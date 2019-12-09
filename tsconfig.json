@@ -1,5 +1,5 @@
 {
-  "include": ["src", "types"],
+  "include": ["src", "types", "stories"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "es5",
@@ -22,11 +22,11 @@
     "moduleResolution": "node",
     "jsx": "react",
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "allowJs": false,
     "baseUrl": ".",
-    "rootDir": "./src",
-    "outDir": "./build",
-    "resolveJsonModule": true,
-    "incremental": true
+    "paths": {
+      "@sinoui/core/*": ["src/*"]
+    }
   }
 }

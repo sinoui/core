@@ -1,3 +1,4 @@
-import Counter from './Counter';
+/* eslint-disable import/prefer-default-export */
+import BaseButton from './BaseButton';
 
-export default Counter;
+export { BaseButton };
