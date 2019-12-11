@@ -53,6 +53,7 @@
     "@babel/polyfill": "^7.7.0",
     "@babel/runtime": "^7.7.6",
     "@sinoui/theme": "^0.3.3",
+    "classnames": "^2.2.6",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
@@ -64,6 +65,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/react-hooks": "^3.2.1",
+    "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.15",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.0",

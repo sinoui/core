@@ -17,5 +17,6 @@
   "typescript.suggest.autoImports": true,
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
-  "typescript.implementationsCodeLens.enabled": true
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
