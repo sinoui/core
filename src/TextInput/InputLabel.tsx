@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
 export interface InputLabelProps {
@@ -63,8 +63,7 @@ const InputLabel = styled.div.attrs({
   transform: translate(0, ${(props) => props.theme.spacing.unit * 3}px) scale(1);
   ${(props) => props.variant === 'filled' && filledLabelStyle};
   ${(props) => props.variant === 'outlined' && outlinedlineStyle};
-  ${(props) =>
-    props.disabled && `color: ${props.theme.palette.input.disabled}`};
+  ${(props) => props.disabled && `color: ${props.theme.palette.text.disabled}`};
   ${(props) => !props.disabled && animateStyle};
   ${(props) => props.shrink && shrinkStyle};
   ${(props) => props.focused && `color: ${props.theme.palette.primary[500]}`};

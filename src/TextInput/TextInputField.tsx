@@ -11,6 +11,7 @@ import FilledInput from '@sinoui/core/FilledInput';
 import OutlineInput from '@sinoui/core/OutlineInput';
 import InputLabel from './InputLabel';
 import Input from '../Input';
+import HelperText from './HelperText';
 
 export interface TextInputFieldProps extends BaseInputProps {
   /**
@@ -29,6 +30,10 @@ export interface TextInputFieldProps extends BaseInputProps {
    * 标签宽度
    */
   labelWidth?: number;
+  /**
+   * 帮助文字
+   */
+  helperText?: string;
 }
 
 const variantComponent = {
@@ -42,8 +47,7 @@ const TextInputWrapper = styled.div`
   flex-direction: column;
   min-width: 0px;
   padding: 0;
-  margin-top: ${(props) => props.theme.spacing.unit * 2}px;
-  margin-bottom: ${(props) => props.theme.spacing.unit}px;
+  margin: 0;
   border: 0px;
   position: relative;
 `;
@@ -59,7 +63,9 @@ export default function TextInputField(props: TextInputFieldProps) {
     error,
     variant = 'standard',
     placeholder,
+    className,
     labelWidth: labelWidthProp = 0,
+    helperText,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -119,7 +125,7 @@ export default function TextInputField(props: TextInputFieldProps) {
   const InputComponent = variantComponent[variant];
 
   return (
-    <TextInputWrapper>
+    <TextInputWrapper className={className}>
       {label && (
         <InputLabel
           disabled={disabled}
@@ -146,6 +152,14 @@ export default function TextInputField(props: TextInputFieldProps) {
         defaultValue={defaultValue}
         labelWidth={labelWidth}
       />
+      {!!error && (
+        <HelperText error variant={variant}>
+          {error}
+        </HelperText>
+      )}
+      {!error && helperText && (
+        <HelperText variant={variant}>{helperText}</HelperText>
+      )}
     </TextInputWrapper>
   );
 }

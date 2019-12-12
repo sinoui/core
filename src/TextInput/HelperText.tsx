@@ -1,0 +1,30 @@
+import styled, { css } from 'styled-components';
+
+export interface HelperTextProps {
+  disabeld?: boolean;
+  error?: boolean;
+  variant?: 'standard' | 'filled' | 'outlined';
+}
+
+const containedStyle = css`
+  margin: 8px 14px 0;
+`;
+
+const HelperText = styled.p<HelperTextProps>`
+  color: ${(props) => props.theme.palette.text.secondary};
+  font-family: ${(props) => props.theme.typography.fontFamily};
+  font-size: ${(props) => props.theme.typography.caption.fontSize}rem;
+  text-align: left;
+  line-height: 0.75rem;
+  min-height: 0.75rem;
+  margin: 0;
+  margin-top: 8px;
+
+  ${(props) => props.disabeld && `color:${props.theme.palette.text.disabled}`};
+  ${(props) => props.error && `color:${props.theme.palette.error[500]}`};
+  ${(props) =>
+    (props.variant === 'filled' || props.variant === 'outlined') &&
+    containedStyle};
+`;
+
+export default HelperText;

@@ -1,11 +1,16 @@
 import React, { useState, useCallback } from 'react';
-import TextInputField from '@sinoui/core/TextInput';
-import { ThemeProvider } from 'styled-components';
+import TextInput from '@sinoui/core/TextInput';
+import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 
 export default {
   title: 'Input',
 };
+
+const TextInputField = styled(TextInput)`
+  margin: 8px;
+  width: 200px;
+`;
 
 function SimpleInput() {
   const [value, setValue] = useState();
@@ -22,88 +27,128 @@ function SimpleInput() {
     <ThemeProvider theme={defaultTheme}>
       <div style={{ display: 'flex' }}>
         <TextInputField
-          label="用户名"
+          label="Required"
           onChange={onChange}
           value={value}
           required
         />
         <TextInputField
-          label="用户名"
+          label="Disabled"
           onChange={onChange}
           value={value}
           disabled
         />
         <TextInputField
-          label="用户名"
+          label="ReadOnly"
           onChange={onChange}
           value={value}
           readOnly
         />
         <TextInputField
-          label="密码"
+          label="Error"
+          onChange={onChange}
+          value={value}
+          error="Error Message"
+        />
+        <TextInputField
+          label="Password"
           onChange={onChange}
           value={value}
           type="password"
+        />
+        <TextInputField
+          label="Help Text"
+          onChange={onChange}
+          value={value}
+          helperText="请输入内容"
         />
       </div>
       <div style={{ display: 'flex' }}>
         <TextInputField
-          label="用户名"
+          label="Required"
           onChange={onChange}
           value={value}
           required
           variant="filled"
         />
         <TextInputField
-          label="用户名"
+          label="Disabled"
           onChange={onChange}
           value={value}
           variant="filled"
           disabled
         />
         <TextInputField
-          label="用户名"
+          label="ReadOnly"
           onChange={onChange}
           value={value}
           variant="filled"
           readOnly
         />
         <TextInputField
-          label="密码"
+          label="Error"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          error="Error Message"
+        />
+        <TextInputField
+          label="Password"
           onChange={onChange}
           value={value}
           variant="filled"
           type="password"
+        />
+        <TextInputField
+          label="Help Text"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          helperText="请输入内容"
         />
       </div>
       <div style={{ display: 'flex' }}>
         <TextInputField
-          label="用户名"
+          label="Required"
           onChange={onChange}
           value={value}
           required
           variant="outlined"
         />
         <TextInputField
-          label="用户名"
+          label="Disabled"
           onChange={onChange}
           value={value}
           variant="outlined"
           disabled
         />
         <TextInputField
-          label="用户名"
+          label="ReadOnly"
           onChange={onChange}
           value={value}
           variant="outlined"
           readOnly
         />
         <TextInputField
-          label="密码"
+          label="Error"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          error="Error Message"
+        />
+        <TextInputField
+          label="Password"
           onChange={onChange}
           value={value}
           variant="outlined"
           type="password"
+        />
+        <TextInputField
+          label="Help Text"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          helperText="请输入内容"
         />
       </div>
     </ThemeProvider>

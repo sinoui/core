@@ -91,6 +91,10 @@ const underlineStyle = css<FilledInputProps>`
   }
 `;
 
+const disabledBackgroundStyle = css`
+  background-color: ${(props) => props.theme.palette.text.divider};
+`;
+
 const StyledBaseInput = styled(BaseInput)<
   BaseInputProps & { error?: boolean; warning?: boolean }
 >`
@@ -124,6 +128,7 @@ const StyledBaseInput = styled(BaseInput)<
   ${(props) => !props.error && underlineStyle};
   ${(props) => (props.error || props.warning) && errorOrWarnigStyle};
   ${(props) => props.disabled && disabledunderlineStyle};
+  ${(props) => props.disabled && disabledBackgroundStyle};
 
   > input {
     padding: 27px 12px 10px;
