@@ -105,13 +105,6 @@ function SimpleInput() {
           variant="outlined"
           type="password"
         />
-        <TextInputField
-          label="密码"
-          onChange={onChange}
-          value="ggg"
-          variant="outlined"
-          type="password"
-        />
       </div>
     </ThemeProvider>
   );

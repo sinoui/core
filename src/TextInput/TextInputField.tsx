@@ -25,6 +25,9 @@ export interface TextInputFieldProps extends BaseInputProps {
    * input的渲染形式
    */
   variant?: 'standard' | 'filled' | 'outlined';
+  /**
+   * 标签宽度
+   */
   labelWidth?: number;
 }
 
