@@ -1,4 +1,10 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, {
+  useState,
+  useCallback,
+  useRef,
+  useMemo,
+  useEffect,
+} from 'react';
 import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
 import FilledInput from '@sinoui/core/FilledInput';
@@ -50,11 +56,30 @@ export default function TextInputField(props: TextInputFieldProps) {
     error,
     variant = 'standard',
     placeholder,
-    labelWidth: labelWidthProp,
+    labelWidth: labelWidthProp = 0,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
-  const labelRef = useRef<HTMLLabelElement | undefined>();
+  const [labelWidth, setLabelWidth] = useState(labelWidthProp);
+  const labelRef = useRef<HTMLLabelElement | null>(null);
+
+  const shrink = useMemo(
+    () => focused || !!value || !!defaultValue || !!placeholder,
+    [defaultValue, focused, placeholder, value],
+  );
+
+  const shrinkRef = useRef(shrink);
+
+  useEffect(() => {
+    if (labelWidthProp) {
+      setLabelWidth(labelWidthProp);
+      return;
+    }
+    if (labelRef && labelRef.current) {
+      const { width } = labelRef.current.getBoundingClientRect();
+      setLabelWidth(width / (shrinkRef.current ? 0.75 : 1));
+    }
+  }, [labelWidthProp]);
 
   const handleBlur = useCallback(
     (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -88,17 +113,6 @@ export default function TextInputField(props: TextInputFieldProps) {
     [props],
   );
 
-  const labelWidth = () => {
-    if (labelWidthProp) {
-      return labelWidthProp;
-    }
-    if (labelRef && labelRef.current) {
-      const { width } = labelRef.current.getBoundingClientRect();
-      return width;
-    }
-    return 0;
-  };
-
   const InputComponent = variantComponent[variant];
 
   return (
@@ -107,7 +121,7 @@ export default function TextInputField(props: TextInputFieldProps) {
         <InputLabel
           disabled={disabled}
           focused={focused}
-          shrink={focused || !!value || !!defaultValue || !!placeholder}
+          shrink={shrink}
           required={required}
           error={!!error}
           variant={variant}
@@ -119,6 +133,7 @@ export default function TextInputField(props: TextInputFieldProps) {
       <InputComponent
         {...other}
         required={required}
+        disabled={disabled}
         error={error}
         placeholder={placeholder}
         onFocus={handleFocus}
@@ -126,7 +141,7 @@ export default function TextInputField(props: TextInputFieldProps) {
         value={value}
         onChange={onChange}
         defaultValue={defaultValue}
-        labelWidth={labelWidth()}
+        labelWidth={labelWidth}
       />
     </TextInputWrapper>
   );
