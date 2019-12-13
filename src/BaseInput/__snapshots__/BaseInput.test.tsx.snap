@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染BaseInput 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout"
+  data-testid="baseInput"
+>
+  <input
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;
+
+exports[`渲染disabled属性下的BaseInput 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout"
+  data-testid="baseInput"
+  disabled={true}
+>
+  <input
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;
+
+exports[`渲染全宽模式下的BaseInput 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 kpHZJ sinoui-base-input__layout"
+  data-testid="baseInput"
+>
+  <input
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;
+
+exports[`渲染多行输入框 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout"
+  data-testid="baseInput"
+  disabled={true}
+>
+  <textarea
+    className="BaseInput__StyleTextarea-sc-1es3u8i-1 jJZNer"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;

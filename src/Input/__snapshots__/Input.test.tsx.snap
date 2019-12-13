@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染input 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 iafmNm sinoui-input"
+  data-testid="baseInput"
+>
+  <input
+    focused={false}
+    multiline={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+</div>
+`;
+
+exports[`渲染不可用的Input 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 dOWYDL sinoui-input sinoui-input--disabled"
+  data-testid="baseInput"
+  disabled={true}
+>
+  <input
+    disabled={true}
+    focused={false}
+    multiline={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+</div>
+`;
+
+exports[`渲染密集模式下的Input 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 czUuUM sinoui-input sinoui-input--dense"
+  data-testid="baseInput"
+>
+  <input
+    dense={true}
+    focused={false}
+    multiline={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+</div>
+`;
+
+exports[`渲染错误状态下的input 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 yWBVY sinoui-input sinoui-input--error"
+  data-testid="baseInput"
+>
+  <input
+    error={true}
+    focused={false}
+    multiline={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+</div>
+`;

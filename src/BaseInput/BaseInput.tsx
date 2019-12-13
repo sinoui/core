@@ -257,6 +257,7 @@ export default function BaseInput(props: BaseInputProps) {
       className={classNames('sinoui-base-input__layout', className)}
       disabled={disabled}
       fullWidth={fullWidth}
+      data-testid="baseInput"
     >
       {startComponent}
       <InputComonent {...inputprops} />
