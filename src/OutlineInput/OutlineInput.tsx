@@ -46,8 +46,6 @@ const StyledBaseInput = styled(BaseInput)<
       ${(props) =>
         props.error && `border-color:${props.theme.palette.error[500]}`};
       ${(props) =>
-        props.warning && `border-color:${props.theme.palette.warning[500]}`};
-      ${(props) =>
         props.disabled &&
         `border-color:${props.theme.palette.action.disabled}`};
     }

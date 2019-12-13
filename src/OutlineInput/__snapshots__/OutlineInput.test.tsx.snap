@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染边框模式下的Input 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 hRrNJV sinoui-outlined-input"
+  data-testid="baseInput"
+>
+  <input
+    focused={false}
+    multiline={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+  <fieldset
+    aria-hidden={true}
+    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+    style={
+      Object {
+        "paddingLeft": 8,
+      }
+    }
+  >
+    <legend
+      className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+      style={
+        Object {
+          "width": 0.01,
+        }
+      }
+    >
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "&#8203;",
+          }
+        }
+      />
+    </legend>
+  </fieldset>
+</div>
+`;
+
+exports[`渲染不可用状态下边框模式的Input 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 jScDLm sinoui-outlined-input sinoui-outlined-input--disabled"
+  data-testid="baseInput"
+  disabled={true}
+>
+  <input
+    disabled={true}
+    focused={false}
+    multiline={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+  <fieldset
+    aria-hidden={true}
+    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+    style={
+      Object {
+        "paddingLeft": 8,
+      }
+    }
+  >
+    <legend
+      className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+      style={
+        Object {
+          "width": 0.01,
+        }
+      }
+    >
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "&#8203;",
+          }
+        }
+      />
+    </legend>
+  </fieldset>
+</div>
+`;
+
+exports[`渲染密集状态下边框模式的Input 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 bXtBKv sinoui-outlined-input sinoui-outlined-input--dense"
+  data-testid="baseInput"
+>
+  <input
+    dense={true}
+    focused={false}
+    multiline={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+  <fieldset
+    aria-hidden={true}
+    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+    style={
+      Object {
+        "paddingLeft": 8,
+      }
+    }
+  >
+    <legend
+      className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+      style={
+        Object {
+          "width": 0.01,
+        }
+      }
+    >
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "&#8203;",
+          }
+        }
+      />
+    </legend>
+  </fieldset>
+</div>
+`;
+
+exports[`渲染错误状态下边框模式的Input 1`] = `
+<div
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eZHLqk sinoui-outlined-input sinoui-outlined-input--error"
+  data-testid="baseInput"
+>
+  <input
+    error={true}
+    focused={false}
+    multiline={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+  <fieldset
+    aria-hidden={true}
+    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+    style={
+      Object {
+        "paddingLeft": 8,
+      }
+    }
+  >
+    <legend
+      className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    >
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "&#8203;",
+          }
+        }
+      />
+    </legend>
+  </fieldset>
+</div>
+`;
