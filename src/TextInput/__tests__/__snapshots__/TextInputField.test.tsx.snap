@@ -1,0 +1,470 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染三种模式下的输入框 1`] = `
+<div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 ibxzwb sinoui-input-label"
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 iafmNm sinoui-input"
+      data-testid="baseInput"
+    >
+      <input
+        error={false}
+        focused={false}
+        labelWidth={0}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 iFUxJC sinoui-input-label sinoui-input-label--filled"
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 gcCNmv sinoui-filled-input"
+      data-testid="baseInput"
+    >
+      <input
+        error={false}
+        focused={false}
+        labelWidth={0}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 fgYsvn sinoui-input-label sinoui-input-label--outlined"
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 hRrNJV sinoui-outlined-input"
+      data-testid="baseInput"
+    >
+      <input
+        error={false}
+        focused={false}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+      <fieldset
+        aria-hidden={true}
+        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+        style={
+          Object {
+            "paddingLeft": 35.25,
+          }
+        }
+      >
+        <legend
+          className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+          style={
+            Object {
+              "width": 0.01,
+            }
+          }
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "&#8203;",
+              }
+            }
+          />
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`渲染不可用状态下三种形态输入框 1`] = `
+<div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 NiSDY sinoui-input-label sinoui-input-label--disabled"
+      disabled={true}
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 dOWYDL sinoui-input sinoui-input--disabled"
+      data-testid="baseInput"
+      disabled={true}
+    >
+      <input
+        disabled={true}
+        error={false}
+        focused={false}
+        labelWidth={0}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+    <p
+      className="HelperText-sc-10rfm69-0 dmYUMv"
+    >
+      输入用户名
+    </p>
+  </div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 hnweLv sinoui-input-label sinoui-input-label--disabled sinoui-input-label--filled"
+      disabled={true}
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 eupSH sinoui-filled-input sinoui-filled-input--disabled"
+      data-testid="baseInput"
+      disabled={true}
+    >
+      <input
+        disabled={true}
+        error={false}
+        focused={false}
+        labelWidth={0}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+    <p
+      className="HelperText-sc-10rfm69-0 dyfPPE"
+    >
+      输入用户名
+    </p>
+  </div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 gwXTat sinoui-input-label sinoui-input-label--disabled sinoui-input-label--outlined sinoui-input-label--dense"
+      disabled={true}
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 uQpUt sinoui-outlined-input sinoui-outlined-input--disabled sinoui-outlined-input--dense"
+      data-testid="baseInput"
+      disabled={true}
+    >
+      <input
+        dense={true}
+        disabled={true}
+        error={false}
+        focused={false}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+      <fieldset
+        aria-hidden={true}
+        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+        style={
+          Object {
+            "paddingLeft": 35.25,
+          }
+        }
+      >
+        <legend
+          className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+          style={
+            Object {
+              "width": 0.01,
+            }
+          }
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "&#8203;",
+              }
+            }
+          />
+        </legend>
+      </fieldset>
+    </div>
+    <p
+      className="HelperText-sc-10rfm69-0 mRTUn"
+    >
+      输入用户名
+    </p>
+  </div>
+</div>
+`;
+
+exports[`渲染有辅助性文字的输入框 1`] = `
+<div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 ibxzwb sinoui-input-label"
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 iafmNm sinoui-input"
+      data-testid="baseInput"
+    >
+      <input
+        error={false}
+        focused={false}
+        labelWidth={0}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+    <p
+      className="HelperText-sc-10rfm69-0 eapacZ"
+    >
+      输入用户名
+    </p>
+  </div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 iFUxJC sinoui-input-label sinoui-input-label--filled"
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 gcCNmv sinoui-filled-input"
+      data-testid="baseInput"
+    >
+      <input
+        error={false}
+        focused={false}
+        labelWidth={0}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+    <p
+      className="HelperText-sc-10rfm69-0 bHnIp"
+    >
+      输入用户名
+    </p>
+  </div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 fgYsvn sinoui-input-label sinoui-input-label--outlined"
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 hRrNJV sinoui-outlined-input"
+      data-testid="baseInput"
+    >
+      <input
+        error={false}
+        focused={false}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+      <fieldset
+        aria-hidden={true}
+        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+        style={
+          Object {
+            "paddingLeft": 35.25,
+          }
+        }
+      >
+        <legend
+          className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+          style={
+            Object {
+              "width": 0.01,
+            }
+          }
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "&#8203;",
+              }
+            }
+          />
+        </legend>
+      </fieldset>
+    </div>
+    <p
+      className="HelperText-sc-10rfm69-0 bHnIp"
+    >
+      输入用户名
+    </p>
+  </div>
+</div>
+`;
+
+exports[`渲染有错误提示的输入框 1`] = `
+<div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 dZzfMP sinoui-input-label sinoui-input-label--error"
+      required={true}
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 yWBVY sinoui-input sinoui-input--error"
+      data-testid="baseInput"
+    >
+      <input
+        aria-required={true}
+        error={true}
+        focused={false}
+        labelWidth={0}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+    <p
+      className="HelperText-sc-10rfm69-0 eSWldN"
+    >
+      必填
+    </p>
+  </div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 hVRGxd sinoui-input-label sinoui-input-label--error sinoui-input-label--filled"
+      required={true}
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 jNZbEI sinoui-filled-input sinoui-filled-input--error"
+      data-testid="baseInput"
+    >
+      <input
+        aria-required={true}
+        error={true}
+        focused={false}
+        labelWidth={0}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+    <p
+      className="HelperText-sc-10rfm69-0 rKrul"
+    >
+      必填
+    </p>
+  </div>
+  <div
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+  >
+    <label
+      className="InputLabel-unslap-0 UHfzd sinoui-input-label sinoui-input-label--error sinoui-input-label--outlined"
+      required={true}
+    >
+      用户名
+    </label>
+    <div
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eZHLqk sinoui-outlined-input sinoui-outlined-input--error"
+      data-testid="baseInput"
+    >
+      <input
+        aria-required={true}
+        error={true}
+        focused={false}
+        multiline={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+      <fieldset
+        aria-hidden={true}
+        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+        style={
+          Object {
+            "paddingLeft": 35.25,
+          }
+        }
+      >
+        <legend
+          className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+          style={
+            Object {
+              "width": 0.01,
+            }
+          }
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "&#8203;",
+              }
+            }
+          />
+        </legend>
+      </fieldset>
+    </div>
+    <p
+      className="HelperText-sc-10rfm69-0 rKrul"
+    >
+      必填
+    </p>
+  </div>
+</div>
+`;

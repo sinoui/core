@@ -180,7 +180,7 @@ export default function TextInputField(props: TextInputFieldProps) {
         </HelperText>
       )}
       {!error && helperText && (
-        <HelperText variant={variant} dense={dense}>
+        <HelperText disabeld={disabled} variant={variant} dense={dense}>
           {helperText}
         </HelperText>
       )}
