@@ -4,6 +4,7 @@ export interface HelperTextProps {
   disabeld?: boolean;
   error?: boolean;
   variant?: 'standard' | 'filled' | 'outlined';
+  dense?: boolean;
 }
 
 const containedStyle = css`
@@ -18,7 +19,7 @@ const HelperText = styled.p<HelperTextProps>`
   line-height: 0.75rem;
   min-height: 0.75rem;
   margin: 0;
-  margin-top: 8px;
+  margin-top: ${(props) => (props.dense ? 4 : 8)}px;
 
   ${(props) => props.disabeld && `color:${props.theme.palette.text.disabled}`};
   ${(props) => props.error && `color:${props.theme.palette.error[500]}`};

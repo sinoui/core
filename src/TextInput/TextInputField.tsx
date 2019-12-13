@@ -36,6 +36,10 @@ export interface TextInputFieldProps extends BaseInputProps {
    * 帮助文字
    */
   helperText?: string;
+  /**
+   * 密集模式
+   */
+  dense?: boolean;
 }
 
 const variantComponent = {
@@ -69,6 +73,7 @@ export default function TextInputField(props: TextInputFieldProps) {
     labelWidth: labelWidthProp = 0,
     helperText,
     readOnly,
+    dense,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -138,6 +143,7 @@ export default function TextInputField(props: TextInputFieldProps) {
           error={!!error}
           variant={variant}
           ref={labelRef}
+          dense={dense}
           className={classNames(
             generateClassName('sinoui-input-label', {
               disabled,
@@ -146,6 +152,7 @@ export default function TextInputField(props: TextInputFieldProps) {
               readOnly,
               filled: variant === 'filled',
               outlined: variant === 'outlined',
+              dense,
             }),
           )}
         >
@@ -155,6 +162,7 @@ export default function TextInputField(props: TextInputFieldProps) {
       <InputComponent
         {...other}
         required={required}
+        dense={dense}
         disabled={disabled}
         error={!!error}
         readOnly={readOnly}
@@ -167,12 +175,14 @@ export default function TextInputField(props: TextInputFieldProps) {
         labelWidth={labelWidth}
       />
       {!!error && (
-        <HelperText error variant={variant}>
+        <HelperText error variant={variant} dense={dense}>
           {error}
         </HelperText>
       )}
       {!error && helperText && (
-        <HelperText variant={variant}>{helperText}</HelperText>
+        <HelperText variant={variant} dense={dense}>
+          {helperText}
+        </HelperText>
       )}
     </TextInputWrapper>
   );

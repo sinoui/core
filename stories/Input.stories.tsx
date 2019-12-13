@@ -25,7 +25,7 @@ function SimpleInput() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -62,8 +62,15 @@ function SimpleInput() {
           value={value}
           helperText="请输入内容"
         />
+        <TextInputField
+          label="Dense"
+          onChange={onChange}
+          value={value}
+          dense
+          helperText="请输入内容"
+        />
       </div>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -106,8 +113,16 @@ function SimpleInput() {
           variant="filled"
           helperText="请输入内容"
         />
+        <TextInputField
+          label="Dense"
+          onChange={onChange}
+          value={value}
+          dense
+          variant="filled"
+          helperText="请输入内容"
+        />
       </div>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -147,6 +162,14 @@ function SimpleInput() {
           label="Help Text"
           onChange={onChange}
           value={value}
+          variant="outlined"
+          helperText="请输入内容"
+        />
+        <TextInputField
+          label="Dense"
+          onChange={onChange}
+          value={value}
+          dense
           variant="outlined"
           helperText="请输入内容"
         />

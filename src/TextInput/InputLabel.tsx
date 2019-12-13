@@ -13,6 +13,7 @@ export interface InputLabelProps {
    */
   variant?: 'standard' | 'filled' | 'outlined';
   ref?: any;
+  dense?: boolean;
 }
 
 const animateStyle = css`
@@ -34,20 +35,29 @@ const shrinkStyle = css<InputLabelProps>`
     `transform: translate(14px, -6px) scale(0.75);`}
 `;
 
+const denseShrinkLabelStyle = css<InputLabelProps>`
+  ${(props) =>
+    props.variant === 'filled' &&
+    `transform: translate(12px, 7px) scale(0.75);`}
+`;
+
 const errorStyle = css`
   color: ${(props) => props.theme.palette.error[500]};
 `;
 
-const filledLabelStyle = css`
+const filledLabelStyle = css<{ dense?: boolean }>`
   transform: translate(12px, 20px) scale(1);
   z-index: 1;
   pointer-events: none;
+  ${(props) => props.dense && ` transform: translate(12px, 17px) scale(1);`}
 `;
 
-const outlinedlineStyle = css`
+const outlinedlineStyle = css<InputLabelProps>`
   transform: translate(14px, 20px) scale(1);
   z-index: 1;
   pointer-events: none;
+
+  ${(props) => props.dense && ` transform: translate(14px, 12px) scale(1);`}
 `;
 
 const InputLabel = styled.div.attrs({
@@ -66,6 +76,7 @@ const InputLabel = styled.div.attrs({
   ${(props) => props.disabled && `color: ${props.theme.palette.text.disabled}`};
   ${(props) => !props.disabled && animateStyle};
   ${(props) => props.shrink && shrinkStyle};
+  ${(props) => props.dense && props.shrink && denseShrinkLabelStyle};
   ${(props) => props.focused && `color: ${props.theme.palette.primary[500]}`};
   ${(props) => props.error && errorStyle};
   ${(props) =>

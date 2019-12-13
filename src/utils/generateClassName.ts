@@ -11,5 +11,6 @@ export default function generateClassName(
     [`${className}--readonly`]: props.readOnly,
     [`${className}--filled`]: props.filled,
     [`${className}--outlined`]: props.outlined,
+    [`${className}--dense`]: props.dense,
   });
 }

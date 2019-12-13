@@ -8,6 +8,7 @@ export interface FilledInputProps extends BaseInputProps {
   error?: boolean;
   warning?: boolean;
   focused?: boolean;
+  dense?: boolean;
 }
 
 const FULL_SCALE_X = 1;
@@ -97,7 +98,7 @@ const disabledBackgroundStyle = css`
 `;
 
 const StyledBaseInput = styled(BaseInput)<
-  BaseInputProps & { error?: boolean; warning?: boolean }
+  BaseInputProps & { error?: boolean; warning?: boolean; dense?: boolean }
 >`
   position: relative;
   background-color: ${(props) =>
@@ -133,6 +134,8 @@ const StyledBaseInput = styled(BaseInput)<
 
   > input {
     padding: 27px 12px 10px;
+
+    ${(props) => props.dense && `padding-top:23px;padding-bottom:6px;`}
   }
 `;
 

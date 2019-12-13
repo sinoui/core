@@ -9,6 +9,7 @@ export interface InputProps extends BaseInputProps {
   error?: boolean;
   warning?: boolean;
   focused?: boolean;
+  dense?: boolean;
 }
 
 const FULL_SCALE_X = 1;
@@ -100,6 +101,7 @@ const disabledUnderlineStyle = css`
 const StyledBaseInput = styled(BaseInput)<{
   error?: boolean;
   warning?: boolean;
+  dense?: boolean;
 }>`
   color: ${(props) =>
     props.disabled
@@ -109,6 +111,10 @@ const StyledBaseInput = styled(BaseInput)<{
   ${(props) => !props.disabled && inkbarStyle};
   ${(props) => !props.error && underlineStyle};
   ${(props) => props.disabled && disabledUnderlineStyle};
+
+  > input {
+    ${(props) => props.dense && `padding-top:3px;`}
+  }
 
   label ~ & {
     margin-top: 16px;
@@ -143,6 +149,7 @@ export default function Input(props: InputProps) {
     warning,
     disabled,
     readOnly,
+    dense,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -191,6 +198,7 @@ export default function Input(props: InputProps) {
       ref={ref}
       disabled={disabled}
       readOnly={readOnly}
+      dense={dense}
       {...other}
       className={classNames(
         generateClassName('sinoui-input', {
@@ -198,6 +206,7 @@ export default function Input(props: InputProps) {
           readOnly,
           error,
           focused,
+          dense,
         }),
         className,
       )}

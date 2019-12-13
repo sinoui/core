@@ -11,10 +11,16 @@ export interface OutlineInputProps extends BaseInputProps {
   focused?: boolean;
   notched?: boolean;
   labelWidth?: number;
+  dense?: boolean;
 }
 
 const StyledBaseInput = styled(BaseInput)<
-  BaseInputProps & { error?: boolean; warning?: boolean; focused?: boolean }
+  BaseInputProps & {
+    error?: boolean;
+    warning?: boolean;
+    focused?: boolean;
+    dense?: boolean;
+  }
 >`
   position: relative;
   border-radius: 4px;
@@ -49,6 +55,8 @@ const StyledBaseInput = styled(BaseInput)<
 
   > input {
     padding: 18.5px 14px;
+
+    ${(props) => props.dense && `padding-top:10.5px;padding-bottom:10.5px;`}
   }
 `;
 
@@ -69,6 +77,7 @@ export default function OutlineInput(props: OutlineInputProps) {
     labelWidth,
     disabled,
     readOnly,
+    dense,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -125,6 +134,7 @@ export default function OutlineInput(props: OutlineInputProps) {
       multiline={multiline}
       type={type}
       ref={ref}
+      dense={dense}
       disabled={disabled}
       readOnly={readOnly}
       {...other}
@@ -134,6 +144,7 @@ export default function OutlineInput(props: OutlineInputProps) {
           error,
           disabled,
           readOnly,
+          dense,
         }),
         className,
       )}
