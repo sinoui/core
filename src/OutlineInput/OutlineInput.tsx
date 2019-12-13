@@ -3,9 +3,10 @@ import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import NotchedOutline from './NotchedOutline';
+import generateClassName from '../utils/generateClassName';
 
 export interface OutlineInputProps extends BaseInputProps {
-  error?: string;
+  error?: boolean;
   warning?: boolean;
   focused?: boolean;
   notched?: boolean;
@@ -66,6 +67,8 @@ export default function OutlineInput(props: OutlineInputProps) {
     defaultValue,
     placeholder,
     labelWidth,
+    disabled,
+    readOnly,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -115,15 +118,25 @@ export default function OutlineInput(props: OutlineInputProps) {
           labelWidth={labelWidth}
         />
       )}
-      error={!!error}
+      error={error}
       warning={warning}
       focused={focused}
       inputComponent={inputComponent}
       multiline={multiline}
       type={type}
       ref={ref}
+      disabled={disabled}
+      readOnly={readOnly}
       {...other}
-      className={classNames('sinoui-input', className)}
+      className={classNames(
+        generateClassName('sinoui-outlined-input', {
+          focused,
+          error,
+          disabled,
+          readOnly,
+        }),
+        className,
+      )}
       onFocus={handleFocus}
       onBlur={handleBlur}
       value={value}

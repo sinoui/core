@@ -2,9 +2,10 @@ import React, { useState, useCallback } from 'react';
 import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
+import generateClassName from '../utils/generateClassName';
 
 export interface FilledInputProps extends BaseInputProps {
-  error?: string;
+  error?: boolean;
   warning?: boolean;
   focused?: boolean;
 }
@@ -145,6 +146,8 @@ export default function FilledInput(props: FilledInputProps) {
     className,
     error,
     warning,
+    disabled,
+    readOnly,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -184,15 +187,25 @@ export default function FilledInput(props: FilledInputProps) {
   return (
     <StyledBaseInput
       fullWidth={fullWidth}
-      error={!!error}
+      error={error}
       warning={warning}
       focused={focused}
+      disabled={disabled}
+      readOnly={readOnly}
       inputComponent={inputComponent}
       multiline={multiline}
       type={type}
       ref={ref}
       {...other}
-      className={classNames('sinoui-filled-input', className)}
+      className={classNames(
+        generateClassName('sinoui-filled-input', {
+          focused,
+          error,
+          disabled,
+          readOnly,
+        }),
+        className,
+      )}
       onFocus={handleFocus}
       onBlur={handleBlur}
     />

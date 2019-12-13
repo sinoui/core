@@ -3,9 +3,10 @@ import React, { useState, useCallback } from 'react';
 import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
+import generateClassName from '../utils/generateClassName';
 
 export interface InputProps extends BaseInputProps {
-  error?: string;
+  error?: boolean;
   warning?: boolean;
   focused?: boolean;
 }
@@ -140,6 +141,8 @@ export default function Input(props: InputProps) {
     className,
     error,
     warning,
+    disabled,
+    readOnly,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -179,15 +182,25 @@ export default function Input(props: InputProps) {
   return (
     <StyledBaseInput
       fullWidth={fullWidth}
-      error={!!error}
+      error={error}
       warning={warning}
       focused={focused}
       inputComponent={inputComponent}
       multiline={multiline}
       type={type}
       ref={ref}
+      disabled={disabled}
+      readOnly={readOnly}
       {...other}
-      className={classNames('sinoui-input', className)}
+      className={classNames(
+        generateClassName('sinoui-input', {
+          disabled,
+          readOnly,
+          error,
+          focused,
+        }),
+        className,
+      )}
       onFocus={handleFocus}
       onBlur={handleBlur}
     />

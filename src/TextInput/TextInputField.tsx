@@ -9,9 +9,11 @@ import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
 import FilledInput from '@sinoui/core/FilledInput';
 import OutlineInput from '@sinoui/core/OutlineInput';
+import classNames from 'classnames';
 import InputLabel from './InputLabel';
 import Input from '../Input';
 import HelperText from './HelperText';
+import generateClassName from '../utils/generateClassName';
 
 export interface TextInputFieldProps extends BaseInputProps {
   /**
@@ -66,6 +68,7 @@ export default function TextInputField(props: TextInputFieldProps) {
     className,
     labelWidth: labelWidthProp = 0,
     helperText,
+    readOnly,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -135,6 +138,16 @@ export default function TextInputField(props: TextInputFieldProps) {
           error={!!error}
           variant={variant}
           ref={labelRef}
+          className={classNames(
+            generateClassName('sinoui-input-label', {
+              disabled,
+              error: !!error,
+              focused,
+              readOnly,
+              filled: variant === 'filled',
+              outlined: variant === 'outlined',
+            }),
+          )}
         >
           {label}
         </InputLabel>
@@ -143,7 +156,8 @@ export default function TextInputField(props: TextInputFieldProps) {
         {...other}
         required={required}
         disabled={disabled}
-        error={error}
+        error={!!error}
+        readOnly={readOnly}
         placeholder={placeholder}
         onFocus={handleFocus}
         onBlur={handleBlur}
