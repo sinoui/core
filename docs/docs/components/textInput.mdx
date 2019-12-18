@@ -1,0 +1,249 @@
+---
+id: textInput
+title: TextInput 输入框
+---
+
+import TextInput from '@sinoui/core/TextInput';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import TextInputDemo from './textInput-demoes/TextInputDemo';
+import FormPropTextInputDemo from './textInput-demoes/FormPropTextInputDemo';
+
+> TextInput 是最基础的表单控件，供输入信息使用。
+
+## 引入方式
+
+```tsx
+import TextInput from '@sinoui/core/TextInput';
+```
+
+## 使用场景
+
+### 三种形态输入框的基本使用
+
+```tsx
+import React, { useCallback, useState } from 'react';
+import TextInput from '@sinoui/core/TextInput';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+function TextInputDemo() {
+  const [value, setValue] = useState();
+
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const inputValue = event.target.value;
+      setValue(inputValue);
+    },
+    [],
+  );
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <TextInput label="标准输入框" value={value} onChange={onChange} />
+        <TextInput
+          label="填充模式输入框"
+          value={value}
+          onChange={onChange}
+          variant="filled"
+        />
+        <TextInput
+          label="带边框的输入框"
+          value={value}
+          onChange={onChange}
+          variant="outlined"
+        />
+      </div>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果如下：
+
+<TextInputDemo />
+
+### 不同状态下的输入框
+
+```tsx
+import React, { useState, useCallback } from 'react';
+import TextInput from '@sinoui/core/TextInput';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+const TextInputField = styled(TextInput)`
+  width: 200px;
+  margin: 8px;
+`;
+
+function FormPropTextInputDemo() {
+  const [value, setValue] = useState();
+
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const inputValue = event.target.value;
+      setValue(inputValue);
+    },
+    [],
+  );
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <TextInputField
+          label="Required"
+          onChange={onChange}
+          value={value}
+          required
+        />
+        <TextInputField
+          label="Disabled"
+          onChange={onChange}
+          value={value}
+          disabled
+        />
+        <TextInputField
+          label="ReadOnly"
+          onChange={onChange}
+          value={value}
+          readOnly
+        />
+        <TextInputField
+          label="Error"
+          onChange={onChange}
+          value={value}
+          error="Error Message"
+        />
+        <TextInputField
+          label="Password"
+          onChange={onChange}
+          value={value}
+          type="password"
+        />
+        <TextInputField
+          label="Help Text"
+          onChange={onChange}
+          value={value}
+          helperText="请输入内容"
+        />
+        <TextInputField
+          label="Dense"
+          onChange={onChange}
+          value={value}
+          dense
+          helperText="请输入内容"
+        />
+      </div>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <TextInputField
+          label="Required"
+          onChange={onChange}
+          value={value}
+          required
+          variant="filled"
+        />
+        <TextInputField
+          label="Disabled"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          disabled
+        />
+        <TextInputField
+          label="ReadOnly"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          readOnly
+        />
+        <TextInputField
+          label="Error"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          error="Error Message"
+        />
+        <TextInputField
+          label="Password"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          type="password"
+        />
+        <TextInputField
+          label="Help Text"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          helperText="请输入内容"
+        />
+        <TextInputField
+          label="Dense"
+          onChange={onChange}
+          value={value}
+          dense
+          variant="filled"
+          helperText="请输入内容"
+        />
+      </div>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <TextInputField
+          label="Required"
+          onChange={onChange}
+          value={value}
+          required
+          variant="outlined"
+        />
+        <TextInputField
+          label="Disabled"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          disabled
+        />
+        <TextInputField
+          label="ReadOnly"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          readOnly
+        />
+        <TextInputField
+          label="Error"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          error="Error Message"
+        />
+        <TextInputField
+          label="Password"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          type="password"
+        />
+        <TextInputField
+          label="Help Text"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          helperText="请输入内容"
+        />
+        <TextInputField
+          label="Dense"
+          onChange={onChange}
+          value={value}
+          dense
+          variant="outlined"
+          helperText="请输入内容"
+        />
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export default FormPropTextInputDemo;
+```
+
+<FormPropTextInputDemo />

@@ -2,6 +2,7 @@
 const { resolve } = require('path');
 
 module.exports = function(_context, _options) {
+  console.log(resolve(__dirname, 'node_modules/react/index.js'));
   return {
     name: 'ts-loader',
     configureWebpack(config, _isServer) {
@@ -9,6 +10,11 @@ module.exports = function(_context, _options) {
         resolve: {
           alias: {
             '@sinoui/core': resolve(__dirname, '../../../src'),
+            react: resolve(__dirname, '../../node_modules/react/index.js'),
+            'react-dom': resolve(
+              __dirname,
+              '../../node_modules/react-dom/index.js',
+            ),
           },
           extensions: [
             ...(config.resolve.extensions || []),
