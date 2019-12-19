@@ -69,6 +69,12 @@ function SimpleInput() {
           dense
           helperText="请输入内容"
         />
+        <TextInputField
+          label="Multiline"
+          multiline
+          value={value}
+          onChange={onChange}
+        />
       </div>
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <TextInputField
@@ -118,8 +124,14 @@ function SimpleInput() {
           onChange={onChange}
           value={value}
           dense
-          variant="filled"
           helperText="请输入内容"
+        />
+        <TextInputField
+          label="Multiline"
+          multiline
+          variant="filled"
+          value={value}
+          onChange={onChange}
         />
       </div>
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
@@ -172,6 +184,13 @@ function SimpleInput() {
           dense
           variant="outlined"
           helperText="请输入内容"
+        />
+        <TextInputField
+          label="Multiline"
+          multiline
+          variant="outlined"
+          value={value}
+          onChange={onChange}
         />
       </div>
     </ThemeProvider>

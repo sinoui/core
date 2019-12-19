@@ -2,7 +2,7 @@
 
 exports[`正确渲染边框模式下的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 hRrNJV sinoui-outlined-input"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eRFFGo sinoui-outlined-input"
   data-testid="baseInput"
 >
   <input
@@ -44,7 +44,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
 
 exports[`渲染不可用状态下边框模式的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 jScDLm sinoui-outlined-input sinoui-outlined-input--disabled"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 dHsfit sinoui-outlined-input sinoui-outlined-input--disabled"
   data-testid="baseInput"
   disabled={true}
 >
@@ -88,7 +88,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 
 exports[`渲染密集状态下边框模式的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 bXtBKv sinoui-outlined-input sinoui-outlined-input--dense"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 hfGBWe sinoui-outlined-input sinoui-outlined-input--dense"
   data-testid="baseInput"
 >
   <input
@@ -131,7 +131,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
 
 exports[`渲染错误状态下边框模式的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eZHLqk sinoui-outlined-input sinoui-outlined-input--error"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 fEpmJe sinoui-outlined-input sinoui-outlined-input--error"
   data-testid="baseInput"
 >
   <input

@@ -35,7 +35,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 gcCNmv sinoui-filled-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 gMPxvg sinoui-filled-input"
       data-testid="baseInput"
     >
       <input
@@ -59,7 +59,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 hRrNJV sinoui-outlined-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eRFFGo sinoui-outlined-input"
       data-testid="baseInput"
     >
       <input
@@ -146,7 +146,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 eupSH sinoui-filled-input sinoui-filled-input--disabled"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 kkMUWn sinoui-filled-input sinoui-filled-input--disabled"
       data-testid="baseInput"
       disabled={true}
     >
@@ -178,7 +178,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 uQpUt sinoui-outlined-input sinoui-outlined-input--disabled sinoui-outlined-input--dense"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 fvSSHI sinoui-outlined-input sinoui-outlined-input--disabled sinoui-outlined-input--dense"
       data-testid="baseInput"
       disabled={true}
     >
@@ -269,7 +269,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 gcCNmv sinoui-filled-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 gMPxvg sinoui-filled-input"
       data-testid="baseInput"
     >
       <input
@@ -298,7 +298,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 hRrNJV sinoui-outlined-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eRFFGo sinoui-outlined-input"
       data-testid="baseInput"
     >
       <input
@@ -389,7 +389,7 @@ exports[`渲染有错误提示的输入框 1`] = `
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 jNZbEI sinoui-filled-input sinoui-filled-input--error"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 eMDSxU sinoui-filled-input sinoui-filled-input--error"
       data-testid="baseInput"
     >
       <input
@@ -420,7 +420,7 @@ exports[`渲染有错误提示的输入框 1`] = `
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eZHLqk sinoui-outlined-input sinoui-outlined-input--error"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 fEpmJe sinoui-outlined-input sinoui-outlined-input--error"
       data-testid="baseInput"
     >
       <input

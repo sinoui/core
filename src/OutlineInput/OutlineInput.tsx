@@ -51,7 +51,8 @@ const StyledBaseInput = styled(BaseInput)<
     }
   }
 
-  > input {
+  > input,
+  > textarea {
     padding: 18.5px 14px;
 
     ${(props) => props.dense && `padding-top:10.5px;padding-bottom:10.5px;`}

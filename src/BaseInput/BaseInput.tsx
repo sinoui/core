@@ -1,6 +1,7 @@
 import React, { ReactType, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
+import Textarea from 'react-textarea-autosize';
 
 export interface BaseInputProps {
   /**
@@ -157,12 +158,11 @@ const BaseInputLayout = styled.div<{ disabled?: boolean; fullWidth?: boolean }>`
   }
 `;
 
-const StyleTextarea = styled.textarea`
-  resize: none;
-  padding: 0;
-  line-height: 1.375rem;
-  overflow: auto;
+const StyleTextarea = styled(Textarea)`
   ${inputStyle};
+  resize: none;
+  overflow: auto;
+  padding: 6px 0;
   ${(props: { disabled?: boolean }) => props.disabled && disabledStyle};
 `;
 

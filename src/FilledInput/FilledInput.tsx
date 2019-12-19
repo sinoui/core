@@ -132,7 +132,8 @@ const StyledBaseInput = styled(BaseInput)<
   ${(props) => props.disabled && disabledunderlineStyle};
   ${(props) => props.disabled && disabledBackgroundStyle};
 
-  > input {
+  > input,
+  > textarea {
     padding: 27px 12px 10px;
 
     ${(props) => props.dense && `padding-top:23px;padding-bottom:6px;`}

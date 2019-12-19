@@ -48,11 +48,17 @@ exports[`渲染多行输入框 1`] = `
   disabled={true}
 >
   <textarea
-    className="BaseInput__StyleTextarea-sc-1es3u8i-1 jJZNer"
+    className="BaseInput__StyleTextarea-sc-1es3u8i-1 kgzhVq"
     disabled={true}
+    multiline={true}
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
+    style={
+      Object {
+        "height": 0,
+      }
+    }
   />
 </div>
 `;
