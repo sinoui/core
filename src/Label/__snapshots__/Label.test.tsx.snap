@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染Label组件 1`] = `
+<label
+  className="Label-sc-4jto8h-0 IwfXs"
+>
+  标签内容
+</label>
+`;
+
+exports[`渲染不可用状态下的Label 1`] = `
+<label
+  className="Label-sc-4jto8h-0 gCZBle"
+  disabled={true}
+>
+  标签内容
+</label>
+`;
+
+exports[`渲染必填状态下的Label 1`] = `
+<label
+  className="Label-sc-4jto8h-0 ztKis"
+  required={true}
+>
+  标签内容
+</label>
+`;
+
+exports[`渲染获取焦点状态下的Label 1`] = `
+<label
+  className="Label-sc-4jto8h-0 hXIGLF"
+>
+  标签内容
+</label>
+`;
+
+exports[`渲染警告状态下的Label 1`] = `
+<label
+  className="Label-sc-4jto8h-0 gooWuq"
+>
+  标签内容
+</label>
+`;
+
+exports[`渲染错误状态下的Label 1`] = `
+<label
+  className="Label-sc-4jto8h-0 ezoUeA"
+>
+  标签内容
+</label>
+`;
