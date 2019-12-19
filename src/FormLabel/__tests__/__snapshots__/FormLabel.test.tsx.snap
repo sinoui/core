@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染FormLabel 1`] = `
+<label
+  className="Label-sc-4jto8h-0 FormLabelContainer-iuornh-0 gJOjYe"
+>
+  <div
+    className="FormLabelContent-vdsbls-0 gugLXF"
+  >
+    标签
+  </div>
+</label>
+`;

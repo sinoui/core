@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`垂直布局的标签容器 1`] = `
+<label
+  className="Label-sc-4jto8h-0 FormLabelContainer-iuornh-0 ckPTLN"
+>
+  标签容器
+</label>
+`;
+
+exports[`带冒号的标签 1`] = `
+<label
+  className="Label-sc-4jto8h-0 FormLabelContainer-iuornh-0 cCbUWe"
+>
+  标签容器
+</label>
+`;
+
+exports[`正确渲染FormLabelContainer 1`] = `
+<label
+  className="Label-sc-4jto8h-0 FormLabelContainer-iuornh-0 gJOjYe"
+>
+  标签容器
+</label>
+`;
