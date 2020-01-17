@@ -21,7 +21,9 @@ function FormPropTextInputDemo() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -66,7 +68,9 @@ function FormPropTextInputDemo() {
           helperText="请输入内容"
         />
       </div>
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -118,7 +122,9 @@ function FormPropTextInputDemo() {
           helperText="请输入内容"
         />
       </div>
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
         <TextInputField
           label="Required"
           onChange={onChange}
