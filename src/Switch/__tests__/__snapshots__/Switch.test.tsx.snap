@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch 镜像测试 不可用状态 1`] = `
+<span
+  className="Switch__Wrapper-m36o27-0 jpjEEk sinoui-switch sinoui-switch--disabled"
+  disabled={true}
+>
+  <span
+    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 dZNjYw sinoui-switch__label"
+    data-testid="switchLabel"
+    disabled={true}
+  >
+    <input
+      className="sinoui-switch__input"
+      disabled={true}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="checkbox"
+      value="switch2"
+    />
+    <span
+      className="sinoui-switch__thumb"
+    />
+  </span>
+  <span
+    className="SwitchTrack-sc-1s786x7-0 dLTuXo sinoui-switch__track"
+    disabled={true}
+  />
+</span>
+`;
+
+exports[`Switch 镜像测试 渲染Switch 1`] = `
+<span
+  className="Switch__Wrapper-m36o27-0 djFYIr sinoui-switch"
+>
+  <span
+    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 cEAdKq sinoui-switch__label"
+    color="primary"
+    data-testid="switchLabel"
+  >
+    <input
+      className="sinoui-switch__input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="checkbox"
+      value="switch1"
+    />
+    <span
+      className="sinoui-switch__thumb"
+    />
+  </span>
+  <span
+    className="SwitchTrack-sc-1s786x7-0 joAhyw sinoui-switch__track"
+    color="primary"
+  />
+</span>
+`;
+
+exports[`Switch 镜像测试 选中状态 1`] = `
+<span
+  className="Switch__Wrapper-m36o27-0 djFYIr sinoui-switch sinoui-switch--checked"
+>
+  <span
+    checked={true}
+    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 xdlRx sinoui-switch__label"
+    color="accent"
+    data-testid="switchLabel"
+  >
+    <input
+      checked={true}
+      className="sinoui-switch__input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="checkbox"
+      value="switch3"
+    />
+    <span
+      className="sinoui-switch__thumb"
+    />
+  </span>
+  <span
+    checked={true}
+    className="SwitchTrack-sc-1s786x7-0 fxCFYl sinoui-switch__track"
+    color="accent"
+  />
+</span>
+`;
