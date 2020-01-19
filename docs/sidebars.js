@@ -11,7 +11,7 @@ module.exports = {
       {
         type: 'category',
         label: '通用',
-        items: ['components/button'],
+        items: ['components/button', 'components/switch'],
       },
     ],
     组件API: ['components-apis/base-button'],
