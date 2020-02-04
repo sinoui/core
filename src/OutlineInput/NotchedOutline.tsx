@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -52,7 +51,7 @@ export default function NotchedOutline(props: NotchedOutlineProps) {
       }}
     >
       <Legend style={{ width: notched ? labelWidth : 0.01 }}>
-        <span dangerouslySetInnerHTML={{ __html: '&#8203;' }} />
+        <span>&#8203;</span>
       </Legend>
     </NotchedOutlineLayout>
   );

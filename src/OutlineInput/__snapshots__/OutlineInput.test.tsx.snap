@@ -30,13 +30,9 @@ exports[`正确渲染边框模式下的Input 1`] = `
         }
       }
     >
-      <span
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "&#8203;",
-          }
-        }
-      />
+      <span>
+        ​
+      </span>
     </legend>
   </fieldset>
 </div>
@@ -74,13 +70,9 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
         }
       }
     >
-      <span
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "&#8203;",
-          }
-        }
-      />
+      <span>
+        ​
+      </span>
     </legend>
   </fieldset>
 </div>
@@ -117,13 +109,9 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
         }
       }
     >
-      <span
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "&#8203;",
-          }
-        }
-      />
+      <span>
+        ​
+      </span>
     </legend>
   </fieldset>
 </div>
@@ -160,13 +148,9 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
         }
       }
     >
-      <span
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "&#8203;",
-          }
-        }
-      />
+      <span>
+        ​
+      </span>
     </legend>
   </fieldset>
 </div>

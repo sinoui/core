@@ -88,13 +88,9 @@ exports[`正确渲染三种模式下的输入框 1`] = `
             }
           }
         >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "&#8203;",
-              }
-            }
-          />
+          <span>
+            ​
+          </span>
         </legend>
       </fieldset>
     </div>
@@ -210,13 +206,9 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
             }
           }
         >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "&#8203;",
-              }
-            }
-          />
+          <span>
+            ​
+          </span>
         </legend>
       </fieldset>
     </div>
@@ -327,13 +319,9 @@ exports[`渲染有辅助性文字的输入框 1`] = `
             }
           }
         >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "&#8203;",
-              }
-            }
-          />
+          <span>
+            ​
+          </span>
         </legend>
       </fieldset>
     </div>
@@ -450,13 +438,9 @@ exports[`渲染有错误提示的输入框 1`] = `
             }
           }
         >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "&#8203;",
-              }
-            }
-          />
+          <span>
+            ​
+          </span>
         </legend>
       </fieldset>
     </div>
