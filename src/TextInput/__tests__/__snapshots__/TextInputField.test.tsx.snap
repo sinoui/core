@@ -3,15 +3,15 @@
 exports[`正确渲染三种模式下的输入框 1`] = `
 <div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 ibxzwb sinoui-input-label"
+      className="InputLabel-unslap-0 fcaPuJ sinoui-input-label"
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 iafmNm sinoui-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 jafowa sinoui-input"
       data-testid="baseInput"
     >
       <input
@@ -27,15 +27,15 @@ exports[`正确渲染三种模式下的输入框 1`] = `
     </div>
   </div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 iFUxJC sinoui-input-label sinoui-input-label--filled"
+      className="InputLabel-unslap-0 lhOYyR sinoui-input-label sinoui-input-label--filled"
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 gMPxvg sinoui-filled-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 GAJtQ sinoui-filled-input"
       data-testid="baseInput"
     >
       <input
@@ -51,15 +51,15 @@ exports[`正确渲染三种模式下的输入框 1`] = `
     </div>
   </div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 fgYsvn sinoui-input-label sinoui-input-label--outlined"
+      className="InputLabel-unslap-0 ftiUOT sinoui-input-label sinoui-input-label--outlined"
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eRFFGo sinoui-outlined-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 lhpvpv sinoui-outlined-input"
       data-testid="baseInput"
     >
       <input
@@ -73,7 +73,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
       />
       <fieldset
         aria-hidden={true}
-        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
         style={
           Object {
             "paddingLeft": 35.25,
@@ -81,7 +81,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
         }
       >
         <legend
-          className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+          className="NotchedOutline__Legend-l693hg-1 jgJZAz"
           style={
             Object {
               "width": 0.01,
@@ -105,16 +105,16 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 exports[`渲染不可用状态下三种形态输入框 1`] = `
 <div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 NiSDY sinoui-input-label sinoui-input-label--disabled"
+      className="InputLabel-unslap-0 cLNbqs sinoui-input-label sinoui-input-label--disabled"
       disabled={true}
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 dOWYDL sinoui-input sinoui-input--disabled"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 iGZEKm sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 VDmgA sinoui-input sinoui-input--disabled"
       data-testid="baseInput"
       disabled={true}
     >
@@ -131,22 +131,22 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
       />
     </div>
     <p
-      className="HelperText-sc-10rfm69-0 dmYUMv"
+      className="HelperText-sc-10rfm69-0 eKjwCv"
     >
       输入用户名
     </p>
   </div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 hnweLv sinoui-input-label sinoui-input-label--disabled sinoui-input-label--filled"
+      className="InputLabel-unslap-0 brUQcc sinoui-input-label sinoui-input-label--disabled sinoui-input-label--filled"
       disabled={true}
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 kkMUWn sinoui-filled-input sinoui-filled-input--disabled"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 iGZEKm sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 diUJtd sinoui-filled-input sinoui-filled-input--disabled"
       data-testid="baseInput"
       disabled={true}
     >
@@ -163,22 +163,22 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
       />
     </div>
     <p
-      className="HelperText-sc-10rfm69-0 dyfPPE"
+      className="HelperText-sc-10rfm69-0 iLfqmf"
     >
       输入用户名
     </p>
   </div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 gwXTat sinoui-input-label sinoui-input-label--disabled sinoui-input-label--outlined sinoui-input-label--dense"
+      className="InputLabel-unslap-0 kNLzOA sinoui-input-label sinoui-input-label--disabled sinoui-input-label--outlined sinoui-input-label--dense"
       disabled={true}
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 fvSSHI sinoui-outlined-input sinoui-outlined-input--disabled sinoui-outlined-input--dense"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 iGZEKm sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 fWUEyo sinoui-outlined-input sinoui-outlined-input--disabled sinoui-outlined-input--dense"
       data-testid="baseInput"
       disabled={true}
     >
@@ -195,7 +195,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
       />
       <fieldset
         aria-hidden={true}
-        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
         style={
           Object {
             "paddingLeft": 35.25,
@@ -203,7 +203,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
         }
       >
         <legend
-          className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+          className="NotchedOutline__Legend-l693hg-1 jgJZAz"
           style={
             Object {
               "width": 0.01,
@@ -221,7 +221,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
       </fieldset>
     </div>
     <p
-      className="HelperText-sc-10rfm69-0 mRTUn"
+      className="HelperText-sc-10rfm69-0 tawbD"
     >
       输入用户名
     </p>
@@ -232,15 +232,15 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 exports[`渲染有辅助性文字的输入框 1`] = `
 <div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 ibxzwb sinoui-input-label"
+      className="InputLabel-unslap-0 fcaPuJ sinoui-input-label"
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 iafmNm sinoui-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 jafowa sinoui-input"
       data-testid="baseInput"
     >
       <input
@@ -255,21 +255,21 @@ exports[`渲染有辅助性文字的输入框 1`] = `
       />
     </div>
     <p
-      className="HelperText-sc-10rfm69-0 eapacZ"
+      className="HelperText-sc-10rfm69-0 ZkdYQ"
     >
       输入用户名
     </p>
   </div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 iFUxJC sinoui-input-label sinoui-input-label--filled"
+      className="InputLabel-unslap-0 lhOYyR sinoui-input-label sinoui-input-label--filled"
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 gMPxvg sinoui-filled-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 GAJtQ sinoui-filled-input"
       data-testid="baseInput"
     >
       <input
@@ -284,21 +284,21 @@ exports[`渲染有辅助性文字的输入框 1`] = `
       />
     </div>
     <p
-      className="HelperText-sc-10rfm69-0 bHnIp"
+      className="HelperText-sc-10rfm69-0 dTrhtg"
     >
       输入用户名
     </p>
   </div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 fgYsvn sinoui-input-label sinoui-input-label--outlined"
+      className="InputLabel-unslap-0 ftiUOT sinoui-input-label sinoui-input-label--outlined"
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eRFFGo sinoui-outlined-input"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 lhpvpv sinoui-outlined-input"
       data-testid="baseInput"
     >
       <input
@@ -312,7 +312,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
       />
       <fieldset
         aria-hidden={true}
-        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
         style={
           Object {
             "paddingLeft": 35.25,
@@ -320,7 +320,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
         }
       >
         <legend
-          className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+          className="NotchedOutline__Legend-l693hg-1 jgJZAz"
           style={
             Object {
               "width": 0.01,
@@ -338,7 +338,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
       </fieldset>
     </div>
     <p
-      className="HelperText-sc-10rfm69-0 bHnIp"
+      className="HelperText-sc-10rfm69-0 dTrhtg"
     >
       输入用户名
     </p>
@@ -349,16 +349,16 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 exports[`渲染有错误提示的输入框 1`] = `
 <div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 dZzfMP sinoui-input-label sinoui-input-label--error"
+      className="InputLabel-unslap-0 exRGmA sinoui-input-label sinoui-input-label--error"
       required={true}
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 yWBVY sinoui-input sinoui-input--error"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 eJpNBh sinoui-input sinoui-input--error"
       data-testid="baseInput"
     >
       <input
@@ -374,22 +374,22 @@ exports[`渲染有错误提示的输入框 1`] = `
       />
     </div>
     <p
-      className="HelperText-sc-10rfm69-0 eSWldN"
+      className="HelperText-sc-10rfm69-0 hQwDkW"
     >
       必填
     </p>
   </div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 hVRGxd sinoui-input-label sinoui-input-label--error sinoui-input-label--filled"
+      className="InputLabel-unslap-0 gBuJwk sinoui-input-label sinoui-input-label--error sinoui-input-label--filled"
       required={true}
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 eMDSxU sinoui-filled-input sinoui-filled-input--error"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 FVCeD sinoui-filled-input sinoui-filled-input--error"
       data-testid="baseInput"
     >
       <input
@@ -405,22 +405,22 @@ exports[`渲染有错误提示的输入框 1`] = `
       />
     </div>
     <p
-      className="HelperText-sc-10rfm69-0 rKrul"
+      className="HelperText-sc-10rfm69-0 iSGRMW"
     >
       必填
     </p>
   </div>
   <div
-    className="TextInputField__TextInputWrapper-r3ecrk-0 gNPWuu"
+    className="TextInputField__TextInputWrapper-r3ecrk-0 gCTtkd"
   >
     <label
-      className="InputLabel-unslap-0 UHfzd sinoui-input-label sinoui-input-label--error sinoui-input-label--outlined"
+      className="InputLabel-unslap-0 iNFcsS sinoui-input-label sinoui-input-label--error sinoui-input-label--outlined"
       required={true}
     >
       用户名
     </label>
     <div
-      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 fEpmJe sinoui-outlined-input sinoui-outlined-input--error"
+      className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 jLHbOs sinoui-outlined-input sinoui-outlined-input--error"
       data-testid="baseInput"
     >
       <input
@@ -435,7 +435,7 @@ exports[`渲染有错误提示的输入框 1`] = `
       />
       <fieldset
         aria-hidden={true}
-        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+        className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
         style={
           Object {
             "paddingLeft": 35.25,
@@ -443,7 +443,7 @@ exports[`渲染有错误提示的输入框 1`] = `
         }
       >
         <legend
-          className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+          className="NotchedOutline__Legend-l693hg-1 jgJZAz"
           style={
             Object {
               "width": 0.01,
@@ -461,7 +461,7 @@ exports[`渲染有错误提示的输入框 1`] = `
       </fieldset>
     </div>
     <p
-      className="HelperText-sc-10rfm69-0 rKrul"
+      className="HelperText-sc-10rfm69-0 iSGRMW"
     >
       必填
     </p>

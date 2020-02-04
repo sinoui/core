@@ -2,7 +2,7 @@
 
 exports[`正确渲染BaseInput 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout"
   data-testid="baseInput"
 >
   <input
@@ -15,7 +15,7 @@ exports[`正确渲染BaseInput 1`] = `
 
 exports[`渲染disabled属性下的BaseInput 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 iGZEKm sinoui-base-input__layout"
   data-testid="baseInput"
   disabled={true}
 >
@@ -30,7 +30,7 @@ exports[`渲染disabled属性下的BaseInput 1`] = `
 
 exports[`渲染全宽模式下的BaseInput 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 kpHZJ sinoui-base-input__layout"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 iZgkBS sinoui-base-input__layout"
   data-testid="baseInput"
 >
   <input
@@ -43,12 +43,12 @@ exports[`渲染全宽模式下的BaseInput 1`] = `
 
 exports[`渲染多行输入框 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 iGZEKm sinoui-base-input__layout"
   data-testid="baseInput"
   disabled={true}
 >
   <textarea
-    className="BaseInput__StyleTextarea-sc-1es3u8i-1 kgzhVq"
+    className="BaseInput__StyleTextarea-sc-1es3u8i-1 cCTojr"
     disabled={true}
     multiline={true}
     onBlur={[Function]}

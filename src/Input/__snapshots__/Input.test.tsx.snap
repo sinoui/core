@@ -2,7 +2,7 @@
 
 exports[`正确渲染input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 iafmNm sinoui-input"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 jafowa sinoui-input"
   data-testid="baseInput"
 >
   <input
@@ -18,7 +18,7 @@ exports[`正确渲染input 1`] = `
 
 exports[`渲染不可用的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 dOWYDL sinoui-input sinoui-input--disabled"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 iGZEKm sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 VDmgA sinoui-input sinoui-input--disabled"
   data-testid="baseInput"
   disabled={true}
 >
@@ -36,7 +36,7 @@ exports[`渲染不可用的Input 1`] = `
 
 exports[`渲染密集模式下的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 czUuUM sinoui-input sinoui-input--dense"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 LPhYN sinoui-input sinoui-input--dense"
   data-testid="baseInput"
 >
   <input
@@ -53,7 +53,7 @@ exports[`渲染密集模式下的Input 1`] = `
 
 exports[`渲染错误状态下的input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 yWBVY sinoui-input sinoui-input--error"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout Input__StyledBaseInput-m9upae-0 eJpNBh sinoui-input sinoui-input--error"
   data-testid="baseInput"
 >
   <input

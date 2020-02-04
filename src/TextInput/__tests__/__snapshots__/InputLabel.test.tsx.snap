@@ -2,7 +2,7 @@
 
 exports[`渲染上浮之后的Label 1`] = `
 <label
-  className="InputLabel-unslap-0 dgpKBv"
+  className="InputLabel-unslap-0 iEzkbd"
 >
   用户名
 </label>
@@ -10,7 +10,7 @@ exports[`渲染上浮之后的Label 1`] = `
 
 exports[`渲染密集模式下的Label 1`] = `
 <label
-  className="InputLabel-unslap-0 cVVnoq"
+  className="InputLabel-unslap-0 hGvqym"
 >
   用户名
 </label>

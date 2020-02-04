@@ -2,7 +2,7 @@
 
 exports[`正确渲染边框模式下的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 eRFFGo sinoui-outlined-input"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 lhpvpv sinoui-outlined-input"
   data-testid="baseInput"
 >
   <input
@@ -15,7 +15,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
   />
   <fieldset
     aria-hidden={true}
-    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
     style={
       Object {
         "paddingLeft": 8,
@@ -23,7 +23,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
     }
   >
     <legend
-      className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+      className="NotchedOutline__Legend-l693hg-1 jgJZAz"
       style={
         Object {
           "width": 0.01,
@@ -44,7 +44,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
 
 exports[`渲染不可用状态下边框模式的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 cDpumE sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 dHsfit sinoui-outlined-input sinoui-outlined-input--disabled"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 iGZEKm sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 jwRviS sinoui-outlined-input sinoui-outlined-input--disabled"
   data-testid="baseInput"
   disabled={true}
 >
@@ -59,7 +59,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
   />
   <fieldset
     aria-hidden={true}
-    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
     style={
       Object {
         "paddingLeft": 8,
@@ -67,7 +67,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
     }
   >
     <legend
-      className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+      className="NotchedOutline__Legend-l693hg-1 jgJZAz"
       style={
         Object {
           "width": 0.01,
@@ -88,7 +88,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 
 exports[`渲染密集状态下边框模式的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 hfGBWe sinoui-outlined-input sinoui-outlined-input--dense"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 iBdaKZ sinoui-outlined-input sinoui-outlined-input--dense"
   data-testid="baseInput"
 >
   <input
@@ -102,7 +102,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
   />
   <fieldset
     aria-hidden={true}
-    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
     style={
       Object {
         "paddingLeft": 8,
@@ -110,7 +110,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
     }
   >
     <legend
-      className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+      className="NotchedOutline__Legend-l693hg-1 jgJZAz"
       style={
         Object {
           "width": 0.01,
@@ -131,7 +131,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
 
 exports[`渲染错误状态下边框模式的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 fEpmJe sinoui-outlined-input sinoui-outlined-input--error"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 jLHbOs sinoui-outlined-input sinoui-outlined-input--error"
   data-testid="baseInput"
 >
   <input
@@ -145,7 +145,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
   />
   <fieldset
     aria-hidden={true}
-    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 jvLKxI"
+    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
     style={
       Object {
         "paddingLeft": 8,
@@ -153,7 +153,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
     }
   >
     <legend
-      className="NotchedOutline__Legend-l693hg-1 kUsjLx"
+      className="NotchedOutline__Legend-l693hg-1 jgJZAz"
       style={
         Object {
           "width": 0,

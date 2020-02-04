@@ -6,7 +6,7 @@ exports[`渲染不可用状态下的填充模式的Input 1`] = `[Function]`;
 
 exports[`渲染密集状态下填充模式的Input 1`] = `
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 beGnvK sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 iMtdGa sinoui-filled-input"
+  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout FilledInput__StyledBaseInput-sc-1bh4y6c-0 eZOXcd sinoui-filled-input"
   data-testid="baseInput"
 >
   <input
