@@ -1,8 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
-import classNames from 'classnames';
 import styled, { css } from 'styled-components';
-import generateClassName from '../utils/generateClassName';
+import bemClassNames from '../utils/bemClassNames';
 
 export interface FilledInputProps extends BaseInputProps {
   error?: boolean;
@@ -201,13 +200,14 @@ export default function FilledInput(props: FilledInputProps) {
       type={type}
       ref={ref}
       {...other}
-      className={classNames(
-        generateClassName('sinoui-filled-input', {
+      className={bemClassNames(
+        'sinoui-filled-input',
+        {
           focused,
           error,
           disabled,
           readOnly,
-        }),
+        },
         className,
       )}
       onFocus={handleFocus}

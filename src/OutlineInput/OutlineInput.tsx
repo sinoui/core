@@ -1,9 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
-import classNames from 'classnames';
 import styled from 'styled-components';
 import NotchedOutline from './NotchedOutline';
-import generateClassName from '../utils/generateClassName';
+import bemClassNames from '../utils/bemClassNames';
 
 export interface OutlineInputProps extends BaseInputProps {
   error?: boolean;
@@ -137,14 +136,15 @@ export default function OutlineInput(props: OutlineInputProps) {
       disabled={disabled}
       readOnly={readOnly}
       {...other}
-      className={classNames(
-        generateClassName('sinoui-outlined-input', {
+      className={bemClassNames(
+        'sinoui-outlined-input',
+        {
           focused,
           error,
           disabled,
           readOnly,
           dense,
-        }),
+        },
         className,
       )}
       onFocus={handleFocus}

@@ -9,11 +9,10 @@ import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
 import FilledInput from '@sinoui/core/FilledInput';
 import OutlineInput from '@sinoui/core/OutlineInput';
-import classNames from 'classnames';
 import InputLabel from './InputLabel';
 import Input from '../Input';
 import HelperText from './HelperText';
-import generateClassName from '../utils/generateClassName';
+import bemClassNames from '../utils/bemClassNames';
 
 export interface TextInputFieldProps extends BaseInputProps {
   /**
@@ -144,17 +143,15 @@ export default function TextInputField(props: TextInputFieldProps) {
           variant={variant}
           ref={labelRef}
           dense={dense}
-          className={classNames(
-            generateClassName('sinoui-input-label', {
-              disabled,
-              error: !!error,
-              focused,
-              readOnly,
-              filled: variant === 'filled',
-              outlined: variant === 'outlined',
-              dense,
-            }),
-          )}
+          className={bemClassNames('sinoui-input-label', {
+            disabled,
+            error: !!error,
+            focused,
+            readOnly,
+            filled: variant === 'filled',
+            outlined: variant === 'outlined',
+            dense,
+          })}
         >
           {label}
         </InputLabel>

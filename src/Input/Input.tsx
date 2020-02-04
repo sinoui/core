@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useState, useCallback } from 'react';
 import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
-import classNames from 'classnames';
 import styled, { css } from 'styled-components';
-import generateClassName from '../utils/generateClassName';
+import bemClassNames from '../utils/bemClassNames';
 
 export interface InputProps extends BaseInputProps {
   error?: boolean;
@@ -200,14 +199,15 @@ export default function Input(props: InputProps) {
       readOnly={readOnly}
       dense={dense}
       {...other}
-      className={classNames(
-        generateClassName('sinoui-input', {
+      className={bemClassNames(
+        'sinoui-input',
+        {
           disabled,
           readOnly,
           error,
           focused,
           dense,
-        }),
+        },
         className,
       )}
       onFocus={handleFocus}
