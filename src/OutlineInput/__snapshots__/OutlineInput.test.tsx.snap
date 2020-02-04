@@ -1,12 +1,112 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`正确渲染边框模式下的Input 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  line-height: 1.1875rem;
+}
+
+.c0 > input {
+  padding: 6px 0 7px;
+  border: 0px;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: rgba(0,0,0,0.87);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: block;
+  min-width: 0px;
+  width: 100%;
+  height: 1.1875rem;
+}
+
+.c0 > input::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input::-ms-clear {
+  display: none;
+}
+
+.c0 > input:focus {
+  outline: 0;
+}
+
+.c0 > input:invalid {
+  box-shadow: none;
+}
+
+.c2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c3 {
+  text-align: left;
+  padding: 0;
+  line-height: 11px;
+  -webkit-transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c1 {
+  position: relative;
+  border-radius: 4px;
+}
+
+.c1 > fieldset {
+  border-color: rgba(0,0,0,0.23);
+}
+
+.c1:hover > fieldset {
+  border-color: rgba(0,0,0,0.87);
+}
+
+.c1 > input,
+.c1 > textarea {
+  padding: 18.5px 14px;
+}
+
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 lhpvpv sinoui-outlined-input"
+  className="c0 sinoui-base-input__layout c1 sinoui-outlined-input"
   data-testid="baseInput"
+  onClick={[Function]}
 >
   <input
-    focused={false}
     multiline={false}
     onBlur={[Function]}
     onChange={[Function]}
@@ -15,7 +115,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
   />
   <fieldset
     aria-hidden={true}
-    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
+    className="c2"
     style={
       Object {
         "paddingLeft": 8,
@@ -23,7 +123,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
     }
   >
     <legend
-      className="NotchedOutline__Legend-l693hg-1 jgJZAz"
+      className="c3"
       style={
         Object {
           "width": 0.01,
@@ -39,14 +139,119 @@ exports[`正确渲染边框模式下的Input 1`] = `
 `;
 
 exports[`渲染不可用状态下边框模式的Input 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  cursor: default;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  line-height: 1.1875rem;
+}
+
+.c0 > input {
+  padding: 6px 0 7px;
+  border: 0px;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: rgba(0,0,0,0.38);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: block;
+  min-width: 0px;
+  width: 100%;
+  height: 1.1875rem;
+  opacity: 1;
+}
+
+.c0 > input::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input::-ms-clear {
+  display: none;
+}
+
+.c0 > input:focus {
+  outline: 0;
+}
+
+.c0 > input:invalid {
+  box-shadow: none;
+}
+
+.c2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c3 {
+  text-align: left;
+  padding: 0;
+  line-height: 11px;
+  -webkit-transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c1 {
+  position: relative;
+  border-radius: 4px;
+}
+
+.c1 > fieldset {
+  border-color: rgba(0,0,0,0.23);
+}
+
+.c1:hover > fieldset {
+  border-color: rgba(0,0,0,0.87);
+}
+
+.c1.c1 > fieldset {
+  border-color: rgba(0,0,0,0.26);
+}
+
+.c1 > input,
+.c1 > textarea {
+  padding: 18.5px 14px;
+}
+
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 iGZEKm sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 jwRviS sinoui-outlined-input sinoui-outlined-input--disabled"
+  className="c0 sinoui-base-input__layout c1 sinoui-outlined-input sinoui-outlined-input--disabled"
   data-testid="baseInput"
   disabled={true}
+  onClick={[Function]}
 >
   <input
     disabled={true}
-    focused={false}
     multiline={false}
     onBlur={[Function]}
     onChange={[Function]}
@@ -55,7 +260,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
   />
   <fieldset
     aria-hidden={true}
-    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
+    className="c2"
     style={
       Object {
         "paddingLeft": 8,
@@ -63,7 +268,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
     }
   >
     <legend
-      className="NotchedOutline__Legend-l693hg-1 jgJZAz"
+      className="c3"
       style={
         Object {
           "width": 0.01,
@@ -79,13 +284,114 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 `;
 
 exports[`渲染密集状态下边框模式的Input 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  line-height: 1.1875rem;
+}
+
+.c0 > input {
+  padding: 6px 0 7px;
+  border: 0px;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: rgba(0,0,0,0.87);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: block;
+  min-width: 0px;
+  width: 100%;
+  height: 1.1875rem;
+}
+
+.c0 > input::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input::-ms-clear {
+  display: none;
+}
+
+.c0 > input:focus {
+  outline: 0;
+}
+
+.c0 > input:invalid {
+  box-shadow: none;
+}
+
+.c2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c3 {
+  text-align: left;
+  padding: 0;
+  line-height: 11px;
+  -webkit-transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c1 {
+  position: relative;
+  border-radius: 4px;
+}
+
+.c1 > fieldset {
+  border-color: rgba(0,0,0,0.23);
+}
+
+.c1:hover > fieldset {
+  border-color: rgba(0,0,0,0.87);
+}
+
+.c1 > input,
+.c1 > textarea {
+  padding: 18.5px 14px;
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 iBdaKZ sinoui-outlined-input sinoui-outlined-input--dense"
+  className="c0 sinoui-base-input__layout c1 sinoui-outlined-input sinoui-outlined-input--dense"
   data-testid="baseInput"
+  onClick={[Function]}
 >
   <input
-    dense={true}
-    focused={false}
     multiline={false}
     onBlur={[Function]}
     onChange={[Function]}
@@ -94,7 +400,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
   />
   <fieldset
     aria-hidden={true}
-    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
+    className="c2"
     style={
       Object {
         "paddingLeft": 8,
@@ -102,7 +408,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
     }
   >
     <legend
-      className="NotchedOutline__Legend-l693hg-1 jgJZAz"
+      className="c3"
       style={
         Object {
           "width": 0.01,
@@ -118,13 +424,116 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
 `;
 
 exports[`渲染错误状态下边框模式的Input 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  line-height: 1.1875rem;
+}
+
+.c0 > input {
+  padding: 6px 0 7px;
+  border: 0px;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: rgba(0,0,0,0.87);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: block;
+  min-width: 0px;
+  width: 100%;
+  height: 1.1875rem;
+}
+
+.c0 > input::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > input::-ms-clear {
+  display: none;
+}
+
+.c0 > input:focus {
+  outline: 0;
+}
+
+.c0 > input:invalid {
+  box-shadow: none;
+}
+
+.c2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c3 {
+  text-align: left;
+  padding: 0;
+  line-height: 11px;
+  -webkit-transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c1 {
+  position: relative;
+  border-radius: 4px;
+}
+
+.c1 > fieldset {
+  border-color: rgba(0,0,0,0.23);
+}
+
+.c1:hover > fieldset {
+  border-color: rgba(0,0,0,0.87);
+}
+
+.c1.c1 > fieldset {
+  border-color: #f44336;
+}
+
+.c1 > input,
+.c1 > textarea {
+  padding: 18.5px 14px;
+}
+
 <div
-  className="BaseInput__BaseInputLayout-sc-1es3u8i-0 LdEa-D sinoui-base-input__layout OutlineInput__StyledBaseInput-gfwean-0 jLHbOs sinoui-outlined-input sinoui-outlined-input--error"
+  className="c0 sinoui-base-input__layout c1 sinoui-outlined-input sinoui-outlined-input--error"
   data-testid="baseInput"
+  onClick={[Function]}
 >
   <input
-    error={true}
-    focused={false}
     multiline={false}
     onBlur={[Function]}
     onChange={[Function]}
@@ -133,7 +542,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
   />
   <fieldset
     aria-hidden={true}
-    className="NotchedOutline__NotchedOutlineLayout-l693hg-0 cBVctA"
+    className="c2"
     style={
       Object {
         "paddingLeft": 8,
@@ -141,7 +550,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
     }
   >
     <legend
-      className="NotchedOutline__Legend-l693hg-1 jgJZAz"
+      className="c3"
       style={
         Object {
           "width": 0,

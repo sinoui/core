@@ -1,16 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`渲染上浮之后的Label 1`] = `
+.c0 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.54);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform: translate(12px,17px) scale(1);
+  -ms-transform: translate(12px,17px) scale(1);
+  transform: translate(12px,17px) scale(1);
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transform: translate(0,1.5px) scale(0.75);
+  -ms-transform: translate(0,1.5px) scale(0.75);
+  transform: translate(0,1.5px) scale(0.75);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: translate(12px,10px) scale(0.75);
+  -ms-transform: translate(12px,10px) scale(0.75);
+  transform: translate(12px,10px) scale(0.75);
+  -webkit-transform: translate(12px,7px) scale(0.75);
+  -ms-transform: translate(12px,7px) scale(0.75);
+  transform: translate(12px,7px) scale(0.75);
+}
+
 <label
-  className="InputLabel-unslap-0 iEzkbd"
+  className="c0"
 >
   用户名
 </label>
 `;
 
 exports[`渲染密集模式下的Label 1`] = `
+.c0 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.54);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform: translate(12px,17px) scale(1);
+  -ms-transform: translate(12px,17px) scale(1);
+  transform: translate(12px,17px) scale(1);
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
 <label
-  className="InputLabel-unslap-0 hGvqym"
+  className="c0"
 >
   用户名
 </label>

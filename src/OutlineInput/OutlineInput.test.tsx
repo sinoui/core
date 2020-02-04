@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import 'jest-styled-components';
 import OutlineInput from './OutlineInput';
 
 it('正确渲染边框模式下的Input', () => {

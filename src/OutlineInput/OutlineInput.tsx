@@ -5,18 +5,27 @@ import NotchedOutline from './NotchedOutline';
 import bemClassNames from '../utils/bemClassNames';
 
 export interface OutlineInputProps extends BaseInputProps {
+  /**
+   * 如果设置为 `true`，输入框将显示为错误状态。
+   */
   error?: boolean;
-  warning?: boolean;
-  focused?: boolean;
+  /**
+   * 如果设置为 `true`，轮廓上出现缺口，并且标签上浮到轮廓缺口处。
+   */
   notched?: boolean;
+  /**
+   * 标签宽度。用来设置轮廓缺口的宽度。
+   */
   labelWidth?: number;
+  /**
+   * 密集模式
+   */
   dense?: boolean;
 }
 
 const StyledBaseInput = styled(BaseInput)<
   BaseInputProps & {
     error?: boolean;
-    warning?: boolean;
     focused?: boolean;
     dense?: boolean;
   }
@@ -31,7 +40,7 @@ const StyledBaseInput = styled(BaseInput)<
         : 'rgba(255, 255, 255, 0.23)'};
   }
 
-  &:hover {
+  :hover {
     > fieldset {
       border-color: ${(props) => props.theme.palette.text.primary};
     }
@@ -58,100 +67,102 @@ const StyledBaseInput = styled(BaseInput)<
   }
 `;
 
-export default function OutlineInput(props: OutlineInputProps) {
-  const {
-    fullWidth = false,
-    inputComponent = 'input',
-    multiline = false,
-    type = 'text',
-    ref,
-    className,
-    error,
-    warning,
-    notched,
-    value,
-    defaultValue,
-    placeholder,
-    labelWidth,
-    disabled,
-    readOnly,
-    dense,
-    ...other
-  } = props;
-  const [focused, setFocused] = useState(false);
+/**
+ * 轮廓输入框
+ */
+export default React.forwardRef<HTMLDivElement, OutlineInputProps>(
+  function OutlineInput(props: OutlineInputProps, ref) {
+    const {
+      fullWidth = false,
+      inputComponent = 'input',
+      multiline = false,
+      type = 'text',
+      className,
+      error,
+      notched,
+      value,
+      defaultValue,
+      placeholder,
+      labelWidth,
+      disabled,
+      readOnly,
+      dense,
+      ...other
+    } = props;
+    const [focused, setFocused] = useState(false);
 
-  const handleBlur = useCallback(
-    (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (!props.readOnly) {
-        setFocused(false);
-        if (props.onBlur) {
-          props.onBlur(event);
-        }
-
-        if (props.inputProps && props.inputProps.onBlur) {
-          props.inputProps.onBlur(event);
-        }
-      }
-    },
-    [props],
-  );
-
-  const handleFocus = useCallback(
-    (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (!props.readOnly) {
-        setFocused(true);
-        if (props.onFocus) {
-          props.onFocus(event);
-        }
-
-        if (props.inputProps && props.inputProps.onFocus) {
-          props.inputProps.onFocus(event);
-        }
-      }
-    },
-    [props],
-  );
-
-  return (
-    <StyledBaseInput
-      fullWidth={fullWidth}
-      renderSuffix={(_state) => (
-        <NotchedOutline
-          notched={
-            typeof notched !== 'undefined'
-              ? notched
-              : focused || !!value || !!defaultValue || !!placeholder
+    const handleBlur = useCallback(
+      (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        if (!props.readOnly) {
+          setFocused(false);
+          if (props.onBlur) {
+            props.onBlur(event);
           }
-          labelWidth={labelWidth}
-        />
-      )}
-      error={error}
-      warning={warning}
-      focused={focused}
-      inputComponent={inputComponent}
-      multiline={multiline}
-      type={type}
-      ref={ref}
-      dense={dense}
-      disabled={disabled}
-      readOnly={readOnly}
-      {...other}
-      className={bemClassNames(
-        'sinoui-outlined-input',
-        {
-          focused,
-          error,
-          disabled,
-          readOnly,
-          dense,
-        },
-        className,
-      )}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-      value={value}
-      defaultValue={defaultValue}
-      placeholder={placeholder}
-    />
-  );
-}
+
+          if (props.inputProps && props.inputProps.onBlur) {
+            props.inputProps.onBlur(event);
+          }
+        }
+      },
+      [props],
+    );
+
+    const handleFocus = useCallback(
+      (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        if (!props.readOnly) {
+          setFocused(true);
+          if (props.onFocus) {
+            props.onFocus(event);
+          }
+
+          if (props.inputProps && props.inputProps.onFocus) {
+            props.inputProps.onFocus(event);
+          }
+        }
+      },
+      [props],
+    );
+
+    return (
+      <StyledBaseInput
+        fullWidth={fullWidth}
+        renderSuffix={(_state) => (
+          <NotchedOutline
+            notched={
+              typeof notched !== 'undefined'
+                ? notched
+                : focused || !!value || !!defaultValue || !!placeholder
+            }
+            labelWidth={labelWidth}
+          />
+        )}
+        error={error}
+        focused={focused}
+        inputComponent={inputComponent}
+        multiline={multiline}
+        type={type}
+        ref={ref}
+        dense={dense}
+        disabled={disabled}
+        readOnly={readOnly}
+        {...other}
+        className={bemClassNames(
+          'sinoui-outlined-input',
+          {
+            focused,
+            error,
+            disabled,
+            readOnly,
+            dense,
+          },
+          className,
+        )}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        value={value}
+        defaultValue={defaultValue}
+        placeholder={placeholder}
+      />
+    );
+  },
+);

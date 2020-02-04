@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import 'jest-styled-components';
 import InputLabel from '../InputLabel';
 
 it('渲染密集模式下的Label', () => {

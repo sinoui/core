@@ -1,7 +1,8 @@
-import React, { ReactType, useCallback } from 'react';
+import React, { ReactType, useCallback, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import Textarea from 'react-textarea-autosize';
+import useMultiRefs from '../utils/useMultiRefs';
 
 export interface BaseInputProps {
   /**
@@ -24,6 +25,12 @@ export interface BaseInputProps {
    * 输入框属性
    */
   inputProps?: React.HTMLProps<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  >;
+  /**
+   * 为输入框元素指定 ref
+   */
+  inputRef?: React.Ref<
     HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
   >;
   /**
@@ -51,6 +58,10 @@ export interface BaseInputProps {
    */
   className?: string;
   /**
+   * 自定义样式
+   */
+  style?: React.CSSProperties;
+  /**
    * 失去焦点时的回调函数
    */
   onBlur?: (
@@ -71,6 +82,10 @@ export interface BaseInputProps {
     value?: any,
   ) => void;
   /**
+   * 点击事件的回调函数
+   */
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  /**
    * 前缀元素
    */
   startComponent?: React.ReactNode;
@@ -83,10 +98,6 @@ export interface BaseInputProps {
    */
   inputComponent?: React.ReactType;
   /**
-   * 查找input的dom
-   */
-  ref?: React.RefObject<HTMLInputElement>;
-  /**
    * 不可用状态
    */
   disabled?: boolean;
@@ -94,7 +105,6 @@ export interface BaseInputProps {
    * 全宽模式
    */
   fullWidth?: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   renderSuffix?: (state: any) => React.ReactNode;
 }
 
@@ -115,9 +125,14 @@ const inputStyle = css<{ disabled?: boolean }>`
   min-width: 0px;
   width: 100%;
   height: 1.1875rem;
-  ::-moz-placeholder,
-  ::-webkit-input-placeholder,
-  ::-ms-input-placeholder {
+
+  ::-moz-placeholder {
+    color: ${(props) => props.theme.palette.text.hint};
+  }
+  ::-webkit-input-placeholder {
+    color: ${(props) => props.theme.palette.text.hint};
+  }
+  :-ms-input-placeholder {
     color: ${(props) => props.theme.palette.text.hint};
   }
 
@@ -125,11 +140,11 @@ const inputStyle = css<{ disabled?: boolean }>`
     display: none;
   }
 
-  &:focus {
+  :focus {
     outline: 0;
   }
 
-  &:invalid {
+  :invalid {
     box-shadow: none;
   }
 `;
@@ -166,103 +181,141 @@ const StyleTextarea = styled(Textarea)`
   ${(props: { disabled?: boolean }) => props.disabled && disabledStyle};
 `;
 
-export default function BaseInput(props: BaseInputProps) {
-  const {
-    inputProps = {},
-    autoComplete,
-    autoFocus,
-    className,
-    multiline,
-    inputComponent = 'input',
-    startComponent,
-    endComponent,
-    ref,
-    required,
-    onChange: onChangeProp,
-    onBlur,
-    onFocus,
-    disabled,
-    fullWidth,
-    renderSuffix,
-    ...other
-  } = props;
+export default React.forwardRef<HTMLDivElement, BaseInputProps>(
+  function BaseInput(props, ref) {
+    const {
+      type,
+      inputProps: inputPropsProp = {},
+      inputRef: inputRefProp,
+      autoComplete,
+      autoFocus,
+      className,
+      multiline,
+      inputComponent = 'input',
+      startComponent,
+      endComponent,
+      required,
+      onChange: onChangeProp,
+      onBlur,
+      onFocus,
+      onClick,
+      disabled,
+      fullWidth,
+      renderSuffix,
+      placeholder,
+      ...other
+    } = props;
 
-  /**
-   * 值变更时的回调函数
-   */
-  const onChange = useCallback(
-    (
-      event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-      value,
-    ) => {
-      if (onChangeProp) {
-        onChangeProp(event, value);
-      }
+    const inputRef = useRef<any>(null);
+    const handleInputRef = useMultiRefs(
+      inputRef,
+      inputRefProp,
+      inputPropsProp.ref as any,
+    );
 
-      if (inputProps.onChange) {
-        inputProps.onChange(event);
-      }
-    },
-    [inputProps, onChangeProp],
-  );
+    const {
+      onChange: onChangeInputProp,
+      onBlur: onBlurInputProp,
+      onFocus: onFocusInputProp,
+    } = inputPropsProp;
 
-  /**
-   * 失去焦点时的回调函数
-   */
-  const handleBlur = useCallback(
-    (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (onBlur) {
-        onBlur(event);
-      }
+    /**
+     * 值变更时的回调函数
+     */
+    const handleChange = useCallback(
+      (
+        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+        value,
+      ) => {
+        if (onChangeProp) {
+          onChangeProp(event, value);
+        }
 
-      if (inputProps.onBlur) {
-        inputProps.onBlur(event);
-      }
-    },
-    [inputProps, onBlur],
-  );
+        if (onChangeInputProp) {
+          onChangeInputProp(event);
+        }
+      },
+      [onChangeInputProp, onChangeProp],
+    );
 
-  /**
-   * 获取焦点时的回调函数
-   */
-  const handleFocus = useCallback(
-    (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (onFocus) {
-        onFocus(event);
-      }
+    /**
+     * 失去焦点时的回调函数
+     */
+    const handleBlur = useCallback(
+      (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        if (onBlur) {
+          onBlur(event);
+        }
 
-      if (inputProps.onFocus) {
-        inputProps.onFocus(event);
-      }
-    },
-    [inputProps, onFocus],
-  );
+        if (onBlurInputProp) {
+          onBlurInputProp(event);
+        }
+      },
+      [onBlur, onBlurInputProp],
+    );
 
-  const InputComonent: ReactType = multiline ? StyleTextarea : inputComponent;
-  const inputprops = {
-    ...inputProps,
-    ...other,
-    autoFocus,
-    autoComplete,
-    multiline,
-    disabled,
-    ref: inputProps.ref || ref,
-    onChange,
-    onBlur: handleBlur,
-    onFocus: handleFocus,
-    'aria-required': required,
-  };
-  return (
-    <BaseInputLayout
-      className={classNames('sinoui-base-input__layout', className)}
-      disabled={disabled}
-      fullWidth={fullWidth}
-      data-testid="baseInput"
-    >
-      {startComponent}
-      <InputComonent {...inputprops} />
-      {endComponent}
-      {renderSuffix && renderSuffix({ disabled, required })}
-    </BaseInputLayout>
-  );
-}
+    /**
+     * 获取焦点时的回调函数
+     */
+    const handleFocus = useCallback(
+      (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        if (onFocus) {
+          onFocus(event);
+        }
+
+        if (onFocusInputProp) {
+          onFocusInputProp(event);
+        }
+      },
+      [onFocus, onFocusInputProp],
+    );
+
+    /**
+     * 处理点击事件的回调函数
+     */
+    const handleClick = useCallback(
+      (event: React.MouseEvent<HTMLDivElement>) => {
+        const input = inputRef.current;
+        if (input && event.currentTarget === event.target) {
+          input.focus();
+        }
+        if (onClick) {
+          onClick(event);
+        }
+      },
+      [onClick],
+    );
+
+    const InputComonent: ReactType = multiline ? StyleTextarea : inputComponent;
+    const inputprops = {
+      ...inputPropsProp,
+      type,
+      autoFocus,
+      autoComplete,
+      multiline,
+      disabled,
+      ref: handleInputRef,
+      onChange: handleChange,
+      onBlur: handleBlur,
+      onFocus: handleFocus,
+      placeholder,
+      'aria-required': required,
+    };
+    return (
+      <BaseInputLayout
+        className={classNames('sinoui-base-input__layout', className)}
+        disabled={disabled}
+        fullWidth={fullWidth}
+        data-testid="baseInput"
+        ref={ref}
+        onClick={handleClick}
+        {...other}
+      >
+        {startComponent}
+        <InputComonent {...inputprops} />
+        {endComponent}
+        {renderSuffix && renderSuffix({ disabled, required })}
+      </BaseInputLayout>
+    );
+  },
+);

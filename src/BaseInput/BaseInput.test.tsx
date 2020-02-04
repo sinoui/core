@@ -1,10 +1,11 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import renderer, { act } from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import BaseInput from '.';
+import 'jest-styled-components';
+import BaseInput from './BaseInput';
 
 it('正确渲染BaseInput', () => {
   const tree = renderer
@@ -127,4 +128,19 @@ it('渲染修饰元素', () => {
   );
 
   expect(getByText('这是修饰元素')).toBeDefined();
+});
+
+it('点击获取焦点', () => {
+  const handleFocus = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <BaseInput onFocus={handleFocus} />
+    </ThemeProvider>,
+  );
+
+  act(() => {
+    fireEvent.click(getByTestId('baseInput'));
+  });
+
+  expect(handleFocus).toBeCalled();
 });

@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import 'jest-styled-components';
 import TextInputField from '../TextInputField';
 
 it('正确渲染三种模式下的输入框', () => {

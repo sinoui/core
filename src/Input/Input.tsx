@@ -136,19 +136,26 @@ const StyledBaseInput = styled(BaseInput)<{
   }
 `;
 
-export default function Input(props: InputProps) {
+/**
+ * 输入框
+ */
+export default React.forwardRef<HTMLDivElement, InputProps>(function Input(
+  props: InputProps,
+  ref,
+) {
   const {
     fullWidth = false,
     inputComponent = 'input',
     multiline = false,
     type = 'text',
-    ref,
     className,
     error,
     warning,
     disabled,
     readOnly,
     dense,
+    onFocus,
+    onBlur,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -157,32 +164,24 @@ export default function Input(props: InputProps) {
     (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       if (!props.readOnly) {
         setFocused(false);
-        if (props.onBlur) {
-          props.onBlur(event);
-        }
-
-        if (props.inputProps && props.inputProps.onBlur) {
-          props.inputProps.onBlur(event);
+        if (onBlur) {
+          onBlur(event);
         }
       }
     },
-    [props],
+    [onBlur, props.readOnly],
   );
 
   const handleFocus = useCallback(
     (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       if (!props.readOnly) {
         setFocused(true);
-        if (props.onFocus) {
-          props.onFocus(event);
-        }
-
-        if (props.inputProps && props.inputProps.onFocus) {
-          props.inputProps.onFocus(event);
+        if (onFocus) {
+          onFocus(event);
         }
       }
     },
-    [props],
+    [onFocus, props.readOnly],
   );
 
   return (
@@ -214,4 +213,4 @@ export default function Input(props: InputProps) {
       onBlur={handleBlur}
     />
   );
-}
+});
