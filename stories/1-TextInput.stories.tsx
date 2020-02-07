@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 
 export default {
-  title: 'Input',
+  title: 'TextInput',
 };
 
 const TextInputField = styled(TextInput)`
