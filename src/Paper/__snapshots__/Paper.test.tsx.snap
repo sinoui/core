@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲Paper 1`] = `[Function]`;
+
+exports[`渲染全宽模式下的Paper 1`] = `[Function]`;
+
+exports[`渲染显示圆角的Paper 1`] = `
+.c0 {
+  padding: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+  border-radius: 0px;
+  background-color: #ffffff;
+}
+
+<div
+  className="c0"
+  elevation={2}
+/>
+`;
+
+exports[`渲染自定义阴影高度的Paper 1`] = `[Function]`;
