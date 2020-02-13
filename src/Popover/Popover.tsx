@@ -30,7 +30,7 @@ export interface PopoverProps {
    *
    * @type {Element}
    */
-  anchorEl?: Element;
+  anchorEl?: Element | null;
   /**
    * 锚点原点，这是锚点元素上的用来显示popover出来的元素起始位置。
    *
