@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '@sinoui/core/Modal';
+import Paper from '@sinoui/core/Paper';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 
@@ -15,12 +16,8 @@ function SimpleDemo() {
       <button type="button" onClick={() => setOpen(true)}>
         打开模态框
       </button>
-      <Modal
-        open={open}
-        onRequestClose={() => setOpen(false)}
-        onBackdropClick={() => setOpen(false)}
-      >
-        <div onClick={() => setOpen(false)}> 124</div>
+      <Modal open={open} onBackdropClick={() => setOpen(false)}>
+        <Paper>这是弹出内容</Paper>
       </Modal>
     </>
   );

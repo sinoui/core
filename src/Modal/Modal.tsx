@@ -135,6 +135,7 @@ function Modal(props: ModalPropsType): any {
     onRequestClose,
     onTransitionExited: onTransitionExitedProp,
     children,
+    onBackdropClick: onBackdropClickProp,
     ...rest
   } = props;
 
@@ -169,24 +170,22 @@ function Modal(props: ModalPropsType): any {
   const onBackdropClick = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) => {
       if (event.target !== event.currentTarget) {
-        return null;
+        return;
       }
 
       if (!backdropClick) {
-        return null;
+        return;
       }
 
-      if (onBackdropClick) {
-        onBackdropClick(event);
+      if (onBackdropClickProp) {
+        onBackdropClickProp(event);
       }
 
       if (onRequestClose) {
         onRequestClose(event, 'backdropClick');
       }
-
-      return null;
     },
-    [backdropClick, onRequestClose],
+    [backdropClick, onBackdropClickProp, onRequestClose],
   );
 
   const onTransitionExited = useCallback(() => {

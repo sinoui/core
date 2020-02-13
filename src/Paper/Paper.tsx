@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { CSSProperties } from 'react';
 
 export interface PaperProps {
   /**
@@ -16,6 +17,10 @@ export interface PaperProps {
    * 宽度是否全屏
    */
   fullWidth?: boolean;
+  /**
+   * 自定义样式
+   */
+  style?: CSSProperties;
 }
 
 const paperCss = css<PaperProps>`
