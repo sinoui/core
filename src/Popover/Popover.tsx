@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import React, { useRef, useCallback, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import contains from 'dom-helpers/query/contains';
 import debounce from 'lodash/debounce';
 import EventListener from 'react-event-listener';
@@ -303,7 +302,7 @@ function Popover(props: PopoverProps) {
 
   const handleResize: (() => void) & { cancel: () => void } = debounce(() => {
     // eslint-disable-next-line react/no-find-dom-node
-    const element = ReactDOM.findDOMNode(transitionElRef.current);
+    const element = transitionElRef.current;
     setPositioningStyles(element as any);
   }, 166);
 

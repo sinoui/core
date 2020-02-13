@@ -6,3 +6,8 @@ declare module 'styled-components' {
     __version?: string;
   }
 }
+
+declare module 'dom-helpers/util/scrollbarSize' {
+  const value: any;
+  export = value;
+}
