@@ -124,6 +124,7 @@ function Menu(props: MenuProps) {
 
   return (
     <Popover
+      open={open}
       getContentAnchorEl={getContentAnchorEl}
       onEnter={handleEnter}
       anchorOrigin={LTR_ORIGIN}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Select, { Option } from '@sinoui/core/Select';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import { MdArrowDownward } from 'react-icons/md';
 
 export default {
   title: 'Select',
@@ -30,6 +31,7 @@ function SimpleDemo() {
       open={open}
       onOpen={onOpen}
       onBlur={onBlur}
+      IconComponent={MdArrowDownward}
     >
       <Option value="选项一">选项一</Option>
       <Option value="选项二">选项二</Option>
