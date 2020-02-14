@@ -27,7 +27,8 @@ function getItems(items: HTMLCollection) {
 export default React.forwardRef<HTMLUListElement, MenuListProps>(
   function MenuList(props, ref) {
     const [currentTabIndex, setCurrentTabIndex] = useState(-1);
-    const [selectedItemIndex, setSelectedItemIndex] = useState(-1);
+
+    const selectedItemIndexRef = useRef<number>(-1);
 
     const { onBlur, children, ...other } = props;
 
@@ -62,13 +63,13 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
 
         if (focusIndex !== -1) {
           setCurrentTabIndex(focusIndex);
-        } else if (selectedItemIndex !== -1) {
-          setCurrentTabIndex(selectedItemIndex);
+        } else if (selectedItemIndexRef.current !== -1) {
+          setCurrentTabIndex(selectedItemIndexRef.current);
         } else {
           setCurrentTabIndex(0);
         }
       },
-      [getFocusItemIndex, selectedItemIndex],
+      [getFocusItemIndex],
     );
 
     useEffect(() => {
@@ -157,7 +158,7 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
             const element = React.cloneElement(child, childProps);
 
             if (child.props.selected) {
-              setSelectedItemIndex(index);
+              selectedItemIndexRef.current = index;
             }
 
             return element;
