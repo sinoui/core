@@ -187,12 +187,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
   const displayMultiple: string[] = [];
   let computeDisplay = false;
 
-  if (
-    (value !== null &&
-      value !== undefined &&
-      !(Array.isArray(value) && value.length === 0)) ||
-    displayEmpty
-  ) {
+  if (displayEmpty) {
     if (renderValue) {
       display = renderValue(value);
     } else {

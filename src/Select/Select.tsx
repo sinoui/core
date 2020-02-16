@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import OutlinedInput from '@sinoui/core/OutlineInput';
 import Input from '@sinoui/core/Input';
 import FilledInput from '@sinoui/core/FilledInput';
@@ -46,13 +46,15 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     labelWidth = 0,
     MenuProps,
     multiple = false,
-    onClose,
+    onClose: onCloseProp,
     onOpen,
-    open,
+    open: openProp,
     renderValue,
     variant = 'standard',
     ...other
   } = props;
+
+  const [open, setOpen] = useState(openProp ?? false);
 
   const inputComponent = SelectInput;
 
@@ -63,6 +65,21 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
       outlined: <OutlinedInput label={label} labelWidth={labelWidth} />,
       filled: <FilledInput />,
     }[variant];
+
+  const onClick = () => {
+    setOpen(true);
+  };
+
+  const onClose = useCallback(
+    (event: any) => {
+      setOpen(false);
+
+      if (onCloseProp) {
+        onCloseProp(event);
+      }
+    },
+    [onCloseProp],
+  );
 
   return React.cloneElement(InputComponent, {
     inputComponent,
@@ -84,6 +101,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
       ...inputProps,
       ...(input ? input.props.inputProps : {}),
     },
+    onClick,
     ref,
     ...other,
   });
