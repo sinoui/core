@@ -21,6 +21,10 @@ export interface OutlineInputProps extends BaseInputProps {
    * 密集模式
    */
   dense?: boolean;
+  /**
+   * 标签
+   */
+  label?: string;
 }
 
 const StyledBaseInput = styled(BaseInput)<
@@ -87,6 +91,7 @@ export default React.forwardRef<HTMLDivElement, OutlineInputProps>(
       disabled,
       readOnly,
       dense,
+      label,
       ...other
     } = props;
     const [focused, setFocused] = useState(false);
@@ -133,6 +138,7 @@ export default React.forwardRef<HTMLDivElement, OutlineInputProps>(
                 ? notched
                 : focused || !!value || !!defaultValue || !!placeholder
             }
+            label={label}
             labelWidth={labelWidth}
           />
         )}

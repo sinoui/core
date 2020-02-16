@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React, { useState, useRef, useImperativeHandle, useEffect } from 'react';
-import Menu from '@sinoui/core/Menu';
+import Menu, { MenuListItem } from '@sinoui/core/Menu';
 import classNames from 'classnames';
 import useForkRef from '../utils/useForkRef';
 
@@ -187,7 +187,12 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
   const displayMultiple: string[] = [];
   let computeDisplay = false;
 
-  if (displayEmpty) {
+  if (
+    (value !== null &&
+      value !== undefined &&
+      !(Array.isArray(value) && value.length === 0)) ||
+    displayEmpty
+  ) {
     if (renderValue) {
       display = renderValue(value);
     } else {
@@ -195,7 +200,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     }
   }
 
-  const items = React.Children.map(children, (child) => {
+  const items = React.Children.map(children, (child, index) => {
     if (!React.isValidElement(child)) {
       return null;
     }
@@ -221,23 +226,15 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       }
     }
 
-    return React.cloneElement(child, {
-      'aria-selected': selected ? 'true' : undefined,
-      onClick: handleItemClick(child),
-      onKeyUp: (event: React.KeyboardEvent<HTMLElement>) => {
-        if (event.key === ' ') {
-          event.preventDefault();
-        }
-        const { onKeyUp } = child.props;
-        if (typeof onKeyUp === 'function') {
-          onKeyUp(event);
-        }
-      },
-      role: 'option',
-      selected,
-      value: undefined,
-      'data-value': child.props.value,
-    });
+    return (
+      <MenuListItem
+        role="option"
+        {...child.props}
+        key={child.props.key || index}
+        selected={selected}
+        onClick={handleItemClick(child)}
+      />
+    );
   });
 
   if (computeDisplay) {

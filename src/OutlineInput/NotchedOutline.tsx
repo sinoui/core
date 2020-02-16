@@ -5,6 +5,7 @@ export interface NotchedOutlineProps {
   notched?: boolean;
   labelWidth?: number;
   style?: React.CSSProperties;
+  label?: string;
 }
 
 const NotchedOutlineLayout = styled.fieldset`
@@ -38,7 +39,7 @@ const Legend = styled.legend`
 `;
 
 export default function NotchedOutline(props: NotchedOutlineProps) {
-  const { notched, labelWidth: labelWidthProp = 0, style } = props;
+  const { notched, labelWidth: labelWidthProp = 0, style, label } = props;
 
   const labelWidth = labelWidthProp > 0 ? labelWidthProp * 0.75 + 8 : 0;
   return (
@@ -51,7 +52,7 @@ export default function NotchedOutline(props: NotchedOutlineProps) {
       }}
     >
       <Legend style={{ width: notched ? labelWidth : 0.01 }}>
-        <span>&#8203;</span>
+        {label ? <span>{label}</span> : <span>&#8203;</span>}
       </Legend>
     </NotchedOutlineLayout>
   );

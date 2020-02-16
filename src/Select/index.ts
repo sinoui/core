@@ -1,4 +1,4 @@
-import Select from './SelectInput';
+import Select from './Select';
 import Option from './Option';
 
 export default Select;
