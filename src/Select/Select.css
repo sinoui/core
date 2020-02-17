@@ -1,3 +1,7 @@
+.sinoui-select-wrapper {
+  width: 200px;
+}
+
 .sinoui-select-wrapper > svg {
   font-size: 24px;
 }

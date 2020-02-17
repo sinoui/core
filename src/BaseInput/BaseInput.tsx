@@ -288,9 +288,9 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
 
     const InputComonent: ReactType = multiline ? StyleTextarea : inputComponent;
     const inputprops = {
-      ...inputPropsProp,
       type,
       autoFocus,
+      ...inputPropsProp,
       autoComplete,
       multiline,
       disabled,

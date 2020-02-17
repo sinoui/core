@@ -89,7 +89,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
       children,
       IconComponent,
       variant,
-      type: undefined,
+      type: 'hidden',
       multiple,
       ...{
         autoWidth,
@@ -106,6 +106,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     onClick,
     ref,
     className: 'sinoui-select-wrapper',
+    endComponent: <MdArrowDropDown />,
     ...other,
   });
 });
