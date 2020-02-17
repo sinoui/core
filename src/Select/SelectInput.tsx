@@ -91,6 +91,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
           displayNode.focus();
         }
       },
+
       node: inputRef.current,
       value,
     }),
@@ -304,6 +305,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
             ...(MenuProps.PaperProps != null
               ? MenuProps.PaperProps.style
               : null),
+            margin: 0,
           },
         }}
       >

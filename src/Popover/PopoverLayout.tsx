@@ -5,7 +5,6 @@ import styled from 'styled-components';
  */
 const PopoverLayout = styled.div<any>`
   position: absolute;
-  overflow: hidden;
   min-width: 16px;
   min-height: 16px;
   padding: 0px;

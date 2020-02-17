@@ -15,7 +15,7 @@ function SimpleDemo() {
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: 16 }}>
       <Select value={value} onChange={onChange}>
         <Option value="选项一">选项一</Option>
         <Option value="选项二">选项二</Option>
@@ -46,7 +46,7 @@ function MultipleSelectDemo() {
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: 16 }}>
       <Select value={value} onChange={onChange} multiple>
         <Option value="选项一">选项一</Option>
         <Option value="选项二">选项二</Option>
