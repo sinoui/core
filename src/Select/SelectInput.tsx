@@ -238,8 +238,8 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
 
   let menuMinWidth;
 
-  if (!autoWidth && displayNode) {
-    menuMinWidth = displayNode.clientWidth;
+  if (!autoWidth && displayNode && displayNode.parentNode) {
+    menuMinWidth = displayNode.parentNode.clientWidth;
   }
 
   let tabIndex;
@@ -283,9 +283,13 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       <IconComponent />
       <Menu
         id={`menu-${name || ''}`}
-        anchorEl={displayNode}
+        minWidth={
+          displayNode?.parentNode ? displayNode.parentNode.clientWidth : 0
+        }
+        anchorEl={displayNode?.parentNode}
         open={open}
         onRequestClose={handleClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         {...MenuProps}
         MenuListProps={{
           'aria-labelledby': labelId,

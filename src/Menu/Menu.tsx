@@ -139,6 +139,7 @@ function Menu(props: MenuProps) {
         },
         ref: paperRef,
       }}
+      onRequestClose={onRequestClose}
       {...other}
     >
       <MenuList

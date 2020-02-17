@@ -4,10 +4,11 @@ import Input from '@sinoui/core/Input';
 import FilledInput from '@sinoui/core/FilledInput';
 import { MdArrowDropDown } from 'react-icons/md';
 import SelectInput from './SelectInput';
+import './Select.css';
 
 export interface Props {
   autoWidth?: boolean;
-  children: React.ReactChild;
+  children: React.ReactChild[];
   defaultValue?: string | string[];
   multiple?: boolean;
   displayEmpty?: boolean;
@@ -29,6 +30,7 @@ export interface Props {
   renderValue?: (value: string | string[]) => void;
   value?: string | string[];
   variant?: 'standard' | 'outlined' | 'filled';
+  minWidth?: number;
 }
 
 const Select = React.forwardRef<HTMLElement, Props>(function Select(
@@ -103,6 +105,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     },
     onClick,
     ref,
+    className: 'sinoui-select-wrapper',
     ...other,
   });
 });
