@@ -12,7 +12,6 @@ export interface Props {
   className?: string;
   defaultValue?: string | string[];
   disabled?: boolean;
-  IconComponent: React.ReactType;
   inputRef: any;
   labelId?: string;
   MenuProps?: any;
@@ -36,7 +35,7 @@ export interface Props {
   minWidth?: number;
 }
 
-type SelectLayoutProps = Omit<Props, 'IconComponent' | 'value' | 'inputRef'>;
+type SelectLayoutProps = Omit<Props, 'value' | 'inputRef'>;
 
 function areEqualValues(a: any, b: any) {
   if (typeof b === 'object' && b !== null) {
@@ -113,7 +112,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     defaultValue,
     disabled,
     displayEmpty,
-    IconComponent,
     inputRef: inputRefProp,
     labelId,
     MenuProps = {},

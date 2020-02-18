@@ -1,10 +1,18 @@
-import React, { useState, useCallback } from 'react';
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  useEffect,
+  useRef,
+} from 'react';
 import OutlinedInput from '@sinoui/core/OutlineInput';
 import Input from '@sinoui/core/Input';
 import FilledInput from '@sinoui/core/FilledInput';
 import { MdArrowDropDown } from 'react-icons/md';
+import styled from 'styled-components';
 import SelectInput from './SelectInput';
 import './Select.css';
+import { Label, HelperText } from '../TextInput';
 
 export interface Props {
   autoWidth?: boolean;
@@ -12,7 +20,6 @@ export interface Props {
   defaultValue?: string | string[];
   multiple?: boolean;
   displayEmpty?: boolean;
-  IconComponent?: React.ReactType;
   input?: React.ReactElement;
   inputProps?: any;
   label?: string;
@@ -31,7 +38,20 @@ export interface Props {
   value?: string | string[];
   variant?: 'standard' | 'outlined' | 'filled';
   minWidth?: number;
+  error?: string;
+  dense?: boolean;
+  helperText?: string;
 }
+
+const SelectWrapper = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 0px;
+  padding: 0;
+  margin: 0;
+  border: 0px;
+  position: relative;
+`;
 
 const Select = React.forwardRef<HTMLElement, Props>(function Select(
   props,
@@ -41,11 +61,10 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     autoWidth = false,
     children,
     displayEmpty = false,
-    IconComponent = MdArrowDropDown,
     input,
     inputProps,
     label,
-    labelWidth = 0,
+    labelWidth: labelWidthProp = 0,
     MenuProps,
     multiple = false,
     onClose: onCloseProp,
@@ -53,10 +72,40 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     open: openProp,
     renderValue,
     variant = 'standard',
+    error,
+    disabled,
+    helperText,
+    dense,
+    value,
+    defaultValue,
     ...other
   } = props;
 
   const [open, setOpen] = useState(openProp ?? false);
+  const [focused, setFocused] = useState(false);
+  const [labelWidth, setLabelWidth] = useState(labelWidthProp);
+  const labelRef = useRef<HTMLLabelElement | null>(null);
+
+  const shrink = useMemo(() => {
+    return (
+      focused ||
+      (Array.isArray(value) ? value.length > 0 : !!value) ||
+      !!defaultValue
+    );
+  }, [defaultValue, focused, value]);
+
+  const shrinkRef = useRef(shrink);
+
+  useEffect(() => {
+    if (labelWidthProp) {
+      setLabelWidth(labelWidthProp);
+      return;
+    }
+    if (labelRef && labelRef.current) {
+      const { width } = labelRef.current.getBoundingClientRect();
+      setLabelWidth(width / (shrinkRef.current ? 0.75 : 1));
+    }
+  }, [labelWidthProp, shrink]);
 
   const inputComponent = SelectInput;
 
@@ -64,12 +113,13 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     input ||
     {
       standard: <Input />,
-      outlined: <OutlinedInput label={label} labelWidth={labelWidth} />,
+      outlined: <OutlinedInput />,
       filled: <FilledInput />,
     }[variant];
 
   const onClick = () => {
     setOpen(true);
+    setFocused(true);
   };
 
   const onClose = useCallback(
@@ -83,32 +133,65 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     [onCloseProp],
   );
 
-  return React.cloneElement(InputComponent, {
-    inputComponent,
-    inputProps: {
-      children,
-      IconComponent,
-      variant,
-      type: 'hidden',
-      multiple,
-      ...{
-        autoWidth,
-        displayEmpty,
-        MenuProps,
-        onClose,
-        onOpen,
-        open,
-        renderValue,
-      },
-      ...inputProps,
-      ...(input ? input.props.inputProps : {}),
-    },
-    onClick,
-    ref,
-    className: 'sinoui-select-wrapper',
-    endComponent: <MdArrowDropDown />,
-    ...other,
-  });
+  const onBlur = (_event: React.FocusEvent<HTMLDivElement>) => {
+    setFocused(false);
+  };
+
+  return (
+    <SelectWrapper>
+      {label && (
+        <Label
+          ref={labelRef}
+          disabled={disabled}
+          error={!!error}
+          variant={variant}
+          shrink={shrink}
+          dense={dense}
+          focused={focused}
+        >
+          {label}
+        </Label>
+      )}
+      {React.cloneElement(InputComponent, {
+        inputComponent,
+        inputProps: {
+          children,
+          variant,
+          type: 'hidden',
+          multiple,
+          ...{
+            autoWidth,
+            displayEmpty,
+            MenuProps,
+            onClose,
+            onOpen,
+            open,
+            renderValue,
+            onBlur,
+          },
+          ...inputProps,
+          ...(input ? input.props.inputProps : {}),
+        },
+        onClick,
+        ref,
+        className: 'sinoui-select-wrapper',
+        endComponent: <MdArrowDropDown />,
+        labelWidth,
+        value,
+        ...other,
+      })}
+      {!!error && (
+        <HelperText error variant={variant} dense={dense}>
+          {error}
+        </HelperText>
+      )}
+      {!error && helperText && (
+        <HelperText disabeld={disabled} variant={variant} dense={dense}>
+          {helperText}
+        </HelperText>
+      )}
+    </SelectWrapper>
+  );
 });
 
 export default Select;
