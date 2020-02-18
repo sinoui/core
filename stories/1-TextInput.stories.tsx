@@ -123,6 +123,7 @@ function SimpleInput() {
           label="Dense"
           onChange={onChange}
           value={value}
+          variant="filled"
           dense
           helperText="请输入内容"
         />

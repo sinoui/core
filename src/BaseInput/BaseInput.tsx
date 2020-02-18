@@ -203,6 +203,7 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
       fullWidth,
       renderSuffix,
       placeholder,
+      readOnly,
       ...other
     } = props;
 
@@ -275,6 +276,9 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
      */
     const handleClick = useCallback(
       (event: React.MouseEvent<HTMLDivElement>) => {
+        if (disabled || readOnly) {
+          return;
+        }
         const input = inputRef.current;
         if (input && event.currentTarget === event.target) {
           input.focus();
@@ -283,7 +287,7 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
           onClick(event);
         }
       },
-      [onClick],
+      [disabled, onClick, readOnly],
     );
 
     const InputComonent: ReactType = multiline ? StyleTextarea : inputComponent;

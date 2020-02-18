@@ -10,7 +10,6 @@ export interface Props {
   autoWidth?: boolean;
   children: React.ReactNode;
   className?: string;
-  defaultValue?: string | string[];
   disabled?: boolean;
   inputRef: any;
   labelId?: string;
@@ -33,6 +32,7 @@ export interface Props {
   value: string | string[];
   variant?: 'standard' | 'outlined' | 'filled';
   minWidth?: number;
+  dense?: boolean;
 }
 
 type SelectLayoutProps = Omit<Props, 'value' | 'inputRef'>;
@@ -55,6 +55,14 @@ const filledStyle = css`
 
 const outlinedStyle = css`
   padding: 18.5px 0px 18.5px 14px;
+`;
+
+const denseStyle = css<{ variant?: 'standard' | 'outlined' | 'filled' }>`
+  padding-top: 3px;
+  ${(props) =>
+    props.variant === 'filled' && 'padding-top:23px;padding-bottom:6px;'};
+  ${(props) =>
+    props.variant === 'outlined' && 'padding-top:10.5px;padding-bottom:10.5px;'}
 `;
 
 const disabledStyle = css`
@@ -98,6 +106,7 @@ const SelectLayout = styled.div<SelectLayoutProps>`
   ${(props) => props.disabled && disabledStyle};
   ${(props) => props.variant === 'filled' && filledStyle};
   ${(props) => props.variant === 'outlined' && outlinedStyle}
+  ${(props) => props.dense && denseStyle};
 `;
 
 export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
@@ -109,7 +118,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     autoWidth,
     children,
     className,
-    defaultValue,
+    dense,
     disabled,
     displayEmpty,
     inputRef: inputRefProp,
@@ -131,7 +140,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     ...other
   } = props;
 
-  const [value, setValue] = useState(defaultValue ?? valueProp);
+  const [value, setValue] = useState(valueProp);
 
   const inputRef = useRef(null);
   const handleRef = useForkRef(ref, inputRefProp);
@@ -331,6 +340,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         onMouseDown={(disabled || readOnly ? null : handleMouseDown) as any}
         onBlur={handleBlur as any}
         onFocus={onFocus}
+        dense={dense}
       >
         {isEmpty(display) ? <span>&#8203;</span> : display}
       </SelectLayout>

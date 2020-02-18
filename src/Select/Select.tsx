@@ -10,6 +10,7 @@ import Input from '@sinoui/core/Input';
 import FilledInput from '@sinoui/core/FilledInput';
 import { MdArrowDropDown } from 'react-icons/md';
 import styled from 'styled-components';
+import classNames from 'classnames';
 import SelectInput from './SelectInput';
 import './Select.css';
 import { Label, HelperText } from '../TextInput';
@@ -17,7 +18,6 @@ import { Label, HelperText } from '../TextInput';
 export interface Props {
   autoWidth?: boolean;
   children: React.ReactChild[];
-  defaultValue?: string | string[];
   multiple?: boolean;
   displayEmpty?: boolean;
   input?: React.ReactElement;
@@ -41,6 +41,8 @@ export interface Props {
   error?: string;
   dense?: boolean;
   helperText?: string;
+  className?: string;
+  required?: boolean;
 }
 
 const SelectWrapper = styled.div`
@@ -77,7 +79,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     helperText,
     dense,
     value,
-    defaultValue,
+    className,
     ...other
   } = props;
 
@@ -87,12 +89,8 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
   const labelRef = useRef<HTMLLabelElement | null>(null);
 
   const shrink = useMemo(() => {
-    return (
-      focused ||
-      (Array.isArray(value) ? value.length > 0 : !!value) ||
-      !!defaultValue
-    );
-  }, [defaultValue, focused, value]);
+    return focused || (Array.isArray(value) ? value.length > 0 : !!value);
+  }, [focused, value]);
 
   const shrinkRef = useRef(shrink);
 
@@ -138,7 +136,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
   };
 
   return (
-    <SelectWrapper>
+    <SelectWrapper className={classNames('sinoui-select-wrapper', className)}>
       {label && (
         <Label
           ref={labelRef}
@@ -159,6 +157,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
           variant,
           type: 'hidden',
           multiple,
+          dense,
           ...{
             autoWidth,
             displayEmpty,
@@ -168,16 +167,19 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
             open,
             renderValue,
             onBlur,
+            disabled,
           },
           ...inputProps,
           ...(input ? input.props.inputProps : {}),
         },
         onClick,
         ref,
-        className: 'sinoui-select-wrapper',
+        className: 'sinoui-select-base-layout',
         endComponent: <MdArrowDropDown />,
         labelWidth,
         value,
+        disabled,
+        error: !!error,
         ...other,
       })}
       {!!error && (
