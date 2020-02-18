@@ -136,7 +136,10 @@ export default React.forwardRef<HTMLDivElement, OutlineInputProps>(
             notched={
               typeof notched !== 'undefined'
                 ? notched
-                : focused || !!value || !!defaultValue || !!placeholder
+                : focused ||
+                  (Array.isArray(value) ? value.length > 0 : !!value) ||
+                  !!defaultValue ||
+                  !!placeholder
             }
             label={label}
             labelWidth={labelWidth}

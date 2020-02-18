@@ -1,5 +1,17 @@
 import styled from 'styled-components';
+import { Theme } from '@sinoui/theme';
 import Item, { ListItemProps } from './ListItem';
+
+const getFocusStyle = (props: ListItemProps & { theme: Theme }) => {
+  if (props.selected) {
+    if (props.role === 'option') {
+      return `background-color: ${props.theme.palette.primary[200]}`;
+    }
+
+    return `background-color: ${props.theme.palette.action.selected}`;
+  }
+  return props.theme.palette.action.hover;
+};
 
 const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
   button: button || true,
@@ -17,15 +29,19 @@ const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
   cursor: pointer;
   ${(props) =>
     props.selected &&
-    `background-color: ${props.theme.palette.action.selected}`};
+    `background-color:  ${
+      props.role === 'option'
+        ? props.theme.palette.primary[200]
+        : props.theme.palette.action.selected
+    }`};
   &:hover {
-    background-color: ${(props) => props.theme.palette.action.hover};
+    background-color: ${(props) =>
+      props.selected && props.role === 'option'
+        ? props.theme.palette.primary[200]
+        : props.theme.palette.action.hover};
   }
   &:focus {
-    background-color: ${(props) =>
-      props.selected
-        ? props.theme.palette.action.selected
-        : props.theme.palette.action.hover};
+    ${(props) => getFocusStyle(props)};
   }
 `;
 

@@ -273,14 +273,14 @@ function MultipleSelectDemo() {
   };
 
   return (
-    <div style={{ marginLeft: 16, display: 'flex', alignItems: 'center' }}>
-      <Select value={value} onChange={onChange} multiple label="Multiple">
+    <div style={{ marginLeft: 16, display: 'flex', alignItems: 'flex-start' }}>
+      <SelectField value={value} onChange={onChange} multiple label="Multiple">
         <Option value="选项一">选项一</Option>
         <Option value="选项二">选项二</Option>
         <Option value="选项三">选项三</Option>
         <Option value="选项四">选项四</Option>
-      </Select>
-      <Select
+      </SelectField>
+      <SelectField
         value={value}
         onChange={onChange}
         multiple
@@ -291,8 +291,8 @@ function MultipleSelectDemo() {
         <Option value="选项二">选项二</Option>
         <Option value="选项三">选项三</Option>
         <Option value="选项四">选项四</Option>
-      </Select>
-      <Select
+      </SelectField>
+      <SelectField
         value={value}
         onChange={onChange}
         multiple
@@ -303,7 +303,7 @@ function MultipleSelectDemo() {
         <Option value="选项二">选项二</Option>
         <Option value="选项三">选项三</Option>
         <Option value="选项四">选项四</Option>
-      </Select>
+      </SelectField>
     </div>
   );
 }
