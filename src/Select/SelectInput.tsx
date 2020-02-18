@@ -136,29 +136,29 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
   const [value, setValue] = useState(defaultValue ?? valueProp);
 
   const inputRef = useRef(null);
-  const [displayNode, setDisplayNode] = useState<any>(null);
   const handleRef = useForkRef(ref, inputRefProp);
+  const anchorElRef = useRef<HTMLDivElement | null>(null);
 
   useImperativeHandle(
     handleRef,
     () => ({
       focus: () => {
-        if (displayNode) {
-          displayNode.focus();
+        if (anchorElRef.current) {
+          anchorElRef.current.focus();
         }
       },
 
       node: inputRef.current,
       value,
     }),
-    [displayNode, value],
+    [value],
   );
 
   useEffect(() => {
-    if (autoFocus && displayNode) {
-      displayNode.focus();
+    if (autoFocus && anchorElRef.current) {
+      anchorElRef.current.focus();
     }
-  }, [autoFocus, displayNode]);
+  }, [autoFocus]);
 
   const update = (openState: boolean | undefined, event: any) => {
     if (openState) {
@@ -167,6 +167,10 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       }
     } else if (onClose) {
       onClose(event);
+
+      if (anchorElRef.current) {
+        anchorElRef.current.focus();
+      }
     }
   };
 
@@ -176,7 +180,9 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     }
 
     event.preventDefault();
-    displayNode.focus();
+    if (anchorElRef.current) {
+      anchorElRef.current.focus();
+    }
 
     update(true, event);
   };
@@ -300,8 +306,8 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
 
   let menuMinWidth;
 
-  if (!autoWidth && displayNode && displayNode.parentNode) {
-    menuMinWidth = displayNode.parentNode.clientWidth;
+  if (!autoWidth && anchorElRef.current && anchorElRef.current.parentNode) {
+    menuMinWidth = (anchorElRef.current.parentNode as any).clientWidth;
   }
 
   let tabIndex;
@@ -315,7 +321,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     <>
       <SelectLayout
         className={classNames('sinoui-select-layout', className)}
-        ref={setDisplayNode}
+        ref={anchorElRef}
         data-mui-test="SelectDisplay"
         tabIndex={tabIndex as any}
         role="button"
@@ -325,13 +331,12 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         aria-haspopup="listbox"
         onKeyDown={handleKeyDown}
         onMouseDown={(disabled || readOnly ? null : handleMouseDown) as any}
-        onBlur={handleBlur}
+        onBlur={handleBlur as any}
         onFocus={onFocus}
       >
         {isEmpty(display) ? <span>&#8203;</span> : display}
       </SelectLayout>
       <input
-        value={Array.isArray(value) ? value.join(',') : value}
         name={name}
         ref={inputRef}
         type="hidden"
@@ -339,13 +344,14 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         autoFocus={autoFocus}
         {...other}
       />
-      {/* <IconComponent /> */}
       <Menu
         id={`menu-${name || ''}`}
         minWidth={
-          displayNode?.parentNode ? displayNode.parentNode.clientWidth : 0
+          anchorElRef.current?.parentNode
+            ? (anchorElRef.current.parentNode as any).clientWidth
+            : 0
         }
-        anchorEl={displayNode?.parentNode}
+        anchorEl={anchorElRef.current}
         open={open}
         onRequestClose={handleClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
