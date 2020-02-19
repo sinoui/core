@@ -7,7 +7,6 @@ export interface ListProps {
   dense?: boolean;
   disablePadding?: boolean;
   role?: string;
-  innerRef?: (node: any) => void;
   onBlur?: (event: React.FocusEvent<HTMLUListElement>) => void;
   color?: string;
   textStyle?: React.CSSProperties;

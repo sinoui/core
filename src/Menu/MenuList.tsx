@@ -11,7 +11,7 @@ export interface MenuListProps extends ListProps {
   children: React.ReactNode;
   onBlur?: (event: React.FocusEvent<HTMLElement>) => void;
   onKeyDown?: (
-    event: React.KeyboardEvent<HTMLElement>,
+    event: React.FocusEvent<HTMLElement> | any,
     keyCode?: string,
   ) => void;
 }
@@ -31,7 +31,7 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
 
     const selectedItemIndexRef = useRef<number>(-1);
 
-    const { onBlur, children, ...other } = props;
+    const { onBlur, children, onKeyDown, ...other } = props;
 
     const listRef = useRef<HTMLUListElement>(null);
     const handleListRef = useMultiRefs(listRef, ref);
@@ -132,9 +132,25 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
           if (focusItem.previousElementSibling) {
             focusItem.previousElementSibling.focus();
           }
+        } else if (key === 'enter') {
+          event.preventDefault();
+          if (onKeyDown) {
+            onKeyDown(
+              {
+                ...event,
+                target: {
+                  ...event.target,
+                  value: focusItem.getAttribute('value'),
+                },
+              },
+              key,
+            );
+          }
+        } else if (onKeyDown) {
+          onKeyDown(event, key);
         }
       },
-      [],
+      [onKeyDown],
     );
 
     return (

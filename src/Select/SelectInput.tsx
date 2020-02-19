@@ -1,5 +1,11 @@
 /* eslint-disable react/no-danger */
-import React, { useState, useRef, useImperativeHandle, useEffect } from 'react';
+import React, {
+  useState,
+  useRef,
+  useImperativeHandle,
+  useEffect,
+  useCallback,
+} from 'react';
 import Menu, { MenuListItem } from '@sinoui/core/Menu';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
@@ -167,19 +173,22 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     }
   }, [autoFocus]);
 
-  const update = (openState: boolean | undefined, event: any) => {
-    if (openState) {
-      if (onOpen) {
-        onOpen(event);
-      }
-    } else if (onClose) {
-      onClose(event);
+  const update = useCallback(
+    (openState: boolean | undefined, event: any) => {
+      if (openState) {
+        if (onOpen) {
+          onOpen(event);
+        }
+      } else if (onClose) {
+        onClose(event);
 
-      if (anchorElRef.current) {
-        anchorElRef.current.focus();
+        if (anchorElRef.current) {
+          anchorElRef.current.focus();
+        }
       }
-    }
-  };
+    },
+    [onClose, onOpen],
+  );
 
   const handleMouseDown = (event: React.MouseEvent<HTMLElement>) => {
     if (event.button !== 0) {
@@ -197,6 +206,20 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
   const handleClose = (event: any) => {
     update(false, event);
   };
+
+  const handleEnterKeyDown = useCallback(
+    (event: any) => {
+      if (!multiple) {
+        setValue(event.target.value);
+
+        update(false, event);
+        if (onChange) {
+          onChange(event);
+        }
+      }
+    },
+    [multiple, onChange, update],
+  );
 
   const handleItemClick = (child: any) => (event: any) => {
     if (!multiple) {
@@ -364,6 +387,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         open={open}
         onRequestClose={handleClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        onEnterKeyDown={handleEnterKeyDown}
         {...MenuProps}
         MenuListProps={{
           'aria-labelledby': labelId,
