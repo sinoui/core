@@ -5,15 +5,11 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
-import OutlinedInput from '@sinoui/core/OutlineInput';
-import Input from '@sinoui/core/Input';
-import FilledInput from '@sinoui/core/FilledInput';
 import { MdArrowDropDown } from 'react-icons/md';
-import styled from 'styled-components';
 import classNames from 'classnames';
+import TextInputField from '@sinoui/core/TextInput';
 import SelectInput from './SelectInput';
 import './Select.css';
-import { Label, HelperText } from '../TextInput';
 
 export interface Props {
   autoWidth?: boolean;
@@ -44,16 +40,6 @@ export interface Props {
   className?: string;
   required?: boolean;
 }
-
-const SelectWrapper = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  min-width: 0px;
-  padding: 0;
-  margin: 0;
-  border: 0px;
-  position: relative;
-`;
 
 const Select = React.forwardRef<HTMLElement, Props>(function Select(
   props,
@@ -107,14 +93,6 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
 
   const inputComponent = SelectInput;
 
-  const InputComponent: any =
-    input ||
-    {
-      standard: <Input />,
-      outlined: <OutlinedInput />,
-      filled: <FilledInput />,
-    }[variant];
-
   const onClick = () => {
     setOpen(true);
     setFocused(true);
@@ -135,65 +113,43 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     setFocused(false);
   };
 
-  return (
-    <SelectWrapper className={classNames('sinoui-select-wrapper', className)}>
-      {label && (
-        <Label
-          ref={labelRef}
-          disabled={disabled}
-          error={!!error}
-          variant={variant}
-          shrink={shrink}
-          dense={dense}
-          focused={focused}
-        >
-          {label}
-        </Label>
-      )}
-      {React.cloneElement(InputComponent, {
-        inputComponent,
-        inputProps: {
-          children,
-          variant,
-          type: 'hidden',
-          multiple,
-          dense,
-          ...{
-            autoWidth,
-            displayEmpty,
-            MenuProps,
-            onClose,
-            onOpen,
-            open,
-            renderValue,
-            onBlur,
-            disabled,
-          },
-          ...inputProps,
-          ...(input ? input.props.inputProps : {}),
-        },
-        onClick,
-        ref,
-        className: 'sinoui-select-base-layout',
-        endComponent: <MdArrowDropDown />,
-        labelWidth,
-        value,
+  return React.cloneElement(<TextInputField />, {
+    inputComponent,
+    inputProps: {
+      children,
+      variant,
+      type: 'hidden',
+      multiple,
+      dense,
+      disabled,
+      ...{
+        autoWidth,
+        displayEmpty,
+        MenuProps,
+        onClose,
+        onOpen,
+        open,
+        renderValue,
+        onBlur,
         disabled,
-        error: !!error,
-        ...other,
-      })}
-      {!!error && (
-        <HelperText error variant={variant} dense={dense}>
-          {error}
-        </HelperText>
-      )}
-      {!error && helperText && (
-        <HelperText disabeld={disabled} variant={variant} dense={dense}>
-          {helperText}
-        </HelperText>
-      )}
-    </SelectWrapper>
-  );
+      },
+      ...inputProps,
+      ...(input ? input.props.inputProps : {}),
+    },
+    onClick,
+    ref,
+    label,
+    className: classNames('sinoui-select-base-layout', className),
+    endComponent: <MdArrowDropDown />,
+    labelWidth,
+    value,
+    disabled,
+    error,
+    variant,
+    helperText,
+    dense,
+    ...other,
+  });
 });
 
 export default Select;

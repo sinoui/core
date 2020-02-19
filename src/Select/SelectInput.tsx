@@ -341,6 +341,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         onBlur={handleBlur as any}
         onFocus={onFocus}
         dense={dense}
+        disabled={disabled || readOnly}
       >
         {isEmpty(display) ? <span>&#8203;</span> : display}
       </SelectLayout>

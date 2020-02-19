@@ -80,7 +80,11 @@ export default function TextInputField(props: TextInputFieldProps) {
   const labelRef = useRef<HTMLLabelElement | null>(null);
 
   const shrink = useMemo(
-    () => focused || !!value || !!defaultValue || !!placeholder,
+    () =>
+      focused ||
+      (Array.isArray(value) ? value.length > 0 : !!value) ||
+      !!defaultValue ||
+      !!placeholder,
     [defaultValue, focused, placeholder, value],
   );
 
