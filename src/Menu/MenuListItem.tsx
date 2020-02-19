@@ -5,12 +5,12 @@ import Item, { ListItemProps } from './ListItem';
 const getFocusStyle = (props: ListItemProps & { theme: Theme }) => {
   if (props.selected) {
     if (props.role === 'option') {
-      return `background-color: ${props.theme.palette.primary[200]}`;
+      return `background-color: ${props.theme.palette.primary[300]}`;
     }
 
     return `background-color: ${props.theme.palette.action.selected}`;
   }
-  return props.theme.palette.action.hover;
+  return `background-color: ${props.theme.palette.action.hover}`;
 };
 
 const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
@@ -31,7 +31,7 @@ const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
     props.selected &&
     `background-color:  ${
       props.role === 'option'
-        ? props.theme.palette.primary[200]
+        ? props.theme.palette.primary[100]
         : props.theme.palette.action.selected
     }`};
   &:hover {
