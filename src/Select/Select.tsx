@@ -7,9 +7,25 @@ import React, {
 } from 'react';
 import { MdArrowDropDown } from 'react-icons/md';
 import classNames from 'classnames';
+import styled, { css } from 'styled-components';
 import TextInputField from '@sinoui/core/TextInput';
+import { Theme } from '@sinoui/theme';
 import SelectInput from './SelectInput';
-import './Select.css';
+
+const iconFocusedStyle = css`
+  color: ${(props) => props.theme.palette.primary[500]};
+  transform: rotate(180deg);
+  transition: transform 200ms;
+`;
+
+const StyledTextInput = styled(TextInputField)`
+  .sinoui-base-input__layout > svg {
+    font-size: 24px;
+    ${(props: { focused?: boolean; theme: Theme }) =>
+      props.focused && iconFocusedStyle};
+    ${(props) => props.error && `color: ${props.theme.palette.error[500]}`};
+  }
+`;
 
 export interface Props {
   autoWidth?: boolean;
@@ -113,8 +129,9 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     setFocused(false);
   };
 
-  return React.cloneElement(<TextInputField />, {
+  return React.cloneElement(<StyledTextInput />, {
     inputComponent,
+    focused,
     inputProps: {
       children,
       variant,
