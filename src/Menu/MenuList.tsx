@@ -5,6 +5,7 @@ import activeElement from 'dom-helpers/activeElement';
 import ownerDocument from 'dom-helpers/ownerDocument';
 import List, { ListProps } from './List';
 import { ListItemProps } from './ListItem';
+import useMultiRefs from '../utils/useMultiRefs';
 
 export interface MenuListProps extends ListProps {
   children: React.ReactNode;
@@ -32,7 +33,8 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
 
     const { onBlur, children, ...other } = props;
 
-    const listRef = useRef<HTMLUListElement>(ref as any);
+    const listRef = useRef<HTMLUListElement>(null);
+    const handleListRef = useMultiRefs(listRef, ref);
     const blurTimer = useRef<any>(null);
 
     const getFocusItem = () => {
@@ -48,7 +50,8 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
     const getFocusItemIndex = useCallback(() => {
       const focusItem = getFocusItem();
       if (focusItem) {
-        const items = getItems(listRef.current.children);
+        const listItemDOMS = listRef.current?.children;
+        const items = listItemDOMS ? getItems(listItemDOMS) : [];
         return items.indexOf(focusItem);
       }
       return -1;
@@ -135,7 +138,7 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
     );
 
     return (
-      <List role="menu" ref={listRef} onBlur={handleBlur} {...other}>
+      <List role="menu" ref={handleListRef} onBlur={handleBlur} {...other}>
         {React.Children.map(
           children as any,
           (child: React.ReactElement<ListItemProps>, index: number) => {

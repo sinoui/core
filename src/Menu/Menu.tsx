@@ -13,7 +13,6 @@ export interface MenuProps extends PopoverProps {
   onRequestClose?: () => void;
   MenuListProps?: MenuListProps;
   PaperProps?: PaperProps;
-  contentAnchorElTarget?: 'item' | 'list';
   preventAutoFocus?: boolean;
   id?: string;
   paperRef?: HTMLElement;
@@ -45,7 +44,6 @@ export function syncWidth(anchorElement: HTMLElement, target?: HTMLElement) {
 
 function Menu(props: MenuProps) {
   const {
-    contentAnchorElTarget = 'item',
     preventAutoFocus,
     open,
     onEnter,
@@ -84,17 +82,6 @@ function Menu(props: MenuProps) {
     }
   }, [focus, open]);
 
-  const getContentAnchorEl = () => {
-    if (contentAnchorElTarget === 'item') {
-      if (!menuListRef.current || !menuListRef.current.containsSelectedItem) {
-        return menuListRef.current?.firstChild as HTMLElement;
-      }
-
-      return menuListRef.current.selectedItem;
-    }
-    return null;
-  };
-
   const handleEnter = useCallback(
     (element: HTMLElement) => {
       const menuList = menuListRef.current as HTMLElement;
@@ -125,7 +112,6 @@ function Menu(props: MenuProps) {
   return (
     <Popover
       open={open}
-      getContentAnchorEl={getContentAnchorEl}
       onEnter={handleEnter}
       anchorOrigin={LTR_ORIGIN}
       transformOrigin={LTR_ORIGIN}
