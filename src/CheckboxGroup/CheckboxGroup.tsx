@@ -248,6 +248,9 @@ function CheckboxGroup(props: CheckboxGroupProps) {
         onChange={onSelectAllChange}
         readOnly={props.readOnly}
         disabled={props.disabled}
+        className={classNames('sinoui-checkboxGroup-select', {
+          'sinoui-checkboxGroup-selectAll': selectedAll(),
+        })}
       >
         全选
       </Checkbox>
@@ -286,6 +289,7 @@ function CheckboxGroup(props: CheckboxGroupProps) {
     <FormGroupWrapper
       {...rest}
       className={classNames('sinoui-checkbox-group', props.className)}
+      data-testid="checkboxGroup"
     >
       {renderSelectAll()}
       {items ? items.map(child) : React.Children.map(children, child)}

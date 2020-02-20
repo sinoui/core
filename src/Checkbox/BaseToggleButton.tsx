@@ -13,6 +13,7 @@ export interface Props
   disabled?: boolean;
   dense?: boolean;
   color?: string;
+  className?: string;
 }
 
 const Wrapper = styled.div`
@@ -133,7 +134,7 @@ export default function BaseToggleButton(props: Props) {
       {...props}
       ref={ref}
       style={style}
-      className={classNames('sinoui-checkbox-button', {
+      className={classNames('sinoui-checkbox-button', props.className, {
         'sinoui-checkbox-button__disabled': props.disabled,
         'sinoui-checkbox-button__checked': props.checked,
       })}

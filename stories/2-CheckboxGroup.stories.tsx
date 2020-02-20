@@ -39,12 +39,7 @@ storiesOf('CheckboxGroup', module)
           <Checkbox value="3">复选框3</Checkbox>,
           <Checkbox value="4">复选框4</Checkbox>,
         ]}
-      >
-        <Checkbox value="1">复选框1</Checkbox>
-        <Checkbox value="2">复选框2</Checkbox>
-        <Checkbox value="3">复选框3</Checkbox>
-        <Checkbox value="4">复选框4</Checkbox>
-      </CheckboxGroup>
+      ></CheckboxGroup>
     </StoryLayout>
   ))
   .add('是否支持全选', () => (
