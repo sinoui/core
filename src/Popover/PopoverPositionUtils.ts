@@ -58,9 +58,11 @@ export function suitBorder(
   elementOffset: { vertical: number; horizontal: number },
   containerRect: { width: number; height: number },
   marginThreshold: number,
+  anchorRect: ClientRect,
 ) {
   let { left, top } = elementRect;
-  const { bottom, right } = elementRect;
+  const { height: anchorRectHeight } = anchorRect;
+  const { bottom, right, height } = elementRect;
   const heightThreshold = containerRect.height - marginThreshold;
   const widthThreshold = containerRect.width - marginThreshold;
   const transformOrigin = { ...elementOffset };
@@ -71,9 +73,8 @@ export function suitBorder(
     top -= diff;
     transformOrigin.vertical += diff;
   } else if (bottom > heightThreshold) {
-    const diff = bottom - heightThreshold;
-    top -= diff;
-    transformOrigin.vertical += diff;
+    top -= anchorRectHeight + height - 6; // 这里的6是为了解决outline模式下的样式
+    transformOrigin.vertical += anchorRectHeight + height;
   }
 
   // Check if the horizontal axis needs shifting

@@ -85,6 +85,7 @@ export default class PopoverPosition {
       targetOffset,
       containerRect,
       this.marginThreshold,
+      anchorRect,
     );
   }
 }
