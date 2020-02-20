@@ -79,12 +79,15 @@ function Menu(props: MenuProps) {
   const focus = useCallback(() => {
     if (menuListRef.current) {
       const focusedItems = getSelectedItems(menuListRef.current.children);
-      if (focusedItems.length === 1) {
-        (focusedItems[0] as any).focus();
-      } else {
-        focusedItems.forEach((item) => (item as any).focus());
+      if (focusedItems.length > 0) {
+        if (focusedItems.length === 1) {
+          (focusedItems[0] as any).focus();
+        } else {
+          focusedItems.forEach((item) => (item as any).focus());
+        }
+
+        return;
       }
-      return;
     }
 
     if (!preventAutoFocus) {

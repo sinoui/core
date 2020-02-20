@@ -209,16 +209,33 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
 
   const handleEnterKeyDown = useCallback(
     (event: any) => {
+      let newValue;
       if (!multiple) {
-        setValue(event.target.value);
-
         update(false, event);
-        if (onChange) {
-          onChange(event);
+      }
+
+      if (multiple) {
+        newValue = Array.isArray(value) ? [...value] : [];
+        const itemIndex = value.indexOf(event.target.value);
+        if (itemIndex === -1) {
+          newValue.push(event.target.value);
+        } else {
+          newValue.splice(itemIndex, 1);
         }
+      } else {
+        newValue = event.target.value;
+      }
+
+      setValue(newValue);
+      if (onChange) {
+        Object.defineProperty(event, 'target', {
+          writable: true,
+          value: { value: newValue, name },
+        });
+        onChange(event);
       }
     },
-    [multiple, onChange, update],
+    [multiple, name, onChange, update, value],
   );
 
   const handleItemClick = (child: any) => (event: any) => {
