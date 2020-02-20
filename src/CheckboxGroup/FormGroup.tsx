@@ -5,7 +5,8 @@ export const getFlexDirection = (props: FormGroupProps) =>
 
 export const gridLayoutCss = css<FormGroupProps>`
   > * {
-    width: ${(props) => 100 / props.columns}%;
+    width: ${(props) =>
+      props.columns && props.columns > 0 ? 100 / props.columns : 100 / 3}%;
   }
 `;
 
@@ -49,7 +50,7 @@ const FormGroup = styled.div<FormGroupProps>`
   display: flex;
   flex-direction: ${getFlexDirection};
   flex-wrap: wrap;
-  ${(props) => props.gridLayout && props.columns > 0 && gridLayoutCss};
+  ${(props) => props.gridLayout && gridLayoutCss};
 `;
 
 export default FormGroup;

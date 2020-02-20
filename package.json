@@ -45,19 +45,13 @@
   "peerDependencies": {
     "react": ">=16.8.0"
   },
-  "files": [
-    "dist",
-    "assets"
-  ],
+  "files": ["dist", "assets"],
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@babel/runtime": "^7.7.6",
     "@sinoui/ripple": "^1.0.10",
     "@sinoui/theme": "^0.3.3",
     "@types/classnames": "^2.2.9",
-    "@types/lodash": "^4.14.123",
-    "lodash": "^4.17.11",
-    "lodash.debounce": "^4.0.8",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {

@@ -5,8 +5,6 @@ import FormGroup from './FormGroup';
 import { toggleItem } from './arrays';
 import { removeUndefinedProperties } from './objects';
 import Checkbox, { CheckboxProps } from '../Checkbox';
-// import without from 'lodash/without';
-// import union from 'lodash/union';
 
 const PaddingRightStyle = css`
   > .sinoui-form-control-label .sinoui-form-control-label__title {
@@ -23,27 +21,27 @@ const FormGroupWrapper = styled(FormGroup)<{ column?: boolean }>`
 
 export interface CheckboxGroupProps {
   /**
-   * 子节点。一般为一组`Checkbox`或者`<input type="checkbox" />`之类的。
+   * 子节点。一般为一组`Checkbox`或者`<input type="checkbox" />`之类的
    */
   children: React.ReactNode;
   /**
-   * 复选框的值。/
+   * 复选框的值
    */
   value?: string[];
   /**
-   * 值发生变化事件。
+   * 值发生变化事件
    */
   onChange?: (value: string[]) => void;
   /**
-   * 复选框不可用。
+   * 复选框不可用
    */
   disabled?: boolean;
   /**
-   * 只读。
+   * 只读
    */
   readOnly?: boolean;
   /**
-   * 紧密模式。
+   * 紧密模式
    */
   dense?: boolean;
   /**
@@ -51,19 +49,19 @@ export interface CheckboxGroupProps {
    */
   labelPosition?: 'left' | 'right';
   /**
-   * 指定失去焦点事件监听器。
+   * 指定失去焦点事件监听器
    */
   onBlur?: () => void;
   /**
-   * 指定获取焦点事件监听器。
+   * 指定获取焦点事件监听器
    */
   onFocus?: () => void;
   /**
-   * 纵向显示。
+   * 纵向显示
    */
   column?: boolean;
   /**
-   * 指定额外的样式。
+   * 指定额外的样式
    */
   className?: string;
   /**
@@ -71,7 +69,7 @@ export interface CheckboxGroupProps {
    */
   style?: React.CSSProperties;
   /**
-   * 指定Checkbox的颜色。
+   * 指定Checkbox的颜色
    */
   color?: string;
   /**
@@ -103,9 +101,8 @@ export interface CheckboxGroupProps {
 }
 
 /**
- * 复选框组组件。不指定value属性时，此组件为非受控状态，自身维护选中状态。
+ * 复选框组组件。不指定value属性时，此组件为非受控状态，自身维护选中状态
  */
-
 function CheckboxGroup(props: CheckboxGroupProps) {
   const {
     children,
@@ -164,24 +161,20 @@ function CheckboxGroup(props: CheckboxGroupProps) {
     const items = getItemValues();
     if (selectedAll()) {
       if (!isControlled) {
-        // setValue(without(value, ...items));
         const val =
           value && value.filter((el: string) => items.indexOf(el) === -1);
         setValue(val);
       }
       if (props.onChange) {
-        // props.onChange(without(value, ...items));
         props.onChange([]);
       }
     } else {
       if (!isControlled) {
-        // setValue(union(value.concat(items)));
         const arr = new Set([...newValue, ...items]);
         const newArr = Array.from(arr);
         setValue(newArr);
       }
       if (props.onChange) {
-        // props.onChange(union(value.concat(items)));
         const arr = new Set([...newValue, ...items]);
         const newArr = Array.from(arr);
         props.onChange(newArr);

@@ -81,6 +81,24 @@ storiesOf('CheckboxGroup', module)
       </CheckboxGroup>
     </StoryLayout>
   ))
+  .add('网格对齐布局,默认3列', () => (
+    <StoryLayout>
+      <CheckboxGroup gridLayout>
+        <Checkbox value="1">复选框1</Checkbox>
+        <Checkbox value="2">复选框2</Checkbox>
+        <Checkbox value="3">复选框3</Checkbox>
+        <Checkbox value="4">复选框4</Checkbox>
+        <Checkbox value="5">复选框5</Checkbox>
+      </CheckboxGroup>
+      <CheckboxGroup gridLayout columns={4}>
+        <Checkbox value="1">复选框1</Checkbox>
+        <Checkbox value="2">复选框2</Checkbox>
+        <Checkbox value="3">复选框3</Checkbox>
+        <Checkbox value="4">复选框4</Checkbox>
+        <Checkbox value="5">复选框5</Checkbox>
+      </CheckboxGroup>
+    </StoryLayout>
+  ))
   .add('获取焦点事件监听器', () => (
     <StoryLayout>
       <CheckboxGroup onFocus={() => alert('获取焦点')}>
