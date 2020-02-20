@@ -98,6 +98,10 @@ export interface CheckboxGroupProps {
    * 是否支持全选
    */
   enableSelectAll?: boolean;
+  /**
+   * 相当于children
+   */
+  items?: [];
 }
 
 /**
@@ -115,6 +119,7 @@ function CheckboxGroup(props: CheckboxGroupProps) {
     onFocus,
     color,
     onChange,
+    items,
     ...rest
   } = props;
 
@@ -251,39 +256,39 @@ function CheckboxGroup(props: CheckboxGroupProps) {
     return selectAll;
   };
   const newValue = isControlled ? props.value : value;
+
+  const child = (checkbox: React.ReactElement<CheckboxProps<string>>) => {
+    if (React.isValidElement(checkbox)) {
+      const checkboxProps: any = removeUndefinedProperties({
+        checked:
+          newValue && newValue.indexOf(getCheckboxValue(checkbox.props)) !== -1,
+        onChange: (e: React.ChangeEvent<HTMLInputElement>, v: string) => {
+          if (checkbox.props.onChange) {
+            checkbox.props.onChange(e, v);
+          }
+          onCheckboxChange(e, checkbox.props.value);
+        },
+        labelPosition,
+        disabled: checkbox.props.disabled || disabled,
+        readOnly,
+        dense,
+        onBlur: !readOnly && onBlur,
+        onFocus: !readOnly && onFocus,
+        color,
+        key: checkbox.props.value,
+      });
+      return React.cloneElement(checkbox, checkboxProps);
+    }
+    return checkbox;
+  };
+
   return (
     <FormGroupWrapper
       {...rest}
       className={classNames('sinoui-checkbox-group', props.className)}
     >
       {renderSelectAll()}
-      {React.Children.map(
-        children,
-        (checkbox: React.ReactElement<CheckboxProps<string>>) => {
-          if (React.isValidElement(checkbox)) {
-            const checkboxProps: any = removeUndefinedProperties({
-              checked:
-                newValue &&
-                newValue.indexOf(getCheckboxValue(checkbox.props)) !== -1,
-              onChange: (e: React.ChangeEvent<HTMLInputElement>, v: string) => {
-                if (checkbox.props.onChange) {
-                  checkbox.props.onChange(e, v);
-                }
-                onCheckboxChange(e, checkbox.props.value);
-              },
-              labelPosition,
-              disabled: checkbox.props.disabled || disabled,
-              readOnly,
-              dense,
-              onBlur: !readOnly && onBlur,
-              onFocus: !readOnly && onFocus,
-              color,
-            });
-            return React.cloneElement(checkbox, checkboxProps);
-          }
-          return checkbox;
-        },
-      )}
+      {items ? items.map(child) : React.Children.map(children, child)}
     </FormGroupWrapper>
   );
 }

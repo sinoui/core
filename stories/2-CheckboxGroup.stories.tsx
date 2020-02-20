@@ -19,6 +19,34 @@ storiesOf('CheckboxGroup', module)
       </CheckboxGroup>
     </StoryLayout>
   ))
+  .add('基本复选框,没有value', () => (
+    <StoryLayout>
+      <CheckboxGroup onChange={(value) => alert(value)}>
+        <Checkbox value="1">复选框1</Checkbox>
+        <Checkbox value="2">复选框2</Checkbox>
+        <Checkbox value="3">复选框3</Checkbox>
+        <Checkbox value="4">复选框4</Checkbox>
+      </CheckboxGroup>
+    </StoryLayout>
+  ))
+  .add('存在items', () => (
+    <StoryLayout>
+      <CheckboxGroup
+        onChange={(value) => console.log(value)}
+        items={[
+          <Checkbox value="1">复选框1</Checkbox>,
+          <Checkbox value="2">复选框2</Checkbox>,
+          <Checkbox value="3">复选框3</Checkbox>,
+          <Checkbox value="4">复选框4</Checkbox>,
+        ]}
+      >
+        <Checkbox value="1">复选框1</Checkbox>
+        <Checkbox value="2">复选框2</Checkbox>
+        <Checkbox value="3">复选框3</Checkbox>
+        <Checkbox value="4">复选框4</Checkbox>
+      </CheckboxGroup>
+    </StoryLayout>
+  ))
   .add('是否支持全选', () => (
     <StoryLayout>
       <CheckboxGroup enableSelectAll onChange={(value) => console.log(value)}>
