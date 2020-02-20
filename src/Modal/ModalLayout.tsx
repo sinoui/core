@@ -21,7 +21,7 @@ const fullScreenCss = css`
  */
 const ModalLayout = styled.div<ModalLayoutProps>`
   ${(props) => props.fullScreen && fullScreenCss};
-  position: fixed;
+  position: absolute;
   display: flex;
   top: 0;
   left: 0;
