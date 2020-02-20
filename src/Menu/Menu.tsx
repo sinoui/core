@@ -43,6 +43,18 @@ export function syncWidth(anchorElement: HTMLElement, target?: HTMLElement) {
   }
 }
 
+function getSelectedItems(items?: HTMLCollection) {
+  const focusItem = [];
+  if (items) {
+    for (let i = 0; i < items.length; i += 1) {
+      if ((items[i] as any).selected) {
+        focusItem.push(items[i]);
+      }
+    }
+  }
+  return focusItem;
+}
+
 function Menu(props: MenuProps) {
   const {
     preventAutoFocus,
@@ -65,8 +77,13 @@ function Menu(props: MenuProps) {
   const PaperPropsStyle = paperProps.style || {};
 
   const focus = useCallback(() => {
-    if (menuListRef.current && menuListRef.current.selectedItem) {
-      (menuListRef.current.selectedItem as HTMLElement).focus();
+    if (menuListRef.current) {
+      const focusedItems = getSelectedItems(menuListRef.current.children);
+      if (focusedItems.length === 1) {
+        (focusedItems[0] as any).focus();
+      } else {
+        focusedItems.forEach((item) => (item as any).focus());
+      }
       return;
     }
 

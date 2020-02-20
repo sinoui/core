@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import Select, { Option } from '@sinoui/core/Select';
 import styled, { ThemeProvider } from 'styled-components';
-import { defaultTheme } from '@sinoui/theme';
+import {
+  defaultTheme,
+  createPalette,
+  createTheme,
+  colors,
+} from '@sinoui/theme';
 
 export default {
   title: 'Select',
@@ -12,8 +17,14 @@ const SelectField = styled(Select)`
   width: 200px;
 `;
 
+const theme = createTheme({
+  palette: createPalette({
+    primary: colors.purple, // 主色调
+  }),
+});
+
 function SimpleDemo() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('选项三');
 
   const onChange = (event: any) => {
     setValue(event.target.value);
@@ -315,7 +326,7 @@ export const 基础下拉框 = () => (
 );
 
 export const 多选下拉框 = () => (
-  <ThemeProvider theme={defaultTheme}>
+  <ThemeProvider theme={theme}>
     <MultipleSelectDemo />
   </ThemeProvider>
 );
