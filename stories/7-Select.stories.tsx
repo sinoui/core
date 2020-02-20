@@ -45,6 +45,7 @@ function SimpleDemo() {
           onChange={onChange}
           label="Required"
           required
+          allowClear
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
@@ -285,7 +286,13 @@ function MultipleSelectDemo() {
 
   return (
     <div style={{ marginLeft: 16, display: 'flex', alignItems: 'flex-start' }}>
-      <SelectField value={value} onChange={onChange} multiple label="Multiple">
+      <SelectField
+        value={value}
+        onChange={onChange}
+        multiple
+        label="Multiple"
+        allowClear
+      >
         <Option value="选项一">选项一</Option>
         <Option value="选项二">选项二</Option>
         <Option value="选项三">选项三</Option>

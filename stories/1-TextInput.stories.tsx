@@ -27,6 +27,7 @@ function SimpleInput() {
     <ThemeProvider theme={defaultTheme}>
       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <TextInputField
+          allowClear
           label="Required"
           onChange={onChange}
           value={value}

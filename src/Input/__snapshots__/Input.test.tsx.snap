@@ -59,6 +59,18 @@ exports[`正确渲染input 1`] = `
   box-shadow: none;
 }
 
+.c0 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__endcomponent {
+  display: none;
+}
+
 .c1 {
   color: rgba(0,0,0,0.87);
 }
@@ -189,6 +201,18 @@ exports[`渲染不可用的Input 1`] = `
   box-shadow: none;
 }
 
+.c0 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__endcomponent {
+  display: none;
+}
+
 .c1 {
   color: rgba(0,0,0,0.38);
 }
@@ -304,6 +328,18 @@ exports[`渲染密集模式下的Input 1`] = `
 
 .c0 > input:invalid {
   box-shadow: none;
+}
+
+.c0 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__endcomponent {
+  display: none;
 }
 
 .c1 {
@@ -437,6 +473,18 @@ exports[`渲染错误状态下的input 1`] = `
 
 .c0 > input:invalid {
   box-shadow: none;
+}
+
+.c0 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__endcomponent {
+  display: none;
 }
 
 .c1 {

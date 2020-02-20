@@ -152,6 +152,12 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
   const handleRef = useForkRef(ref, inputRefProp);
   const anchorElRef = useRef<HTMLDivElement | null>(null);
 
+  useEffect(() => {
+    if (valueProp !== value) {
+      setValue(valueProp);
+    }
+  }, [value, valueProp]);
+
   useImperativeHandle(
     handleRef,
     () => ({

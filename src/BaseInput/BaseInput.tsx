@@ -1,7 +1,8 @@
-import React, { ReactType, useCallback, useRef } from 'react';
+import React, { ReactType, useCallback, useRef, useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import Textarea from 'react-textarea-autosize';
+import { MdClear } from 'react-icons/md';
 import useMultiRefs from '../utils/useMultiRefs';
 
 export interface BaseInputProps {
@@ -106,6 +107,10 @@ export interface BaseInputProps {
    */
   fullWidth?: boolean;
   renderSuffix?: (state: any) => React.ReactNode;
+  /**
+   * 是否允许清除
+   */
+  allowClear?: boolean;
 }
 
 const inputStyle = css<{ disabled?: boolean }>`
@@ -153,7 +158,11 @@ const disabledStyle = css`
   opacity: 1;
 `;
 
-const BaseInputLayout = styled.div<{ disabled?: boolean; fullWidth?: boolean }>`
+const BaseInputLayout = styled.div<{
+  disabled?: boolean;
+  fullWidth?: boolean;
+  defaultShowClear?: boolean;
+}>`
   display: inline-flex;
   position: relative;
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
@@ -170,6 +179,20 @@ const BaseInputLayout = styled.div<{ disabled?: boolean; fullWidth?: boolean }>`
     padding: 6px 0 7px;
     ${inputStyle};
     ${(props) => props.disabled && disabledStyle};
+  }
+
+  > .sinoui-base-input__clear {
+    display: ${(props) => (props.defaultShowClear ? 'block' : 'none')};
+  }
+
+  &:hover {
+    > .sinoui-base-input__clear {
+      display: block;
+    }
+
+    > .sinoui-base-input__endcomponent {
+      display: none;
+    }
   }
 `;
 
@@ -204,6 +227,7 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
       renderSuffix,
       placeholder,
       readOnly,
+      allowClear,
       ...other
     } = props;
 
@@ -213,6 +237,16 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
       inputRefProp,
       inputPropsProp.ref as any,
     );
+
+    const isShowClear = useMemo(() => {
+      if (endComponent) {
+        return (
+          allowClear &&
+          (Array.isArray(props.value) ? props.value.length > 0 : !!props.value)
+        );
+      }
+      return allowClear && !!props.value;
+    }, [allowClear, endComponent, props.value]);
 
     const {
       onChange: onChangeInputProp,
@@ -290,6 +324,27 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
       [disabled, onClick, readOnly],
     );
 
+    const handleClear = useCallback(
+      (event: React.MouseEvent<HTMLOrSVGElement>) => {
+        event.preventDefault();
+        event.persist();
+        event.stopPropagation();
+        const newValue = Array.isArray(props.value) ? [] : '';
+        Object.defineProperty(event, 'target', {
+          writable: true,
+          value: { value: newValue },
+        });
+        if (onChangeProp) {
+          onChangeProp(event as any, newValue);
+        }
+
+        if (onChangeInputProp) {
+          onChangeInputProp(event as any);
+        }
+      },
+      [onChangeInputProp, onChangeProp, props.value],
+    );
+
     const InputComonent: ReactType = multiline ? StyleTextarea : inputComponent;
     const inputprops = {
       type,
@@ -316,11 +371,19 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
         data-testid="baseInput"
         ref={ref}
         onClick={handleClick}
+        defaultShowClear={!endComponent}
         {...other}
       >
         {startComponent}
         <InputComonent {...inputprops} />
-        {endComponent}
+        {isShowClear && (
+          <MdClear className="sinoui-base-input__clear" onClick={handleClear} />
+        )}
+        {endComponent
+          ? React.cloneElement(endComponent as any, {
+              className: 'sinoui-base-input__endcomponent',
+            })
+          : null}
         {renderSuffix && renderSuffix({ disabled, required })}
       </BaseInputLayout>
     );

@@ -63,6 +63,18 @@ exports[`渲染密集状态下填充模式的Input 1`] = `
   box-shadow: none;
 }
 
+.c0 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__endcomponent {
+  display: none;
+}
+
 .c1 {
   position: relative;
   background-color: rgba(0,0,0,0.09);

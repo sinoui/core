@@ -59,6 +59,18 @@ exports[`正确渲染BaseInput 1`] = `
   box-shadow: none;
 }
 
+.c0 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__endcomponent {
+  display: none;
+}
+
 <div
   className="c0 sinoui-base-input__layout"
   data-testid="baseInput"
@@ -130,6 +142,18 @@ exports[`渲染disabled属性下的BaseInput 1`] = `
 
 .c0 > input:invalid {
   box-shadow: none;
+}
+
+.c0 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__endcomponent {
+  display: none;
 }
 
 <div
@@ -207,6 +231,18 @@ exports[`渲染全宽模式下的BaseInput 1`] = `
   box-shadow: none;
 }
 
+.c0 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__endcomponent {
+  display: none;
+}
+
 <div
   className="c0 sinoui-base-input__layout"
   data-testid="baseInput"
@@ -278,6 +314,18 @@ exports[`渲染多行输入框 1`] = `
 
 .c0 > input:invalid {
   box-shadow: none;
+}
+
+.c0 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c0:hover > .sinoui-base-input__endcomponent {
+  display: none;
 }
 
 .c1 {

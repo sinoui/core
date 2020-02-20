@@ -55,6 +55,7 @@ export interface Props {
   helperText?: string;
   className?: string;
   required?: boolean;
+  allowClear?: boolean;
 }
 
 const Select = React.forwardRef<HTMLElement, Props>(function Select(

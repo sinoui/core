@@ -59,6 +59,18 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   box-shadow: none;
 }
 
+.c2 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c2:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c2:hover > .sinoui-base-input__endcomponent {
+  display: none;
+}
+
 .c5 {
   position: relative;
   background-color: rgba(0,0,0,0.09);
@@ -442,6 +454,18 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 
 .c2 > input:invalid {
   box-shadow: none;
+}
+
+.c2 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c2:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c2:hover > .sinoui-base-input__endcomponent {
+  display: none;
 }
 
 .c6 {
@@ -860,6 +884,18 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 
 .c2 > input:invalid {
   box-shadow: none;
+}
+
+.c2 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c2:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c2:hover > .sinoui-base-input__endcomponent {
+  display: none;
 }
 
 .c6 {
@@ -1282,6 +1318,18 @@ exports[`渲染有错误提示的输入框 1`] = `
 
 .c2 > input:invalid {
   box-shadow: none;
+}
+
+.c2 > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c2:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c2:hover > .sinoui-base-input__endcomponent {
+  display: none;
 }
 
 .c6 {
