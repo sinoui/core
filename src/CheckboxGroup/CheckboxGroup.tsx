@@ -128,7 +128,7 @@ function CheckboxGroup(props: CheckboxGroupProps) {
 
   const [value, setValue] = useState(!isControlled && (valueProp || []));
 
-  function getCheckboxValue<T>(props: CheckboxProps<T>): T {
+  function getCheckboxValue<T>(props: CheckboxProps<T>) {
     if (props.value) {
       return props.value;
     }
@@ -161,27 +161,27 @@ function CheckboxGroup(props: CheckboxGroupProps) {
    * @memberof CheckboxGroup
    */
   const onSelectAllClick = (event: React.MouseEvent<HTMLElement>) => {
-    const newValue = isControlled ? props.value : value;
+    const newValue: any = isControlled ? props.value : value;
+
     event.stopPropagation();
     const items = getItemValues();
     if (selectedAll()) {
+      const val: string[] =
+        newValue && newValue.filter((el: string) => items.indexOf(el) === -1);
+
       if (!isControlled) {
-        const val =
-          value && value.filter((el: string) => items.indexOf(el) === -1);
         setValue(val);
       }
       if (props.onChange) {
-        props.onChange([]);
+        props.onChange(val);
       }
     } else {
+      const arr = new Set([...newValue, ...items]);
+      const newArr = Array.from(arr);
       if (!isControlled) {
-        const arr = new Set([...newValue, ...items]);
-        const newArr = Array.from(arr);
         setValue(newArr);
       }
       if (props.onChange) {
-        const arr = new Set([...newValue, ...items]);
-        const newArr = Array.from(arr);
         props.onChange(newArr);
       }
     }
@@ -207,9 +207,12 @@ function CheckboxGroup(props: CheckboxGroupProps) {
    */
   function onCheckboxChange(
     event: React.ChangeEvent<HTMLInputElement>,
-    checkboxValue: T,
+    checkboxValue: string,
   ) {
-    const val = toggleItem<T>(isControlled ? valueProp : value, checkboxValue);
+    const val = toggleItem<any>(
+      isControlled ? valueProp : value,
+      checkboxValue,
+    );
 
     if (props.readOnly) {
       return;
@@ -262,7 +265,7 @@ function CheckboxGroup(props: CheckboxGroupProps) {
 
   const child = (checkbox: React.ReactElement<CheckboxProps<string>>) => {
     if (React.isValidElement(checkbox)) {
-      const checkboxProps: any = removeUndefinedProperties({
+      const checkboxProps = removeUndefinedProperties({
         checked:
           newValue && newValue.indexOf(getCheckboxValue(checkbox.props)) !== -1,
         onChange: (e: React.ChangeEvent<HTMLInputElement>, v: string) => {

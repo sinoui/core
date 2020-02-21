@@ -1,6 +1,6 @@
 import React from 'react';
-import Checkbox from '@sinoui/core/Checkbox';
-import { CheckboxGroup } from '@sinoui/core/CheckboxGroup';
+import Checkbox from '../src/Checkbox';
+import { CheckboxGroup } from '../src/CheckboxGroup';
 import { storiesOf } from '@storybook/react';
 import StoryLayout from './StoryLayout';
 
@@ -11,7 +11,10 @@ export default {
 storiesOf('CheckboxGroup', module)
   .add('基本复选框', () => (
     <StoryLayout>
-      <CheckboxGroup onChange={(value) => alert(value)} value="3">
+      <CheckboxGroup
+        onChange={(value) => console.log(value)}
+        value={['2', '3']}
+      >
         <Checkbox value="1">复选框1</Checkbox>
         <Checkbox value="2">复选框2</Checkbox>
         <Checkbox value="3">复选框3</Checkbox>
@@ -21,7 +24,7 @@ storiesOf('CheckboxGroup', module)
   ))
   .add('基本复选框,没有value', () => (
     <StoryLayout>
-      <CheckboxGroup onChange={(value) => alert(value)}>
+      <CheckboxGroup onChange={(value) => console.log(value)}>
         <Checkbox value="1">复选框1</Checkbox>
         <Checkbox value="2">复选框2</Checkbox>
         <Checkbox value="3">复选框3</Checkbox>

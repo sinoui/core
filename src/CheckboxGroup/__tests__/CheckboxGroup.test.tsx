@@ -54,7 +54,7 @@ describe('CheckboxGroup 单元测试', () => {
   test('是否支持全选，全部选中', async () => {
     const { container } = render(
       <TestWrapper>
-        <CheckboxGroup enableSelectAll value="1,2,3">
+        <CheckboxGroup enableSelectAll value={['1', '2', '3']}>
           <Checkbox value="1">复选框</Checkbox>
           <Checkbox value="2">复选框2</Checkbox>
           <Checkbox value="3">复选框3</Checkbox>
@@ -76,7 +76,7 @@ describe('CheckboxGroup 单元测试', () => {
   test('是否支持全选，未全部选中', async () => {
     const { container } = render(
       <TestWrapper>
-        <CheckboxGroup enableSelectAll value="1,2">
+        <CheckboxGroup enableSelectAll value={['1', '2']}>
           <Checkbox value="1">复选框</Checkbox>
           <Checkbox value="2">复选框2</Checkbox>
           <Checkbox value="3">复选框3</Checkbox>
