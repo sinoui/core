@@ -100,6 +100,9 @@ const denseRippleConfig = {
   fixSize: true,
 };
 
+/**
+ * 按钮容器组件
+ */
 export default function BaseToggleButton(props: Props) {
   const ref = useRipple<HTMLDivElement>(
     props.dense ? denseRippleConfig : rippleConfig,

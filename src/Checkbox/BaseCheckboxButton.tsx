@@ -78,6 +78,9 @@ const checkedCheckboxIcon = <CheckBox />;
 const checkboxIcon = <CheckBoxOutlineBlank />;
 const indeterminateCheckboxIcon = <IndeterminateCheckBoxIcon />;
 
+/**
+ * 复选框按钮
+ */
 export default function BaseCheckboxButton(props: Props) {
   const {
     checked,

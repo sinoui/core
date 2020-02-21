@@ -1,3 +1,4 @@
 import CheckboxGroup, { CheckboxGroupProps } from './CheckboxGroup';
 
-export { CheckboxGroup, CheckboxGroupProps };
+export { CheckboxGroupProps };
+export default CheckboxGroup;

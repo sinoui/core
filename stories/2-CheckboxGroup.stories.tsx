@@ -1,6 +1,6 @@
 import React from 'react';
 import Checkbox from '../src/Checkbox';
-import { CheckboxGroup } from '../src/CheckboxGroup';
+import CheckboxGroup from '../src/CheckboxGroup';
 import { storiesOf } from '@storybook/react';
 import StoryLayout from './StoryLayout';
 
@@ -117,6 +117,17 @@ storiesOf('CheckboxGroup', module)
         <Checkbox value="5">复选框5</Checkbox>
       </CheckboxGroup>
       <CheckboxGroup gridLayout columns={4}>
+        <Checkbox value="1">复选框1</Checkbox>
+        <Checkbox value="2">复选框2</Checkbox>
+        <Checkbox value="3">复选框3</Checkbox>
+        <Checkbox value="4">复选框4</Checkbox>
+        <Checkbox value="5">复选框5</Checkbox>
+      </CheckboxGroup>
+    </StoryLayout>
+  ))
+  .add('是否是紧缩型', () => (
+    <StoryLayout>
+      <CheckboxGroup dense>
         <Checkbox value="1">复选框1</Checkbox>
         <Checkbox value="2">复选框2</Checkbox>
         <Checkbox value="3">复选框3</Checkbox>

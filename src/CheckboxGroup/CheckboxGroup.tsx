@@ -41,7 +41,7 @@ export interface CheckboxGroupProps {
    */
   readOnly?: boolean;
   /**
-   * 紧密模式
+   * 是否是紧缩型
    */
   dense?: boolean;
   /**
