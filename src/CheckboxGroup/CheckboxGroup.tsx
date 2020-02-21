@@ -19,19 +19,19 @@ const FormGroupWrapper = styled(FormGroup)<{ column?: boolean }>`
   ${(props) => !props.column && PaddingRightStyle};
 `;
 
-export interface CheckboxGroupProps {
+export interface CheckboxGroupProps<T> {
   /**
    * 子节点。一般为一组`Checkbox`或者`<input type="checkbox" />`之类的
    */
-  children: React.ReactNode;
+  children?: React.ReactNode | any;
   /**
    * 复选框的值
    */
-  value?: string[];
+  value?: T[];
   /**
    * 值发生变化事件
    */
-  onChange?: (value: string[]) => void;
+  onChange?: (value: T[]) => void;
   /**
    * 复选框不可用
    */
@@ -101,13 +101,13 @@ export interface CheckboxGroupProps {
   /**
    * 相当于children
    */
-  items?: [];
+  items?: React.ReactElement<CheckboxProps<T>>[];
 }
 
 /**
  * 复选框组组件。不指定value属性时，此组件为非受控状态，自身维护选中状态
  */
-function CheckboxGroup(props: CheckboxGroupProps) {
+function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
   const {
     children,
     value: valueProp,
@@ -128,13 +128,12 @@ function CheckboxGroup(props: CheckboxGroupProps) {
 
   const [value, setValue] = useState(!isControlled && (valueProp || []));
 
-  function getCheckboxValue<T>(props: CheckboxProps<T>) {
+  function getCheckboxValue(props: any) {
     if (props.value) {
       return props.value;
     }
     if (props.children && typeof props.children === 'string') {
-      // tslint:disable-next-line:no-any
-      return props.children as any;
+      return props.children;
     }
     return undefined;
   }
@@ -143,7 +142,6 @@ function CheckboxGroup(props: CheckboxGroupProps) {
    *获取所有子元素的值
    *
    * @private
-   * @returns {any[]}
    * @memberof CheckboxGroup
    */
   const getItemValues = () => {
@@ -166,8 +164,8 @@ function CheckboxGroup(props: CheckboxGroupProps) {
     event.stopPropagation();
     const items = getItemValues();
     if (selectedAll()) {
-      const val: string[] =
-        newValue && newValue.filter((el: string) => items.indexOf(el) === -1);
+      const val: T[] =
+        newValue && newValue.filter((el: T) => items.indexOf(el) === -1);
 
       if (!isControlled) {
         setValue(val);
@@ -205,14 +203,12 @@ function CheckboxGroup(props: CheckboxGroupProps) {
    * @returns
    * @memberof CheckboxGroup
    */
-  function onCheckboxChange(
+  function onCheckboxChange<T>(
     event: React.ChangeEvent<HTMLInputElement>,
-    checkboxValue: string,
+    checkboxValue: T,
   ) {
-    const val = toggleItem<any>(
-      isControlled ? valueProp : value,
-      checkboxValue,
-    );
+    const el: any = isControlled ? valueProp : value;
+    const val: any = toggleItem<T>(el, checkboxValue);
 
     if (props.readOnly) {
       return;
@@ -263,9 +259,9 @@ function CheckboxGroup(props: CheckboxGroupProps) {
   };
   const newValue = isControlled ? props.value : value;
 
-  const child = (checkbox: React.ReactElement<CheckboxProps<string>>) => {
+  const child = (checkbox: React.ReactElement<CheckboxProps<T>>) => {
     if (React.isValidElement(checkbox)) {
-      const checkboxProps = removeUndefinedProperties({
+      const checkboxProps: any = removeUndefinedProperties({
         checked:
           newValue && newValue.indexOf(getCheckboxValue(checkbox.props)) !== -1,
         onChange: (e: React.ChangeEvent<HTMLInputElement>, v: string) => {
