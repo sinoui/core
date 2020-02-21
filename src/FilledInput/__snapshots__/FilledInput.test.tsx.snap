@@ -72,7 +72,7 @@ exports[`渲染密集状态下填充模式的Input 1`] = `
 }
 
 .c0:hover > .sinoui-base-input__endcomponent {
-  display: none;
+  display: block;
 }
 
 .c1 {

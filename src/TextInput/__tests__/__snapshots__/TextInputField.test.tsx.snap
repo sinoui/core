@@ -68,7 +68,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 }
 
 .c2:hover > .sinoui-base-input__endcomponent {
-  display: none;
+  display: block;
 }
 
 .c5 {
@@ -465,7 +465,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 }
 
 .c2:hover > .sinoui-base-input__endcomponent {
-  display: none;
+  display: block;
 }
 
 .c6 {
@@ -895,7 +895,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 }
 
 .c2:hover > .sinoui-base-input__endcomponent {
-  display: none;
+  display: block;
 }
 
 .c6 {
@@ -1329,7 +1329,7 @@ exports[`渲染有错误提示的输入框 1`] = `
 }
 
 .c2:hover > .sinoui-base-input__endcomponent {
-  display: none;
+  display: block;
 }
 
 .c6 {

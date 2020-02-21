@@ -68,7 +68,7 @@ exports[`正确渲染input 1`] = `
 }
 
 .c0:hover > .sinoui-base-input__endcomponent {
-  display: none;
+  display: block;
 }
 
 .c1 {
@@ -210,7 +210,7 @@ exports[`渲染不可用的Input 1`] = `
 }
 
 .c0:hover > .sinoui-base-input__endcomponent {
-  display: none;
+  display: block;
 }
 
 .c1 {
@@ -339,7 +339,7 @@ exports[`渲染密集模式下的Input 1`] = `
 }
 
 .c0:hover > .sinoui-base-input__endcomponent {
-  display: none;
+  display: block;
 }
 
 .c1 {
@@ -484,7 +484,7 @@ exports[`渲染错误状态下的input 1`] = `
 }
 
 .c0:hover > .sinoui-base-input__endcomponent {
-  display: none;
+  display: block;
 }
 
 .c1 {
