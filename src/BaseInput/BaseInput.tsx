@@ -162,6 +162,7 @@ const BaseInputLayout = styled.div<{
   disabled?: boolean;
   fullWidth?: boolean;
   defaultShowClear?: boolean;
+  isShowClear?: boolean;
 }>`
   display: inline-flex;
   position: relative;
@@ -191,7 +192,7 @@ const BaseInputLayout = styled.div<{
     }
 
     > .sinoui-base-input__endcomponent {
-      display: none;
+      display: ${(props) => (props.isShowClear ? 'none' : 'block')};
     }
   }
 `;
@@ -372,6 +373,7 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
         ref={ref}
         onClick={handleClick}
         defaultShowClear={!endComponent}
+        isShowClear={isShowClear}
         {...other}
       >
         {startComponent}
