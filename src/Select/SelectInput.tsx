@@ -17,7 +17,7 @@ export interface Props {
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
-  inputRef: any;
+  inputRef?: any;
   labelId?: string;
   MenuProps?: any;
   multiple?: boolean;
@@ -375,7 +375,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       <SelectLayout
         className={classNames('sinoui-select-layout', className)}
         ref={anchorElRef}
-        data-mui-test="SelectDisplay"
+        data-testid="SelectDisplay"
         tabIndex={tabIndex as any}
         role="button"
         variant={variant}

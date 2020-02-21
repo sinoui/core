@@ -144,3 +144,17 @@ it('点击获取焦点', () => {
 
   expect(handleFocus).toBeCalled();
 });
+
+it('点击清除按钮,onChnage被调用', () => {
+  const onChange = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <BaseInput onChange={onChange} allowClear value="123" />
+    </ThemeProvider>,
+  );
+  act(() => {
+    fireEvent.click(getByTestId('clearIcon'));
+  });
+
+  expect(onChange).toHaveBeenCalled();
+});

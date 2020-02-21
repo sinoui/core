@@ -55,6 +55,18 @@ it('渲染密集模式下的Input', () => {
   expect(tree).toMatchSnapshot();
 });
 
+it('渲染支持清除功能的input', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <Input allowClear value="123" />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
 it('获取焦点和失去焦点时，样式类的切换', () => {
   const onFocus = jest.fn();
   const onFocusInputProp = jest.fn();

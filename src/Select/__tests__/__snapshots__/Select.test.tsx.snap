@@ -1,0 +1,832 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染三种模式下的下拉选择框 1`] = `
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  line-height: 1.1875rem;
+}
+
+.c3 > input {
+  padding: 6px 0 7px;
+  border: 0px;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: rgba(0,0,0,0.87);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: block;
+  min-width: 0px;
+  width: 100%;
+  height: 1.1875rem;
+}
+
+.c3 > input::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 > input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 > input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 > input::-ms-clear {
+  display: none;
+}
+
+.c3 > input:focus {
+  outline: 0;
+}
+
+.c3 > input:invalid {
+  box-shadow: none;
+}
+
+.c3 > .sinoui-base-input__clear {
+  display: none;
+}
+
+.c3:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c3:hover > .sinoui-base-input__endcomponent {
+  display: block;
+}
+
+.c7 {
+  position: relative;
+  background-color: rgba(0,0,0,0.09);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c7:hover {
+  background-color: rgba(0,0,0,0.13);
+  cursor: pointer;
+}
+
+.c7::after {
+  background-color: #303f9f;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(0) scaleY(0);
+  -ms-transform: scaleX(0) scaleY(0);
+  transform: scaleX(0) scaleY(0);
+}
+
+.c7::before {
+  background-color: rgba(0,0,0,0.42);
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(1) scaleY(1);
+  -ms-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+}
+
+.c7:hover::before {
+  background-color: rgba(0,0,0,0.87);
+}
+
+.c7 > input,
+.c7 > textarea {
+  padding: 27px 12px 10px;
+}
+
+.c12 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c13 {
+  text-align: left;
+  padding: 0;
+  line-height: 11px;
+  -webkit-transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c10 {
+  position: relative;
+  border-radius: 4px;
+}
+
+.c10 > fieldset {
+  border-color: rgba(0,0,0,0.23);
+}
+
+.c10:hover > fieldset {
+  border-color: rgba(0,0,0,0.87);
+}
+
+.c10 > input,
+.c10 > textarea {
+  padding: 18.5px 14px;
+}
+
+.c2 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.54);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c6 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.54);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c9 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.54);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transform: translate(14px,20px) scale(1);
+  -ms-transform: translate(14px,20px) scale(1);
+  transform: translate(14px,20px) scale(1);
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c4 {
+  color: rgba(0,0,0,0.87);
+}
+
+.c4::after {
+  background-color: #303f9f;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(0) scaleY(0);
+  -ms-transform: scaleX(0) scaleY(0);
+  transform: scaleX(0) scaleY(0);
+}
+
+.c4::before {
+  background-color: rgba(0,0,0,0.42);
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(1) scaleY(1);
+  -ms-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+}
+
+.c4:hover::before {
+  background-color: rgba(0,0,0,0.87);
+  height: 2px;
+}
+
+label ~ .c4 {
+  margin-top: 16px;
+}
+
+.c4::before,
+.c4::after {
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  font-size: 0px;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0px;
+  padding: 0;
+  margin: 0;
+  border: 0px;
+  position: relative;
+}
+
+.c5 {
+  min-width: 160px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 6px 0 7px;
+  height: 1.1875rem;
+  width: 100%;
+  cursor: pointer;
+  border: 0px;
+  box-sizing: content-box;
+  background: transparent;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  border-radius: 0;
+  outline: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.c5:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+.c5::-ms-expand {
+  display: none;
+}
+
+.c8 {
+  min-width: 160px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 6px 0 7px;
+  height: 1.1875rem;
+  width: 100%;
+  cursor: pointer;
+  border: 0px;
+  box-sizing: content-box;
+  background: transparent;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  border-radius: 0;
+  outline: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 27px 0px 10px 12px;
+}
+
+.c8:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+.c8::-ms-expand {
+  display: none;
+}
+
+.c11 {
+  min-width: 160px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 6px 0 7px;
+  height: 1.1875rem;
+  width: 100%;
+  cursor: pointer;
+  border: 0px;
+  box-sizing: content-box;
+  background: transparent;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  border-radius: 0;
+  outline: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 18.5px 0px 18.5px 14px;
+}
+
+.c11:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+.c11::-ms-expand {
+  display: none;
+}
+
+.c1 .sinoui-base-input__layout > svg {
+  font-size: 24px;
+}
+
+<div>
+  <div
+    className="c0 c1 sinoui-select-base-layout"
+  >
+    <label
+      className="c2 sinoui-input-label"
+    >
+      Required
+    </label>
+    <div
+      className="c3 sinoui-base-input__layout c4 sinoui-input"
+      data-testid="baseInput"
+      onClick={[Function]}
+      value={Array []}
+    >
+      <div
+        aria-haspopup="listbox"
+        aria-labelledby=""
+        className="c5 sinoui-select-layout"
+        data-testid="SelectDisplay"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <span>
+          ​
+        </span>
+      </div>
+      <input
+        multiline={false}
+        type="hidden"
+      />
+      <svg
+        className="sinoui-base-input__endcomponent"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="c0 c1 sinoui-select-base-layout"
+  >
+    <label
+      className="c6 sinoui-input-label sinoui-input-label--filled"
+    >
+      Required
+    </label>
+    <div
+      className="c3 sinoui-base-input__layout c7 sinoui-filled-input"
+      data-testid="baseInput"
+      onClick={[Function]}
+    >
+      <div
+        aria-haspopup="listbox"
+        aria-labelledby=""
+        className="c8 sinoui-select-layout"
+        data-testid="SelectDisplay"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <span>
+          ​
+        </span>
+      </div>
+      <input
+        multiline={false}
+        type="hidden"
+      />
+      <svg
+        className="sinoui-base-input__endcomponent"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="c0 c1 sinoui-select-base-layout"
+  >
+    <label
+      className="c9 sinoui-input-label sinoui-input-label--outlined"
+    >
+      Required
+    </label>
+    <div
+      className="c3 sinoui-base-input__layout c10 sinoui-outlined-input"
+      data-testid="baseInput"
+      onClick={[Function]}
+    >
+      <div
+        aria-haspopup="listbox"
+        aria-labelledby=""
+        className="c11 sinoui-select-layout"
+        data-testid="SelectDisplay"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <span>
+          ​
+        </span>
+      </div>
+      <input
+        multiline={false}
+        type="hidden"
+      />
+      <svg
+        className="sinoui-base-input__endcomponent"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+      <fieldset
+        aria-hidden={true}
+        className="c12"
+        style={
+          Object {
+            "paddingLeft": 8,
+          }
+        }
+      >
+        <legend
+          className="c13"
+          style={
+            Object {
+              "width": 0.01,
+            }
+          }
+        >
+          <span>
+            ​
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`渲染不可用的下拉框 1`] = `
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  cursor: default;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  line-height: 1.1875rem;
+}
+
+.c3 > input {
+  padding: 6px 0 7px;
+  border: 0px;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: rgba(0,0,0,0.38);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: block;
+  min-width: 0px;
+  width: 100%;
+  height: 1.1875rem;
+  opacity: 1;
+}
+
+.c3 > input::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 > input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 > input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 > input::-ms-clear {
+  display: none;
+}
+
+.c3 > input:focus {
+  outline: 0;
+}
+
+.c3 > input:invalid {
+  box-shadow: none;
+}
+
+.c3 > .sinoui-base-input__clear {
+  display: none;
+}
+
+.c3:hover > .sinoui-base-input__clear {
+  display: block;
+}
+
+.c3:hover > .sinoui-base-input__endcomponent {
+  display: block;
+}
+
+.c2 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.54);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  color: rgba(0,0,0,0.38);
+}
+
+.c4 {
+  color: rgba(0,0,0,0.38);
+}
+
+.c4::before {
+  background-color: rgba(0,0,0,0.42);
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(1) scaleY(1);
+  -ms-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+}
+
+.c4::before {
+  background: transparent;
+  background-image: linear-gradient( to right,rgba(0,0,0,0.42) 33%,transparent 0% );
+  background-position: left top;
+  background-repeat: repeat-x;
+  background-size: 5px 1px;
+}
+
+label ~ .c4 {
+  margin-top: 16px;
+}
+
+.c4::before,
+.c4::after {
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  font-size: 0px;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0px;
+  padding: 0;
+  margin: 0;
+  border: 0px;
+  position: relative;
+}
+
+.c5 {
+  min-width: 160px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 6px 0 7px;
+  height: 1.1875rem;
+  width: 100%;
+  cursor: pointer;
+  border: 0px;
+  box-sizing: content-box;
+  background: transparent;
+  font-size: 1rem;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  border-radius: 0;
+  outline: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: default;
+}
+
+.c5:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+.c5::-ms-expand {
+  display: none;
+}
+
+.c1 .sinoui-base-input__layout > svg {
+  font-size: 24px;
+}
+
+<div
+  className="c0 c1 sinoui-select-base-layout"
+>
+  <label
+    className="c2 sinoui-input-label sinoui-input-label--disabled"
+    disabled={true}
+  >
+    Required
+  </label>
+  <div
+    className="c3 sinoui-base-input__layout c4 sinoui-input sinoui-input--disabled"
+    data-testid="baseInput"
+    disabled={true}
+    onClick={[Function]}
+  >
+    <div
+      aria-haspopup="listbox"
+      aria-labelledby=""
+      className="c5 sinoui-select-layout"
+      data-testid="SelectDisplay"
+      disabled={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={null}
+      role="button"
+      tabIndex={null}
+    >
+      <span>
+        ​
+      </span>
+    </div>
+    <input
+      multiline={false}
+      type="hidden"
+    />
+    <svg
+      className="sinoui-base-input__endcomponent"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+</div>
+`;

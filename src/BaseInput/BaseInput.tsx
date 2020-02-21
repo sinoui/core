@@ -379,7 +379,11 @@ export default React.forwardRef<HTMLDivElement, BaseInputProps>(
         {startComponent}
         <InputComonent {...inputprops} />
         {isShowClear && (
-          <MdClear className="sinoui-base-input__clear" onClick={handleClear} />
+          <MdClear
+            className="sinoui-base-input__clear"
+            onClick={handleClear}
+            data-testid="clearIcon"
+          />
         )}
         {endComponent
           ? React.cloneElement(endComponent as any, {

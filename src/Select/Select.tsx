@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useCallback,
-  useMemo,
-  useEffect,
-  useRef,
-} from 'react';
+import React, { useState, useCallback } from 'react';
 import { MdArrowDropDown } from 'react-icons/md';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
@@ -69,7 +63,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     input,
     inputProps,
     label,
-    labelWidth: labelWidthProp = 0,
+    labelWidth = 0,
     MenuProps,
     multiple = false,
     onClose: onCloseProp,
@@ -88,25 +82,6 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
 
   const [open, setOpen] = useState(openProp ?? false);
   const [focused, setFocused] = useState(false);
-  const [labelWidth, setLabelWidth] = useState(labelWidthProp);
-  const labelRef = useRef<HTMLLabelElement | null>(null);
-
-  const shrink = useMemo(() => {
-    return focused || (Array.isArray(value) ? value.length > 0 : !!value);
-  }, [focused, value]);
-
-  const shrinkRef = useRef(shrink);
-
-  useEffect(() => {
-    if (labelWidthProp) {
-      setLabelWidth(labelWidthProp);
-      return;
-    }
-    if (labelRef && labelRef.current) {
-      const { width } = labelRef.current.getBoundingClientRect();
-      setLabelWidth(width / (shrinkRef.current ? 0.75 : 1));
-    }
-  }, [labelWidthProp, shrink]);
 
   const inputComponent = SelectInput;
 
