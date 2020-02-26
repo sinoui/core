@@ -42,7 +42,7 @@ storiesOf('Typography', module)
       <H1 as="h2">H1</H1>
       <H1 align="center">H1</H1>
       <H1 noWrap>H1</H1>
-      <H1 color="secondary">H1</H1>
+      <H1 color="success">H1</H1>
       <H1 gutterBottom>H1</H1>
       <H1>H1</H1>
       <Body2>Body2</Body2>

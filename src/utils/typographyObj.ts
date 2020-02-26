@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getColorFromTheme } from './color';
 
 /**
  * 文本对齐方式
@@ -38,7 +39,7 @@ export const Text = styled.div.attrs((props: TextProps) => ({
   textAlign: textAlignWrapper(props),
   whiteSpace: props.noWrap && 'nowrap',
   marginBottom: marginBottomWrapper(props),
-  color: props.theme.palette.text[props.color || 'textPrimary'],
+  color: getColorFromTheme(props, props.theme.palette.text.primary),
 }));
 
 /**
