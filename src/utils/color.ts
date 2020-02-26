@@ -24,6 +24,11 @@ function isColorTypeTrue(
   return props.color === colorType;
 }
 
+const isColor = (props: { theme?: Theme }, colorType: string) => {
+  const { main } = props.theme && props.theme.palette[colorType];
+  return main;
+};
+
 /**
  * 获取主题中的颜色
  */
@@ -35,15 +40,13 @@ export function getColorFromTheme(
     return defaultColor;
   }
 
-  console.log(props.theme.palette.primary, props.theme.palette.primary.main);
-
   let color = defaultColor;
   if (props.theme) {
     if (isColorTypeTrue(props, 'primary')) {
-      color = props.theme.palette.primary[500];
+      color = isColor(props, 'primary');
     }
     if (isColorTypeTrue(props, 'secondary')) {
-      color = props.theme.palette.secondary[500];
+      color = isColor(props, 'secondary');
     }
     if (isColorTypeTrue(props, 'textPrimary')) {
       color = props.theme.palette.text.primary;
@@ -52,16 +55,16 @@ export function getColorFromTheme(
       color = props.theme.palette.text.secondary;
     }
     if (isColorTypeTrue(props, 'error')) {
-      color = props.theme.palette.error[600];
+      color = isColor(props, 'error');
     }
     if (isColorTypeTrue(props, 'warning')) {
-      color = props.theme.palette.warning[500];
+      color = isColor(props, 'warning');
     }
     if (isColorTypeTrue(props, 'success')) {
-      color = props.theme.palette.success.A700;
+      color = isColor(props, 'success');
     }
     if (isColorTypeTrue(props, 'info')) {
-      color = props.theme.palette.info[500];
+      color = isColor(props, 'info');
     }
   }
   return color;

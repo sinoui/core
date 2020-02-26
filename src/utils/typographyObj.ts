@@ -83,6 +83,10 @@ export interface TextProps {
    */
   color?: string;
   /**
+   * 引用元素
+   */
+  ref?: React.RefObject<HTMLInputElement>;
+  /**
    * 命名className
    */
   type?: string;

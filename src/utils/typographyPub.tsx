@@ -57,11 +57,11 @@ export const TextContent = React.forwardRef((props: TextProps, ref) => {
   );
 });
 
-export const typographyPub = (label: string, type: string) => {
+export function typographyPub(label: string, type: string) {
   return (Text: any) => {
-    const wrapper = (props: TextProps) => {
-      return <Text as={label} type={type} {...props} />;
+    const wrapper = ({ ...props }) => {
+      return <Text as={label} type={type} ref={props.ref} {...props} />;
     };
     return wrapper;
   };
-};
+}
