@@ -3,13 +3,13 @@ import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import '@testing-library/jest-dom/extend-expect';
-import Card from './Card';
+import CardPrimaryAction from './CardPrimaryAction';
 
-it('正确渲染Card', () => {
+it('正确渲染CardPrimaryAction', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Card>文本</Card>
+        <CardPrimaryAction>文本</CardPrimaryAction>
       </ThemeProvider>,
     )
     .toJSON();

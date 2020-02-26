@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染CardHeader 1`] = `
+<div
+  className="CardHeader__CardHeaderWrapper-sc-3c49dw-0 dDOLOj"
+>
+  <div
+    className="card-header-avatar"
+  />
+  <div
+    className="card-header-content"
+  >
+    <div
+      className="card-header-title"
+    >
+      Shrimp and Chorizo Paella
+    </div>
+    <div
+      className="card-header-subheader"
+    >
+      subheader
+    </div>
+  </div>
+  <div
+    className="card-header-action"
+  />
+</div>
+`;

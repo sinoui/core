@@ -3,13 +3,16 @@ import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import '@testing-library/jest-dom/extend-expect';
-import Card from './Card';
+import CardMedia from './CardMedia';
 
-it('正确渲染Card', () => {
+const mediaImgUrl =
+  'https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg';
+
+it('正确渲染CardHeader', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Card>文本</Card>
+        <CardMedia imageUrl={mediaImgUrl} wide />
       </ThemeProvider>,
     )
     .toJSON();

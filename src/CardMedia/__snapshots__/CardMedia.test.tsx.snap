@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染CardHeader 1`] = `
+<div
+  className="CardMedia__CardMediaWrapper-bhn9ot-0 ewfOku sinoui-card__media sinoui-card__media--16-9"
+/>
+`;

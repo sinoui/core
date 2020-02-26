@@ -14,7 +14,7 @@ export interface CardProps {
   className?: string;
   style?: React.CSSProperties;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  as?: any;
+  as?: React.ReactType;
 }
 const StyledCard = styled.div<CardProps>`
   ${({ theme, elevation = 1, outlined = false }) =>
