@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染Card 1`] = `
+<div
+  className="Card__StyledCard-zr26b8-0 KVtVL"
+>
+  文本
+</div>
+`;
