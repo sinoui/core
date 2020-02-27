@@ -45,11 +45,15 @@
   "peerDependencies": {
     "react": ">=16.8.0"
   },
-  "files": ["dist", "assets"],
+  "files": [
+    "dist",
+    "assets"
+  ],
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@babel/runtime": "^7.7.6",
     "@sinoui/theme": "1.0.0-beta.4",
+    "@types/classnames": "^2.2.9",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
