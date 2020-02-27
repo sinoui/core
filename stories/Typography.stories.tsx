@@ -59,7 +59,7 @@ export const 设置属性 = () => (
     <H1 color="success">H1</H1>
     5.gutterBottom属性，是否在底部添加间隙，H1~H6、Subtitle1、Subtitle2：
     <H1 gutterBottom>H1</H1>
-    6.paragraph属性，是否为段落，Body1、Body2：
+    6.paragraph属性设置1rem底部外边距，一般用在Body1和Body2之上:
     <Body2 paragraph>Body2</Body2>
     7.Typography组件的type属性：
     <Typography type="body1">Typography</Typography>
@@ -84,23 +84,23 @@ export const 设置颜色 = () => (
 
 export const 文章 = () => (
   <StoryLayout>
-    <H1>Try React</H1>
-    <Body1>
+    <H1 gutterBottom>Try React</H1>
+    <Body1 paragraph>
       React has been designed from the start for gradual adoption, and you can
       use as little or as much React as you need. Whether you want to get a
       taste of React, add some interactivity to a simple HTML page, or start a
       complex React-powered app, the links in this section will help you get
       started.
     </Body1>
-    <H2>Online Playgrounds</H2>
-    <Body1>
+    <H2 gutterBottom>Online Playgrounds</H2>
+    <Body1 paragraph>
       If you prefer to use your own text editor, you can also download this HTML
       file, edit it, and open it from the local filesystem in your browser. It
       does a slow runtime code transformation, so we’d only recommend using this
       for simple demos.
     </Body1>
-    <Subtitle1>Create a New React App</Subtitle1>
-    <Body2>
+    <Subtitle1 gutterBottom>Create a New React App</Subtitle1>
+    <Body2 paragraph>
       As your application grows, you might want to consider a more integrated
       setup. There are several JavaScript toolchains we recommend for larger
       applications. Each of them can work with little to no configuration and
