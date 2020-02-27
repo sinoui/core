@@ -15,7 +15,10 @@ const StyledCardPrimaryAction = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: ${opacify(-0.96, '#000')};
+    background-color: ${({ theme }) =>
+      theme.palette.type === 'light'
+        ? opacify(-0.96, '#000')
+        : opacify(-0.96, '#fff')};
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
     @media (hover: none) {
@@ -24,7 +27,10 @@ const StyledCardPrimaryAction = styled.div`
   }
 
   &:focus {
-    background-color: ${opacify(-0.88, '#000')};
+    background-color: ${({ theme }) =>
+      theme.palette.type === 'light'
+        ? opacify(-0.88, '#000')
+        : opacify(-0.88, '#fff')};
     outline: none;
   }
 `;

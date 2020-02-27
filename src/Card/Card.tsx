@@ -27,6 +27,7 @@ const StyledCard = styled.div<CardProps>`
         `};
 
   border-radius: 4px;
+  background-color: ${({ theme }) => theme.palette.background.paper};
 `;
 
 /**

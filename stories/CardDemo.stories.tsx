@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { createTheme, createPalette, colors } from '@sinoui/theme';
+import { createTheme, defaultTheme } from '@sinoui/theme';
+import blue from '@sinoui/theme/colors/blue';
 import { MdMoreVert, MdShare } from 'react-icons/md';
 import Card from '@sinoui/core/Card';
 import CardPrimaryAction from '@sinoui/core/CardPrimaryAction';
@@ -11,10 +12,10 @@ import CardMedia from '@sinoui/core/CardMedia';
 import CardHeader from '@sinoui/core/CardHeader';
 import CardContent from '@sinoui/core/CardContent';
 
-const theme = createTheme({
-  palette: createPalette({
-    primary: colors.blue, // 主色调
-  }),
+const darkTheme = createTheme({
+  palette: {
+    type: 'dark',
+  },
 });
 export default {
   title: 'CardDemo',
@@ -37,7 +38,7 @@ const Avatar = () => {
 };
 
 export const baseDemo = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={defaultTheme}>
     <Card>
       <CardPrimaryAction>
         <CardHeader
@@ -64,7 +65,28 @@ export const baseDemo = () => (
 );
 
 export const CardActionOnlyButtons = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={defaultTheme}>
+    <Card>
+      <CardPrimaryAction>
+        <CardHeader
+          avatar={<Avatar />}
+          action={<MdMoreVert />}
+          title="Shrimp and Chorizo Paella"
+          subheader="subheader"
+        />
+        <CardMedia imageUrl={mediaImgUrl} wide />
+        <CardContent>content</CardContent>
+      </CardPrimaryAction>
+      <CardActions>
+        <button>read</button>
+        <button>bookmark</button>
+      </CardActions>
+    </Card>
+  </ThemeProvider>
+);
+
+export const CardInDarkTheme = () => (
+  <ThemeProvider theme={darkTheme}>
     <Card>
       <CardPrimaryAction>
         <CardHeader
