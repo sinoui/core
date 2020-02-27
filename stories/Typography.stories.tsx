@@ -61,6 +61,7 @@ storiesOf('Typography', module)
       <Body2 paragraph>Body2</Body2>
       7.Typography组件的type属性：
       <Typography type="body1">Typography</Typography>
+      8.ref属性：
       <TypographyRef />
     </StoryLayout>
   ))
