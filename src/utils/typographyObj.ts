@@ -35,9 +35,11 @@ const marginBottomWrapper = (props: TextProps) => {
 export const Text = styled.div.attrs((props: TextProps) => ({
   as: props.as || 'div',
 }))<TextProps>((props) => ({
-  ...props.theme.typography[props.name || 'Body1'],
+  ...props.theme.typography[props.name || 'body1'],
   textAlign: textAlignWrapper(props),
   whiteSpace: props.noWrap && 'nowrap',
+  overflow: props.noWrap && 'hidden',
+  textOverflow: props.noWrap && 'ellipsis',
   marginBottom: marginBottomWrapper(props),
   color: getColorFromTheme(props, props.theme.palette.text.primary),
 }));
@@ -55,7 +57,7 @@ export interface TextProps {
    */
   as?: any;
   /**
-   * 指定额外的样式。
+   * 自定义类名
    */
   className?: string;
   /**
@@ -79,7 +81,7 @@ export interface TextProps {
    */
   paragraph?: boolean;
   /**
-   * 颜色，primary secondary textPrimary textSecondary error warning success info
+   * 指定颜色，primary secondary textPrimary textSecondary error warning success info
    */
   color?: string;
   /**

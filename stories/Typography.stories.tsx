@@ -49,7 +49,7 @@ storiesOf('Typography', module)
     <StoryLayout>
       1.as属性，变更DOM元素：
       <H1 as="h2">H1</H1>
-      2.center属性，文本对齐方式：
+      2.align属性，文本对齐方式：
       <H1 align="center">H1</H1>
       3.noWrap属性，是否换行：
       <H1 noWrap>React has been designed from</H1>
