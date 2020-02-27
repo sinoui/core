@@ -22,7 +22,7 @@ const textAlignWrapper = (props: TextProps) => {
 const marginBottomWrapper = (props: TextProps) => {
   let bot;
   if (props.gutterBottom) {
-    bot = '0.35rem';
+    bot = '0.35em';
   } else if (props.paragraph) {
     bot = '1rem';
   }
@@ -35,7 +35,9 @@ const marginBottomWrapper = (props: TextProps) => {
 export const Text = styled.div.attrs((props: TextProps) => ({
   as: props.as || 'div',
 }))<TextProps>((props) => ({
-  ...props.theme.typography[props.name || 'body1'],
+  margin: 0,
+  padding: 0,
+  ...props.theme.typography[props.name || 'body2'],
   textAlign: textAlignWrapper(props),
   whiteSpace: props.noWrap && 'nowrap',
   overflow: props.noWrap && 'hidden',
