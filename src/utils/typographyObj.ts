@@ -35,7 +35,7 @@ const marginBottomWrapper = (props: TextProps) => {
 export const Text = styled.div.attrs((props: TextProps) => ({
   as: props.as || 'div',
 }))<TextProps>((props) => ({
-  ...props.theme.typography[props.as],
+  ...props.theme.typography[props.name || 'Body1'],
   textAlign: textAlignWrapper(props),
   whiteSpace: props.noWrap && 'nowrap',
   marginBottom: marginBottomWrapper(props),
@@ -89,5 +89,5 @@ export interface TextProps {
   /**
    * 命名className
    */
-  type?: string;
+  name?: string;
 }

@@ -13,7 +13,7 @@ export const TextContent = React.forwardRef((props: TextProps, ref) => {
     gutterBottom,
     paragraph,
     color = 'textPrimary',
-    type,
+    name,
     ...rest
   } = props;
   return (
@@ -21,47 +21,48 @@ export const TextContent = React.forwardRef((props: TextProps, ref) => {
       {...rest}
       ref={ref}
       as={as}
-      className={classNames(`sinoui-typography-${type}`, className, {
+      className={classNames(`sinoui-typography-${name}`, className, {
         'sinoui-typography--gutterBottom':
-          (type === 'h1' ||
-            type === 'h2' ||
-            type === 'h3' ||
-            type === 'h4' ||
-            type === 'h5' ||
-            type === 'h6' ||
-            type === 'subtitle1' ||
-            type === 'subtitle2') &&
+          (name === 'h1' ||
+            name === 'h2' ||
+            name === 'h3' ||
+            name === 'h4' ||
+            name === 'h5' ||
+            name === 'h6' ||
+            name === 'subtitle1' ||
+            name === 'subtitle2') &&
           gutterBottom,
         'sinoui-typography--paragraph':
-          (type === 'body1' || type === 'body2') && paragraph,
+          (name === 'body1' || name === 'body2') && paragraph,
       })}
       style={style}
       align={align}
       noWrap={noWrap}
       gutterBottom={
-        (type === 'h1' ||
-          type === 'h2' ||
-          type === 'h3' ||
-          type === 'h4' ||
-          type === 'h5' ||
-          type === 'h6' ||
-          type === 'subtitle1' ||
-          type === 'subtitle2') &&
+        (name === 'h1' ||
+          name === 'h2' ||
+          name === 'h3' ||
+          name === 'h4' ||
+          name === 'h5' ||
+          name === 'h6' ||
+          name === 'subtitle1' ||
+          name === 'subtitle2') &&
         gutterBottom
       }
-      paragraph={(type === 'body1' || type === 'body2') && paragraph}
+      paragraph={(name === 'body1' || name === 'body2') && paragraph}
       color={color}
+      name={name}
     >
       {children}
     </Text>
   );
 });
 
-export function typographyPub(label: string, type: string) {
+export function typographyPub(label: string, name: string) {
   return (Text: any) => {
-    const wrapper = ({ ...props }) => {
-      return <Text as={label} type={type} ref={props.ref} {...props} />;
-    };
+    const wrapper: any = React.forwardRef((props, ref) => {
+      return <Text as={label} name={name} ref={ref} {...props} />;
+    });
     return wrapper;
   };
 }
