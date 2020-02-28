@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`文字排版 快照测试 基本文字排版 1`] = `
+<div
+  className="TestWrapper__Container-sc-1mof8la-0 fadnqN"
+>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 hmhIKv sinoui-typography sinoui-typography--subtitle2"
+    color="textPrimary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+</div>
+`;
+
+exports[`文字排版 快照测试 设置属性 1`] = `
+<div
+  className="TestWrapper__Container-sc-1mof8la-0 fadnqN"
+>
+  <h2
+    className="Typography__TypographyWrapper-sc-12agh80-0 hmhIKv sinoui-typography sinoui-typography--subtitle2"
+    color="textPrimary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h2>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 dxJseB sinoui-typography sinoui-typography--subtitle2"
+    color="textPrimary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 bUQVOI sinoui-typography sinoui-typography--subtitle2"
+    color="textPrimary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 fiWWiv sinoui-typography sinoui-typography--subtitle2"
+    color="success"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 kVjhIK sinoui-typography sinoui-typography--subtitle2 sinoui-typography--gutter-bottom"
+    color="textPrimary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+</div>
+`;
+
+exports[`文字排版 快照测试 颜色设置 1`] = `
+<div
+  className="TestWrapper__Container-sc-1mof8la-0 fadnqN"
+>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 hmhIKv sinoui-typography sinoui-typography--subtitle2"
+    color="textPrimary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 eMdxMV sinoui-typography sinoui-typography--subtitle2"
+    color="primary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 cObVaG sinoui-typography sinoui-typography--subtitle2"
+    color="secondary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 hmhIKv sinoui-typography sinoui-typography--subtitle2"
+    color="textPrimary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 gHmmQH sinoui-typography sinoui-typography--subtitle2"
+    color="textSecondary"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 gQePit sinoui-typography sinoui-typography--subtitle2"
+    color="error"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 fffRuP sinoui-typography sinoui-typography--subtitle2"
+    color="warning"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 fiWWiv sinoui-typography sinoui-typography--subtitle2"
+    color="success"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+  <h6
+    className="Typography__TypographyWrapper-sc-12agh80-0 kfhAJU sinoui-typography sinoui-typography--subtitle2"
+    color="info"
+    type="subtitle2"
+  >
+    Subtitle2
+  </h6>
+</div>
+`;

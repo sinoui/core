@@ -1,3 +1,3 @@
-import Body1 from './Body1';
+import createTypography from '../Typography/createTypography';
 
-export default Body1;
+export default createTypography('body1', 'Body1');

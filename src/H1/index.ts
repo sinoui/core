@@ -1,3 +1,3 @@
-import H1 from './H1';
+import createTypography from '../Typography/createTypography';
 
-export default H1;
+export default createTypography('h1', 'H1');

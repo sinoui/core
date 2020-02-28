@@ -1,3 +1,3 @@
-import Overline from './Overline';
+import createTypography from '../Typography/createTypography';
 
-export default Overline;
+export default createTypography('overline', 'Overline');

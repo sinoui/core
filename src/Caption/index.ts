@@ -1,3 +1,3 @@
-import Caption from './Caption';
+import createTypography from '../Typography/createTypography';
 
-export default Caption;
+export default createTypography('caption', 'Caption');

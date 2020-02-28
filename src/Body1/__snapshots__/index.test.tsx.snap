@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`文字排版 快照测试 基本文字排版 1`] = `
+<div
+  className="TestWrapper__Container-sc-1mof8la-0 fadnqN"
+>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 hIiXaW sinoui-typography sinoui-typography--body1"
+    color="textPrimary"
+    type="body1"
+  >
+    Body1
+  </p>
+</div>
+`;
+
+exports[`文字排版 快照测试 设置属性 1`] = `
+<div
+  className="TestWrapper__Container-sc-1mof8la-0 fadnqN"
+>
+  <h2
+    className="Typography__TypographyWrapper-sc-12agh80-0 hIiXaW sinoui-typography sinoui-typography--body1"
+    color="textPrimary"
+    type="body1"
+  >
+    Body1
+  </h2>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 guHDuc sinoui-typography sinoui-typography--body1"
+    color="textPrimary"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 jenYcl sinoui-typography sinoui-typography--body1"
+    color="textPrimary"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 eKGHas sinoui-typography sinoui-typography--body1"
+    color="success"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 hIiXaW sinoui-typography sinoui-typography--body1"
+    color="textPrimary"
+    type="body1"
+  >
+    Body1
+  </p>
+</div>
+`;
+
+exports[`文字排版 快照测试 颜色设置 1`] = `
+<div
+  className="TestWrapper__Container-sc-1mof8la-0 fadnqN"
+>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 hIiXaW sinoui-typography sinoui-typography--body1"
+    color="textPrimary"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 bhBJJK sinoui-typography sinoui-typography--body1"
+    color="primary"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 iDfnoH sinoui-typography sinoui-typography--body1"
+    color="secondary"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 hIiXaW sinoui-typography sinoui-typography--body1"
+    color="textPrimary"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 cigveM sinoui-typography sinoui-typography--body1"
+    color="textSecondary"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 fYpxPg sinoui-typography sinoui-typography--body1"
+    color="error"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 exwdFh sinoui-typography sinoui-typography--body1"
+    color="warning"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 eKGHas sinoui-typography sinoui-typography--body1"
+    color="success"
+    type="body1"
+  >
+    Body1
+  </p>
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 chTHHt sinoui-typography sinoui-typography--body1"
+    color="info"
+    type="body1"
+  >
+    Body1
+  </p>
+</div>
+`;

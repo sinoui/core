@@ -1,3 +1,3 @@
-import H2 from './H2';
+import createTypography from '../Typography/createTypography';
 
-export default H2;
+export default createTypography('h2', 'H2');

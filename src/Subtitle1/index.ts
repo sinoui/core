@@ -1,3 +1,3 @@
-import Subtitle1 from './Subtitle1';
+import createTypography from '../Typography/createTypography';
 
-export default Subtitle1;
+export default createTypography('subtitle1', 'Subtitle1');
