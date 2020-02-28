@@ -4,26 +4,40 @@ import { opacify } from 'polished';
 import { useRipple } from '@sinoui/ripple';
 
 export interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  as?: any;
+  as?: React.ReactType;
 }
 const StyledCardPrimaryAction = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
   cursor: pointer;
+  outline: none;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
 
   &:hover {
+    @media (hover: none) {
+      background-color: transparent;
+    }
+  }
+
+  &:hover::before {
     background-color: ${({ theme }) =>
       theme.palette.type === 'light'
         ? opacify(-0.96, '#000')
         : opacify(-0.96, '#fff')};
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-    @media (hover: none) {
-      background-color: transparent;
-    }
   }
 
   &:focus {
@@ -31,7 +45,13 @@ const StyledCardPrimaryAction = styled.div`
       theme.palette.type === 'light'
         ? opacify(-0.88, '#000')
         : opacify(-0.88, '#fff')};
-    outline: none;
+  }
+
+  &:focus::before {
+    background-color: ${({ theme }) =>
+      theme.palette.type === 'light'
+        ? opacify(-0.88, '#000')
+        : opacify(-0.88, '#fff')};
   }
 `;
 
@@ -39,13 +59,15 @@ const StyledCardPrimaryAction = styled.div`
  *
  * CardPrimaryAction 主操作区域
  */
-const CardPrimaryAction: React.SFC<Props> = ({ children, ...rest }) => {
-  const ref = useRipple<HTMLDivElement>();
-  return (
-    <StyledCardPrimaryAction {...rest} ref={ref}>
-      {children}
-    </StyledCardPrimaryAction>
-  );
-};
+const CardPrimaryAction = React.forwardRef<HTMLDivElement, Props>(
+  (props, ref) => {
+    const rippleRef = useRipple<HTMLDivElement>();
+    return (
+      <StyledCardPrimaryAction tabIndex="0" {...props} ref={ref || rippleRef}>
+        {props.children}
+      </StyledCardPrimaryAction>
+    );
+  },
+);
 
 export default CardPrimaryAction;

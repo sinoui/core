@@ -46,7 +46,16 @@ const wideStyle = css`
   }
 `;
 
-const CardMediaWrapper = styled.div<Props>`
+const CardMediaClassName = 'sinoui-card__media';
+
+const CardMediaWrapper = styled.div.attrs(
+  ({ className, wide, square }: Props) => ({
+    className: classNames(className, CardMediaClassName, {
+      [`${CardMediaClassName}--16-9`]: wide,
+      [`${CardMediaClassName}--square`]: square,
+    }),
+  }),
+)<Props>`
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
   background-repeat: no-repeat;
   background-position: 50%;
@@ -68,29 +77,19 @@ const CardMediaWrapper = styled.div<Props>`
     `
     width: ${width}px;
   `}
+  box-sizing: border-box;
 `;
 
-const CardMediaClassName = 'sinoui-card__media';
-
-const CardMedia = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const { wide, square, children } = props;
-
+React.forwardRef<React.Ref<HTMLDivElement>, Props>((props, ref) => {
   return (
-    <CardMediaWrapper
-      {...props}
-      ref={ref}
-      className={classNames(CardMediaClassName, {
-        [`${CardMediaClassName}--16-9`]: wide,
-        [`${CardMediaClassName}--square`]: square,
-      })}
-    >
-      {children}
+    <CardMediaWrapper {...props} ref={ref}>
+      {props.children}
     </CardMediaWrapper>
   );
 });
 
 if (process.env.NODE_ENV === 'development') {
-  CardMedia.displayName = 'CardMedia';
+  CardMediaWrapper.displayName = 'CardMedia';
 }
 
-export default CardMedia;
+export default CardMediaWrapper;

@@ -2,7 +2,7 @@
 
 exports[`正确渲染Card 1`] = `
 <div
-  className="Card__StyledCard-zr26b8-0 fBocZa"
+  className="Card__StyledCard-zr26b8-0 bWQoyx"
 >
   文本
 </div>

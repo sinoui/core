@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 export interface CardProps {
-  children: React.ReactNode;
   /**
    * 边框模式 默认为true
    */
@@ -11,30 +10,41 @@ export interface CardProps {
    * 阴影
    */
   elevation?: 0 | 1;
-  className?: string;
   style?: React.CSSProperties;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   as?: React.ReactType;
 }
+
+const normalCss = css<{ elevation?: 0 | 1 }>`
+  box-shadow: ${({ theme, elevation = 1 }) => theme.shadows[elevation]};
+`;
+const outlinedCss = css`
+  border: 1px solid ${({ theme }) => theme.palette.divider};
+`;
+
 const StyledCard = styled.div<CardProps>`
-  ${({ theme, elevation = 1, outlined = false }) =>
-    outlined
-      ? css`
-          border: 1px solid ${theme.palette.divider};
-        `
-      : css`
-          box-shadow: ${theme.shadows[elevation]};
-        `};
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  ${({ outlined }) => (outlined ? outlinedCss : normalCss)};
+
   border-radius: 4px;
   background-color: ${({ theme }) => theme.palette.background.paper};
+  box-sizing: border-box;
+  outline: none;
 `;
 
 /**
  *
  * Card 根组件
  */
-const Card: React.SFC<CardProps> = ({ children, ...rest }) => {
-  return <StyledCard {...rest}>{children}</StyledCard>;
-};
+React.forwardRef<React.Ref<HTMLDivElement>, CardProps>((props, ref) => {
+  const { children } = props;
+  return (
+    <StyledCard tabIndex="0" {...props} ref={ref}>
+      {children}
+    </StyledCard>
+  );
+});
 
-export default Card;
+export default StyledCard;

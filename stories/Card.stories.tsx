@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import { createTheme, defaultTheme } from '@sinoui/theme';
-import blue from '@sinoui/theme/colors/blue';
 import { MdMoreVert, MdShare } from 'react-icons/md';
 import Card from '@sinoui/core/Card';
 import CardPrimaryAction from '@sinoui/core/CardPrimaryAction';
