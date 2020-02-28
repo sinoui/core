@@ -1,6 +1,6 @@
 import { Theme } from '@sinoui/theme';
 
-const get = (palette: {}, path: string[]) => {
+const get = <T>(palette: any, path: string[]): T | undefined => {
   if (typeof palette !== 'object') {
     return undefined;
   }
