@@ -39,14 +39,10 @@ const StyledCardPrimaryAction = styled.div`
  *
  * CardPrimaryAction 主操作区域
  */
-const CardPrimaryAction: React.SFC<Props> = ({
-  children,
-  as = 'div',
-  ...rest
-}) => {
+const CardPrimaryAction: React.SFC<Props> = ({ children, ...rest }) => {
   const ref = useRipple<HTMLDivElement>();
   return (
-    <StyledCardPrimaryAction as={as} {...rest} ref={ref}>
+    <StyledCardPrimaryAction {...rest} ref={ref}>
       {children}
     </StyledCardPrimaryAction>
   );

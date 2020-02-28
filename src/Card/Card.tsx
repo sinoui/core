@@ -25,7 +25,6 @@ const StyledCard = styled.div<CardProps>`
       : css`
           box-shadow: ${theme.shadows[elevation]};
         `};
-
   border-radius: 4px;
   background-color: ${({ theme }) => theme.palette.background.paper};
 `;
@@ -34,12 +33,8 @@ const StyledCard = styled.div<CardProps>`
  *
  * Card 根组件
  */
-const Card: React.SFC<CardProps> = ({ children, as = 'div', ...rest }) => {
-  return (
-    <StyledCard as={as} {...rest}>
-      {children}
-    </StyledCard>
-  );
+const Card: React.SFC<CardProps> = ({ children, ...rest }) => {
+  return <StyledCard {...rest}>{children}</StyledCard>;
 };
 
 export default Card;

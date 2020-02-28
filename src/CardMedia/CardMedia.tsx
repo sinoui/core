@@ -31,6 +31,7 @@ interface Props {
    * 指定自定义样式。
    */
   style?: React.CSSProperties;
+  children?: React.ReactNode;
 }
 
 const squareStyle = css`
