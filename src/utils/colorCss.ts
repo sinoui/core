@@ -20,7 +20,7 @@ export default function colorCss(
 ) {
   const keys = typeof cssVariables === 'string' ? [cssVariables] : cssVariables;
   return css<CompProps>(({ theme, color = defaultColor }) => {
-    const colorValue = getColorFromTheme(theme, color);
+    const colorValue = color ? getColorFromTheme(theme, color) : undefined;
     return colorValue
       ? keys.reduce((draft, key) => {
           draft[key] = colorValue;

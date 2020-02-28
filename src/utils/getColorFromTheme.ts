@@ -1,5 +1,14 @@
 import { Theme } from '@sinoui/theme';
 
+/**
+ *
+ * 从对象中通过对象路径获取到属性值
+ *
+ * @export
+ * @param {object} palette 主题theme.palette对象
+ * @param {string[]} path 对象路径数组
+ * @returns
+ */
 const get = <T>(palette: any, path: string[]): T | undefined => {
   if (typeof palette !== 'object') {
     return undefined;
@@ -18,6 +27,12 @@ const get = <T>(palette: any, path: string[]): T | undefined => {
   return value;
 };
 
+/**
+ * 获取对象路径
+ *
+ * @param {string} key 颜色关键字
+ * @returns
+ */
 const camelToObjectPath = (key: string) => {
   return key.replace(/[A-Z]/g, (word) => `.${word.toLowerCase()}`).split('.');
 };
@@ -27,8 +42,8 @@ const camelToObjectPath = (key: string) => {
  * 获取关键字对应的颜色
  *
  * @export
- * @param {Theme} theme
- * @param {string} colorKey
+ * @param {Theme} theme 主题
+ * @param {string} colorKey 颜色关键字
  * @returns
  */
 export default function getColorFromTheme(theme: Theme, colorKey: string) {
