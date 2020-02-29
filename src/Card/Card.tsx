@@ -13,6 +13,10 @@ export interface CardProps {
   style?: React.CSSProperties;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   as?: React.ReactType;
+  /**
+   * 指定自定义样式类名。
+   */
+  className?: string;
 }
 
 const normalCss = css<{ elevation?: 0 | 1 }>`

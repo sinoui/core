@@ -1,0 +1,556 @@
+---
+id: card
+title: Card卡片
+---
+
+import CardStoryLayout from './CardStoryLayout';
+import Card from '../../../src/Card';
+import {
+  MediaUIControls0,
+  MediaUIControls1,
+  BorderCard,
+  CardSelected,
+  TextCards,
+  MediaButtonCard,
+  HeaderCard,
+  ExpandCard,
+} from '../../../stories/CardDemo';
+
+## 代码演示
+
+### 边框模式的简单卡片
+
+<CardStoryLayout>
+  <BorderCard />
+</CardStoryLayout>
+
+#### 代码
+
+```tsx
+import React from 'react';
+import styled from 'styled-components';
+import Card from '@sinoui/core/Card';
+
+const StyledCardWrapper = styled(Card)`
+  padding: 16px;
+  margin-right: 16px;
+  & h1 {
+    margin: 16px 0 0;
+  }
+
+  & h1 ~ h4 {
+    margin: 16px 0 0;
+  }
+  & h4 {
+    margin: 0;
+    color: ${(props) => props.theme.palette.text.secondary};
+    font-weight: ${(props) => props.theme.typography.fontWeightRegular};
+  }
+`;
+
+export default function BorderCard() {
+  return (
+    <StyledCardWrapper outlined>
+      <h4>Marketing</h4>
+      <h1>123.4M</h1>
+    </StyledCardWrapper>
+  );
+}
+```
+
+Card 组件默认是有 4px 的圆角，开发者可以通过如下方式自定义圆角：
+
+```tsx
+<Card style={{ borderRadius: '8px' }} />
+```
+
+### 用户控件 U - 媒体播放
+
+<CardStoryLayout>
+  <MediaUIControls0 />
+</CardStoryLayout>
+
+#### 代码
+
+StyledCardInner.ts
+
+```ts
+const StyledCardInner = styled.div<{
+  flexDirection?: 'row' | 'column';
+  border?: boolean;
+}>`
+  display: flex;
+  flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
+  flex: 1;
+
+  & h5 {
+    margin: 0;
+    font-size: ${(props) => props.theme.typography.h5.fontSize};
+    font-weight: ${(props) => props.theme.typography.fontWeightRegular};
+    line-height: 1.334;
+  }
+
+  & h6 {
+    margin: 0;
+    font-size: ${(props) => props.theme.typography.body1.fontSize};
+    color: ${(props) => props.theme.palette.text.secondary};
+    font-weight: ${(props) => props.theme.typography.fontWeightRegular};
+    line-height: 1.75;
+  }
+
+  & .icons {
+    display: flex;
+    align-items: center;
+    padding: 0 0 16px 16px;
+    & svg {
+      font-size: 24px;
+    }
+  }
+`;
+```
+
+Ddemo.tsx
+
+```tsx
+import React from 'react';
+import Card from '@sinoui/core/Card';
+import CardMedia from '@sinoui/core/CardMedia';
+import CardContent from '@sinoui/core/CardContent';
+import { MdPlayArrow, MdFastRewind, MdFastForward } from 'react-icons/md';
+import StyledCardInner from './Components/StyledCardInner';
+
+const mediaCardUrl =
+  'https://material-ui.com/static/images/cards/live-from-space.jpg';
+
+export default function Demo() {
+  return (
+    <Card style={{ flexDirection: 'row' }}>
+      <StyledCardInner flexDirection="column">
+        <CardContent>
+          <h5>Live From Space</h5>
+          <h6>Mac Miller</h6>
+        </CardContent>
+        <div className="icons">
+          <MdFastRewind />
+          <MdPlayArrow />
+          <MdFastForward />
+        </div>
+      </StyledCardInner>
+
+      <CardMedia
+        imageUrl={mediaCardUrl}
+        width={151}
+        style={{ borderRadius: '0 4px 4px 0' }}
+      />
+    </Card>
+  );
+}
+```
+
+### 用户控件 U - 评分
+
+<CardStoryLayout>
+  <MediaUIControls1 />
+</CardStoryLayout>
+
+#### 代码
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import styled from 'styled-components';
+import { MdStar, MdStarBorder } from 'react-icons/md';
+import Card from '@sinoui/core/Card';
+import CardMedia from '@sinoui/core/CardMedia';
+import CardContent from '@sinoui/core/CardContent';
+import CardActions from '@sinoui/core/CardActions';
+import CardActionButtons from '@sinoui/core/CardActionButtons';
+import CardActionIcons from '@sinoui/core/CardActionIcons';
+import StyledCardInner from './Components/StyledCardInner';
+
+const mediaCardUrl =
+  'https://material-ui.com/static/images/cards/live-from-space.jpg';
+
+const StyledCardContent = styled(CardContent)`
+  border-bottom: 1px solid ${({ theme }) => theme.palette.divider};
+`;
+
+export default function Demo() {
+  return (
+    <Card>
+      <StyledCardInner>
+        <CardMedia
+          imageUrl={mediaCardUrl}
+          width={162}
+          style={{ borderRadius: '4px 0 0 0' }}
+        />
+        <StyledCardContent>
+          <h5>Rozes</h5>
+          <h6>Mac Miller</h6>
+        </StyledCardContent>
+      </StyledCardInner>
+
+      <CardActions>
+        <CardActionButtons>Rate this album</CardActionButtons>
+        <CardActionIcons>
+          <MdStar />
+          <MdStar />
+          <MdStarBorder />
+        </CardActionIcons>
+      </CardActions>
+    </Card>
+  );
+}
+```
+
+### 自定义交互状态的卡片
+
+<CardStoryLayout>{/* <CardSelected /> */}</CardStoryLayout>
+
+#### 代码
+
+StyledCard.tsx
+
+```tsx
+import styled, { css } from 'styled-components';
+import { opacify } from 'polished';
+import Card from '@sinoui/core/Card';
+
+const disabledCss = css`
+  &::before {
+    background-color: ${opacify(-0.62, '#fff')};
+  }
+`;
+
+const enableCss = css`
+  &:hover::before {
+    background-color: ${opacify(-0.92, '#fff')};
+  }
+
+  &:hover {
+    box-shadow: ${({ theme }) => theme.shadows[8]};
+  }
+
+  &:focus::before {
+    background-color: ${opacify(-0.76, '#fff')};
+    box-shadow: ${({ theme }) => theme.shadows[8]};
+  }
+
+  &:active {
+    box-shadow: ${({ theme }) => theme.shadows[8]};
+  }
+`;
+
+const StyledCard = styled(Card)<{ disabled?: boolean }>`
+  padding: 16px;
+  background-color: ${(props) => props.theme.palette.primary.main};
+  color: ${(props) => props.theme.palette.primary.contrastText};
+  cursor: pointer;
+  ${(props) => (props.disabled ? disabledCss : enableCss)}
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  & h1 {
+    margin: 0;
+  }
+
+  & svg {
+    font-size: 24px;
+    position: absolute;
+    right: 16px;
+  }
+`;
+
+export default StyledCard;
+```
+
+Demo.tsx
+
+```tsx
+import React, { useState } from 'react';
+import { useRipple } from '@sinoui/ripple';
+import { MdCheckCircle } from 'react-icons/md';
+import StyledCard from './Components/StyledCard';
+import StyledDivider from './Components/StyledDivider';
+
+export default function Demo() {
+  const [selected, setSelected] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+  const ref = useRipple<HTMLDivElement>();
+
+  // 选中卡片
+  const setCardSelected = () => {
+    setSelected(true);
+  };
+
+  // 取消卡片选中
+  const cancelCardSelected = (e: React.MouseEvent) => {
+    setSelected(false);
+    e.stopPropagation();
+  };
+
+  return (
+    <>
+      <div style={{ marginBottom: '10px' }}>
+        <button onClick={() => setDisabled(!disabled)}>设置禁用</button>
+      </div>
+      <StyledCard onClick={setCardSelected} ref={ref} disabled={disabled}>
+        {selected && <MdCheckCircle onClick={cancelCardSelected} />}
+        <h1>Call</h1>
+        <h1>Jennifer</h1>
+        <StyledDivider />
+        <div>October 07,2020</div>
+      </StyledCard>
+    </>
+  );
+}
+```
+
+### 文字组合卡片
+
+<CardStoryLayout>{/* <TextCards /> */}</CardStoryLayout>
+
+#### 代码
+
+StyledCardText.ts
+
+```tsx
+import styled from 'styled-components';
+import Card from '@sinoui/core/Card';
+
+const StyledCardText = styled(Card)`
+  padding: 16px;
+  margin-right: 16px;
+  & h1 {
+    margin: 16px 0 0;
+  }
+
+  & h1 ~ h4 {
+    margin: 16px 0 0;
+  }
+  & h4 {
+    margin: 0;
+    color: ${(props) => props.theme.palette.text.secondary};
+    font-weight: ${(props) => props.theme.typography.fontWeightRegular};
+  }
+`;
+
+export default StyledCardText;
+```
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import StyledCardText from './Components/StyledCardText';
+import CardPrimaryAction from '@sinoui/core/CardPrimaryAction';
+
+export default function Demo() {
+  return (
+    <>
+      <StyledCardText>
+        <CardPrimaryAction>
+          <h4>Marketing</h4>
+          <h1>123.4M</h1>
+        </CardPrimaryAction>
+      </StyledCardText>
+      <StyledCardText>
+        <h4>Sales</h4>
+        <h1>345.8M</h1>
+        <h4>+11</h4>
+      </StyledCardText>
+      <StyledCardText>
+        <h4>Users</h4>
+        <h1>345.8M</h1>
+      </StyledCardText>
+    </>
+  );
+}
+```
+
+### 带有图片和操作按钮的卡片
+
+<CardStoryLayout>{/* <MediaButtonCard /> */}</CardStoryLayout>
+
+#### 代码
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { MdShare, MdMoreVert } from 'react-icons/md';
+import Card from '@sinoui/core/Card';
+import CardMedia from '@sinoui/core/CardMedia';
+import CardContent from '@sinoui/core/CardContent';
+import CardPrimaryAction from '@sinoui/core/CardPrimaryAction';
+import CardActions from '@sinoui/core/CardActions';
+import CardActionButtons from '@sinoui/core/CardActionButtons';
+import CardActionIcons from '@sinoui/core/CardActionIcons';
+import { mediaImgUrl } from './constant';
+
+export default function Demo() {
+  return (
+    <Card>
+      <CardPrimaryAction>
+        <CardMedia imageUrl={mediaImgUrl} wide />
+        <CardContent>主要内容</CardContent>
+      </CardPrimaryAction>
+      <CardActions>
+        <CardActionButtons>
+          <button>read</button>
+          <button>bookmark</button>
+        </CardActionButtons>
+        <CardActionIcons>
+          <MdShare />
+          <MdMoreVert />
+        </CardActionIcons>
+      </CardActions>
+    </Card>
+  );
+}
+```
+
+### 包含头部的卡片
+
+<CardStoryLayout>{/* <HeaderCard /> */}</CardStoryLayout>
+
+#### 代码
+
+Avatar.tsx
+
+```tsx
+import React from 'react';
+
+const Avatar = () => {
+  return (
+    <div
+      style={{
+        height: '40px',
+        width: '40px',
+        backgroundColor: '#f44336',
+        borderRadius: '4px',
+      }}
+    />
+  );
+};
+
+export default Avatar;
+```
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { MdShare, MdMoreVert } from 'react-icons/md';
+import Card from '@sinoui/core/Card';
+import CardHeader from '@sinoui/core/CardHeader';
+import CardMedia from '@sinoui/core/CardMedia';
+import CardContent from '@sinoui/core/CardContent';
+import CardPrimaryAction from '@sinoui/core/CardPrimaryAction';
+import CardActions from '@sinoui/core/CardActions';
+import CardActionButtons from '@sinoui/core/CardActionButtons';
+import CardActionIcons from '@sinoui/core/CardActionIcons';
+import Avatar from './Components/Avatat';
+import { mediaImgUrl } from './constant';
+
+export default function Demo() {
+  return (
+    <Card>
+      <CardPrimaryAction>
+        <CardHeader
+          avatar={<Avatar />}
+          action={<MdMoreVert />}
+          title="Shrimp and Chorizo Paella"
+          subheader="subheader"
+        />
+        <CardMedia imageUrl={mediaImgUrl} wide />
+        <CardContent>content</CardContent>
+      </CardPrimaryAction>
+      <CardActions>
+        <CardActionButtons>
+          <button>read</button>
+          <button>bookmark</button>
+        </CardActionButtons>
+        <CardActionIcons>
+          <MdShare />
+          <MdMoreVert />
+        </CardActionIcons>
+      </CardActions>
+    </Card>
+  );
+}
+```
+
+### 可展开的卡片
+
+<CardStoryLayout>{/* <ExpandCard /> */}</CardStoryLayout>
+
+#### 代码
+
+Demo.tsx
+
+```tsx
+import React, { useState } from 'react';
+import {
+  MdMoreVert,
+  MdKeyboardArrowDown,
+  MdKeyboardArrowUp,
+} from 'react-icons/md';
+import Card from '@sinoui/core/Card';
+import CardHeader from '@sinoui/core/CardHeader';
+import CardMedia from '@sinoui/core/CardMedia';
+import CardContent from '@sinoui/core/CardContent';
+import CardPrimaryAction from '@sinoui/core/CardPrimaryAction';
+import CardActions from '@sinoui/core/CardActions';
+import CardActionButtons from '@sinoui/core/CardActionButtons';
+import CardActionIcons from '@sinoui/core/CardActionIcons';
+import Avatar from './Components/Avatat';
+import { mediaImgUrl } from './constant';
+
+export default function Demo() {
+  const [expand, setExpand] = useState(false);
+  return (
+    <Card style={{ maxWidth: '345px' }}>
+      <CardPrimaryAction>
+        <CardHeader
+          avatar={<Avatar />}
+          action={<MdMoreVert />}
+          title="Shrimp and Chorizo Paella"
+          subheader="subheader"
+        />
+        <CardMedia imageUrl={mediaImgUrl} wide />
+        <CardContent>
+          Heat 1/2 cup of the broth in a pot until simmering, add saffron and
+          set aside for 10 minutes.
+        </CardContent>
+      </CardPrimaryAction>
+      <CardActions>
+        <CardActionButtons>
+          <button>read</button>
+          <button>bookmark</button>
+        </CardActionButtons>
+        <CardActionIcons>
+          <span onClick={() => setExpand(!expand)}>
+            {!expand && <MdKeyboardArrowDown />}
+            {expand && <MdKeyboardArrowUp />}
+          </span>
+        </CardActionIcons>
+      </CardActions>
+      {expand && (
+        <CardContent>
+          展开显示的文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+        </CardContent>
+      )}
+    </Card>
+  );
+}
+```

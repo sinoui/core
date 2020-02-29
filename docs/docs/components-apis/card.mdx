@@ -1,5 +1,5 @@
 ---
-id: card
+id: card-api
 title: Card卡片
 ---
 
@@ -9,7 +9,7 @@ title: Card卡片
 
 ### Card
 
-引入方式：`import Card from '@sinoui/core/Card ';`
+引入方式：`import Card from '@sinoui/core/Card';`
 
 Card 组件是卡片的根组件，它有两种主要形式：
 
@@ -18,29 +18,29 @@ Card 组件是卡片的根组件，它有两种主要形式：
 
 #### 属性
 
-| 属性名    | 默认值   | 描述                                                         |
-| --------- | -------- | ------------------------------------------------------------ |
-| outlined  | false    | 设置为`true`，表示是边框模式的卡片。                         |
+| 属性名    | 默认值   | 描述                                                              |
+| --------- | -------- | ----------------------------------------------------------------- |
+| outlined  | false    | 设置为`true`，表示是边框模式的卡片。                              |
 | elevation | 1 或者 0 | 设置海拔（即阴影程度） 。默认为 1，但如果是边框模式，则默认为 0。 |
-| className |          |                                                              |
-| style     |          |                                                              |
-| onClick   |          | 点击事件                                                     |
-| as        | 'div'    | 指定根元素                                                   |
+| className |          |                                                                   |
+| style     |          |                                                                   |
+| onClick   |          | 点击事件                                                          |
+| as        | 'div'    | 指定根元素                                                        |
 
 代码示例：
 
 ```tsx
 export const BaseCard = () => (
-    <Card outlined>
-      <h4>Marketing</h4>
-      <h1>123.4M</h1>
-    </Card>
+  <Card outlined>
+    <h4>Marketing</h4>
+    <h1>123.4M</h1>
+  </Card>
 );
 ```
 
 引入方式：`import CardPrimaryAction from '@sinoui/core/CardPrimaryAction ';`
 
-CardPrimaryAction组件是整个卡片的主操作区，支持各种交互形态（悬停、聚焦和按下）。
+CardPrimaryAction 组件是整个卡片的主操作区，支持各种交互形态（悬停、聚焦和按下）。
 
 #### 属性
 
@@ -62,13 +62,13 @@ export const CardPrimaryActionCard = () => (
 );
 ```
 
-说明：和Card组件展示的示例区别为该示例交互时有动态效果。
+说明：和 Card 组件展示的示例区别为该示例交互时有动态效果。
 
-### CardActions 
+### CardActions
 
 引入方式：`import CardPrimaryAction from '@sinoui/core/CardPrimaryAction ';`
 
-CardActions组件是整个卡片的辅助操作区域。
+CardActions 组件是整个卡片的辅助操作区域。
 
 #### 属性
 
@@ -78,11 +78,13 @@ CardActions组件是整个卡片的辅助操作区域。
 
 ```tsx
 const CardAction = () => {
-    return <Card>
+  return (
+    <Card>
       <CardPrimaryAction>...</CardPrimaryAction>
       <CardActions>...</CardActions>
     </Card>
-}
+  );
+};
 ```
 
 ### CardActionButtons
@@ -120,8 +122,6 @@ const CardActionOmlyButtons = () => {
 }
 ```
 
-
-
 ### CardActionIcons
 
 引入方式：`import CardActionIcons from '@sinoui/core/CardActionIcons';`
@@ -151,9 +151,9 @@ const CardActionIcons = () => {
 
 引入方式：`import CardMedia from '@sinoui/core/CardMedia';`
 
-CardMedia组件是用来呈现多媒体内容的组件，目前只支持显示图片。如果需要支持显示视频，需要由开发人员自行实现。
+CardMedia 组件是用来呈现多媒体内容的组件，目前只支持显示图片。如果需要支持显示视频，需要由开发人员自行实现。
 
-####  属性
+#### 属性
 
 | 属性名    | 默认值 | 描述                       |
 | --------- | ------ | -------------------------- |
@@ -173,14 +173,16 @@ const mediaImgUrl =
   'https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg';
 
 const CardMedia = () => {
-    return <Card>
+  return (
+    <Card>
       <CardPrimaryAction>
         <CardMedia imageUrl={mediaImgUrl} wide />
         <CardContent>...</CardContent>
       </CardPrimaryAction>
       <CardActions>...</CardActions>
     </Card>
-}
+  );
+};
 ```
 
 ### CardContent
@@ -197,22 +199,24 @@ CardContent 组件是用来承载卡片的主体文字段落的容器。
 
 ```tsx
 const CardContent = () => {
-    return <Card>
+  return (
+    <Card>
       <CardPrimaryAction>
         <CardContent>...</CardContent>
       </CardPrimaryAction>
       <CardActions>...</CardActions>
     </Card>
-}
+  );
+};
 ```
 
 ### CardHeader
 
 引入方式：`import CardHeader from '@sinoui/core/CardHeader';`
 
-CardHeader组件是用来展示卡片头部。
+CardHeader 组件是用来展示卡片头部。
 
-####  属性
+#### 属性
 
 | 属性名    | 默认值 | 描述                     |
 | --------- | ------ | ------------------------ |
@@ -225,7 +229,8 @@ CardHeader组件是用来展示卡片头部。
 
 ```tsx
 const CardHeader = () => {
-    return <Card>
+  return (
+    <Card>
       <CardPrimaryAction>
         <CardHeader
           avatar={<Avatar />}
@@ -233,11 +238,12 @@ const CardHeader = () => {
           title="Shrimp and Chorizo Paella"
           subheader="subheader"
         />
-       ...
+        ...
       </CardPrimaryAction>
       <CardActions>...</CardActions>
     </Card>
-}
+  );
+};
 ```
 
 完整示例效果图：
