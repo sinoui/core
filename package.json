@@ -52,7 +52,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@babel/runtime": "^7.7.6",
-    "@sinoui/theme": "^0.3.3",
+    "@sinoui/ripple": "^1.0.10",
+    "@sinoui/theme": "^1.0.0-beta.6",
+    "classnames": "^2.2.6",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
@@ -64,6 +66,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/react-hooks": "^3.2.1",
+    "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.15",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.0",
@@ -76,7 +79,7 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
-    "ts-lib-tools": "^0.5.2",
+    "ts-lib-tools": "^0.9.5",
     "typescript": "^3.7.3"
   }
 }
