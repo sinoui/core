@@ -12,7 +12,7 @@ export interface BaseButtonProps {
   /**
    * 指定渲染用的dom元素，默认为button
    */
-  as?: string;
+  as?: HTMLElement | any;
   /**
    * 设置超链接
    */

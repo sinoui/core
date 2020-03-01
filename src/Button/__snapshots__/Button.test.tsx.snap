@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染三种形式按钮 1`] = `
+Array [
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 bCLDSB sinoui-button"
+    role="button"
+    type="button"
+  >
+    文本按钮
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 sKkrL sinoui-button sinoui-button--outlined"
+    role="button"
+    type="button"
+  >
+    轮廓按钮
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 hPDdig sinoui-button sinoui-button--raised"
+    role="button"
+    type="button"
+  >
+    容器按钮
+  </button>,
+]
+`;
