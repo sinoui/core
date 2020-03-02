@@ -30,7 +30,7 @@ const getBgColor = (theme: Theme, color?: string, selected?: boolean) => {
     }
     return opacify(
       theme.palette.action.selectedOpacity - 1,
-      getColorFromTheme(theme, color) ?? theme.palette.text.primary,
+      getColorFromTheme(theme, color) || theme.palette.text.primary,
     );
   }
   return 'transparent';
@@ -51,7 +51,7 @@ const IconButtonWrapper = styled(BaseButton)<IconButtonProps>`
       color !== 'textPrimary' &&
       opacify(
         theme.palette.action.hoverOpacity - 1,
-        getColorFromTheme(theme, color) ?? theme.palette.text.primary,
+        getColorFromTheme(theme, color) || theme.palette.text.primary,
       )};
   }
 

@@ -8,34 +8,31 @@ const StyleButton = styled(Button)`
   margin: 8px;
 `;
 
-export default function RaisedButtonDemo() {
+export default function OutlinedButtonDemo() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <>
-        <StyleButton raised>default</StyleButton>
-        <StyleButton raised color="primary">
+        <StyleButton outlined>default</StyleButton>
+        <StyleButton outlined color="primary">
           primary
         </StyleButton>
-        <StyleButton raised color="secondary">
+        <StyleButton outlined color="secondary">
           secondary
         </StyleButton>
-        <StyleButton raised color="error">
+        <StyleButton outlined color="error">
           error
         </StyleButton>
-        <StyleButton raised color="warning">
+        <StyleButton outlined color="warning">
           warning
         </StyleButton>
-        <StyleButton raised color="info">
+        <StyleButton outlined color="info">
           info
         </StyleButton>
-        <StyleButton raised color="success">
+        <StyleButton outlined color="success">
           success
         </StyleButton>
-        <StyleButton raised disabled>
+        <StyleButton outlined disabled>
           disabled
-        </StyleButton>
-        <StyleButton raised disableElevation>
-          disableElevation
         </StyleButton>
       </>
     </ThemeProvider>

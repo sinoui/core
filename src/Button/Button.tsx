@@ -40,7 +40,7 @@ const textButtonStyle = css<ButtonProps>`
     background-color: ${({ theme, color }) =>
       opacify(
         theme.palette.action.hoverOpacity - 1,
-        getColorFromTheme(theme, color) ?? theme.palette.primary.main,
+        getColorFromTheme(theme, color) || theme.palette.primary.main,
       )};
   }
 `;

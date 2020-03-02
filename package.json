@@ -14,7 +14,8 @@
     "lint": "ts-lib-tools lint",
     "prepublishOnly": "ts-lib-tools build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "postinstall": " yarn-deduplicate yarn.lock "
   },
   "prettier": {
     "printWidth": 80,
