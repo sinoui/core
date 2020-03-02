@@ -25,6 +25,7 @@ export interface BaseButtonProps {
    * 不可用状态
    */
   disabled?: boolean;
+  onClick?: (event: MouseEvent) => void;
   children: React.ReactNode;
 }
 
