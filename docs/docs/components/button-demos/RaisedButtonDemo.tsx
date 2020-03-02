@@ -1,31 +1,4 @@
----
-id: button
-title: Button 按钮
----
-
-import styled, { ThemeProvider } from 'styled-components';
-import BaseButton from '@sinoui/core/BaseButton';
-import Button from '@sinoui/core/Button';
-import IconButton from '@sinoui/core/Button';
-import RaisedButtonDemo from './button-demos/RaisedButtonDemo';
-
-## Button
-
-> 按钮用于开始一个即时操作。标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
-
-[按钮](https://material.io/design/components/buttons.html)允许用户只需轻按一下即可采取行动并做出选择。主要有三种形式：
-
-- 容器按钮。
-- 文本按钮。 通常用于不太醒目的操作，主要用在对话框或者卡片中。
-- 轮廓按钮。 包含重要操作，但不是应用程序中的主要操作。强调程度介于容器按钮和文本按钮之间。
-
-### 容器按钮
-
-表示高度强调，按照不同的填充颜色和立体效果来表示强调程度。它们用于触发应用程序所具有的主要功能。
-
-使用方式：
-
-```tsx
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
@@ -35,7 +8,7 @@ const StyleButton = styled(Button)`
   margin: 8px;
 `;
 
-function RaisedButtonDemo() {
+export default function RaisedButtonDemo() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <>
@@ -60,8 +33,3 @@ function RaisedButtonDemo() {
     </ThemeProvider>
   );
 }
-```
-
-效果如下：
-
-<RaisedButtonDemo />
