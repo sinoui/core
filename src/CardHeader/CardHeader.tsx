@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface Props {
-  avatar: React.ReactNode;
+  avatar?: React.ReactNode;
   action?: React.ReactNode;
   title: string;
   subheader?: string;
@@ -42,7 +42,7 @@ export default function CardHeader({
 }: Props) {
   return (
     <CardHeaderWrapper>
-      <div className="card-header-avatar">{avatar}</div>
+      {avatar && <div className="card-header-avatar">{avatar}</div>}
       <div className="card-header-content">
         <div className="card-header-title">{title}</div>
         <div className="card-header-subheader">{subheader}</div>

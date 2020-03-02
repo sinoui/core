@@ -3,7 +3,7 @@ import BorderCard from './BorderCard';
 import MediaUIControls1 from './MediaUIControls1';
 import CardSelected from './CardSelected';
 import TextCards from './TextCards';
-import MedaiButtonCard from './MedaiButtonCard';
+import MediaButtonCard from './MediaButtonCard';
 import HeaderCard from './HeaderCard';
 import ExpandCard from './ExpandCard';
 
@@ -13,7 +13,7 @@ export {
   MediaUIControls1,
   CardSelected,
   TextCards,
-  MedaiButtonCard,
+  MediaButtonCard,
   HeaderCard,
   ExpandCard,
 };

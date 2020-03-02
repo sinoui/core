@@ -7,7 +7,7 @@ import {
   BorderCard,
   CardSelected,
   TextCards,
-  MedaiButtonCard,
+  MediaButtonCard,
   HeaderCard,
   ExpandCard,
 } from './CardDemo';
@@ -48,7 +48,7 @@ export const 边框模式的简单卡片 = () => (
 
 export const 带有图片和操作按钮的卡片 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <MedaiButtonCard />
+    <MediaButtonCard />
   </ThemeProvider>
 );
 
