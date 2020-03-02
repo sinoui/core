@@ -77,6 +77,14 @@ const StyledBaseButton = styled(BaseButton)<ButtonProps>`
   ${textButtonStyle};
   ${(props) => props.outlined && outlinedStyle};
   ${(props) => props.raised && raisedStyle};
+
+  > svg {
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+    margin-right: 8px;
+    ${({ outlined, raised }) => (outlined || raised) && `margin-left:-4px`};
+  }
 `;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(

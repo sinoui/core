@@ -25,7 +25,7 @@ export interface BaseButtonProps {
    * 不可用状态
    */
   disabled?: boolean;
-  children: React.ReactChild;
+  children: React.ReactNode;
 }
 
 const BaseButtonStyle = css<BaseButtonProps>`
