@@ -18,3 +18,21 @@ it('正确渲染三种形式按钮', () => {
 
   expect(tree).toMatchSnapshot();
 });
+
+it('渲染不可用状态下的三种形式按钮', () => {
+  const tree = renderer.create(
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <Button disabled>文本按钮</Button>
+        <Button disabled outlined>
+          轮廓按钮
+        </Button>
+        <Button disabled raised>
+          容器按钮
+        </Button>
+      </>
+    </ThemeProvider>,
+  );
+
+  expect(tree).toMatchSnapshot();
+});

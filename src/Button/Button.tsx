@@ -2,7 +2,8 @@ import React from 'react';
 import BaseButton, { BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
-import textButtonStyle from './textButtonStyle';
+import { opacify } from 'polished';
+import getColorFromTheme from '../utils/getColorFromTheme';
 
 export interface ButtonProps extends BaseButtonProps {
   /**
@@ -20,8 +21,29 @@ export interface ButtonProps extends BaseButtonProps {
   /**
    * 按钮颜色
    */
-  color?: boolean;
+  color?: string;
 }
+
+const textButtonStyle = css<ButtonProps>`
+  ${({ theme }) => ({ ...theme.typography.button })};
+  min-width: 64px;
+  height: 36px;
+  color: ${({ theme, color, disabled }) =>
+    disabled ? theme.palette.text.disabled : getColorFromTheme(theme, color)};
+  user-select: none;
+  transition: background-color 100ms ease-in-out;
+  padding: 0px 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: ${({ theme, color }) =>
+      opacify(
+        theme.palette.action.hoverOpacity - 1,
+        getColorFromTheme(theme, color) ?? theme.palette.primary.main,
+      )};
+  }
+`;
 
 const outlinedStyle = css`
   border: 1px solid currentColor;
@@ -31,15 +53,23 @@ const outlinedStyle = css`
 
 const raisedStyle = css<ButtonProps>`
   padding: 0 16px;
-  box-shadow: ${(props) => !props.disabled && props.theme.shadows[2]};
-  color: ${(props) => props.theme.palette.primary.contrastText};
-  background-color: ${(props) => props.theme.palette.primary.main};
+  box-shadow: ${({ disabled, disableElevation, theme }) =>
+    !disabled && !disableElevation && theme.shadows[2]};
+  color: ${({ theme, disabled }) =>
+    disabled
+      ? theme.palette.text.disabled
+      : theme.palette.primary.contrastText};
+  background-color: ${({ theme, color, disabled }) =>
+    disabled
+      ? theme.palette.action.disabledBackground
+      : getColorFromTheme(theme, color)};
   border-radius: 4px;
   transition: box-shadow 280ms;
 
   &:hover {
-    background-color: ${(props) => props.theme.palette.primary.main};
-    box-shadow: ${(props) => !props.disabled && props.theme.shadows[8]};
+    background-color: ${({ theme, color }) => getColorFromTheme(theme, color)};
+    box-shadow: ${({ disabled, disableElevation, theme }) =>
+      !disabled && !disableElevation && theme.shadows[8]};
   }
 `;
 
@@ -53,17 +83,21 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   props,
   ref,
 ) {
-  const { className, outlined, raised, ...other } = props;
+  const { className, color = 'primary', outlined, raised, ...other } = props;
   return (
     <StyledBaseButton
-      className={classNames('sinoui-button', {
-        'sinoui-button--outlined': outlined,
-        'sinoui-button--raised': raised,
+      className={classNames(
+        'sinoui-button',
+        {
+          'sinoui-button--outlined': outlined,
+          'sinoui-button--raised': raised,
+        },
         className,
-      })}
+      )}
       ref={ref}
       raised={raised}
       outlined={outlined}
+      color={color}
       {...other}
     />
   );
