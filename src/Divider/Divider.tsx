@@ -74,14 +74,14 @@ const marginBottomCss = css<{ marginBottom?: number }>`
  * 左边距
  */
 const marginLeftCss = css<{ marginLeft?: number }>`
-  margin-top: ${({ marginLeft = 0 }) => marginLeft}px;
+  margin-left: ${({ marginLeft = 0 }) => marginLeft}px;
 `;
 
 /**
  * 右边距
  */
 const marginRightCss = css<{ marginRight?: number }>`
-  margin-top: ${({ marginRight = 0 }) => marginRight}px;
+  margin-right: ${({ marginRight = 0 }) => marginRight}px;
 `;
 
 export interface Props {
