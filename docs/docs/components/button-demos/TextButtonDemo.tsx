@@ -20,6 +20,7 @@ export default function TextButtonDemo() {
         <StyleButton color="info">info</StyleButton>
         <StyleButton color="success">success</StyleButton>
         <StyleButton disabled>disabled</StyleButton>
+        <StyleButton href="https://www.baidu.com/">Link</StyleButton>
       </>
     </ThemeProvider>
   );

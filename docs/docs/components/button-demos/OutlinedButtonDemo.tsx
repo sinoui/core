@@ -34,6 +34,9 @@ export default function OutlinedButtonDemo() {
         <StyleButton outlined disabled>
           disabled
         </StyleButton>
+        <StyleButton outlined href="https://www.baidu.com/">
+          Link
+        </StyleButton>
       </>
     </ThemeProvider>
   );

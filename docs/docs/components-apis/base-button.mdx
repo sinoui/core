@@ -2,3 +2,38 @@
 id: base-button
 title: BaseButton
 ---
+
+基础的可点击元素。
+
+## 属性
+
+| 属性      | 属性类型          | 默认值             | 说明                                                         |
+| --------- | ----------------- | ------------------ | ------------------------------------------------------------ |
+| as        | HTMLElement       | button             | 指定渲染用的 dom 元素                                        |
+| className | string            | sinoui-base-button | 自定义样式类名称                                             |
+| href      | string            |                    | 设置超链接,如果指定 href,则使用`a`渲染                       |
+| ripple    | boolean \| object | true               | 是否启用涟漪效果，默认启用。也可设置为对象，指定涟漪效果参数 |
+| disabled  | boolean           | false              | 不可用状态                                                   |
+
+其中，ripple 作为对象使用时，对象具体属性可参考[ripple 官网](https://sinoui.github.io/ripple/)。
+
+除此之外，BaseButton 可以指定 button 元素的所有属性。
+
+## 入门示例
+
+```tsx
+import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import BaseButton from '@sinoui/core/BaseButton';
+
+function BaseButtonDemo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <BaseButton>文本按钮</BaseButton>
+    </ThemeProvider>
+  );
+}
+```
+
+更多关于 BaseButton 的使用，请参考 [按钮 | BaseButton](../components/button/#basebutton)。

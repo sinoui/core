@@ -14,6 +14,10 @@ module.exports = {
         items: ['components/button'],
       },
     ],
-    组件API: ['components-apis/base-button'],
+    组件API: [
+      'components-apis/base-button',
+      'components-apis/button',
+      'components-apis/icon-button',
+    ],
   },
 };

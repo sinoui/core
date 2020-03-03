@@ -21,8 +21,6 @@ exports[`正确渲染链接按钮 1`] = `
   <a
     className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button"
     href="https://github.com/"
-    role="button"
-    type="button"
   >
     github官网
   </a>

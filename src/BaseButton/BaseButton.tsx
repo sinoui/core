@@ -91,16 +91,6 @@ const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
       rippleRef,
     );
 
-    const buttonProps =
-      asProp === 'button'
-        ? {
-            type: 'button',
-            disabled,
-            role: 'button',
-            'aria-disabled': disabled,
-          }
-        : {};
-
     const asComp = useMemo(() => {
       if (href) {
         return 'a';
@@ -110,6 +100,16 @@ const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
       }
       return 'button';
     }, [asProp, href]);
+
+    const buttonProps =
+      asComp === 'button'
+        ? {
+            type: 'button',
+            disabled,
+            role: 'button',
+            'aria-disabled': disabled,
+          }
+        : {};
 
     return (
       <BaseButtonLayout

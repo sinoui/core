@@ -37,6 +37,9 @@ export default function RaisedButtonDemo() {
         <StyleButton raised disableElevation>
           disableElevation
         </StyleButton>
+        <StyleButton raised href="https://www.baidu.com/">
+          Link
+        </StyleButton>
       </>
     </ThemeProvider>
   );

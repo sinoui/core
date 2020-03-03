@@ -70,6 +70,9 @@ function RaisedButtonDemo() {
         <StyleButton raised disableElevation>
           disableElevation
         </StyleButton>
+        <StyleButton raised href="https://www.baidu.com/">
+          Link
+        </StyleButton>
       </>
     </ThemeProvider>
   );
@@ -110,6 +113,7 @@ function TextButtonDemo() {
         </StyleButton>
         <StyleButton color="success">success</StyleButton>
         <StyleButton disabled>disabled</StyleButton>
+        <StyleButton href="https://www.baidu.com/">Link</StyleButton>
       </>
     </ThemeProvider>
   );
@@ -161,6 +165,9 @@ function OutlinedButtonDemo() {
         </StyleButton>
         <StyleButton outlined disabled>
           disabled
+        </StyleButton>
+        <StyleButton outlined href="https://www.baidu.com/">
+          Link
         </StyleButton>
       </>
     </ThemeProvider>
@@ -259,6 +266,9 @@ export default function IconButtonDemo() {
         <StyledIconButton disabled>
           <FavoriteIcon />
         </StyledIconButton>
+        <StyledIconButton selected color="primary">
+          <FavoriteIcon />
+        </StyledIconButton>
       </>
     </ThemeProvider>
   );
@@ -320,6 +330,6 @@ function BaseButtonDemo() {
 
 ### API
 
-- BaseButton
-- Button
-- IconButton
+- [BaseButton](../components-apis/base-button)
+- [Button](../components-apis/button)
+- [IconButton](../components-apis/icon-button)

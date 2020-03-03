@@ -1,0 +1,38 @@
+---
+id: icon-button
+title: IconButton
+---
+
+图标按钮组件。
+
+## 属性
+
+| 属性     | 属性类型 | 默认值      | 说明         |
+| -------- | -------- | ----------- | ------------ |
+| selected | boolean  | false       | 选中状态     |
+| color    | string   | textPrimary | 指定图标颜色 |
+
+除上述属性外，Button 组件拥有 [BaseButton](./base-button) 的所有属性。
+
+## 入门示例
+
+```tsx
+import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import IconButton from '@sinoui/core/IconButton';
+import FavoriteIcon from '@sinoui/icons/Favorite';
+
+function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <FavoriteIcon />
+        <FavoriteIcon selected />
+      </>
+    </ThemeProvider>
+  );
+}
+```
+
+更多关于 IconButton 的使用示例，请参考 [Button | 图标按钮](../components/button/#图标按钮)。
