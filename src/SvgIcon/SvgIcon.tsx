@@ -25,7 +25,7 @@ export interface SvgProps {
   /**
    * 子元素
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /**
    * 自定义类名
    */
@@ -58,6 +58,10 @@ export interface SvgProps {
    * 引用元素
    */
   ref?: React.RefObject<HTMLInputElement>;
+  /**
+   * 引用组件
+   */
+  component?: React.ReactNode;
 }
 
 /**
@@ -72,10 +76,14 @@ const SvgIcon = React.forwardRef((props: SvgProps, ref) => {
     color,
     title,
     as = 'svg',
+    component,
     ...rest
   } = props;
+
+  const Svg: any = component ? component : SvgWrapper;
+
   return (
-    <SvgWrapper
+    <Svg
       {...rest}
       className={classNames('sinoui-svg-icon', className)}
       viewBox={viewBox}
@@ -89,7 +97,7 @@ const SvgIcon = React.forwardRef((props: SvgProps, ref) => {
     >
       {!!title && <title>{title}</title>}
       {children}
-    </SvgWrapper>
+    </Svg>
   );
 });
 
