@@ -21,14 +21,14 @@ describe('分割线组件 单元测试', () => {
     expect(container.firstChild && container.firstChild.nodeName).toBe('DIV');
   });
 
-  // it('设置水平间距', () => {
-  //   const { container } = render(
-  //     <ThemeProvider theme={defaultTheme}>
-  //       <Divider data-testid="divider" horizontal marginHorizontal={24} />
-  //     </ThemeProvider>,
-  //   );
-  //   expect(container.firstChild.style.marginLeft).toBe('24px');
-  // });
+  it('设置水平间距', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Divider data-testid="divider" horizontal marginHorizontal={24} />
+      </ThemeProvider>,
+    );
+    expect(container.firstChild).toHaveStyle('margin-left:24px');
+  });
 });
 
 describe('快照测试', () => {
