@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { getColorFromTheme } from './getColor';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 const SvgWrapper = styled.svg.attrs((props: SvgProps) => ({
   as: props.as,
-}))<{ size?: number | string }>`
+}))<{ size?: number | string,color?: string}>`
   font-size: ${(props) =>
     props.size === 'inherit' ? props.size : `${props.size}px`};
   width: 1em;
@@ -16,7 +16,7 @@ const SvgWrapper = styled.svg.attrs((props: SvgProps) => ({
     props.theme.transitions.create('fill', {
       duration: props.theme.transitions.duration.shorter,
     })};
-  color: ${(props) => getColorFromTheme(props)};
+  color: ${(props) => getColorFromTheme(props.theme, props.color)};
   user-select: none;
   display: inline-block;
 `;
