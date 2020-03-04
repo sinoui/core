@@ -11,9 +11,17 @@ module.exports = {
       {
         type: 'category',
         label: '通用',
-        items: ['components/button', 'components/topAppBar'],
+        items: [
+          'components/button',
+          'components/topAppBar',
+          'components/bottom-app-bar',
+        ],
       },
     ],
-    组件API: ['components-apis/base-button', 'components-apis/topAppBar-api'],
+    组件API: [
+      'components-apis/base-button',
+      'components-apis/topAppBar-api',
+      'components-apis/bottom-app-bar-api',
+    ],
   },
 };
