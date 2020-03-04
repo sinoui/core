@@ -1,18 +1,15 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { useRipple } from '@sinoui/ripple';
 import styled, { css } from 'styled-components';
 import useMultiRefs from '../utils/useMultiRefs';
+import OverridableComponent, { OverrideProps } from '../OverridableComponent';
 
-export interface BaseButtonProps {
+export interface Props {
   /**
    * 自定义class名称
    */
   className?: string;
-  /**
-   * 指定渲染用的dom元素，默认为button
-   */
-  as?: HTMLElement | any;
   /**
    * 设置超链接
    */
@@ -25,11 +22,13 @@ export interface BaseButtonProps {
    * 不可用状态
    */
   disabled?: boolean;
-  onClick?: (event: MouseEvent) => void;
-  children: React.ReactNode;
+  /**
+   * 指定根元素组件类型
+   */
+  as?: React.ReactType;
 }
 
-const BaseButtonStyle = css<BaseButtonProps>`
+const BaseButtonStyle = css<Props>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -59,23 +58,26 @@ const BaseButtonStyle = css<BaseButtonProps>`
   }
 `;
 
-const BaseButtonLayout = styled.button.attrs(({ as }: BaseButtonProps) => ({
-  as,
-}))`
+const BaseButtonLayout = styled.button`
   ${BaseButtonStyle}
 `;
+
+type BaseButtonType = ((
+  props: { href: string } & OverrideProps<Props, 'a'>,
+) => JSX.Element | null) &
+  OverridableComponent<Omit<Props, 'href'>, 'button'>;
 
 /**
  * 基础的可点击元素
  */
-const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
+const BaseButton: BaseButtonType = React.forwardRef<HTMLElement, Props>(
   function BaseButton(props, ref) {
     const {
       children,
       className,
-      as: asProp = 'button',
-      ripple = true,
       href,
+      as: asProp = href ? 'a' : 'button',
+      ripple = true,
       disabled,
       ...other
     } = props;
@@ -86,23 +88,10 @@ const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
         : { disabled: disabled || ripple === false };
     const rippleRef = useRipple(rippleConfig);
 
-    const handleRef = useMultiRefs<HTMLButtonElement | HTMLElement | null>(
-      ref,
-      rippleRef,
-    );
-
-    const asComp = useMemo(() => {
-      if (href) {
-        return 'a';
-      }
-      if (asProp) {
-        return asProp;
-      }
-      return 'button';
-    }, [asProp, href]);
+    const handleRef = useMultiRefs<HTMLElement>(ref, rippleRef);
 
     const buttonProps =
-      asComp === 'button'
+      asProp === 'button'
         ? {
             type: 'button',
             disabled,
@@ -115,7 +104,7 @@ const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
       <BaseButtonLayout
         {...(buttonProps as any)}
         className={classNames('sinoui-base-button', className)}
-        as={asComp}
+        as={asProp}
         href={href}
         ref={handleRef}
         disabled={disabled}
