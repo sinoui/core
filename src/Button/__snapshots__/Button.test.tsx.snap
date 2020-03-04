@@ -1,9 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`指定颜色 1`] = `
+Array [
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 cbsMir sinoui-button"
+    color="secondary"
+    role="button"
+    type="button"
+  >
+    文本按钮
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 dTWMDa sinoui-button sinoui-button--outlined"
+    color="secondary"
+    role="button"
+    type="button"
+  >
+    轮廓按钮
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 bfwuKi sinoui-button sinoui-button--raised"
+    color="secondary"
+    role="button"
+    type="button"
+  >
+    容器按钮
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 EkaWs sinoui-button"
+    color="textPrimary"
+    role="button"
+    type="button"
+  >
+    文本按钮
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 dHiyGA sinoui-button sinoui-button--outlined"
+    color="textPrimary"
+    role="button"
+    type="button"
+  >
+    轮廓按钮
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 kbQQoS sinoui-button sinoui-button--raised"
+    color="textPrimary"
+    role="button"
+    type="button"
+  >
+    容器按钮
+  </button>,
+]
+`;
+
 exports[`正确渲染三种形式按钮 1`] = `
 Array [
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 fDrNQu sinoui-button"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 kyqWxI sinoui-button"
     color="primary"
     role="button"
     type="button"
@@ -11,7 +64,7 @@ Array [
     文本按钮
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 kVWyvU sinoui-button sinoui-button--outlined"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 einurQ sinoui-button sinoui-button--outlined"
     color="primary"
     role="button"
     type="button"
@@ -19,7 +72,7 @@ Array [
     轮廓按钮
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 jvsHow sinoui-button sinoui-button--raised"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 fJvAwX sinoui-button sinoui-button--raised"
     color="primary"
     role="button"
     type="button"
@@ -33,7 +86,7 @@ exports[`渲染不可用状态下的三种形式按钮 1`] = `
 Array [
   <button
     aria-disabled={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 InWyh sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 ljTsfT sinoui-button"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 InWyh sinoui-base-button Button-sc-15sa99-0 flBdNy sinoui-button"
     color="primary"
     disabled={true}
     role="button"
@@ -43,7 +96,7 @@ Array [
   </button>,
   <button
     aria-disabled={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 InWyh sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 kcipEe sinoui-button sinoui-button--outlined"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 InWyh sinoui-base-button Button-sc-15sa99-0 iCNuHi sinoui-button sinoui-button--outlined"
     color="primary"
     disabled={true}
     role="button"
@@ -53,7 +106,7 @@ Array [
   </button>,
   <button
     aria-disabled={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 InWyh sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 gJMeKf sinoui-button sinoui-button--raised"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 InWyh sinoui-base-button Button-sc-15sa99-0 eqWXSI sinoui-button sinoui-button--raised"
     color="primary"
     disabled={true}
     role="button"
@@ -67,7 +120,7 @@ Array [
 exports[`渲染带图标按钮 1`] = `
 Array [
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 fDrNQu sinoui-button"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 kyqWxI sinoui-button"
     color="primary"
     role="button"
     type="button"
@@ -85,7 +138,7 @@ Array [
     icon
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 kVWyvU sinoui-button sinoui-button--outlined"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 einurQ sinoui-button sinoui-button--outlined"
     color="primary"
     role="button"
     type="button"
@@ -103,7 +156,7 @@ Array [
     icon
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button__StyledBaseButton-sc-15sa99-0 jvsHow sinoui-button sinoui-button--raised"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button Button-sc-15sa99-0 fJvAwX sinoui-button sinoui-button--raised"
     color="primary"
     role="button"
     type="button"

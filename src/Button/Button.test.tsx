@@ -3,7 +3,10 @@ import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import '@testing-library/jest-dom/extend-expect';
+import { render, cleanup } from '@testing-library/react';
 import Button from './Button';
+
+afterEach(cleanup);
 
 it('正确渲染三种形式按钮', () => {
   const tree = renderer.create(
@@ -73,4 +76,86 @@ it('渲染带图标按钮', () => {
   );
 
   expect(tree).toMatchSnapshot();
+});
+
+it('指定颜色', () => {
+  const tree = renderer.create(
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <Button color="secondary">文本按钮</Button>
+        <Button outlined color="secondary">
+          轮廓按钮
+        </Button>
+        <Button raised color="secondary">
+          容器按钮
+        </Button>
+        <Button color="textPrimary">文本按钮</Button>
+        <Button outlined color="textPrimary">
+          轮廓按钮
+        </Button>
+        <Button raised color="textPrimary">
+          容器按钮
+        </Button>
+      </>
+    </ThemeProvider>,
+  );
+
+  expect(tree).toMatchSnapshot();
+});
+
+describe('className', () => {
+  it('文本按钮', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Button data-testid="textButton">文本按钮</Button>
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('textButton')).toHaveClass('sinoui-button');
+  });
+
+  it('轮廓按钮', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Button data-testid="outlinedButton" outlined>
+          轮廓按钮
+        </Button>
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('outlinedButton')).toHaveClass(
+      'sinoui-button',
+      'sinoui-button--outlined',
+    );
+  });
+
+  it('容器按钮', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Button data-testid="raisedButton" raised>
+          容器按钮
+        </Button>
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('raisedButton')).toHaveClass(
+      'sinoui-button',
+      'sinoui-button--raised',
+    );
+  });
+
+  it('指定自定义 className', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Button data-testid="customButton" className="x-button">
+          自定义按钮
+        </Button>
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('customButton')).toHaveClass(
+      'sinoui-button',
+      'x-button',
+    );
+  });
 });

@@ -1,9 +1,9 @@
-import React from 'react';
-import BaseButton, { BaseButtonProps } from '@sinoui/core/BaseButton';
+import BaseButton, { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import { opacify } from 'polished';
 import getColorFromTheme from '../utils/getColorFromTheme';
+import OverridableComponent from '../OverridableComponent';
 
 export interface ButtonProps extends BaseButtonProps {
   /**
@@ -73,7 +73,19 @@ const raisedStyle = css<ButtonProps>`
   }
 `;
 
-const StyledBaseButton = styled(BaseButton)<ButtonProps>`
+const Button: OverridableComponent<ButtonProps, 'button'> = styled(
+  BaseButton,
+).attrs(({ className, outlined, raised, color = 'primary' }: ButtonProps) => ({
+  color,
+  className: classNames(
+    'sinoui-button',
+    {
+      'sinoui-button--outlined': outlined,
+      'sinoui-button--raised': raised,
+    },
+    className,
+  ),
+}))<ButtonProps>`
   ${textButtonStyle};
   ${(props) => props.outlined && outlinedStyle};
   ${(props) => props.raised && raisedStyle};
@@ -86,32 +98,5 @@ const StyledBaseButton = styled(BaseButton)<ButtonProps>`
     ${({ outlined, raised }) => (outlined || raised) && `margin-left:-4px`};
   }
 `;
-
-/**
- * 按钮组件
- */
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  props,
-  ref,
-) {
-  const { className, color = 'primary', outlined, raised, ...other } = props;
-  return (
-    <StyledBaseButton
-      className={classNames(
-        'sinoui-button',
-        {
-          'sinoui-button--outlined': outlined,
-          'sinoui-button--raised': raised,
-        },
-        className,
-      )}
-      ref={ref}
-      raised={raised}
-      outlined={outlined}
-      color={color}
-      {...other}
-    />
-  );
-});
 
 export default Button;
