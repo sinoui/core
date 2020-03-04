@@ -1,0 +1,210 @@
+---
+id: fab
+title: Fab 浮动按钮
+---
+
+import Fab from '@sinoui/core/Fab';
+import { MdAdd } from "react-icons/md";
+import StoryLayout from './StoryLayout';
+
+## 常规 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <Fab>
+      <MdAdd />
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab>
+    <MdAdd />
+  </Fab>
+</StoryLayout>
+
+## mini 形式 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <Fab mini>
+      <MdAdd />
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab mini>
+    <MdAdd />
+  </Fab>
+</StoryLayout>
+
+## 只有文本的扩展 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+   <Fab extended>
+      <span>按钮</span>
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab extended>
+    <span>按钮</span>
+  </Fab>
+</StoryLayout>
+
+## 左侧有图标的 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+   <Fab extended>
+      <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
+      <span>按钮</span>
+   </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab extended>
+    <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
+    <span>按钮</span>
+  </Fab>
+</StoryLayout>
+
+## 右侧有图标的 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <Fab extended>
+      <span>按钮</span>
+      <MdAdd style={{ fontSize: '24px', marginLeft: '12px' }} />
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab extended>
+    <span>按钮</span>
+    <MdAdd style={{ fontSize: '24px', marginLeft: '12px' }} />
+  </Fab>
+</StoryLayout>
+
+## 常规 Fab 使用示例
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <Fab style={{ borderRadius: '50% 0' }}>
+      <MdAdd />
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab style={{ borderRadius: '50% 0' }}>
+    <MdAdd />
+  </Fab>
+</StoryLayout>
+
+## 较小 Fab 使用示例
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <Fab
+      mini
+      style={{
+        borderRadius: '8px',
+      }}
+    >
+      <MdAdd />
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab
+    mini
+    style={{
+      borderRadius: '8px',
+    }}
+  >
+    <MdAdd />
+  </Fab>
+</StoryLayout>
+
+## 扩展 Fab 使用示例
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <Fab
+      extended
+      style={{
+        borderRadius: '12px',
+      }}
+    >
+      <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
+      <span>按钮</span>
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab
+    extended
+    style={{
+      borderRadius: '12px',
+    }}
+  >
+    <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
+    <span>按钮</span>
+  </Fab>
+</StoryLayout>

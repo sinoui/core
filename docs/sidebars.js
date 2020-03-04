@@ -11,9 +11,9 @@ module.exports = {
       {
         type: 'category',
         label: '通用',
-        items: ['components/button'],
+        items: ['components/button','components/fab'],
       },
     ],
-    组件API: ['components-apis/base-button'],
+    组件API: ['components-apis/base-button','components-apis/fab'],
   },
 };
