@@ -62,6 +62,10 @@ const BaseButtonLayout = styled.button`
   ${BaseButtonStyle}
 `;
 
+export type BaseButtonProps<
+  C extends React.ElementType = 'button'
+> = OverrideProps<Props, C>;
+
 type BaseButtonType = ((
   props: { href: string } & OverrideProps<Props, 'a'>,
 ) => JSX.Element | null) &
