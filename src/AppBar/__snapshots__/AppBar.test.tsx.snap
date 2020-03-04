@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 固定模式 1`] = `
+<div
+  className="AppBar__StyledAppBar-qqgfwp-0 kBVjMN"
+/>
+`;
+
+exports[`快照测试 密集模式 1`] = `
+<div
+  className="AppBar__StyledAppBar-qqgfwp-0 bjlEwZ"
+/>
+`;
+
+exports[`快照测试 收缩模式 1`] = `
+<div
+  className="AppBar__StyledAppBar-qqgfwp-0 bjlEwZ"
+/>
+`;
+
+exports[`快照测试 标准模式 1`] = `
+<div
+  className="AppBar__StyledAppBar-qqgfwp-0 fAskVX"
+/>
+`;
+
+exports[`快照测试 突出模式 1`] = `
+<div
+  className="AppBar__StyledAppBar-qqgfwp-0 kCdphO"
+/>
+`;

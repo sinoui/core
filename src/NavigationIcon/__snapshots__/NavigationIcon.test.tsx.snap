@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationIcon 1`] = `
+<div
+  className="NavigationIcon-sc-2b8xro-0 kIukpP"
+>
+  icons
+</div>
+`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import { BaseAppBarDemo, AppBarInput } from './appBarDemos';
+import { BaseAppBarDemo, AppBarInput, AppBarInputRight } from './appBarDemos';
 
 export default {
   title: 'AppBar',
@@ -45,8 +45,14 @@ export const 带有输入框的AppBar = () => (
   </ThemeProvider>
 );
 
-export const 带有输入框的突出AppBar = () => (
+export const 带有搜索框的突出AppBar = () => (
   <ThemeProvider theme={defaultTheme}>
     <AppBarInput prominent />
+  </ThemeProvider>
+);
+
+export const 带有搜索框在右侧的AppBar = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <AppBarInputRight />
   </ThemeProvider>
 );

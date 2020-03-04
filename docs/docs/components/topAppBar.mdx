@@ -1,0 +1,274 @@
+---
+id: topAppBar
+title: AppBar 顶部应用栏
+---
+
+import CardStoryLayout from '../components/CardStoryLayout';
+import AppBar from '@sinoui/core/AppBar';
+import AppBarTitle from '@sinoui/core/AppBarTitle';
+import NavigationIcon from '@sinoui/core/NavigationIcon';
+import AppBarActions from '@sinoui/core/AppBarActions';
+import Icon from '../../../stories/appBarDemos/Icon';
+import {
+  BaseAppBarDemo,
+  AppBarInput,
+  AppBarInputRight,
+} from '../../../stories/appBarDemos';
+import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+
+## 顶部应用栏组件结构
+
+按照从左到右的顺序，建议在顶部应用程序栏中如下方式放置元素：
+
+- 在应用栏的最左侧放置导航图标
+- 在应用栏的导航图标右侧放置标题
+- 在应用栏的最右侧放置可操作的元素，比如图片、搜索区域
+
+![](https://user-images.githubusercontent.com/20694684/75840000-31b4c780-5e05-11ea-8c3c-ae9bf521ba4d.jpg)
+
+1. AppBar-应用栏容器
+2. NavigationIcon-应用栏左侧图标按钮区域
+3. AppBarTitle-应用栏标题区域
+4. AppBarActions-应用栏可操作性区域
+
+## 应用栏模式
+
+根据应用栏的不同形态将应用栏分为以下几种模式：
+
+- 标准模式(默认形式)
+- 突出模式(prominent)
+- 密集模式(dense)
+- 收缩模式(fixed)
+- 固定模式(short)
+
+### 标准模式
+
+`<AppBar prominent>...</AppBar>`
+
+标准模式下的顶部应用显示栏标题文字时注意事项：
+
+- 不建议标题文字换行
+- 不建议标题文字过多时省略号显示
+- 不建议标题文字过多时缩放显示
+- 标题文字过多时建议使用突出模式顶部应用栏
+
+### 突出模式(prominent)
+
+`<AppBar prominent>...</AppBar>`
+
+突出的顶部应用栏可用于较长的标题展示，可以容纳图像，或作为一个更强大的顶部应用栏。
+
+**注意事项：突出模式的顶部应用栏在容纳图像时不用使用容易使应用栏图标和文字变得难以辨认的图片。**
+
+推荐：
+![image](https://user-images.githubusercontent.com/20694684/75842202-b0603380-5e0a-11ea-96b1-5afa22f89664.png)
+不推荐:
+![image](https://user-images.githubusercontent.com/20694684/75842324-f0271b00-5e0a-11ea-8d38-5351264036fd.png)
+
+### 密集模式(dense)
+
+`<AppBar dense>...</AppBar>`
+
+布局空间比较密集时，可以使用密集式应用栏以适应更密集的布局。
+
+### 收缩模式(short)
+
+`<AppBar short>...</AppBar>`
+
+当顶部应用栏需要收缩展示时，可以使用收缩模式，收缩模式的应用栏只展示左侧的导航图标和最后一个可操作性区域的元素。
+
+### 密固定模式(fixed)
+
+`<AppBar fixed>...</AppBar>`
+
+固定模式的顶部应用栏则固定显示在顶部，页面发生滚动时依然停留在页面顶部。
+
+## 顶部应用栏示例
+
+### 标准模式
+
+<CardStoryLayout>
+  <BaseAppBarDemo />
+</CardStoryLayout>
+
+#### 代码
+
+```tsx
+<AppBar>
+  <NavigationIcon>
+    <Icon>
+      <MdDehaze />
+    </Icon>
+  </NavigationIcon>
+  <AppBarTitle>标题</AppBarTitle>
+  <AppBarActions>
+    <Icon>
+      <MdFavorite />
+    </Icon>
+    <Icon>
+      <MdBookmark />
+    </Icon>
+  </AppBarActions>
+</AppBar>
+```
+
+### 突出模式
+
+<CardStoryLayout>
+  <BaseAppBarDemo prominent />
+</CardStoryLayout>
+
+#### 代码
+
+```tsx
+<AppBar prominent>
+  <NavigationIcon>
+    <Icon>
+      <MdDehaze />
+    </Icon>
+  </NavigationIcon>
+  <AppBarTitle>标题</AppBarTitle>
+  <AppBarActions>
+    <Icon>
+      <MdFavorite />
+    </Icon>
+    <Icon>
+      <MdBookmark />
+    </Icon>
+  </AppBarActions>
+</AppBar>
+```
+
+### 密集模式
+
+<CardStoryLayout>
+  <BaseAppBarDemo dense />
+</CardStoryLayout>
+
+#### 代码
+
+```tsx
+<AppBar dense>
+  <NavigationIcon>
+    <Icon>
+      <MdDehaze />
+    </Icon>
+  </NavigationIcon>
+  <AppBarTitle>标题</AppBarTitle>
+  <AppBarActions>
+    <Icon>
+      <MdFavorite />
+    </Icon>
+    <Icon>
+      <MdBookmark />
+    </Icon>
+  </AppBarActions>
+</AppBar>
+```
+
+### 收缩模式
+
+<CardStoryLayout>
+  <BaseAppBarDemo short />
+</CardStoryLayout>
+
+#### 代码
+
+```tsx
+<AppBar short>
+  <NavigationIcon>
+    <Icon>
+      <MdDehaze />
+    </Icon>
+  </NavigationIcon>
+  <AppBarTitle>标题</AppBarTitle>
+  <AppBarActions>
+    <Icon>
+      <MdFavorite />
+    </Icon>
+    <Icon>
+      <MdBookmark />
+    </Icon>
+  </AppBarActions>
+</AppBar>
+```
+
+### 固定模式
+
+#### 代码
+
+```tsx
+<AppBar fixed>
+  <NavigationIcon>
+    <Icon>
+      <MdDehaze />
+    </Icon>
+  </NavigationIcon>
+  <AppBarTitle>标题</AppBarTitle>
+  <AppBarActions>
+    <Icon>
+      <MdFavorite />
+    </Icon>
+    <Icon>
+      <MdBookmark />
+    </Icon>
+  </AppBarActions>
+</AppBar>
+```
+
+### 带输入框的应用栏
+
+- 输入框紧挨在标题的右侧
+
+  <CardStoryLayout>
+    <AppBarInput />
+  </CardStoryLayout>
+
+#### 代码
+
+```tsx
+<AppBar>
+  <NavigationIcon>
+    <Icon>
+      <MdDehaze />
+    </Icon>
+  </NavigationIcon>
+  <TitleWrapper>
+    <AppBarTitle>标题</AppBarTitle>
+    <input placeholder="请输入" style={{ height: '32px' }} />
+  </TitleWrapper>
+  <AppBarActions>
+    <Icon>
+      <MdFavorite />
+    </Icon>
+    <Icon>
+      <MdBookmark />
+    </Icon>
+  </AppBarActions>
+</AppBar>
+```
+
+- 输入框在可操作区域的左侧
+  <CardStoryLayout>
+    <AppBarInputRight />
+  </CardStoryLayout>
+
+```tsx
+<AppBar>
+  <NavigationIcon>
+    <Icon>
+      <MdDehaze />
+    </Icon>
+  </NavigationIcon>
+  <AppBarTitle>标题</AppBarTitle>
+  <AppBarActions>
+    <input placeholder="请输入" style={{ height: '32px' }} />
+    <Icon>
+      <MdFavorite />
+    </Icon>
+    <Icon>
+      <MdBookmark />
+    </Icon>
+  </AppBarActions>
+</AppBar>
+```
