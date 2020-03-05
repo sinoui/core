@@ -51,7 +51,7 @@ export const 设置扩展样式 = () => (
   </StoryLayout>
 );
 
-const TabShaped = styled(Fab)`
+const TabShapedFirst = styled(Fab)`
   border-radius: 50% 0;
   padding: 0;
   width: 56px;
@@ -100,9 +100,9 @@ const TabShapedThird = styled(Fab)`
 
 export const 不同形状展示 = () => (
   <StoryLayout>
-    <TabShaped>
+    <TabShapedFirst extended>
       <MdAdd />
-    </TabShaped>
+    </TabShapedFirst>
     <p />
     <TabShapedSecond extended>
       <MdAdd />

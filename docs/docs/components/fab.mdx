@@ -6,6 +6,9 @@ title: Fab 浮动按钮
 import Fab from '@sinoui/core/Fab';
 import { MdAdd } from "react-icons/md";
 import StoryLayout from './StoryLayout';
+import TabShapedFirst from './fab-demos/TabShapedFirst';
+import TabShapedSecond from './fab-demos/TabShapedSecond';
+import TabShapedThird from './fab-demos/TabShapedThird';
 
 ## 常规 Fab
 
@@ -121,90 +124,106 @@ function FabDemo() {
   </Fab>
 </StoryLayout>
 
-## 常规 Fab 使用示例
+## 不同形状展示
+
+### 形状1
 
 ```tsx
 import Fab from '@sinoui/core/Fab';
 
+const TabShapedFirst = styled(Fab)`
+  border-radius: 50% 0;
+  padding: 0;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  .sinoui-fab-extended__ripple-layout {
+    width: 56px;
+    height: 56px;
+    border-radius: 50% 0;
+  }
+  .sinoui-fab-extended__ripple {
+    width: 56px;
+    height: 56px;
+    border-radius: 50% 0;
+  }
+`;
+
 function FabDemo() {
   return (
-    <Fab style={{ borderRadius: '50% 0' }}>
+    <TabShapedFirst extended>
       <MdAdd />
-    </Fab>
+    </TabShapedFirst>
   );
 }
 ```
 
 效果如下：
 
-<StoryLayout>
-  <Fab style={{ borderRadius: '50% 0' }}>
-    <MdAdd />
-  </Fab>
-</StoryLayout>
+<TabShapedFirst />
 
-## 较小 Fab 使用示例
+### 形状2
 
 ```tsx
 import Fab from '@sinoui/core/Fab';
 
+const TabShapedSecond = styled(Fab)`
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0;
+  .sinoui-fab-extended__ripple-layout {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+  .sinoui-fab-extended__ripple {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+`;
+
 function FabDemo() {
   return (
-    <Fab
-      mini
-      style={{
-        borderRadius: '8px',
-      }}
-    >
+   <TabShapedSecond extended>
       <MdAdd />
-    </Fab>
+    </TabShapedSecond>
   );
 }
 ```
 
 效果如下：
 
-<StoryLayout>
-  <Fab
-    mini
-    style={{
-      borderRadius: '8px',
-    }}
-  >
-    <MdAdd />
-  </Fab>
-</StoryLayout>
+<TabShapedSecond />
 
-## 扩展 Fab 使用示例
+### 形状3
 
 ```tsx
 import Fab from '@sinoui/core/Fab';
 
+const TabShapedThird = styled(Fab)`
+  border-radius: 12px;
+
+  .sinoui-fab-extended__ripple-layout {
+    border-radius: 12px;
+  }
+  .sinoui-fab-extended__ripple {
+    border-radius: 12px;
+  }
+`;
+
 function FabDemo() {
   return (
-    <Fab
-      extended
-      style={{
-        borderRadius: '12px',
-      }}
-    >
+    <TabShapedThird extended>
       <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
       <span>按钮</span>
-    </Fab>
+    </TabShapedThird>
   );
 }
 ```
 
 效果如下：
 
-<StoryLayout>
-  <Fab
-    extended
-    style={{
-      borderRadius: '12px',
-    }}
-  >
-    <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
-    <span>按钮</span>
-  </Fab>
-</StoryLayout>
+<TabShapedThird />
