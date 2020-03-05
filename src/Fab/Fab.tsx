@@ -47,7 +47,6 @@ const FabStyle = css<Props>`
   background: ${(props) => getColorFromTheme(props.theme, props.color)};
   padding: ${(props) => (props.extended ? '0px 20px' : '0px')};
   font-size: ${(props) => (props.extended ? '0.875rem' : '24px')};
-  pointer-events: ${({ disabled }) => (disabled ? 'none' : 'default')};
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -57,6 +56,7 @@ const FabStyle = css<Props>`
   max-width: 100%;
   cursor: pointer;
   text-decoration: none;
+  box-sizing: border-box;
   &::-moz-focus-inner {
     border-style: none;
   }
@@ -70,8 +70,28 @@ const FabStyle = css<Props>`
       )};
   }
 
+  // Reset on touch devices, it doesn't add specificity
+  @media (hover: none) {
+    backgroundcolor: transparent;
+  }
+
   &:foucs {
     box-shadow: ${(props) => props.theme.shadows[12]};
+  }
+
+  &.sinoui-fab--disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .sinoui-fab__ripple-layout {
+    width: ${(props) => WidthStyle(props)};
+    height: ${(props) => HeightStyle(props)};
+  }
+
+  .sinoui-fab__ripple {
+    width: ${(props) => WidthStyle(props)};
+    height: ${(props) => HeightStyle(props)};
   }
 `;
 
@@ -132,7 +152,13 @@ const Fab = React.forwardRef((props: Props, ref: any) => {
     ...rest
   } = props;
 
-  const rippleRef = useRipple<HTMLButtonElement>();
+  const rippleRef = useRipple<HTMLButtonElement>({
+    disabled,
+    fixSize: !extended && true,
+    center: !extended && true,
+    rippleLayoutClassName: !extended ? 'sinoui-fab__ripple-layout' : '',
+    rippleClassName: !extended ? 'sinoui-fab__ripple' : '',
+  });
   const handleRef = useMultiRefs<HTMLButtonElement | HTMLElement | null>(
     ref,
     rippleRef,
