@@ -149,8 +149,8 @@ const StyledDivider = styled.hr.attrs(({ vertical }: Props) => ({
   ${({ marginHorizontal }) =>
     marginHorizontal !== undefined && marginHorizontalCss}
   ${({ marginVertical }) => marginVertical && marginVerticalCss}
-  ${({ marginTop }) => marginTop !== undefined && marginTopCss}
-  ${({ marginBottom }) => marginBottom !== undefined && marginBottomCss}
+  ${({ marginTop }) => marginTop && marginTopCss}
+  ${({ marginBottom }) => marginBottom && marginBottomCss}
   ${({ marginLeft }) => marginLeft !== undefined && marginLeftCss}
   ${({ marginRight }) => marginRight !== undefined && marginRightCss}
 `;
