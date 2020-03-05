@@ -2,7 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import TestWrapper from '../utils/TestWrapper';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
 import Overline from './index';
 
 /**
@@ -13,9 +14,9 @@ describe('文字排版 单元测试', () => {
 
   it('指定不同的根元素', () => {
     const { container } = render(
-      <TestWrapper>
+      <ThemeProvider theme={defaultTheme}>
         <Overline as="div">这是一个文字。</Overline>
-      </TestWrapper>,
+      </ThemeProvider>,
     );
 
     const text = container.querySelector('div');
@@ -25,28 +26,27 @@ describe('文字排版 单元测试', () => {
   it('ref 指向根元素', () => {
     const ref: React.RefObject<HTMLInputElement> = React.createRef();
     const { container } = render(
-      <TestWrapper>
+      <ThemeProvider theme={defaultTheme}>
         <Overline data-testid="typo" ref={ref}>
           这是一个文字。
         </Overline>
-      </TestWrapper>,
+      </ThemeProvider>,
     );
 
     const text = container.firstChild;
-    expect(text && text.firstChild).toEqual(ref.current);
+    expect(text).toEqual(ref.current);
   });
-  it('其它属性传递给根元素', () => {
-    const ref: React.RefObject<HTMLInputElement> = React.createRef();
+  it('设置align文本对齐方式', () => {
     const { container } = render(
-      <TestWrapper>
-        <Overline data-testid="typo" as="div" ref={ref}>
+      <ThemeProvider theme={defaultTheme}>
+        <Overline data-testid="typo" align="center">
           这是一个文字。
         </Overline>
-      </TestWrapper>,
+      </ThemeProvider>,
     );
 
     const text = container.firstChild;
-    expect(text && text.firstChild).toEqual(ref.current);
+    expect(text).toHaveStyle(`text-align:center`);
   });
 });
 
@@ -57,9 +57,9 @@ describe('文字排版 快照测试', () => {
   it('基本文字排版', () => {
     const tree = renderer
       .create(
-        <TestWrapper>
+        <ThemeProvider theme={defaultTheme}>
           <Overline>Overline</Overline>
-        </TestWrapper>,
+        </ThemeProvider>,
       )
       .toJSON();
 
@@ -68,12 +68,12 @@ describe('文字排版 快照测试', () => {
   it('设置属性', () => {
     const tree = renderer
       .create(
-        <TestWrapper>
+        <ThemeProvider theme={defaultTheme}>
           <Overline as="h2">Overline</Overline>
           <Overline align="center">Overline</Overline>
           <Overline noWrap>Overline</Overline>
           <Overline color="success">Overline</Overline>
-        </TestWrapper>,
+        </ThemeProvider>,
       )
       .toJSON();
 
@@ -82,7 +82,7 @@ describe('文字排版 快照测试', () => {
   it('颜色设置', () => {
     const tree = renderer
       .create(
-        <TestWrapper>
+        <ThemeProvider theme={defaultTheme}>
           <Overline>Overline</Overline>
           <Overline color="primary">Overline</Overline>
           <Overline color="secondary">Overline</Overline>
@@ -92,7 +92,7 @@ describe('文字排版 快照测试', () => {
           <Overline color="warning">Overline</Overline>
           <Overline color="success">Overline</Overline>
           <Overline color="info">Overline</Overline>
-        </TestWrapper>,
+        </ThemeProvider>,
       )
       .toJSON();
 

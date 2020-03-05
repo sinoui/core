@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import classNames from 'classnames';
-import { getColorFromTheme } from '../utils/color';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 /**
  * 文本对齐方式
@@ -32,21 +32,32 @@ const marginBottomWrapper = (props: Props) => {
 };
 
 /**
+ * 不换行处理
+ */
+const noWrapStyle = css`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const TypographyStyle = css<Props>`
+  margin: 0;
+  padding: 0;
+  ${(props) => ({ ...props.theme.typography[props.type || 'body2'] })};
+  text-align: ${(props) => textAlignWrapper(props)};
+  margin-bottom: ${(props) => marginBottomWrapper(props)};
+  color: ${(props) => getColorFromTheme(props.theme, props.color)};
+`;
+
+/**
  * 文字排版组件
  */
 export const TypographyWrapper = styled.div.attrs((props: Props) => ({
   as: props.as || 'p',
-}))<Props>((props) => ({
-  margin: 0,
-  padding: 0,
-  ...props.theme.typography[props.type || 'body2'],
-  textAlign: textAlignWrapper(props),
-  whiteSpace: props.noWrap && 'nowrap',
-  overflow: props.noWrap && 'hidden',
-  textOverflow: props.noWrap && 'ellipsis',
-  marginBottom: marginBottomWrapper(props),
-  color: getColorFromTheme(props, props.theme.palette.text.primary),
-}));
+}))<Props>`
+  ${TypographyStyle};
+  ${(props) => props.noWrap && noWrapStyle};
+`;
 
 /**
  * 文字排版组件类型
@@ -59,7 +70,7 @@ export interface Props {
   /**
    * 变更DOM元素
    */
-  as?: any;
+  as?: React.ReactType | any;
   /**
    * 自定义类名
    */
@@ -71,7 +82,7 @@ export interface Props {
   /**
    * 文本对齐方式，默认左对齐
    */
-  align?: string;
+  align?: 'center' | 'left' | 'right';
   /**
    * 是否换行
    */
@@ -95,7 +106,19 @@ export interface Props {
   /**
    * 文本样式类型
    */
-  type?: string;
+  type?:
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'subtitle1'
+    | 'subtitle2'
+    | 'body1'
+    | 'body2'
+    | 'caption'
+    | 'overline';
 }
 
 const asElementTypes = {
@@ -116,7 +139,7 @@ const asElementTypes = {
 const Typography = React.forwardRef((props: Props, ref) => {
   const {
     type = 'body2',
-    as = asElementTypes[props.type],
+    as = asElementTypes[props.type || 'body2'],
     children,
     className,
     style,
@@ -127,6 +150,20 @@ const Typography = React.forwardRef((props: Props, ref) => {
     color = 'textPrimary',
     ...rest
   } = props;
+
+  const isGutterBottom =
+    (type === 'h1' ||
+      type === 'h2' ||
+      type === 'h3' ||
+      type === 'h4' ||
+      type === 'h5' ||
+      type === 'h6' ||
+      type === 'subtitle1' ||
+      type === 'subtitle2') &&
+    gutterBottom;
+
+  const isParagraph = (type === 'body1' || type === 'body2') && paragraph;
+
   return (
     <TypographyWrapper
       {...rest}
@@ -137,35 +174,15 @@ const Typography = React.forwardRef((props: Props, ref) => {
         `sinoui-typography--${type}`,
         className,
         {
-          'sinoui-typography--gutter-bottom':
-            (type === 'h1' ||
-              type === 'h2' ||
-              type === 'h3' ||
-              type === 'h4' ||
-              type === 'h5' ||
-              type === 'h6' ||
-              type === 'subtitle1' ||
-              type === 'subtitle2') &&
-            gutterBottom,
-          'sinoui-typography--paragraph':
-            (type === 'body1' || type === 'body2') && paragraph,
+          'sinoui-typography--gutter-bottom': isGutterBottom,
+          'sinoui-typography--paragraph': isParagraph,
         },
       )}
       style={style}
       align={align}
       noWrap={noWrap}
-      gutterBottom={
-        (type === 'h1' ||
-          type === 'h2' ||
-          type === 'h3' ||
-          type === 'h4' ||
-          type === 'h5' ||
-          type === 'h6' ||
-          type === 'subtitle1' ||
-          type === 'subtitle2') &&
-        gutterBottom
-      }
-      paragraph={(type === 'body1' || type === 'body2') && paragraph}
+      gutterBottom={isGutterBottom}
+      paragraph={isParagraph}
       color={color}
       type={type}
     >

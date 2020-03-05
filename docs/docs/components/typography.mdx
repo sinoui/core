@@ -18,7 +18,7 @@ import Caption from '@sinoui/core/Caption';
 import Overline from '@sinoui/core/Overline';
 import StoryLayout from './StoryLayout';
 
-## BaseButton
+## Typography
 
 ```tsx
 import H1 from '@sinoui/core/H1';
@@ -47,7 +47,19 @@ function TypographyDemo() {
 效果如下：
 
 <StoryLayout>
-  <Typography>Typography</Typography>
+  <H1>h1.一级标题</H1>
+  <H2>h2. 二级标题</H2>
+  <H3>h3. 三级标题</H3>
+  <H4>h4. 四级标题</H4>
+  <H5>h5. 五级标题</H5>
+  <H6>h6. 六级标题</H6>
+  <Subtitle1>subtitle1. 副标题1</Subtitle1>
+  <Subtitle2>subtitle2. 副标题2</Subtitle2>
+  <Body1>body1. 段落 1</Body1>
+  <Body2>body2. 段落 2</Body2>
+  <Caption>Caption. 说明</Caption>
+  <Overline>Overline.</Overline>
+  <Typography>Typography.</Typography>
 </StoryLayout>
 
 ## 设置变更DOM元素
@@ -155,7 +167,6 @@ function H1Demo(){
 
 <StoryLayout>
   <H1 gutterBottom>H1</H1>
-  <H1>H1</H1>
 </StoryLayout>
 
 ## 设置是否为段落
@@ -172,7 +183,6 @@ function Body1Demo(){
 
 <StoryLayout>
   <Body1 paragraph>Body1</Body1>
-  <Body1>Body1</Body1>
 </StoryLayout>
 
 ## 设置操作DOM节点
