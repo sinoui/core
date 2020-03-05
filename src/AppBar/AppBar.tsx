@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import AppBarTitle from '@sinoui/core/AppBarTitle';
 import AppBarActions from '@sinoui/core/AppBarActions';
@@ -9,8 +8,17 @@ export interface Props {
    * 突出模式
    */
   prominent?: boolean;
+  /**
+   * 密集模式
+   */
   dense?: boolean;
+  /**
+   * 固定模式
+   */
   fixed?: boolean;
+  /**
+   * 收缩模式
+   */
   short?: boolean;
 }
 /**
@@ -77,12 +85,12 @@ const shortCss = css`
  */
 const fixedCss = css`
   position: fixed;
-  width: 100%;
 `;
 
 const StyledAppBar = styled.div<Props>`
   position: relative;
   display: flex;
+  width: 100%;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[4]};
   background-color: ${({ theme }) => theme.palette.primary.main};
@@ -96,9 +104,4 @@ const StyledAppBar = styled.div<Props>`
   }
   
 `;
-
-React.forwardRef<HTMLDivElement, Props>((props, ref) => (
-  <StyledAppBar ref={ref} {...props} />
-));
-
 export default StyledAppBar;

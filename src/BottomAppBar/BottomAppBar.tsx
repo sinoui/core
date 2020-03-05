@@ -1,8 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import AppBarActions from '@sinoui/core/AppBarActions';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
+import NavigationIcon from '@sinoui/core/NavigationIcon';
 import Fab from '../../stories/appBarDemos/Fab';
-import Circle from './Circle';
+import InSetCircle from './InSetCircle';
 
 export interface Props {
   /**
@@ -13,10 +15,11 @@ export interface Props {
    * 浮动操作按钮为居右显示 可操作区域要放在左侧显示。
    */
   endFab?: boolean;
+  style?: React.CSSProperties;
 }
 
 const endFabCss = css<Props>`
-  & ${AppBarActions} {
+  && ${AppBarActions} {
     justify-content: ${(props) => props.endFab && 'flex-start'};
   }
 
@@ -37,14 +40,15 @@ const StyledAppBar = styled.div<Props>`
   box-sizing: border-box;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[8]};
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  ${(props) => props.endFab && endFabCss}
 
   & ${AppBarActions} {
     flex: 1;
     justify-content: flex-end;
   }
 
-  ${(props) => props.endFab && endFabCss}
+  background-color: ${({ color = 'primary', theme }: Props) =>
+    getColorFromTheme(theme, color)};
 `;
 
 const InsetBottomAppBar = styled.div`
@@ -60,33 +64,44 @@ const InsetBottomAppBar = styled.div`
   box-shadow: ${({ theme }) => theme.shadows[8]};
   background-color: transparent;
 
-  .sino-bottom-left-bar {
+  & ${AppBarActions} {
     flex: 1;
-    height: 100%;
-    background: ${(props) => props.theme.palette.primary.main};
-  }
-  .sino-bottom-right-bar {
-    flex: 1;
-    height: 100%;
-    background: ${(props) => props.theme.palette.primary.main};
+    justify-content: flex-end;
+    z-index: 1;
   }
 
-  .sino-bottom-cut {
-    width: 72px;
-    height: 72px;
-    border-radius: 36px;
+  & ${NavigationIcon} {
+    z-index: 1;
   }
 `;
+
+const InsetBottomAppBarLayer = styled.div`
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 56px;
+  top: 0;
+  left: 0;
+  .sinoui-bottom-app-bar--layer {
+    flex: 1;
+    height: 100%;
+    background-color: ${({ color = 'primary', theme }) =>
+      getColorFromTheme(theme, color)};
+  }
+`;
+
 const BottomAppBar = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const { insertFab, children } = props;
-  console.log(children);
+  const { insertFab, children, style } = props;
   return !insertFab ? (
     <StyledAppBar ref={ref} {...props} />
   ) : (
-    <InsetBottomAppBar>
-      <div className="sino-bottom-left-bar">left</div>
-      <Circle />
-      <div className="sino-bottom-right-bar">right</div>
+    <InsetBottomAppBar style={style}>
+      {children}
+      <InsetBottomAppBarLayer>
+        <div className="sinoui-bottom-app-bar--layer" />
+        <InSetCircle />
+        <div className="sinoui-bottom-app-bar--layer" />
+      </InsetBottomAppBarLayer>
     </InsetBottomAppBar>
   );
 });

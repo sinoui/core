@@ -2,30 +2,30 @@
 
 exports[`快照测试 固定模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 kBVjMN"
+  className="AppBar__StyledAppBar-qqgfwp-0 kiPzqC"
 />
 `;
 
 exports[`快照测试 密集模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 bjlEwZ"
+  className="AppBar__StyledAppBar-qqgfwp-0 kQVcUW"
 />
 `;
 
 exports[`快照测试 收缩模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 bjlEwZ"
+  className="AppBar__StyledAppBar-qqgfwp-0 kQVcUW"
 />
 `;
 
 exports[`快照测试 标准模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 fAskVX"
+  className="AppBar__StyledAppBar-qqgfwp-0 jiXzMi"
 />
 `;
 
 exports[`快照测试 突出模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 kCdphO"
+  className="AppBar__StyledAppBar-qqgfwp-0 dWxAZi"
 />
 `;

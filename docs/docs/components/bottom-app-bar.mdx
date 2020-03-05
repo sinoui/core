@@ -28,7 +28,7 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 - 应用中已经存在底部导航栏
 - 屏幕中最多只有一个动作
 
-## 底部应用栏组件结构
+## 底部应用栏结构
 
 ![](https://user-images.githubusercontent.com/20694684/75869481-95121a00-5e44-11ea-861b-404f078ab9d0.jpg)
 
@@ -37,12 +37,179 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 3. Fab-浮动操作按钮
 4. AppBarActions-应用栏可操作性区域
 
-## 应用栏模式
+## 底部应用栏模式
 
-根据应用栏的不同形态将应用栏分为以下几种模式：
+根据应用栏的浮动按钮的不同形态将底部应用栏分为以下几种模式：
 
-- 标准模式(默认形式)
-- 突出模式(prominent)
-- 密集模式(dense)
-- 收缩模式(fixed)
-- 固定模式(short)
+- 浮动按钮居中(默认)
+- 浮动按钮居右显示
+- 没有浮动按钮
+- 浮动按钮居中嵌入显示
+
+### 浮动按钮居中
+
+<CardStoryLayout height={200}>
+  <BottomAppBarDemo style={{ position: 'relative', alignSelf: 'flex-end' }} />
+</CardStoryLayout>
+
+代码：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import BottomAppBar from '@sinoui/core/BottomAppBar';
+import NavigationIcon from '@sinoui/core/NavigationIcon';
+import AppBarActions from '@sinoui/core/AppBarActions';
+import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+import Icon from './Icon';
+import Fab from './Fab';
+
+export default function Demo() {
+  return (
+    <BottomAppBar>
+      <NavigationIcon>
+        <Icon>
+          <MdDehaze />
+        </Icon>
+      </NavigationIcon>
+      <Fab />
+      <AppBarActions>
+        <Icon>
+          <MdFavorite />
+        </Icon>
+        <Icon>
+          <MdBookmark />
+        </Icon>
+      </AppBarActions>
+    </BottomAppBar>
+  );
+}
+```
+
+### 浮动按钮居右
+
+<CardStoryLayout height={200}>
+  <BottomAppBarDemo
+    endFab
+    style={{ position: 'relative', alignSelf: 'flex-end' }}
+  />
+</CardStoryLayout>
+
+代码：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import BottomAppBar from '@sinoui/core/BottomAppBar';
+import NavigationIcon from '@sinoui/core/NavigationIcon';
+import AppBarActions from '@sinoui/core/AppBarActions';
+import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+import Icon from './Icon';
+import Fab from './Fab';
+
+export default function Demo() {
+  return (
+    <BottomAppBar endFab>
+      <NavigationIcon>
+        <Icon>
+          <MdDehaze />
+        </Icon>
+      </NavigationIcon>
+      <Fab />
+      <AppBarActions>
+        <Icon>
+          <MdFavorite />
+        </Icon>
+        <Icon>
+          <MdBookmark />
+        </Icon>
+      </AppBarActions>
+    </BottomAppBar>
+  );
+}
+```
+
+### 没有浮动按钮
+
+<CardStoryLayout height={200}>
+  <BottomAppBarDemoNoFab
+    style={{ position: 'relative', alignSelf: 'flex-end' }}
+  />
+</CardStoryLayout>
+
+代码：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import BottomAppBar from '@sinoui/core/BottomAppBar';
+import NavigationIcon from '@sinoui/core/NavigationIcon';
+import AppBarActions from '@sinoui/core/AppBarActions';
+import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+import Icon from './Icon';
+
+export default function Demo() {
+  return (
+    <BottomAppBar endFab>
+      <NavigationIcon>
+        <Icon>
+          <MdDehaze />
+        </Icon>
+      </NavigationIcon>
+      <AppBarActions>
+        <Icon>
+          <MdFavorite />
+        </Icon>
+        <Icon>
+          <MdBookmark />
+        </Icon>
+      </AppBarActions>
+    </BottomAppBar>
+  );
+}
+```
+
+### 浮动按钮居中嵌入
+
+<CardStoryLayout height={200}>
+  <BottomAppBarDemo
+    insertFab
+    style={{ position: 'relative', alignSelf: 'flex-end' }}
+  />
+</CardStoryLayout>
+
+代码：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import BottomAppBar from '@sinoui/core/BottomAppBar';
+import NavigationIcon from '@sinoui/core/NavigationIcon';
+import AppBarActions from '@sinoui/core/AppBarActions';
+import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+import Icon from './Icon';
+
+export default function Demo() {
+  return (
+    <BottomAppBar endFab>
+      <NavigationIcon>
+        <Icon>
+          <MdDehaze />
+        </Icon>
+      </NavigationIcon>
+      <AppBarActions>
+        <Icon>
+          <MdFavorite />
+        </Icon>
+        <Icon>
+          <MdBookmark />
+        </Icon>
+      </AppBarActions>
+    </BottomAppBar>
+  );
+}
+```
