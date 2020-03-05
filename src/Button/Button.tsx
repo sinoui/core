@@ -72,8 +72,8 @@ const raisedStyle = css<Props>`
 
   &:hover {
     background-color: ${({ theme, color }) => getColorFromTheme(theme, color)};
-    box-shadow: ${({ disabled, disableElevation, theme }) =>
-      !disabled && !disableElevation && theme.shadows[8]};
+    box-shadow: ${({ disableElevation, theme }) =>
+      !disableElevation && theme.shadows[4]};
 
     @media (hover: none) {
       background-color: ${({ theme, color, disabled }) =>
@@ -84,8 +84,8 @@ const raisedStyle = css<Props>`
   }
 
   &:focus {
-    box-shadow: ${({ disabled, disableElevation, theme }) =>
-      !disabled && !disableElevation && theme.shadows[8]};
+    box-shadow: ${({ disableElevation, theme }) =>
+      !disableElevation && theme.shadows[4]};
   }
 `;
 
@@ -118,7 +118,9 @@ const Button: OverridableComponent<Props, 'button'> = styled(BaseButton).attrs(
     margin-right: 8px;
     ${({ outlined, raised }) => (outlined || raised) && `margin-left:-4px`};
     ${(props) =>
-      typeof (props.children as any)[0] === 'string' && flowingIconStyle};
+      Array.isArray(props.children) &&
+      typeof props.children[0] === 'string' &&
+      flowingIconStyle};
   }
 `;
 
