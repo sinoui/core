@@ -95,6 +95,18 @@ const FabStyle = css<Props>`
     width: ${(props) => WidthStyle(props)};
     height: ${(props) => HeightStyle(props)};
   }
+
+  .sinoui-fab-extended__ripple-layout {
+    width: 100%;
+    height: 48px;
+    border-radius: 24px;
+  }
+
+  .sinoui-fab-extended__ripple {
+    width: 100%;
+    height: 48px;
+    border-radius: 24px;
+  }
 `;
 
 const FabWrapper = styled.div`
@@ -158,8 +170,12 @@ const Fab = React.forwardRef((props: Props, ref: any) => {
     disabled,
     fixSize: !extended && true,
     center: !extended && true,
-    rippleLayoutClassName: !extended ? 'sinoui-fab__ripple-layout' : '',
-    rippleClassName: !extended ? 'sinoui-fab__ripple' : '',
+    rippleLayoutClassName: !extended
+      ? 'sinoui-fab__ripple-layout'
+      : 'sinoui-fab-extended__ripple-layout',
+    rippleClassName: !extended
+      ? 'sinoui-fab__ripple'
+      : 'sinoui-fab-extended__ripple',
   });
   const handleRef = useMultiRefs<HTMLButtonElement | HTMLElement | null>(
     ref,
