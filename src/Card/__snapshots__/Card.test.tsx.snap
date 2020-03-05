@@ -1,8 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`正确渲染Card 1`] = `
+exports[`Card快照测试 海拔为0的Card 1`] = `
 <div
-  className="Card__StyledCard-zr26b8-0 bWQoyx"
+  className="Card__StyledCard-zr26b8-0 cjuYjT sinoui-card"
+  elevation={0}
+  tabIndex="0"
+>
+  文本
+</div>
+`;
+
+exports[`Card快照测试 边框模式Card 1`] = `
+<div
+  className="Card__StyledCard-zr26b8-0 dswiVO sinoui-card sinoui-card--outlined"
+  tabIndex="0"
+>
+  文本
+</div>
+`;
+
+exports[`Card快照测试 默认(海拔为1的Card) 1`] = `
+<div
+  className="Card__StyledCard-zr26b8-0 bWQoyx sinoui-card"
+  tabIndex="0"
 >
   文本
 </div>

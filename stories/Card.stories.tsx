@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { createTheme, defaultTheme } from '@sinoui/theme';
 import { MdMoreVert, MdShare } from 'react-icons/md';
 import Card from '@sinoui/core/Card';
@@ -125,6 +124,16 @@ export const CardDemoMediaText = () => (
         <button>read</button>
         <button>bookmark</button>
       </CardActions>
+    </Card>
+  </ThemeProvider>
+);
+
+export const Card头部没有头像和action = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <Card style={{ width: '360px' }}>
+      <CardPrimaryAction>
+        <CardHeader title="Shrimp and Chorizo Paella" subheader="subheader" />
+      </CardPrimaryAction>
     </Card>
   </ThemeProvider>
 );

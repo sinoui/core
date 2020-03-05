@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import classnames from 'classnames';
 
 export interface CardProps {
   /**
@@ -12,6 +13,9 @@ export interface CardProps {
   elevation?: 0 | 1;
   style?: React.CSSProperties;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  /**
+   * 根元素
+   */
   as?: React.ReactType;
   /**
    * 指定自定义样式类名。
@@ -26,7 +30,12 @@ const outlinedCss = css`
   border: 1px solid ${({ theme }) => theme.palette.divider};
 `;
 
-const StyledCard = styled.div<CardProps>`
+const StyledCard = styled.div.attrs(({ outlined }: CardProps) => ({
+  tabIndex: '0',
+  className: classnames('sinoui-card', {
+    'sinoui-card--outlined': outlined,
+  }),
+}))<CardProps>`
   position: relative;
   display: inline-flex;
   flex-direction: column;
@@ -37,18 +46,5 @@ const StyledCard = styled.div<CardProps>`
   box-sizing: border-box;
   outline: none;
 `;
-
-/**
- *
- * Card 根组件
- */
-React.forwardRef<React.Ref<HTMLDivElement>, CardProps>((props, ref) => {
-  const { children } = props;
-  return (
-    <StyledCard tabIndex="0" {...props} ref={ref}>
-      {children}
-    </StyledCard>
-  );
-});
 
 export default StyledCard;

@@ -2,9 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface Props {
+  /**
+   * 卡片头部头像
+   */
   avatar?: React.ReactNode;
+  /**
+   * 卡片头部操作
+   */
   action?: React.ReactNode;
+  /**
+   * 卡片头部主标题
+   */
   title: string;
+  /**
+   * 卡片头部副标题
+   */
   subheader?: string;
 }
 const CardHeaderWrapper = styled.div`
@@ -34,6 +46,15 @@ const CardHeaderWrapper = styled.div`
   }
 `;
 
+/**
+ * CardHeader 没有头像和action时使用 props.theme.typography.h6
+ */
+const CardHeaderTitle = styled.div((props) => props.theme.typography.h6);
+
+/**
+ *
+ * CardHeader  卡片头部组件
+ */
 export default function CardHeader({
   avatar,
   action,
@@ -44,10 +65,15 @@ export default function CardHeader({
     <CardHeaderWrapper>
       {avatar && <div className="card-header-avatar">{avatar}</div>}
       <div className="card-header-content">
-        <div className="card-header-title">{title}</div>
-        <div className="card-header-subheader">{subheader}</div>
+        {avatar && action ? (
+          <div className="card-header-title">{title}</div>
+        ) : (
+          <CardHeaderTitle>{title}</CardHeaderTitle>
+        )}
+
+        {subheader && <div className="card-header-subheader">{subheader}</div>}
       </div>
-      <div className="card-header-action">{action}</div>
+      {action && <div className="card-header-action">{action}</div>}
     </CardHeaderWrapper>
   );
 }

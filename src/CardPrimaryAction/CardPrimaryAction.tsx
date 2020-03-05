@@ -5,10 +5,13 @@ import { useRipple } from '@sinoui/ripple';
 
 export interface Props {
   children?: React.ReactNode;
+  /**
+   * 点击事件
+   *
+   */
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  as?: React.ReactType;
 }
-const StyledCardPrimaryAction = styled.div`
+const StyledCardPrimaryAction = styled.div.attrs(() => ({ tabIndex: '0' }))`
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -62,11 +65,7 @@ const StyledCardPrimaryAction = styled.div`
 const CardPrimaryAction = React.forwardRef<HTMLDivElement, Props>(
   (props, ref) => {
     const rippleRef = useRipple<HTMLDivElement>();
-    return (
-      <StyledCardPrimaryAction tabIndex="0" {...props} ref={ref || rippleRef}>
-        {props.children}
-      </StyledCardPrimaryAction>
-    );
+    return <StyledCardPrimaryAction {...props} ref={ref || rippleRef} />;
   },
 );
 

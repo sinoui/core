@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 
@@ -19,19 +18,6 @@ interface Props {
    * 图片宽度
    */
   width?: number;
-  /**
-   * 指定根组件
-   */
-  as?: React.ReactType;
-  /**
-   * 指定自定义样式类名。
-   */
-  className?: string;
-  /**
-   * 指定自定义样式。
-   */
-  style?: React.CSSProperties;
-  children?: React.ReactNode;
 }
 
 const squareStyle = css`
@@ -48,14 +34,12 @@ const wideStyle = css`
 
 const CardMediaClassName = 'sinoui-card__media';
 
-const CardMediaWrapper = styled.div.attrs(
-  ({ className, wide, square }: Props) => ({
-    className: classNames(className, CardMediaClassName, {
-      [`${CardMediaClassName}--16-9`]: wide,
-      [`${CardMediaClassName}--square`]: square,
-    }),
+const CardMediaWrapper = styled.div.attrs(({ wide, square }: Props) => ({
+  className: classNames(CardMediaClassName, {
+    [`${CardMediaClassName}--16-9`]: wide,
+    [`${CardMediaClassName}--square`]: square,
   }),
-)<Props>`
+}))<Props>`
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
   background-repeat: no-repeat;
   background-position: 50%;
@@ -79,14 +63,6 @@ const CardMediaWrapper = styled.div.attrs(
   `}
   box-sizing: border-box;
 `;
-
-React.forwardRef<React.Ref<HTMLDivElement>, Props>((props, ref) => {
-  return (
-    <CardMediaWrapper {...props} ref={ref}>
-      {props.children}
-    </CardMediaWrapper>
-  );
-});
 
 if (process.env.NODE_ENV === 'development') {
   CardMediaWrapper.displayName = 'CardMedia';
