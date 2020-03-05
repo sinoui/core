@@ -1,6 +1,66 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
+import classNames from 'classnames';
 import { MIDDLE_MAGRIN, INSET_MARGIN } from './constants';
+
+export interface Props {
+  /**
+   * 水平插入分割线
+   */
+  inset?: boolean;
+  /**
+   * 水平中间分割线
+   */
+  middle?: boolean;
+  /**
+   * true 为表示是垂直分隔线
+   */
+  vertical?: boolean;
+  /**
+   * 分隔线左边距
+   */
+  marginLeft?: number;
+  /**
+   * 分隔线右边距
+   */
+  marginRight?: number;
+  /**
+   * 分隔线上边距
+   */
+  marginTop?: number;
+  /**
+   * 分隔线下边距
+   */
+  marginBottom?: number;
+  /**
+   * 分隔线垂直边距 即上下边距
+   */
+  marginVertical?: number;
+  /**
+   * 分隔线水平边距 即左右边距
+   */
+  marginHorizontal?: number;
+  /**
+   * 是否为flex布局 垂直分隔线需要设置
+   */
+  flexItem?: boolean;
+}
+
+/**
+ * 水平分隔线样式
+ */
+const horizontalCss = css`
+  height: 1px;
+  flex-shrink: 0;
+`;
+
+/**
+ * 水垂直分隔线样式
+ */
+const verticalCss = css`
+  height: 100%;
+  width: 1px;
+`;
+
 /**
  * 中间分割线
  */
@@ -17,22 +77,6 @@ const insetCss = css`
 `;
 
 /**
- * 水平分割线
- */
-const horizontalCss = css`
-  height: 1px;
-  flex-shrink: 0;
-`;
-
-/**
- *垂直分割线
- */
-const vertivalCss = css`
-  height: 100%;
-  width: 1px;
-`;
-
-/**
  * flex 布局下 垂直分割线 的样式
  */
 const flexItemCss = css`
@@ -43,7 +87,7 @@ const flexItemCss = css`
 /**
  * 水平边距
  */
-const marginHorizontaCss = css<{ marginHorizontal?: number }>`
+const marginHorizontalCss = css<{ marginHorizontal?: number }>`
   margin-left: ${({ marginHorizontal = MIDDLE_MAGRIN }) => marginHorizontal}px;
   margin-right: ${({ marginHorizontal = MIDDLE_MAGRIN }) => marginHorizontal}px;
 `;
@@ -84,51 +128,31 @@ const marginRightCss = css<{ marginRight?: number }>`
   margin-right: ${({ marginRight = 0 }) => marginRight}px;
 `;
 
-export interface Props {
-  /**
-   * 插入分割线
-   */
-  inset?: boolean;
-  /**
-   * 中间分割线
-   */
-  middle?: boolean;
-  /**
-   * false 为表示是垂直分割线
-   */
-  horizontal?: boolean;
-  marginLeft?: number;
-  marginRight?: number;
-  marginTop?: number;
-  marginBottom?: number;
-  marginVertical?: number;
-  marginHorizontal?: number;
-  flexItem?: boolean;
-  style?: React.CSSProperties;
-  as?: React.ReactType;
-  className?: string;
-}
-const StyledDivider = styled.hr<Props>`
+const DividerClassName = 'sinoui-divider';
+
+/**
+ * 分隔线
+ */
+const StyledDivider = styled.hr.attrs(({ vertical }: Props) => ({
+  className: classNames(DividerClassName, {
+    [`${DividerClassName}--vertical`]: vertical,
+  }),
+}))<Props>`
   margin: 0;
   border: none;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.palette.divider};
-  ${({ horizontal = false }) => (horizontal ? horizontalCss : vertivalCss)}
-  ${({ horizontal = false, middle }) => horizontal && middle && middleCss}
-  ${({ horizontal = false, inset }) => horizontal && inset && insetCss}
-  ${({ horizontal = false, flexItem }) =>
-    !horizontal && flexItem && flexItemCss}
+  ${({ vertical }) => (vertical ? verticalCss : horizontalCss)}
+  ${({ vertical, middle }) => !vertical && middle && middleCss}
+  ${({ vertical, inset }) => !vertical && inset && insetCss}
+  ${({ vertical, flexItem }) => vertical && flexItem && flexItemCss}
   ${({ marginHorizontal }) =>
-    marginHorizontal !== undefined && marginHorizontaCss}
-  ${({ marginVertical }) => marginVertical !== undefined && marginVerticalCss}
+    marginHorizontal !== undefined && marginHorizontalCss}
+  ${({ marginVertical }) => marginVertical && marginVerticalCss}
   ${({ marginTop }) => marginTop !== undefined && marginTopCss}
   ${({ marginBottom }) => marginBottom !== undefined && marginBottomCss}
   ${({ marginLeft }) => marginLeft !== undefined && marginLeftCss}
   ${({ marginRight }) => marginRight !== undefined && marginRightCss}
 `;
 
-const Divider = React.forwardRef<React.ReactType, Props>((props, ref) => {
-  return <StyledDivider {...props} ref={ref} />;
-});
-
-export default Divider;
+export default StyledDivider;

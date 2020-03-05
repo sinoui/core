@@ -5,7 +5,177 @@ title: Divider
 
 import CardStoryLayout from './CardStoryLayout';
 import Divider from '@sinoui/core/Divider';
-import { VertivalFullDivider } from '../../../stories/dividerDemo';
+import {
+  VertivalFullDivider,
+  HorizontalDivider,
+} from '../../../stories/dividerDemo';
+
+## 水平分隔线(默认)
+
+<CardStoryLayout>
+  <HorizontalDivider />
+</CardStoryLayout>
+
+代码：
+
+```tsx
+<Wrapper>
+  <ul>
+    <li>item1</li>
+    <Divider as="li" />
+    <li>item2</li>
+    <Divider as="li" />
+    <li>item3</li>
+    <Divider as="li" />
+    <li>item4</li>
+  </ul>
+</Wrapper>
+```
+
+### 左边距为 72px 的水平分隔线
+
+通过 marginLeft 属性设置左边距为 72px 的水平分隔线
+
+<CardStoryLayout>
+  <HorizontalDivider marginLeft={72} />
+</CardStoryLayout>
+
+代码：
+
+```tsx
+<Wrapper>
+  <ul>
+    <li>item1</li>
+    <Divider as="li" marginLeft={72} />
+    <li>item2</li>
+    <Divider as="li" marginLeft={72} />
+    <li>item3</li>
+    <Divider as="li" marginLeft={72} />
+    <li>item4</li>
+  </ul>
+</Wrapper>
+```
+
+### 右边距为 72px 的水平分隔线
+
+通过 marginRight 属性设置右边距为 72px 的水平分隔线
+
+<CardStoryLayout>
+  <HorizontalDivider marginRight={72} />
+</CardStoryLayout>
+
+代码：
+
+```tsx
+<Wrapper>
+  <ul>
+    <li>item1</li>
+    <Divider as="li" marginRight={72} />
+    <li>item2</li>
+    <Divider as="li" marginRight={72} />
+    <li>item3</li>
+    <Divider as="li" marginRight={72} />
+    <li>item4</li>
+  </ul>
+</Wrapper>
+```
+
+## 水平居中分隔线(middle)
+
+水平居中分隔线默认为 16px 的水平间距
+
+<CardStoryLayout>
+  <HorizontalDivider middle />
+</CardStoryLayout>
+
+代码
+
+```tsx
+<Wrapper>
+  <ul>
+    <li>item1</li>
+    <Divider as="li" middle />
+    <li>item2</li>
+    <Divider as="li" middle />
+    <li>item3</li>
+    <Divider as="li" middle />
+    <li>item4</li>
+  </ul>
+</Wrapper>
+```
+
+### 水平间距为 48px 的水平分隔线
+
+通过 marginHorizontal 属性设置水平间距为 48px 的水平分隔线
+
+<CardStoryLayout>
+  <HorizontalDivider middle marginHorizontal={48} />
+</CardStoryLayout>
+
+代码
+
+```tsx
+<Wrapper>
+  <ul>
+    <li>item1</li>
+    <Divider as="li" middle marginHorizontal={48} />
+    <li>item2</li>
+    <Divider as="li" middle marginHorizontal={48} />
+    <li>item3</li>
+    <Divider as="li" middle marginHorizontal={48} />
+    <li>item4</li>
+  </ul>
+</Wrapper>
+```
+
+## 水平插入分隔线(inset)
+
+水平插入分隔线默认为 72px 的左边距
+
+<CardStoryLayout>
+  <HorizontalDivider inset />
+</CardStoryLayout>
+
+代码
+
+```tsx
+<Wrapper>
+  <ul>
+    <li>item1</li>
+    <Divider as="li" inset />
+    <li>item2</li>
+    <Divider as="li" inset />
+    <li>item3</li>
+    <Divider as="li" inset />
+    <li>item4</li>
+  </ul>
+</Wrapper>
+```
+
+### 左边距为 108px 的水平插入分隔线
+
+通过 marginVertical 属性设置左边距为 108px 的水平插入分隔线
+水平插入分隔线默认为 108px 的左边距
+
+<CardStoryLayout>
+  <HorizontalDivider inset marginLeft={108} />
+</CardStoryLayout>
+
+代码
+
+```tsx
+<Wrapper>
+  <ul>
+    <li>item1</li>
+    <Divider as="li" inset />
+    <li>item2</li>
+    <Divider as="li" inset />
+    <li>item3</li>
+    <Divider as="li" inset />
+    <li>item4</li>
+  </ul>
+</Wrapper>
+```
 
 ## 垂直分隔线
 
@@ -13,86 +183,84 @@ import { VertivalFullDivider } from '../../../stories/dividerDemo';
   <VertivalFullDivider />
 </CardStoryLayout>
 
-### 代码
+代码
 
 ```tsx
 import React from 'react';
 import styled from 'styled-components';
 import Divider from '@sinoui/core/Divider';
+import { MdSubject, MdToc } from 'react-icons/md';
 
 const Wrapper = styled.div`
   display: flex;
-  height: 100px;
+  font-size: 24px;
+  border: 1px solid ${(props) => props.theme.palette.divider};
+
+  & > svg {
+    margin: 8px;
+  }
 `;
 export default function Demo() {
   return (
     <Wrapper>
-      <Divider flexItem marginVertical={20} />
+      <MdSubject />
+      <Divider vertical flexItem />
+      <MdToc />
     </Wrapper>
   );
 }
 ```
 
-## 水平全宽分隔线
+### 垂直边距为 8px 的垂直分隔线
+
+通过 marginVertical 属性设置垂直边距为 8px 的垂直分隔线
 
 <CardStoryLayout>
-  <Divider horizontal />
+  <VertivalFullDivider marginVertical={8} />
 </CardStoryLayout>
 
-### 代码
+代码
 
 ```tsx
-<Divider horizontal />
+<Wrapper>
+  <MdSubject />
+  <Divider vertical flexItem marginVertical={8} />
+  <MdToc />
+</Wrapper>
 ```
 
-### 水平居中分隔线
+### 上边距为 8px 的垂直分隔线
 
-默认为 16px 的水平间距
+通过 marginVertical 属性设置上边距为 8px 的垂直分隔线
 
 <CardStoryLayout>
-  <Divider horizontal middle />
+  <VertivalFullDivider marginTop={8} />
 </CardStoryLayout>
 
-### 代码
+代码
 
 ```tsx
-<Divider horizontal middle />
+<Wrapper>
+  <MdSubject />
+  <Divider vertical flexItem marginTop={8} />
+  <MdToc />
+</Wrapper>
 ```
 
-通过 marginHorizontal 属性设置水平间距为 48px 的水平分隔线
+### 下边距为 8px 的垂直分隔线
+
+通过 marginVertical 属性设置下边距为 8px 的垂直分隔线
 
 <CardStoryLayout>
-  <Divider horizontal middle marginHorizontal={48} />
+  <VertivalFullDivider marginBottom={8} />
 </CardStoryLayout>
 
-### 代码
+代码
 
 ```tsx
-<Divider horizontal middle marginHorizontal={48} />
-```
-
-## 水平插入分隔线
-
-默认为 72px 的左边距
-
-<CardStoryLayout>
-  <Divider horizontal inset />
-</CardStoryLayout>
-
-### 代码
-
-```tsx
-<Divider horizontal inset />
-```
-
-通过 marginLeft 属性设置左边距为 106px 的水平分隔线
-
-<CardStoryLayout>
-  <Divider horizontal inset marginLeft={106} />
-</CardStoryLayout>
-
-### 代码
-
-```tsx
-<Divider horizontal inset />
+<Wrapper>
+  <MdSubject />
+  <Divider vertical flexItem marginBottom={8} />
+  <MdToc />
+</Wrapper>
 ```
