@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
 import { MdAdd } from 'react-icons/md';
 import TestWrapper from './TestWrapper';

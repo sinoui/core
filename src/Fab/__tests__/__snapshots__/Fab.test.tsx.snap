@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fab组件 快照测试 基本使用 1`] = `
+<div
+  className="TestWrapper__Container-wrvnwl-0 edoXsR"
+>
+  <div
+    className="Fab__FabWrapper-egtp6t-0 czRWAm sinoui-fab"
+    color="primary"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Fab组件 快照测试 设置不可用状态 1`] = `
+<div
+  className="TestWrapper__Container-wrvnwl-0 edoXsR"
+>
+  <div
+    className="Fab__FabWrapper-egtp6t-0 czRWAm sinoui-fab sinoui-fab--disabled"
+    color="primary"
+    disabled={true}
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Fab组件 快照测试 设置扩展样式 1`] = `
+<div
+  className="TestWrapper__Container-wrvnwl-0 edoXsR"
+>
+  <div
+    className="Fab__FabWrapper-egtp6t-0 gZCzwF sinoui-fab sinoui-fab--extended"
+    color="primary"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Fab组件 快照测试 设置较小显示 1`] = `
+<div
+  className="TestWrapper__Container-wrvnwl-0 edoXsR"
+>
+  <div
+    className="Fab__FabWrapper-egtp6t-0 kXkoJx sinoui-fab"
+    color="primary"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </div>
+</div>
+`;

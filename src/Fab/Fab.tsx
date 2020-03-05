@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { useRipple } from '@sinoui/ripple';
-import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import classNames from 'classnames';
 import { opacify } from 'polished';
+import getColorFromTheme from '../utils/getColorFromTheme';
 import useMultiRefs from '../utils/useMultiRefs';
 
 /**
@@ -44,7 +44,8 @@ const FabStyle = css<Props>`
   height: ${(props) => HeightStyle(props)};
   border-radius: ${(props) => (props.extended ? '24px' : '50%')};
   color: #fff;
-  background: ${(props) => getColorFromTheme(props.theme, props.color)};
+  background: ${(props) =>
+    getColorFromTheme(props.theme, props.color) as string};
   padding: ${(props) => (props.extended ? '0px 20px' : '0px')};
   font-size: ${(props) => (props.extended ? '0.875rem' : '24px')};
   display: inline-flex;
@@ -66,7 +67,8 @@ const FabStyle = css<Props>`
     background-color: ${({ theme, color }) =>
       opacify(
         theme.palette.action.hoverOpacity - 0.12,
-        getColorFromTheme(theme, color) || theme.palette.primary.main,
+        (getColorFromTheme(theme, color) ||
+          theme.palette.primary.main) as string,
       )};
   }
 
