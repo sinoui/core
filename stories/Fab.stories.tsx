@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { MdAdd } from 'react-icons/md';
 import Fab from '@sinoui/core/Fab';
+import styled from 'styled-components';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -50,30 +51,67 @@ export const 设置扩展样式 = () => (
   </StoryLayout>
 );
 
+const TabShaped = styled(Fab)`
+  border-radius: 50% 0;
+  padding: 0;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  .sinoui-fab-extended__ripple-layout {
+    width: 56px;
+    height: 56px;
+    border-radius: 50% 0;
+  }
+  .sinoui-fab-extended__ripple {
+    width: 56px;
+    height: 56px;
+    border-radius: 50% 0;
+  }
+`;
+
+const TabShapedSecond = styled(Fab)`
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0;
+  .sinoui-fab-extended__ripple-layout {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+  .sinoui-fab-extended__ripple {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+`;
+
+const TabShapedThird = styled(Fab)`
+  border-radius: 12px;
+
+  .sinoui-fab-extended__ripple-layout {
+    border-radius: 12px;
+  }
+  .sinoui-fab-extended__ripple {
+    border-radius: 12px;
+  }
+`;
+
 export const 不同形状展示 = () => (
   <StoryLayout>
-    <Fab style={{ borderRadius: '50% 0' }}>
+    <TabShaped>
       <MdAdd />
-    </Fab>
+    </TabShaped>
     <p />
-    <Fab
-      mini
-      style={{
-        borderRadius: '8px',
-      }}
-    >
+    <TabShapedSecond extended>
       <MdAdd />
-    </Fab>
+    </TabShapedSecond>
     <p />
-    <Fab
-      extended
-      style={{
-        borderRadius: '12px',
-      }}
-    >
+    <TabShapedThird extended>
       <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
       <span>按钮</span>
-    </Fab>
+    </TabShapedThird>
   </StoryLayout>
 );
 
