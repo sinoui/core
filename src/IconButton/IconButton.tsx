@@ -1,10 +1,10 @@
-import React from 'react';
-import BaseButton, { BaseButtonProps } from '@sinoui/core/BaseButton';
+import BaseButton, { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { opacify } from 'polished';
 import { Theme } from '@sinoui/theme';
 import getColorFromTheme from '../utils/getColorFromTheme';
+import OverridableComponent from '../OverridableComponent';
 
 export interface IconButtonProps extends BaseButtonProps {
   /**
@@ -36,7 +36,24 @@ const getBgColor = (theme: Theme, color?: string, selected?: boolean) => {
   return 'transparent';
 };
 
-const IconButtonWrapper = styled(BaseButton)<IconButtonProps>`
+const rippleConfig = {
+  center: true,
+  rippleLayoutClassName: 'sinoui-icon-button__ripple-layout',
+  rippleClassName: 'sinoui-icon-button__ripple',
+  fixSize: true,
+};
+
+const IconButton: OverridableComponent<IconButtonProps, 'button'> = styled(
+  BaseButton,
+).attrs(({ className, selected, color = 'textPrimary' }: IconButtonProps) => ({
+  color,
+  className: classNames(
+    'sinoui-icon-button',
+    { 'sinoui-icon-button--selected': selected },
+    className,
+  ),
+  ripple: rippleConfig,
+}))<IconButtonProps>`
   width: ${({ theme }) => theme.spacing.unit * 6}px;
   height: ${({ theme }) => theme.spacing.unit * 6}px;
   border-radius: 50%;
@@ -53,6 +70,11 @@ const IconButtonWrapper = styled(BaseButton)<IconButtonProps>`
         theme.palette.action.hoverOpacity - 1,
         getColorFromTheme(theme, color) || theme.palette.text.primary,
       )};
+
+    @media (hover: none) {
+      background-color: ${({ theme, selected, color }) =>
+        getBgColor(theme, color, selected)};
+    }
   }
 
   > .sinoui-icon-button__ripple-layout {
@@ -67,35 +89,5 @@ const IconButtonWrapper = styled(BaseButton)<IconButtonProps>`
     height: 48px;
   }
 `;
-
-const rippleConfig = {
-  center: true,
-  rippleLayoutClassName: 'sinoui-icon-button__ripple-layout',
-  rippleClassName: 'sinoui-icon-button__ripple',
-  fixSize: true,
-};
-
-/**
- * 图标按钮组件
- */
-const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  function IconButton(props, ref) {
-    const { className, selected, color = 'textPrimary', ...other } = props;
-    return (
-      <IconButtonWrapper
-        className={classNames(
-          'sinoui-icon-button',
-          { 'sinoui-icon-button--selected': selected },
-          className,
-        )}
-        selected={selected}
-        color={color}
-        ref={ref}
-        ripple={rippleConfig}
-        {...other}
-      />
-    );
-  },
-);
 
 export default IconButton;

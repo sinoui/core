@@ -8,6 +8,13 @@ const StyleButton = styled(Button)`
   margin: 8px;
 `;
 
+const LinkButton = styled(StyleButton)`
+  &:hover {
+    text-decoration: none;
+    color: ${({ theme }) => theme.palette.primary.main};
+  }
+`;
+
 export default function TextButtonDemo() {
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -20,7 +27,7 @@ export default function TextButtonDemo() {
         <StyleButton color="info">info</StyleButton>
         <StyleButton color="success">success</StyleButton>
         <StyleButton disabled>disabled</StyleButton>
-        <StyleButton href="https://www.baidu.com/">Link</StyleButton>
+        <LinkButton href="https://www.baidu.com/">Link</LinkButton>
       </>
     </ThemeProvider>
   );

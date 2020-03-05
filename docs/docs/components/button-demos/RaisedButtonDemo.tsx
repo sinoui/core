@@ -8,6 +8,13 @@ const StyleButton = styled(Button)`
   margin: 8px;
 `;
 
+const LinkButton = styled(StyleButton)`
+  &:hover {
+    text-decoration: none;
+    color: ${({ theme }) => theme.palette.primary.contrastText};
+  }
+`;
+
 export default function RaisedButtonDemo() {
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -37,9 +44,9 @@ export default function RaisedButtonDemo() {
         <StyleButton raised disableElevation>
           disableElevation
         </StyleButton>
-        <StyleButton raised href="https://www.baidu.com/">
+        <LinkButton raised href="https://www.baidu.com/">
           Link
-        </StyleButton>
+        </LinkButton>
       </>
     </ThemeProvider>
   );

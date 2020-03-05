@@ -2,7 +2,7 @@
 
 exports[`正确渲染IconButton 1`] = `
 <button
-  className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button IconButton__IconButtonWrapper-sc-11batye-0 xTyde sinoui-icon-button"
+  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 bjpBrZ sinoui-icon-button"
   color="textPrimary"
   role="button"
   type="button"
@@ -22,7 +22,7 @@ exports[`正确渲染IconButton 1`] = `
 
 exports[`渲染color为primary且选中状态下的图标按钮 1`] = `
 <button
-  className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button IconButton__IconButtonWrapper-sc-11batye-0 hVRtFS sinoui-icon-button sinoui-icon-button--selected"
+  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 cBhQbA sinoui-icon-button sinoui-icon-button--selected"
   color="primary"
   role="button"
   selected={true}
@@ -44,7 +44,7 @@ exports[`渲染color为primary且选中状态下的图标按钮 1`] = `
 exports[`渲染不可用的图标按钮 1`] = `
 <button
   aria-disabled={true}
-  className="BaseButton__BaseButtonLayout-wk8p17-0 InWyh sinoui-base-button IconButton__IconButtonWrapper-sc-11batye-0 jBjCHJ sinoui-icon-button"
+  className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 foFkZ sinoui-icon-button"
   color="textPrimary"
   disabled={true}
   role="button"
@@ -65,7 +65,7 @@ exports[`渲染不可用的图标按钮 1`] = `
 
 exports[`渲染被选中的图标按钮 1`] = `
 <button
-  className="BaseButton__BaseButtonLayout-wk8p17-0 ewlIJR sinoui-base-button IconButton__IconButtonWrapper-sc-11batye-0 ieCZNw sinoui-icon-button sinoui-icon-button--selected"
+  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ewHGYx sinoui-icon-button sinoui-icon-button--selected"
   color="textPrimary"
   role="button"
   selected={true}

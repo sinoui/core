@@ -17,13 +17,25 @@ export default function ButtonWithIconDemo() {
           <FavoriteIcon />
           icon
         </StyleButton>
+        <StyleButton>
+          icon
+          <FavoriteIcon />
+        </StyleButton>
         <StyleButton outlined>
           <FavoriteIcon />
           icon
         </StyleButton>
+        <StyleButton outlined>
+          icon
+          <FavoriteIcon />
+        </StyleButton>
         <StyleButton raised>
           <FavoriteIcon />
           icon
+        </StyleButton>
+        <StyleButton raised>
+          icon
+          <FavoriteIcon />
         </StyleButton>
       </>
     </ThemeProvider>

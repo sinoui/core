@@ -5,7 +5,7 @@ import { opacify } from 'polished';
 import getColorFromTheme from '../utils/getColorFromTheme';
 import OverridableComponent from '../OverridableComponent';
 
-export interface ButtonProps extends BaseButtonProps {
+export interface Props extends BaseButtonProps {
   /**
    * 是否为轮廓按钮，默认为false
    */
@@ -24,7 +24,7 @@ export interface ButtonProps extends BaseButtonProps {
   color?: string;
 }
 
-const textButtonStyle = css<ButtonProps>`
+const textButtonStyle = css<Props>`
   ${({ theme }) => ({ ...theme.typography.button })};
   min-width: 64px;
   height: 36px;
@@ -42,6 +42,10 @@ const textButtonStyle = css<ButtonProps>`
         theme.palette.action.hoverOpacity - 1,
         getColorFromTheme(theme, color) || theme.palette.primary.main,
       )};
+
+    @media (hover: none) {
+      background-color: transparent;
+    }
   }
 `;
 
@@ -51,7 +55,7 @@ const outlinedStyle = css`
   padding: 0 16px;
 `;
 
-const raisedStyle = css<ButtonProps>`
+const raisedStyle = css<Props>`
   padding: 0 16px;
   box-shadow: ${({ disabled, disableElevation, theme }) =>
     !disabled && !disableElevation && theme.shadows[2]};
@@ -70,22 +74,39 @@ const raisedStyle = css<ButtonProps>`
     background-color: ${({ theme, color }) => getColorFromTheme(theme, color)};
     box-shadow: ${({ disabled, disableElevation, theme }) =>
       !disabled && !disableElevation && theme.shadows[8]};
+
+    @media (hover: none) {
+      background-color: ${({ theme, color, disabled }) =>
+        disabled
+          ? theme.palette.action.disabledBackground
+          : getColorFromTheme(theme, color)};
+    }
+  }
+
+  &:focus {
+    box-shadow: ${({ disabled, disableElevation, theme }) =>
+      !disabled && !disableElevation && theme.shadows[8]};
   }
 `;
 
-const Button: OverridableComponent<ButtonProps, 'button'> = styled(
-  BaseButton,
-).attrs(({ className, outlined, raised, color = 'primary' }: ButtonProps) => ({
-  color,
-  className: classNames(
-    'sinoui-button',
-    {
-      'sinoui-button--outlined': outlined,
-      'sinoui-button--raised': raised,
-    },
-    className,
-  ),
-}))<ButtonProps>`
+const flowingIconStyle = css<Props>`
+  margin-left: 8px;
+  margin-right: ${({ outlined, raised }) => (outlined || raised ? -4 : 0)}px;
+`;
+
+const Button: OverridableComponent<Props, 'button'> = styled(BaseButton).attrs(
+  ({ className, outlined, raised, color = 'primary' }: Props) => ({
+    color,
+    className: classNames(
+      'sinoui-button',
+      {
+        'sinoui-button--outlined': outlined,
+        'sinoui-button--raised': raised,
+      },
+      className,
+    ),
+  }),
+)<Props>`
   ${textButtonStyle};
   ${(props) => props.outlined && outlinedStyle};
   ${(props) => props.raised && raisedStyle};
@@ -96,6 +117,8 @@ const Button: OverridableComponent<ButtonProps, 'button'> = styled(
     width: 18px;
     margin-right: 8px;
     ${({ outlined, raised }) => (outlined || raised) && `margin-left:-4px`};
+    ${(props) =>
+      typeof (props.children as any)[0] === 'string' && flowingIconStyle};
   }
 `;
 

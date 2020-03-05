@@ -55,6 +55,10 @@ const BaseButtonStyle = css<Props>`
 
   &:hover {
     background-color: ${({ theme }) => theme.palette.action.hover};
+
+    @media (hover: none) {
+      background-color: transparent;
+    }
   }
 `;
 

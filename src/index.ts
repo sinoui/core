@@ -1,6 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 import BaseButton from './BaseButton';
-import Button from './Button';
+import Button, { Props as ButtonProps } from './Button';
 import IconButton from './IconButton';
 
-export { BaseButton, Button, IconButton };
+export { BaseButton, Button, ButtonProps, IconButton };

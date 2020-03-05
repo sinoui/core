@@ -15,6 +15,16 @@ const CustomButton = styled(BaseButton)`
   margin: 8px;
 `;
 
+const LinkButton = styled(CustomButton)`
+  color: currentColor;
+
+  &:hover {
+    color: currentColor;
+    background-color: ${(props) => props.theme.palette.action.hover};
+    text-decoration: none;
+  }
+`;
+
 export default function BaseButtonDemo() {
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -25,10 +35,10 @@ export default function BaseButtonDemo() {
             😀 😎 👍 💯
           </span>
         </CustomButton>
-        <CustomButton as="a" href="https://www.baidu.com/">
+        <LinkButton as="a" href="https://www.baidu.com/">
           百度链接
-        </CustomButton>
-        <CustomButton href="https://github.com/">github官网</CustomButton>
+        </LinkButton>
+        <LinkButton href="https://github.com/">github官网</LinkButton>
         <CustomButton ripple={false}>禁用涟漪效果</CustomButton>
         <CustomButton ripple={{ color: 'red' }}>自定义涟漪颜色</CustomButton>
       </>

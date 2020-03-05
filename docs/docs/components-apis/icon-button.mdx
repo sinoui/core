@@ -27,8 +27,12 @@ function Demo() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <>
-        <FavoriteIcon />
-        <FavoriteIcon selected />
+        <IconButton>
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton selected>
+          <FavoriteIcon />
+        </IconButton>
       </>
     </ThemeProvider>
   );

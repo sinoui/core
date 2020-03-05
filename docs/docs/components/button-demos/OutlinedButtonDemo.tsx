@@ -8,6 +8,13 @@ const StyleButton = styled(Button)`
   margin: 8px;
 `;
 
+const LinkButton = styled(StyleButton)`
+  &:hover {
+    text-decoration: none;
+    color: ${({ theme }) => theme.palette.primary.main};
+  }
+`;
+
 export default function OutlinedButtonDemo() {
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -34,9 +41,9 @@ export default function OutlinedButtonDemo() {
         <StyleButton outlined disabled>
           disabled
         </StyleButton>
-        <StyleButton outlined href="https://www.baidu.com/">
+        <LinkButton outlined href="https://www.baidu.com/">
           Link
-        </StyleButton>
+        </LinkButton>
       </>
     </ThemeProvider>
   );

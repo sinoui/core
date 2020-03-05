@@ -11,6 +11,17 @@ const StyleButton = styled(Button)`
   margin: 8px;
 `;
 
+function SvgIcon() {
+  return (
+    <svg height="24" viewBox="0 0 24 24" width="24">
+      <path
+        fill="currentColor"
+        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+      />
+    </svg>
+  );
+}
+
 export const 文本按钮 = () => (
   <ThemeProvider theme={defaultTheme}>
     <>
@@ -23,14 +34,14 @@ export const 文本按钮 = () => (
       <StyleButton color="success">success</StyleButton>
       <StyleButton disabled>disabled</StyleButton>
       <StyleButton>
-        <svg height="24" viewBox="0 0 24 24" width="24">
-          <path
-            fill="currentColor"
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-          />
-        </svg>
+        <SvgIcon />
         icon
       </StyleButton>
+      <StyleButton>
+        icon
+        <SvgIcon />
+      </StyleButton>
+      <StyleButton href="https://www.baidu.com/">Link</StyleButton>
     </>
   </ThemeProvider>
 );
@@ -61,13 +72,15 @@ export const 轮廓按钮 = () => (
         disabled
       </StyleButton>
       <StyleButton outlined>
-        <svg height="24" viewBox="0 0 24 24" width="24">
-          <path
-            fill="currentColor"
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-          />
-        </svg>
+        <SvgIcon />
         icon
+      </StyleButton>
+      <StyleButton outlined>
+        icon
+        <SvgIcon />
+      </StyleButton>
+      <StyleButton outlined href="https://www.baidu.com/">
+        Link
       </StyleButton>
     </>
   </ThemeProvider>
@@ -99,13 +112,15 @@ export const 容器按钮 = () => (
         disabled
       </StyleButton>
       <StyleButton raised>
-        <svg height="24" viewBox="0 0 24 24" width="24">
-          <path
-            fill="currentColor"
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-          />
-        </svg>
+        <SvgIcon />
         icon
+      </StyleButton>
+      <StyleButton raised>
+        icon
+        <SvgIcon />
+      </StyleButton>
+      <StyleButton raised href="https://www.baidu.com/">
+        Link
       </StyleButton>
     </>
   </ThemeProvider>
