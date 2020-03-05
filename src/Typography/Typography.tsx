@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
-import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
+import getColorFromTheme from '../utils/getColorFromTheme';
 
 /**
  * 文本对齐方式
@@ -46,15 +46,13 @@ const TypographyStyle = css<Props>`
   ${(props) => ({ ...props.theme.typography[props.type || 'body2'] })};
   text-align: ${(props) => textAlignWrapper(props)};
   margin-bottom: ${(props) => marginBottomWrapper(props)};
-  color: ${(props) => getColorFromTheme(props.theme, props.color)};
+  color: ${({ theme, color }) => getColorFromTheme(theme, color) as string};
 `;
 
 /**
  * 文字排版组件
  */
-export const TypographyWrapper = styled.div.attrs((props: Props) => ({
-  as: props.as || 'p',
-}))<Props>`
+export const TypographyWrapper = styled.div<Props>`
   ${TypographyStyle};
   ${(props) => props.noWrap && noWrapStyle};
 `;
@@ -70,7 +68,7 @@ export interface Props {
   /**
    * 变更DOM元素
    */
-  as?: React.ReactType | any;
+  as?: React.ReactType;
   /**
    * 自定义类名
    */
@@ -100,10 +98,6 @@ export interface Props {
    */
   color?: string;
   /**
-   * 引用元素
-   */
-  ref?: React.RefObject<HTMLInputElement>;
-  /**
    * 文本样式类型
    */
   type?:
@@ -121,7 +115,7 @@ export interface Props {
     | 'overline';
 }
 
-const asElementTypes = {
+const asElementTypes: { [name: string]: React.ReactType } = {
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
@@ -136,10 +130,10 @@ const asElementTypes = {
   overline: 'p',
 };
 
-const Typography = React.forwardRef((props: Props, ref) => {
+const Typography = React.forwardRef<HTMLElement, Props>((props, ref) => {
   const {
     type = 'body2',
-    as = asElementTypes[props.type || 'body2'],
+    as = asElementTypes[type],
     children,
     className,
     style,

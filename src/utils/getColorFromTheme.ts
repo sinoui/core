@@ -46,7 +46,7 @@ const camelToObjectPath = (key: string) => {
  * @param {string} colorKey 颜色关键字
  * @returns
  */
-export default function getColorFromTheme(theme: Theme, colorKey: string) {
+export default function getColorFromTheme(theme: Theme, colorKey?: string) {
   if (!colorKey) {
     return undefined;
   }
