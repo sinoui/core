@@ -2,39 +2,15 @@ import BaseButton, { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { opacify } from 'polished';
-import { Theme } from '@sinoui/theme';
 import getColorFromTheme from '../utils/getColorFromTheme';
 import OverridableComponent from '../OverridableComponent';
 
 export interface IconButtonProps extends BaseButtonProps {
   /**
-   * 选中状态，默认为false
-   */
-  selected?: boolean;
-  /**
    * 按钮颜色
    */
   color?: string;
 }
-
-/**
- * 获取背景色
- * @param theme 主题
- * @param color 颜色
- * @param selected 选中状态
- */
-const getBgColor = (theme: Theme, color?: string, selected?: boolean) => {
-  if (selected) {
-    if (color === 'textPrimary') {
-      return theme.palette.action.selected;
-    }
-    return opacify(
-      theme.palette.action.selectedOpacity - 1,
-      getColorFromTheme(theme, color) || theme.palette.text.primary,
-    );
-  }
-  return 'transparent';
-};
 
 const rippleConfig = {
   center: true,
@@ -45,13 +21,9 @@ const rippleConfig = {
 
 const IconButton: OverridableComponent<IconButtonProps, 'button'> = styled(
   BaseButton,
-).attrs(({ className, selected, color = 'textPrimary' }: IconButtonProps) => ({
+).attrs(({ className, color = 'textPrimary' }: IconButtonProps) => ({
   color,
-  className: classNames(
-    'sinoui-icon-button',
-    { 'sinoui-icon-button--selected': selected },
-    className,
-  ),
+  className: classNames('sinoui-icon-button', className),
   ripple: rippleConfig,
 }))<IconButtonProps>`
   width: ${({ theme }) => theme.spacing.unit * 6}px;
@@ -60,20 +32,17 @@ const IconButton: OverridableComponent<IconButtonProps, 'button'> = styled(
   box-sizing: border-box;
   color: ${({ theme, color, disabled }) =>
     disabled ? theme.palette.text.disabled : getColorFromTheme(theme, color)};
-  background-color: ${({ theme, selected, color }) =>
-    getBgColor(theme, color, selected)};
 
   &:hover {
     background-color: ${({ theme, color }) =>
       color !== 'textPrimary' &&
       opacify(
         theme.palette.action.hoverOpacity - 1,
-        getColorFromTheme(theme, color) || theme.palette.text.primary,
+        getColorFromTheme(theme, color),
       )};
 
     @media (hover: none) {
-      background-color: ${({ theme, selected, color }) =>
-        getBgColor(theme, color, selected)};
+      background-color: transparent;
     }
   }
 

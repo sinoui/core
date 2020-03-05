@@ -36,9 +36,6 @@ export default function IconButtonDemo() {
         <StyledIconButton disabled>
           <FavoriteIcon />
         </StyledIconButton>
-        <StyledIconButton selected color="primary">
-          <FavoriteIcon />
-        </StyledIconButton>
       </>
     </ThemeProvider>
   );
