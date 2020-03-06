@@ -54,8 +54,8 @@
     "@babel/runtime": "^7.7.6",
     "@sinoui/theme": "1.0.0-beta.4",
     "@types/classnames": "^2.2.9",
-    "react-icons": "^3.9.0",
     "jest-styled-components": "^7.0.0",
+    "react-icons": "^3.9.0",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
