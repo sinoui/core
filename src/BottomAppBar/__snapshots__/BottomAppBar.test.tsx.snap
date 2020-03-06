@@ -19,7 +19,7 @@ exports[`快照测试 嵌入图标 1`] = `
 
 exports[`快照测试 浮动按钮居中嵌入 1`] = `
 <div
-  className="BottomAppBar__InsetBottomAppBar-f0o39x-1 kRsZZj"
+  className="BottomAppBar__InsetBottomAppBar-f0o39x-1 jPrmrp"
 >
   <div
     className="BottomAppBar__InsetBottomAppBarLayer-f0o39x-2 elENlO"
@@ -50,12 +50,12 @@ exports[`快照测试 浮动按钮居中嵌入 1`] = `
 
 exports[`快照测试 浮动按钮居右显示 1`] = `
 <div
-  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 yxrA"
+  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 dxbSvV"
 />
 `;
 
 exports[`快照测试 默认 1`] = `
 <div
-  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 brRmdW"
+  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 cPLdyv"
 />
 `;

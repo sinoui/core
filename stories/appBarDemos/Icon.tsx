@@ -7,6 +7,8 @@ const StyledIcon = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  padding: 12px;
+  box-sizing: border-box;
 `;
 
 export default StyledIcon;

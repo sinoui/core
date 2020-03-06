@@ -42,7 +42,7 @@ const StyledBottomAppBar = styled.div<Props>`
   height: 56px;
   width: 100%;
   align-items: center;
-  padding: 16px;
+  padding: 4px;
   box-sizing: border-box;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[8]};
@@ -67,6 +67,7 @@ const InsetBottomAppBar = styled.div`
   bottom: 0;
   left: 0;
   height: 56px;
+  padding: 4px;
   width: 100%;
   align-items: center;
   box-sizing: border-box;

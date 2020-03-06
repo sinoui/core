@@ -9,7 +9,7 @@ export default {
 
 export const 常规模式AppBar = () => <BaseAppBarDemo />;
 
-export const 常规紧凑模式AppBar = () => (
+export const 紧凑模式AppBar = () => (
   <ThemeProvider theme={defaultTheme}>
     <BaseAppBarDemo dense />
   </ThemeProvider>

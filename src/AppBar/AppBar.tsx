@@ -30,7 +30,7 @@ export interface Props {
 const regularCss = css`
   height: 56px;
   align-items: center;
-  padding: 16px;
+  padding: 4px;
   box-sizing: border-box;
 `;
 
@@ -40,11 +40,12 @@ const regularCss = css`
 const prominentCss = css`
   height: 128px;
   align-items: flex-start;
-  padding: 16px;
+  padding: 4px;
   box-sizing: border-box;
 
   & ${AppBarTitle} {
     align-self: flex-end;
+    margin-bottom: 9px;
   }
 `;
 
@@ -101,9 +102,12 @@ const StyledAppBar = styled.div<Props>`
   ${({ dense }) => dense && denseCss}
   ${({ fixed }) => fixed && fixedCss}
   ${({ short }) => short && shortCss}
-  > ${AppBarTitle} {
+  & > ${AppBarTitle} {
     flex: 1;
-   
+  }
+
+  & > ${NavigationIcon} {
+    margin-right: 20px;
   }
   
 `;
