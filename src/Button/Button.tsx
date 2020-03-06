@@ -87,6 +87,11 @@ const raisedStyle = css<Props>`
     box-shadow: ${({ disableElevation, theme }) =>
       !disableElevation && theme.shadows[4]};
   }
+
+  &:active {
+    box-shadow: ${({ disableElevation, theme }) =>
+      !disableElevation && theme.shadows[8]};
+  }
 `;
 
 const flowingIconStyle = css<Props>`
