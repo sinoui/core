@@ -49,6 +49,7 @@ const SvgIcon = styled.svg.attrs(
     size = 24,
     color,
     title,
+    style,
   }: SvgProps) => ({
     children: (
       <>
@@ -63,10 +64,11 @@ const SvgIcon = styled.svg.attrs(
     ['aria-hidden']: title ? undefined : 'true',
     role: title ? 'img' : 'presentation',
     focusable: 'false',
+    style,
   }),
 )<{ size?: number | string; color?: string }>`
   font-size: ${(props) =>
-    props.size === 'inherit' ? props.size : `${props.size}px`};
+    typeof props.size === 'string' ? props.size : `${props.size}px`};
   width: 1em;
   height: 1em;
   fill: currentColor;
