@@ -1,0 +1,184 @@
+---
+id: svg-icon
+title: SvgIcon 用来展示图标
+---
+
+import SvgIcon from '@sinoui/core/SvgIcon';
+import StoryLayout from './StoryLayout';
+import StarIcon from "./star.svg";
+
+## SvgIcon
+
+```tsx
+import SvgIcon from '@sinoui/core/SvgIcon';
+
+function SvgIconDemo() {
+  return (
+    <SvgIcon>
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+    </SvgIcon>
+    
+  )
+}
+```
+
+## 内置图标组件
+
+@sinoui/icons 集成了[Material Design](https://material.io/resources/icons/?style=baseline)提供的 1100+个图标，均为 svg 格式图标。更多详细使用方式可参考@sinoui/icons官方文档(https://github.com/sinoui/icons/blob/master/docs/index.mdx)。
+
+```tsx
+import Close from '@sinoui/icons/Close';
+
+function SvgIconDemo() {
+  return (
+    <Close />
+  )
+}
+```
+
+## 包含自定义图标
+
+### SvgIcon组件的作用
+
+SvgIcon 组件是用来展示图标的。
+
+### 直接包装图标内容
+
+```tsx
+import SvgIcon from '@sinoui/core/SvgIcon';
+
+function SvgIconDemo() {
+  return (
+    <SvgIcon>
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+    </SvgIcon>
+  )
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <SvgIcon>
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+</StoryLayout>
+
+### 与第三方图标库结合使用
+
+```tsx
+import SvgIcon from '@sinoui/core/SvgIcon';
+import { WiDayCloudyGusts } from "react-icons/wi";
+
+const SvgIconDemo = () => <SvgIcon as={WiDayCloudyGusts} />;
+```
+
+效果如下：
+
+import { WiDayCloudyGusts } from "react-icons/wi";
+
+<StoryLayout>
+  <SvgIcon as={WiDayCloudyGusts} />
+</StoryLayout>
+
+### 引用 svg 文件
+
+通过 svgr 可在打包时自动将 svg 文件转换成 React 组件，在 webpack.config.js 中的配置如下：
+
+```tsx
+{
+  test: /\.svg$/,
+  use: ['@svgr/webpack'],
+}
+```
+
+在代码中的使用方式：
+
+```tsx
+import StarIcon from "./star.svg";
+
+<StoryLayout>
+  <SvgIcon as={StarIcon}  />
+</StoryLayout>
+```
+
+效果如下：
+
+<StoryLayout>
+  <SvgIcon as={StarIcon} color="primary"  />
+</StoryLayout>
+
+## 其它特性
+
+### 不同尺寸的图标
+
+```tsx
+import SvgIcon from '@sinoui/core/SvgIcon';
+
+function SvgIconDemo() {
+  return (
+    <>
+      <SvgIcon size={48}>
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+      </SvgIcon>
+      <SvgIcon size="2rem">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+      </SvgIcon>
+    </>
+  )
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <SvgIcon size={48}>
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+  <SvgIcon size="2rem">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+    </SvgIcon>
+</StoryLayout>
+
+### 不同的图标颜色
+
+```tsx
+import SvgIcon from '@sinoui/core/SvgIcon';
+
+function SvgIconDemo() {
+  return (
+    <SvgIcon color="primary">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+    </SvgIcon>
+  )
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <SvgIcon color="primary">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+  <SvgIcon color="secondary">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+  <SvgIcon color="error">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+    <SvgIcon color="warning">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+    <SvgIcon color="success">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+    <SvgIcon color="info">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+  <SvgIcon color="actionActive">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+    <SvgIcon color="actionDisabled">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
+</StoryLayout>
