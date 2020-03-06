@@ -1,0 +1,27 @@
+---
+id: typography
+title: Typography组件
+---
+
+## API
+
+Typography 组件属性
+
+| 参数名称     | 参数类型                                                                                                                    | 说明                                            |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| children     | React.ReactNode                                                                                                             | 子元素                                          |
+| as           | React.ReactType                                                                                                             | 变更 DOM 元素                                   |
+| align        | 'center'\|'left'\| 'right'                                                                                                  | 文本对齐方式，默认左对齐                        |
+| noWrap       | boolean                                                                                                                     | 是否换行                                        |
+| gutterBottom | boolean                                                                                                                     | 是否在底部添加间隙，H1~H6、Subtitle1、Subtitle2 |
+| paragraph    | boolean                                                                                                                     | 是否为段落，Body1、Body2                        |
+| color        | string                                                                                                                      | 指定颜色                                        |
+| className    | string                                                                                                                      | 自定义类名                                      |
+| style        | React.CSSProperties                                                                                                         | 指定样式                                        |
+| type         | 'h1' \| 'h2' \| 'h3' \| 'h4' \| 'h5' \| 'h6' \| 'subtitle1' \| 'subtitle2' \| 'body1' \| 'body2' \| 'caption' \| 'overline' | 文本样式类型                                    |
+
+其它组件与 Typography 的属性类似，只是没有 type 属性。
+
+## Demo
+
+- [Typography 文字排版](../components/typography)

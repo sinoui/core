@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`文字排版 快照测试 基本文字排版 1`] = `
+<p
+  className="Typography__TypographyWrapper-sc-12agh80-0 dlYlpX sinoui-typography sinoui-typography--overline"
+  color="textPrimary"
+  type="overline"
+>
+  Overline
+</p>
+`;
+
+exports[`文字排版 快照测试 设置属性 1`] = `
+Array [
+  <h2
+    className="Typography__TypographyWrapper-sc-12agh80-0 dlYlpX sinoui-typography sinoui-typography--overline"
+    color="textPrimary"
+    type="overline"
+  >
+    Overline
+  </h2>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 ksZRoq sinoui-typography sinoui-typography--overline"
+    color="textPrimary"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 fEqrPt sinoui-typography sinoui-typography--overline"
+    color="textPrimary"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 fWVxRr sinoui-typography sinoui-typography--overline"
+    color="success"
+    type="overline"
+  >
+    Overline
+  </p>,
+]
+`;
+
+exports[`文字排版 快照测试 颜色设置 1`] = `
+Array [
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 dlYlpX sinoui-typography sinoui-typography--overline"
+    color="textPrimary"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 hTMcmm sinoui-typography sinoui-typography--overline"
+    color="primary"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 gmJrec sinoui-typography sinoui-typography--overline"
+    color="secondary"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 dlYlpX sinoui-typography sinoui-typography--overline"
+    color="textPrimary"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 FXrlX sinoui-typography sinoui-typography--overline"
+    color="textSecondary"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 gcABTG sinoui-typography sinoui-typography--overline"
+    color="error"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 DmhHF sinoui-typography sinoui-typography--overline"
+    color="warning"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 fWVxRr sinoui-typography sinoui-typography--overline"
+    color="success"
+    type="overline"
+  >
+    Overline
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 jvqrBH sinoui-typography sinoui-typography--overline"
+    color="info"
+    type="overline"
+  >
+    Overline
+  </p>,
+]
+`;
