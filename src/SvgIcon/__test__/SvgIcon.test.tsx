@@ -29,6 +29,9 @@ describe('SvgIcon组件 快照测试', () => {
           <SvgIcon size={28}>
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
           </SvgIcon>
+          <SvgIcon size="2rem">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+          </SvgIcon>
         </TestWrapper>,
       )
       .toJSON();
@@ -94,10 +97,10 @@ describe('SvgIcon组件 快照测试', () => {
           <SvgIcon color="info">
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
           </SvgIcon>
-          <SvgIcon color="action">
+          <SvgIcon color="actionActive">
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
           </SvgIcon>
-          <SvgIcon color="disabled">
+          <SvgIcon color="actionDisabled">
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
           </SvgIcon>
         </TestWrapper>,
