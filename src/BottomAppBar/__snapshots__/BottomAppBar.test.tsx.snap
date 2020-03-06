@@ -50,12 +50,12 @@ exports[`快照测试 浮动按钮居中嵌入 1`] = `
 
 exports[`快照测试 浮动按钮居右显示 1`] = `
 <div
-  className="BottomAppBar__StyledAppBar-f0o39x-0 cUgSwL"
+  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 yxrA"
 />
 `;
 
 exports[`快照测试 默认 1`] = `
 <div
-  className="BottomAppBar__StyledAppBar-f0o39x-0 emTiwy"
+  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 brRmdW"
 />
 `;

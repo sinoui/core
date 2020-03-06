@@ -3,6 +3,9 @@ import AppBarTitle from '@sinoui/core/AppBarTitle';
 import AppBarActions from '@sinoui/core/AppBarActions';
 import NavigationIcon from '@sinoui/core/NavigationIcon';
 
+/**
+ * AppBar 顶部应用栏容器
+ */
 export interface Props {
   /**
    * 突出模式

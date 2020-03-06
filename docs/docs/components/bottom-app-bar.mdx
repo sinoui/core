@@ -48,10 +48,6 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 ### 浮动按钮居中
 
-<CardStoryLayout height={200}>
-  <BottomAppBarDemo style={{ position: 'relative', alignSelf: 'flex-end' }} />
-</CardStoryLayout>
-
 代码：
 
 ```tsx
@@ -87,14 +83,13 @@ export default function Demo() {
 }
 ```
 
-### 浮动按钮居右
+运行效果：
 
 <CardStoryLayout height={200}>
-  <BottomAppBarDemo
-    endFab
-    style={{ position: 'relative', alignSelf: 'flex-end' }}
-  />
+  <BottomAppBarDemo style={{ position: 'relative', alignSelf: 'flex-end' }} />
 </CardStoryLayout>
+
+### 浮动按钮居右
 
 代码：
 
@@ -131,7 +126,51 @@ export default function Demo() {
 }
 ```
 
+运行效果：
+
+<CardStoryLayout height={200}>
+  <BottomAppBarDemo
+    endFab
+    style={{ position: 'relative', alignSelf: 'flex-end' }}
+  />
+</CardStoryLayout>
+
 ### 没有浮动按钮
+
+代码：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import BottomAppBar from '@sinoui/core/BottomAppBar';
+import NavigationIcon from '@sinoui/core/NavigationIcon';
+import AppBarActions from '@sinoui/core/AppBarActions';
+import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+import Icon from './Icon';
+
+export default function Demo() {
+  return (
+    <BottomAppBar endFab>
+      <NavigationIcon>
+        <Icon>
+          <MdDehaze />
+        </Icon>
+      </NavigationIcon>
+      <AppBarActions>
+        <Icon>
+          <MdFavorite />
+        </Icon>
+        <Icon>
+          <MdBookmark />
+        </Icon>
+      </AppBarActions>
+    </BottomAppBar>
+  );
+}
+```
+
+运行效果：
 
 <CardStoryLayout height={200}>
   <BottomAppBarDemoNoFab
@@ -139,6 +178,8 @@ export default function Demo() {
   />
 </CardStoryLayout>
 
+### 浮动按钮居中嵌入
+
 代码：
 
 ```tsx
@@ -172,7 +213,7 @@ export default function Demo() {
 }
 ```
 
-### 浮动按钮居中嵌入
+运行效果：
 
 <CardStoryLayout height={200}>
   <BottomAppBarDemo
@@ -180,36 +221,3 @@ export default function Demo() {
     style={{ position: 'relative', alignSelf: 'flex-end' }}
   />
 </CardStoryLayout>
-
-代码：
-
-```tsx
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { defaultTheme } from '@sinoui/theme';
-import BottomAppBar from '@sinoui/core/BottomAppBar';
-import NavigationIcon from '@sinoui/core/NavigationIcon';
-import AppBarActions from '@sinoui/core/AppBarActions';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-import Icon from './Icon';
-
-export default function Demo() {
-  return (
-    <BottomAppBar endFab>
-      <NavigationIcon>
-        <Icon>
-          <MdDehaze />
-        </Icon>
-      </NavigationIcon>
-      <AppBarActions>
-        <Icon>
-          <MdFavorite />
-        </Icon>
-        <Icon>
-          <MdBookmark />
-        </Icon>
-      </AppBarActions>
-    </BottomAppBar>
-  );
-}
-```

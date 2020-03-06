@@ -6,6 +6,9 @@ import NavigationIcon from '@sinoui/core/NavigationIcon';
 import Fab from '../../stories/appBarDemos/Fab';
 import InSetCircle from './InSetCircle';
 
+/**
+ * 底部应用栏容器
+ */
 export interface Props {
   /**
    * 浮动操作按钮为居中且嵌入显示
@@ -28,7 +31,10 @@ const endFabCss = css<Props>`
   }
 `;
 
-const StyledAppBar = styled.div<Props>`
+/**
+ * 非嵌入模式底部应用 容器
+ */
+const StyledBottomAppBar = styled.div<Props>`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -50,6 +56,10 @@ const StyledAppBar = styled.div<Props>`
   background-color: ${({ color = 'primary', theme }: Props) =>
     getColorFromTheme(theme, color)};
 `;
+
+/**
+ * 嵌入模式底部应用 容器
+ */
 
 const InsetBottomAppBar = styled.div`
   position: fixed;
@@ -93,7 +103,7 @@ const InsetBottomAppBarLayer = styled.div`
 const BottomAppBar = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { insertFab, children, style } = props;
   return !insertFab ? (
-    <StyledAppBar ref={ref} {...props} />
+    <StyledBottomAppBar ref={ref} {...props} />
   ) : (
     <InsetBottomAppBar style={style}>
       {children}

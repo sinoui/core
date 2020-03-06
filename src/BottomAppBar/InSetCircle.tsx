@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
+/**
+ * 底部应用栏 嵌入模式式图标
+ */
 export default function InsetCircle() {
   const {
     palette: {

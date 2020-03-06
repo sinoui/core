@@ -13,14 +13,14 @@ module.exports = {
         label: '通用',
         items: [
           'components/button',
-          'components/topAppBar',
+          'components/app-bar',
           'components/bottom-app-bar',
         ],
       },
     ],
     组件API: [
       'components-apis/base-button',
-      'components-apis/topAppBar-api',
+      'components-apis/app-bar-api',
       'components-apis/bottom-app-bar-api',
     ],
   },

@@ -1,5 +1,5 @@
 ---
-id: topAppBar-api
+id: app-bar-api
 title: AppBar
 ---
 
@@ -15,7 +15,11 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 AppBar 组件主要用来展示和当前页面有关的信息和操作，是一个承载应用栏图标、标题等内容的容器。
 
-引入方式：`import AppBar from '@sinoui/core/AppBar';`
+引入方式：
+
+```tsx
+import AppBar from '@sinoui/core/AppBar';
+```
 
 ### 属性
 
@@ -32,85 +36,32 @@ AppBarTitle 组件用来展示应用栏的标题。
 
 标准模式的应用栏中标题文字不是很多，若标题内容过多需要换行的，推荐使用突出模式的应用栏。
 
-引入方式：`import AppBarTitle from '@sinoui/core/AppBarTitle';`
+引入方式：
 
-### 属性
-
-无
+```tsx
+import AppBarTitle from '@sinoui/core/AppBarTitle';
+```
 
 ## NavigationIcon
 
 NavigationIcon 组件是用来承载应用栏最左侧图标按钮的容器。
 
-引入方式：`import NavigationIcon from '@sinoui/core/NavigationIcon';`
+引入方式：
 
-### 属性
-
-无
+```tsx
+import NavigationIcon from '@sinoui/core/NavigationIcon';
+```
 
 ## AppBarActions
 
 AppBarActions 组件使用来承载应用栏可操作性按钮、图标等的容器。
 
-### 属性
-
-无
-
-## 应用栏示例
-
-<CardStoryLayout>
-  <AppBar>
-    <NavigationIcon>
-      <Icon>
-        <MdDehaze />
-      </Icon>
-    </NavigationIcon>
-    <AppBarTitle>标题</AppBarTitle>
-    <AppBarActions>
-      <Icon>
-        <MdFavorite />
-      </Icon>
-      <Icon>
-        <MdBookmark />
-      </Icon>
-    </AppBarActions>
-  </AppBar>
-</CardStoryLayout>
-
-### 代码
+引入方式：
 
 ```tsx
-import React from 'react';
-import AppBar from '@sinoui/core/AppBar';
-import AppBarTitle from '@sinoui/core/AppBarTitle';
-import NavigationIcon from '@sinoui/core/NavigationIcon';
 import AppBarActions from '@sinoui/core/AppBarActions';
-import Icon from './Icon';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-
-export default function Demo(props: {
-  prominent?: boolean;
-  dense?: boolean;
-  fixed?: boolean;
-  short?: boolean;
-}) {
-  return (
-    <AppBar>
-      <NavigationIcon>
-        <Icon>
-          <MdDehaze />
-        </Icon>
-      </NavigationIcon>
-      <AppBarTitle>标题</AppBarTitle>
-      <AppBarActions>
-        <Icon>
-          <MdFavorite />
-        </Icon>
-        <Icon>
-          <MdBookmark />
-        </Icon>
-      </AppBarActions>
-    </AppBar>
-  );
-}
 ```
+
+## 示例
+
+更多顶部应用栏示例请查看[开发文档](../components/app-bar)
