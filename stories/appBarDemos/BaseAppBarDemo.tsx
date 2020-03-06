@@ -22,7 +22,9 @@ export default function Demo(props: {
             <MdDehaze />
           </Icon>
         </NavigationIcon>
-        <AppBarTitle>标题</AppBarTitle>
+        <AppBarTitle>
+          标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题
+        </AppBarTitle>
         <AppBarActions>
           <Icon>
             <MdFavorite />

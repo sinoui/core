@@ -24,14 +24,20 @@ export interface Props {
    */
   short?: boolean;
 }
+
 /**
  * 常规 appBar
  */
 const regularCss = css`
-  height: 56px;
+  height: 64px;
+  padding: 8px 12px;
   align-items: center;
-  padding: 4px;
   box-sizing: border-box;
+
+  @media (max-width: 599px) {
+    height: 56px;
+    padding: 4px;
+  }
 `;
 
 /**
@@ -40,12 +46,19 @@ const regularCss = css`
 const prominentCss = css`
   height: 128px;
   align-items: flex-start;
-  padding: 4px;
+  padding: 8px 12px;
   box-sizing: border-box;
 
   & ${AppBarTitle} {
     align-self: flex-end;
-    margin-bottom: 9px;
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 599px) {
+    padding: 4px;
+    & ${AppBarTitle} {
+      padding-bottom: 6px;
+    }
   }
 `;
 
@@ -53,11 +66,11 @@ const prominentCss = css`
  * dense 紧凑appbar
  */
 const denseCss = css<Props>`
-  height: ${({ prominent }) => (prominent ? '116px' : '48px')};
-  padding: 0 4px;
+  height: ${({ prominent }) => (prominent ? '96px' : '48px')};
+  padding: 0 ${({ prominent }) => (prominent ? '12px' : '4px')};
 
   & ${AppBarTitle} {
-    padding-bottom: ${({ prominent }) => (prominent ? '8px' : 0)};
+    padding-bottom: ${({ prominent }) => (prominent ? '9px' : 0)};
   }
 `;
 
@@ -66,7 +79,9 @@ const denseCss = css<Props>`
  */
 
 const shortCss = css`
-  width: 124px;
+  width: 112px;
+  height: 56px;
+  padding: 4px;
   border-radius: 0 0 24px 0;
   & ${AppBarTitle} {
     display: none;
@@ -104,10 +119,7 @@ const StyledAppBar = styled.div<Props>`
   ${({ short }) => short && shortCss}
   & > ${AppBarTitle} {
     flex: 1;
-  }
-
-  & > ${NavigationIcon} {
-    margin-right: 20px;
+    margin-left: 20px;
   }
   
 `;

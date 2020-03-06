@@ -7,6 +7,9 @@ const AppBarTitle = styled.h1((props) => {
   return {
     ...props.theme.typography.h6,
     margin: 0,
+    overflow: 'hidden',
+    'text-overflow': 'ellipsis',
+    'white-space': 'nowrap',
   };
 });
 
