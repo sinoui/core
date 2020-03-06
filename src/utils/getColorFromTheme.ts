@@ -50,6 +50,9 @@ export default function getColorFromTheme(theme: Theme, colorKey?: string) {
   if (!colorKey) {
     return undefined;
   }
-  const colorValueFromTheme = get(theme.palette, camelToObjectPath(colorKey));
+  const colorValueFromTheme = get<string>(
+    theme.palette,
+    camelToObjectPath(colorKey),
+  );
   return colorValueFromTheme || colorKey;
 }

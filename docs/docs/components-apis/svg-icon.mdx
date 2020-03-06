@@ -3,17 +3,29 @@ id: svg-icon
 title: SvgIcon
 ---
 
+SvgIcon 组件是用来展示图标的。
+
 ## API
 
 SvgIcon组件属性：
 
-| 参数名称    | 参数类型        | 说明                                                         |
-| ----------- | --------------- | ------------------------------------------------------------ |
-| size   | number 、string |  设置图标大小。数字或者字符串。如果是数字，则单位是像素。   |
-| viewBox   | string |   设置 svg 元素的 viewBox，默认为0 0 24 24  |
-| color  | string |  设置颜色   |
-| children    | React.ReactNode | 指定图标内容    |
-| title  | string |  指定图标的标题   |
-| as  | React.ReactNode |  指定根元素   |
-| className   | string          | 自定义类名      
-| style   | React.CSSProperties          | 指定样式    
+| 参数名称    | 参数类型   | 默认值        | 说明                                                         |
+| ----------- | --------------- | ------------------------ | ----------------------------------- |
+| size   | number \| string |  24|设置图标大小。数字或者字符串。如果是数字，则单位是像素。   |
+| viewBox   | string | 0 0 24 24 | 设置 svg 元素的 viewBox，默认为0 0 24 24  |
+| color  | string |  |设置颜色   |
+| children    | React.ReactNode | |指定图标内容    |
+| title  | string | | 指定图标的标题   |
+| ref  | React.ref | | 指定根元素   |
+| as  | React.ReactType | | 变更 DOM 元素   |
+| className   | string      |    | 自定义类名       
+
+## 引用方式
+
+```tsx
+import SvgIcon from '@sinoui/core/SvgIcon';
+```
+
+继承svg根元素所有属性。
+
+更多使用示例，请参考[SvgIcon Demos](/docs/components/svg-icon)

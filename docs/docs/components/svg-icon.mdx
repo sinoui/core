@@ -1,7 +1,9 @@
 ---
 id: svg-icon
-title: SvgIcon 用来展示图标
+title: SvgIcon 图标
 ---
+
+SvgIcon 组件是用来展示图标的。
 
 import SvgIcon from '@sinoui/core/SvgIcon';
 import StoryLayout from './StoryLayout';
@@ -16,33 +18,42 @@ function SvgIconDemo() {
   return (
     <SvgIcon>
       <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-    </SvgIcon>
-    
-  )
+    </SvgIcon>   
+  );
 }
 ```
 
 ## 内置图标组件
 
-@sinoui/icons 集成了[Material Design](https://material.io/resources/icons/?style=baseline)提供的 1100+个图标，均为 svg 格式图标。更多详细使用方式可参考@sinoui/icons官方文档(https://github.com/sinoui/icons/blob/master/docs/index.mdx)。
+[@sinoui/icons](https://github.com/sinoui/icons) 提供了 1100+ 个 [Material Design 图标](https://material.io/resources/icons/?style=baseline)。更多详细使用方式可参考 [@sinoui/icons 官方文档](https://sinoui.github.io/icons)。
+
+因为 @sinoui/icons 中提供的每个图标组件，都已经使用了 SvgIcon 组件包装，所以在使用组件时，不需要再使用 `<SvgIcon>` 包裹：
 
 ```tsx
-import Close from '@sinoui/icons/Close';
+import CloseIcon from '@sinoui/icons/Close';
 
-function SvgIconDemo() {
-  return (
-    <Close />
-  )
+function SvgIconDemo() {
+  return <CloseIcon />;
 }
 ```
 
-## 包含自定义图标
+不需要这么做：
 
-### SvgIcon组件的作用
+```tsx
+import SvgIcon from '@sinoui/core/SvgIcon';
+import CloseIcon from '@sinoui/icons/Close';
 
-SvgIcon 组件是用来展示图标的。
+function SvgIconDemo() {
+  // ️ 不需要用 SvgIcon 包裹 @sinoui/icons 中的图标组件
+  return (
+    <SvgIcon>
+      <CloseIcon />
+    </SvgIcon>
+  );
+}
+```
 
-### 直接包装图标内容
+## 直接包装图标内容
 
 ```tsx
 import SvgIcon from '@sinoui/core/SvgIcon';
@@ -52,7 +63,7 @@ function SvgIconDemo() {
     <SvgIcon>
       <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
     </SvgIcon>
-  )
+  );
 }
 ```
 
@@ -64,7 +75,7 @@ function SvgIconDemo() {
   </SvgIcon>
 </StoryLayout>
 
-### 与第三方图标库结合使用
+## 与第三方图标库结合使用
 
 ```tsx
 import SvgIcon from '@sinoui/core/SvgIcon';
@@ -81,7 +92,7 @@ import { WiDayCloudyGusts } from "react-icons/wi";
   <SvgIcon as={WiDayCloudyGusts} />
 </StoryLayout>
 
-### 引用 svg 文件
+## 引用 svg 文件
 
 通过 svgr 可在打包时自动将 svg 文件转换成 React 组件，在 webpack.config.js 中的配置如下：
 
@@ -98,14 +109,14 @@ import { WiDayCloudyGusts } from "react-icons/wi";
 import StarIcon from "./star.svg";
 
 <StoryLayout>
-  <SvgIcon as={StarIcon}  />
+  <SvgIcon as={StarIcon}  color="actionActive" />
 </StoryLayout>
 ```
 
 效果如下：
 
 <StoryLayout>
-  <SvgIcon as={StarIcon} color="primary"  />
+  <SvgIcon as={StarIcon} color="actionActive"  />
 </StoryLayout>
 
 ## 其它特性
@@ -125,7 +136,7 @@ function SvgIconDemo() {
         <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
       </SvgIcon>
     </>
-  )
+  );
 }
 ```
 
@@ -136,8 +147,8 @@ function SvgIconDemo() {
     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
   </SvgIcon>
   <SvgIcon size="2rem">
-      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-    </SvgIcon>
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </SvgIcon>
 </StoryLayout>
 
 ### 不同的图标颜色
@@ -150,7 +161,7 @@ function SvgIconDemo() {
     <SvgIcon color="primary">
       <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
     </SvgIcon>
-  )
+  );
 }
 ```
 
@@ -182,3 +193,7 @@ function SvgIconDemo() {
     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
   </SvgIcon>
 </StoryLayout>
+
+## API
+
+查看[SvgIcon组件API](/docs/components-apis/svg-icon)
