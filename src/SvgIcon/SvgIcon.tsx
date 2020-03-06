@@ -61,7 +61,7 @@ const SvgIcon = styled.svg.attrs(
     viewBox,
     color,
     size,
-    ['aria-hidden']: title ? undefined : 'true',
+    'aria-hidden': title ? undefined : 'true',
     role: title ? 'img' : 'presentation',
     focusable: 'false',
     style,
