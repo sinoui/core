@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
-import getColorFromTheme from '../utils/getColorFromTheme';
+import colorCss from '@sinoui/core/utils/colorCss';
 
 /**
  * 文本对齐方式
@@ -46,7 +46,7 @@ const TypographyStyle = css<Props>`
   ${(props) => ({ ...props.theme.typography[props.type || 'body2'] })};
   text-align: ${(props) => textAlignWrapper(props)};
   margin-bottom: ${(props) => marginBottomWrapper(props)};
-  color: ${({ theme, color }) => getColorFromTheme(theme, color) as string};
+  ${(props) => colorCss('color', props.color)};
 `;
 
 /**
