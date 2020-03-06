@@ -4,7 +4,6 @@ import { opacify } from 'polished';
 import { useRipple } from '@sinoui/ripple';
 
 export interface Props {
-  children?: React.ReactNode;
   /**
    * 点击事件
    *

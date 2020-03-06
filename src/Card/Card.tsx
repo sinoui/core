@@ -30,6 +30,9 @@ const outlinedCss = css`
   border: 1px solid ${({ theme }) => theme.palette.divider};
 `;
 
+/**
+ * Card 根组件
+ */
 const StyledCard = styled.div.attrs(({ outlined }: CardProps) => ({
   tabIndex: '0',
   className: classnames('sinoui-card', {

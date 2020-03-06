@@ -16,15 +16,11 @@ import {
   ExpandCard,
 } from '../../../stories/CardDemo';
 
-## 代码演示
+卡片是用来承载单个主题的内容和按钮。内容包括标题、文字、图标或者其它内容，如数据表格、表单空间等。
 
-### 边框模式的简单卡片
+## 边框模式的简单卡片
 
-<CardStoryLayout>
-  <BorderCard />
-</CardStoryLayout>
-
-#### 代码
+代码:
 
 ```tsx
 import React from 'react';
@@ -58,19 +54,21 @@ export default function BorderCard() {
 }
 ```
 
+运行效果：
+
+<CardStoryLayout>
+  <BorderCard />
+</CardStoryLayout>
+
 Card 组件默认是有 4px 的圆角，开发者可以通过如下方式自定义圆角：
 
 ```tsx
 <Card style={{ borderRadius: '8px' }} />
 ```
 
-### 用户控件 U - 媒体播放
+## 用户控件 UI - 媒体播放
 
-<CardStoryLayout>
-  <MediaUIControls0 />
-</CardStoryLayout>
-
-#### 代码
+代码：
 
 StyledCardInner.ts
 
@@ -109,7 +107,7 @@ const StyledCardInner = styled.div<{
 `;
 ```
 
-Ddemo.tsx
+Demo.tsx
 
 ```tsx
 import React from 'react';
@@ -147,13 +145,15 @@ export default function Demo() {
 }
 ```
 
-### 用户控件 U - 评分
+运行效果：
 
 <CardStoryLayout>
-  <MediaUIControls1 />
+  <MediaUIControls0 />
 </CardStoryLayout>
 
-#### 代码
+## 用户控件 UI - 评分
+
+代码：
 
 Demo.tsx
 
@@ -204,13 +204,15 @@ export default function Demo() {
 }
 ```
 
-### 自定义交互状态的卡片
+运行效果：
 
 <CardStoryLayout>
-  <CardSelected />
+  <MediaUIControls1 />
 </CardStoryLayout>
 
-#### 代码
+## 自定义交互状态的卡片
+
+代码：
 
 StyledCard.tsx
 
@@ -317,13 +319,15 @@ export default function Demo() {
 }
 ```
 
-### 文字组合卡片
+运行效果:
 
 <CardStoryLayout>
-  <TextCards />
+  <CardSelected />
 </CardStoryLayout>
 
-#### 代码
+## 文字组合卡片
+
+代码：
 
 StyledCardText.ts
 
@@ -381,13 +385,15 @@ export default function Demo() {
 }
 ```
 
-### 带有图片和操作按钮的卡片
+运行效果:
 
 <CardStoryLayout>
-  <MediaButtonCard />
+  <TextCards />
 </CardStoryLayout>
 
-#### 代码
+## 带有图片和操作按钮的卡片
+
+代码：
 
 Demo.tsx
 
@@ -425,13 +431,15 @@ export default function Demo() {
 }
 ```
 
-### 包含头部的卡片
+运行效果：
 
 <CardStoryLayout>
-  <HeaderCard />
+  <MediaButtonCard />
 </CardStoryLayout>
 
-#### 代码
+## 包含头部的卡片
+
+代码：
 
 Avatar.tsx
 
@@ -498,13 +506,15 @@ export default function Demo() {
 }
 ```
 
-### 可展开的卡片
+运行效果：
 
 <CardStoryLayout>
-  <ExpandCard />
+  <HeaderCard />
 </CardStoryLayout>
 
-#### 代码
+## 可展开的卡片
+
+代码：
 
 Demo.tsx
 
@@ -564,3 +574,9 @@ export default function Demo() {
   );
 }
 ```
+
+运行效果：
+
+<CardStoryLayout>
+  <ExpandCard />
+</CardStoryLayout>

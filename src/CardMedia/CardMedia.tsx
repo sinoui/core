@@ -33,7 +33,9 @@ const wideStyle = css`
 `;
 
 const CardMediaClassName = 'sinoui-card__media';
-
+/**
+ * 卡片媒体区域
+ */
 const CardMediaWrapper = styled.div.attrs(({ wide, square }: Props) => ({
   className: classNames(CardMediaClassName, {
     [`${CardMediaClassName}--16-9`]: wide,

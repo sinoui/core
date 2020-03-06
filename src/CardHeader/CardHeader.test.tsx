@@ -18,18 +18,33 @@ const Avatar = () => {
   );
 };
 
-it('正确渲染CardHeader', () => {
-  const tree = renderer
-    .create(
-      <ThemeProvider theme={defaultTheme}>
-        <CardHeader
-          avatar={Avatar}
-          title="Shrimp and Chorizo Paella"
-          subheader="subheader"
-        />
-      </ThemeProvider>,
-    )
-    .toJSON();
+describe('快照测试', () => {
+  it('头像+主标题+副标题+操作的CardHeader', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <CardHeader
+            avatar={Avatar}
+            title="Shrimp and Chorizo Paella"
+            subheader="subheader"
+            action={[<span>icon</span>]}
+          />
+        </ThemeProvider>,
+      )
+      .toJSON();
 
-  expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('只有主标题的CardHeader', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <CardHeader title="Shrimp and Chorizo Paella" />
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

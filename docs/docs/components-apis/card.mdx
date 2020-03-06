@@ -3,11 +3,9 @@ id: card-api
 title: Card卡片
 ---
 
-## Card 卡片
-
 卡片是用来承载单个主题的内容和按钮。内容包括标题、文字、图标或者其它内容，如数据表格、表单空间等。
 
-### Card
+## Card
 
 引入方式：
 
@@ -22,7 +20,7 @@ Card 组件是卡片的根组件，它有两种主要形式：
 
 Card 组件可以作为卡片的主操作区，不内置支持各种交互形态（悬停、聚焦和按下），需要开发者自己实现。
 
-#### 属性
+### 属性
 
 | 属性名    | 默认值   | 类型                | 描述                                                              |
 | --------- | -------- | ------------------- | ----------------------------------------------------------------- |
@@ -50,9 +48,11 @@ export const BaseCard = () => (
 import CardPrimaryAction from '@sinoui/core/CardPrimaryAction ';
 ```
 
-CardPrimaryAction 组件是整个卡片的主操作区，支持各种交互形态（悬停、聚焦和按下）。
+## CardPrimaryAction
 
-#### 属性
+组件是整个卡片的主操作区，支持各种交互形态（悬停、聚焦和按下）。
+
+### 属性
 
 | 属性名  | 默认值 | 类型            | 描述       |
 | ------- | ------ | --------------- | ---------- |
@@ -72,7 +72,7 @@ export const CardPrimaryActionCard = () => (
 );
 ```
 
-### CardActions
+## CardActions
 
 引入方式：
 
@@ -95,7 +95,7 @@ const CardAction = () => {
 };
 ```
 
-### CardActionButtons
+## CardActionButtons
 
 引入方式：
 
@@ -109,17 +109,23 @@ CardActionButtons 组件是用来承载卡片按钮的容器。
 
 ```tsx
 const CardActionButtons = () => {
-    return <Card>
+  return (
+    <Card>
       <CardPrimaryAction>...</CardPrimaryAction>
       <CardActions>
         <CardActionButtons>
           <button>read</button>
           <button>bookmark</button>
-        </CardActionButtons></CardActions>
+        </CardActionButtons>
+      </CardActions>
     </Card>
-}
+  );
+};
+```
 
-// CardActions组件中只有CardActionButtons时可简化为
+CardActions 组件中只有 CardActionButtons 时可简化为:
+
+```tsx
 const CardActionOmlyButtons = () => {
     return <Card>
       <CardPrimaryAction>...</CardPrimaryAction>
@@ -130,7 +136,7 @@ const CardActionOmlyButtons = () => {
 }
 ```
 
-### CardActionIcons
+## CardActionIcons
 
 引入方式：
 
@@ -155,7 +161,7 @@ const CardActionIcons = () => {
 }
 ```
 
-### CardMedia
+## CardMedia
 
 引入方式：
 
@@ -165,7 +171,7 @@ import CardMedia from '@sinoui/core/CardMedia';
 
 CardMedia 组件是用来呈现多媒体内容的组件，目前只支持显示图片。如果需要支持显示视频，需要由开发人员自行实现。
 
-#### 属性
+### 属性
 
 | 属性名    | 默认值 | 类型                | 描述                       |
 | --------- | ------ | ------------------- | -------------------------- |
@@ -197,7 +203,7 @@ const CardMedia = () => {
 };
 ```
 
-### CardContent
+## CardContent
 
 引入方式：
 
@@ -222,7 +228,7 @@ const CardContent = () => {
 };
 ```
 
-### CardHeader
+## CardHeader
 
 引入方式：
 
@@ -232,7 +238,7 @@ import CardHeader from '@sinoui/core/CardHeader';
 
 CardHeader 组件是用来展示卡片头部。
 
-#### 属性
+### 属性
 
 | 属性名    | 默认值 | 类型            | 描述                   |
 | --------- | ------ | --------------- | ---------------------- |
@@ -262,6 +268,6 @@ const CardHeader = () => {
 };
 ```
 
-### 示例
+## 示例
 
 更多示例请查看[Card 开发文档](../components/card)
