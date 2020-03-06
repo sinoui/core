@@ -1,3 +1,4 @@
-import Fab from './Fab';
+import Fab, { FabProps } from './Fab';
 
+export { FabProps };
 export default Fab;

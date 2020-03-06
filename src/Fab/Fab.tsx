@@ -1,15 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { useRipple } from '@sinoui/ripple';
 import classNames from 'classnames';
 import { opacify } from 'polished';
-import getColorFromTheme from '../utils/getColorFromTheme';
-import useMultiRefs from '../utils/useMultiRefs';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 /**
  * 宽度
  */
-const WidthStyle = (props: Props) => {
+const WidthStyle = (props: FabProps) => {
   let width;
   if (props.extended) {
     width = 'auto';
@@ -24,7 +22,7 @@ const WidthStyle = (props: Props) => {
 /**
  * 高度
  */
-const HeightStyle = (props: Props) => {
+const HeightStyle = (props: FabProps) => {
   let height;
   if (props.extended) {
     height = '48px';
@@ -36,18 +34,21 @@ const HeightStyle = (props: Props) => {
   return height;
 };
 
-const FabStyle = css<Props>`
+/**
+ * 浮动按钮样式
+ */
+const FabStyle = css<FabProps>`
   ${({ theme }) => ({ ...theme.typography.button })};
   position: relative;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
   width: ${(props) => WidthStyle(props)};
   height: ${(props) => HeightStyle(props)};
-  border-radius: ${(props) => (props.extended ? '24px' : '50%')};
+  border-radius: 50%;
   color: #fff;
   background: ${(props) =>
     getColorFromTheme(props.theme, props.color) as string};
-  padding: ${(props) => (props.extended ? '0px 20px' : '0px')};
-  font-size: ${(props) => (props.extended ? '0.875rem' : '24px')};
+  font-size: 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -56,11 +57,7 @@ const FabStyle = css<Props>`
   user-select: none;
   max-width: 100%;
   cursor: pointer;
-  text-decoration: none;
   box-sizing: border-box;
-  &::-moz-focus-inner {
-    border-style: none;
-  }
 
   &:hover {
     box-shadow: ${(props) => props.theme.shadows[12]};
@@ -70,11 +67,11 @@ const FabStyle = css<Props>`
         (getColorFromTheme(theme, color) ||
           theme.palette.primary.main) as string,
       )};
-  }
 
-  // Reset on touch devices, it doesn't add specificity
-  @media (hover: none) {
-    backgroundcolor: transparent;
+    // Reset on touch devices, it doesn't add specificity
+    @media (hover: none) {
+      backgroundcolor: transparent;
+    }
   }
 
   &:foucs {
@@ -84,6 +81,12 @@ const FabStyle = css<Props>`
   &.sinoui-fab--disabled {
     pointer-events: none;
     cursor: default;
+    background-color: ${({ theme }) =>
+      opacify(
+        theme.palette.action.hoverOpacity - 0.12,
+        getColorFromTheme(theme, 'actionDisabled') as string,
+      )};
+    color: ${({ theme }) => theme.palette.text.disabled};
   }
 
   .sinoui-fab__ripple-layout {
@@ -109,14 +112,10 @@ const FabStyle = css<Props>`
   }
 `;
 
-const FabWrapper = styled.div`
-  ${FabStyle}
-`;
-
 /**
  * 浮动按钮类型
  */
-export interface Props {
+export interface FabProps {
   /**
    * 子元素
    */
@@ -145,59 +144,85 @@ export interface Props {
    * 指定样式
    */
   style?: React.CSSProperties;
-  /**
-   * 指向根元素
-   */
-  ref?: React.Ref<HTMLInputElement>;
 }
+
+const rippleConfig = {
+  fixSize: true,
+  center: true,
+  rippleLayoutClassName: 'sinoui-fab__ripple-layout',
+  rippleClassName: 'sinoui-fab__ripple',
+};
+
+const rippleConfigExtended = {
+  rippleLayoutClassName: 'sinoui-fab-extended__ripple-layout',
+  rippleClassName: 'sinoui-fab-extended__ripple',
+};
+
+/**
+ * 扩展样式,图标在左侧
+ */
+const extendedLeftIconStyle = css`
+  padding: 0px 20px 0px 12px;
+  > svg {
+    margin-right: 12px;
+  }
+`;
+
+/**
+ * 扩展样式,图标在右侧
+ */
+const extendedRightIconStyle = css`
+  padding: 0px 12px 0px 20px;
+  > svg {
+    margin-left: 12px;
+  }
+`;
+
+/**
+ * 扩展样式
+ */
+const extendedStyle = css<FabProps>`
+  border-radius: 24px;
+  font-size: 0.875rem;
+  padding: 0 20px;
+  > svg {
+    font-size: 24px;
+  }
+  ${(props) =>
+    Array.isArray(props.children) &&
+    props.children.length > 1 &&
+    (typeof props.children[0] === 'string'
+      ? extendedRightIconStyle
+      : extendedLeftIconStyle)}
+`;
 
 /**
  * 浮动按钮
  */
-const Fab = React.forwardRef((props: Props, ref: any) => {
-  const {
-    color = 'primary',
-    mini,
+const Fab = styled.div.attrs(
+  ({
+    className,
     extended,
     disabled,
-    children,
-    className,
+    mini,
+    color = 'primary',
     style,
-    ...rest
-  } = props;
-
-  const rippleRef = useRipple<HTMLButtonElement>({
+  }: FabProps) => ({
+    className: classNames('sinoui-fab', className, {
+      'sinoui-fab--extended': extended,
+      'sinoui-fab--disabled': disabled,
+      'sinoui-fab--mini': mini,
+    }),
+    extended,
     disabled,
-    fixSize: !extended && true,
-    center: !extended && true,
-    rippleLayoutClassName: !extended
-      ? 'sinoui-fab__ripple-layout'
-      : 'sinoui-fab-extended__ripple-layout',
-    rippleClassName: !extended
-      ? 'sinoui-fab__ripple'
-      : 'sinoui-fab-extended__ripple',
-  });
-  const handleRef = useMultiRefs<HTMLButtonElement | HTMLElement | null>(
-    ref,
-    rippleRef,
-  );
-  return (
-    <FabWrapper
-      {...rest}
-      className={classNames('sinoui-fab', className, {
-        'sinoui-fab--extended': extended,
-        'sinoui-fab--disabled': disabled,
-      })}
-      ref={handleRef}
-      color={color}
-      mini={mini}
-      extended={extended}
-      disabled={disabled}
-      style={style}
-    >
-      {children}
-    </FabWrapper>
-  );
-});
+    mini,
+    color,
+    style,
+    ripple: !extended ? rippleConfig : rippleConfigExtended,
+  }),
+)`
+  ${FabStyle}
+  ${(props) => props.extended && extendedStyle}
+`;
 
 export default Fab;

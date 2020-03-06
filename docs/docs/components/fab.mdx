@@ -62,8 +62,8 @@ import Fab from '@sinoui/core/Fab';
 function FabDemo() {
   return (
    <Fab extended>
-      <span>按钮</span>
-    </Fab>
+      按钮
+   </Fab>
   );
 }
 ```
@@ -72,7 +72,7 @@ function FabDemo() {
 
 <StoryLayout>
   <Fab extended>
-    <span>按钮</span>
+    按钮
   </Fab>
 </StoryLayout>
 
@@ -84,8 +84,8 @@ import Fab from '@sinoui/core/Fab';
 function FabDemo() {
   return (
    <Fab extended>
-      <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
-      <span>按钮</span>
+      <MdAdd />
+      按钮
    </Fab>
   );
 }
@@ -95,8 +95,8 @@ function FabDemo() {
 
 <StoryLayout>
   <Fab extended>
-    <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
-    <span>按钮</span>
+    <MdAdd />
+    按钮
   </Fab>
 </StoryLayout>
 
@@ -108,8 +108,8 @@ import Fab from '@sinoui/core/Fab';
 function FabDemo() {
   return (
     <Fab extended>
-      <span>按钮</span>
-      <MdAdd style={{ fontSize: '24px', marginLeft: '12px' }} />
+      按钮
+      <MdAdd  />
     </Fab>
   );
 }
@@ -119,8 +119,74 @@ function FabDemo() {
 
 <StoryLayout>
   <Fab extended>
-    <span>按钮</span>
-    <MdAdd style={{ fontSize: '24px', marginLeft: '12px' }} />
+    按钮
+    <MdAdd  />
+  </Fab>
+</StoryLayout>
+
+## 指定不同颜色
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <>
+      <Fab color="primary">
+        <MdAdd />
+      </Fab>
+      <Fab color="secondary">
+        <MdAdd />
+      </Fab>
+      <Fab color="error">
+        <MdAdd />
+      </Fab>
+      <Fab color="warning">
+        <MdAdd />
+      </Fab>
+      <Fab color="info">
+        <MdAdd />
+      </Fab>
+      <Fab color="success">
+        <MdAdd />
+      </Fab>
+      <Fab color="actionActive">
+        <MdAdd />
+      </Fab>
+      <Fab color="actionDisabled">
+        <MdAdd />
+      </Fab>
+   </>
+  );
+}
+```
+
+效果展示：
+
+<StoryLayout>
+  <Fab color="primary">
+    <MdAdd />
+  </Fab>
+  <Fab color="secondary">
+    <MdAdd />
+  </Fab>
+  <Fab color="error">
+    <MdAdd />
+  </Fab>
+  <Fab color="warning">
+    <MdAdd />
+  </Fab>
+  <Fab color="info">
+    <MdAdd />
+  </Fab>
+  <Fab color="success">
+    <MdAdd />
+  </Fab>
+  <Fab color="actionActive">
+    <MdAdd />
+  </Fab>
+  <Fab color="actionDisabled">
+    <MdAdd />
   </Fab>
 </StoryLayout>
 

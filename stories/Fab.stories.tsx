@@ -36,18 +36,16 @@ export const 设置扩展样式 = () => (
   <StoryLayout>
     <p>左侧有图标：</p>
     <Fab extended>
-      <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
-      <span>按钮</span>
+      <MdAdd />
+      按钮
     </Fab>
     <p>右侧有图标：</p>
     <Fab extended>
-      <span>按钮</span>
-      <MdAdd style={{ fontSize: '24px', marginLeft: '12px' }} />
+      按钮
+      <MdAdd />
     </Fab>
     <p>只有文本：</p>
-    <Fab extended>
-      <span>按钮</span>
-    </Fab>
+    <Fab extended>按钮</Fab>
   </StoryLayout>
 );
 
@@ -115,20 +113,55 @@ export const 不同形状展示 = () => (
   </StoryLayout>
 );
 
-const TabRef = () => {
-  const ref = React.createRef();
-  useEffect(() => {
-    console.log(ref);
-  });
-  return (
-    <Fab ref={ref}>
-      <MdAdd />
-    </Fab>
-  );
-};
-
-export const 指向根元素 = () => (
+export const 指定不同颜色 = () => (
   <StoryLayout>
-    <TabRef />
+    <p>
+      color=primary:
+      <Fab color="primary">
+        <MdAdd />
+      </Fab>
+    </p>
+    <p>
+      color=secondary:
+      <Fab color="secondary">
+        <MdAdd />
+      </Fab>
+    </p>
+    <p>
+      color=error:
+      <Fab color="error">
+        <MdAdd />
+      </Fab>
+    </p>
+    <p>
+      color=warning:
+      <Fab color="warning">
+        <MdAdd />
+      </Fab>
+    </p>
+    <p>
+      color=info:
+      <Fab color="info">
+        <MdAdd />
+      </Fab>
+    </p>
+    <p>
+      color=success:
+      <Fab color="success">
+        <MdAdd />
+      </Fab>
+    </p>
+    <p>
+      color=actionActive:
+      <Fab color="actionActive">
+        <MdAdd />
+      </Fab>
+    </p>
+    <p>
+      color=actionDisabled:
+      <Fab color="actionDisabled">
+        <MdAdd />
+      </Fab>
+    </p>
   </StoryLayout>
 );
