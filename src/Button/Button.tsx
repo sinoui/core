@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import { opacify } from 'polished';
 import getColorFromTheme from '../utils/getColorFromTheme';
+import colorCss from '../utils/colorCss';
 import OverridableComponent from '../OverridableComponent';
 
 export interface Props extends BaseButtonProps {
@@ -71,13 +72,12 @@ const raisedStyle = css<Props>`
   transition: box-shadow 280ms;
 
   &:hover {
-    background-color: ${({ theme, color }) => getColorFromTheme(theme, color)};
+    ${colorCss('background-color')};
     box-shadow: ${({ disableElevation, theme }) =>
       !disableElevation && theme.shadows[4]};
 
     @media (hover: none) {
-      background-color: ${({ theme, color }) =>
-        getColorFromTheme(theme, color)};
+      ${colorCss('background-color')};
     }
   }
 
