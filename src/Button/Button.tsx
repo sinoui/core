@@ -76,10 +76,8 @@ const raisedStyle = css<Props>`
       !disableElevation && theme.shadows[4]};
 
     @media (hover: none) {
-      background-color: ${({ theme, color, disabled }) =>
-        disabled
-          ? theme.palette.action.disabledBackground
-          : getColorFromTheme(theme, color)};
+      background-color: ${({ theme, color }) =>
+        getColorFromTheme(theme, color)};
     }
   }
 
