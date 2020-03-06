@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { MdAdd } from 'react-icons/md';
 import Fab from '@sinoui/core/Fab';
 import styled from 'styled-components';
+import SvgIcon from '@sinoui/core/SvgIcon';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -36,13 +37,13 @@ export const 设置扩展样式 = () => (
   <StoryLayout>
     <p>左侧有图标：</p>
     <Fab extended>
-      <MdAdd />
+      <SvgIcon as={MdAdd} />
       按钮
     </Fab>
     <p>右侧有图标：</p>
     <Fab extended>
       按钮
-      <MdAdd />
+      <SvgIcon as={MdAdd} />
     </Fab>
     <p>只有文本：</p>
     <Fab extended>按钮</Fab>
@@ -107,8 +108,8 @@ export const 不同形状展示 = () => (
     </TabShapedSecond>
     <p />
     <TabShapedThird extended>
-      <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
-      <span>按钮</span>
+      <SvgIcon as={MdAdd} />
+      按钮
     </TabShapedThird>
   </StoryLayout>
 );

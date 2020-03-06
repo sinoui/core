@@ -163,7 +163,7 @@ const rippleConfigExtended = {
  */
 const extendedLeftIconStyle = css`
   padding: 0px 20px 0px 12px;
-  > svg {
+  > .sinoui-svg-icon {
     margin-right: 12px;
   }
 `;
@@ -173,7 +173,7 @@ const extendedLeftIconStyle = css`
  */
 const extendedRightIconStyle = css`
   padding: 0px 12px 0px 20px;
-  > svg {
+  > .sinoui-svg-icon {
     margin-left: 12px;
   }
 `;
@@ -185,7 +185,7 @@ const extendedStyle = css<FabProps>`
   border-radius: 24px;
   font-size: 0.875rem;
   padding: 0 20px;
-  > svg {
+  > .sinoui-svg-icon {
     font-size: 24px;
   }
   ${(props) =>
@@ -221,8 +221,8 @@ const Fab = styled.div.attrs(
     ripple: !extended ? rippleConfig : rippleConfigExtended,
   }),
 )`
-  ${FabStyle}
-  ${(props) => props.extended && extendedStyle}
+  ${FabStyle};
+  ${(props) => props.extended && extendedStyle};
 `;
 
 export default Fab;

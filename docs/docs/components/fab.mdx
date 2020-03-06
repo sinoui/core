@@ -5,6 +5,7 @@ title: Fab 浮动按钮
 
 import Fab from '@sinoui/core/Fab';
 import { MdAdd } from "react-icons/md";
+import SvgIcon from '@sinoui/core/SvgIcon';
 import StoryLayout from './StoryLayout';
 import TabShapedFirst from './fab-demos/TabShapedFirst';
 import TabShapedSecond from './fab-demos/TabShapedSecond';
@@ -80,11 +81,12 @@ function FabDemo() {
 
 ```tsx
 import Fab from '@sinoui/core/Fab';
+import SvgIcon from '@sinoui/core/SvgIcon';
 
 function FabDemo() {
   return (
    <Fab extended>
-      <MdAdd />
+      <SvgIcon as={MdAdd} />
       按钮
    </Fab>
   );
@@ -95,7 +97,7 @@ function FabDemo() {
 
 <StoryLayout>
   <Fab extended>
-    <MdAdd />
+    <SvgIcon as={MdAdd} />
     按钮
   </Fab>
 </StoryLayout>
@@ -104,12 +106,13 @@ function FabDemo() {
 
 ```tsx
 import Fab from '@sinoui/core/Fab';
+import SvgIcon from '@sinoui/core/SvgIcon';
 
 function FabDemo() {
   return (
     <Fab extended>
       按钮
-      <MdAdd  />
+      <SvgIcon as={MdAdd} />
     </Fab>
   );
 }
@@ -120,7 +123,7 @@ function FabDemo() {
 <StoryLayout>
   <Fab extended>
     按钮
-    <MdAdd  />
+    <SvgIcon as={MdAdd} />
   </Fab>
 </StoryLayout>
 
