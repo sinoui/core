@@ -2,7 +2,7 @@
 
 exports[`AppBarActions 1`] = `
 <div
-  className="AppBarActions-sl4kx3-0 RlKcw"
+  className="AppBarActions-sl4kx3-0 RlKcw sinoui-app-bar--actions"
 >
   icons
 </div>

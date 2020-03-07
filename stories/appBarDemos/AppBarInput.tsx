@@ -27,28 +27,30 @@ export default function Demo(props: {
   fixed?: boolean;
   short?: boolean;
 }) {
-  const { prominent } = props;
   return (
     <ThemeProvider theme={defaultTheme}>
-      <AppBar {...props}>
-        <NavigationIcon>
+      <AppBar
+        {...props}
+        title={
+          <>
+            <div>标题</div>
+            <input placeholder="请输入" style={{ height: '32px' }} />
+          </>
+        }
+        navigationIcon={
           <Icon>
             <MdDehaze />
           </Icon>
-        </NavigationIcon>
-        <TitleWrapper prominent={prominent}>
-          <AppBarTitle>标题</AppBarTitle>
-          <input placeholder="请输入" style={{ height: '32px' }} />
-        </TitleWrapper>
-        <AppBarActions>
+        }
+        actionItems={[
           <Icon>
             <MdFavorite />
-          </Icon>
+          </Icon>,
           <Icon>
             <MdBookmark />
-          </Icon>
-        </AppBarActions>
-      </AppBar>
+          </Icon>,
+        ]}
+      />
     </ThemeProvider>
   );
 }

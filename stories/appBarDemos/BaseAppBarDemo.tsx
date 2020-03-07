@@ -16,24 +16,23 @@ export default function Demo(props: {
 }) {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <AppBar {...props}>
-        <NavigationIcon>
+      <AppBar
+        {...props}
+        title="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"
+        navigationIcon={
           <Icon>
             <MdDehaze />
           </Icon>
-        </NavigationIcon>
-        <AppBarTitle>
-          标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题
-        </AppBarTitle>
-        <AppBarActions>
+        }
+        actionItems={[
           <Icon>
             <MdFavorite />
-          </Icon>
+          </Icon>,
           <Icon>
             <MdBookmark />
-          </Icon>
-        </AppBarActions>
-      </AppBar>
+          </Icon>,
+        ]}
+      />
     </ThemeProvider>
   );
 }

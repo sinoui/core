@@ -1,9 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import AppBarActions from '@sinoui/core/AppBarActions';
-import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import NavigationIcon from '@sinoui/core/NavigationIcon';
-import Fab from '../../stories/appBarDemos/Fab';
 import InSetCircle from './InSetCircle';
 
 /**
@@ -26,7 +24,7 @@ const endFabCss = css<Props>`
     justify-content: ${(props) => props.endFab && 'flex-start'};
   }
 
-  & ${Fab} {
+  && > .sinoui-bottom-app-bar--fab {
     right: 16px;
   }
 `;
@@ -46,6 +44,7 @@ const StyledBottomAppBar = styled.div<Props>`
   box-sizing: border-box;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[8]};
+  background-color: ${(props) => props.theme.palette.primary.main};
   ${(props) => props.endFab && endFabCss}
 
   & ${AppBarActions} {
@@ -53,8 +52,11 @@ const StyledBottomAppBar = styled.div<Props>`
     justify-content: flex-end;
   }
 
-  background-color: ${({ color = 'primary', theme }: Props) =>
-    getColorFromTheme(theme, color)};
+  & > .sinoui-bottom-app-bar--fab {
+    position: absolute;
+    right: calc(50% - 28px);
+    top: -50%;
+  }
 `;
 
 /**
@@ -84,6 +86,12 @@ const InsetBottomAppBar = styled.div`
   & ${NavigationIcon} {
     z-index: 1;
   }
+
+  & > .sinoui-bottom-app-bar--fab {
+    position: absolute;
+    right: calc(50% - 28px);
+    top: -50%;
+  }
 `;
 
 const InsetBottomAppBarLayer = styled.div`
@@ -96,18 +104,39 @@ const InsetBottomAppBarLayer = styled.div`
   .sinoui-bottom-app-bar--layer {
     flex: 1;
     height: 100%;
-    background-color: ${({ color = 'primary', theme }) =>
-      getColorFromTheme(theme, color)};
+    background-color: ${(props) => props.theme.palette.primary.main};
   }
 `;
 
-const BottomAppBar = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const { insertFab, children, style } = props;
+const BottomAppBar = React.forwardRef<
+  HTMLDivElement,
+  Props & {
+    /**
+     * 应用栏左侧图标
+     */
+    navigationIcon: React.ReactNode;
+    /**
+     * 浮动操作按钮
+     */
+    fab?: React.ReactNode;
+    /**
+     * 应用栏可操作元素
+     */
+    actionItems?: React.ReactNode;
+  }
+>((props, ref) => {
+  const { navigationIcon, actionItems, fab, insertFab, style, ...rest } = props;
   return !insertFab ? (
-    <StyledBottomAppBar ref={ref} {...props} />
+    <StyledBottomAppBar ref={ref} style={style} {...rest}>
+      <NavigationIcon>{navigationIcon}</NavigationIcon>
+      <div className="sinoui-bottom-app-bar--fab">{fab}</div>
+      <AppBarActions>{actionItems}</AppBarActions>
+    </StyledBottomAppBar>
   ) : (
     <InsetBottomAppBar style={style}>
-      {children}
+      <NavigationIcon>{navigationIcon}</NavigationIcon>
+      <div className="sinoui-bottom-app-bar--fab">{fab}</div>
+      <AppBarActions>{actionItems}</AppBarActions>
       <InsetBottomAppBarLayer>
         <div className="sinoui-bottom-app-bar--layer" />
         <InSetCircle />

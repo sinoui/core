@@ -16,23 +16,24 @@ export default function Demo(props: {
 }) {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <AppBar {...props}>
-        <NavigationIcon>
+      <AppBar
+        {...props}
+        title="标题"
+        navigationIcon={
           <Icon>
             <MdDehaze />
           </Icon>
-        </NavigationIcon>
-        <AppBarTitle>标题</AppBarTitle>
-        <AppBarActions>
-          <input placeholder="请输入" style={{ height: '32px' }} />
+        }
+        actionItems={[
+          <input placeholder="请输入" style={{ height: '32px' }} />,
           <Icon>
             <MdFavorite />
-          </Icon>
+          </Icon>,
           <Icon>
             <MdBookmark />
-          </Icon>
-        </AppBarActions>
-      </AppBar>
+          </Icon>,
+        ]}
+      />
     </ThemeProvider>
   );
 }

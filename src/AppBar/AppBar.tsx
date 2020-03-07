@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import AppBarTitle from '@sinoui/core/AppBarTitle';
 import AppBarActions from '@sinoui/core/AppBarActions';
@@ -23,6 +24,10 @@ export interface Props {
    * 收缩模式
    */
   short?: boolean;
+  /**
+   * 一直收缩的模式
+   */
+  shortCollapsed?: boolean;
 }
 
 /**
@@ -106,7 +111,9 @@ const fixedCss = css`
   position: fixed;
 `;
 
-const StyledAppBar = styled.div<Props>`
+const StyledAppBar = styled.div.attrs(() => ({
+  className: 'sinoui-app-bar',
+}))<Props>`
   position: relative;
   display: flex;
   width: 100%;
@@ -118,9 +125,38 @@ const StyledAppBar = styled.div<Props>`
   ${({ fixed }) => fixed && fixedCss}
   ${({ short }) => short && shortCss}
   & > ${AppBarTitle} {
+    display: flex;
     flex: 1;
     margin-left: 20px;
   }
   
 `;
-export default StyledAppBar;
+
+const AppBar = React.forwardRef<
+  HTMLDivElement,
+  Props & {
+    /**
+     * 应用栏左侧图标
+     */
+    navigationIcon?: React.ReactNode;
+    /**
+     * 应用栏标题
+     */
+    title: React.ReactNode;
+    /**
+     * 应用栏可操作元素
+     */
+    actionItems?: React.ReactNode;
+  }
+>((props, ref) => {
+  const { navigationIcon, title, actionItems, ...rest } = props;
+  return (
+    <StyledAppBar ref={ref} {...rest}>
+      <NavigationIcon>{navigationIcon}</NavigationIcon>
+      <AppBarTitle>{title}</AppBarTitle>
+      <AppBarActions>{actionItems}</AppBarActions>
+    </StyledAppBar>
+  );
+});
+
+export default AppBar;

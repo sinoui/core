@@ -19,8 +19,17 @@ exports[`快照测试 嵌入图标 1`] = `
 
 exports[`快照测试 浮动按钮居中嵌入 1`] = `
 <div
-  className="BottomAppBar__InsetBottomAppBar-f0o39x-1 jPrmrp"
+  className="BottomAppBar__InsetBottomAppBar-f0o39x-1 fHdqxT"
 >
+  <div
+    className="NavigationIcon-sc-2b8xro-0 eaIGBi sinoui-app-bar--navigation"
+  />
+  <div
+    className="sinoui-bottom-app-bar--fab"
+  />
+  <div
+    className="AppBarActions-sl4kx3-0 RlKcw sinoui-app-bar--actions"
+  />
   <div
     className="BottomAppBar__InsetBottomAppBarLayer-f0o39x-2 elENlO"
   >
@@ -50,12 +59,32 @@ exports[`快照测试 浮动按钮居中嵌入 1`] = `
 
 exports[`快照测试 浮动按钮居右显示 1`] = `
 <div
-  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 dxbSvV"
-/>
+  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 lpfVj"
+>
+  <div
+    className="NavigationIcon-sc-2b8xro-0 eaIGBi sinoui-app-bar--navigation"
+  />
+  <div
+    className="sinoui-bottom-app-bar--fab"
+  />
+  <div
+    className="AppBarActions-sl4kx3-0 RlKcw sinoui-app-bar--actions"
+  />
+</div>
 `;
 
 exports[`快照测试 默认 1`] = `
 <div
-  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 cPLdyv"
-/>
+  className="BottomAppBar__StyledBottomAppBar-f0o39x-0 iSEiHo"
+>
+  <div
+    className="NavigationIcon-sc-2b8xro-0 eaIGBi sinoui-app-bar--navigation"
+  />
+  <div
+    className="sinoui-bottom-app-bar--fab"
+  />
+  <div
+    className="AppBarActions-sl4kx3-0 RlKcw sinoui-app-bar--actions"
+  />
+</div>
 `;
