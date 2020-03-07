@@ -7,11 +7,19 @@
 
 module.exports = {
   docs: {
-    组件: [{
-      type: 'category',
-      label: '通用',
-      items: ['components/button', 'components/divider', 'components/typography'],
-    }, ],
-    组件API: ['components-apis/base-button', 'components-apis/divider-api', 'components-apis/typography'],
+    组件: [
+      {
+        type: 'category',
+        label: '通用',
+        items: ['components/button', 'components/divider', 'components/typography'],
+      },
+    ],
+    组件API: [
+      'components-apis/base-button',
+      'components-apis/button',
+      'components-apis/icon-button',
+      'components-apis/divider-api', 
+      'components-apis/typography'
+    ],
   },
 };
