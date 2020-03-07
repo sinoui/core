@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
-import 'jest-styled-components';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import { MdAdd } from 'react-icons/md';
 import TestWrapper from './TestWrapper';
@@ -21,29 +20,29 @@ describe('Fab组件 单元测试', () => {
 
     const fab = container.firstChild;
 
-    expect(fab).toHaveClass('sinoui-fab--extended');
+    expect(fab && fab.firstChild).toHaveClass('sinoui-fab--extended');
   });
   test('mini状态下class类名', () => {
     const { container } = render(
       <TestWrapper>
-        <Fab extended>按钮</Fab>
+        <Fab mini>按钮</Fab>
       </TestWrapper>,
     );
 
     const fab = container.firstChild;
 
-    expect(fab).toHaveClass('sinoui-fab--mini');
+    expect(fab && fab.firstChild).toHaveClass('sinoui-fab--mini');
   });
   test('disabled状态下class类名', () => {
     const { container } = render(
       <TestWrapper>
-        <Fab extended>按钮</Fab>
+        <Fab disabled>按钮</Fab>
       </TestWrapper>,
     );
 
     const fab = container.firstChild;
 
-    expect(fab).toHaveClass('sinoui-fab--disabled');
+    expect(fab && fab.firstChild).toHaveClass('sinoui-fab--disabled');
   });
 });
 

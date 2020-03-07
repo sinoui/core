@@ -4,9 +4,11 @@ exports[`Fab组件 快照测试 基本使用 1`] = `
 <div
   className="TestWrapper__Container-wrvnwl-0 edoXsR"
 >
-  <div
-    className="Fab__FabWrapper-egtp6t-0 czRWAm sinoui-fab"
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 jcPEBv sinoui-fab"
     color="primary"
+    role="button"
+    type="button"
   >
     <svg
       fill="currentColor"
@@ -26,7 +28,214 @@ exports[`Fab组件 快照测试 基本使用 1`] = `
         d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
       />
     </svg>
-  </div>
+  </button>
+</div>
+`;
+
+exports[`Fab组件 快照测试 指定不同颜色 1`] = `
+<div
+  className="TestWrapper__Container-wrvnwl-0 edoXsR"
+>
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 jcPEBv sinoui-fab"
+    color="primary"
+    role="button"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </button>
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 dKfbQd sinoui-fab"
+    color="secondary"
+    role="button"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </button>
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 eHKQIj sinoui-fab"
+    color="error"
+    role="button"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </button>
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 kZRUzV sinoui-fab"
+    color="warning"
+    role="button"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </button>
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 iNdZfv sinoui-fab"
+    color="info"
+    role="button"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </button>
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 fUAhWZ sinoui-fab"
+    color="success"
+    role="button"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </button>
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 gwdhnu sinoui-fab"
+    color="actionActive"
+    role="button"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </button>
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 cWGahN sinoui-fab"
+    color="actionDisabled"
+    role="button"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </button>
 </div>
 `;
 
@@ -34,10 +243,13 @@ exports[`Fab组件 快照测试 设置不可用状态 1`] = `
 <div
   className="TestWrapper__Container-wrvnwl-0 edoXsR"
 >
-  <div
-    className="Fab__FabWrapper-egtp6t-0 czRWAm sinoui-fab sinoui-fab--disabled"
+  <button
+    aria-disabled={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button Fab-egtp6t-0 jcPEBv sinoui-fab sinoui-fab--disabled"
     color="primary"
     disabled={true}
+    role="button"
+    type="button"
   >
     <svg
       fill="currentColor"
@@ -57,7 +269,7 @@ exports[`Fab组件 快照测试 设置不可用状态 1`] = `
         d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
       />
     </svg>
-  </div>
+  </button>
 </div>
 `;
 
@@ -65,9 +277,11 @@ exports[`Fab组件 快照测试 设置扩展样式 1`] = `
 <div
   className="TestWrapper__Container-wrvnwl-0 edoXsR"
 >
-  <div
-    className="Fab__FabWrapper-egtp6t-0 gZCzwF sinoui-fab sinoui-fab--extended"
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 bxwxwG sinoui-fab sinoui-fab--extended"
     color="primary"
+    role="button"
+    type="button"
   >
     <svg
       fill="currentColor"
@@ -87,7 +301,7 @@ exports[`Fab组件 快照测试 设置扩展样式 1`] = `
         d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
       />
     </svg>
-  </div>
+  </button>
 </div>
 `;
 
@@ -95,9 +309,11 @@ exports[`Fab组件 快照测试 设置较小显示 1`] = `
 <div
   className="TestWrapper__Container-wrvnwl-0 edoXsR"
 >
-  <div
-    className="Fab__FabWrapper-egtp6t-0 kXkoJx sinoui-fab"
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 gKWvvP sinoui-fab sinoui-fab--mini"
     color="primary"
+    role="button"
+    type="button"
   >
     <svg
       fill="currentColor"
@@ -117,6 +333,6 @@ exports[`Fab组件 快照测试 设置较小显示 1`] = `
         d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
       />
     </svg>
-  </div>
+  </button>
 </div>
 `;
