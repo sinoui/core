@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import { opacify } from 'polished';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
+import BaseButton from '@sinoui/core/BaseButton';
 
 /**
  * 宽度
@@ -39,9 +40,6 @@ const HeightStyle = (props: FabProps) => {
  */
 const FabStyle = css<FabProps>`
   ${({ theme }) => ({ ...theme.typography.button })};
-  position: relative;
-  margin: 0;
-  padding: 0;
   width: ${(props) => WidthStyle(props)};
   height: ${(props) => HeightStyle(props)};
   border-radius: 50%;
@@ -49,14 +47,9 @@ const FabStyle = css<FabProps>`
   background: ${(props) =>
     getColorFromTheme(props.theme, props.color) as string};
   font-size: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: ${(props) => props.theme.shadows[6]};
   fill: currentColor;
-  user-select: none;
   max-width: 100%;
-  cursor: pointer;
   box-sizing: border-box;
 
   &:hover {
@@ -103,12 +96,14 @@ const FabStyle = css<FabProps>`
     width: 100%;
     height: 48px;
     border-radius: 24px;
+    left:0px;
   }
 
   .sinoui-fab-extended__ripple {
     width: 100%;
     height: 48px;
     border-radius: 24px;
+    left:0px;
   }
 `;
 
@@ -140,10 +135,6 @@ export interface FabProps {
    * 自定义类名
    */
   className?: string;
-  /**
-   * 指定样式
-   */
-  style?: React.CSSProperties;
 }
 
 const rippleConfig = {
@@ -199,7 +190,7 @@ const extendedStyle = css<FabProps>`
 /**
  * 浮动按钮
  */
-const Fab = styled.div.attrs(
+const Fab = styled(BaseButton).attrs(
   ({
     className,
     extended,
