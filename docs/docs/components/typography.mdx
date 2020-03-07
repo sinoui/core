@@ -1,0 +1,220 @@
+---
+id: typography
+title: Typography 文字排版
+---
+
+import Typography from '@sinoui/core/Typography';
+import H1 from '@sinoui/core/H1';
+import H2 from '@sinoui/core/H2';
+import H3 from '@sinoui/core/H3';
+import H4 from '@sinoui/core/H4';
+import H5 from '@sinoui/core/H5';
+import H6 from '@sinoui/core/H6';
+import Subtitle1 from '@sinoui/core/Subtitle1';
+import Subtitle2 from '@sinoui/core/Subtitle2';
+import Body1 from '@sinoui/core/Body1';
+import Body2 from '@sinoui/core/Body2';
+import Caption from '@sinoui/core/Caption';
+import Overline from '@sinoui/core/Overline';
+import StoryLayout from './StoryLayout';
+
+## Typography
+
+```tsx
+import H1 from '@sinoui/core/H1';
+
+function TypographyDemo() {
+  return (
+    <>
+      <H1>h1.一级标题</H1>
+      <H2>h2. 二级标题</H2>
+      <H3>h3. 三级标题</H3>
+      <H4>h4. 四级标题</H4>
+      <H5>h5. 五级标题</H5>
+      <H6>h6. 六级标题</H6>
+      <Subtitle1>subtitle1. 副标题1</Subtitle1>
+      <Subtitle2>subtitle2. 副标题2</Subtitle2>
+      <Body1>body1. 段落 1</Body1>
+      <Body2>body2. 段落 2</Body2>
+      <Caption>Caption. 说明</Caption>
+      <Overline>Overline.</Overline>
+      <Typography>Typography.</Typography>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <H1>h1.一级标题</H1>
+  <H2>h2. 二级标题</H2>
+  <H3>h3. 三级标题</H3>
+  <H4>h4. 四级标题</H4>
+  <H5>h5. 五级标题</H5>
+  <H6>h6. 六级标题</H6>
+  <Subtitle1>subtitle1. 副标题1</Subtitle1>
+  <Subtitle2>subtitle2. 副标题2</Subtitle2>
+  <Body1>body1. 段落 1</Body1>
+  <Body2>body2. 段落 2</Body2>
+  <Caption>Caption. 说明</Caption>
+  <Overline>Overline.</Overline>
+  <Typography>Typography.</Typography>
+</StoryLayout>
+
+## 设置变更DOM元素
+
+设置 `as` 属性即可变更DOM元素。
+
+```tsx
+function TypographyDemo(){
+  return (
+   <Typography as="h2">Typography</Typography>
+  )
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Typography as="h2">Typography</Typography>
+</StoryLayout>
+
+## 设置文本对齐方式
+
+设置 `align` 属性即可设置文本对齐方式。
+
+```tsx
+function TypographyDemo(){
+  return (
+   <>
+    <Typography align="right">Typography</Typography>
+    <Typography align="center">Typography</Typography>
+   </>
+  )
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Typography align="right">Typography</Typography>
+
+  <Typography align="center">Typography</Typography>
+</StoryLayout>
+
+## 设置是否换行
+
+设置 `noWrap` 属性即可设置是否换行。
+
+```tsx
+function TypographyDemo(){
+  return <Typography noWrap>React has been designed from the start for gradual adoption, and you can use as little or as much React as you need.</Typography>
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Typography noWrap>React has been designed from the start for gradual adoption, and you can use as little or as much React as you need.React has been designed from the start for gradual adoption, and you can use as little or as much React as you need.</Typography>
+</StoryLayout>
+
+## 设置颜色
+
+设置 `color` 属性即可控制颜色。
+
+```tsx
+function TypographyDemo(){
+  return (
+    <>
+      <Typography color="primary">Typography</Typography>
+      <Typography color="secondary">Typography</Typography>
+      <Typography color="textPrimary">Typography</Typography>
+      <Typography color="textSecondary">Typography</Typography>
+      <Typography color="error">Typography</Typography>
+      <Typography color="warning">Typography</Typography>
+      <Typography color="success">Typography</Typography>
+      <Typography color="info">Typography</Typography>
+    </>
+  )
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Typography color="primary">Typography</Typography>
+  <Typography color="secondary">Typography</Typography>
+  <Typography color="textPrimary">Typography</Typography>
+  <Typography color="textSecondary">Typography</Typography>
+  <Typography color="error">Typography</Typography>
+  <Typography color="warning">Typography</Typography>
+  <Typography color="success">Typography</Typography>
+  <Typography color="info">Typography</Typography>
+</StoryLayout>
+
+## 设置是否在底部添加间隙
+
+设置 `gutterBottom` 属性即可设置是否在底部添加间隙，适用H1~H6、Subtitle1、Subtitle2
+
+```tsx
+function H1Demo(){
+  return <H1 gutterBottom>H1</H1>
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <H1 gutterBottom>H1</H1>
+</StoryLayout>
+
+## 设置是否为段落
+
+设置 `paragraph` 属性即可设置是否在底部添加间隙，适用Body1、Body2
+
+```tsx
+function Body1Demo(){
+  return <Body1 paragraph>Body1</Body1>
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Body1 paragraph>Body1</Body1>
+</StoryLayout>
+
+## 设置操作DOM节点
+
+设置 `ref` 属性即可操作DOM节点
+
+```tsx
+function TypographyRef() {
+  const ref = React.createRef();
+  useEffect(() => {
+    console.log(ref.current);
+  });
+  return <H1 ref={ref}>ref</H1>;
+}
+```
+
+## 设置Typography组件的type属性
+
+设置 `type` 属性
+
+```tsx
+function TypographyRef() {
+  return <Typography type="body1">Typography</Typography>;
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Typography type="body1">Typography</Typography>
+</StoryLayout>
+
+## API
+
+* [Typography](../components-apis/typography)
