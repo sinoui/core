@@ -14,7 +14,8 @@
     "lint": "ts-lib-tools lint",
     "prepublishOnly": "ts-lib-tools build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "postinstall": " yarn-deduplicate yarn.lock "
   },
   "prettier": {
     "printWidth": 80,
@@ -51,8 +52,11 @@
     "@babel/runtime": "^7.7.6",
     "@sinoui/ripple": "^1.0.10",
     "@sinoui/theme": "^1.0.0-beta.7",
-    "@types/classnames": "^2.2.9",
-    "styled-components": "^4.4.1"
+    "classnames": "^2.2.6",
+    "jest-styled-components": "^7.0.0",
+    "polished": "^3.4.4",
+    "styled-components": "^4.4.1",
+    "react-icons": "^3.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -63,6 +67,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/react-hooks": "^3.2.1",
+    "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.15",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.0",
@@ -75,7 +80,8 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
-    "ts-lib-tools": "^0.5.2",
-    "typescript": "^3.7.3"
+    "ts-lib-tools": "^0.9.5",
+    "typescript": "^3.8.3",
+    "yarn-deduplicate": "^2.0.0"
   }
 }
