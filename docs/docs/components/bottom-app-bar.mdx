@@ -63,22 +63,22 @@ import Fab from './Fab';
 
 export default function Demo() {
   return (
-    <BottomAppBar>
-      <NavigationIcon>
+    <BottomAppBar
+      navigationIcon={
         <Icon>
           <MdDehaze />
         </Icon>
-      </NavigationIcon>
-      <Fab />
-      <AppBarActions>
+      }
+      fab={<Fab />}
+      actionItems={[
         <Icon>
           <MdFavorite />
-        </Icon>
+        </Icon>,
         <Icon>
           <MdBookmark />
-        </Icon>
-      </AppBarActions>
-    </BottomAppBar>
+        </Icon>,
+      ]}
+    />
   );
 }
 ```
@@ -106,22 +106,23 @@ import Fab from './Fab';
 
 export default function Demo() {
   return (
-    <BottomAppBar endFab>
-      <NavigationIcon>
+    <BottomAppBar
+      endFab
+      navigationIcon={
         <Icon>
           <MdDehaze />
         </Icon>
-      </NavigationIcon>
-      <Fab />
-      <AppBarActions>
+      }
+      fab={<Fab />}
+      actionItems={[
         <Icon>
           <MdFavorite />
-        </Icon>
+        </Icon>,
         <Icon>
           <MdBookmark />
-        </Icon>
-      </AppBarActions>
-    </BottomAppBar>
+        </Icon>,
+      ]}
+    />
   );
 }
 ```
@@ -151,21 +152,21 @@ import Icon from './Icon';
 
 export default function Demo() {
   return (
-    <BottomAppBar endFab>
-      <NavigationIcon>
+    <BottomAppBar
+      navigationIcon={
         <Icon>
           <MdDehaze />
         </Icon>
-      </NavigationIcon>
-      <AppBarActions>
+      }
+      actionItems={[
         <Icon>
           <MdFavorite />
-        </Icon>
+        </Icon>,
         <Icon>
           <MdBookmark />
-        </Icon>
-      </AppBarActions>
-    </BottomAppBar>
+        </Icon>,
+      ]}
+    />
   );
 }
 ```
@@ -194,21 +195,22 @@ import Icon from './Icon';
 
 export default function Demo() {
   return (
-    <BottomAppBar endFab>
-      <NavigationIcon>
+    <BottomAppBar
+      insertFab
+      navigationIcon={
         <Icon>
           <MdDehaze />
         </Icon>
-      </NavigationIcon>
-      <AppBarActions>
+      }
+      actionItems={[
         <Icon>
           <MdFavorite />
-        </Icon>
+        </Icon>,
         <Icon>
           <MdBookmark />
-        </Icon>
-      </AppBarActions>
-    </BottomAppBar>
+        </Icon>,
+      ]}
+    />
   );
 }
 ```

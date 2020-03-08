@@ -15,7 +15,7 @@ export default function Demo(props: {
   const targetScrollRef = useRef<HTMLDivElement>(null);
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div>
+      <div ref={targetScrollRef} style={{ height: '200px', overflowY: 'auto' }}>
         <AppBar
           {...props}
           targetScroll={targetScrollRef}
@@ -34,10 +34,7 @@ export default function Demo(props: {
             </Icon>,
           ]}
         />
-        <div
-          ref={targetScrollRef}
-          style={{ height: '200px', overflowY: 'auto' }}
-        >
+        <div>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(
             (index: number) => (
               <h1 style={{ margin: '0 0 10px 0' }}>item{index}</h1>

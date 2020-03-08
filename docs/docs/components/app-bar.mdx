@@ -38,13 +38,14 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 - 标准模式(默认形式)
 - 突出模式(prominent)
 - 密集模式(dense)
-- 收缩模式(fixed)
+- 可收缩模式(fixed)
+- 一直收缩模式(fixed)
 - 固定模式(short)
 
 ### 标准模式
 
 ```tsx
-<AppBar prominent>...</AppBar>
+<AppBar />
 ```
 
 标准模式下的顶部应用显示栏标题文字时注意事项：
@@ -56,11 +57,11 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 ### 突出模式(prominent)
 
-```tsx
-<AppBar prominent>...</AppBar>
-```
-
 突出的顶部应用栏可用于较长的标题展示，可以容纳图像，或作为一个更强大的顶部应用栏。
+
+```tsx
+<AppBar prominent />
+```
 
 **注意事项：突出模式的顶部应用栏在容纳图像时不用使用容易使应用栏图标和文字变得难以辨认的图片。**
 
@@ -71,27 +72,35 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 ### 密集模式(dense)
 
-```tsx
-<AppBar dense>...</AppBar>
-```
-
-布局空间比较密集时，可以使用密集式应用栏以适应更密集的布局。
-
-### 收缩模式(short)
+需要以更小的高度展示应用栏时，可以使用密集。
 
 ```tsx
-<AppBar short>...</AppBar>
+<AppBar dense />
 ```
 
-当顶部应用栏需要收缩展示时，可以使用收缩模式，收缩模式的应用栏只展示左侧的导航图标和最后一个可操作性区域的元素。
+### 可收缩模式(short)
+
+当屏幕中页面内容发生滚动时，可收缩模式下的应用栏会变为收缩状态，内容滚动顶部时恢复态应用栏初始状。
+
+```tsx
+<AppBar short />
+```
+
+### 收缩模式(shortCollapsed)
+
+当需要以更小的空间展示顶部应用栏时，可以使用收缩模式的应用栏。收缩模式下的应用栏只展示左侧的导航图标和可操作区域最后一个元素。
+
+```tsx
+<AppBar shortCollapsed />
+```
 
 ### 固定模式(fixed)
 
-```tsx
-<AppBar fixed>...</AppBar>
-```
+固定模式下的应用栏，页面内容发生滚动时应用栏位置固定显示在页面顶部，不随着内容的滚动而滚动。
 
-固定模式的顶部应用栏则固定显示在顶部，页面发生滚动时依然停留在页面顶部。
+```tsx
+<AppBar fixed />
+```
 
 ## 顶部应用栏示例
 
@@ -120,7 +129,7 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 运行效果：
 
-<CardStoryLayout>
+<CardStoryLayout style={{flexDirection: 'column',width: '500px'}}>
   <BaseAppBarDemo />
 </CardStoryLayout>
 
@@ -149,7 +158,7 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 运行效果：
 
-<CardStoryLayout>
+<CardStoryLayout style={{flexDirection: 'column',width: '500px'}}>
   <BaseAppBarDemo prominent />
 </CardStoryLayout>
 
@@ -178,11 +187,11 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 运行效果：
 
-<CardStoryLayout>
+<CardStoryLayout style={{flexDirection: 'column',width: '500px'}}>
   <BaseAppBarDemo dense />
 </CardStoryLayout>
 
-### 收缩模式
+### 可收缩模式
 
 代码：
 
@@ -207,8 +216,38 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 运行效果：
 
-<CardStoryLayout>
+<CardStoryLayout style={{flexDirection: 'column',width: '500px'}}>
   <BaseAppBarDemo short />
+</CardStoryLayout>
+
+
+### 收缩模式
+
+代码：
+
+```tsx
+<AppBar shortCollapsed>
+  <NavigationIcon>
+    <Icon>
+      <MdDehaze />
+    </Icon>
+  </NavigationIcon>
+  <AppBarTitle>标题</AppBarTitle>
+  <AppBarActions>
+    <Icon>
+      <MdFavorite />
+    </Icon>
+    <Icon>
+      <MdBookmark />
+    </Icon>
+  </AppBarActions>
+</AppBar>
+```
+
+运行效果：
+
+<CardStoryLayout style={{flexDirection: 'column',width: '500px'}}>
+  <BaseAppBarDemo shortCollapsed style={{ position: 'relative', alignSelf: 'flex-start' }}/>
 </CardStoryLayout>
 
 ### 固定模式
@@ -236,7 +275,7 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 运行效果：
 
-<CardStoryLayout height={200}>
+<CardStoryLayout height={200} style={{flexDirection: 'column',width: '500px'}}>
   <BaseAppBarDemo
     fixed
     style={{ position: 'relative', alignSelf: 'flex-start' }}
@@ -250,57 +289,59 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 代码：
 
 ```tsx
-<AppBar>
-  <NavigationIcon>
+<AppBar
+  title={
+    <>
+      <div>标题</div>
+      <input placeholder="请输入" style={{ height: '32px' }} />
+    </>
+  }
+  navigationIcon={
     <Icon>
       <MdDehaze />
     </Icon>
-  </NavigationIcon>
-  <TitleWrapper>
-    <AppBarTitle>标题</AppBarTitle>
-    <input placeholder="请输入" style={{ height: '32px' }} />
-  </TitleWrapper>
-  <AppBarActions>
+  }
+  actionItems={[
     <Icon>
       <MdFavorite />
-    </Icon>
+    </Icon>,
     <Icon>
       <MdBookmark />
-    </Icon>
-  </AppBarActions>
-</AppBar>
+    </Icon>,
+  ]}
+/>
 ```
 
 运行效果：
 
-<CardStoryLayout>
+<CardStoryLayout >
   <AppBarInput />
 </CardStoryLayout>
 
 - 输入框在可操作区域的左侧
 
 ```tsx
-<AppBar>
-  <NavigationIcon>
-    <Icon>
-      <MdDehaze />
-    </Icon>
-  </NavigationIcon>
-  <AppBarTitle>标题</AppBarTitle>
-  <AppBarActions>
-    <input placeholder="请输入" style={{ height: '32px' }} />
-    <Icon>
-      <MdFavorite />
-    </Icon>
-    <Icon>
-      <MdBookmark />
-    </Icon>
-  </AppBarActions>
-</AppBar>
+<AppBar
+  title="标题"
+    navigationIcon={
+      <Icon>
+        <MdDehaze />
+      </Icon>
+    }
+    actionItems={[
+      <input placeholder="请输入" style={{ height: '32px' }} />,
+      <Icon>
+        <MdFavorite />
+      </Icon>,
+      <Icon>
+        <MdBookmark />
+      </Icon>,
+    ]}
+  />
 ```
 
 运行效果：
 
-<CardStoryLayout>
+<CardStoryLayout >
   <AppBarInputRight />
 </CardStoryLayout>
