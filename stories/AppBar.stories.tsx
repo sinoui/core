@@ -27,13 +27,37 @@ export const 突出紧凑模式AppBar = () => (
   </ThemeProvider>
 );
 
-export const 固定位置AppBar = () => (
+export const 可收缩模式AppBar = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <BaseAppBarDemo short />
+  </ThemeProvider>
+);
+
+export const 一直处于收缩模式AppBar = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <BaseAppBarDemo shortCollapsed />
+  </ThemeProvider>
+);
+
+export const 固定AppBar = () => (
   <ThemeProvider theme={defaultTheme}>
     <BaseAppBarDemo fixed />
   </ThemeProvider>
 );
 
-export const 收缩模式AppBar = () => (
+export const 固定突出模式AppBar = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <BaseAppBarDemo fixed prominent />
+  </ThemeProvider>
+);
+
+export const 固定突出紧凑模式AppBar = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <BaseAppBarDemo fixed prominent dense />
+  </ThemeProvider>
+);
+
+export const 固定可收缩模式AppBar = () => (
   <ThemeProvider theme={defaultTheme}>
     <BaseAppBarDemo fixed short />
   </ThemeProvider>

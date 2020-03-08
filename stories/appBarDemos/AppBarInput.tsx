@@ -3,23 +3,8 @@ import styled, { ThemeProvider, css } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import AppBar from '@sinoui/core/AppBar';
 import AppBarTitle from '@sinoui/core/AppBarTitle';
-import NavigationIcon from '@sinoui/core/NavigationIcon';
-import AppBarActions from '@sinoui/core/AppBarActions';
 import Icon from './Icon';
 import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-
-const TitleWrapper = styled.div<{ prominent?: boolean }>`
-  display: flex;
-  flex: 1;
-  ${(props) =>
-    props.prominent &&
-    css`
-      align-self: flex-end;
-    `}
-  ${AppBarTitle} {
-    margin-right: 32px;
-  }
-`;
 
 export default function Demo(props: {
   prominent?: boolean;
