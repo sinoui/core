@@ -96,6 +96,7 @@ export default function BaseCheckboxButton(props: Props) {
     indeterminate,
     dense,
     onClick,
+    color,
   } = props;
 
   const _icon = indeterminate
@@ -109,7 +110,7 @@ export default function BaseCheckboxButton(props: Props) {
       checked={checked}
       disabled={disabled || readOnly}
       className={classNames('sinoui-checkbox-button', className)}
-      color={props.color}
+      color={color}
       dense={dense}
       onClick={onClick}
     >

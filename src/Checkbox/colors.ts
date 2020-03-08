@@ -103,7 +103,7 @@ export function getColorFromTheme(
       color = props.theme.palette.success.A700;
     }
     if (isColorTypeTrue(props, 'accent')) {
-      color = props.theme.palette.accent.A200;
+      color = props.theme.palette.accent;
     }
     if (isColorTypeTrue(props, 'error')) {
       color = props.theme.palette.error[600];

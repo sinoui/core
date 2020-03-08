@@ -57,7 +57,7 @@ export function getTextColor(
     return props.theme.palette.text.disabled;
   }
 
-  return props.theme.typography.subheading.color;
+  return props.theme.typography.subtitle1.color;
 }
 
 /**
@@ -66,9 +66,9 @@ export function getTextColor(
  * @ReactComponent
  */
 const Label = styled.label<LabelProps>`
-  font-size: ${(props) => props.theme.typography.subheading.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
   font-family: ${(props) => props.theme.typography.fontFamily};
-  font-weight: ${(props) => props.theme.typography.subheading.fontWeight};
+  font-weight: ${(props) => props.theme.typography.subtitle1.fontWeight};
   color: ${(props) => getTextColor(props)};
   margin: 0;
   padding: 0;
