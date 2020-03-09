@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import CheckBoxOutlineBlankIcon from '../Checkbox/svg-icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '../Checkbox/svg-icons/CheckBox';
-// import RippleInterface from '../BaseButton/RippleInterface';
 import ToggleButton from './ToggleButton';
 
 const StyleInput = styled.input`
@@ -124,9 +123,9 @@ function SwitchBase(props: Props) {
       return;
     }
 
-    // if (this.ripple) {
-    //   this.ripple.handleFocus(event as React.FocusEvent<HTMLButtonElement>);
-    // }
+    if (props.onFocus) {
+      props.onFocus(event);
+    }
   };
 
   const handleBlur = (event: React.FocusEvent<HTMLElement>) => {
@@ -134,9 +133,9 @@ function SwitchBase(props: Props) {
       return;
     }
 
-    // if (this.ripple) {
-    //   this.ripple.handleBlur(event as React.FocusEvent<HTMLButtonElement>);
-    // }
+    if (props.onBlur) {
+      props.onBlur(event);
+    }
   };
 
   const {

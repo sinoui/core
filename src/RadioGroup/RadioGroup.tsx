@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
 import FormGroup from './FormGroup';
-import { removeUndefinedProperties } from './objects';
+import { removeUndefinedProperties } from '@sinoui/core/utils/objects';
 
 const PaddingRightStyle = css`
   > label {

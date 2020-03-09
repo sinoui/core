@@ -32,3 +32,14 @@ export const 只读 = () => (
     <Radio readOnly>单选框2</Radio>
   </StoryLayout>
 );
+
+export const 指定颜色 = () => (
+  <StoryLayout>
+    <Radio checked color="primary" />
+    <Radio checked color="secondary" />
+    <Radio checked color="error" />
+    <Radio checked color="warning" />
+    <Radio checked color="success" />
+    <Radio checked color="info" />
+  </StoryLayout>
+);

@@ -84,7 +84,6 @@ const Wrapper = styled.div`
     width: 32px;
     height: 32px;
   }
-
 `;
 
 const rippleConfig = {
@@ -117,11 +116,11 @@ export default function BaseToggleButton(props: Props) {
     };
 
     if (!props.checked) {
-      result.color = theme.palette.text.secondary;
+      result.color = getColorFromTheme(theme, 'textSecondary');
     }
 
     if (props.disabled) {
-      result.color = theme.palette.action.disabled;
+      result.color = getColorFromTheme(theme, 'actionDisabled');
     }
 
     // result['-webkit-tap-highlight-color'] =
