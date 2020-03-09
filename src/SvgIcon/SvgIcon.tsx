@@ -62,13 +62,12 @@ const SvgIcon = styled.svg.attrs(
   fill: currentColor;
   flex-shrink: 0;
   transition: ${(props) =>
-    props.theme.transitions.create('fill', {
+    props.theme.transitions.create('color', {
       duration: props.theme.transitions.duration.shorter,
     })};
   ${colorCss('color')};
   user-select: none;
   display: inline-block;
-  box-sizing: border-box;
 `;
 
 export default SvgIcon;
