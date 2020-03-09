@@ -7,9 +7,9 @@ interface Props {
 }
 
 const Container = styled.div`
-  width: 750px;
+  max-width: 750px;
   background-color: ${(props) => props.theme.palette.background.default};
-  min-height: 20vh;
+  min-height: 10vh;
   padding: 16px;
 `;
 

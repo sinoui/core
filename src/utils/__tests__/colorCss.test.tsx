@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import TestWrapper from './TestWrapper';
 import styled from 'styled-components';
 import colorCss from '@sinoui/core/utils/colorCss';
+import TestWrapper from './TestWrapper';
 
 const Comp1 = styled.p`
   ${colorCss('color', 'textPrimary')}

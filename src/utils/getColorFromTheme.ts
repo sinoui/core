@@ -1,3 +1,4 @@
+/* eslint-disable import/export */
 import { Theme } from '@sinoui/theme';
 
 /**
@@ -46,10 +47,19 @@ const camelToObjectPath = (key: string) => {
  * @param {string} colorKey 颜色关键字
  * @returns
  */
-export default function getColorFromTheme(theme: Theme, colorKey: string) {
+
+function getColorFromTheme(theme: Theme, colorKey: string): string;
+function getColorFromTheme(theme: Theme, colorKey: undefined): undefined;
+function getColorFromTheme(theme: Theme, colorKey?: string): string | undefined;
+function getColorFromTheme(theme: Theme, colorKey?: string | undefined) {
   if (!colorKey) {
     return undefined;
   }
-  const colorValueFromTheme = get(theme.palette, camelToObjectPath(colorKey));
+  const colorValueFromTheme = get(
+    theme.palette,
+    camelToObjectPath(colorKey),
+  ) as string;
   return colorValueFromTheme || colorKey;
 }
+
+export default getColorFromTheme;
