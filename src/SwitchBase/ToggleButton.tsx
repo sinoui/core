@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import IconButton from '../IconButton';
+import IconButton from '@sinoui/core/IconButton';
 
 export interface ToggleButtonProps {
   checked?: boolean;
@@ -7,16 +7,17 @@ export interface ToggleButtonProps {
   color?: string;
 }
 
-const ToggleButton = styled(IconButton).attrs(
-  ({ color, checked, disabled }: ToggleButtonProps) => ({
-    type: 'switch',
-    color: !checked && !disabled ? undefined : color,
-  }),
-)<ToggleButtonProps>`
+const ToggleButton = styled(IconButton).attrs(() => ({
+  type: 'switch',
+}))<ToggleButtonProps>`
   ${(props) =>
     !props.checked &&
     !props.disabled &&
-    `color: ${props.theme.palette.text.secondary};`};
+    `color: ${props.theme.palette.text.secondary}`};
+  color: ${(props) =>
+    !props.checked && !props.disabled
+      ? props.theme.palette.text.secondary
+      : props.color};
   > .sinoui-icon,
   > .sinoui-svg-icon {
     font-size: 20px;

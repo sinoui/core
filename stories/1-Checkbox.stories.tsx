@@ -50,7 +50,7 @@ storiesOf('Checkbox', module)
   ))
   .add('color', () => (
     <StoryLayout>
-      <Checkbox checked color="accent" />
+      <Checkbox checked color="secondary" />
       <Checkbox checked color="success" />
     </StoryLayout>
   ));

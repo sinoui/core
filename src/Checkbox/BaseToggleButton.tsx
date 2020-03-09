@@ -2,7 +2,7 @@ import React, { useMemo, useContext } from 'react';
 import classNames from 'classnames';
 import styled, { ThemeContext } from 'styled-components';
 import { useRipple } from '@sinoui/ripple';
-import { getColorFromTheme } from './colors';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 export interface Props
   extends React.DetailedHTMLProps<
@@ -84,8 +84,7 @@ const Wrapper = styled.div`
     width: 32px;
     height: 32px;
   }
-  -webkit-tap-highlight-color: ${(props) =>
-    props.theme.palette.background.transparent};
+
 `;
 
 const rippleConfig = {
@@ -114,10 +113,7 @@ export default function BaseToggleButton(props: Props) {
 
   const style = useMemo(() => {
     const result: React.CSSProperties = {
-      color: getColorFromTheme(
-        { theme, color: props.color || 'primary', disabled: props.disabled },
-        theme.palette.text.secondary,
-      ),
+      color: getColorFromTheme(theme, props.color),
     };
 
     if (!props.checked) {
@@ -127,6 +123,9 @@ export default function BaseToggleButton(props: Props) {
     if (props.disabled) {
       result.color = theme.palette.action.disabled;
     }
+
+    // result['-webkit-tap-highlight-color'] =
+    // theme.palette.background.transparent;
 
     return result;
   }, [theme, props.disabled, props.checked, props.color]);

@@ -96,7 +96,7 @@ export default function BaseCheckboxButton(props: Props) {
     indeterminate,
     dense,
     onClick,
-    color,
+    color = 'primary',
   } = props;
 
   const _icon = indeterminate

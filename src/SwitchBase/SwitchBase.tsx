@@ -1,10 +1,22 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import CheckBoxOutlineBlankIcon from '../Checkbox/svg-icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '../Checkbox/svg-icons/CheckBox';
-import Icon from '../Icon';
-import StyleInput from './StyleInput';
 // import RippleInterface from '../BaseButton/RippleInterface';
 import ToggleButton from './ToggleButton';
+
+const StyleInput = styled.input`
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+`;
 
 export interface Props {
   /**
@@ -147,13 +159,8 @@ function SwitchBase(props: Props) {
 
   let icon = checkedNew ? checkedIcon : iconProp;
 
-  if (typeof icon === 'string') {
-    icon = <Icon>{icon}</Icon>;
-  }
-
   return (
     <ToggleButton
-      component="span"
       checked={checkedNew}
       disabled={disabledProp || readOnlyProp}
       {...other}
