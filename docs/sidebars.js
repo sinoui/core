@@ -16,6 +16,7 @@ module.exports = {
           'components/divider',
           'components/typography',
           'components/card',
+          'components/svg-icon',
         ],
       },
     ],
@@ -26,6 +27,7 @@ module.exports = {
       'components-apis/divider-api',
       'components-apis/typography',
       'components-apis/card-api',
+      'components-apis/svg-icon',
     ],
   },
 };
