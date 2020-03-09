@@ -152,17 +152,5 @@ export const 指定不同颜色 = () => (
         <MdAdd />
       </Fab>
     </p>
-    <p>
-      color=actionActive:
-      <Fab color="actionActive">
-        <MdAdd />
-      </Fab>
-    </p>
-    <p>
-      color=actionDisabled:
-      <Fab color="actionDisabled">
-        <MdAdd />
-      </Fab>
-    </p>
   </StoryLayout>
 );

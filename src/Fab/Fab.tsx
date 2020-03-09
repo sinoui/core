@@ -1,9 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
-import { opacify } from 'polished';
-import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
-import BaseButton from '@sinoui/core/BaseButton';
+import colorCss from '@sinoui/core/utils/colorCss';
+import BaseButton, { BaseButtonProps } from '@sinoui/core/BaseButton';
 
 /**
  * 宽度
@@ -44,8 +43,7 @@ const FabStyle = css<FabProps>`
   height: ${(props) => HeightStyle(props)};
   border-radius: 50%;
   color: #fff;
-  background: ${(props) =>
-    getColorFromTheme(props.theme, props.color) as string};
+  ${colorCss('background-color')};
   font-size: 24px;
   box-shadow: ${(props) => props.theme.shadows[6]};
   fill: currentColor;
@@ -53,17 +51,12 @@ const FabStyle = css<FabProps>`
   box-sizing: border-box;
 
   &:hover {
-    box-shadow: ${(props) => props.theme.shadows[12]};
-    background-color: ${({ theme, color }) =>
-      opacify(
-        theme.palette.action.hoverOpacity - 0.12,
-        (getColorFromTheme(theme, color) ||
-          theme.palette.primary.main) as string,
-      )};
+    box-shadow: ${(props) => props.theme.shadows[8]};
+    ${colorCss('background-color')};
 
     // Reset on touch devices, it doesn't add specificity
     @media (hover: none) {
-      backgroundcolor: transparent;
+      ${colorCss('background-color')};
     }
   }
 
@@ -71,15 +64,16 @@ const FabStyle = css<FabProps>`
     box-shadow: ${(props) => props.theme.shadows[12]};
   }
 
+  &:active {
+    box-shadow: ${(props) => props.theme.shadows[12]};
+  }
+
   &.sinoui-fab--disabled {
     pointer-events: none;
     cursor: default;
-    background-color: ${({ theme }) =>
-      opacify(
-        theme.palette.action.hoverOpacity - 0.12,
-        getColorFromTheme(theme, 'actionDisabled') as string,
-      )};
+    background-color: ${({ theme }) => theme.palette.action.disabled};
     color: ${({ theme }) => theme.palette.text.disabled};
+    box-shadow: none;
   }
 
   .sinoui-fab__ripple-layout {
@@ -96,21 +90,21 @@ const FabStyle = css<FabProps>`
     width: 100%;
     height: 48px;
     border-radius: 24px;
-    left:0px;
+    left: 0px;
   }
 
   .sinoui-fab-extended__ripple {
     width: 100%;
     height: 48px;
     border-radius: 24px;
-    left:0px;
+    left: 0px;
   }
 `;
 
 /**
  * 浮动按钮类型
  */
-export interface FabProps {
+export interface FabProps extends BaseButtonProps {
   /**
    * 子元素
    */
@@ -191,14 +185,7 @@ const extendedStyle = css<FabProps>`
  * 浮动按钮
  */
 const Fab = styled(BaseButton).attrs(
-  ({
-    className,
-    extended,
-    disabled,
-    mini,
-    color = 'primary',
-    style,
-  }: FabProps) => ({
+  ({ className, extended, disabled, mini, color = 'primary' }: FabProps) => ({
     className: classNames('sinoui-fab', className, {
       'sinoui-fab--extended': extended,
       'sinoui-fab--disabled': disabled,
@@ -208,7 +195,6 @@ const Fab = styled(BaseButton).attrs(
     disabled,
     mini,
     color,
-    style,
     ripple: !extended ? rippleConfig : rippleConfigExtended,
   }),
 )`

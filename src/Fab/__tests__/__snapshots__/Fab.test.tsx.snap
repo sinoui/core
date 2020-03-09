@@ -5,7 +5,7 @@ exports[`Fab组件 快照测试 基本使用 1`] = `
   className="TestWrapper__Container-wrvnwl-0 edoXsR"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 jcPEBv sinoui-fab"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 jqGwUT sinoui-fab"
     color="primary"
     role="button"
     type="button"
@@ -37,7 +37,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
   className="TestWrapper__Container-wrvnwl-0 edoXsR"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 jcPEBv sinoui-fab"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 jqGwUT sinoui-fab"
     color="primary"
     role="button"
     type="button"
@@ -62,7 +62,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 dKfbQd sinoui-fab"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 ctDPLH sinoui-fab"
     color="secondary"
     role="button"
     type="button"
@@ -87,7 +87,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 eHKQIj sinoui-fab"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 ixZRXK sinoui-fab"
     color="error"
     role="button"
     type="button"
@@ -112,7 +112,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 kZRUzV sinoui-fab"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 fbdEMl sinoui-fab"
     color="warning"
     role="button"
     type="button"
@@ -137,7 +137,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 iNdZfv sinoui-fab"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 lmMAHA sinoui-fab"
     color="info"
     role="button"
     type="button"
@@ -162,7 +162,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 fUAhWZ sinoui-fab"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 gstgJL sinoui-fab"
     color="success"
     role="button"
     type="button"
@@ -187,7 +187,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 gwdhnu sinoui-fab"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 dAwofb sinoui-fab"
     color="actionActive"
     role="button"
     type="button"
@@ -212,7 +212,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 cWGahN sinoui-fab"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 iVNaOJ sinoui-fab"
     color="actionDisabled"
     role="button"
     type="button"
@@ -245,7 +245,7 @@ exports[`Fab组件 快照测试 设置不可用状态 1`] = `
 >
   <button
     aria-disabled={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button Fab-egtp6t-0 jcPEBv sinoui-fab sinoui-fab--disabled"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button Fab-egtp6t-0 jqGwUT sinoui-fab sinoui-fab--disabled"
     color="primary"
     disabled={true}
     role="button"
@@ -278,7 +278,7 @@ exports[`Fab组件 快照测试 设置扩展样式 1`] = `
   className="TestWrapper__Container-wrvnwl-0 edoXsR"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 bxwxwG sinoui-fab sinoui-fab--extended"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 iXRLEV sinoui-fab sinoui-fab--extended"
     color="primary"
     role="button"
     type="button"
@@ -310,7 +310,7 @@ exports[`Fab组件 快照测试 设置较小显示 1`] = `
   className="TestWrapper__Container-wrvnwl-0 edoXsR"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 gKWvvP sinoui-fab sinoui-fab--mini"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Fab-egtp6t-0 ikcJy sinoui-fab sinoui-fab--mini"
     color="primary"
     role="button"
     type="button"
