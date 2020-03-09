@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import classnames from 'classnames';
+import OverridableComponent from '../OverridableComponent';
 
 export interface CardProps {
   /**
@@ -25,12 +26,14 @@ const outlinedCss = css`
 /**
  * Card 根组件
  */
-const StyledCard = styled.div.attrs(({ outlined }: CardProps) => ({
-  tabIndex: '0',
-  className: classnames('sinoui-card', {
-    'sinoui-card--outlined': outlined,
+const StyledCard: OverridableComponent<CardProps, 'div'> = styled.div.attrs(
+  ({ outlined }: CardProps) => ({
+    tabIndex: '0',
+    className: classnames('sinoui-card', {
+      'sinoui-card--outlined': outlined,
+    }),
   }),
-}))<CardProps>`
+)<CardProps>`
   position: relative;
   display: inline-flex;
   flex-direction: column;

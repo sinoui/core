@@ -11,16 +11,21 @@ module.exports = {
       {
         type: 'category',
         label: '通用',
-        items: ['components/button', 'components/divider', 'components/typography','components-apis/card'],
+        items: [
+          'components/button',
+          'components/divider',
+          'components/typography',
+          'components/card',
+        ],
       },
     ],
     组件API: [
       'components-apis/base-button',
       'components-apis/button',
       'components-apis/icon-button',
-      'components-apis/divider-api', 
+      'components-apis/divider-api',
       'components-apis/typography',
-      'components-apis/card-api'
+      'components-apis/card-api',
     ],
   },
 };

@@ -10,8 +10,8 @@ export interface Props {
    *
    */
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  children: React.ReactNode;
 }
+
 const StyledCardPrimaryAction = styled.div.attrs(() => ({ tabIndex: '0' }))`
   overflow: hidden;
   cursor: pointer;
