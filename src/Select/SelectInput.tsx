@@ -85,7 +85,7 @@ const selectStyle = css<SelectLayoutProps>`
   border: 0px;
   box-sizing: content-box;
   background: transparent;
-  font-size: ${(props) => props.theme.typography.subheading.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
   font-family: ${(props) => props.theme.typography.fontFamily};
   border-radius: 0;
   outline: none;

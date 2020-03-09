@@ -7,7 +7,7 @@ import { Theme } from '@sinoui/theme';
 import SelectInput from './SelectInput';
 
 const iconFocusedStyle = css`
-  color: ${(props) => props.theme.palette.primary[500]};
+  color: ${(props) => props.theme.palette.primary.main};
   transform: rotate(180deg);
   transition: transform 200ms;
 `;
@@ -17,7 +17,7 @@ const StyledTextInput = styled(TextInputField)`
     font-size: 24px;
     ${(props: { focused?: boolean; theme: Theme }) =>
       props.focused && iconFocusedStyle};
-    ${(props) => props.error && `color: ${props.theme.palette.error[500]}`};
+    ${(props) => props.error && `color: ${props.theme.palette.error.main}`};
   }
 `;
 

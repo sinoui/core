@@ -1,0 +1,48 @@
+---
+id: base-input
+title: BaseInput
+---
+
+基础的输入框组件。
+
+## 属性
+
+| 属性名称       | 属性类型                                                                               | 默认值 | 属性说明                   |
+| -------------- | -------------------------------------------------------------------------------------- | ------ | -------------------------- |
+| value          | string                                                                                 |        | 输入框的值                 |
+| defaultValue   | string                                                                                 |        | 默认值                     |
+| placeholder    | string                                                                                 |        | 占位符文字                 |
+| type           | string                                                                                 |        | 输入框的类型               |
+| inputProps     | React.HTMLProps<HTMLInputElement \| HTMLTextAreaElement \| HTMLSelectElement>          |        | 输入框的属性               |
+| readOnly       | boolean                                                                                | false  | 如果设为`true`则为只读状态 |
+| required       | boolean                                                                                | false  | 是否必填                   |
+| multiline      | boolean                                                                                | false  | 是否为多行文本             |
+| autoFocus      | boolean                                                                                | false  | 自动获取焦点               |
+| className      | string                                                                                 |        | 自定义样式类名称           |
+| style          | React.CSSProperties                                                                    |        | 自定义样式                 |
+| onBlur         | `(event: React.FocusEvent<HTMLInputElement \| HTMLTextAreaElement>)=>void`             |        | 失去焦点时的回调函数       |
+| onChange       | `(event: React.ChangeEvent<HTMLInputElement \| HTMLTextAreaElement>,value?:any)=>void` |        | 值改变时的回调函数         |
+| onClick        | `(event: React.MouseEvent<HTMLDivElement>) => void`                                    |        | 点击时的回调函数           |
+| startComponent | React.ReactNode                                                                        |        | 前缀元素                   |
+| endComponent   | React.ReactNode                                                                        |        | 后缀元素                   |
+| inputComponent | React.ReactType                                                                        |        | 输入区域渲染元素           |
+| disabled       | boolean                                                                                | false  | 是否为不可用状态           |
+| fullWidth      | boolean                                                                                | false  | 是否为全宽模式             |
+
+## 使用方式
+
+```tsx
+import React from 'react';
+import BaseInput from '@sinoui/core/BaseInput';
+
+const Demo = () => {
+  return (
+    <BaseInput
+      placeholder="请输入姓名"
+      style={{
+        borderBottom: '1px solid currentColor',
+      }}
+    />
+  );
+};
+```

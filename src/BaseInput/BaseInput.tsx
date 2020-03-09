@@ -118,14 +118,11 @@ const inputStyle = css<{ disabled?: boolean }>`
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: ${(props) => props.theme.typography.subheading.fontSize}rem;
-  font-family: ${(props) => props.theme.typography.fontFamily};
-  color: ${(props) =>
-    props.disabled
-      ? props.theme.palette.text.disabled
-      : props.theme.palette.input.inputText};
-  -webkit-tap-highlight-color: ${(props) =>
-    props.theme.palette.background.transparent};
+  font-size: ${({ theme }) => theme.typography.subtitle1.fontSize}rem;
+  font-family: ${({ theme }) => theme.typography.fontFamily};
+  color: ${({ theme, disabled }) =>
+    disabled ? theme.palette.text.disabled : theme.palette.text.primary};
+  -webkit-tap-highlight-color: transparent;
   display: block;
   min-width: 0px;
   width: 100%;
@@ -168,7 +165,7 @@ const BaseInputLayout = styled.div<{
   position: relative;
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   color: ${(props) => props.theme.palette.text.primary};
-  font-size: ${(props) => props.theme.typography.subheading.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
   box-sizing: border-box;
   align-items: center;
   font-family: ${(props) => props.theme.typography.fontFamily};

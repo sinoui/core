@@ -8,7 +8,7 @@ const getFocusStyle = (props: ListItemProps & { theme: Theme }) => {
     if (props.role === 'option') {
       return `background-color: ${opacify(
         -0.8,
-        props.theme.palette.primary[500],
+        props.theme.palette.primary.main,
       )}`;
     }
 
@@ -21,10 +21,7 @@ const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
   button: button || true,
   tabIndex: tabIndex || -1,
 }))<ListItemProps>`
-  font-size: ${(props) => props.theme.typography.subheading.fontSize}rem;
-  font-family: ${(props) => props.theme.typography.fontFamily};
-  font-weight: ${(props) => props.theme.typography.subheading.fontWeight};
-  line-height: ${(props) => props.theme.typography.subheading.lineHeight}rem;
+  ${({ theme }) => ({ ...theme.typography.subtitle1 })};
   height: ${(props) => props.theme.spacing.unit * 3}px;
   box-sizing: content-box;
   overflow: hidden;
@@ -35,13 +32,13 @@ const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
     props.selected &&
     `background-color:  ${
       props.role === 'option'
-        ? opacify(-0.92, props.theme.palette.primary[500])
+        ? opacify(-0.92, props.theme.palette.primary.main)
         : props.theme.palette.action.selected
     }`};
   &:hover {
     background-color: ${(props) =>
       props.selected && props.role === 'option'
-        ? opacify(-0.88, props.theme.palette.primary[500])
+        ? opacify(-0.88, props.theme.palette.primary.main)
         : props.theme.palette.action.hover};
   }
   &:focus {

@@ -29,7 +29,7 @@ const gutterStyle = css`
 `;
 
 const dividerStyle = css`
-  border-bottom: 1px solid ${(props) => props.theme.palette.text.divider};
+  border-bottom: 1px solid ${(props) => props.theme.palette.divider};
 `;
 
 const buttonStyle = css`
@@ -50,7 +50,7 @@ const buttonStyle = css`
 `;
 
 const Typography = styled.div`
-  font-size: ${(props) => props.theme.typography.subheading.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
   color: ${(props) =>
     props.color ? props.color : props.theme.palette.text.primary};
 `;

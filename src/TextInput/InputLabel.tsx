@@ -42,7 +42,7 @@ const denseShrinkLabelStyle = css<InputLabelProps>`
 `;
 
 const errorStyle = css`
-  color: ${(props) => props.theme.palette.error[500]};
+  color: ${(props) => props.theme.palette.error.main};
 `;
 
 const filledLabelStyle = css<{ dense?: boolean }>`
@@ -69,7 +69,7 @@ const InputLabel = styled.div.attrs({
   top: 0;
   color: ${(props) => props.theme.palette.text.secondary};
   line-height: 1;
-  font-size: ${(props) => props.theme.typography.subheading.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
   transform: translate(0, ${(props) => props.theme.spacing.unit * 3}px) scale(1);
   ${(props) => props.variant === 'filled' && filledLabelStyle};
   ${(props) => props.variant === 'outlined' && outlinedlineStyle};
@@ -77,7 +77,7 @@ const InputLabel = styled.div.attrs({
   ${(props) => !props.disabled && animateStyle};
   ${(props) => props.shrink && shrinkStyle};
   ${(props) => props.dense && props.shrink && denseShrinkLabelStyle};
-  ${(props) => props.focused && `color: ${props.theme.palette.primary[500]}`};
+  ${(props) => props.focused && `color: ${props.theme.palette.primary.main}`};
   ${(props) => props.error && errorStyle};
   ${(props) =>
     props.required &&

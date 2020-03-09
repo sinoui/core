@@ -9,13 +9,13 @@ exports[`正确渲染input 1`] = `
   position: relative;
   cursor: pointer;
   color: rgba(0,0,0,0.87);
-  font-size: 1rem;
+  font-size: 1remrem;
   box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   line-height: 1.1875rem;
 }
 
@@ -25,10 +25,10 @@ exports[`正确渲染input 1`] = `
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: 1rem;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1remrem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   color: rgba(0,0,0,0.87);
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
   display: block;
   min-width: 0px;
   width: 100%;
@@ -76,7 +76,7 @@ exports[`正确渲染input 1`] = `
 }
 
 .c1::after {
-  background-color: #303f9f;
+  background-color: #3f51b5;
   left: 0;
   bottom: 0;
   content: '';
@@ -93,7 +93,7 @@ exports[`正确渲染input 1`] = `
 }
 
 .c1::before {
-  background-color: rgba(0,0,0,0.42);
+  background-color: rgba(0,0,0,0.12);
   left: 0;
   bottom: 0;
   content: '';
@@ -150,13 +150,13 @@ exports[`渲染不可用的Input 1`] = `
   position: relative;
   cursor: default;
   color: rgba(0,0,0,0.87);
-  font-size: 1rem;
+  font-size: 1remrem;
   box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   line-height: 1.1875rem;
 }
 
@@ -166,10 +166,10 @@ exports[`渲染不可用的Input 1`] = `
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: 1rem;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1remrem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   color: rgba(0,0,0,0.38);
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
   display: block;
   min-width: 0px;
   width: 100%;
@@ -218,7 +218,7 @@ exports[`渲染不可用的Input 1`] = `
 }
 
 .c1::before {
-  background-color: rgba(0,0,0,0.42);
+  background-color: rgba(0,0,0,0.12);
   left: 0;
   bottom: 0;
   content: '';
@@ -236,7 +236,7 @@ exports[`渲染不可用的Input 1`] = `
 
 .c1::before {
   background: transparent;
-  background-image: linear-gradient( to right,rgba(0,0,0,0.42) 33%,transparent 0% );
+  background-image: linear-gradient( to right,rgba(0,0,0,0.12) 33%,transparent 0% );
   background-position: left top;
   background-repeat: repeat-x;
   background-size: 5px 1px;
@@ -280,13 +280,13 @@ exports[`渲染密集模式下的Input 1`] = `
   position: relative;
   cursor: pointer;
   color: rgba(0,0,0,0.87);
-  font-size: 1rem;
+  font-size: 1remrem;
   box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   line-height: 1.1875rem;
 }
 
@@ -296,10 +296,10 @@ exports[`渲染密集模式下的Input 1`] = `
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: 1rem;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1remrem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   color: rgba(0,0,0,0.87);
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
   display: block;
   min-width: 0px;
   width: 100%;
@@ -347,7 +347,7 @@ exports[`渲染密集模式下的Input 1`] = `
 }
 
 .c1::after {
-  background-color: #303f9f;
+  background-color: #3f51b5;
   left: 0;
   bottom: 0;
   content: '';
@@ -364,7 +364,7 @@ exports[`渲染密集模式下的Input 1`] = `
 }
 
 .c1::before {
-  background-color: rgba(0,0,0,0.42);
+  background-color: rgba(0,0,0,0.12);
   left: 0;
   bottom: 0;
   content: '';
@@ -425,13 +425,13 @@ exports[`渲染支持清除功能的input 1`] = `
   position: relative;
   cursor: pointer;
   color: rgba(0,0,0,0.87);
-  font-size: 1rem;
+  font-size: 1remrem;
   box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   line-height: 1.1875rem;
 }
 
@@ -441,10 +441,10 @@ exports[`渲染支持清除功能的input 1`] = `
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: 1rem;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1remrem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   color: rgba(0,0,0,0.87);
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
   display: block;
   min-width: 0px;
   width: 100%;
@@ -492,7 +492,7 @@ exports[`渲染支持清除功能的input 1`] = `
 }
 
 .c1::after {
-  background-color: #303f9f;
+  background-color: #3f51b5;
   left: 0;
   bottom: 0;
   content: '';
@@ -509,7 +509,7 @@ exports[`渲染支持清除功能的input 1`] = `
 }
 
 .c1::before {
-  background-color: rgba(0,0,0,0.42);
+  background-color: rgba(0,0,0,0.12);
   left: 0;
   bottom: 0;
   content: '';
@@ -589,13 +589,13 @@ exports[`渲染错误状态下的input 1`] = `
   position: relative;
   cursor: pointer;
   color: rgba(0,0,0,0.87);
-  font-size: 1rem;
+  font-size: 1remrem;
   box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   line-height: 1.1875rem;
 }
 
@@ -605,10 +605,10 @@ exports[`渲染错误状态下的input 1`] = `
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: 1rem;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1remrem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   color: rgba(0,0,0,0.87);
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
   display: block;
   min-width: 0px;
   width: 100%;
@@ -663,7 +663,7 @@ exports[`渲染错误状态下的input 1`] = `
 }
 
 .c1::after {
-  background-color: #303f9f;
+  background-color: #3f51b5;
   left: 0;
   bottom: 0;
   content: '';

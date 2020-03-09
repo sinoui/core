@@ -17,8 +17,8 @@ const FULL_SCALE_Y = 1;
 const errorOrWarnigStyle = css<InputProps>`
   && {
     &::after {
-      background-color: ${(props) =>
-        props.theme.palette[props.error ? 'error' : 'warning'][500]};
+      background-color: ${({ theme, error }) =>
+        theme.palette[error ? 'error' : 'warning'].main};
       transform: scaleX(${FULL_SCALE_X}) scaleY(${FULL_SCALE_Y});
     }
   }
@@ -34,20 +34,17 @@ const transformStyle = (props: { focused?: boolean }) => {
 
 const inkbarStyle = css`
   &::after {
-    background-color: ${(props) =>
-      props.theme.palette.primary[
-        props.theme.palette.type === 'light' ? 700 : 300
-      ]};
+    background-color: ${({ theme }) => theme.palette.primary.main};
     left: 0;
     bottom: 0;
     content: '';
     height: 2px;
     position: absolute;
     right: 0;
-    transition: ${(props) =>
-      props.theme.transitions.create('transform', {
-        duration: props.theme.transitions.duration.shorter,
-        easing: props.theme.transitions.easing.easeOut,
+    transition: ${({ theme }) =>
+      theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shorter,
+        easing: theme.transitions.easing.easeOut,
       })};
     pointer-events: none;
     ${transformStyle};
@@ -56,7 +53,7 @@ const inkbarStyle = css`
 
 const underlineStyle = css<InputProps>`
   &::before {
-    background-color: ${(props) => props.theme.palette.input.bottomLine};
+    background-color: ${({ theme }) => theme.palette.divider};
     left: 0;
     bottom: 0;
     content: '';
@@ -64,21 +61,21 @@ const underlineStyle = css<InputProps>`
     height: 1px;
     position: absolute;
     right: 0;
-    transition: ${(props) =>
-      props.theme.transitions.create('background-color', {
-        duration: props.theme.transitions.duration.shorter,
-        easing: props.theme.transitions.easing.easeInOut,
+    transition: ${({ theme }) =>
+      theme.transitions.create('background-color', {
+        duration: theme.transitions.duration.shorter,
+        easing: theme.transitions.easing.easeInOut,
       })};
     pointer-events: none;
     transform: scaleX(${FULL_SCALE_X}) scaleY(${FULL_SCALE_Y});
   }
 
   &:hover::before {
-    ${(props) =>
-      !props.disabled &&
-      !props.readOnly &&
-      !props.error &&
-      `background-color: ${props.theme.palette.text.primary};
+    ${({ disabled, readOnly, error, theme }) =>
+      !disabled &&
+      !readOnly &&
+      !error &&
+      `background-color: ${theme.palette.text.primary};
   height: 2px;`};
   }
 `;
@@ -88,7 +85,7 @@ const disabledUnderlineStyle = css`
     background: transparent;
     background-image: linear-gradient(
       to right,
-      ${(props) => props.theme.palette.input.bottomLine} 33%,
+      ${({ theme }) => theme.palette.divider} 33%,
       transparent 0%
     );
     background-position: left top;
@@ -102,10 +99,8 @@ const StyledBaseInput = styled(BaseInput)<{
   warning?: boolean;
   dense?: boolean;
 }>`
-  color: ${(props) =>
-    props.disabled
-      ? props.theme.palette.text.disabled
-      : props.theme.palette.input.inputText};
+  color: ${({ theme, disabled }) =>
+    disabled ? theme.palette.text.disabled : theme.palette.text.primary};
   ${(props) => (props.error || props.warning) && errorOrWarnigStyle};
   ${(props) => !props.disabled && inkbarStyle};
   ${(props) => !props.error && underlineStyle};
