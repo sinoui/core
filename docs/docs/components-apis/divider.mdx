@@ -1,0 +1,45 @@
+---
+id: divider-api
+title: Divider
+---
+
+## Divider 分割线
+
+分隔线是对列表和布局中的内容进行分组的一条细线。
+
+默认情况下，分隔线呈现为 `<hr>`。 您可以使用 Divider 组件上的 as 属性来指定渲染元素。
+
+引入方式：
+
+```tsx
+import Divider from '@sinoui/core/Divider';
+```
+
+分割线有两种形式：
+
+- 水平分割线
+- 垂直分割线
+
+其中水平分割线又分为：
+
+- 全宽水平分割线
+- 居中水平分割线
+- 插入水平分割线
+
+### 属性
+
+| 属性名           | 默认值 | 类型                | 描述                                                                                 |
+| ---------------- | ------ | ------------------- | ------------------------------------------------------------------------------------ |
+| inset            | false  | boolean             | 表示是否是插入分隔线。如果为 true，会有 72px 的左边距。                              |
+| middle           | false  | boolean             | 表示是否是中间分隔线。如果为 true，会有 16px 的水平边距。                            |
+| vertaical        | false  | boolean             | 表示是否为垂直分隔线。默认值为 false,是水平分割线。                                  |
+| as               | 'hr'   | React.ReactType     | 指定根元素。                                                                         |
+| marginLeft       |        | number              | 指定左边距。                                                                         |
+| marginRight      |        | number              | 指定右边距。                                                                         |
+| marginTop        |        | number              | 指定上边距。                                                                         |
+| marginBottom     |        | number              | 指定下边距。                                                                         |
+| marginVertical   |        | number              | 指定垂直边距。                                                                       |
+| marginHorizontal |        | number              | 指定水平边距。                                                                       |
+| flexItem         |        | boolean             | 指定垂直分隔线在 flex 容器中使用。如果不指定，可能垂直分隔线的高度会被计算为 `0px`。 |
+| style            |        | React.CSSProperties | 指定 css 样式。                                                                      |
+| className        |        | string              | 指定 css 样式名。                                                                    |

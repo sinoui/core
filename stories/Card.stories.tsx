@@ -57,7 +57,7 @@ const CardContentText = styled.div`
 
 export const baseDemo = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Card>
+    <Card className="custon-css">
       <CardPrimaryAction>
         <CardHeader
           avatar={<Avatar />}

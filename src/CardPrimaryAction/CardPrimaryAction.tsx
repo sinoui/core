@@ -11,8 +11,6 @@ export interface Props {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 const StyledCardPrimaryAction = styled.div.attrs(() => ({ tabIndex: '0' }))`
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
   cursor: pointer;
   outline: none;
