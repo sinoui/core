@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { Row, Column } from '@sinoui/core/Grid';
-
+import { GridDemo } from './gridDemo';
 export default {
   title: 'Grid',
 };
@@ -78,4 +78,12 @@ export const 启用flex布局 = () => (
       </Column>
     </Row>
   </ThemeProvider>
+);
+
+export const 默认值示例 = () => <GridDemo />;
+
+export const gutterType默认为between且gutter为8 = () => <GridDemo gutter={8} />;
+
+export const gutterType为around且gutter为8 = () => (
+  <GridDemo gutterType="around" gutter={8} />
 );

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 /**
  * 行布局
  */
-interface Props {
+export interface RowProps {
   gutter?: number;
   gutterType?: 'around' | 'between';
   justifyContent?:
@@ -16,18 +16,18 @@ interface Props {
   alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch';
 }
 
-const gutterBetweenCss = css<Props>`
+const gutterBetweenCss = css<RowProps>`
   width: calc(100% + ${({ gutter }) => gutter}px);
   margin: 0px -${({ gutter = 0 }) => gutter / 2}px;
 `;
 
-const gutterAroundCss = css<Props>`
+const gutterAroundCss = css<RowProps>`
   margin: 0px ${({ gutter = 0 }) => gutter / 2}px;
 `;
 
 const Row = styled.div.attrs(() => ({
   className: classNames('sinoui-row'),
-}))<Props>`
+}))<RowProps>`
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;

@@ -1,0 +1,748 @@
+---
+id: grid
+title: Grid 栅格布局
+---
+
+import CardStoryLayout from './CardStoryLayout';
+import { Row, Column } from '@sinoui/core/Grid';
+import {
+  GridDemo,
+  GridDemo36,
+  GridDemoAlignItems,
+  GridDemoResponse,
+} from '../../../stories/gridDemo';
+
+布局组件是基于 24 列的栅格布局，使用栅格布局可以轻松实现响应式 UI。
+布局组件中的行(Row)和列(Column)必须一起使用，才能达到栅格布局效果。
+
+# 默认状态的栅格布局
+
+行(Row)组件不设置间隔(gutter)属性时，列(Column)之间是没有间隔的。
+
+Wrapper.tsx
+
+```tsx
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  background: rgb(41, 45, 62);
+  padding: 16px 0;
+  & .sinoui-column {
+    margin-bottom: 16px;
+    > div {
+      padding: 16px;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: ${(props) => props.theme.shadows[1]};
+    }
+  }
+`;
+export default Wrapper;
+```
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo />
+</CardStoryLayout>
+
+## 设置栅格水平间距
+
+通过 Row 组件的 gutter 属性设置栅格间水平间距为 8px
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo gutter={8} />
+</CardStoryLayout>
+
+## 设置两留白方式
+
+### 两边不留白(默认方式)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutterType={around} gutter={8}>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo gutter={8} />
+</CardStoryLayout>
+
+### 两边留白
+
+Row 组件 gutterType 属性的默认值为 between，即行两边不留。通过 `gutterType = "around" gutter={8}` 设置可以使行两边的留白尺寸为为 gutter 值。
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutterType="around" gutter={8}>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+          <Column xs={12}>
+            <div>col-xs-12</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo gutter={8} gutterType="around" />
+</CardStoryLayout>
+
+## 行列水平对齐方式
+
+通过设置 Row 组件的 justifyContent 属性，实现行列的不同水平对齐方式
+
+### 默认居左对齐(flex-start)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8}>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo36 gutter={8} />
+</CardStoryLayout>
+
+### 居右对齐(flex-end)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8} justifyContent="flex-end">
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo36 gutter={8} justifyContent="flex-end" />
+</CardStoryLayout>
+
+### 居中对齐(center)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8} justifyContent="center">
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo36 gutter={8} justifyContent="center" />
+</CardStoryLayout>
+
+### 两端对齐(sapce-between)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8} justifyContent="space-between">
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo36 gutter={8} justifyContent="space-between" />
+</CardStoryLayout>
+
+### 两端留白对齐(sapce-around)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8} justifyContent="space-around">
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo36 gutter={8} justifyContent="space-around" />
+</CardStoryLayout>
+
+## 行列的垂直对齐方式
+
+通过设置 Row 组件的 alignItems 属性，实现行列的不同垂直对齐方式
+
+### 默认居上对齐(flex-start)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper style={{ minHeight: '300px' }}>
+        <Row gutter={8}>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemoAlignItems gutter={8} />
+</CardStoryLayout>
+
+### 居下对齐(flex-end)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8} alignItems="flex-end">
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemoAlignItems gutter={8} alignItems="flex-end" />
+</CardStoryLayout>
+
+### 居中对齐(center)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8} alignItems="center">
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemoAlignItems gutter={8} alignItems="center" />
+</CardStoryLayout>
+
+### 拉伸对齐(stretch)
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8} alignItems="stretch">
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemoAlignItems gutter={8} alignItems="stretch" />
+</CardStoryLayout>
+
+## 自动换行
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8}>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+          <Column xs={12} md={6}>
+            <div>col-xs-12,col-md-6</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemo36 gutter={8} />
+</CardStoryLayout>
+
+## 响应式布局
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8}>
+          <Column xs={12} sm={6} md={4} lg={3}>
+            <div>col-xs-12,col-sm-6,col-md-4,col-lg-3</div>
+          </Column>
+          <Column xs={12} sm={6} md={4} lg={3}>
+            <div>col-xs-12,col-sm-6,col-md-4,col-lg-3</div>
+          </Column>
+          <Column xs={12} sm={6} md={4} lg={3}>
+            <div>col-xs-12,col-sm-6,col-md-4,col-lg-3</div>
+          </Column>
+          <Column xs={12} sm={6} md={4} lg={3}>
+            <div>col-xs-12,col-sm-6,col-md-4,col-lg-3</div>
+          </Column>
+          <Column xs={12} sm={6} md={4} lg={3}>
+            <div>col-xs-12,col-sm-6,col-md-4,col-lg-3</div>
+          </Column>
+          <Column xs={12} sm={6} md={4} lg={3}>
+            <div>col-xs-12,col-sm-6,col-md-4,col-lg-3</div>
+          </Column>
+          <Column xs={12} sm={6} md={4} lg={3}>
+            <div>col-xs-12,col-sm-6,col-md-4,col-lg-3</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridDemoResponse gutter={8} />
+</CardStoryLayout>
