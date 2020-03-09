@@ -25,6 +25,9 @@ export interface ToggleButtonProps {
   theme: Theme;
 }
 
+/**
+ * 容器组件
+ */
 const ToggleButton = styled(IconButton).attrs(() => ({
   type: 'switch',
 }))<ToggleButtonProps>`
@@ -42,6 +45,9 @@ const ToggleButton = styled(IconButton).attrs(() => ({
   > .sinoui-icon-button__ripple-layout {
     left: -14px;
     top: -14px;
+  }
+  &:hover {
+    background-color: transparent;
   }
 `;
 

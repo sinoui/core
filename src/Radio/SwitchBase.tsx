@@ -17,7 +17,7 @@ const StyleInput = styled.input`
   border: none;
 `;
 
-export interface Props {
+export interface SwitchBaseProps {
   /**
    * 是否被选中
    */
@@ -96,7 +96,10 @@ export interface Props {
   style?: React.CSSProperties;
 }
 
-function SwitchBase(props: Props) {
+/**
+ * 基本展示组件
+ */
+function SwitchBase(props: SwitchBaseProps) {
   const isControlled = props.checked != null;
   const [checked, setChecked] = useState(
     !isControlled &&

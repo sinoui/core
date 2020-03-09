@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import SwitchBase, { SwitchBaseProps } from '../SwitchBase';
+import SwitchBase, { SwitchBaseProps } from './SwitchBase';
 import RadioButtonCheckedIcon from './svg-icons/RadioButtonChecked';
 import RadioButtonUncheckedIcon from './svg-icons/RadioButtonUnchecked';
 

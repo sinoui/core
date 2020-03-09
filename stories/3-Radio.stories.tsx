@@ -38,7 +38,9 @@ export const 指定颜色 = () => (
     <Radio checked color="primary" />
     <Radio checked color="secondary" />
     <Radio checked color="error" />
-    <Radio checked color="warning" />
+    <Radio checked color="warning" warning>
+      单选框
+    </Radio>
     <Radio checked color="success" />
     <Radio checked color="info" />
   </StoryLayout>

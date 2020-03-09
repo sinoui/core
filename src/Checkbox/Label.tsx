@@ -48,11 +48,11 @@ export function getTextColor(
   },
 ) {
   if (props.warning) {
-    return props.theme.palette.warning[500];
+    return props.theme.palette.warning.main[500];
   } else if (props.error) {
-    return props.theme.palette.error[500];
+    return props.theme.palette.error.main[500];
   } else if (props.focused && !props.readOnly) {
-    return props.theme.palette.primary[500];
+    return props.theme.palette.primary.main[500];
   } else if (props.disabled) {
     return props.theme.palette.text.disabled;
   }
@@ -66,7 +66,7 @@ export function getTextColor(
  * @ReactComponent
  */
 const Label = styled.label<LabelProps>`
-  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.subtitle1.fontSize};
   font-family: ${(props) => props.theme.typography.fontFamily};
   font-weight: ${(props) => props.theme.typography.subtitle1.fontWeight};
   color: ${(props) => getTextColor(props)};
