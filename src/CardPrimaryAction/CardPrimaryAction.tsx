@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { opacify } from 'polished';
 import { useRipple } from '@sinoui/ripple';
+import useMultiRefs from '../utils/useMultiRefs';
 
 export interface Props {
   /**
@@ -9,6 +10,7 @@ export interface Props {
    *
    */
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  children: React.ReactNode;
 }
 const StyledCardPrimaryAction = styled.div.attrs(() => ({ tabIndex: '0' }))`
   overflow: hidden;
@@ -62,7 +64,8 @@ const StyledCardPrimaryAction = styled.div.attrs(() => ({ tabIndex: '0' }))`
 const CardPrimaryAction = React.forwardRef<HTMLDivElement, Props>(
   (props, ref) => {
     const rippleRef = useRipple<HTMLDivElement>();
-    return <StyledCardPrimaryAction {...props} ref={ref || rippleRef} />;
+    const cardPrimaryActionRef = useMultiRefs(rippleRef, ref);
+    return <StyledCardPrimaryAction {...props} ref={cardPrimaryActionRef} />;
   },
 );
 
