@@ -6,7 +6,26 @@ exports[`SvgIcon组件 快照测试 基本使用 1`] = `
 >
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 hBHJLC sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+    focusable="false"
+    role="presentation"
+    size={24}
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`SvgIcon组件 快照测试 添加自定义className 1`] = `
+<div
+  className="TestWrapper__Container-sc-1j2x5li-0 dxXyvc"
+>
+  <svg
+    aria-hidden="true"
+    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon--img sinoui-svg-icon sinoui-svg-icon--img"
     focusable="false"
     role="presentation"
     size={24}
@@ -25,7 +44,7 @@ exports[`SvgIcon组件 快照测试 设置svg可见区域 1`] = `
 >
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 hBHJLC sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
     focusable="false"
     role="presentation"
     size={24}
@@ -44,7 +63,7 @@ exports[`SvgIcon组件 快照测试 设置图标大小 1`] = `
 >
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 dFIaKe sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 edWbxm sinoui-svg-icon"
     focusable="false"
     role="presentation"
     size={28}
@@ -56,7 +75,7 @@ exports[`SvgIcon组件 快照测试 设置图标大小 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 dGxYYM sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 gTDEeD sinoui-svg-icon"
     focusable="false"
     role="presentation"
     size="2rem"
@@ -74,7 +93,7 @@ exports[`SvgIcon组件 快照测试 设置指定标题 1`] = `
   className="TestWrapper__Container-sc-1j2x5li-0 dxXyvc"
 >
   <svg
-    className="SvgIcon-sc-1015m7s-0 hBHJLC sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
     focusable="false"
     role="img"
     size={24}
@@ -97,7 +116,7 @@ exports[`SvgIcon组件 快照测试 设置指定根元素 1`] = `
 >
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 hBHJLC sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
     fill="currentColor"
     focusable="false"
     height={24}
@@ -160,7 +179,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
 >
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 KSvqL sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 bJwEWC sinoui-svg-icon"
     color="primary"
     focusable="false"
     role="presentation"
@@ -173,7 +192,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 bQcDsY sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 keTMll sinoui-svg-icon"
     color="secondary"
     focusable="false"
     role="presentation"
@@ -186,7 +205,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 xUeHu sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 QVNNn sinoui-svg-icon"
     color="error"
     focusable="false"
     role="presentation"
@@ -199,7 +218,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 gHNkTf sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 jXGjTY sinoui-svg-icon"
     color="warning"
     focusable="false"
     role="presentation"
@@ -212,7 +231,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 kUsvNG sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 fCzRde sinoui-svg-icon"
     color="success"
     focusable="false"
     role="presentation"
@@ -225,7 +244,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 clzkOo sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 hnddJm sinoui-svg-icon"
     color="info"
     focusable="false"
     role="presentation"
@@ -238,7 +257,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 kltWNs sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 jscraE sinoui-svg-icon"
     color="actionActive"
     focusable="false"
     role="presentation"
@@ -251,7 +270,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 bTtusW sinoui-svg-icon"
+    className="SvgIcon-sc-1015m7s-0 hLpPme sinoui-svg-icon"
     color="actionDisabled"
     focusable="false"
     role="presentation"

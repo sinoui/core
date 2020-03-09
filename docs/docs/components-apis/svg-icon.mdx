@@ -5,6 +5,12 @@ title: SvgIcon
 
 SvgIcon 组件是用来展示图标的。
 
+## 引用方式
+
+```tsx
+import SvgIcon from '@sinoui/core/SvgIcon';
+```
+
 ## API
 
 SvgIcon组件属性：
@@ -16,16 +22,10 @@ SvgIcon组件属性：
 | color  | string |  |设置颜色   |
 | children    | React.ReactNode | |指定图标内容    |
 | title  | string | | 指定图标的标题   |
-| ref  | React.ref | | 指定根元素   |
-| as  | React.ReactType | | 变更 DOM 元素   |
-| className   | string      |    | 自定义类名       
+| ref  | React.ref | | 用来在组件外部引用组件内部根元素   |
+| as  | React.ReactType |svg | 变更 DOM 元素   |
+| className   | string      |    | 添加自定义类名    |   
 
-## 引用方式
-
-```tsx
-import SvgIcon from '@sinoui/core/SvgIcon';
-```
-
-继承svg根元素所有属性。
+SvgIcon组件继承svg根元素所有属性。
 
 更多使用示例，请参考[SvgIcon Demos](/docs/components/svg-icon)
