@@ -24,8 +24,8 @@ const transformStyle = (props: { focused?: boolean }) => {
 const errorOrWarnigStyle = css<FilledInputProps>`
   && {
     &::after {
-      background-color: ${(props) =>
-        props.theme.palette[props.error ? 'error' : 'warning'][500]};
+      background-color: ${({ theme, error }) =>
+        theme.palette[error ? 'error' : 'warning'].main};
       transform: scaleX(${FULL_SCALE_X}) scaleY(${FULL_SCALE_Y});
     }
   }
@@ -43,10 +43,7 @@ const disabledunderlineStyle = css`
 
 const inkbarStyle = css`
   &::after {
-    background-color: ${(props) =>
-      props.theme.palette.primary[
-        props.theme.palette.type === 'light' ? 700 : 300
-      ]};
+    background-color: ${(props) => props.theme.palette.primary.main};
     left: 0;
     bottom: 0;
     content: '';
@@ -65,7 +62,7 @@ const inkbarStyle = css`
 
 const underlineStyle = css<FilledInputProps>`
   &::before {
-    background-color: ${(props) => props.theme.palette.input.bottomLine};
+    background-color: ${(props) => props.theme.palette.divider};
     left: 0;
     bottom: 0;
     content: '';
@@ -93,7 +90,7 @@ const underlineStyle = css<FilledInputProps>`
 `;
 
 const disabledBackgroundStyle = css`
-  background-color: ${(props) => props.theme.palette.text.divider};
+  background-color: ${(props) => props.theme.palette.divider};
 `;
 
 const StyledBaseInput = styled(BaseInput)<
@@ -139,79 +136,80 @@ const StyledBaseInput = styled(BaseInput)<
   }
 `;
 
-export default function FilledInput(props: FilledInputProps) {
-  const {
-    fullWidth = false,
-    inputComponent = 'input',
-    multiline = false,
-    type = 'text',
-    ref,
-    className,
-    error,
-    warning,
-    disabled,
-    readOnly,
-    ...other
-  } = props;
-  const [focused, setFocused] = useState(false);
+export default React.forwardRef<HTMLDivElement, FilledInputProps>(
+  function FilledInput(props, ref) {
+    const {
+      fullWidth = false,
+      inputComponent = 'input',
+      multiline = false,
+      type = 'text',
+      className,
+      error,
+      warning,
+      disabled,
+      readOnly,
+      ...other
+    } = props;
+    const [focused, setFocused] = useState(false);
 
-  const handleBlur = useCallback(
-    (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (!props.readOnly) {
-        setFocused(false);
-        if (props.onBlur) {
-          props.onBlur(event);
+    const handleBlur = useCallback(
+      (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        if (!props.readOnly) {
+          setFocused(false);
+          if (props.onBlur) {
+            props.onBlur(event);
+          }
+
+          if (props.inputProps && props.inputProps.onBlur) {
+            props.inputProps.onBlur(event);
+          }
         }
+      },
+      [props],
+    );
 
-        if (props.inputProps && props.inputProps.onBlur) {
-          props.inputProps.onBlur(event);
+    const handleFocus = useCallback(
+      (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        if (!props.readOnly) {
+          setFocused(true);
+          if (props.onFocus) {
+            props.onFocus(event);
+          }
+
+          if (props.inputProps && props.inputProps.onFocus) {
+            props.inputProps.onFocus(event);
+          }
         }
-      }
-    },
-    [props],
-  );
+      },
+      [props],
+    );
 
-  const handleFocus = useCallback(
-    (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (!props.readOnly) {
-        setFocused(true);
-        if (props.onFocus) {
-          props.onFocus(event);
-        }
-
-        if (props.inputProps && props.inputProps.onFocus) {
-          props.inputProps.onFocus(event);
-        }
-      }
-    },
-    [props],
-  );
-
-  return (
-    <StyledBaseInput
-      fullWidth={fullWidth}
-      error={error}
-      warning={warning}
-      focused={focused}
-      disabled={disabled}
-      readOnly={readOnly}
-      inputComponent={inputComponent}
-      multiline={multiline}
-      type={type}
-      ref={ref}
-      {...other}
-      className={bemClassNames(
-        'sinoui-filled-input',
-        {
-          focused,
-          error,
-          disabled,
-          readOnly,
-        },
-        className,
-      )}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-    />
-  );
-}
+    return (
+      <StyledBaseInput
+        fullWidth={fullWidth}
+        error={error}
+        warning={warning}
+        focused={focused}
+        disabled={disabled}
+        readOnly={readOnly}
+        inputComponent={inputComponent}
+        multiline={multiline}
+        type={type}
+        ref={ref}
+        {...other}
+        className={bemClassNames(
+          'sinoui-filled-input',
+          {
+            focused,
+            error,
+            disabled,
+            readOnly,
+          },
+          className,
+        )}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      />
+    );
+  },
+);

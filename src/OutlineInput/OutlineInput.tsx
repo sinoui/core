@@ -50,9 +50,9 @@ const StyledBaseInput = styled(BaseInput)<
     > fieldset {
       ${(props) =>
         props.focused &&
-        `border-color:${props.theme.palette.primary[500]};border-width:2px;`};
+        `border-color:${props.theme.palette.primary.main}; border-width:2px;`};
       ${(props) =>
-        props.error && `border-color:${props.theme.palette.error[500]}`};
+        props.error && `border-color:${props.theme.palette.error.main}`};
       ${(props) =>
         props.disabled &&
         `border-color:${props.theme.palette.action.disabled}`};

@@ -22,7 +22,7 @@ const HelperText = styled.p<HelperTextProps>`
   margin-top: ${(props) => (props.dense ? 4 : 8)}px;
 
   ${(props) => props.disabeld && `color:${props.theme.palette.text.disabled}`};
-  ${(props) => props.error && `color:${props.theme.palette.error[500]}`};
+  ${(props) => props.error && `color:${props.theme.palette.error.main}`};
   ${(props) =>
     (props.variant === 'filled' || props.variant === 'outlined') &&
     containedStyle};
