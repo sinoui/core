@@ -7,15 +7,14 @@
   "module": "dist/sinoui-core.esm.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "start": "ts-lib-tools watch",
     "test": "ts-lib-tools test",
-    "build": "ts-lib-tools build",
+    "build": "ts-lib-tools build --simple",
     "format": "ts-lib-tools format",
     "lint": "ts-lib-tools lint",
     "prepublishOnly": "ts-lib-tools build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "postinstall": " yarn-deduplicate yarn.lock "
+    "release": "yarn build && yarn publish dist"
   },
   "prettier": {
     "printWidth": 80,
@@ -46,7 +45,10 @@
   "peerDependencies": {
     "react": ">=16.8.0"
   },
-  "files": ["dist", "assets"],
+  "files": [
+    "dist",
+    "assets"
+  ],
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@babel/runtime": "^7.7.6",
@@ -80,7 +82,7 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
-    "ts-lib-tools": "^0.9.5",
+    "ts-lib-tools": "^0.10.1",
     "typescript": "^3.8.3",
     "yarn-deduplicate": "^2.0.0"
   }
