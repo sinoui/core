@@ -1,19 +1,26 @@
 {
   "name": "@sinoui/core",
-  "version": "0.1.0",
+  "version": "1.0.0-beta.1",
+  "description": "sinoui基础组件库",
   "license": "MIT",
   "main": "dist/index.js",
   "umd:main": "dist/sinoui-core.umd.production.js",
   "module": "dist/sinoui-core.esm.js",
-  "typings": "dist/index.d.ts",
+  "types": "types/index.d.ts",
+  "homepage": "https://sinoui.github.io/core",
+  "bugs": {
+    "url": "https://github.com/sinoui/core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinoui/core.git"
+  },
   "scripts": {
-    "start": "ts-lib-tools watch",
     "test": "ts-lib-tools test",
     "build": "ts-lib-tools build --simple",
     "format": "ts-lib-tools format",
     "lint": "ts-lib-tools lint",
-    "release": "yarn publish dist --tag latest",
-    "prepublishOnly": "ts-lib-tools build",
+    "release": "yarn build && yarn publish dist",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "postinstall": " yarn-deduplicate yarn.lock "
@@ -84,8 +91,11 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
-    "ts-lib-tools": "^0.9.5",
+    "ts-lib-tools": "^0.10.1",
     "typescript": "^3.8.3",
     "yarn-deduplicate": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
