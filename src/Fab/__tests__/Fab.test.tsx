@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { MdAdd } from 'react-icons/md';
 import TestWrapper from './TestWrapper';
 import Fab from '../Fab';

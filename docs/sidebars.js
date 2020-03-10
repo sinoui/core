@@ -18,6 +18,7 @@ module.exports = {
           'components/card',
           'components/svg-icon',
           'components/fab',
+          'components/avatar',
         ],
       },
     ],
@@ -30,6 +31,7 @@ module.exports = {
       'components-apis/card-api',
       'components-apis/svg-icon',
       'components-apis/fab',
+      'components-apis/avatar',
     ],
   },
 };

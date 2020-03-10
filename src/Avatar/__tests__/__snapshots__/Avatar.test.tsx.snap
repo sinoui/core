@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar组件 快照测试 图标头像 1`] = `[Function]`;
+
+exports[`Avatar组件 快照测试 图片头像 1`] = `[Function]`;
+
+exports[`Avatar组件 快照测试 字母头像 1`] = `[Function]`;
+
+exports[`Avatar组件 快照测试 设置不同背景颜色 1`] = `[Function]`;
