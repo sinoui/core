@@ -27,9 +27,7 @@ describe('CheckboxGroup 单元测试', () => {
   test('测试items', async () => {
     const { getByTestId } = render(
       <TestWrapper>
-        <CheckboxGroup
-          items={[<Checkbox value="1">复选框</Checkbox>]}
-        ></CheckboxGroup>
+        <CheckboxGroup items={[<Checkbox value="1">复选框</Checkbox>]} />
       </TestWrapper>,
     );
 

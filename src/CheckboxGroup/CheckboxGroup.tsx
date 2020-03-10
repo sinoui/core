@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
+import { removeUndefinedProperties } from '@sinoui/core/utils/objects';
 import FormGroup from './FormGroup';
 import { toggleItem } from './arrays';
-import { removeUndefinedProperties } from '@sinoui/core/utils/objects';
+
 import Checkbox, { CheckboxProps } from '../Checkbox';
 
 const PaddingRightStyle = css`

@@ -35,7 +35,6 @@ export interface CheckboxExtendProps {
 /**
  * 带文字的复选框组件。
  */
-// tslint:disable-next-line:no-any
 const Checkbox = withLabel<any, HTMLInputElement, CheckboxProps<any>>(
   'Checkbox',
 )(CheckboxButton);

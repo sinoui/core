@@ -2,8 +2,13 @@ import React from 'react';
 import FormControlLabel from './FormControlLabel';
 import { ColorProp } from '../types';
 
-function getDisplayName(WrappedComponent: React.ComponentType) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+function getDisplayName(WrappedComponent: any, displayName?: string) {
+  return (
+    displayName ||
+    WrappedComponent.displayName ||
+    WrappedComponent.name ||
+    'Component'
+  );
 }
 
 export interface FormControlBaseProps<V, T> {
@@ -74,7 +79,6 @@ function withLabel<V, T, P extends FormControlBaseProps<V, T>>(
   return (BaseComponent: React.ComponentType<P>) => {
     const FormControlWithLabel: React.SFC<P &
       FormControlWithLabelProps<V, T>> = ({
-    // tslint:disable-next-line:no-any
       children,
       labelPosition,
       ...props
@@ -94,6 +98,7 @@ function withLabel<V, T, P extends FormControlBaseProps<V, T>>(
     if (process.env.NODE_ENV !== 'production') {
       FormControlWithLabel.displayName = `withLabel${getDisplayName(
         BaseComponent,
+        displayName,
       )}`;
     }
 

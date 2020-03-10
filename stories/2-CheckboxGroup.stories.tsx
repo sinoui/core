@@ -38,7 +38,7 @@ export const 设置items属性 = () => (
         <Checkbox value="3">复选框3</Checkbox>,
         <Checkbox value="4">复选框4</Checkbox>,
       ]}
-    ></CheckboxGroup>
+    />
   </StoryLayout>
 );
 
