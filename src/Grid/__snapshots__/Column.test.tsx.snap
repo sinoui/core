@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`布局Column快照测试 栅格布局 1`] = `
+<div
+  className="Row-sc-1de494c-0 hOCLbp sinoui-row"
+>
+  <div
+    className="Column-sc-1wcr58v-0 iPXzCz sinoui-column"
+  >
+    列
+  </div>
+</div>
+`;
+
+exports[`布局Column快照测试 默认 1`] = `
+<div
+  className="Row-sc-1de494c-0 hOCLbp sinoui-row"
+>
+  <div
+    className="Column-sc-1wcr58v-0 ldLZPT sinoui-column"
+  >
+    列
+  </div>
+</div>
+`;

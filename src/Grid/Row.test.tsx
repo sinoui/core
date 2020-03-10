@@ -18,12 +18,6 @@ describe('布局Row单元测试', () => {
     expect(container.firstChild).toHaveStyle(`margin-right: -${gutter / 2}px`);
   });
 
-  it(`gutterType = "around" gutter=${gutter}`, () => {
-    const { container } = render(<Row gutter={gutter} gutterType="around" />);
-    expect(container.firstChild).toHaveStyle(`margin-left: ${gutter / 2}px`);
-    expect(container.firstChild).toHaveStyle(`margin-right: ${gutter / 2}px`);
-  });
-
   it(`justifyContent = "center" alignItems="center"`, () => {
     const { container } = render(
       <Row gutter={gutter} justifyContent="center" alignItems="center" />,

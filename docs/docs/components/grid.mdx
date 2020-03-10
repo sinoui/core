@@ -10,12 +10,14 @@ import {
   GridDemo36,
   GridDemoAlignItems,
   GridDemoResponse,
+  GridColumnWidth,
+  GridColumnWidthAuto,
 } from '../../../stories/gridDemo';
 
 布局组件是基于 24 列的栅格布局，使用栅格布局可以轻松实现响应式 UI。
 布局组件中的行(Row)和列(Column)必须一起使用，才能达到栅格布局效果。
 
-# 默认状态的栅格布局
+## 默认状态的栅格布局
 
 行(Row)组件不设置间隔(gutter)属性时，列(Column)之间是没有间隔的。
 
@@ -79,50 +81,7 @@ export default function Demo() {
   <GridDemo />
 </CardStoryLayout>
 
-## 设置栅格水平间距
-
-通过 Row 组件的 gutter 属性设置栅格间水平间距为 8px
-
-Demo.tsx
-
-```tsx
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { defaultTheme } from '@sinoui/theme';
-import { Row, Column } from '@sinoui/core/Grid';
-import Wrapper from './Wrapper';
-
-export default function Demo() {
-  return (
-    <ThemeProvider theme={defaultTheme}>
-      <Wrapper>
-        <Row>
-          <Column xs={12}>
-            <div>col-xs-12</div>
-          </Column>
-          <Column xs={12}>
-            <div>col-xs-12</div>
-          </Column>
-          <Column xs={12}>
-            <div>col-xs-12</div>
-          </Column>
-          <Column xs={12}>
-            <div>col-xs-12</div>
-          </Column>
-        </Row>
-      </Wrapper>
-    </ThemeProvider>
-  );
-}
-```
-
-运行效果：
-
-<CardStoryLayout>
-  <GridDemo gutter={8} />
-</CardStoryLayout>
-
-## 设置两留白方式
+## 设置水平间隔及留白方式
 
 ### 两边不留白(默认方式)
 
@@ -167,7 +126,7 @@ export default function Demo() {
 
 ### 两边留白
 
-Row 组件 gutterType 属性的默认值为 between，即行两边不留。通过 `gutterType = "around" gutter={8}` 设置可以使行两边的留白尺寸为为 gutter 值。
+Row 组件 gutterType 属性的默认值为 between，即两边不留白。通过 `gutterType = "around" gutter={8}` 可以设置水平间隔及留白方式。
 
 Demo.tsx
 
@@ -208,7 +167,7 @@ export default function Demo() {
   <GridDemo gutter={8} gutterType="around" />
 </CardStoryLayout>
 
-## 行列水平对齐方式
+## 项目在水平方向的布局方式
 
 通过设置 Row 组件的 justifyContent 属性，实现行列的不同水平对齐方式
 
@@ -452,7 +411,7 @@ export default function Demo() {
   <GridDemo36 gutter={8} justifyContent="space-around" />
 </CardStoryLayout>
 
-## 行列的垂直对齐方式
+## 项目在垂直方向的布局方式
 
 通过设置 Row 组件的 alignItems 属性，实现行列的不同垂直对齐方式
 
@@ -698,6 +657,7 @@ export default function Demo() {
 
 ## 响应式布局
 
+通过设置 Column 组件的 xs、sm、md、lg、xs 属性值，可以实现不同屏幕分辨率下列的尺寸，从而实现响应式布局。
 Demo.tsx
 
 ```tsx
@@ -745,4 +705,89 @@ export default function Demo() {
 
 <CardStoryLayout>
   <GridDemoResponse gutter={8} />
+</CardStoryLayout>
+
+## 自动布局
+
+- 如果 Column 组件没有设置任何 xs、sm、md、lg、xs 属性值,则每列平均分配剩余空间。
+- 如果 Column 组件通过 style 属性或者 ClassName 设置了 width 样式，则列宽为设置的 width 值。
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8}>
+          <Column style={{ width: '200px' }}>
+            <div>width: 200px</div>
+          </Column>
+          <Column>
+            <div>auto</div>
+          </Column>
+          <Column>
+            <div>auto</div>
+          </Column>
+          <Column>
+            <div>auto</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridColumnWidth gutter={8} />
+</CardStoryLayout>
+
+Demo.tsx
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { Row, Column } from '@sinoui/core/Grid';
+import { RowProps } from '@sinoui/core/Grid/Row';
+import Wrapper from './Wrapper';
+
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <Row gutter={8}>
+          <Column>
+            <div>auto</div>
+          </Column>
+          <Column>
+            <div>auto</div>
+          </Column>
+          <Column>
+            <div>auto</div>
+          </Column>
+          <Column>
+            <div>auto</div>
+          </Column>
+        </Row>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果：
+
+<CardStoryLayout>
+  <GridColumnWidthAuto gutter={8} />
 </CardStoryLayout>

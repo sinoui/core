@@ -2,30 +2,30 @@
 
 exports[`布局Row快照测试 gutter = 8 1`] = `
 <div
-  className="Row-sc-1de494c-0 cSrsSg sinoui-row"
+  className="Row-sc-1de494c-0 jpBZMs sinoui-row"
 />
 `;
 
 exports[`布局Row快照测试 gutterType = "around" 1`] = `
 <div
-  className="Row-sc-1de494c-0 ddtAUC sinoui-row"
+  className="Row-sc-1de494c-0 clJuDF sinoui-row"
 />
 `;
 
 exports[`布局Row快照测试 justifyContent = "center" alignItems="center" 1`] = `
 <div
-  className="Row-sc-1de494c-0 lpgIuy sinoui-row"
+  className="Row-sc-1de494c-0 kyFBTr sinoui-row"
 />
 `;
 
 exports[`布局Row快照测试 justifyContent="center" 1`] = `
 <div
-  className="Row-sc-1de494c-0 bDwqJj sinoui-row"
+  className="Row-sc-1de494c-0 csEIJT sinoui-row"
 />
 `;
 
 exports[`布局Row快照测试 默认 1`] = `
 <div
-  className="Row-sc-1de494c-0 fAHHqs sinoui-row"
+  className="Row-sc-1de494c-0 hOCLbp sinoui-row"
 />
 `;
