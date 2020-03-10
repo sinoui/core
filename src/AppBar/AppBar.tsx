@@ -144,6 +144,12 @@ const StyledAppBar = styled.div.attrs(() => ({
     display: flex;
     flex: 1;
     margin-left: 20px;
+
+    > div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   &.sinoui-top-app-bar--fixed-scrolled {
@@ -188,7 +194,9 @@ const AppBar = React.forwardRef<HTMLDivElement, AppBarProps>((props, ref) => {
   return (
     <StyledAppBar ref={containerRef} {...rest}>
       <NavigationIcon>{navigationIcon}</NavigationIcon>
-      <AppBarTitle>{title}</AppBarTitle>
+      <AppBarTitle>
+        <div>{title}</div>
+      </AppBarTitle>
       <AppBarActions>{actionItems}</AppBarActions>
     </StyledAppBar>
   );
