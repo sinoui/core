@@ -11,15 +11,25 @@ module.exports = {
       {
         type: 'category',
         label: '通用',
-        items: ['components/button', 'components/divider', 'components/typography'],
+        items: [
+          'components/button',
+          'components/divider',
+          'components/typography',
+          'components/card',
+          'components/svg-icon',
+          'components/fab',
+        ],
       },
     ],
     组件API: [
       'components-apis/base-button',
       'components-apis/button',
       'components-apis/icon-button',
-      'components-apis/divider-api', 
-      'components-apis/typography'
+      'components-apis/divider-api',
+      'components-apis/typography',
+      'components-apis/card-api',
+      'components-apis/svg-icon',
+      'components-apis/fab',
     ],
   },
 };

@@ -7,16 +7,15 @@ interface Props {
 }
 
 const Container = styled.div`
-  max-width: 750px;
   background-color: ${(props) => props.theme.palette.background.default};
-  min-height: 10vh;
+  min-height: 100vh;
   padding: 16px;
 `;
 
 /**
  * demo布局组件
  */
-export default function StoryLayout(props: Props) {
+export default function TestWrapper(props: Props) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container>{props.children}</Container>
