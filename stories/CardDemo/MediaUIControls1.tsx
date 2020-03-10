@@ -6,6 +6,8 @@ import CardMedia from '@sinoui/core/CardMedia';
 import CardContent from '@sinoui/core/CardContent';
 import CardActions from '@sinoui/core/CardActions';
 import CardActionButtons from '@sinoui/core/CardActionButtons';
+import SvgIcon from '@sinoui/core/SvgIcon';
+import IconButton from '@sinoui/core/IconButton';
 import CardActionIcons from '@sinoui/core/CardActionIcons';
 import StyledCardInner from './Components/StyledCardInner';
 import { mediaAvatar } from './constant';
@@ -32,9 +34,15 @@ export default function Demo() {
       <CardActions>
         <CardActionButtons>Rate this album</CardActionButtons>
         <CardActionIcons>
-          <MdStar />
-          <MdStar />
-          <MdStarBorder />
+          <IconButton color="orange">
+            <SvgIcon as={MdStar} />
+          </IconButton>
+          <IconButton color="orange">
+            <SvgIcon as={MdStar} />
+          </IconButton>
+          <IconButton color="orange">
+            <SvgIcon as={MdStarBorder} />
+          </IconButton>
         </CardActionIcons>
       </CardActions>
     </Card>

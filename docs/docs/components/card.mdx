@@ -114,11 +114,11 @@ import React from 'react';
 import Card from '@sinoui/core/Card';
 import CardMedia from '@sinoui/core/CardMedia';
 import CardContent from '@sinoui/core/CardContent';
+import SvgIcon from '@sinoui/core/SvgIcon';
+import IconButton from '@sinoui/core/IconButton';
 import { MdPlayArrow, MdFastRewind, MdFastForward } from 'react-icons/md';
 import StyledCardInner from './Components/StyledCardInner';
-
-const mediaCardUrl =
-  'https://material-ui.com/static/images/cards/live-from-space.jpg';
+import { mediaAvatar } from './constant';
 
 export default function Demo() {
   return (
@@ -129,14 +129,20 @@ export default function Demo() {
           <h6>Mac Miller</h6>
         </CardContent>
         <div className="icons">
-          <MdFastRewind />
-          <MdPlayArrow />
-          <MdFastForward />
+          <IconButton>
+            <SvgIcon as={MdFastRewind} />
+          </IconButton>
+          <IconButton>
+            <SvgIcon as={MdPlayArrow} />
+          </IconButton>
+          <IconButton>
+            <SvgIcon as={MdFastForward} />
+          </IconButton>
         </div>
       </StyledCardInner>
 
       <CardMedia
-        imageUrl={mediaCardUrl}
+        imageUrl={mediaAvatar}
         width={151}
         style={{ borderRadius: '0 4px 4px 0' }}
       />
@@ -166,11 +172,11 @@ import CardMedia from '@sinoui/core/CardMedia';
 import CardContent from '@sinoui/core/CardContent';
 import CardActions from '@sinoui/core/CardActions';
 import CardActionButtons from '@sinoui/core/CardActionButtons';
+import SvgIcon from '@sinoui/core/SvgIcon';
+import IconButton from '@sinoui/core/IconButton';
 import CardActionIcons from '@sinoui/core/CardActionIcons';
 import StyledCardInner from './Components/StyledCardInner';
-
-const mediaCardUrl =
-  'https://material-ui.com/static/images/cards/live-from-space.jpg';
+import { mediaAvatar } from './constant';
 
 const StyledCardContent = styled(CardContent)`
   border-bottom: 1px solid ${({ theme }) => theme.palette.divider};
@@ -181,7 +187,7 @@ export default function Demo() {
     <Card>
       <StyledCardInner>
         <CardMedia
-          imageUrl={mediaCardUrl}
+          imageUrl={mediaAvatar}
           width={162}
           style={{ borderRadius: '4px 0 0 0' }}
         />
@@ -194,9 +200,15 @@ export default function Demo() {
       <CardActions>
         <CardActionButtons>Rate this album</CardActionButtons>
         <CardActionIcons>
-          <MdStar />
-          <MdStar />
-          <MdStarBorder />
+          <IconButton color="orange">
+            <SvgIcon as={MdStar} />
+          </IconButton>
+          <IconButton color="orange">
+            <SvgIcon as={MdStar} />
+          </IconButton>
+          <IconButton color="orange">
+            <SvgIcon as={MdStarBorder} />
+          </IconButton>
         </CardActionIcons>
       </CardActions>
     </Card>
@@ -283,6 +295,7 @@ Demo.tsx
 import React, { useState } from 'react';
 import { useRipple } from '@sinoui/ripple';
 import { MdCheckCircle } from 'react-icons/md';
+import Button from '@sinoui/core/Button';
 import StyledCard from './Components/StyledCard';
 import StyledDivider from './Components/StyledDivider';
 
@@ -305,7 +318,9 @@ export default function Demo() {
   return (
     <>
       <div style={{ marginBottom: '10px' }}>
-        <button onClick={() => setDisabled(!disabled)}>设置禁用</button>
+        <Button raised onClick={() => setDisabled(!disabled)}>
+          设置禁用
+        </Button>
       </div>
       <StyledCard onClick={setCardSelected} ref={ref} disabled={disabled}>
         {selected && <MdCheckCircle onClick={cancelCardSelected} />}
@@ -407,6 +422,9 @@ import CardPrimaryAction from '@sinoui/core/CardPrimaryAction';
 import CardActions from '@sinoui/core/CardActions';
 import CardActionButtons from '@sinoui/core/CardActionButtons';
 import CardActionIcons from '@sinoui/core/CardActionIcons';
+import Button from '@sinoui/core/Button';
+import SvgIcon from '@sinoui/core/SvgIcon';
+import IconButton from '@sinoui/core/IconButton';
 import { mediaImgUrl } from './constant';
 
 export default function Demo() {
@@ -418,12 +436,16 @@ export default function Demo() {
       </CardPrimaryAction>
       <CardActions>
         <CardActionButtons>
-          <button>read</button>
-          <button>bookmark</button>
+          <Button>read</Button>
+          <Button>bookmark</Button>
         </CardActionButtons>
         <CardActionIcons>
-          <MdShare />
-          <MdMoreVert />
+          <IconButton color="primary">
+            <SvgIcon as={MdShare} />
+          </IconButton>
+          <IconButton color="warning">
+            <SvgIcon as={MdMoreVert} />
+          </IconButton>
         </CardActionIcons>
       </CardActions>
     </Card>
@@ -480,12 +502,16 @@ import { mediaImgUrl } from './constant';
 
 export default function Demo() {
   return (
-    <Card>
+    <Card style={{ width: '344px' }}>
       <CardPrimaryAction>
         <CardHeader
           avatar={<Avatar />}
-          action={<MdMoreVert />}
-          title="Shrimp and Chorizo Paella"
+          action={
+            <IconButton>
+              <SvgIcon as={MdMoreVert} />
+            </IconButton>
+          }
+          title="Shrimp and Chorizo PaellShrimp and Chorizo Paella"
           subheader="subheader"
         />
         <CardMedia imageUrl={mediaImgUrl} wide />
@@ -493,12 +519,16 @@ export default function Demo() {
       </CardPrimaryAction>
       <CardActions>
         <CardActionButtons>
-          <button>read</button>
-          <button>bookmark</button>
+          <Button>read</Button>
+          <Button>bookmark</Button>
         </CardActionButtons>
         <CardActionIcons>
-          <MdShare />
-          <MdMoreVert />
+          <IconButton color="primary">
+            <SvgIcon as={MdShare} />
+          </IconButton>
+          <IconButton color="warning">
+            <SvgIcon as={MdMoreVert} />
+          </IconButton>
         </CardActionIcons>
       </CardActions>
     </Card>
@@ -519,60 +549,50 @@ export default function Demo() {
 Demo.tsx
 
 ```tsx
-import React, { useState } from 'react';
-import {
-  MdMoreVert,
-  MdKeyboardArrowDown,
-  MdKeyboardArrowUp,
-} from 'react-icons/md';
-import Card from '@sinoui/core/Card';
-import CardHeader from '@sinoui/core/CardHeader';
-import CardMedia from '@sinoui/core/CardMedia';
-import CardContent from '@sinoui/core/CardContent';
-import CardPrimaryAction from '@sinoui/core/CardPrimaryAction';
-import CardActions from '@sinoui/core/CardActions';
-import CardActionButtons from '@sinoui/core/CardActionButtons';
-import CardActionIcons from '@sinoui/core/CardActionIcons';
-import Avatar from './Components/Avatat';
-import { mediaImgUrl } from './constant';
-
-export default function Demo() {
-  const [expand, setExpand] = useState(false);
-  return (
-    <Card style={{ maxWidth: '345px' }}>
-      <CardPrimaryAction>
-        <CardHeader
-          avatar={<Avatar />}
-          action={<MdMoreVert />}
-          title="Shrimp and Chorizo Paella"
-          subheader="subheader"
-        />
-        <CardMedia imageUrl={mediaImgUrl} wide />
-        <CardContent>
-          Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-          set aside for 10 minutes.
-        </CardContent>
-      </CardPrimaryAction>
-      <CardActions>
-        <CardActionButtons>
-          <button>read</button>
-          <button>bookmark</button>
-        </CardActionButtons>
-        <CardActionIcons>
-          <span onClick={() => setExpand(!expand)}>
-            {!expand && <MdKeyboardArrowDown />}
-            {expand && <MdKeyboardArrowUp />}
-          </span>
-        </CardActionIcons>
-      </CardActions>
-      {expand && (
-        <CardContent>
-          展开显示的文字文字文字文字文字文字文字文字文字文字文字文字文字文字
-        </CardContent>
-      )}
-    </Card>
-  );
-}
+<Card style={{ maxWidth: '345px' }}>
+  <CardPrimaryAction>
+    <CardHeader
+      avatar={<Avatar />}
+      action={
+        <IconButton>
+          <SvgIcon as={MdMoreVert} />
+        </IconButton>
+      }
+      title="Shrimp and Chorizo Paella"
+      subheader="subheader"
+    />
+    <CardMedia imageUrl={mediaImgUrl} wide />
+    <CardContent>
+      Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
+      aside for 10 minutes.
+    </CardContent>
+  </CardPrimaryAction>
+  <CardActions>
+    <CardActionButtons>
+      <Button>read</Button>
+      <Button>bookmark</Button>
+    </CardActionButtons>
+    <CardActionIcons>
+      <span onClick={() => setExpand(!expand)}>
+        {!expand && (
+          <IconButton>
+            <SvgIcon as={MdKeyboardArrowDown} />
+          </IconButton>
+        )}
+        {expand && (
+          <IconButton>
+            <SvgIcon as={MdKeyboardArrowUp} />
+          </IconButton>
+        )}
+      </span>
+    </CardActionIcons>
+  </CardActions>
+  {expand && (
+    <CardContent>
+      展开显示的文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    </CardContent>
+  )}
+</Card>
 ```
 
 运行效果：

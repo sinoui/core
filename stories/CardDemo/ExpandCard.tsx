@@ -12,6 +12,9 @@ import CardPrimaryAction from '@sinoui/core/CardPrimaryAction';
 import CardActions from '@sinoui/core/CardActions';
 import CardActionButtons from '@sinoui/core/CardActionButtons';
 import CardActionIcons from '@sinoui/core/CardActionIcons';
+import Button from '@sinoui/core/Button';
+import SvgIcon from '@sinoui/core/SvgIcon';
+import IconButton from '@sinoui/core/IconButton';
 import Avatar from './Components/Avatat';
 import { mediaImgUrl } from './constant';
 
@@ -22,7 +25,11 @@ export default function Demo() {
       <CardPrimaryAction>
         <CardHeader
           avatar={<Avatar />}
-          action={<MdMoreVert />}
+          action={
+            <IconButton>
+              <SvgIcon as={MdMoreVert} />
+            </IconButton>
+          }
           title="Shrimp and Chorizo Paella"
           subheader="subheader"
         />
@@ -34,13 +41,21 @@ export default function Demo() {
       </CardPrimaryAction>
       <CardActions>
         <CardActionButtons>
-          <button>read</button>
-          <button>bookmark</button>
+          <Button>read</Button>
+          <Button>bookmark</Button>
         </CardActionButtons>
         <CardActionIcons>
           <span onClick={() => setExpand(!expand)}>
-            {!expand && <MdKeyboardArrowDown />}
-            {expand && <MdKeyboardArrowUp />}
+            {!expand && (
+              <IconButton>
+                <SvgIcon as={MdKeyboardArrowDown} />
+              </IconButton>
+            )}
+            {expand && (
+              <IconButton>
+                <SvgIcon as={MdKeyboardArrowUp} />
+              </IconButton>
+            )}
           </span>
         </CardActionIcons>
       </CardActions>

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { opacify } from 'polished';
 import { useRipple } from '@sinoui/ripple';
+import OverriableComponent from '../OverridableComponent';
 import useMultiRefs from '../utils/useMultiRefs';
 
 export interface Props {
@@ -61,12 +62,13 @@ const StyledCardPrimaryAction = styled.div.attrs(() => ({ tabIndex: '0' }))`
  *
  * CardPrimaryAction 主操作区域
  */
-const CardPrimaryAction = React.forwardRef<HTMLDivElement, Props>(
-  (props, ref) => {
-    const rippleRef = useRipple<HTMLDivElement>();
-    const cardPrimaryActionRef = useMultiRefs(rippleRef, ref);
-    return <StyledCardPrimaryAction {...props} ref={cardPrimaryActionRef} />;
-  },
-);
+const CardPrimaryAction: OverriableComponent<Props, 'div'> = React.forwardRef<
+  HTMLDivElement,
+  Props
+>((props, ref) => {
+  const rippleRef = useRipple<HTMLDivElement>();
+  const cardPrimaryActionRef = useMultiRefs(rippleRef, ref);
+  return <StyledCardPrimaryAction {...props} ref={cardPrimaryActionRef} />;
+});
 
 export default CardPrimaryAction;
