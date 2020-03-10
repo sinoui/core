@@ -17,6 +17,7 @@ module.exports = {
           'components/typography',
           'components/card',
           'components/svg-icon',
+          'components/fab',
         ],
       },
     ],
@@ -28,6 +29,7 @@ module.exports = {
       'components-apis/typography',
       'components-apis/card-api',
       'components-apis/svg-icon',
+      'components-apis/fab',
     ],
   },
 };
