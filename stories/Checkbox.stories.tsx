@@ -24,8 +24,8 @@ function StatefulCheckbox() {
 export const 简单使用 = () => (
   <StoryLayout>
     <Checkbox />
-    <Checkbox checked />
-    <Checkbox indeterminate />
+    <Checkbox checked color="success" />
+    <Checkbox indeterminate color="success" />
   </StoryLayout>
 );
 
@@ -52,7 +52,13 @@ export const 设置只读 = () => (
 
 export const 指定颜色 = () => (
   <StoryLayout>
+    <Checkbox checked color="primary" />
     <Checkbox checked color="secondary" />
+    <Checkbox checked color="error" />
+    <Checkbox checked color="warning" />
     <Checkbox checked color="success" />
+    <Checkbox checked color="info" />
+    <Checkbox checked color="actionActive" />
+    <Checkbox checked color="actionDisabled" />
   </StoryLayout>
 );

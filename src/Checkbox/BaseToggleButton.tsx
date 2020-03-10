@@ -115,16 +115,13 @@ export default function BaseToggleButton(props: Props) {
       color: getColorFromTheme(theme, props.color),
     };
 
-    if (!props.checked) {
+    if (!props.checked && !props.indeterminate) {
       result.color = getColorFromTheme(theme, 'textSecondary');
     }
 
     if (props.disabled) {
       result.color = getColorFromTheme(theme, 'actionDisabled');
     }
-
-    // result['-webkit-tap-highlight-color'] =
-    // theme.palette.background.transparent;
 
     return result;
   }, [theme, props.disabled, props.checked, props.color]);

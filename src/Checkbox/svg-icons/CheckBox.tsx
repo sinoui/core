@@ -10,6 +10,6 @@ const CheckBox: React.SFC = (props) => (
   </SvgIcon>
 );
 
-CheckBox.sinouiName = 'SvgIcon';
+CheckBox.displayName = 'SvgIcon';
 
 export default CheckBox;

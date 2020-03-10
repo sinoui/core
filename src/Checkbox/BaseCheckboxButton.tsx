@@ -99,11 +99,20 @@ export default function BaseCheckboxButton(props: Props) {
     color = 'primary',
   } = props;
 
-  const _icon = indeterminate
-    ? indeterminateCheckboxIcon
-    : checked
-    ? checkedCheckboxIcon
-    : checkboxIcon;
+  /**
+   * 图标显示
+   */
+  const iconWrapper = () => {
+    let _icon;
+    if (indeterminate) {
+      _icon = indeterminateCheckboxIcon;
+    } else if (checked) {
+      _icon = checkedCheckboxIcon;
+    } else {
+      _icon = checkboxIcon;
+    }
+    return _icon;
+  };
 
   return (
     <BaseToggleButton
@@ -113,8 +122,9 @@ export default function BaseCheckboxButton(props: Props) {
       color={color}
       dense={dense}
       onClick={onClick}
+      indeterminate={indeterminate}
     >
-      {_icon}
+      {iconWrapper()}
       <input
         className={classNames(
           'sinoui-checkbox-button-input',
