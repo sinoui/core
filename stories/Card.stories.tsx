@@ -10,6 +10,9 @@ import CardActionIcons from '@sinoui/core/CardActionIcons';
 import CardMedia from '@sinoui/core/CardMedia';
 import CardHeader from '@sinoui/core/CardHeader';
 import CardContent from '@sinoui/core/CardContent';
+import Button from '@sinoui/core/Button';
+import SvgIcon from '@sinoui/core/SvgIcon';
+import IconButton from '@sinoui/core/IconButton';
 
 const darkTheme = createTheme({
   palette: {
@@ -61,7 +64,11 @@ export const baseDemo = () => (
       <CardPrimaryAction>
         <CardHeader
           avatar={<Avatar />}
-          action={<MdMoreVert />}
+          action={
+            <IconButton>
+              <SvgIcon as={MdMoreVert} />
+            </IconButton>
+          }
           title="Shrimp and Chorizo Paella"
           subheader="subheader"
         />
@@ -70,8 +77,8 @@ export const baseDemo = () => (
       </CardPrimaryAction>
       <CardActions>
         <CardActionButtons>
-          <button>read</button>
-          <button>bookmark</button>
+          <Button>read</Button>
+          <Button>bookmark</Button>
         </CardActionButtons>
         <CardActionIcons>
           <MdShare />
@@ -88,7 +95,11 @@ export const CardInDarkTheme = () => (
       <CardPrimaryAction>
         <CardHeader
           avatar={<Avatar />}
-          action={<MdMoreVert />}
+          action={
+            <IconButton>
+              <SvgIcon as={MdMoreVert} />
+            </IconButton>
+          }
           title="Shrimp and Chorizo Paella"
           subheader="subheader"
         />
@@ -96,8 +107,8 @@ export const CardInDarkTheme = () => (
         <CardContent>content</CardContent>
       </CardPrimaryAction>
       <CardActions>
-        <button>read</button>
-        <button>bookmark</button>
+        <Button>read</Button>
+        <Button>bookmark</Button>
       </CardActions>
     </Card>
   </ThemeProvider>
@@ -121,8 +132,8 @@ export const CardDemoMediaText = () => (
         </CardContent>
       </CardPrimaryAction>
       <CardActions>
-        <button>read</button>
-        <button>bookmark</button>
+        <Button>read</Button>
+        <Button>bookmark</Button>
       </CardActions>
     </Card>
   </ThemeProvider>

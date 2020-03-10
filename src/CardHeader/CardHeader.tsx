@@ -21,8 +21,10 @@ export interface Props {
 }
 const CardHeaderWrapper = styled.div`
   display: flex;
-  padding: 16px;
+  padding: 0 16px;
+  height: 72px;
   align-items: center;
+  box-sizing: border-box;
   font-size: ${(props) => props.theme.typography.body2.fontSize};
   & .card-header-avatar {
     flex: 0 0 auto;
@@ -31,14 +33,23 @@ const CardHeaderWrapper = styled.div`
 
   & .card-header-content {
     flex: 1 1 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   & .card-header-title {
     color: ${(props) => props.theme.palette.text.primary};
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   & .card-header-subheader {
     color: ${(props) => props.theme.palette.text.secondary};
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   & .card-header-action {

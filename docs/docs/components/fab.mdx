@@ -1,0 +1,304 @@
+---
+id: fab
+title: Fab 浮动按钮
+---
+
+浮动按钮。
+
+import Fab from '@sinoui/core/Fab';
+import { MdAdd } from "react-icons/md";
+import SvgIcon from '@sinoui/core/SvgIcon';
+import StoryLayout from './StoryLayout';
+import TabShapedFirst from './fab-demos/TabShapedFirst';
+import TabShapedSecond from './fab-demos/TabShapedSecond';
+import TabShapedThird from './fab-demos/TabShapedThird';
+
+## 常规 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <Fab>
+      <MdAdd />
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab>
+    <MdAdd />
+  </Fab>
+</StoryLayout>
+
+## mini 形式 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <Fab mini>
+      <MdAdd />
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab mini>
+    <MdAdd />
+  </Fab>
+</StoryLayout>
+
+## 只有文本的扩展 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+   <Fab extended>
+      按钮
+   </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab extended>
+    按钮
+  </Fab>
+</StoryLayout>
+
+## 左侧有图标的 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+import SvgIcon from '@sinoui/core/SvgIcon';
+
+function FabDemo() {
+  return (
+   <Fab extended>
+      <SvgIcon as={MdAdd} />
+      按钮
+   </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab extended>
+    <SvgIcon as={MdAdd} />
+    按钮
+  </Fab>
+</StoryLayout>
+
+## 右侧有图标的 Fab
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+import SvgIcon from '@sinoui/core/SvgIcon';
+
+function FabDemo() {
+  return (
+    <Fab extended>
+      按钮
+      <SvgIcon as={MdAdd} />
+    </Fab>
+  );
+}
+```
+
+效果如下：
+
+<StoryLayout>
+  <Fab extended>
+    按钮
+    <SvgIcon as={MdAdd} />
+  </Fab>
+</StoryLayout>
+
+## 指定不同颜色
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+function FabDemo() {
+  return (
+    <>
+      <Fab color="primary">
+        <MdAdd />
+      </Fab>
+      <Fab color="secondary">
+        <MdAdd />
+      </Fab>
+      <Fab color="error">
+        <MdAdd />
+      </Fab>
+      <Fab color="warning">
+        <MdAdd />
+      </Fab>
+      <Fab color="info">
+        <MdAdd />
+      </Fab>
+      <Fab color="success">
+        <MdAdd />
+      </Fab>
+      <Fab color="actionActive">
+        <MdAdd />
+      </Fab>
+      <Fab color="actionDisabled">
+        <MdAdd />
+      </Fab>
+   </>
+  );
+}
+```
+
+效果展示：
+
+<StoryLayout>
+  <Fab color="primary">
+    <MdAdd />
+  </Fab>
+  <Fab color="secondary">
+    <MdAdd />
+  </Fab>
+  <Fab color="error">
+    <MdAdd />
+  </Fab>
+  <Fab color="warning">
+    <MdAdd />
+  </Fab>
+  <Fab color="info">
+    <MdAdd />
+  </Fab>
+  <Fab color="success">
+    <MdAdd />
+  </Fab>
+  <Fab color="actionActive">
+    <MdAdd />
+  </Fab>
+  <Fab color="actionDisabled">
+    <MdAdd />
+  </Fab>
+</StoryLayout>
+
+## 不同形状展示
+
+### 形状1
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+const TabShapedFirst = styled(Fab)`
+  border-radius: 50% 0;
+  padding: 0;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  .sinoui-fab-extended__ripple-layout {
+    width: 56px;
+    height: 56px;
+    border-radius: 50% 0;
+  }
+  .sinoui-fab-extended__ripple {
+    width: 56px;
+    height: 56px;
+    border-radius: 50% 0;
+  }
+`;
+
+function FabDemo() {
+  return (
+    <TabShapedFirst extended>
+      <MdAdd />
+    </TabShapedFirst>
+  );
+}
+```
+
+效果如下：
+
+<TabShapedFirst />
+
+### 形状2
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+const TabShapedSecond = styled(Fab)`
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0;
+  .sinoui-fab-extended__ripple-layout {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+  .sinoui-fab-extended__ripple {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+`;
+
+function FabDemo() {
+  return (
+   <TabShapedSecond extended>
+      <MdAdd />
+    </TabShapedSecond>
+  );
+}
+```
+
+效果如下：
+
+<TabShapedSecond />
+
+### 形状3
+
+```tsx
+import Fab from '@sinoui/core/Fab';
+
+const TabShapedThird = styled(Fab)`
+  border-radius: 12px;
+
+  .sinoui-fab-extended__ripple-layout {
+    border-radius: 12px;
+  }
+  .sinoui-fab-extended__ripple {
+    border-radius: 12px;
+  }
+`;
+
+function FabDemo() {
+  return (
+    <TabShapedThird extended>
+      <MdAdd style={{ fontSize: '24px', marginRight: '12px' }} />
+      <span>按钮</span>
+    </TabShapedThird>
+  );
+}
+```
+
+效果如下：
+
+<TabShapedThird />
+
+## API
+
+查看[fab组件API](/docs/components-apis/fab)
