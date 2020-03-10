@@ -9,6 +9,11 @@ module.exports = function(_context, _options) {
         resolve: {
           alias: {
             '@sinoui/core': resolve(__dirname, '../../../src'),
+            react: resolve(__dirname, '../../node_modules/react/index.js'),
+            'react-dom': resolve(
+              __dirname,
+              '../../node_modules/react-dom/index.js',
+            ),
           },
           extensions: [
             ...(config.resolve.extensions || []),
@@ -24,7 +29,7 @@ module.exports = function(_context, _options) {
         module: {
           rules: [
             {
-              test: /\.(gif|png|jpe?g|svg)$/i,
+              test: /\.(gif|png|jpe?g)$/i,
               exclude: /\.(mdx?)$/i,
               use: ['file-loader', { loader: 'image-webpack-loader' }],
             },
@@ -40,6 +45,10 @@ module.exports = function(_context, _options) {
                   },
                 },
               ],
+            },
+            {
+              test: /\.svg$/,
+              use: ['@svgr/webpack'],
             },
           ],
         },
