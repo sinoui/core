@@ -46,10 +46,7 @@
   "peerDependencies": {
     "react": ">=16.8.0"
   },
-  "files": [
-    "dist",
-    "assets"
-  ],
+  "files": ["dist", "assets"],
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@babel/runtime": "^7.7.6",
