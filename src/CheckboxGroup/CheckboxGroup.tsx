@@ -124,8 +124,7 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
     ...rest
   } = props;
 
-  const isControlled: boolean =
-    typeof props.value !== 'undefined' ? true : false;
+  const isControlled: boolean = typeof props.value !== 'undefined';
 
   const [value, setValue] = useState(!isControlled && (valueProp || []));
 
