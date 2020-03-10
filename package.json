@@ -22,8 +22,7 @@
     "lint": "ts-lib-tools lint",
     "release": "yarn build && yarn publish dist",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "release": "yarn build && yarn publish dist"
+    "build-storybook": "build-storybook"
   },
   "prettier": {
     "printWidth": 80,
