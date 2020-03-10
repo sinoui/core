@@ -61,7 +61,7 @@ const FabStyle = css<FabProps>`
   }
 
   &:foucs {
-    box-shadow: ${(props) => props.theme.shadows[12]};
+    box-shadow: ${(props) => props.theme.shadows[8]};
   }
 
   &:active {
