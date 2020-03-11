@@ -1,18 +1,25 @@
 {
   "name": "@sinoui/core",
-  "version": "0.1.0",
+  "version": "1.0.0-beta.2",
+  "description": "sinoui基础组件库",
   "license": "MIT",
-  "main": "dist/index.js",
-  "umd:main": "dist/sinoui-core.umd.production.js",
-  "module": "dist/sinoui-core.esm.js",
-  "typings": "dist/index.d.ts",
+  "main": "index.js",
+  "module": "esm/index.js",
+  "types": "index.d.ts",
+  "homepage": "https://sinoui.github.io/core",
+  "bugs": {
+    "url": "https://github.com/sinoui/core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinoui/core.git"
+  },
   "scripts": {
-    "start": "ts-lib-tools watch",
     "test": "ts-lib-tools test",
-    "build": "ts-lib-tools build",
+    "build": "ts-lib-tools build --simple",
     "format": "ts-lib-tools format",
     "lint": "ts-lib-tools lint",
-    "prepublishOnly": "ts-lib-tools build",
+    "release": "yarn build && yarn publish dist",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -45,19 +52,16 @@
   "peerDependencies": {
     "react": ">=16.8.0"
   },
-  "files": [
-    "dist",
-    "assets"
-  ],
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@babel/runtime": "^7.7.6",
     "@sinoui/ripple": "^1.0.10",
-    "@sinoui/theme": "^0.3.3",
+    "@sinoui/theme": "^1.0.0-beta.7",
     "classnames": "^2.2.6",
-    "color": "^3.1.2",
-    "polished": "^3.4.2",
-    "styled-components": "^4.4.1"
+    "jest-styled-components": "^7.0.0",
+    "polished": "^3.4.4",
+    "styled-components": "^4.4.1",
+    "react-icons": "^3.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -73,6 +77,7 @@
     "@types/react": "^16.9.15",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.0",
+    "@sinoui/icons": "^1.0.0-beta.1",
     "babel-loader": "^8.0.6",
     "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
@@ -83,7 +88,11 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
-    "ts-lib-tools": "^0.9.2",
-    "typescript": "^3.7.4"
+    "ts-lib-tools": "^0.10.1",
+    "typescript": "^3.8.3",
+    "yarn-deduplicate": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -15,11 +15,12 @@
     "@docusaurus/core": "^2.0.0-alpha.39",
     "@docusaurus/preset-classic": "^2.0.0-alpha.39",
     "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.39",
-    "@sinoui/theme": "^0.3.5",
+    "@svgr/webpack": "^5.2.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-ts-lib": "^0.9.0",
     "classnames": "^2.2.6",
+    "image-webpack-loader": "^6.0.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "styled-components": "^4.4.1"

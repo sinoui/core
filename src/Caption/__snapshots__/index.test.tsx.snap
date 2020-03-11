@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`文字排版 快照测试 基本文字排版 1`] = `
+<p
+  className="Typography__TypographyWrapper-sc-12agh80-0 kXsTWd sinoui-typography sinoui-typography--caption"
+  color="textPrimary"
+  type="caption"
+>
+  Caption
+</p>
+`;
+
+exports[`文字排版 快照测试 设置属性 1`] = `
+Array [
+  <h2
+    className="Typography__TypographyWrapper-sc-12agh80-0 kXsTWd sinoui-typography sinoui-typography--caption"
+    color="textPrimary"
+    type="caption"
+  >
+    Caption
+  </h2>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 bGVFrR sinoui-typography sinoui-typography--caption"
+    color="textPrimary"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 jzeOeG sinoui-typography sinoui-typography--caption"
+    color="textPrimary"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 HAepN sinoui-typography sinoui-typography--caption"
+    color="success"
+    type="caption"
+  >
+    Caption
+  </p>,
+]
+`;
+
+exports[`文字排版 快照测试 颜色设置 1`] = `
+Array [
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 kXsTWd sinoui-typography sinoui-typography--caption"
+    color="textPrimary"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 kdzdVI sinoui-typography sinoui-typography--caption"
+    color="primary"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 jRbrNt sinoui-typography sinoui-typography--caption"
+    color="secondary"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 kXsTWd sinoui-typography sinoui-typography--caption"
+    color="textPrimary"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 jAWnLr sinoui-typography sinoui-typography--caption"
+    color="textSecondary"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 iBaCAn sinoui-typography sinoui-typography--caption"
+    color="error"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 XNtwy sinoui-typography sinoui-typography--caption"
+    color="warning"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 HAepN sinoui-typography sinoui-typography--caption"
+    color="success"
+    type="caption"
+  >
+    Caption
+  </p>,
+  <p
+    className="Typography__TypographyWrapper-sc-12agh80-0 icFPzB sinoui-typography sinoui-typography--caption"
+    color="info"
+    type="caption"
+  >
+    Caption
+  </p>,
+]
+`;
