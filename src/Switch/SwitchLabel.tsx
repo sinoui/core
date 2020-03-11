@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import { useRipple } from '@sinoui/ripple';
-import { Theme } from '@sinoui/theme';
 import { opacify } from 'polished';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
@@ -29,7 +28,6 @@ interface WrapperProps {
   disabled?: boolean;
   color?: string;
   focused?: boolean;
-  theme: Theme;
 }
 
 const checkedWrapperStyle = css<WrapperProps>`
