@@ -75,18 +75,7 @@ const Column = styled.div.attrs(() => ({
 
   @media (max-width: ${(props) => props.theme.breakpoints.sm}px) {
     ${({ xs }) =>
-      !xs
-        ? flexGrowCss
-        : css`
-            width: ${(Math.min(xs, 24) / 24) * 100}%;
-          `};
-
-    ${({ xs }) =>
-      !xs
-        ? flexGrowCss
-        : css`
-            width: ${(Math.min(xs, 24) / 24) * 100}%;
-          `};
+      !xs ? flexGrowCss : `width: ${(Math.min(xs, 24) / 24) * 100}%`};
   }
 
   @media (min-width: ${(props) =>
@@ -95,9 +84,7 @@ const Column = styled.div.attrs(() => ({
     ${({ sm, xs }) =>
       !sm && !xs
         ? flexGrowCss
-        : css`
-            width: ${(Math.min(sm || xs, 24) / 24) * 100}%;
-          `};
+        : `width: ${(Math.min(sm || xs, 24) / 24) * 100}%`};
   }
 
   @media (min-width: ${(props) =>
@@ -106,9 +93,7 @@ const Column = styled.div.attrs(() => ({
     ${({ md, sm, xs }) =>
       !md && !sm && !xs
         ? flexGrowCss
-        : css`
-            width: ${(Math.min(md || sm || xs, 24) / 24) * 100}%;
-          `};
+        : `width: ${(Math.min(md || sm || xs, 24) / 24) * 100}%`};
   }
 
   @media (min-width: ${(props) =>
@@ -117,9 +102,7 @@ const Column = styled.div.attrs(() => ({
     ${({ lg, md, sm, xs }) =>
       !lg && !md && !sm && !xs
         ? flexGrowCss
-        : css`
-            width: ${(Math.min(lg || md || sm || xs, 24) / 24) * 100}%;
-          `};
+        : `width: ${(Math.min(lg || md || sm || xs, 24) / 24) * 100}%`};
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.xl}px) {
@@ -127,9 +110,8 @@ const Column = styled.div.attrs(() => ({
     ${({ xl, lg, md, sm, xs }) =>
       !xl && !lg && !md && !sm && !xs
         ? flexGrowCss
-        : css`
-            width: ${(Math.min(xl || lg || md || sm || xs) / 24) * 100}%;
-          `};
+        : `width: ${(Math.min(xl || lg || md || sm || xs) / 24) * 100}%`};
   }
 `;
+
 export default Column;

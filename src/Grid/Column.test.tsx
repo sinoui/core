@@ -54,7 +54,6 @@ describe('布局Column单元测试', () => {
     expect(column).toHaveStyle('align-items: center');
   });
 
-  // @meida样式单元测试检测不到
   // it(`Column不设置xs`, () => {
   //   const { getByTestId } = render(
   //     <ThemeProvider theme={defaultTheme}>

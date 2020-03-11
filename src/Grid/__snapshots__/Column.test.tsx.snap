@@ -5,7 +5,7 @@ exports[`布局Column快照测试 栅格布局 1`] = `
   className="Row-sc-1de494c-0 hOCLbp sinoui-row"
 >
   <div
-    className="Column-sc-1wcr58v-0 iPXzCz sinoui-column"
+    className="Column-sc-1wcr58v-0 fQgNoX sinoui-column"
   >
     列
   </div>
@@ -17,7 +17,7 @@ exports[`布局Column快照测试 默认 1`] = `
   className="Row-sc-1de494c-0 hOCLbp sinoui-row"
 >
   <div
-    className="Column-sc-1wcr58v-0 ldLZPT sinoui-column"
+    className="Column-sc-1wcr58v-0 iMsyKw sinoui-column"
   >
     列
   </div>
