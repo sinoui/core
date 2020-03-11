@@ -88,9 +88,7 @@ import Avatar from '@sinoui/core/Avatar';
 function AvatarDemo() {
   return (
     <Avatar>
-      <SvgIcon>
-        <MdAdd />
-      </SvgIcon>
+      <SvgIcon as={MdAdd}></SvgIcon>
     </Avatar>
   );
 }
@@ -100,10 +98,44 @@ function AvatarDemo() {
 
 <ThemeProvider theme={defaultTheme}>
   <Avatar>
-    <SvgIcon>
-      <MdAdd />
-    </SvgIcon>
+    <SvgIcon as={MdAdd}></SvgIcon>
   </Avatar>
+</ThemeProvider>
+
+## 是否为密集模式
+
+```tsx
+import Avatar from '@sinoui/core/Avatar';
+
+function AvatarDemo() {
+  return (
+    <>
+      <Avatar dense>
+        <img src={avatarf} />
+      </Avatar>
+      <p />
+      <Avatar dense>
+        <SvgIcon as={MdAdd}></SvgIcon>
+      </Avatar>
+      <p />
+      <Avatar dense>H</Avatar>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Avatar dense>
+    <img src={useBaseUrl('img/avatarf.jpg')} alt="" />
+  </Avatar>
+  <p />
+  <Avatar dense>
+    <SvgIcon as={MdAdd}></SvgIcon>
+  </Avatar>
+  <p />
+  <Avatar dense>H</Avatar>
 </ThemeProvider>
 
 ## 设置不同背景颜色

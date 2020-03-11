@@ -59,6 +59,24 @@ describe('Avatar组件 快照测试', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('是否为密集模式', () => {
+    const tree = renderer.create(
+      <ThemeProvider theme={defaultTheme}>
+        <Avatar dense>
+          <img src={avatarf} />
+        </Avatar>
+        <p />
+        <Avatar dense>
+          <SvgIcon as={MdAdd}></SvgIcon>
+        </Avatar>
+        <p />
+        <Avatar dense>H</Avatar>
+      </ThemeProvider>,
+    ).toJSON;
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it('设置不同背景颜色', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>

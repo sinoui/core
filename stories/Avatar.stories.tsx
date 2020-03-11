@@ -37,10 +37,22 @@ export const 字母头像 = () => (
 export const 图标头像 = () => (
   <ThemeProvider theme={defaultTheme}>
     <Avatar>
-      <SvgIcon>
-        <MdAdd />
-      </SvgIcon>
+      <SvgIcon as={MdAdd}></SvgIcon>
     </Avatar>
+  </ThemeProvider>
+);
+
+export const 是否为密集模式 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <Avatar dense>
+      <img src={avatarf} />
+    </Avatar>
+    <p />
+    <Avatar dense>
+      <SvgIcon as={MdAdd}></SvgIcon>
+    </Avatar>
+    <p />
+    <Avatar dense>H</Avatar>
   </ThemeProvider>
 );
 
