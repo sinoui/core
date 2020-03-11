@@ -57,3 +57,34 @@ exports[`Switch 镜像测试 渲染Switch 1`] = `
   />
 </span>
 `;
+
+exports[`Switch 镜像测试 选中状态 1`] = `
+<span
+  className="Switch__Wrapper-m36o27-0 djFYIr sinoui-switch sinoui-switch--checked"
+>
+  <span
+    checked={true}
+    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 bkdIsI sinoui-switch__label"
+    color="info"
+    data-testid="switchLabel"
+  >
+    <input
+      checked={true}
+      className="sinoui-switch__input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="checkbox"
+      value="switch2"
+    />
+    <span
+      className="sinoui-switch__thumb"
+    />
+  </span>
+  <span
+    checked={true}
+    className="SwitchTrack-sc-1s786x7-0 dhVJWy sinoui-switch__track"
+    color="info"
+  />
+</span>
+`;

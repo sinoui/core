@@ -37,3 +37,24 @@ exports[`SwitchLabel 镜像测试 渲染SwitchLabel 1`] = `
   />
 </span>
 `;
+
+exports[`SwitchLabel 镜像测试 选中状态 1`] = `
+<span
+  checked={true}
+  className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 bkdIsI sinoui-switch__label"
+  color="info"
+  data-testid="switchLabel"
+>
+  <input
+    checked={true}
+    className="sinoui-switch__input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="sinoui-switch__thumb"
+  />
+</span>
+`;

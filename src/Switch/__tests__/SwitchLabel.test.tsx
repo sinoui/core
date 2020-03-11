@@ -30,6 +30,18 @@ describe('SwitchLabel 镜像测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('选中状态', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <SwitchLabel checked color="info" />
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('验收测试', () => {
