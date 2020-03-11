@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { getColorFromTheme } from '../utils/color';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 export interface SwitchTrackProps {
   disabled?: boolean;
@@ -8,12 +8,8 @@ export interface SwitchTrackProps {
 }
 
 const checkedStyle = css<SwitchTrackProps>`
-  background-color: ${(props) =>
-    getColorFromTheme({
-      color: props.color || 'primary',
-      theme: props.theme,
-      disabled: props.disabled,
-    })};
+  background-color: ${({ theme, color = 'primary', disabled }) =>
+    disabled ? theme.palette.action.disabled : getColorFromTheme(theme, color)};
   opacity: 0.5;
 `;
 
@@ -33,8 +29,8 @@ const SwitchTrack = styled.span<SwitchTrackProps>`
   border-radius: 7px;
   background-color: ${(props) =>
     props.theme.palette.type === 'light'
-      ? props.theme.palette.black
-      : props.theme.palette.white};
+      ? props.theme.palette.common.black
+      : props.theme.palette.common.white};
 
   ${(props) => props.checked && checkedStyle};
   ${(props) => props.disabled && disabledStyle};

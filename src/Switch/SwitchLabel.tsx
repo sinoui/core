@@ -2,9 +2,9 @@ import React, { useState, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import { useRipple } from '@sinoui/ripple';
-import Color from 'color';
 import { Theme } from '@sinoui/theme';
-import { getColorFromTheme } from '../utils/color';
+import { opacify } from 'polished';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 export interface Props {
   inputClassName?: string;
@@ -32,37 +32,16 @@ interface WrapperProps {
   theme: Theme;
 }
 
-function getColor(props: WrapperProps) {
-  return getColorFromTheme(props, props.theme.typography.button.color);
-}
-
-export const getHoverBgColor = (props: WrapperProps) => {
-  const mainColor = getColor(props);
-  if (mainColor && mainColor !== 'inherit' && mainColor !== 'currentColor') {
-    return Color(mainColor)
-      .alpha(0.12)
-      .rgb()
-      .string();
-  }
-  return null;
-};
-
 const checkedWrapperStyle = css<WrapperProps>`
   transform: translateX(50%);
-  color: ${(props) =>
-    getColorFromTheme({
-      color: props.color || 'primary',
-      theme: props.theme,
-      disabled: props.disabled,
-    })};
+  color: ${({ theme, color = 'primary' }) => getColorFromTheme(theme, color)};
 
   &:hover {
     background-color: ${(props) =>
-      getHoverBgColor({
-        color: props.color || 'primary',
-        theme: props.theme,
-        disabled: props.disabled,
-      })};
+      opacify(
+        props.theme.palette.action.selectedOpacity - 1,
+        getColorFromTheme(props.theme, props.color || 'primary'),
+      )};
   }
 `;
 
@@ -78,11 +57,10 @@ const disabledWrapperStyle = css<WrapperProps>`
 const focusedWrapperStyle = css<WrapperProps>`
   background-color: ${(props) =>
     props.checked
-      ? getHoverBgColor({
-          color: props.color || 'primary',
-          theme: props.theme,
-          disabled: props.disabled,
-        })
+      ? opacify(
+          props.theme.palette.action.selectedOpacity - 1,
+          getColorFromTheme(props.theme, props.color || 'primary'),
+        )
       : 'rgba(0, 0, 0, 0.08)'};
 `;
 
@@ -105,6 +83,10 @@ const SwitchLabelWrapper = styled.span<WrapperProps>`
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.08);
+
+    @media (hover: none) {
+      background-color: transparent;
+    }
   }
 
   ${(props) => props.focused && focusedWrapperStyle};

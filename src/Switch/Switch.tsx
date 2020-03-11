@@ -49,7 +49,10 @@ const Wrapper = styled.span<{ disabled?: boolean }>`
  * @param {SwitchProps} props
  * @returns
  */
-export default function Switch(props: SwitchProps) {
+export default React.forwardRef<HTMLElement, SwitchProps>(function Switch(
+  props,
+  ref,
+) {
   const { disabled, checked, color } = props;
   return (
     <Wrapper
@@ -58,6 +61,7 @@ export default function Switch(props: SwitchProps) {
         'sinoui-switch--checked': checked,
       })}
       disabled={disabled}
+      ref={ref}
     >
       <SwitchLabel {...props} />
       <SwitchTrack
@@ -68,4 +72,4 @@ export default function Switch(props: SwitchProps) {
       />
     </Wrapper>
   );
-}
+});

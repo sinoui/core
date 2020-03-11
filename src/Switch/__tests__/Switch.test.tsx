@@ -29,16 +29,4 @@ describe('Switch 镜像测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
-
-  it('选中状态', () => {
-    const tree = renderer
-      .create(
-        <ThemeProvider theme={defaultTheme}>
-          <Switch value="switch3" checked color="accent" />
-        </ThemeProvider>,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
-  });
 });
