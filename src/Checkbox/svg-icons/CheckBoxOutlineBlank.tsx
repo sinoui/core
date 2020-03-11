@@ -1,5 +1,5 @@
 import React from 'react';
-import SvgIcon from '../../SvgIcon';
+import SvgIcon from '@sinoui/core/SvgIcon';
 
 /* eslint max-len:0 */
 const CheckBoxOutlineBlank: React.SFC = (props: {}) => (

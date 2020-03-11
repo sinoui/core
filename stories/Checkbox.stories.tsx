@@ -9,9 +9,12 @@ export default {
 function StatefulCheckbox() {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = useCallback(() => {
-    setChecked(!checked);
-  }, [checked]);
+  const handleChange = useCallback(
+    (e) => {
+      setChecked(e.target.checked);
+    },
+    [checked],
+  );
 
   return (
     <>
@@ -21,11 +24,11 @@ function StatefulCheckbox() {
   );
 }
 
-export const 简单使用 = () => (
+export const 基本使用 = () => (
   <StoryLayout>
     <Checkbox />
-    <Checkbox checked color="success" />
-    <Checkbox indeterminate color="success" />
+    <Checkbox checked />
+    <Checkbox indeterminate />
   </StoryLayout>
 );
 
@@ -45,8 +48,10 @@ export const 带有状态复选框 = () => (
 
 export const 设置只读 = () => (
   <StoryLayout>
+    <p>不可用：</p>
     <Checkbox disabled />
-    <Checkbox disabled checked />
+    <p>只读：</p>
+    <Checkbox readOnly />
   </StoryLayout>
 );
 

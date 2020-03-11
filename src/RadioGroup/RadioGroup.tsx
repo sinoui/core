@@ -23,7 +23,7 @@ const FormGroupWrapper = styled(FormGroup)<{ block?: boolean }>`
 
 export interface RadioGroupProps {
   /**
-   * 子元素。一般为一组`Radio`组件。
+   * 子元素。一般为一组`Radio`组件
    */
   children: React.ReactNode | any;
   /**
@@ -31,7 +31,7 @@ export interface RadioGroupProps {
    */
   value?: string | number;
   /**
-   * 值发生变化事件监听器。
+   * 值发生变化事件监听器
    */
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -39,31 +39,27 @@ export interface RadioGroupProps {
     form?: any,
   ) => void;
   /**
-   * 标题位置。默认为right，标题会显示在radio图标的右侧。
+   * 标题位置。默认为right，标题会显示在radio图标的右侧
    */
   labelPosition?: 'left' | 'right';
   /**
-   * 密级模式。在密级模式下，radio的尺寸会减小。
-   */
-  dense?: boolean;
-  /**
-   * 组件处于不可用状态。
+   * 组件处于不可用状态
    */
   disabled?: boolean;
   /**
-   * 监听焦点失去事件。
+   * 监听焦点失去事件
    */
   onBlur?: () => void;
   /**
-   * 监听焦点获取事件。
+   * 监听焦点获取事件
    */
   onFocus?: () => void;
   /**
-   * 指定Radio的颜色。
+   * 指定Radio的颜色
    */
   color?: boolean;
   /**
-   * 只读。
+   * 只读
    */
   readOnly?: boolean;
   /**
@@ -75,11 +71,11 @@ export interface RadioGroupProps {
    */
   id?: string;
   /**
-   * 指定额外的样式
+   * 添加自定义类名
    */
   className?: string;
   /**
-   * 是否纵向排列
+   * 设置是否纵向排列
    */
   block?: boolean;
 }
@@ -115,7 +111,6 @@ function RadioGroup(props: RadioGroupProps) {
     children,
     value: valueProp,
     labelPosition,
-    dense,
     disabled,
     onFocus,
     onBlur,
@@ -142,7 +137,6 @@ function RadioGroup(props: RadioGroupProps) {
             const radioProps: {} = removeUndefinedProperties({
               checked: valueNew === radioValue,
               onChange: onRadioChange,
-              dense,
               disabled: radio.props.disabled || disabled,
               readOnly,
               onBlur: !readOnly && onBlur,

@@ -1,0 +1,123 @@
+---
+id: radio
+title: Radio 单选框
+---
+
+Radio 单选框组件。
+
+import { useCallback } from 'react';
+import Radio from '@sinoui/core/Radio';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+## Radio
+
+## 基本使用
+
+```tsx
+import Radio from '@sinoui/core/Radio';
+
+function RadioDemo() {
+  return (
+    <>
+      <Radio />
+      <Radio checked />
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    <Radio />
+    <Radio checked />
+  </>  
+</ThemeProvider>
+
+## 带文字单选框
+
+```tsx
+import Radio from '@sinoui/core/Radio';
+
+function RadioDemo() {
+  return (
+    <>
+      <Radio>单选框1</Radio>
+      <Radio checked>单选框2</Radio>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    <Radio>单选框1</Radio>
+    <Radio checked>单选框2</Radio>
+  </>  
+</ThemeProvider>
+
+## 设置只读
+
+```tsx
+import Radio from '@sinoui/core/Radio';
+
+function RadioDemo() {
+  return (
+    <>
+      不可用：
+      <Radio disabled>单选框1</Radio>
+      <br />
+      只读：
+      <Radio readOnly>单选框2</Radio>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    不可用：
+    <Radio disabled>单选框1</Radio>
+    <br />
+    只读：
+    <Radio readOnly>单选框2</Radio>
+  </>  
+</ThemeProvider>
+
+## 指定颜色
+
+```tsx
+import Radio from '@sinoui/core/Radio';
+
+function RadioDemo() {
+  return (
+    <>
+      <Radio checked color="primary" />
+      <Radio checked color="secondary" />
+      <Radio checked color="error" />
+      <Radio checked color="warning" />
+      <Radio checked color="success" />
+      <Radio checked color="info" />
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    <Radio checked color="primary" />
+    <Radio checked color="secondary" />
+    <Radio checked color="error" />
+    <Radio checked color="warning" />
+    <Radio checked color="success" />
+    <Radio checked color="info" />
+  </>  
+</ThemeProvider>

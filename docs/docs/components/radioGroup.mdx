@@ -1,0 +1,170 @@
+---
+id: radioGroup
+title: RadioGroup 单选框组
+---
+
+RadioGroup 单选框组组件。
+
+import { useCallback } from 'react';
+import RadioGroup from '@sinoui/core/RadioGroup';
+import Radio from '@sinoui/core/Radio';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+## RadioGroup
+
+## 基本使用
+
+```tsx
+import RadioGroup from '@sinoui/core/RadioGroup';
+
+function RadioGroupDemo() {
+  return (
+    <RadioGroup onChange={(event, value) => console.log(value)} value="3">
+      <Radio value="1">单选框1</Radio>
+      <Radio value="2">单选框2</Radio>
+      <Radio value="3">单选框3</Radio>
+      <Radio value="4">单选框4</Radio>
+    </RadioGroup>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <RadioGroup onChange={(event, value) => console.log(value)} value="3">
+    <Radio value="1">单选框1</Radio>
+    <Radio value="2">单选框2</Radio>
+    <Radio value="3">单选框3</Radio>
+    <Radio value="4">单选框4</Radio>
+  </RadioGroup>
+</ThemeProvider>
+
+## 设置纵向排列
+
+```tsx
+import RadioGroup from '@sinoui/core/RadioGroup';
+
+function RadioGroupDemo() {
+  return (
+    <RadioGroup block>
+      <Radio value="1">单选框1</Radio>
+      <Radio value="2">单选框2</Radio>
+      <Radio value="3">单选框3</Radio>
+      <Radio value="4">单选框4</Radio>
+    </RadioGroup>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <RadioGroup block>
+    <Radio value="1">单选框1</Radio>
+    <Radio value="2">单选框2</Radio>
+    <Radio value="3">单选框3</Radio>
+    <Radio value="4">单选框4</Radio>
+  </RadioGroup>
+</ThemeProvider>
+
+## 设置只读
+
+```tsx
+import RadioGroup from '@sinoui/core/RadioGroup';
+
+function RadioGroupDemo() {
+  return (
+    <>
+      不可用：
+      <RadioGroup disabled>
+        <Radio value="1">单选框1</Radio>
+        <Radio value="2">单选框2</Radio>
+        <Radio value="3">单选框3</Radio>
+        <Radio value="4">单选框4</Radio>
+      </RadioGroup>
+      只读：
+      <br />
+      <RadioGroup readOnly>
+        <Radio value="1">单选框1</Radio>
+        <Radio value="2">单选框2</Radio>
+        <Radio value="3">单选框3</Radio>
+        <Radio value="4">单选框4</Radio>
+      </RadioGroup>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    不可用：
+    <RadioGroup disabled>
+      <Radio value="1">单选框1</Radio>
+      <Radio value="2">单选框2</Radio>
+      <Radio value="3">单选框3</Radio>
+      <Radio value="4">单选框4</Radio>
+    </RadioGroup>
+    只读：
+    <br />
+    <RadioGroup readOnly>
+      <Radio value="1">单选框1</Radio>
+      <Radio value="2">单选框2</Radio>
+      <Radio value="3">单选框3</Radio>
+      <Radio value="4">单选框4</Radio>
+    </RadioGroup>
+  </>
+</ThemeProvider>
+
+## 设置标题显示位置
+
+```tsx
+import RadioGroup from '@sinoui/core/RadioGroup';
+
+function RadioGroupDemo() {
+  return (
+    <>
+      标题在右侧显示：
+      <RadioGroup>
+        <Radio value="1">单选框1</Radio>
+        <Radio value="2">单选框2</Radio>
+        <Radio value="3">单选框3</Radio>
+        <Radio value="4">单选框4</Radio>
+      </RadioGroup>
+      <br />
+      标题在左侧显示：
+      <RadioGroup labelPosition="left">
+        <Radio value="1">单选框1</Radio>
+        <Radio value="2">单选框2</Radio>
+        <Radio value="3">单选框3</Radio>
+        <Radio value="4">单选框4</Radio>
+      </RadioGroup>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    标题在右侧显示：
+    <RadioGroup>
+      <Radio value="1">单选框1</Radio>
+      <Radio value="2">单选框2</Radio>
+      <Radio value="3">单选框3</Radio>
+      <Radio value="4">单选框4</Radio>
+    </RadioGroup>
+    <br />
+    标题在左侧显示：
+    <RadioGroup labelPosition="left">
+      <Radio value="1">单选框1</Radio>
+      <Radio value="2">单选框2</Radio>
+      <Radio value="3">单选框3</Radio>
+      <Radio value="4">单选框4</Radio>
+    </RadioGroup>
+  </>
+</ThemeProvider>

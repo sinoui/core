@@ -6,14 +6,14 @@ export default {
   title: 'Radio',
 };
 
-export const 基本单选框 = () => (
+export const 基本使用 = () => (
   <StoryLayout>
-    <Radio></Radio>
-    <Radio checked></Radio>
+    <Radio />
+    <Radio checked />
   </StoryLayout>
 );
 
-export const 带文字 = () => (
+export const 带文字单选框 = () => (
   <StoryLayout>
     <Radio
       value="1"
@@ -26,9 +26,11 @@ export const 带文字 = () => (
   </StoryLayout>
 );
 
-export const 只读 = () => (
+export const 设置只读 = () => (
   <StoryLayout>
+    <p>不可用：</p>
     <Radio disabled>单选框1</Radio>
+    <p>只读：</p>
     <Radio readOnly>单选框2</Radio>
   </StoryLayout>
 );
@@ -38,7 +40,7 @@ export const 指定颜色 = () => (
     <Radio checked color="primary" />
     <Radio checked color="secondary" />
     <Radio checked color="error" />
-    <Radio checked color="warning" warning>
+    <Radio checked color="warning">
       单选框
     </Radio>
     <Radio checked color="success" />

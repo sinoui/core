@@ -1,5 +1,5 @@
 import React from 'react';
-import SvgIcon from '../../SvgIcon';
+import SvgIcon from '@sinoui/core/SvgIcon';
 
 const CheckBox: React.SFC = (props) => (
   <SvgIcon {...props}>

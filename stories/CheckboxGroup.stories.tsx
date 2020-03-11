@@ -112,15 +112,3 @@ export const 设置网格对齐布局默认3列 = () => (
     </CheckboxGroup>
   </StoryLayout>
 );
-
-export const 设置是否是紧缩型 = () => (
-  <StoryLayout>
-    <CheckboxGroup dense>
-      <Checkbox value="1">复选框1</Checkbox>
-      <Checkbox value="2">复选框2</Checkbox>
-      <Checkbox value="3">复选框3</Checkbox>
-      <Checkbox value="4">复选框4</Checkbox>
-      <Checkbox value="5">复选框5</Checkbox>
-    </CheckboxGroup>
-  </StoryLayout>
-);

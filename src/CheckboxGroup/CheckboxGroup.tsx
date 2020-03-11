@@ -22,7 +22,7 @@ const FormGroupWrapper = styled(FormGroup)<{ column?: boolean }>`
 
 export interface CheckboxGroupProps<T> {
   /**
-   * 子节点。一般为一组`Checkbox`或者`<input type="checkbox" />`之类的
+   * 子元素。一般为一组`Checkbox`或者`<input type="checkbox" />`之类的
    */
   children?: React.ReactNode | any;
   /**
@@ -30,7 +30,7 @@ export interface CheckboxGroupProps<T> {
    */
   value?: T[];
   /**
-   * 值发生变化事件
+   * 值发生变化的回调函数
    */
   onChange?: (value: T[]) => void;
   /**
@@ -41,10 +41,6 @@ export interface CheckboxGroupProps<T> {
    * 只读
    */
   readOnly?: boolean;
-  /**
-   * 是否是紧缩型
-   */
-  dense?: boolean;
   /**
    * 标题显示位置
    */
@@ -58,17 +54,13 @@ export interface CheckboxGroupProps<T> {
    */
   onFocus?: () => void;
   /**
-   * 纵向显示
+   * 设置是否纵向排列
    */
   column?: boolean;
   /**
-   * 指定额外的样式
+   * 添加自定义类名
    */
   className?: string;
-  /**
-   * 指定样式
-   */
-  style?: React.CSSProperties;
   /**
    * 指定Checkbox的颜色
    */
@@ -115,7 +107,6 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
     labelPosition,
     disabled,
     readOnly,
-    dense,
     onBlur,
     onFocus,
     color,
@@ -273,7 +264,6 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
         labelPosition,
         disabled: checkbox.props.disabled || disabled,
         readOnly,
-        dense,
         onBlur: !readOnly && onBlur,
         onFocus: !readOnly && onFocus,
         color,

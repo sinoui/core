@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import CheckBoxOutlineBlankIcon from '../Checkbox/svg-icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '../Checkbox/svg-icons/CheckBox';
+import RadioButtonCheckedIcon from './svg-icons/RadioButtonChecked';
+import RadioButtonUncheckedIcon from './svg-icons/RadioButtonUnchecked';
 import ToggleButton from './ToggleButton';
 
 const StyleInput = styled.input`
@@ -55,7 +55,7 @@ export interface SwitchBaseProps {
    */
   name?: string;
   /**
-   * 值发生变化事件
+   * 值发生变化的回调函数
    */
   onChange?: (event: React.ChangeEvent<HTMLElement>, checked: boolean) => void;
   /**
@@ -79,7 +79,7 @@ export interface SwitchBaseProps {
    */
   tabIndex?: number;
   /**
-   * 值
+   * 单选框的值
    */
   value?: string;
   /**
@@ -87,13 +87,13 @@ export interface SwitchBaseProps {
    */
   defaultChecked?: boolean;
   /**
-   * 指定额外的样式
+   * 添加自定义类名
    */
   className?: string;
   /**
-   * 指定样式
+   * 指定颜色
    */
-  style?: React.CSSProperties;
+  color?: string;
 }
 
 /**
@@ -143,9 +143,9 @@ function SwitchBase(props: SwitchBaseProps) {
 
   const {
     checked: checkedProp,
-    checkedIcon = <CheckBoxIcon />,
+    checkedIcon = <RadioButtonCheckedIcon />,
     disabled: disabledProp,
-    icon: iconProp = <CheckBoxOutlineBlankIcon />,
+    icon: iconProp = <RadioButtonUncheckedIcon />,
     inputProps,
     inputRef,
     inputType = 'checkbox',
@@ -154,6 +154,7 @@ function SwitchBase(props: SwitchBaseProps) {
     tabIndex,
     value,
     readOnly: readOnlyProp,
+    color = 'primary',
     ...other
   } = props;
 
@@ -165,6 +166,7 @@ function SwitchBase(props: SwitchBaseProps) {
     <ToggleButton
       checked={checkedNew}
       disabled={disabledProp || readOnlyProp}
+      color={color}
       {...other}
     >
       {icon}

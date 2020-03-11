@@ -7,11 +7,7 @@ export type CheckboxProps<T> = FormControlWithLabelProps<T, HTMLInputElement> &
 
 export interface CheckboxExtendProps {
   /**
-   * 是否是紧缩型
-   */
-  dense?: boolean;
-  /**
-   * 自定义类名，用于样式定制
+   * 添加自定义类名
    */
   className?: string;
   /**

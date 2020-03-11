@@ -32,6 +32,9 @@ export interface LabelProps {
    * label要绑定元素的id
    */
   htmlFor?: string;
+  /**
+   * 只读
+   */
   readOnly?: boolean;
 }
 

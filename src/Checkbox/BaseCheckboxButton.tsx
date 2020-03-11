@@ -1,25 +1,91 @@
 import React from 'react';
 import classNames from 'classnames';
+import styled from 'styled-components';
+import BaseButton from '@sinoui/core/BaseButton';
+import colorCss from '@sinoui/core/utils/colorCss';
 import IndeterminateCheckBoxIcon from './svg-icons/IndeterminateCheckBox';
 import CheckBoxOutlineBlank from './svg-icons/CheckBoxOutlineBlank';
 import CheckBox from './svg-icons/CheckBox';
-import BaseToggleButton from './BaseToggleButton';
+
+const BaseToggleButton = styled(BaseButton)`
+  position: relative;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  &::-moz-focus-inner {
+    border-style: none;
+  }
+
+  pointer-events: default;
+  width: 20px;
+  height: 20px;
+  color: ${(props) => props.theme.palette.text.secondary};
+
+  & .sinoui-svg-icon {
+    font-size: 20px;
+  }
+
+  &.sinoui-checkbox-button__checked {
+    ${colorCss('color')};
+  }
+  &.sinoui-checkbox-button__indeterminate {
+    ${colorCss('color')};
+  }
+
+  &.sinoui-checkbox-button__disabled {
+    cursor: default;
+    pointer-events: none;
+    color: ${(props) => props.theme.palette.action.disabled};
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  & .sinoui-checkbox-button-input {
+    cursor: inherit;
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+  }
+
+  & .sinoui-checkbox-button__ripple {
+    width: 48px;
+    height: 48px;
+    border-radius: 32px;
+  }
+
+  & .sinoui-checkbox-button__ripple-layout {
+    left: -14px;
+    top: -14px;
+    width: 48px;
+    height: 48px;
+  }
+`;
 
 export interface Props {
   /**
-   * 是否选中。如果为`true`，则显示选中的复选框样式。
+   * 是否选中
    */
   checked?: boolean;
   /**
-   * 是否为部分选择状态。如果为`true`，则复选框显示部分选择图标。
+   * 是否为部分选择状态
    */
   indeterminate?: boolean;
   /**
-   * 是否禁用。如果为`true`，则此复选框不可用。
+   * 是否不可用
    */
   disabled?: boolean;
   /**
-   * 是否只读。如果为`true`，则复选框只读。
+   * 是否只读
    */
   readOnly?: boolean;
   /**
@@ -31,17 +97,13 @@ export interface Props {
    */
   value?: string;
   /**
-   * 复选框发生状态变化时调用的回调函数。
+   * 复选框发生状态变化时调用的回调函数
    */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /**
-   * 给根元素添加上样式类
+   * 添加自定义类名
    */
   className?: string;
-  /**
-   * 给根元素应用上样式
-   */
-  style?: React.CSSProperties;
   /**
    * tab键索引
    */
@@ -64,12 +126,11 @@ export interface Props {
    */
   inputClassName?: string;
   /**
-   * 如果为`true`，则显示密集模式下的复选框样式
+   * 点击时的回调函数
    */
-  dense?: boolean;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /**
-   * 指定主题颜色
+   * 指定颜色
    */
   color?: string;
 }
@@ -94,7 +155,6 @@ export default function BaseCheckboxButton(props: Props) {
     className,
     readOnly,
     indeterminate,
-    dense,
     onClick,
     color = 'primary',
   } = props;
@@ -114,15 +174,25 @@ export default function BaseCheckboxButton(props: Props) {
     return _icon;
   };
 
+  const rippleConfig = {
+    center: true,
+    rippleClassName: 'sinoui-checkbox-button__ripple',
+    rippleLayoutClassName: 'sinoui-checkbox-button__ripple-layout',
+    fixSize: true,
+  };
+
   return (
     <BaseToggleButton
-      checked={checked}
       disabled={disabled || readOnly}
-      className={classNames('sinoui-checkbox-button', className)}
+      className={classNames('sinoui-checkbox-button', className, {
+        'sinoui-checkbox-button__disabled': disabled,
+        'sinoui-checkbox-button__checked': checked,
+        'sinoui-checkbox-button__indeterminate': indeterminate,
+      })}
       color={color}
-      dense={dense}
       onClick={onClick}
-      indeterminate={indeterminate}
+      ripple={rippleConfig}
+      data-testid="checkbox"
     >
       {iconWrapper()}
       <input

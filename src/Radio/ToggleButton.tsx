@@ -8,12 +8,12 @@ import { Theme } from '@sinoui/theme';
  */
 const colorWrapper = (props: ToggleButtonProps) => {
   let color;
-  if (!props.checked && !props.disabled) {
-    color = getColorFromTheme(props.theme, 'textSecondary');
+  if (props.checked) {
+    color = getColorFromTheme(props.theme, props.color);
   } else if (props.disabled) {
     color = getColorFromTheme(props.theme, 'actionDisabled');
   } else {
-    color = getColorFromTheme(props.theme, props.color);
+    color = getColorFromTheme(props.theme, 'textSecondary');
   }
   return color;
 };
