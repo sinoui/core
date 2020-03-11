@@ -3,7 +3,7 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import Button from '@sinoui/core/Button';
-import FavoriteIcon from './Favorite';
+import FavoriteIcon from '@sinoui/icons/Favorite';
 
 const StyleButton = styled(Button)`
   margin: 8px;
