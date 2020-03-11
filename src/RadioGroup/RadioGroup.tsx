@@ -118,16 +118,20 @@ function RadioGroup(props: RadioGroupProps) {
     readOnly,
     onChange,
     block,
+    className,
     ...rest
   } = props;
   const valueNew = isControlled ? valueProp : value;
   return (
     <FormGroupWrapper
       {...rest}
-      className={classNames('sinoui-radio-group', props.className, {
+      className={classNames('sinoui-radio-group', className, {
         'sinoui-radio-group__block': block,
+        'sinoui-radio-group__disabled': disabled,
+        'sinoui-radio-group__readOnly': readOnly,
       })}
       block={block}
+      data-testid="radioGroup"
     >
       {React.Children.map(
         children,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import Radio from '@sinoui/core/Radio';
 import StoryLayout from './StoryLayout';
 
@@ -18,7 +18,6 @@ export const 带文字单选框 = () => (
     <Radio
       value="1"
       onChange={(event, checked) => console.log(event.target.value, checked)}
-      onClick={() => console.log('1')}
     >
       单选框1
     </Radio>

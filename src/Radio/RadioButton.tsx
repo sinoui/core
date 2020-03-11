@@ -33,7 +33,12 @@ function RadioButton(props: Props) {
         'sinoui-radio',
         'sinoui-radio-button',
         props.className,
+        {
+          'sinoui-radio--checked': props.checked,
+          'sinoui-radio--disabled': props.disabled,
+        },
       )}
+      data-testid="radio"
     />
   );
 }

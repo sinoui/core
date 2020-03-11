@@ -19,7 +19,6 @@ function StatefulCheckbox() {
   return (
     <>
       <Checkbox checked={checked} onChange={handleChange} />
-      <Checkbox />
     </>
   );
 }
@@ -32,7 +31,7 @@ export const 基本使用 = () => (
   </StoryLayout>
 );
 
-export const 带有文字 = () => (
+export const 带有文字复选框 = () => (
   <StoryLayout>
     <Checkbox>爱好1</Checkbox>
     <Checkbox checked>爱好2</Checkbox>

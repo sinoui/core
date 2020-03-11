@@ -1,0 +1,448 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio组件 快照测试 基本使用 1`] = `
+Array [
+  <button
+    checked={false}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+    color="primary"
+    data-testid="radio"
+    role="button"
+    type="switch"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+    <input
+      className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+    />
+  </button>,
+  <button
+    checked={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 aTmaD sinoui-radio sinoui-radio-button sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--checked"
+    color="primary"
+    data-testid="radio"
+    role="button"
+    type="switch"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+    />
+  </button>,
+]
+`;
+
+exports[`Radio组件 快照测试 带文字单选框 1`] = `
+Array [
+  <label
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+  >
+    <button
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+      color="primary"
+      data-testid="radio"
+      role="button"
+      type="switch"
+    >
+      <svg
+        aria-hidden="true"
+        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+        />
+      </svg>
+      <input
+        className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="radio"
+      />
+    </button>
+    <span
+      className="sinoui-form-control-label__title"
+    >
+      单选框1
+    </span>
+  </label>,
+  <label
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+  >
+    <button
+      checked={true}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 aTmaD sinoui-radio sinoui-radio-button sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--checked"
+      color="primary"
+      data-testid="radio"
+      role="button"
+      type="switch"
+    >
+      <svg
+        aria-hidden="true"
+        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+        />
+      </svg>
+      <input
+        checked={true}
+        className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="radio"
+      />
+    </button>
+    <span
+      className="sinoui-form-control-label__title"
+    >
+      单选框2
+    </span>
+  </label>,
+]
+`;
+
+exports[`Radio组件 快照测试 指定颜色 1`] = `
+Array [
+  <label
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+  >
+    <button
+      aria-disabled={true}
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--disabled"
+      color="primary"
+      data-testid="radio"
+      disabled={true}
+      role="button"
+      type="switch"
+    >
+      <svg
+        aria-hidden="true"
+        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+        />
+      </svg>
+      <input
+        className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+        disabled={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="radio"
+      />
+    </button>
+    <span
+      className="sinoui-form-control-label__title"
+    >
+      单选框1
+    </span>
+  </label>,
+  <button
+    checked={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 aTmaD sinoui-radio sinoui-radio-button sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--checked"
+    color="primary"
+    data-testid="radio"
+    role="button"
+    type="switch"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+    />
+  </button>,
+  <button
+    checked={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gbYApC sinoui-radio sinoui-radio-button sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--checked"
+    color="secondary"
+    data-testid="radio"
+    role="button"
+    type="switch"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+    />
+  </button>,
+  <button
+    checked={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 kmrstf sinoui-radio sinoui-radio-button sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--checked"
+    color="error"
+    data-testid="radio"
+    role="button"
+    type="switch"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+    />
+  </button>,
+  <button
+    checked={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 jApFzg sinoui-radio sinoui-radio-button sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--checked"
+    color="warning"
+    data-testid="radio"
+    role="button"
+    type="switch"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+    />
+  </button>,
+  <button
+    checked={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 hhgpeN sinoui-radio sinoui-radio-button sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--checked"
+    color="success"
+    data-testid="radio"
+    role="button"
+    type="switch"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+    />
+  </button>,
+  <button
+    checked={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 hoSCGh sinoui-radio sinoui-radio-button sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--checked"
+    color="info"
+    data-testid="radio"
+    role="button"
+    type="switch"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+    />
+  </button>,
+]
+`;
+
+exports[`Radio组件 快照测试 设置只读 1`] = `
+Array [
+  <label
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+  >
+    <button
+      aria-disabled={true}
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--disabled"
+      color="primary"
+      data-testid="radio"
+      disabled={true}
+      role="button"
+      type="switch"
+    >
+      <svg
+        aria-hidden="true"
+        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+        />
+      </svg>
+      <input
+        className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+        disabled={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="radio"
+      />
+    </button>
+    <span
+      className="sinoui-form-control-label__title"
+    >
+      单选框1
+    </span>
+  </label>,
+  <label
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 yePCV sinoui-form-control-label"
+    readOnly={true}
+  >
+    <button
+      aria-disabled={true}
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+      color="primary"
+      data-testid="radio"
+      disabled={true}
+      role="button"
+      type="switch"
+    >
+      <svg
+        aria-hidden="true"
+        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+        />
+      </svg>
+      <input
+        className="SwitchBase__StyleInput-ucpq1e-0 djkSbR"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        readOnly={true}
+        type="radio"
+      />
+    </button>
+    <span
+      className="sinoui-form-control-label__title"
+    >
+      单选框2
+    </span>
+  </label>,
+]
+`;

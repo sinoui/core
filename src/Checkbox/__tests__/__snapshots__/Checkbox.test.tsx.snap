@@ -1,0 +1,448 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox组件 快照测试 基本使用 1`] = `
+Array [
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button"
+    color="primary"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+      />
+    </svg>
+    <input
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__checked"
+    color="primary"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__indeterminate"
+    color="primary"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"
+      />
+    </svg>
+    <input
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+]
+`;
+
+exports[`Checkbox组件 快照测试 带有文字复选框 1`] = `
+Array [
+  <label
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+  >
+    <button
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button"
+      color="primary"
+      data-testid="checkbox"
+      role="button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+      <input
+        className="sinoui-checkbox-button-input"
+        type="checkbox"
+      />
+    </button>
+    <span
+      className="sinoui-form-control-label__title"
+    >
+      爱好1
+    </span>
+  </label>,
+  <label
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+  >
+    <button
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__checked"
+      color="primary"
+      data-testid="checkbox"
+      role="button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+        />
+      </svg>
+      <input
+        checked={true}
+        className="sinoui-checkbox-button-input"
+        type="checkbox"
+      />
+    </button>
+    <span
+      className="sinoui-form-control-label__title"
+    >
+      爱好2
+    </span>
+  </label>,
+  <label
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+  >
+    <button
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button"
+      color="primary"
+      data-testid="checkbox"
+      role="button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+      <input
+        className="sinoui-checkbox-button-input"
+        type="checkbox"
+      />
+    </button>
+    <span
+      className="sinoui-form-control-label__title"
+    >
+      爱好3
+    </span>
+  </label>,
+]
+`;
+
+exports[`Checkbox组件 快照测试 指定颜色 1`] = `
+Array [
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__checked"
+    color="primary"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 cIfoMJ sinoui-checkbox-button sinoui-checkbox-button__checked"
+    color="secondary"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dkNyDG sinoui-checkbox-button sinoui-checkbox-button__checked"
+    color="error"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 gpLamT sinoui-checkbox-button sinoui-checkbox-button__checked"
+    color="warning"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 eteBni sinoui-checkbox-button sinoui-checkbox-button__checked"
+    color="success"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 bHvkWF sinoui-checkbox-button sinoui-checkbox-button__checked"
+    color="info"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dKQQdn sinoui-checkbox-button sinoui-checkbox-button__checked"
+    color="actionActive"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 ijbwOW sinoui-checkbox-button sinoui-checkbox-button__checked"
+    color="actionDisabled"
+    data-testid="checkbox"
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <input
+      checked={true}
+      className="sinoui-checkbox-button-input"
+      type="checkbox"
+    />
+  </button>,
+]
+`;
+
+exports[`Checkbox组件 快照测试 设置只读 1`] = `
+Array [
+  <button
+    aria-disabled={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__disabled"
+    color="primary"
+    data-testid="checkbox"
+    disabled={true}
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+      />
+    </svg>
+    <input
+      className="sinoui-checkbox-button-input"
+      disabled={true}
+      type="checkbox"
+    />
+  </button>,
+  <button
+    aria-disabled={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__readOnly"
+    color="primary"
+    data-testid="checkbox"
+    disabled={true}
+    role="button"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+      />
+    </svg>
+    <input
+      className="sinoui-checkbox-button-input"
+      readOnly={true}
+      type="checkbox"
+    />
+  </button>,
+]
+`;
