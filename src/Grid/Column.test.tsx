@@ -41,7 +41,7 @@ describe('布局Column单元测试', () => {
             data-testid="row-column"
             justifyContent="center"
             alignItems="center"
-            xs="24"
+            xs={24}
           >
             column
           </Column>
