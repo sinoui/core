@@ -2754,6 +2754,12 @@ async-limiter@~1.0.0:
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
   integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
 
+
+async@^3.1.1:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
+  integrity sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
@@ -2876,10 +2882,10 @@ babel-plugin-annotate-pure-calls@^0.4.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-annotate-pure-calls/-/babel-plugin-annotate-pure-calls-0.4.0.tgz#78aa00fd878c4fcde4d49f3da397fcf5defbcce8"
   integrity sha512-oi4M/PWUJOU9ZyRGoPTfPMqdyMp06jbJAomd3RcyYuzUtBOddv98BqLm96Lucpi2QFoQHkdGQt0ACvw7VzVEQA==
 
-babel-plugin-clean-type-import-export@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-clean-type-import-export/-/babel-plugin-clean-type-import-export-0.9.0.tgz#6c6140c32dbad82382ddaa0ca272c437f908f4ea"
-  integrity sha512-1q3IGfnVT2JNL1RruNjYGz+F1KZRB5JOdeR/Yzhv/VVcJI7D5CDzD1pxxXHVX/R0JxH4oEzqHWhS63PdHLTDrg==
+babel-plugin-clean-type-import-export@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-clean-type-import-export/-/babel-plugin-clean-type-import-export-0.10.0.tgz#0ded66d5e6f03deeb8b0827874256d2bcd182cdc"
+  integrity sha512-fyBu5tZ4kRLwRbeh4a8ajGBg/JcZCeG5pBqJIC5Ymwftp1MK00vhHhf+uPVil86EHXr0NzVyB2F0moeNJaqWbA==
   dependencies:
     "@babel/core" "^7.7.5"
     "@types/babel-core" "^6.25.6"
@@ -3161,10 +3167,10 @@ babel-preset-jest@^24.9.0:
     babel-plugin-transform-undefined-to-void "^6.9.4"
     lodash "^4.17.11"
 
-babel-preset-ts-lib@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-ts-lib/-/babel-preset-ts-lib-0.9.0.tgz#bdb674b9bd08a6a8f4d1bdf2198796114da43aac"
-  integrity sha512-9wc6Lbq+60Xt5h2FWEqzKWXZa2y6qJpRNgzMiIf1QEUbrpOso08ZYYYh/XtzLI1N2TISiUjewHe3IvSw3rrJrw==
+babel-preset-ts-lib@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-ts-lib/-/babel-preset-ts-lib-0.10.0.tgz#9434ae465964d1b3f533220f7b0c854d4892cc02"
+  integrity sha512-TH9p/9lR7KCgmF1JW0iQZXbAPnEesZ5rEykpxrnlaidOpXK031LmanHkBvJx3ldBVu7FkO3HeN1Pdkh24La6Pg==
   dependencies:
     "@babel/core" "^7.7.5"
     "@babel/plugin-proposal-class-properties" "^7.7.4"
@@ -3181,7 +3187,7 @@ babel-preset-ts-lib@^0.9.0:
     "@babel/runtime" "^7.7.6"
     "@types/babel__core" "^7.1.3"
     babel-plugin-annotate-pure-calls "^0.4.0"
-    babel-plugin-clean-type-import-export "^0.9.0"
+    babel-plugin-clean-type-import-export "^0.10.0"
     babel-plugin-dev-expression "^0.2.2"
     babel-plugin-dynamic-import-node "^2.3.0"
     babel-plugin-macros "^2.6.1"
@@ -3692,6 +3698,11 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
+charenc@~0.0.1:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
+  integrity sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=
+
 "chokidar@>=2.0.0 <4.0.0":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.3.1.tgz#c84e5b3d18d9a4d77558fef466b1bf16bbeb3450"
@@ -4201,6 +4212,11 @@ cross-spawn@^7.0.0:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+crypt@~0.0.1:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/crypt/-/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
+  integrity sha1-iNf/fsDfuG9xPch7u0LQRNPmxBs=
+
 crypto-browserify@^3.11.0:
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/crypto-browserify/-/crypto-browserify-3.12.0.tgz#396cf9f3137f03e4b8e532c58f698254e00f80ec"
@@ -4485,7 +4501,7 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.8, debug@^2.6.
   dependencies:
     ms "2.0.0"
 
-debug@^3.0.0, debug@^3.2.5, debug@^3.2.6:
+debug@^3.0.0, debug@^3.2.5:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   integrity sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
@@ -5096,17 +5112,17 @@ eslint-config-prettier@^6.9.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-config-ts-lib-fast@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-ts-lib-fast/-/eslint-config-ts-lib-fast-0.9.0.tgz#33c99a7487e92975b22d9e56ebd9d2f166290b96"
-  integrity sha512-vk0j2ZFIImO5L/nACF+BGjM3mkxiElBPrKFQ4LGsiPvY6TG5z1UWFqKqmWF2xJEheW6oG0U8uLjaDxNZV1gQMQ==
+eslint-config-ts-lib-fast@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-ts-lib-fast/-/eslint-config-ts-lib-fast-0.10.0.tgz#fbea937862e221767e6373fd0b704e7ef663d8f0"
+  integrity sha512-iRl2Ri/dZMgZoPKA44Va7ICCeUjffowokgSgTqZP2T4Te32dB1L44PKmiMjeE5CCQvaSOdC34YlJGg+KgLEaQQ==
   dependencies:
-    eslint-config-ts-lib "^0.9.0"
+    eslint-config-ts-lib "^0.10.0"
 
-eslint-config-ts-lib@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-ts-lib/-/eslint-config-ts-lib-0.9.0.tgz#a29b20a6c021cd3340b2ef145799b54992a7feb2"
-  integrity sha512-UesNL5I37lieHpp+mAtEldyX27p92TcYmVZnPTfAxxX/evktxiz9qutYl/7zghuj53haGQxyJsFExSwoleAjqw==
+eslint-config-ts-lib@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-ts-lib/-/eslint-config-ts-lib-0.10.0.tgz#8e61f705613d5ff5bdf6a76d8a8d7be40c96e4a7"
+  integrity sha512-s3+yXl9Bek70z2PyTXboLJ1eMCXoWc0mM5fGVUQu5uGoh21uBxUNV5UkQ4Cox4mxxpD0RkHkxKBlA/Nh0baOIw==
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.3"
@@ -5367,7 +5383,7 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^2.0.3, execa@^2.0.4:
+execa@^2.0.3:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-2.1.0.tgz#e5d3ecd837d2a60ec50f3da78fd39767747bbe99"
   integrity sha512-Y/URAVapfbYy2Xp/gb6A0E7iR8xeqOCXsuuaoMn7A5PzrXUK84E1gyiEfq0wQd/GHA6GsoHWwhNq8anb0mleIw==
@@ -5395,6 +5411,21 @@ execa@^3.4.0:
     npm-run-path "^4.0.0"
     onetime "^5.1.0"
     p-finally "^2.0.0"
+    signal-exit "^3.0.2"
+    strip-final-newline "^2.0.0"
+
+execa@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-4.0.0.tgz#7f37d6ec17f09e6b8fc53288611695b6d12b9daf"
+  integrity sha512-JbDUxwV3BoT5ZVXQrSVbAiaXhXUkIwvbhPIwZ0N13kX+5yCzOhUNdocxB/UQRuYOHRYYwAxKYwJYc0T4D12pDA==
+  dependencies:
+    cross-spawn "^7.0.0"
+    get-stream "^5.0.0"
+    human-signals "^1.1.1"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^4.0.0"
+    onetime "^5.1.0"
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
@@ -6789,7 +6820,7 @@ is-binary-path@~2.1.0:
   dependencies:
     binary-extensions "^2.0.0"
 
-is-buffer@^1.0.2, is-buffer@^1.1.5:
+is-buffer@^1.0.2, is-buffer@^1.1.5, is-buffer@~1.1.1:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
@@ -7436,10 +7467,10 @@ jest-resolve@^24.9.0:
     jest-pnp-resolver "^1.2.1"
     realpath-native "^1.1.0"
 
-jest-resolver-tsconfig-paths@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/jest-resolver-tsconfig-paths/-/jest-resolver-tsconfig-paths-0.9.0.tgz#5fef5faa96b45182416b32aa076cb63a6bdbf4de"
-  integrity sha512-YMgwsdUBDwE+hAuwdPLoG21QuFpFcyIKQ6yxOXvXgYNXi+6PAajYCMwmpqQRSf4aJZCFerjB279NVTIXMcGwFg==
+jest-resolver-tsconfig-paths@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/jest-resolver-tsconfig-paths/-/jest-resolver-tsconfig-paths-0.10.0.tgz#fbe9bd1e104d73a797c5c85992f00ae561b42de7"
+  integrity sha512-vmCT6UEzvBvvoF39geYQYc/1gfBm0nU3gB2PMvXYipyTP9PQMZ3NTRzgyfNf00lVfwUiTHjtSF5PIW9csTSGIQ==
   dependencies:
     tsconfig-paths "^3.8.0"
 
@@ -8179,6 +8210,15 @@ md5.js@^1.3.4:
     hash-base "^3.0.0"
     inherits "^2.0.1"
     safe-buffer "^5.1.2"
+
+md5@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/md5/-/md5-2.2.1.tgz#53ab38d5fe3c8891ba465329ea23fac0540126f9"
+  integrity sha1-U6s41f48iJG6RlMp6iP6wFQBJvk=
+  dependencies:
+    charenc "~0.0.1"
+    crypt "~0.0.1"
+    is-buffer "~1.1.1"
 
 mdn-data@2.0.4:
   version "2.0.4"
@@ -8957,7 +8997,7 @@ os-homedir@^1.0.0:
   resolved "https://registry.yarnpkg.com/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
   integrity sha1-/7xJiDNuDoM94MFox+8VISGqf7M=
 
-os-tmpdir@^1.0.0, os-tmpdir@~1.0.2:
+os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
@@ -11935,25 +11975,26 @@ ts-dedent@^1.1.0:
   resolved "https://registry.yarnpkg.com/ts-dedent/-/ts-dedent-1.1.1.tgz#68fad040d7dbd53a90f545b450702340e17d18f3"
   integrity sha512-UGTRZu1evMw4uTPyYF66/KFd22XiU+jMaIuHrkIHQ2GivAXVlLV0v/vHrpOuTRf9BmpNHi/SO7Vd0rLu0y57jg==
 
-ts-lib-jsdom-polyfill@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/ts-lib-jsdom-polyfill/-/ts-lib-jsdom-polyfill-0.9.0.tgz#393f00207c39b6967683df8f0d1c91b98bef3473"
-  integrity sha512-/NNzbfhztT/e41eJNfKBIZpCotRxLh0+hRcB4EPi+89V8WKIDt8aiVQ2/AiA1MvWyVt2LZypF3Uqaz2dSj4IqA==
+ts-lib-jsdom-polyfill@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/ts-lib-jsdom-polyfill/-/ts-lib-jsdom-polyfill-0.10.0.tgz#f1a7d65f1e2f8a8d6f9146800ca4adcc3934cf58"
+  integrity sha512-kRsCWxt2ozMxWDJxz1MbzIFLmA7jVWKbqhC3Z5jpqm+hfMXmxb2Qaorwq3L2Ny77OgnsCpt8Z1JJLXsTEsusvw==
 
-ts-lib-scripts-utils@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/ts-lib-scripts-utils/-/ts-lib-scripts-utils-0.9.0.tgz#12f4df6e29a17c80358d4f6dbb0861b6404ba2c1"
-  integrity sha512-uC/oNQdYne236hE21jWHDMik5UGZVqWt66HeV6sMBHwV9/6wel9y0u5oAHtnLVPDUeTgiaOIESgdLhfgmGe2Yg==
+ts-lib-scripts-utils@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/ts-lib-scripts-utils/-/ts-lib-scripts-utils-0.10.0.tgz#fbdcec4cd3a22155517e8ec335634697ceed4258"
+  integrity sha512-Q1jaKbA1hsYKaV8i2yL5//YNWypVG1JcDZrYoApA6RRrLAaU9xKUzMcQrtJoEmA5lE8wb1j5eZm4qqjziad32A==
   dependencies:
     chalk "^2.4.2"
     execa "^3.4.0"
     fs-extra "^8.1.0"
 
-ts-lib-tools@^0.9.5:
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/ts-lib-tools/-/ts-lib-tools-0.9.5.tgz#c46b9ae651e1ed8abb9a7b4560c34dad8418d4e3"
-  integrity sha512-EilgUovz6qOKxoRwAokBO+9kClYZHmfrFvpkotY9QE71dJd0OdrljYw6naORYu654avPHK2Kq8E2YHkEq87Xmw==
+ts-lib-tools@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/ts-lib-tools/-/ts-lib-tools-0.10.1.tgz#7535b150b26d1f424f44b183c3f503ab13944ef3"
+  integrity sha512-MeAQxq1WLbB3mIuwe6maAiThwPlpo3M3RaH5bBvkOzcpLiLbMCzu4ctOtAQIbe3P1k3GRn+GEYIczeMu0ZpDww==
   dependencies:
+    "@babel/plugin-transform-modules-commonjs" "^7.8.3"
     "@rollup/plugin-image" "^2.0.1"
     "@rollup/plugin-json" "^4.0.1"
     "@rollup/plugin-node-resolve" "^7.0.0"
@@ -11962,8 +12003,9 @@ ts-lib-tools@^0.9.5:
     "@types/jest" "^24.9.0"
     "@typescript-eslint/eslint-plugin" "^2.16.0"
     "@typescript-eslint/parser" "^2.16.0"
+    async "^3.1.1"
     babel-jest "^24.9.0"
-    babel-preset-ts-lib "^0.9.0"
+    babel-preset-ts-lib "^0.10.0"
     camelcase "^5.3.1"
     chalk "^2.4.2"
     commander "^3.0.0"
@@ -11971,8 +12013,8 @@ ts-lib-tools@^0.9.5:
     eslint "6.8.0"
     eslint-config-airbnb "18.0.1"
     eslint-config-prettier "^6.9.0"
-    eslint-config-ts-lib "^0.9.0"
-    eslint-config-ts-lib-fast "^0.9.0"
+    eslint-config-ts-lib "^0.10.0"
+    eslint-config-ts-lib-fast "^0.10.0"
     eslint-import-resolver-typescript "^2.0.0"
     eslint-plugin-import "2.20.0"
     eslint-plugin-jsx-a11y "6.2.3"
@@ -11980,13 +12022,14 @@ ts-lib-tools@^0.9.5:
     eslint-plugin-react "7.18.0"
     eslint-plugin-react-hooks "2.3.0"
     eslint-plugin-standard "^4.0.1"
-    execa "^2.0.4"
+    execa "^4.0.0"
     fs-extra "^8.1.0"
     globby "^11.0.0"
     identity-obj-proxy "^3.0.0"
     jest "^24.9.0"
-    jest-resolver-tsconfig-paths "^0.9.0"
+    jest-resolver-tsconfig-paths "^0.10.0"
     jest-watch-typeahead "^0.4.2"
+    md5 "^2.2.1"
     ora "^3.4.0"
     prettier "^1.19.1"
     progress-estimator "^0.2.2"
@@ -11996,8 +12039,8 @@ ts-lib-tools@^0.9.5:
     rollup-plugin-postcss "^2.0.3"
     rollup-plugin-sourcemaps "^0.5.0"
     rollup-plugin-terser "^5.2.0"
-    ts-lib-jsdom-polyfill "^0.9.0"
-    ts-lib-scripts-utils "^0.9.0"
+    ts-lib-jsdom-polyfill "^0.10.0"
+    ts-lib-scripts-utils "^0.10.0"
     tsconfig-paths "^3.9.0"
     tslib "^1.10.0"
     typescript "^3.7.5"
