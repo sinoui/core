@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
+import { Theme } from '@sinoui/theme';
 
 /**
  * 列布局
@@ -60,58 +61,34 @@ const flexCss = css<Props>`
   align-items: ${(props) => props.alignItems || 'flex-start'};
 `;
 
-const flexGrowCss = css`
-  flex-grow: 1;
-`;
+const breakpointKeys = ['xs', 'sm', 'md', 'lg', 'xl'];
+let mediaResult;
+const breakpointsCss = css((props: Props & { theme: Theme }) => {
+  return breakpointKeys
+    .filter((item) => props[item] > 0)
+    .reduce((result, item) => {
+      mediaResult = result;
+      mediaResult[
+        `@media screen and (min-width: ${props.theme.breakpoints[item]}px)`
+      ] = {
+        '&': {
+          width: `${(Math.min(props[item], 24) / 24) * 100}%`,
+          flexBasis: `${(Math.min(props[item], 24) / 24) * 100}%`,
+        },
+      };
+
+      return mediaResult;
+    }, {} as any);
+});
 
 const Column = styled.div.attrs(() => ({
   className: classNames('sinoui-column'),
 }))<Props>`
   display: block;
   box-sizing: border-box;
-  flex: 0 0  auto;
+  flex: 1 0 auto;
   ${(props) => props.flexContainer && flexCss}
-
-
-  @media (max-width: ${(props) => props.theme.breakpoints.sm}px) {
-    ${({ xs }) =>
-      !xs ? flexGrowCss : `width: ${(Math.min(xs, 24) / 24) * 100}%`};
-  }
-
-  @media (min-width: ${(props) =>
-    props.theme.breakpoints.sm}px) and (max-width: ${(props) =>
-  props.theme.breakpoints.md}px) {
-    ${({ sm, xs }) =>
-      !sm && !xs
-        ? flexGrowCss
-        : `width: ${(Math.min(sm || xs, 24) / 24) * 100}%`};
-  }
-
-  @media (min-width: ${(props) =>
-    props.theme.breakpoints.md}px) and (max-width: ${(props) =>
-  props.theme.breakpoints.lg}px) {
-    ${({ md, sm, xs }) =>
-      !md && !sm && !xs
-        ? flexGrowCss
-        : `width: ${(Math.min(md || sm || xs, 24) / 24) * 100}%`};
-  }
-
-  @media (min-width: ${(props) =>
-    props.theme.breakpoints.lg}px) and (max-width: ${(props) =>
-  props.theme.breakpoints.xl}px) {
-    ${({ lg, md, sm, xs }) =>
-      !lg && !md && !sm && !xs
-        ? flexGrowCss
-        : `width: ${(Math.min(lg || md || sm || xs, 24) / 24) * 100}%`};
-  }
-
-  @media (min-width: ${(props) => props.theme.breakpoints.xl}px) {
-   
-    ${({ xl, lg, md, sm, xs }) =>
-      !xl && !lg && !md && !sm && !xs
-        ? flexGrowCss
-        : `width: ${(Math.min(xl || lg || md || sm || xs) / 24) * 100}%`};
-  }
+  ${breakpointsCss}
 `;
 
 export default Column;
