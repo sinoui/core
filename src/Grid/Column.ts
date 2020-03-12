@@ -68,7 +68,6 @@ const breakpointKeys: Array<'xs' | 'sm' | 'md' | 'lg' | 'xl'> = [
   'lg',
   'xl',
 ];
-let mediaResult;
 const breakpointsCss = css((props: Props & { theme: Theme }) => {
   return breakpointKeys
     .filter((item) => {
@@ -77,7 +76,7 @@ const breakpointsCss = css((props: Props & { theme: Theme }) => {
       return colNum && colNum > 0;
     })
     .reduce((result, item) => {
-      mediaResult = result;
+      const mediaResult = result;
       const colNum = props[item];
       if (colNum && colNum > 0) {
         mediaResult[
