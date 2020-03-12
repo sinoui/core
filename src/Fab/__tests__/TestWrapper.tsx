@@ -16,9 +16,10 @@ const Container = styled.div`
  * demo布局组件
  */
 export default function TestWrapper(props: Props) {
+  const { children } = props;
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container>{props.children}</Container>
+      <Container>{children}</Container>
     </ThemeProvider>
   );
 }
