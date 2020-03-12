@@ -10,10 +10,10 @@ const listData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 export default function Demo() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <List>
+      <List paddingLeft={72}>
         {listData.map((item) => (
           <>
-            <ListItem>
+            <ListItem paddingLeft={item % 2 === 0 ? 32 : 72}>
               <ListItemText>item{item}</ListItemText>
             </ListItem>
             <Divider />

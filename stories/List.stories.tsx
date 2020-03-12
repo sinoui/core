@@ -8,6 +8,7 @@ import {
   ListCheckboxPrimary,
   ListCheckboxSecondary,
   ListDisabled,
+  ListInsert,
 } from './listDemo';
 
 export default {
@@ -30,3 +31,5 @@ export const 主要操作区域的行为与ListItem的单击行为保持一致 =
 export const 辅助操作区行为 = () => <ListCheckboxSecondary />;
 
 export const 列表项禁用 = () => <ListDisabled />;
+
+export const 嵌入列表 = () => <ListInsert />;

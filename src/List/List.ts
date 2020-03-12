@@ -34,15 +34,13 @@ const ListStyle = css<Props>`
   padding: 0;
   box-sizing: border-box;
 
-  & > *.sinoui-list-item {
+  &.sinoui-list--insert > .sinoui-list-item {
+    padding-left: 32px;
+  }
+
+  & > .sinoui-list-item {
     ${({ paddingLeft }) =>
       paddingLeft !== undefined && `padding-left: ${paddingLeft}px`}
-  }
-
-  & > *.sinoui-list-item--insert {
-  }
-
-  & > *.sinoui-list-item--disabled-ripple {
   }
 `;
 

@@ -6,7 +6,7 @@ import ListClicked from './ListClicked';
 import ListCheckboxPrimary from './ListCheckboxPrimary';
 import ListCheckboxSecondary from './ListCheckboxSecondary';
 import ListDisabled from './ListDisabled';
-
+import ListInsert from './ListInsert';
 export {
   ListOneLine,
   ListTwoLine,
@@ -16,4 +16,5 @@ export {
   ListCheckboxPrimary,
   ListCheckboxSecondary,
   ListDisabled,
+  ListInsert,
 };

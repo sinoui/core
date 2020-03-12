@@ -77,10 +77,7 @@ const hoverCss = css<ListItemProps>`
   }
 
   &:hover::before {
-    background-color: ${({ theme }) =>
-      theme.palette.type === 'light'
-        ? opacify(-0.96, '#000')
-        : opacify(-0.96, '#fff')};
+    background-color: ${({ theme }) => theme.palette.action.hover};
   }
 `;
 
@@ -124,15 +121,13 @@ const ListItemStyle = css<ListItemProps>`
   }
 
   &.sinoui-list-item--insert {
-  }
-
-  &.sinoui-list-item--disabled-ripple {
+    padding-left: 32px;
   }
 `;
 
 const Wrapper = styled.li.attrs((props: ListItemProps) => ({
   tabIndex: '0',
-  className: classNames('sinoui-list', {
+  className: classNames('sinoui-list-item', {
     'sinoui-list-item--insert': props.insert,
     'sinoui-list-item--disabled-ripple': props.disabledRipple,
     'sinoui-list-item--dense': props.dense,
