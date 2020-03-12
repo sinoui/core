@@ -61,22 +61,34 @@ const flexCss = css<Props>`
   align-items: ${(props) => props.alignItems || 'flex-start'};
 `;
 
-const breakpointKeys = ['xs', 'sm', 'md', 'lg', 'xl'];
+const breakpointKeys: Array<'xs' | 'sm' | 'md' | 'lg' | 'xl'> = [
+  'xs',
+  'sm',
+  'md',
+  'lg',
+  'xl',
+];
 let mediaResult;
 const breakpointsCss = css((props: Props & { theme: Theme }) => {
   return breakpointKeys
-    .filter((item) => props[item] > 0)
+    .filter((item) => {
+      // colNum 为栅格数
+      const colNum = props[item];
+      return colNum && colNum > 0;
+    })
     .reduce((result, item) => {
       mediaResult = result;
-      mediaResult[
-        `@media screen and (min-width: ${props.theme.breakpoints[item]}px)`
-      ] = {
-        '&': {
-          width: `${(Math.min(props[item], 24) / 24) * 100}%`,
-          flexBasis: `${(Math.min(props[item], 24) / 24) * 100}%`,
-        },
-      };
-
+      const colNum = props[item];
+      if (colNum && colNum > 0) {
+        mediaResult[
+          `@media screen and (min-width: ${props.theme.breakpoints[item]}px)`
+        ] = {
+          '&': {
+            width: `${(Math.min(colNum, 24) / 24) * 100}%`,
+            flexBasis: `${(Math.min(colNum, 24) / 24) * 100}%`,
+          },
+        };
+      }
       return mediaResult;
     }, {} as any);
 });
