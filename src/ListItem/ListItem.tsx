@@ -84,6 +84,13 @@ const hoverCss = css<ListItemProps>`
   }
 `;
 
+const disabledCss = css`
+  background-color: ${({ theme }) => theme.palette.action.disabled};
+  color: ${({ theme }) => theme.palette.text.disabled};
+  cursor: default;
+  pointer-events: none;
+`;
+
 const ListItemStyle = css<ListItemProps>`
   position: relative;
   display: flex;
@@ -97,9 +104,10 @@ const ListItemStyle = css<ListItemProps>`
   background-color: ${(props) => props.theme.palette.background.paper};
   outline: none;
   cursor: pointer;
-  ${(props) => props.selected && selectedCss}
-  ${hoverCss}
-  ${focusCss}
+  ${(props) => props.selected && selectedCss};
+  ${(props) => !props.disabled && hoverCss};
+  ${(props) => !props.disabled && focusCss};
+  ${(props) => props.disabled && disabledCss};
   &::before {
     content: '';
     position: absolute;
@@ -137,8 +145,11 @@ const ListItem: OverriableComponent<ListItemProps, 'li'> = React.forwardRef<
   HTMLLIElement,
   ListItemProps
 >((props, ref) => {
+  const { disabledRipple, disabled } = props;
   const rippleRef = useRipple<HTMLLIElement>();
   const listItemRef = useMultiRefs(rippleRef, ref);
-  return <Wrapper {...props} ref={listItemRef} />;
+  return (
+    <Wrapper {...props} ref={disabledRipple || disabled ? ref : listItemRef} />
+  );
 });
 export default ListItem;

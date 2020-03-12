@@ -5,8 +5,10 @@ import styled from 'styled-components';
  */
 
 const ListItemPrimaryAction = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
+  z-index: 1;
 
   & > svg {
     margin-right: 32px;

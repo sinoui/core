@@ -5,9 +5,11 @@ import styled from 'styled-components';
  */
 
 const ListItemSecondaryAction = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   margin-left: 16px;
+  z-index: 1;
 `;
 
 export default ListItemSecondaryAction;
