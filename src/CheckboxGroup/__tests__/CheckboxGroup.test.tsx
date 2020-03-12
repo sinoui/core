@@ -46,9 +46,7 @@ describe('CheckboxGroup 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const check = container.querySelectorAll(
-      '.sinoui-checkbox-button__disabled',
-    );
+    const check = container.querySelectorAll('.sinoui-checkbox--disabled');
     expect(check.length).toBe(2);
   });
   test('是否支持全选，全部选中', async () => {
@@ -62,9 +60,7 @@ describe('CheckboxGroup 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const check = container.querySelectorAll(
-      '.sinoui-checkbox-button__checked',
-    );
+    const check = container.querySelectorAll('.sinoui-checkbox--checked');
     expect(check.length).toBe(4);
 
     const selectAll = container.querySelector(
@@ -84,9 +80,7 @@ describe('CheckboxGroup 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const check = container.querySelectorAll(
-      '.sinoui-checkbox-button__checked',
-    );
+    const check = container.querySelectorAll('.sinoui-checkbox--checked');
     expect(check.length).toBe(2);
   });
 });

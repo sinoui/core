@@ -37,7 +37,7 @@ describe('RadioGroup 单元测试', () => {
     );
 
     const radioGroup = getByTestId('radioGroup');
-    expect(radioGroup).toHaveClass('sinoui-radio-group__block');
+    expect(radioGroup).toHaveClass('sinoui-radio-group--block');
   });
 });
 

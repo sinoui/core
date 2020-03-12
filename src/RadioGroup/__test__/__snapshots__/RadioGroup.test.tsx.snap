@@ -167,7 +167,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
 exports[`radioGroup组件 快照测试 设置只读 1`] = `
 Array [
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 iABNhT sinoui-radio-group sinoui-radio-group__disabled"
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 iABNhT sinoui-radio-group sinoui-radio-group--disabled"
     data-testid="radioGroup"
   >
     <label
@@ -340,7 +340,7 @@ Array [
     </label>
   </div>,
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 iABNhT sinoui-radio-group sinoui-radio-group__readOnly"
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 iABNhT sinoui-radio-group sinoui-radio-group--readOnly"
     data-testid="radioGroup"
   >
     <label
@@ -778,7 +778,7 @@ Array [
 
 exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
 <div
-  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 dkrcaq sinoui-radio-group sinoui-radio-group__block"
+  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 dkrcaq sinoui-radio-group sinoui-radio-group--block"
   data-testid="radioGroup"
 >
   <label

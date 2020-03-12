@@ -100,24 +100,23 @@ export interface SwitchBaseProps {
  * 基本展示组件
  */
 function SwitchBase(props: SwitchBaseProps) {
-  const isControlled = props.checked != null;
-  const [checked, setChecked] = useState(
-    !isControlled &&
-      (props.defaultChecked !== undefined ? props.defaultChecked : false),
+  const { checked, defaultChecked } = props;
+  const isControlled = checked != null;
+  const [check, setCheck] = useState(
+    !isControlled && (defaultChecked !== undefined ? defaultChecked : false),
   );
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { checked } = event.target;
     if (props.readOnly) {
       return;
     }
 
     if (!isControlled) {
-      setChecked(checked);
+      setCheck(event.target.checked);
     }
 
     if (props.onChange) {
-      props.onChange(event, checked);
+      props.onChange(event, event.target.checked);
     }
   };
 
@@ -158,9 +157,9 @@ function SwitchBase(props: SwitchBaseProps) {
     ...other
   } = props;
 
-  const checkedNew = isControlled ? checkedProp : checked;
+  const checkedNew = isControlled ? checkedProp : check;
 
-  let icon = checkedNew ? checkedIcon : iconProp;
+  const icon = checkedNew ? checkedIcon : iconProp;
 
   return (
     <ToggleButton

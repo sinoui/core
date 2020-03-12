@@ -3,8 +3,10 @@
  *
  * @param {object} obj
  */
-export function removeUndefinedProperties<T extends {}>(obj: T): T {
-  const newObj = {} as T;
+export function removeUndefinedProperties<T extends { [name: string]: any }>(
+  obj: T,
+): T {
+  const newObj: any = {};
   Object.keys(obj)
     .filter((key) => typeof obj[key] !== 'undefined')
     .forEach((key) => {

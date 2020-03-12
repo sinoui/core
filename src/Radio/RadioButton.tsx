@@ -23,21 +23,17 @@ export interface Props extends SwitchBaseProps {
  * 单选框组件（只有图标）。推荐使用`Radio`组件。
  */
 function RadioButton(props: Props) {
+  const { className, checked, disabled } = props;
   return (
     <SwitchBase
       inputType="radio"
       icon={<RadioButtonUncheckedIcon />}
       checkedIcon={<RadioButtonCheckedIcon />}
       {...props}
-      className={classNames(
-        'sinoui-radio',
-        'sinoui-radio-button',
-        props.className,
-        {
-          'sinoui-radio--checked': props.checked,
-          'sinoui-radio--disabled': props.disabled,
-        },
-      )}
+      className={classNames('sinoui-radio', className, {
+        'sinoui-radio--checked': checked,
+        'sinoui-radio--disabled': disabled,
+      })}
       data-testid="radio"
     />
   );

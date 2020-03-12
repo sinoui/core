@@ -112,22 +112,23 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
     color,
     onChange,
     items,
+    className,
     ...rest
   } = props;
 
-  const isControlled: boolean = typeof props.value !== 'undefined';
+  const isControlled: boolean = typeof valueProp !== 'undefined';
 
-  const [value, setValue] = useState(!isControlled && (valueProp || []));
+  const [groupVal, setGroupVal] = useState(!isControlled && []);
 
-  function getCheckboxValue(props: any) {
-    if (props.value) {
-      return props.value;
+  const getCheckboxValue = (checkboxProps: any) => {
+    if (checkboxProps.value) {
+      return checkboxProps.value;
     }
-    if (props.children && typeof props.children === 'string') {
-      return props.children;
+    if (checkboxProps.children && typeof checkboxProps.children === 'string') {
+      return checkboxProps.children;
     }
     return undefined;
-  }
+  };
 
   /**
    *获取所有子元素的值
@@ -144,45 +145,45 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
   };
 
   /**
+   * 是否选中所有
+   */
+  const selectedAll = () => {
+    const lists = getItemValues();
+    const newValue = isControlled ? props.value : groupVal;
+    return newValue && lists.every((_: T) => newValue.indexOf(_) !== -1);
+  };
+
+  /**
    *处理全选
    *
    * @private
    * @memberof CheckboxGroup
    */
   const onSelectAllClick = (event: React.MouseEvent<HTMLElement>) => {
-    const newValue: any = isControlled ? props.value : value;
+    const newValue: any = isControlled ? props.value : groupVal;
 
     event.stopPropagation();
-    const items = getItemValues();
+    const lists = getItemValues();
     if (selectedAll()) {
-      const val: T[] =
-        newValue && newValue.filter((el: T) => items.indexOf(el) === -1);
+      const val: any =
+        newValue && newValue.filter((el: T) => lists.indexOf(el) === -1);
 
       if (!isControlled) {
-        setValue(val);
+        setGroupVal(val);
       }
       if (props.onChange) {
         props.onChange(val);
       }
     } else {
-      const arr = new Set([...newValue, ...items]);
-      const newArr = Array.from(arr);
+      const arr = new Set([...newValue, ...lists]);
+      const newArr: any = Array.from(arr);
       if (!isControlled) {
-        setValue(newArr);
+        setGroupVal(newArr);
       }
       if (props.onChange) {
         props.onChange(newArr);
       }
     }
-  };
-
-  /**
-   * 是否选中所有
-   */
-  const selectedAll = () => {
-    const items = getItemValues();
-    const newValue = isControlled ? props.value : value;
-    return newValue && items.every((_) => newValue.indexOf(_) !== -1);
   };
 
   /**
@@ -198,14 +199,14 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
     event: React.ChangeEvent<HTMLInputElement>,
     checkboxValue: T,
   ) {
-    const el: any = isControlled ? valueProp : value;
+    const el: any = isControlled ? valueProp : groupVal;
     const val: any = toggleItem<T>(el, checkboxValue);
 
     if (props.readOnly) {
       return;
     }
     if (!isControlled) {
-      setValue(val);
+      setGroupVal(val);
     }
 
     if (props.onChange) {
@@ -229,7 +230,7 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
    * @memberof CheckboxGroup
    */
   const renderSelectAll = () => {
-    const newValue = isControlled ? props.value : value;
+    const newValue = isControlled ? props.value : groupVal;
     const selectAll = props.enableSelectAll && (
       <Checkbox
         indeterminate={newValue && newValue.length > 0 && !selectedAll()}
@@ -248,7 +249,7 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
 
     return selectAll;
   };
-  const newValue = isControlled ? props.value : value;
+  const newValue = isControlled ? valueProp : groupVal;
 
   const child = (checkbox: React.ReactElement<CheckboxProps<T>>) => {
     if (React.isValidElement(checkbox)) {
@@ -277,7 +278,7 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
   return (
     <FormGroupWrapper
       {...rest}
-      className={classNames('sinoui-checkbox-group', props.className)}
+      className={classNames('sinoui-checkbox-group', className)}
       data-testid="checkboxGroup"
     >
       {renderSelectAll()}

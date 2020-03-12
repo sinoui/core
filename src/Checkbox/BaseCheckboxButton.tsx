@@ -27,14 +27,14 @@ const BaseToggleButton = styled(BaseButton)`
     font-size: 20px;
   }
 
-  &.sinoui-checkbox-button__checked {
+  &.sinoui-checkbox--checked {
     ${colorCss('color')};
   }
-  &.sinoui-checkbox-button__indeterminate {
+  &.sinoui-checkbox--indeterminate {
     ${colorCss('color')};
   }
 
-  &.sinoui-checkbox-button__disabled {
+  &.sinoui-checkbox--disabled {
     cursor: default;
     pointer-events: none;
     color: ${(props) => props.theme.palette.action.disabled};
@@ -44,7 +44,7 @@ const BaseToggleButton = styled(BaseButton)`
     background-color: transparent;
   }
 
-  & .sinoui-checkbox-button-input {
+  & .sinoui-checkbox__input {
     cursor: inherit;
     position: absolute;
     opacity: 0;
@@ -57,13 +57,13 @@ const BaseToggleButton = styled(BaseButton)`
     border: none;
   }
 
-  & .sinoui-checkbox-button__ripple {
+  & .sinoui-checkbox__ripple {
     width: 48px;
     height: 48px;
     border-radius: 32px;
   }
 
-  & .sinoui-checkbox-button__ripple-layout {
+  & .sinoui-checkbox__ripple-layout {
     left: -14px;
     top: -14px;
     width: 48px;
@@ -157,38 +157,39 @@ export default function BaseCheckboxButton(props: Props) {
     indeterminate,
     onClick,
     color = 'primary',
+    inputClassName,
   } = props;
 
   /**
    * 图标显示
    */
   const iconWrapper = () => {
-    let _icon;
+    let icon;
     if (indeterminate) {
-      _icon = indeterminateCheckboxIcon;
+      icon = indeterminateCheckboxIcon;
     } else if (checked) {
-      _icon = checkedCheckboxIcon;
+      icon = checkedCheckboxIcon;
     } else {
-      _icon = checkboxIcon;
+      icon = checkboxIcon;
     }
-    return _icon;
+    return icon;
   };
 
   const rippleConfig = {
     center: true,
-    rippleClassName: 'sinoui-checkbox-button__ripple',
-    rippleLayoutClassName: 'sinoui-checkbox-button__ripple-layout',
+    rippleClassName: 'sinoui-checkbox__ripple',
+    rippleLayoutClassName: 'sinoui-checkbox__ripple-layout',
     fixSize: true,
   };
 
   return (
     <BaseToggleButton
       disabled={disabled || readOnly}
-      className={classNames('sinoui-checkbox-button', className, {
-        'sinoui-checkbox-button__disabled': disabled,
-        'sinoui-checkbox-button__checked': checked,
-        'sinoui-checkbox-button__indeterminate': indeterminate,
-        'sinoui-checkbox-button__readOnly': readOnly,
+      className={classNames('sinoui-checkbox', className, {
+        'sinoui-checkbox--disabled': disabled,
+        'sinoui-checkbox--checked': checked,
+        'sinoui-checkbox--indeterminate': indeterminate,
+        'sinoui-checkbox--readOnly': readOnly,
       })}
       color={color}
       onClick={onClick}
@@ -197,10 +198,7 @@ export default function BaseCheckboxButton(props: Props) {
     >
       {iconWrapper()}
       <input
-        className={classNames(
-          'sinoui-checkbox-button-input',
-          props.inputClassName,
-        )}
+        className={classNames('sinoui-checkbox__input', inputClassName)}
         type="checkbox"
         name={name}
         checked={checked}

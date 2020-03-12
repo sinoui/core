@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
-import FormGroup from './FormGroup';
 import { removeUndefinedProperties } from '@sinoui/core/utils/objects';
+import FormGroup from './FormGroup';
 
 const PaddingRightStyle = css`
   > label {
@@ -14,7 +14,7 @@ const PaddingRightStyle = css`
 `;
 
 const FormGroupWrapper = styled(FormGroup)<{ block?: boolean }>`
-  &.sinoui-radio-group__block > .sinoui-form-control-label {
+  &.sinoui-radio-group--block > .sinoui-form-control-label {
     width: 100%;
   }
 
@@ -84,10 +84,9 @@ export interface RadioGroupProps {
  * 单选按钮组组件。如果没有指定value属性或者value属性值为undefined时，RadioGroup组件就处于非受控状态，会自身维护选中状态。
  */
 function RadioGroup(props: RadioGroupProps) {
-  const isControlled: boolean = typeof props.value !== 'undefined';
-  const [value, setValue] = useState<string | number | any>(
-    !isControlled && null,
-  );
+  const { value } = props;
+  const isControlled: boolean = typeof value !== 'undefined';
+  const [val, setVal] = useState<string | number | any>(!isControlled && null);
 
   const onRadioChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -99,7 +98,7 @@ function RadioGroup(props: RadioGroupProps) {
 
     if (checked && props.onChange) {
       if (!isControlled) {
-        setValue(event.target.value);
+        setVal(event.target.value);
       }
 
       event.stopPropagation();
@@ -121,14 +120,14 @@ function RadioGroup(props: RadioGroupProps) {
     className,
     ...rest
   } = props;
-  const valueNew = isControlled ? valueProp : value;
+  const valueNew = isControlled ? valueProp : val;
   return (
     <FormGroupWrapper
       {...rest}
       className={classNames('sinoui-radio-group', className, {
-        'sinoui-radio-group__block': block,
-        'sinoui-radio-group__disabled': disabled,
-        'sinoui-radio-group__readOnly': readOnly,
+        'sinoui-radio-group--block': block,
+        'sinoui-radio-group--disabled': disabled,
+        'sinoui-radio-group--readOnly': readOnly,
       })}
       block={block}
       data-testid="radioGroup"

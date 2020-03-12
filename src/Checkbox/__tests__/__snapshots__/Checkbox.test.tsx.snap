@@ -3,7 +3,7 @@
 exports[`Checkbox组件 快照测试 基本使用 1`] = `
 Array [
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
     color="primary"
     data-testid="checkbox"
     role="button"
@@ -22,12 +22,12 @@ Array [
       />
     </svg>
     <input
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
     data-testid="checkbox"
     role="button"
@@ -47,12 +47,12 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__indeterminate"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--indeterminate"
     color="primary"
     data-testid="checkbox"
     role="button"
@@ -71,7 +71,7 @@ Array [
       />
     </svg>
     <input
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
@@ -84,7 +84,7 @@ Array [
     className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -103,7 +103,7 @@ Array [
         />
       </svg>
       <input
-        className="sinoui-checkbox-button-input"
+        className="sinoui-checkbox__input"
         type="checkbox"
       />
     </button>
@@ -117,7 +117,7 @@ Array [
     className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -137,7 +137,7 @@ Array [
       </svg>
       <input
         checked={true}
-        className="sinoui-checkbox-button-input"
+        className="sinoui-checkbox__input"
         type="checkbox"
       />
     </button>
@@ -151,7 +151,7 @@ Array [
     className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -170,7 +170,7 @@ Array [
         />
       </svg>
       <input
-        className="sinoui-checkbox-button-input"
+        className="sinoui-checkbox__input"
         type="checkbox"
       />
     </button>
@@ -186,7 +186,7 @@ Array [
 exports[`Checkbox组件 快照测试 指定颜色 1`] = `
 Array [
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
     data-testid="checkbox"
     role="button"
@@ -206,12 +206,12 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 cIfoMJ sinoui-checkbox-button sinoui-checkbox-button__checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 cIfoMJ sinoui-checkbox sinoui-checkbox--checked"
     color="secondary"
     data-testid="checkbox"
     role="button"
@@ -231,12 +231,12 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dkNyDG sinoui-checkbox-button sinoui-checkbox-button__checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dkNyDG sinoui-checkbox sinoui-checkbox--checked"
     color="error"
     data-testid="checkbox"
     role="button"
@@ -256,12 +256,12 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 gpLamT sinoui-checkbox-button sinoui-checkbox-button__checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 gpLamT sinoui-checkbox sinoui-checkbox--checked"
     color="warning"
     data-testid="checkbox"
     role="button"
@@ -281,12 +281,12 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 eteBni sinoui-checkbox-button sinoui-checkbox-button__checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 eteBni sinoui-checkbox sinoui-checkbox--checked"
     color="success"
     data-testid="checkbox"
     role="button"
@@ -306,12 +306,12 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 bHvkWF sinoui-checkbox-button sinoui-checkbox-button__checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 bHvkWF sinoui-checkbox sinoui-checkbox--checked"
     color="info"
     data-testid="checkbox"
     role="button"
@@ -331,12 +331,12 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dKQQdn sinoui-checkbox-button sinoui-checkbox-button__checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dKQQdn sinoui-checkbox sinoui-checkbox--checked"
     color="actionActive"
     data-testid="checkbox"
     role="button"
@@ -356,12 +356,12 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 ijbwOW sinoui-checkbox-button sinoui-checkbox-button__checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 ijbwOW sinoui-checkbox sinoui-checkbox--checked"
     color="actionDisabled"
     data-testid="checkbox"
     role="button"
@@ -381,7 +381,7 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       type="checkbox"
     />
   </button>,
@@ -392,7 +392,7 @@ exports[`Checkbox组件 快照测试 设置只读 1`] = `
 Array [
   <button
     aria-disabled={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__disabled"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--disabled"
     color="primary"
     data-testid="checkbox"
     disabled={true}
@@ -412,14 +412,14 @@ Array [
       />
     </svg>
     <input
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       disabled={true}
       type="checkbox"
     />
   </button>,
   <button
     aria-disabled={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox-button sinoui-checkbox-button__readOnly"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--readOnly"
     color="primary"
     data-testid="checkbox"
     disabled={true}
@@ -439,7 +439,7 @@ Array [
       />
     </svg>
     <input
-      className="sinoui-checkbox-button-input"
+      className="sinoui-checkbox__input"
       readOnly={true}
       type="checkbox"
     />

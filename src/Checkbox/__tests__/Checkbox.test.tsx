@@ -17,7 +17,7 @@ describe('Checkbox 单元测试', () => {
     );
     const check = getByTestId('checkbox');
 
-    expect(check).toHaveClass('sinoui-checkbox-button__checked');
+    expect(check).toHaveClass('sinoui-checkbox--checked');
   });
 
   test('是否为部分选择状态', () => {
@@ -28,7 +28,7 @@ describe('Checkbox 单元测试', () => {
     );
     const check = getByTestId('checkbox');
 
-    expect(check).toHaveClass('sinoui-checkbox-button__indeterminate');
+    expect(check).toHaveClass('sinoui-checkbox--indeterminate');
   });
 
   test('是否为不可用状态', () => {
@@ -39,7 +39,7 @@ describe('Checkbox 单元测试', () => {
     );
     const check = getByTestId('checkbox');
 
-    expect(check).toHaveClass('sinoui-checkbox-button__disabled');
+    expect(check).toHaveClass('sinoui-checkbox--disabled');
   });
 });
 
