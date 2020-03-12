@@ -10,7 +10,7 @@ const listData = [1, 2, 3, 4];
 export default function Demo() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <List>
+      <List className="list" paddingLeft={32}>
         {listData.map((item) => (
           <>
             <ListItem>

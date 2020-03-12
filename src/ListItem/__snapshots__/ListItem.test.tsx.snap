@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 设置属性 1`] = `
+<ul
+  className="List-sc-1mlp4sc-0 feBjmm sinoui-list"
+>
+  <li
+    className="ListItem__Wrapper-sc-1jwmghb-0 IPZlx sinoui-list-item sinoui-list-item--insert sinoui-list-item--disabled-ripple"
+    disabled={true}
+    tabIndex="0"
+  >
+    item
+  </li>
+</ul>
+`;
+
+exports[`快照测试 默认 1`] = `
+<ul
+  className="List-sc-1mlp4sc-0 feBjmm sinoui-list"
+>
+  <li
+    className="ListItem__Wrapper-sc-1jwmghb-0 iucePS sinoui-list-item"
+    tabIndex="0"
+  >
+    item
+  </li>
+</ul>
+`;
