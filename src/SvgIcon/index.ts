@@ -1,3 +1,4 @@
-import SvgIcon from './SvgIcon';
+import SvgIcon, { SvgProps } from './SvgIcon';
 
+export { SvgProps };
 export default SvgIcon;
