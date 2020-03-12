@@ -1,0 +1,503 @@
+---
+id: list
+title: List 列表
+---
+
+import CardStoryLayout from './CardStoryLayout';
+import {
+  ListOneLine,
+  ListTwoLine,
+  ListOneLineIcon,
+  ListOneLineIconButton,
+  ListClicked,
+  ListCheckboxPrimary,
+  ListCheckboxSecondary,
+  ListDisabled,
+  ListInsert,
+  ListTwoLineIcon,
+  ListAvatarText,
+} from '../../../stories/ListDemo';
+
+> 列表是一组连续的文本或图像。列表的每一项可包含主要操作区、文本显示区和辅助操作区。
+
+## 单行文本列表
+
+示例：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import List from '@sinoui/core/List';
+import ListItem from '@sinoui/core/ListItem';
+import ListItemText from '@sinoui/core/ListItemText';
+import Divider from '@sinoui/core/Divider';
+
+const listData = [1, 2, 3, 4];
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <List>
+        {listData.map((item) => (
+          <>
+            <ListItem>
+              <ListItemText>item{item}</ListItemText>
+            </ListItem>
+            <Divider />
+          </>
+        ))}
+      </List>
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ListOneLine />
+</CardStoryLayout>
+
+## 多行文本列表
+
+示例：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import List from '@sinoui/core/List';
+import ListItem from '@sinoui/core/ListItem';
+import ListItemText from '@sinoui/core/ListItemText';
+import Divider from '@sinoui/core/Divider';
+
+const listData = [1, 2, 3, 4];
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <List>
+        {listData.map((item) => (
+          <>
+            <ListItem>
+              <ListItemText secondary={`subTitle${item}`}>
+                item{item}
+              </ListItemText>
+            </ListItem>
+            <Divider />
+          </>
+        ))}
+      </List>
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ListTwoLine />
+</CardStoryLayout>
+
+## 图标 + 单行文本 + 图标列表
+
+示例：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import List from '@sinoui/core/List';
+import ListItem from '@sinoui/core/ListItem';
+import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
+import ListItemText from '@sinoui/core/ListItemText';
+import ListItemSecondaryAction from '@sinoui/core/ListItemSecondaryAction';
+import Divider from '@sinoui/core/Divider';
+import BookmarkBorder from '@sinoui/icons/BookmarkBorder';
+import CheckBox from '@sinoui/icons/CheckBox';
+
+const listData = [1, 2, 3, 4];
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <List>
+        {listData.map((item) => (
+          <>
+            <ListItem>
+              <ListItemPrimaryAction>
+                <BookmarkBorder color="primary" />
+              </ListItemPrimaryAction>
+              <ListItemText>item{item}</ListItemText>
+              <ListItemSecondaryAction>
+                <CheckBox color="error" />
+              </ListItemSecondaryAction>
+            </ListItem>
+            <Divider />
+          </>
+        ))}
+      </List>
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ListOneLineIcon />
+</CardStoryLayout>
+
+## 图标 + 多行文本 + 图标列表
+
+示例：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import List from '@sinoui/core/List';
+import ListItem from '@sinoui/core/ListItem';
+import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
+import ListItemText from '@sinoui/core/ListItemText';
+import ListItemSecondaryAction from '@sinoui/core/ListItemSecondaryAction';
+import Divider from '@sinoui/core/Divider';
+import BookmarkBorder from '@sinoui/icons/BookmarkBorder';
+import CheckBox from '@sinoui/icons/CheckBox';
+
+const listData = [1, 2, 3, 4];
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <List>
+        {listData.map((item) => (
+          <>
+            <ListItem>
+              <ListItemPrimaryAction>
+                <BookmarkBorder color="primary" />
+              </ListItemPrimaryAction>
+              <ListItemText secondary="副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本副标题">
+                item{item}
+              </ListItemText>
+              <ListItemSecondaryAction>
+                <CheckBox color="error" />
+              </ListItemSecondaryAction>
+            </ListItem>
+            <Divider />
+          </>
+        ))}
+      </List>
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ListTwoLineIcon />
+</CardStoryLayout>
+
+## 头像 + 多行文本列表
+
+示例：
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import List from '@sinoui/core/List';
+import ListItem from '@sinoui/core/ListItem';
+import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
+import ListItemText from '@sinoui/core/ListItemText';
+import Divider from '@sinoui/core/Divider';
+import Avatar from '@sinoui/core/Avatar';
+
+const listData = [1, 2, 3, 4];
+export default function Demo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <List>
+        {listData.map((item) => (
+          <>
+            <ListItem>
+              <ListItemPrimaryAction>
+                <Avatar color="info">H</Avatar>
+              </ListItemPrimaryAction>
+              <ListItemText secondary="副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本副标题副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本副标题副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本副标题副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本副标题">
+                item{item}
+              </ListItemText>
+            </ListItem>
+            <Divider />
+          </>
+        ))}
+      </List>
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ListAvatarText />
+</CardStoryLayout>
+
+## checkBox + 文本 + 图标列表
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { produce } from 'immer';
+import List from '@sinoui/core/List';
+import ListItem from '@sinoui/core/ListItem';
+import ListItemText from '@sinoui/core/ListItemText';
+import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
+import ListSeconddarAction from '@sinoui/core/ListItemSecondaryAction';
+import Divider from '@sinoui/core/Divider';
+import BookmarkBorder from '@sinoui/icons/BookmarkBorder';
+import IconButton from '@sinoui/core/IconButton';
+
+const listData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+export default function Demo() {
+  const [selectItems, setSelectItems] = useState<number[]>([]);
+
+  const onClickItem = (_e: React.MouseEvent, item: number) => {
+    const index = selectItems.indexOf(item);
+    if (index !== -1) {
+      const newValue = produce(selectItems, (draft) => {
+        draft.splice(index, 1);
+      });
+      setSelectItems(newValue);
+    } else {
+      const newValue = produce(selectItems, (draft) => {
+        draft.push(item);
+      });
+      setSelectItems(newValue);
+    }
+  };
+
+  const onCheckboxChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    item: number,
+  ) => {
+    e.stopPropagation();
+    const index = selectItems.indexOf(item);
+    if (!e.target.checked && index !== -1) {
+      const newValue = produce(selectItems, (draft) => {
+        draft.splice(index, 1);
+      });
+      setSelectItems(newValue);
+    } else {
+      const newValue = produce(selectItems, (draft) => {
+        draft.push(item);
+      });
+      setSelectItems(newValue);
+    }
+  };
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <List>
+        {listData.map((item) => (
+          <>
+            <ListItem
+              onClick={(e: React.MouseEvent) => onClickItem(e, item)}
+              selected={selectItems.indexOf(item) !== -1}
+              key={item}
+            >
+              <ListItemPrimaryAction>
+                <input
+                  type="checkbox"
+                  checked={selectItems.indexOf(item) !== -1}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    onCheckboxChange(e, item)
+                  }
+                />
+              </ListItemPrimaryAction>
+              <ListItemText>item{item}</ListItemText>
+              <ListSeconddarAction>
+                <BookmarkBorder color="error" />
+              </ListSeconddarAction>
+            </ListItem>
+            <Divider />
+          </>
+        ))}
+      </List>
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ListCheckboxPrimary />
+</CardStoryLayout>
+
+## 单行文本 + checkbox 列表
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { produce } from 'immer';
+import List from '@sinoui/core/List';
+import ListItem from '@sinoui/core/ListItem';
+import ListItemText from '@sinoui/core/ListItemText';
+import ListItemSecondaryAction from '@sinoui/core/ListItemSecondaryAction';
+import Divider from '@sinoui/core/Divider';
+
+const listData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+export default function Demo() {
+  const [selectItems, setSelectItems] = useState<number[]>([]);
+
+  const onCheckboxChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    item: number,
+  ) => {
+    const index = selectItems.indexOf(item);
+    if (index !== -1) {
+      const newValue = produce(selectItems, (draft) => {
+        draft.splice(index, 1);
+      });
+      setSelectItems(newValue);
+    } else {
+      const newValue = produce(selectItems, (draft) => {
+        draft.push(item);
+      });
+      setSelectItems(newValue);
+    }
+    e.stopPropagation();
+  };
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <List>
+        {listData.map((item) => (
+          <>
+            <ListItem key={item} disabledRipple>
+              <ListItemText>item{item}</ListItemText>
+              <ListItemSecondaryAction>
+                <input
+                  type="checkbox"
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    onCheckboxChange(e, item)
+                  }
+                />
+              </ListItemSecondaryAction>
+            </ListItem>
+            <Divider />
+          </>
+        ))}
+      </List>
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ListCheckboxSecondary />
+</CardStoryLayout>
+
+## 嵌入列表
+
+示例：
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import { produce } from 'immer';
+import List from '@sinoui/core/List';
+import ListItem from '@sinoui/core/ListItem';
+import ListItemText from '@sinoui/core/ListItemText';
+import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
+import Divider from '@sinoui/core/Divider';
+import BookmarkBorder from '@sinoui/icons/BookmarkBorder';
+import Favorite from '@sinoui/icons/Favorite';
+import KeyboardArrowUp from '@sinoui/icons/KeyboardArrowUp';
+import KeyboardArrowDown from '@sinoui/icons/KeyboardArrowDown';
+import IconButton from '@sinoui/core/IconButton';
+import ListItemSecondaryAction from '@sinoui/core/ListItemSecondaryAction';
+
+const listData = [1, 2, 3, 4, 5, 6];
+const subListData = [1, 2];
+export default function Demo() {
+  const [expandItems, setExpandItems] = useState<number[]>([]);
+
+  const onClickItem = (e: React.MouseEvent, item: number) => {
+    e.stopPropagation();
+    const index = expandItems.indexOf(item);
+    if (index !== -1) {
+      const newValue = produce(expandItems, (draft) => {
+        draft.splice(index, 1);
+      });
+      setExpandItems(newValue);
+    } else {
+      const newValue = produce(expandItems, (draft) => {
+        draft.push(item);
+      });
+      setExpandItems(newValue);
+    }
+  };
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <List>
+        {listData.map((item) => (
+          <>
+            <ListItem disabledRipple key={item}>
+              <ListItemPrimaryAction>
+                <BookmarkBorder color="primary" />
+              </ListItemPrimaryAction>
+              <ListItemText>item{item}</ListItemText>
+              <ListItemSecondaryAction>
+                <IconButton
+                  color="primary"
+                  onClick={(e: React.MouseEvent) => onClickItem(e, item)}
+                >
+                  {expandItems.indexOf(item) !== -1 ? (
+                    <KeyboardArrowUp />
+                  ) : (
+                    <KeyboardArrowDown />
+                  )}
+                </IconButton>
+              </ListItemSecondaryAction>
+            </ListItem>
+            <List
+              insert
+              style={{
+                display: expandItems.indexOf(item) !== -1 ? 'block' : 'none',
+              }}
+            >
+              {subListData.map((subItem) => (
+                <>
+                  <ListItem key={subItem}>
+                    <ListItemPrimaryAction>
+                      <Favorite color="error" />
+                    </ListItemPrimaryAction>
+                    <ListItemText>subItem{subItem}</ListItemText>
+                  </ListItem>
+                  <Divider />
+                </>
+              ))}
+            </List>
+          </>
+        ))}
+      </List>
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ListInsert />
+</CardStoryLayout>
+
+## API
+
+- [List](../components-apis/list)

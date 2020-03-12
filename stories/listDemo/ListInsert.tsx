@@ -8,12 +8,13 @@ import ListItemText from '@sinoui/core/ListItemText';
 import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
 import Divider from '@sinoui/core/Divider';
 import BookmarkBorder from '@sinoui/icons/BookmarkBorder';
+import Favorite from '@sinoui/icons/Favorite';
 import KeyboardArrowUp from '@sinoui/icons/KeyboardArrowUp';
 import KeyboardArrowDown from '@sinoui/icons/KeyboardArrowDown';
 import IconButton from '@sinoui/core/IconButton';
 import ListItemSecondaryAction from '@sinoui/core/ListItemSecondaryAction';
 
-const listData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const listData = [1, 2, 3, 4, 5, 6];
 const subListData = [1, 2];
 export default function Demo() {
   const [expandItems, setExpandItems] = useState<number[]>([]);
@@ -39,11 +40,9 @@ export default function Demo() {
       <List>
         {listData.map((item) => (
           <>
-            <ListItem disabledRipple key={item} insert={item % 2 === 0}>
+            <ListItem disabledRipple key={item}>
               <ListItemPrimaryAction>
-                <IconButton color="primary">
-                  <BookmarkBorder />
-                </IconButton>
+                <BookmarkBorder color="primary" />
               </ListItemPrimaryAction>
               <ListItemText>item{item}</ListItemText>
               <ListItemSecondaryAction>
@@ -69,9 +68,7 @@ export default function Demo() {
                 <>
                   <ListItem key={subItem}>
                     <ListItemPrimaryAction>
-                      <IconButton color="primary">
-                        <BookmarkBorder />
-                      </IconButton>
+                      <Favorite color="error" />
                     </ListItemPrimaryAction>
                     <ListItemText>subItem{subItem}</ListItemText>
                   </ListItem>

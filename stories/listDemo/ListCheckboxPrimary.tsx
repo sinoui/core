@@ -6,6 +6,7 @@ import List from '@sinoui/core/List';
 import ListItem from '@sinoui/core/ListItem';
 import ListItemText from '@sinoui/core/ListItemText';
 import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
+import ListSeconddarAction from '@sinoui/core/ListItemSecondaryAction';
 import Divider from '@sinoui/core/Divider';
 import BookmarkBorder from '@sinoui/icons/BookmarkBorder';
 import IconButton from '@sinoui/core/IconButton';
@@ -68,6 +69,9 @@ export default function Demo() {
                 />
               </ListItemPrimaryAction>
               <ListItemText>item{item}</ListItemText>
+              <ListSeconddarAction>
+                <BookmarkBorder color="error" />
+              </ListSeconddarAction>
             </ListItem>
             <Divider />
           </>

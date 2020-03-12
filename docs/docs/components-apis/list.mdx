@@ -1,0 +1,94 @@
+---
+id: list
+title: List 列表
+---
+
+> 列表是一组连续的文本或图像。列表的每一项可包含主要操作区、文本显示区和辅助操作区。
+
+## List
+
+List 组件是列表的根组件。
+
+引入方式：
+
+```tsx
+import List from '@sinoui/core/List';
+```
+
+### 属性
+
+| 属性名         | 默认值 | 类型                | 描述                              |
+| -------------- | ------ | ------------------- | --------------------------------- |
+| insert         | false  | boolean             | 设置为`true`，表示是嵌入式列表。  |
+| disabledRipple | false  | boolean             | 设置为`true`,表示禁用 ripple 效果 |
+| paddingLeft    |        | number              | 设置 List 的子元素的左侧内边距    |
+| dense          | false  | boolean             | 设置为`true`,表示为密集模式       |
+| className      |        | string              | 自定义 class 名称                 |
+| style          |        | React.CSSProperties | 自定义样式                        |
+| as             | 'ul'   | React.ReactNode     | 指定根元素                        |
+
+## ListItem
+
+ListItem 是列表项组件。
+
+引入方式：
+
+```tsx
+import ListItem from '@sinoui/core/ListItem';
+```
+
+### 属性
+
+| 属性名         | 默认值 | 类型                                       | 描述                                       |
+| -------------- | ------ | ------------------------------------------ | ------------------------------------------ |
+| insert         | false  | boolean                                    | 设置为`true`，则是嵌入样式。               |
+| disabledRipple | false  | boolean                                    | 设置为`true`,表示禁用 ripple 效果          |
+| paddingLeft    |        | number                                     | 设置左侧内边距                             |
+| disabled       | false  | boolean                                    | 若设置为`true`，则为不可用状态，不可访问等 |
+| dense          | false  | boolean                                    | 设置为`true`,表示为密集模式                |
+| className      |        | string                                     | 自定义 class 名称                          |
+| style          |        | React.CSSProperties                        | 自定义样式                                 |
+| as             | 'li'   | React.ReactNode                            | 指定 dom 元素                              |
+| onClick        |        | (e: React.MouseEvent, value?: any) => void | 单击时的回调函数                           |
+| onDoubleClick  |        | (e: React.MouseEvent, value?: any) => void | 双击时的回调函数                           |
+
+## ListItemText
+
+ListItem 是列表项中用来渲染文本的组件。
+
+引入方式：
+
+```tsx
+import ListItemText from '@sinoui/core/ListItemText';
+```
+
+| 属性名    | 默认值 | 类型                | 描述                                                    |
+| --------- | ------ | ------------------- | ------------------------------------------------------- |
+| dense     | false  | boolean             | 设置为`true`,表示为密集模式                             |
+| className |        | string              | 自定义 class 名称                                       |
+| style     |        | React.CSSProperties | 自定义样式                                              |
+| secondary |        | React.ReactNode     | 指定 Item 的辅助性文本，可以是字符串也可以是`ReactNode` |
+
+## ListItemPrimaryAction
+
+ListItemPrimaryAction 是列表主要操作区，是一个容器组件。可放置图标、头像等辅助提升视觉效果，也可放操作按钮，在列表文本内容前面展示。主要操作区域的行为与`ListItem`的单击行为保持一致，即如果放可操作性控件，比如`Checkbox`等，则触发`ListItem`单击事件时，`Checkbox`选中状态要发生变化。
+
+引入方式：
+
+```tsx
+import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
+```
+
+## ListItemSecondaryAction
+
+ListItemSecondaryAction 是列表辅助操作区，是一个容器组件。可放置图标、文本、操作控件等，在文本后面展示。辅助操作区域的行为是独立的，即只有触发辅助操作区域内的元素时，才会触发其行为。例如： 如果放可操作性控件，比如`Checkbox`等，则只有在点击`Checkbox`元素本身时其选中状态才会发生变化。
+
+引入方式：
+
+```tsx
+import ListItemSecondaryAction from '@sinoui/core/ListItemSecondaryAction';
+```
+
+## 示例
+
+更多示例请查看[List 开发文档](../components/list)

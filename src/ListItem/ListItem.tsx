@@ -93,11 +93,8 @@ const ListItemStyle = css<ListItemProps>`
   display: flex;
   align-items: center;
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 16px;
-  min-height: 48px;
+  padding: 12px 16px;
   background-color: ${(props) => props.theme.palette.background.paper};
   outline: none;
   cursor: pointer;

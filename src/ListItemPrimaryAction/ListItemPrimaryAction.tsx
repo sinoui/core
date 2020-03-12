@@ -14,8 +14,9 @@ const ListItemPrimaryAction = styled.div`
     margin-right: 32px;
   }
 
-  & > .sinoui-icon-button {
-    margin: 8px 16px 8px 0;
+  & > .sinoui-icon-button,
+  & > .sinoui-avatar {
+    margin-right: 16px;
   }
 `;
 

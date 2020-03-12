@@ -5,10 +5,8 @@ import List from '@sinoui/core/List';
 import ListItem from '@sinoui/core/ListItem';
 import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
 import ListItemText from '@sinoui/core/ListItemText';
-import ListItemSecondaryAction from '@sinoui/core/ListItemSecondaryAction';
 import Divider from '@sinoui/core/Divider';
-import BookmarkBorder from '@sinoui/icons/BookmarkBorder';
-import CheckBox from '@sinoui/icons/CheckBox';
+import Avatar from '@sinoui/core/Avatar';
 
 const listData = [1, 2, 3, 4];
 export default function Demo() {
@@ -19,12 +17,11 @@ export default function Demo() {
           <>
             <ListItem>
               <ListItemPrimaryAction>
-                <BookmarkBorder color="primary" />
+                <Avatar color="info">H</Avatar>
               </ListItemPrimaryAction>
-              <ListItemText>item{item}</ListItemText>
-              <ListItemSecondaryAction>
-                <CheckBox color="error" />
-              </ListItemSecondaryAction>
+              <ListItemText secondary="副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本副标题副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本副标题副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本副标题副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本副标题">
+                item{item}
+              </ListItemText>
             </ListItem>
             <Divider />
           </>

@@ -6,7 +6,7 @@ import ListItem from '@sinoui/core/ListItem';
 import ListItemText from '@sinoui/core/ListItemText';
 import Divider from '@sinoui/core/Divider';
 
-const listData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const listData = [1, 2, 3, 4];
 export default function Demo() {
   return (
     <ThemeProvider theme={defaultTheme}>

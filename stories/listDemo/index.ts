@@ -7,6 +7,8 @@ import ListCheckboxPrimary from './ListCheckboxPrimary';
 import ListCheckboxSecondary from './ListCheckboxSecondary';
 import ListDisabled from './ListDisabled';
 import ListInsert from './ListInsert';
+import ListTwoLineIcon from './ListTwoLineIcon';
+import ListAvatarText from './ListAvatarText';
 export {
   ListOneLine,
   ListTwoLine,
@@ -17,4 +19,6 @@ export {
   ListCheckboxSecondary,
   ListDisabled,
   ListInsert,
+  ListTwoLineIcon,
+  ListAvatarText,
 };

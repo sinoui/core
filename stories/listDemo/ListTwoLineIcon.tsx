@@ -21,7 +21,9 @@ export default function Demo() {
               <ListItemPrimaryAction>
                 <BookmarkBorder color="primary" />
               </ListItemPrimaryAction>
-              <ListItemText>item{item}</ListItemText>
+              <ListItemText secondary="副标题辅助性文本副标题辅助性文本副标题副标题辅助性文本">
+                item{item}
+              </ListItemText>
               <ListItemSecondaryAction>
                 <CheckBox color="error" />
               </ListItemSecondaryAction>

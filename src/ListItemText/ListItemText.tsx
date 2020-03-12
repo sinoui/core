@@ -34,7 +34,6 @@ const Wrapper = styled.div.attrs((props: ListItemProps) => ({
     'sinoui-list-item-text--dense': props.dense,
   }),
 }))`
-  min-height: 48px;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -46,7 +45,7 @@ const Wrapper = styled.div.attrs((props: ListItemProps) => ({
 
 const Title = styled.div((props) => {
   return {
-    ...props.theme.typography.h6,
+    ...props.theme.typography.body1,
     overflow: 'hidden',
     'text-overflow': 'ellipsis',
     'white-space': 'nowrap',
@@ -54,8 +53,11 @@ const Title = styled.div((props) => {
 });
 const SecondaryTitle = styled.div((props) => {
   return {
-    ...props.theme.typography.subtitle1,
+    ...props.theme.typography.body2,
     color: props.theme.palette.text.secondary,
+    'white-space': 'pre-wrap',
+    'word-wrap': 'break-word',
+    'word-break': 'break-all',
   };
 });
 

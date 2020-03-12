@@ -9,6 +9,8 @@ import {
   ListCheckboxSecondary,
   ListDisabled,
   ListInsert,
+  ListTwoLineIcon,
+  ListAvatarText,
 } from './listDemo';
 
 export default {
@@ -21,7 +23,11 @@ export const 单行含图标 = () => <ListOneLineIcon />;
 
 export const 单行含IconButton = () => <ListOneLineIconButton />;
 
-export const 双行文本list = () => <ListTwoLine />;
+export const 双行文本 = () => <ListTwoLine />;
+
+export const 双行含图标 = () => <ListTwoLineIcon />;
+
+export const 多行文本含头像 = () => <ListAvatarText />;
 
 export const 单击 = () => <ListClicked />;
 
@@ -32,4 +38,4 @@ export const 辅助操作区行为 = () => <ListCheckboxSecondary />;
 
 export const 列表项禁用 = () => <ListDisabled />;
 
-export const 嵌入列表 = () => <ListInsert />;
+export const 嵌套列表 = () => <ListInsert />;
