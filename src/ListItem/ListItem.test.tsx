@@ -2,7 +2,8 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import renderer from 'react-test-renderer';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import '@testing-library/jest-dom/extend-expect';
 import List from '@sinoui/core/List';
 import ListItem from '@sinoui/core/ListItem';
@@ -78,6 +79,40 @@ describe('List', () => {
   //   );
   //   expect(getByTestId('list').children[0]).toHaveStyle('padding-left: 32px');
   // });
+
+  it('单击事件', () => {
+    const testClick = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <List>
+          <ListItem data-testid="listItem" onClick={testClick}>
+            item
+          </ListItem>
+        </List>
+      </ThemeProvider>,
+    );
+    act(() => {
+      fireEvent.click(getByTestId('listItem'));
+    });
+    expect(testClick).toHaveBeenCalled();
+  });
+
+  it('双击事件', () => {
+    const testDoubleClick = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <List>
+          <ListItem data-testid="listItem" onDoubleClick={testDoubleClick}>
+            item
+          </ListItem>
+        </List>
+      </ThemeProvider>,
+    );
+    act(() => {
+      fireEvent.doubleClick(getByTestId('listItem'));
+    });
+    expect(testDoubleClick).toHaveBeenCalled();
+  });
 });
 
 describe('快照测试', () => {
