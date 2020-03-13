@@ -68,28 +68,50 @@ const breakpointKeys: Array<'xs' | 'sm' | 'md' | 'lg' | 'xl'> = [
   'lg',
   'xl',
 ];
+
+/**
+ * 对应断点尺寸是否需要设置flex-grow: 1
+ * @param props
+ * @param breakpointKey
+ */
+const isFlexGrow = (
+  props: Props,
+  breakpointKey: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
+): boolean => {
+  let breakpointKeyIndex = breakpointKeys.findIndex(
+    (item) => item === breakpointKey,
+  );
+  // 判断对应断点是否设置了栅格
+  if (!props[breakpointKey]) {
+    //  则递归判断小于断点之前的断点是否设置了栅格 若都没有设置栅格 则flex-grow: 1,否则应用前一个断点的栅格数
+    if (breakpointKeyIndex > 0) {
+      breakpointKeyIndex -= breakpointKeyIndex;
+      isFlexGrow(props, breakpointKeys[breakpointKeyIndex]);
+    }
+
+    return !props[breakpointKey];
+  }
+  return false;
+};
+
 const breakpointsCss = css((props: Props & { theme: Theme }) => {
-  return breakpointKeys
-    .filter((item) => {
-      // colNum 为栅格数
-      const colNum = props[item];
-      return colNum && colNum > 0;
-    })
-    .reduce((result, item) => {
-      const mediaResult = result;
-      const colNum = props[item];
-      if (colNum && colNum > 0) {
-        mediaResult[
-          `@media screen and (min-width: ${props.theme.breakpoints[item]}px)`
-        ] = {
-          '&': {
-            width: `${(Math.min(colNum, 24) / 24) * 100}%`,
-            flexBasis: `${(Math.min(colNum, 24) / 24) * 100}%`,
-          },
-        };
-      }
-      return mediaResult;
-    }, {} as any);
+  return breakpointKeys.reduce((result, item) => {
+    const mediaResult = result;
+    // colNum 为栅格数
+    const colNum = props[item];
+    const mediaKey = `@media screen and (min-width: ${props.theme.breakpoints[item]}px)`;
+    mediaResult[mediaKey] = {
+      flexGrow: isFlexGrow(props, item) ? 1 : 0,
+    };
+    if (colNum && colNum > 0) {
+      mediaResult[mediaKey] = {
+        ...mediaResult[mediaKey],
+        width: `${(Math.min(colNum, 24) / 24) * 100}%`,
+        flexBasis: `${(Math.min(colNum, 24) / 24) * 100}%`,
+      };
+    }
+    return mediaResult;
+  }, {} as any);
 });
 
 const Column = styled.div.attrs(() => ({
@@ -97,7 +119,7 @@ const Column = styled.div.attrs(() => ({
 }))<Props>`
   display: block;
   box-sizing: border-box;
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   ${(props) => props.flexContainer && flexCss}
   ${breakpointsCss}
 `;

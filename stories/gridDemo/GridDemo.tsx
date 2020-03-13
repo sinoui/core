@@ -29,9 +29,6 @@ export default function Demo({
           <Column xs={12}>
             <div>col-xs-12</div>
           </Column>
-          <Column xs={12}>
-            <div>col-xs-12</div>
-          </Column>
         </Row>
       </Wrapper>
     </ThemeProvider>
