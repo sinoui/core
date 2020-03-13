@@ -23,8 +23,8 @@ export default function Demo({
           <Column style={{ width: '200px', flexGrow: 0 }}>
             <div>width: 200px</div>
           </Column>
-          <Column sm={24}>
-            <div>col-sm-24,其余auto</div>
+          <Column sm={12} xs={24} md={8}>
+            <div>sm-12,xs-24,md-8</div>
           </Column>
           <Column>
             <div>auto</div>
