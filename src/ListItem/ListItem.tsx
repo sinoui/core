@@ -71,13 +71,14 @@ const focusCss = css<ListItemProps>`
 
 const hoverCss = css<ListItemProps>`
   &:hover {
-    @media (hover: none) {
-      background-color: transparent;
+    ::before {
+      background-color: ${({ theme }) => theme.palette.action.hover};
     }
-  }
-
-  &:hover::before {
-    background-color: ${({ theme }) => theme.palette.action.hover};
+    @media (hover: none) {
+      &::before {
+        background-color: transparent;
+      }
+    }
   }
 `;
 
