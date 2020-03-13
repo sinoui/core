@@ -57,7 +57,11 @@ export interface ListItemProps {
  * 选中样式
  */
 const selectedCss = css<ListItemProps>`
-  background-color: ${opacify(-0.92, '#6200EE')};
+  background-color: ${(props) =>
+    opacify(
+      props.theme.palette.action.selectedOpacity - 1,
+      props.theme.palette.primary.main,
+    )};
 `;
 
 const focusCss = css<ListItemProps>`
@@ -83,7 +87,7 @@ const hoverCss = css<ListItemProps>`
 `;
 
 const disabledCss = css`
-  background-color: ${({ theme }) => theme.palette.action.disabled};
+  background-color: ${({ theme }) => theme.palette.action.disabledBackground};
   color: ${({ theme }) => theme.palette.text.disabled};
   cursor: default;
   pointer-events: none;
@@ -113,14 +117,10 @@ const ListItemStyle = css<ListItemProps>`
     z-index: 0;
   }
 
-  &.sinoui-list-item {
-    ${({ paddingLeft }) =>
-      paddingLeft !== undefined && `padding-left: ${paddingLeft}px`}
-  }
+  ${({ paddingLeft }) =>
+    paddingLeft !== undefined && `padding-left: ${paddingLeft}px`}
 
-  &.sinoui-list-item--insert {
-    padding-left: 32px;
-  }
+  ${({ insert }) => insert && `padding-left: 32px`}
 `;
 
 const Wrapper = styled.li.attrs((props: ListItemProps) => ({
@@ -139,10 +139,10 @@ const ListItem: OverriableComponent<ListItemProps, 'li'> = React.forwardRef<
   ListItemProps
 >((props, ref) => {
   const { disabledRipple, disabled } = props;
-  const rippleRef = useRipple<HTMLLIElement>();
+  const rippleConfig = disabledRipple ? { disabled: true } : { disabled };
+  const rippleRef = useRipple<HTMLLIElement>(rippleConfig);
   const listItemRef = useMultiRefs(rippleRef, ref);
-  return (
-    <Wrapper {...props} ref={disabledRipple || disabled ? ref : listItemRef} />
-  );
+
+  return <Wrapper {...props} ref={listItemRef} />;
 });
 export default ListItem;

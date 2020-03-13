@@ -34,23 +34,13 @@ const Wrapper = styled.div.attrs((props: ListItemProps) => ({
     'sinoui-list-item-text--dense': props.dense,
   }),
 }))`
-  display: flex;
   flex-grow: 1;
-  flex-direction: column;
-  justify-content: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  ${(props) => ({ ...props.theme.typography.body1 })}
 `;
 
-const Title = styled.div((props) => {
-  return {
-    ...props.theme.typography.body1,
-    overflow: 'hidden',
-    'text-overflow': 'ellipsis',
-    'white-space': 'nowrap',
-  };
-});
 const SecondaryTitle = styled.div((props) => {
   return {
     ...props.theme.typography.body2,
@@ -63,10 +53,16 @@ const SecondaryTitle = styled.div((props) => {
 
 export default function ListItemText(props: ListItemProps) {
   const { children, secondary, ...rest } = props;
+  console.log(typeof secondary);
   return (
     <Wrapper {...rest}>
-      <Title>{children}</Title>
-      {secondary && <SecondaryTitle>{secondary}</SecondaryTitle>}
+      {children}
+      {secondary &&
+        (typeof secondary === 'string' ? (
+          <SecondaryTitle>{secondary}</SecondaryTitle>
+        ) : (
+          secondary
+        ))}
     </Wrapper>
   );
 }

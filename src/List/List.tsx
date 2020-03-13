@@ -1,6 +1,7 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
-
+import OverriableComponent from '../OverridableComponent';
 /**
  * List  列表根组件
  */
@@ -31,7 +32,7 @@ export interface Props {
 const ListStyle = css<Props>`
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 8px 0;
   box-sizing: border-box;
 
   &.sinoui-list--insert > .sinoui-list-item {
@@ -44,7 +45,7 @@ const ListStyle = css<Props>`
   }
 `;
 
-const List = styled.ul.attrs((props: Props) => ({
+const StyledList = styled.ul.attrs((props: Props) => ({
   className: classNames('sinoui-list', {
     'sinoui-list--insert': props.insert,
     'sinoui-list--disabled-ripple': props.disabledRipple,
@@ -53,5 +54,30 @@ const List = styled.ul.attrs((props: Props) => ({
 }))<Props>`
   ${ListStyle}
 `;
+
+const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
+  HTMLUListElement,
+  Props
+>((props, ref) => {
+  const { children, ...rest } = props;
+  const renderChildren = () =>
+    React.Children.map(
+      children as React.ReactElement<any>,
+      (child: React.ReactElement<any>) => {
+        return React.cloneElement(React.Children.only(child), {
+          insert: child.props.insert || props.insert,
+          dense: child.props.dense || props.dense,
+          paddingLeft: child.props.paddingLeft || props.paddingLeft,
+          disabledRipple: child.props.disabledRipple || props.disabledRipple,
+        });
+      },
+    );
+
+  return (
+    <StyledList {...rest} ref={ref}>
+      {renderChildren()}
+    </StyledList>
+  );
+});
 
 export default List;

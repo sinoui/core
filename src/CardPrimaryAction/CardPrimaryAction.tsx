@@ -31,16 +31,17 @@ const StyledCardPrimaryAction = styled.div.attrs(() => ({ tabIndex: '0' }))`
   }
 
   &:hover {
-    @media (hover: none) {
-      background-color: transparent;
+    ::before {
+      background-color: ${({ theme }) =>
+        theme.palette.type === 'light'
+          ? opacify(-0.96, '#000')
+          : opacify(-0.96, '#fff')};
     }
-  }
-
-  &:hover::before {
-    background-color: ${({ theme }) =>
-      theme.palette.type === 'light'
-        ? opacify(-0.96, '#000')
-        : opacify(-0.96, '#fff')};
+    @media (hover: none) {
+      ::before {
+        background-color: transparent;
+      }
+    }
   }
 
   &:focus {
