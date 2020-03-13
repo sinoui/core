@@ -130,7 +130,6 @@ function RadioGroup(props: RadioGroupProps) {
         'sinoui-radio-group--readOnly': readOnly,
       })}
       block={block}
-      data-testid="radioGroup"
     >
       {React.Children.map(
         children,

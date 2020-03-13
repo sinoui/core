@@ -10,6 +10,7 @@ import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 import Checkbox from '@sinoui/core/Checkbox';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import CheckboxGroupDemo from './checkbox-demos/CheckboxGroupDemo';
 
 ## CheckboxGroup
 
@@ -19,8 +20,14 @@ import { defaultTheme } from '@sinoui/theme';
 import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 
 function CheckboxGroupDemo() {
+  const [value, setValue] = useState(['2', '3']);
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement | any>) => {
+    setValue(event.target.value);
+  };
+
   return (
-    <CheckboxGroup onChange={(value) => console.log(value)} value={['2', '3']}>
+    <CheckboxGroup onChange={onChange} value={value}>
       <Checkbox value="1">复选框1</Checkbox>
       <Checkbox value="2">复选框2</Checkbox>
       <Checkbox value="3">复选框3</Checkbox>
@@ -33,12 +40,7 @@ function CheckboxGroupDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <CheckboxGroup onChange={(value) => console.log(value)} value={['2', '3']}>
-    <Checkbox value="1">复选框1</Checkbox>
-    <Checkbox value="2">复选框2</Checkbox>
-    <Checkbox value="3">复选框3</Checkbox>
-    <Checkbox value="4">复选框4</Checkbox>
-  </CheckboxGroup>  
+  <CheckboxGroupDemo />
 </ThemeProvider>
 
 ## 设置items属性

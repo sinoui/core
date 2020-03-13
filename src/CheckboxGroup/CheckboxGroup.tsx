@@ -7,16 +7,25 @@ import { toggleItem } from './arrays';
 
 import Checkbox, { CheckboxProps } from '../Checkbox';
 
-const PaddingRightStyle = css`
+const PaddingRightStyle = css<{ labelPosition?: 'left' | 'right' }>`
   > .sinoui-form-control-label .sinoui-form-control-label__title {
-    padding-right: 16px;
+    padding-right: ${(props) =>
+      props.labelPosition === 'left' ? '4px' : '16px'};
+    padding-left: ${(props) => props.labelPosition === 'left' && '16px'};
   }
   > .sinoui-form-control-label:last-child .sinoui-form-control-label__title {
-    padding-right: 8px;
+    padding-right: ${(props) =>
+      props.labelPosition === 'left' ? '4px' : '8px'};
+  }
+  > .sinoui-form-control-label:first-child .sinoui-form-control-label__title {
+    padding-left: ${(props) => props.labelPosition === 'left' && '0px'};
   }
 `;
 
-const FormGroupWrapper = styled(FormGroup)<{ column?: boolean }>`
+const FormGroupWrapper = styled(FormGroup)<{
+  column?: boolean;
+  labelPosition?: 'left' | 'right';
+}>`
   ${(props) => !props.column && PaddingRightStyle};
 `;
 
@@ -32,7 +41,7 @@ export interface CheckboxGroupProps<T> {
   /**
    * 值发生变化的回调函数
    */
-  onChange?: (value: T[]) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement | any>) => void;
   /**
    * 复选框不可用
    */
@@ -168,20 +177,31 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
       const val: any =
         newValue && newValue.filter((el: T) => lists.indexOf(el) === -1);
 
+      Object.defineProperty(event, 'target', {
+        writable: true,
+        value: { value: val },
+      });
+
       if (!isControlled) {
         setGroupVal(val);
       }
       if (props.onChange) {
-        props.onChange(val);
+        props.onChange(event);
       }
     } else {
       const arr = new Set([...newValue, ...lists]);
       const newArr: any = Array.from(arr);
+
+      Object.defineProperty(event, 'target', {
+        writable: true,
+        value: { value: newArr },
+      });
+
       if (!isControlled) {
         setGroupVal(newArr);
       }
       if (props.onChange) {
-        props.onChange(newArr);
+        props.onChange(event);
       }
     }
   };
@@ -211,7 +231,11 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
 
     if (props.onChange) {
       event.stopPropagation();
-      props.onChange(val);
+      Object.defineProperty(event, 'target', {
+        writable: true,
+        value: { value: val },
+      });
+      props.onChange(event);
     }
   }
 
@@ -279,7 +303,7 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
     <FormGroupWrapper
       {...rest}
       className={classNames('sinoui-checkbox-group', className)}
-      data-testid="checkboxGroup"
+      labelPosition={labelPosition}
     >
       {renderSelectAll()}
       {items ? items.map(child) : React.Children.map(children, child)}

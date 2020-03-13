@@ -9,8 +9,29 @@ import { useCallback } from 'react';
 import Checkbox from '@sinoui/core/Checkbox';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import CheckboxDemo from './checkbox-demos/CheckboxDemo';
 
 ## Checkbox
+
+```tsx
+import Checkbox from '@sinoui/core/Checkbox';
+
+function CheckboxDemo() {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(e.target.checked);
+  };
+
+  return <Checkbox checked={checked} onChange={handleChange} />;
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <CheckboxDemo />
+</ThemeProvider>
 
 ## 基本使用
 

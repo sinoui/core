@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import Checkbox from '@sinoui/core/Checkbox';
 import StoryLayout from './StoryLayout';
 
@@ -9,18 +9,11 @@ export default {
 function StatefulCheckbox() {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = useCallback(
-    (e) => {
-      setChecked(e.target.checked);
-    },
-    [checked],
-  );
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(e.target.checked);
+  };
 
-  return (
-    <>
-      <Checkbox checked={checked} onChange={handleChange} />
-    </>
-  );
+  return <Checkbox checked={checked} onChange={handleChange} />;
 }
 
 export const 基本使用 = () => (

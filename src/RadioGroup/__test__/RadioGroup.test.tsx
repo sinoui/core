@@ -17,7 +17,7 @@ describe('RadioGroup 单元测试', () => {
   test('测试children', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <RadioGroup>
+        <RadioGroup data-testid="radioGroup">
           <Radio value="1">单选框</Radio>
         </RadioGroup>
       </ThemeProvider>,
@@ -30,7 +30,7 @@ describe('RadioGroup 单元测试', () => {
   test('纵向排列的class类名', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <RadioGroup block>
+        <RadioGroup block data-testid="radioGroup">
           <Radio value="1">单选框</Radio>
         </RadioGroup>
       </ThemeProvider>,

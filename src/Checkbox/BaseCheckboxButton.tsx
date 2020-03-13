@@ -3,12 +3,17 @@ import classNames from 'classnames';
 import styled from 'styled-components';
 import BaseButton from '@sinoui/core/BaseButton';
 import colorCss from '@sinoui/core/utils/colorCss';
+import { opacify } from 'polished';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import IndeterminateCheckBoxIcon from './svg-icons/IndeterminateCheckBox';
 import CheckBoxOutlineBlank from './svg-icons/CheckBoxOutlineBlank';
 import CheckBox from './svg-icons/CheckBox';
 
 const BaseToggleButton = styled(BaseButton)`
   position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   outline: none;
   border: 0px;
   vertical-align: middle;
@@ -19,12 +24,30 @@ const BaseToggleButton = styled(BaseButton)`
   }
 
   pointer-events: default;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   color: ${(props) => props.theme.palette.text.secondary};
 
   & .sinoui-svg-icon {
     font-size: 20px;
+  }
+
+  &:hover {
+    width: 40px;
+    height: 40px;
+    background-color: ${({ theme }) => theme.palette.action.hover};
+    // Reset on touch devices, it doesn't add specificity
+    @media (hover: none) {
+      background-color: transparent;
+    }
+  }
+  &:focus {
+    background-color: ${({ theme, color }) =>
+      opacify(
+        theme.palette.action.hoverOpacity - 1,
+        getColorFromTheme(theme, color) as string,
+      )};
   }
 
   &.sinoui-checkbox--checked {
@@ -38,9 +61,6 @@ const BaseToggleButton = styled(BaseButton)`
     cursor: default;
     pointer-events: none;
     color: ${(props) => props.theme.palette.action.disabled};
-  }
-
-  &:hover {
     background-color: transparent;
   }
 
@@ -58,16 +78,14 @@ const BaseToggleButton = styled(BaseButton)`
   }
 
   & .sinoui-checkbox__ripple {
-    width: 48px;
-    height: 48px;
-    border-radius: 32px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
   }
 
   & .sinoui-checkbox__ripple-layout {
-    left: -14px;
-    top: -14px;
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
 `;
 
