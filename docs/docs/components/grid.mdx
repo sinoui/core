@@ -698,7 +698,7 @@ export default function Demo() {
 ## 自动布局
 
 - 若 Column 组件没有设置 xs、sm、md、lg、xs 属性值,则在断点对应尺寸下每列平均分配剩余空间。
-- 如果 Column 组件通过 style 属性或者 ClassName 设置了 width 样式(设置 width 的同时还需要设置 flow-grow:1 以防止存在剩余空间时列会自动伸展)，则列宽为设置的 width 值。
+- 如果 Column 组件通过 style 属性或者 ClassName 设置了 width 样式(设置 width 的同时还需要设置 flow-grow:0 以防止存在剩余空间时列会自动伸展)，则列宽为设置的 width 值。
 
 Demo.tsx
 
