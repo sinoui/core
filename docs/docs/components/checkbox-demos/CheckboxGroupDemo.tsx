@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 import Checkbox from '@sinoui/core/Checkbox';
 
-export default function CheckboxGroupDemo() {
+export default function CheckboxGroupDemo(props) {
   const [value, setValue] = useState(['2', '3']);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement | any>) => {
@@ -10,7 +10,7 @@ export default function CheckboxGroupDemo() {
   };
 
   return (
-    <CheckboxGroup onChange={onChange} value={value}>
+    <CheckboxGroup onChange={onChange} value={value} {...props}>
       <Checkbox value="1">复选框1</Checkbox>
       <Checkbox value="2">复选框2</Checkbox>
       <Checkbox value="3">复选框3</Checkbox>

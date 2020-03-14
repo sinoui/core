@@ -1,7 +1,7 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import renderer, { act } from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import CheckboxGroup from '@sinoui/core/CheckboxGroup';
@@ -85,6 +85,61 @@ describe('CheckboxGroup 单元测试', () => {
 
     const check = container.querySelectorAll('.sinoui-checkbox--checked');
     expect(check.length).toBe(2);
+  });
+
+  test('非受控使用，即无value', () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <CheckboxGroup onChange={onChange}>
+          <Checkbox value="1">复选框</Checkbox>
+          <Checkbox value="2">复选框2</Checkbox>
+          <Checkbox value="3">复选框3</Checkbox>
+        </CheckboxGroup>
+      </ThemeProvider>,
+    );
+    const checkboxInput = container.querySelectorAll(
+      '.sinoui-checkbox__input',
+    )[1] as HTMLElement;
+
+    expect(checkboxInput).not.toBeChecked();
+
+    act(() => {
+      fireEvent.change(checkboxInput, {
+        target: {
+          checked: true,
+        },
+      });
+    });
+
+    expect(checkboxInput).toBeChecked();
+  });
+  test('切换选中状态', () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <CheckboxGroup onChange={onChange} value={['3']}>
+          <Checkbox value="1">复选框</Checkbox>
+          <Checkbox value="2">复选框2</Checkbox>
+          <Checkbox value="3">复选框3</Checkbox>
+        </CheckboxGroup>
+      </ThemeProvider>,
+    );
+    const checkboxInput = container.querySelectorAll(
+      '.sinoui-checkbox__input',
+    )[1] as HTMLElement;
+
+    expect(checkboxInput).not.toBeChecked();
+
+    act(() => {
+      fireEvent.change(checkboxInput, {
+        target: {
+          checked: true,
+        },
+      });
+    });
+
+    expect(checkboxInput).toBeChecked();
   });
 });
 

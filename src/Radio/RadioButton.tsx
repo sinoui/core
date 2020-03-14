@@ -2,39 +2,25 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import BaseButton from '@sinoui/core/BaseButton';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
-import { Theme } from '@sinoui/theme';
+import { opacify } from 'polished';
 import classNames from 'classnames';
 import RadioButtonCheckedIcon from './svg-icons/RadioButtonChecked';
 import RadioButtonUncheckedIcon from './svg-icons/RadioButtonUnchecked';
 
-/**
- * 颜色
- */
-const colorWrapper = (props: RadioButtonProps) => {
-  let color;
-  if (props.theme) {
-    if (props.disabled) {
-      color = getColorFromTheme(props.theme, 'actionDisabled');
-    } else if (props.checked) {
-      color = getColorFromTheme(props.theme, props.color);
-    } else {
-      color = getColorFromTheme(props.theme, 'textSecondary');
-    }
-  }
-  return color;
-};
-
-const ToggleButton = styled(BaseButton)`
-  color: ${(props) => colorWrapper(props)};
+const ToggleButton = styled(BaseButton).attrs(() => ({
+  forwardedAs: 'span',
+}))<{ checked?: boolean }>`
   > .sinoui-icon,
   > .sinoui-svg-icon {
     font-size: 20px;
   }
   width: 40px;
   height: 40px;
-
-  &:hover {
-    background-color: transparent;
+  border-radius: 50%;
+  color: ${({ theme, checked, color }) =>
+    checked ? getColorFromTheme(theme, color) : theme.palette.text.secondary};
+  &.sinoui-radio--disabled {
+    color: ${(props) => props.theme.palette.text.disabled};
   }
   & .sinoui-radio__ripple {
     width: 40px;
@@ -45,6 +31,27 @@ const ToggleButton = styled(BaseButton)`
   & .sinoui-radio__ripple-layout {
     width: 40px;
     height: 40px;
+  }
+
+  &:hover {
+    background-color: ${({ theme, color, checked }) =>
+      !checked
+        ? theme.palette.action.hover
+        : opacify(
+            theme.palette.action.hoverOpacity - 1,
+            getColorFromTheme(theme, color) as string,
+          )};
+
+    @media (hover: none) {
+      background-color: transparent;
+    }
+  }
+  &:focus {
+    background-color: ${({ theme, color }) =>
+      opacify(
+        theme.palette.action.hoverOpacity - 1,
+        getColorFromTheme(theme, color) as string,
+      )};
   }
 `;
 
@@ -61,15 +68,11 @@ const StyleInput = styled.input`
   border: none;
 `;
 
-export interface RadioButtonProps {
+export interface Props {
   /**
    * 是否被选中
    */
   checked?: boolean;
-  /**
-   * 选中的图标
-   */
-  checkedIcon?: React.ReactChild;
   /**
    * 是否不可用
    */
@@ -78,10 +81,6 @@ export interface RadioButtonProps {
    * 是否只读
    */
   readOnly?: boolean;
-  /**
-   * 未选中的图标
-   */
-  icon?: React.ReactChild;
   /**
    * input的其它属性
    */
@@ -97,15 +96,10 @@ export interface RadioButtonProps {
   /**
    * 值发生变化的回调函数
    */
-  onChange?: (event: React.ChangeEvent<HTMLElement>, checked: boolean) => void;
-  /**
-   * 指定获取焦点事件监听器
-   */
-  onFocus?: (event: React.FocusEvent<HTMLElement>) => void;
-  /**
-   * 指定失去焦点事件监听器
-   */
-  onBlur?: (event: React.FocusEvent<HTMLElement>) => void;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean,
+  ) => void;
   /**
    * 键盘事件
    */
@@ -134,13 +128,16 @@ export interface RadioButtonProps {
    * 指定颜色
    */
   color?: string;
-  theme?: Theme;
+  /**
+   * 给input元素应用上样式类
+   */
+  inputClassName?: string;
 }
 
 /**
  * 基本展示组件
  */
-function RadioButton(props: RadioButtonProps) {
+function RadioButton(props: Props) {
   const { checked, defaultChecked } = props;
   const isControlled = checked != null;
   const [check, setCheck] = useState(
@@ -161,31 +158,9 @@ function RadioButton(props: RadioButtonProps) {
     }
   };
 
-  const handleFocus = (event: React.FocusEvent<HTMLElement>) => {
-    if (props.readOnly) {
-      return;
-    }
-
-    if (props.onFocus) {
-      props.onFocus(event);
-    }
-  };
-
-  const handleBlur = (event: React.FocusEvent<HTMLElement>) => {
-    if (props.readOnly) {
-      return;
-    }
-
-    if (props.onBlur) {
-      props.onBlur(event);
-    }
-  };
-
   const {
     checked: checkedProp,
-    checkedIcon = <RadioButtonCheckedIcon />,
     disabled: disabledProp,
-    icon: iconProp = <RadioButtonUncheckedIcon />,
     inputProps,
     inputRef,
     name,
@@ -195,12 +170,17 @@ function RadioButton(props: RadioButtonProps) {
     readOnly: readOnlyProp,
     color = 'primary',
     className,
+    inputClassName,
     ...other
   } = props;
 
   const checkedNew = isControlled ? checkedProp : check;
 
-  const icon = checkedNew ? checkedIcon : iconProp;
+  const icon = checkedNew ? (
+    <RadioButtonCheckedIcon />
+  ) : (
+    <RadioButtonUncheckedIcon />
+  );
 
   const rippleConfig = {
     center: true,
@@ -233,8 +213,7 @@ function RadioButton(props: RadioButtonProps) {
         value={value}
         ref={inputRef}
         {...inputProps}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
+        className={classNames('sinoui-radio__input', inputClassName)}
       />
     </ToggleButton>
   );
