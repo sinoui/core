@@ -38,10 +38,7 @@ export default function Demo({
           <Column xs={24} sm={12} md={6} lg={4}>
             <div>col-xs-24,col-sm-12,col-md-6,col-lg-4</div>
           </Column>
-          <Column xs={24} sm={12} md={6} lg={4}>
-            <div>col-xs-24,col-sm-12,col-md-6,col-lg-4</div>
-          </Column>
-          <Column xs={24} sm={12} md={6} lg={4}>
+          <Column sm={12} md={6} lg={4}>
             <div>col-xs-24,col-sm-12,col-md-6,col-lg-4</div>
           </Column>
         </Row>

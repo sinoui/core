@@ -20,11 +20,11 @@ export default function Demo({
           justifyContent={justifyContent}
           alignItems={alignItems}
         >
-          <Column style={{ width: '200px' }}>
+          <Column style={{ width: '200px', flexGrow: 0 }}>
             <div>width: 200px</div>
           </Column>
-          <Column>
-            <div>auto</div>
+          <Column sm={12} xs={24} md={8}>
+            <div>sm-12,xs-24,md-8</div>
           </Column>
           <Column>
             <div>auto</div>

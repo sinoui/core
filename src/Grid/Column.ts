@@ -68,28 +68,22 @@ const breakpointKeys: Array<'xs' | 'sm' | 'md' | 'lg' | 'xl'> = [
   'lg',
   'xl',
 ];
+
 const breakpointsCss = css((props: Props & { theme: Theme }) => {
-  return breakpointKeys
-    .filter((item) => {
-      // colNum 为栅格数
-      const colNum = props[item];
-      return colNum && colNum > 0;
-    })
-    .reduce((result, item) => {
-      const mediaResult = result;
-      const colNum = props[item];
-      if (colNum && colNum > 0) {
-        mediaResult[
-          `@media screen and (min-width: ${props.theme.breakpoints[item]}px)`
-        ] = {
-          '&': {
-            width: `${(Math.min(colNum, 24) / 24) * 100}%`,
-            flexBasis: `${(Math.min(colNum, 24) / 24) * 100}%`,
-          },
-        };
-      }
-      return mediaResult;
-    }, {} as any);
+  return breakpointKeys.reduce((result, item) => {
+    const mediaResult = result;
+    // colNum 为栅格数
+    const colNum = props[item];
+    const mediaKey = `@media screen and (min-width: ${props.theme.breakpoints[item]}px)`;
+    if (colNum && colNum > 0) {
+      mediaResult[mediaKey] = {
+        width: `${(Math.min(colNum, 24) / 24) * 100}%`,
+        flexBasis: `${(Math.min(colNum, 24) / 24) * 100}%`,
+        flexGrow: 0,
+      };
+    }
+    return mediaResult;
+  }, {} as any);
 });
 
 const Column = styled.div.attrs(() => ({

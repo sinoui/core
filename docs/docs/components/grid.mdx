@@ -65,9 +65,6 @@ export default function Demo() {
           <Column xs={12}>
             <div>col-xs-12</div>
           </Column>
-          <Column xs={12}>
-            <div>col-xs-12</div>
-          </Column>
         </Row>
       </Wrapper>
     </ThemeProvider>
@@ -108,9 +105,6 @@ export default function Demo() {
           <Column xs={12}>
             <div>col-xs-12</div>
           </Column>
-          <Column xs={12}>
-            <div>col-xs-12</div>
-          </Column>
         </Row>
       </Wrapper>
     </ThemeProvider>
@@ -142,9 +136,6 @@ export default function Demo() {
     <ThemeProvider theme={defaultTheme}>
       <Wrapper>
         <Row gutterType="around" gutter={8}>
-          <Column xs={12}>
-            <div>col-xs-12</div>
-          </Column>
           <Column xs={12}>
             <div>col-xs-12</div>
           </Column>
@@ -691,9 +682,6 @@ export default function Demo() {
           <Column xs={12} sm={6} md={4} lg={3}>
             <div>col-xs-12,col-sm-6,col-md-4,col-lg-3</div>
           </Column>
-          <Column xs={12} sm={6} md={4} lg={3}>
-            <div>col-xs-12,col-sm-6,col-md-4,col-lg-3</div>
-          </Column>
         </Row>
       </Wrapper>
     </ThemeProvider>
@@ -709,8 +697,8 @@ export default function Demo() {
 
 ## 自动布局
 
-- 如果 Column 组件没有设置任何 xs、sm、md、lg、xs 属性值,则每列平均分配剩余空间。
-- 如果 Column 组件通过 style 属性或者 ClassName 设置了 width 样式，则列宽为设置的 width 值。
+- 若 Column 组件没有设置 xs、sm、md、lg、xs 属性值,则在断点对应尺寸下每列平均分配剩余空间。
+- 如果 Column 组件通过 style 属性或者 ClassName 设置了 width 样式(设置 width 的同时还需要设置 flow-grow:0 以防止存在剩余空间时列会自动伸展)，则列宽为设置的 width 值。
 
 Demo.tsx
 
@@ -730,8 +718,8 @@ export default function Demo() {
           <Column style={{ width: '200px' }}>
             <div>width: 200px</div>
           </Column>
-          <Column>
-            <div>auto</div>
+          <Column sm={24}>
+            <div>col-sm-24,其余auto</div>
           </Column>
           <Column>
             <div>auto</div>
