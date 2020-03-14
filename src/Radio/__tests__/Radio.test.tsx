@@ -15,7 +15,7 @@ describe('Radio 单元测试', () => {
   test('测试是否选中', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Radio checked readOnly />
+        <Radio checked readOnly data-testid="radio" />
       </ThemeProvider>,
     );
     const test = getByTestId('radio');
@@ -25,7 +25,7 @@ describe('Radio 单元测试', () => {
   test('测试是否不可用', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Radio disabled />
+        <Radio disabled data-testid="radio" />
       </ThemeProvider>,
     );
     const test = getByTestId('radio');

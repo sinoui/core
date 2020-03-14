@@ -4,26 +4,13 @@ import styled from 'styled-components';
 import BaseButton from '@sinoui/core/BaseButton';
 import { opacify } from 'polished';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
-import { Theme } from '@sinoui/theme';
 import IndeterminateCheckBoxIcon from './svg-icons/IndeterminateCheckBox';
 import CheckBoxOutlineBlank from './svg-icons/CheckBoxOutlineBlank';
 import CheckBox from './svg-icons/CheckBox';
 
-const colorWrapper = (props: Props) => {
-  let color;
-  if (props.theme) {
-    if (props.disabled) {
-      color = getColorFromTheme(props.theme, 'actionDisabled');
-    } else if (props.checked) {
-      color = getColorFromTheme(props.theme, props.color);
-    } else {
-      color = getColorFromTheme(props.theme, 'textSecondary');
-    }
-  }
-  return color;
-};
-
-const BaseToggleButton = styled(BaseButton)`
+const BaseToggleButton = styled(BaseButton).attrs(() => ({
+  forwardedAs: 'span',
+}))<Props>`
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -41,17 +28,24 @@ const BaseToggleButton = styled(BaseButton)`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  color: ${(props) => colorWrapper(props)};
+  color: ${({ theme, checked, indeterminate, color }) =>
+    checked || indeterminate
+      ? getColorFromTheme(theme, color)
+      : theme.palette.text.secondary};
 
   & .sinoui-svg-icon {
     font-size: 20px;
   }
 
-  /* &:hover {
-    width: 40px;
-    height: 40px;
-    background-color: ${({ theme }) => theme.palette.action.hover};
-    // Reset on touch devices, it doesn't add specificity
+  &:hover {
+    background-color: ${({ theme, color, checked, indeterminate }) =>
+      !checked && !indeterminate
+        ? theme.palette.action.hover
+        : opacify(
+            theme.palette.action.hoverOpacity - 1,
+            getColorFromTheme(theme, color) as string,
+          )};
+
     @media (hover: none) {
       background-color: transparent;
     }
@@ -62,14 +56,13 @@ const BaseToggleButton = styled(BaseButton)`
         theme.palette.action.hoverOpacity - 1,
         getColorFromTheme(theme, color) as string,
       )};
-  } */
-
- 
+  }
 
   &.sinoui-checkbox--disabled {
     cursor: default;
     pointer-events: none;
     background-color: transparent;
+    color: ${(props) => props.theme.palette.text.disabled};
   }
 
   & .sinoui-checkbox__input {
@@ -159,7 +152,6 @@ export interface Props {
    * 指定颜色
    */
   color?: string;
-  theme?: Theme;
 }
 
 const checkedCheckboxIcon = <CheckBox />;
@@ -223,7 +215,6 @@ export default function BaseCheckboxButton(props: Props) {
       ripple={rippleConfig}
       checked={checked}
       indeterminate={indeterminate}
-      data-testid="checkbox"
       {...rest}
     >
       {iconWrapper()}

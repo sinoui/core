@@ -1,7 +1,7 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import renderer, { act } from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import Checkbox from '@sinoui/core/Checkbox';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
@@ -12,7 +12,7 @@ describe('Checkbox 单元测试', () => {
   test('是否选中', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Checkbox checked readOnly />
+        <Checkbox checked readOnly data-testid="checkbox" />
       </ThemeProvider>,
     );
     const check = getByTestId('checkbox');
@@ -23,7 +23,7 @@ describe('Checkbox 单元测试', () => {
   test('是否为部分选择状态', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Checkbox indeterminate />
+        <Checkbox indeterminate data-testid="checkbox" />
       </ThemeProvider>,
     );
     const check = getByTestId('checkbox');
@@ -34,12 +34,37 @@ describe('Checkbox 单元测试', () => {
   test('是否为不可用状态', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Checkbox disabled />
+        <Checkbox disabled data-testid="checkbox" />
       </ThemeProvider>,
     );
     const check = getByTestId('checkbox');
 
     expect(check).toHaveClass('sinoui-checkbox--disabled');
+  });
+
+  it('切换选中状态', () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Checkbox indeterminate onChange={onChange} />
+      </ThemeProvider>,
+    );
+
+    const checkboxInput = container.querySelector(
+      '.sinoui-checkbox__input',
+    ) as HTMLElement;
+
+    expect(checkboxInput).not.toBeChecked();
+
+    act(() => {
+      fireEvent.change(checkboxInput, {
+        target: {
+          checked: true,
+        },
+      });
+    });
+
+    expect(checkboxInput).toBeChecked();
   });
 });
 
