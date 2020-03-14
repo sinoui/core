@@ -53,7 +53,6 @@ const SecondaryTitle = styled.div((props) => {
 
 export default function ListItemText(props: ListItemProps) {
   const { children, secondary, ...rest } = props;
-  console.log(typeof secondary);
   return (
     <Wrapper {...rest}>
       {children}

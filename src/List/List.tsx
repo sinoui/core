@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import OverriableComponent from '../OverridableComponent';
+import useMultiRefs from '../utils/useMultiRefs';
+
 /**
  * List  列表根组件
  */
@@ -55,10 +57,52 @@ const StyledList = styled.ul.attrs((props: Props) => ({
   ${ListStyle}
 `;
 
+// 将nodeList转换为数组
+const nodeListToArray = (listRef: HTMLElement | null) => {
+  const arr = [];
+  const anchors = listRef?.querySelectorAll('.sinoui-list-item') || [];
+  anchors.forEach((item: any) => {
+    arr.push(item);
+  });
+
+  return arr;
+};
+
 const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
   HTMLUListElement,
   Props
 >((props, ref) => {
+  const listRef = React.createRef<HTMLElement>();
+  const multiRef = useMultiRefs(listRef, ref);
+
+  useEffect(() => {
+    const listItemsLen =
+      listRef.current?.querySelectorAll('.sinoui-list-item').length || 0;
+    document.onkeydown = function(e) {
+      let focusIndex = nodeListToArray(listRef.current).findIndex(
+        (item) => item === document.activeElement,
+      );
+      if (listItemsLen > 0) {
+        switch ((e || window.event).keyCode) {
+          case 38:
+            focusIndex = focusIndex > 0 ? focusIndex - 1 : 0;
+            break;
+          case 40:
+            focusIndex =
+              focusIndex < listItemsLen - 1 ? focusIndex + 1 : listItemsLen - 1;
+            break;
+          default:
+            break;
+        }
+        (listRef.current?.querySelectorAll('.sinoui-list-item')[
+          focusIndex
+        ] as HTMLInputElement).focus();
+      }
+    };
+    return () => {
+      document.onkeydown = null;
+    };
+  }, [listRef]);
   const { children, ...rest } = props;
   const renderChildren = () =>
     React.Children.map(
@@ -74,7 +118,7 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
     );
 
   return (
-    <StyledList {...rest} ref={ref}>
+    <StyledList {...rest} ref={multiRef}>
       {renderChildren()}
     </StyledList>
   );
