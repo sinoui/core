@@ -7,24 +7,21 @@
 
 module.exports = {
   docs: {
-    组件: [
-      {
-        type: 'category',
-        label: '通用',
-        items: [
-          'components/button',
-          'components/divider',
-          'components/typography',
-          'components/card',
-          'components/svg-icon',
-          'components/fab',
-          'components/checkbox',
-          'components/checkboxGroup',
-          'components/radio',
-          'components/radioGroup',
-        ],
-      },
-    ],
+    组件: [{
+      type: 'category',
+      label: '通用',
+      items: [
+        'components/button',
+        'components/divider',
+        'components/typography',
+        'components/card',
+        'components/svg-icon',
+        'components/fab',
+        'components/checkbox',
+        'components/checkboxGroup',
+        'components/radioGroup',
+      ],
+    }, ],
     组件API: [
       'components-apis/base-button',
       'components-apis/button',

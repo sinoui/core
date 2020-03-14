@@ -3,7 +3,7 @@
 exports[`Checkbox组件 快照测试 基本使用 1`] = `
 Array [
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
     color="primary"
     data-testid="checkbox"
     role="button"
@@ -27,7 +27,7 @@ Array [
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
     data-testid="checkbox"
     role="button"
@@ -52,7 +52,7 @@ Array [
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--indeterminate"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--indeterminate"
     color="primary"
     data-testid="checkbox"
     role="button"
@@ -81,10 +81,10 @@ Array [
 exports[`Checkbox组件 快照测试 带有文字复选框 1`] = `
 Array [
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -114,10 +114,10 @@ Array [
     </span>
   </label>,
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -148,10 +148,10 @@ Array [
     </span>
   </label>,
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -186,7 +186,7 @@ Array [
 exports[`Checkbox组件 快照测试 指定颜色 1`] = `
 Array [
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
     data-testid="checkbox"
     role="button"
@@ -211,7 +211,7 @@ Array [
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 cIfoMJ sinoui-checkbox sinoui-checkbox--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dfAuNK sinoui-checkbox sinoui-checkbox--checked"
     color="secondary"
     data-testid="checkbox"
     role="button"
@@ -236,7 +236,7 @@ Array [
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dkNyDG sinoui-checkbox sinoui-checkbox--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 BJdlr sinoui-checkbox sinoui-checkbox--checked"
     color="error"
     data-testid="checkbox"
     role="button"
@@ -261,7 +261,7 @@ Array [
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 gpLamT sinoui-checkbox sinoui-checkbox--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 hQHMPE sinoui-checkbox sinoui-checkbox--checked"
     color="warning"
     data-testid="checkbox"
     role="button"
@@ -286,7 +286,7 @@ Array [
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 eteBni sinoui-checkbox sinoui-checkbox--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 lgGSJs sinoui-checkbox sinoui-checkbox--checked"
     color="success"
     data-testid="checkbox"
     role="button"
@@ -311,7 +311,7 @@ Array [
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 bHvkWF sinoui-checkbox sinoui-checkbox--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 kBzfDr sinoui-checkbox sinoui-checkbox--checked"
     color="info"
     data-testid="checkbox"
     role="button"
@@ -336,7 +336,7 @@ Array [
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dKQQdn sinoui-checkbox sinoui-checkbox--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 cmOAhT sinoui-checkbox sinoui-checkbox--checked"
     color="actionActive"
     data-testid="checkbox"
     role="button"
@@ -361,7 +361,7 @@ Array [
     />
   </button>,
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 ijbwOW sinoui-checkbox sinoui-checkbox--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jVOsqS sinoui-checkbox sinoui-checkbox--checked"
     color="actionDisabled"
     data-testid="checkbox"
     role="button"
@@ -392,7 +392,7 @@ exports[`Checkbox组件 快照测试 设置只读 1`] = `
 Array [
   <button
     aria-disabled={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--disabled"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--disabled"
     color="primary"
     data-testid="checkbox"
     disabled={true}
@@ -419,7 +419,7 @@ Array [
   </button>,
   <button
     aria-disabled={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--readOnly"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--readOnly"
     color="primary"
     data-testid="checkbox"
     disabled={true}

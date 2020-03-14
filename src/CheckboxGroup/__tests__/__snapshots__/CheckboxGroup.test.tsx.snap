@@ -2,14 +2,13 @@
 
 exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 lLvxt sinoui-checkbox-group"
-  data-testid="checkboxGroup"
+  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -42,10 +41,10 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -78,10 +77,10 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -114,10 +113,10 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -154,14 +153,13 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
 
 exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 lLvxt sinoui-checkbox-group"
-  data-testid="checkboxGroup"
+  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -194,10 +192,10 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -230,10 +228,10 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -266,10 +264,10 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -310,15 +308,14 @@ Array [
     不可用:
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 lLvxt sinoui-checkbox-group"
-    data-testid="checkboxGroup"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
         aria-disabled={true}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--disabled"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--disabled"
         color="primary"
         data-testid="checkbox"
         disabled={true}
@@ -353,11 +350,11 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
         aria-disabled={true}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--disabled"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--disabled"
         color="primary"
         data-testid="checkbox"
         disabled={true}
@@ -396,16 +393,15 @@ Array [
     只读:
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 lLvxt sinoui-checkbox-group"
-    data-testid="checkboxGroup"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 yePCV sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bmQrpY sinoui-form-control-label"
       readOnly={true}
     >
       <button
         aria-disabled={true}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--readOnly"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--readOnly"
         color="primary"
         data-testid="checkbox"
         disabled={true}
@@ -440,12 +436,12 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 yePCV sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bmQrpY sinoui-form-control-label"
       readOnly={true}
     >
       <button
         aria-disabled={true}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkbox--readOnly"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkbox--readOnly"
         color="primary"
         data-testid="checkbox"
         disabled={true}
@@ -485,14 +481,13 @@ Array [
 
 exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 lLvxt sinoui-checkbox-group"
-  data-testid="checkboxGroup"
+  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox sinoui-checkboxGroup-select"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox sinoui-checkboxGroup-select"
       color="primary"
       data-testid="checkbox"
       onClick={[Function]}
@@ -525,10 +520,10 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -561,10 +556,10 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -597,10 +592,10 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -633,10 +628,10 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -674,13 +669,12 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
 exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
 <div
   className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 ggoGiy sinoui-checkbox-group"
-  data-testid="checkboxGroup"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -713,10 +707,10 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
       color="primary"
       data-testid="checkbox"
       role="button"
@@ -757,14 +751,13 @@ Array [
     标题显示在右侧：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 lLvxt sinoui-checkbox-group"
-    data-testid="checkboxGroup"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -797,10 +790,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -837,14 +830,13 @@ Array [
     标题显示在左侧：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 lLvxt sinoui-checkbox-group"
-    data-testid="checkboxGroup"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 dEWKMF sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 kInsNr sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jeznLs sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -877,10 +869,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 kInsNr sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jeznLs sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -922,14 +914,13 @@ Array [
     默认：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 jyyvGi sinoui-checkbox-group"
-    data-testid="checkboxGroup"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hSUeXH sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -962,10 +953,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -998,10 +989,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -1034,10 +1025,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -1070,10 +1061,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -1110,14 +1101,13 @@ Array [
     设置colums为4：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hNfufH sinoui-checkbox-group"
-    data-testid="checkboxGroup"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 jAgsLA sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -1150,10 +1140,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -1186,10 +1176,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -1222,10 +1212,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"
@@ -1258,10 +1248,10 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 csiJak sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 inCkDx sinoui-checkbox"
         color="primary"
         data-testid="checkbox"
         role="button"

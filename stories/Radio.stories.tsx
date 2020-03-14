@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import Radio from '@sinoui/core/Radio';
 import StoryLayout from './StoryLayout';
 
@@ -29,8 +29,14 @@ export const 设置只读 = () => (
   <StoryLayout>
     <p>不可用：</p>
     <Radio disabled>单选框1</Radio>
+    <Radio disabled checked>
+      单选框2
+    </Radio>
     <p>只读：</p>
-    <Radio readOnly>单选框2</Radio>
+    <Radio readOnly>单选框1</Radio>
+    <Radio readOnly checked>
+      单选框2
+    </Radio>
   </StoryLayout>
 );
 
@@ -39,9 +45,7 @@ export const 指定颜色 = () => (
     <Radio checked color="primary" />
     <Radio checked color="secondary" />
     <Radio checked color="error" />
-    <Radio checked color="warning">
-      单选框
-    </Radio>
+    <Radio checked color="warning" />
     <Radio checked color="success" />
     <Radio checked color="info" />
   </StoryLayout>

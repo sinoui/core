@@ -2,15 +2,14 @@
 
 exports[`radioGroup组件 快照测试 基本使用 1`] = `
 <div
-  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 iABNhT sinoui-radio-group"
-  data-testid="radioGroup"
+  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
       color="primary"
       data-testid="radio"
       role="button"
@@ -45,11 +44,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
       color="primary"
       data-testid="radio"
       role="button"
@@ -84,11 +83,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 aTmaD sinoui-radio sinoui-radio-button sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 aTmaD sinoui-radio sinoui-radio--checked sinoui-icon-button sinoui-radio sinoui-radio--checked"
       color="primary"
       data-testid="radio"
       role="button"
@@ -123,11 +122,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
       color="primary"
       data-testid="radio"
       role="button"
@@ -167,16 +166,15 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
 exports[`radioGroup组件 快照测试 设置只读 1`] = `
 Array [
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 iABNhT sinoui-radio-group sinoui-radio-group--disabled"
-    data-testid="radioGroup"
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group sinoui-radio-group--disabled"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
         aria-disabled={true}
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--disabled"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio--disabled"
         color="primary"
         data-testid="radio"
         disabled={true}
@@ -213,12 +211,12 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
         aria-disabled={true}
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--disabled"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio--disabled"
         color="primary"
         data-testid="radio"
         disabled={true}
@@ -255,12 +253,12 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
         aria-disabled={true}
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--disabled"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio--disabled"
         color="primary"
         data-testid="radio"
         disabled={true}
@@ -297,12 +295,12 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
         aria-disabled={true}
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio-button sinoui-radio--disabled"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio--disabled sinoui-icon-button sinoui-radio sinoui-radio--disabled"
         color="primary"
         data-testid="radio"
         disabled={true}
@@ -340,17 +338,16 @@ Array [
     </label>
   </div>,
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 iABNhT sinoui-radio-group sinoui-radio-group--readOnly"
-    data-testid="radioGroup"
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group sinoui-radio-group--readOnly"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 yePCV sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bmQrpY sinoui-form-control-label"
       readOnly={true}
     >
       <button
         aria-disabled={true}
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         disabled={true}
@@ -389,13 +386,13 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 yePCV sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bmQrpY sinoui-form-control-label"
       readOnly={true}
     >
       <button
         aria-disabled={true}
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         disabled={true}
@@ -434,13 +431,13 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 yePCV sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bmQrpY sinoui-form-control-label"
       readOnly={true}
     >
       <button
         aria-disabled={true}
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         disabled={true}
@@ -479,13 +476,13 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 yePCV sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bmQrpY sinoui-form-control-label"
       readOnly={true}
     >
       <button
         aria-disabled={true}
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 eBfhRQ sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         disabled={true}
@@ -530,15 +527,14 @@ Array [
 exports[`radioGroup组件 快照测试 设置标题显示位置 1`] = `
 Array [
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 iABNhT sinoui-radio-group"
-    data-testid="radioGroup"
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         role="button"
@@ -573,11 +569,11 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         role="button"
@@ -612,11 +608,11 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
     >
       <button
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         role="button"
@@ -652,15 +648,14 @@ Array [
     </label>
   </div>,
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 iABNhT sinoui-radio-group"
-    data-testid="radioGroup"
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 kInsNr sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jeznLs sinoui-form-control-label"
     >
       <button
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         role="button"
@@ -695,11 +690,11 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 kInsNr sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jeznLs sinoui-form-control-label"
     >
       <button
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         role="button"
@@ -734,11 +729,11 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 kInsNr sinoui-form-control-label"
+      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jeznLs sinoui-form-control-label"
     >
       <button
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
         color="primary"
         data-testid="radio"
         role="button"
@@ -778,15 +773,14 @@ Array [
 
 exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
 <div
-  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 dkrcaq sinoui-radio-group sinoui-radio-group--block"
-  data-testid="radioGroup"
+  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cHzAoy sinoui-radio-group sinoui-radio-group--block"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
       color="primary"
       data-testid="radio"
       role="button"
@@ -821,11 +815,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
       color="primary"
       data-testid="radio"
       role="button"
@@ -860,11 +854,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
       color="primary"
       data-testid="radio"
       role="button"
@@ -899,11 +893,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 jUlhQq sinoui-form-control-label"
+    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 bHxusA sinoui-form-control-label"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-radio-button sinoui-icon-button sinoui-radio sinoui-radio-button"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 ToggleButton-zmk5oa-0 gsybTW sinoui-radio sinoui-icon-button sinoui-radio"
       color="primary"
       data-testid="radio"
       role="button"

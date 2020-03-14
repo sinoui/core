@@ -16,7 +16,7 @@ describe('CheckboxGroup 单元测试', () => {
   test('测试children', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <CheckboxGroup>
+        <CheckboxGroup data-testid="checkboxGroup">
           <Checkbox value="1">复选框</Checkbox>
         </CheckboxGroup>
       </ThemeProvider>,
@@ -29,7 +29,10 @@ describe('CheckboxGroup 单元测试', () => {
   test('测试items', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <CheckboxGroup items={[<Checkbox value="1">复选框</Checkbox>]} />
+        <CheckboxGroup
+          items={[<Checkbox value="1">复选框</Checkbox>]}
+          data-testid="checkboxGroup"
+        />
       </ThemeProvider>,
     );
 

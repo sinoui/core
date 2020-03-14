@@ -79,12 +79,20 @@ export const 设置是否支持全选 = () => (
 export const 设置不可用 = () => (
   <StoryLayout>
     <p>不可用:</p>
-    <CheckboxGroup disabled>
+    <CheckboxGroup
+      disabled
+      onChange={(value) => console.log(value)}
+      value={['2']}
+    >
       <Checkbox value="1">复选框1</Checkbox>
       <Checkbox value="2">复选框2</Checkbox>
     </CheckboxGroup>
     <p>只读:</p>
-    <CheckboxGroup readOnly>
+    <CheckboxGroup
+      readOnly
+      onChange={(value) => console.log(value)}
+      value={['2']}
+    >
       <Checkbox value="1">复选框1</Checkbox>
       <Checkbox value="2">复选框2</Checkbox>
     </CheckboxGroup>

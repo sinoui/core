@@ -17,10 +17,6 @@ export interface RadioProps
    */
   disabled?: boolean;
   /**
-   * 是否紧缩型
-   */
-  dense?: boolean;
-  /**
    * 点击事件
    */
   onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;

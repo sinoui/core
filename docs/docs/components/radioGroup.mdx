@@ -10,6 +10,7 @@ import RadioGroup from '@sinoui/core/RadioGroup';
 import Radio from '@sinoui/core/Radio';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import RadioGroupDemo from './radioGroup-demos/RadioGroupDemo';
 
 ## RadioGroup
 
@@ -19,8 +20,14 @@ import { defaultTheme } from '@sinoui/theme';
 import RadioGroup from '@sinoui/core/RadioGroup';
 
 function RadioGroupDemo() {
+  const [value, setValue] = useState('2');
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
   return (
-    <RadioGroup onChange={(event, value) => console.log(value)} value="3">
+    <RadioGroup onChange={onChange} value={value}>
       <Radio value="1">单选框1</Radio>
       <Radio value="2">单选框2</Radio>
       <Radio value="3">单选框3</Radio>
@@ -33,12 +40,7 @@ function RadioGroupDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <RadioGroup onChange={(event, value) => console.log(value)} value="3">
-    <Radio value="1">单选框1</Radio>
-    <Radio value="2">单选框2</Radio>
-    <Radio value="3">单选框3</Radio>
-    <Radio value="4">单选框4</Radio>
-  </RadioGroup>
+  <RadioGroupDemo />
 </ThemeProvider>
 
 ## 设置纵向排列
@@ -47,8 +49,14 @@ function RadioGroupDemo() {
 import RadioGroup from '@sinoui/core/RadioGroup';
 
 function RadioGroupDemo() {
+  const [value, setValue] = useState('2');
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
   return (
-    <RadioGroup block>
+    <RadioGroup block onChange={onChange} value={value}>
       <Radio value="1">单选框1</Radio>
       <Radio value="2">单选框2</Radio>
       <Radio value="3">单选框3</Radio>
@@ -61,12 +69,7 @@ function RadioGroupDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <RadioGroup block>
-    <Radio value="1">单选框1</Radio>
-    <Radio value="2">单选框2</Radio>
-    <Radio value="3">单选框3</Radio>
-    <Radio value="4">单选框4</Radio>
-  </RadioGroup>
+  <RadioGroupDemo block/>
 </ThemeProvider>
 
 ## 设置只读
@@ -78,7 +81,7 @@ function RadioGroupDemo() {
   return (
     <>
       不可用：
-      <RadioGroup disabled>
+      <RadioGroup disabled value="2">
         <Radio value="1">单选框1</Radio>
         <Radio value="2">单选框2</Radio>
         <Radio value="3">单选框3</Radio>
@@ -86,7 +89,7 @@ function RadioGroupDemo() {
       </RadioGroup>
       只读：
       <br />
-      <RadioGroup readOnly>
+      <RadioGroup readOnly value="2">
         <Radio value="1">单选框1</Radio>
         <Radio value="2">单选框2</Radio>
         <Radio value="3">单选框3</Radio>
@@ -102,7 +105,7 @@ function RadioGroupDemo() {
 <ThemeProvider theme={defaultTheme}>
   <>
     不可用：
-    <RadioGroup disabled>
+    <RadioGroup disabled value="2">
       <Radio value="1">单选框1</Radio>
       <Radio value="2">单选框2</Radio>
       <Radio value="3">单选框3</Radio>
@@ -110,7 +113,7 @@ function RadioGroupDemo() {
     </RadioGroup>
     只读：
     <br />
-    <RadioGroup readOnly>
+    <RadioGroup readOnly value="3">
       <Radio value="1">单选框1</Radio>
       <Radio value="2">单选框2</Radio>
       <Radio value="3">单选框3</Radio>
@@ -125,10 +128,16 @@ function RadioGroupDemo() {
 import RadioGroup from '@sinoui/core/RadioGroup';
 
 function RadioGroupDemo() {
+  const [value, setValue] = useState('2');
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
   return (
     <>
       标题在右侧显示：
-      <RadioGroup>
+      <RadioGroup onChange={onChange} value={value}>
         <Radio value="1">单选框1</Radio>
         <Radio value="2">单选框2</Radio>
         <Radio value="3">单选框3</Radio>
@@ -136,7 +145,7 @@ function RadioGroupDemo() {
       </RadioGroup>
       <br />
       标题在左侧显示：
-      <RadioGroup labelPosition="left">
+      <RadioGroup labelPosition="left" onChange={onChange} value={value}>
         <Radio value="1">单选框1</Radio>
         <Radio value="2">单选框2</Radio>
         <Radio value="3">单选框3</Radio>
@@ -152,19 +161,9 @@ function RadioGroupDemo() {
 <ThemeProvider theme={defaultTheme}>
   <>
     标题在右侧显示：
-    <RadioGroup>
-      <Radio value="1">单选框1</Radio>
-      <Radio value="2">单选框2</Radio>
-      <Radio value="3">单选框3</Radio>
-      <Radio value="4">单选框4</Radio>
-    </RadioGroup>
+    <RadioGroupDemo />
     <br />
     标题在左侧显示：
-    <RadioGroup labelPosition="left">
-      <Radio value="1">单选框1</Radio>
-      <Radio value="2">单选框2</Radio>
-      <Radio value="3">单选框3</Radio>
-      <Radio value="4">单选框4</Radio>
-    </RadioGroup>
+    <RadioGroupDemo labelPosition="left" />
   </>
 </ThemeProvider>

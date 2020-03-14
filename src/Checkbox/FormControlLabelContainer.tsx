@@ -18,7 +18,7 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
   vertical-align: middle;
 
   > .sinoui-checkbox,
-  > .sinoui-radio-button {
+  > .sinoui-radio {
     padding-top: 2px;
     flex-shrink: 0;
   }
