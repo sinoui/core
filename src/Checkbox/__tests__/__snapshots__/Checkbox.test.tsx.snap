@@ -73,7 +73,7 @@ Array [
 exports[`Checkbox组件 快照测试 带有文字复选框 1`] = `
 Array [
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 lgdfZY sinoui-checkbox"
@@ -103,7 +103,7 @@ Array [
     </span>
   </label>,
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={true}
@@ -135,7 +135,7 @@ Array [
     </span>
   </label>,
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 lgdfZY sinoui-checkbox"

@@ -55,7 +55,7 @@ Array [
 exports[`Radio组件 快照测试 带文字单选框 1`] = `
 Array [
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -87,7 +87,7 @@ Array [
     </span>
   </label>,
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={true}
@@ -125,7 +125,8 @@ Array [
 exports[`Radio组件 快照测试 指定颜色 1`] = `
 Array [
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 fbzBzb sinoui-form-control-label"
+    disabled={true}
   >
     <span
       checked={false}
@@ -308,7 +309,8 @@ Array [
 exports[`Radio组件 快照测试 设置只读 1`] = `
 Array [
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 fbzBzb sinoui-form-control-label"
+    disabled={true}
   >
     <span
       checked={false}
@@ -342,7 +344,7 @@ Array [
     </span>
   </label>,
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 hDtaBt sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 fbzBzb sinoui-form-control-label"
     readOnly={true}
   >
     <span

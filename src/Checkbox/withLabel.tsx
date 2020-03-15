@@ -44,15 +44,10 @@ export interface FormControlBaseProps<V, T> {
    * 指定颜色
    */
   color?: ColorProp;
+  /**
+   * 子元素
+   */
   children?: React.ReactNode;
-  /**
-   * 错误状态
-   */
-  error?: any;
-  /**
-   * dom元素的id
-   */
-  id?: string;
 }
 
 export interface FormControlWithLabelProps<V, T>

@@ -5,7 +5,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
   className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -39,7 +39,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={true}
@@ -73,7 +73,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={true}
@@ -107,7 +107,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -148,7 +148,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
   className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -182,7 +182,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -216,7 +216,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -250,7 +250,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -295,7 +295,8 @@ Array [
     className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 fbzBzb sinoui-form-control-label"
+      disabled={true}
     >
       <span
         checked={false}
@@ -331,7 +332,8 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 fbzBzb sinoui-form-control-label"
+      disabled={true}
     >
       <span
         checked={false}
@@ -374,7 +376,7 @@ Array [
     className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 hDtaBt sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 fbzBzb sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -413,7 +415,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 hDtaBt sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 fbzBzb sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -460,7 +462,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
   className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -494,7 +496,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -528,7 +530,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -562,7 +564,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -596,7 +598,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -637,7 +639,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
   className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 ggoGiy sinoui-checkbox-group"
 >
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -671,7 +673,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
     </span>
   </label>
   <label
-    className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -716,7 +718,7 @@ Array [
     className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hileKf sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -750,7 +752,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -791,7 +793,7 @@ Array [
     className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 dEWKMF sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 fSMlpf sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 hoYJvd sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -825,7 +827,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 fSMlpf sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 hoYJvd sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -871,7 +873,7 @@ Array [
     className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 hSUeXH sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -905,7 +907,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -939,7 +941,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -973,7 +975,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1007,7 +1009,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1048,7 +1050,7 @@ Array [
     className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 jAgsLA sinoui-checkbox-group"
   >
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1082,7 +1084,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1116,7 +1118,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1150,7 +1152,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1184,7 +1186,7 @@ Array [
       </span>
     </label>
     <label
-      className="Label-sc-1rwdyco-0 FormControlLabelContainer-sc-136va0i-0 eoJIyq sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 mTHub sinoui-form-control-label"
     >
       <span
         checked={false}

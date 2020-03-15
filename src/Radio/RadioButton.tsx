@@ -98,16 +98,12 @@ export interface Props {
    */
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean,
+    checked: boolean | any,
   ) => void;
   /**
    * 键盘事件
    */
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
-  /**
-   * 点击事件
-   */
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /**
    * tabIndex属性
    */

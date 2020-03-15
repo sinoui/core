@@ -16,10 +16,6 @@ export interface RadioProps
    * 是否不可用
    */
   disabled?: boolean;
-  /**
-   * 点击事件
-   */
-  onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 }
 
 /**

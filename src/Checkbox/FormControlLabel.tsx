@@ -17,6 +17,14 @@ export interface FormControlLabelProps {
    * 表单控件
    */
   control: any;
+  /**
+   * 不可用
+   */
+  disabled?: boolean;
+  /**
+   * 只读
+   */
+  readOnly?: boolean;
 }
 
 /**
@@ -32,6 +40,7 @@ export default function FormControlLabel({
       className="sinoui-form-control-label"
       labelPosition={labelPosition}
       readOnly={control.props.readOnly}
+      disabled={control.props.disabled}
     >
       {control}
       <span className="sinoui-form-control-label__title">{label}</span>
