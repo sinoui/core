@@ -72,7 +72,7 @@ const focusCss = css<ListItemProps>`
   &:focus::before {
     background-color: ${({ theme, selected }) =>
       !selected
-        ? opacify(-0.88, theme.palette.background.paper)
+        ? opacify(-0.88, theme.palette.type === 'light' ? '#000' : '#fff')
         : opacify(-0.8, theme.palette.primary.main)};
   }
 `;
