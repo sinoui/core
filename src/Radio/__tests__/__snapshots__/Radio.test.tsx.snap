@@ -4,7 +4,7 @@ exports[`Radio组件 快照测试 基本使用 1`] = `
 Array [
   <span
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio"
     color="primary"
     tabIndex="0"
   >
@@ -28,7 +28,7 @@ Array [
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 cExwTv sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 iZQbYb sinoui-radio sinoui-radio--checked"
     color="primary"
     tabIndex="0"
   >
@@ -61,7 +61,7 @@ Array [
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio"
       color="primary"
       tabIndex="0"
     >
@@ -94,7 +94,7 @@ Array [
   >
     <span
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 cExwTv sinoui-radio sinoui-radio--checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 iZQbYb sinoui-radio sinoui-radio--checked"
       color="primary"
       tabIndex="0"
     >
@@ -134,7 +134,7 @@ Array [
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio sinoui-radio--disabled"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
       tabIndex="0"
@@ -166,7 +166,7 @@ Array [
   </label>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 cExwTv sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 iZQbYb sinoui-radio sinoui-radio--checked"
     color="primary"
     tabIndex="0"
   >
@@ -191,7 +191,7 @@ Array [
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 BHZwW sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 ixcVmv sinoui-radio sinoui-radio--checked"
     color="secondary"
     tabIndex="0"
   >
@@ -216,7 +216,7 @@ Array [
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jwUqIS sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 eHrrvN sinoui-radio sinoui-radio--checked"
     color="error"
     tabIndex="0"
   >
@@ -241,7 +241,7 @@ Array [
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jfVgFq sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 hHlPAY sinoui-radio sinoui-radio--checked"
     color="warning"
     tabIndex="0"
   >
@@ -266,7 +266,7 @@ Array [
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 bhxjQD sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 cyPefX sinoui-radio sinoui-radio--checked"
     color="success"
     tabIndex="0"
   >
@@ -291,7 +291,7 @@ Array [
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 dWbYiM sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 gVfdxk sinoui-radio sinoui-radio--checked"
     color="info"
     tabIndex="0"
   >
@@ -325,7 +325,7 @@ Array [
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio sinoui-radio--disabled"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
       tabIndex="0"
@@ -361,7 +361,7 @@ Array [
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio sinoui-radio--readOnly"
       color="primary"
       disabled={true}
       tabIndex="0"

@@ -66,6 +66,10 @@ const BaseToggleButton = styled(BaseButton).attrs(() => ({
     color: ${(props) => props.theme.palette.text.disabled};
   }
 
+  &.sinoui-checkbox--readOnly {
+    color: ${(props) => props.theme.palette.text.disabled};
+  }
+
   & .sinoui-checkbox__input {
     cursor: inherit;
     position: absolute;
@@ -210,6 +214,7 @@ export default function BaseCheckboxButton(props: Props) {
         'sinoui-checkbox--disabled': disabled,
         'sinoui-checkbox--checked': checked,
         'sinoui-checkbox--indeterminate': indeterminate,
+        'sinoui-checkbox--readOnly': readOnly,
       })}
       color={color}
       onClick={onClick}

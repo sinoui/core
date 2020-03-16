@@ -23,6 +23,10 @@ const ToggleButton = styled(BaseButton).attrs(() => ({
   &.sinoui-radio--disabled {
     color: ${(props) => props.theme.palette.text.disabled};
   }
+
+  &.sinoui-radio--readOnly {
+    color: ${(props) => props.theme.palette.text.disabled};
+  }
   & .sinoui-radio__ripple {
     width: 40px;
     height: 40px;
@@ -195,6 +199,7 @@ function RadioButton(props: Props) {
       className={classNames('sinoui-radio', className, {
         'sinoui-radio--checked': checked,
         'sinoui-radio--disabled': disabledProp,
+        'sinoui-radio--readOnly': readOnlyProp,
       })}
       ripple={rippleConfig}
     >
