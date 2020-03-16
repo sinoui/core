@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import OverriableComponent from '../OverridableComponent';
@@ -37,7 +37,7 @@ const StyledList = styled.ul.attrs((props: Props) => ({
 
 // 将nodeList转换为数组
 const nodeListToArray = (listRef: HTMLElement | null) => {
-  const arr = [];
+  const arr: any[] = [];
   const anchors =
     (listRef && listRef.querySelectorAll('.sinoui-list-item')) || [];
   anchors.forEach((item: any) => {
@@ -51,7 +51,7 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
   HTMLUListElement,
   Props
 >((props, ref) => {
-  const listRef = React.createRef<HTMLUListElement>();
+  const listRef = useRef<HTMLUListElement | null>(null);
   const multiRef = useMultiRefs(listRef, ref);
 
   useEffect(() => {
@@ -60,9 +60,13 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
         listRef.current.querySelectorAll('.sinoui-list-item').length) ||
       0;
     document.onkeydown = (e) => {
-      let focusIndex = nodeListToArray(listRef.current).findIndex(
-        (item) => item === document.activeElement,
-      );
+      let focusIndex = -1;
+      if (listRef.current) {
+        focusIndex = nodeListToArray(listRef.current).findIndex(
+          (item) => item === document.activeElement,
+        );
+      }
+
       if (listItemsLen > 0) {
         switch ((e || window.event).keyCode) {
           case 38:
@@ -75,7 +79,7 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
           default:
             break;
         }
-        console.log(focusIndex);
+
         if (focusIndex !== -1) {
           const listItems =
             (listRef.current &&
