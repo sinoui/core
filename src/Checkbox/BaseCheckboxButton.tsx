@@ -10,6 +10,7 @@ import CheckBox from './svg-icons/CheckBox';
 
 const BaseToggleButton = styled(BaseButton).attrs(() => ({
   forwardedAs: 'span',
+  tabIndex: '0',
 }))<Props>`
   position: relative;
   display: inline-flex;

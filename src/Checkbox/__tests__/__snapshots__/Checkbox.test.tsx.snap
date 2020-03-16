@@ -5,6 +5,7 @@ Array [
   <span
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 lgdfZY sinoui-checkbox"
     color="primary"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -27,6 +28,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 glxIBc sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -49,6 +51,7 @@ Array [
   <span
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 glxIBc sinoui-checkbox sinoui-checkbox--indeterminate"
     color="primary"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -78,6 +81,7 @@ Array [
     <span
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 lgdfZY sinoui-checkbox"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -109,6 +113,7 @@ Array [
       checked={true}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 glxIBc sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -140,6 +145,7 @@ Array [
     <span
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 lgdfZY sinoui-checkbox"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -173,6 +179,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 glxIBc sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -196,6 +203,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 gyqJic sinoui-checkbox sinoui-checkbox--checked"
     color="secondary"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -219,6 +227,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 ksEyrK sinoui-checkbox sinoui-checkbox--checked"
     color="error"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -242,6 +251,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iLolVg sinoui-checkbox sinoui-checkbox--checked"
     color="warning"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -265,6 +275,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 eaBLch sinoui-checkbox sinoui-checkbox--checked"
     color="success"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -288,6 +299,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 kPVrMj sinoui-checkbox sinoui-checkbox--checked"
     color="info"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -311,6 +323,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dhXzkw sinoui-checkbox sinoui-checkbox--checked"
     color="actionActive"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -334,6 +347,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iFsYjA sinoui-checkbox sinoui-checkbox--checked"
     color="actionDisabled"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -362,6 +376,7 @@ Array [
     className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 lgdfZY sinoui-checkbox sinoui-checkbox--disabled"
     color="primary"
     disabled={true}
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -385,6 +400,7 @@ Array [
     className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 lgdfZY sinoui-checkbox"
     color="primary"
     disabled={true}
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"

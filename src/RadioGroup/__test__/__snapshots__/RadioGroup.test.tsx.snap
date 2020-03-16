@@ -11,6 +11,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       checked={false}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -45,6 +46,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       checked={false}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -79,6 +81,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       checked={true}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 cExwTv sinoui-radio sinoui-radio--checked"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -113,6 +116,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       checked={false}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -157,6 +161,7 @@ Array [
         className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -194,6 +199,7 @@ Array [
         className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -231,6 +237,7 @@ Array [
         className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -268,6 +275,7 @@ Array [
         className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -311,6 +319,7 @@ Array [
         disabled={true}
         onBlur={false}
         onFocus={false}
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -350,6 +359,7 @@ Array [
         disabled={true}
         onBlur={false}
         onFocus={false}
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -389,6 +399,7 @@ Array [
         disabled={true}
         onBlur={false}
         onFocus={false}
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -428,6 +439,7 @@ Array [
         disabled={true}
         onBlur={false}
         onFocus={false}
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -472,6 +484,7 @@ Array [
         checked={false}
         className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
         color="primary"
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -506,6 +519,7 @@ Array [
         checked={false}
         className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
         color="primary"
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -540,6 +554,7 @@ Array [
         checked={false}
         className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
         color="primary"
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -578,6 +593,7 @@ Array [
         checked={false}
         className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
         color="primary"
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -612,6 +628,7 @@ Array [
         checked={false}
         className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
         color="primary"
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -646,6 +663,7 @@ Array [
         checked={false}
         className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
         color="primary"
+        tabIndex="0"
       >
         <svg
           aria-hidden="true"
@@ -688,6 +706,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       checked={false}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -722,6 +741,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       checked={false}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -756,6 +776,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       checked={false}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -790,6 +811,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       checked={false}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"

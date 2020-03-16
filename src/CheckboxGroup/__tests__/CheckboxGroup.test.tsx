@@ -114,11 +114,16 @@ describe('CheckboxGroup 单元测试', () => {
 
     expect(checkboxInput).toBeChecked();
   });
+
   test('切换选中状态', () => {
     const onChange = jest.fn();
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <CheckboxGroup onChange={onChange} value={['3']}>
+        <CheckboxGroup
+          onChange={onChange}
+          value={['3']}
+          data-testid="checkboxGroup"
+        >
           <Checkbox value="1">复选框</Checkbox>
           <Checkbox value="2">复选框2</Checkbox>
           <Checkbox value="3">复选框3</Checkbox>
@@ -132,14 +137,10 @@ describe('CheckboxGroup 单元测试', () => {
     expect(checkboxInput).not.toBeChecked();
 
     act(() => {
-      fireEvent.change(checkboxInput, {
-        target: {
-          checked: true,
-        },
-      });
+      fireEvent.click(checkboxInput);
     });
 
-    expect(checkboxInput).toBeChecked();
+    expect(onChange).toHaveBeenCalledTimes(1);
   });
 });
 

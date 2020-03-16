@@ -6,6 +6,7 @@ Array [
     checked={false}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
     color="primary"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -29,6 +30,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 cExwTv sinoui-radio sinoui-radio--checked"
     color="primary"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -61,6 +63,7 @@ Array [
       checked={false}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -93,6 +96,7 @@ Array [
       checked={true}
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 cExwTv sinoui-radio sinoui-radio--checked"
       color="primary"
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -133,6 +137,7 @@ Array [
       className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -163,6 +168,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 cExwTv sinoui-radio sinoui-radio--checked"
     color="primary"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -187,6 +193,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 BHZwW sinoui-radio sinoui-radio--checked"
     color="secondary"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -211,6 +218,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jwUqIS sinoui-radio sinoui-radio--checked"
     color="error"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -235,6 +243,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jfVgFq sinoui-radio sinoui-radio--checked"
     color="warning"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -259,6 +268,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 bhxjQD sinoui-radio sinoui-radio--checked"
     color="success"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -283,6 +293,7 @@ Array [
     checked={true}
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 dWbYiM sinoui-radio sinoui-radio--checked"
     color="info"
+    tabIndex="0"
   >
     <svg
       aria-hidden="true"
@@ -317,6 +328,7 @@ Array [
       className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"
@@ -352,6 +364,7 @@ Array [
       className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fTBnno sinoui-radio"
       color="primary"
       disabled={true}
+      tabIndex="0"
     >
       <svg
         aria-hidden="true"

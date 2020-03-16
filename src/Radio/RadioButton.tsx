@@ -9,6 +9,7 @@ import RadioButtonUncheckedIcon from './svg-icons/RadioButtonUnchecked';
 
 const ToggleButton = styled(BaseButton).attrs(() => ({
   forwardedAs: 'span',
+  tabIndex: '0',
 }))<{ checked?: boolean }>`
   > .sinoui-icon,
   > .sinoui-svg-icon {
