@@ -75,15 +75,17 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
           default:
             break;
         }
-        const listItems =
-          (listRef.current &&
-            listRef.current.querySelectorAll('.sinoui-list-item')) ||
-          [];
-        (
-          listItems &&
-          listItems[focusIndex] &&
-          (listItems[focusIndex] as HTMLInputElement)
-        ).focus();
+        if (focusIndex !== -1) {
+          const listItems =
+            (listRef.current &&
+              listRef.current.querySelectorAll('.sinoui-list-item')) ||
+            [];
+          (
+            listItems &&
+            listItems[focusIndex] &&
+            (listItems[focusIndex] as HTMLInputElement)
+          ).focus();
+        }
       }
     };
     return () => {
