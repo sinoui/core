@@ -133,7 +133,7 @@ const StyledAppBar = styled.div.attrs(() => ({
   width: 100%;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[4]};
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  background-color: ${({ theme }) => theme.palette.primary.dark};
   ${({ prominent }) => (prominent ? prominentCss : regularCss)}
   ${({ dense }) => dense && denseCss}
   ${({ fixed }) => fixed && fixedCss}

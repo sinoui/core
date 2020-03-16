@@ -44,7 +44,7 @@ const StyledBottomAppBar = styled.div<Props>`
   box-sizing: border-box;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[8]};
-  background-color: ${(props) => props.theme.palette.primary.main};
+  background-color: ${(props) => props.theme.palette.primary.dark};
   ${(props) => props.endFab && endFabCss}
 
   & ${AppBarActions} {
