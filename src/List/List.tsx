@@ -75,6 +75,7 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
           default:
             break;
         }
+        console.log(focusIndex);
         if (focusIndex !== -1) {
           const listItems =
             (listRef.current &&
