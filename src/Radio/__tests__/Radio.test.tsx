@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, act, fireEvent } from '@testing-library/react';
 import Radio from '@sinoui/core/Radio';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
@@ -30,6 +30,25 @@ describe('Radio 单元测试', () => {
     );
     const test = getByTestId('radio');
     expect(test).toHaveClass('sinoui-radio--disabled');
+  });
+
+  it('点击选中，onChange被调用', () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Radio data-testid="radio" value="" onChange={onChange} />
+      </ThemeProvider>,
+    );
+
+    const radioInput = container.querySelector(
+      '.sinoui-radio__input',
+    ) as HTMLInputElement;
+
+    act(() => {
+      fireEvent.click(radioInput);
+    });
+
+    expect(onChange).toHaveBeenCalled();
   });
 });
 

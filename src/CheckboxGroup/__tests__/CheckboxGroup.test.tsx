@@ -75,10 +75,10 @@ describe('CheckboxGroup 单元测试', () => {
   test('是否支持全选，未全部选中', async () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <CheckboxGroup enableSelectAll value={['1', '2']}>
-          <Checkbox value="1">复选框</Checkbox>
-          <Checkbox value="2">复选框2</Checkbox>
-          <Checkbox value="3">复选框3</Checkbox>
+        <CheckboxGroup enableSelectAll value={['复选框', '复选框2']}>
+          <Checkbox>复选框</Checkbox>
+          <Checkbox>复选框2</Checkbox>
+          <Checkbox>复选框3</Checkbox>
         </CheckboxGroup>
       </ThemeProvider>,
     );
@@ -87,7 +87,7 @@ describe('CheckboxGroup 单元测试', () => {
     expect(check.length).toBe(2);
   });
 
-  test('是否支持全选', async () => {
+  test('点击全选时，onChange被调用', () => {
     const onChange = jest.fn();
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
@@ -99,17 +99,13 @@ describe('CheckboxGroup 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const checkboxInput = container.querySelectorAll(
-      '.sinoui-checkbox__input',
-    )[1] as HTMLElement;
-
-    expect(checkboxInput).not.toBeChecked();
+    const allSelectCheckbox = container.querySelectorAll('.sinoui-checkbox')[0];
 
     act(() => {
-      fireEvent.click(checkboxInput);
+      fireEvent.click(allSelectCheckbox);
     });
 
-    expect(checkboxInput).toBeChecked();
+    expect(onChange).toHaveBeenCalled();
   });
 
   test('非受控使用，即无value', () => {

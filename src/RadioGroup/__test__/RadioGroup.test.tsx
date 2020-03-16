@@ -67,6 +67,7 @@ describe('RadioGroup 单元测试', () => {
 
     expect(radio).toBeChecked();
   });
+
   test('切换选中状态', () => {
     const onChange = jest.fn();
     const { container } = render(
@@ -83,17 +84,11 @@ describe('RadioGroup 单元测试', () => {
       '.sinoui-radio__input',
     )[1] as HTMLElement;
 
-    expect(radio).not.toBeChecked();
-
     act(() => {
-      fireEvent.change(radio, {
-        target: {
-          checked: true,
-        },
-      });
+      fireEvent.click(radio);
     });
 
-    expect(radio).toBeChecked();
+    expect(onChange).toHaveBeenCalled();
   });
 });
 
@@ -102,7 +97,10 @@ describe('radioGroup组件 快照测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <RadioGroup onChange={(event, value) => console.log(value)} value="3">
+          <RadioGroup
+            onChange={(_event, value) => console.log(value)}
+            value="3"
+          >
             <Radio value="1">单选框1</Radio>
             <Radio value="2">单选框2</Radio>
             <Radio value="3">单选框3</Radio>
