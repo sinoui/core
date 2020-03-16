@@ -145,7 +145,9 @@ const ListItem: OverriableComponent<ListItemProps, 'li'> = React.forwardRef<
   ListItemProps
 >((props, ref) => {
   const { disabledRipple, disabled } = props;
-  const rippleConfig = disabledRipple ? { disabled: true } : { disabled };
+  const rippleConfig = disabledRipple
+    ? { enableKeyboardFocus: false, disabled: true }
+    : { enableKeyboardFocus: false, disabled };
   const rippleRef = useRipple<HTMLLIElement>(rippleConfig);
   const listItemRef = useMultiRefs(rippleRef, ref);
 
