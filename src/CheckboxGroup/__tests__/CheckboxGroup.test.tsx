@@ -87,6 +87,31 @@ describe('CheckboxGroup 单元测试', () => {
     expect(check.length).toBe(2);
   });
 
+  test('是否支持全选', async () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <CheckboxGroup enableSelectAll onChange={onChange} value={['2', '3']}>
+          <Checkbox value="1">复选框</Checkbox>
+          <Checkbox value="2">复选框2</Checkbox>
+          <Checkbox value="3">复选框3</Checkbox>
+        </CheckboxGroup>
+      </ThemeProvider>,
+    );
+
+    const checkboxInput = container.querySelectorAll(
+      '.sinoui-checkbox__input',
+    )[1] as HTMLElement;
+
+    expect(checkboxInput).not.toBeChecked();
+
+    act(() => {
+      fireEvent.click(checkboxInput);
+    });
+
+    expect(checkboxInput).toBeChecked();
+  });
+
   test('非受控使用，即无value', () => {
     const onChange = jest.fn();
     const { container } = render(
