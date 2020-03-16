@@ -94,7 +94,6 @@ const hoverCss = css<ListItemProps>`
 `;
 
 const disabledCss = css`
-  background-color: ${({ theme }) => theme.palette.action.disabledBackground};
   color: ${({ theme }) => theme.palette.text.disabled};
   cursor: default;
   pointer-events: none;
