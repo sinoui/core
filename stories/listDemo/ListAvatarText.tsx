@@ -15,7 +15,7 @@ export default function Demo() {
       <List>
         {listData.map((item) => (
           <>
-            <ListItem>
+            <ListItem alignItems="flex-start">
               <ListItemPrimaryAction>
                 <Avatar color="info">H</Avatar>
               </ListItemPrimaryAction>

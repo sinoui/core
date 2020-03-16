@@ -39,18 +39,19 @@ import ListItem from '@sinoui/core/ListItem';
 
 ### 属性
 
-| 属性名         | 默认值 | 类型                                       | 描述                                       |
-| -------------- | ------ | ------------------------------------------ | ------------------------------------------ |
-| insert         | false  | boolean                                    | 设置为`true`，则是嵌入样式。               |
-| disabledRipple | false  | boolean                                    | 设置为`true`,表示禁用 ripple 效果          |
-| paddingLeft    |        | number                                     | 设置左侧内边距                             |
-| disabled       | false  | boolean                                    | 若设置为`true`，则为不可用状态，不可访问等 |
-| dense          | false  | boolean                                    | 设置为`true`,表示为密集模式                |
-| className      |        | string                                     | 自定义 class 名称                          |
-| style          |        | React.CSSProperties                        | 自定义样式                                 |
-| as             | 'li'   | React.ReactNode                            | 指定 dom 元素                              |
-| onClick        |        | (e: React.MouseEvent, value?: any) => void | 单击时的回调函数                           |
-| onDoubleClick  |        | (e: React.MouseEvent, value?: any) => void | 双击时的回调函数                           |
+| 属性名         | 默认值 | 类型                                       | 描述                                                                            |
+| -------------- | ------ | ------------------------------------------ | ------------------------------------------------------------------------------- |
+| insert         | false  | boolean                                    | 设置为`true`，则是嵌入样式。                                                    |
+| disabledRipple | false  | boolean                                    | 设置为`true`,表示禁用 ripple 效果                                               |
+| paddingLeft    |        | number                                     | 设置左侧内边距                                                                  |
+| disabled       | false  | boolean                                    | 若设置为`true`，则为不可用状态，不可访问等                                      |
+| dense          | false  | boolean                                    | 设置为`true`,表示为密集模式                                                     |
+| alignItems     | center | 'flex-start'\|'flex-end' \|'center'        | ListItem 子元素垂直方向的布局方式(列表项文本多于两行时，建议布局方式为顶部对齐) |
+| className      |        | string                                     | 自定义 class 名称                                                               |
+| style          |        | React.CSSProperties                        | 自定义样式                                                                      |
+| as             | 'li'   | React.ReactNode                            | 指定 dom 元素                                                                   |
+| onClick        |        | (e: React.MouseEvent, value?: any) => void | 单击时的回调函数                                                                |
+| onDoubleClick  |        | (e: React.MouseEvent, value?: any) => void | 双击时的回调函数                                                                |
 
 ## ListItemText
 

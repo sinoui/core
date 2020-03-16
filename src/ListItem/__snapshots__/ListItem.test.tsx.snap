@@ -2,7 +2,7 @@
 
 exports[`快照测试 设置属性 1`] = `
 <ul
-  className="List__StyledList-sc-1djj80a-0 iztEOO sinoui-list"
+  className="List__StyledList-sc-1djj80a-0 SuRSt sinoui-list"
 >
   <li
     className="ListItem__Wrapper-sc-1jwmghb-0 iNiNba sinoui-list-item sinoui-list-item--insert sinoui-list-item--disabled-ripple"
@@ -16,7 +16,7 @@ exports[`快照测试 设置属性 1`] = `
 
 exports[`快照测试 默认 1`] = `
 <ul
-  className="List__StyledList-sc-1djj80a-0 iztEOO sinoui-list"
+  className="List__StyledList-sc-1djj80a-0 SuRSt sinoui-list"
 >
   <li
     className="ListItem__Wrapper-sc-1jwmghb-0 chyfua sinoui-list-item"

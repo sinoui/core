@@ -20,14 +20,12 @@ describe('List', () => {
     expect(container.firstChild).toHaveClass('test');
   });
 
-  it('不同属性值下的样式类', () => {
+  it('紧凑模式下样式类', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <List data-testid="list" insert disabledRipple dense />
+        <List data-testid="list" dense />
       </ThemeProvider>,
     );
-    expect(container.firstChild).toHaveClass('sinoui-list--insert');
-    expect(container.firstChild).toHaveClass('sinoui-list--disabled-ripple');
     expect(container.firstChild).toHaveClass('sinoui-list--dense');
   });
 

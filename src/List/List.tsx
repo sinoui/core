@@ -10,18 +10,6 @@ import useMultiRefs from '../utils/useMultiRefs';
 
 export interface Props {
   /**
-   * 设置为true，表示是嵌入式列表
-   */
-  insert?: boolean;
-  /**
-   * 设置为true,表示禁用 ripple 效果
-   */
-  disabledRipple?: boolean;
-  /**
-   * 设置 List 的子元素的左侧内边距
-   */
-  paddingLeft?: number;
-  /**
    * 设置为true,表示为密集模式
    */
   dense?: boolean;
@@ -29,6 +17,7 @@ export interface Props {
    * 自定义class名称
    */
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const ListStyle = css<Props>`
@@ -36,21 +25,10 @@ const ListStyle = css<Props>`
   margin: 0;
   padding: 8px 0;
   box-sizing: border-box;
-
-  &.sinoui-list--insert > .sinoui-list-item {
-    padding-left: 32px;
-  }
-
-  & > .sinoui-list-item {
-    ${({ paddingLeft }) =>
-      paddingLeft !== undefined && `padding-left: ${paddingLeft}px`}
-  }
 `;
 
 const StyledList = styled.ul.attrs((props: Props) => ({
   className: classNames('sinoui-list', {
-    'sinoui-list--insert': props.insert,
-    'sinoui-list--disabled-ripple': props.disabledRipple,
     'sinoui-list--dense': props.dense,
   }),
 }))<Props>`
@@ -60,7 +38,8 @@ const StyledList = styled.ul.attrs((props: Props) => ({
 // 将nodeList转换为数组
 const nodeListToArray = (listRef: HTMLElement | null) => {
   const arr = [];
-  const anchors = listRef?.querySelectorAll('.sinoui-list-item') || [];
+  const anchors =
+    (listRef && listRef.querySelectorAll('.sinoui-list-item')) || [];
   anchors.forEach((item: any) => {
     arr.push(item);
   });
@@ -72,13 +51,15 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
   HTMLUListElement,
   Props
 >((props, ref) => {
-  const listRef = React.createRef<HTMLElement>();
+  const listRef = React.createRef<HTMLUListElement>();
   const multiRef = useMultiRefs(listRef, ref);
 
   useEffect(() => {
     const listItemsLen =
-      listRef.current?.querySelectorAll('.sinoui-list-item').length || 0;
-    document.onkeydown = function(e) {
+      (listRef.current &&
+        listRef.current.querySelectorAll('.sinoui-list-item').length) ||
+      0;
+    document.onkeydown = (e) => {
       let focusIndex = nodeListToArray(listRef.current).findIndex(
         (item) => item === document.activeElement,
       );
@@ -94,34 +75,23 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
           default:
             break;
         }
-        (listRef.current?.querySelectorAll('.sinoui-list-item')[
-          focusIndex
-        ] as HTMLInputElement).focus();
+        const listItems =
+          (listRef.current &&
+            listRef.current.querySelectorAll('.sinoui-list-item')) ||
+          [];
+        (
+          listItems &&
+          listItems[focusIndex] &&
+          (listItems[focusIndex] as HTMLInputElement)
+        ).focus();
       }
     };
     return () => {
       document.onkeydown = null;
     };
   }, [listRef]);
-  const { children, ...rest } = props;
-  const renderChildren = () =>
-    React.Children.map(
-      children as React.ReactElement<any>,
-      (child: React.ReactElement<any>) => {
-        return React.cloneElement(React.Children.only(child), {
-          insert: child.props.insert || props.insert,
-          dense: child.props.dense || props.dense,
-          paddingLeft: child.props.paddingLeft || props.paddingLeft,
-          disabledRipple: child.props.disabledRipple || props.disabledRipple,
-        });
-      },
-    );
 
-  return (
-    <StyledList {...rest} ref={multiRef}>
-      {renderChildren()}
-    </StyledList>
-  );
+  return <StyledList {...props} ref={multiRef} />;
 });
 
 export default List;

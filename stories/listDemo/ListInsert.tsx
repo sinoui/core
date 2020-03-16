@@ -59,14 +59,13 @@ export default function Demo() {
               </ListItemSecondaryAction>
             </ListItem>
             <List
-              insert
               style={{
                 display: expandItems.indexOf(item) !== -1 ? 'block' : 'none',
               }}
             >
               {subListData.map((subItem) => (
                 <>
-                  <ListItem key={subItem}>
+                  <ListItem insert key={subItem}>
                     <ListItemPrimaryAction>
                       <Favorite color="error" />
                     </ListItemPrimaryAction>

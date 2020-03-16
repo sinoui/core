@@ -36,6 +36,10 @@ export interface ListItemProps {
    */
   selected?: boolean;
   /**
+   * ListItem子元素垂直方向的布局方式
+   */
+  alignItems?: 'flex-start' | 'flex-end' | 'center';
+  /**
    * 单击回调函数
    */
   onClick?: (e: React.MouseEvent, value?: any) => void;
@@ -96,7 +100,7 @@ const disabledCss = css`
 const ListItemStyle = css<ListItemProps>`
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: ${({ alignItems = 'center' }) => alignItems};
   margin: 0;
   box-sizing: border-box;
   padding: 12px 16px;

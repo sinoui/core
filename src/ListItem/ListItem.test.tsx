@@ -69,17 +69,6 @@ describe('List', () => {
     expect(getByTestId('listItem')).toHaveStyle('padding-left: 72px');
   });
 
-  // it('List设置32px的左内边距', () => {
-  //   const { getByTestId } = render(
-  //     <ThemeProvider theme={defaultTheme}>
-  //       <List data-testid="list" paddingLeft={32}>
-  //         <ListItem>item</ListItem>
-  //       </List>
-  //     </ThemeProvider>,
-  //   );
-  //   expect(getByTestId('list').children[0]).toHaveStyle('padding-left: 32px');
-  // });
-
   it('单击事件', () => {
     const testClick = jest.fn();
     const { getByTestId } = render(

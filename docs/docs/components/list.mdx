@@ -198,6 +198,8 @@ export default function Demo() {
 
 ## 头像 + 多行文本列表
 
+列表项文本多于两行时，列表项建议采用顶部对齐方式，即 ListItem 组件设置属性`alignItems="flex-start"`。
+
 示例：
 
 ```tsx
@@ -218,7 +220,7 @@ export default function Demo() {
       <List>
         {listData.map((item) => (
           <>
-            <ListItem>
+            <ListItem alignItems="flex-start">
               <ListItemPrimaryAction>
                 <Avatar color="info">H</Avatar>
               </ListItemPrimaryAction>
@@ -467,14 +469,13 @@ export default function Demo() {
               </ListItemSecondaryAction>
             </ListItem>
             <List
-              insert
               style={{
                 display: expandItems.indexOf(item) !== -1 ? 'block' : 'none',
               }}
             >
               {subListData.map((subItem) => (
                 <>
-                  <ListItem key={subItem}>
+                  <ListItem insert key={subItem}>
                     <ListItemPrimaryAction>
                       <Favorite color="error" />
                     </ListItemPrimaryAction>
