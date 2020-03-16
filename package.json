@@ -60,7 +60,9 @@
     "classnames": "^2.2.6",
     "polished": "^3.4.4",
     "styled-components": "^4.4.1",
-    "react-icons": "^3.9.0"
+    "react-icons": "^3.9.0",
+    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.15"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -89,7 +91,8 @@
     "react-test-renderer": "^16.12.0",
     "ts-lib-tools": "^0.10.1",
     "typescript": "^3.8.3",
-    "yarn-deduplicate": "^2.0.0"
+    "yarn-deduplicate": "^2.0.0",
+    "@types/lodash": "^4.14.149"
   },
   "publishConfig": {
     "access": "public"
