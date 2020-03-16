@@ -41,6 +41,12 @@ const Wrapper = styled.div.attrs((props: ListItemProps) => ({
   ${(props) => ({ ...props.theme.typography.body1 })}
 `;
 
+const Title = styled.div`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
 const SecondaryTitle = styled.div((props) => {
   return {
     ...props.theme.typography.body2,
@@ -53,9 +59,10 @@ const SecondaryTitle = styled.div((props) => {
 
 export default function ListItemText(props: ListItemProps) {
   const { children, secondary, ...rest } = props;
+
   return (
     <Wrapper {...rest}>
-      {children}
+      {secondary ? <Title>{children}</Title> : children}
       {secondary &&
         (typeof secondary === 'string' ? (
           <SecondaryTitle>{secondary}</SecondaryTitle>

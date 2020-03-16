@@ -70,17 +70,20 @@ const selectedCss = css<ListItemProps>`
 
 const focusCss = css<ListItemProps>`
   &:focus::before {
-    background-color: ${(props) =>
-      props.theme.palette.type === 'light'
-        ? opacify(-0.88, '#000')
-        : opacify(-0.88, '#fff')};
+    background-color: ${({ theme, selected }) =>
+      !selected
+        ? opacify(-0.88, theme.palette.background.paper)
+        : opacify(-0.8, theme.palette.primary.main)};
   }
 `;
 
 const hoverCss = css<ListItemProps>`
   &:hover {
     ::before {
-      background-color: ${({ theme }) => theme.palette.action.hover};
+      background-color: ${({ theme, selected }) =>
+        !selected
+          ? theme.palette.action.hover
+          : opacify(-0.88, theme.palette.primary.main)};
     }
     @media (hover: none) {
       &::before {
