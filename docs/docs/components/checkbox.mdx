@@ -1,0 +1,154 @@
+---
+id: checkbox
+title: Checkbox 复选框
+---
+
+Checkbox 复选框组件。
+
+import { useCallback } from 'react';
+import Checkbox from '@sinoui/core/Checkbox';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import CheckboxDemo from './checkbox-demos/CheckboxDemo';
+
+## Checkbox
+
+```tsx
+import Checkbox from '@sinoui/core/Checkbox';
+
+function CheckboxDemo() {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(e.target.checked);
+  };
+
+  return <Checkbox checked={checked} onChange={handleChange} />;
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <CheckboxDemo />
+</ThemeProvider>
+
+## 基本使用
+
+```tsx
+import Checkbox from '@sinoui/core/Checkbox';
+
+function CheckboxDemo() {
+  return (
+    <>
+      <Checkbox />
+      <Checkbox checked />
+      <Checkbox indeterminate />
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    <Checkbox />
+    <Checkbox checked />
+    <Checkbox indeterminate />
+  </>  
+</ThemeProvider>
+
+## 带有文字
+
+```tsx
+import Checkbox from '@sinoui/core/Checkbox';
+
+function CheckboxDemo() {
+  return (
+    <>
+      <Checkbox>爱好1</Checkbox>
+      <Checkbox checked>爱好2</Checkbox>
+      <Checkbox>爱好3</Checkbox>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    <Checkbox>爱好1</Checkbox>
+    <Checkbox checked>爱好2</Checkbox>
+    <Checkbox>爱好3</Checkbox>
+  </>  
+</ThemeProvider>
+
+## 设置只读
+
+```tsx
+import Checkbox from '@sinoui/core/Checkbox';
+
+function CheckboxDemo() {
+  return (
+    <>
+      不可用：
+      <Checkbox disabled />
+      只读：
+      <Checkbox readOnly />
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    不可用：
+    <Checkbox disabled />
+    只读：
+    <Checkbox readOnly />
+  </>  
+</ThemeProvider>
+
+## 指定颜色
+
+```tsx
+import Checkbox from '@sinoui/core/Checkbox';
+
+function CheckboxDemo() {
+  return (
+    <>
+      <Checkbox checked color="primary" />
+      <Checkbox checked color="secondary" />
+      <Checkbox checked color="error" />
+      <Checkbox checked color="warning" />
+      <Checkbox checked color="success" />
+      <Checkbox checked color="info" />
+      <Checkbox checked color="actionActive" />
+      <Checkbox checked color="actionDisabled" />
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    <Checkbox checked color="primary" />
+    <Checkbox checked color="secondary" />
+    <Checkbox checked color="error" />
+    <Checkbox checked color="warning" />
+    <Checkbox checked color="success" />
+    <Checkbox checked color="info" />
+    <Checkbox checked color="actionActive" />
+    <Checkbox checked color="actionDisabled" />
+  </>  
+</ThemeProvider>
+
+## API
+
+查看[Checkbox 组件 API](/docs/components-apis/checkbox)
