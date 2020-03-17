@@ -114,12 +114,12 @@ const ButtonLayout = styled(BaseButton).attrs(
       className,
     ),
   }),
-)<Props & { forwardedAs?: React.ReactType }>`
+)<Props>`
   ${textButtonStyle};
   ${(props) => props.outlined && outlinedStyle};
   ${(props) => props.raised && raisedStyle};
 
-  > svg {
+  > .sinoui-svg-icon {
     font-size: 18px;
     height: 18px;
     width: 18px;

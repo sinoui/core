@@ -2,7 +2,7 @@
 
 exports[`正确渲染IconButton 1`] = `
 <button
-  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 hOagCB sinoui-icon-button"
+  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 sLtAY sinoui-icon-button"
   color="textPrimary"
   role="button"
   type="button"
@@ -22,7 +22,7 @@ exports[`正确渲染IconButton 1`] = `
 
 exports[`渲染color为primary的图标按钮 1`] = `
 <button
-  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 jRIFKZ sinoui-icon-button"
+  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 ipwEOk sinoui-icon-button"
   color="primary"
   role="button"
   type="button"
@@ -43,7 +43,7 @@ exports[`渲染color为primary的图标按钮 1`] = `
 exports[`渲染不可用的图标按钮 1`] = `
 <button
   aria-disabled={true}
-  className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton-sc-11batye-0 iEqtJm sinoui-icon-button"
+  className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 bAUZeK sinoui-icon-button"
   color="textPrimary"
   disabled={true}
   role="button"
