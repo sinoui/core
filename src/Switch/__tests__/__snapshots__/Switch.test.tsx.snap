@@ -64,7 +64,7 @@ exports[`Switch 镜像测试 选中状态 1`] = `
 >
   <span
     checked={true}
-    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 bkdIsI sinoui-switch__label"
+    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 kYUiAW sinoui-switch__label"
     color="info"
     data-testid="switchLabel"
   >
