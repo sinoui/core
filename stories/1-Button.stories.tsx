@@ -150,3 +150,19 @@ export const 禁用海拔高度按钮 = () => (
     </>
   </ThemeProvider>
 );
+
+export const SpanButton = () => {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <Button as="span">spanButton</Button>
+        <Button as="span" outlined>
+          spanButton
+        </Button>
+        <Button as="span" raised>
+          spanButton
+        </Button>
+      </>
+    </ThemeProvider>
+  );
+};
