@@ -58,14 +58,16 @@
     "@sinoui/ripple": "^1.0.10",
     "@sinoui/theme": "^1.0.0-beta.7",
     "classnames": "^2.2.6",
-    "polished": "^3.4.4",
-    "styled-components": "^4.4.1",
-    "react-icons": "^3.9.0",
     "lodash": "^4.17.15",
-    "lodash-es": "^4.17.15"
+    "lodash-es": "^4.17.15",
+    "polished": "^3.4.4",
+    "react-icons": "^3.9.0",
+    "react-transition-group": "^4.3.0",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
+    "@sinoui/icons": "^1.0.0-beta.1",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
@@ -75,10 +77,10 @@
     "@testing-library/react-hooks": "^3.2.1",
     "@types/classnames": "^2.2.9",
     "@types/color": "^3.0.1",
+    "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.15",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.0",
-    "@sinoui/icons": "^1.0.0-beta.1",
     "babel-loader": "^8.0.6",
     "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
@@ -91,8 +93,7 @@
     "react-test-renderer": "^16.12.0",
     "ts-lib-tools": "^0.10.1",
     "typescript": "^3.8.3",
-    "yarn-deduplicate": "^2.0.0",
-    "@types/lodash": "^4.14.149"
+    "yarn-deduplicate": "^2.0.0"
   },
   "publishConfig": {
     "access": "public"

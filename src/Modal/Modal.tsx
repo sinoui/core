@@ -6,7 +6,7 @@ import React, {
   useMemo,
 } from 'react';
 import ReactDOM from 'react-dom';
-// import omit from 'lodash/omit';
+import omit from 'lodash/omit';
 import Backdrop, { BackdropProps } from './Backdrop';
 import { createChainFunction } from '../utils/createChainFunction';
 import ModalLayout from './ModalLayout';
@@ -220,8 +220,7 @@ function Modal(props: ModalPropsType): any {
 
   const Container = fixed ? ModalLayout : 'div';
 
-  // const containerProps = fixed ? rest : omit(rest, ['fullScreen', 'zIndex']);
-  const containerProps = rest;
+  const containerProps = fixed ? rest : omit(rest, ['fullScreen', 'zIndex']);
 
   return ReactDOM.createPortal(
     <Container

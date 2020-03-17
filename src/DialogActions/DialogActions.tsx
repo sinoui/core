@@ -22,7 +22,7 @@ const defaultLayout = css`
   }
 `;
 
-const DialogActionsWrapper = styled.div.attrs((className) => ({
+const DialogActionsWrapper = styled.div.attrs(({ className }) => ({
   className: classNames('sinoui-dialog-actions', className),
 }))<{ column?: boolean }>`
   min-height: 52px;
@@ -53,9 +53,9 @@ export interface Props {
  * 弹窗按钮组件
  */
 function DialogActions(props: Props) {
-  const { children } = props;
+  const { children, column } = props;
   return (
-    <DialogActionsWrapper>
+    <DialogActionsWrapper column={column}>
       {React.Children.map(
         children,
         (child: React.ReactElement<{ color?: string }>) => {

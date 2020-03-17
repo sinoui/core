@@ -28,7 +28,7 @@ function DialogDemo() {
   return (
     <>
       <Button onClick={() => setOpen(true)}>点击</Button>
-      <Dialog open={open} onBackdropClick={() => setOpen(false)}>
+      <Dialog open={open} onBackdropClick={() => console.log(1)}>
         <DialogTitle>标题</DialogTitle>
         <DialogContent>内容</DialogContent>
         <DialogActions>
@@ -43,5 +43,31 @@ function DialogDemo() {
 export const 弹窗2 = () => (
   <StoryLayout>
     <DialogDemo />
+  </StoryLayout>
+);
+
+export const 不显示遮罩层 = () => (
+  <StoryLayout>
+    <Dialog backdrop={false}>
+      <DialogTitle>标题</DialogTitle>
+      <DialogContent>内容</DialogContent>
+      <DialogActions>
+        <Button>取消</Button>
+        <Button>确定</Button>
+      </DialogActions>
+    </Dialog>
+  </StoryLayout>
+);
+
+export const 按钮垂直显示 = () => (
+  <StoryLayout>
+    <Dialog>
+      <DialogTitle>标题</DialogTitle>
+      <DialogContent>内容</DialogContent>
+      <DialogActions column>
+        <Button>取消</Button>
+        <Button>确定</Button>
+      </DialogActions>
+    </Dialog>
   </StoryLayout>
 );

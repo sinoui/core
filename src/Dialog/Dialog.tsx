@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import classNames from 'classnames';
 import DialogTitle from '@sinoui/core/DialogTitle';
 import DialogActions from '@sinoui/core/DialogActions';
-import Modal from '@sinoui/core/Modal';
+import Modal, { ModalPropsType } from '@sinoui/core/Modal';
 import DialogWrapper from './DialogWrapper';
 import Iframe from './Iframe';
 
@@ -38,6 +38,10 @@ export interface DialogProps {
    * 最大宽度
    */
   autoWidth?: boolean;
+  /**
+   * 为true时可以响应backdrop点击事件。
+   */
+  backdropClick?: boolean;
 }
 
 /**

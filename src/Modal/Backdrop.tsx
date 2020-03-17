@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import Fade from '../transitions/Fade';
+import Fade from '../transitions/Fade';
 
 export interface BackdropProps {
   /**
@@ -53,8 +53,8 @@ const StyledBackdrop = styled.div.attrs({
 export default function Backdrop(props: BackdropProps) {
   const { open, transitionDuration } = props;
   return (
-    // <Fade appear in={open} timeout={transitionDuration} {...props}>
-    <StyledBackdrop />
-    // </Fade>
+    <Fade appear in={open} timeout={transitionDuration} {...props}>
+      <StyledBackdrop />
+    </Fade>
   );
 }
