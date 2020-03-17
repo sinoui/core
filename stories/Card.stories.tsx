@@ -61,17 +61,17 @@ const CardContentText = styled.div`
 export const baseDemo = () => (
   <ThemeProvider theme={defaultTheme}>
     <Card className="custon-css">
+      <CardHeader
+        avatar={<Avatar />}
+        action={
+          <IconButton>
+            <SvgIcon as={MdMoreVert} />
+          </IconButton>
+        }
+        title="Shrimp and Chorizo Paella"
+        subheader="subheader"
+      />
       <CardPrimaryAction>
-        <CardHeader
-          avatar={<Avatar />}
-          action={
-            <IconButton>
-              <SvgIcon as={MdMoreVert} />
-            </IconButton>
-          }
-          title="Shrimp and Chorizo Paella"
-          subheader="subheader"
-        />
         <CardMedia imageUrl={mediaImgUrl} wide />
         <CardContent>content</CardContent>
       </CardPrimaryAction>
@@ -92,17 +92,17 @@ export const baseDemo = () => (
 export const CardInDarkTheme = () => (
   <ThemeProvider theme={darkTheme}>
     <Card>
+      <CardHeader
+        avatar={<Avatar />}
+        action={
+          <IconButton>
+            <SvgIcon as={MdMoreVert} />
+          </IconButton>
+        }
+        title="Shrimp and Chorizo Paella"
+        subheader="subheader"
+      />
       <CardPrimaryAction>
-        <CardHeader
-          avatar={<Avatar />}
-          action={
-            <IconButton>
-              <SvgIcon as={MdMoreVert} />
-            </IconButton>
-          }
-          title="Shrimp and Chorizo Paella"
-          subheader="subheader"
-        />
         <CardMedia imageUrl={mediaImgUrl} wide />
         <CardContent>content</CardContent>
       </CardPrimaryAction>

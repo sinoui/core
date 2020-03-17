@@ -22,17 +22,17 @@ export default function Demo() {
   const [expand, setExpand] = useState(false);
   return (
     <Card style={{ maxWidth: '345px' }}>
+      <CardHeader
+        avatar={<Avatar />}
+        action={
+          <IconButton>
+            <SvgIcon as={MdMoreVert} />
+          </IconButton>
+        }
+        title="Shrimp and Chorizo Paella"
+        subheader="subheader"
+      />
       <CardPrimaryAction>
-        <CardHeader
-          avatar={<Avatar />}
-          action={
-            <IconButton>
-              <SvgIcon as={MdMoreVert} />
-            </IconButton>
-          }
-          title="Shrimp and Chorizo Paella"
-          subheader="subheader"
-        />
         <CardMedia imageUrl={mediaImgUrl} wide />
         <CardContent>
           Heat 1/2 cup of the broth in a pot until simmering, add saffron and
