@@ -16,7 +16,7 @@ export default function Demo() {
       <List>
         {listData.map((item) => (
           <>
-            <ListItem disabled={item % 2 === 0} key={item}>
+            <ListItem disabled={item % 3 === 0} key={item}>
               <ListItemPrimaryAction>
                 <IconButton color="primary">
                   <BookmarkBorder />

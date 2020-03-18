@@ -134,6 +134,7 @@ const Wrapper = styled.li.attrs((props: ListItemProps) => ({
   tabIndex: '0',
   className: classNames('sinoui-list-item', {
     'sinoui-list-item--insert': props.insert,
+    'sinoui-list-item--disabled': props.disabled,
     'sinoui-list-item--disabled-ripple': props.disabledRipple,
     'sinoui-list-item--dense': props.dense,
   }),

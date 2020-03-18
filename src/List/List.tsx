@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import OverriableComponent from '../OverridableComponent';
@@ -54,49 +54,90 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
   const listRef = useRef<HTMLUListElement | null>(null);
   const multiRef = useMultiRefs(listRef, ref);
 
-  useEffect(() => {
-    const listItemsLen =
-      (listRef.current &&
-        listRef.current.querySelectorAll('.sinoui-list-item').length) ||
-      0;
-    document.onkeydown = (e) => {
-      let focusIndex = -1;
-      if (listRef.current) {
-        focusIndex = nodeListToArray(listRef.current).findIndex(
-          (item) => item === document.activeElement,
-        );
+  /**
+   * 获取 需要聚焦的 listItem 序号
+   */
+  const getFoucsIndex = useCallback(
+    (activeIndex: number, isPageDown?: boolean): number => {
+      let focusIndex = activeIndex;
+      const listItems =
+        (listRef.current &&
+          listRef.current.querySelectorAll('.sinoui-list-item')) ||
+        [];
+      if (!isPageDown) {
+        focusIndex = focusIndex > 0 ? focusIndex - 1 : 0;
+      } else {
+        focusIndex =
+          focusIndex < listItems.length - 1
+            ? focusIndex + 1
+            : listItems.length - 1;
       }
 
-      if (listItemsLen > 0) {
+      const isItemDisabled =
+        listRef.current &&
+        listRef.current
+          .querySelectorAll('.sinoui-list-item')
+          [focusIndex].classList.value.includes('sinoui-list-item--disabled');
+      if (isItemDisabled) {
+        // 如果聚焦的元素是列表的最后一个非禁用项，点击下键，则focusIndex = focusIndex - 1
+        return getFoucsIndex(
+          focusIndex,
+          focusIndex < listItems.length - 1 ? isPageDown : !isPageDown,
+        );
+      }
+      return focusIndex;
+    },
+    [],
+  );
+
+  useEffect(() => {
+    const listItems =
+      (listRef.current &&
+        listRef.current.querySelectorAll('.sinoui-list-item')) ||
+      [];
+    const listItemsLen = listItems.length;
+    const disabledListItems =
+      (listRef.current &&
+        listRef.current.querySelectorAll(
+          '.sinoui-list-item.sinoui-list-item--disabled',
+        )) ||
+      [];
+
+    // 如果列表项全部 禁用 则不监听键盘上下键
+    if (listItemsLen > 0 && listItemsLen > disabledListItems.length) {
+      document.onkeydown = (e) => {
+        let focusIndex = -1;
+        if (listRef.current) {
+          focusIndex = nodeListToArray(listRef.current).findIndex(
+            (item) => item === document.activeElement,
+          );
+        }
+
         switch ((e || window.event).keyCode) {
           case 38:
-            focusIndex = focusIndex > 0 ? focusIndex - 1 : 0;
+            focusIndex = getFoucsIndex(focusIndex);
             break;
           case 40:
-            focusIndex =
-              focusIndex < listItemsLen - 1 ? focusIndex + 1 : listItemsLen - 1;
+            focusIndex = getFoucsIndex(focusIndex, true);
             break;
           default:
             break;
         }
 
-        if (focusIndex !== -1) {
-          const listItems =
-            (listRef.current &&
-              listRef.current.querySelectorAll('.sinoui-list-item')) ||
-            [];
+        if (focusIndex !== -1 && focusIndex <= listItemsLen - 1) {
           (
             listItems &&
             listItems[focusIndex] &&
             (listItems[focusIndex] as HTMLInputElement)
           ).focus();
         }
-      }
-    };
+      };
+    }
+
     return () => {
       document.onkeydown = null;
     };
-  }, [listRef]);
+  }, [getFoucsIndex, listRef]);
 
   return <StyledList {...props} ref={multiRef} />;
 });
