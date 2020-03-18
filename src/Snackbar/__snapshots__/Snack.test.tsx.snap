@@ -2,7 +2,7 @@
 
 exports[`Snackbar快照测试 不自动消失 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-0 hjWIaj sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 kOauGN sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -20,8 +20,8 @@ exports[`Snackbar快照测试 不自动消失 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 bYcjJJ sinoui-icon-button"
-          color="#fff"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          color="textPrimary"
           role="button"
           type="button"
         >
@@ -47,7 +47,7 @@ exports[`Snackbar快照测试 不自动消失 1`] = `
 
 exports[`Snackbar快照测试 含有操作区域 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-0 hjWIaj sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 kOauGN sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -77,8 +77,8 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 bYcjJJ sinoui-icon-button"
-          color="#fff"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          color="textPrimary"
           role="button"
           type="button"
         >
@@ -104,7 +104,7 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
 
 exports[`Snackbar快照测试 居左显示 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-0 kqMiBo sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--leading"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 bRQKkS sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--leading"
   open={true}
 >
   <div
@@ -122,8 +122,8 @@ exports[`Snackbar快照测试 居左显示 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 bYcjJJ sinoui-icon-button"
-          color="#fff"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          color="textPrimary"
           role="button"
           type="button"
         >
@@ -149,7 +149,7 @@ exports[`Snackbar快照测试 居左显示 1`] = `
 
 exports[`Snackbar快照测试 操作区域换行显示 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-0 bMZfHX sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--stacked sinoui-snackbar--leading"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 jhjRTq sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--stacked sinoui-snackbar--leading"
   open={true}
 >
   <div
@@ -179,8 +179,8 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 bYcjJJ sinoui-icon-button"
-          color="#fff"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          color="textPrimary"
           role="button"
           type="button"
         >
@@ -206,23 +206,13 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
 
 exports[`Snackbar快照测试 纯文本不显示 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-0 gWtYcd sinoui-snackbar"
->
-  <div
-    className="sinoui-snackbar__surface"
-  >
-    <div
-      className="sinoui-snackbar__label"
-    >
-      消息条文本
-    </div>
-  </div>
-</div>
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 cJLCCG sinoui-snackbar"
+/>
 `;
 
 exports[`Snackbar快照测试 纯文本显示 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-0 hjWIaj sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 kOauGN sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -232,6 +222,34 @@ exports[`Snackbar快照测试 纯文本显示 1`] = `
       className="sinoui-snackbar__label"
     >
       消息条文本
+    </div>
+    <div
+      className="sinoui-snackbar__actions"
+    >
+      <div
+        className="sinoui-snackbar__dismiss"
+      >
+        <button
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          color="textPrimary"
+          role="button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+            data-testid="CloseIcon"
+            focusable="false"
+            role="presentation"
+            size={24}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -239,7 +257,7 @@ exports[`Snackbar快照测试 纯文本显示 1`] = `
 
 exports[`Snackbar快照测试 设置自定义时长 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-0 hjWIaj sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 kOauGN sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -249,6 +267,34 @@ exports[`Snackbar快照测试 设置自定义时长 1`] = `
       className="sinoui-snackbar__label"
     >
       消息条文本
+    </div>
+    <div
+      className="sinoui-snackbar__actions"
+    >
+      <div
+        className="sinoui-snackbar__dismiss"
+      >
+        <button
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          color="textPrimary"
+          role="button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+            data-testid="CloseIcon"
+            focusable="false"
+            role="presentation"
+            size={24}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>

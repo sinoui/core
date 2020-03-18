@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from 'react';
-import styled, { css, ThemeContext } from 'styled-components';
+import React, { useEffect } from 'react';
+import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import IconButton from '@sinoui/core/IconButton';
 import Close from '@sinoui/icons/Close';
 import { Theme } from '@sinoui/theme';
+import { CSSTransition } from 'react-transition-group';
 import { SNACKBAR_BACKGROUND } from './constants';
 /**
  * Snackbar 屏幕底端消息条
@@ -44,12 +45,6 @@ interface SnackbarProps {
  */
 const openStyle = css`
   display: flex;
-
-  && > .sinoui-snackbar__surface {
-    transform: scale(1);
-    opacity: 1;
-    pointer-events: auto;
-  }
 `;
 
 /**
@@ -85,7 +80,6 @@ const snackbarStyle = css`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  pointer-events: none;
 
   & .sinoui-snackbar__surface {
     display: flex;
@@ -107,8 +101,14 @@ const snackbarStyle = css`
     }) =>
       create(['opacity', 'transform'], {
         duration: duration.shortest,
-        easing: easing.easeIn,
+        easing: easing.easeInOut,
       })};
+
+    &.sinoui-snackbar--enter-active,
+    &.sinoui-snackbar--enter-done {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   & .sinoui-snackbar__label {
@@ -124,11 +124,8 @@ const snackbarStyle = css`
     align-items: center;
     box-sizing: border-box;
     padding-right: 8px;
-    & .sinoui-base-button {
-      font-size: ${(props) => props.theme.typography.body2.fontSize};
-    }
 
-    & svg {
+    & .sinoui-svg-icon {
       font-size: 18px;
     }
 
@@ -136,6 +133,10 @@ const snackbarStyle = css`
       margin-left: 8px;
     }
   }
+`;
+
+const DismissIconButton = styled(IconButton)`
+  color: currentColor;
 `;
 
 const SnackbarWrapper = styled.div.attrs((props: SnackbarProps) => ({
@@ -166,11 +167,10 @@ export default function Snackbar(props: SnackbarProps) {
     onClose,
     ...rest
   } = props;
-  const theme = useContext(ThemeContext);
 
   useEffect(() => {
     let timer: any;
-    if (duration !== -1 && onClose) {
+    if (open && duration !== -1 && onClose) {
       timer = setTimeout(() => {
         onClose();
       }, duration);
@@ -181,24 +181,24 @@ export default function Snackbar(props: SnackbarProps) {
 
   return (
     <SnackbarWrapper stacked={stacked} open={open} leading={leading} {...rest}>
-      <div className="sinoui-snackbar__surface">
-        <div className="sinoui-snackbar__label">{message}</div>
-        {(action || duration === -1) && (
+      <CSSTransition
+        in={open}
+        timeout={150}
+        unmountOnExit
+        classNames="sinoui-snackbar-"
+      >
+        <div className="sinoui-snackbar__surface">
+          <div className="sinoui-snackbar__label">{message}</div>
           <div className="sinoui-snackbar__actions">
             {action && <div className="sinoui-snackbar__action">{action}</div>}
-            {duration === -1 && (
-              <div className="sinoui-snackbar__dismiss">
-                <IconButton
-                  color={theme.palette.primary.contrastText}
-                  onClick={onClose}
-                >
-                  <Close />
-                </IconButton>
-              </div>
-            )}
+            <div className="sinoui-snackbar__dismiss">
+              <DismissIconButton onClick={onClose}>
+                <Close />
+              </DismissIconButton>
+            </div>
           </div>
-        )}
-      </div>
+        </div>
+      </CSSTransition>
     </SnackbarWrapper>
   );
 }

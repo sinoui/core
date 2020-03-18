@@ -4,7 +4,12 @@ title: Snackbar 消息条
 ---
 
 import CardStoryLayout from './CardStoryLayout';
-import { BaseDemo, ActionDemo, FabDemo } from '../../../stories/SnackbarsDemo';
+import {
+  BaseDemo,
+  ActionDemo,
+  FabDemo,
+  FabDemoDoc,
+} from '../../../stories/SnackbarsDemo';
 
 ## 单行文本消息条
 
@@ -36,7 +41,7 @@ export default function BaseDemo() {
 效果：
 
 <CardStoryLayout>
-  <BaseDemo message="单行文本消息条" style={{ marginBottom: '150px' }} />
+  <BaseDemo message="单行文本消息条" />
 </CardStoryLayout>
 
 ## 多行文本消息条
@@ -71,10 +76,7 @@ export default function BaseDemo() {
 效果：
 
 <CardStoryLayout>
-  <BaseDemo
-    message="多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本消息条"
-    style={{ marginBottom: '150px' }}
-  />
+  <BaseDemo message="多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本消息条" />
 </CardStoryLayout>
 
 ## 含有操作按钮的消息条
@@ -114,10 +116,12 @@ export default function BaseDemo() {
 效果：
 
 <CardStoryLayout>
-  <ActionDemo message="单行文本消息条" style={{ marginBottom: '150px' }} />
+  <ActionDemo message="单行文本消息条" />
 </CardStoryLayout>
 
-## 操作按钮换行显示的消息条
+## 操作区域换行显示的消息条
+
+消息条的提示文字特别多超过一行显示时，可以将操作区域按钮换行显示。
 
 Demo.tsx
 
@@ -158,7 +162,6 @@ export default function BaseDemo() {
   <ActionDemo
     message="多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本消息条"
     stacked
-    style={{ marginBottom: '150px' }}
   />
 </CardStoryLayout>
 
@@ -195,11 +198,7 @@ export default function BaseDemo() {
 效果：
 
 <CardStoryLayout>
-  <BaseDemo
-    message="单行文本消息条"
-    leading
-    style={{ marginBottom: '150px' }}
-  />
+  <BaseDemo message="单行文本消息条" leading />
 </CardStoryLayout>
 
 ## 页面中含有浮动按钮的消息条
@@ -248,5 +247,5 @@ export default function BaseDemo() {
 效果：
 
 <CardStoryLayout>
-  <FabDemo />
+  <FabDemoDoc />
 </CardStoryLayout>
