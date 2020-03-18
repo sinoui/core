@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog组件 快照测试 基本使用 1`] = `
+Array [
+  "ReactDOM.createPortal(",
+  <div
+    className="ModalLayout-g5nr25-0 jNRojG Dialog__ModalWrapper-sc-10h8ou0-0 ieHqTo"
+    onClick={[Function]}
+  >
+    <div
+      aria-hidden={true}
+      className="Backdrop__BackdropWrapper-sc-15mv4hm-0 dYcqsh"
+      data-sinoui-test="Backdrop"
+      onClick={[Function]}
+    />
+    <div
+      className="DialogWrapper-otdr06-0 hSmHOF sinoui-dialog"
+    >
+      <div
+        className="Typography__TypographyWrapper-sc-12agh80-0 imjgCm sinoui-typography sinoui-typography--H6 DialogTitle-sc-1z056jx-0 joiqub sinoui-dialog-title"
+        color="textPrimary"
+        type="H6"
+      >
+        Use Google location service?
+      </div>
+      <h6
+        className="Typography__TypographyWrapper-sc-12agh80-0 juBaHC sinoui-typography sinoui-typography--subtitle1 DialogContent-rvt14v-0 coPUFm sinoui-dialog-content children forwardedComponent theme"
+        color="textSecondary"
+        type="subtitle1"
+      >
+        Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
+      </h6>
+      <div
+        className="DialogActions__DialogActionsWrapper-ibc7so-0 kTvEtc sinoui-dialog-actions"
+      >
+        <button
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button-sc-15sa99-0 euJRxB sinoui-button"
+          color="primary"
+          role="button"
+          type="button"
+        >
+          Disagree
+        </button>
+        <button
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button-sc-15sa99-0 euJRxB sinoui-button"
+          color="primary"
+          role="button"
+          type="button"
+        >
+          Agree
+        </button>
+      </div>
+      <iframe
+        className="Iframe-fna49j-0 IJdcU"
+        frameBorder={0}
+        scrolling="false"
+      />
+    </div>
+  </div>,
+  ", elRef.current, );",
+]
+`;

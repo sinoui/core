@@ -117,41 +117,20 @@ export default function createStyleTransition<Props extends {}>(
   options: StyleTransitionOptions,
   defaultProps?: Props & StyleTransitionPropsType,
 ): React.ComponentType<Props & StyleTransitionPropsType> {
-  return class StyleTransition
-    extends React.Component<Props & StyleTransitionPropsType>
-    implements TransitionInterface {
-    public static defaultProps = defaultProps;
+  return function StyleTransition(props) {
+    const easing = () => {
+      return getEasing(props.easing, options.easing);
+    };
 
-    constructor(props: Props & StyleTransitionPropsType) {
-      super(props);
-
-      this.handleEnter = this.handleEnter.bind(this);
-      this.handleEntering = this.handleEntering.bind(this);
-      this.handleExit = this.handleExit.bind(this);
-      this.handleExiting = this.handleExiting.bind(this);
-      this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
-    }
-
-    get easing(): {
-      enter: string;
-      exit: string;
-    } {
-      return getEasing(this.props.easing, options.easing);
-    }
-
-    public getTimeout(
-      node: HTMLElement,
-    ): {
-      enter: number;
-      exit: number;
-    } {
+    const getTimeout = (node: HTMLElement) => {
       const timeout:
         | 'auto'
         | number
         | {
             enter: number;
             exit: number;
-          } = this.props.timeout || options.duration;
+          }
+        | undefined = props.timeout || options.duration;
       if (timeout === 'auto') {
         const duration = transitions.getAutoHeightDuration(node.clientHeight);
         return {
@@ -160,7 +139,7 @@ export default function createStyleTransition<Props extends {}>(
         };
       }
       return getDuration(timeout, options.duration);
-    }
+    };
 
     /**
      * 处理过渡的enter事件
@@ -170,9 +149,9 @@ export default function createStyleTransition<Props extends {}>(
      *  如果`HorizontalSlide`组件设置了`appear`属性，则会在刚创建节点时，
      *  调用此方法，且isAppearing为true；否则不会调用此方法。
      */
-    public handleEnter(node: HTMLElement, isAppearing: boolean) {
-      if (this.props.onEnter) {
-        this.props.onEnter(node, isAppearing);
+    const handleEnter = (node: HTMLElement, isAppearing: boolean) => {
+      if (props.onEnter) {
+        props.onEnter(node, isAppearing);
       }
 
       const enterStyle = {
@@ -180,7 +159,7 @@ export default function createStyleTransition<Props extends {}>(
         ...options.enterStyle(this, node, isAppearing),
       };
       Object.assign(node.style, enterStyle);
-    }
+    };
 
     /**
      * 处理过渡的entering事件
@@ -190,14 +169,14 @@ export default function createStyleTransition<Props extends {}>(
      *  如果`HorizontalSlide`组件设置了`appear`属性，则会在刚创建节点时，
      *  调用此方法，且isAppearing为true；否则不会调用此方法。
      */
-    public handleEntering(node: HTMLElement, isAppearing: boolean) {
+    const handleEntering = (node: HTMLElement, isAppearing: boolean) => {
       const activeStyle = options.enterActiveStyle
         ? options.enterActiveStyle(this, node, isAppearing)
         : {};
       if (!activeStyle.transition) {
         activeStyle.transition = transitions.create(options.transitionProps, {
-          duration: this.getTimeout(node).enter,
-          easing: this.easing.enter,
+          duration: getTimeout(node).enter,
+          easing: easing().enter,
         });
       }
 
@@ -208,10 +187,10 @@ export default function createStyleTransition<Props extends {}>(
 
       Object.assign(node.style, enterActiveStyle);
 
-      if (this.props.onEntering) {
-        this.props.onEntering(node, isAppearing);
+      if (props.onEntering) {
+        props.onEntering(node, isAppearing);
       }
-    }
+    };
 
     /**
      * 处理过渡的exit事件
@@ -221,7 +200,7 @@ export default function createStyleTransition<Props extends {}>(
      *  如果`HorizontalSlide`组件设置了`appear`属性，则会在刚创建节点时，
      *  调用此方法，且isAppearing为true；否则不会调用此方法。
      */
-    public handleExit(node: HTMLElement) {
+    const handleExit = (node: HTMLElement) => {
       const exitStyle = {
         transition: 'none',
         ...options.exitStyle(this, node),
@@ -229,17 +208,17 @@ export default function createStyleTransition<Props extends {}>(
 
       Object.assign(node.style, exitStyle);
 
-      if (this.props.onExit) {
-        this.props.onExit(node);
+      if (props.onExit) {
+        props.onExit(node);
       }
-    }
+    };
 
     /**
      * 处理过渡的exiting事件
      *
      * @param {HTMLElement} node 应用过渡效果的节点
      */
-    public handleExiting(node: HTMLElement) {
+    const handleExiting = (node: HTMLElement) => {
       const exitActiveStyle = options.exitActiveStyle
         ? options.exitActiveStyle(this, node)
         : {};
@@ -247,8 +226,8 @@ export default function createStyleTransition<Props extends {}>(
         exitActiveStyle.transition = transitions.create(
           options.transitionProps,
           {
-            duration: this.getTimeout(node).exit,
-            easing: this.easing.exit,
+            duration: getTimeout(node).exit,
+            easing: easing().exit,
           },
         );
       }
@@ -259,10 +238,10 @@ export default function createStyleTransition<Props extends {}>(
 
       Object.assign(node.style, style);
 
-      if (this.props.onExiting) {
-        this.props.onExiting(node);
+      if (props.onExiting) {
+        props.onExiting(node);
       }
-    }
+    };
 
     /**
      * 过渡结束监听器。
@@ -270,29 +249,31 @@ export default function createStyleTransition<Props extends {}>(
      * @param {HTMLElement} node 过渡元素
      * @param {() => void} next 通知`Transition`组件过渡结束的方法。
      */
-    public handleTransitionEnd(node: HTMLElement, next: () => void) {
-      if (this.props.timeout === 'auto') {
-        setTimeout(next, this.getTimeout(node).enter);
+    const handleTransitionEnd = (node: HTMLElement, next: () => void) => {
+      if (props.timeout === 'auto') {
+        setTimeout(next, getTimeout(node).enter);
       }
-    }
+    };
 
-    public render() {
-      const { transitionClasses, direction, timeout, ...props } = this
-        .props as StyleTransitionPropsType;
-      return (
-        <CSSTransition
-          {...props}
-          onEnter={this.handleEnter}
-          onEntering={this.handleEntering}
-          onExit={this.handleExit}
-          onExiting={this.handleExiting}
-          timeout={
-            timeout === 'auto' ? null : getDuration(timeout, options.duration)
-          }
-          classNames={transitionClasses || ''}
-          addEndListener={this.handleTransitionEnd}
-        />
-      );
-    }
+    const {
+      transitionClasses,
+      direction,
+      timeout = defaultProps && defaultProps.timeout,
+      ...rest
+    } = props as StyleTransitionPropsType;
+    return (
+      <CSSTransition
+        {...rest}
+        onEnter={handleEnter}
+        onEntering={handleEntering}
+        onExit={handleExit}
+        onExiting={handleExiting}
+        timeout={
+          timeout === 'auto' ? null : getDuration(timeout, options.duration)
+        }
+        classNames={transitionClasses || ''}
+        addEndListener={handleTransitionEnd}
+      />
+    );
   };
 }

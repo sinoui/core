@@ -1,5 +1,5 @@
-import createStyleTransition from './createStyleTransition';
 import { transitions } from '@sinoui/theme';
+import createStyleTransition from './createStyleTransition';
 
 const { duration, easing } = transitions;
 

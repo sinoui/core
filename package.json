@@ -57,13 +57,15 @@
     "@babel/runtime": "^7.7.6",
     "@sinoui/ripple": "^1.0.10",
     "@sinoui/theme": "^1.0.0-beta.7",
+    "@types/react-transition-group": "^4.2.4",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
     "lodash-es": "^4.17.15",
     "polished": "^3.4.4",
     "react-icons": "^3.9.0",
     "react-transition-group": "^4.3.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -89,7 +91,6 @@
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-docgen-typescript-loader": "^3.6.0",
-    "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
     "ts-lib-tools": "^0.10.1",
     "typescript": "^3.8.3",

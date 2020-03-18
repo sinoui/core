@@ -7,22 +7,21 @@
 
 module.exports = {
   docs: {
-    组件: [
-      {
-        type: 'category',
-        label: '通用',
-        items: [
-          'components/button',
-          'components/divider',
-          'components/typography',
-          'components/card',
-          'components/svg-icon',
-          'components/fab', 
-          'components/switch',
-          'components/avatar',
-        ],
-      },
-    ],
+    组件: [{
+      type: 'category',
+      label: '通用',
+      items: [
+        'components/button',
+        'components/divider',
+        'components/typography',
+        'components/card',
+        'components/svg-icon',
+        'components/fab',
+        'components/switch',
+        'components/avatar',
+        'components/dialog',
+      ],
+    }, ],
     组件API: [
       'components-apis/base-button',
       'components-apis/button',
@@ -33,6 +32,7 @@ module.exports = {
       'components-apis/svg-icon',
       'components-apis/fab',
       'components-apis/avatar',
+      'components-apis/dialog',
     ],
   },
 };

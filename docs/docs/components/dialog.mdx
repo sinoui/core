@@ -1,0 +1,253 @@
+---
+id: dialog
+title: Dialog 对话框
+---
+
+对话框将一个任务告知给用户，它包含了一些关键信息，需要用户进行确认，或者包含了多个任务。
+
+对话框是 modal 窗体的一种类型，它通常在应用程序内容之前呈现，来提供一些关键信息，或者要求用户做出决策。 对话框出现的时候会禁用应用程序的所有功能，只有被确认、被取消或已采取其他必要的操作时，对话框才不会留在屏幕上。
+
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import DialogDemo from './dialog-demos/DialogDemo';
+
+## 基本使用
+
+```tsx
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+
+function DialogDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>CLICK</Button>
+      <Dialog open={open}>
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <DialogDemo />
+</ThemeProvider>
+
+## 不显示遮罩层
+
+```tsx
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+
+function DialogDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>点击</Button>
+      <Dialog open={open} backdrop={false}>
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <DialogDemo backdrop={false} />
+</ThemeProvider>
+
+## 显示关闭图标
+
+```tsx
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+
+function DialogDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>点击</Button>
+      <Dialog open={open} showCloseIcon onRequestClose={() => setOpen(false)}>
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <DialogDemo showCloseIcon onRequestClose />
+</ThemeProvider>
+
+## 设置点击遮罩层的回调函数
+
+```tsx
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+
+function DialogDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>点击</Button>
+      <Dialog
+        open={open}
+        onBackdropClick={() => setOpen(false)}
+        backdropClick
+        absolute
+      >
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <DialogDemo onBackdropClick backdropClick absolute />
+</ThemeProvider>
+
+## 设置全屏显示
+
+```tsx
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+
+function DialogDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>点击</Button>
+      <Dialog fullScreen>
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <DialogDemo fullScreen />
+</ThemeProvider>
+
+## 设置最大宽度显示
+
+```tsx
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+
+function DialogDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>点击</Button>
+      <Dialog fullWidth>
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <DialogDemo fullWidth />
+</ThemeProvider>
+
+## 设置宽度自适应
+
+```tsx
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+
+function DialogDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>点击</Button>
+      <Dialog autoWidth>
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <DialogDemo autoWidth />
+</ThemeProvider>

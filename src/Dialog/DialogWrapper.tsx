@@ -26,7 +26,7 @@ const fullScreenStyle = css`
  * 宽屏模式设置的宽度
  */
 const fullWidthStyle = css`
-  width: 600px;
+  width: 560px;
 `;
 
 /**
@@ -34,7 +34,7 @@ const fullWidthStyle = css`
  */
 const maxWidthStyle = css`
   max-width: ${(props: DialogWrapperProps) =>
-    props.autoWidth ? '100%' : '600px'};
+    props.autoWidth ? '100%' : '560px'};
 `;
 
 /**

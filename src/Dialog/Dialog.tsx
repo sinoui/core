@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import classNames from 'classnames';
-import DialogTitle from '@sinoui/core/DialogTitle';
-import DialogActions from '@sinoui/core/DialogActions';
-import Modal, { ModalPropsType } from '@sinoui/core/Modal';
-import DialogWrapper from './DialogWrapper';
-import Iframe from './Iframe';
+import Modal from '@sinoui/core/Modal';
+import Fade from '../transitions/Fade';
+import DialogContainer, { DialogContainerProps } from './DialogContainer';
 
 const ModalWrapper = styled(Modal)`
   display: flex;
@@ -13,91 +10,51 @@ const ModalWrapper = styled(Modal)`
   align-items: center;
 `;
 
-export interface DialogProps {
+export interface DialogProps extends DialogContainerProps {
   /**
-   * iframe的定位方式
+   * 为true时打开Modal
+   *
+   * @type {boolean}
    */
-  absolute?: boolean;
-  /**
-   * 子元素
-   */
-  children?: React.ReactNode;
-  /**
-   * 是否全屏显示
-   */
-  fullScreen?: boolean;
-  /**
-   * 对话框将根据 maxWidth 的值进行自我调整
-   */
-  fullWidth?: boolean;
-  /**
-   * 添加自定义类名
-   */
-  className?: string;
-  /**
-   * 最大宽度
-   */
-  autoWidth?: boolean;
+  open?: boolean;
   /**
    * 为true时可以响应backdrop点击事件。
    */
   backdropClick?: boolean;
+  /**
+   * 展现过渡动画。默认为Fade。
+   */
+  transition?: React.ReactType;
+  /**
+   * 过渡动画时长
+   */
+  transitionDuration?:
+    | number
+    | {
+        enter: number;
+        exit: number;
+      };
+  /**
+   * backdrop被点击时的回调函数
+   *
+   * @type {(SyntheticMouseEvent<*>) => void}
+   */
+  onBackdropClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-/**
- * 弹窗的根组件
- */
 function Dialog(props: DialogProps) {
   const {
-    children,
-    absolute,
-    fullScreen,
-    fullWidth,
-    className,
-    autoWidth,
     backdropClick = true,
+    transition: Transition = Fade,
+    transitionDuration,
+    open,
     ...rest
   } = props;
-
-  /**
-   * 获取Dialog子组件的排序号
-   *
-   * @param {Node} node
-   */
-  const getDialogNodeOrderNode = (node: React.ReactElement<any>) => {
-    switch (node.type) {
-      case DialogTitle:
-        return 0;
-      case DialogActions:
-        return 2;
-      default:
-        return 1;
-    }
-  };
-
-  const sortDialogChildren = (
-    node1: React.ReactElement<any>,
-    node2: React.ReactElement<any>,
-  ) => {
-    return getDialogNodeOrderNode(node1) - getDialogNodeOrderNode(node2);
-  };
-
-  const nodes = React.Children.toArray(children)
-    .filter(Boolean)
-    .sort(sortDialogChildren);
-
   return (
-    <ModalWrapper {...rest} backdropClick={backdropClick}>
-      <DialogWrapper
-        fullScreen={fullScreen}
-        fullWidth={fullWidth}
-        className={classNames('sinoui-dialog', className)}
-        autoWidth={autoWidth}
-        {...props}
-      >
-        {nodes}
-        <Iframe frameBorder={0} scrolling="false" absolute={absolute} />
-      </DialogWrapper>
+    <ModalWrapper {...rest} backdropClick={backdropClick} open={open}>
+      <Transition timeout={transitionDuration} appear in={open}>
+        <DialogContainer {...props} />
+      </Transition>
     </ModalWrapper>
   );
 }
