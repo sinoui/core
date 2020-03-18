@@ -11,11 +11,12 @@ export default function BaseDemo({ leading }: { leading?: boolean }) {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Button onClick={() => setOpen(true)}>显示snackbar</Button>
+      <Button raised onClick={() => setOpen(true)}>
+        显示snackbar
+      </Button>
       <Snackbar
         message="单行文本消息"
         open={open}
-        duration={-1}
         leading={leading}
         onClose={() => setOpen(false)}
         style={{ marginBottom: '72px' }}

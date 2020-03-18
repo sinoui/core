@@ -4,13 +4,23 @@ import { defaultTheme } from '@sinoui/theme';
 import Snackbar from '@sinoui/core/Snackbar';
 import Button from '@sinoui/core/Button';
 
-export default function BaseDemo() {
+export default function BaseDemo({
+  message,
+  stacked,
+  style,
+}: {
+  message: string;
+  stacked?: boolean;
+  style?: React.CSSProperties;
+}) {
   const [open, setOpen] = useState();
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Button onClick={() => setOpen(true)}>显示snackbar</Button>
+      <Button raised onClick={() => setOpen(true)}>
+        显示snackbar
+      </Button>
       <Snackbar
-        message="单行文本消息"
+        message={message}
         open={open}
         duration={-1}
         action={
@@ -18,6 +28,8 @@ export default function BaseDemo() {
             undo
           </Button>
         }
+        stacked={stacked}
+        style={style}
         onClose={() => setOpen(false)}
       />
     </ThemeProvider>

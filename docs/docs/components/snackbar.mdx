@@ -1,0 +1,252 @@
+---
+id: snackbar
+title: Snackbar 消息条
+---
+
+import CardStoryLayout from './CardStoryLayout';
+import { BaseDemo, ActionDemo, FabDemo } from '../../../stories/SnackbarsDemo';
+
+## 单行文本消息条
+
+Demo.tsx
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Snackbar from '@sinoui/core/Snackbar';
+import Button from '@sinoui/core/Button';
+
+export default function BaseDemo() {
+  const [open, setOpen] = useState();
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Button onClick={() => setOpen(true)}>显示snackbar</Button>
+      <Snackbar
+        message="单行文本消息条"
+        open={open}
+        onClose={() => setOpen(false)}
+      />
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <BaseDemo message="单行文本消息条" style={{ marginBottom: '150px' }} />
+</CardStoryLayout>
+
+## 多行文本消息条
+
+Demo.tsx
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Snackbar from '@sinoui/core/Snackbar';
+import Button from '@sinoui/core/Button';
+
+export default function BaseDemo() {
+  const [open, setOpen] = useState();
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Button raised onClick={() => setOpen(true)}>
+        显示snackbar
+      </Button>
+      <Snackbar
+        message="多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本消息条"
+        open={open}
+        onClose={() => setOpen(false)}
+      />
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <BaseDemo
+    message="多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本消息条"
+    style={{ marginBottom: '150px' }}
+  />
+</CardStoryLayout>
+
+## 含有操作按钮的消息条
+
+Demo.tsx
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Snackbar from '@sinoui/core/Snackbar';
+import Button from '@sinoui/core/Button';
+
+export default function BaseDemo() {
+  const [open, setOpen] = useState();
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Button raised onClick={() => setOpen(true)}>
+        显示snackbar
+      </Button>
+      <Snackbar
+        message="单行文本消息条"
+        open={open}
+        duration={-1}
+        action={
+          <Button color="error" onClick={() => alert('执行撤销操作')}>
+            undo
+          </Button>
+        }
+        onClose={() => setOpen(false)}
+      />
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ActionDemo message="单行文本消息条" style={{ marginBottom: '150px' }} />
+</CardStoryLayout>
+
+## 操作按钮换行显示的消息条
+
+Demo.tsx
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Snackbar from '@sinoui/core/Snackbar';
+import Button from '@sinoui/core/Button';
+
+export default function BaseDemo() {
+  const [open, setOpen] = useState();
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Button raised onClick={() => setOpen(true)}>
+        显示snackbar
+      </Button>
+      <Snackbar
+        message="多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本消息条"
+        open={open}
+        duration={-1}
+        action={
+          <Button color="error" onClick={() => alert('执行撤销操作')}>
+            undo
+          </Button>
+        }
+        stacked
+        onClose={() => setOpen(false)}
+      />
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <ActionDemo
+    message="多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本多行文本消息条"
+    stacked
+    style={{ marginBottom: '150px' }}
+  />
+</CardStoryLayout>
+
+## 居左显示的消息条
+
+消息条默认居中显示，当在宽屏下使用消息条组件时，可以通过设置`leading` 属性为 true 使得消息条在屏幕中居左显示。
+
+Demo.tsx
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Snackbar from '@sinoui/core/Snackbar';
+import Button from '@sinoui/core/Button';
+
+export default function BaseDemo() {
+  const [open, setOpen] = useState();
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Button onClick={() => setOpen(true)}>显示snackbar</Button>
+      <Snackbar
+        message="单行文本消息条"
+        open={open}
+        leading
+        onClose={() => setOpen(false)}
+      />
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <BaseDemo
+    message="单行文本消息条"
+    leading
+    style={{ marginBottom: '150px' }}
+  />
+</CardStoryLayout>
+
+## 页面中含有浮动按钮的消息条
+
+页面中包含浮动按钮或者底部应用栏时，消息条应该显示在浮动按钮或者应用栏的上方，且元素间不能相互重叠。
+
+Demo.tsx
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Snackbar from '@sinoui/core/Snackbar';
+import Button from '@sinoui/core/Button';
+import Fab from '@sinoui/core/Fab';
+import { MdAdd } from 'react-icons/md';
+
+export default function BaseDemo() {
+  const [open, setOpen] = useState();
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Button raised onClick={() => setOpen(true)}>
+        显示snackbar
+      </Button>
+      <Snackbar
+        message="单行文本消息"
+        open={open}
+        onClose={() => setOpen(false)}
+        style={{ marginBottom: '72px' }}
+      />
+      <Fab
+        style={{
+          position: 'fixed',
+          bottom: '10px',
+          right: '10px',
+        }}
+      >
+        <MdAdd />
+      </Fab>
+    </ThemeProvider>
+  );
+}
+```
+
+效果：
+
+<CardStoryLayout>
+  <FabDemo />
+</CardStoryLayout>

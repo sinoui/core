@@ -29,7 +29,7 @@ interface SnackbarProps {
   /**
    * 消息条被关闭的回调函数
    */
-  onClose: () => void;
+  onClose?: () => void;
   stacked?: boolean;
   /**
    * 在宽屏下 leadding设置为true  消息条居左显示
@@ -170,7 +170,7 @@ export default function Snackbar(props: SnackbarProps) {
 
   useEffect(() => {
     let timer: any;
-    if (duration !== -1) {
+    if (duration !== -1 && onClose) {
       timer = setTimeout(() => {
         onClose();
       }, duration);
