@@ -60,23 +60,46 @@ describe('List', () => {
         </List>
       </ThemeProvider>,
     );
-    const event = new KeyboardEvent('keydown', { code: '38' });
     const listItemEle = container.querySelectorAll('.sinoui-list-item');
-    act(() => {
-      fireEvent.click(listItemEle[1]);
-    });
-    act(() => {
-      fireEvent.focus(listItemEle[1]);
-    });
+    listItemEle[1].focus();
+    expect(listItemEle[1]).toHaveFocus();
 
-    // const focusListItemEle = container.querySelector(
-    //   '.sinoui-list-item:focus',
-    // ) as HTMLElement;
-    // console.log(document.activeElement);
-    // console.log(focusListItemEle);
-    document.dispatchEvent(event);
-    expect(testClick).toHaveBeenCalled();
-    // expect(listItemEle[0].innerHTML).toEqual(focusListItemEle);
+    act(() => {
+      fireEvent.keyDown(listItemEle[1], { keyCode: 40 });
+    });
+    expect(listItemEle[2]).not.toHaveFocus();
+    expect(listItemEle[3]).toHaveFocus();
+  });
+
+  it('第一项获取焦点，点击向上切换，焦点仍在第一项', () => {
+    const listData = [1, 2, 3, 4];
+    const testClick = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <List>
+          {listData.map((item) => (
+            <>
+              <ListItem
+                disabled={item % 3 === 0}
+                key={item}
+                onClick={testClick}
+              >
+                <ListItemText>item{item}</ListItemText>
+              </ListItem>
+            </>
+          ))}
+        </List>
+      </ThemeProvider>,
+    );
+    const listItemEle = container.querySelectorAll('.sinoui-list-item');
+    listItemEle[0].focus();
+    expect(listItemEle[0]).toHaveFocus();
+
+    act(() => {
+      fireEvent.keyDown(listItemEle[0], { keyCode: 38 });
+    });
+    expect(listItemEle[1]).not.toHaveFocus();
+    expect(listItemEle[0]).toHaveFocus();
   });
 });
 
