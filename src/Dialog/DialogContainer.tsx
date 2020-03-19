@@ -78,11 +78,13 @@ function DialogContainer(props: DialogContainerProps) {
         handler: '.sinoui-dialog-title',
         bounds: true,
       });
+
+      return () => {
+        drag.teardown();
+      };
     }
 
-    return () => {
-      drag.teardown();
-    };
+    return () => null;
   }, [dialogContainerRef, draggable]);
 
   /**

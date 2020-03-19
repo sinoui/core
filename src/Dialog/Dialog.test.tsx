@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
