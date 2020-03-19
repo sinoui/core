@@ -30,17 +30,18 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
   display: inline-flex;
   flex-direction: ${(props) =>
     props.labelPosition === 'left' ? 'row-reverse' : 'row'};
-  align-items: center;
+  align-items: flex-start;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 
   > .sinoui-checkbox,
   > .sinoui-radio {
-    padding-top: 2px;
     flex-shrink: 0;
   }
 
   > .sinoui-form-control-label__title {
+    padding-top: 9px;
     padding-left: 4px;
     padding-right: 4px;
     word-break: break-all;
