@@ -26,6 +26,7 @@ export default function BaseDemo({
         leading={leading}
         onClose={() => setOpen(false)}
         style={style}
+        duration={-1}
       />
     </ThemeProvider>
   );

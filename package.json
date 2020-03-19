@@ -79,6 +79,7 @@
     "@types/color": "^3.0.1",
     "@types/react": "^16.9.15",
     "@types/react-dom": "^16.9.4",
+    "@types/react-transition-group": "^4.2.4",
     "@types/styled-components": "^4.4.0",
     "babel-loader": "^8.0.6",
     "husky": "^3.1.0",

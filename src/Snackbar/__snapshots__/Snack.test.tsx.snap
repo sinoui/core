@@ -2,7 +2,7 @@
 
 exports[`Snackbar快照测试 不自动消失 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 kOauGN sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 zSdAZ sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -47,7 +47,7 @@ exports[`Snackbar快照测试 不自动消失 1`] = `
 
 exports[`Snackbar快照测试 含有操作区域 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 kOauGN sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 zSdAZ sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -65,7 +65,7 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
         className="sinoui-snackbar__action"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button-sc-15sa99-0 bhwQWK sinoui-button sinoui-button--raised"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button-sc-15sa99-0 dGYkF sinoui-button sinoui-button--raised"
           color="error"
           role="button"
           type="button"
@@ -104,7 +104,7 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
 
 exports[`Snackbar快照测试 居左显示 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 bRQKkS sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--leading"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 hRFkSZ sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--leading"
   open={true}
 >
   <div
@@ -149,7 +149,7 @@ exports[`Snackbar快照测试 居左显示 1`] = `
 
 exports[`Snackbar快照测试 操作区域换行显示 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 jhjRTq sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--stacked sinoui-snackbar--leading"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 eOeYou sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--stacked sinoui-snackbar--leading"
   open={true}
 >
   <div
@@ -167,7 +167,7 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
         className="sinoui-snackbar__action"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button-sc-15sa99-0 bhwQWK sinoui-button sinoui-button--raised"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button-sc-15sa99-0 dGYkF sinoui-button sinoui-button--raised"
           color="error"
           role="button"
           type="button"
@@ -206,13 +206,13 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
 
 exports[`Snackbar快照测试 纯文本不显示 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 cJLCCG sinoui-snackbar"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 zSdAZ sinoui-snackbar"
 />
 `;
 
 exports[`Snackbar快照测试 纯文本显示 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 kOauGN sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 zSdAZ sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -257,7 +257,7 @@ exports[`Snackbar快照测试 纯文本显示 1`] = `
 
 exports[`Snackbar快照测试 设置自定义时长 1`] = `
 <div
-  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 kOauGN sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 zSdAZ sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div

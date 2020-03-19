@@ -41,13 +41,6 @@ interface SnackbarProps {
 }
 
 /**
- * Snackbar 显示状态的样式
- */
-const openStyle = css`
-  display: flex;
-`;
-
-/**
  * 操作区域换行样式
  */
 const stackStyle = css`
@@ -71,7 +64,7 @@ const leadingStyle = css`
 
 const snackbarStyle = css`
   position: fixed;
-  display: none;
+  display: flex;
   z-index: ${({ theme }) => theme.zIndex.snackbar};
   right: 0;
   bottom: 0;
@@ -108,6 +101,11 @@ const snackbarStyle = css`
     &.sinoui-snackbar--enter-done {
       opacity: 1;
       transform: scale(1);
+    }
+
+    .sinoui-snackbar--exit-active {
+      opacity: 0;
+      transform: scale(0.9);
     }
   }
 
@@ -151,7 +149,6 @@ const SnackbarWrapper = styled.div.attrs((props: SnackbarProps) => ({
   }
 >`
   ${snackbarStyle};
-  ${(props) => props.open && openStyle}
   ${(props) => props.stacked && stackStyle}
   ${(props) => props.leading && leadingStyle}
 `;
