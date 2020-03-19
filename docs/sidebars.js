@@ -24,6 +24,7 @@ module.exports = {
         'components/checkbox',
         'components/checkboxGroup',
         'components/radioGroup',
+        'components/badge',
       ],
     }, ],
     组件API: [
@@ -42,6 +43,7 @@ module.exports = {
       'components-apis/checkboxGroup',
       'components-apis/radio',
       'components-apis/radioGroup',
+      'components-apis/badge',
     ],
   },
 };
