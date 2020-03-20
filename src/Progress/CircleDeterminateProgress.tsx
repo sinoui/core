@@ -1,10 +1,14 @@
 import React, { useRef, useEffect, useContext, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
 import classNames from 'classnames';
-import getColorFromTheme from '../utils/getColorFromTheme';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import { ProgressPropsType } from './types';
 
-export default function Demo(props: ProgressPropsType) {
+/**
+ * 环形定量进度指示器
+ * @param props
+ */
+export default function CircleDeterminateProgress(props: ProgressPropsType) {
   const {
     size = 40,
     thickness = 3.6,
@@ -14,7 +18,7 @@ export default function Demo(props: ProgressPropsType) {
     style,
   } = props;
   const theme = useContext(ThemeContext);
-  const canvas = useRef<HTMLCanvasElement>();
+  const canvas = useRef<HTMLCanvasElement>(null);
   const canvasCtx = useRef<CanvasRenderingContext2D | null>();
   const rafId = useRef<number>();
   const end = useRef(-90);
@@ -63,11 +67,13 @@ export default function Demo(props: ProgressPropsType) {
     }
     return () => cancelAnimationFrame(rafId.current as number);
   }, [color, draw, size, start, theme, thickness, value]);
+
   return (
     <div
       className={classNames(
         'sinoui-progress',
         'sinoui-progress--circle',
+        'sinoui-progress--circle--determinate',
         className,
       )}
       style={style}

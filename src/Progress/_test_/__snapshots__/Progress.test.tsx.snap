@@ -2,7 +2,7 @@
 
 exports[`快照测试 环形定量指示器 1`] = `
 <div
-  className="sinoui-progress sinoui-progress--circle"
+  className="sinoui-progress sinoui-progress--circle sinoui-progress--circle--determinate"
 >
   <canvas />
 </div>

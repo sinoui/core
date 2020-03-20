@@ -142,6 +142,7 @@ export default function LinearProgress(props: ProgressPropsType) {
       className={classNames(
         'sinoui-progress',
         'sinoui-progress--linear',
+        { 'sinoui-progress--buffer': buffer },
         className,
       )}
     >

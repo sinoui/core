@@ -1,15 +1,20 @@
 import React, { useRef, useEffect, useContext, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import DivCanvas from './DivCanvas';
-import getColorFromTheme from '../utils/getColorFromTheme';
 import { ProgressPropsType } from './types';
 
 const PROGRESS_MAX_WIDTH = 1.9; // 弧度
 const PROGRESS_WIDTH_DELTA = 0.05;
-export default function Demo(props: ProgressPropsType) {
+
+/**
+ * 环形不定量进度指示器
+ * @param props
+ */
+export default function CircleProgress(props: ProgressPropsType) {
   const { size = 40, thickness = 3.6, color = 'primary' } = props;
   const theme = useContext(ThemeContext);
-  const canvas = useRef<HTMLCanvasElement>();
+  const canvas = useRef<HTMLCanvasElement>(null);
   const canvasCtx = useRef<CanvasRenderingContext2D | null>();
   const rafId = useRef<number>();
   const progressState = useRef<'expand' | 'collapse'>('expand');
@@ -80,6 +85,7 @@ export default function Demo(props: ProgressPropsType) {
     }
     return () => cancelAnimationFrame(rafId.current as number);
   }, [color, draw, drawCanvas, rafId, size, theme, thickness]);
+
   return (
     <DivCanvas {...props}>
       <canvas ref={canvas} />
