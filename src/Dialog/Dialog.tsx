@@ -1,8 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Modal from '@sinoui/core/Modal';
-import Fade from '../transitions/Fade';
+import { CSSTransition } from 'react-transition-group';
 import DialogContainer, { DialogContainerProps } from './DialogContainer';
+
+const GlobalStyle = createGlobalStyle`
+.sinoui-dialog-enter {
+   opacity: 0;
+}
+
+.sinoui-dialog-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.sinoui-dialog-exit { 
+  opacity: 1;
+}
+
+.sinoui-dialog-exit-active { 
+   opacity: 0;
+  transition: opacity 200ms;
+}
+`;
 
 const ModalWrapper = styled(Modal)`
   display: flex;
@@ -49,16 +69,24 @@ export interface DialogProps extends DialogContainerProps {
 function Dialog(props: DialogProps) {
   const {
     backdropClick = true,
-    transition: Transition = Fade,
-    transitionDuration,
+    transitionDuration = 300,
     open,
     ...rest
   } = props;
   return (
     <ModalWrapper {...rest} backdropClick={backdropClick} open={open}>
-      <Transition timeout={transitionDuration} appear in={open}>
-        <DialogContainer {...props} />
-      </Transition>
+      <CSSTransition
+        timeout={transitionDuration}
+        appear
+        in={open}
+        classNames="sinoui-dialog"
+        unmountOnExit
+      >
+        <>
+          <DialogContainer {...props} />
+          <GlobalStyle />
+        </>
+      </CSSTransition>
     </ModalWrapper>
   );
 }

@@ -1,6 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
-import Fade from '../transitions/Fade';
+import styled, { createGlobalStyle } from 'styled-components';
+import { CSSTransition } from 'react-transition-group';
+
+const GlobalStyle = createGlobalStyle`
+.sinoui-dialog-back-enter {
+   opacity: 0;
+}
+
+.sinoui-dialog-back-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.sinoui-dialog-back-exit { 
+  opacity: 1;
+}
+
+.sinoui-dialog-back-exit-active { 
+   opacity: 0;
+  transition: opacity 200ms;
+}
+`;
 
 const BackdropWrapper = styled.div.attrs({
   'aria-hidden': true,
@@ -28,7 +48,7 @@ export interface BackdropProps {
   /**
    * transitionDuration
    */
-  transitionDuration?: 'auto' | number;
+  transitionDuration?: number;
   /**
    * 点击事件
    */
@@ -40,10 +60,20 @@ export interface BackdropProps {
 }
 
 export default function Backdrop(props: BackdropProps) {
-  const { open, transitionDuration } = props;
+  const { open, transitionDuration = 300 } = props;
   return (
-    <Fade appear in={open} timeout={transitionDuration} {...props}>
-      <BackdropWrapper />
-    </Fade>
+    <>
+      <CSSTransition
+        appear
+        in={open}
+        timeout={transitionDuration}
+        {...props}
+        classNames="sinoui-dialog-back"
+        unmountOnExit
+      >
+        <BackdropWrapper />
+      </CSSTransition>
+      <GlobalStyle />
+    </>
   );
 }

@@ -107,7 +107,7 @@ function DialogContainer(props: DialogContainerProps) {
     <DialogWrapper
       fullScreen={fullScreen}
       fullWidth={fullWidth}
-      className={classNames('sinoui-dialog', className, {
+      className={classNames(className, {
         'sinoui-dialog--draggable': draggable,
       })}
       autoWidth={autoWidth}
