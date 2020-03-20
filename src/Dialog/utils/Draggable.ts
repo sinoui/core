@@ -23,20 +23,37 @@ export default class Draggable {
 
   private delta: Position = { x: 0, y: 0 };
 
-  private startX: number;
+  private startX = 0;
 
-  private startY: number;
+  private startY = 0;
 
-  private deltaBounds: DeltaBounds;
+  private deltaBounds: DeltaBounds = { x: [0, 0], y: [0, 0] };
 
-  private dragging: boolean;
+  private dragging = false;
 
   constructor(private dragConfig: DragConfig) {
     this.onContainerMouseDown = this.onContainerMouseDown.bind(this);
     this.onDocumentMouseMove = this.onDocumentMouseMove.bind(this);
     this.onDocumentMouseUp = this.onDocumentMouseUp.bind(this);
 
-    this.init();
+    this.container$ =
+      typeof this.dragConfig.container === 'string'
+        ? (document.querySelector(this.dragConfig.container) as HTMLElement)
+        : this.dragConfig.container;
+    this.handler$ = this.dragConfig.handler
+      ? (this.container$.querySelector(this.dragConfig.handler) as HTMLElement)
+      : this.container$;
+    this.pos = { x: 0, y: 0 };
+    this.delta = { x: 0, y: 0 };
+
+    if (!this.handler$) {
+      return;
+    }
+    this.handler$.addEventListener(
+      'mousedown',
+      this.onContainerMouseDown,
+      false,
+    );
   }
 
   /**
@@ -70,33 +87,6 @@ export default class Draggable {
         false,
       );
     }
-  }
-
-  /**
-   * 初始化
-   *
-   * @private
-   * @memberof Draggable
-   */
-  private init() {
-    this.container$ =
-      typeof this.dragConfig.container === 'string'
-        ? document.querySelector(this.dragConfig.container)
-        : this.dragConfig.container;
-    this.handler$ = this.dragConfig.handler
-      ? this.container$.querySelector(this.dragConfig.handler)
-      : this.container$;
-    this.pos = { x: 0, y: 0 };
-    this.delta = { x: 0, y: 0 };
-
-    if (!this.handler$) {
-      return;
-    }
-    this.handler$.addEventListener(
-      'mousedown',
-      this.onContainerMouseDown,
-      false,
-    );
   }
 
   /**
