@@ -115,6 +115,39 @@ function DialogDemo() {
   <DialogDemo showCloseIcon onRequestClose />
 </ThemeProvider>
 
+## 设置弹窗不可以拖拽
+
+```tsx
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+
+function DialogDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>点击</Button>
+      <Dialog open={open} draggable={false}>
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <DialogDemo draggable={false} />
+</ThemeProvider>
+
 ## 设置点击遮罩层的回调函数
 
 ```tsx
