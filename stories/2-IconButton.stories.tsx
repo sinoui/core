@@ -49,6 +49,24 @@ export const 基础图标按钮 = () => (
   </ThemeProvider>
 );
 
+export const 自定义dom元素 = () => {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <IconButton as="div">
+          <SvgIcon />
+        </IconButton>
+        <IconButton as="div" color="primary">
+          <SvgIcon />
+        </IconButton>
+        <IconButton as="div" color="secondary">
+          <SvgIcon />
+        </IconButton>
+      </>
+    </ThemeProvider>
+  );
+};
+
 export const 切换按钮选中状态 = () => {
   const [selected, setSelected] = useState(false);
 

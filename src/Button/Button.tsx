@@ -1,3 +1,4 @@
+import React from 'react';
 import BaseButton, { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
@@ -23,6 +24,10 @@ export interface Props extends BaseButtonProps {
    * 按钮颜色
    */
   color?: string;
+  /**
+   * 子元素
+   */
+  children?: React.ReactNode;
 }
 
 const textButtonStyle = css<Props>`
@@ -97,7 +102,7 @@ const flowingIconStyle = css<Props>`
   margin-right: ${({ outlined, raised }) => (outlined || raised ? -4 : 0)}px;
 `;
 
-const Button: OverridableComponent<Props, 'button'> = styled(BaseButton).attrs(
+const ButtonLayout = styled(BaseButton).attrs(
   ({ className, outlined, raised, color = 'primary' }: Props) => ({
     color,
     className: classNames(
@@ -114,7 +119,7 @@ const Button: OverridableComponent<Props, 'button'> = styled(BaseButton).attrs(
   ${(props) => props.outlined && outlinedStyle};
   ${(props) => props.raised && raisedStyle};
 
-  > svg {
+  > .sinoui-svg-icon {
     font-size: 18px;
     height: 18px;
     width: 18px;
@@ -126,5 +131,13 @@ const Button: OverridableComponent<Props, 'button'> = styled(BaseButton).attrs(
       flowingIconStyle};
   }
 `;
+
+const Button: OverridableComponent<Props, 'button'> = React.forwardRef<
+  HTMLButtonElement,
+  Props
+>(function Button(props, ref) {
+  const { as, ...other } = props;
+  return <ButtonLayout {...other} forwardedAs={as} ref={ref} />;
+});
 
 export default Button;

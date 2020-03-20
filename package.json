@@ -56,9 +56,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "@babel/runtime": "^7.7.6",
-    "@sinoui/icons": "^1.0.0-beta.1",
-    "@sinoui/ripple": "^1.0.10",
     "@sinoui/theme": "^1.0.0-beta.8",
+    "@sinoui/ripple": "^1.0.11",
     "classnames": "^2.2.6",
     "polished": "^3.4.4",
     "react-icons": "^3.9.0",

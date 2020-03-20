@@ -1,3 +1,4 @@
+import React from 'react';
 import BaseButton, { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled from 'styled-components';
 import classNames from 'classnames';
@@ -12,20 +13,19 @@ export interface IconButtonProps extends BaseButtonProps {
   color?: string;
 }
 
-const rippleConfig = {
+const rippleConfig: object = {
   center: true,
   rippleLayoutClassName: 'sinoui-icon-button__ripple-layout',
   rippleClassName: 'sinoui-icon-button__ripple',
   fixSize: true,
 };
 
-const IconButton: OverridableComponent<IconButtonProps, 'button'> = styled(
-  BaseButton,
-).attrs(({ className, color = 'textPrimary' }: IconButtonProps) => ({
-  color,
-  className: classNames('sinoui-icon-button', className),
-  ripple: rippleConfig,
-}))<IconButtonProps>`
+const IconButtonLayout = styled(BaseButton).attrs(
+  ({ className, color = 'textPrimary' }: IconButtonProps) => ({
+    color,
+    className: classNames('sinoui-icon-button', className),
+  }),
+)<IconButtonProps>`
   width: ${({ theme }) => theme.spacing.unit * 6}px;
   height: ${({ theme }) => theme.spacing.unit * 6}px;
   border-radius: 50%;
@@ -58,5 +58,25 @@ const IconButton: OverridableComponent<IconButtonProps, 'button'> = styled(
     height: 48px;
   }
 `;
+
+const IconButton: OverridableComponent<
+  IconButtonProps,
+  'button'
+> = React.forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
+  props,
+  ref,
+) {
+  const { as, children, ...other } = props;
+  return (
+    <IconButtonLayout
+      ripple={rippleConfig}
+      {...other}
+      forwardedAs={as}
+      ref={ref}
+    >
+      {children}
+    </IconButtonLayout>
+  );
+});
 
 export default IconButton;

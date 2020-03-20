@@ -32,6 +32,7 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
     props.labelPosition === 'left' ? 'row-reverse' : 'row'};
   align-items: center;
   vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
 
   > .sinoui-checkbox,
   > .sinoui-radio {

@@ -1158,6 +1158,17 @@
     keycode "^2.2.0"
     warning "^4.0.3"
 
+"@sinoui/ripple@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@sinoui/ripple/-/ripple-1.0.11.tgz#49ee274ff684e88324ca8d44bf3d1a38799c80ac"
+  integrity sha512-nBRhmfbXdfD8PpaY5+Fc9Bm18qpQHy35rY8MwazLdpmqZjvu87MyXE9eFEVt6ZXARd7P1Y9bQ3JUxjQwOmGK6A==
+  dependencies:
+    "@babel/polyfill" "^7.6.0"
+    "@babel/runtime" "^7.6.3"
+    dom-helpers "^3.4.0"
+    keycode "^2.2.0"
+    warning "^4.0.3"
+
 "@sinoui/theme@^1.0.0-beta.7":
   version "1.0.0-beta.7"
   resolved "https://registry.yarnpkg.com/@sinoui/theme/-/theme-1.0.0-beta.7.tgz#9549516f9740e9a993dbff682ca141d484bc12f5"

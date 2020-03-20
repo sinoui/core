@@ -40,6 +40,10 @@ const checkedWrapperStyle = css<WrapperProps>`
         props.theme.palette.action.selectedOpacity - 1,
         getColorFromTheme(props.theme, props.color || 'primary'),
       )};
+
+    @media (hover: none) {
+      background-color: transparent;
+    }
   }
 `;
 

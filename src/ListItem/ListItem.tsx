@@ -109,6 +109,7 @@ const ListItemStyle = css<ListItemProps>`
   background-color: ${(props) => props.theme.palette.background.paper};
   outline: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   ${(props) => props.selected && selectedCss};
   ${(props) => !props.disabled && hoverCss};
   ${(props) => !props.disabled && focusCss};
