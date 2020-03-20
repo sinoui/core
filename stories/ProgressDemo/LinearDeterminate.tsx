@@ -4,8 +4,7 @@ import { defaultTheme } from '@sinoui/theme';
 import Progress from '@sinoui/core/Progress';
 
 const Wrapper = styled.div`
-  height: 100vh;
-  padding-top: 100px;
+  padding-top: 10px;
 `;
 export default function Demo({
   linear,

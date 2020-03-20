@@ -1,0 +1,30 @@
+---
+id: progress
+title: Progress
+---
+
+> 进度指示器能够将当前处理过程的状态通知用户。例如加载一个应用，提交一个表单或者保存一些更新。
+
+引入方式：
+
+```tsx
+import Progress from '@sinoui/core/Progress';
+```
+
+## 属性
+
+| 属性名      | 默认值            | 类型                | 描述                                                      |
+| ----------- | ----------------- | ------------------- | --------------------------------------------------------- |
+| linear      | false             | boolean             | 设置为 `true`，则是线性进度指示器                         |
+| determinate | false             | boolean             | 设置为 `true`，则是定量进度指示器                         |
+| buffer      | false             | boolean             | 设置为 `true`，则是线性缓冲指示器                         |
+| value       |                   | number              | 指定定量进度指示器的进度                                  |
+| color       | 'primary'         | string              | 指定进度指示器的颜色                                      |
+| thickness   |                   | number              | 指定进度指示器的线条宽度(环形默认为 3.6px,线性默认为 4px) |
+| size        |                   | number              | 指定圆形进度指示器的尺寸，默认为 40px                     |
+| className   | 'sinoui-progress' | string              | 自定义进度指示器的样式类名称                              |
+| style       |                   | React.CSSProperties | 自定义进度指示器的样式                                    |
+
+## 示例
+
+更多示例请查看[Progress 开发文档](../components/progress)

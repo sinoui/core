@@ -36,7 +36,10 @@ export default function Demo(props: ProgressPropsType) {
       (start * Math.PI) / 180,
       (end.current * Math.PI) / 180,
     ); // 绘制一个弧线
-  }, [size, start, thickness, value]);
+    ctx.strokeStyle = getColorFromTheme(theme, color);
+    ctx.lineWidth = thickness;
+    ctx.stroke();
+  }, [color, size, start, theme, thickness, value]);
 
   const draw = useCallback(() => {
     if (!rafId) {
@@ -56,11 +59,7 @@ export default function Demo(props: ProgressPropsType) {
 
       canvas.current.width = size;
       canvas.current.height = size;
-      if (canvasCtx.current) {
-        canvasCtx.current.strokeStyle = getColorFromTheme(theme, color);
-        canvasCtx.current.lineWidth = thickness;
-        draw();
-      }
+      draw();
     }
     return () => cancelAnimationFrame(rafId.current as number);
   }, [color, draw, size, start, theme, thickness, value]);
