@@ -55,7 +55,7 @@ const defaultBigSizeStyle = css`
 const DialogWrapper = styled.div<DialogWrapperProps>`
   background: ${(props) => props.theme.palette.background.paper};
   padding: 0;
-  box-shadow: ${shadows[5]};
+  box-shadow: ${shadows[24]};
   position: relative;
   z-index: ${(props) => props.theme.zIndex.dialog};
   display: flex;

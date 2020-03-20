@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import DialogTitle from '@sinoui/core/DialogTitle';
-import DialogActions from '@sinoui/core/DialogActions';
 import Draggable from './utils/Draggable';
 import DialogWrapper from './DialogWrapper';
 import Iframe from './Iframe';
@@ -87,47 +86,21 @@ function DialogContainer(props: DialogContainerProps) {
     return () => null;
   }, [dialogContainerRef, draggable]);
 
-  /**
-   * 获取Dialog子组件的排序号
-   *
-   * @param {Node} node
-   */
-  const getDialogNodeOrderNode = (node: React.ReactElement<any>) => {
-    switch (node.type) {
-      case DialogTitle:
-        return 0;
-      case DialogActions:
-        return 2;
-      default:
-        return 1;
+  const nodes = React.Children.toArray(children).map((node: any) => {
+    if (node.type === DialogTitle) {
+      return (
+        <DialogTitle
+          key="dialogTitle"
+          {...node.props}
+          showCloseIcon={showCloseIcon}
+        >
+          {node.props.children}
+          {showCloseIcon && <CloseIcon onClick={onRequestClose} />}
+        </DialogTitle>
+      );
     }
-  };
-
-  const sortDialogChildren = (
-    node1: React.ReactElement<any>,
-    node2: React.ReactElement<any>,
-  ) => {
-    return getDialogNodeOrderNode(node1) - getDialogNodeOrderNode(node2);
-  };
-
-  const nodes = React.Children.toArray(children)
-    .map((node: any) => {
-      if (node.type === DialogTitle) {
-        return (
-          <DialogTitle
-            key="dialogTitle"
-            {...node.props}
-            showCloseIcon={showCloseIcon}
-          >
-            {node.props.children}
-            {showCloseIcon && <CloseIcon onClick={onRequestClose} />}
-          </DialogTitle>
-        );
-      }
-      return node;
-    })
-    .filter(Boolean)
-    .sort(sortDialogChildren);
+    return node;
+  });
 
   return (
     <DialogWrapper
