@@ -8,15 +8,203 @@ import { LinearDeterminate } from '../../../stories/ProgressDemo';
 
 > 进度指示器能够将当前处理过程的状态通知用户。例如加载一个应用，提交一个表单或者保存一些更新。
 
-## 环形不定量进度指示器
+## 环形进度指示器
+
+### 环形不定量进度指示器
+
+环形不定量进度指示器为进度指示器的默认展示方式。
 
 Demo.tsx
 
 ```tsx
+import React from 'react';
+import Progress from '@sinoui/core/Progress';
+
+export default function Demo() {
+  return <Progress />;
+}
 ```
 
 效果：
 
-<CardStoryLayout>
+<CardStoryLayout style={{display:'flex', justifyContent:'center',alignItems: 'center'}}>
   <LinearDeterminate />
 </CardStoryLayout>
+
+### 环形定量进度指示器
+
+LinearDeterminate.tsx
+```tsx
+import React, { useState, useRef } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Progress from '@sinoui/core/Progress';
+import Button from '@sinoui/core/Button';
+
+const Wrapper = styled.div`
+  display: flex;
+  padding-top: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+export default function Demo({
+  linear,
+  determinate,
+  buffer,
+}: {
+  linear?: boolean;
+  determinate?: boolean;
+  buffer?: boolean;
+}) {
+  const [progressValue, setProgressValue] = useState(0);
+  const [loading, setLoading] = useState(!determinate);
+  const max = 30;
+  const min = 10;
+  const step = Math.floor(Math.random() * (max - min + 1) + min);
+  const timer = useRef<any>();
+  const onClick = () => {
+    if (determinate && !loading) {
+      setProgressValue(0);
+      setLoading(true);
+      timer.current = setInterval(() => {
+        setProgressValue((prev: number) => {
+          if (prev + step < 100) {
+            return prev + step;
+          }
+          const timeOut = setTimeout(() => {
+            setLoading(false);
+            clearInterval(timer.current);
+            clearTimeout(timeOut);
+          }, 500);
+
+          return 100;
+        });
+      }, 1000);
+    }
+  };
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div>
+        {determinate && (
+          <Button raised onClick={onClick} disabled={loading}>
+            点击加载
+          </Button>
+        )}
+        {loading && (
+          <Wrapper>
+            <Progress
+              linear={linear}
+              value={progressValue}
+              determinate={determinate}
+              buffer={buffer}
+            />
+          </Wrapper>
+        )}
+      </div>
+    </ThemeProvider>
+  );
+}
+
+```
+Demo.tsx
+
+```tsx
+<LinearDeterminate determinate />
+```
+
+效果：
+
+<CardStoryLayout style={{height: '150px'}}>
+  <LinearDeterminate determinate />
+</CardStoryLayout>
+
+### 指定线条宽度的环形进度指示器
+
+Demo.tsx
+```tsx
+import React from 'react';
+import Progress from '@sinoui/core/Progress';
+
+export default function Demo() {
+  return <Progress thickness={8}/>;
+}
+```
+效果：
+
+<CardStoryLayout style={{display:'flex', justifyContent:'center',alignItems: 'center'}}>
+  <LinearDeterminate thickness={8}/>
+</CardStoryLayout>
+
+### 指定大小的环形进度指示器
+
+Demo.tsx
+```tsx
+import React from 'react';
+import Progress from '@sinoui/core/Progress';
+
+export default function Demo() {
+  return <Progress size={100} thickness={8}/>;
+}
+```
+效果：
+
+<CardStoryLayout style={{display:'flex', justifyContent:'center',alignItems: 'center'}}>
+  <LinearDeterminate thickness={8} size={100}/>
+</CardStoryLayout>
+
+## 线性进度指示器
+
+### 线性不定量进度指示器
+Demo.tsx
+
+```tsx
+<LinearDeterminate linear />
+```
+
+效果：
+
+<CardStoryLayout style={{height: '150px',display:'flex',alignItems: 'center'}}>
+  <LinearDeterminate linear />
+</CardStoryLayout>
+
+### 线性定量进度指示器
+Demo.tsx
+
+```tsx
+<LinearDeterminate linear determinate/>
+```
+
+效果：
+
+<CardStoryLayout style={{height: '150px',display:'flex',flexDirection:'column',alignItems: 'flex-start'}}>
+  <LinearDeterminate linear determinate/>
+</CardStoryLayout>
+
+### 线性缓冲进度指示器
+Demo.tsx
+
+```tsx
+<LinearDeterminate linear determinate buffer/>
+```
+
+效果：
+
+<CardStoryLayout style={{height: '150px',display:'flex',flexDirection:'column',alignItems: 'flex-start'}}>
+  <LinearDeterminate linear determinate buffer />
+</CardStoryLayout>
+
+### 指定线条宽度的线性进度指示器
+Demo.tsx
+
+```tsx
+<LinearDeterminate linear thickness={8}/>
+```
+
+效果：
+
+<CardStoryLayout style={{height: '150px',display:'flex',alignItems: 'center'}}>
+  <LinearDeterminate linear thickness={8}/>
+</CardStoryLayout>
+
