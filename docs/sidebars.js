@@ -26,6 +26,7 @@ module.exports = {
           'components/checkboxGroup',
           'components/radioGroup',
           'components/progress',
+          'components/snackbar',
         ],
       },
     ],
@@ -46,6 +47,7 @@ module.exports = {
       'components-apis/radio',
       'components-apis/radioGroup',
       'components-apis/progress',
+      'components-apis/snackbar',
     ],
   },
 };
