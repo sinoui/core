@@ -89,9 +89,16 @@ const inDeterminateSecondaryBarInnerKeyFrames = keyframes`
 }
 `;
 
+const determinateBuefferDotKeyframes = keyframes`
+  to {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+}`;
+
 export {
   inDeterminatePrimaryBarKeyFrames,
   inDeterminatePrimaryBarInnerKeyFrames,
   inDeterminateSecondaryBarKeyFrames,
   inDeterminateSecondaryBarInnerKeyFrames,
+  determinateBuefferDotKeyframes,
 };

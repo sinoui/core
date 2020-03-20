@@ -9,7 +9,9 @@ import {
   inDeterminatePrimaryBarInnerKeyFrames,
   inDeterminateSecondaryBarKeyFrames,
   inDeterminateSecondaryBarInnerKeyFrames,
+  determinateBuefferDotKeyframes,
 } from './LinearKeyframes';
+import dot from './dot.svg';
 
 /**
  * 线性进度条不定量样式
@@ -45,18 +47,54 @@ const normalDeterminateStyle = css<ProgressPropsType>`
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.6, 1);
   }
 `;
-const Wrapper = styled.div.attrs((props: ProgressPropsType) => ({
-  className: classNames('sinoui-progress', 'sinoui-progress--linear', {
-    'sinoui-progress--linear--indeterminate': props.determinate,
-  }),
-}))<ProgressPropsType>`
+
+/*
+ * 缓冲进度条
+ */
+
+const getBufferValue = (value: number) => {
+  const max = 5;
+  const min = 1;
+  const distance =
+    value < 90
+      ? value + Math.floor(Math.random() * (max - min + 1) + min)
+      : value;
+  return distance <= 100 ? distance : 100;
+};
+
+const bufferStyle = css<ProgressPropsType>`
+  & .sinoui-progress--linear__buffer-dots {
+    background-image: url(${dot});
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 10px 4px;
+    background-repeat: repeat-x;
+    animation: ${determinateBuefferDotKeyframes} 0.25s infinite linear;
+  }
+
+  & .sinoui-progress--linear__buffer {
+    left: -100%;
+    transform: translateX(${({ value = 0 }) => `${getBufferValue(value)}%`});
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.6, 1);
+  }
+
+  &
+    .sinoui-progress--linear__primary-bar
+    > .sinoui-progress--linear__bar-inner {
+    left: -100%;
+    transform: translateX(${({ value = 0 }) => `${value}%`});
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.6, 1);
+  }
+`;
+
+const Wrapper = styled.div<ProgressPropsType>`
   position: relative;
   width: 100%;
   height: ${(props) => props.thickness}px;
   transform: translateZ(0);
   outline: 1px solid transparent;
   overflow: hidden;
-  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.6, 1) 0ms;
 
   & .sinoui-progress--linear__buffer {
     position: absolute;
@@ -87,12 +125,21 @@ const Wrapper = styled.div.attrs((props: ProgressPropsType) => ({
   ${({ determinate }) => !determinate && inDeterminateStyle};
   ${({ determinate, buffer }) =>
     determinate && !buffer && normalDeterminateStyle};
+  ${({ determinate, buffer }) => determinate && buffer && bufferStyle};
 `;
 
 export default function LinearProgress(props: ProgressPropsType) {
-  const { determinate } = props;
+  const { determinate, className } = props;
   return (
-    <Wrapper {...props}>
+    <Wrapper
+      {...props}
+      className={classNames(
+        'sinoui-progress',
+        'sinoui-progress--linear',
+        className,
+      )}
+    >
+      <div className="sinoui-progress--linear__buffer-dots" />
       <div className="sinoui-progress--linear__buffer" />
       <div
         className={classNames(
