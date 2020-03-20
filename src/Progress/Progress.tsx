@@ -23,9 +23,9 @@ export default function Progress(props: ProgressPropsType) {
       );
     }
     if (determinate) {
-      return <CircleDeterminateProgress {...rest} />;
+      return <CircleDeterminateProgress {...props} />;
     }
-    return <CircleProgress {...rest} />;
+    return <CircleProgress {...props} />;
   };
   return render();
 }

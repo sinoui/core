@@ -10,7 +10,7 @@ export default function Demo(props: ProgressPropsType) {
   const { size = 40, thickness = 3.6, color = 'primary' } = props;
   const theme = useContext(ThemeContext);
   const canvas = useRef<HTMLCanvasElement>();
-  const canvasCtx = useRef<CanvasRenderingContext2D>();
+  const canvasCtx = useRef<CanvasRenderingContext2D | null>();
   const rafId = useRef<number>();
   const progressState = useRef<'expand' | 'collapse'>('expand');
   const progressWidth = useRef(0);
@@ -69,15 +69,14 @@ export default function Demo(props: ProgressPropsType) {
 
   useEffect(() => {
     if (canvas.current && !canvasCtx.current) {
-      canvasCtx.current = canvas.current.getContext(
-        '2d',
-      ) as CanvasRenderingContext2D;
+      canvasCtx.current = canvas.current.getContext('2d');
       canvas.current.width = size;
       canvas.current.height = size;
-      canvasCtx.current.strokeStyle = getColorFromTheme(theme, color);
-      canvasCtx.current.lineWidth = thickness;
-
-      draw();
+      if (canvasCtx.current) {
+        canvasCtx.current.strokeStyle = getColorFromTheme(theme, color);
+        canvasCtx.current.lineWidth = thickness;
+        draw();
+      }
     }
     return () => cancelAnimationFrame(rafId.current as number);
   }, [color, draw, drawCanvas, rafId, size, theme, thickness]);

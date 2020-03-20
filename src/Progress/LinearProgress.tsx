@@ -62,6 +62,9 @@ const getBufferValue = (value: number) => {
   return distance <= 100 ? distance : 100;
 };
 
+/**
+ * 线性缓冲样式
+ */
 const bufferStyle = css<ProgressPropsType>`
   & .sinoui-progress--linear__buffer-dots {
     background-image: url(${dot});
@@ -128,8 +131,11 @@ const Wrapper = styled.div<ProgressPropsType>`
   ${({ determinate, buffer }) => determinate && buffer && bufferStyle};
 `;
 
+/**
+ * 线性指示器
+ */
 export default function LinearProgress(props: ProgressPropsType) {
-  const { determinate, className } = props;
+  const { determinate, className, buffer } = props;
   return (
     <Wrapper
       {...props}
@@ -139,14 +145,9 @@ export default function LinearProgress(props: ProgressPropsType) {
         className,
       )}
     >
-      <div className="sinoui-progress--linear__buffer-dots" />
+      {buffer && <div className="sinoui-progress--linear__buffer-dots" />}
       <div className="sinoui-progress--linear__buffer" />
-      <div
-        className={classNames(
-          'sinoui-progress--linear__bar',
-          'sinoui-progress--linear__primary-bar',
-        )}
-      >
+      <div className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar">
         <span className="sinoui-progress--linear__bar-inner" />
       </div>
       {!determinate && (

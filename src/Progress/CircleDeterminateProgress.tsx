@@ -1,13 +1,21 @@
 import React, { useRef, useEffect, useContext, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
+import classNames from 'classnames';
 import getColorFromTheme from '../utils/getColorFromTheme';
 import { ProgressPropsType } from './types';
 
 export default function Demo(props: ProgressPropsType) {
-  const { size = 40, thickness = 3.6, color = 'primary', value = 0 } = props;
+  const {
+    size = 40,
+    thickness = 3.6,
+    color = 'primary',
+    value = 0,
+    className,
+    style,
+  } = props;
   const theme = useContext(ThemeContext);
   const canvas = useRef<HTMLCanvasElement>();
-  const canvasCtx = useRef<CanvasRenderingContext2D>();
+  const canvasCtx = useRef<CanvasRenderingContext2D | null>();
   const rafId = useRef<number>();
   const end = useRef(-90);
   const start = -90;
@@ -28,10 +36,7 @@ export default function Demo(props: ProgressPropsType) {
       (start * Math.PI) / 180,
       (end.current * Math.PI) / 180,
     ); // 绘制一个弧线
-    ctx.strokeStyle = getColorFromTheme(theme, color); // 轮廓/描边的颜色
-
-    ctx.stroke(); // 对一条路径描边
-  }, [color, size, start, theme, thickness, value]);
+  }, [size, start, thickness, value]);
 
   const draw = useCallback(() => {
     if (!rafId) {
@@ -46,18 +51,29 @@ export default function Demo(props: ProgressPropsType) {
   useEffect(() => {
     if (canvas.current && end.current < 270) {
       if (!canvasCtx.current) {
-        canvasCtx.current = canvas.current.getContext(
-          '2d',
-        ) as CanvasRenderingContext2D;
+        canvasCtx.current = canvas.current.getContext('2d');
       }
 
       canvas.current.width = size;
       canvas.current.height = size;
-      canvasCtx.current.strokeStyle = '#428bca';
-      canvasCtx.current.lineWidth = thickness;
-      draw();
+      if (canvasCtx.current) {
+        canvasCtx.current.strokeStyle = getColorFromTheme(theme, color);
+        canvasCtx.current.lineWidth = thickness;
+        draw();
+      }
     }
     return () => cancelAnimationFrame(rafId.current as number);
-  }, [color, draw, size, start, thickness, value]);
-  return <canvas ref={canvas} />;
+  }, [color, draw, size, start, theme, thickness, value]);
+  return (
+    <div
+      className={classNames(
+        'sinoui-progress',
+        'sinoui-progress--circle',
+        className,
+      )}
+      style={style}
+    >
+      <canvas ref={canvas} />
+    </div>
+  );
 }
