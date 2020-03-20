@@ -4,7 +4,6 @@ import SvgIcon from '@sinoui/core/SvgIcon';
 import { MdClose } from 'react-icons/md';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import colorCss from '@sinoui/core/colorCss';
 
 export interface CloseIconProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;

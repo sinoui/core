@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import renderer, { act } from 'react-test-renderer';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
@@ -10,6 +11,7 @@ import DialogActions from '@sinoui/core/DialogActions';
 import Button from '@sinoui/core/Button';
 
 describe('Dialog组件 单元测试', () => {
+  afterEach(cleanup);
   test('测试显示关闭按钮', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
@@ -38,20 +40,38 @@ describe('Dialog组件 单元测试', () => {
       <ThemeProvider theme={defaultTheme}>
         <Dialog fullScreen data-testid="dialog">
           <DialogTitle>Use Google location service?</DialogTitle>
-          <DialogContent>
-            Let Google help apps determine location. This means sending
-            anonymous location data toGoogle, even when no apps are running.
-          </DialogContent>
-          <DialogActions>
-            <Button>Disagree</Button>
-            <Button>Agree</Button>
-          </DialogActions>
         </Dialog>
       </ThemeProvider>,
     );
 
     const test = getAllByTestId('dialog')[0];
     expect(test).toHaveStyle('width:100%;height:100%');
+  });
+
+  test('不显示遮罩层', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Dialog backdrop={false} data-testid="dialog">
+          <DialogTitle>Use Google location service?</DialogTitle>
+        </Dialog>
+      </ThemeProvider>,
+    );
+
+    const test = container.querySelector('.sinoui-modal--backdrop');
+    expect(test).toBeFalsy();
+  });
+
+  test('弹窗不可以拖拽', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Dialog draggable={false} data-testid="dialog">
+          <DialogTitle>Use Google location service?</DialogTitle>
+        </Dialog>
+      </ThemeProvider>,
+    );
+
+    const test = container.querySelector('.sinoui-modal--draggable');
+    expect(test).toBeFalsy();
   });
 });
 

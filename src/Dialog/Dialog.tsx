@@ -40,6 +40,10 @@ export interface DialogProps extends DialogContainerProps {
    * @type {(SyntheticMouseEvent<*>) => void}
    */
   onBackdropClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * 是否显示遮罩层
+   */
+  backdrop?: boolean;
 }
 
 function Dialog(props: DialogProps) {

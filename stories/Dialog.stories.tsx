@@ -15,7 +15,7 @@ function DialogDemo(props: any) {
   return (
     <>
       <Button onClick={() => setOpen(true)}>CLICK</Button>
-      <Dialog open={open} onBackdropClick={() => console.log(1)} {...props}>
+      <Dialog open={open} {...props}>
         <DialogTitle>Use Google location service</DialogTitle>
         <DialogContent>
           Let Google help apps determine location. This means sending anonymous

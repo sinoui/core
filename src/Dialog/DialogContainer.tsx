@@ -93,6 +93,7 @@ function DialogContainer(props: DialogContainerProps) {
           key="dialogTitle"
           {...node.props}
           showCloseIcon={showCloseIcon}
+          draggable={draggable}
         >
           {node.props.children}
           {showCloseIcon && <CloseIcon onClick={onRequestClose} />}
@@ -106,7 +107,9 @@ function DialogContainer(props: DialogContainerProps) {
     <DialogWrapper
       fullScreen={fullScreen}
       fullWidth={fullWidth}
-      className={classNames('sinoui-dialog', className)}
+      className={classNames('sinoui-dialog', className, {
+        'sinoui-dialog--draggable': draggable,
+      })}
       autoWidth={autoWidth}
       {...rest}
       ref={dialogContainerRef}

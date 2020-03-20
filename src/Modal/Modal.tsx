@@ -245,6 +245,7 @@ function Modal(props: ModalPropsType) {
           {...backdropProps}
           onClick={onBackdropClick}
           open={props.open}
+          className="sinoui-modal--backdrop"
         />
       )}
       {React.cloneElement(React.Children.only(children) as any, childProps)}
