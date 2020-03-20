@@ -27,7 +27,7 @@ export interface BadgeProps {
   /**
    * 	指定封顶数值
    */
-  overflowCount?: number;
+  overflowCount: number;
   /**
    * 	设置数字为0时显示
    */
@@ -54,7 +54,7 @@ const BadgeWrapper = styled.span`
 `;
 
 const dotCss = css`
-  min-width: 8px;
+  width: 8px;
   height: 8px;
 `;
 
@@ -81,7 +81,7 @@ const anchorOriginCss = css<BadgeProps>`
 const BadgeCircle = styled.span<BadgeProps>`
   position: absolute;
   ${anchorOriginCss};
-  min-width: 20px;
+  min-width: ${(props) => !props.dot && '20px'};
   height: 20px;
   border-radius: 50%;
   ${colorCss('background-color')};
@@ -91,7 +91,10 @@ const BadgeCircle = styled.span<BadgeProps>`
   justify-content: center;
   text-align: center;
   ${(props) => props.dot && dotCss};
-  ${(props) => props.overflowCount && overflowCountCss};
+  ${(props) =>
+    ((props.badgeContent && props.badgeContent > props.overflowCount) ||
+      (props.count && props.count > props.overflowCount)) &&
+    overflowCountCss};
 `;
 
 /**
@@ -100,46 +103,51 @@ const BadgeCircle = styled.span<BadgeProps>`
  * @param {BadgeProps} props
  * @returns
  */
-function Badge(props: BadgeProps) {
-  const {
-    children,
-    className,
-    dot,
-    count = 0,
-    color = 'primary',
-    showZero,
-    title,
-    badgeContent,
-    overflowCount,
-    anchorOrigin = { vertical: 'top', horizontal: 'right' },
-    ...rest
-  } = props;
+const Badge = React.forwardRef(
+  (props: BadgeProps, ref: React.Ref<HTMLInputElement>) => {
+    const {
+      children,
+      className,
+      dot,
+      count,
+      color = 'error',
+      showZero,
+      title,
+      badgeContent,
+      overflowCount = 99,
+      anchorOrigin = { vertical: 'top', horizontal: 'right' },
+      ...rest
+    } = props;
 
-  const content = badgeContent || count;
-  const num =
-    overflowCount && content > overflowCount ? `${overflowCount}+` : content;
-  return (
-    <BadgeWrapper
-      className={classNames('sinoui-badge', className, {
-        'sinoui-badge--dot': dot,
-      })}
-      data-testid="badge"
-    >
-      {(count > 0 || showZero) && (
-        <BadgeCircle
-          color={color}
-          dot={dot}
-          title={title}
-          overflowCount={overflowCount}
-          anchorOrigin={anchorOrigin}
-          {...rest}
-        >
-          {!dot ? num : null}
-        </BadgeCircle>
-      )}
-      {children}
-    </BadgeWrapper>
-  );
-}
+    const content = badgeContent || count;
+    const num =
+      overflowCount && content && content > overflowCount
+        ? `${overflowCount}+`
+        : content;
+    return (
+      <BadgeWrapper
+        ref={ref}
+        className={classNames('sinoui-badge', className, {
+          'sinoui-badge--dot': dot,
+        })}
+        data-testid="badge"
+      >
+        {(badgeContent || (count && count > 0) || showZero || dot) && (
+          <BadgeCircle
+            color={color}
+            dot={dot}
+            title={title}
+            overflowCount={overflowCount}
+            anchorOrigin={anchorOrigin}
+            {...rest}
+          >
+            {!dot ? num : null}
+          </BadgeCircle>
+        )}
+        {children}
+      </BadgeWrapper>
+    );
+  },
+);
 
 export default Badge;

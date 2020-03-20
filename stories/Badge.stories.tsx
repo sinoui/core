@@ -11,7 +11,7 @@ export default {
 
 export const 基本使用 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Badge>
+    <Badge count={8}>
       <SvgIcon as={MdEmail} />
     </Badge>
   </ThemeProvider>
@@ -35,7 +35,7 @@ export const 设置数字为0时显示 = () => (
 
 export const 设置为圆点形式 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Badge count={1} dot>
+    <Badge dot count={1}>
       <SvgIcon as={MdEmail} />
     </Badge>
   </ThemeProvider>
@@ -51,7 +51,7 @@ export const 设置鼠标悬浮时显示的文字 = () => (
 
 export const 设置自定义badge的内容 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Badge count={1} badgeContent={4}>
+    <Badge badgeContent={4}>
       <SvgIcon as={MdEmail} />
     </Badge>
   </ThemeProvider>
@@ -59,11 +59,11 @@ export const 设置自定义badge的内容 = () => (
 
 export const 指定封顶数值 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Badge count={99} overflowCount={99}>
+    <Badge count={100}>
       <SvgIcon as={MdEmail} />
     </Badge>
     <p />
-    <Badge count={100} overflowCount={99}>
+    <Badge count={1000} overflowCount={999}>
       <SvgIcon as={MdEmail} />
     </Badge>
   </ThemeProvider>
@@ -91,27 +91,27 @@ export const 设置徽标的显示位置 = () => (
 
 export const 指定颜色 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Badge count={99} color="primary">
+    <Badge dot color="primary">
       <SvgIcon as={MdEmail} />
     </Badge>
     <p />
-    <Badge count={99} color="secondary">
+    <Badge dot color="secondary">
       <SvgIcon as={MdEmail} />
     </Badge>
     <p />
-    <Badge count={99} color="warning">
+    <Badge dot color="warning">
       <SvgIcon as={MdEmail} />
     </Badge>
     <p />
-    <Badge count={99} color="success">
+    <Badge dot color="success">
       <SvgIcon as={MdEmail} />
     </Badge>
     <p />
-    <Badge count={99} color="error">
+    <Badge dot color="error">
       <SvgIcon as={MdEmail} />
     </Badge>
     <p />
-    <Badge count={99} color="info">
+    <Badge dot color="info">
       <SvgIcon as={MdEmail} />
     </Badge>
   </ThemeProvider>

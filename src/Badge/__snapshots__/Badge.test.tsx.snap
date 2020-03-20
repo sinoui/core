@@ -38,8 +38,8 @@ Array [
     data-testid="badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 fayGIy"
-      color="primary"
+      className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+      color="error"
     >
       99
     </span>
@@ -72,8 +72,8 @@ Array [
     data-testid="badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 fayGIy"
-      color="primary"
+      className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+      color="error"
     >
       99+
     </span>
@@ -110,8 +110,8 @@ exports[`Badge组件 快照测试 指定数字 1`] = `
   data-testid="badge"
 >
   <span
-    className="Badge__BadgeCircle-sc-1mox8ry-1 hMBnOj"
-    color="primary"
+    className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+    color="error"
   >
     8
   </span>
@@ -356,8 +356,8 @@ exports[`Badge组件 快照测试 设置为圆点形式 1`] = `
   data-testid="badge"
 >
   <span
-    className="Badge__BadgeCircle-sc-1mox8ry-1 buiuPv"
-    color="primary"
+    className="Badge__BadgeCircle-sc-1mox8ry-1 eDMdBr"
+    color="error"
   />
   <svg
     aria-hidden="true"
@@ -392,8 +392,8 @@ Array [
     data-testid="badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 hMBnOj"
-      color="primary"
+      className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+      color="error"
     >
       8
     </span>
@@ -426,8 +426,8 @@ Array [
     data-testid="badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 cbkogE"
-      color="primary"
+      className="Badge__BadgeCircle-sc-1mox8ry-1 eaoOCi"
+      color="error"
     >
       8
     </span>
@@ -460,8 +460,8 @@ Array [
     data-testid="badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 iQPyCu"
-      color="primary"
+      className="Badge__BadgeCircle-sc-1mox8ry-1 dEQWyn"
+      color="error"
     >
       8
     </span>
@@ -494,8 +494,8 @@ Array [
     data-testid="badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 dsvSal"
-      color="primary"
+      className="Badge__BadgeCircle-sc-1mox8ry-1 jiTUGi"
+      color="error"
     >
       8
     </span>
@@ -532,8 +532,8 @@ exports[`Badge组件 快照测试 设置数字为0时显示 1`] = `
   data-testid="badge"
 >
   <span
-    className="Badge__BadgeCircle-sc-1mox8ry-1 hMBnOj"
-    color="primary"
+    className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+    color="error"
   >
     0
   </span>
@@ -569,8 +569,8 @@ exports[`Badge组件 快照测试 设置自定义badge的内容 1`] = `
   data-testid="badge"
 >
   <span
-    className="Badge__BadgeCircle-sc-1mox8ry-1 hMBnOj"
-    color="primary"
+    className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+    color="error"
   >
     4
   </span>
@@ -606,8 +606,8 @@ exports[`Badge组件 快照测试 设置鼠标悬浮时显示的文字 1`] = `
   data-testid="badge"
 >
   <span
-    className="Badge__BadgeCircle-sc-1mox8ry-1 hMBnOj"
-    color="primary"
+    className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+    color="error"
     title="文字"
   >
     1

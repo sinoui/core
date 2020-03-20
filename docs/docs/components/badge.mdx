@@ -5,6 +5,8 @@ title: Badge 徽章
 
 徽章会在其子项的右上角生成一个小徽章。
 
+一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。
+
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import SvgIcon from '@sinoui/core/SvgIcon';
@@ -18,7 +20,7 @@ import Badge from '@sinoui/core/Badge';
 
 function BadgeDemo() {
   return (
-    <Badge>
+    <Badge count={8}>
       <SvgIcon as={MdEmail} />
     </Badge>
   );
@@ -57,6 +59,8 @@ function BadgeDemo() {
 
 ## 设置数字为0时显示
 
+简单的徽章展示，当 count 为 0 时，默认不显示，但是可以使用 showZero 修改为显示。
+
 ```tsx
 import Badge from '@sinoui/core/Badge';
 
@@ -79,12 +83,14 @@ function BadgeDemo() {
 
 ## 设置为圆点形式
 
+dot属性将徽章更改为小点。这可以作为一个通知，说明某些内容已更改，而不给出计数。
+
 ```tsx
 import Badge from '@sinoui/core/Badge';
 
 function BadgeDemo() {
   return (
-    <Badge count={1} dot>
+    <Badge dot>
       <SvgIcon as={MdEmail} />
     </Badge>
   );
@@ -138,12 +144,14 @@ function BadgeDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <Badge count={1} badgeContent={4}>
+  <Badge badgeContent={4}>
     <SvgIcon as={MdEmail} />
   </Badge>
 </ThemeProvider>
 
 ## 指定封顶数值
+
+超过 overflowCount 的会显示为 ${overflowCount}+，默认的 overflowCount 为 99。
 
 ```tsx
 import Badge from '@sinoui/core/Badge';
@@ -151,11 +159,11 @@ import Badge from '@sinoui/core/Badge';
 function BadgeDemo() {
   return (
     <>
-      <Badge count={99} overflowCount={99}>
+      <Badge count={100}>
         <SvgIcon as={MdEmail} />
       </Badge>
       <p />
-      <Badge count={100} overflowCount={99}>
+      <Badge count={1000} overflowCount={999}>
         <SvgIcon as={MdEmail} />
       </Badge>
     </>
@@ -166,16 +174,18 @@ function BadgeDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <Badge count={99} overflowCount={99}>
+  <Badge count={100}>
     <SvgIcon as={MdEmail} />
   </Badge>
   <p />
-  <Badge count={100} overflowCount={99}>
+  <Badge count={1000} overflowCount={999}>
     <SvgIcon as={MdEmail} />
-  </Badge> 
+  </Badge>
 </ThemeProvider>
 
 ## 设置徽标的显示位置
+
+您可以使用anchorOrigin道具将徽章移动到包装元素的任何角落。
 
 ```tsx
 import Badge from '@sinoui/core/Badge';
@@ -225,33 +235,35 @@ function BadgeDemo() {
 
 ## 指定颜色
 
+这个示例是个包含了文本的徽章，同时使用了主色和副色。 徽章会对其子元素生效。
+
 ```tsx
 import Badge from '@sinoui/core/Badge';
 
 function BadgeDemo() {
   return (
     <>
-      <Badge count={99} color="primary">
+      <Badge dot color="primary">
         <SvgIcon as={MdEmail} />
       </Badge>
       <p />
-      <Badge count={99} color="secondary">
+      <Badge dot color="secondary">
         <SvgIcon as={MdEmail} />
       </Badge>
       <p />
-      <Badge count={99} color="warning">
+      <Badge dot color="warning">
         <SvgIcon as={MdEmail} />
       </Badge>
       <p />
-      <Badge count={99} color="success">
+      <Badge dot color="success">
         <SvgIcon as={MdEmail} />
       </Badge>
       <p />
-      <Badge count={99} color="error">
+      <Badge dot color="error">
         <SvgIcon as={MdEmail} />
       </Badge>
       <p />
-      <Badge count={99} color="info">
+      <Badge dot color="info">
         <SvgIcon as={MdEmail} />
       </Badge>
     </>
@@ -262,27 +274,27 @@ function BadgeDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <Badge count={99} color="primary">
+  <Badge dot color="primary">
     <SvgIcon as={MdEmail} />
   </Badge>
   <p />
-  <Badge count={99} color="secondary">
+  <Badge dot color="secondary">
     <SvgIcon as={MdEmail} />
   </Badge>
   <p />
-  <Badge count={99} color="warning">
+  <Badge dot color="warning">
     <SvgIcon as={MdEmail} />
   </Badge>
   <p />
-  <Badge count={99} color="success">
+  <Badge dot color="success">
     <SvgIcon as={MdEmail} />
   </Badge>
   <p />
-  <Badge count={99} color="error">
+  <Badge dot color="error">
     <SvgIcon as={MdEmail} />
   </Badge>
   <p />
-  <Badge count={99} color="info">
+  <Badge dot color="info">
     <SvgIcon as={MdEmail} />
   </Badge>
 </ThemeProvider>
