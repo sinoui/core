@@ -1,5 +1,6 @@
 import React from 'react';
-import { withLabel, FormControlWithLabelProps } from '@sinoui/core/Checkbox';
+import { withLabel } from '@sinoui/core/Checkbox';
+import type { FormControlWithLabelProps } from '@sinoui/core/Checkbox';
 import RadioButton from './RadioButton';
 
 export interface RadioProps
