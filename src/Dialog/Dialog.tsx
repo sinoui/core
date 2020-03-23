@@ -1,8 +1,11 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import { transitions } from '@sinoui/theme';
 import Modal from '@sinoui/core/Modal';
 import { CSSTransition } from 'react-transition-group';
 import DialogContainer, { DialogContainerProps } from './DialogContainer';
+
+const { duration, easing } = transitions;
 
 const GlobalStyle = createGlobalStyle`
 .sinoui-dialog-enter {
@@ -11,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
 .sinoui-dialog-enter-active {
   opacity: 1;
-  transition: opacity 200ms;
+  transition: opacity ${duration.enteringScreen} ${easing.easeInOut};
 }
 
 .sinoui-dialog-exit { 
@@ -19,8 +22,8 @@ const GlobalStyle = createGlobalStyle`
 }
 
 .sinoui-dialog-exit-active { 
-   opacity: 0;
-  transition: opacity 200ms;
+  opacity: 0;
+  transition: opacity ${duration.leavingScreen} ${easing.easeInOut};
 }
 `;
 
@@ -48,12 +51,7 @@ export interface DialogProps extends DialogContainerProps {
   /**
    * 过渡动画时长
    */
-  transitionDuration?:
-    | number
-    | {
-        enter: number;
-        exit: number;
-      };
+  transitionDuration?: number;
   /**
    * backdrop被点击时的回调函数
    *
@@ -64,13 +62,18 @@ export interface DialogProps extends DialogContainerProps {
    * 是否显示遮罩层
    */
   backdrop?: boolean;
+  /**
+   * 过渡结束监听器
+   */
+  addEndListener?: any;
 }
 
 function Dialog(props: DialogProps) {
   const {
     backdropClick = true,
-    transitionDuration = 300,
+    transitionDuration,
     open,
+    addEndListener,
     ...rest
   } = props;
   return (
@@ -81,6 +84,7 @@ function Dialog(props: DialogProps) {
         in={open}
         classNames="sinoui-dialog"
         unmountOnExit
+        addEndListener={addEndListener}
       >
         <>
           <DialogContainer {...props} />

@@ -1,15 +1,18 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
+import { transitions } from '@sinoui/theme';
+
+const { duration, easing } = transitions;
 
 const GlobalStyle = createGlobalStyle`
 .sinoui-dialog-back-enter {
-   opacity: 0;
+  opacity: 0;
 }
 
 .sinoui-dialog-back-enter-active {
   opacity: 1;
-  transition: opacity 200ms;
+  transition: opacity ${duration.enteringScreen} ${easing.easeInOut};
 }
 
 .sinoui-dialog-back-exit { 
@@ -17,8 +20,8 @@ const GlobalStyle = createGlobalStyle`
 }
 
 .sinoui-dialog-back-exit-active { 
-   opacity: 0;
-  transition: opacity 200ms;
+  opacity: 0;
+  transition: opacity ${duration.leavingScreen} ${easing.easeInOut};
 }
 `;
 
@@ -57,23 +60,28 @@ export interface BackdropProps {
    * 添加自定义类名
    */
   className?: string;
+  /**
+   * 过渡结束监听器
+   */
+  addEndListener?: any;
 }
 
 export default function Backdrop(props: BackdropProps) {
-  const { open, transitionDuration = 300 } = props;
+  const { open, transitionDuration, addEndListener } = props;
   return (
-    <>
-      <CSSTransition
-        appear
-        in={open}
-        timeout={transitionDuration}
-        {...props}
-        classNames="sinoui-dialog-back"
-        unmountOnExit
-      >
+    <CSSTransition
+      appear
+      in={open}
+      timeout={transitionDuration}
+      {...props}
+      classNames="sinoui-dialog-back"
+      unmountOnExit
+      addEndListener={addEndListener}
+    >
+      <>
         <BackdropWrapper />
-      </CSSTransition>
-      <GlobalStyle />
-    </>
+        <GlobalStyle />
+      </>
+    </CSSTransition>
   );
 }
