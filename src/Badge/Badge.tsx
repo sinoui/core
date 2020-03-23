@@ -27,7 +27,7 @@ export interface BadgeProps {
   /**
    * 	指定封顶数值
    */
-  overflowCount: number;
+  overflowCount?: number;
   /**
    * 	设置数字为0时显示
    */
@@ -92,9 +92,15 @@ const BadgeCircle = styled.span<BadgeProps>`
   text-align: center;
   ${(props) => props.dot && dotCss};
   ${(props) =>
-    ((props.badgeContent && props.badgeContent > props.overflowCount) ||
-      (props.count && props.count > props.overflowCount)) &&
+    props.count &&
+    props.overflowCount &&
+    props.count > props.overflowCount &&
     overflowCountCss};
+`;
+
+const Wrapper = styled.div`
+  position: absolute;
+  ${anchorOriginCss};
 `;
 
 /**
@@ -119,30 +125,38 @@ const Badge = React.forwardRef(
       ...rest
     } = props;
 
-    const content = badgeContent || count;
     const num =
-      overflowCount && content && content > overflowCount
+      overflowCount && count && count > overflowCount
         ? `${overflowCount}+`
-        : content;
+        : count;
     return (
       <BadgeWrapper
         ref={ref}
         className={classNames('sinoui-badge', className, {
           'sinoui-badge--dot': dot,
         })}
-        data-testid="badge"
       >
-        {(badgeContent || (count && count > 0) || showZero || dot) && (
-          <BadgeCircle
-            color={color}
-            dot={dot}
-            title={title}
-            overflowCount={overflowCount}
+        {badgeContent ? (
+          <Wrapper
+            className="sinoui-badge__content"
             anchorOrigin={anchorOrigin}
-            {...rest}
           >
-            {!dot ? num : null}
-          </BadgeCircle>
+            {badgeContent}
+          </Wrapper>
+        ) : (
+          ((count && count > 0) || showZero || dot) && (
+            <BadgeCircle
+              color={color}
+              dot={dot}
+              title={title}
+              overflowCount={overflowCount}
+              anchorOrigin={anchorOrigin}
+              count={count}
+              {...rest}
+            >
+              {!dot ? num : null}
+            </BadgeCircle>
+          )
         )}
         {children}
       </BadgeWrapper>

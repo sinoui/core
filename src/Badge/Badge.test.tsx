@@ -16,7 +16,7 @@ describe('Badge组件 单元测试', () => {
   afterEach(cleanup);
 
   it('设置为圆点形式', () => {
-    const { getByTestId } = render(
+    const { container } = render(
       <ThemeProvider theme={defaultTheme}>
         <Badge count={1} dot>
           <SvgIcon as={MdEmail} />
@@ -24,12 +24,12 @@ describe('Badge组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const text = getByTestId('badge');
+    const text = container.querySelector('.sinoui-badge');
     expect(text).toHaveClass('sinoui-badge--dot');
   });
 
   it('指定数字', () => {
-    const { getByTestId } = render(
+    const { getByText } = render(
       <ThemeProvider theme={defaultTheme}>
         <Badge count={1}>
           <SvgIcon as={MdEmail} />
@@ -37,12 +37,11 @@ describe('Badge组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const text = getByTestId('badge');
-    expect(text.firstChild).toHaveTextContent('1');
+    expect(getByText('1')).toBeInTheDOM();
   });
 
   it('指定封顶数值', () => {
-    const { getByTestId } = render(
+    const { getByText } = render(
       <ThemeProvider theme={defaultTheme}>
         <Badge count={100} overflowCount={99}>
           <SvgIcon as={MdEmail} />
@@ -50,12 +49,11 @@ describe('Badge组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const text = getByTestId('badge');
-    expect(text.firstChild).toHaveTextContent('99+');
+    expect(getByText('99+')).toBeInTheDOM();
   });
 
   it('设置徽标的显示位置', () => {
-    const { getByTestId } = render(
+    const { container } = render(
       <ThemeProvider theme={defaultTheme}>
         <Badge count={8} anchorOrigin={{ vertical: 'top', horizontal: 'left' }}>
           <SvgIcon as={MdEmail} />
@@ -63,8 +61,8 @@ describe('Badge组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const text = getByTestId('badge');
-    expect(text.firstChild).toHaveStyle('top:0;left:0');
+    const text = container.querySelector('.sinoui-badge');
+    expect(text?.firstChild).toHaveStyle('top:0;left:0');
   });
 });
 

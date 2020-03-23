@@ -1,9 +1,12 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import SvgIcon from '@sinoui/core/SvgIcon';
 import { MdEmail } from 'react-icons/md';
 import Badge from '@sinoui/core/Badge';
+import Avatar from '@sinoui/core/Avatar';
+import avatarf from './img/avatarf.jpg';
+import avatars from './img/avatars.jpg';
 
 export default {
   title: 'Badge',
@@ -49,11 +52,39 @@ export const 设置鼠标悬浮时显示的文字 = () => (
   </ThemeProvider>
 );
 
+const BadgeWrapper = styled(Badge)`
+  & .sinoui-badge__content {
+    right: 14%;
+    bottom: 14%;
+  }
+`;
+
+const AvatarWrapper = styled(Avatar)`
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+
+  > img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+`;
+
 export const 设置自定义badge的内容 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Badge badgeContent={4}>
-      <SvgIcon as={MdEmail} />
-    </Badge>
+    <BadgeWrapper
+      badgeContent={
+        <AvatarWrapper>
+          <img src={avatarf} alt="" />
+        </AvatarWrapper>
+      }
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+    >
+      <Avatar>
+        <img src={avatars} alt="" />
+      </Avatar>
+    </BadgeWrapper>
   </ThemeProvider>
 );
 

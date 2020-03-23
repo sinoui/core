@@ -12,6 +12,7 @@ import { defaultTheme } from '@sinoui/theme';
 import SvgIcon from '@sinoui/core/SvgIcon';
 import { MdEmail } from 'react-icons/md';
 import Badge from '@sinoui/core/Badge';
+import BadgeContentDemo from './badge-demos/BadgeContentDemo';
 
 ## 基本使用
 
@@ -30,7 +31,7 @@ function BadgeDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <Badge>
+  <Badge count={8}>
     <SvgIcon as={MdEmail} />
   </Badge>
 </ThemeProvider>
@@ -131,12 +132,41 @@ function BadgeDemo() {
 
 ```tsx
 import Badge from '@sinoui/core/Badge';
+import Avatar from '@sinoui/core/Avatar';
+
+const BadgeWrapper = styled(Badge)`
+  & .sinoui-badge__content {
+    right: 14%;
+    bottom: 14%;
+  }
+`;
+
+const AvatarWrapper = styled(Avatar)`
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+
+  > img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+`;
 
 function BadgeDemo() {
   return (
-    <Badge count={1} badgeContent={4}>
-      <SvgIcon as={MdEmail} />
-    </Badge>
+    <BadgeWrapper
+      badgeContent={
+        <AvatarWrapper>
+          <img src={avatarf} alt="" />
+        </AvatarWrapper>
+      }
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+    >
+      <Avatar>
+        <img src={avatars} alt="" />
+      </Avatar>
+    </BadgeWrapper>
   );
 }
 ```
@@ -144,9 +174,7 @@ function BadgeDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <Badge badgeContent={4}>
-    <SvgIcon as={MdEmail} />
-  </Badge>
+  <BadgeContentDemo />
 </ThemeProvider>
 
 ## 指定封顶数值
