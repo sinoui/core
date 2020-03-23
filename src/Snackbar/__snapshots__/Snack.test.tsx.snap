@@ -20,7 +20,7 @@ exports[`Snackbar快照测试 不自动消失 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 sLtAY Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk"
           color="textPrimary"
           role="button"
           type="button"
@@ -65,7 +65,7 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
         className="sinoui-snackbar__action"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button-sc-15sa99-0 dGYkF sinoui-button sinoui-button--raised"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 bkvkpP sinoui-button sinoui-button--raised"
           color="error"
           role="button"
           type="button"
@@ -77,7 +77,7 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 sLtAY Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk"
           color="textPrimary"
           role="button"
           type="button"
@@ -122,7 +122,7 @@ exports[`Snackbar快照测试 居左显示 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 sLtAY Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk"
           color="textPrimary"
           role="button"
           type="button"
@@ -167,7 +167,7 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
         className="sinoui-snackbar__action"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button-sc-15sa99-0 dGYkF sinoui-button sinoui-button--raised"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 bkvkpP sinoui-button sinoui-button--raised"
           color="error"
           role="button"
           type="button"
@@ -179,7 +179,7 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 sLtAY Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk"
           color="textPrimary"
           role="button"
           type="button"
@@ -230,7 +230,7 @@ exports[`Snackbar快照测试 纯文本显示 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 sLtAY Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk"
           color="textPrimary"
           role="button"
           type="button"
@@ -275,7 +275,7 @@ exports[`Snackbar快照测试 设置自定义时长 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton-sc-11batye-0 Snackbar__DismissIconButton-sc-1xagtb1-0 bxcjsV sinoui-icon-button"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 sLtAY Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 bZvByk"
           color="textPrimary"
           role="button"
           type="button"

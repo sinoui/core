@@ -1,5 +1,6 @@
 import React from 'react';
-import BaseButton, { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
+import BaseButton from '@sinoui/core/BaseButton';
+import type { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { opacify } from 'polished';

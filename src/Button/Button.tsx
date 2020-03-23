@@ -1,10 +1,11 @@
 import React from 'react';
-import BaseButton, { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
+import BaseButton from '@sinoui/core/BaseButton';
+import type { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import { opacify } from 'polished';
-import getColorFromTheme from '../utils/getColorFromTheme';
-import colorCss from '../utils/colorCss';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
+import colorCss from '@sinoui/core/utils/colorCss';
 import OverridableComponent from '../OverridableComponent';
 
 export interface Props extends BaseButtonProps {

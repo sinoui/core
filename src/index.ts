@@ -1,6 +1,8 @@
 import BaseButton from './BaseButton';
-import Button, { Props as ButtonProps } from './Button';
+import Button from './Button';
 import IconButton from './IconButton';
 import SvgIcon from './SvgIcon';
+import type { Props as ButtonProps } from './Button';
 
-export { BaseButton, Button, ButtonProps, IconButton, SvgIcon };
+export type { ButtonProps };
+export { BaseButton, Button, IconButton, SvgIcon };
