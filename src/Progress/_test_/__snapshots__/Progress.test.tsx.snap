@@ -51,7 +51,8 @@ exports[`快照测试 线性缓冲指示器 1`] = `
 
 exports[`快照测试 默认 1`] = `
 <div
-  className="DivCanvas-i30x29-0 fcvnNX sinoui-progress sinoui-progress--circle"
+  className="DivCanvas-i30x29-0 fCpBfb sinoui-progress sinoui-progress--circle"
+  size={40}
 >
   <canvas />
 </div>

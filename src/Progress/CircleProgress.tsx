@@ -87,7 +87,7 @@ export default function CircleProgress(props: ProgressPropsType) {
   }, [color, draw, drawCanvas, rafId, size, theme, thickness]);
 
   return (
-    <DivCanvas {...props}>
+    <DivCanvas {...props} size={size}>
       <canvas ref={canvas} />
     </DivCanvas>
   );

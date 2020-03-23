@@ -46,6 +46,17 @@ describe('Progress', () => {
     );
 
     expect(container.innerHTML).toBe(circleProgressContainer.innerHTML);
+    expect(container.firstChild).toHaveStyle('width: 40px');
+  });
+
+  it('环形指示器指定大小为80px', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Progress size={80} />
+      </ThemeProvider>,
+    );
+
+    expect(container.firstChild).toHaveStyle('width: 80px');
   });
 
   it('环形定量进度指示器', () => {
@@ -73,6 +84,8 @@ describe('Progress', () => {
     expect(
       container.querySelector('.sinoui-progress--linear__secondary-bar'),
     ).not.toBeNull();
+
+    expect(container.firstChild).toHaveStyle('height: 4px');
   });
 
   it('指定为线性常规定量进度指示器', () => {
@@ -92,7 +105,7 @@ describe('Progress', () => {
   it('指定为线性缓冲进度指示器', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Progress linear determinate buffer />
+        <Progress linear buffer />
       </ThemeProvider>,
     );
     expect(
@@ -101,6 +114,16 @@ describe('Progress', () => {
     expect(
       container.querySelector('.sinoui-progress--linear__secondary-bar'),
     ).not.toBeNull();
+  });
+
+  it('线性进度指示器指定线条宽度为8px', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Progress linear buffer thickness={8} />
+      </ThemeProvider>,
+    );
+
+    expect(container.firstChild).toHaveStyle('height: 8px');
   });
 });
 
