@@ -8,17 +8,11 @@ import { toggleItem } from './arrays';
 import Checkbox, { CheckboxProps } from '../Checkbox';
 
 const PaddingRightStyle = css<{ labelPosition?: 'left' | 'right' }>`
-  > .sinoui-form-control-label .sinoui-form-control-label__title {
-    padding-right: ${(props) =>
-      props.labelPosition === 'left' ? '4px' : '16px'};
-    padding-left: ${(props) => props.labelPosition === 'left' && '16px'};
+  > label {
+    padding-right: 8px;
   }
-  > .sinoui-form-control-label:last-child .sinoui-form-control-label__title {
-    padding-right: ${(props) =>
-      props.labelPosition === 'left' ? '4px' : '8px'};
-  }
-  > .sinoui-form-control-label:first-child .sinoui-form-control-label__title {
-    padding-left: ${(props) => props.labelPosition === 'left' && '0px'};
+  > label:last-child {
+    padding-right: 0px;
   }
 `;
 
