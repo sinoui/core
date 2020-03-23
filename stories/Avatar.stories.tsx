@@ -15,13 +15,13 @@ export default {
 export const 图片头像 = () => (
   <ThemeProvider theme={defaultTheme}>
     <Avatar>
-      <img src={avatarf} />
+      <img src={avatarf} alt="" />
     </Avatar>
     <Avatar>
-      <img src={avatars} />
+      <img src={avatars} alt="" />
     </Avatar>
     <Avatar>
-      <img src={avatart} />
+      <img src={avatart} alt="" />
     </Avatar>
   </ThemeProvider>
 );
@@ -37,7 +37,7 @@ export const 字母头像 = () => (
 export const 图标头像 = () => (
   <ThemeProvider theme={defaultTheme}>
     <Avatar>
-      <SvgIcon as={MdAdd}></SvgIcon>
+      <SvgIcon as={MdAdd} />
     </Avatar>
   </ThemeProvider>
 );
@@ -45,11 +45,11 @@ export const 图标头像 = () => (
 export const 是否为密集模式 = () => (
   <ThemeProvider theme={defaultTheme}>
     <Avatar dense>
-      <img src={avatarf} />
+      <img src={avatarf} alt="" />
     </Avatar>
     <p />
     <Avatar dense>
-      <SvgIcon as={MdAdd}></SvgIcon>
+      <SvgIcon as={MdAdd} />
     </Avatar>
     <p />
     <Avatar dense>H</Avatar>
