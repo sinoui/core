@@ -6,32 +6,23 @@ import { lighten } from 'polished';
 import { ProgressPropsType } from './types';
 import {
   inDeterminatePrimaryBarKeyFrames,
-  inDeterminatePrimaryBarInnerKeyFrames,
   inDeterminateSecondaryBarKeyFrames,
-  inDeterminateSecondaryBarInnerKeyFrames,
   determinateBuefferDotKeyframes,
 } from './LinearKeyframes';
-import dot from './dot.svg';
 
 /**
  * 线性进度条不定量样式
  */
 const inDeterminateStyle = css`
   & .sinoui-progress--linear__primary-bar {
-    left: -145.166611%;
-    animation: ${inDeterminatePrimaryBarKeyFrames} 2s infinite linear;
+    width: 100%;
+    animation: ${inDeterminatePrimaryBarKeyFrames} 2.1s
+      cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
   }
-
-  & .sinoui-progress--linear__bar-inner {
-    animation: ${inDeterminatePrimaryBarInnerKeyFrames} 2s infinite linear;
-  }
-
   & .sinoui-progress--linear__secondary-bar {
-    left: -54.888891%;
-    animation: ${inDeterminateSecondaryBarKeyFrames} 2s infinite linear;
-    > .sinoui-progress--linear__bar-inner {
-      animation: ${inDeterminateSecondaryBarInnerKeyFrames} 2s infinite linear;
-    }
+    width: 100%;
+    animation: ${inDeterminateSecondaryBarKeyFrames} 2.1s
+      cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite;
   }
 `;
 
@@ -39,55 +30,48 @@ const inDeterminateStyle = css`
  * 非缓冲线性定量进度条
  */
 const normalDeterminateStyle = css<ProgressPropsType>`
-  &
-    .sinoui-progress--linear__primary-bar
-    > .sinoui-progress--linear__bar-inner {
+  & .sinoui-progress--linear__primary-bar {
+    width: 100%;
     left: -100%;
     transform: translateX(${(props) => `${props.value}%`});
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.6, 1);
   }
 `;
 
-/*
- * 缓冲进度条
- */
-
-const getBufferValue = (value: number) => {
-  const max = 5;
-  const min = 1;
-  const distance =
-    value < 90
-      ? value + Math.floor(Math.random() * (max - min + 1) + min)
-      : value;
-  return distance <= 100 ? distance : 100;
-};
-
 /**
  * 线性缓冲样式
  */
 const bufferStyle = css<ProgressPropsType>`
+  background-color: transparent;
   & .sinoui-progress--linear__buffer-dots {
-    background-image: url(${dot});
     position: absolute;
     width: 100%;
     height: 100%;
-    background-size: 10px 4px;
-    background-repeat: repeat-x;
-    animation: ${determinateBuefferDotKeyframes} 0.25s infinite linear;
+    background-size: 10px 10px;
+    background-position: 0 -23px;
+    background-image: radial-gradient(
+      ${({ color = 'primary', theme }) =>
+          lighten(0.26, getColorFromTheme(theme, color))}
+        0%,
+      ${({ color = 'primary', theme }) =>
+          lighten(0.26, getColorFromTheme(theme, color))}
+        16%,
+      transparent 42%
+    );
+    animation: ${determinateBuefferDotKeyframes} 3s infinite linear;
   }
 
-  & .sinoui-progress--linear__buffer {
-    left: -100%;
-    transform: translateX(${({ value = 0 }) => `${getBufferValue(value)}%`});
+  & .sinoui-progress--linear__secondary-bar {
+    transform: translateX(${({ bufferValue = 0 }) => `${bufferValue}%`});
     transition: transform 0.15s cubic-bezier(0.4, 0, 0.6, 1);
+    background-color: ${({ color = 'primary', theme }) =>
+      lighten(0.26, getColorFromTheme(theme, color))};
   }
 
-  &
-    .sinoui-progress--linear__primary-bar
-    > .sinoui-progress--linear__bar-inner {
-    left: -100%;
+  & .sinoui-progress--linear__primary-bar {
     transform: translateX(${({ value = 0 }) => `${value}%`});
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.6, 1);
+    z-index: 1;
   }
 `;
 
@@ -95,8 +79,8 @@ const Wrapper = styled.div<ProgressPropsType>`
   position: relative;
   width: 100%;
   height: ${(props) => props.thickness}px;
-  transform: translateZ(0);
-  outline: 1px solid transparent;
+  background-color: ${({ color = 'primary', theme }) =>
+    lighten(0.26, getColorFromTheme(theme, color))};
   overflow: hidden;
 
   & .sinoui-progress--linear__buffer {
@@ -113,16 +97,12 @@ const Wrapper = styled.div<ProgressPropsType>`
     position: absolute;
     width: 100%;
     height: 100%;
+    left: -100%;
+    top: 0;
     transform-origin: top left;
-  }
-
-  & .sinoui-progress--linear__bar-inner {
-    position: absolute;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
     background-color: ${({ color = 'primary', theme }) =>
       getColorFromTheme(theme, color)};
+    transition: transform 0.2s linear;
   }
 
   ${({ determinate }) => !determinate && inDeterminateStyle};
@@ -147,14 +127,9 @@ export default function LinearProgress(props: ProgressPropsType) {
       )}
     >
       {buffer && <div className="sinoui-progress--linear__buffer-dots" />}
-      <div className="sinoui-progress--linear__buffer" />
-      <div className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar">
-        <span className="sinoui-progress--linear__bar-inner" />
-      </div>
-      {!determinate && (
-        <div className="sinoui-progress--linear__bar sinoui-progress--linear__secondary-bar">
-          <span className="sinoui-progress--linear__bar-inner" />
-        </div>
+      <div className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar" />
+      {(!determinate || buffer) && (
+        <div className="sinoui-progress--linear__bar sinoui-progress--linear__secondary-bar" />
       )}
     </Wrapper>
   );

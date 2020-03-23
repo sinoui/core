@@ -100,7 +100,7 @@ describe('Progress', () => {
     ).not.toBeNull();
     expect(
       container.querySelector('.sinoui-progress--linear__secondary-bar'),
-    ).toBeNull();
+    ).not.toBeNull();
   });
 });
 
@@ -149,14 +149,14 @@ describe('快照测试', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  // it('线性缓冲指示器', () => {
-  //   const tree = renderer
-  //     .create(
-  //       <ThemeProvider theme={defaultTheme}>
-  //         <Progress linear determinate buffer value={50} />
-  //       </ThemeProvider>,
-  //     )
-  //     .toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
+  it('线性缓冲指示器', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <Progress linear buffer value={50} bufferValue={55} />
+        </ThemeProvider>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

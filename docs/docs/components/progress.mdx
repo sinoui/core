@@ -52,19 +52,24 @@ export default function Demo({
   linear,
   determinate,
   buffer,
+  size,
+  thickness,
 }: {
   linear?: boolean;
   determinate?: boolean;
   buffer?: boolean;
+  size?: number;
+  thickness?: number;
 }) {
   const [progressValue, setProgressValue] = useState(0);
-  const [loading, setLoading] = useState(!determinate);
-  const max = 30;
-  const min = 10;
-  const step = Math.floor(Math.random() * (max - min + 1) + min);
+  const [loading, setLoading] = useState(!determinate && !buffer);
+
   const timer = useRef<any>();
   const onClick = () => {
-    if (determinate && !loading) {
+    const max = 30;
+    const min = 10;
+    const step = Math.floor(Math.random() * (max - min + 1) + min);
+    if ((determinate || buffer) && !loading) {
       setProgressValue(0);
       setLoading(true);
       timer.current = setInterval(() => {
@@ -84,29 +89,43 @@ export default function Demo({
     }
   };
 
+  /*
+   * 缓冲进度条
+   */
+
+  const getBufferValue = () => {
+    const max = 5;
+    const min = 1;
+    const distance =
+      progressValue < 90
+        ? progressValue + Math.floor(Math.random() * (max - min + 1) + min)
+        : progressValue;
+    return distance <= 100 ? distance : 100;
+  };
+
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div>
-        {determinate && (
-          <Button raised onClick={onClick} disabled={loading}>
-            点击加载
-          </Button>
-        )}
-        {loading && (
-          <Wrapper>
-            <Progress
-              linear={linear}
-              value={progressValue}
-              determinate={determinate}
-              buffer={buffer}
-            />
-          </Wrapper>
-        )}
-      </div>
+      {(determinate || buffer) && (
+        <Button raised onClick={onClick} disabled={loading}>
+          点击加载
+        </Button>
+      )}
+      {loading && (
+        <Wrapper>
+          <Progress
+            linear={linear}
+            value={progressValue}
+            determinate={determinate}
+            buffer={buffer}
+            bufferValue={getBufferValue()}
+            thickness={thickness}
+            size={size}
+          />
+        </Wrapper>
+      )}
     </ThemeProvider>
   );
 }
-
 ```
 Demo.tsx
 
@@ -121,6 +140,8 @@ Demo.tsx
 </CardStoryLayout>
 
 ### 指定线条宽度的环形进度指示器
+
+环形进度指示器线条的宽度默认是3.6px，通过指定`thickness`属性来更改指示器的线条宽度，如`thickness={8}`。
 
 Demo.tsx
 ```tsx
@@ -138,6 +159,8 @@ export default function Demo() {
 </CardStoryLayout>
 
 ### 指定大小的环形进度指示器
+
+环形进度指示器的大小默认是40px*40px，通过指定`size`属性来更改指示器的大小，如`size={100}`。
 
 Demo.tsx
 ```tsx
@@ -185,6 +208,8 @@ Demo.tsx
 ### 线性缓冲进度指示器
 Demo.tsx
 
+线性缓冲进度指示器默认是定量的，所以指定线性缓冲进度指示器时，不需要显示传入`determinate`属性。
+
 ```tsx
 <LinearDeterminate linear determinate buffer/>
 ```
@@ -192,10 +217,13 @@ Demo.tsx
 效果：
 
 <CardStoryLayout style={{height: '150px',display:'flex',flexDirection:'column',alignItems: 'flex-start'}}>
-  <LinearDeterminate linear determinate buffer />
+  <LinearDeterminate linear  buffer />
 </CardStoryLayout>
 
 ### 指定线条宽度的线性进度指示器
+
+线性进度指示器的线条宽度默认是4px，通过指定`thickness`属性来更改指示器的大小，如`thickness={8}`。
+
 Demo.tsx
 
 ```tsx

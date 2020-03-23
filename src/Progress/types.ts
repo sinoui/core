@@ -17,6 +17,10 @@ export interface ProgressPropsType {
    */
   value?: number;
   /**
+   * 指定缓存进度指示器的缓冲进度
+   */
+  bufferValue?: number;
+  /**
    * 进度条指示器的颜色
    */
   color?: string;

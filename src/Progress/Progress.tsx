@@ -18,7 +18,7 @@ export default function Progress(props: ProgressPropsType) {
         <LinearProgress
           {...rest}
           thickness={thickness}
-          determinate={determinate}
+          determinate={determinate || props.buffer}
         />
       );
     }

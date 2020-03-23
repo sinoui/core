@@ -25,13 +25,14 @@ export default function Demo({
   thickness?: number;
 }) {
   const [progressValue, setProgressValue] = useState(0);
-  const [loading, setLoading] = useState(!determinate);
-  const max = 30;
-  const min = 10;
-  const step = Math.floor(Math.random() * (max - min + 1) + min);
+  const [loading, setLoading] = useState(!determinate && !buffer);
+
   const timer = useRef<any>();
   const onClick = () => {
-    if (determinate && !loading) {
+    const max = 30;
+    const min = 10;
+    const step = Math.floor(Math.random() * (max - min + 1) + min);
+    if ((determinate || buffer) && !loading) {
       setProgressValue(0);
       setLoading(true);
       timer.current = setInterval(() => {
@@ -51,9 +52,23 @@ export default function Demo({
     }
   };
 
+  /*
+   * 缓冲进度条
+   */
+
+  const getBufferValue = () => {
+    const max = 5;
+    const min = 1;
+    const distance =
+      progressValue < 90
+        ? progressValue + Math.floor(Math.random() * (max - min + 1) + min)
+        : progressValue;
+    return distance <= 100 ? distance : 100;
+  };
+
   return (
     <ThemeProvider theme={defaultTheme}>
-      {determinate && (
+      {(determinate || buffer) && (
         <Button raised onClick={onClick} disabled={loading}>
           点击加载
         </Button>
@@ -65,6 +80,7 @@ export default function Demo({
             value={progressValue}
             determinate={determinate}
             buffer={buffer}
+            bufferValue={getBufferValue()}
             thickness={thickness}
             size={size}
           />

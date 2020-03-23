@@ -10,43 +10,42 @@ exports[`快照测试 环形定量指示器 1`] = `
 
 exports[`快照测试 线性不定量指示器 1`] = `
 <div
-  className="LinearProgress__Wrapper-sc-11c2xp2-0 gFUwEG sinoui-progress sinoui-progress--linear"
+  className="LinearProgress__Wrapper-sc-11c2xp2-0 dBiydJ sinoui-progress sinoui-progress--linear"
 >
   <div
-    className="sinoui-progress--linear__buffer"
+    className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar"
   />
   <div
-    className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar"
-  >
-    <span
-      className="sinoui-progress--linear__bar-inner"
-    />
-  </div>
-  <div
     className="sinoui-progress--linear__bar sinoui-progress--linear__secondary-bar"
-  >
-    <span
-      className="sinoui-progress--linear__bar-inner"
-    />
-  </div>
+  />
 </div>
 `;
 
 exports[`快照测试 线性定量指示器 1`] = `
 <div
-  className="LinearProgress__Wrapper-sc-11c2xp2-0 clIqbt sinoui-progress sinoui-progress--linear"
+  className="LinearProgress__Wrapper-sc-11c2xp2-0 keefnB sinoui-progress sinoui-progress--linear"
   value={50}
 >
   <div
-    className="sinoui-progress--linear__buffer"
+    className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar"
+  />
+</div>
+`;
+
+exports[`快照测试 线性缓冲指示器 1`] = `
+<div
+  className="LinearProgress__Wrapper-sc-11c2xp2-0 iHpDqc sinoui-progress sinoui-progress--linear sinoui-progress--buffer"
+  value={50}
+>
+  <div
+    className="sinoui-progress--linear__buffer-dots"
   />
   <div
     className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar"
-  >
-    <span
-      className="sinoui-progress--linear__bar-inner"
-    />
-  </div>
+  />
+  <div
+    className="sinoui-progress--linear__bar sinoui-progress--linear__secondary-bar"
+  />
 </div>
 `;
 

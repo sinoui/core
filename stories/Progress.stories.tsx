@@ -7,9 +7,7 @@ export default {
 
 export const 线性不定量指示器 = () => <LinearDeterminate linear />;
 export const 线性定量指示器 = () => <LinearDeterminate linear determinate />;
-export const 线性定量缓冲指示器 = () => (
-  <LinearDeterminate linear determinate buffer />
-);
+export const 线性定量缓冲指示器 = () => <LinearDeterminate linear buffer />;
 export const 线条宽度为8的线性指示器 = () => (
   <LinearDeterminate linear thickness={8} />
 );

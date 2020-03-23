@@ -2,82 +2,50 @@ import { keyframes } from 'styled-components';
 
 const inDeterminatePrimaryBarKeyFrames = keyframes`
   0% {
-    transform: translateX(0);
+    left: -35%;
   }
-  20% {
-    animation-timing-function: cubic-bezier(0.5, 0, 0.701732, 0.495819);
-    transform: translateX(0);
-  }
-  59.15% {
-      animation-timing-function: cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);
-      transform: translateX(83.67142%);
+  60% {
+    left: 100%;
+    right: -90%;
   }
   100% {
-    transform: translateX(200.611057%);
+    left: 100%;
+    right: -90%;
   }
 `;
-
-const inDeterminatePrimaryBarInnerKeyFrames = keyframes`
-  0% {
-    transform: scaleX(0.08);
-  }
-  36.65% {
-    animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1);
-    transform: scaleX(0.08);
-  }
-  69.15% {
-    animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1);
-    transform: scaleX(0.661479);
-  }
-  100% {
-    transform: scaleX(0.08);
-}`;
 
 const inDeterminateSecondaryBarKeyFrames = keyframes`
   0% {
-    animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685);
-    transform: translateX(0);
+    left: -200%;
+    right: 100%;
   }
-  25% {
-    animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);
-    transform: translateX(37.651913%);
-  }
-  48.35% {
-    animation-timing-function: cubic-bezier(0.4, 0.627035, 0.6, 0.902026);
-    transform: translateX(84.386165%);
+  60% {
+    left: 107%;
+    right: -8%;
   }
   100% {
-    transform: translateX(160.277782%);
+    left: 107%;
+    right: -8%;
   }
-`;
-
-const inDeterminateSecondaryBarInnerKeyFrames = keyframes`
-  0% {
-    animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);
-    transform: scaleX(0.08);
-  }
-  19.15% {
-    animation-timing-function: cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);
-    transform: scaleX(0.457104);
-  }
-  44.15% {
-    animation-timing-function: cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179);
-    transform: scaleX(0.72796);
-  }
-  100% {
-    transform: scaleX(0.08);
-}
 `;
 
 const determinateBuefferDotKeyframes = keyframes`
-  to {
-    transform: translateX(-10px);
-}`;
+  0% {
+    opacity: 1;
+    background-position: 0px -23px;
+  }
+  50% {
+    opacity: 0;
+    background-position: 0px -23px;
+  }
+  100% {
+    opacity: 1;
+    background-position: -200px -23px;
+  }
+`;
 
 export {
   inDeterminatePrimaryBarKeyFrames,
-  inDeterminatePrimaryBarInnerKeyFrames,
   inDeterminateSecondaryBarKeyFrames,
-  inDeterminateSecondaryBarInnerKeyFrames,
   determinateBuefferDotKeyframes,
 };
