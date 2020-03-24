@@ -67,19 +67,18 @@ export interface BackdropProps {
 }
 
 export default function Backdrop(props: BackdropProps) {
-  const { open, transitionDuration, addEndListener } = props;
+  const { open, transitionDuration, addEndListener, ...rest } = props;
   return (
     <CSSTransition
       appear
       in={open}
       timeout={transitionDuration}
-      {...props}
       classNames="sinoui-dialog-back"
       unmountOnExit
       addEndListener={addEndListener}
     >
       <>
-        <BackdropWrapper />
+        <BackdropWrapper {...rest} />
         <GlobalStyle />
       </>
     </CSSTransition>

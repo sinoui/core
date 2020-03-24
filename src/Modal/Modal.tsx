@@ -223,6 +223,7 @@ function Modal(props: ModalPropsType) {
       child && child.props.onExited,
       onTransitionExited,
     );
+
     if (!open) {
       childProps.in = false;
     }
