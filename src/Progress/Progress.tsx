@@ -2,7 +2,7 @@ import React from 'react';
 import LinearProgress from './LinearProgress';
 import CircleProgress from './CircleProgress';
 import CircleDeterminateProgress from './CircleDeterminateProgress';
-import { ProgressPropsType } from './types';
+import type { ProgressPropsType } from './types';
 
 /**
  *

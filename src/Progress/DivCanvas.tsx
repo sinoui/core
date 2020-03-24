@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import classNames from 'classnames';
-import { ProgressPropsType } from './types';
+import type { ProgressPropsType } from './types';
 
 const DivCanvasKeyFrames = keyframes`
   0% { transform: rotate(0deg) }

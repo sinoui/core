@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useContext, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import DivCanvas from './DivCanvas';
-import { ProgressPropsType } from './types';
+import type { ProgressPropsType } from './types';
 
 const PROGRESS_MAX_WIDTH = 1.9; // 弧度
 const PROGRESS_WIDTH_DELTA = 0.05;

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import { lighten } from 'polished';
-import { ProgressPropsType } from './types';
+import type { ProgressPropsType } from './types';
 import {
   inDeterminatePrimaryBarKeyFrames,
   inDeterminateSecondaryBarKeyFrames,

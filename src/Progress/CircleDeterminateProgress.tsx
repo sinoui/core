@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useContext, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
 import classNames from 'classnames';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
-import { ProgressPropsType } from './types';
+import type { ProgressPropsType } from './types';
 
 /**
  * 环形定量进度指示器
