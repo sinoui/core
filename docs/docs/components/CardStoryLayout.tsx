@@ -4,6 +4,7 @@ import { defaultTheme } from '@sinoui/theme';
 
 interface Props {
   children: React.ReactNode;
+  style: React.CSSProperties;
 }
 
 const Container = styled.div`
@@ -16,9 +17,10 @@ const Container = styled.div`
  * demo布局组件
  */
 export default function StoryLayout(props: Props) {
+  const { children, style } = props;
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container>{props.children}</Container>
+      <Container style={style}>{children}</Container>
     </ThemeProvider>
   );
 }

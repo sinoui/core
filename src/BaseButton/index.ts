@@ -1,4 +1,5 @@
-import BaseButton, { BaseButtonProps, Props } from './BaseButton';
+import BaseButton from './BaseButton';
+import type { Props, BaseButtonProps } from './BaseButton';
 
-export { BaseButtonProps, Props };
+export type { BaseButtonProps, Props };
 export default BaseButton;

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 环形定量指示器 1`] = `
+<div
+  className="sinoui-progress sinoui-progress--circle sinoui-progress--circle--determinate"
+>
+  <canvas />
+</div>
+`;
+
+exports[`快照测试 线性不定量指示器 1`] = `
+<div
+  className="LinearProgress__Wrapper-sc-11c2xp2-0 dBiydJ sinoui-progress sinoui-progress--linear"
+>
+  <div
+    className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar"
+  />
+  <div
+    className="sinoui-progress--linear__bar sinoui-progress--linear__secondary-bar"
+  />
+</div>
+`;
+
+exports[`快照测试 线性定量指示器 1`] = `
+<div
+  className="LinearProgress__Wrapper-sc-11c2xp2-0 keefnB sinoui-progress sinoui-progress--linear"
+  value={50}
+>
+  <div
+    className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar"
+  />
+</div>
+`;
+
+exports[`快照测试 线性缓冲指示器 1`] = `
+<div
+  className="LinearProgress__Wrapper-sc-11c2xp2-0 iHpDqc sinoui-progress sinoui-progress--linear sinoui-progress--buffer"
+  value={50}
+>
+  <div
+    className="sinoui-progress--linear__buffer-dots"
+  />
+  <div
+    className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar"
+  />
+  <div
+    className="sinoui-progress--linear__bar sinoui-progress--linear__secondary-bar"
+  />
+</div>
+`;
+
+exports[`快照测试 默认 1`] = `
+<div
+  className="DivCanvas-i30x29-0 fCpBfb sinoui-progress sinoui-progress--circle"
+  size={40}
+>
+  <canvas />
+</div>
+`;

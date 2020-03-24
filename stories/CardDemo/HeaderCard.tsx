@@ -17,17 +17,17 @@ import { mediaImgUrl } from './constant';
 export default function Demo() {
   return (
     <Card style={{ width: '344px' }}>
+      <CardHeader
+        avatar={<Avatar />}
+        action={
+          <IconButton>
+            <SvgIcon as={MdMoreVert} />
+          </IconButton>
+        }
+        title="Shrimp and Chorizo PaellShrimp and Chorizo Paella"
+        subheader="subheader"
+      />
       <CardPrimaryAction>
-        <CardHeader
-          avatar={<Avatar />}
-          action={
-            <IconButton>
-              <SvgIcon as={MdMoreVert} />
-            </IconButton>
-          }
-          title="Shrimp and Chorizo PaellShrimp and Chorizo Paella"
-          subheader="subheader"
-        />
         <CardMedia imageUrl={mediaImgUrl} wide />
         <CardContent>content</CardContent>
       </CardPrimaryAction>

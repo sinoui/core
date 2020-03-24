@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 默认 1`] = `
+<ul
+  className="List__StyledList-sc-1djj80a-0 SuRSt sinoui-list"
+/>
+`;

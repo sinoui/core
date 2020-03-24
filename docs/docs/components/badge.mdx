@@ -1,0 +1,332 @@
+---
+id: badge
+title: Badge 徽章
+---
+
+徽章会在其子项的右上角生成一个小徽章。
+
+一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。
+
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import SvgIcon from '@sinoui/core/SvgIcon';
+import { MdEmail } from 'react-icons/md';
+import Badge from '@sinoui/core/Badge';
+import BadgeContentDemo from './badge-demos/BadgeContentDemo';
+
+## 基本使用
+
+```tsx
+import Badge from '@sinoui/core/Badge';
+
+function BadgeDemo() {
+  return (
+    <Badge count={8}>
+      <SvgIcon as={MdEmail} />
+    </Badge>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Badge count={8}>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+</ThemeProvider>
+
+## 指定数字
+
+```tsx
+import Badge from '@sinoui/core/Badge';
+
+function BadgeDemo() {
+  return (
+    <Badge count={8}>
+      <SvgIcon as={MdEmail} />
+    </Badge>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Badge count={8}>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+</ThemeProvider>
+
+## 设置数字为0时显示
+
+简单的徽章展示，当 count 为 0 时，默认不显示，但是可以使用 showZero 修改为显示。
+
+```tsx
+import Badge from '@sinoui/core/Badge';
+
+function BadgeDemo() {
+  return (
+    <Badge count={0} showZero>
+      <SvgIcon as={MdEmail} />
+    </Badge>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Badge count={0} showZero>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+</ThemeProvider>
+
+## 设置为圆点形式
+
+dot属性将徽章更改为小点。这可以作为一个通知，说明某些内容已更改，而不给出计数。
+
+```tsx
+import Badge from '@sinoui/core/Badge';
+
+function BadgeDemo() {
+  return (
+    <Badge dot>
+      <SvgIcon as={MdEmail} />
+    </Badge>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Badge count={1} dot>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+</ThemeProvider>
+
+## 设置鼠标悬浮时显示的文字
+
+```tsx
+import Badge from '@sinoui/core/Badge';
+
+function BadgeDemo() {
+  return (
+    <Badge count={1} title="文字">
+      <SvgIcon as={MdEmail} />
+    </Badge>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Badge count={1} title="文字">
+    <SvgIcon as={MdEmail} />
+  </Badge>
+</ThemeProvider>
+
+## 设置自定义badge的内容
+
+```tsx
+import Badge from '@sinoui/core/Badge';
+import Avatar from '@sinoui/core/Avatar';
+
+const BadgeWrapper = styled(Badge)`
+  & .sinoui-badge__content {
+    right: 14%;
+    bottom: 14%;
+  }
+`;
+
+const AvatarWrapper = styled(Avatar)`
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+
+  > img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+`;
+
+function BadgeDemo() {
+  return (
+    <BadgeWrapper
+      badgeContent={
+        <AvatarWrapper>
+          <img src={avatarf} alt="" />
+        </AvatarWrapper>
+      }
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+    >
+      <Avatar>
+        <img src={avatars} alt="" />
+      </Avatar>
+    </BadgeWrapper>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <BadgeContentDemo />
+</ThemeProvider>
+
+## 指定封顶数值
+
+超过 overflowCount 的会显示为 ${overflowCount}+，默认的 overflowCount 为 99。
+
+```tsx
+import Badge from '@sinoui/core/Badge';
+
+function BadgeDemo() {
+  return (
+    <>
+      <Badge count={100}>
+        <SvgIcon as={MdEmail} />
+      </Badge>
+      <p />
+      <Badge count={1000} overflowCount={999}>
+        <SvgIcon as={MdEmail} />
+      </Badge>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Badge count={100}>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+  <p />
+  <Badge count={1000} overflowCount={999}>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+</ThemeProvider>
+
+## 设置徽标的显示位置
+
+您可以使用anchorOrigin道具将徽章移动到包装元素的任何角落。
+
+```tsx
+import Badge from '@sinoui/core/Badge';
+
+function BadgeDemo() {
+  return (
+    <>
+      <Badge count={8} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
+        <SvgIcon as={MdEmail} />
+      </Badge>
+      <p />
+      <Badge count={8} anchorOrigin={{ vertical: 'top', horizontal: 'left' }}>
+        <SvgIcon as={MdEmail} />
+      </Badge>
+      <p />
+      <Badge count={8} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+        <SvgIcon as={MdEmail} />
+      </Badge>
+      <p />
+      <Badge count={8} anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
+        <SvgIcon as={MdEmail} />
+      </Badge>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Badge count={8} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+  <p />
+  <Badge count={8} anchorOrigin={{ vertical: 'top', horizontal: 'left' }}>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+  <p />
+  <Badge count={8} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+  <p />
+  <Badge count={8} anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
+    <SvgIcon as={MdEmail} />
+  </Badge>
+</ThemeProvider>
+
+## 指定颜色
+
+这个示例是个包含了文本的徽章，同时使用了主色和副色。 徽章会对其子元素生效。
+
+```tsx
+import Badge from '@sinoui/core/Badge';
+
+function BadgeDemo() {
+  return (
+    <>
+      <Badge dot color="primary">
+        <SvgIcon as={MdEmail} />
+      </Badge>
+      <p />
+      <Badge dot color="secondary">
+        <SvgIcon as={MdEmail} />
+      </Badge>
+      <p />
+      <Badge dot color="warning">
+        <SvgIcon as={MdEmail} />
+      </Badge>
+      <p />
+      <Badge dot color="success">
+        <SvgIcon as={MdEmail} />
+      </Badge>
+      <p />
+      <Badge dot color="error">
+        <SvgIcon as={MdEmail} />
+      </Badge>
+      <p />
+      <Badge dot color="info">
+        <SvgIcon as={MdEmail} />
+      </Badge>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Badge dot color="primary">
+    <SvgIcon as={MdEmail} />
+  </Badge>
+  <p />
+  <Badge dot color="secondary">
+    <SvgIcon as={MdEmail} />
+  </Badge>
+  <p />
+  <Badge dot color="warning">
+    <SvgIcon as={MdEmail} />
+  </Badge>
+  <p />
+  <Badge dot color="success">
+    <SvgIcon as={MdEmail} />
+  </Badge>
+  <p />
+  <Badge dot color="error">
+    <SvgIcon as={MdEmail} />
+  </Badge>
+  <p />
+  <Badge dot color="info">
+    <SvgIcon as={MdEmail} />
+  </Badge>
+</ThemeProvider>
+
+## API
+
+查看[Badge 组件 API](/docs/components-apis/badge)
