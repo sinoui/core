@@ -28,6 +28,7 @@ module.exports = {
         'components/snackbar',
         'components/badge',
         'components/dialog',
+        'components/bottomSheet',
       ],
     }, ],
     组件API: [
@@ -50,6 +51,7 @@ module.exports = {
       'components-apis/snackbar',
       'components-apis/badge',
       'components-apis/dialog',
+      'components-apis/bottomSheet',
     ],
   },
 };

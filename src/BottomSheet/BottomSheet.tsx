@@ -62,6 +62,10 @@ export interface BottomSheetProps {
    */
   open?: boolean;
   /**
+   * 是否显示遮罩层
+   */
+  backdrop?: boolean;
+  /**
    * 是否响应点击遮罩层事件
    */
   backdropClick?: boolean;
@@ -70,7 +74,7 @@ export interface BottomSheetProps {
    */
   onBackdropClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /**
-   * 添加自定义样式
+   * 添加自定义类名
    */
   className?: string;
   /**
@@ -92,7 +96,7 @@ export interface BottomSheetProps {
  */
 function BottomSheet(props: BottomSheetProps) {
   const {
-    open = false,
+    open = true,
     backdropClick = true,
     onBackdropClick,
     className,

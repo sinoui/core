@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import renderer from 'react-test-renderer';
+import '@testing-library/jest-dom/extend-expect';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import Button from '@sinoui/core/Button';
@@ -11,9 +13,9 @@ import Divider from '@sinoui/core/Divider';
 import IconButton from '@sinoui/core/IconButton';
 import BookmarkBorder from '@sinoui/icons/BookmarkBorder';
 
-export default {
-  title: 'BottomSheet',
-};
+/**
+ * BottomSheet组件 测试
+ */
 
 const listData = [1, 2, 3];
 const content = (
@@ -32,12 +34,6 @@ const content = (
       </>
     ))}
   </List>
-);
-
-export const 基本使用 = () => (
-  <ThemeProvider theme={defaultTheme}>
-    <BottomSheet>{content}</BottomSheet>
-  </ThemeProvider>
 );
 
 function BottomSheetDemo() {
@@ -60,14 +56,40 @@ function BottomSheetDemo() {
   );
 }
 
-export const 点击遮罩层事件 = () => (
-  <ThemeProvider theme={defaultTheme}>
-    <BottomSheetDemo />
-  </ThemeProvider>
-);
+// describe('BottomSheet组件 快照测试', () => {
+//   it('基本使用', () => {
+//     const tree = renderer
+//       .create(
+//         <ThemeProvider theme={defaultTheme}>
+//           <BottomSheet>{content}</BottomSheet>
+//         </ThemeProvider>,
+//       )
+//       .toJSON();
 
-export const 设置不显示遮罩层 = () => (
-  <ThemeProvider theme={defaultTheme}>
-    <BottomSheet backdrop={false}>{content}</BottomSheet>
-  </ThemeProvider>
-);
+//     expect(tree).toMatchSnapshot();
+//   });
+
+//   it('点击遮罩层事件', () => {
+//     const tree = renderer
+//       .create(
+//         <ThemeProvider theme={defaultTheme}>
+//           <BottomSheetDemo />
+//         </ThemeProvider>,
+//       )
+//       .toJSON();
+
+//     expect(tree).toMatchSnapshot();
+//   });
+
+//   it('设置不显示遮罩层', () => {
+//     const tree = renderer
+//       .create(
+//         <ThemeProvider theme={defaultTheme}>
+//           <BottomSheet backdrop={false}>{content}</BottomSheet>
+//         </ThemeProvider>,
+//       )
+//       .toJSON();
+
+//     expect(tree).toMatchSnapshot();
+//   });
+// });

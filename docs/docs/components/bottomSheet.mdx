@@ -1,0 +1,144 @@
+---
+id: bottomSheet
+title: bottomSheet 底部滑出
+---
+
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import BottomSheet from '@sinoui/core/BottomSheet';
+import BottomSheetDemo from './bottomSheet-demos/BottomSheetDemo';
+
+## 基本使用
+
+```tsx
+import BottomSheet from '@sinoui/core/BottomSheet';
+
+function BottomSheetDemo() {
+  const listData = [1, 2, 3];
+  const content = (
+    <List>
+      {listData.map((item) => (
+        <>
+          <ListItem>
+            <ListItemPrimaryAction>
+              <IconButton color="primary">
+                <BookmarkBorder />
+              </IconButton>
+            </ListItemPrimaryAction>
+            <ListItemText>item{item}</ListItemText>
+          </ListItem>
+          <Divider />
+        </>
+      ))}
+    </List>
+  );
+
+  return <BottomSheet>{content}</BottomSheet>
+}
+```
+
+效果如下：
+
+<BottomSheetDemo />
+
+## 点击遮罩层事件
+
+```tsx
+import BottomSheet from '@sinoui/core/BottomSheet';
+
+function BottomSheetDemo() {
+  const [open, setOpen] = useState(false);
+
+  const onClick = () => {
+    setOpen(!open);
+  };
+
+  const onBackdropClick = () => {
+    setOpen(false);
+  };
+
+  const listData = [1, 2, 3];
+
+  const content = (
+    <List>
+      {listData.map((item) => (
+        <>
+          <ListItem>
+            <ListItemPrimaryAction>
+              <IconButton color="primary">
+                <BookmarkBorder />
+              </IconButton>
+            </ListItemPrimaryAction>
+            <ListItemText>item{item}</ListItemText>
+          </ListItem>
+          <Divider />
+        </>
+      ))}
+    </List>
+  );
+
+  return (
+    <>
+      <Button onClick={onClick}>CLICK</Button>
+      <BottomSheet open={open} onBackdropClick={onBackdropClick}>
+        {content}
+      </BottomSheet>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<BottomSheetDemo onBackdropClick />
+
+## 设置不显示遮罩层
+
+```tsx
+import BottomSheet from '@sinoui/core/BottomSheet';
+
+function BottomSheetDemo() {
+  const [open, setOpen] = useState(false);
+
+  const onClick = () => {
+    setOpen(!open);
+  };
+
+  const listData = [1, 2, 3];
+
+  const content = (
+    <List>
+      {listData.map((item) => (
+        <>
+          <ListItem>
+            <ListItemPrimaryAction>
+              <IconButton color="primary">
+                <BookmarkBorder />
+              </IconButton>
+            </ListItemPrimaryAction>
+            <ListItemText>item{item}</ListItemText>
+          </ListItem>
+          <Divider />
+        </>
+      ))}
+    </List>
+  );
+
+  return (
+    <>
+      <Button onClick={onClick}>CLICK</Button>
+      <BottomSheet open={open} backdrop={false}>
+        {content}
+      </BottomSheet>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<BottomSheetDemo onBackdropClick backdrop={false} />
+
+## API
+
+查看[BottomSheet 组件 API](/docs/components-apis/bottomSheet)
