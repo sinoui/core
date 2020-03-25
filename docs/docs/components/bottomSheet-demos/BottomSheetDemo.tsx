@@ -7,9 +7,8 @@ import List from '@sinoui/core/List';
 import ListItem from '@sinoui/core/ListItem';
 import ListItemText from '@sinoui/core/ListItemText';
 import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
-import Divider from '@sinoui/core/Divider';
-import IconButton from '@sinoui/core/IconButton';
-import BookmarkBorder from '@sinoui/icons/BookmarkBorder';
+import SvgIcon from '@sinoui/core/SvgIcon';
+import { MdShare, MdInsertLink, MdModeEdit, MdDelete } from 'react-icons/md';
 
 function BottomSheetDemo(props: any) {
   const [open, setOpen] = useState(false);
@@ -21,20 +20,23 @@ function BottomSheetDemo(props: any) {
   const onBackdropClick = () => {
     setOpen(false);
   };
-  const listData = [1, 2, 3];
+  const listData = [
+    { icon: MdShare, text: 'Share' },
+    { icon: MdInsertLink, text: 'Get link' },
+    { icon: MdShare, text: 'Share' },
+    { icon: MdModeEdit, text: 'Edit name' },
+    { icon: MdDelete, text: 'Delete collection' },
+  ];
   const content = (
     <List>
-      {listData.map((item) => (
-        <React.Fragment key={item}>
+      {listData.map((item: any, index) => (
+        <React.Fragment key={index.toString()}>
           <ListItem>
             <ListItemPrimaryAction>
-              <IconButton color="primary">
-                <BookmarkBorder />
-              </IconButton>
+              <SvgIcon as={item.icon} color="textSecondary" />
             </ListItemPrimaryAction>
-            <ListItemText>item{item}</ListItemText>
+            <ListItemText>{item.text}</ListItemText>
           </ListItem>
-          <Divider />
         </React.Fragment>
       ))}
     </List>

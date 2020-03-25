@@ -71,7 +71,7 @@ export interface DialogProps extends DialogContainerProps {
 function Dialog(props: DialogProps) {
   const {
     backdropClick = true,
-    transitionDuration,
+    transitionDuration = 300,
     open,
     addEndListener,
     ...rest

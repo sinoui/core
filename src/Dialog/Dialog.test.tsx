@@ -12,28 +12,6 @@ import Button from '@sinoui/core/Button';
 
 describe('Dialog组件 单元测试', () => {
   afterEach(cleanup);
-  test('测试显示关闭按钮', () => {
-    const { getByTestId } = render(
-      <ThemeProvider theme={defaultTheme}>
-        <Dialog showCloseIcon>
-          <DialogTitle data-testid="dialogTitle">
-            Use Google location service?
-          </DialogTitle>
-          <DialogContent>
-            Let Google help apps determine location. This means sending
-            anonymous location data toGoogle, even when no apps are running.
-          </DialogContent>
-          <DialogActions>
-            <Button>Disagree</Button>
-            <Button>Agree</Button>
-          </DialogActions>
-        </Dialog>
-      </ThemeProvider>,
-    );
-
-    const title = getByTestId('dialogTitle');
-    expect(title.firstElementChild).toHaveClass('sinoui-dialog-title__icon');
-  });
 
   test('测试全屏显示', () => {
     const { getAllByTestId } = render(

@@ -21,7 +21,7 @@ const listData = [1, 2, 3];
 const content = (
   <List>
     {listData.map((item) => (
-      <>
+      <React.Fragment key={item}>
         <ListItem>
           <ListItemPrimaryAction>
             <IconButton color="primary">
@@ -31,7 +31,7 @@ const content = (
           <ListItemText>item{item}</ListItemText>
         </ListItem>
         <Divider />
-      </>
+      </React.Fragment>
     ))}
   </List>
 );
@@ -56,40 +56,25 @@ function BottomSheetDemo() {
   );
 }
 
-// describe('BottomSheet组件 快照测试', () => {
-//   it('基本使用', () => {
-//     const tree = renderer
-//       .create(
-//         <ThemeProvider theme={defaultTheme}>
-//           <BottomSheet>{content}</BottomSheet>
-//         </ThemeProvider>,
-//       )
-//       .toJSON();
-
-//     expect(tree).toMatchSnapshot();
-//   });
-
-//   it('点击遮罩层事件', () => {
-//     const tree = renderer
-//       .create(
-//         <ThemeProvider theme={defaultTheme}>
-//           <BottomSheetDemo />
-//         </ThemeProvider>,
-//       )
-//       .toJSON();
-
-//     expect(tree).toMatchSnapshot();
-//   });
-
-//   it('设置不显示遮罩层', () => {
-//     const tree = renderer
-//       .create(
-//         <ThemeProvider theme={defaultTheme}>
-//           <BottomSheet backdrop={false}>{content}</BottomSheet>
-//         </ThemeProvider>,
-//       )
-//       .toJSON();
-
-//     expect(tree).toMatchSnapshot();
-//   });
-// });
+describe('BottomSheet组件 快照测试', () => {
+  // it('基本使用', () => {
+  //   const tree = renderer
+  //     .create(
+  //       <ThemeProvider theme={defaultTheme}>
+  //         <BottomSheet>{content}</BottomSheet>
+  //       </ThemeProvider>,
+  //     )
+  //     .toJSON();
+  //   expect(tree).toMatchSnapshot();
+  // });
+  // it('点击遮罩层事件', () => {
+  //   const tree = renderer
+  //     .create(
+  //       <ThemeProvider theme={defaultTheme}>
+  //         <BottomSheetDemo />
+  //       </ThemeProvider>,
+  //     )
+  //     .toJSON();
+  //   expect(tree).toMatchSnapshot();
+  // });
+});

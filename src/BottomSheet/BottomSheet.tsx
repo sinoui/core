@@ -23,7 +23,7 @@ const timeout = 300;
 const GlobalStyle = createGlobalStyle`
 .sinoui-bottom-sheet__css-appear {
   opacity: 0;
-  transform: translate3d(0,100%,0);
+  transform: translate3d(0, 100%, 0);
 }
 
 .sinoui-bottom-sheet__css-appear-active {

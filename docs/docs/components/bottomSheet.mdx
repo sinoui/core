@@ -14,20 +14,25 @@ import BottomSheetDemo from './bottomSheet-demos/BottomSheetDemo';
 import BottomSheet from '@sinoui/core/BottomSheet';
 
 function BottomSheetDemo() {
-  const listData = [1, 2, 3];
+
+  const listData = [
+    { icon: MdShare, text: 'Share' },
+    { icon: MdInsertLink, text: 'Get link' },
+    { icon: MdShare, text: 'Share' },
+    { icon: MdModeEdit, text: 'Edit name' },
+    { icon: MdDelete, text: 'Delete collection' },
+  ];
+
   const content = (
     <List>
-      {listData.map((item) => (
-        <React.Fragment key={item}>
+      {listData.map((item: any, index) => (
+        <React.Fragment key={index.toString()}>
           <ListItem>
             <ListItemPrimaryAction>
-              <IconButton color="primary">
-                <BookmarkBorder />
-              </IconButton>
+              <SvgIcon as={item.icon} color="textSecondary" />
             </ListItemPrimaryAction>
-            <ListItemText>item{item}</ListItemText>
+            <ListItemText>{item.text}</ListItemText>
           </ListItem>
-          <Divider />
         </React.Fragment>
       ))}
     </List>
@@ -57,21 +62,24 @@ function BottomSheetDemo() {
     setOpen(false);
   };
 
-  const listData = [1, 2, 3];
-
+  const listData = [
+    { icon: MdShare, text: 'Share' },
+    { icon: MdInsertLink, text: 'Get link' },
+    { icon: MdShare, text: 'Share' },
+    { icon: MdModeEdit, text: 'Edit name' },
+    { icon: MdDelete, text: 'Delete collection' },
+  ];
+  
   const content = (
     <List>
-      {listData.map((item) => (
-        <React.Fragment key={item}>
+      {listData.map((item: any, index) => (
+        <React.Fragment key={index.toString()}>
           <ListItem>
             <ListItemPrimaryAction>
-              <IconButton color="primary">
-                <BookmarkBorder />
-              </IconButton>
+              <SvgIcon as={item.icon} color="textSecondary" />
             </ListItemPrimaryAction>
-            <ListItemText>item{item}</ListItemText>
+            <ListItemText>{item.text}</ListItemText>
           </ListItem>
-          <Divider />
         </React.Fragment>
       ))}
     </List>
@@ -91,53 +99,6 @@ function BottomSheetDemo() {
 效果如下：
 
 <BottomSheetDemo onBackdropClick />
-
-## 设置不显示遮罩层
-
-```tsx
-import BottomSheet from '@sinoui/core/BottomSheet';
-
-function BottomSheetDemo() {
-  const [open, setOpen] = useState(false);
-
-  const onClick = () => {
-    setOpen(!open);
-  };
-
-  const listData = [1, 2, 3];
-
-  const content = (
-    <List>
-      {listData.map((item) => (
-        <React.Fragment key={item}>
-          <ListItem>
-            <ListItemPrimaryAction>
-              <IconButton color="primary">
-                <BookmarkBorder />
-              </IconButton>
-            </ListItemPrimaryAction>
-            <ListItemText>item{item}</ListItemText>
-          </ListItem>
-          <Divider />
-        </React.Fragment>
-      ))}
-    </List>
-  );
-
-  return (
-    <>
-      <Button onClick={onClick}>CLICK</Button>
-      <BottomSheet open={open} backdrop={false}>
-        {content}
-      </BottomSheet>
-    </>
-  );
-}
-```
-
-效果如下：
-
-<BottomSheetDemo onBackdropClick backdrop={false} />
 
 ## API
 
