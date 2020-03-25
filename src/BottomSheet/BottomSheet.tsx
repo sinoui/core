@@ -62,10 +62,6 @@ export interface BottomSheetProps {
    */
   open?: boolean;
   /**
-   * 是否显示遮罩层
-   */
-  backdrop?: boolean;
-  /**
    * 是否响应点击遮罩层事件
    */
   backdropClick?: boolean;
