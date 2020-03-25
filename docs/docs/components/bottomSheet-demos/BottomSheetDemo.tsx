@@ -46,7 +46,7 @@ function BottomSheetDemo(props: any) {
   } = props;
   return (
     <ThemeProvider theme={defaultTheme}>
-      {onBackdropClickProps && <Button>CLICK</Button>}
+      {onBackdropClickProps && <Button onClick={onClick}>CLICK</Button>}
       <BottomSheet
         open={open}
         onBackdropClick={onBackdropClickProps && onBackdropClick}
