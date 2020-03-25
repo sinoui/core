@@ -49,13 +49,15 @@ export interface BackdropProps {
    */
   open?: boolean;
   /**
-   * transitionDuration
+   * 动画延长时间
    */
   transitionDuration?: number;
   /**
-   * 点击事件
+   * backdrop被点击时的回调函数
+   *
+   * @type {(SyntheticMouseEvent<*>) => void}
    */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onBackdropClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /**
    * 添加自定义类名
    */
@@ -67,7 +69,7 @@ export interface BackdropProps {
 }
 
 export default function Backdrop(props: BackdropProps) {
-  const { open, transitionDuration, addEndListener, ...rest } = props;
+  const { open, transitionDuration = 300, addEndListener, ...rest } = props;
   return (
     <CSSTransition
       appear

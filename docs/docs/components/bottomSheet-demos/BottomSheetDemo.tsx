@@ -25,7 +25,7 @@ function BottomSheetDemo(props: any) {
   const content = (
     <List>
       {listData.map((item) => (
-        <>
+        <React.Fragment key={item}>
           <ListItem>
             <ListItemPrimaryAction>
               <IconButton color="primary">
@@ -35,7 +35,7 @@ function BottomSheetDemo(props: any) {
             <ListItemText>item{item}</ListItemText>
           </ListItem>
           <Divider />
-        </>
+        </React.Fragment>
       ))}
     </List>
   );

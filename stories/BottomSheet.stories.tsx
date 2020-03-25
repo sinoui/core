@@ -19,7 +19,7 @@ const listData = [1, 2, 3];
 const content = (
   <List>
     {listData.map((item) => (
-      <>
+      <React.Fragment key={item}>
         <ListItem>
           <ListItemPrimaryAction>
             <IconButton color="primary">
@@ -29,7 +29,7 @@ const content = (
           <ListItemText>item{item}</ListItemText>
         </ListItem>
         <Divider />
-      </>
+      </React.Fragment>
     ))}
   </List>
 );

@@ -60,7 +60,6 @@ const DialogWrapper = styled.div<DialogWrapperProps>`
   z-index: ${(props) => props.theme.zIndex.dialog};
   display: flex;
   flex-direction: column;
-  position: relative;
   overflow-y: auto;
   ${(props) => (props.fullScreen ? fullScreenStyle : defaultBigSizeStyle)};
 `;

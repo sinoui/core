@@ -18,7 +18,7 @@ function BottomSheetDemo() {
   const content = (
     <List>
       {listData.map((item) => (
-        <>
+        <React.Fragment key={item}>
           <ListItem>
             <ListItemPrimaryAction>
               <IconButton color="primary">
@@ -28,7 +28,7 @@ function BottomSheetDemo() {
             <ListItemText>item{item}</ListItemText>
           </ListItem>
           <Divider />
-        </>
+        </React.Fragment>
       ))}
     </List>
   );
@@ -62,7 +62,7 @@ function BottomSheetDemo() {
   const content = (
     <List>
       {listData.map((item) => (
-        <>
+        <React.Fragment key={item}>
           <ListItem>
             <ListItemPrimaryAction>
               <IconButton color="primary">
@@ -72,7 +72,7 @@ function BottomSheetDemo() {
             <ListItemText>item{item}</ListItemText>
           </ListItem>
           <Divider />
-        </>
+        </React.Fragment>
       ))}
     </List>
   );
@@ -109,7 +109,7 @@ function BottomSheetDemo() {
   const content = (
     <List>
       {listData.map((item) => (
-        <>
+        <React.Fragment key={item}>
           <ListItem>
             <ListItemPrimaryAction>
               <IconButton color="primary">
@@ -119,7 +119,7 @@ function BottomSheetDemo() {
             <ListItemText>item{item}</ListItemText>
           </ListItem>
           <Divider />
-        </>
+        </React.Fragment>
       ))}
     </List>
   );
