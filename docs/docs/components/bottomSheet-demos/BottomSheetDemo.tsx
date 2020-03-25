@@ -43,20 +43,22 @@ function BottomSheetDemo(props: any) {
   );
 
   const {
-    onBackdropClick: onBackdropClickProps,
+    // onBackdropClick: onBackdropClickNew,
     backdrop: backdropProps,
   } = props;
   return (
     <ThemeProvider theme={defaultTheme}>
-      {onBackdropClickProps && <Button onClick={onClick}>CLICK</Button>}
-      <BottomSheet
-        open={open}
-        onBackdropClick={onBackdropClickProps && onBackdropClick}
-        backdrop={backdropProps}
-        {...props}
-      >
-        {content}
-      </BottomSheet>
+      <div style={{ width: '300px' }}>
+        <Button onClick={onClick}>CLICK</Button>
+        <BottomSheet
+          open={open}
+          onBackdropClick={onBackdropClick}
+          backdrop={backdropProps}
+          {...props}
+        >
+          {content}
+        </BottomSheet>
+      </div>
     </ThemeProvider>
   );
 }

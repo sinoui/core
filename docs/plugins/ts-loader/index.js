@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { resolve } = require('path');
 
-module.exports = function(_context, _options) {
+module.exports = function (_context, _options) {
   return {
     name: 'ts-loader',
     configureWebpack(config, _isServer) {
@@ -13,6 +13,10 @@ module.exports = function(_context, _options) {
             'react-dom': resolve(
               __dirname,
               '../../node_modules/react-dom/index.js',
+            ),
+            'styled-components': resolve(
+              __dirname,
+              '../../node_modules/styled-components/dist/styled-components.cjs.js',
             ),
           },
           extensions: [

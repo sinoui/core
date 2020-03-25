@@ -14,44 +14,6 @@ import BottomSheetDemo from './bottomSheet-demos/BottomSheetDemo';
 import BottomSheet from '@sinoui/core/BottomSheet';
 
 function BottomSheetDemo() {
-
-  const listData = [
-    { icon: MdShare, text: 'Share' },
-    { icon: MdInsertLink, text: 'Get link' },
-    { icon: MdShare, text: 'Share' },
-    { icon: MdModeEdit, text: 'Edit name' },
-    { icon: MdDelete, text: 'Delete collection' },
-  ];
-
-  const content = (
-    <List>
-      {listData.map((item: any, index) => (
-        <React.Fragment key={index.toString()}>
-          <ListItem>
-            <ListItemPrimaryAction>
-              <SvgIcon as={item.icon} color="textSecondary" />
-            </ListItemPrimaryAction>
-            <ListItemText>{item.text}</ListItemText>
-          </ListItem>
-        </React.Fragment>
-      ))}
-    </List>
-  );
-
-  return <BottomSheet>{content}</BottomSheet>
-}
-```
-
-效果如下：
-
-<BottomSheetDemo />
-
-## 点击遮罩层事件
-
-```tsx
-import BottomSheet from '@sinoui/core/BottomSheet';
-
-function BottomSheetDemo() {
   const [open, setOpen] = useState(false);
 
   const onClick = () => {
@@ -69,7 +31,7 @@ function BottomSheetDemo() {
     { icon: MdModeEdit, text: 'Edit name' },
     { icon: MdDelete, text: 'Delete collection' },
   ];
-  
+
   const content = (
     <List>
       {listData.map((item: any, index) => (
@@ -98,7 +60,7 @@ function BottomSheetDemo() {
 
 效果如下：
 
-<BottomSheetDemo onBackdropClick />
+<BottomSheetDemo />
 
 ## API
 
