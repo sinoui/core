@@ -25,7 +25,9 @@ function SimpleInput() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -76,7 +78,9 @@ function SimpleInput() {
           onChange={onChange}
         />
       </div>
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -134,7 +138,9 @@ function SimpleInput() {
           onChange={onChange}
         />
       </div>
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
         <TextInputField
           label="Required"
           onChange={onChange}

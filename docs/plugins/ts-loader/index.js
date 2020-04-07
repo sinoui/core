@@ -14,6 +14,10 @@ module.exports = (_context, _options) => {
               __dirname,
               '../../node_modules/react-dom/index.js',
             ),
+            'styled-components': resolve(
+              __dirname,
+              '../../node_modules/styled-components/dist/styled-components.cjs.js',
+            ),
           },
           extensions: [
             ...(config.resolve.extensions || []),
