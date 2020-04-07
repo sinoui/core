@@ -1,29 +1,6 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import { CSSTransition } from 'react-transition-group';
-import { transitions } from '@sinoui/theme';
-
-const { duration, easing } = transitions;
-
-const GlobalStyle = createGlobalStyle`
-.sinoui-dialog-back-enter {
-  opacity: 0;
-}
-
-.sinoui-dialog-back-enter-active {
-  opacity: 1;
-  transition: opacity ${duration.enteringScreen} ${easing.easeInOut};
-}
-
-.sinoui-dialog-back-exit { 
-  opacity: 1;
-}
-
-.sinoui-dialog-back-exit-active { 
-  opacity: 0;
-  transition: opacity ${duration.leavingScreen} ${easing.easeInOut};
-}
-`;
+import styled from 'styled-components';
+import Fade from '../transitions/Fade';
 
 const BackdropWrapper = styled.div.attrs({
   'aria-hidden': true,
@@ -51,7 +28,7 @@ export interface BackdropProps {
   /**
    * 动画延长时间
    */
-  transitionDuration?: number;
+  transitionDuration?: 'auto' | number;
   /**
    * backdrop被点击时的回调函数
    *
@@ -59,30 +36,20 @@ export interface BackdropProps {
    */
   onBackdropClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /**
+   * 点击事件
+   */
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  /**
    * 添加自定义类名
    */
   className?: string;
-  /**
-   * 过渡结束监听器
-   */
-  addEndListener?: any;
 }
 
 export default function Backdrop(props: BackdropProps) {
-  const { open, transitionDuration = 300, addEndListener, ...rest } = props;
+  const { open, transitionDuration } = props;
   return (
-    <CSSTransition
-      appear
-      in={open}
-      timeout={transitionDuration}
-      classNames="sinoui-dialog-back"
-      unmountOnExit
-      addEndListener={addEndListener}
-    >
-      <>
-        <BackdropWrapper {...rest} />
-        <GlobalStyle />
-      </>
-    </CSSTransition>
+    <Fade appear in={open} timeout={transitionDuration} {...props}>
+      <BackdropWrapper />
+    </Fade>
   );
 }

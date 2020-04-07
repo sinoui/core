@@ -1,31 +1,8 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import { transitions } from '@sinoui/theme';
+import styled from 'styled-components';
 import Modal from '@sinoui/core/Modal';
-import { CSSTransition } from 'react-transition-group';
+import Fade from '../transitions/Fade';
 import DialogContainer, { DialogContainerProps } from './DialogContainer';
-
-const { duration, easing } = transitions;
-
-const GlobalStyle = createGlobalStyle`
-.sinoui-dialog-enter {
-   opacity: 0;
-}
-
-.sinoui-dialog-enter-active {
-  opacity: 1;
-  transition: opacity ${duration.enteringScreen} ${easing.easeInOut};
-}
-
-.sinoui-dialog-exit { 
-  opacity: 1;
-}
-
-.sinoui-dialog-exit-active { 
-  opacity: 0;
-  transition: opacity ${duration.leavingScreen} ${easing.easeInOut};
-}
-`;
 
 const ModalWrapper = styled(Modal)`
   display: flex;
@@ -45,13 +22,21 @@ export interface DialogProps extends DialogContainerProps {
    */
   backdropClick?: boolean;
   /**
-   * 展现过渡动画。默认为Fade。
+   * Dialog展现过渡动画。默认为Fade。
+   *
+   * @type {(string | ())}
    */
   transition?: React.ReactType;
   /**
-   * 过渡动画时长
+   * 过渡动画时长。
+   *
    */
-  transitionDuration?: number;
+  transitionDuration?:
+    | number
+    | {
+        enter: number;
+        exit: number;
+      };
   /**
    * backdrop被点击时的回调函数
    *
@@ -71,26 +56,19 @@ export interface DialogProps extends DialogContainerProps {
 function Dialog(props: DialogProps) {
   const {
     backdropClick = true,
-    transitionDuration = 300,
     open,
     addEndListener,
+    transition: Transition = Fade,
+    transitionDuration,
     ...rest
   } = props;
   return (
     <ModalWrapper {...rest} backdropClick={backdropClick} open={open}>
-      <CSSTransition
-        timeout={transitionDuration}
-        appear
-        in={open}
-        classNames="sinoui-dialog"
-        unmountOnExit
-        addEndListener={addEndListener}
-      >
+      <Transition timeout={transitionDuration} appear in={open}>
         <>
           <DialogContainer {...props} />
-          <GlobalStyle />
         </>
-      </CSSTransition>
+      </Transition>
     </ModalWrapper>
   );
 }

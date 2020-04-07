@@ -44,7 +44,7 @@ export const 不显示遮罩层 = () => (
 
 export const 按钮垂直显示 = () => (
   <StoryLayout>
-    <Dialog>
+    <Dialog open>
       <DialogTitle>Use Google location service</DialogTitle>
       <DialogContent>
         Let Google help apps determine location. This means sending anonymous
