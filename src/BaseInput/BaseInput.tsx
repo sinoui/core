@@ -113,7 +113,7 @@ const inputStyle = css<{ disabled?: boolean }>`
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: ${({ theme }) => theme.typography.subtitle1.fontSize}rem;
+  font-size: ${({ theme }) => theme.typography.subtitle1.fontSize};
   font-family: ${({ theme }) => theme.typography.fontFamily};
   color: ${({ theme, disabled }) =>
     disabled ? theme.palette.text.disabled : theme.palette.text.primary};
@@ -155,7 +155,7 @@ const BaseInputLayout = styled.div<{ disabled?: boolean; fullWidth?: boolean }>`
   position: relative;
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   color: ${(props) => props.theme.palette.text.primary};
-  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.subtitle1.fontSize};
   box-sizing: border-box;
   align-items: center;
   font-family: ${(props) => props.theme.typography.fontFamily};

@@ -14,7 +14,7 @@ const containedStyle = css`
 const HelperText = styled.p<HelperTextProps>`
   color: ${(props) => props.theme.palette.text.secondary};
   font-family: ${(props) => props.theme.typography.fontFamily};
-  font-size: ${(props) => props.theme.typography.caption.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.caption.fontSize};
   text-align: left;
   line-height: 0.75rem;
   min-height: 0.75rem;
