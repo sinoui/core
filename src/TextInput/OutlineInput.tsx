@@ -129,11 +129,7 @@ export default React.forwardRef<HTMLDivElement, OutlineInputProps>(
         fullWidth={fullWidth}
         renderSuffix={(_state) => (
           <NotchedOutline
-            notched={
-              typeof notched !== 'undefined'
-                ? notched
-                : !focused || !!value || !!defaultValue || !!placeholder
-            }
+            notched={typeof notched !== 'undefined' ? notched : !focused}
             labelWidth={labelWidth}
           />
         )}
