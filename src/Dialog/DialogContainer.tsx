@@ -77,13 +77,13 @@ function DialogContainer(props: DialogContainerProps) {
         handler: '.sinoui-dialog-title',
         bounds: true,
       });
-
-      return () => {
-        drag.teardown();
-      };
     }
 
-    return () => null;
+    return () => {
+      if (draggable) {
+        drag.teardown();
+      }
+    };
   }, [dialogContainerRef, draggable]);
 
   const nodes = React.Children.toArray(children).map((node: any) => {

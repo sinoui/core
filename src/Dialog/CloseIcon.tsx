@@ -13,10 +13,10 @@ const IconButtonWrapper = styled(IconButton)`
   position: absolute !important;
   top: 8px;
   right: 8px;
-  color: ${(props) => props.theme.palette.action.disabled};
+  color: ${(props) => props.theme.palette.text.secondary};
   padding: 12px;
 
-  :hover {
+  &:hover {
     transition: color 300ms;
     transition: background 300ms;
 
