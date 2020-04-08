@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`在开始位置使用 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+
+<div
+  className="c0 sinoui-input-adornment"
+>
+  <p>
+    装饰器
+  </p>
+</div>
+`;
+
+exports[`在结束位置使用 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+<div
+  className="c0 sinoui-input-adornment"
+>
+  <p>
+    装饰器
+  </p>
+</div>
+`;
+
+exports[`显示文本装饰器 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  margin-left: 8px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  color: rgba(0,0,0,0.6);
+  margin: 0;
+}
+
+<div
+  className="c0 sinoui-input-adornment"
+>
+  <p
+    className="c1"
+  >
+    装饰器
+  </p>
+</div>
+`;
+
+exports[`替换根元素 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+
+<p
+  className="c0 sinoui-input-adornment"
+>
+  <p>
+    装饰器
+  </p>
+</p>
+`;
+
+exports[`禁止点击事件 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  margin-right: 8px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div
+  className="c0 sinoui-input-adornment"
+>
+  <p>
+    装饰器
+  </p>
+</div>
+`;

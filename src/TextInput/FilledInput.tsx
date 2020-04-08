@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
+import BaseInput from '@sinoui/core/BaseInput';
+import type { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled, { css } from 'styled-components';
 import bemClassNames from '../utils/bemClassNames';
 

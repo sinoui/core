@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
+import BaseInput from '@sinoui/core/BaseInput';
+import type { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled from 'styled-components';
 import NotchedOutline from './NotchedOutline';
 import bemClassNames from '../utils/bemClassNames';
@@ -126,16 +127,6 @@ export default React.forwardRef<HTMLDivElement, OutlineInputProps>(
     return (
       <StyledBaseInput
         fullWidth={fullWidth}
-        renderSuffix={(_state) => (
-          <NotchedOutline
-            notched={
-              typeof notched !== 'undefined'
-                ? notched
-                : !focused || !!value || !!defaultValue || !!placeholder
-            }
-            labelWidth={labelWidth}
-          />
-        )}
         error={error}
         focused={focused}
         inputComponent={inputComponent}
@@ -162,7 +153,16 @@ export default React.forwardRef<HTMLDivElement, OutlineInputProps>(
         value={value}
         defaultValue={defaultValue}
         placeholder={placeholder}
-      />
+      >
+        <NotchedOutline
+          notched={
+            typeof notched !== 'undefined'
+              ? notched
+              : !focused || !!value || !!defaultValue || !!placeholder
+          }
+          labelWidth={labelWidth}
+        />
+      </StyledBaseInput>
     );
   },
 );

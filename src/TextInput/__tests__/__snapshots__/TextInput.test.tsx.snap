@@ -7,56 +7,80 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
-  cursor: pointer;
-  color: rgba(0,0,0,0.87);
-  font-size: 1remrem;
   box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  cursor: text;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875rem;
+  line-height: 1.1875em;
 }
 
-.c2 > input {
+.c2 > input,
+.c2 > textarea {
   padding: 6px 0 7px;
-  border: 0px;
+  display: block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  border: none;
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: 1remrem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  color: rgba(0,0,0,0.87);
   -webkit-tap-highlight-color: transparent;
-  display: block;
   min-width: 0px;
   width: 100%;
-  height: 1.1875rem;
+  height: 1.1876em;
+  min-height: 1.1876em;
 }
 
-.c2 > input::-moz-placeholder {
+.c2 > input::-moz-placeholder,
+.c2 > textarea::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder {
+.c2 > input::-webkit-input-placeholder,
+.c2 > textarea::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder {
+.c2 > input:-ms-input-placeholder,
+.c2 > textarea:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear {
+.c2 > input::-ms-clear,
+.c2 > textarea::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus {
+.c2 > input:focus,
+.c2 > textarea:focus {
   outline: 0;
 }
 
-.c2 > input:invalid {
+.c2 > input:invalid,
+.c2 > textarea:invalid {
   box-shadow: none;
+}
+
+.c2 > textarea {
+  resize: none;
+  overflow: hidden;
 }
 
 .c5 {
@@ -309,7 +333,6 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <input
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -331,7 +354,6 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <input
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -353,7 +375,6 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <input
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -393,57 +414,80 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
-  cursor: default;
-  color: rgba(0,0,0,0.87);
-  font-size: 1remrem;
   box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  cursor: default;
+  color: rgba(0,0,0,0.38);
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875rem;
+  line-height: 1.1875em;
 }
 
-.c2 > input {
+.c2 > input,
+.c2 > textarea {
   padding: 6px 0 7px;
-  border: 0px;
+  display: block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  border: none;
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: 1remrem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  color: rgba(0,0,0,0.38);
   -webkit-tap-highlight-color: transparent;
-  display: block;
   min-width: 0px;
   width: 100%;
-  height: 1.1875rem;
-  opacity: 1;
+  height: 1.1876em;
+  min-height: 1.1876em;
 }
 
-.c2 > input::-moz-placeholder {
+.c2 > input::-moz-placeholder,
+.c2 > textarea::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder {
+.c2 > input::-webkit-input-placeholder,
+.c2 > textarea::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder {
+.c2 > input:-ms-input-placeholder,
+.c2 > textarea:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear {
+.c2 > input::-ms-clear,
+.c2 > textarea::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus {
+.c2 > input:focus,
+.c2 > textarea:focus {
   outline: 0;
 }
 
-.c2 > input:invalid {
+.c2 > input:invalid,
+.c2 > textarea:invalid {
   box-shadow: none;
+}
+
+.c2 > textarea {
+  resize: none;
+  overflow: hidden;
 }
 
 .c6 {
@@ -620,7 +664,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 
 .c3::before {
   background: transparent;
-  background-image: linear-gradient( to right,rgba(0,0,0,0.12) 33%,transparent 0% );
+  background-image: linear-gradient( to right, rgba(0,0,0,0.12) 33%, transparent 0% );
   background-position: left top;
   background-repeat: repeat-x;
   background-size: 5px 1px;
@@ -704,12 +748,10 @@ label ~ .c3 {
     <div
       className="c2 sinoui-base-input__layout c3 sinoui-input sinoui-input--disabled"
       data-testid="baseInput"
-      disabled={true}
       onClick={[Function]}
     >
       <input
         disabled={true}
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -734,12 +776,10 @@ label ~ .c3 {
     <div
       className="c2 sinoui-base-input__layout c6 sinoui-filled-input sinoui-filled-input--disabled"
       data-testid="baseInput"
-      disabled={true}
       onClick={[Function]}
     >
       <input
         disabled={true}
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -764,12 +804,10 @@ label ~ .c3 {
     <div
       className="c2 sinoui-base-input__layout c9 sinoui-outlined-input sinoui-outlined-input--disabled sinoui-outlined-input--dense"
       data-testid="baseInput"
-      disabled={true}
       onClick={[Function]}
     >
       <input
         disabled={true}
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -814,56 +852,80 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
-  cursor: pointer;
-  color: rgba(0,0,0,0.87);
-  font-size: 1remrem;
   box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  cursor: text;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875rem;
+  line-height: 1.1875em;
 }
 
-.c2 > input {
+.c2 > input,
+.c2 > textarea {
   padding: 6px 0 7px;
-  border: 0px;
+  display: block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  border: none;
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: 1remrem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  color: rgba(0,0,0,0.87);
   -webkit-tap-highlight-color: transparent;
-  display: block;
   min-width: 0px;
   width: 100%;
-  height: 1.1875rem;
+  height: 1.1876em;
+  min-height: 1.1876em;
 }
 
-.c2 > input::-moz-placeholder {
+.c2 > input::-moz-placeholder,
+.c2 > textarea::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder {
+.c2 > input::-webkit-input-placeholder,
+.c2 > textarea::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder {
+.c2 > input:-ms-input-placeholder,
+.c2 > textarea:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear {
+.c2 > input::-ms-clear,
+.c2 > textarea::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus {
+.c2 > input:focus,
+.c2 > textarea:focus {
   outline: 0;
 }
 
-.c2 > input:invalid {
+.c2 > input:invalid,
+.c2 > textarea:invalid {
   box-shadow: none;
+}
+
+.c2 > textarea {
+  resize: none;
+  overflow: hidden;
 }
 
 .c6 {
@@ -1139,7 +1201,6 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <input
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -1166,7 +1227,6 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <input
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -1193,7 +1253,6 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <input
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -1238,56 +1297,80 @@ exports[`渲染有错误提示的输入框 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
-  cursor: pointer;
-  color: rgba(0,0,0,0.87);
-  font-size: 1remrem;
   box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  cursor: text;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875rem;
+  line-height: 1.1875em;
 }
 
-.c2 > input {
+.c2 > input,
+.c2 > textarea {
   padding: 6px 0 7px;
-  border: 0px;
+  display: block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  border: none;
   box-sizing: content-box;
   background: none;
   margin: 0px;
-  font-size: 1remrem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  color: rgba(0,0,0,0.87);
   -webkit-tap-highlight-color: transparent;
-  display: block;
   min-width: 0px;
   width: 100%;
-  height: 1.1875rem;
+  height: 1.1876em;
+  min-height: 1.1876em;
 }
 
-.c2 > input::-moz-placeholder {
+.c2 > input::-moz-placeholder,
+.c2 > textarea::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder {
+.c2 > input::-webkit-input-placeholder,
+.c2 > textarea::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder {
+.c2 > input:-ms-input-placeholder,
+.c2 > textarea:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear {
+.c2 > input::-ms-clear,
+.c2 > textarea::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus {
+.c2 > input:focus,
+.c2 > textarea:focus {
   outline: 0;
 }
 
-.c2 > input:invalid {
+.c2 > input:invalid,
+.c2 > textarea:invalid {
   box-shadow: none;
+}
+
+.c2 > textarea {
+  resize: none;
+  overflow: hidden;
 }
 
 .c6 {
@@ -1555,7 +1638,6 @@ label ~ .c3 {
     >
       <input
         aria-required={true}
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -1584,7 +1666,6 @@ label ~ .c3 {
     >
       <input
         aria-required={true}
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -1613,7 +1694,6 @@ label ~ .c3 {
     >
       <input
         aria-required={true}
-        multiline={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
