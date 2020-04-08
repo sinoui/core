@@ -4,23 +4,28 @@ import { defaultTheme } from '@sinoui/theme';
 
 interface Props {
   children: React.ReactNode;
-  style: React.CSSProperties;
+  height?: number;
+  style?: React.CSSProperties;
 }
 
-const Container = styled.div`
+const Container = styled.div<Props>`
+  display: flex;
   background-color: ${(props) => props.theme.palette.background.default};
   min-height: 20vh;
   padding: 16px;
+  height: ${({ height }) => height && height}px;
 `;
 
 /**
  * demo布局组件
  */
 export default function StoryLayout(props: Props) {
-  const { children, style } = props;
+  const { children, height, style } = props;
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container style={style}>{children}</Container>
+      <Container height={height} style={style}>
+        {children}
+      </Container>
     </ThemeProvider>
   );
 }
