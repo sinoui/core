@@ -2,7 +2,7 @@
 
 exports[`快照测试 固定模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 dLmGgr sinoui-app-bar"
+  className="AppBar__StyledAppBar-qqgfwp-0 bevHmr sinoui-app-bar"
 >
   <div
     className="NavigationIcon-sc-2b8xro-0 eaIGBi sinoui-app-bar--navigation"
@@ -10,7 +10,7 @@ exports[`快照测试 固定模式 1`] = `
   <h1
     className="AppBarTitle-sc-1lmkalg-0 hVbawm"
   >
-    <div />
+     
   </h1>
   <div
     className="AppBarActions-sl4kx3-0 RlKcw sinoui-app-bar--actions"
@@ -20,7 +20,7 @@ exports[`快照测试 固定模式 1`] = `
 
 exports[`快照测试 密集模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 cbchGy sinoui-app-bar"
+  className="AppBar__StyledAppBar-qqgfwp-0 iOvHcE sinoui-app-bar"
 >
   <div
     className="NavigationIcon-sc-2b8xro-0 eaIGBi sinoui-app-bar--navigation"
@@ -28,7 +28,7 @@ exports[`快照测试 密集模式 1`] = `
   <h1
     className="AppBarTitle-sc-1lmkalg-0 hVbawm"
   >
-    <div />
+     
   </h1>
   <div
     className="AppBarActions-sl4kx3-0 RlKcw sinoui-app-bar--actions"
@@ -38,7 +38,7 @@ exports[`快照测试 密集模式 1`] = `
 
 exports[`快照测试 收缩模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 cbchGy sinoui-app-bar"
+  className="AppBar__StyledAppBar-qqgfwp-0 iOvHcE sinoui-app-bar"
 >
   <div
     className="NavigationIcon-sc-2b8xro-0 eaIGBi sinoui-app-bar--navigation"
@@ -46,7 +46,7 @@ exports[`快照测试 收缩模式 1`] = `
   <h1
     className="AppBarTitle-sc-1lmkalg-0 hVbawm"
   >
-    <div />
+     
   </h1>
   <div
     className="AppBarActions-sl4kx3-0 RlKcw sinoui-app-bar--actions"
@@ -56,7 +56,7 @@ exports[`快照测试 收缩模式 1`] = `
 
 exports[`快照测试 标准模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 dFxRmh sinoui-app-bar"
+  className="AppBar__StyledAppBar-qqgfwp-0 bWXpDF sinoui-app-bar"
 >
   <div
     className="NavigationIcon-sc-2b8xro-0 eaIGBi sinoui-app-bar--navigation"
@@ -64,7 +64,7 @@ exports[`快照测试 标准模式 1`] = `
   <h1
     className="AppBarTitle-sc-1lmkalg-0 hVbawm"
   >
-    <div />
+     
   </h1>
   <div
     className="AppBarActions-sl4kx3-0 RlKcw sinoui-app-bar--actions"
@@ -74,7 +74,7 @@ exports[`快照测试 标准模式 1`] = `
 
 exports[`快照测试 突出模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 kBVAWy sinoui-app-bar"
+  className="AppBar__StyledAppBar-qqgfwp-0 fUiTPK sinoui-app-bar"
 >
   <div
     className="NavigationIcon-sc-2b8xro-0 eaIGBi sinoui-app-bar--navigation"
@@ -82,7 +82,7 @@ exports[`快照测试 突出模式 1`] = `
   <h1
     className="AppBarTitle-sc-1lmkalg-0 hVbawm"
   >
-    <div />
+     
   </h1>
   <div
     className="AppBarActions-sl4kx3-0 RlKcw sinoui-app-bar--actions"

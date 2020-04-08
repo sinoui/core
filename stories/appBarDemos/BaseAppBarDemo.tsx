@@ -2,8 +2,10 @@ import React, { useRef } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import AppBar from '@sinoui/core/AppBar';
-import Icon from './Icon';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+import IconButton from '@sinoui/core/IconButton';
+import Dehaze from '@sinoui/icons/Dehaze';
+import Favorite from '@sinoui/icons/Favorite';
+import Bookmark from '@sinoui/icons/Bookmark';
 
 export default function Demo(props: {
   prominent?: boolean;
@@ -19,19 +21,19 @@ export default function Demo(props: {
         <AppBar
           {...props}
           targetScroll={targetScrollRef}
-          title="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"
+          title="标题标题标题标题标题"
           navigationIcon={
-            <Icon>
-              <MdDehaze />
-            </Icon>
+            <IconButton color="#fff">
+              <Dehaze />
+            </IconButton>
           }
           actionItems={[
-            <Icon>
-              <MdFavorite />
-            </Icon>,
-            <Icon>
-              <MdBookmark />
-            </Icon>,
+            <IconButton color="#fff">
+              <Favorite />
+            </IconButton>,
+            <IconButton color="#fff">
+              <Bookmark />
+            </IconButton>,
           ]}
         />
         <div>

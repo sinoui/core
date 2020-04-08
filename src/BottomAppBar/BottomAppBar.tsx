@@ -16,6 +16,18 @@ export interface Props {
    * 浮动操作按钮为居右显示 可操作区域要放在左侧显示。
    */
   endFab?: boolean;
+  /**
+   * 应用栏左侧图标
+   */
+  navigationIcon?: React.ReactNode;
+  /**
+   * 浮动操作按钮
+   */
+  fab?: React.ReactNode;
+  /**
+   * 应用栏可操作元素
+   */
+  actionItems?: React.ReactNode;
   style?: React.CSSProperties;
 }
 
@@ -32,7 +44,9 @@ const endFabCss = css<Props>`
 /**
  * 非嵌入模式底部应用 容器
  */
-const StyledBottomAppBar = styled.div<Props>`
+const StyledBottomAppBar = styled.div<{
+  endFab?: boolean;
+}>`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -44,7 +58,7 @@ const StyledBottomAppBar = styled.div<Props>`
   box-sizing: border-box;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[8]};
-  background-color: ${(props) => props.theme.palette.primary.dark};
+  background-color: ${(props) => props.theme.palette.primary.main};
   ${(props) => props.endFab && endFabCss}
 
   & ${AppBarActions} {
@@ -92,6 +106,9 @@ const InsetBottomAppBar = styled.div`
     right: calc(50% - 28px);
     top: -50%;
   }
+  & .sinoui-fab {
+    box-shadow: ${(props) => props.theme.shadows[12]};
+  }
 `;
 
 const InsetBottomAppBarLayer = styled.div`
@@ -108,33 +125,17 @@ const InsetBottomAppBarLayer = styled.div`
   }
 `;
 
-const BottomAppBar = React.forwardRef<
-  HTMLDivElement,
-  Props & {
-    /**
-     * 应用栏左侧图标
-     */
-    navigationIcon: React.ReactNode;
-    /**
-     * 浮动操作按钮
-     */
-    fab?: React.ReactNode;
-    /**
-     * 应用栏可操作元素
-     */
-    actionItems?: React.ReactNode;
-  }
->((props, ref) => {
-  const { navigationIcon, actionItems, fab, insertFab, style, ...rest } = props;
+const BottomAppBar = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+  const { navigationIcon, actionItems, fab, insertFab, style } = props;
   return !insertFab ? (
-    <StyledBottomAppBar ref={ref} style={style} {...rest}>
-      <NavigationIcon>{navigationIcon}</NavigationIcon>
+    <StyledBottomAppBar ref={ref} style={style} endFab={props.endFab}>
+      {navigationIcon && <NavigationIcon>{navigationIcon}</NavigationIcon>}
       <div className="sinoui-bottom-app-bar--fab">{fab}</div>
       <AppBarActions>{actionItems}</AppBarActions>
     </StyledBottomAppBar>
   ) : (
     <InsetBottomAppBar style={style}>
-      <NavigationIcon>{navigationIcon}</NavigationIcon>
+      {navigationIcon && <NavigationIcon>{navigationIcon}</NavigationIcon>}
       <div className="sinoui-bottom-app-bar--fab">{fab}</div>
       <AppBarActions>{actionItems}</AppBarActions>
       <InsetBottomAppBarLayer>

@@ -1,225 +1,53 @@
 ---
-id: bottom-app-bar
-title: BottomAppBar 底部应用栏
+id: bottom-app-bar-api
+title: BottomAppBar
 ---
 
-import CardStoryLayout from '../components/CardStoryLayout';
-import AppBar from '@sinoui/core/AppBar';
-import AppBarTitle from '@sinoui/core/AppBarTitle';
-import NavigationIcon from '@sinoui/core/NavigationIcon';
-import AppBarActions from '@sinoui/core/AppBarActions';
-import Icon from '../../../stories/appBarDemos/Icon';
-import {
-  BottomAppBarDemo,
-  BottomAppBarDemoNoFab,
-} from '../../../stories/appBarDemos';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+## BottomAppBar 底部应用栏
 
-## 底部应用栏使用场景
+底部应用程序栏组件提供对底部导航抽屉和最多四个操作的访问，包括浮动操作按钮。
 
-底部应用栏建议用在如下场景：
-
-- 仅限移动设备
-- 访问底部导航抽屉
-- 在屏幕上有两到五个的动作(包括浮动操作按钮)
-
-底部应用栏不建议用在如下场景：
-
-- 应用中已经存在底部导航栏
-- 屏幕中最多只有一个动作
-
-## 底部应用栏结构
-
-![](https://user-images.githubusercontent.com/20694684/75869481-95121a00-5e44-11ea-861b-404f078ab9d0.jpg)
-
-1. BottomAppBar-顶部应用栏容器
-2. NavigationIcon-应用栏左侧图标按钮区域
-3. Fab-浮动操作按钮
-4. AppBarActions-应用栏可操作性区域
-
-## 底部应用栏模式
-
-根据应用栏的浮动按钮的不同形态将底部应用栏分为以下几种模式：
-
-- 浮动按钮居中(默认)
-- 浮动按钮居右显示
-- 没有浮动按钮
-- 浮动按钮居中嵌入显示
-
-### 浮动按钮居中
-
-代码：
+引入方式：
 
 ```tsx
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { defaultTheme } from '@sinoui/theme';
 import BottomAppBar from '@sinoui/core/BottomAppBar';
-import NavigationIcon from '@sinoui/core/NavigationIcon';
-import AppBarActions from '@sinoui/core/AppBarActions';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-import Icon from './Icon';
-import Fab from './Fab';
-
-export default function Demo() {
-  return (
-    <BottomAppBar
-      navigationIcon={
-        <Icon>
-          <MdDehaze />
-        </Icon>
-      }
-      fab={<Fab />}
-      actionItems={[
-        <Icon>
-          <MdFavorite />
-        </Icon>,
-        <Icon>
-          <MdBookmark />
-        </Icon>,
-      ]}
-    />
-  );
-}
 ```
 
-运行效果：
-
-<CardStoryLayout height={200}>
-  <BottomAppBarDemo style={{ position: 'relative', alignSelf: 'flex-end' }} />
-</CardStoryLayout>
-
-### 浮动按钮居右
-
-代码：
+组件结构：
 
 ```tsx
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { defaultTheme } from '@sinoui/theme';
-import BottomAppBar from '@sinoui/core/BottomAppBar';
-import NavigationIcon from '@sinoui/core/NavigationIcon';
-import AppBarActions from '@sinoui/core/AppBarActions';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-import Icon from './Icon';
-import Fab from './Fab';
-
-export default function Demo() {
-  return (
-    <BottomAppBar
-      endFab
-      navigationIcon={
-        <Icon>
-          <MdDehaze />
-        </Icon>
-      }
-      fab={<Fab />}
-      actionItems={[
-        <Icon>
-          <MdFavorite />
-        </Icon>,
-        <Icon>
-          <MdBookmark />
-        </Icon>,
-      ]}
-    />
-  );
-}
+<BottomAppBar
+  navigationIcon={
+    <IconButton color="#fff">
+      <Dehaze />
+    </IconButton>
+  }
+  fab={
+    <Fab color="#000">
+      <Add />
+    </Fab>
+  }
+  actionItems={[
+    <IconButton color="#fff">
+      <Favorite />
+    </IconButton>,
+    <IconButton color="#fff">
+      <Bookmark />
+    </IconButton>,
+  ]}
+/>
 ```
 
-运行效果：
+### 属性
 
-<CardStoryLayout height={200}>
-  <BottomAppBarDemo
-    endFab
-    style={{ position: 'relative', alignSelf: 'flex-end' }}
-  />
-</CardStoryLayout>
+| 属性名         | 默认值 | 类型            | 描述                                             |
+| -------------- | ------ | --------------- | ------------------------------------------------ |
+| insertFab      | false  | boolean         | 设置为 true，则 Fab 在底部应用栏居中且嵌入位置。 |
+| endFab         | false  | boolean         | 设置为 true，则 Fab 在底部应用栏最右侧显示。     |
+| navigationIcon |        | React.ReactNode | 底部应用栏左侧图标按钮                           |
+| actionItems    |        | React.ReactNode | 底部应用栏可操作元素                             |
+| fab            |        | React.ReactNode | 底部应用栏浮动操作按钮                           |
 
-### 没有浮动按钮
+## 示例
 
-代码：
-
-```tsx
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { defaultTheme } from '@sinoui/theme';
-import BottomAppBar from '@sinoui/core/BottomAppBar';
-import NavigationIcon from '@sinoui/core/NavigationIcon';
-import AppBarActions from '@sinoui/core/AppBarActions';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-import Icon from './Icon';
-
-export default function Demo() {
-  return (
-    <BottomAppBar
-      navigationIcon={
-        <Icon>
-          <MdDehaze />
-        </Icon>
-      }
-      actionItems={[
-        <Icon>
-          <MdFavorite />
-        </Icon>,
-        <Icon>
-          <MdBookmark />
-        </Icon>,
-      ]}
-    />
-  );
-}
-```
-
-运行效果：
-
-<CardStoryLayout height={200}>
-  <BottomAppBarDemoNoFab
-    style={{ position: 'relative', alignSelf: 'flex-end' }}
-  />
-</CardStoryLayout>
-
-### 浮动按钮居中嵌入
-
-代码：
-
-```tsx
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { defaultTheme } from '@sinoui/theme';
-import BottomAppBar from '@sinoui/core/BottomAppBar';
-import NavigationIcon from '@sinoui/core/NavigationIcon';
-import AppBarActions from '@sinoui/core/AppBarActions';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-import Icon from './Icon';
-
-export default function Demo() {
-  return (
-    <BottomAppBar
-      insertFab
-      navigationIcon={
-        <Icon>
-          <MdDehaze />
-        </Icon>
-      }
-      actionItems={[
-        <Icon>
-          <MdFavorite />
-        </Icon>,
-        <Icon>
-          <MdBookmark />
-        </Icon>,
-      ]}
-    />
-  );
-}
-```
-
-运行效果：
-
-<CardStoryLayout height={200}>
-  <BottomAppBarDemo
-    insertFab
-    style={{ position: 'relative', alignSelf: 'flex-end' }}
-  />
-</CardStoryLayout>
+更多底部应用栏示例请查看[开发文档](../components/bottom-app-bar)

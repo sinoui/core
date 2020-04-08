@@ -1,10 +1,11 @@
 import React from 'react';
-import styled, { ThemeProvider, css } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import AppBar from '@sinoui/core/AppBar';
-import AppBarTitle from '@sinoui/core/AppBarTitle';
-import Icon from './Icon';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+import IconButton from '@sinoui/core/IconButton';
+import Dehaze from '@sinoui/icons/Dehaze';
+import Favorite from '@sinoui/icons/Favorite';
+import Bookmark from '@sinoui/icons/Bookmark';
 
 export default function Demo(props: {
   prominent?: boolean;
@@ -17,23 +18,23 @@ export default function Demo(props: {
       <AppBar
         {...props}
         title={
-          <>
+          <div style={{ display: 'flex' }}>
             <div>标题</div>
             <input placeholder="请输入" style={{ height: '32px' }} />
-          </>
+          </div>
         }
         navigationIcon={
-          <Icon>
-            <MdDehaze />
-          </Icon>
+          <IconButton color="#fff">
+            <Dehaze />
+          </IconButton>
         }
         actionItems={[
-          <Icon>
-            <MdFavorite />
-          </Icon>,
-          <Icon>
-            <MdBookmark />
-          </Icon>,
+          <IconButton color="#fff">
+            <Favorite />
+          </IconButton>,
+          <IconButton color="#fff">
+            <Bookmark />
+          </IconButton>,
         ]}
       />
     </ThemeProvider>

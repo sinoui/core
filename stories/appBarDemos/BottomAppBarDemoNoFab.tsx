@@ -2,8 +2,10 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import BottomAppBar from '@sinoui/core/BottomAppBar';
-import Icon from './Icon';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
+import IconButton from '@sinoui/core/IconButton';
+import Dehaze from '@sinoui/icons/Dehaze';
+import Favorite from '@sinoui/icons/Favorite';
+import Bookmark from '@sinoui/icons/Bookmark';
 
 export default function Demo(props: { insertFab?: boolean; endFab?: boolean }) {
   return (
@@ -11,17 +13,17 @@ export default function Demo(props: { insertFab?: boolean; endFab?: boolean }) {
       <BottomAppBar
         {...props}
         navigationIcon={
-          <Icon>
-            <MdDehaze />
-          </Icon>
+          <IconButton color="#fff">
+            <Dehaze />
+          </IconButton>
         }
         actionItems={[
-          <Icon>
-            <MdFavorite />
-          </Icon>,
-          <Icon>
-            <MdBookmark />
-          </Icon>,
+          <IconButton color="#fff">
+            <Favorite />
+          </IconButton>,
+          <IconButton color="#fff">
+            <Bookmark />
+          </IconButton>,
         ]}
       />
     </ThemeProvider>

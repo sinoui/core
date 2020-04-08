@@ -28,9 +28,8 @@ export default class TopAppBarFoundation {
   /**
    * 处理滚动事件
    */
-  public handleScroll() {
-    return this;
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  public handleScroll() {}
 
   /**
    * 处理浏览器窗口大小改变事件

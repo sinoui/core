@@ -6,7 +6,7 @@ import NavigationIcon from '@sinoui/core/NavigationIcon';
 import createFoundation from './utils/createFoundation';
 import useMultiRefs from '../utils/useMultiRefs';
 import isRefObject from '../utils/isRefObject';
-import { AppBarProps, AppBarStatusTypes } from './types';
+import type { AppBarProps, AppBarStatusTypes } from './types';
 /**
  * AppBar 顶部应用栏容器
  */
@@ -24,7 +24,7 @@ const regularCss = css<AppBarStatusTypes>`
     padding-top: ${({ fixed }) => fixed && '64px'};
   }
 
-  @media (max-width: 599px) {
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}px) {
     height: 56px;
     padding: 4px;
 
@@ -52,7 +52,7 @@ const prominentCss = css<AppBarStatusTypes>`
     padding-bottom: 2px;
   }
 
-  @media (max-width: 599px) {
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}px) {
     padding: 4px;
     & ${AppBarTitle} {
       padding-bottom: 6px;
@@ -82,8 +82,14 @@ const denseCss = css<AppBarStatusTypes>`
  */
 
 const shortCss = css`
+  position: fixed;
+  top: 0;
   height: 56px;
   padding: 4px;
+
+  & + * {
+    padding-top: 56px;
+  }
 `;
 /**
  * 收缩状态的appbar
@@ -133,7 +139,7 @@ const StyledAppBar = styled.div.attrs(() => ({
   width: 100%;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[4]};
-  background-color: ${({ theme }) => theme.palette.primary.dark};
+  background-color: ${({ theme }) => theme.palette.primary.main};
   ${({ prominent }) => (prominent ? prominentCss : regularCss)}
   ${({ dense }) => dense && denseCss}
   ${({ fixed }) => fixed && fixedCss}
@@ -141,15 +147,12 @@ const StyledAppBar = styled.div.attrs(() => ({
   ${({ shortCollapsed }) => shortCollapsed && shortCollapsedCss}
   transition: width .25s cubic-bezier(.4,0,.2,1), height .25s cubic-bezier(.4,0,.2,1);
   &  ${AppBarTitle} {
-    display: flex;
     flex: 1;
     margin-left: 20px;
-
-    > div {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
   }
 
   &.sinoui-top-app-bar--fixed-scrolled {
@@ -194,9 +197,7 @@ const AppBar = React.forwardRef<HTMLDivElement, AppBarProps>((props, ref) => {
   return (
     <StyledAppBar ref={containerRef} {...rest}>
       <NavigationIcon>{navigationIcon}</NavigationIcon>
-      <AppBarTitle>
-        <div>{title}</div>
-      </AppBarTitle>
+      <AppBarTitle> {title}</AppBarTitle>
       <AppBarActions>{actionItems}</AppBarActions>
     </StyledAppBar>
   );

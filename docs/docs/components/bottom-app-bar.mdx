@@ -8,12 +8,10 @@ import AppBar from '@sinoui/core/AppBar';
 import AppBarTitle from '@sinoui/core/AppBarTitle';
 import NavigationIcon from '@sinoui/core/NavigationIcon';
 import AppBarActions from '@sinoui/core/AppBarActions';
-import Icon from '../../../stories/appBarDemos/Icon';
 import {
   BottomAppBarDemo,
   BottomAppBarDemoNoFab,
 } from '../../../stories/appBarDemos';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 ## 底部应用栏使用场景
 
@@ -27,15 +25,6 @@ import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
 
 - 应用中已经存在底部导航栏
 - 屏幕中最多只有一个动作
-
-## 底部应用栏结构
-
-![](https://user-images.githubusercontent.com/20694684/75869481-95121a00-5e44-11ea-861b-404f078ab9d0.jpg)
-
-1. BottomAppBar-顶部应用栏容器
-2. NavigationIcon-应用栏左侧图标按钮区域
-3. Fab-浮动操作按钮
-4. AppBarActions-应用栏可操作性区域
 
 ## 底部应用栏模式
 
@@ -57,26 +46,33 @@ import { defaultTheme } from '@sinoui/theme';
 import BottomAppBar from '@sinoui/core/BottomAppBar';
 import NavigationIcon from '@sinoui/core/NavigationIcon';
 import AppBarActions from '@sinoui/core/AppBarActions';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-import Icon from './Icon';
-import Fab from './Fab';
+import IconButton from '@sinoui/core/IconButton';
+import Dehaze from '@sinoui/icons/Dehaze';
+import Favorite from '@sinoui/icons/Favorite';
+import Bookmark from '@sinoui/icons/Bookmark';
+import Add from '@sinoui/icons/Add';
+import Fab from '@sinoui/core/Fab';
 
 export default function Demo() {
   return (
     <BottomAppBar
       navigationIcon={
-        <Icon>
-          <MdDehaze />
-        </Icon>
+        <IconButton color="#fff">
+          <Dehaze />
+        </IconButton>
       }
-      fab={<Fab />}
+      fab={
+        <Fab color="#000">
+          <Add />
+        </Fab>
+      }
       actionItems={[
-        <Icon>
-          <MdFavorite />
-        </Icon>,
-        <Icon>
-          <MdBookmark />
-        </Icon>,
+        <IconButton color="#fff">
+          <Favorite />
+        </IconButton>,
+        <IconButton color="#fff">
+          <Bookmark />
+        </IconButton>,
       ]}
     />
   );
@@ -100,27 +96,34 @@ import { defaultTheme } from '@sinoui/theme';
 import BottomAppBar from '@sinoui/core/BottomAppBar';
 import NavigationIcon from '@sinoui/core/NavigationIcon';
 import AppBarActions from '@sinoui/core/AppBarActions';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-import Icon from './Icon';
-import Fab from './Fab';
+import IconButton from '@sinoui/core/IconButton';
+import Dehaze from '@sinoui/icons/Dehaze';
+import Favorite from '@sinoui/icons/Favorite';
+import Bookmark from '@sinoui/icons/Bookmark';
+import Add from '@sinoui/icons/Add';
+import Fab from '@sinoui/core/Fab';
 
 export default function Demo() {
   return (
     <BottomAppBar
       endFab
       navigationIcon={
-        <Icon>
-          <MdDehaze />
-        </Icon>
+        <IconButton color="#fff">
+          <Dehaze />
+        </IconButton>
       }
-      fab={<Fab />}
+      fab={
+        <Fab color="#000">
+          <Add />
+        </Fab>
+      }
       actionItems={[
-        <Icon>
-          <MdFavorite />
-        </Icon>,
-        <Icon>
-          <MdBookmark />
-        </Icon>,
+        <IconButton color="#fff">
+          <Favorite />
+        </IconButton>,
+        <IconButton color="#fff">
+          <Bookmark />
+        </IconButton>,
       ]}
     />
   );
@@ -147,24 +150,26 @@ import { defaultTheme } from '@sinoui/theme';
 import BottomAppBar from '@sinoui/core/BottomAppBar';
 import NavigationIcon from '@sinoui/core/NavigationIcon';
 import AppBarActions from '@sinoui/core/AppBarActions';
-import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-import Icon from './Icon';
+import IconButton from '@sinoui/core/IconButton';
+import Dehaze from '@sinoui/icons/Dehaze';
+import Favorite from '@sinoui/icons/Favorite';
+import Bookmark from '@sinoui/icons/Bookmark';
 
 export default function Demo() {
   return (
     <BottomAppBar
       navigationIcon={
-        <Icon>
-          <MdDehaze />
-        </Icon>
+        <IconButton color="#fff">
+          <Dehaze />
+        </IconButton>
       }
       actionItems={[
-        <Icon>
-          <MdFavorite />
-        </Icon>,
-        <Icon>
-          <MdBookmark />
-        </Icon>,
+        <IconButton color="#fff">
+          <Favorite />
+        </IconButton>,
+        <IconButton color="#fff">
+          <Bookmark />
+        </IconButton>,
       ]}
     />
   );
@@ -191,7 +196,7 @@ import BottomAppBar from '@sinoui/core/BottomAppBar';
 import NavigationIcon from '@sinoui/core/NavigationIcon';
 import AppBarActions from '@sinoui/core/AppBarActions';
 import { MdDehaze, MdFavorite, MdBookmark } from 'react-icons/md';
-import Icon from './Icon';
+import IconButton from '@sinoui/core/IconButton';
 
 export default function Demo() {
   return (

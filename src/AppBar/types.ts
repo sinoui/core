@@ -29,7 +29,7 @@ export interface AppBarProps extends AppBarStatusTypes {
   /**
    * 应用栏标题
    */
-  title: React.ReactNode;
+  title?: React.ReactNode;
   /**
    * 应用栏可操作元素
    */
