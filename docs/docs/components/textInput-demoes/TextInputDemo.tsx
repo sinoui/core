@@ -16,9 +16,7 @@ function TextInputDemo() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div
-        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
-      >
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
         <TextInput label="标准输入框" value={value} onChange={onChange} />
         <TextInput
           label="填充模式输入框"

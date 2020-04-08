@@ -68,14 +68,16 @@ exports[`正确渲染边框模式下的Input 1`] = `
   margin: 0;
   padding: 0;
   pointer-events: none;
+  box-sizing: border-box;
   border-radius: inherit;
   border-style: solid;
   border-width: 1px;
-  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
 }
 
 .c3 {
+  width: auto;
   text-align: left;
   padding: 0;
   line-height: 11px;
@@ -126,7 +128,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
       className="c3"
       style={
         Object {
-          "width": 0.01,
+          "width": "auto",
         }
       }
     >
@@ -207,14 +209,16 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
   margin: 0;
   padding: 0;
   pointer-events: none;
+  box-sizing: border-box;
   border-radius: inherit;
   border-style: solid;
   border-width: 1px;
-  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
 }
 
 .c3 {
+  width: auto;
   text-align: left;
   padding: 0;
   line-height: 11px;
@@ -271,7 +275,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
       className="c3"
       style={
         Object {
-          "width": 0.01,
+          "width": "auto",
         }
       }
     >
@@ -351,14 +355,16 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
   margin: 0;
   padding: 0;
   pointer-events: none;
+  box-sizing: border-box;
   border-radius: inherit;
   border-style: solid;
   border-width: 1px;
-  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
 }
 
 .c3 {
+  width: auto;
   text-align: left;
   padding: 0;
   line-height: 11px;
@@ -411,7 +417,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
       className="c3"
       style={
         Object {
-          "width": 0.01,
+          "width": "auto",
         }
       }
     >
@@ -491,14 +497,16 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
   margin: 0;
   padding: 0;
   pointer-events: none;
+  box-sizing: border-box;
   border-radius: inherit;
   border-style: solid;
   border-width: 1px;
-  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,border-width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
 }
 
 .c3 {
+  width: auto;
   text-align: left;
   padding: 0;
   line-height: 11px;
@@ -553,7 +561,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
       className="c3"
       style={
         Object {
-          "width": 0,
+          "width": "auto",
         }
       }
     >

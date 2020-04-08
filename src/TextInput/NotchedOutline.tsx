@@ -16,17 +16,19 @@ const NotchedOutlineLayout = styled.fieldset`
   margin: 0;
   padding: 0;
   pointer-events: none;
+  box-sizing: border-box;
   border-radius: inherit;
   border-style: solid;
   border-width: 1px;
   transition: ${(props) =>
-    props.theme.transitions.create(['border-color', 'border-width'], {
+    props.theme.transitions.create('border-color', {
       duration: props.theme.transitions.duration.shorter,
       easing: props.theme.transitions.easing.easeOut,
     })};
 `;
 
 const Legend = styled.legend`
+  width: auto;
   text-align: left;
   padding: 0;
   line-height: 11px;
@@ -46,11 +48,11 @@ export default function NotchedOutline(props: NotchedOutlineProps) {
       aria-hidden
       {...props}
       style={{
-        paddingLeft: 8 + (notched ? 0 : labelWidth / 2),
+        paddingLeft: 8,
         ...style,
       }}
     >
-      <Legend style={{ width: notched ? labelWidth : 0.01 }}>
+      <Legend style={{ width: notched ? 'auto' : labelWidth }}>
         <span>&#8203;</span>
       </Legend>
     </NotchedOutlineLayout>
