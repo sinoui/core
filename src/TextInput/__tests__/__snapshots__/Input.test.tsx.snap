@@ -81,7 +81,7 @@ exports[`正确渲染input 1`] = `
 }
 
 .c1::before {
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
   content: '';
@@ -194,7 +194,7 @@ exports[`渲染不可用的Input 1`] = `
 }
 
 .c1::before {
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
   content: '';
@@ -212,7 +212,7 @@ exports[`渲染不可用的Input 1`] = `
 
 .c1::before {
   background: transparent;
-  background-image: linear-gradient( to right,rgba(0,0,0,0.12) 33%,transparent 0% );
+  background-image: linear-gradient( to right,rgba(0,0,0,0.42) 33%,transparent 0% );
   background-position: left top;
   background-repeat: repeat-x;
   background-size: 5px 1px;
@@ -328,7 +328,7 @@ exports[`渲染密集模式下的Input 1`] = `
 }
 
 .c1::before {
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
   content: '';

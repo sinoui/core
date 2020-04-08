@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled, { css } from 'styled-components';
 import bemClassNames from '../utils/bemClassNames';
+import { INPUT_LINE_COLOR, DISABLED_INPUT_LINE_COLOR } from './constant';
 
 export interface FilledInputProps extends BaseInputProps {
   error?: boolean;
@@ -37,7 +38,8 @@ const disabledunderlineStyle = css`
   }
 
   &::before {
-    height: 0px;
+    background-color: ${({ theme }) =>
+      DISABLED_INPUT_LINE_COLOR[theme.palette.type]};
   }
 `;
 
@@ -62,7 +64,7 @@ const inkbarStyle = css`
 
 const underlineStyle = css<FilledInputProps>`
   &::before {
-    background-color: ${(props) => props.theme.palette.divider};
+    background-color: ${({ theme }) => INPUT_LINE_COLOR[theme.palette.type]};
     left: 0;
     bottom: 0;
     content: '';

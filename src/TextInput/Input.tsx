@@ -3,6 +3,7 @@ import React, { useState, useCallback } from 'react';
 import BaseInput, { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled, { css } from 'styled-components';
 import bemClassNames from '../utils/bemClassNames';
+import { INPUT_LINE_COLOR } from './constant';
 
 export interface InputProps extends BaseInputProps {
   error?: boolean;
@@ -53,7 +54,7 @@ const inkbarStyle = css`
 
 const underlineStyle = css<InputProps>`
   &::before {
-    background-color: ${({ theme }) => theme.palette.divider};
+    background-color: ${({ theme }) => INPUT_LINE_COLOR[theme.palette.type]};
     left: 0;
     bottom: 0;
     content: '';
@@ -85,7 +86,7 @@ const disabledUnderlineStyle = css`
     background: transparent;
     background-image: linear-gradient(
       to right,
-      ${({ theme }) => theme.palette.divider} 33%,
+      ${({ theme }) => INPUT_LINE_COLOR[theme.palette.type]} 33%,
       transparent 0%
     );
     background-position: left top;

@@ -91,7 +91,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 }
 
 .c5::before {
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
   content: '';
@@ -148,7 +148,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 }
 
 .c7 > fieldset {
-  border-color: rgba(0,0,0,0.23);
+  border-color: rgba(0,0,0,0.38);
 }
 
 .c7:hover > fieldset {
@@ -246,7 +246,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 }
 
 .c3::before {
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
   content: '';
@@ -457,7 +457,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 }
 
 .c6::before {
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
   content: '';
@@ -478,7 +478,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 }
 
 .c6::before {
-  height: 0px;
+  background-color: rgba(0,0,0,0.06);
 }
 
 .c6 > input,
@@ -518,7 +518,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 }
 
 .c9 > fieldset {
-  border-color: rgba(0,0,0,0.23);
+  border-color: rgba(0,0,0,0.38);
 }
 
 .c9:hover > fieldset {
@@ -526,7 +526,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 }
 
 .c9.c9 > fieldset {
-  border-color: rgba(0,0,0,0.26);
+  border-color: rgba(0,0,0,0.06);
 }
 
 .c9 > input,
@@ -602,7 +602,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 }
 
 .c3::before {
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
   content: '';
@@ -620,7 +620,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 
 .c3::before {
   background: transparent;
-  background-image: linear-gradient( to right,rgba(0,0,0,0.12) 33%,transparent 0% );
+  background-image: linear-gradient( to right,rgba(0,0,0,0.42) 33%,transparent 0% );
   background-position: left top;
   background-repeat: repeat-x;
   background-size: 5px 1px;
@@ -898,7 +898,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 }
 
 .c6::before {
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
   content: '';
@@ -955,7 +955,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 }
 
 .c9 > fieldset {
-  border-color: rgba(0,0,0,0.23);
+  border-color: rgba(0,0,0,0.38);
 }
 
 .c9:hover > fieldset {
@@ -1053,7 +1053,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 }
 
 .c3::before {
-  background-color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
   content: '';
@@ -1360,7 +1360,7 @@ exports[`渲染有错误提示的输入框 1`] = `
 }
 
 .c9 > fieldset {
-  border-color: rgba(0,0,0,0.23);
+  border-color: rgba(0,0,0,0.38);
 }
 
 .c9:hover > fieldset {
