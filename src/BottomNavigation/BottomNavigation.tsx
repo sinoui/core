@@ -12,6 +12,7 @@ const BottomNavigationWrapper = styled.div`
   justify-content: space-between;
   text-align: center;
   vertical-align: middle;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   left: 0;

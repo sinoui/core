@@ -15,11 +15,11 @@ const IconWrapper = styled.span`
 const colorWrapper = (theme: Theme, color?: string, checked?: boolean) => {
   let newColor;
   if (checked && color) {
-    newColor = '#fff';
+    newColor = theme.palette.common.white;
   } else if (checked) {
     newColor = theme.palette.primary.main;
   } else if (!checked && color) {
-    newColor = opacify(-0.24, '#fff');
+    newColor = opacify(-0.24, theme.palette.common.white);
   } else {
     newColor = theme.palette.text.secondary;
   }
@@ -29,6 +29,7 @@ const colorWrapper = (theme: Theme, color?: string, checked?: boolean) => {
 const BaseButtonWrapper = styled(BaseButton)<{
   color?: string;
   checked: boolean;
+  showLabel?: boolean;
 }>`
   display: flex;
   flex-direction: column;
@@ -38,11 +39,18 @@ const BaseButtonWrapper = styled(BaseButton)<{
   vertical-align: middle;
   color: ${({ theme, color, checked }) => colorWrapper(theme, color, checked)};
   transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  max-width: 168px;
+  min-width: 80px;
+  padding: ${({ showLabel }) => (showLabel ? '8px 12px 12px' : '16px 12px')};
 
   > .sinoui-typography--body2 {
     color: ${({ theme, color, checked }) =>
       colorWrapper(theme, color, checked)};
     transition: font-size 0.2s, opacity 0.2s;
+  }
+
+  &:foucs {
+    color: opacify(-0.24, '#fff');
   }
 `;
 
@@ -89,7 +97,12 @@ function BottomNavigationAction(props: BottomNavActionProps) {
     ...rest
   } = props;
   return (
-    <BaseButtonWrapper color={color} checked={checked} {...rest}>
+    <BaseButtonWrapper
+      color={color}
+      checked={checked}
+      showLabel={showLabel}
+      {...rest}
+    >
       <IconWrapper>{icon}</IconWrapper>
       {showLabel && <Body2 as="span">{label}</Body2>}
     </BaseButtonWrapper>

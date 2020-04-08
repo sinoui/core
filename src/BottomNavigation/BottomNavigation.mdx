@@ -20,12 +20,20 @@ import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
 
 ```tsx
 <BottomNavigation value={value} onChange={handleChange}>
-  <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
-  <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
-  <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
-  <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
+  <BottomNavigationAction label="Recents" value="recents" icon={<MdRestore />} />
+  <BottomNavigationAction label="Favorites" value="favorites" icon={<MdFavorite />} />
+  <BottomNavigationAction label="Nearby" value="nearby" icon={<MdLocationOn />} />
+  <BottomNavigationAction label="Folder" value="folder" icon={<MdFolder />} />
 </BottomNavigation>
 ```
+
+## 特性
+
+- 最大宽度168px,最小宽度80px;
+
+- 图标大小24;
+
+- 有无label的padding值不同;
 
 ## BottomNavigation组件属性
 
@@ -33,7 +41,9 @@ import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
 | -------- | ----------- | -------------------------------------------------------- |
 | children |             | 子元素                                             |
 | showLabels |             | 是否显示所有标签名称                             |
-| onChange |             | 点击事件                             |
+| onChange |             | 值变化的回调函数                            |
+| value |                | value值                            |
+| color |                | 指定背景颜色                            |
 | className |             | 添加自定义类型                                             |
 
 ## BottomNavigationAction组件属性
@@ -45,4 +55,4 @@ import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
 
 ### API 文档
 
-描述 SvgIcon 组件。
+描述 BottomNavigation 组件。

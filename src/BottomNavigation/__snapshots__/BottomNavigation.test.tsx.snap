@@ -2,11 +2,11 @@
 
 exports[`基本使用 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 crdbVK sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 itVEQq sinoui-bottom-navigation"
 >
   <button
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
     onClick={[Function]}
     role="button"
     type="button"
@@ -44,7 +44,7 @@ exports[`基本使用 1`] = `
   </button>
   <button
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iOkzeP"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 htWeRz"
     onClick={[Function]}
     role="button"
     type="button"
@@ -82,7 +82,7 @@ exports[`基本使用 1`] = `
   </button>
   <button
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
     onClick={[Function]}
     role="button"
     type="button"
@@ -120,7 +120,7 @@ exports[`基本使用 1`] = `
   </button>
   <button
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
     onClick={[Function]}
     role="button"
     type="button"
@@ -162,11 +162,11 @@ exports[`基本使用 1`] = `
 exports[`指定背景颜色 1`] = `
 Array [
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 crdbVK sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 itVEQq sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
       onClick={[Function]}
       role="button"
       type="button"
@@ -204,7 +204,7 @@ Array [
     </button>
     <button
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iOkzeP"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 htWeRz"
       onClick={[Function]}
       role="button"
       type="button"
@@ -242,7 +242,7 @@ Array [
     </button>
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
       onClick={[Function]}
       role="button"
       type="button"
@@ -280,7 +280,7 @@ Array [
     </button>
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
       onClick={[Function]}
       role="button"
       type="button"
@@ -318,12 +318,12 @@ Array [
     </button>
   </div>,
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 gWfBbv sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 ibZtXR sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
     color="primary"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 jUlYwS"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
       color="primary"
       onClick={[Function]}
       role="button"
@@ -362,7 +362,7 @@ Array [
     </button>
     <button
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 dnjvma"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 bnMHSf"
       color="primary"
       onClick={[Function]}
       role="button"
@@ -401,7 +401,7 @@ Array [
     </button>
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 jUlYwS"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
       color="primary"
       onClick={[Function]}
       role="button"
@@ -440,7 +440,7 @@ Array [
     </button>
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 jUlYwS"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
       color="primary"
       onClick={[Function]}
       role="button"
@@ -479,12 +479,12 @@ Array [
     </button>
   </div>,
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 fzGJQi sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 bYOZHO sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
     color="success"
   >
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 jUlYwS"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
       color="success"
       onClick={[Function]}
       role="button"
@@ -523,7 +523,7 @@ Array [
     </button>
     <button
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 dnjvma"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 bnMHSf"
       color="success"
       onClick={[Function]}
       role="button"
@@ -562,7 +562,7 @@ Array [
     </button>
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 jUlYwS"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
       color="success"
       onClick={[Function]}
       role="button"
@@ -601,7 +601,7 @@ Array [
     </button>
     <button
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 jUlYwS"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
       color="success"
       onClick={[Function]}
       role="button"
@@ -644,11 +644,11 @@ Array [
 
 exports[`设置隐藏所有标签名称 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 crdbVK sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 itVEQq sinoui-bottom-navigation"
 >
   <button
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gUpjZV"
     onClick={[Function]}
     role="button"
     type="button"
@@ -679,7 +679,7 @@ exports[`设置隐藏所有标签名称 1`] = `
   </button>
   <button
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iOkzeP"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ecbHEa"
     onClick={[Function]}
     role="button"
     type="button"
@@ -710,7 +710,7 @@ exports[`设置隐藏所有标签名称 1`] = `
   </button>
   <button
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gUpjZV"
     onClick={[Function]}
     role="button"
     type="button"
@@ -741,7 +741,7 @@ exports[`设置隐藏所有标签名称 1`] = `
   </button>
   <button
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gUpjZV"
     onClick={[Function]}
     role="button"
     type="button"
@@ -775,11 +775,11 @@ exports[`设置隐藏所有标签名称 1`] = `
 
 exports[`设置隐藏标签名称 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 crdbVK sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 itVEQq sinoui-bottom-navigation"
 >
   <button
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gUpjZV"
     onClick={[Function]}
     role="button"
     type="button"
@@ -810,7 +810,7 @@ exports[`设置隐藏标签名称 1`] = `
   </button>
   <button
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iOkzeP"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 htWeRz"
     onClick={[Function]}
     role="button"
     type="button"
@@ -848,7 +848,7 @@ exports[`设置隐藏标签名称 1`] = `
   </button>
   <button
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
     onClick={[Function]}
     role="button"
     type="button"
@@ -886,7 +886,7 @@ exports[`设置隐藏标签名称 1`] = `
   </button>
   <button
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 hyACrB"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
     onClick={[Function]}
     role="button"
     type="button"
