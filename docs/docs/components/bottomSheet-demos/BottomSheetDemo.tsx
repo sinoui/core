@@ -10,6 +10,34 @@ import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
 import SvgIcon from '@sinoui/core/SvgIcon';
 import { MdShare, MdInsertLink, MdModeEdit, MdDelete } from 'react-icons/md';
 
+const listData = [
+  { icon: MdShare, text: 'Share' },
+  { icon: MdInsertLink, text: 'Get link' },
+  { icon: MdShare, text: 'Share' },
+  { icon: MdModeEdit, text: 'Edit name' },
+  { icon: MdDelete, text: 'Delete collection' },
+];
+
+const listScrollData = listData.concat(listData, listData);
+
+const Content = (props: any) => {
+  const { data, onClick } = props;
+  return (
+    <List>
+      {data.map((item: any, index: number) => (
+        <React.Fragment key={index.toString()}>
+          <ListItem onClick={onClick}>
+            <ListItemPrimaryAction>
+              <SvgIcon as={item.icon} color="textSecondary" />
+            </ListItemPrimaryAction>
+            <ListItemText>{item.text}</ListItemText>
+          </ListItem>
+        </React.Fragment>
+      ))}
+    </List>
+  );
+};
+
 function BottomSheetDemo(props: any) {
   const [open, setOpen] = useState(false);
 
@@ -20,32 +48,12 @@ function BottomSheetDemo(props: any) {
   const onBackdropClick = () => {
     setOpen(false);
   };
-  const listData = [
-    { icon: MdShare, text: 'Share' },
-    { icon: MdInsertLink, text: 'Get link' },
-    { icon: MdShare, text: 'Share' },
-    { icon: MdModeEdit, text: 'Edit name' },
-    { icon: MdDelete, text: 'Delete collection' },
-  ];
-  const content = (
-    <List>
-      {listData.map((item: any, index) => (
-        <React.Fragment key={index.toString()}>
-          <ListItem>
-            <ListItemPrimaryAction>
-              <SvgIcon as={item.icon} color="textSecondary" />
-            </ListItemPrimaryAction>
-            <ListItemText>{item.text}</ListItemText>
-          </ListItem>
-        </React.Fragment>
-      ))}
-    </List>
-  );
 
-  const {
-    // onBackdropClick: onBackdropClickNew,
-    backdrop: backdropProps,
-  } = props;
+  const onItemClick = () => {
+    setOpen(false);
+  };
+
+  const { backdrop: backdropProps, listScroll } = props;
   return (
     <ThemeProvider theme={defaultTheme}>
       <div style={{ width: '300px' }}>
@@ -56,7 +64,10 @@ function BottomSheetDemo(props: any) {
           backdrop={backdropProps}
           {...props}
         >
-          {content}
+          <Content
+            onClick={onItemClick}
+            data={listScroll ? listScrollData : listData}
+          />
         </BottomSheet>
       </div>
     </ThemeProvider>

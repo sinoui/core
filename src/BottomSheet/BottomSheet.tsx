@@ -10,47 +10,48 @@ const ModalWrapper = styled(Modal)`
 `;
 
 const BottomSheetWrapper = styled.div`
-  box-shadow: ${(props) => props.theme.shadows[5]};
-  background: #fff;
+  box-shadow: ${(props) => props.theme.shadows[16]};
+  background: ${(props) => props.theme.palette.common.white};
   width: 100%;
-  height: 50%;
+  max-height: calc(50%);
   align-self: flex-end;
   transform: translate3d(0, 0, 0);
+  overflow-y: auto;
 `;
 
 const timeout = 300;
 
 const GlobalStyle = createGlobalStyle`
-.sinoui-bottom-sheet__css-appear {
+.sinoui-bottom-sheet-appear {
   opacity: 0;
   transform: translate3d(0, 100%, 0);
 }
 
-.sinoui-bottom-sheet__css-appear-active {
+.sinoui-bottom-sheet-appear-active {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: opacity ${timeout}ms, transform ${timeout}ms, height ${timeout}ms;
 }
 
-.sinoui-bottom-sheet__css-enter {
+.sinoui-bottom-sheet-enter {
   opacity: 0;
   transform: translate3d(0, 100%, 0); 
 
 }
 
-.sinoui-bottom-sheet__css-enter-active {
+.sinoui-bottom-sheet-enter-active {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: opacity ${timeout}ms, transform ${timeout}ms, height ${timeout}ms;
 }
 
-.sinoui-bottom-sheet__css-exit { 
+.sinoui-bottom-sheet-exit { 
   opacity: 1;
   transform: translate3d(0, 0, 0);
  ;
 }
 
-.sinoui-bottom-sheet__css-exit-active { 
+.sinoui-bottom-sheet-exit-active { 
   opacity: 0;
   transform: translate3d(0, 100%, 0);
   transition: opacity ${timeout}ms, transform ${timeout}ms, height ${timeout}ms
@@ -90,43 +91,46 @@ export interface BottomSheetProps {
 /**
  * 底部滑出组件
  */
-function BottomSheet(props: BottomSheetProps) {
-  const {
-    open = true,
-    backdropClick = true,
-    onBackdropClick,
-    className,
-    children,
-    transitionDuration = 300,
-    addEndListener,
-    ...rest
-  } = props;
-  return (
-    <ModalWrapper
-      {...rest}
-      open={open}
-      backdropClick={backdropClick}
-      onBackdropClick={onBackdropClick}
-    >
-      <CSSTransition
-        classNames="sinoui-bottom-sheet__css"
-        timeout={transitionDuration}
-        in={open}
-        appear
-        unmountOnExit
-        addEndListener={addEndListener}
+const BottomSheet = React.forwardRef(
+  (props: BottomSheetProps, ref: React.Ref<HTMLInputElement>) => {
+    const {
+      open,
+      backdropClick = true,
+      onBackdropClick,
+      className,
+      children,
+      transitionDuration = 300,
+      addEndListener,
+      ...rest
+    } = props;
+    return (
+      <ModalWrapper
+        {...rest}
+        open={open}
+        backdropClick={backdropClick}
+        onBackdropClick={onBackdropClick}
+        ref={ref}
       >
-        <>
-          <BottomSheetWrapper
-            className={classNames('sinoui-bottom-sheet', className)}
-          >
-            {children}
-          </BottomSheetWrapper>
-          <GlobalStyle />
-        </>
-      </CSSTransition>
-    </ModalWrapper>
-  );
-}
+        <CSSTransition
+          classNames="sinoui-bottom-sheet"
+          timeout={transitionDuration}
+          in={open}
+          appear
+          unmountOnExit
+          addEndListener={addEndListener}
+        >
+          <>
+            <BottomSheetWrapper
+              className={classNames('sinoui-bottom-sheet', className)}
+            >
+              {children}
+            </BottomSheetWrapper>
+            <GlobalStyle />
+          </>
+        </CSSTransition>
+      </ModalWrapper>
+    );
+  },
+);
 
 export default BottomSheet;
