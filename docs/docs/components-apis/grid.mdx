@@ -1,0 +1,55 @@
+---
+id: grid
+title: Grid 栅格布局
+---
+
+布局组件是基于 24 列的栅格布局，使用栅格布局可以轻松实现响应式 UI。
+布局组件中的行(Row)和列(Column)必须一起使用，才可以达到栅格布局效果。
+
+## Row
+
+栅格布局中的行布局组件。Row 组件的子元素只能是 Column 组件，才会渲染处正确的栅格布局。
+
+引入方式：
+
+```tsx
+import { Row } from '@sinoui/core/Grid';
+```
+
+### 属性
+
+| 属性名         | 属性类型                                                              | 默认值       | 描述                      |
+| -------------- | --------------------------------------------------------------------- | ------------ | ------------------------- |
+| gutter         | number                                                                |              | 指定留白间距              |
+| gutterType     | 'around'\|'between'                                                   | 'between'    | 设置留白方式              |
+| justifyContent | 'flex-start'\| 'flex-end'\| 'center'\|'space-around'\|'space-between' | 'flex-start' | 设置主轴上的对齐方式      |
+| alignItems     | 'flex-start'\| 'flex-end'\| 'center'\|'stretch'                       | 'flex-start' | 设置交叉轴上的对齐方式    |
+| className      | string                                                                | 'sinoui-row' | 自定义样式类的 class 名称 |
+
+## Column
+
+栅格布局中的列布局组件。一行中最多只能有 24 列，多余的列会自动换行，且换行后，栅格间距保持一致。
+列布局的实现遵循“移动设备优先”原则。
+引入方式：
+
+```tsx
+import { Column } from '@sinoui/core/Grid';
+```
+
+### 属性
+
+| 属性名         | 属性类型                                                              | 默认值          | 描述                                                                      |
+| -------------- | --------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------- |
+| xs             | number                                                                |                 | 在小于 600px 宽度屏幕下的宽度尺寸占比,如果只指定 xs，则是所有尺寸下的占比 |
+| sm             | number                                                                |                 | 在[600px, 960px)屏幕下的宽度尺寸占比                                      |
+| md             | number                                                                |                 | 在[960px, 1280px)屏幕下的宽度尺寸占比比                                   |
+| lg             | number                                                                |                 | 在[1280px, 1920px)屏幕下的宽度尺寸占比                                    |
+| xl             | number                                                                |                 | 在 >=1920px 屏幕下的宽度尺寸占比                                          |
+| flexContainer  | boolean                                                               | false           | 是否启用 flex 布局                                                        |
+| justifyContent | 'flex-start'\| 'flex-end'\| 'center'\|'space-around'\|'space-between' | 'flex-start'    | 设置主轴上的对齐方式                                                      |
+| alignItems     | 'flex-start'\| 'flex-end'\| 'center'                                  | 'flex-start'    | 设置交叉轴上的对齐方式                                                    |
+| className      | string                                                                | 'sinoui-column' | 自定义样式类的 class 名称                                                 |
+
+## 示例
+
+[栅格布局示例](../components/grid)

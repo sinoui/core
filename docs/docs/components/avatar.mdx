@@ -1,0 +1,172 @@
+---
+id: avatar
+title: Avatar 头像
+---
+
+Avatar 组件是用来展示头像的。
+
+import Avatar from '@sinoui/core/Avatar';
+import { MdAdd } from 'react-icons/md';
+import SvgIcon from '@sinoui/core/SvgIcon';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+## Avatar
+
+- 图片头像
+
+- 字母头像
+
+- 图标头像
+
+## 图片头像
+
+```tsx
+import Avatar from '@sinoui/core/Avatar';
+
+function AvatarDemo() {
+  return (
+    <>
+      <Avatar>
+        <img src={useBaseUrl('img/avatarf.jpg')} alt="" />
+      </Avatar>
+      <Avatar>
+        <img src={useBaseUrl('img/avatars.jpg')} alt="" />
+      </Avatar>
+      <Avatar>
+        <img src={useBaseUrl('img/avatart.jpg')} alt="" />
+      </Avatar>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Avatar>
+    <img src={useBaseUrl('img/avatarf.jpg')} />
+  </Avatar>
+  <Avatar>
+    <img src={useBaseUrl('img/avatars.jpg')} />
+  </Avatar>
+  <Avatar>
+    <img src={useBaseUrl('img/avatart.jpg')} />
+  </Avatar>
+</ThemeProvider>
+
+## 字母头像
+
+```tsx
+import Avatar from '@sinoui/core/Avatar';
+
+function AvatarDemo() {
+  return (
+    <>
+      <Avatar>H</Avatar>
+      <Avatar>N</Avatar>
+      <Avatar>LX</Avatar>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Avatar>H</Avatar>
+  <Avatar>N</Avatar>
+  <Avatar>LX</Avatar>
+</ThemeProvider>
+
+## 图标头像
+
+```tsx
+import Avatar from '@sinoui/core/Avatar';
+
+function AvatarDemo() {
+  return (
+    <Avatar>
+      <SvgIcon as={MdAdd}></SvgIcon>
+    </Avatar>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Avatar>
+    <SvgIcon as={MdAdd}></SvgIcon>
+  </Avatar>
+</ThemeProvider>
+
+## 是否为密集模式
+
+```tsx
+import Avatar from '@sinoui/core/Avatar';
+
+function AvatarDemo() {
+  return (
+    <>
+      <Avatar dense>
+        <img src={avatarf} />
+      </Avatar>
+      <p />
+      <Avatar dense>
+        <SvgIcon as={MdAdd}></SvgIcon>
+      </Avatar>
+      <p />
+      <Avatar dense>H</Avatar>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Avatar dense>
+    <img src={useBaseUrl('img/avatarf.jpg')} alt="" />
+  </Avatar>
+  <p />
+  <Avatar dense>
+    <SvgIcon as={MdAdd}></SvgIcon>
+  </Avatar>
+  <p />
+  <Avatar dense>H</Avatar>
+</ThemeProvider>
+
+## 设置不同背景颜色
+
+```tsx
+import Avatar from '@sinoui/core/Avatar';
+
+function AvatarDemo() {
+  return (
+    <Avatar>
+      <SvgIcon>
+        <MdAdd />
+      </SvgIcon>
+    </Avatar>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Avatar color="primary">LX</Avatar>
+  <Avatar color="secondary">LX</Avatar>
+  <Avatar color="warning">LX</Avatar>
+  <Avatar color="error">LX</Avatar>
+  <Avatar color="success">LX</Avatar>
+  <Avatar color="info">LX</Avatar>
+  <Avatar color="actionActive">LX</Avatar>
+  <Avatar color="actionDisabled">LX</Avatar>
+</ThemeProvider>
+
+## API
+
+查看[Avatar 组件 API](/docs/components-apis/avatar)

@@ -1,0 +1,26 @@
+---
+id: snackbar
+title: Snackbar 消息条
+---
+
+> 消息条在屏幕底部提供有关应用程序进程的简短消息。
+
+引入方式：
+
+```tsx
+import Snackbar from '@sinoui/core/Snackbar';
+```
+
+## 属性
+
+| 属性名   | 默认值 | 类型            | 描述                                                                                                           |
+| -------- | ------ | --------------- | -------------------------------------------------------------------------------------------------------------- |
+| open     | false  | boolean         | 设置为 `true`，则显示 snackbar                                                                                 |
+| duration | 5000   | number          | 指定 snackbar 的显示时长，时长应该在 4000ms-10000ms 之间。(若设置值为 -1 表示禁止消息条自动消失，显示关闭图标) |
+| message  |        | string          | 指定消息条的提示文本                                                                                           |
+| action   |        | React.ReactNode | 可选操作                                                                                                       |
+| onClose  |        | () => void      | 消息条关闭的回调函数                                                                                           |
+| snacked  | false  | boolean         | 设置为 true，消息条操作区域换行显示                                                                            |
+| leading  | false  | boolean         | 设置为 true，消息条居左显示(该属性只建议在宽屏下选择性设置)                                                    |
+
+更多关于 Snackbar 的使用，请参考 [Snackbar 开发文档](../components/snackbar)。

@@ -33,7 +33,7 @@ module.exports = (_context, _options) => {
         module: {
           rules: [
             {
-              test: /\.(gif|png|jpe?g|svg)$/i,
+              test: /\.(gif|png|jpe?g)$/i,
               exclude: /\.(mdx?)$/i,
               use: ['file-loader', { loader: 'image-webpack-loader' }],
             },
@@ -49,6 +49,10 @@ module.exports = (_context, _options) => {
                   },
                 },
               ],
+            },
+            {
+              test: /\.svg$/,
+              use: ['@svgr/webpack'],
             },
           ],
         },
