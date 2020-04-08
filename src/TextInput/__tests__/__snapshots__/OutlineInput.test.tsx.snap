@@ -91,6 +91,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
   left: 0;
   margin: 0;
   padding: 0;
+  padding-left: 8px;
   pointer-events: none;
   box-sizing: border-box;
   border-radius: inherit;
@@ -115,7 +116,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
 }
 
 .c1 > fieldset {
-  border-color: rgba(0,0,0,0.23);
+  border-color: rgba(0,0,0,0.38);
 }
 
 .c1:hover > fieldset {
@@ -141,11 +142,6 @@ exports[`正确渲染边框模式下的Input 1`] = `
   <fieldset
     aria-hidden={true}
     className="c2"
-    style={
-      Object {
-        "paddingLeft": 8,
-      }
-    }
   >
     <legend
       className="c3"
@@ -254,6 +250,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
   left: 0;
   margin: 0;
   padding: 0;
+  padding-left: 8px;
   pointer-events: none;
   box-sizing: border-box;
   border-radius: inherit;
@@ -278,7 +275,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 }
 
 .c1 > fieldset {
-  border-color: rgba(0,0,0,0.23);
+  border-color: rgba(0,0,0,0.38);
 }
 
 .c1:hover > fieldset {
@@ -286,7 +283,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 }
 
 .c1.c1 > fieldset {
-  border-color: rgba(0,0,0,0.26);
+  border-color: rgba(0,0,0,0.06);
 }
 
 .c1 > input,
@@ -309,11 +306,6 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
   <fieldset
     aria-hidden={true}
     className="c2"
-    style={
-      Object {
-        "paddingLeft": 8,
-      }
-    }
   >
     <legend
       className="c3"
@@ -422,6 +414,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
   left: 0;
   margin: 0;
   padding: 0;
+  padding-left: 8px;
   pointer-events: none;
   box-sizing: border-box;
   border-radius: inherit;
@@ -446,7 +439,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
 }
 
 .c1 > fieldset {
-  border-color: rgba(0,0,0,0.23);
+  border-color: rgba(0,0,0,0.38);
 }
 
 .c1:hover > fieldset {
@@ -474,11 +467,6 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
   <fieldset
     aria-hidden={true}
     className="c2"
-    style={
-      Object {
-        "paddingLeft": 8,
-      }
-    }
   >
     <legend
       className="c3"
@@ -587,6 +575,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
   left: 0;
   margin: 0;
   padding: 0;
+  padding-left: 8px;
   pointer-events: none;
   box-sizing: border-box;
   border-radius: inherit;
@@ -611,7 +600,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 }
 
 .c1 > fieldset {
-  border-color: rgba(0,0,0,0.23);
+  border-color: rgba(0,0,0,0.38);
 }
 
 .c1:hover > fieldset {
@@ -641,11 +630,6 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
   <fieldset
     aria-hidden={true}
     className="c2"
-    style={
-      Object {
-        "paddingLeft": 8,
-      }
-    }
   >
     <legend
       className="c3"

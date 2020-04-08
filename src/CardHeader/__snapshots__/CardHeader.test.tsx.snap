@@ -2,13 +2,13 @@
 
 exports[`快照测试 只有主标题的CardHeader 1`] = `
 <div
-  className="CardHeader__CardHeaderWrapper-sc-3c49dw-0 QbvUD"
+  className="sc-AxjAm ioqRtj"
 >
   <div
     className="card-header-content"
   >
     <div
-      className="CardHeader__CardHeaderTitle-sc-3c49dw-1 lgaTHf"
+      className="sc-AxirZ hBVueb"
     >
       Shrimp and Chorizo Paella
     </div>
@@ -18,7 +18,7 @@ exports[`快照测试 只有主标题的CardHeader 1`] = `
 
 exports[`快照测试 头像+主标题+副标题+操作的CardHeader 1`] = `
 <div
-  className="CardHeader__CardHeaderWrapper-sc-3c49dw-0 QbvUD"
+  className="sc-AxjAm ioqRtj"
 >
   <div
     className="card-header-avatar"

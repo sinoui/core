@@ -2,11 +2,11 @@
 
 exports[`Badge组件 快照测试 基本使用 1`] = `
 <span
-  className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+  className="sc-AxirZ dJuSRs sinoui-badge"
 >
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+    className="sc-AxjAm cpsEpc sinoui-svg-icon"
     fill="currentColor"
     focusable="false"
     height={24}
@@ -33,17 +33,17 @@ exports[`Badge组件 快照测试 基本使用 1`] = `
 exports[`Badge组件 快照测试 指定封顶数值 1`] = `
 Array [
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+      className="sc-AxiKw iLlfvZ"
       color="error"
     >
       99
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -66,17 +66,17 @@ Array [
     </svg>
   </span>,
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 fMKCBt"
+      className="sc-AxiKw SJuto"
       color="error"
     >
       99+
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -103,17 +103,17 @@ Array [
 
 exports[`Badge组件 快照测试 指定数字 1`] = `
 <span
-  className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+  className="sc-AxirZ dJuSRs sinoui-badge"
 >
   <span
-    className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+    className="sc-AxiKw iLlfvZ"
     color="error"
   >
     8
   </span>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+    className="sc-AxjAm cpsEpc sinoui-svg-icon"
     fill="currentColor"
     focusable="false"
     height={24}
@@ -140,17 +140,17 @@ exports[`Badge组件 快照测试 指定数字 1`] = `
 exports[`Badge组件 快照测试 指定颜色 1`] = `
 Array [
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 hMBnOj"
+      className="sc-AxiKw fYZPVv"
       color="primary"
     >
       99
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -173,17 +173,17 @@ Array [
     </svg>
   </span>,
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 eXGwPR"
+      className="sc-AxiKw kLBrco"
       color="secondary"
     >
       99
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -206,17 +206,17 @@ Array [
     </svg>
   </span>,
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 ipYcQf"
+      className="sc-AxiKw gpksfY"
       color="warning"
     >
       99
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -239,17 +239,17 @@ Array [
     </svg>
   </span>,
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 gKQYoh"
+      className="sc-AxiKw fRTSok"
       color="success"
     >
       99
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -272,17 +272,17 @@ Array [
     </svg>
   </span>,
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+      className="sc-AxiKw iLlfvZ"
       color="error"
     >
       99
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -305,17 +305,17 @@ Array [
     </svg>
   </span>,
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 gHANMe"
+      className="sc-AxiKw dyhdmU"
       color="info"
     >
       99
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -342,15 +342,15 @@ Array [
 
 exports[`Badge组件 快照测试 设置为圆点形式 1`] = `
 <span
-  className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge sinoui-badge--dot"
+  className="sc-AxirZ dJuSRs sinoui-badge sinoui-badge--dot"
 >
   <span
-    className="Badge__BadgeCircle-sc-1mox8ry-1 eDMdBr"
+    className="sc-AxiKw cjloKU"
     color="error"
   />
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+    className="sc-AxjAm cpsEpc sinoui-svg-icon"
     fill="currentColor"
     focusable="false"
     height={24}
@@ -377,17 +377,17 @@ exports[`Badge组件 快照测试 设置为圆点形式 1`] = `
 exports[`Badge组件 快照测试 设置徽标的显示位置 1`] = `
 Array [
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+      className="sc-AxiKw iLlfvZ"
       color="error"
     >
       8
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -410,17 +410,17 @@ Array [
     </svg>
   </span>,
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 eaoOCi"
+      className="sc-AxiKw eXLYOq"
       color="error"
     >
       8
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -443,17 +443,17 @@ Array [
     </svg>
   </span>,
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 dEQWyn"
+      className="sc-AxiKw dYEaLl"
       color="error"
     >
       8
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -476,17 +476,17 @@ Array [
     </svg>
   </span>,
   <span
-    className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+    className="sc-AxirZ dJuSRs sinoui-badge"
   >
     <span
-      className="Badge__BadgeCircle-sc-1mox8ry-1 jiTUGi"
+      className="sc-AxiKw jHcvHu"
       color="error"
     >
       8
     </span>
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="sc-AxjAm cpsEpc sinoui-svg-icon"
       fill="currentColor"
       focusable="false"
       height={24}
@@ -513,17 +513,17 @@ Array [
 
 exports[`Badge组件 快照测试 设置数字为0时显示 1`] = `
 <span
-  className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+  className="sc-AxirZ dJuSRs sinoui-badge"
 >
   <span
-    className="Badge__BadgeCircle-sc-1mox8ry-1 kMKzzd"
+    className="sc-AxiKw fkFzjt"
     color="error"
   >
     0
   </span>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+    className="sc-AxjAm cpsEpc sinoui-svg-icon"
     fill="currentColor"
     focusable="false"
     height={24}
@@ -549,16 +549,16 @@ exports[`Badge组件 快照测试 设置数字为0时显示 1`] = `
 
 exports[`Badge组件 快照测试 设置自定义badge的内容 1`] = `
 <span
-  className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+  className="sc-AxirZ dJuSRs sinoui-badge"
 >
   <div
-    className="Badge__Wrapper-sc-1mox8ry-2 kBwYFE sinoui-badge__content"
+    className="sc-AxhCb hdAhoY sinoui-badge__content"
   >
     4
   </div>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+    className="sc-AxjAm cpsEpc sinoui-svg-icon"
     fill="currentColor"
     focusable="false"
     height={24}
@@ -584,10 +584,10 @@ exports[`Badge组件 快照测试 设置自定义badge的内容 1`] = `
 
 exports[`Badge组件 快照测试 设置鼠标悬浮时显示的文字 1`] = `
 <span
-  className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
+  className="sc-AxirZ dJuSRs sinoui-badge"
 >
   <span
-    className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+    className="sc-AxiKw iLlfvZ"
     color="error"
     title="文字"
   >
@@ -595,7 +595,7 @@ exports[`Badge组件 快照测试 设置鼠标悬浮时显示的文字 1`] = `
   </span>
   <svg
     aria-hidden="true"
-    className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+    className="sc-AxjAm cpsEpc sinoui-svg-icon"
     fill="currentColor"
     focusable="false"
     height={24}

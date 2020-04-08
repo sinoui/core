@@ -62,7 +62,7 @@
     "polished": "^3.4.4",
     "react-icons": "^3.9.0",
     "react-transition-group": "^4.3.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

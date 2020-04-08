@@ -4,6 +4,7 @@ import type { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled from 'styled-components';
 import NotchedOutline from './NotchedOutline';
 import bemClassNames from '../utils/bemClassNames';
+import { DISABLED_INPUT_LINE_COLOR } from './constant';
 
 export interface OutlineInputProps extends BaseInputProps {
   /**
@@ -37,8 +38,8 @@ const StyledBaseInput = styled(BaseInput)<
   > fieldset {
     border-color: ${(props) =>
       props.theme.palette.type === 'light'
-        ? 'rgba(0, 0, 0, 0.23)'
-        : 'rgba(255, 255, 255, 0.23)'};
+        ? 'rgba(0, 0, 0, 0.38)'
+        : 'rgba(255, 255, 255, 0.38)'};
   }
 
   :hover {
@@ -56,7 +57,7 @@ const StyledBaseInput = styled(BaseInput)<
         props.error && `border-color:${props.theme.palette.error.main}`};
       ${(props) =>
         props.disabled &&
-        `border-color:${props.theme.palette.action.disabled}`};
+        `border-color:${DISABLED_INPUT_LINE_COLOR[props.theme.palette.type]}`};
     }
   }
 
@@ -155,11 +156,7 @@ export default React.forwardRef<HTMLDivElement, OutlineInputProps>(
         placeholder={placeholder}
       >
         <NotchedOutline
-          notched={
-            typeof notched !== 'undefined'
-              ? notched
-              : !focused || !!value || !!defaultValue || !!placeholder
-          }
+          notched={typeof notched !== 'undefined' ? notched : !focused}
           labelWidth={labelWidth}
         />
       </StyledBaseInput>

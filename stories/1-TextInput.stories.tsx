@@ -125,6 +125,7 @@ function SimpleInput() {
         />
         <TextInputField
           label="Dense"
+          variant="filled"
           onChange={onChange}
           value={value}
           dense

@@ -67,7 +67,7 @@ const InputLabel = styled.label<InputLabelProps>`
   top: 0;
   color: ${(props) => props.theme.palette.text.secondary};
   line-height: 1;
-  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.subtitle1.fontSize};
   transform: translate(0, ${(props) => props.theme.spacing.unit * 3}px) scale(1);
   ${(props) => props.variant === 'filled' && filledLabelStyle};
   ${(props) => props.variant === 'outlined' && outlinedlineStyle};
