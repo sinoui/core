@@ -5,43 +5,49 @@ import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
-import FilledInput from './FilledInput';
+import Input from '../Input';
 
-it('正确渲染填充模式的input', () => {
-  const tree = renderer.create(
-    <ThemeProvider theme={defaultTheme}>
-      <FilledInput />
-    </ThemeProvider>,
-  ).toJSON;
-
-  expect(tree).toMatchSnapshot();
-});
-
-it('渲染不可用状态下的填充模式的Input', () => {
-  const tree = renderer.create(
-    <ThemeProvider theme={defaultTheme}>
-      <FilledInput disabled />
-    </ThemeProvider>,
-  ).toJSON;
-
-  expect(tree).toMatchSnapshot();
-});
-
-it('渲染错误状态下填充模式的Input', () => {
-  const tree = renderer.create(
-    <ThemeProvider theme={defaultTheme}>
-      <FilledInput error />
-    </ThemeProvider>,
-  ).toJSON;
-
-  expect(tree).toMatchSnapshot();
-});
-
-it('渲染密集状态下填充模式的Input', () => {
+it('正确渲染input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <FilledInput dense />
+        <Input />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('渲染不可用的Input', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <Input disabled />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('渲染错误状态下的input', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <Input error />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('渲染密集模式下的Input', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <Input dense />
       </ThemeProvider>,
     )
     .toJSON();
@@ -56,7 +62,7 @@ it('获取焦点和失去焦点时，样式类的切换', () => {
   const onBlurInputProp = jest.fn();
   const { getByTestId, getByPlaceholderText } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FilledInput
+      <Input
         onFocus={onFocus}
         inputProps={{ onFocus: onFocusInputProp, onBlur: onBlurInputProp }}
         onBlur={onBlur}
@@ -70,7 +76,7 @@ it('获取焦点和失去焦点时，样式类的切换', () => {
   expect(onFocus).toHaveBeenCalled();
   expect(onFocusInputProp).toHaveBeenCalled();
   expect(getByTestId('baseInput')).toHaveClass(
-    'sinoui-base-input__layout sinoui-filled-input--focused',
+    'sinoui-base-input__layout sinoui-input--focused',
   );
 
   fireEvent.blur(input);

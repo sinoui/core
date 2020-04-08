@@ -7,14 +7,14 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
-import FilledInput from '@sinoui/core/FilledInput';
-import OutlineInput from '@sinoui/core/OutlineInput';
+import FilledInput from './FilledInput';
+import OutlineInput from './OutlineInput';
 import InputLabel from './InputLabel';
-import Input from '../Input';
+import Input from './Input';
 import HelperText from './HelperText';
 import bemClassNames from '../utils/bemClassNames';
 
-export interface TextInputFieldProps extends BaseInputProps {
+export interface TextInputProps extends BaseInputProps {
   /**
    * 标签内容
    */
@@ -57,7 +57,7 @@ const TextInputWrapper = styled.div`
   position: relative;
 `;
 
-export default function TextInputField(props: TextInputFieldProps) {
+export default function TextInput(props: TextInputProps) {
   const {
     label,
     value,

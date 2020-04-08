@@ -60,9 +60,7 @@ const outlinedlineStyle = css<InputLabelProps>`
   ${(props) => props.dense && ` transform: translate(14px, 12px) scale(1);`}
 `;
 
-const InputLabel = styled.div.attrs({
-  as: 'label',
-})<InputLabelProps>`
+const InputLabel = styled.label<InputLabelProps>`
   transform-origin: top left;
   position: absolute;
   left: 0;

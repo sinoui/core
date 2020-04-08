@@ -5,13 +5,13 @@ import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
-import Input from './Input';
+import OutlineInput from '../OutlineInput';
 
-it('正确渲染input', () => {
+it('正确渲染边框模式下的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Input />
+        <OutlineInput />
       </ThemeProvider>,
     )
     .toJSON();
@@ -19,11 +19,11 @@ it('正确渲染input', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('渲染不可用的Input', () => {
+it('渲染不可用状态下边框模式的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Input disabled />
+        <OutlineInput disabled />
       </ThemeProvider>,
     )
     .toJSON();
@@ -31,11 +31,11 @@ it('渲染不可用的Input', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('渲染错误状态下的input', () => {
+it('渲染错误状态下边框模式的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Input error />
+        <OutlineInput error notched />
       </ThemeProvider>,
     )
     .toJSON();
@@ -43,11 +43,11 @@ it('渲染错误状态下的input', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('渲染密集模式下的Input', () => {
+it('渲染密集状态下边框模式的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Input dense />
+        <OutlineInput dense />
       </ThemeProvider>,
     )
     .toJSON();
@@ -62,7 +62,7 @@ it('获取焦点和失去焦点时，样式类的切换', () => {
   const onBlurInputProp = jest.fn();
   const { getByTestId, getByPlaceholderText } = render(
     <ThemeProvider theme={defaultTheme}>
-      <Input
+      <OutlineInput
         onFocus={onFocus}
         inputProps={{ onFocus: onFocusInputProp, onBlur: onBlurInputProp }}
         onBlur={onBlur}
@@ -76,7 +76,7 @@ it('获取焦点和失去焦点时，样式类的切换', () => {
   expect(onFocus).toHaveBeenCalled();
   expect(onFocusInputProp).toHaveBeenCalled();
   expect(getByTestId('baseInput')).toHaveClass(
-    'sinoui-base-input__layout sinoui-input--focused',
+    'sinoui-base-input__layout sinoui-outlined-input--focused',
   );
 
   fireEvent.blur(input);
