@@ -27,6 +27,7 @@ module.exports = {
         'components/progress',
         'components/snackbar',
         'components/badge',
+        'components/bottomNavigation',
       ],
     }, ],
     组件API: [
@@ -48,6 +49,7 @@ module.exports = {
       'components-apis/progress',
       'components-apis/snackbar',
       'components-apis/badge',
+      'components-apis/bottomNavigation',
     ],
   },
 };

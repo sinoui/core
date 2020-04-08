@@ -1,0 +1,36 @@
+---
+id: bottomNavigation
+title: BottomNavigation
+---
+
+使用底部导航栏，您可以在应用程序的主要导航项之间跳转。
+
+底部导航栏在屏幕下方显示三到五个导航项。 每一个导航项都由一个图标和一个可选文本标签表示。 当点击底部导航图标时，用户被切换到该图标关联的目标页面顶部。
+
+## 引用方式
+
+```tsx
+import BottomNavigation from '@sinoui/core/BottomNavigation';
+import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
+```
+
+## API
+
+BottomNavigation组件属性：
+
+| 参数名称    | 参数类型   | 默认值        | 说明                                                         |
+| ----------- | --------------- | ------------------------ | ----------------------------------- |
+| children |      子元素         |       |                                     |
+| showLabels |     是否显示所有标签        |   true     |                      |
+| onChange |         值变化的的回调函数     |                |             |
+| value |        value值       |               |             |
+| color |        指定背景颜色       |               |             |
+| className |     添加自定义类型         |         |                                    |
+
+BottomNavigationAction组件属性：
+
+| 参数名称    | 参数类型   | 默认值        | 说明                                                         |
+| ----------- | --------------- | ------------------------ | ----------------------------------- |
+| showLabel |    是否显示标签         |   true     |                     |
+
+更多使用示例，请参考[BottomNavigation Demos](/docs/components/bottomNavigation)

@@ -1,0 +1,253 @@
+---
+id: bottomNavigation
+title: BottomNavigation 底部导航栏
+---
+
+使用底部导航栏，您可以在应用程序的主要导航项之间跳转。
+
+底部导航栏在屏幕下方显示三到五个导航项。 每一个导航项都由一个图标和一个可选文本标签表示。 当点击底部导航图标时，用户被切换到该图标关联的目标页面顶部。
+
+import BottomNavigation from '@sinoui/core/BottomNavigation';
+import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
+import { MdRestore, MdFavorite, MdLocationOn, MdFolder } from 'react-icons/md';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import BottomNavigationDemos from './bottomNavigation-demos/BottomNavigationDemos';
+import BottomNavigationActionDemos from './bottomNavigation-demos/BottomNavigationActionDemos';
+import BottomNavLabelDemos from './bottomNavigation-demos/BottomNavLabelDemos';
+import BottomNavigationColorDemos from './bottomNavigation-demos/BottomNavigationColorDemos';
+
+## BottomNavigation
+
+## 基本使用
+
+```tsx
+import BottomNavigation from '@sinoui/core/BottomNavigation';
+import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
+
+function SvgIconDemo() {
+  const [show, setShow] = useState(false);
+
+  const onClick = () => {
+    setShow(!show);
+  };
+
+  return (
+    <>
+      <Button onClick={onClick}>
+        {show ? '显示底部导航栏' : '隐藏底部导航栏'}
+      </Button>
+      {show && (
+        <BottomNavigation
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
+            console.log(value)
+          }
+          value="favorites"
+        >
+          <BottomNavigationAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+          />
+          <BottomNavigationAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <BottomNavigationAction
+            label="Nearby"
+            value="nearby"
+            icon={<MdLocationOn />}
+          />
+          <BottomNavigationAction
+            label="Folder"
+            value="folder"
+            icon={<MdFolder />}
+          />
+        </BottomNavigation>
+      )}  
+    </>
+  )
+}
+```
+
+效果如下：
+
+<BottomNavigationDemos />
+
+## 设置隐藏标签
+
+```tsx
+import BottomNavigation from '@sinoui/core/BottomNavigation';
+import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
+
+function SvgIconDemo() {
+  const [show, setShow] = useState(false);
+
+  const onClick = () => {
+    setShow(!show);
+  };
+
+  return (
+    <>
+      <Button onClick={onClick}>
+        {show ? '显示底部导航栏' : '隐藏底部导航栏'}
+      </Button>
+      {show && (
+        <BottomNavigation
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
+            console.log(value)
+          }
+          value="favorites"
+        >
+          <BottomNavigationAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+            showLabel={false}
+          />
+          <BottomNavigationAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <BottomNavigationAction
+            label="Nearby"
+            value="nearby"
+            icon={<MdLocationOn />}
+          />
+          <BottomNavigationAction
+            label="Folder"
+            value="folder"
+            icon={<MdFolder />}
+          />
+        </BottomNavigation>
+      )}  
+    </>
+  )
+}
+```
+
+效果如下：
+
+<BottomNavigationActionDemos />
+
+## 设置隐藏所有标签
+
+```tsx
+import BottomNavigation from '@sinoui/core/BottomNavigation';
+import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
+
+function SvgIconDemo() {
+  const [show, setShow] = useState(false);
+
+  const onClick = () => {
+    setShow(!show);
+  };
+
+  return (
+    <>
+      <Button onClick={onClick}>
+        {show ? '显示底部导航栏' : '隐藏底部导航栏'}
+      </Button>
+      {show && (
+        <BottomNavigation
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
+            console.log(value)
+          }
+          value="favorites"
+          showLabels={false}
+        >
+          <BottomNavigationAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+          />
+          <BottomNavigationAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <BottomNavigationAction
+            label="Nearby"
+            value="nearby"
+            icon={<MdLocationOn />}
+          />
+          <BottomNavigationAction
+            label="Folder"
+            value="folder"
+            icon={<MdFolder />}
+          />
+        </BottomNavigation>
+      )}  
+    </>
+  )
+}
+```
+
+效果如下：
+
+<BottomNavLabelDemos />
+
+## 指定颜色
+
+例如指定颜色为success：
+
+```tsx
+import BottomNavigation from '@sinoui/core/BottomNavigation';
+import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
+
+function SvgIconDemo() {
+  const [show, setShow] = useState(false);
+
+  const onClick = () => {
+    setShow(!show);
+  };
+
+  return (
+    <>
+      <Button onClick={onClick}>
+        {show ? '显示底部导航栏' : '隐藏底部导航栏'}
+      </Button>
+      {show && (
+        <BottomNavigation
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
+            console.log(value)
+          }
+          value="favorites"
+          color="success"
+        >
+          <BottomNavigationAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+          />
+          <BottomNavigationAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <BottomNavigationAction
+            label="Nearby"
+            value="nearby"
+            icon={<MdLocationOn />}
+          />
+          <BottomNavigationAction
+            label="Folder"
+            value="folder"
+            icon={<MdFolder />}
+          />
+        </BottomNavigation>
+      )}  
+    </>
+  )
+}
+```
+
+效果如下：
+
+<BottomNavigationColorDemos />
+
+## API
+
+查看[BottomNavigation 组件 API](/docs/components-apis/bottomNavigation)
