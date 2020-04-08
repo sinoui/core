@@ -159,3 +159,22 @@ it('失去焦点时，onBlur被调用', () => {
   expect(onBlurInInputProps).toHaveBeenCalled();
   expect(onBlur).toHaveBeenCalled();
 });
+
+it('框模式的输入框输入值时，outlineInput的notched状态为false', () => {
+  const { container, rerender } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInputField labelWidth={60} variant="outlined" />
+    </ThemeProvider>,
+  );
+
+  const legend = container.querySelector('legend') as HTMLElement;
+
+  expect(legend).toHaveStyle('width: auto');
+
+  rerender(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInputField labelWidth={60} value="123" variant="outlined" />
+    </ThemeProvider>,
+  );
+  expect(legend).toHaveStyle('width: 53px');
+});

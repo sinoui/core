@@ -15,6 +15,7 @@ const NotchedOutlineLayout = styled.fieldset`
   left: 0;
   margin: 0;
   padding: 0;
+  padding-left: 8px;
   pointer-events: none;
   box-sizing: border-box;
   border-radius: inherit;
@@ -40,18 +41,11 @@ const Legend = styled.legend`
 `;
 
 export default function NotchedOutline(props: NotchedOutlineProps) {
-  const { notched, labelWidth: labelWidthProp = 0, style } = props;
+  const { notched, labelWidth: labelWidthProp = 0 } = props;
 
   const labelWidth = labelWidthProp > 0 ? labelWidthProp * 0.75 + 8 : 0;
   return (
-    <NotchedOutlineLayout
-      aria-hidden
-      {...props}
-      style={{
-        paddingLeft: 8,
-        ...style,
-      }}
-    >
+    <NotchedOutlineLayout aria-hidden {...props}>
       <Legend style={{ width: notched ? 'auto' : labelWidth }}>
         <span>&#8203;</span>
       </Legend>
