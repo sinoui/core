@@ -33,7 +33,7 @@ export default function createDOMAdapter(
     },
     getScrollTop() {
       return scrollTarget === window
-        ? document.documentElement.scrollTop
+        ? window.pageYOffset
         : (scrollTarget as HTMLElement).scrollTop;
     },
   };

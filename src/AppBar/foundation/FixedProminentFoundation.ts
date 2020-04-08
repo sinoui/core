@@ -4,14 +4,19 @@ import TopAppBarFoundation from './TopAppBarFoundation';
  * 固定突出顶部应用栏 - 内容有滚动时，变成标准应用栏；内容滚动到顶部时，变成突出应用栏
  */
 export default class FixedProminentFoundation extends TopAppBarFoundation {
+  private lastScrollTop = 0;
+
+  private scrolllTop = 0;
+
   public handleScroll() {
-    if (this.adapter.getScrollTop() > 0 && !this.scrolled) {
-      this.scrolled = true;
+    this.scrolllTop = this.adapter.getScrollTop();
+
+    if (this.scrolllTop > this.lastScrollTop) {
       this.adapter.addClass('sinoui-top-app-bar--prominent-scrolled');
-    }
-    if (this.adapter.getScrollTop() === 0 && this.scrolled) {
-      this.scrolled = false;
+    } else if (this.scrolllTop < this.lastScrollTop) {
       this.adapter.removeClass('sinoui-top-app-bar--prominent-scrolled');
     }
+
+    this.lastScrollTop = this.scrolllTop <= 0 ? 0 : this.scrolllTop;
   }
 }

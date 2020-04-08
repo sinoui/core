@@ -2,11 +2,6 @@ import { TopAppBarAdapter } from '../utils/createDOMAdapter';
 
 export default class TopAppBarFoundation {
   /**
-   * 页面是否处于滚动
-   */
-  public scrolled = false;
-
-  /**
    * 顶部应用栏dom交互包装器
    */
   public adapter: TopAppBarAdapter;
