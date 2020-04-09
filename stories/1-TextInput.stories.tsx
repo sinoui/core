@@ -13,7 +13,7 @@ const TextInputField = styled(TextInput)`
 `;
 
 function SimpleInput() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
 
   const onChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
