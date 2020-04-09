@@ -1,18 +1,14 @@
-import React, {
-  useState,
-  useCallback,
-  useRef,
-  useMemo,
-  useEffect,
-} from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
+import classNames from 'classnames';
 import FilledInput from './FilledInput';
-import OutlineInput from './OutlineInput';
+import OutlinedInput from './OutlinedInput';
 import InputLabel from './InputLabel';
 import Input from './Input';
 import HelperText from './HelperText';
 import bemClassNames from '../utils/bemClassNames';
+import { cssClasses } from './constant';
 
 export interface TextInputProps extends BaseInputProps {
   /**
@@ -28,10 +24,6 @@ export interface TextInputProps extends BaseInputProps {
    */
   variant?: 'standard' | 'filled' | 'outlined';
   /**
-   * 标签宽度
-   */
-  labelWidth?: number;
-  /**
    * 帮助文字
    */
   helperText?: string;
@@ -39,139 +31,114 @@ export interface TextInputProps extends BaseInputProps {
    * 密集模式
    */
   dense?: boolean;
+  /**
+   * 基础的class类名。默认为 `sinoui-text-input`。
+   */
+  baseClassName?: string;
+  /**
+   * 如果设置为`true`，则输入框的标签一直处于收缩悬浮状态。默认为`false`。
+   */
+  shrink?: boolean;
 }
 
 const variantComponent = {
   standard: Input,
   filled: FilledInput,
-  outlined: OutlineInput,
+  outlined: OutlinedInput,
 };
 
 const TextInputWrapper = styled.div`
   display: inline-flex;
   flex-direction: column;
-  min-width: 0px;
-  padding: 0;
-  margin: 0;
-  border: 0px;
   position: relative;
 `;
 
+/**
+ * 文本输入框组件。符合 Material Design Text Field 规范。
+ */
 export default function TextInput(props: TextInputProps) {
   const {
+    variant = 'standard',
+    baseClassName = cssClasses.textInput,
     label,
     value,
     defaultValue,
     disabled,
-    onChange,
     required,
+    shrink: shrinkProp,
     error,
-    variant = 'standard',
     placeholder,
     className,
-    labelWidth: labelWidthProp = 0,
     helperText,
     readOnly,
     dense,
     ...other
   } = props;
+  const labelRef = useRef<HTMLLabelElement>(null);
   const [focused, setFocused] = useState(false);
-  const [labelWidth, setLabelWidth] = useState(labelWidthProp);
-  const labelRef = useRef<HTMLLabelElement | null>(null);
+  const shrink =
+    shrinkProp || focused || !!value || !!defaultValue || !!placeholder;
 
-  const shrink = useMemo(
-    () => focused || !!value || !!defaultValue || !!placeholder,
-    [defaultValue, focused, placeholder, value],
-  );
-
-  const shrinkRef = useRef(shrink);
-
-  useEffect(() => {
-    if (labelWidthProp) {
-      setLabelWidth(labelWidthProp);
-      return;
+  const handleBlur = () => {
+    if (!readOnly) {
+      setFocused(false);
     }
-    if (labelRef && labelRef.current) {
-      const { width } = labelRef.current.getBoundingClientRect();
-      setLabelWidth(width / (shrinkRef.current ? 0.75 : 1));
+  };
+
+  const handleFocus = () => {
+    if (!readOnly) {
+      setFocused(true);
     }
-  }, [labelWidthProp]);
-
-  const handleBlur = useCallback(
-    (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (!props.readOnly) {
-        setFocused(false);
-        if (props.onBlur) {
-          props.onBlur(event);
-        }
-
-        if (props.inputProps && props.inputProps.onBlur) {
-          props.inputProps.onBlur(event);
-        }
-      }
-    },
-    [props],
-  );
-
-  const handleFocus = useCallback(
-    (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (!props.readOnly) {
-        setFocused(true);
-        if (props.onFocus) {
-          props.onFocus(event);
-        }
-
-        if (props.inputProps && props.inputProps.onFocus) {
-          props.inputProps.onFocus(event);
-        }
-      }
-    },
-    [props],
-  );
+  };
 
   const InputComponent = variantComponent[variant];
+  const inputState = {
+    required,
+    dense,
+    disabled,
+    error: !!error,
+    readOnly,
+    focused,
+  };
+
+  const inputProps: any = {
+    ...other,
+    ...inputState,
+    placeholder,
+    value,
+    defaultValue,
+  };
+
+  if (variant === 'outlined') {
+    inputProps.notched = shrink;
+    inputProps.labelRef = labelRef;
+  }
 
   return (
-    <TextInputWrapper className={className}>
+    <TextInputWrapper
+      className={classNames(
+        className,
+        bemClassNames(baseClassName, {
+          outlined: variant === 'outlined',
+          filled: variant === 'filled',
+          shrink,
+          ...inputState,
+        }),
+      )}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+    >
       {label && (
         <InputLabel
-          disabled={disabled}
-          focused={focused}
-          shrink={shrink}
-          required={required}
-          error={!!error}
+          {...inputState}
           variant={variant}
+          shrink={shrink}
           ref={labelRef}
-          dense={dense}
-          className={bemClassNames('sinoui-input-label', {
-            disabled,
-            error: !!error,
-            focused,
-            readOnly,
-            filled: variant === 'filled',
-            outlined: variant === 'outlined',
-            dense,
-          })}
         >
           {label}
         </InputLabel>
       )}
-      <InputComponent
-        {...other}
-        notched={!shrink}
-        required={required}
-        dense={dense}
-        disabled={disabled}
-        error={!!error}
-        readOnly={readOnly}
-        placeholder={placeholder}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        value={value}
-        onChange={onChange}
-        defaultValue={defaultValue}
-        labelWidth={labelWidth}
-      />
+      <InputComponent {...inputProps} />
       {!!error && (
         <HelperText error variant={variant} dense={dense}>
           {error}

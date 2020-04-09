@@ -1,24 +1,41 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
+import bemClassNames from '../utils/bemClassNames';
+import { cssClasses } from './constant';
 
 export interface InputLabelProps {
+  /**
+   * 如果设置为`true`，则表示必填。
+   */
   required?: boolean;
-  children?: React.ReactNode;
+  /**
+   * 如果设置为`true`，则表示禁用。
+   */
   disabled?: boolean;
+  /**
+   * 如果设置为`true`，则表示标签处于收缩悬浮状态。
+   */
   shrink?: boolean;
+  /**
+   * 如果设置为`true`，则表示输入框处于聚焦状态。
+   */
   focused?: boolean;
+  /**
+   * 如果设置为`true`，则表示输入框处于错误状态。
+   */
   error?: boolean;
   /**
    * input的渲染形式
    */
   variant?: 'standard' | 'filled' | 'outlined';
-  ref?: any;
+  /**
+   * 如果设置为`true`，则表示输入框处于密级模式。
+   */
   dense?: boolean;
 }
 
 const animateStyle = css`
   transition: ${(props) =>
-    props.theme.transitions.create('transform', {
+    props.theme.transitions.create(['transform', 'color'], {
       duration: props.theme.transitions.duration.shorter,
       easing: props.theme.transitions.easing.easeOut,
     })};
@@ -60,7 +77,19 @@ const outlinedlineStyle = css<InputLabelProps>`
   ${(props) => props.dense && ` transform: translate(14px, 12px) scale(1);`}
 `;
 
-const InputLabel = styled.label<InputLabelProps>`
+const InputLabel = styled.label.attrs<InputLabelProps>(
+  ({ disabled, error, focused, variant, dense, shrink }) => ({
+    className: bemClassNames(cssClasses.inputLabel, {
+      disabled,
+      error: !!error,
+      focused,
+      filled: variant === 'filled',
+      outlined: variant === 'outlined',
+      dense,
+      shrink,
+    }),
+  }),
+)<InputLabelProps>`
   transform-origin: top left;
   position: absolute;
   left: 0;
@@ -85,6 +114,10 @@ const InputLabel = styled.label<InputLabelProps>`
       padding: 4px;
     }
   `}
+  will-change: transform;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export default InputLabel;

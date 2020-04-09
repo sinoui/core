@@ -22,9 +22,9 @@ exports[`渲染上浮之后的Label 1`] = `
   -webkit-transform: translate(12px,17px) scale(1);
   -ms-transform: translate(12px,17px) scale(1);
   transform: translate(12px,17px) scale(1);
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   -webkit-transform: translate(0,1.5px) scale(0.75);
   -ms-transform: translate(0,1.5px) scale(0.75);
   transform: translate(0,1.5px) scale(0.75);
@@ -37,10 +37,14 @@ exports[`渲染上浮之后的Label 1`] = `
   -webkit-transform: translate(12px,7px) scale(0.75);
   -ms-transform: translate(12px,7px) scale(0.75);
   transform: translate(12px,7px) scale(0.75);
+  will-change: transform;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 <label
-  className="c0"
+  className="c0 sinoui-input-label sinoui-input-label--filled sinoui-input-label--dense sinoui-input-label--shrink"
 >
   用户名
 </label>
@@ -68,13 +72,17 @@ exports[`渲染密集模式下的Label 1`] = `
   -webkit-transform: translate(12px,17px) scale(1);
   -ms-transform: translate(12px,17px) scale(1);
   transform: translate(12px,17px) scale(1);
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  will-change: transform;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 <label
-  className="c0"
+  className="c0 sinoui-input-label sinoui-input-label--filled sinoui-input-label--dense"
 >
   用户名
 </label>

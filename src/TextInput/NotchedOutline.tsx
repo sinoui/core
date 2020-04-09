@@ -1,54 +1,78 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
+import bemClassNames from '../utils/bemClassNames';
 
 export interface NotchedOutlineProps {
+  /**
+   * 设置为`true`，则会形成缺口。
+   */
   notched?: boolean;
-  labelWidth?: number;
-  style?: React.CSSProperties;
+  /**
+   * 缺口宽度
+   */
+  notchWidth?: number;
 }
 
-const NotchedOutlineLayout = styled.fieldset`
+const NotchedOutlineLayout = styled.div`
+  display: flex;
   position: absolute;
   bottom: 0;
   right: 0;
-  top: -5px;
+  top: 0;
   left: 0;
-  margin: 0;
-  padding: 0;
-  padding-left: 8px;
+  width: 100%;
+  max-width: 100%;
   pointer-events: none;
   box-sizing: border-box;
-  border-radius: inherit;
-  border-style: solid;
-  border-width: 1px;
-  transition: ${(props) =>
-    props.theme.transitions.create('border-color', {
-      duration: props.theme.transitions.duration.shorter,
-      easing: props.theme.transitions.easing.easeOut,
-    })};
+
+  > div {
+    border: 1px solid currentColor;
+  }
+
+  > .sinoui-notched-outline__leading {
+    border-right: none;
+    width: 8px;
+    border-radius: 4px 0 0 4px;
+  }
+
+  > .sinoui-notched-outline__notch {
+    border-left: none;
+    border-right: none;
+    max-width: 80%;
+    padding: 0 4px;
+    box-sizing: content-box;
+  }
+
+  > .sinoui-notched-outline__trailing {
+    border-left: none;
+    flex-grow: 1;
+    border-radius: 0 4px 4px 0;
+  }
+
+  &.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+    border-top: none;
+  }
 `;
 
-const Legend = styled.legend`
-  width: auto;
-  text-align: left;
-  padding: 0;
-  line-height: 11px;
-  transition: ${(props) =>
-    props.theme.transitions.create('width', {
-      duration: props.theme.transitions.duration.shorter,
-      easing: props.theme.transitions.easing.easeOut,
-    })};
-`;
-
+/**
+ * 有缺口的轮廓组件。一般用于轮廓模式的输入框、下拉选择框。
+ */
 export default function NotchedOutline(props: NotchedOutlineProps) {
-  const { notched, labelWidth: labelWidthProp = 0 } = props;
-
-  const labelWidth = labelWidthProp > 0 ? labelWidthProp * 0.75 + 8 : 0;
+  const { notched, notchWidth = 0 } = props;
+  const notchStyle = useMemo(
+    () => ({
+      width: notchWidth,
+    }),
+    [notchWidth],
+  );
   return (
-    <NotchedOutlineLayout aria-hidden {...props}>
-      <Legend style={{ width: notched ? 'auto' : labelWidth }}>
-        <span>&#8203;</span>
-      </Legend>
+    <NotchedOutlineLayout
+      {...props}
+      className={bemClassNames('sinoui-notched-outline', { notched })}
+    >
+      <div className="sinoui-notched-outline__leading" />
+      <div className="sinoui-notched-outline__notch" style={notchStyle} />
+      <div className="sinoui-notched-outline__trailing" />
     </NotchedOutlineLayout>
   );
 }

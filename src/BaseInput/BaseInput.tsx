@@ -129,7 +129,7 @@ export interface BaseInputProps<
   ref?: React.Ref<HTMLDivElement>;
 }
 
-interface BaseInputComponentType<InputElementType = HTMLInputElement> {
+export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
   <C extends React.ElementType>(
     props: {
       inputComponent: C;

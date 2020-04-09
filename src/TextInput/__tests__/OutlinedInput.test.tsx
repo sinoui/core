@@ -4,13 +4,13 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
-import Input from '../Input';
+import OutlinedInput from '../OutlinedInput';
 
-it('正确渲染input', () => {
+it('正确渲染边框模式下的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Input />
+        <OutlinedInput />
       </ThemeProvider>,
     )
     .toJSON();
@@ -18,11 +18,11 @@ it('正确渲染input', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('渲染不可用的Input', () => {
+it('渲染不可用状态下边框模式的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Input disabled />
+        <OutlinedInput disabled />
       </ThemeProvider>,
     )
     .toJSON();
@@ -30,11 +30,11 @@ it('渲染不可用的Input', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('渲染错误状态下的input', () => {
+it('渲染错误状态下边框模式的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Input error />
+        <OutlinedInput error notched />
       </ThemeProvider>,
     )
     .toJSON();
@@ -42,11 +42,11 @@ it('渲染错误状态下的input', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('渲染密集模式下的Input', () => {
+it('渲染密集状态下边框模式的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Input dense />
+        <OutlinedInput dense />
       </ThemeProvider>,
     )
     .toJSON();

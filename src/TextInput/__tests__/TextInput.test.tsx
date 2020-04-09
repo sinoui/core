@@ -14,7 +14,7 @@ it('正确渲染三种模式下的输入框', () => {
         <div>
           <TextInputField label="用户名" />
           <TextInputField label="用户名" variant="filled" />
-          <TextInputField label="用户名" variant="outlined" labelWidth={62} />
+          <TextInputField label="用户名" variant="outlined" shrink />
         </div>
       </ThemeProvider>,
     )
@@ -32,12 +32,6 @@ it('渲染有辅助性文字的输入框', () => {
           <TextInputField
             label="用户名"
             variant="filled"
-            helperText="输入用户名"
-          />
-          <TextInputField
-            label="用户名"
-            variant="outlined"
-            labelWidth={62}
             helperText="输入用户名"
           />
         </div>
@@ -60,13 +54,6 @@ it('渲染有错误提示的输入框', () => {
             required
             error="必填"
           />
-          <TextInputField
-            label="用户名"
-            variant="outlined"
-            labelWidth={62}
-            required
-            error="必填"
-          />
         </div>
       </ThemeProvider>,
     )
@@ -86,14 +73,6 @@ it('渲染不可用状态下三种形态输入框', () => {
             variant="filled"
             helperText="输入用户名"
             disabled
-          />
-          <TextInputField
-            label="用户名"
-            variant="outlined"
-            labelWidth={62}
-            dense
-            disabled
-            helperText="输入用户名"
           />
         </div>
       </ThemeProvider>,
@@ -160,21 +139,23 @@ it('失去焦点时，onBlur被调用', () => {
   expect(onBlur).toHaveBeenCalled();
 });
 
-it('框模式的输入框输入值时，outlineInput的notched状态为false', () => {
+it('框模式的输入框输入值时，outlineInput的notched状态为true', () => {
   const { container, rerender } = render(
     <ThemeProvider theme={defaultTheme}>
-      <TextInputField labelWidth={60} variant="outlined" />
+      <TextInputField variant="outlined" />
     </ThemeProvider>,
   );
 
-  const legend = container.querySelector('legend') as HTMLElement;
+  const notchedOutline = container.querySelector(
+    '.sinoui-notched-outline',
+  ) as HTMLElement;
 
-  expect(legend).toHaveStyle('width: auto');
+  expect(notchedOutline).not.toHaveClass('sinoui-notched-outline--notched');
 
   rerender(
     <ThemeProvider theme={defaultTheme}>
-      <TextInputField labelWidth={60} value="123" variant="outlined" />
+      <TextInputField value="123" variant="outlined" />
     </ThemeProvider>,
   );
-  expect(legend).toHaveStyle('width: 53px');
+  expect(notchedOutline).toHaveClass('sinoui-notched-outline--notched');
 });

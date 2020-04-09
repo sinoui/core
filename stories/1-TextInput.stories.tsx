@@ -205,3 +205,12 @@ function SimpleInput() {
 }
 
 export const 标准Input = () => <SimpleInput />;
+
+export const 轮廓输入框 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <div>
+      <TextInput variant="outlined" value="张三" label="姓名" />
+      <TextInput variant="outlined" label="姓名" />
+    </div>
+  </ThemeProvider>
+);
