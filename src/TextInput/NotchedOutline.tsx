@@ -46,7 +46,7 @@ export default function NotchedOutline(props: NotchedOutlineProps) {
   const labelWidth = labelWidthProp > 0 ? labelWidthProp * 0.75 + 8 : 0;
   return (
     <NotchedOutlineLayout aria-hidden {...props}>
-      <Legend style={{ width: notched ? 'auto' : labelWidth }}>
+      <Legend style={{ width: !notched ? 'auto' : labelWidth }}>
         <span>&#8203;</span>
       </Legend>
     </NotchedOutlineLayout>

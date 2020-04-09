@@ -156,7 +156,7 @@ export default React.forwardRef<HTMLDivElement, OutlineInputProps>(
         placeholder={placeholder}
       >
         <NotchedOutline
-          notched={typeof notched !== 'undefined' ? notched : !focused}
+          notched={typeof notched !== 'undefined' ? notched : focused}
           labelWidth={labelWidth}
         />
       </StyledBaseInput>

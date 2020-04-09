@@ -635,7 +635,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
       className="c3"
       style={
         Object {
-          "width": "auto",
+          "width": 0,
         }
       }
     >

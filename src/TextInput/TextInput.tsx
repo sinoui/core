@@ -158,7 +158,7 @@ export default function TextInput(props: TextInputProps) {
       )}
       <InputComponent
         {...other}
-        notched={!shrink}
+        notched={shrink}
         required={required}
         dense={dense}
         disabled={disabled}
