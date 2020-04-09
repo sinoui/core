@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import TextInputDemo from './textInput-demoes/TextInputDemo';
 import FormPropTextInputDemo from './textInput-demoes/FormPropTextInputDemo';
+import SearchInputDemo from './textInput-demoes/SearchInputDemo';
 
 > TextInput 是最基础的表单控件，供输入信息使用。
 
@@ -247,3 +248,88 @@ export default FormPropTextInputDemo;
 ```
 
 <FormPropTextInputDemo />
+
+### 查询框
+
+我们可以使用`TextInput`和`IconButton`结合自定义查询框，示例如下：
+
+```tsx
+import React, { useState, useCallback } from 'react';
+import TextInput from '@sinoui/core/TextInput';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import InputAdornment from '@sinoui/core/InputAdornment';
+import IconButton from '@sinoui/core/IconButton';
+import Search from '@sinoui/icons/Search';
+
+const TextInputField = styled(TextInput)`
+  width: 200px;
+  margin: 8px;
+
+  > .sinoui-outlined-input > fieldset {
+    border-radius: 48px;
+  }
+
+  & .sinoui-input-adornment {
+    margin-right: 0px;
+  }
+
+  & input {
+    margin-left: -8px;
+  }
+`;
+
+const DenseIconButton = styled(IconButton)`
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+
+  > .sinoui-icon-button__ripple-layout {
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+  }
+
+  > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
+    width: 32px;
+    height: 32px;
+  }
+`;
+
+function SearchInput() {
+  const [value, setValue] = useState('');
+
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const inputValue = event.target.value;
+      setValue(inputValue);
+    },
+    [],
+  );
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <TextInputField
+        variant="outlined"
+        placeholder="请输出查询内容"
+        value={value}
+        onChange={onChange}
+        startAdornment={
+          <InputAdornment position="start">
+            <DenseIconButton onClick={() => alert(value)}>
+              <Search />
+            </DenseIconButton>
+          </InputAdornment>
+        }
+      />
+    </ThemeProvider>
+  );
+}
+
+export default SearchInputDemo;
+```
+
+运行效果如下：
+
+<SearchInputDemo />
