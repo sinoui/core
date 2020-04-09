@@ -16,7 +16,7 @@ import { AppBarStatusTypes } from '../types';
 export default function createFoundation(
   appBarProps: AppBarStatusTypes,
   scrollTarget: Window | HTMLElement,
-  appBar: HTMLDivElement,
+  appBar: HTMLElement,
 ) {
   const { fixed, short, prominent, shortCollapsed } = appBarProps;
   const adapter = createDOMAdapter(scrollTarget, appBar);
