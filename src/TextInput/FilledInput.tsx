@@ -3,7 +3,12 @@ import BaseInput from '@sinoui/core/BaseInput';
 import type { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled, { css } from 'styled-components';
 import bemClassNames from '../utils/bemClassNames';
-import { INPUT_LINE_COLOR, DISABLED_INPUT_LINE_COLOR } from './constant';
+import {
+  INPUT_LINE_COLOR,
+  DISABLED_INPUT_LINE_COLOR,
+  FILLED_INPUT_BGCOLOR,
+  DISABLED_FILLED_INPUT_BGCOLOR,
+} from './constant';
 
 export interface FilledInputProps extends BaseInputProps {
   error?: boolean;
@@ -93,7 +98,8 @@ const underlineStyle = css<FilledInputProps>`
 `;
 
 const disabledBackgroundStyle = css`
-  background-color: ${(props) => props.theme.palette.divider};
+  background-color: ${({ theme }) =>
+    DISABLED_FILLED_INPUT_BGCOLOR[theme.palette.type]};
 `;
 
 const StyledBaseInput = styled(BaseInput)<
@@ -101,9 +107,7 @@ const StyledBaseInput = styled(BaseInput)<
 >`
   position: relative;
   background-color: ${(props) =>
-    props.theme.palette.type === 'light'
-      ? 'rgba(0,0,0,0.09)'
-      : 'rgba(255,255,255,0.09)'};
+    FILLED_INPUT_BGCOLOR[props.theme.palette.type]};
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   transition: ${(props) =>
@@ -117,11 +121,7 @@ const StyledBaseInput = styled(BaseInput)<
       !props.disabled &&
       !props.readOnly &&
       !props.error &&
-      `background-color: ${
-        props.theme.palette.type === 'light'
-          ? 'rgba(0,0,0,0.13)'
-          : 'rgba(255,255,255,0.13)'
-      };
+      `background-color: ${props.theme.palette.action.selected};
       cursor:pointer;
   `};
   }
