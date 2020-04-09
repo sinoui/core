@@ -134,7 +134,6 @@ const fixedCss = css`
 const StyledAppBar = styled.div.attrs(() => ({
   className: 'sinoui-app-bar',
 }))<AppBarStatusTypes>`
-  position: relative;
   display: flex;
   width: 100%;
   color: ${({ theme }) => theme.palette.primary.contrastText};
