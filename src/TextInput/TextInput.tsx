@@ -73,6 +73,7 @@ export default function TextInput(props: TextInputProps) {
     helperText,
     readOnly,
     dense,
+    startAdornment,
     ...other
   } = props;
   const [focused, setFocused] = useState(false);
@@ -80,8 +81,9 @@ export default function TextInput(props: TextInputProps) {
   const labelRef = useRef<HTMLLabelElement | null>(null);
 
   const shrink = useMemo(
-    () => focused || !!value || !!defaultValue || !!placeholder,
-    [defaultValue, focused, placeholder, value],
+    () =>
+      focused || !!value || !!defaultValue || !!placeholder || !!startAdornment,
+    [defaultValue, focused, startAdornment, placeholder, value],
   );
 
   const shrinkRef = useRef(shrink);
@@ -158,6 +160,7 @@ export default function TextInput(props: TextInputProps) {
       )}
       <InputComponent
         {...other}
+        startAdornment={startAdornment}
         notched={shrink}
         required={required}
         dense={dense}

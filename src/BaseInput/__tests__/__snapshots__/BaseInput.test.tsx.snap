@@ -121,7 +121,7 @@ exports[`前缀装饰器 1`] = `
   onClick={[Function]}
 >
   <div
-    className="c1 sinoui-input-adornment"
+    className="c1 sinoui-input-adornment sinoui-input-adornment--start"
   >
     <p
       className="c2"
@@ -263,7 +263,7 @@ exports[`后缀装饰器 1`] = `
     onFocus={[Function]}
   />
   <div
-    className="c1 sinoui-input-adornment"
+    className="c1 sinoui-input-adornment sinoui-input-adornment--end"
   >
     <p
       className="c2"

@@ -17,7 +17,7 @@ exports[`在开始位置使用 1`] = `
 }
 
 <div
-  className="c0 sinoui-input-adornment"
+  className="c0 sinoui-input-adornment sinoui-input-adornment--start"
 >
   <p>
     装饰器
@@ -42,7 +42,7 @@ exports[`在结束位置使用 1`] = `
 }
 
 <div
-  className="c0 sinoui-input-adornment"
+  className="c0 sinoui-input-adornment sinoui-input-adornment--end"
 >
   <p>
     装饰器
@@ -84,7 +84,7 @@ exports[`显示文本装饰器 1`] = `
 }
 
 <div
-  className="c0 sinoui-input-adornment"
+  className="c0 sinoui-input-adornment sinoui-input-adornment--end"
 >
   <p
     className="c1"
@@ -111,7 +111,7 @@ exports[`替换根元素 1`] = `
 }
 
 <p
-  className="c0 sinoui-input-adornment"
+  className="c0 sinoui-input-adornment sinoui-input-adornment--start"
 >
   <p>
     装饰器
@@ -141,7 +141,7 @@ exports[`禁止点击事件 1`] = `
 }
 
 <div
-  className="c0 sinoui-input-adornment"
+  className="c0 sinoui-input-adornment sinoui-input-adornment--start"
 >
   <p>
     装饰器

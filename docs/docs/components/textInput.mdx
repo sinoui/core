@@ -9,6 +9,7 @@ import { defaultTheme } from '@sinoui/theme';
 import TextInputDemo from './textInput-demoes/TextInputDemo';
 import FormPropTextInputDemo from './textInput-demoes/FormPropTextInputDemo';
 import SearchInputDemo from './textInput-demoes/SearchInputDemo';
+import AdornmentInputDemo from './textInput-demoes/AdornmentInputDemo';
 
 > TextInput 是最基础的表单控件，供输入信息使用。
 
@@ -248,6 +249,164 @@ export default FormPropTextInputDemo;
 ```
 
 <FormPropTextInputDemo />
+
+### 带装饰器的输入框
+
+我们可以通过`TextInput`的`startAdornment`和`endAdornment`属性分别指定前缀和后缀元素，比如：
+
+```tsx
+import React, { useState, useCallback } from 'react';
+import TextInput from '@sinoui/core/TextInput';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import InputAdornment from '@sinoui/core/InputAdornment';
+import Star from '@sinoui/icons/Star';
+import Visibility from '@sinoui/icons/Visibility';
+
+const TextInputField = styled(TextInput)`
+  margin: 8px;
+  width: 200px;
+`;
+
+function AdornmentInputDemo() {
+  const [value, setValue] = useState('');
+
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const inputValue = event.target.value;
+      setValue(inputValue);
+    },
+    [],
+  );
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
+        <TextInputField
+          value={value}
+          onChange={onChange}
+          label="金额"
+          startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        />
+        <TextInputField
+          value={value}
+          onChange={onChange}
+          label="Label"
+          startAdornment={
+            <InputAdornment position="start">
+              <Star color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+        <TextInputField
+          value={value}
+          onChange={onChange}
+          label="重量"
+          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+        />
+        <TextInputField
+          value={value}
+          onChange={onChange}
+          label="Label"
+          endAdornment={
+            <InputAdornment position="end">
+              <Visibility color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+      </div>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
+        <TextInputField
+          variant="filled"
+          value={value}
+          onChange={onChange}
+          label="金额"
+          startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        />
+        <TextInputField
+          variant="filled"
+          value={value}
+          onChange={onChange}
+          label="Label"
+          startAdornment={
+            <InputAdornment position="start">
+              <Star color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+        <TextInputField
+          variant="filled"
+          value={value}
+          onChange={onChange}
+          label="重量"
+          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+        />
+        <TextInputField
+          variant="filled"
+          value={value}
+          onChange={onChange}
+          label="Label"
+          endAdornment={
+            <InputAdornment position="end">
+              <Visibility color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+      </div>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
+        <TextInputField
+          variant="outlined"
+          value={value}
+          onChange={onChange}
+          label="金额"
+          startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        />
+        <TextInputField
+          variant="outlined"
+          value={value}
+          onChange={onChange}
+          label="Label"
+          startAdornment={
+            <InputAdornment position="start">
+              <Star color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+        <TextInputField
+          variant="outlined"
+          value={value}
+          onChange={onChange}
+          label="重量"
+          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+        />
+        <TextInputField
+          variant="outlined"
+          value={value}
+          onChange={onChange}
+          label="Label"
+          endAdornment={
+            <InputAdornment position="end">
+              <Visibility color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export default AdornmentInputDemo;
+```
+
+运行效果如下：
+
+<AdornmentInputDemo />
 
 ### 查询框
 

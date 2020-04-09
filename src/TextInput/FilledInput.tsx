@@ -131,6 +131,21 @@ const StyledBaseInput = styled(BaseInput)<
   ${(props) => props.disabled && disabledunderlineStyle};
   ${(props) => props.disabled && disabledBackgroundStyle};
 
+  > .sinoui-input-adornment--end {
+    margin-right: 12px;
+    margin-left: -6px;
+  }
+
+  > .sinoui-input-adornment--start {
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-top: 12px;
+  }
+
+  > .sinoui-input-adornment--start ~ input {
+    margin-left: -8px;
+  }
+
   > input,
   > textarea {
     padding: 27px 12px 10px;

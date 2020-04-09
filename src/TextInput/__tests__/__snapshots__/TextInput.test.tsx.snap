@@ -135,6 +135,21 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   background-color: rgba(0,0,0,0.87);
 }
 
+.c5 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c5 > .sinoui-input-adornment--start {
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 12px;
+}
+
+.c5 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
 .c5 > input,
 .c5 > textarea {
   padding: 27px 12px 10px;
@@ -170,6 +185,20 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 .c7 {
   position: relative;
   border-radius: 4px;
+}
+
+.c7 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c7 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c7 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
 }
 
 .c7 > fieldset {
@@ -521,6 +550,21 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   background-color: rgba(0,0,0,0.06);
 }
 
+.c6 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c6 > .sinoui-input-adornment--start {
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 12px;
+}
+
+.c6 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
 .c6 > input,
 .c6 > textarea {
   padding: 27px 12px 10px;
@@ -556,6 +600,20 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 .c9 {
   position: relative;
   border-radius: 4px;
+}
+
+.c9 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c9 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c9 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
 }
 
 .c9 > fieldset {
@@ -972,6 +1030,21 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   background-color: rgba(0,0,0,0.87);
 }
 
+.c6 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c6 > .sinoui-input-adornment--start {
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 12px;
+}
+
+.c6 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
 .c6 > input,
 .c6 > textarea {
   padding: 27px 12px 10px;
@@ -1007,6 +1080,20 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 .c9 {
   position: relative;
   border-radius: 4px;
+}
+
+.c9 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c9 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c9 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
 }
 
 .c9 > fieldset {
@@ -1394,6 +1481,21 @@ exports[`渲染有错误提示的输入框 1`] = `
   transform: scaleX(1) scaleY(1);
 }
 
+.c6 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c6 > .sinoui-input-adornment--start {
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 12px;
+}
+
+.c6 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
 .c6 > input,
 .c6 > textarea {
   padding: 27px 12px 10px;
@@ -1429,6 +1531,20 @@ exports[`渲染有错误提示的输入框 1`] = `
 .c9 {
   position: relative;
   border-radius: 4px;
+}
+
+.c9 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c9 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c9 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
 }
 
 .c9 > fieldset {

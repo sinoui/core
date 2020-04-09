@@ -35,6 +35,20 @@ const StyledBaseInput = styled(BaseInput)<
   position: relative;
   border-radius: 4px;
 
+  > .sinoui-input-adornment--start {
+    margin-left: 14px;
+    margin-right: 0px;
+  }
+
+  > .sinoui-input-adornment--end {
+    margin-right: 12px;
+    margin-left: -6px;
+  }
+
+  > .sinoui-input-adornment--start ~ input {
+    margin-left: -8px;
+  }
+
   > fieldset {
     border-color: ${(props) =>
       props.theme.palette.type === 'light'

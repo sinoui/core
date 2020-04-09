@@ -115,6 +115,20 @@ exports[`正确渲染边框模式下的Input 1`] = `
   border-radius: 4px;
 }
 
+.c1 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c1 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c1 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
 .c1 > fieldset {
   border-color: rgba(0,0,0,0.38);
 }
@@ -272,6 +286,20 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 .c1 {
   position: relative;
   border-radius: 4px;
+}
+
+.c1 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c1 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c1 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
 }
 
 .c1 > fieldset {
@@ -438,6 +466,20 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
   border-radius: 4px;
 }
 
+.c1 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c1 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c1 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
 .c1 > fieldset {
   border-color: rgba(0,0,0,0.38);
 }
@@ -597,6 +639,20 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 .c1 {
   position: relative;
   border-radius: 4px;
+}
+
+.c1 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c1 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c1 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
 }
 
 .c1 > fieldset {
