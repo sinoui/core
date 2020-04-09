@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import Button from '@sinoui/core/Button';
 import BottomSheet from '@sinoui/core/BottomSheet';
@@ -11,6 +11,7 @@ import ListItemText from '@sinoui/core/ListItemText';
 import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
 import SvgIcon from '@sinoui/core/SvgIcon';
 import { MdShare, MdInsertLink, MdModeEdit, MdDelete } from 'react-icons/md';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 /**
  * BottomSheet组件 测试
@@ -120,6 +121,37 @@ function BottomSheetScrollDemo() {
   );
 }
 
+const BottomSheetColor = styled(BottomSheet)<{ color?: string }>`
+  > ul li {
+    background-color: ${({ theme, color }) => getColorFromTheme(theme, color)};
+    color: #fff;
+  }
+  > ul li svg {
+    color: #fff;
+  }
+`;
+
+function BottomSheetBasicColorDemo() {
+  const [open, setOpen] = useState(false);
+
+  const onClick = () => {
+    setOpen(!open);
+  };
+
+  const onItemClick = () => {
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <Button onClick={onClick}>CLICK</Button>
+      <BottomSheetColor open={open} color="success">
+        <Content data={listData} onClick={onItemClick} />
+      </BottomSheetColor>
+    </>
+  );
+}
+
 describe('BottomSheet组件 快照测试', () => {
   it('基本使用', () => {
     const tree = renderer
@@ -146,6 +178,16 @@ describe('BottomSheet组件 快照测试', () => {
       .create(
         <ThemeProvider theme={defaultTheme}>
           <BottomSheetScrollDemo />
+        </ThemeProvider>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('指定背景颜色', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <BottomSheetBasicColorDemo />
         </ThemeProvider>,
       )
       .toJSON();

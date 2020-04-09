@@ -109,6 +109,12 @@ export default class Draggable {
     }
 
     if (this.handler$.ownerDocument) {
+      this.handler$.ownerDocument.ondragstart = (e: MouseEvent) => {
+        e.preventDefault();
+      };
+      this.handler$.ownerDocument.ondragend = (e: MouseEvent) => {
+        e.preventDefault();
+      };
       this.handler$.ownerDocument.addEventListener(
         'mouseup',
         this.onDocumentMouseUp,

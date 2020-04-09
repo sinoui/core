@@ -84,7 +84,7 @@ function DialogContainer(props: DialogContainerProps) {
         drag.teardown();
       }
     };
-  }, [dialogContainerRef, draggable]);
+  });
 
   const nodes = React.Children.toArray(children).map((node: any) => {
     if (node.type === DialogTitle) {

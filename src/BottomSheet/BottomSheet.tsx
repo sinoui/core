@@ -3,17 +3,19 @@ import styled, { createGlobalStyle } from 'styled-components';
 import classNames from 'classnames';
 import Modal from '@sinoui/core/Modal';
 import { CSSTransition } from 'react-transition-group';
+import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 const ModalWrapper = styled(Modal)`
   display: flex;
   align-items: center;
 `;
 
-const BottomSheetWrapper = styled.div`
+const BottomSheetWrapper = styled.div<{ color?: string }>`
   box-shadow: ${(props) => props.theme.shadows[16]};
-  background: ${(props) => props.theme.palette.common.white};
+  background: ${({ theme, color }) =>
+    color ? getColorFromTheme(theme, color) : theme.palette.common.white};
   width: 100%;
-  max-height: calc(50%);
+  max-height: 50%;
   align-self: flex-end;
   transform: translate3d(0, 0, 0);
   overflow-y: auto;
@@ -86,6 +88,10 @@ export interface BottomSheetProps {
    * 过渡结束监听器
    */
   addEndListener?: any;
+  /**
+   * 指定背景颜色
+   */
+  color?: string;
 }
 
 /**
@@ -101,6 +107,7 @@ const BottomSheet = React.forwardRef(
       children,
       transitionDuration = 300,
       addEndListener,
+      color,
       ...rest
     } = props;
     return (
@@ -122,6 +129,7 @@ const BottomSheet = React.forwardRef(
           <>
             <BottomSheetWrapper
               className={classNames('sinoui-bottom-sheet', className)}
+              color={color}
             >
               {children}
             </BottomSheetWrapper>
