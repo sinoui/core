@@ -5,6 +5,7 @@ import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
+import InputAdornment from '@sinoui/core/InputAdornment';
 import TextInputField from '../TextInput';
 
 it('正确渲染三种模式下的输入框', () => {
@@ -94,6 +95,66 @@ it('渲染不可用状态下三种形态输入框', () => {
             dense
             disabled
             helperText="输入用户名"
+          />
+        </div>
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('渲染带前缀元素的装饰器', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <div>
+          <TextInputField
+            label="金额"
+            startAdornment={
+              <InputAdornment position="start">￥</InputAdornment>
+            }
+          />
+          <TextInputField
+            variant="filled"
+            label="金额"
+            startAdornment={
+              <InputAdornment position="start">￥</InputAdornment>
+            }
+          />
+          <TextInputField
+            variant="outlined"
+            label="金额"
+            startAdornment={
+              <InputAdornment position="start">￥</InputAdornment>
+            }
+          />
+        </div>
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('渲染带后缀元素的输入框', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <div>
+          <TextInputField
+            label="重量"
+            endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+          />
+          <TextInputField
+            variant="filled"
+            label="重量"
+            endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+          />
+          <TextInputField
+            variant="outlined"
+            label="重量"
+            endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
           />
         </div>
       </ThemeProvider>,

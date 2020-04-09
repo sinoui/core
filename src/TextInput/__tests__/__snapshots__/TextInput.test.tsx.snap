@@ -895,6 +895,1012 @@ label ~ .c3 {
 </div>
 `;
 
+exports[`渲染带前缀元素的装饰器 1`] = `
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  margin-right: 8px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  color: rgba(0,0,0,0.6);
+  margin: 0;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: text;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  line-height: 1.1875em;
+}
+
+.c2 > input,
+.c2 > textarea {
+  padding: 6px 0 7px;
+  display: block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  border: none;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 0px;
+  width: 100%;
+  height: 1.1876em;
+  min-height: 1.1876em;
+}
+
+.c2 > input::-moz-placeholder,
+.c2 > textarea::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c2 > input::-webkit-input-placeholder,
+.c2 > textarea::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c2 > input:-ms-input-placeholder,
+.c2 > textarea:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c2 > input::-ms-clear,
+.c2 > textarea::-ms-clear {
+  display: none;
+}
+
+.c2 > input:focus,
+.c2 > textarea:focus {
+  outline: 0;
+}
+
+.c2 > input:invalid,
+.c2 > textarea:invalid {
+  box-shadow: none;
+}
+
+.c2 > textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+.c7 {
+  position: relative;
+  background-color: #f5f5f5;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c7:hover {
+  background-color: rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.c7::after {
+  background-color: #3f51b5;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(0) scaleY(0);
+  -ms-transform: scaleX(0) scaleY(0);
+  transform: scaleX(0) scaleY(0);
+}
+
+.c7::before {
+  background-color: rgba(0,0,0,0.42);
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(1) scaleY(1);
+  -ms-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+}
+
+.c7:hover::before {
+  background-color: rgba(0,0,0,0.87);
+}
+
+.c7 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c7 > .sinoui-input-adornment--start {
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 12px;
+}
+
+.c7 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
+.c7 > input,
+.c7 > textarea {
+  padding: 27px 12px 10px;
+}
+
+.c10 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  padding-left: 8px;
+  pointer-events: none;
+  box-sizing: border-box;
+  border-radius: inherit;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c11 {
+  width: auto;
+  text-align: left;
+  padding: 0;
+  line-height: 11px;
+  -webkit-transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c9 {
+  position: relative;
+  border-radius: 4px;
+}
+
+.c9 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c9 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c9 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
+.c9 > fieldset {
+  border-color: rgba(0,0,0,0.38);
+}
+
+.c9:hover > fieldset {
+  border-color: rgba(0,0,0,0.87);
+}
+
+.c9 > input,
+.c9 > textarea {
+  padding: 18.5px 14px;
+}
+
+.c1 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.6);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transform: translate(0,1.5px) scale(0.75);
+  -ms-transform: translate(0,1.5px) scale(0.75);
+  transform: translate(0,1.5px) scale(0.75);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+}
+
+.c6 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.6);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transform: translate(0,1.5px) scale(0.75);
+  -ms-transform: translate(0,1.5px) scale(0.75);
+  transform: translate(0,1.5px) scale(0.75);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: translate(12px,10px) scale(0.75);
+  -ms-transform: translate(12px,10px) scale(0.75);
+  transform: translate(12px,10px) scale(0.75);
+}
+
+.c8 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.6);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transform: translate(14px,20px) scale(1);
+  -ms-transform: translate(14px,20px) scale(1);
+  transform: translate(14px,20px) scale(1);
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transform: translate(0,1.5px) scale(0.75);
+  -ms-transform: translate(0,1.5px) scale(0.75);
+  transform: translate(0,1.5px) scale(0.75);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: translate(14px,-6px) scale(0.75);
+  -ms-transform: translate(14px,-6px) scale(0.75);
+  transform: translate(14px,-6px) scale(0.75);
+}
+
+.c3 {
+  color: rgba(0,0,0,0.87);
+}
+
+.c3::after {
+  background-color: #3f51b5;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(0) scaleY(0);
+  -ms-transform: scaleX(0) scaleY(0);
+  transform: scaleX(0) scaleY(0);
+}
+
+.c3::before {
+  background-color: rgba(0,0,0,0.42);
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(1) scaleY(1);
+  -ms-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+}
+
+.c3:hover::before {
+  background-color: rgba(0,0,0,0.87);
+  height: 2px;
+}
+
+label ~ .c3 {
+  margin-top: 16px;
+}
+
+.c3::before,
+.c3::after {
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  font-size: 0px;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0px;
+  padding: 0;
+  margin: 0;
+  border: 0px;
+  position: relative;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <label
+      className="c1 sinoui-input-label"
+    >
+      金额
+    </label>
+    <div
+      className="c2 sinoui-base-input__layout c3 sinoui-input"
+      data-testid="baseInput"
+      onClick={[Function]}
+    >
+      <div
+        className="c4 sinoui-input-adornment sinoui-input-adornment--start"
+      >
+        <p
+          className="c5"
+        >
+          ￥
+        </p>
+      </div>
+      <input
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <label
+      className="c6 sinoui-input-label sinoui-input-label--filled"
+    >
+      金额
+    </label>
+    <div
+      className="c2 sinoui-base-input__layout c7 sinoui-filled-input"
+      data-testid="baseInput"
+      onClick={[Function]}
+    >
+      <div
+        className="c4 sinoui-input-adornment sinoui-input-adornment--start"
+      >
+        <p
+          className="c5"
+        >
+          ￥
+        </p>
+      </div>
+      <input
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <label
+      className="c8 sinoui-input-label sinoui-input-label--outlined"
+    >
+      金额
+    </label>
+    <div
+      className="c2 sinoui-base-input__layout c9 sinoui-outlined-input"
+      data-testid="baseInput"
+      onClick={[Function]}
+    >
+      <div
+        className="c4 sinoui-input-adornment sinoui-input-adornment--start"
+      >
+        <p
+          className="c5"
+        >
+          ￥
+        </p>
+      </div>
+      <input
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+      <fieldset
+        aria-hidden={true}
+        className="c10"
+      >
+        <legend
+          className="c11"
+          style={
+            Object {
+              "width": 0,
+            }
+          }
+        >
+          <span>
+            ​
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`渲染带后缀元素的输入框 1`] = `
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  margin-left: 8px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  color: rgba(0,0,0,0.6);
+  margin: 0;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: text;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  line-height: 1.1875em;
+}
+
+.c2 > input,
+.c2 > textarea {
+  padding: 6px 0 7px;
+  display: block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  border: none;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 0px;
+  width: 100%;
+  height: 1.1876em;
+  min-height: 1.1876em;
+}
+
+.c2 > input::-moz-placeholder,
+.c2 > textarea::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c2 > input::-webkit-input-placeholder,
+.c2 > textarea::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c2 > input:-ms-input-placeholder,
+.c2 > textarea:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c2 > input::-ms-clear,
+.c2 > textarea::-ms-clear {
+  display: none;
+}
+
+.c2 > input:focus,
+.c2 > textarea:focus {
+  outline: 0;
+}
+
+.c2 > input:invalid,
+.c2 > textarea:invalid {
+  box-shadow: none;
+}
+
+.c2 > textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+.c7 {
+  position: relative;
+  background-color: #f5f5f5;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c7:hover {
+  background-color: rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.c7::after {
+  background-color: #3f51b5;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(0) scaleY(0);
+  -ms-transform: scaleX(0) scaleY(0);
+  transform: scaleX(0) scaleY(0);
+}
+
+.c7::before {
+  background-color: rgba(0,0,0,0.42);
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(1) scaleY(1);
+  -ms-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+}
+
+.c7:hover::before {
+  background-color: rgba(0,0,0,0.87);
+}
+
+.c7 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c7 > .sinoui-input-adornment--start {
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 12px;
+}
+
+.c7 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
+.c7 > input,
+.c7 > textarea {
+  padding: 27px 12px 10px;
+}
+
+.c10 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  padding-left: 8px;
+  pointer-events: none;
+  box-sizing: border-box;
+  border-radius: inherit;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: border-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c11 {
+  width: auto;
+  text-align: left;
+  padding: 0;
+  line-height: 11px;
+  -webkit-transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: width 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c9 {
+  position: relative;
+  border-radius: 4px;
+}
+
+.c9 > .sinoui-input-adornment--start {
+  margin-left: 14px;
+  margin-right: 0px;
+}
+
+.c9 > .sinoui-input-adornment--end {
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.c9 > .sinoui-input-adornment--start ~ input {
+  margin-left: -8px;
+}
+
+.c9 > fieldset {
+  border-color: rgba(0,0,0,0.38);
+}
+
+.c9:hover > fieldset {
+  border-color: rgba(0,0,0,0.87);
+}
+
+.c9 > input,
+.c9 > textarea {
+  padding: 18.5px 14px;
+}
+
+.c1 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.6);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c6 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.6);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c8 {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0,0,0,0.6);
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-transform: translate(0,24px) scale(1);
+  -ms-transform: translate(0,24px) scale(1);
+  transform: translate(0,24px) scale(1);
+  -webkit-transform: translate(14px,20px) scale(1);
+  -ms-transform: translate(14px,20px) scale(1);
+  transform: translate(14px,20px) scale(1);
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+}
+
+.c3 {
+  color: rgba(0,0,0,0.87);
+}
+
+.c3::after {
+  background-color: #3f51b5;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(0) scaleY(0);
+  -ms-transform: scaleX(0) scaleY(0);
+  transform: scaleX(0) scaleY(0);
+}
+
+.c3::before {
+  background-color: rgba(0,0,0,0.42);
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(1) scaleY(1);
+  -ms-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+}
+
+.c3:hover::before {
+  background-color: rgba(0,0,0,0.87);
+  height: 2px;
+}
+
+label ~ .c3 {
+  margin-top: 16px;
+}
+
+.c3::before,
+.c3::after {
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  font-size: 0px;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0px;
+  padding: 0;
+  margin: 0;
+  border: 0px;
+  position: relative;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <label
+      className="c1 sinoui-input-label"
+    >
+      重量
+    </label>
+    <div
+      className="c2 sinoui-base-input__layout c3 sinoui-input"
+      data-testid="baseInput"
+      onClick={[Function]}
+    >
+      <input
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+      <div
+        className="c4 sinoui-input-adornment sinoui-input-adornment--end"
+      >
+        <p
+          className="c5"
+        >
+          Kg
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <label
+      className="c6 sinoui-input-label sinoui-input-label--filled"
+    >
+      重量
+    </label>
+    <div
+      className="c2 sinoui-base-input__layout c7 sinoui-filled-input"
+      data-testid="baseInput"
+      onClick={[Function]}
+    >
+      <input
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+      <div
+        className="c4 sinoui-input-adornment sinoui-input-adornment--end"
+      >
+        <p
+          className="c5"
+        >
+          Kg
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <label
+      className="c8 sinoui-input-label sinoui-input-label--outlined"
+    >
+      重量
+    </label>
+    <div
+      className="c2 sinoui-base-input__layout c9 sinoui-outlined-input"
+      data-testid="baseInput"
+      onClick={[Function]}
+    >
+      <input
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+      />
+      <div
+        className="c4 sinoui-input-adornment sinoui-input-adornment--end"
+      >
+        <p
+          className="c5"
+        >
+          Kg
+        </p>
+      </div>
+      <fieldset
+        aria-hidden={true}
+        className="c10"
+      >
+        <legend
+          className="c11"
+          style={
+            Object {
+              "width": "auto",
+            }
+          }
+        >
+          <span>
+            ​
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`渲染有辅助性文字的输入框 1`] = `
 .c2 {
   display: -webkit-inline-box;
