@@ -78,7 +78,12 @@ export default function TextInput(props: TextInputProps) {
   const labelRef = useRef<HTMLLabelElement>(null);
   const [focused, setFocused] = useState(false);
   const shrink =
-    shrinkProp || focused || !!value || !!defaultValue || !!placeholder;
+    shrinkProp ||
+    focused ||
+    !!value ||
+    !!defaultValue ||
+    !!placeholder ||
+    !!startAdornment;
 
   const handleBlur = () => {
     if (!readOnly) {
@@ -105,6 +110,7 @@ export default function TextInput(props: TextInputProps) {
   const inputProps: Record<string, any> = {
     ...other,
     ...inputState,
+    startAdornment,
     placeholder,
     value,
     defaultValue,
