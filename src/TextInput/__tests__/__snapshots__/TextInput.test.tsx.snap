@@ -857,6 +857,41 @@ label ~ .c3 {
 `;
 
 exports[`渲染带前缀元素的装饰器 1`] = `
+.c4 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  margin-right: 8px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  color: rgba(0,0,0,0.6);
+  margin: 0;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -939,7 +974,7 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   overflow: hidden;
 }
 
-.c5 {
+.c7 {
   position: relative;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
@@ -948,32 +983,32 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
 }
 
-.c5:hover {
+.c7:hover {
   background-color: rgba(0,0,0,0.08);
   cursor: pointer;
 }
 
-.c5 > .sinoui-input-adornment--end {
+.c7 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c5 > .sinoui-input-adornment--start {
+.c7 > .sinoui-input-adornment--start {
   margin-left: 10px;
   margin-right: 0px;
   margin-top: 12px;
 }
 
-.c5 > .sinoui-input-adornment--start ~ input {
+.c7 > .sinoui-input-adornment--start ~ input {
   margin-left: -8px;
 }
 
-.c5 > input,
-.c5 > textarea {
+.c7 > input,
+.c7 > textarea {
   padding: 27px 12px 10px;
 }
 
-.c5::before {
+.c7::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
@@ -990,11 +1025,11 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   transform: scaleX(1) scaleY(1);
 }
 
-.c5:hover::before {
+.c7:hover::before {
   background-color: rgba(0,0,0,0.87);
 }
 
-.c5::after {
+.c7::after {
   background-color: #3f51b5;
   left: 0;
   bottom: 0;
@@ -1011,20 +1046,20 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   transform: scaleX(0) scaleY(0);
 }
 
-.c5::before,
-.c5::after {
+.c7::before,
+.c7::after {
   position: absolute;
   bottom: 0px;
   overflow: hidden;
   font-size: 0px;
 }
 
-.c5:hover::before {
+.c7:hover::before {
   background-color: rgba(0,0,0,0.87);
   height: 1px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1040,17 +1075,17 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   box-sizing: border-box;
 }
 
-.c8 > div {
+.c10 > div {
   border: 1px solid currentColor;
 }
 
-.c8 > .sinoui-notched-outline__leading {
+.c10 > .sinoui-notched-outline__leading {
   border-right: none;
   width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
-.c8 > .sinoui-notched-outline__notch {
+.c10 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   max-width: 80%;
@@ -1058,7 +1093,7 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   box-sizing: content-box;
 }
 
-.c8 > .sinoui-notched-outline__trailing {
+.c10 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -1067,40 +1102,40 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c8.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c10.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c7 {
+.c9 {
   position: relative;
   border-radius: 4px;
 }
 
-.c7 > .sinoui-notched-outline > div {
+.c9 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c7:hover > .sinoui-notched-outline {
+.c9:hover > .sinoui-notched-outline {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c7 > input,
-.c7 > textarea {
+.c9 > input,
+.c9 > textarea {
   padding: 18.5px 14px;
 }
 
-.c7 > .sinoui-input-adornment--start {
+.c9 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c7 > .sinoui-input-adornment--end {
+.c9 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c7 > .sinoui-input-adornment--start ~ input {
+.c9 > .sinoui-input-adornment--start ~ input {
   margin-left: -8px;
 }
 
@@ -1120,13 +1155,19 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transform: translate(0,1.5px) scale(0.75);
+  -ms-transform: translate(0,1.5px) scale(0.75);
+  transform: translate(0,1.5px) scale(0.75);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
   will-change: transform;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c4 {
+.c6 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -1147,13 +1188,22 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transform: translate(0,1.5px) scale(0.75);
+  -ms-transform: translate(0,1.5px) scale(0.75);
+  transform: translate(0,1.5px) scale(0.75);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: translate(12px,10px) scale(0.75);
+  -ms-transform: translate(12px,10px) scale(0.75);
+  transform: translate(12px,10px) scale(0.75);
   will-change: transform;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c6 {
+.c8 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -1174,6 +1224,15 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transform: translate(0,1.5px) scale(0.75);
+  -ms-transform: translate(0,1.5px) scale(0.75);
+  transform: translate(0,1.5px) scale(0.75);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: translate(14px,-6px) scale(0.75);
+  -ms-transform: translate(14px,-6px) scale(0.75);
+  transform: translate(14px,-6px) scale(0.75);
   will-change: transform;
   max-width: 100%;
   overflow: hidden;
@@ -1252,12 +1311,12 @@ label ~ .c3 {
 
 <div>
   <div
-    className="c0 sinoui-text-input"
+    className="c0 sinoui-text-input sinoui-text-input--shrink"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <label
-      className="c1 sinoui-input-label"
+      className="c1 sinoui-input-label sinoui-input-label--shrink"
     >
       金额
     </label>
@@ -1266,6 +1325,15 @@ label ~ .c3 {
       data-testid="baseInput"
       onClick={[Function]}
     >
+      <div
+        className="c4 sinoui-input-adornment sinoui-input-adornment--start"
+      >
+        <p
+          className="c5"
+        >
+          ￥
+        </p>
+      </div>
       <input
         onBlur={[Function]}
         onChange={[Function]}
@@ -1274,34 +1342,12 @@ label ~ .c3 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--filled"
+    className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--shrink"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <label
-      className="c4 sinoui-input-label sinoui-input-label--filled"
-    >
-      金额
-    </label>
-    <div
-      className="c2 sinoui-base-input__layout c5"
-      data-testid="baseInput"
-      onClick={[Function]}
-    >
-      <input
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-      />
-    </div>
-  </div>
-  <div
-    className="c0 sinoui-text-input sinoui-text-input--outlined"
-    onBlur={[Function]}
-    onFocus={[Function]}
-  >
-    <label
-      className="c6 sinoui-input-label sinoui-input-label--outlined"
+      className="c6 sinoui-input-label sinoui-input-label--filled sinoui-input-label--shrink"
     >
       金额
     </label>
@@ -1310,13 +1356,53 @@ label ~ .c3 {
       data-testid="baseInput"
       onClick={[Function]}
     >
+      <div
+        className="c4 sinoui-input-adornment sinoui-input-adornment--start"
+      >
+        <p
+          className="c5"
+        >
+          ￥
+        </p>
+      </div>
+      <input
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <label
+      className="c8 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
+    >
+      金额
+    </label>
+    <div
+      className="c2 sinoui-base-input__layout c9"
+      data-testid="baseInput"
+      onClick={[Function]}
+    >
+      <div
+        className="c4 sinoui-input-adornment sinoui-input-adornment--start"
+      >
+        <p
+          className="c5"
+        >
+          ￥
+        </p>
+      </div>
       <input
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       />
       <div
-        className="c8 sinoui-notched-outline"
+        className="c10 sinoui-notched-outline sinoui-notched-outline--notched"
       >
         <div
           className="sinoui-notched-outline__leading"
