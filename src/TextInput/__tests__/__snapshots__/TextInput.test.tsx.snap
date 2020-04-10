@@ -215,6 +215,10 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   border-top: none;
 }
 
+.c8.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+  padding: 0;
+}
+
 .c7 {
   position: relative;
   border-radius: 4px;
@@ -469,7 +473,7 @@ label ~ .c3 {
         onFocus={[Function]}
       />
       <div
-        className="c8 sinoui-notched-outline sinoui-notched-outline--notched"
+        className="c8 sinoui-notched-outline sinoui-notched-outline--notched sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -1071,6 +1075,10 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   border-top: none;
 }
 
+.c8.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+  padding: 0;
+}
+
 .c7 {
   position: relative;
   border-radius: 4px;
@@ -1316,7 +1324,7 @@ label ~ .c3 {
         onFocus={[Function]}
       />
       <div
-        className="c8 sinoui-notched-outline"
+        className="c8 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -1586,6 +1594,10 @@ exports[`渲染带后缀元素的输入框 1`] = `
 
 .c10.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
+}
+
+.c10.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+  padding: 0;
 }
 
 .c9 {
@@ -1860,7 +1872,7 @@ label ~ .c3 {
         </p>
       </div>
       <div
-        className="c10 sinoui-notched-outline"
+        className="c10 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"

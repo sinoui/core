@@ -52,6 +52,10 @@ const NotchedOutlineLayout = styled.div`
   &.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
     border-top: none;
   }
+
+  &.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+    padding: 0;
+  }
 `;
 
 /**
@@ -68,7 +72,10 @@ export default function NotchedOutline(props: NotchedOutlineProps) {
   return (
     <NotchedOutlineLayout
       {...props}
-      className={bemClassNames('sinoui-notched-outline', { notched })}
+      className={bemClassNames('sinoui-notched-outline', {
+        notched,
+        'no-label': notchWidth === 0,
+      })}
     >
       <div className="sinoui-notched-outline__leading" />
       <div className="sinoui-notched-outline__notch" style={notchStyle} />

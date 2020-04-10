@@ -130,6 +130,10 @@ exports[`正确渲染边框模式下的Input 1`] = `
   border-top: none;
 }
 
+.c2.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+  padding: 0;
+}
+
 .c1 {
   position: relative;
   border-radius: 4px;
@@ -174,7 +178,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
     onFocus={[Function]}
   />
   <div
-    className="c2 sinoui-notched-outline"
+    className="c2 sinoui-notched-outline sinoui-notched-outline--no-label"
   >
     <div
       className="sinoui-notched-outline__leading"
@@ -324,6 +328,10 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
   border-top: none;
 }
 
+.c2.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+  padding: 0;
+}
+
 .c1 {
   position: relative;
   border-radius: 4px;
@@ -369,7 +377,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
     onFocus={[Function]}
   />
   <div
-    className="c2 sinoui-notched-outline"
+    className="c2 sinoui-notched-outline sinoui-notched-outline--no-label"
   >
     <div
       className="sinoui-notched-outline__leading"
@@ -519,6 +527,10 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
   border-top: none;
 }
 
+.c2.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+  padding: 0;
+}
+
 .c1 {
   position: relative;
   border-radius: 4px;
@@ -565,7 +577,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
     onFocus={[Function]}
   />
   <div
-    className="c2 sinoui-notched-outline"
+    className="c2 sinoui-notched-outline sinoui-notched-outline--no-label"
   >
     <div
       className="sinoui-notched-outline__leading"
@@ -715,6 +727,10 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
   border-top: none;
 }
 
+.c2.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+  padding: 0;
+}
+
 .c1 {
   position: relative;
   border-radius: 4px;
@@ -759,7 +775,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
     onFocus={[Function]}
   />
   <div
-    className="c2 sinoui-notched-outline sinoui-notched-outline--notched"
+    className="c2 sinoui-notched-outline sinoui-notched-outline--notched sinoui-notched-outline--no-label"
   >
     <div
       className="sinoui-notched-outline__leading"

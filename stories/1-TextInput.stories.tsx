@@ -352,3 +352,12 @@ export const 轮廓输入框 = () => (
 );
 
 export const 带装饰器的Input = () => <AdornmentInput />;
+
+export const 不带标签的输入框 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <div>
+      <TextInput variant="outlined" />
+      <TextInput variant="outlined" label="" />
+    </div>
+  </ThemeProvider>
+);
