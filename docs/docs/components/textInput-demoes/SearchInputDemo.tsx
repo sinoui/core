@@ -8,7 +8,6 @@ import Search from '@sinoui/icons/Search';
 
 const TextInputField = styled(TextInput)`
   width: 200px;
-  margin: 8px;
 
   .sinoui-notched-outline__leading {
     width: 40px;
@@ -18,6 +17,10 @@ const TextInputField = styled(TextInput)`
   .sinoui-notched-outline__trailing {
     border-radius: 0 48px 48px 0;
   }
+
+  input {
+    padding-right: 16px;
+  }
 `;
 
 const DenseIconButton = styled(IconButton)`
@@ -25,15 +28,15 @@ const DenseIconButton = styled(IconButton)`
   height: 24px;
 
   > .sinoui-icon-button__ripple-layout {
-    left: 0px;
-    top: 0px;
-    width: 24px;
-    height: 24px;
+    left: -4px;
+    top: -4px;
+    width: 32px;
+    height: 32px;
   }
 
   > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
   }
 `;
 
