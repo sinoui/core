@@ -95,7 +95,7 @@ const InputLabel = styled.label.attrs<InputLabelProps>(
   left: 0;
   top: 0;
   color: ${(props) => props.theme.palette.text.secondary};
-  line-height: 1;
+  line-height: 1.15;
   font-size: ${(props) => props.theme.typography.subtitle1.fontSize};
   transform: translate(0, ${(props) => props.theme.spacing.unit * 3}px) scale(1);
   ${(props) => props.variant === 'filled' && filledLabelStyle};

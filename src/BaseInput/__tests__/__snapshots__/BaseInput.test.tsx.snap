@@ -2,6 +2,9 @@
 
 exports[`前缀装饰器 1`] = `
 .c1 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -121,7 +124,7 @@ exports[`前缀装饰器 1`] = `
   onClick={[Function]}
 >
   <div
-    className="c1 sinoui-input-adornment"
+    className="c1 sinoui-input-adornment sinoui-input-adornment--start"
   >
     <p
       className="c2"
@@ -139,6 +142,9 @@ exports[`前缀装饰器 1`] = `
 
 exports[`后缀装饰器 1`] = `
 .c1 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -263,7 +269,7 @@ exports[`后缀装饰器 1`] = `
     onFocus={[Function]}
   />
   <div
-    className="c1 sinoui-input-adornment"
+    className="c1 sinoui-input-adornment sinoui-input-adornment--end"
   >
     <p
       className="c2"

@@ -47,7 +47,7 @@ const variantComponent = {
   outlined: OutlinedInput,
 };
 
-const TextInputWrapper = styled.div`
+const TextInputWrapper = styled.div<{ disabled?: boolean }>`
   display: inline-flex;
   flex-direction: column;
   position: relative;
@@ -72,6 +72,7 @@ export default function TextInput(props: TextInputProps) {
     helperText,
     readOnly,
     dense,
+    startAdornment,
     ...other
   } = props;
   const labelRef = useRef<HTMLLabelElement>(null);
@@ -101,7 +102,7 @@ export default function TextInput(props: TextInputProps) {
     focused,
   };
 
-  const inputProps: any = {
+  const inputProps: Record<string, any> = {
     ...other,
     ...inputState,
     placeholder,
@@ -127,6 +128,7 @@ export default function TextInput(props: TextInputProps) {
       )}
       onFocus={handleFocus}
       onBlur={handleBlur}
+      disabled={disabled}
     >
       {label && (
         <InputLabel

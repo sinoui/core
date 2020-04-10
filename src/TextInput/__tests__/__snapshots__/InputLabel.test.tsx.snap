@@ -9,7 +9,7 @@ exports[`渲染上浮之后的Label 1`] = `
   left: 0;
   top: 0;
   color: rgba(0,0,0,0.6);
-  line-height: 1;
+  line-height: 1.15;
   font-size: 1rem;
   -webkit-transform: translate(0,24px) scale(1);
   -ms-transform: translate(0,24px) scale(1);
@@ -59,7 +59,7 @@ exports[`渲染密集模式下的Label 1`] = `
   left: 0;
   top: 0;
   color: rgba(0,0,0,0.6);
-  line-height: 1;
+  line-height: 1.15;
   font-size: 1rem;
   -webkit-transform: translate(0,24px) scale(1);
   -ms-transform: translate(0,24px) scale(1);

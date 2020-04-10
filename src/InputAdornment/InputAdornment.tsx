@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import bemClassNames from '../utils/bemClassNames';
 
 export interface Props {
   /**
@@ -39,9 +40,15 @@ interface InputAdornmentLayoutProps {
   $disablePointerEvents?: boolean;
 }
 
-const InputAdornmentLayout = styled.div.attrs({
-  className: 'sinoui-input-adornment',
-})<InputAdornmentLayoutProps>`
+const InputAdornmentLayout = styled.div.attrs(
+  ({ $position }: InputAdornmentLayoutProps) => ({
+    className: bemClassNames('sinoui-input-adornment', {
+      start: $position === 'start',
+      end: $position === 'end',
+    }),
+  }),
+)<InputAdornmentLayoutProps>`
+  flex-shrink: 0;
   display: flex;
   height: 0.01em;
   align-items: center;

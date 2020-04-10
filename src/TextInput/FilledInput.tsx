@@ -2,6 +2,10 @@ import BaseInput from '@sinoui/core/BaseInput';
 import type { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled from 'styled-components';
 import lineRippleStyle from './lineRippleStyle';
+import {
+  FILLED_INPUT_BGCOLOR,
+  DISABLED_FILLED_INPUT_BGCOLOR,
+} from './constant';
 
 export interface FilledInputProps extends BaseInputProps {
   error?: boolean;
@@ -17,10 +21,10 @@ const FilledInput = styled(BaseInput)<
   BaseInputProps & { error?: boolean; warning?: boolean; dense?: boolean }
 >`
   position: relative;
-  background-color: ${(props) =>
-    props.theme.palette.type === 'light'
-      ? 'rgba(0,0,0,0.09)'
-      : 'rgba(255,255,255,0.09)'};
+  background-color: ${({ disabled, theme }) =>
+    (disabled ? DISABLED_FILLED_INPUT_BGCOLOR : FILLED_INPUT_BGCOLOR)[
+      theme.palette.type
+    ]};
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   transition: ${({ theme: { transitions } }) =>
@@ -34,13 +38,24 @@ const FilledInput = styled(BaseInput)<
       !props.disabled &&
       !props.readOnly &&
       !props.error &&
-      `background-color: ${
-        props.theme.palette.type === 'light'
-          ? 'rgba(0,0,0,0.13)'
-          : 'rgba(255,255,255,0.13)'
-      };
+      `background-color: ${props.theme.palette.action.selected};
       cursor:pointer;
   `}
+  }
+
+  > .sinoui-input-adornment--end {
+    margin-right: 12px;
+    margin-left: -6px;
+  }
+
+  > .sinoui-input-adornment--start {
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-top: 12px;
+  }
+
+  > .sinoui-input-adornment--start ~ input {
+    margin-left: -8px;
   }
 
   > input,
