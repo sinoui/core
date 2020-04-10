@@ -38,9 +38,7 @@ const FilledInput = styled(BaseInput)<
       !props.disabled &&
       !props.readOnly &&
       !props.error &&
-      `background-color: ${props.theme.palette.action.selected};
-      cursor:pointer;
-  `}
+      `background-color: ${props.theme.palette.action.selected};`}
   }
 
   > .sinoui-input-adornment--end {

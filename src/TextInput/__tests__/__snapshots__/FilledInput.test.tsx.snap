@@ -98,7 +98,6 @@ exports[`渲染密集状态下填充模式的Input 1`] = `
 
 .c1:hover {
   background-color: rgba(0,0,0,0.08);
-  cursor: pointer;
 }
 
 .c1 > .sinoui-input-adornment--end {

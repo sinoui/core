@@ -94,7 +94,6 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 
 .c5:hover {
   background-color: rgba(0,0,0,0.08);
-  cursor: pointer;
 }
 
 .c5 > .sinoui-input-adornment--end {
@@ -991,7 +990,6 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 
 .c7:hover {
   background-color: rgba(0,0,0,0.08);
-  cursor: pointer;
 }
 
 .c7 > .sinoui-input-adornment--end {
@@ -1571,7 +1569,6 @@ exports[`渲染带后缀元素的输入框 1`] = `
 
 .c7:hover {
   background-color: rgba(0,0,0,0.08);
-  cursor: pointer;
 }
 
 .c7 > .sinoui-input-adornment--end {
@@ -2090,7 +2087,6 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 
 .c6:hover {
   background-color: rgba(0,0,0,0.08);
-  cursor: pointer;
 }
 
 .c6 > .sinoui-input-adornment--end {
