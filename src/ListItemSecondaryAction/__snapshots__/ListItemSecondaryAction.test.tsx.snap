@@ -5,7 +5,7 @@ exports[`快照测试 主操作区有IconButton 1`] = `
   className="sc-AxjAm cgcbLq"
 >
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw cNUHJv sinoui-icon-button"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw hJlFGG sinoui-icon-button"
     color="textPrimary"
     role="button"
     type="button"

@@ -2,7 +2,7 @@
 
 exports[`正确渲染IconButton 1`] = `
 <button
-  className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ jSuVdP sinoui-icon-button"
+  className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ bTOUWe sinoui-icon-button"
   color="textPrimary"
   role="button"
   type="button"
@@ -43,7 +43,7 @@ exports[`渲染color为primary的图标按钮 1`] = `
 exports[`渲染不可用的图标按钮 1`] = `
 <button
   aria-disabled={true}
-  className="sc-AxjAm gIJowi sinoui-base-button sc-AxirZ dUzFQz sinoui-icon-button"
+  className="sc-AxjAm gIJowi sinoui-base-button sc-AxirZ HWKGa sinoui-icon-button"
   color="textPrimary"
   disabled={true}
   role="button"

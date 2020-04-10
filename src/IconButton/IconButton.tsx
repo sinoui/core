@@ -3,9 +3,9 @@ import BaseButton from '@sinoui/core/BaseButton';
 import type { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { opacify } from 'polished';
 import getColorFromTheme from '../utils/getColorFromTheme';
 import OverridableComponent from '../OverridableComponent';
+import adjustOpacity from '../utils/adjustOpacity';
 
 export interface IconButtonProps extends BaseButtonProps {
   /**
@@ -36,9 +36,8 @@ const IconButtonLayout = styled(BaseButton).attrs(
 
   &:hover {
     background-color: ${({ theme, color }) =>
-      color !== 'textPrimary' &&
-      opacify(
-        theme.palette.action.hoverOpacity - 1,
+      adjustOpacity(
+        theme.palette.action.hoverOpacity,
         getColorFromTheme(theme, color),
       )};
 
