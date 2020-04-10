@@ -8,7 +8,6 @@ import Search from '@sinoui/icons/Search';
 
 const TextInputField = styled(TextInput)`
   width: 200px;
-  margin: 8px;
 
   .sinoui-notched-outline__leading {
     width: 40px;
@@ -17,6 +16,10 @@ const TextInputField = styled(TextInput)`
 
   .sinoui-notched-outline__trailing {
     border-radius: 0 48px 48px 0;
+  }
+
+  input {
+    padding-right: 16px;
   }
 `;
 

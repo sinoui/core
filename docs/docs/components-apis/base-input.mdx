@@ -7,32 +7,32 @@ title: BaseInput
 
 ## 属性
 
-| 属性名称       | 属性类型                                                                                   | 默认值  | 属性说明                   |
-| -------------- | ------------------------------------------------------------------------------------------ | ------- | -------------------------- |
-| value          | string                                                                                     |         | 输入框的值                 |
-| defaultValue   | string                                                                                     |         | 默认值                     |
-| placeholder    | string                                                                                     |         | 占位符文字                 |
-| type           | string                                                                                     |         | 输入框的类型               |
-| inputProps     | `React.ComponentPropsWithRef<InputComponentType> & Record<string, any> & ExtendInputProps` |         | 输入框的属性               |
-| inputRef       | `React.Ref<InputElementType>`                                                              |         | 为输入框元素指定 ref       |
-| readOnly       | boolean                                                                                    | false   | 如果设为`true`则为只读状态 |
-| required       | boolean                                                                                    | false   | 是否必填                   |
-| multiline      | boolean                                                                                    | false   | 是否为多行文本             |
-| autoFocus      | boolean                                                                                    | false   | 自动获取焦点               |
-| autoComplete   | boolean                                                                                    | false   | 自动补全                   |
-| className      | string                                                                                     |         | 自定义样式类名称           |
-| style          | React.CSSProperties                                                                        |         | 自定义样式                 |
-| onBlur         | `(event: React.FocusEvent<HTMLInputElement \| HTMLTextAreaElement>)=>void`                 |         | 失去焦点时的回调函数       |
-| onFocus        | `(event: React.FocusEvent<HTMLInputElement \| HTMLTextAreaElement>)=>void`                 |         | 获得焦点时的回调函数       |
-| onChange       | `(event: React.ChangeEvent<HTMLInputElement \| HTMLTextAreaElement>,value?:any)=>void`     |         | 值改变时的回调函数         |
-| onClick        | `(event: React.MouseEvent<HTMLDivElement>) => void`                                        |         | 点击时的回调函数           |
-| startAdornment | React.ReactNode                                                                            |         | 前缀元素                   |
-| endAdornment   | React.ReactNode                                                                            |         | 后缀元素                   |
-| inputComponent | React.ReactType                                                                            |         | 输入区域渲染元素           |
-| disabled       | boolean                                                                                    | false   | 是否为不可用状态           |
-| fullWidth      | boolean                                                                                    | false   | 是否为全宽模式             |
-| align          | 'start' \| 'end'                                                                           | 'start' | 输入框文本对齐方式         |
-| ref            | `React.Ref<HTMLDivElement>`                                                                |         | 引用根元素                 |
+| 属性名称       | 属性类型                                            | 默认值  | 属性说明                   |
+| -------------- | --------------------------------------------------- | ------- | -------------------------- |
+| value          | string                                              |         | 输入框的值                 |
+| defaultValue   | string                                              |         | 默认值                     |
+| placeholder    | string                                              |         | 占位符文字                 |
+| type           | string                                              |         | 输入框的类型               |
+| inputProps     | object                                              |         | 输入框的属性               |
+| inputRef       | `React.Ref<InputElementType>`                       |         | 为输入框元素指定 ref       |
+| readOnly       | boolean                                             | false   | 如果设为`true`则为只读状态 |
+| required       | boolean                                             | false   | 是否必填                   |
+| multiline      | boolean                                             | false   | 是否为多行文本             |
+| autoFocus      | boolean                                             | false   | 自动获取焦点               |
+| autoComplete   | boolean                                             | false   | 自动补全                   |
+| className      | string                                              |         | 自定义样式类名称           |
+| style          | React.CSSProperties                                 |         | 自定义样式                 |
+| onBlur         | (event)=>void                                       |         | 失去焦点时的回调函数       |
+| onFocus        | (event)=>void                                       |         | 获得焦点时的回调函数       |
+| onChange       | (event,value?:any)=>void                            |         | 值改变时的回调函数         |
+| onClick        | `(event: React.MouseEvent<HTMLDivElement>) => void` |         | 点击时的回调函数           |
+| startAdornment | React.ReactNode                                     |         | 前缀元素                   |
+| endAdornment   | React.ReactNode                                     |         | 后缀元素                   |
+| inputComponent | React.ReactType                                     |         | 输入区域渲染元素           |
+| disabled       | boolean                                             | false   | 是否为不可用状态           |
+| fullWidth      | boolean                                             | false   | 是否为全宽模式             |
+| align          | 'start' \| 'end'                                    | 'start' | 输入框文本对齐方式         |
+| ref            | `React.Ref<HTMLDivElement>`                         |         | 引用根元素                 |
 
 ## 入门示例
 
