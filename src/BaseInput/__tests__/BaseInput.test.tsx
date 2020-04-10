@@ -269,3 +269,15 @@ it('设置id和name', () => {
   expect(input).toHaveAttribute('id', 'userName');
   expect(input).toHaveAttribute('name', 'firstName');
 });
+
+it('设置minRows和maxRows', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <BaseInput multiline minRows={2} maxRows={4} />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});

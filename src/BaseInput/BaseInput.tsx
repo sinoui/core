@@ -135,6 +135,14 @@ export interface BaseInputProps<
    * 设置输入框的name
    */
   name?: string;
+  /**
+   * 最小行数目
+   */
+  minRows?: number;
+  /**
+   * 最大行数目
+   */
+  maxRows?: number;
 }
 
 export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
@@ -183,6 +191,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     align,
     id,
     name,
+    minRows,
+    maxRows,
     ...other
   } = props;
 
@@ -245,6 +255,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     ...inputPropsProp,
     id,
     name,
+    minRows,
+    maxRows,
     type,
     autoFocus,
     autoComplete,
