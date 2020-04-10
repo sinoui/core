@@ -11,6 +11,18 @@ export default class TopAppBarFoundation {
    */
   public scrollTarget: HTMLElement | Window;
 
+  /**
+   * 上一次滚动条距页面顶端的距离
+   *
+   */
+  public lastScrollTop = 0;
+
+  /**
+   * 当前滚动条距页面顶端的距离
+   *
+   */
+  public scrolllTop = 0;
+
   constructor(adapter: TopAppBarAdapter, scrollTarget: HTMLElement | Window) {
     this.adapter = adapter;
     this.scrollTarget = scrollTarget;
@@ -23,8 +35,19 @@ export default class TopAppBarFoundation {
   /**
    * 处理滚动事件
    */
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  public handleScroll() {}
+  public handleScroll() {
+    this.scrolllTop = this.adapter.getScrollTop();
+
+    if (this.scrolllTop > this.lastScrollTop) {
+      const top = this.adapter.getTopAppBarTopOffset();
+      this.adapter.setStyle('top', `-${top}px`);
+    } else if (this.scrolllTop < this.lastScrollTop) {
+      // 向上滚动
+      this.adapter.setStyle('top', `0px`);
+    }
+
+    this.lastScrollTop = this.scrolllTop <= 0 ? 0 : this.scrolllTop;
+  }
 
   /**
    * 处理浏览器窗口大小改变事件

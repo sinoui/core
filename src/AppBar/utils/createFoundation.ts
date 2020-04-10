@@ -27,7 +27,7 @@ export default function createFoundation(
     return new ShortFoundation(adapter, scrollTarget);
   }
 
-  if (fixed && prominent) {
+  if (prominent) {
     return new FixedProminentFoundation(adapter, scrollTarget);
   }
 

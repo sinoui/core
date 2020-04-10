@@ -21,7 +21,7 @@ const regularCss = css<AppBarStatusTypes>`
   box-sizing: border-box;
 
   & + * {
-    padding-top: ${({ fixed }) => fixed && '64px'};
+    padding-top: 64px;
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.sm}px) {
@@ -29,7 +29,7 @@ const regularCss = css<AppBarStatusTypes>`
     padding: 4px;
 
     & + * {
-      padding-top: ${({ fixed }) => fixed && '56px'};
+      padding-top: 56px;
     }
   }
 `;
@@ -44,7 +44,7 @@ const prominentCss = css<AppBarStatusTypes>`
   box-sizing: border-box;
 
   & + * {
-    padding-top: ${({ fixed }) => fixed && '128px'};
+    padding-top: 128px;
   }
 
   & ${AppBarTitle} {
@@ -72,8 +72,7 @@ const denseCss = css<AppBarStatusTypes>`
   }
 
   & + * {
-    padding-top: ${({ prominent, fixed }) =>
-      fixed && (prominent ? '96px' : '48px')};
+    padding-top: ${({ prominent }) => (prominent ? '96px' : '48px')};
   }
 `;
 
@@ -123,28 +122,21 @@ const shortCollapsedCss = css`
   }
 `;
 
-/**
- * fixed 为true 固定样式
- */
-const fixedCss = css`
-  position: fixed;
-  top: 0;
-`;
-
 const StyledAppBar = styled.div.attrs(() => ({
   className: 'sinoui-app-bar',
 }))<AppBarStatusTypes>`
   display: flex;
+  position: fixed;
+  top:0;
   width: 100%;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[4]};
   background-color: ${({ theme }) => theme.palette.primary.main};
   ${({ prominent }) => (prominent ? prominentCss : regularCss)}
   ${({ dense }) => dense && denseCss}
-  ${({ fixed }) => fixed && fixedCss}
   ${({ short }) => short && shortCss}
   ${({ shortCollapsed }) => shortCollapsed && shortCollapsedCss}
-  transition: width .25s cubic-bezier(.4,0,.2,1), height .25s cubic-bezier(.4,0,.2,1);
+  transition: top .25s cubic-bezier(.4,0,.2,1), width .25s cubic-bezier(.4,0,.2,1), height .25s cubic-bezier(.4,0,.2,1);
   &  ${AppBarTitle} {
     flex: 1;
     margin-left: 20px;
@@ -169,6 +161,7 @@ const StyledAppBar = styled.div.attrs(() => ({
     align-self: center;
     }
   }
+
 `;
 
 const AppBar = React.forwardRef<HTMLDivElement, AppBarProps>((props, ref) => {

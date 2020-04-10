@@ -2,8 +2,9 @@ export interface TopAppBarAdapter {
   setStyle(styleName: string, value: any): void;
   addClass(className: string): void;
   removeClass(className: string): void;
-  getTopAppBarHeight?: () => number;
-  getViewportScrollY?: () => number;
+  getTopAppBarHeight(): number;
+  // 获取当前滚动下状态下应该设置的滚动条 top值
+  getTopAppBarTopOffset(): number;
   getScrollTop(): number;
 }
 
@@ -30,6 +31,10 @@ export default function createDOMAdapter(
     },
     getTopAppBarHeight() {
       return appBar.clientHeight;
+    },
+    getTopAppBarTopOffset() {
+      // 10为appbar的阴影的高度
+      return appBar.clientHeight + 10;
     },
     getScrollTop() {
       return scrollTarget === window

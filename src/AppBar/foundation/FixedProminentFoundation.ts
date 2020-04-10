@@ -4,10 +4,6 @@ import TopAppBarFoundation from './TopAppBarFoundation';
  * 固定突出顶部应用栏 - 内容有滚动时，变成标准应用栏；内容滚动到顶部时，变成突出应用栏
  */
 export default class FixedProminentFoundation extends TopAppBarFoundation {
-  private lastScrollTop = 0;
-
-  private scrolllTop = 0;
-
   public handleScroll() {
     this.scrolllTop = this.adapter.getScrollTop();
 

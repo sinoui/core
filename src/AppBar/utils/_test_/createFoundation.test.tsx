@@ -3,6 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import createFoundation from '../createFoundation';
+import createDOMAdapter from '../createDOMAdapter';
 
 describe('不同模式应用栏滚动', () => {
   it('固定模式', () => {
@@ -95,5 +96,28 @@ describe('不同模式应用栏滚动', () => {
       fireEvent.scroll(window, { target: { pageYOffset: 80 } });
     });
     expect(appBar).not.toHaveClass('sinoui-top-app-bar--prominent-scrolled');
+  });
+
+  it('标准模式', () => {
+    const { container } = render(
+      <div style={{ height: '3300px' }}>
+        <div>AppBar</div>
+      </div>,
+    );
+    const appBar = container.firstChild as HTMLElement;
+    createFoundation({}, window, appBar);
+    const adapter = createDOMAdapter(window, appBar);
+    // 触发滚动事件之前 需要先监听滚动事件
+    window.addEventListener('scroll', () => {
+      /* some callback */
+    });
+    act(() => {
+      fireEvent.scroll(window, { target: { pageYOffset: 100 } });
+    });
+    expect(appBar).toHaveStyle(`top:-${adapter.getTopAppBarTopOffset()}px`);
+    act(() => {
+      fireEvent.scroll(window, { target: { pageYOffset: 80 } });
+    });
+    expect(appBar).toHaveStyle(`top:0px`);
   });
 });
