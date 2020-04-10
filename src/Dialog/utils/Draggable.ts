@@ -40,9 +40,12 @@ export default class Draggable {
       typeof this.dragConfig.container === 'string'
         ? (document.querySelector(this.dragConfig.container) as HTMLElement)
         : this.dragConfig.container;
-    this.handler$ = this.dragConfig.handler
-      ? (this.container$.querySelector(this.dragConfig.handler) as HTMLElement)
-      : this.container$;
+    this.handler$ =
+      this.dragConfig.handler && this.container$
+        ? (this.container$.querySelector(
+            this.dragConfig.handler,
+          ) as HTMLElement)
+        : this.container$;
     this.pos = { x: 0, y: 0 };
     this.delta = { x: 0, y: 0 };
 

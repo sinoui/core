@@ -1,0 +1,432 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog组件 快照测试 不显示遮罩层 1`] = `
+<div
+  className="ModalLayout-g5nr25-0 jNRojG Dialog__ModalWrapper-sc-10h8ou0-0 ieHqTo"
+  onClick={[Function]}
+>
+  <div
+    className="DialogWrapper-otdr06-0 cDqcGd sinoui-dialog--draggable"
+  >
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 bKkQU sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 bkFOVa sinoui-dialog-title"
+      color="textPrimary"
+      draggable={true}
+      type="h6"
+    >
+      Use Google location service?
+    </h6>
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 juBaHC sinoui-typography sinoui-typography--subtitle1 DialogContent-rvt14v-0 coPUFm sinoui-dialog-content children forwardedComponent theme"
+      color="textSecondary"
+      type="subtitle1"
+    >
+      Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
+    </h6>
+    <div
+      className="DialogActions__DialogActionsWrapper-ibc7so-0 kTvEtc sinoui-dialog-actions"
+    >
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Disagree
+      </button>
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Agree
+      </button>
+    </div>
+    <iframe
+      className="Iframe-fna49j-0 IJdcU"
+      frameBorder={0}
+      scrolling="false"
+    />
+  </div>
+</div>
+`;
+
+exports[`Dialog组件 快照测试 基本使用 1`] = `
+<div
+  className="ModalLayout-g5nr25-0 jNRojG Dialog__ModalWrapper-sc-10h8ou0-0 ieHqTo"
+  onClick={[Function]}
+>
+  <div
+    aria-hidden={true}
+    className="Backdrop__BackdropWrapper-sc-15mv4hm-0 dYcqsh sinoui-modal--backdrop"
+    data-sinoui-test="Backdrop"
+    onClick={[Function]}
+  />
+  <div
+    className="DialogWrapper-otdr06-0 cDqcGd sinoui-dialog--draggable"
+  >
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 bKkQU sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 bkFOVa sinoui-dialog-title"
+      color="textPrimary"
+      draggable={true}
+      type="h6"
+    >
+      Use Google location service?
+    </h6>
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 juBaHC sinoui-typography sinoui-typography--subtitle1 DialogContent-rvt14v-0 coPUFm sinoui-dialog-content children forwardedComponent theme"
+      color="textSecondary"
+      type="subtitle1"
+    >
+      Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
+    </h6>
+    <div
+      className="DialogActions__DialogActionsWrapper-ibc7so-0 kTvEtc sinoui-dialog-actions"
+    >
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Disagree
+      </button>
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Agree
+      </button>
+    </div>
+    <iframe
+      className="Iframe-fna49j-0 IJdcU"
+      frameBorder={0}
+      scrolling="false"
+    />
+  </div>
+</div>
+`;
+
+exports[`Dialog组件 快照测试 宽度自适应 1`] = `
+<div
+  className="ModalLayout-g5nr25-0 jNRojG Dialog__ModalWrapper-sc-10h8ou0-0 ieHqTo"
+  onClick={[Function]}
+>
+  <div
+    aria-hidden={true}
+    className="Backdrop__BackdropWrapper-sc-15mv4hm-0 dYcqsh sinoui-modal--backdrop"
+    data-sinoui-test="Backdrop"
+    onClick={[Function]}
+  />
+  <div
+    className="DialogWrapper-otdr06-0 itSnar sinoui-dialog--draggable"
+  >
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 bKkQU sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 bkFOVa sinoui-dialog-title"
+      color="textPrimary"
+      draggable={true}
+      type="h6"
+    >
+      Use Google location service?
+    </h6>
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 juBaHC sinoui-typography sinoui-typography--subtitle1 DialogContent-rvt14v-0 coPUFm sinoui-dialog-content children forwardedComponent theme"
+      color="textSecondary"
+      type="subtitle1"
+    >
+      Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
+    </h6>
+    <div
+      className="DialogActions__DialogActionsWrapper-ibc7so-0 kTvEtc sinoui-dialog-actions"
+    >
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Disagree
+      </button>
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Agree
+      </button>
+    </div>
+    <iframe
+      className="Iframe-fna49j-0 IJdcU"
+      frameBorder={0}
+      scrolling="false"
+    />
+  </div>
+</div>
+`;
+
+exports[`Dialog组件 快照测试 对话框将根据maxWidth的值进行自我调整 1`] = `
+<div
+  className="ModalLayout-g5nr25-0 jNRojG Dialog__ModalWrapper-sc-10h8ou0-0 ieHqTo"
+  onClick={[Function]}
+>
+  <div
+    aria-hidden={true}
+    className="Backdrop__BackdropWrapper-sc-15mv4hm-0 dYcqsh sinoui-modal--backdrop"
+    data-sinoui-test="Backdrop"
+    onClick={[Function]}
+  />
+  <div
+    className="DialogWrapper-otdr06-0 bNEukK sinoui-dialog--draggable"
+  >
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 bKkQU sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 bkFOVa sinoui-dialog-title"
+      color="textPrimary"
+      draggable={true}
+      type="h6"
+    >
+      Use Google location service?
+    </h6>
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 juBaHC sinoui-typography sinoui-typography--subtitle1 DialogContent-rvt14v-0 coPUFm sinoui-dialog-content children forwardedComponent theme"
+      color="textSecondary"
+      type="subtitle1"
+    >
+      Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
+    </h6>
+    <div
+      className="DialogActions__DialogActionsWrapper-ibc7so-0 kTvEtc sinoui-dialog-actions"
+    >
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Disagree
+      </button>
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Agree
+      </button>
+    </div>
+    <iframe
+      className="Iframe-fna49j-0 IJdcU"
+      frameBorder={0}
+      scrolling="false"
+    />
+  </div>
+</div>
+`;
+
+exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
+<div
+  className="ModalLayout-g5nr25-0 jNRojG Dialog__ModalWrapper-sc-10h8ou0-0 ieHqTo"
+  onClick={[Function]}
+>
+  <div
+    aria-hidden={true}
+    className="Backdrop__BackdropWrapper-sc-15mv4hm-0 dYcqsh sinoui-modal--backdrop"
+    data-sinoui-test="Backdrop"
+    onClick={[Function]}
+  />
+  <div
+    className="DialogWrapper-otdr06-0 cDqcGd sinoui-dialog--draggable"
+  >
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 bKkQU sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 ctkIjy sinoui-dialog-title"
+      color="textPrimary"
+      draggable={true}
+      type="h6"
+    >
+      Use Google location service?
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 sLtAY CloseIcon__IconButtonWrapper-tgx290-0 dUKtJz sinoui-dialog-title__icon sinoui-icon-button CloseIcon__IconButtonWrapper-tgx290-0 dUKtJz sinoui-dialog-title__icon"
+        color="textPrimary"
+        role="button"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          fill="currentColor"
+          focusable="false"
+          height={24}
+          role="presentation"
+          size={24}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+        </svg>
+      </button>
+    </h6>
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 juBaHC sinoui-typography sinoui-typography--subtitle1 DialogContent-rvt14v-0 coPUFm sinoui-dialog-content children forwardedComponent theme"
+      color="textSecondary"
+      type="subtitle1"
+    >
+      Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
+    </h6>
+    <div
+      className="DialogActions__DialogActionsWrapper-ibc7so-0 kTvEtc sinoui-dialog-actions"
+    >
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Disagree
+      </button>
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Agree
+      </button>
+    </div>
+    <iframe
+      className="Iframe-fna49j-0 IJdcU"
+      frameBorder={0}
+      scrolling="false"
+    />
+  </div>
+</div>
+`;
+
+exports[`Dialog组件 快照测试 设置全屏显示 1`] = `
+<div
+  className="ModalLayout-g5nr25-0 jNRojG Dialog__ModalWrapper-sc-10h8ou0-0 ieHqTo"
+  onClick={[Function]}
+>
+  <div
+    aria-hidden={true}
+    className="Backdrop__BackdropWrapper-sc-15mv4hm-0 dYcqsh sinoui-modal--backdrop"
+    data-sinoui-test="Backdrop"
+    onClick={[Function]}
+  />
+  <div
+    className="DialogWrapper-otdr06-0 cIHicm sinoui-dialog--draggable"
+  >
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 bKkQU sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 bkFOVa sinoui-dialog-title"
+      color="textPrimary"
+      draggable={true}
+      type="h6"
+    >
+      Use Google location service?
+    </h6>
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 juBaHC sinoui-typography sinoui-typography--subtitle1 DialogContent-rvt14v-0 coPUFm sinoui-dialog-content children forwardedComponent theme"
+      color="textSecondary"
+      type="subtitle1"
+    >
+      Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
+    </h6>
+    <div
+      className="DialogActions__DialogActionsWrapper-ibc7so-0 kTvEtc sinoui-dialog-actions"
+    >
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Disagree
+      </button>
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Agree
+      </button>
+    </div>
+    <iframe
+      className="Iframe-fna49j-0 IJdcU"
+      frameBorder={0}
+      scrolling="false"
+    />
+  </div>
+</div>
+`;
+
+exports[`Dialog组件 快照测试 设置弹窗不可以拖拽 1`] = `
+<div
+  className="ModalLayout-g5nr25-0 jNRojG Dialog__ModalWrapper-sc-10h8ou0-0 ieHqTo"
+  draggable={false}
+  onClick={[Function]}
+>
+  <div
+    aria-hidden={true}
+    className="Backdrop__BackdropWrapper-sc-15mv4hm-0 dYcqsh sinoui-modal--backdrop"
+    data-sinoui-test="Backdrop"
+    onClick={[Function]}
+  />
+  <div
+    className="DialogWrapper-otdr06-0 cDqcGd"
+  >
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 bKkQU sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 pDzwY sinoui-dialog-title"
+      color="textPrimary"
+      draggable={false}
+      type="h6"
+    >
+      Use Google location service?
+    </h6>
+    <h6
+      className="Typography__TypographyWrapper-sc-12agh80-0 juBaHC sinoui-typography sinoui-typography--subtitle1 DialogContent-rvt14v-0 coPUFm sinoui-dialog-content children forwardedComponent theme"
+      color="textSecondary"
+      type="subtitle1"
+    >
+      Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
+    </h6>
+    <div
+      className="DialogActions__DialogActionsWrapper-ibc7so-0 kTvEtc sinoui-dialog-actions"
+    >
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Disagree
+      </button>
+      <button
+        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        Agree
+      </button>
+    </div>
+    <iframe
+      className="Iframe-fna49j-0 IJdcU"
+      frameBorder={0}
+      scrolling="false"
+    />
+  </div>
+</div>
+`;
