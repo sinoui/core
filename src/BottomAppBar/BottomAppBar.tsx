@@ -125,6 +125,9 @@ const InsetBottomAppBarLayer = styled.div`
   }
 `;
 
+/**
+ * 底部应用栏
+ */
 const BottomAppBar = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { navigationIcon, actionItems, fab, insertFab, style } = props;
   return !insertFab ? (
