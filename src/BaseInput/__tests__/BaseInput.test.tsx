@@ -258,3 +258,14 @@ it('后缀装饰器', () => {
 
   expect(tree).toMatchSnapshot();
 });
+
+it('设置id和name', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <BaseInput id="userName" name="firstName" />
+    </ThemeProvider>,
+  );
+  const input = container.querySelector('input');
+  expect(input).toHaveAttribute('id', 'userName');
+  expect(input).toHaveAttribute('name', 'firstName');
+});

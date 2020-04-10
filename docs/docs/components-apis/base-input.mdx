@@ -24,7 +24,7 @@ title: BaseInput
 | style          | React.CSSProperties                                 |         | 自定义样式                 |
 | onBlur         | (event)=>void                                       |         | 失去焦点时的回调函数       |
 | onFocus        | (event)=>void                                       |         | 获得焦点时的回调函数       |
-| onChange       | (event,value?:any)=>void                            |         | 值改变时的回调函数         |
+| onChange       | (event)=>void                                       |         | 值改变时的回调函数         |
 | onClick        | `(event: React.MouseEvent<HTMLDivElement>) => void` |         | 点击时的回调函数           |
 | startAdornment | React.ReactNode                                     |         | 前缀元素                   |
 | endAdornment   | React.ReactNode                                     |         | 后缀元素                   |
@@ -33,6 +33,8 @@ title: BaseInput
 | fullWidth      | boolean                                             | false   | 是否为全宽模式             |
 | align          | 'start' \| 'end'                                    | 'start' | 输入框文本对齐方式         |
 | ref            | `React.Ref<HTMLDivElement>`                         |         | 引用根元素                 |
+| id             | string                                              |         | 指定输入框的 id            |
+| name           | string                                              |         | 指定输入框的 name          |
 
 ## 入门示例
 

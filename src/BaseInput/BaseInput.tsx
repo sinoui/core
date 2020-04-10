@@ -127,6 +127,14 @@ export interface BaseInputProps<
    * 引用根元素
    */
   ref?: React.Ref<HTMLDivElement>;
+  /**
+   * 设置输入框元素的id
+   */
+  id?: string;
+  /**
+   * 设置输入框的name
+   */
+  name?: string;
 }
 
 export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
@@ -173,6 +181,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     children,
     placeholder,
     align,
+    id,
+    name,
     ...other
   } = props;
 
@@ -233,6 +243,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   const inputprops: Record<string, any> = {
     ...inputPropsProp,
+    id,
+    name,
     type,
     autoFocus,
     autoComplete,
