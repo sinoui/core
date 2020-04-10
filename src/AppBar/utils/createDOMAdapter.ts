@@ -1,10 +1,41 @@
 export interface TopAppBarAdapter {
+  /**
+   * 设置样式值
+   *
+   * @param {string} styleName 样式名称
+   * @param {*} value 样式值
+   */
   setStyle(styleName: string, value: any): void;
+  /**
+   * 获取样式值
+   *
+   * @param {string} styleName 样式名称
+   */
+  getStyleValue(styleName: string): number;
+  /**
+   *添加className
+   *
+   * @param {string} className
+   */
   addClass(className: string): void;
+  /**
+   *获取className
+   *
+   * @param {string} className
+   */
   removeClass(className: string): void;
+  /**
+   *获取应用栏高度
+   */
   getTopAppBarHeight(): number;
-  // 获取当前滚动下状态下应该设置的滚动条 top值
+  /**
+   * 获取应用栏top值 = 应用栏 高度 + 阴影大小
+   */
   getTopAppBarTopOffset(): number;
+  /**
+   * 获取滚动元素的滚动条据页面顶端的距离
+   *
+   */
   getScrollTop(): number;
 }
 
@@ -23,6 +54,9 @@ export default function createDOMAdapter(
       // eslint-disable-next-line no-param-reassign
       appBar.style[styleName] = value;
     },
+    getStyleValue(styleName: any) {
+      return appBar.style[styleName];
+    },
     addClass(className: string) {
       appBar.classList.add(className);
     },
@@ -33,8 +67,10 @@ export default function createDOMAdapter(
       return appBar.clientHeight;
     },
     getTopAppBarTopOffset() {
-      // 10为appbar的阴影的高度
-      return appBar.clientHeight + 10;
+      // appbar的阴影的垂直高度为4px
+      const boxShadow = 4;
+      // 为了让应用栏不显示 需要将值设置为默认阴影的2倍。
+      return this.getTopAppBarHeight() + boxShadow * 2;
     },
     getScrollTop() {
       return scrollTarget === window

@@ -4,6 +4,7 @@ import {
   FixedFoundation,
   ShortFoundation,
   FixedProminentFoundation,
+  ShortCollapsedFoundation,
 } from '../foundation';
 import { AppBarStatusTypes } from '../types';
 
@@ -20,6 +21,7 @@ export default function createFoundation(
 ) {
   const { fixed, short, prominent, shortCollapsed } = appBarProps;
   const adapter = createDOMAdapter(scrollTarget, appBar);
+
   if (fixed && !short && !prominent) {
     return new FixedFoundation(adapter, scrollTarget);
   }
@@ -27,7 +29,11 @@ export default function createFoundation(
     return new ShortFoundation(adapter, scrollTarget);
   }
 
-  if (prominent) {
+  if (shortCollapsed) {
+    return new ShortCollapsedFoundation(adapter, scrollTarget);
+  }
+
+  if (prominent && fixed) {
     return new FixedProminentFoundation(adapter, scrollTarget);
   }
 

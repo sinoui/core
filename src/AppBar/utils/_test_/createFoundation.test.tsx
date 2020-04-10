@@ -5,14 +5,22 @@ import { act } from 'react-dom/test-utils';
 import createFoundation from '../createFoundation';
 import createDOMAdapter from '../createDOMAdapter';
 
+/**
+ * 获取应用栏
+ * @param container
+ */
+const getAppBarDom = (container: any) => {
+  return container.querySelector('#appBar') as HTMLElement;
+};
+
 describe('不同模式应用栏滚动', () => {
   it('固定模式', () => {
     const { container } = render(
       <div style={{ height: '3300px' }}>
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
+    const appBar = getAppBarDom(container);
     createFoundation({ fixed: true }, window, appBar);
 
     // 触发滚动事件之前 需要先监听滚动事件
@@ -32,10 +40,10 @@ describe('不同模式应用栏滚动', () => {
   it('可收缩模式', () => {
     const { container } = render(
       <div style={{ height: '3300px' }}>
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
+    const appBar = getAppBarDom(container);
     createFoundation({ short: true }, window, appBar);
 
     // 触发滚动事件之前 需要先监听滚动事件
@@ -47,7 +55,7 @@ describe('不同模式应用栏滚动', () => {
     });
     expect(appBar).toHaveClass('sinoui-top-app-bar--short-scrolled');
     act(() => {
-      fireEvent.scroll(window, { target: { pageYOffset: 80 } });
+      fireEvent.scroll(window, { target: { pageYOffset: 0 } });
     });
     expect(appBar).not.toHaveClass('sinoui-top-app-bar--short-scrolled');
   });
@@ -55,10 +63,10 @@ describe('不同模式应用栏滚动', () => {
   it('固定突出模式', () => {
     const { container } = render(
       <div style={{ height: '3300px' }}>
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
+    const appBar = getAppBarDom(container);
     createFoundation({ fixed: true, prominent: true }, window, appBar);
 
     // 触发滚动事件之前 需要先监听滚动事件
@@ -70,7 +78,7 @@ describe('不同模式应用栏滚动', () => {
     });
     expect(appBar).toHaveClass('sinoui-top-app-bar--prominent-scrolled');
     act(() => {
-      fireEvent.scroll(window, { target: { pageYOffset: 80 } });
+      fireEvent.scroll(window, { target: { pageYOffset: 0 } });
     });
     expect(appBar).not.toHaveClass('sinoui-top-app-bar--prominent-scrolled');
   });
@@ -78,11 +86,11 @@ describe('不同模式应用栏滚动', () => {
   it('一直收缩模式', () => {
     const { container } = render(
       <div style={{ height: '3300px' }}>
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
-    createFoundation({ short: true }, window, appBar);
+    const appBar = getAppBarDom(container);
+    createFoundation({ shortCollapsed: true }, window, appBar);
 
     // 触发滚动事件之前 需要先监听滚动事件
     window.addEventListener('scroll', () => {
@@ -91,21 +99,45 @@ describe('不同模式应用栏滚动', () => {
     act(() => {
       fireEvent.scroll(window, { target: { pageYOffset: 100 } });
     });
-    expect(appBar).not.toHaveClass('sinoui-top-app-bar--prominent-scrolled');
+    console.log(appBar.outerHTML);
+    expect(appBar).toHaveStyle('top:0px');
     act(() => {
-      fireEvent.scroll(window, { target: { pageYOffset: 80 } });
+      fireEvent.scroll(window, { target: { pageYOffset: 0 } });
     });
-    expect(appBar).not.toHaveClass('sinoui-top-app-bar--prominent-scrolled');
+    expect(appBar).toHaveStyle('top:0px');
   });
 
   it('标准模式', () => {
     const { container } = render(
       <div style={{ height: '3300px' }}>
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
+    const appBar = getAppBarDom(container);
     createFoundation({}, window, appBar);
+    const adapter = createDOMAdapter(window, appBar);
+    // 触发滚动事件之前 需要先监听滚动事件
+    window.addEventListener('scroll', () => {
+      /* some callback */
+    });
+    act(() => {
+      fireEvent.scroll(window, { target: { pageYOffset: 100 } });
+    });
+    expect(appBar).toHaveStyle(`top:-${adapter.getTopAppBarTopOffset()}px`);
+    act(() => {
+      fireEvent.scroll(window, { target: { pageYOffset: 80 } });
+    });
+    expect(appBar).toHaveStyle(`top:0px`);
+  });
+
+  it('突出紧凑模式', () => {
+    const { container } = render(
+      <div style={{ height: '3300px' }}>
+        <div id="appBar">AppBar</div>
+      </div>,
+    );
+    const appBar = getAppBarDom(container);
+    createFoundation({ prominent: true, dense: true }, window, appBar);
     const adapter = createDOMAdapter(window, appBar);
     // 触发滚动事件之前 需要先监听滚动事件
     window.addEventListener('scroll', () => {

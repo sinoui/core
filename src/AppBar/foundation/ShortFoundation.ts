@@ -5,14 +5,12 @@ import TopAppBarFoundation from './TopAppBarFoundation';
  */
 export default class ShortFoundation extends TopAppBarFoundation {
   public handleScroll() {
-    this.scrolllTop = this.adapter.getScrollTop();
-
-    if (this.scrolllTop > this.lastScrollTop) {
-      this.adapter.addClass('sinoui-top-app-bar--short-scrolled');
-    } else if (this.scrolllTop < this.lastScrollTop) {
+    if (this.adapter.getScrollTop() === 0 && this.isScrolled) {
+      this.isScrolled = false;
       this.adapter.removeClass('sinoui-top-app-bar--short-scrolled');
+    } else if (this.adapter.getScrollTop() > 0 && !this.isScrolled) {
+      this.isScrolled = true;
+      this.adapter.addClass('sinoui-top-app-bar--short-scrolled');
     }
-
-    this.lastScrollTop = this.scrolllTop <= 0 ? 0 : this.scrolllTop;
   }
 }

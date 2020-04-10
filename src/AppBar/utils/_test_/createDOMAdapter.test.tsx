@@ -4,14 +4,22 @@ import { render, fireEvent } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import createDOMAdapter from '../createDOMAdapter';
 
+/**
+ * 获取应用栏
+ * @param container
+ */
+const getAppBarDom = (container: any) => {
+  return container.querySelector('#appBar') as HTMLElement;
+};
+
 describe('验证createDOMAdapter中的方法', () => {
   it('addClass', () => {
     const { container } = render(
       <div style={{ height: '3300px' }}>
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
+    const appBar = getAppBarDom(container);
     const adapter = createDOMAdapter(window, appBar);
     adapter.addClass('test');
     expect(appBar).toHaveClass('test');
@@ -20,10 +28,10 @@ describe('验证createDOMAdapter中的方法', () => {
   it('removeClass', () => {
     const { container } = render(
       <div style={{ height: '3300px' }} className="test">
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
+    const appBar = getAppBarDom(container);
     const adapter = createDOMAdapter(window, appBar);
     adapter.removeClass('test');
     expect(appBar).not.toHaveClass('test');
@@ -32,22 +40,36 @@ describe('验证createDOMAdapter中的方法', () => {
   it('setStyle', () => {
     const { container } = render(
       <div style={{ height: '3300px' }}>
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
+    const appBar = getAppBarDom(container);
     const adapter = createDOMAdapter(window, appBar);
     adapter.setStyle('marginTop', '10px');
     expect(appBar).toHaveStyle('margin-top:10px');
   });
 
+  it('getStyleValue', () => {
+    const { container } = render(
+      <div style={{ height: '3300px' }}>
+        <div id="appBar" style={{ height: '64px', top: '0px' }}>
+          AppBar
+        </div>
+      </div>,
+    );
+    const appBar = getAppBarDom(container);
+    const adapter = createDOMAdapter(window, appBar);
+    expect(adapter.getStyleValue('top')).toEqual('0px');
+    expect(adapter.getStyleValue('height')).toEqual('64px');
+  });
+
   it('window getScrollTop', () => {
     const { container } = render(
       <div style={{ height: '3300px' }}>
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
+    const appBar = getAppBarDom(container);
     const adapter = createDOMAdapter(window, appBar);
     expect(adapter.getScrollTop()).toBe(0);
     window.addEventListener('scroll', () => {
@@ -63,11 +85,11 @@ describe('验证createDOMAdapter中的方法', () => {
   it('div getScrollTop', () => {
     const { container } = render(
       <div style={{ height: '1000px;overflow:auto' }}>
-        <div>AppBar</div>
+        <div id="appBar">AppBar</div>
         <div style={{ height: '3300px' }} />
       </div>,
     );
-    const appBar = container.firstChild as HTMLElement;
+    const appBar = getAppBarDom(container);
     const adapter = createDOMAdapter(container, appBar);
     expect(adapter.getScrollTop()).toBe(0);
     container.addEventListener('scroll', () => {

@@ -37,6 +37,8 @@ import {
 
 ### 标准模式
 
+标准模式下的应用栏，页面内容向下滚动应用栏消失，内容向上滚动应用栏出现。
+
 Demo.tsx:
 
 ```tsx
@@ -99,7 +101,15 @@ export default function Demo(props: {
 
 运行效果：
 
-<CardStoryLayout style={{ flexDirection: 'column', width: '500px' }}>
+<CardStoryLayout
+  style={{
+    flexDirection: 'column',
+    width: '500px',
+    transform: 'scale(1)',
+    overflow: 'hidden',
+    padding: 0,
+  }}
+>
   <BaseAppBarDemo />
 </CardStoryLayout>
 
@@ -114,6 +124,8 @@ export default function Demo(props: {
 
 突出的顶部应用栏可用于较长的标题展示，可以容纳图像，或作为一个更强大的顶部应用栏。
 
+突出模式下的应用栏，页面内容向下滚动应用栏消失，内容向上滚动应用栏出现。
+
 示例：
 
 ```tsx
@@ -122,12 +134,21 @@ export default function Demo(props: {
 
 运行效果：
 
-<CardStoryLayout style={{ flexDirection: 'column', width: '500px' }}>
+<CardStoryLayout
+  style={{
+    flexDirection: 'column',
+    width: '500px',
+    transform: 'scale(1)',
+    overflow: 'hidden',
+    padding: 0,
+  }}
+>
   <BaseAppBarDemo prominent />
 </CardStoryLayout>
 
-**注意事项：突出模式的顶部应用栏在容纳图像时不用使用容易使应用栏图标和文字变得难以辨认的图片。**
+注意事项：突出模式的顶部应用栏在容纳图像时不应使用容易使应用栏图标和文字变得难以辨认的图片。
 
+推荐：
 ![image](../../static/img/appBar1.png)
 不推荐:
 ![image](../../static/img/appBar2.png)
@@ -135,6 +156,8 @@ export default function Demo(props: {
 ### 密集模式(dense)
 
 需要以更小的高度展示应用栏时，可以使用密集。
+
+密集模式下的应用栏，页面内容向下滚动应用栏消失，内容向上滚动应用栏出现。
 
 示例：
 
@@ -144,7 +167,15 @@ export default function Demo(props: {
 
 运行效果：
 
-<CardStoryLayout style={{ flexDirection: 'column', width: '500px' }}>
+<CardStoryLayout
+  style={{
+    flexDirection: 'column',
+    width: '500px',
+    transform: 'scale(1)',
+    overflow: 'hidden',
+    padding: 0,
+  }}
+>
   <BaseAppBarDemo dense />
 </CardStoryLayout>
 
@@ -160,13 +191,23 @@ export default function Demo(props: {
 
 运行效果：
 
-<CardStoryLayout style={{ flexDirection: 'column', width: '500px' }}>
-  <BaseAppBarDemo short style={{ position: 'relative' }} />
+<CardStoryLayout
+  style={{
+    flexDirection: 'column',
+    width: '500px',
+    transform: 'scale(1)',
+    overflow: 'hidden',
+    padding: 0,
+  }}
+>
+  <BaseAppBarDemo short />
 </CardStoryLayout>
 
 ### 收缩模式(shortCollapsed)
 
 当需要以更小的空间展示顶部应用栏时，可以使用收缩模式的应用栏。收缩模式下的应用栏只展示左侧的导航图标和可操作区域最后一个元素。
+
+收缩模式下的应用栏一直固定显示在左上角。
 
 示例：
 
@@ -176,8 +217,16 @@ export default function Demo(props: {
 
 运行效果：
 
-<CardStoryLayout style={{ flexDirection: 'column', width: '500px' }}>
-  <BaseAppBarDemo shortCollapsed style={{ position: 'relative' }} />
+<CardStoryLayout
+  style={{
+    flexDirection: 'column',
+    width: '500px',
+    transform: 'scale(1)',
+    overflow: 'hidden',
+    padding: 0,
+  }}
+>
+  <BaseAppBarDemo shortCollapsed />
 </CardStoryLayout>
 
 ### 固定模式(fixed)
@@ -192,8 +241,40 @@ export default function Demo(props: {
 
 运行效果：
 
-<CardStoryLayout style={{ flexDirection: 'column', width: '500px' }}>
-  <BaseAppBarDemo fixed style={{ position: 'relative' }} />
+<CardStoryLayout
+  style={{
+    flexDirection: 'column',
+    width: '500px',
+    transform: 'scale(1)',
+    overflow: 'hidden',
+    padding: 0,
+  }}
+>
+  <BaseAppBarDemo fixed />
+</CardStoryLayout>
+
+### 固定突出模式(fixed + prominent)
+
+固定突出模式下的应用栏，页面内容发生滚动时变成标准应用栏，内容滚动到顶部时变成突出应用栏。
+
+示例：
+
+```tsx
+<BaseAppBarDemo fixed prominent />
+```
+
+运行效果：
+
+<CardStoryLayout
+  style={{
+    flexDirection: 'column',
+    width: '500px',
+    transform: 'scale(1)',
+    overflow: 'hidden',
+    padding: 0,
+  }}
+>
+  <BaseAppBarDemo fixed prominent />
 </CardStoryLayout>
 
 ## 含有输入框的应用栏示例

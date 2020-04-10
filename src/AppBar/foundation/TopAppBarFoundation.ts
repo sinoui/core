@@ -1,6 +1,17 @@
 import { TopAppBarAdapter } from '../utils/createDOMAdapter';
 
+/**
+ *
+ * 应用栏滚动基类
+ * 内容滚动默认响应方式： 向下滚动应用栏消失 向上滚动应用栏显示
+ */
 export default class TopAppBarFoundation {
+  /**
+   *
+   * 页面是否处于滚动
+   */
+  public isScrolled = false;
+
   /**
    * 顶部应用栏dom交互包装器
    */
@@ -39,6 +50,7 @@ export default class TopAppBarFoundation {
     this.scrolllTop = this.adapter.getScrollTop();
 
     if (this.scrolllTop > this.lastScrollTop) {
+      // 向下滚动时 通过设置应用栏 top = -(应用栏高度+应用栏阴影大小) 让应用栏隐藏
       const top = this.adapter.getTopAppBarTopOffset();
       this.adapter.setStyle('top', `-${top}px`);
     } else if (this.scrolllTop < this.lastScrollTop) {
