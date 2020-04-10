@@ -7,28 +7,32 @@
 
 module.exports = {
   docs: {
-    组件: [{
-      type: 'category',
-      label: '通用',
-      items: [
-        'components/button',
-        'components/divider',
-        'components/typography',
-        'components/card',
-        'components/svg-icon',
-        'components/grid',
-        'components/fab',
-        'components/switch',
-        'components/avatar',
-        'components/list',
-        'components/checkbox',
-        'components/checkboxGroup',
-        'components/radioGroup',
-        'components/progress',
-        'components/snackbar',
-        'components/badge',
-      ],
-    }, ],
+    组件: [
+      {
+        type: 'category',
+        label: '通用',
+        items: [
+          'components/button',
+          'components/divider',
+          'components/typography',
+          'components/card',
+          'components/svg-icon',
+          'components/grid',
+          'components/fab',
+          'components/switch',
+          'components/avatar',
+          'components/list',
+          'components/checkbox',
+          'components/checkboxGroup',
+          'components/radioGroup',
+          'components/progress',
+          'components/snackbar',
+          'components/badge',
+          'components/app-bar',
+          'components/bottom-app-bar',
+        ],
+      },
+    ],
     组件API: [
       'components-apis/base-button',
       'components-apis/button',
@@ -48,6 +52,8 @@ module.exports = {
       'components-apis/progress',
       'components-apis/snackbar',
       'components-apis/badge',
+      'components-apis/app-bar',
+      'components-apis/bottom-app-bar',
     ],
   },
 };
