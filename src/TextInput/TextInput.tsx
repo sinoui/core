@@ -39,6 +39,14 @@ export interface TextInputProps extends BaseInputProps {
    * 如果设置为`true`，则输入框的标签一直处于收缩悬浮状态。默认为`false`。
    */
   shrink?: boolean;
+  /**
+   * 给根元素指定css样式
+   */
+  style?: React.CSSProperties;
+  /**
+   * 给根元素指定属性
+   */
+  wrapperProps?: Record<string, any>;
 }
 
 const variantComponent = {
@@ -69,10 +77,12 @@ export default function TextInput(props: TextInputProps) {
     error,
     placeholder,
     className,
+    style,
     helperText,
     readOnly,
     dense,
     startAdornment,
+    wrapperProps,
     ...other
   } = props;
   const labelRef = useRef<HTMLLabelElement>(null);
@@ -123,6 +133,7 @@ export default function TextInput(props: TextInputProps) {
 
   return (
     <TextInputWrapper
+      {...wrapperProps}
       className={classNames(
         className,
         bemClassNames(baseClassName, {
@@ -135,6 +146,7 @@ export default function TextInput(props: TextInputProps) {
       onFocus={handleFocus}
       onBlur={handleBlur}
       disabled={disabled}
+      style={style}
     >
       {label && (
         <InputLabel

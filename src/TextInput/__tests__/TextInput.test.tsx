@@ -6,16 +6,16 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 import InputAdornment from '@sinoui/core/InputAdornment';
-import TextInputField from '../TextInput';
+import TextInput from '../TextInput';
 
 it('正确渲染三种模式下的输入框', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
         <div>
-          <TextInputField label="用户名" />
-          <TextInputField label="用户名" variant="filled" />
-          <TextInputField label="用户名" variant="outlined" shrink />
+          <TextInput label="用户名" />
+          <TextInput label="用户名" variant="filled" />
+          <TextInput label="用户名" variant="outlined" shrink />
         </div>
       </ThemeProvider>,
     )
@@ -29,12 +29,8 @@ it('渲染有辅助性文字的输入框', () => {
     .create(
       <ThemeProvider theme={defaultTheme}>
         <div>
-          <TextInputField label="用户名" helperText="输入用户名" />
-          <TextInputField
-            label="用户名"
-            variant="filled"
-            helperText="输入用户名"
-          />
+          <TextInput label="用户名" helperText="输入用户名" />
+          <TextInput label="用户名" variant="filled" helperText="输入用户名" />
         </div>
       </ThemeProvider>,
     )
@@ -48,13 +44,8 @@ it('渲染有错误提示的输入框', () => {
     .create(
       <ThemeProvider theme={defaultTheme}>
         <div>
-          <TextInputField label="用户名" required error="必填" />
-          <TextInputField
-            label="用户名"
-            variant="filled"
-            required
-            error="必填"
-          />
+          <TextInput label="用户名" required error="必填" />
+          <TextInput label="用户名" variant="filled" required error="必填" />
         </div>
       </ThemeProvider>,
     )
@@ -68,8 +59,8 @@ it('渲染不可用状态下三种形态输入框', () => {
     .create(
       <ThemeProvider theme={defaultTheme}>
         <div>
-          <TextInputField label="用户名" helperText="输入用户名" disabled />
-          <TextInputField
+          <TextInput label="用户名" helperText="输入用户名" disabled />
+          <TextInput
             label="用户名"
             variant="filled"
             helperText="输入用户名"
@@ -88,20 +79,20 @@ it('渲染带前缀元素的装饰器', () => {
     .create(
       <ThemeProvider theme={defaultTheme}>
         <div>
-          <TextInputField
+          <TextInput
             label="金额"
             startAdornment={
               <InputAdornment position="start">￥</InputAdornment>
             }
           />
-          <TextInputField
+          <TextInput
             variant="filled"
             label="金额"
             startAdornment={
               <InputAdornment position="start">￥</InputAdornment>
             }
           />
-          <TextInputField
+          <TextInput
             variant="outlined"
             label="金额"
             startAdornment={
@@ -121,16 +112,16 @@ it('渲染带后缀元素的输入框', () => {
     .create(
       <ThemeProvider theme={defaultTheme}>
         <div>
-          <TextInputField
+          <TextInput
             label="重量"
             endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
           />
-          <TextInputField
+          <TextInput
             variant="filled"
             label="重量"
             endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
           />
-          <TextInputField
+          <TextInput
             variant="outlined"
             label="重量"
             endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
@@ -150,14 +141,14 @@ it('获取焦点时，onFocus被调用', () => {
   const { getByPlaceholderText } = render(
     <ThemeProvider theme={defaultTheme}>
       <div>
-        <TextInputField
+        <TextInput
           label="用户名"
           placeholder="填充输入框"
           variant="filled"
           onFocus={onFocus}
           inputProps={{ onFocus: onFocusInInputProps }}
         />
-        <TextInputField
+        <TextInput
           label="用户名"
           placeholder="边框输入框"
           variant="outlined"
@@ -184,7 +175,7 @@ it('失去焦点时，onBlur被调用', () => {
 
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <TextInputField
+      <TextInput
         label="用户名"
         onBlur={onBlur}
         inputProps={{ onBlur: onBlurInInputProps }}
@@ -203,7 +194,7 @@ it('失去焦点时，onBlur被调用', () => {
 it('框模式的输入框输入值时，outlineInput的notched状态为true', () => {
   const { container, rerender } = render(
     <ThemeProvider theme={defaultTheme}>
-      <TextInputField variant="outlined" />
+      <TextInput variant="outlined" value="" />
     </ThemeProvider>,
   );
 
@@ -215,8 +206,24 @@ it('框模式的输入框输入值时，outlineInput的notched状态为true', ()
 
   rerender(
     <ThemeProvider theme={defaultTheme}>
-      <TextInputField value="123" variant="outlined" />
+      <TextInput value="123" variant="outlined" />
     </ThemeProvider>,
   );
   expect(notchedOutline).toHaveClass('sinoui-notched-outline--notched');
+});
+
+it('style属性', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput
+        style={{ margin: 8 }}
+        variant="outlined"
+        wrapperProps={{
+          'data-testid': 'root',
+        }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('root')).toHaveStyle('margin: 8px');
 });
