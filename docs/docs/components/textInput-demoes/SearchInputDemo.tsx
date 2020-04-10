@@ -25,15 +25,15 @@ const DenseIconButton = styled(IconButton)`
   height: 24px;
 
   > .sinoui-icon-button__ripple-layout {
-    left: 0px;
-    top: 0px;
-    width: 24px;
-    height: 24px;
+    left: -4px;
+    top: -4px;
+    width: 32px;
+    height: 32px;
   }
 
   > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
   }
 `;
 
