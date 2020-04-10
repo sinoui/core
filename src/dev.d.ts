@@ -6,3 +6,13 @@ declare module 'styled-components' {
     __version?: string;
   }
 }
+
+declare module 'react' {
+  interface FunctionComponent<P = {}> {
+    sinouiName?: string;
+  }
+
+  interface NamedExoticComponent {
+    sinouiName?: string;
+  }
+}
