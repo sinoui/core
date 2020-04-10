@@ -10,34 +10,30 @@ const TextInputField = styled(TextInput)`
   width: 200px;
   margin: 8px;
 
-  > .sinoui-outlined-input > fieldset {
-    border-radius: 48px;
+  .sinoui-notched-outline__leading {
+    width: 40px;
+    border-radius: 48px 0 0 48px;
   }
 
-  & .sinoui-input-adornment {
-    margin-right: 0px;
-  }
-
-  & input {
-    margin-left: -8px;
+  .sinoui-notched-outline__trailing {
+    border-radius: 0 48px 48px 0;
   }
 `;
 
 const DenseIconButton = styled(IconButton)`
-  width: 32px;
-  height: 32px;
-  margin-left: 8px;
+  width: 24px;
+  height: 24px;
 
   > .sinoui-icon-button__ripple-layout {
     left: 0px;
     top: 0px;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
   }
 
   > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
   }
 `;
 
@@ -55,6 +51,7 @@ function SearchInputDemo() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <TextInputField
+        dense
         variant="outlined"
         placeholder="请输出查询内容"
         value={value}
