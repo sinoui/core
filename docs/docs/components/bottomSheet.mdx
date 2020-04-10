@@ -7,7 +7,6 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import BottomSheet from '@sinoui/core/BottomSheet';
 import BottomSheetDemo from './bottomSheet-demos/BottomSheetDemo';
-import BottomSheetBasicColorDemo from './bottomSheet-demos/BottomSheetBasicColorDemo';
 
 ## 基本使用
 
@@ -130,84 +129,6 @@ function BottomSheetDemo() {
 效果如下：
 
 <BottomSheetDemo listScroll />
-
-## 指定背景颜色
-
-指定背景颜色为 success：
-
-```tsx
-import BottomSheet from '@sinoui/core/BottomSheet';
-
-const BottomSheetColor = styled(BottomSheet)<{ color?: string }>`
-  > ul li {
-    background-color: ${({ theme, color }) => getColorFromTheme(theme, color)};
-    color: #fff;
-  }
-  > ul li svg {
-    color: #fff;
-  }
-`;
-
-const listData = [
-  { icon: MdShare, text: 'Share' },
-  { icon: MdInsertLink, text: 'Get link' },
-  { icon: MdShare, text: 'Share' },
-  { icon: MdModeEdit, text: 'Edit name' },
-  { icon: MdDelete, text: 'Delete collection' },
-];
-
-const listScrollData = listData.concat(listData, listData);
-
-const Content = (props: any) => {
-  return (
-    <List>
-      {listScrollData.map((item: any, index) => (
-        <React.Fragment key={index.toString()}>
-          <ListItem onClick={props.onClick}>
-            <ListItemPrimaryAction>
-              <SvgIcon as={item.icon} color="textSecondary" />
-            </ListItemPrimaryAction>
-            <ListItemText>{item.text}</ListItemText>
-          </ListItem>
-        </React.Fragment>
-      ))}
-    </List>
-  );
-};
-
-function BottomSheetDemo() {
-  const [open, setOpen] = useState(false);
-
-  const onClick = () => {
-    setOpen(!open);
-  };
-
-  const onBackdropClick = () => {
-    setOpen(false);
-  };
-
-  const onItemClick = () => {
-    setOpen(false);
-  };
-
-  return (
-    <>
-      <Button onClick={onClick}>CLICK</Button>
-      <BottomSheetColor
-        open={open}
-        onBackdropClick={onBackdropClick}
-        color="success"
-      >
-        <Content onClick={onItemClick} />
-      </BottomSheetColor>
-    </>
-  );
-}
-```
-
-效果如下：
-
-<BottomSheetBasicColorDemo />
 
 ## API
 

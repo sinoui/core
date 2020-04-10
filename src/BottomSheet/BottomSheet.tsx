@@ -3,17 +3,15 @@ import styled, { createGlobalStyle } from 'styled-components';
 import classNames from 'classnames';
 import Modal from '@sinoui/core/Modal';
 import { CSSTransition } from 'react-transition-group';
-import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 const ModalWrapper = styled(Modal)`
   display: flex;
   align-items: center;
 `;
 
-const BottomSheetWrapper = styled.div<{ color?: string }>`
+const BottomSheetWrapper = styled.div`
   box-shadow: ${(props) => props.theme.shadows[16]};
-  background: ${({ theme, color }) =>
-    color ? getColorFromTheme(theme, color) : theme.palette.common.white};
+  background: ${({ theme }) => theme.palette.background.paper};
   width: 100%;
   max-height: 50%;
   align-self: flex-end;
@@ -24,36 +22,36 @@ const BottomSheetWrapper = styled.div<{ color?: string }>`
 const timeout = 300;
 
 const GlobalStyle = createGlobalStyle`
-.sinoui-bottom-sheet-appear {
+.sinoui-bottom-sheet__translate-appear {
   opacity: 0;
   transform: translate3d(0, 100%, 0);
 }
 
-.sinoui-bottom-sheet-appear-active {
+.sinoui-bottom-sheet__translate-appear-active {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: opacity ${timeout}ms, transform ${timeout}ms, height ${timeout}ms;
 }
 
-.sinoui-bottom-sheet-enter {
+.sinoui-bottom-sheet__translate-enter {
   opacity: 0;
   transform: translate3d(0, 100%, 0); 
 
 }
 
-.sinoui-bottom-sheet-enter-active {
+.sinoui-bottom-sheet__translate-enter-active {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: opacity ${timeout}ms, transform ${timeout}ms, height ${timeout}ms;
 }
 
-.sinoui-bottom-sheet-exit { 
+.sinoui-bottom-sheet__translate-exit { 
   opacity: 1;
   transform: translate3d(0, 0, 0);
  ;
 }
 
-.sinoui-bottom-sheet-exit-active { 
+.sinoui-bottom-sheet__translate-exit-active { 
   opacity: 0;
   transform: translate3d(0, 100%, 0);
   transition: opacity ${timeout}ms, transform ${timeout}ms, height ${timeout}ms
@@ -88,10 +86,6 @@ export interface BottomSheetProps {
    * 过渡结束监听器
    */
   addEndListener?: any;
-  /**
-   * 指定背景颜色
-   */
-  color?: string;
 }
 
 /**
@@ -107,7 +101,6 @@ const BottomSheet = React.forwardRef(
       children,
       transitionDuration = 300,
       addEndListener,
-      color,
       ...rest
     } = props;
     return (
@@ -119,7 +112,7 @@ const BottomSheet = React.forwardRef(
         ref={ref}
       >
         <CSSTransition
-          classNames="sinoui-bottom-sheet"
+          classNames="sinoui-bottom-sheet__translate"
           timeout={transitionDuration}
           in={open}
           appear
@@ -129,7 +122,6 @@ const BottomSheet = React.forwardRef(
           <>
             <BottomSheetWrapper
               className={classNames('sinoui-bottom-sheet', className)}
-              color={color}
             >
               {children}
             </BottomSheetWrapper>

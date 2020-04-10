@@ -9,21 +9,10 @@ import ListItemText from '@sinoui/core/ListItemText';
 import ListItemPrimaryAction from '@sinoui/core/ListItemPrimaryAction';
 import SvgIcon from '@sinoui/core/SvgIcon';
 import { MdShare, MdInsertLink, MdModeEdit, MdDelete } from 'react-icons/md';
-import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 
 export default {
   title: 'BottomSheet',
 };
-
-const BottomSheetColor = styled(BottomSheet)<{ color?: string }>`
-  > ul li {
-    background-color: ${({ theme, color }) => getColorFromTheme(theme, color)};
-    color: #fff;
-  }
-  > ul li svg {
-    color: #fff;
-  }
-`;
 
 const listData = [
   { icon: MdShare, text: 'Share' },
@@ -129,27 +118,6 @@ function BottomSheetScrollDemo() {
   );
 }
 
-function BottomSheetBasicColorDemo() {
-  const [open, setOpen] = useState(false);
-
-  const onClick = () => {
-    setOpen(!open);
-  };
-
-  const onItemClick = () => {
-    setOpen(false);
-  };
-
-  return (
-    <>
-      <Button onClick={onClick}>CLICK</Button>
-      <BottomSheetColor open={open} color="success">
-        <Content data={listData} onClick={onItemClick} />
-      </BottomSheetColor>
-    </>
-  );
-}
-
 export const 基本使用 = () => (
   <ThemeProvider theme={defaultTheme}>
     <BottomSheetBasicDemo />
@@ -165,11 +133,5 @@ export const 点击遮罩层事件 = () => (
 export const 内容超出屏幕一半显示滚动条 = () => (
   <ThemeProvider theme={defaultTheme}>
     <BottomSheetScrollDemo />
-  </ThemeProvider>
-);
-
-export const 指定背景颜色 = () => (
-  <ThemeProvider theme={defaultTheme}>
-    <BottomSheetBasicColorDemo />
   </ThemeProvider>
 );
