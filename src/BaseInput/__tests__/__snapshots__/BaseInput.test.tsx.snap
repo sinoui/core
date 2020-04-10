@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`前缀装饰器 1`] = `
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  text-align: left;
+  color: rgba(0,0,0,0.87);
+}
+
 .c1 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -22,18 +36,6 @@ exports[`前缀装饰器 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.c2 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-letter-spacing: 0.00938em;
-  -moz-letter-spacing: 0.00938em;
-  -ms-letter-spacing: 0.00938em;
-  letter-spacing: 0.00938em;
-  color: rgba(0,0,0,0.6);
-  margin: 0;
 }
 
 .c0 {
@@ -127,7 +129,9 @@ exports[`前缀装饰器 1`] = `
     className="c1 sinoui-input-adornment sinoui-input-adornment--start"
   >
     <p
-      className="c2"
+      className="c2 sinoui-typography sinoui-typography--body1"
+      color="textPrimary"
+      type="body1"
     >
       ￥
     </p>
@@ -141,6 +145,20 @@ exports[`前缀装饰器 1`] = `
 `;
 
 exports[`后缀装饰器 1`] = `
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  text-align: left;
+  color: rgba(0,0,0,0.87);
+}
+
 .c1 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -162,18 +180,6 @@ exports[`后缀装饰器 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.c2 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-letter-spacing: 0.00938em;
-  -moz-letter-spacing: 0.00938em;
-  -ms-letter-spacing: 0.00938em;
-  letter-spacing: 0.00938em;
-  color: rgba(0,0,0,0.6);
-  margin: 0;
 }
 
 .c0 {
@@ -272,7 +278,9 @@ exports[`后缀装饰器 1`] = `
     className="c1 sinoui-input-adornment sinoui-input-adornment--end"
   >
     <p
-      className="c2"
+      className="c2 sinoui-typography sinoui-typography--body1"
+      color="textPrimary"
+      type="body1"
     >
       千克
     </p>

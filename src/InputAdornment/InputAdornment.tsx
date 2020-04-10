@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import Body1 from '@sinoui/core/Body1';
 import bemClassNames from '../utils/bemClassNames';
 
 export interface Props {
@@ -63,15 +64,6 @@ const InputAdornmentLayout = styled.div.attrs(
   `};
 `;
 
-const InputTextAdornment = styled.p((props) => {
-  const style = props.theme.typography.body1;
-  return {
-    ...style,
-    color: props.theme.palette.text.secondary,
-    margin: 0,
-  };
-});
-
 /**
  * 输入框装饰器
  */
@@ -80,18 +72,13 @@ const InputAdornment = (props: Props) => {
   const isStringChildren = typeof children === 'string';
   const $disablePointerEvents = disablePointerEvents ?? isStringChildren;
 
-  // TODO: 使用 Typography 代替 InputTextAdornment
   return (
     <InputAdornmentLayout
       {...rest}
       $disablePointerEvents={$disablePointerEvents}
       $position={position}
     >
-      {isStringChildren ? (
-        <InputTextAdornment>{children}</InputTextAdornment>
-      ) : (
-        children
-      )}
+      {isStringChildren ? <Body1>{children}</Body1> : children}
     </InputAdornmentLayout>
   );
 };

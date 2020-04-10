@@ -57,6 +57,20 @@ exports[`在结束位置使用 1`] = `
 `;
 
 exports[`显示文本装饰器 1`] = `
+.c1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  text-align: left;
+  color: rgba(0,0,0,0.87);
+}
+
 .c0 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -80,23 +94,13 @@ exports[`显示文本装饰器 1`] = `
   user-select: none;
 }
 
-.c1 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-letter-spacing: 0.00938em;
-  -moz-letter-spacing: 0.00938em;
-  -ms-letter-spacing: 0.00938em;
-  letter-spacing: 0.00938em;
-  color: rgba(0,0,0,0.6);
-  margin: 0;
-}
-
 <div
   className="c0 sinoui-input-adornment sinoui-input-adornment--end"
 >
   <p
-    className="c1"
+    className="c1 sinoui-typography sinoui-typography--body1"
+    color="textPrimary"
+    type="body1"
   >
     装饰器
   </p>
