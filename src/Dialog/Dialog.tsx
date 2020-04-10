@@ -65,9 +65,7 @@ function Dialog(props: DialogProps) {
   return (
     <ModalWrapper {...rest} backdropClick={backdropClick} open={open}>
       <Transition timeout={transitionDuration} appear in={open}>
-        <>
-          <DialogContainer {...props} />
-        </>
+        <DialogContainer {...props} />
       </Transition>
     </ModalWrapper>
   );
