@@ -279,6 +279,8 @@ export default function Demo(props: {
 
 ## 含有输入框的应用栏示例
 
+以下示例滚动目标元素为 window,当浏览器窗口滚动时，应用栏会应用对应滚动效果。
+
 ### 输入框紧挨在标题的右侧
 
 代码：
@@ -309,7 +311,15 @@ export default function Demo(props: {
 
 运行效果：
 
-<CardStoryLayout>
+<CardStoryLayout
+  style={{
+    flexDirection: 'column',
+    width: '500px',
+    transform: 'scale(1)',
+    overflow: 'hidden',
+    padding: 0,
+  }}
+>
   <AppBarInput />
 </CardStoryLayout>
 
@@ -337,6 +347,13 @@ export default function Demo(props: {
 
 运行效果：
 
-<CardStoryLayout>
+<CardStoryLayout style={{
+  flexDirection: 'column',
+    width: '500px',
+    transform: 'scale(1)',
+    overflow: 'hidden',
+    padding: 0,
+  }}>
+
   <AppBarInputRight />
 </CardStoryLayout>
