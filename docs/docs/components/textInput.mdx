@@ -10,18 +10,21 @@ import TextInputDemo from './textInput-demoes/TextInputDemo';
 import FormPropTextInputDemo from './textInput-demoes/FormPropTextInputDemo';
 import SearchInputDemo from './textInput-demoes/SearchInputDemo';
 import AdornmentInputDemo from './textInput-demoes/AdornmentInputDemo';
+import CustomizedBaseInput from './textInput-demoes/CustomizedBaseInput';
+import Demo from '../commons/Demo';
+import MultilineTextInputDemo from './textInput-demoes/MultilineTextInputDemo';
 
-> TextInput 是最基础的表单控件，供输入信息使用。
+> TextInput 是文本输入框，用户可以在输入框中输入或编辑文字。
 
 ## 引入方式
 
-```tsx
+```ts
 import TextInput from '@sinoui/core/TextInput';
 ```
 
-## 使用场景
+## TextInput
 
-### 三种形态输入框的基本使用
+`TextInput` 组件是一个完整的表单控件，包含标签、输入框和帮助文本。它有三种形态，分别是：标准(standard)、填充(filled)、轮廓(outlined)。
 
 ```tsx
 import React, { useCallback, useState } from 'react';
@@ -30,7 +33,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 
 function TextInputDemo() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
 
   const onChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -51,7 +54,7 @@ function TextInputDemo() {
           variant="filled"
         />
         <TextInput
-          label="带边框的输入框"
+          label="轮廓输入框"
           value={value}
           onChange={onChange}
           variant="outlined"
@@ -66,7 +69,24 @@ function TextInputDemo() {
 
 <TextInputDemo />
 
-### 不同状态下的输入框
+特别说明：[Material Design 设计指南](https://material.io)不再记录标准形态输入框，但是 sinoui 依然支持此形态。
+
+## TextInput 基础属性
+
+TextInput 支持基本的表单属性，包括：
+
+- `required` - 必填
+- `disabled` - 禁用
+- `readOnly` - 只读
+- `type` - 输入框类型
+- `placeholder` - 提示语
+
+TextInput 组件还支持一些常用的属性，如：
+
+- `helperText` - 帮助性文本，一帮用于描述输入框，譬如描述如何使用输入框。
+- `error` - 输入框的错误信息
+
+更多属性参见 [TextInput API](../components-apis/text-input)。
 
 ```tsx
 import React, { useState, useCallback } from 'react';
@@ -250,7 +270,34 @@ export default FormPropTextInputDemo;
 
 <FormPropTextInputDemo />
 
-### 带装饰器的输入框
+可以通过 `inputProps` 传递更多输入框属性，如下所示：
+
+```tsx
+<TextInput
+  label="地址"
+  inputProps={{
+    id: 'address',
+  }}
+/>
+```
+
+通过 `inputProps` 给输入框传递了 `id` 属性。
+
+## 多行文本框
+
+`TextInput` 组件有 `multiline` 属性，指定文本框为多行。示例：
+
+```tsx
+<TextInput multiline />
+```
+
+运行效果如下：
+
+<Demo>
+  <MultilineTextInputDemo />
+</Demo>
+
+## 带装饰器的输入框
 
 我们可以通过`TextInput`的`startAdornment`和`endAdornment`属性分别指定前缀和后缀元素，比如：
 
@@ -305,6 +352,7 @@ function AdornmentInputDemo() {
           onChange={onChange}
           label="重量"
           endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+          align="end"
         />
         <TextInputField
           value={value}
@@ -408,9 +456,9 @@ export default AdornmentInputDemo;
 
 <AdornmentInputDemo />
 
-### 查询框
+## 查询框
 
-我们可以使用`TextInput`和`IconButton`结合自定义查询框，示例如下：
+我们可以使用`TextInput`和`Icon`结合实现查询框，示例如下：
 
 ```tsx
 import React, { useState, useCallback } from 'react';
@@ -418,7 +466,6 @@ import TextInput from '@sinoui/core/TextInput';
 import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import InputAdornment from '@sinoui/core/InputAdornment';
-import IconButton from '@sinoui/core/IconButton';
 import Search from '@sinoui/icons/Search';
 
 const TextInputField = styled(TextInput)`
@@ -432,23 +479,6 @@ const TextInputField = styled(TextInput)`
 
   .sinoui-notched-outline__trailing {
     border-radius: 0 48px 48px 0;
-  }
-`;
-
-const DenseIconButton = styled(IconButton)`
-  width: 24px;
-  height: 24px;
-
-  > .sinoui-icon-button__ripple-layout {
-    left: 0px;
-    top: 0px;
-    width: 24px;
-    height: 24px;
-  }
-
-  > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
-    width: 24px;
-    height: 24px;
   }
 `;
 
@@ -473,9 +503,7 @@ function SearchInputDemo() {
         onChange={onChange}
         startAdornment={
           <InputAdornment position="start">
-            <DenseIconButton onClick={() => alert(value)}>
-              <Search />
-            </DenseIconButton>
+            <Search />
           </InputAdornment>
         }
       />
@@ -488,4 +516,61 @@ export default SearchInputDemo;
 
 运行效果如下：
 
-<SearchInputDemo />
+<Demo>
+  <SearchInputDemo />
+</Demo>
+
+## 更复杂的查询框
+
+可以使用 [BaseInput](../components-apis/base-input)、[IconButton](button#图标按钮)、[Divider](divider) 等组件组合成更复杂的查询效果：
+
+<CustomizedBaseInput />
+
+代码如下：
+
+```tsx
+import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Paper from '@sinoui/core/Paper';
+import BaseInput from '@sinoui/core/BaseInput';
+import IconButton from '@sinoui/core/IconButton';
+import Divider from '@sinoui/core/Divider';
+import MenuIcon from '@sinoui/icons/Menu';
+import SearchIcon from '@sinoui/icons/Search';
+import DirectionsIcon from '@sinoui/icons/Directions';
+
+const Form = styled(Paper)`
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: flex-start;
+  padding: 2px 4px;
+`;
+
+const SearchInput = styled(BaseInput)`
+  flex: 1;
+  margin-left: 8px;
+`;
+
+function CustomizedBaseInput() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Form as="form">
+        <IconButton color="textSecondary">
+          <MenuIcon />
+        </IconButton>
+        <SearchInput placeholder="搜索人员信息" name="searchText" />
+        <IconButton type="submit" color="textSecondary">
+          <SearchIcon />
+        </IconButton>
+        <Divider vertical flexItem marginVertical={8} marginHorizontal={4} />
+        <IconButton color="primary">
+          <DirectionsIcon />
+        </IconButton>
+      </Form>
+    </ThemeProvider>
+  );
+}
+```

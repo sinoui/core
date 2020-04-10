@@ -3,7 +3,6 @@ import TextInput from '@sinoui/core/TextInput';
 import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import InputAdornment from '@sinoui/core/InputAdornment';
-import IconButton from '@sinoui/core/IconButton';
 import Search from '@sinoui/icons/Search';
 
 const TextInputField = styled(TextInput)`
@@ -20,23 +19,6 @@ const TextInputField = styled(TextInput)`
 
   input {
     padding-right: 16px;
-  }
-`;
-
-const DenseIconButton = styled(IconButton)`
-  width: 24px;
-  height: 24px;
-
-  > .sinoui-icon-button__ripple-layout {
-    left: -4px;
-    top: -4px;
-    width: 32px;
-    height: 32px;
-  }
-
-  > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
-    width: 32px;
-    height: 32px;
   }
 `;
 
@@ -61,9 +43,7 @@ function SearchInputDemo() {
         onChange={onChange}
         startAdornment={
           <InputAdornment position="start">
-            <DenseIconButton onClick={() => alert(value)}>
-              <Search />
-            </DenseIconButton>
+            <Search color="textHint" />
           </InputAdornment>
         }
       />

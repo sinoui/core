@@ -48,6 +48,7 @@ function AdornmentInputDemo() {
           onChange={onChange}
           label="重量"
           endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+          align="end"
         />
         <TextInputField
           value={value}
