@@ -12,10 +12,6 @@ import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
 import { MdRestore, MdFavorite, MdLocationOn, MdFolder } from 'react-icons/md';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import BottomNavigationDemos from './bottomNavigation-demos/BottomNavigationDemos';
-import BottomNavigationActionDemos from './bottomNavigation-demos/BottomNavigationActionDemos';
-import BottomNavLabelDemos from './bottomNavigation-demos/BottomNavLabelDemos';
-import BottomNavigationColorDemos from './bottomNavigation-demos/BottomNavigationColorDemos';
 
 ## BottomNavigation
 
@@ -26,54 +22,61 @@ import BottomNavigation from '@sinoui/core/BottomNavigation';
 import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
 
 function SvgIconDemo() {
-  const [show, setShow] = useState(false);
-
-  const onClick = () => {
-    setShow(!show);
-  };
-
   return (
-    <>
-      <Button onClick={onClick}>
-        {show ? '显示底部导航栏' : '隐藏底部导航栏'}
-      </Button>
-      {show && (
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-        >
-          <BottomNavigationAction
-            label="Recents"
-            value="recents"
-            icon={<MdRestore />}
-          />
-          <BottomNavigationAction
-            label="Favorites"
-            value="favorites"
-            icon={<MdFavorite />}
-          />
-          <BottomNavigationAction
-            label="Nearby"
-            value="nearby"
-            icon={<MdLocationOn />}
-          />
-          <BottomNavigationAction
-            label="Folder"
-            value="folder"
-            icon={<MdFolder />}
-          />
-        </BottomNavigation>
-      )}  
-    </>
-  )
+    <BottomNavigation
+      onChange={(e, value) => console.log(value)}
+      value="favorites"
+    >
+      <BottomNavigationAction
+        label="Recents"
+        value="recents"
+        icon={<MdRestore />}
+      />
+      <BottomNavigationAction
+        label="Favorites"
+        value="favorites"
+        icon={<MdFavorite />}
+      />
+      <BottomNavigationAction
+        label="Nearby"
+        value="nearby"
+        icon={<MdLocationOn />}
+      />
+      <BottomNavigationAction
+        label="Folder"
+        value="folder"
+        icon={<MdFolder />}
+      />
+    </BottomNavigation>
+  );
 }
 ```
 
 效果如下：
 
-<BottomNavigationDemos />
+<ThemeProvider theme={defaultTheme}>
+  <BottomNavigation
+    onChange={(e, value) => console.log(value)}
+    value="favorites"
+  >
+    <BottomNavigationAction
+      label="Recents"
+      value="recents"
+      icon={<MdRestore />}
+    />
+    <BottomNavigationAction
+      label="Favorites"
+      value="favorites"
+      icon={<MdFavorite />}
+    />
+    <BottomNavigationAction
+      label="Nearby"
+      value="nearby"
+      icon={<MdLocationOn />}
+    />
+    <BottomNavigationAction label="Folder" value="folder" icon={<MdFolder />} />
+  </BottomNavigation>
+</ThemeProvider>
 
 ## 设置隐藏标签
 
@@ -82,55 +85,63 @@ import BottomNavigation from '@sinoui/core/BottomNavigation';
 import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
 
 function SvgIconDemo() {
-  const [show, setShow] = useState(false);
-
-  const onClick = () => {
-    setShow(!show);
-  };
-
   return (
-    <>
-      <Button onClick={onClick}>
-        {show ? '显示底部导航栏' : '隐藏底部导航栏'}
-      </Button>
-      {show && (
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-        >
-          <BottomNavigationAction
-            label="Recents"
-            value="recents"
-            icon={<MdRestore />}
-            showLabel={false}
-          />
-          <BottomNavigationAction
-            label="Favorites"
-            value="favorites"
-            icon={<MdFavorite />}
-          />
-          <BottomNavigationAction
-            label="Nearby"
-            value="nearby"
-            icon={<MdLocationOn />}
-          />
-          <BottomNavigationAction
-            label="Folder"
-            value="folder"
-            icon={<MdFolder />}
-          />
-        </BottomNavigation>
-      )}  
-    </>
-  )
+    <BottomNavigation
+      onChange={(e, value) => console.log(value)}
+      value="favorites"
+    >
+      <BottomNavigationAction
+        label="Recents"
+        value="recents"
+        icon={<MdRestore />}
+        showLabel={false}
+      />
+      <BottomNavigationAction
+        label="Favorites"
+        value="favorites"
+        icon={<MdFavorite />}
+      />
+      <BottomNavigationAction
+        label="Nearby"
+        value="nearby"
+        icon={<MdLocationOn />}
+      />
+      <BottomNavigationAction
+        label="Folder"
+        value="folder"
+        icon={<MdFolder />}
+      />
+    </BottomNavigation>
+  );
 }
 ```
 
 效果如下：
 
-<BottomNavigationActionDemos />
+<ThemeProvider theme={defaultTheme}>
+  <BottomNavigation
+    onChange={(e, value) => console.log(value)}
+    value="favorites"
+  >
+    <BottomNavigationAction
+      label="Recents"
+      value="recents"
+      icon={<MdRestore />}
+      showLabel={false}
+    />
+    <BottomNavigationAction
+      label="Favorites"
+      value="favorites"
+      icon={<MdFavorite />}
+    />
+    <BottomNavigationAction
+      label="Nearby"
+      value="nearby"
+      icon={<MdLocationOn />}
+    />
+    <BottomNavigationAction label="Folder" value="folder" icon={<MdFolder />} />
+  </BottomNavigation>
+</ThemeProvider>
 
 ## 设置隐藏所有标签
 
@@ -139,114 +150,130 @@ import BottomNavigation from '@sinoui/core/BottomNavigation';
 import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
 
 function SvgIconDemo() {
-  const [show, setShow] = useState(false);
-
-  const onClick = () => {
-    setShow(!show);
-  };
-
   return (
-    <>
-      <Button onClick={onClick}>
-        {show ? '显示底部导航栏' : '隐藏底部导航栏'}
-      </Button>
-      {show && (
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          showLabels={false}
-        >
-          <BottomNavigationAction
-            label="Recents"
-            value="recents"
-            icon={<MdRestore />}
-          />
-          <BottomNavigationAction
-            label="Favorites"
-            value="favorites"
-            icon={<MdFavorite />}
-          />
-          <BottomNavigationAction
-            label="Nearby"
-            value="nearby"
-            icon={<MdLocationOn />}
-          />
-          <BottomNavigationAction
-            label="Folder"
-            value="folder"
-            icon={<MdFolder />}
-          />
-        </BottomNavigation>
-      )}  
-    </>
-  )
+    <BottomNavigation
+      onChange={(e, value) => console.log(value)}
+      value="favorites"
+      showLabels={false}
+    >
+      <BottomNavigationAction
+        label="Recents"
+        value="recents"
+        icon={<MdRestore />}
+      />
+      <BottomNavigationAction
+        label="Favorites"
+        value="favorites"
+        icon={<MdFavorite />}
+      />
+      <BottomNavigationAction
+        label="Nearby"
+        value="nearby"
+        icon={<MdLocationOn />}
+      />
+      <BottomNavigationAction
+        label="Folder"
+        value="folder"
+        icon={<MdFolder />}
+      />
+    </BottomNavigation>
+  );
 }
 ```
 
 效果如下：
 
-<BottomNavLabelDemos />
+<ThemeProvider theme={defaultTheme}>
+  <BottomNavigation
+    onChange={(e, value) => console.log(value)}
+    value="favorites"
+    showLabels={false}
+  >
+    <BottomNavigationAction
+      label="Recents"
+      value="recents"
+      icon={<MdRestore />}
+    />
+    <BottomNavigationAction
+      label="Favorites"
+      value="favorites"
+      icon={<MdFavorite />}
+    />
+    <BottomNavigationAction
+      label="Nearby"
+      value="nearby"
+      icon={<MdLocationOn />}
+    />
+    <BottomNavigationAction label="Folder" value="folder" icon={<MdFolder />} />
+  </BottomNavigation>
+</ThemeProvider>
 
 ## 指定颜色
 
-例如指定颜色为success：
+例如指定颜色为 success：
 
 ```tsx
 import BottomNavigation from '@sinoui/core/BottomNavigation';
 import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
 
 function SvgIconDemo() {
-  const [show, setShow] = useState(false);
-
-  const onClick = () => {
-    setShow(!show);
-  };
-
   return (
-    <>
-      <Button onClick={onClick}>
-        {show ? '显示底部导航栏' : '隐藏底部导航栏'}
-      </Button>
-      {show && (
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          color="success"
-        >
-          <BottomNavigationAction
-            label="Recents"
-            value="recents"
-            icon={<MdRestore />}
-          />
-          <BottomNavigationAction
-            label="Favorites"
-            value="favorites"
-            icon={<MdFavorite />}
-          />
-          <BottomNavigationAction
-            label="Nearby"
-            value="nearby"
-            icon={<MdLocationOn />}
-          />
-          <BottomNavigationAction
-            label="Folder"
-            value="folder"
-            icon={<MdFolder />}
-          />
-        </BottomNavigation>
-      )}  
-    </>
-  )
+    <BottomNavigation
+      onChange={(e, value) => console.log(value)}
+      value="favorites"
+      color="success"
+    >
+      <BottomNavigationAction
+        label="Recents"
+        value="recents"
+        icon={<MdRestore />}
+      />
+      <BottomNavigationAction
+        label="Favorites"
+        value="favorites"
+        icon={<MdFavorite />}
+      />
+      <BottomNavigationAction
+        label="Nearby"
+        value="nearby"
+        icon={<MdLocationOn />}
+      />
+      <BottomNavigationAction
+        label="Folder"
+        value="folder"
+        icon={<MdFolder />}
+      />
+    </BottomNavigation>
+  );
 }
 ```
 
 效果如下：
 
-<BottomNavigationColorDemos />
+<ThemeProvider theme={defaultTheme}>
+  <BottomNavigation
+    onChange={(e, value) => console.log(value)}
+    value="favorites"
+    color="success"
+  >
+    <BottomNavigationAction
+      label="Recents"
+      value="recents"
+      icon={<MdRestore />}
+    />
+    <BottomNavigationAction
+      label="Favorites"
+      value="favorites"
+      icon={<MdFavorite />}
+    />
+    <BottomNavigationAction
+      label="Nearby"
+      value="nearby"
+      icon={<MdLocationOn />}
+    />
+    <BottomNavigationAction label="Folder" value="folder" icon={<MdFolder />} />
+  </BottomNavigation>
+</ThemeProvider>
 
 ## API
 

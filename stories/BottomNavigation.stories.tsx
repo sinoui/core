@@ -107,13 +107,9 @@ export const 设置隐藏所有标签 = () => (
   </ThemeProvider>
 );
 
-const BottomNavigationWrapper = styled(BottomNavigation)`
-  position: static;
-`;
-
 export const 指定背景颜色 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <BottomNavigationWrapper
+    <BottomNavigation
       onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
         console.log(value)
       }
@@ -139,8 +135,8 @@ export const 指定背景颜色 = () => (
         value="folder"
         icon={<MdFolder />}
       />
-    </BottomNavigationWrapper>
-    <BottomNavigationWrapper
+    </BottomNavigation>
+    <BottomNavigation
       onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
         console.log(value)
       }
@@ -167,8 +163,8 @@ export const 指定背景颜色 = () => (
         value="folder"
         icon={<MdFolder />}
       />
-    </BottomNavigationWrapper>
-    <BottomNavigationWrapper
+    </BottomNavigation>
+    <BottomNavigation
       onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
         console.log(value)
       }
@@ -195,6 +191,6 @@ export const 指定背景颜色 = () => (
         value="folder"
         icon={<MdFolder />}
       />
-    </BottomNavigationWrapper>
+    </BottomNavigation>
   </ThemeProvider>
 );

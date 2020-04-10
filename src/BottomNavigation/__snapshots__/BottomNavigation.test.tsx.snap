@@ -2,7 +2,7 @@
 
 exports[`基本使用 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 itVEQq sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jJVGci sinoui-bottom-navigation"
 >
   <button
     checked={false}
@@ -162,7 +162,7 @@ exports[`基本使用 1`] = `
 exports[`指定背景颜色 1`] = `
 Array [
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 itVEQq sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jJVGci sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
   >
     <button
       checked={false}
@@ -318,7 +318,7 @@ Array [
     </button>
   </div>,
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 ibZtXR sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 imylvi sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
     color="primary"
   >
     <button
@@ -479,7 +479,7 @@ Array [
     </button>
   </div>,
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 bYOZHO sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kbbBKL sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
     color="success"
   >
     <button
@@ -644,7 +644,7 @@ Array [
 
 exports[`设置隐藏所有标签名称 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 itVEQq sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jJVGci sinoui-bottom-navigation"
 >
   <button
     checked={false}
@@ -775,7 +775,7 @@ exports[`设置隐藏所有标签名称 1`] = `
 
 exports[`设置隐藏标签名称 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 itVEQq sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jJVGci sinoui-bottom-navigation"
 >
   <button
     checked={false}

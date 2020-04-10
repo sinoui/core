@@ -13,14 +13,10 @@ const BottomNavigationWrapper = styled.div`
   text-align: center;
   vertical-align: middle;
   justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   z-index: 1;
   width: 100%;
   height: 56px;
-  ${({ theme }) =>
-    colorCss('background-color', theme.palette.background.default)}
+  ${({ theme }) => colorCss('background-color', theme.palette.background.paper)}
 `;
 
 export interface Props {
