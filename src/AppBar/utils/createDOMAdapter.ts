@@ -11,7 +11,7 @@ export interface TopAppBarAdapter {
    *
    * @param {string} styleName 样式名称
    */
-  getStyleValue(styleName: string): number;
+  getStyleValue(styleName: string): number | string;
   /**
    *添加className
    *
