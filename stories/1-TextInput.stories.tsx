@@ -489,3 +489,12 @@ export const 不带标签的输入框 = () => (
     </div>
   </ThemeProvider>
 );
+
+export const 标签不换行显示 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <TextInputField
+      label="这是一个非常长的标签，应不换行显示，溢出部分显示省略号"
+      variant="outlined"
+    />
+  </ThemeProvider>
+);

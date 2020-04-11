@@ -94,6 +94,7 @@ const InputLabel = styled.label.attrs<InputLabelProps>(
   position: absolute;
   left: 0;
   top: 0;
+  box-sizing: border-box;
   color: ${(props) => props.theme.palette.text.secondary};
   line-height: 1.15;
   font-size: ${(props) => props.theme.typography.subtitle1.fontSize};
@@ -115,9 +116,22 @@ const InputLabel = styled.label.attrs<InputLabelProps>(
     }
   `}
   will-change: transform;
-  max-width: 100%;
+  max-width: calc(
+    100% -
+      ${({ variant }) => {
+        switch (variant) {
+          case 'filled':
+            return 24;
+          case 'outlined':
+            return 28;
+          default:
+            return 0;
+        }
+      }}px
+  );
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export default InputLabel;
