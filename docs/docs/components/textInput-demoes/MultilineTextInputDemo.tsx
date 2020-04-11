@@ -62,6 +62,9 @@ function MultilineTextInputDemo() {
           variant="outlined"
           style={optionStyle}
           type="number"
+          inputProps={{
+            min: 0,
+          }}
         />
         <TextInput
           value={maxRows}
@@ -70,6 +73,9 @@ function MultilineTextInputDemo() {
           label="maxRows"
           variant="outlined"
           style={optionStyle}
+          inputProps={{
+            min: toNum(minRows) ?? 0,
+          }}
         />
       </div>
       <Divider vertical marginHorizontal={16} flexItem />
