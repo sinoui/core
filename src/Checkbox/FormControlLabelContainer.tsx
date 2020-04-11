@@ -41,8 +41,7 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
   }
 
   > .sinoui-form-control-label__title {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 0px 4px;
     word-break: break-all;
     word-wrap: break-word;
   }
