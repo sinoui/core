@@ -274,7 +274,10 @@ it('设置minRows和maxRows', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <BaseInput multiline minRows={2} maxRows={4} />
+        <div>
+          <BaseInput multiline minRows={2} maxRows={4} />
+          <BaseInput minRows={2} maxRows={4} />
+        </div>
       </ThemeProvider>,
     )
     .toJSON();

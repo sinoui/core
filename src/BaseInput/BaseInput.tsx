@@ -235,7 +235,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
   ]);
 
   /**
-   * 处理点击事件的回调函数
+   * 处理点击事件的回调函数xx
    */
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
@@ -256,8 +256,6 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     ...inputPropsProp,
     id,
     name,
-    minRows,
-    maxRows,
     type,
     autoFocus,
     autoComplete,
@@ -274,6 +272,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   if (multiline) {
     inputprops.inputRef = handleInputRef;
+    inputprops.minRows = minRows;
+    inputprops.maxRows = maxRows;
   } else {
     inputprops.ref = handleInputRef;
   }

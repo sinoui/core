@@ -779,21 +779,35 @@ exports[`设置minRows和maxRows 1`] = `
   overflow: hidden;
 }
 
-<div
-  className="c0 sinoui-base-input"
-  data-testid="baseInput"
-  onClick={[Function]}
->
-  <textarea
-    className="sinoui-base-input__input"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    style={
-      Object {
-        "height": 0,
+<div>
+  <div
+    className="c0 sinoui-base-input"
+    data-testid="baseInput"
+    onClick={[Function]}
+  >
+    <textarea
+      className="sinoui-base-input__input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      style={
+        Object {
+          "height": 0,
+        }
       }
-    }
-  />
+    />
+  </div>
+  <div
+    className="c0 sinoui-base-input"
+    data-testid="baseInput"
+    onClick={[Function]}
+  >
+    <input
+      className="sinoui-base-input__input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+    />
+  </div>
 </div>
 `;
