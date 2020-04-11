@@ -185,28 +185,30 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 
 .c8 > div {
   border: 1px solid currentColor;
+  box-sizing: border-box;
 }
 
 .c8 > .sinoui-notched-outline__leading {
   border-right: none;
-  width: 8px;
   border-radius: 4px 0 0 4px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 10px;
 }
 
 .c8 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
-  max-width: 80%;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
 .c8 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  -webkit-flex: 1 0 10px;
+  -ms-flex: 1 0 10px;
+  flex: 1 0 10px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -1093,28 +1095,30 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 
 .c10 > div {
   border: 1px solid currentColor;
+  box-sizing: border-box;
 }
 
 .c10 > .sinoui-notched-outline__leading {
   border-right: none;
-  width: 8px;
   border-radius: 4px 0 0 4px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 10px;
 }
 
 .c10 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
-  max-width: 80%;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
 .c10 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  -webkit-flex: 1 0 10px;
+  -ms-flex: 1 0 10px;
+  flex: 1 0 10px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -1680,28 +1684,30 @@ exports[`渲染带后缀元素的输入框 1`] = `
 
 .c10 > div {
   border: 1px solid currentColor;
+  box-sizing: border-box;
 }
 
 .c10 > .sinoui-notched-outline__leading {
   border-right: none;
-  width: 8px;
   border-radius: 4px 0 0 4px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 10px;
 }
 
 .c10 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
-  max-width: 80%;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
 .c10 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  -webkit-flex: 1 0 10px;
+  -ms-flex: 1 0 10px;
+  flex: 1 0 10px;
   border-radius: 0 4px 4px 0;
 }
 

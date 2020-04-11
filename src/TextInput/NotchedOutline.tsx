@@ -27,25 +27,26 @@ const NotchedOutlineLayout = styled.div`
 
   > div {
     border: 1px solid currentColor;
+    box-sizing: border-box;
   }
 
   > .sinoui-notched-outline__leading {
     border-right: none;
-    width: 8px;
     border-radius: 4px 0 0 4px;
+    flex: 0 0 auto;
+    width: 10px;
   }
 
   > .sinoui-notched-outline__notch {
     border-left: none;
     border-right: none;
-    max-width: 80%;
     padding: 0 4px;
     box-sizing: content-box;
   }
 
   > .sinoui-notched-outline__trailing {
     border-left: none;
-    flex-grow: 1;
+    flex: 1 0 10px;
     border-radius: 0 4px 4px 0;
   }
 

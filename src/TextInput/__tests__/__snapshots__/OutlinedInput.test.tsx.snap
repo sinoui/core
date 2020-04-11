@@ -101,28 +101,30 @@ exports[`正确渲染边框模式下的Input 1`] = `
 
 .c2 > div {
   border: 1px solid currentColor;
+  box-sizing: border-box;
 }
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  width: 8px;
   border-radius: 4px 0 0 4px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 10px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
-  max-width: 80%;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  -webkit-flex: 1 0 10px;
+  -ms-flex: 1 0 10px;
+  flex: 1 0 10px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -300,28 +302,30 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 
 .c2 > div {
   border: 1px solid currentColor;
+  box-sizing: border-box;
 }
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  width: 8px;
   border-radius: 4px 0 0 4px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 10px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
-  max-width: 80%;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  -webkit-flex: 1 0 10px;
+  -ms-flex: 1 0 10px;
+  flex: 1 0 10px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -501,28 +505,30 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
 
 .c2 > div {
   border: 1px solid currentColor;
+  box-sizing: border-box;
 }
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  width: 8px;
   border-radius: 4px 0 0 4px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 10px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
-  max-width: 80%;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  -webkit-flex: 1 0 10px;
+  -ms-flex: 1 0 10px;
+  flex: 1 0 10px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -702,28 +708,30 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 
 .c2 > div {
   border: 1px solid currentColor;
+  box-sizing: border-box;
 }
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  width: 8px;
   border-radius: 4px 0 0 4px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 10px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
-  max-width: 80%;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  -webkit-flex: 1 0 10px;
+  -ms-flex: 1 0 10px;
+  flex: 1 0 10px;
   border-radius: 0 4px 4px 0;
 }
 
