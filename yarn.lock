@@ -1309,34 +1309,34 @@
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
   integrity sha512-DetpxZw1fzPD5xUBrIAoplLChO2VB8DlL5Gg+I1IR9b2wPqYIca2WSUxL5g1vLeR4MsQq1NeWriXAVffV+U1Fw==
 
-"@sinoui/core@^1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@sinoui/core/-/core-1.0.0-beta.2.tgz#10554174b6b515a89a9fccffcec195b265a9a6ef"
-  integrity sha512-xFZ/vnXxL1eqTNpecevdP2eNjEcKIfY/tjk1vxXdR/G3S6s6+tYFRITjouUJwLmErcAvUBawnZnN0f0obv6oyg==
+"@sinoui/core@^1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@sinoui/core/-/core-1.0.0-beta.3.tgz#2fd7b050c976679fac0dcf1991cf31ede633aa1f"
+  integrity sha512-aA11+ImLZBrT7y3NfJjPmak0BPUR5o6QCK4BOGAuXKHqt0Aq1hSXBNd0dspkKf2Uba+JJyfjTX6EY3SMdcOAmw==
   dependencies:
     "@babel/polyfill" "^7.7.0"
-    "@babel/runtime" "^7.7.6"
-    "@sinoui/ripple" "^1.0.10"
-    "@sinoui/theme" "^1.0.0-beta.7"
+    "@babel/runtime" "^7.9.2"
+    "@sinoui/ripple" "^1.0.11"
+    "@sinoui/theme" "^1.0.0-beta.8"
     classnames "^2.2.6"
-    jest-styled-components "^7.0.0"
     polished "^3.4.4"
     react-icons "^3.9.0"
+    react-transition-group "^4.3.0"
     styled-components "^4.4.1"
 
-"@sinoui/icons@^1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@sinoui/icons/-/icons-1.0.0-beta.1.tgz#e6677f4045819bd0c676d69d0a6b90e47968397c"
-  integrity sha512-biSqySytZEa6GZ/VLOyspLoIKsqtWt5G16Poya8Pqdb+CkLhLWP6H1cFXb8NjK/Uc1OqKpK1Q7Zqjbx0KeKBAg==
+"@sinoui/icons@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@sinoui/icons/-/icons-1.0.0-beta.2.tgz#47d7a7ce3f304151c9e108b7251a49840649295f"
+  integrity sha512-kmRDPG4mgHGdxgdnXpIz8YROR2uSbwPYa6PdsD2M0czSQEDCK/YXBKcnMzNayZwDq1nWDIkHOnT2RdOEbNkEgA==
   dependencies:
     "@babel/polyfill" "^7.8.3"
     "@babel/runtime" "^7.8.4"
-    "@sinoui/core" "^1.0.0-beta.2"
+    "@sinoui/core" "^1.0.0-beta.3"
     cross-fetch "^3.0.4"
     fs-extra "^8.1.0"
     yargs "^15.1.0"
 
-"@sinoui/ripple@^1.0.10", "@sinoui/ripple@^1.0.11":
+"@sinoui/ripple@^1.0.11":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@sinoui/ripple/-/ripple-1.0.11.tgz#49ee274ff684e88324ca8d44bf3d1a38799c80ac"
   integrity sha512-nBRhmfbXdfD8PpaY5+Fc9Bm18qpQHy35rY8MwazLdpmqZjvu87MyXE9eFEVt6ZXARd7P1Y9bQ3JUxjQwOmGK6A==
@@ -1347,7 +1347,7 @@
     keycode "^2.2.0"
     warning "^4.0.3"
 
-"@sinoui/theme@^1.0.0-beta.7", "@sinoui/theme@^1.0.0-beta.8":
+"@sinoui/theme@^1.0.0-beta.8":
   version "1.0.0-beta.8"
   resolved "https://registry.yarnpkg.com/@sinoui/theme/-/theme-1.0.0-beta.8.tgz#36c11e4f0cc26f966ecec6ed4ca6f22be4c88550"
   integrity sha512-gTnE7Guis7qEw4I7YUlCbbVRnj/YNxksPYxnggxS17cA74sHJLuQ5iX0e2CdGI+0WGatlKVCdTeNoYJwnuJYyg==
