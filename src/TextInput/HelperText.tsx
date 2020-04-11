@@ -8,9 +8,12 @@ export interface HelperTextProps {
 }
 
 const containedStyle = css`
-  margin: 8px 14px 0;
+  margin: 8px 12px 0;
 `;
 
+/**
+ * 帮助性文本
+ */
 const HelperText = styled.p<HelperTextProps>`
   color: ${(props) => props.theme.palette.text.secondary};
   font-family: ${(props) => props.theme.typography.fontFamily};
