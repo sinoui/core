@@ -20,9 +20,7 @@ const objs = {
  * objects 单元测试
  */
 describe('objects 单元测试', () => {
-  afterEach(cleanup);
-
-  test('objects', async () => {
+  it('objects', async () => {
     const text = removeUndefinedProperties(obj);
 
     const objNew = {
@@ -34,7 +32,7 @@ describe('objects 单元测试', () => {
     expect(text).toStrictEqual(objNew);
   });
 
-  test('objects测试', async () => {
+  it('objects测试', async () => {
     const text = removeUndefinedProperties(objs);
 
     const objsNew = {
