@@ -356,6 +356,7 @@ exports[`禁用状态 1`] = `
 
 <div
   className="c0"
+  disabled={true}
 >
   <textarea />
 </div>

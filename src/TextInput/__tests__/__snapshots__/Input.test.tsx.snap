@@ -143,11 +143,12 @@ label ~ .c1 {
 }
 
 <div
-  className="c0 sinoui-base-input__layout c1"
+  className="c0 c1 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
   <input
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -297,11 +298,13 @@ label ~ .c1 {
 }
 
 <div
-  className="c0 sinoui-base-input__layout c1"
+  className="c0 c1 sinoui-base-input sinoui-base-input--disabled"
   data-testid="baseInput"
+  disabled={true}
   onClick={[Function]}
 >
   <input
+    className="sinoui-base-input__input"
     disabled={true}
     onBlur={[Function]}
     onChange={[Function]}
@@ -457,11 +460,12 @@ label ~ .c1 {
 }
 
 <div
-  className="c0 sinoui-base-input__layout c1"
+  className="c0 c1 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
   <input
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -610,11 +614,12 @@ label ~ .c1 {
 }
 
 <div
-  className="c0 sinoui-base-input__layout c1"
+  className="c0 c1 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
   <input
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}

@@ -4,6 +4,7 @@ import AutosizeTextarea from 'react-textarea-autosize';
 import useMultiRefs from '../utils/useMultiRefs';
 import BaseInputLayout from './BaseInputLayout';
 import mergeCallbacks from '../utils/mergeCallbacks';
+import bemClassNames from '../utils/bemClassNames';
 
 interface MultilineProps {
   /**
@@ -279,8 +280,13 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   return (
     <BaseInputLayout
-      className={classNames('sinoui-base-input__layout', className)}
-      $disabled={disabled}
+      className={classNames(
+        className,
+        bemClassNames('sinoui-base-input', {
+          disabled,
+        }),
+      )}
+      disabled={disabled}
       $fullWidth={fullWidth}
       $align={align}
       data-testid="baseInput"
@@ -289,7 +295,10 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
       {...other}
     >
       {startAdornment}
-      <InputComonent {...inputprops} />
+      <InputComonent
+        {...inputprops}
+        className={classNames(inputprops.className, 'sinoui-base-input__input')}
+      />
       {endAdornment}
       {children}
     </BaseInputLayout>

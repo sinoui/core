@@ -41,14 +41,7 @@ interface InputAdornmentLayoutProps {
   $disablePointerEvents?: boolean;
 }
 
-const InputAdornmentLayout = styled.div.attrs(
-  ({ $position }: InputAdornmentLayoutProps) => ({
-    className: bemClassNames('sinoui-input-adornment', {
-      start: $position === 'start',
-      end: $position === 'end',
-    }),
-  }),
-)<InputAdornmentLayoutProps>`
+const InputAdornmentLayout = styled.div<InputAdornmentLayoutProps>`
   flex-shrink: 0;
   display: flex;
   height: 0.01em;
@@ -56,6 +49,10 @@ const InputAdornmentLayout = styled.div.attrs(
   max-height: 2em;
   white-space: nowrap;
   color: ${({ theme }) => theme.palette.text.secondary};
+  [disabled] > & {
+    color: ${({ theme }) => theme.palette.text.disabled};
+  }
+
   ${({ $position }) => ($position === 'start' ? startCss : endCss)};
   ${({ $disablePointerEvents }) =>
     $disablePointerEvents &&
@@ -63,9 +60,6 @@ const InputAdornmentLayout = styled.div.attrs(
       pointer-events: none;
       user-select: none;
   `};
-  .sinoui-text-input--disabled & {
-    color: ${({ theme }) => theme.palette.text.disabled};
-  }
 `;
 
 /**
@@ -81,6 +75,10 @@ const InputAdornment = (props: Props) => {
       {...rest}
       $disablePointerEvents={$disablePointerEvents}
       $position={position}
+      className={bemClassNames('sinoui-input-adornment', {
+        start: position === 'start',
+        end: position === 'end',
+      })}
     >
       {isStringChildren ? <Body1 color="inherit">{children}</Body1> : children}
     </InputAdornmentLayout>

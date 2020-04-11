@@ -5,7 +5,7 @@ interface Props {
   /**
    * 如果设置为`true`，则输入框处于禁用状态。默认为`false`。
    */
-  $disabled?: boolean;
+  disabled?: boolean;
   /**
    * 如果设置为`true`，则输入框会占满宽度。默认为`false`。
    */
@@ -25,9 +25,9 @@ const BaseInputLayout = styled.div<Props>`
   box-sizing: border-box;
   align-items: center;
 
-  cursor: ${({ $disabled }) => ($disabled ? 'default' : 'text')};
-  color: ${({ theme, $disabled }) =>
-    $disabled ? theme.palette.text.disabled : theme.palette.text.primary};
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'text')};
+  color: ${({ theme, disabled }) =>
+    disabled ? theme.palette.text.disabled : theme.palette.text.primary};
   font-size: ${(props) => props.theme.typography.body1.fontSize};
   letter-spacing: ${(props) => props.theme.typography.body1.letterSpacing};
   font-family: ${(props) => props.theme.typography.fontFamily};

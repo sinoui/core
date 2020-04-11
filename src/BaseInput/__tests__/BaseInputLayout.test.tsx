@@ -31,7 +31,7 @@ it('多行输入框', () => {
 it('禁用状态', () => {
   const tree = renderer
     .create(
-      <BaseInputLayout theme={defaultTheme} $disabled>
+      <BaseInputLayout theme={defaultTheme} disabled>
         <textarea />
       </BaseInputLayout>,
     )

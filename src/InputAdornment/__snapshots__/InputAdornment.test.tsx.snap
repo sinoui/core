@@ -20,7 +20,7 @@ exports[`在开始位置使用 1`] = `
   margin-right: 8px;
 }
 
-.sinoui-text-input--disabled .c0 {
+[disabled] > .c0 {
   color: rgba(0,0,0,0.38);
 }
 
@@ -53,7 +53,7 @@ exports[`在结束位置使用 1`] = `
   margin-left: 8px;
 }
 
-.sinoui-text-input--disabled .c0 {
+[disabled] > .c0 {
   color: rgba(0,0,0,0.38);
 }
 
@@ -105,7 +105,7 @@ exports[`显示文本装饰器 1`] = `
   user-select: none;
 }
 
-.sinoui-text-input--disabled .c0 {
+[disabled] > .c0 {
   color: rgba(0,0,0,0.38);
 }
 
@@ -142,7 +142,7 @@ exports[`替换根元素 1`] = `
   margin-right: 8px;
 }
 
-.sinoui-text-input--disabled .c0 {
+[disabled] > .c0 {
   color: rgba(0,0,0,0.38);
 }
 
@@ -180,7 +180,7 @@ exports[`禁止点击事件 1`] = `
   user-select: none;
 }
 
-.sinoui-text-input--disabled .c0 {
+[disabled] > .c0 {
   color: rgba(0,0,0,0.38);
 }
 

@@ -174,11 +174,12 @@ exports[`渲染密集状态下填充模式的Input 1`] = `
 }
 
 <div
-  className="c0 sinoui-base-input__layout c1"
+  className="c0 c1 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
   <input
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}

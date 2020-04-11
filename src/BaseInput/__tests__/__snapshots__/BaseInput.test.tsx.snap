@@ -39,7 +39,7 @@ exports[`前缀装饰器 1`] = `
   user-select: none;
 }
 
-.sinoui-text-input--disabled .c1 {
+[disabled] > .c1 {
   color: rgba(0,0,0,0.38);
 }
 
@@ -126,7 +126,7 @@ exports[`前缀装饰器 1`] = `
 }
 
 <div
-  className="c0 sinoui-base-input__layout"
+  className="c0 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
@@ -142,6 +142,7 @@ exports[`前缀装饰器 1`] = `
     </p>
   </div>
   <input
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -188,7 +189,7 @@ exports[`后缀装饰器 1`] = `
   user-select: none;
 }
 
-.sinoui-text-input--disabled .c1 {
+[disabled] > .c1 {
   color: rgba(0,0,0,0.38);
 }
 
@@ -275,11 +276,12 @@ exports[`后缀装饰器 1`] = `
 }
 
 <div
-  className="c0 sinoui-base-input__layout"
+  className="c0 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
   <input
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -382,11 +384,12 @@ exports[`正确渲染BaseInput 1`] = `
 }
 
 <div
-  className="c0 sinoui-base-input__layout"
+  className="c0 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
   <input
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -478,11 +481,13 @@ exports[`渲染disabled属性下的BaseInput 1`] = `
 }
 
 <div
-  className="c0 sinoui-base-input__layout"
+  className="c0 sinoui-base-input sinoui-base-input--disabled"
   data-testid="baseInput"
+  disabled={true}
   onClick={[Function]}
 >
   <input
+    className="sinoui-base-input__input"
     disabled={true}
     onBlur={[Function]}
     onChange={[Function]}
@@ -576,11 +581,12 @@ exports[`渲染全宽模式下的BaseInput 1`] = `
 }
 
 <div
-  className="c0 sinoui-base-input__layout"
+  className="c0 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
   <input
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -672,11 +678,12 @@ exports[`渲染多行输入框 1`] = `
 }
 
 <div
-  className="c0 sinoui-base-input__layout"
+  className="c0 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
   <textarea
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -773,11 +780,12 @@ exports[`设置minRows和maxRows 1`] = `
 }
 
 <div
-  className="c0 sinoui-base-input__layout"
+  className="c0 sinoui-base-input"
   data-testid="baseInput"
   onClick={[Function]}
 >
   <textarea
+    className="sinoui-base-input__input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
