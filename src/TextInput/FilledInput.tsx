@@ -1,6 +1,6 @@
 import BaseInput from '@sinoui/core/BaseInput';
 import type { BaseInputProps } from '@sinoui/core/BaseInput';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import lineRippleStyle from './lineRippleStyle';
 import {
   FILLED_INPUT_BGCOLOR,
@@ -12,14 +12,23 @@ export interface FilledInputProps extends BaseInputProps {
   warning?: boolean;
   focused?: boolean;
   dense?: boolean;
+  noLabel?: boolean;
 }
+
+const denseStyle = css`
+  padding-top: 22px;
+  padding-bottom: 7px;
+`;
+
+const denseNoLabelStyle = css`
+  padding-top: 6px;
+  padding-bottom: 7px;
+`;
 
 /**
  * 填充模式输入框
  */
-const FilledInput = styled(BaseInput)<
-  BaseInputProps & { error?: boolean; warning?: boolean; dense?: boolean }
->`
+const FilledInput = styled(BaseInput)<FilledInputProps>`
   position: relative;
   background-color: ${({ disabled, theme }) =>
     (disabled ? DISABLED_FILLED_INPUT_BGCOLOR : FILLED_INPUT_BGCOLOR)[
@@ -58,9 +67,10 @@ const FilledInput = styled(BaseInput)<
 
   > input,
   > textarea {
-    padding: 27px 12px 10px;
-
-    ${(props) => props.dense && `padding-top:23px;padding-bottom:6px;`}
+    padding: 26px 12px 11px;
+    padding-top: ${({ noLabel }) => (noLabel ? 10 : 26)}px;
+    ${({ noLabel, dense }) => !noLabel && dense && denseStyle}
+    ${({ noLabel, dense }) => dense && noLabel && denseNoLabelStyle}
   }
 
   ${lineRippleStyle}

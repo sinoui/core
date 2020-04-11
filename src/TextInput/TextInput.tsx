@@ -94,6 +94,7 @@ export default function TextInput(props: TextInputProps) {
     !!defaultValue ||
     !!placeholder ||
     !!startAdornment;
+  const noLabel = !label;
 
   const handleBlur = () => {
     if (!readOnly) {
@@ -124,6 +125,7 @@ export default function TextInput(props: TextInputProps) {
     placeholder,
     value,
     defaultValue,
+    noLabel,
   };
 
   if (variant === 'outlined') {
@@ -140,6 +142,7 @@ export default function TextInput(props: TextInputProps) {
           outlined: variant === 'outlined',
           filled: variant === 'filled',
           shrink,
+          noLabel,
           ...inputState,
         }),
       )}

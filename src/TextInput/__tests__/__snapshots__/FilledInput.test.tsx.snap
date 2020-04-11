@@ -117,9 +117,10 @@ exports[`渲染密集状态下填充模式的Input 1`] = `
 
 .c1 > input,
 .c1 > textarea {
-  padding: 27px 12px 10px;
-  padding-top: 23px;
-  padding-bottom: 6px;
+  padding: 26px 12px 11px;
+  padding-top: 26px;
+  padding-top: 22px;
+  padding-bottom: 7px;
 }
 
 .c1::before {

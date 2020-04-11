@@ -46,7 +46,7 @@ const shrinkStyle = css<InputLabelProps>`
   transform-origin: top left;
   ${(props) =>
     props.variant === 'filled' &&
-    `transform: translate(12px, 10px) scale(0.75);`}
+    `transform: translate(12px, 9px) scale(0.75);`}
   ${(props) =>
     props.variant === 'outlined' &&
     `transform: translate(14px, -6px) scale(0.75);`}

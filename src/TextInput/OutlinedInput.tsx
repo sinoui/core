@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 import BaseInput from '@sinoui/core/BaseInput';
 import type { BaseInputProps } from '@sinoui/core/BaseInput';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import type { Theme } from '@sinoui/theme';
 import NotchedOutline from './NotchedOutline';
 import { DISABLED_INPUT_LINE_COLOR } from './constant';
@@ -27,6 +27,10 @@ export interface OutlinedInputProps extends BaseInputProps {
    * 如果设置为`true`，则表示输入框处于聚焦状态。
    */
   focused?: boolean;
+  /**
+   * 无标签
+   */
+  noLabel?: boolean;
 }
 
 interface StyledBaseInputProps {
@@ -34,6 +38,7 @@ interface StyledBaseInputProps {
   $focused?: boolean;
   $dense?: boolean;
   disabled?: boolean;
+  $noLabel?: boolean;
 }
 
 /**
@@ -62,6 +67,16 @@ const getOutlineColor = (
   return theme.palette.text.hint;
 };
 
+const denseStyle = css`
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+`;
+
+const denseNoLabelStyle = css`
+  padding-top: 6.5px;
+  padding-bottom: 6.5px;
+`;
+
 const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
   position: relative;
   border-radius: 4px;
@@ -77,9 +92,10 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
 
   > input,
   > textarea {
-    padding: 18.5px 14px;
+    padding: ${({ $noLabel }) => ($noLabel ? 10.5 : 18.5)}px 14px;
 
-    ${({ $dense }) => $dense && 'padding-top:10.5px;padding-bottom:10.5px;'}
+    ${({ $dense, $noLabel }) => $dense && !$noLabel && denseStyle}
+    ${({ $dense, $noLabel }) => $dense && $noLabel && denseNoLabelStyle}
   }
 
   > .sinoui-input-adornment--start {
@@ -100,7 +116,7 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
  */
 const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
   function OutlineInput(props: OutlinedInputProps, ref) {
-    const { notched, labelRef, dense, focused, ...other } = props;
+    const { notched, labelRef, dense, focused, noLabel, ...other } = props;
     const [notchWidth, setNotchWidth] = useState(0);
     const [isInitedShrink] = useState(notched);
 
@@ -114,7 +130,13 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
     }, [isInitedShrink, labelRef]);
 
     return (
-      <StyledBaseInput $focused={focused} ref={ref} $dense={dense} {...other}>
+      <StyledBaseInput
+        $focused={focused}
+        ref={ref}
+        $dense={dense}
+        $noLabel={noLabel}
+        {...other}
+      >
         <NotchedOutline notched={notched} notchWidth={notchWidth} />
       </StyledBaseInput>
     );

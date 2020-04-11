@@ -16,7 +16,13 @@ export default function bemClassNames(
     className,
     Object.keys(modifiers)
       .filter((modifier) => modifiers[modifier])
-      .map((modifier) => `${className}--${modifier}`),
+      .map(
+        (modifier) =>
+          `${className}--${modifier.replace(
+            /[A-Z]/g,
+            (letter) => `-${letter.toLowerCase()}`,
+          )}`,
+      ),
     ...classes,
   );
 }

@@ -31,9 +31,9 @@ exports[`渲染上浮之后的Label 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-transform: translate(12px,10px) scale(0.75);
-  -ms-transform: translate(12px,10px) scale(0.75);
-  transform: translate(12px,10px) scale(0.75);
+  -webkit-transform: translate(12px,9px) scale(0.75);
+  -ms-transform: translate(12px,9px) scale(0.75);
+  transform: translate(12px,9px) scale(0.75);
   -webkit-transform: translate(12px,7px) scale(0.75);
   -ms-transform: translate(12px,7px) scale(0.75);
   transform: translate(12px,7px) scale(0.75);
