@@ -170,6 +170,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
   BaseInputProps
 >(function BaseInput(props, ref) {
   const {
+    value,
     type,
     inputProps: inputPropsProp = {},
     inputRef: inputRefProp,
@@ -254,6 +255,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   const inputprops: Record<string, any> = {
     ...inputPropsProp,
+    value,
     id,
     name,
     type,
@@ -261,7 +263,6 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     autoComplete,
     disabled,
     readOnly: props.readOnly,
-    value: props.value,
     defaultValue: props.defaultValue,
     onChange: handleChange,
     onBlur: handleBlur,
