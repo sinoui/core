@@ -102,6 +102,8 @@ exports[`正确渲染边框模式下的Input 1`] = `
 .c2 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
+  -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
 .c2 > .sinoui-notched-outline__leading {
@@ -146,7 +148,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
   border-width: 1px;
 }
 
-.c1:hover > .sinoui-notched-outline {
+.c1:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
@@ -303,6 +305,8 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 .c2 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
+  -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
 .c2 > .sinoui-notched-outline__leading {
@@ -343,12 +347,12 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 }
 
 .c1 > .sinoui-notched-outline > div {
-  border-color: rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.26);
   border-width: 1px;
 }
 
-.c1:hover > .sinoui-notched-outline {
-  border-color: rgba(0,0,0,0.06);
+.c1:hover > .sinoui-notched-outline > div {
+  border-color: rgba(0,0,0,0.26);
 }
 
 .c1 > input,
@@ -506,6 +510,8 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
 .c2 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
+  -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
 .c2 > .sinoui-notched-outline__leading {
@@ -550,7 +556,7 @@ exports[`渲染密集状态下边框模式的Input 1`] = `
   border-width: 1px;
 }
 
-.c1:hover > .sinoui-notched-outline {
+.c1:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
@@ -709,6 +715,8 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 .c2 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
+  -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
 .c2 > .sinoui-notched-outline__leading {
@@ -753,7 +761,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
   border-width: 1px;
 }
 
-.c1:hover > .sinoui-notched-outline {
+.c1:hover > .sinoui-notched-outline > div {
   border-color: #f44336;
 }
 

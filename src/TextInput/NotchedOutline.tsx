@@ -28,6 +28,8 @@ const NotchedOutlineLayout = styled.div`
   > div {
     border: 1px solid currentColor;
     box-sizing: border-box;
+    transition: ${({ theme: { transitions } }) =>
+      transitions.create('border-color')};
   }
 
   > .sinoui-notched-outline__leading {

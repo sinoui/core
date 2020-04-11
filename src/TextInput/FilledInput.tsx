@@ -1,11 +1,9 @@
 import BaseInput from '@sinoui/core/BaseInput';
 import type { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled, { css } from 'styled-components';
+import React from 'react';
 import lineRippleStyle from './lineRippleStyle';
-import {
-  FILLED_INPUT_BGCOLOR,
-  DISABLED_FILLED_INPUT_BGCOLOR,
-} from './constant';
+import { FILLED_INPUT_BGCOLOR } from './constant';
 
 export interface FilledInputProps extends BaseInputProps {
   error?: boolean;
@@ -25,15 +23,36 @@ const denseNoLabelStyle = css`
   padding-bottom: 7px;
 `;
 
-/**
- * 填充模式输入框
- */
-const FilledInput = styled(BaseInput)<FilledInputProps>`
+const overlayStyle = css<{ focused?: boolean }>`
+  > .sinoui-input__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background-color: ${({ theme }) => theme.palette.text.primary};
+    pointer-events: none;
+    z-index: 2;
+    transition: ${({ theme: { transitions } }) =>
+      transitions.create('background-color', {
+        easing: transitions.easing.easeInOut,
+        duration: transitions.duration.shortest,
+      })};
+    opacity: ${({ focused }) => (focused ? 0.12 : 0)};
+  }
+  ${({ focused }) =>
+    !focused &&
+    `
+      :hover > .sinoui-input__overlay {
+        opacity: 0.04;
+      }
+  `}
+`;
+
+const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
   position: relative;
-  background-color: ${({ disabled, theme }) =>
-    (disabled ? DISABLED_FILLED_INPUT_BGCOLOR : FILLED_INPUT_BGCOLOR)[
-      theme.palette.type
-    ]};
+  overflow: hidden;
+  background-color: ${({ theme }) => FILLED_INPUT_BGCOLOR[theme.palette.type]};
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   transition: ${({ theme: { transitions } }) =>
@@ -41,14 +60,6 @@ const FilledInput = styled(BaseInput)<FilledInputProps>`
       duration: transitions.duration.shorter,
       easing: transitions.easing.easeOut,
     })};
-
-  &:hover {
-    ${(props) =>
-      !props.disabled &&
-      !props.readOnly &&
-      !props.error &&
-      `background-color: ${props.theme.palette.action.selected};`}
-  }
 
   > .sinoui-input-adornment--end {
     margin-right: 12px;
@@ -74,6 +85,21 @@ const FilledInput = styled(BaseInput)<FilledInputProps>`
   }
 
   ${lineRippleStyle}
+  ${({ disabled }) => !disabled && overlayStyle}
 `;
+
+/**
+ * 填充模式输入框
+ */
+const FilledInput = React.forwardRef<HTMLDivElement, FilledInputProps>(
+  ({ children, ...props }, ref) => {
+    return (
+      <FilledInputLayout {...props} ref={ref}>
+        {children}
+        <div className="sinoui-input__overlay" />
+      </FilledInputLayout>
+    );
+  },
+);
 
 export default FilledInput;

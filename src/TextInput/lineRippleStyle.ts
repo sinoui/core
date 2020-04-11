@@ -1,10 +1,9 @@
 import { css } from 'styled-components';
-import { INPUT_LINE_COLOR, DISABLED_INPUT_LINE_COLOR } from './constant';
+import { INPUT_LINE_COLOR } from './constant';
 
 interface LineRippleProps {
   error?: boolean;
   focused?: boolean;
-  readOnly?: boolean;
   disabled?: boolean;
   /**
    * 如何设置为true，则采用标准模式。
@@ -37,7 +36,6 @@ const underlineStyle = css<LineRippleProps>`
   &:hover::before {
     ${(props) =>
       !props.disabled &&
-      !props.readOnly &&
       !props.error &&
       `background-color: ${props.theme.palette.text.primary};`}
   }
@@ -102,8 +100,7 @@ const disabledStyle = css`
     display: none;
   }
   &::before {
-    background-color: ${({ theme }) =>
-      DISABLED_INPUT_LINE_COLOR[theme.palette.type]};
+    background-color: ${({ theme }) => theme.palette.action.disabled};
   }
 `;
 
@@ -149,7 +146,7 @@ const baseStyle = css`
  */
 const lineRippleStyle = css<LineRippleProps>`
   ${baseStyle}
-  ${({ error, disabled, readOnly, focused, standard }) => {
+  ${({ error, disabled, focused, standard }) => {
     if (disabled) {
       return standard ? disabledStandardStyle : disabledStyle;
     }
@@ -161,7 +158,7 @@ const lineRippleStyle = css<LineRippleProps>`
       return focusedStyle;
     }
 
-    return readOnly ? null : hoverStyle;
+    return hoverStyle;
   }}
 `;
 

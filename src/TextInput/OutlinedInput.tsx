@@ -4,7 +4,7 @@ import type { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled, { css } from 'styled-components';
 import type { Theme } from '@sinoui/theme';
 import NotchedOutline from './NotchedOutline';
-import { DISABLED_INPUT_LINE_COLOR } from './constant';
+import adjustOpacity from '../utils/adjustOpacity';
 
 export interface OutlinedInputProps extends BaseInputProps {
   /**
@@ -53,7 +53,7 @@ const getOutlineColor = (
 ) => {
   const { theme, $focused, error, disabled } = props;
   if (disabled) {
-    return DISABLED_INPUT_LINE_COLOR[theme.palette.type];
+    return theme.palette.action.disabled;
   }
   if (error) {
     return theme.palette.error.main;
@@ -64,7 +64,7 @@ const getOutlineColor = (
   if (isHover) {
     return theme.palette.text.primary;
   }
-  return theme.palette.text.hint;
+  return adjustOpacity(0.38, theme.palette.action.active);
 };
 
 const denseStyle = css`
@@ -86,7 +86,7 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
     border-width: ${({ $focused }) => ($focused ? 2 : 1)}px;
   }
 
-  :hover > .sinoui-notched-outline {
+  :hover > .sinoui-notched-outline > div {
     border-color: ${(props) => getOutlineColor(props, true)};
   }
 
