@@ -30,6 +30,8 @@ module.exports = {
           'components/badge',
           'components/app-bar',
           'components/bottom-app-bar',
+          'components/dialog',
+          'components/bottomSheet',
         ],
       },
     ],
@@ -54,6 +56,8 @@ module.exports = {
       'components-apis/badge',
       'components-apis/app-bar',
       'components-apis/bottom-app-bar',
+      'components-apis/dialog',
+      'components-apis/bottomSheet',
     ],
   },
 };

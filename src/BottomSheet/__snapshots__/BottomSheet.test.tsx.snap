@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BottomSheet组件 快照测试 内容超出屏幕一半显示滚动条 1`] = `
+<button
+  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+  color="primary"
+  onClick={[Function]}
+  role="button"
+  type="button"
+>
+  CLICK
+</button>
+`;
+
+exports[`BottomSheet组件 快照测试 基本使用 1`] = `
+<button
+  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+  color="primary"
+  onClick={[Function]}
+  role="button"
+  type="button"
+>
+  CLICK
+</button>
+`;
+
+exports[`BottomSheet组件 快照测试 指定背景颜色 1`] = `
+<button
+  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+  color="primary"
+  onClick={[Function]}
+  role="button"
+  type="button"
+>
+  CLICK
+</button>
+`;
+
+exports[`BottomSheet组件 快照测试 点击遮罩层事件 1`] = `
+<button
+  className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button Button__ButtonLayout-sc-15sa99-0 duCArv sinoui-button"
+  color="primary"
+  onClick={[Function]}
+  role="button"
+  type="button"
+>
+  CLICK
+</button>
+`;
