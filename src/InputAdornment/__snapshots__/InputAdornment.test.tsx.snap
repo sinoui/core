@@ -16,7 +16,12 @@ exports[`在开始位置使用 1`] = `
   align-items: center;
   max-height: 2em;
   white-space: nowrap;
+  color: rgba(0,0,0,0.6);
   margin-right: 8px;
+}
+
+.sinoui-text-input--disabled .c0 {
+  color: rgba(0,0,0,0.38);
 }
 
 <div
@@ -44,7 +49,12 @@ exports[`在结束位置使用 1`] = `
   align-items: center;
   max-height: 2em;
   white-space: nowrap;
+  color: rgba(0,0,0,0.6);
   margin-left: 8px;
+}
+
+.sinoui-text-input--disabled .c0 {
+  color: rgba(0,0,0,0.38);
 }
 
 <div
@@ -68,7 +78,7 @@ exports[`显示文本装饰器 1`] = `
   -ms-letter-spacing: 0.00938em;
   letter-spacing: 0.00938em;
   text-align: left;
-  color: rgba(0,0,0,0.87);
+  color: inherit;
 }
 
 .c0 {
@@ -86,6 +96,7 @@ exports[`显示文本装饰器 1`] = `
   align-items: center;
   max-height: 2em;
   white-space: nowrap;
+  color: rgba(0,0,0,0.6);
   margin-left: 8px;
   pointer-events: none;
   -webkit-user-select: none;
@@ -94,12 +105,16 @@ exports[`显示文本装饰器 1`] = `
   user-select: none;
 }
 
+.sinoui-text-input--disabled .c0 {
+  color: rgba(0,0,0,0.38);
+}
+
 <div
   className="c0 sinoui-input-adornment sinoui-input-adornment--end"
 >
   <p
     className="c1 sinoui-typography sinoui-typography--body1"
-    color="textPrimary"
+    color="inherit"
     type="body1"
   >
     装饰器
@@ -123,7 +138,12 @@ exports[`替换根元素 1`] = `
   align-items: center;
   max-height: 2em;
   white-space: nowrap;
+  color: rgba(0,0,0,0.6);
   margin-right: 8px;
+}
+
+.sinoui-text-input--disabled .c0 {
+  color: rgba(0,0,0,0.38);
 }
 
 <p
@@ -151,12 +171,17 @@ exports[`禁止点击事件 1`] = `
   align-items: center;
   max-height: 2em;
   white-space: nowrap;
+  color: rgba(0,0,0,0.6);
   margin-right: 8px;
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.sinoui-text-input--disabled .c0 {
+  color: rgba(0,0,0,0.38);
 }
 
 <div

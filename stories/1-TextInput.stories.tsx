@@ -232,6 +232,13 @@ function AdornmentInput() {
         <TextInputField
           value={value}
           onChange={onChange}
+          label="金额"
+          startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+          disabled
+        />
+        <TextInputField
+          value={value}
+          onChange={onChange}
           label="Label"
           startAdornment={
             <InputAdornment position="start">
@@ -265,6 +272,14 @@ function AdornmentInput() {
           onChange={onChange}
           label="金额"
           startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        />
+        <TextInputField
+          variant="filled"
+          value={value}
+          onChange={onChange}
+          label="金额"
+          startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+          disabled
         />
         <TextInputField
           variant="filled"
@@ -305,6 +320,14 @@ function AdornmentInput() {
           onChange={onChange}
           label="金额"
           startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        />
+        <TextInputField
+          variant="outlined"
+          value={value}
+          onChange={onChange}
+          label="金额"
+          startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+          disabled
         />
         <TextInputField
           variant="outlined"

@@ -55,6 +55,7 @@ const InputAdornmentLayout = styled.div.attrs(
   align-items: center;
   max-height: 2em;
   white-space: nowrap;
+  color: ${({ theme }) => theme.palette.text.secondary};
   ${({ $position }) => ($position === 'start' ? startCss : endCss)};
   ${({ $disablePointerEvents }) =>
     $disablePointerEvents &&
@@ -62,6 +63,9 @@ const InputAdornmentLayout = styled.div.attrs(
       pointer-events: none;
       user-select: none;
   `};
+  .sinoui-text-input--disabled & {
+    color: ${({ theme }) => theme.palette.text.disabled};
+  }
 `;
 
 /**
@@ -78,7 +82,7 @@ const InputAdornment = (props: Props) => {
       $disablePointerEvents={$disablePointerEvents}
       $position={position}
     >
-      {isStringChildren ? <Body1>{children}</Body1> : children}
+      {isStringChildren ? <Body1 color="inherit">{children}</Body1> : children}
     </InputAdornmentLayout>
   );
 };
