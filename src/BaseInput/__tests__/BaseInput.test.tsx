@@ -309,3 +309,13 @@ it('设置校验错误信息', () => {
 
   expect(input.validationMessage).toBe('');
 });
+
+it('多行输入框', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <BaseInput multiline data-testid="input" />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).toHaveClass('sinoui-base-input--multiline');
+});

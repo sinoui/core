@@ -618,3 +618,46 @@ export const 标签不换行显示 = () => (
     />
   </ThemeProvider>
 );
+
+const MultilineTextInputDemo = () => {
+  const [value, setValue] = useState('');
+  const handleChange = (event: React.ChangeEvent<any>) =>
+    setValue(event.target.value);
+  return (
+    <div
+      style={{
+        display: 'flex',
+      }}
+    >
+      <TextInputField
+        multiline
+        maxRows={2}
+        label="多行输入框"
+        value={value}
+        onChange={handleChange}
+      />
+      <TextInputField
+        variant="filled"
+        multiline
+        maxRows={2}
+        label="多行输入框"
+        value={value}
+        onChange={handleChange}
+      />
+      <TextInputField
+        variant="outlined"
+        multiline
+        maxRows={2}
+        label="多行输入框"
+        value={value}
+        onChange={handleChange}
+      />
+    </div>
+  );
+};
+
+export const 多行输入框 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <MultilineTextInputDemo />
+  </ThemeProvider>
+);

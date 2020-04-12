@@ -74,9 +74,10 @@ Array [
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c1 {
@@ -278,9 +279,10 @@ Array [
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c1 {
@@ -486,9 +488,10 @@ exports[`无标签 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c1 {
@@ -697,9 +700,10 @@ exports[`聚焦状态 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c1 {

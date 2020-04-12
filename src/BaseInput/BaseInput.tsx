@@ -297,11 +297,13 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
         'sinoui-base-input',
         {
           disabled,
+          multiline,
         },
         className,
       )}
       disabled={disabled}
       $fullWidth={fullWidth}
+      $multiline={multiline}
       $align={align}
       data-testid="baseInput"
       ref={ref}

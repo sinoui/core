@@ -14,6 +14,10 @@ interface Props {
    * 输入框文本对齐方式
    */
   $align?: 'start' | 'end';
+  /**
+   * 是否是多行输入框
+   */
+  $multiline?: boolean;
 }
 
 /**
@@ -41,10 +45,13 @@ const BaseInputLayout = styled.div<Props>`
     ${({ $align }) => $align === 'end' && 'text-align: right;'}
   }
 
-  > textarea {
+  &.sinoui-base-input--multiline > textarea {
     resize: none;
     overflow: hidden;
+    padding: 0;
   }
+
+  ${({ $multiline }) => $multiline && 'padding: 3.5px 0 4.5px;'}
 `;
 
 export default BaseInputLayout;

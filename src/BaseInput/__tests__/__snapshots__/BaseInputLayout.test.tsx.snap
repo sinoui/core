@@ -74,9 +74,10 @@ exports[`全宽模式 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 <div
@@ -159,9 +160,10 @@ exports[`单行输入框 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 <div
@@ -244,9 +246,10 @@ exports[`多行输入框 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 <div
@@ -329,9 +332,10 @@ exports[`禁用状态 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 <div

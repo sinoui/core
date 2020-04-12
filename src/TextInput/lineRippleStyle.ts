@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { INPUT_LINE_COLOR } from './constant';
 
 interface LineRippleProps {
-  error?: boolean;
+  error?: string;
   focused?: boolean;
   disabled?: boolean;
   /**

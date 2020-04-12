@@ -8,10 +8,6 @@ import adjustOpacity from '../utils/adjustOpacity';
 
 export interface OutlinedInputProps extends BaseInputProps {
   /**
-   * 如果设置为 `true`，输入框将显示为错误状态。
-   */
-  error?: boolean;
-  /**
    * 如果设置为 `true`，轮廓上出现缺口，并且标签上浮到轮廓缺口处。
    */
   notched?: boolean;
@@ -34,7 +30,7 @@ export interface OutlinedInputProps extends BaseInputProps {
 }
 
 interface StyledBaseInputProps {
-  error?: boolean;
+  error?: string;
   $focused?: boolean;
   $dense?: boolean;
   disabled?: boolean;
@@ -90,7 +86,7 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
     border-color: ${(props) => getOutlineColor(props, true)};
   }
 
-  > .sinoui-base-input__input {
+  ${({ multiline }) => (multiline ? '&' : '> .sinoui-base-input__input')} {
     padding: ${({ $noLabel }) => ($noLabel ? 8 : 16)}px 14px;
 
     ${({ $dense, $noLabel }) => $dense && !$noLabel && denseStyle}

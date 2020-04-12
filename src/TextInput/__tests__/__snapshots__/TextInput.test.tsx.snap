@@ -73,9 +73,10 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   caret-color: #f44336;
 }
 
-.c2 > textarea {
+.c2.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c5 {
@@ -608,9 +609,10 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   caret-color: #f44336;
 }
 
-.c2 > textarea {
+.c2.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c6 {
@@ -1032,9 +1034,10 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   caret-color: #f44336;
 }
 
-.c2 > textarea {
+.c2.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c7 {
@@ -1656,9 +1659,10 @@ exports[`渲染带后缀元素的输入框 1`] = `
   caret-color: #f44336;
 }
 
-.c2 > textarea {
+.c2.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c7 {
@@ -2215,9 +2219,10 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   caret-color: #f44336;
 }
 
-.c2 > textarea {
+.c2.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c6 {
@@ -2612,9 +2617,10 @@ exports[`渲染有错误提示的输入框 1`] = `
   caret-color: #f44336;
 }
 
-.c2 > textarea {
+.c2.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c6 {

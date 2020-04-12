@@ -7,10 +7,6 @@ import { FILLED_INPUT_BGCOLOR } from './constant';
 
 export interface FilledInputProps extends BaseInputProps {
   /**
-   * 错误状态
-   */
-  error?: boolean;
-  /**
    * 聚焦状态
    */
   focused?: boolean;
@@ -97,7 +93,7 @@ const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
     transform: translateY(${({ noLabel }) => (noLabel ? 0 : 7.5)}px);
   }
 
-  > .sinoui-base-input__input {
+  ${({ multiline }) => (multiline ? '&' : '> .sinoui-base-input__input')} {
     padding: 23.5px 12px 8.5px;
     padding-top: ${({ noLabel }) => (noLabel ? 7.5 : 23.5)}px;
     ${({ noLabel, dense }) => !noLabel && dense && denseStyle}

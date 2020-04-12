@@ -73,9 +73,10 @@ exports[`正确渲染input 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c1 {
@@ -224,9 +225,10 @@ exports[`渲染不可用的Input 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c1 {
@@ -376,9 +378,10 @@ exports[`渲染密集模式下的Input 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c1 {
@@ -527,9 +530,10 @@ exports[`渲染错误状态下的input 1`] = `
   caret-color: #f44336;
 }
 
-.c0 > textarea {
+.c0.sinoui-base-input--multiline > textarea {
   resize: none;
   overflow: hidden;
+  padding: 0;
 }
 
 .c1 {
