@@ -190,7 +190,7 @@ Array [
 }
 
 <div
-    className="c0 c1 sinoui-base-input"
+    className="c0 sinoui-base-input c1"
     data-testid="baseInput"
     onClick={[Function]}
   >
@@ -392,7 +392,7 @@ Array [
 }
 
 <div
-    className="c0 c1 sinoui-base-input"
+    className="c0 sinoui-base-input c1"
     data-testid="baseInput"
     onClick={[Function]}
   >
@@ -596,7 +596,7 @@ exports[`无标签 1`] = `
 }
 
 <div
-  className="c0 c1 sinoui-base-input"
+  className="c0 sinoui-base-input c1"
   data-testid="baseInput"
   onClick={[Function]}
 >
@@ -802,7 +802,7 @@ exports[`聚焦状态 1`] = `
 }
 
 <div
-  className="c0 c1 sinoui-base-input"
+  className="c0 sinoui-base-input c1"
   data-testid="baseInput"
   onClick={[Function]}
 >

@@ -281,11 +281,12 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   return (
     <BaseInputLayout
-      className={classNames(
-        className,
-        bemClassNames('sinoui-base-input', {
+      className={bemClassNames(
+        'sinoui-base-input',
+        {
           disabled,
-        }),
+        },
+        className,
       )}
       disabled={disabled}
       $fullWidth={fullWidth}

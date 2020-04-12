@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
-import classNames from 'classnames';
 import FilledInput from './FilledInput';
 import OutlinedInput from './OutlinedInput';
 import InputLabel from './InputLabel';
@@ -136,15 +135,16 @@ export default function TextInput(props: TextInputProps) {
   return (
     <TextInputWrapper
       {...wrapperProps}
-      className={classNames(
-        className,
-        bemClassNames(baseClassName, {
+      className={bemClassNames(
+        baseClassName,
+        {
           outlined: variant === 'outlined',
           filled: variant === 'filled',
           shrink,
           noLabel,
           ...inputState,
-        }),
+        },
+        className,
       )}
       onFocus={handleFocus}
       onBlur={handleBlur}

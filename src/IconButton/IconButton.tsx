@@ -2,7 +2,6 @@ import React from 'react';
 import BaseButton from '@sinoui/core/BaseButton';
 import type { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled from 'styled-components';
-import classNames from 'classnames';
 import getColorFromTheme from '../utils/getColorFromTheme';
 import OverridableComponent from '../OverridableComponent';
 import adjustOpacity from '../utils/adjustOpacity';
@@ -80,10 +79,11 @@ const IconButton: OverridableComponent<
       ripple={rippleConfig}
       disabled={disabled}
       color={color}
-      className={classNames(
-        bemClassNames('sinoui-icon-button', {
+      className={bemClassNames(
+        'sinoui-icon-button',
+        {
           disabled,
-        }),
+        },
         className,
       )}
       {...other}

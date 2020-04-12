@@ -451,7 +451,7 @@ label ~ .c3 {
       用户名
     </label>
     <div
-      className="c2 c3 sinoui-base-input"
+      className="c2 sinoui-base-input c3"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -474,7 +474,7 @@ label ~ .c3 {
       用户名
     </label>
     <div
-      className="c2 c5 sinoui-base-input"
+      className="c2 sinoui-base-input c5"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -500,7 +500,7 @@ label ~ .c3 {
       用户名
     </label>
     <div
-      className="c2 c7 sinoui-base-input"
+      className="c2 sinoui-base-input c7"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -857,7 +857,7 @@ label ~ .c3 {
       用户名
     </label>
     <div
-      className="c2 c3 sinoui-base-input sinoui-base-input--disabled"
+      className="c2 sinoui-base-input sinoui-base-input--disabled c3"
       data-testid="baseInput"
       disabled={true}
       onClick={[Function]}
@@ -889,7 +889,7 @@ label ~ .c3 {
       用户名
     </label>
     <div
-      className="c2 c6 sinoui-base-input sinoui-base-input--disabled"
+      className="c2 sinoui-base-input sinoui-base-input--disabled c6"
       data-testid="baseInput"
       disabled={true}
       onClick={[Function]}
@@ -1421,7 +1421,7 @@ label ~ .c3 {
       金额
     </label>
     <div
-      className="c2 c3 sinoui-base-input"
+      className="c2 sinoui-base-input c3"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -1455,7 +1455,7 @@ label ~ .c3 {
       金额
     </label>
     <div
-      className="c2 c7 sinoui-base-input"
+      className="c2 sinoui-base-input c7"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -1492,7 +1492,7 @@ label ~ .c3 {
       金额
     </label>
     <div
-      className="c2 c9 sinoui-base-input"
+      className="c2 sinoui-base-input c9"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -2019,7 +2019,7 @@ label ~ .c3 {
       重量
     </label>
     <div
-      className="c2 c3 sinoui-base-input"
+      className="c2 sinoui-base-input c3"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -2053,7 +2053,7 @@ label ~ .c3 {
       重量
     </label>
     <div
-      className="c2 c7 sinoui-base-input"
+      className="c2 sinoui-base-input c7"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -2090,7 +2090,7 @@ label ~ .c3 {
       重量
     </label>
     <div
-      className="c2 c9 sinoui-base-input"
+      className="c2 sinoui-base-input c9"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -2478,7 +2478,7 @@ label ~ .c3 {
       用户名
     </label>
     <div
-      className="c2 c3 sinoui-base-input"
+      className="c2 sinoui-base-input c3"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -2506,7 +2506,7 @@ label ~ .c3 {
       用户名
     </label>
     <div
-      className="c2 c6 sinoui-base-input"
+      className="c2 sinoui-base-input c6"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -2884,7 +2884,7 @@ label ~ .c3 {
       用户名
     </label>
     <div
-      className="c2 c3 sinoui-base-input"
+      className="c2 sinoui-base-input c3"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -2914,7 +2914,7 @@ label ~ .c3 {
       用户名
     </label>
     <div
-      className="c2 c6 sinoui-base-input"
+      className="c2 sinoui-base-input c6"
       data-testid="baseInput"
       onClick={[Function]}
     >

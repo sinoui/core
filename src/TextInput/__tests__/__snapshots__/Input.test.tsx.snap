@@ -136,7 +136,7 @@ label ~ .c1 {
 }
 
 <div
-  className="c0 c1 sinoui-base-input"
+  className="c0 sinoui-base-input c1"
   data-testid="baseInput"
   onClick={[Function]}
 >
@@ -284,7 +284,7 @@ label ~ .c1 {
 }
 
 <div
-  className="c0 c1 sinoui-base-input sinoui-base-input--disabled"
+  className="c0 sinoui-base-input sinoui-base-input--disabled c1"
   data-testid="baseInput"
   disabled={true}
   onClick={[Function]}
@@ -435,7 +435,7 @@ label ~ .c1 {
 }
 
 <div
-  className="c0 c1 sinoui-base-input"
+  className="c0 sinoui-base-input c1"
   data-testid="baseInput"
   onClick={[Function]}
 >
@@ -582,7 +582,7 @@ label ~ .c1 {
 }
 
 <div
-  className="c0 c1 sinoui-base-input"
+  className="c0 sinoui-base-input c1"
   data-testid="baseInput"
   onClick={[Function]}
 >
