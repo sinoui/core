@@ -6,21 +6,32 @@ import lineRippleStyle from './lineRippleStyle';
 import { FILLED_INPUT_BGCOLOR } from './constant';
 
 export interface FilledInputProps extends BaseInputProps {
+  /**
+   * 错误状态
+   */
   error?: boolean;
-  warning?: boolean;
+  /**
+   * 聚焦状态
+   */
   focused?: boolean;
+  /**
+   * 密集模式
+   */
   dense?: boolean;
+  /**
+   * 无标签
+   */
   noLabel?: boolean;
 }
 
 const denseStyle = css`
-  padding-top: 22px;
-  padding-bottom: 7px;
+  padding-top: 19.5px;
+  padding-bottom: 4.5px;
 `;
 
 const denseNoLabelStyle = css`
-  padding-top: 6px;
-  padding-bottom: 7px;
+  padding-top: 3.5px;
+  padding-bottom: 4.5px;
 `;
 
 const overlayStyle = css<{ focused?: boolean }>`
@@ -67,19 +78,28 @@ const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
   }
 
   > .sinoui-input-adornment--start {
-    margin-left: 10px;
     margin-right: 0px;
-    margin-top: 12px;
+    margin-left: 10px;
   }
 
-  > .sinoui-input-adornment--start ~ input {
-    margin-left: -8px;
+  > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+    margin-left: -6px;
   }
 
-  > input,
-  > textarea {
-    padding: 26px 12px 11px;
-    padding-top: ${({ noLabel }) => (noLabel ? 10 : 26)}px;
+  > .sinoui-input-adornment--start.sinoui-input-adornment--text
+    ~ .sinoui-base-input__input,
+  > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+    margin-left: -12px;
+  }
+
+  > .sinoui-input-adornment--start,
+  > .sinoui-input-adornment--text {
+    transform: translateY(${({ noLabel }) => (noLabel ? 0 : 7.5)}px);
+  }
+
+  > .sinoui-base-input__input {
+    padding: 23.5px 12px 8.5px;
+    padding-top: ${({ noLabel }) => (noLabel ? 7.5 : 23.5)}px;
     ${({ noLabel, dense }) => !noLabel && dense && denseStyle}
     ${({ noLabel, dense }) => dense && noLabel && denseNoLabelStyle}
   }

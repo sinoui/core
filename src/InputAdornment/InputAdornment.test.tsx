@@ -3,7 +3,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import { render, cleanup } from '@testing-library/react';
 import InputAdornment from './InputAdornment';
+
+afterEach(cleanup);
 
 it('在开始位置使用', () => {
   const tree = renderer
@@ -43,6 +46,18 @@ it('显示文本装饰器', () => {
     .toJSON();
 
   expect(tree).toMatchSnapshot();
+});
+
+it('文本装饰器的className', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <InputAdornment data-testid="adornment" position="end">
+        文本
+      </InputAdornment>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('adornment')).toHaveClass('sinoui-input-adornment--text');
 });
 
 it('禁止点击事件', () => {

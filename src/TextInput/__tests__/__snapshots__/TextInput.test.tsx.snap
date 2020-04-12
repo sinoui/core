@@ -20,12 +20,11 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   -ms-letter-spacing: 0.00938em;
   letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875em;
+  line-height: 1.5em;
 }
 
-.c2 > input,
-.c2 > textarea {
-  padding: 6px 0 7px;
+.c2 > .sinoui-base-input__input {
+  padding: 3.5px 0 4.5px;
   display: block;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -44,37 +43,31 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.1876em;
-  min-height: 1.1876em;
+  height: 1.5em;
+  min-height: 1.5em;
 }
 
-.c2 > input::-moz-placeholder,
-.c2 > textarea::-moz-placeholder {
+.c2 > .sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder,
-.c2 > textarea::-webkit-input-placeholder {
+.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder,
-.c2 > textarea:-ms-input-placeholder {
+.c2 > .sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear,
-.c2 > textarea::-ms-clear {
+.c2 > .sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus,
-.c2 > textarea:focus {
+.c2 > .sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > input:invalid,
-.c2 > textarea:invalid {
+.c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
 }
 
@@ -99,19 +92,29 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 }
 
 .c5 > .sinoui-input-adornment--start {
-  margin-left: 10px;
   margin-right: 0px;
-  margin-top: 12px;
+  margin-left: 10px;
 }
 
-.c5 > .sinoui-input-adornment--start ~ input {
-  margin-left: -8px;
+.c5 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+  margin-left: -6px;
 }
 
-.c5 > input,
-.c5 > textarea {
-  padding: 26px 12px 11px;
-  padding-top: 26px;
+.c5 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c5 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -12px;
+}
+
+.c5 > .sinoui-input-adornment--start,
+.c5 > .sinoui-input-adornment--text {
+  -webkit-transform: translateY(7.5px);
+  -ms-transform: translateY(7.5px);
+  transform: translateY(7.5px);
+}
+
+.c5 > .sinoui-base-input__input {
+  padding: 23.5px 12px 8.5px;
+  padding-top: 23.5px;
 }
 
 .c5::before {
@@ -252,9 +255,8 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   border-color: rgba(0,0,0,0.87);
 }
 
-.c7 > input,
-.c7 > textarea {
-  padding: 18.5px 14px;
+.c7 > .sinoui-base-input__input {
+  padding: 16px 14px;
 }
 
 .c7 > .sinoui-input-adornment--start {
@@ -267,8 +269,13 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   margin-left: -6px;
 }
 
-.c7 > .sinoui-input-adornment--start ~ input {
+.c7 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
+}
+
+.c7 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c7 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -14px;
 }
 
 .c1 {
@@ -546,12 +553,11 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   -ms-letter-spacing: 0.00938em;
   letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875em;
+  line-height: 1.5em;
 }
 
-.c2 > input,
-.c2 > textarea {
-  padding: 6px 0 7px;
+.c2 > .sinoui-base-input__input {
+  padding: 3.5px 0 4.5px;
   display: block;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -570,37 +576,31 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.1876em;
-  min-height: 1.1876em;
+  height: 1.5em;
+  min-height: 1.5em;
 }
 
-.c2 > input::-moz-placeholder,
-.c2 > textarea::-moz-placeholder {
+.c2 > .sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder,
-.c2 > textarea::-webkit-input-placeholder {
+.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder,
-.c2 > textarea:-ms-input-placeholder {
+.c2 > .sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear,
-.c2 > textarea::-ms-clear {
+.c2 > .sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus,
-.c2 > textarea:focus {
+.c2 > .sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > input:invalid,
-.c2 > textarea:invalid {
+.c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
 }
 
@@ -625,19 +625,29 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 }
 
 .c6 > .sinoui-input-adornment--start {
-  margin-left: 10px;
   margin-right: 0px;
-  margin-top: 12px;
+  margin-left: 10px;
 }
 
-.c6 > .sinoui-input-adornment--start ~ input {
-  margin-left: -8px;
+.c6 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+  margin-left: -6px;
 }
 
-.c6 > input,
-.c6 > textarea {
-  padding: 26px 12px 11px;
-  padding-top: 26px;
+.c6 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c6 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -12px;
+}
+
+.c6 > .sinoui-input-adornment--start,
+.c6 > .sinoui-input-adornment--text {
+  -webkit-transform: translateY(7.5px);
+  -ms-transform: translateY(7.5px);
+  transform: translateY(7.5px);
+}
+
+.c6 > .sinoui-base-input__input {
+  padding: 23.5px 12px 8.5px;
+  padding-top: 23.5px;
 }
 
 .c6::before {
@@ -935,7 +945,6 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   max-height: 2em;
   white-space: nowrap;
   color: rgba(0,0,0,0.6);
-  margin-right: 8px;
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -966,12 +975,11 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   -ms-letter-spacing: 0.00938em;
   letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875em;
+  line-height: 1.5em;
 }
 
-.c2 > input,
-.c2 > textarea {
-  padding: 6px 0 7px;
+.c2 > .sinoui-base-input__input {
+  padding: 3.5px 0 4.5px;
   display: block;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -990,37 +998,31 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.1876em;
-  min-height: 1.1876em;
+  height: 1.5em;
+  min-height: 1.5em;
 }
 
-.c2 > input::-moz-placeholder,
-.c2 > textarea::-moz-placeholder {
+.c2 > .sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder,
-.c2 > textarea::-webkit-input-placeholder {
+.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder,
-.c2 > textarea:-ms-input-placeholder {
+.c2 > .sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear,
-.c2 > textarea::-ms-clear {
+.c2 > .sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus,
-.c2 > textarea:focus {
+.c2 > .sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > input:invalid,
-.c2 > textarea:invalid {
+.c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
 }
 
@@ -1045,19 +1047,29 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 }
 
 .c7 > .sinoui-input-adornment--start {
-  margin-left: 10px;
   margin-right: 0px;
-  margin-top: 12px;
+  margin-left: 10px;
 }
 
-.c7 > .sinoui-input-adornment--start ~ input {
-  margin-left: -8px;
+.c7 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+  margin-left: -6px;
 }
 
-.c7 > input,
-.c7 > textarea {
-  padding: 26px 12px 11px;
-  padding-top: 26px;
+.c7 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c7 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -12px;
+}
+
+.c7 > .sinoui-input-adornment--start,
+.c7 > .sinoui-input-adornment--text {
+  -webkit-transform: translateY(7.5px);
+  -ms-transform: translateY(7.5px);
+  transform: translateY(7.5px);
+}
+
+.c7 > .sinoui-base-input__input {
+  padding: 23.5px 12px 8.5px;
+  padding-top: 23.5px;
 }
 
 .c7::before {
@@ -1198,9 +1210,8 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   border-color: rgba(0,0,0,0.87);
 }
 
-.c9 > input,
-.c9 > textarea {
-  padding: 18.5px 14px;
+.c9 > .sinoui-base-input__input {
+  padding: 16px 14px;
 }
 
 .c9 > .sinoui-input-adornment--start {
@@ -1213,8 +1224,13 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   margin-left: -6px;
 }
 
-.c9 > .sinoui-input-adornment--start ~ input {
+.c9 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
+}
+
+.c9 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c9 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -14px;
 }
 
 .c1 {
@@ -1410,7 +1426,7 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <div
-        className="c4 sinoui-input-adornment sinoui-input-adornment--start"
+        className="c4 sinoui-input-adornment sinoui-input-adornment--start sinoui-input-adornment--text"
       >
         <p
           className="c5 sinoui-typography sinoui-typography--body1"
@@ -1444,7 +1460,7 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <div
-        className="c4 sinoui-input-adornment sinoui-input-adornment--start"
+        className="c4 sinoui-input-adornment sinoui-input-adornment--start sinoui-input-adornment--text"
       >
         <p
           className="c5 sinoui-typography sinoui-typography--body1"
@@ -1481,7 +1497,7 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <div
-        className="c4 sinoui-input-adornment sinoui-input-adornment--start"
+        className="c4 sinoui-input-adornment sinoui-input-adornment--start sinoui-input-adornment--text"
       >
         <p
           className="c5 sinoui-typography sinoui-typography--body1"
@@ -1551,7 +1567,6 @@ exports[`渲染带后缀元素的输入框 1`] = `
   max-height: 2em;
   white-space: nowrap;
   color: rgba(0,0,0,0.6);
-  margin-left: 8px;
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1582,12 +1597,11 @@ exports[`渲染带后缀元素的输入框 1`] = `
   -ms-letter-spacing: 0.00938em;
   letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875em;
+  line-height: 1.5em;
 }
 
-.c2 > input,
-.c2 > textarea {
-  padding: 6px 0 7px;
+.c2 > .sinoui-base-input__input {
+  padding: 3.5px 0 4.5px;
   display: block;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -1606,37 +1620,31 @@ exports[`渲染带后缀元素的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.1876em;
-  min-height: 1.1876em;
+  height: 1.5em;
+  min-height: 1.5em;
 }
 
-.c2 > input::-moz-placeholder,
-.c2 > textarea::-moz-placeholder {
+.c2 > .sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder,
-.c2 > textarea::-webkit-input-placeholder {
+.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder,
-.c2 > textarea:-ms-input-placeholder {
+.c2 > .sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear,
-.c2 > textarea::-ms-clear {
+.c2 > .sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus,
-.c2 > textarea:focus {
+.c2 > .sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > input:invalid,
-.c2 > textarea:invalid {
+.c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
 }
 
@@ -1661,19 +1669,29 @@ exports[`渲染带后缀元素的输入框 1`] = `
 }
 
 .c7 > .sinoui-input-adornment--start {
-  margin-left: 10px;
   margin-right: 0px;
-  margin-top: 12px;
+  margin-left: 10px;
 }
 
-.c7 > .sinoui-input-adornment--start ~ input {
-  margin-left: -8px;
+.c7 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+  margin-left: -6px;
 }
 
-.c7 > input,
-.c7 > textarea {
-  padding: 26px 12px 11px;
-  padding-top: 26px;
+.c7 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c7 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -12px;
+}
+
+.c7 > .sinoui-input-adornment--start,
+.c7 > .sinoui-input-adornment--text {
+  -webkit-transform: translateY(7.5px);
+  -ms-transform: translateY(7.5px);
+  transform: translateY(7.5px);
+}
+
+.c7 > .sinoui-base-input__input {
+  padding: 23.5px 12px 8.5px;
+  padding-top: 23.5px;
 }
 
 .c7::before {
@@ -1814,9 +1832,8 @@ exports[`渲染带后缀元素的输入框 1`] = `
   border-color: rgba(0,0,0,0.87);
 }
 
-.c9 > input,
-.c9 > textarea {
-  padding: 18.5px 14px;
+.c9 > .sinoui-base-input__input {
+  padding: 16px 14px;
 }
 
 .c9 > .sinoui-input-adornment--start {
@@ -1829,8 +1846,13 @@ exports[`渲染带后缀元素的输入框 1`] = `
   margin-left: -6px;
 }
 
-.c9 > .sinoui-input-adornment--start ~ input {
+.c9 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
+}
+
+.c9 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c9 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -14px;
 }
 
 .c1 {
@@ -2008,7 +2030,7 @@ label ~ .c3 {
         onFocus={[Function]}
       />
       <div
-        className="c4 sinoui-input-adornment sinoui-input-adornment--end"
+        className="c4 sinoui-input-adornment sinoui-input-adornment--end sinoui-input-adornment--text"
       >
         <p
           className="c5 sinoui-typography sinoui-typography--body1"
@@ -2042,7 +2064,7 @@ label ~ .c3 {
         onFocus={[Function]}
       />
       <div
-        className="c4 sinoui-input-adornment sinoui-input-adornment--end"
+        className="c4 sinoui-input-adornment sinoui-input-adornment--end sinoui-input-adornment--text"
       >
         <p
           className="c5 sinoui-typography sinoui-typography--body1"
@@ -2079,7 +2101,7 @@ label ~ .c3 {
         onFocus={[Function]}
       />
       <div
-        className="c4 sinoui-input-adornment sinoui-input-adornment--end"
+        className="c4 sinoui-input-adornment sinoui-input-adornment--end sinoui-input-adornment--text"
       >
         <p
           className="c5 sinoui-typography sinoui-typography--body1"
@@ -2132,12 +2154,11 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   -ms-letter-spacing: 0.00938em;
   letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875em;
+  line-height: 1.5em;
 }
 
-.c2 > input,
-.c2 > textarea {
-  padding: 6px 0 7px;
+.c2 > .sinoui-base-input__input {
+  padding: 3.5px 0 4.5px;
   display: block;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -2156,37 +2177,31 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.1876em;
-  min-height: 1.1876em;
+  height: 1.5em;
+  min-height: 1.5em;
 }
 
-.c2 > input::-moz-placeholder,
-.c2 > textarea::-moz-placeholder {
+.c2 > .sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder,
-.c2 > textarea::-webkit-input-placeholder {
+.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder,
-.c2 > textarea:-ms-input-placeholder {
+.c2 > .sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear,
-.c2 > textarea::-ms-clear {
+.c2 > .sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus,
-.c2 > textarea:focus {
+.c2 > .sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > input:invalid,
-.c2 > textarea:invalid {
+.c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
 }
 
@@ -2211,19 +2226,29 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 }
 
 .c6 > .sinoui-input-adornment--start {
-  margin-left: 10px;
   margin-right: 0px;
-  margin-top: 12px;
+  margin-left: 10px;
 }
 
-.c6 > .sinoui-input-adornment--start ~ input {
-  margin-left: -8px;
+.c6 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+  margin-left: -6px;
 }
 
-.c6 > input,
-.c6 > textarea {
-  padding: 26px 12px 11px;
-  padding-top: 26px;
+.c6 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c6 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -12px;
+}
+
+.c6 > .sinoui-input-adornment--start,
+.c6 > .sinoui-input-adornment--text {
+  -webkit-transform: translateY(7.5px);
+  -ms-transform: translateY(7.5px);
+  transform: translateY(7.5px);
+}
+
+.c6 > .sinoui-base-input__input {
+  padding: 23.5px 12px 8.5px;
+  padding-top: 23.5px;
 }
 
 .c6::before {
@@ -2524,12 +2549,11 @@ exports[`渲染有错误提示的输入框 1`] = `
   -ms-letter-spacing: 0.00938em;
   letter-spacing: 0.00938em;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  line-height: 1.1875em;
+  line-height: 1.5em;
 }
 
-.c2 > input,
-.c2 > textarea {
-  padding: 6px 0 7px;
+.c2 > .sinoui-base-input__input {
+  padding: 3.5px 0 4.5px;
   display: block;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -2548,37 +2572,31 @@ exports[`渲染有错误提示的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.1876em;
-  min-height: 1.1876em;
+  height: 1.5em;
+  min-height: 1.5em;
 }
 
-.c2 > input::-moz-placeholder,
-.c2 > textarea::-moz-placeholder {
+.c2 > .sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-webkit-input-placeholder,
-.c2 > textarea::-webkit-input-placeholder {
+.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input:-ms-input-placeholder,
-.c2 > textarea:-ms-input-placeholder {
+.c2 > .sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > input::-ms-clear,
-.c2 > textarea::-ms-clear {
+.c2 > .sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > input:focus,
-.c2 > textarea:focus {
+.c2 > .sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > input:invalid,
-.c2 > textarea:invalid {
+.c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
 }
 
@@ -2603,19 +2621,29 @@ exports[`渲染有错误提示的输入框 1`] = `
 }
 
 .c6 > .sinoui-input-adornment--start {
-  margin-left: 10px;
   margin-right: 0px;
-  margin-top: 12px;
+  margin-left: 10px;
 }
 
-.c6 > .sinoui-input-adornment--start ~ input {
-  margin-left: -8px;
+.c6 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+  margin-left: -6px;
 }
 
-.c6 > input,
-.c6 > textarea {
-  padding: 26px 12px 11px;
-  padding-top: 26px;
+.c6 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c6 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -12px;
+}
+
+.c6 > .sinoui-input-adornment--start,
+.c6 > .sinoui-input-adornment--text {
+  -webkit-transform: translateY(7.5px);
+  -ms-transform: translateY(7.5px);
+  transform: translateY(7.5px);
+}
+
+.c6 > .sinoui-base-input__input {
+  padding: 23.5px 12px 8.5px;
+  padding-top: 23.5px;
 }
 
 .c6::before {

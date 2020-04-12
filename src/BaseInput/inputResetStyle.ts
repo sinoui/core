@@ -17,8 +17,8 @@ const inputResetStyle = css`
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.1876em;
-  min-height: 1.1876em;
+  height: 1.5em;
+  min-height: 1.5em;
 
   ::-moz-placeholder {
     color: ${(props) => props.theme.palette.text.hint};

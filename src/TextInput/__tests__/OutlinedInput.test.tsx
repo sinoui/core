@@ -42,11 +42,38 @@ it('渲染错误状态下边框模式的Input', () => {
   expect(tree).toMatchSnapshot();
 });
 
+it('聚焦状态', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <OutlinedInput focused />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('无标签', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <OutlinedInput noLabel />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
 it('渲染密集状态下边框模式的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <OutlinedInput dense />
+        <>
+          <OutlinedInput dense />
+          <OutlinedInput dense noLabel />
+        </>
       </ThemeProvider>,
     )
     .toJSON();

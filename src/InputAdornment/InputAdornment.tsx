@@ -39,6 +39,7 @@ interface InputAdornmentLayoutProps {
    * 禁止点击事件。这个属性的作用是：点击装饰器会让输入框获取到焦点。
    */
   $disablePointerEvents?: boolean;
+  $isText?: boolean;
 }
 
 const InputAdornmentLayout = styled.div<InputAdornmentLayoutProps>`
@@ -53,7 +54,8 @@ const InputAdornmentLayout = styled.div<InputAdornmentLayoutProps>`
     color: ${({ theme }) => theme.palette.text.disabled};
   }
 
-  ${({ $position }) => ($position === 'start' ? startCss : endCss)};
+  ${({ $position, $isText }) =>
+    !$isText && ($position === 'start' ? startCss : endCss)};
   ${({ $disablePointerEvents }) =>
     $disablePointerEvents &&
     `
@@ -67,20 +69,22 @@ const InputAdornmentLayout = styled.div<InputAdornmentLayoutProps>`
  */
 const InputAdornment = (props: Props) => {
   const { children, disablePointerEvents, position, ...rest } = props;
-  const isStringChildren = typeof children === 'string';
-  const $disablePointerEvents = disablePointerEvents ?? isStringChildren;
+  const isTextChildren = typeof children === 'string';
+  const $disablePointerEvents = disablePointerEvents ?? isTextChildren;
 
   return (
     <InputAdornmentLayout
       {...rest}
       $disablePointerEvents={$disablePointerEvents}
       $position={position}
+      $isText={isTextChildren}
       className={bemClassNames('sinoui-input-adornment', {
         start: position === 'start',
         end: position === 'end',
+        text: isTextChildren,
       })}
     >
-      {isStringChildren ? <Body1 color="inherit">{children}</Body1> : children}
+      {isTextChildren ? <Body1 color="inherit">{children}</Body1> : children}
     </InputAdornmentLayout>
   );
 };

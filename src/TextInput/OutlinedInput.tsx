@@ -68,13 +68,13 @@ const getOutlineColor = (
 };
 
 const denseStyle = css`
-  padding-top: 10.5px;
-  padding-bottom: 10.5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 `;
 
 const denseNoLabelStyle = css`
-  padding-top: 6.5px;
-  padding-bottom: 6.5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 `;
 
 const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
@@ -90,9 +90,8 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
     border-color: ${(props) => getOutlineColor(props, true)};
   }
 
-  > input,
-  > textarea {
-    padding: ${({ $noLabel }) => ($noLabel ? 10.5 : 18.5)}px 14px;
+  > .sinoui-base-input__input {
+    padding: ${({ $noLabel }) => ($noLabel ? 8 : 16)}px 14px;
 
     ${({ $dense, $noLabel }) => $dense && !$noLabel && denseStyle}
     ${({ $dense, $noLabel }) => $dense && $noLabel && denseNoLabelStyle}
@@ -106,8 +105,14 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
     margin-right: 12px;
     margin-left: -6px;
   }
-  > .sinoui-input-adornment--start ~ input {
+  > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
     margin-left: -8px;
+  }
+
+  > .sinoui-input-adornment--start.sinoui-input-adornment--text
+    ~ .sinoui-base-input__input,
+  > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+    margin-left: -14px;
   }
 `;
 

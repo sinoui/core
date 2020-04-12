@@ -13,7 +13,7 @@ export default {
 
 const TextInputField = styled(TextInput)`
   margin: 8px;
-  width: 200px;
+  width: 300px;
 `;
 
 function SimpleInput() {
@@ -286,6 +286,22 @@ function AdornmentInput() {
               </InputAdornment>
             }
           />
+          <TextInputField
+            value={value}
+            onChange={onChange}
+            label="分量"
+            align="end"
+            endAdornment={<InputAdornment position="end">/100</InputAdornment>}
+          />
+          <TextInputField
+            value={value}
+            onChange={onChange}
+            label="邮箱"
+            align="end"
+            endAdornment={
+              <InputAdornment position="end">@sinosoft.com.cn</InputAdornment>
+            }
+          />
         </div>
         <div
           style={{
@@ -342,6 +358,35 @@ function AdornmentInput() {
               </InputAdornment>
             }
           />
+          <TextInputField
+            variant="filled"
+            value={value}
+            onChange={onChange}
+            label="分量"
+            align="end"
+            endAdornment={<InputAdornment position="end">/100</InputAdornment>}
+          />
+          <TextInputField
+            variant="filled"
+            value={value}
+            onChange={onChange}
+            label="邮箱"
+            align="end"
+            endAdornment={
+              <InputAdornment position="end">@sinosoft.com.cn</InputAdornment>
+            }
+          />
+          <TextInputField
+            variant="filled"
+            dense
+            value={value}
+            onChange={onChange}
+            label="邮箱"
+            align="end"
+            endAdornment={
+              <InputAdornment position="end">@sinosoft.com.cn</InputAdornment>
+            }
+          />
         </div>
         <div
           style={{
@@ -396,6 +441,24 @@ function AdornmentInput() {
               <InputAdornment position="end">
                 <Visibility color="textSecondary" />
               </InputAdornment>
+            }
+          />
+          <TextInputField
+            variant="outlined"
+            value={value}
+            onChange={onChange}
+            label="分量"
+            align="end"
+            endAdornment={<InputAdornment position="end">/100</InputAdornment>}
+          />
+          <TextInputField
+            variant="outlined"
+            value={value}
+            onChange={onChange}
+            label="邮箱"
+            align="end"
+            endAdornment={
+              <InputAdornment position="end">@sinosoft.com.cn</InputAdornment>
             }
           />
         </div>
@@ -434,6 +497,23 @@ export const 不带标签的输入框 = () => (
         minRows={2}
         placeholder="dense multilne minRows=2"
       />
+      <TextInputField
+        placeholder="金额"
+        startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        endAdornment={<InputAdornment position="end">万元</InputAdornment>}
+      />
+      <TextInputField
+        multiline
+        placeholder="金额 multilne"
+        startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        endAdornment={<InputAdornment position="end">万元</InputAdornment>}
+      />
+      <TextInputField
+        dense
+        placeholder="金额 dense"
+        startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        endAdornment={<InputAdornment position="end">万元</InputAdornment>}
+      />
 
       <H4 as="h2" style={{ margin: '1em 0 0.5em' }}>
         填充输入框
@@ -460,6 +540,26 @@ export const 不带标签的输入框 = () => (
         minRows={2}
         placeholder="dense multilne minRows=2"
       />
+      <TextInputField
+        variant="filled"
+        placeholder="金额"
+        startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        endAdornment={<InputAdornment position="end">万元</InputAdornment>}
+      />
+      <TextInputField
+        variant="filled"
+        multiline
+        placeholder="金额 multilne"
+        startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        endAdornment={<InputAdornment position="end">万元</InputAdornment>}
+      />
+      <TextInputField
+        variant="filled"
+        dense
+        placeholder="金额 dense"
+        startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        endAdornment={<InputAdornment position="end">万元</InputAdornment>}
+      />
 
       <H4 as="h2" style={{ margin: '1em 0 0.5em' }}>
         轮廓输入框
@@ -485,6 +585,26 @@ export const 不带标签的输入框 = () => (
         multiline
         minRows={2}
         placeholder="dense multilne minRows=2"
+      />
+      <TextInputField
+        variant="outlined"
+        placeholder="金额"
+        startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        endAdornment={<InputAdornment position="end">万元</InputAdornment>}
+      />
+      <TextInputField
+        variant="outlined"
+        multiline
+        placeholder="金额 multilne"
+        startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        endAdornment={<InputAdornment position="end">万元</InputAdornment>}
+      />
+      <TextInputField
+        variant="outlined"
+        dense
+        placeholder="金额 dense"
+        startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        endAdornment={<InputAdornment position="end">万元</InputAdornment>}
       />
     </div>
   </ThemeProvider>

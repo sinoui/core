@@ -36,11 +36,38 @@ it('渲染错误状态下填充模式的Input', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('渲染密集状态下填充模式的Input', () => {
+it('聚焦状态', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <FilledInput dense />
+        <FilledInput focused />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('无标签', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <FilledInput noLabel />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('密集模式', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <>
+          <FilledInput dense />
+          <FilledInput dense noLabel />
+        </>
       </ThemeProvider>,
     )
     .toJSON();

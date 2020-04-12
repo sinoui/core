@@ -31,10 +31,6 @@ const StandardInput: React.SFC<InputProps> = styled(BaseInput).attrs({
   color: ${({ theme, disabled }) =>
     disabled ? theme.palette.text.disabled : theme.palette.text.primary};
 
-  > input {
-    ${(props) => props.dense && `padding-top:3px;`}
-  }
-
   label ~ & {
     margin-top: 16px;
   }

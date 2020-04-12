@@ -31,13 +31,12 @@ const BaseInputLayout = styled.div<Props>`
   font-size: ${(props) => props.theme.typography.body1.fontSize};
   letter-spacing: ${(props) => props.theme.typography.body1.letterSpacing};
   font-family: ${(props) => props.theme.typography.fontFamily};
-  line-height: 1.1875em;
+  line-height: 1.5em;
 
   ${({ $fullWidth }) => $fullWidth && 'width: 100%;'};
 
-  > input,
-  > textarea {
-    padding: 6px 0 7px;
+  > .sinoui-base-input__input {
+    padding: 3.5px 0 4.5px;
     ${inputResetStyle};
     ${({ $align }) => $align === 'end' && 'text-align: right;'}
   }

@@ -227,3 +227,18 @@ it('style属性', () => {
 
   expect(getByTestId('root')).toHaveStyle('margin: 8px');
 });
+
+it('无标签', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput
+        variant="outlined"
+        wrapperProps={{
+          'data-testid': 'input',
+        }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).toHaveClass('sinoui-text-input--no-label');
+});
