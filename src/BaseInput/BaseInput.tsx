@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useMemo } from 'react';
+import React, { useCallback, useRef, useMemo, useEffect } from 'react';
 import classNames from 'classnames';
 import AutosizeTextarea from 'react-textarea-autosize';
 import useMultiRefs from '../utils/useMultiRefs';
@@ -144,6 +144,10 @@ export interface BaseInputProps<
    * 最大行数目
    */
   maxRows?: number;
+  /**
+   * 指定输入框校验错误信息
+   */
+  error?: string;
 }
 
 export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
@@ -195,6 +199,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     name,
     minRows,
     maxRows,
+    error,
     ...other
   } = props;
 
@@ -204,6 +209,13 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     inputRefProp,
     inputPropsProp.ref as any,
   );
+
+  useEffect(() => {
+    const input: HTMLInputElement = inputRef.current;
+    if (input && input.setCustomValidity) {
+      input.setCustomValidity(error ?? '');
+    }
+  }, [error]);
 
   const {
     onChange: onChangeInputProp,

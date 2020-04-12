@@ -45,6 +45,7 @@ exports[`无标签 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -69,6 +70,7 @@ exports[`无标签 1`] = `
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {
@@ -245,6 +247,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -269,6 +272,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {
@@ -445,6 +449,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -469,6 +474,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {
@@ -648,6 +654,7 @@ Array [
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -672,6 +679,7 @@ Array [
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {
@@ -847,6 +855,7 @@ Array [
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -871,6 +880,7 @@ Array [
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {
@@ -1050,6 +1060,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -1074,6 +1085,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {
@@ -1250,6 +1262,7 @@ exports[`聚焦状态 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -1274,6 +1287,7 @@ exports[`聚焦状态 1`] = `
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {

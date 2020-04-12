@@ -19,6 +19,7 @@ const inputResetStyle = css`
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: ${({ theme }) => theme.palette.primary.main};
 
   ::-moz-placeholder {
     color: ${(props) => props.theme.palette.text.hint};
@@ -40,6 +41,7 @@ const inputResetStyle = css`
 
   :invalid {
     box-shadow: none;
+    caret-color: ${({ theme }) => theme.palette.error.main};
   }
 `;
 

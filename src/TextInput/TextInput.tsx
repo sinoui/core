@@ -125,6 +125,7 @@ export default function TextInput(props: TextInputProps) {
     value,
     defaultValue,
     noLabel,
+    error,
   };
 
   if (variant === 'outlined') {

@@ -45,6 +45,7 @@ exports[`正确渲染input 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -69,6 +70,7 @@ exports[`正确渲染input 1`] = `
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {
@@ -194,6 +196,7 @@ exports[`渲染不可用的Input 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -218,6 +221,7 @@ exports[`渲染不可用的Input 1`] = `
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {
@@ -344,6 +348,7 @@ exports[`渲染密集模式下的Input 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -368,6 +373,7 @@ exports[`渲染密集模式下的Input 1`] = `
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {
@@ -493,6 +499,7 @@ exports[`渲染错误状态下的input 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c0 > .sinoui-base-input__input::-moz-placeholder {
@@ -517,6 +524,7 @@ exports[`渲染错误状态下的input 1`] = `
 
 .c0 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c0 > textarea {

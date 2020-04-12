@@ -45,6 +45,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c2 > .sinoui-base-input__input::-moz-placeholder {
@@ -69,6 +70,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 
 .c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c2 > textarea {
@@ -578,6 +580,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c2 > .sinoui-base-input__input::-moz-placeholder {
@@ -602,6 +605,7 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 
 .c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c2 > textarea {
@@ -1000,6 +1004,7 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c2 > .sinoui-base-input__input::-moz-placeholder {
@@ -1024,6 +1029,7 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 
 .c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c2 > textarea {
@@ -1622,6 +1628,7 @@ exports[`渲染带后缀元素的输入框 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c2 > .sinoui-base-input__input::-moz-placeholder {
@@ -1646,6 +1653,7 @@ exports[`渲染带后缀元素的输入框 1`] = `
 
 .c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c2 > textarea {
@@ -2179,6 +2187,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c2 > .sinoui-base-input__input::-moz-placeholder {
@@ -2203,6 +2212,7 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 
 .c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c2 > textarea {
@@ -2574,6 +2584,7 @@ exports[`渲染有错误提示的输入框 1`] = `
   width: 100%;
   height: 1.5em;
   min-height: 1.5em;
+  caret-color: #3f51b5;
 }
 
 .c2 > .sinoui-base-input__input::-moz-placeholder {
@@ -2598,6 +2609,7 @@ exports[`渲染有错误提示的输入框 1`] = `
 
 .c2 > .sinoui-base-input__input:invalid {
   box-shadow: none;
+  caret-color: #f44336;
 }
 
 .c2 > textarea {
