@@ -75,7 +75,6 @@ exports[`无标签 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -278,7 +277,6 @@ exports[`正确渲染边框模式下的Input 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -481,7 +479,6 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -687,7 +684,6 @@ Array [
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -889,7 +885,6 @@ Array [
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -1095,7 +1090,6 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -1298,7 +1292,6 @@ exports[`聚焦状态 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 

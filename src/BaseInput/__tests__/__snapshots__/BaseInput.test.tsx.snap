@@ -116,7 +116,6 @@ exports[`前缀装饰器 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -261,7 +260,6 @@ exports[`后缀装饰器 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -365,7 +363,6 @@ exports[`正确渲染BaseInput 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -458,7 +455,6 @@ exports[`渲染disabled属性下的BaseInput 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -554,7 +550,6 @@ exports[`渲染全宽模式下的BaseInput 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -648,7 +643,6 @@ exports[`渲染多行输入框 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -662,11 +656,25 @@ exports[`渲染多行输入框 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
+  />
+  <textarea
+    aria-hidden="true"
+    className="sinoui-base-input__input"
     style={
       Object {
         "height": 0,
+        "left": 0,
+        "maxHeight": 0,
+        "minHeight": 0,
+        "overflow": "hidden",
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 0,
+        "transform": "translateZ(0)",
+        "visibility": "hidden",
       }
     }
+    tabIndex={-1}
   />
 </div>
 `;
@@ -747,7 +755,6 @@ exports[`设置minRows和maxRows 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -825,7 +832,6 @@ exports[`设置minRows和maxRows 1`] = `
 
 .c1.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -840,11 +846,26 @@ exports[`设置minRows和maxRows 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      rows={2}
+    />
+    <textarea
+      aria-hidden="true"
+      className="sinoui-base-input__input"
       style={
         Object {
           "height": 0,
+          "left": 0,
+          "maxHeight": 0,
+          "minHeight": 0,
+          "overflow": "hidden",
+          "pointerEvents": "none",
+          "position": "absolute",
+          "top": 0,
+          "transform": "translateZ(0)",
+          "visibility": "hidden",
         }
       }
+      tabIndex={-1}
     />
   </div>
   <div

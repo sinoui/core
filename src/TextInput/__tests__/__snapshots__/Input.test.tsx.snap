@@ -75,7 +75,6 @@ exports[`正确渲染input 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -227,7 +226,6 @@ exports[`渲染不可用的Input 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -380,7 +378,6 @@ exports[`渲染密集模式下的Input 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -532,7 +529,6 @@ exports[`渲染错误状态下的input 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 

@@ -76,7 +76,6 @@ Array [
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -281,7 +280,6 @@ Array [
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -490,7 +488,6 @@ exports[`无标签 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -702,7 +699,6 @@ exports[`聚焦状态 1`] = `
 
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
-  overflow: hidden;
   padding: 0;
 }
 

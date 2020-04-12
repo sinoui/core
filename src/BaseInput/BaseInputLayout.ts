@@ -47,7 +47,6 @@ const BaseInputLayout = styled.div<Props>`
 
   &.sinoui-base-input--multiline > textarea {
     resize: none;
-    overflow: hidden;
     padding: 0;
   }
 

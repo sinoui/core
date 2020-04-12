@@ -1,0 +1,31 @@
+---
+id: autosize-textarea
+title: AutosizeTextarea
+---
+
+高度自适应内容的文本域组件。
+
+## 引用方式
+
+```tsx
+import AutosizeTextarea from '@sinoui/core/AutosizeTextarea';
+```
+
+## 属性
+
+| 属性名称 | 属性类型 | 默认值 | 属性说明         |
+| -------- | -------- | ------ | ---------------- |
+| minRows  | number   |        | 指定最小显示行数 |
+| maxRows  | number   |        | 指定最大显示行数 |
+
+除此之外，AutosizeTextarea 继承了 textarea 的所有属性。
+
+## 限制
+
+AutosizeTextarea 只能用于受控模式，不支持非受控模式。
+
+AutosizeTextarea 不支持 rows 属性，可以使用 minRows 或者 maxRows 属性代替。
+
+## 示例
+
+[TextInput Demo](../components/textInput)

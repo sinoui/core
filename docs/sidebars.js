@@ -33,6 +33,7 @@ module.exports = {
       },
     ],
     组件API: [
+      'components-apis/autosize-textarea',
       'components-apis/base-button',
       'components-apis/button',
       'components-apis/icon-button',

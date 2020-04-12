@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useMemo, useEffect } from 'react';
 import classNames from 'classnames';
-import AutosizeTextarea from 'react-textarea-autosize';
+import AutosizeTextarea from '@sinoui/core/AutosizeTextarea';
 import useMultiRefs from '../utils/useMultiRefs';
 import BaseInputLayout from './BaseInputLayout';
 import mergeCallbacks from '../utils/mergeCallbacks';
@@ -281,14 +281,12 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     onFocus: handleFocus,
     placeholder,
     'aria-required': required,
+    ref: handleInputRef,
   };
 
   if (multiline) {
-    inputprops.inputRef = handleInputRef;
     inputprops.minRows = minRows;
     inputprops.maxRows = maxRows;
-  } else {
-    inputprops.ref = handleInputRef;
   }
 
   return (
