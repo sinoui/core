@@ -289,7 +289,7 @@ function AdornmentInput() {
           <TextInputField
             value={value}
             onChange={onChange}
-            label="分量"
+            label="份数"
             align="end"
             endAdornment={<InputAdornment position="end">/100</InputAdornment>}
           />
@@ -362,7 +362,7 @@ function AdornmentInput() {
             variant="filled"
             value={value}
             onChange={onChange}
-            label="分量"
+            label="份数"
             align="end"
             endAdornment={<InputAdornment position="end">/100</InputAdornment>}
           />
@@ -447,7 +447,7 @@ function AdornmentInput() {
             variant="outlined"
             value={value}
             onChange={onChange}
-            label="分量"
+            label="份数"
             align="end"
             endAdornment={<InputAdornment position="end">/100</InputAdornment>}
           />
