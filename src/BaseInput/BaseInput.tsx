@@ -5,6 +5,8 @@ import useMultiRefs from '../utils/useMultiRefs';
 import BaseInputLayout from './BaseInputLayout';
 import mergeCallbacks from '../utils/mergeCallbacks';
 import bemClassNames from '../utils/bemClassNames';
+import InputAdornment from '../InputAdornment';
+import ClearIcon from './ClearIcon';
 
 interface MultilineProps {
   /**
@@ -148,6 +150,10 @@ export interface BaseInputProps<
    * 指定输入框校验错误信息
    */
   error?: string;
+  /**
+   * 是否允许清除
+   */
+  allowClear?: boolean;
 }
 
 export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
@@ -200,6 +206,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     minRows,
     maxRows,
     error,
+    allowClear,
     ...other
   } = props;
 
@@ -263,6 +270,37 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     [onClick],
   );
 
+  const handleClear = useCallback(
+    (event: React.MouseEvent<HTMLOrSVGElement>) => {
+      event.preventDefault();
+      event.persist();
+      event.stopPropagation();
+      const newValue = Array.isArray(props.value) ? [] : '';
+      Object.defineProperty(event, 'target', {
+        writable: true,
+        value: { value: newValue },
+      });
+      if (onChange) {
+        onChange(event);
+      }
+
+      if (onChangeInputProp) {
+        onChangeInputProp(event);
+      }
+    },
+    [onChange, onChangeInputProp, props.value],
+  );
+
+  const isShowClear = useMemo(() => {
+    if (endAdornment) {
+      return (
+        allowClear &&
+        (Array.isArray(props.value) ? props.value.length > 0 : !!props.value)
+      );
+    }
+    return allowClear && !!props.value;
+  }, [allowClear, endAdornment, props.value]);
+
   const InputComonent = multiline ? AutosizeTextarea : inputComponent;
 
   const inputprops: Record<string, any> = {
@@ -303,6 +341,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
       $fullWidth={fullWidth}
       $multiline={multiline}
       $align={align}
+      $isShowClear={isShowClear}
+      $hasEndAdornment={!!endAdornment}
       data-testid="baseInput"
       ref={ref}
       onClick={handleClick}
@@ -313,7 +353,16 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
         {...inputprops}
         className={classNames(inputprops.className, 'sinoui-base-input__input')}
       />
-      {endAdornment}
+      {isShowClear && (
+        <InputAdornment position="end" className="sinoui-base-input__clear">
+          <ClearIcon onClick={handleClear} />
+        </InputAdornment>
+      )}
+      {endAdornment && isShowClear
+        ? React.cloneElement(endAdornment as any, {
+            className: 'sinoui-base-input__endAdornment',
+          })
+        : endAdornment}
       {children}
     </BaseInputLayout>
   );

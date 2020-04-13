@@ -124,6 +124,8 @@ export const 前后缀 = () => (
         value="100"
         style={inputStyle}
         align="end"
+        data-testid="input"
+        allowClear
       />
       <BaseInput
         startAdornment={<InputAdornment position="start">￥</InputAdornment>}

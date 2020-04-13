@@ -42,6 +42,7 @@ function SimpleInput() {
             onChange={onChange}
             value={value}
             required
+            allowClear
           />
           <TextInputField
             label="Disabled"
@@ -100,6 +101,7 @@ function SimpleInput() {
             value={value}
             required
             variant="filled"
+            allowClear
           />
           <TextInputField
             label="Disabled"
@@ -165,6 +167,7 @@ function SimpleInput() {
             value={value}
             required
             variant="outlined"
+            allowClear
           />
           <TextInputField
             label="Disabled"
@@ -271,12 +274,14 @@ function AdornmentInput() {
             }
           />
           <TextInputField
+            allowClear
             value={value}
             onChange={onChange}
             label="重量"
             endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
           />
           <TextInputField
+            allowClear
             value={value}
             onChange={onChange}
             label="Label"

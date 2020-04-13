@@ -18,6 +18,14 @@ interface Props {
    * 是否是多行输入框
    */
   $multiline?: boolean;
+  /**
+   * 是否显示clear图标
+   */
+  $isShowClear?: boolean;
+  /**
+   * 是否有后缀元素
+   */
+  $hasEndAdornment?: boolean;
 }
 
 /**
@@ -48,6 +56,22 @@ const BaseInputLayout = styled.div<Props>`
   &.sinoui-base-input--multiline > textarea {
     resize: none;
     padding: 0;
+  }
+
+  .sinoui-base-input__clear {
+    display: ${({ $hasEndAdornment }) => ($hasEndAdornment ? 'none' : 'flex')};
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .sinoui-base-input__clear {
+      display: flex;
+    }
+
+    .sinoui-base-input__endAdornment {
+      display: ${({ $isShowClear }) => ($isShowClear ? 'none' : 'flex')};
+    }
   }
 
   ${({ $multiline }) => $multiline && 'padding: 3.5px 0 4.5px;'}

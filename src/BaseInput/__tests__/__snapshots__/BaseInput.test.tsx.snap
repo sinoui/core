@@ -119,6 +119,29 @@ exports[`前缀装饰器 1`] = `
   padding: 0;
 }
 
+.c0 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
   className="c0 sinoui-base-input"
   data-testid="baseInput"
@@ -263,6 +286,26 @@ exports[`后缀装饰器 1`] = `
   padding: 0;
 }
 
+.c0 .sinoui-base-input__clear {
+  display: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
   className="c0 sinoui-base-input"
   data-testid="baseInput"
@@ -366,6 +409,29 @@ exports[`正确渲染BaseInput 1`] = `
   padding: 0;
 }
 
+.c0 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
   className="c0 sinoui-base-input"
   data-testid="baseInput"
@@ -456,6 +522,29 @@ exports[`渲染disabled属性下的BaseInput 1`] = `
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c0 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
@@ -553,6 +642,29 @@ exports[`渲染全宽模式下的BaseInput 1`] = `
   padding: 0;
 }
 
+.c0 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
   className="c0 sinoui-base-input"
   data-testid="baseInput"
@@ -646,6 +758,29 @@ exports[`渲染多行输入框 1`] = `
   padding: 0;
 }
 
+.c0 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
   className="c0 sinoui-base-input sinoui-base-input--multiline"
   data-testid="baseInput"
@@ -675,6 +810,121 @@ exports[`渲染多行输入框 1`] = `
       }
     }
     tabIndex={-1}
+  />
+</div>
+`;
+
+exports[`渲染支持清除功能的输入框 1`] = `
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: text;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  line-height: 1.5em;
+}
+
+.c0 > .sinoui-base-input__input {
+  padding: 3.5px 0 4.5px;
+  display: block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  border: none;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 0px;
+  width: 100%;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > .sinoui-base-input__input::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > .sinoui-base-input__input::-ms-clear {
+  display: none;
+}
+
+.c0 > .sinoui-base-input__input:focus {
+  outline: 0;
+}
+
+.c0 > .sinoui-base-input__input:invalid {
+  box-shadow: none;
+  caret-color: #f44336;
+}
+
+.c0.sinoui-base-input--multiline > textarea {
+  resize: none;
+  padding: 0;
+}
+
+.c0 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="c0 sinoui-base-input"
+  data-testid="baseInput"
+  onClick={[Function]}
+>
+  <input
+    className="sinoui-base-input__input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
   />
 </div>
 `;
@@ -758,6 +1008,29 @@ exports[`设置minRows和maxRows 1`] = `
   padding: 0;
 }
 
+.c0 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c0:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -833,6 +1106,29 @@ exports[`设置minRows和maxRows 1`] = `
 .c1.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c1 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c1:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div>

@@ -78,6 +78,29 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   padding: 0;
 }
 
+.c2 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c2:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c5 {
   position: relative;
   overflow: hidden;
@@ -613,6 +636,29 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   padding: 0;
 }
 
+.c2 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c2:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c6 {
   position: relative;
   overflow: hidden;
@@ -1035,6 +1081,29 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 .c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c2 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c2:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c7 {
@@ -1661,6 +1730,26 @@ exports[`渲染带后缀元素的输入框 1`] = `
   padding: 0;
 }
 
+.c2 .sinoui-base-input__clear {
+  display: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c2:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c7 {
   position: relative;
   overflow: hidden;
@@ -2220,6 +2309,29 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   padding: 0;
 }
 
+.c2 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c2:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c6 {
   position: relative;
   overflow: hidden;
@@ -2615,6 +2727,29 @@ exports[`渲染有错误提示的输入框 1`] = `
 .c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c2 .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c2:hover .sinoui-base-input__clear {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2:hover .sinoui-base-input__endAdornment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c6 {
