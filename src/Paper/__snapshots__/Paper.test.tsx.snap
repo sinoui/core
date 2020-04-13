@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paper组件 快照测试 基本使用 1`] = `
+<div
+  className="Paper-t0j6j6-0 dnOuUQ sinoui-paper"
+>
+  <div
+    className="Papertest__Div-sc-7j6t7q-0 cgDxCW"
+  >
+    Paper Content
+  </div>
+</div>
+`;
+
+exports[`Paper组件 快照测试 设置是否全屏显示 1`] = `
+<div
+  className="Paper-t0j6j6-0 cuBuzT sinoui-paper"
+>
+  <div
+    className="Papertest__Div-sc-7j6t7q-0 cgDxCW"
+  >
+    Paper Content
+  </div>
+</div>
+`;
+
+exports[`Paper组件 快照测试 设置是否显示圆角 1`] = `
+<div
+  className="Paper-t0j6j6-0 iMapOA sinoui-paper"
+>
+  <div
+    className="Papertest__Div-sc-7j6t7q-0 cgDxCW"
+  >
+    Paper Content
+  </div>
+</div>
+`;
+
+exports[`Paper组件 快照测试 设置阴影高度 1`] = `
+<div
+  className="Paper-t0j6j6-0 hICyEu sinoui-paper"
+  elevation={4}
+>
+  <div
+    className="Papertest__Div-sc-7j6t7q-0 cgDxCW"
+  >
+    Paper Content
+  </div>
+</div>
+`;
