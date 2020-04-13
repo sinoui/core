@@ -5,10 +5,6 @@ import { MdRestore, MdFavorite, MdLocationOn, MdFolder } from 'react-icons/md';
 import BottomNavigation from '@sinoui/core/BottomNavigation';
 import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
 
-export default {
-  title: 'BottomNavigation',
-};
-
 function BottomNavigationDemo(props: any) {
   const [val, setVal] = useState('');
 
@@ -49,22 +45,4 @@ function BottomNavigationDemo(props: any) {
   );
 }
 
-export const 基本使用 = () => <BottomNavigationDemo />;
-
-export const 设置隐藏标签 = () => <BottomNavigationDemo showLabel={false} />;
-
-export const 设置隐藏所有标签 = () => (
-  <BottomNavigationDemo showLabels={false} />
-);
-
-export const 指定背景颜色 = () => (
-  <>
-    <BottomNavigationDemo />
-    <BottomNavigationDemo color="primary" />
-    <BottomNavigationDemo color="secondary" />
-    <BottomNavigationDemo color="error" />
-    <BottomNavigationDemo color="warning" />
-    <BottomNavigationDemo color="success" />
-    <BottomNavigationDemo color="info" />
-  </>
-);
+export default BottomNavigationDemo;

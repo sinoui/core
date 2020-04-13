@@ -29,7 +29,7 @@ export interface Props {
   /**
    * 子元素
    */
-  children?: React.ReactNode | any;
+  children?: React.ReactNode;
   /**
    * 添加自定义类名
    */
@@ -67,7 +67,7 @@ const BottomNavigation = React.forwardRef(
     } = props;
 
     const child = React.Children.map(
-      children,
+      children as any,
       (item: React.ReactElement<BottomNavActionProps>) => {
         if (React.isValidElement(item)) {
           const type = removeUndefinedProperties({

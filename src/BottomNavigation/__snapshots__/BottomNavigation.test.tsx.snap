@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`基本使用 1`] = `
+exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jJVGci sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 cJHToH sinoui-bottom-navigation"
 >
   <button
-    checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
     onClick={[Function]}
     role="button"
+    selected={false}
     type="button"
     value="recents"
   >
@@ -43,10 +43,10 @@ exports[`基本使用 1`] = `
     </span>
   </button>
   <button
-    checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 htWeRz"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iQaBmI"
     onClick={[Function]}
     role="button"
+    selected={true}
     type="button"
     value="favorites"
   >
@@ -81,10 +81,10 @@ exports[`基本使用 1`] = `
     </span>
   </button>
   <button
-    checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
     onClick={[Function]}
     role="button"
+    selected={false}
     type="button"
     value="nearby"
   >
@@ -119,10 +119,10 @@ exports[`基本使用 1`] = `
     </span>
   </button>
   <button
-    checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
     onClick={[Function]}
     role="button"
+    selected={false}
     type="button"
     value="folder"
   >
@@ -159,16 +159,16 @@ exports[`基本使用 1`] = `
 </div>
 `;
 
-exports[`指定背景颜色 1`] = `
+exports[`BottomNavigation组件 快照测试 指定背景颜色 1`] = `
 Array [
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jJVGci sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 cJHToH sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
   >
     <button
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
       onClick={[Function]}
       role="button"
+      selected={false}
       type="button"
       value="recents"
     >
@@ -203,10 +203,10 @@ Array [
       </span>
     </button>
     <button
-      checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 htWeRz"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iQaBmI"
       onClick={[Function]}
       role="button"
+      selected={true}
       type="button"
       value="favorites"
     >
@@ -241,10 +241,10 @@ Array [
       </span>
     </button>
     <button
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
       onClick={[Function]}
       role="button"
+      selected={false}
       type="button"
       value="nearby"
     >
@@ -279,10 +279,10 @@ Array [
       </span>
     </button>
     <button
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
       onClick={[Function]}
       role="button"
+      selected={false}
       type="button"
       value="folder"
     >
@@ -318,15 +318,15 @@ Array [
     </button>
   </div>,
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 imylvi sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 izctjG sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
     color="primary"
   >
     <button
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gSKVnv"
       color="primary"
       onClick={[Function]}
       role="button"
+      selected={false}
       type="button"
       value="recents"
     >
@@ -361,11 +361,11 @@ Array [
       </span>
     </button>
     <button
-      checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 bnMHSf"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 jgspvm"
       color="primary"
       onClick={[Function]}
       role="button"
+      selected={true}
       type="button"
       value="favorites"
     >
@@ -400,11 +400,11 @@ Array [
       </span>
     </button>
     <button
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gSKVnv"
       color="primary"
       onClick={[Function]}
       role="button"
+      selected={false}
       type="button"
       value="nearby"
     >
@@ -439,11 +439,11 @@ Array [
       </span>
     </button>
     <button
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gSKVnv"
       color="primary"
       onClick={[Function]}
       role="button"
+      selected={false}
       type="button"
       value="folder"
     >
@@ -479,15 +479,15 @@ Array [
     </button>
   </div>,
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kbbBKL sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 gmWRcg sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
     color="success"
   >
     <button
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gSKVnv"
       color="success"
       onClick={[Function]}
       role="button"
+      selected={false}
       type="button"
       value="recents"
     >
@@ -522,11 +522,11 @@ Array [
       </span>
     </button>
     <button
-      checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 bnMHSf"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 jgspvm"
       color="success"
       onClick={[Function]}
       role="button"
+      selected={true}
       type="button"
       value="favorites"
     >
@@ -561,11 +561,11 @@ Array [
       </span>
     </button>
     <button
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gSKVnv"
       color="success"
       onClick={[Function]}
       role="button"
+      selected={false}
       type="button"
       value="nearby"
     >
@@ -600,11 +600,11 @@ Array [
       </span>
     </button>
     <button
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 fSOjuU"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gSKVnv"
       color="success"
       onClick={[Function]}
       role="button"
+      selected={false}
       type="button"
       value="folder"
     >
@@ -642,15 +642,15 @@ Array [
 ]
 `;
 
-exports[`设置隐藏所有标签名称 1`] = `
+exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jJVGci sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 cJHToH sinoui-bottom-navigation"
 >
   <button
-    checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gUpjZV"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
     onClick={[Function]}
     role="button"
+    selected={false}
     type="button"
     value="recents"
   >
@@ -678,10 +678,10 @@ exports[`设置隐藏所有标签名称 1`] = `
     </span>
   </button>
   <button
-    checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ecbHEa"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 dHfjCj"
     onClick={[Function]}
     role="button"
+    selected={true}
     type="button"
     value="favorites"
   >
@@ -709,10 +709,10 @@ exports[`设置隐藏所有标签名称 1`] = `
     </span>
   </button>
   <button
-    checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gUpjZV"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
     onClick={[Function]}
     role="button"
+    selected={false}
     type="button"
     value="nearby"
   >
@@ -740,10 +740,10 @@ exports[`设置隐藏所有标签名称 1`] = `
     </span>
   </button>
   <button
-    checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gUpjZV"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
     onClick={[Function]}
     role="button"
+    selected={false}
     type="button"
     value="folder"
   >
@@ -773,15 +773,15 @@ exports[`设置隐藏所有标签名称 1`] = `
 </div>
 `;
 
-exports[`设置隐藏标签名称 1`] = `
+exports[`BottomNavigation组件 快照测试 设置隐藏标签名称 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jJVGci sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 cJHToH sinoui-bottom-navigation"
 >
   <button
-    checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 gUpjZV"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
     onClick={[Function]}
     role="button"
+    selected={false}
     type="button"
     value="recents"
   >
@@ -809,10 +809,10 @@ exports[`设置隐藏标签名称 1`] = `
     </span>
   </button>
   <button
-    checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 htWeRz"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iQaBmI"
     onClick={[Function]}
     role="button"
+    selected={true}
     type="button"
     value="favorites"
   >
@@ -847,10 +847,10 @@ exports[`设置隐藏标签名称 1`] = `
     </span>
   </button>
   <button
-    checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
     onClick={[Function]}
     role="button"
+    selected={false}
     type="button"
     value="nearby"
   >
@@ -885,10 +885,10 @@ exports[`设置隐藏标签名称 1`] = `
     </span>
   </button>
   <button
-    checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 MsqtA"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
     onClick={[Function]}
     role="button"
+    selected={false}
     type="button"
     value="folder"
   >

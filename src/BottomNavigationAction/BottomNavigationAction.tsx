@@ -56,13 +56,13 @@ const BaseButtonWrapper = styled(BaseButton)<{
 
 export interface BottomNavActionProps {
   /**
-   * 标签
+   * 标签名称
    */
   label?: string;
   /**
    * 图标
    */
-  icon?: React.ReactNode;
+  icon: React.ReactNode;
   /**
    * 是否显示标签
    */
@@ -75,10 +75,6 @@ export interface BottomNavActionProps {
    * 是否选中
    */
   selected?: boolean;
-  /**
-   * 指定背景颜色
-   */
-  color?: string;
 }
 
 /**
@@ -92,17 +88,12 @@ function BottomNavigationAction(props: BottomNavActionProps) {
     label,
     showLabel = true,
     icon,
-    color,
+
     selected = false,
     ...rest
   } = props;
   return (
-    <BaseButtonWrapper
-      color={color}
-      selected={selected}
-      showLabel={showLabel}
-      {...rest}
-    >
+    <BaseButtonWrapper selected={selected} showLabel={showLabel} {...rest}>
       <IconWrapper>{icon}</IconWrapper>
       {showLabel && <Body2 as="span">{label}</Body2>}
     </BaseButtonWrapper>
