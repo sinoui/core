@@ -36,9 +36,7 @@ export interface Props {
   renderValue?: (value: string | string[]) => void;
   tabIndex?: number;
   value: string | string[];
-  variant?: 'standard' | 'outlined' | 'filled';
   minWidth?: number;
-  dense?: boolean;
 }
 
 type SelectLayoutProps = Omit<Props, 'value' | 'inputRef'>;
@@ -54,22 +52,6 @@ function areEqualValues(a: any, b: any) {
 function isEmpty(display: any) {
   return display == null || (typeof display === 'string' && !display.trim());
 }
-
-const filledStyle = css`
-  padding: 27px 0px 10px 12px;
-`;
-
-const outlinedStyle = css`
-  padding: 18.5px 0px 18.5px 14px;
-`;
-
-const denseStyle = css<{ variant?: 'standard' | 'outlined' | 'filled' }>`
-  padding-top: 3px;
-  ${(props) =>
-    props.variant === 'filled' && 'padding-top:23px;padding-bottom:6px;'};
-  ${(props) =>
-    props.variant === 'outlined' && 'padding-top:10.5px;padding-bottom:10.5px;'}
-`;
 
 const disabledStyle = css`
   cursor: default;
@@ -110,9 +92,6 @@ const SelectLayout = styled.div<SelectLayoutProps>`
   ${selectStyle};
   ${menuSelectStyle};
   ${(props) => props.disabled && disabledStyle};
-  ${(props) => props.variant === 'filled' && filledStyle};
-  ${(props) => props.variant === 'outlined' && outlinedStyle}
-  ${(props) => props.dense && denseStyle};
 `;
 
 export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
@@ -124,7 +103,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     autoWidth,
     children,
     className,
-    dense,
     disabled,
     displayEmpty,
     inputRef: inputRefProp,
@@ -142,7 +120,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     renderValue,
     tabIndex: tabIndexProp,
     value: valueProp,
-    variant,
     ...other
   } = props;
 
@@ -378,7 +355,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         data-testid="SelectDisplay"
         tabIndex={tabIndex as any}
         role="button"
-        variant={variant}
         aria-expanded={open ? 'true' : undefined}
         aria-labelledby={`${labelId || ''}`}
         aria-haspopup="listbox"
@@ -386,7 +362,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         onMouseDown={(disabled || readOnly ? null : handleMouseDown) as any}
         onBlur={handleBlur as any}
         onFocus={onFocus}
-        dense={dense}
         disabled={disabled || readOnly}
       >
         {isEmpty(display) ? <span>&#8203;</span> : display}
