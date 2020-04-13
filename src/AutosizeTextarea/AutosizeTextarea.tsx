@@ -38,7 +38,7 @@ const AutosizeTextarea = React.forwardRef<
   HTMLTextAreaElement,
   AutosizeTextareaProps
 >((props, ref) => {
-  const { minRows, maxRows, ...rest } = props;
+  const { minRows, maxRows, onChange, ...rest } = props;
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const shadowRef = useRef<HTMLTextAreaElement>(null);
   const textareaRefHandler = useMultiRefs(ref, textareaRef);
@@ -64,9 +64,21 @@ const AutosizeTextarea = React.forwardRef<
     };
   }, [resizeTextareaCallback]);
 
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    resizeTextareaCallback();
+    if (onChange) {
+      onChange(event);
+    }
+  };
+
   return (
     <>
-      <textarea ref={textareaRefHandler} rows={minRows} {...rest} />
+      <textarea
+        ref={textareaRefHandler}
+        rows={minRows}
+        onChange={handleChange}
+        {...rest}
+      />
       <textarea
         className={rest.className}
         ref={shadowRef}
