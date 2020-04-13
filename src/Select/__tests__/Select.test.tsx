@@ -73,33 +73,3 @@ it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
   expect(onClose).toHaveBeenCalled();
   expect(container.querySelector('ul')).toBeDefined();
 });
-
-xit('点击出现弹窗，选中关闭后，点击页面其他地方使其失去焦点', () => {
-  const onClose = jest.fn();
-  const onBlur = jest.fn();
-  const { getByTestId, getAllByRole, getByText } = render(
-    <ThemeProvider theme={defaultTheme}>
-      <div>
-        <Select onClose={onClose} inputProps={onBlur}>
-          <Option value="1">选项一</Option>
-          <Option value="2">选项二</Option>
-          <Option value="3">选项三</Option>
-        </Select>
-        <div>124</div>
-      </div>
-    </ThemeProvider>,
-  );
-
-  act(() => {
-    fireEvent.click(getByTestId('baseInput'));
-    fireEvent.click(getAllByRole('option')[0]);
-  });
-
-  expect(onClose).toHaveBeenCalled();
-
-  act(() => {
-    fireEvent.click(getByText('124'));
-  });
-
-  expect(onBlur).toHaveBeenCalled();
-});

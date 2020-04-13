@@ -2,8 +2,9 @@ import React, { useState, useCallback } from 'react';
 import { MdArrowDropDown } from 'react-icons/md';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
-import TextInputField from '@sinoui/core/TextInput';
+import TextInput from '@sinoui/core/TextInput';
 import { Theme } from '@sinoui/theme';
+import InputAdornment from '@sinoui/core/InputAdornment';
 import SelectInput from './SelectInput';
 
 const iconFocusedStyle = css`
@@ -12,8 +13,13 @@ const iconFocusedStyle = css`
   transition: transform 200ms;
 `;
 
-const StyledTextInput = styled(TextInputField)`
-  .sinoui-base-input__layout > svg {
+const StyledTextInput = styled(TextInput)`
+  > .sinoui-base-input {
+    cursor: ${({ disabled, readOnly }) =>
+      disabled || readOnly ? 'default' : 'pointer'};
+  }
+
+  > .sinoui-base-input > .sinoui-input-adornment--end > svg {
     font-size: 24px;
     ${(props: { focused?: boolean; theme: Theme }) =>
       props.focused && iconFocusedStyle};
@@ -77,6 +83,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     dense,
     value,
     className,
+    readOnly,
     ...other
   } = props;
 
@@ -86,6 +93,10 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
   const inputComponent = SelectInput;
 
   const onClick = () => {
+    if (disabled || readOnly) {
+      return;
+    }
+
     setOpen(true);
     setFocused(true);
   };
@@ -110,11 +121,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     focused,
     inputProps: {
       children,
-      variant,
-      type: 'hidden',
       multiple,
-      dense,
-      disabled,
       ...{
         autoWidth,
         displayEmpty,
@@ -124,7 +131,6 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
         open,
         renderValue,
         onBlur,
-        disabled,
       },
       ...inputProps,
       ...(input ? input.props.inputProps : {}),
@@ -133,14 +139,20 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     ref,
     label,
     className: classNames('sinoui-select-base-layout', className),
-    endComponent: <MdArrowDropDown />,
+    endAdornment: (
+      <InputAdornment position="end">
+        <MdArrowDropDown />
+      </InputAdornment>
+    ),
     labelWidth,
     value,
     disabled,
+    readOnly,
     error,
     variant,
     helperText,
     dense,
+    type: 'hidden',
     ...other,
   });
 });
