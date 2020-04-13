@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react';
-import { MdArrowDropDown } from 'react-icons/md';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
 import { Theme } from '@sinoui/theme';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import SelectInput from './SelectInput';
+import ArrowDropDownIcon from './ArrowDropDownIcon';
 
 const iconFocusedStyle = css`
   color: ${(props) => props.theme.palette.primary.main};
@@ -24,6 +24,12 @@ const StyledTextInput = styled(TextInput)`
     ${(props: { focused?: boolean; theme: Theme }) =>
       props.focused && iconFocusedStyle};
     ${(props) => props.error && `color: ${props.theme.palette.error.main}`};
+  }
+
+  > .sinoui-base-input
+    > .sinoui-input-adornment--end
+    > .sinoui-base-input__clear {
+    font-size: 18px;
   }
 `;
 
@@ -208,7 +214,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     className: classNames('sinoui-select-base-layout', className),
     endAdornment: (
       <InputAdornment position="end">
-        <MdArrowDropDown />
+        <ArrowDropDownIcon />
       </InputAdornment>
     ),
     value,
