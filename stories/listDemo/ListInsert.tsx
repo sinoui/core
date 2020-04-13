@@ -59,11 +59,12 @@ export default function Demo() {
               </ListItemSecondaryAction>
             </ListItem>
             <List
+              disabledPadding
               style={{
                 display: expandItems.indexOf(item) !== -1 ? 'block' : 'none',
               }}
             >
-              {subListData.map((subItem) => (
+              {subListData.map((subItem: number, index: number) => (
                 <>
                   <ListItem insert key={subItem}>
                     <ListItemPrimaryAction>
@@ -71,7 +72,7 @@ export default function Demo() {
                     </ListItemPrimaryAction>
                     <ListItemText>subItem{subItem}</ListItemText>
                   </ListItem>
-                  <Divider />
+                  {index === subListData.length - 1 && <Divider />}
                 </>
               ))}
             </List>

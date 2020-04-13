@@ -14,6 +14,10 @@ const Container = styled.div<Props>`
   min-height: 20vh;
   padding: 16px;
   height: ${({ height }) => height && height}px;
+
+  & .sinoui-list > li + li {
+    margin: 0;
+  }
 `;
 
 /**

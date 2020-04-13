@@ -17,13 +17,18 @@ export interface Props {
    * 自定义class名称
    */
   className?: string;
+  /**
+   * 禁用内边距
+   */
+  disabledPadding?: boolean;
   style?: React.CSSProperties;
 }
 
 const ListStyle = css<Props>`
+  width: 100%;
   list-style: none;
   margin: 0;
-  padding: 8px 0;
+  padding: ${(props) => (props.disabledPadding ? 0 : '8px 0')};
   box-sizing: border-box;
 `;
 
