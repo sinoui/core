@@ -5,8 +5,8 @@ exports[`快照测试 主操作区有IconButton 1`] = `
   className="ListItemSecondaryAction-sc-1ixb4sf-0 iKjxOR"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxjAm kFuAxU sinoui-icon-button"
-    color="textSecondary"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 brWspa sinoui-icon-button"
+    color="textPrimary"
     role="button"
     type="button"
   >
