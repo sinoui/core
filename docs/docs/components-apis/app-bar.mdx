@@ -1,0 +1,60 @@
+---
+id: app-bar
+title: AppBar
+---
+
+import CardStoryLayout from '../components/CardStoryLayout';
+import AppBar from '@sinoui/core/AppBar';
+import AppBarTitle from '@sinoui/core/AppBarTitle';
+import NavigationIcon from '@sinoui/core/NavigationIcon';
+import AppBarActions from '@sinoui/core/AppBarActions';
+
+## AppBar
+
+AppBar 组件是由应用栏图标、标题和可操作内容组成的，主要用来展示和当前页面有关的信息和操作。
+
+引入方式：
+
+```tsx
+import AppBar from '@sinoui/core/AppBar';
+```
+
+组件结构：
+
+```tsx
+<AppBar
+  title="应用栏标题"
+  navigationIcon={
+    <IconButton color="#fff">
+      <Dehaze />
+    </IconButton>
+  }
+  actionItems={[
+    <IconButton color="#fff">
+      <Favorite />
+    </IconButton>,
+    <IconButton color="#fff">
+      <Bookmark />
+    </IconButton>,
+  ]}
+  targetScroll={targetScrollRef}
+/>
+```
+
+### 属性
+
+| 属性名         | 默认值 | 类型                                                   | 描述                                                                   |
+| -------------- | ------ | ------------------------------------------------------ | ---------------------------------------------------------------------- |
+| navigationIcon |        | React.ReactNode                                        | 应用栏左侧图标按钮                                                     |
+| title          |        | React.ReactNode                                        | 应用栏标题                                                             |
+| actionItems    |        | React.ReactNode                                        | 应用栏可操作元素                                                       |
+| prominent      | false  | boolean                                                | 设置为`true`，表示是突出模式下的应用栏。                               |
+| dense          | false  | boolean                                                | 设置为`true`，表示是密集模式下的应用栏。                               |
+| short          | false  | boolean                                                | 设置为`true`，表示是可收缩模式下的应用栏，当页面发生滚动，应用栏收缩。 |
+| shortCollapsed | false  | boolean                                                | 设置为`true`，表示一直是收缩模式下的应用栏。                           |
+| fixed          | false  | boolean                                                | 设置为`true`，页面发生滚动时，应用栏位置不变，否则随页面滚动动         |
+| targetScroll   | window | HTMLElement \| Window \| React.RefObject<HTMLElement\> | 设置滚动目标元素。默认为 window。可以 DOM 元素，或者元素的 ref         |
+
+## 示例
+
+更多顶部应用栏示例请查看[开发文档](../components/app-bar)

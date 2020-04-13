@@ -1,6 +1,6 @@
 ---
 id: progress
-title: Progress
+title: Progress 进度指示器
 ---
 
 import CardStoryLayout from './CardStoryLayout';
@@ -27,13 +27,16 @@ export default function Demo() {
 
 效果：
 
-<CardStoryLayout style={{display:'flex', justifyContent:'center',alignItems: 'center'}}>
+<CardStoryLayout
+  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+>
   <LinearDeterminate />
 </CardStoryLayout>
 
 ### 环形定量进度指示器
 
 LinearDeterminate.tsx
+
 ```tsx
 import React, { useState, useRef } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
@@ -127,6 +130,7 @@ export default function Demo({
   );
 }
 ```
+
 Demo.tsx
 
 ```tsx
@@ -135,51 +139,60 @@ Demo.tsx
 
 效果：
 
-<CardStoryLayout style={{height: '150px'}}>
+<CardStoryLayout style={{ height: '150px' }}>
   <LinearDeterminate determinate />
 </CardStoryLayout>
 
 ### 指定线条宽度的环形进度指示器
 
-环形进度指示器线条的宽度默认是3.6px，通过指定`thickness`属性来更改指示器的线条宽度，如`thickness={8}`。
+环形进度指示器线条的宽度默认是 3.6px，通过指定`thickness`属性来更改指示器的线条宽度，如`thickness={8}`。
 
 Demo.tsx
+
 ```tsx
 import React from 'react';
 import Progress from '@sinoui/core/Progress';
 
 export default function Demo() {
-  return <Progress thickness={8}/>;
+  return <Progress thickness={8} />;
 }
 ```
+
 效果：
 
-<CardStoryLayout style={{display:'flex', justifyContent:'center',alignItems: 'center'}}>
-  <LinearDeterminate thickness={8}/>
+<CardStoryLayout
+  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+>
+  <LinearDeterminate thickness={8} />
 </CardStoryLayout>
 
 ### 指定大小的环形进度指示器
 
-环形进度指示器的大小默认是40px*40px，通过指定`size`属性来更改指示器的大小，如`size={100}`。
+环形进度指示器的大小默认是 40px\*40px，通过指定`size`属性来更改指示器的大小，如`size={100}`。
 
 Demo.tsx
+
 ```tsx
 import React from 'react';
 import Progress from '@sinoui/core/Progress';
 
 export default function Demo() {
-  return <Progress size={100} thickness={8}/>;
+  return <Progress size={100} thickness={8} />;
 }
 ```
+
 效果：
 
-<CardStoryLayout style={{display:'flex', justifyContent:'center',alignItems: 'center'}}>
-  <LinearDeterminate thickness={8} size={100}/>
+<CardStoryLayout
+  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+>
+  <LinearDeterminate thickness={8} size={100} />
 </CardStoryLayout>
 
 ## 线性进度指示器
 
 ### 线性不定量进度指示器
+
 Demo.tsx
 
 ```tsx
@@ -188,51 +201,70 @@ Demo.tsx
 
 效果：
 
-<CardStoryLayout style={{height: '150px',display:'flex',alignItems: 'center'}}>
+<CardStoryLayout
+  style={{ height: '150px', display: 'flex', alignItems: 'center' }}
+>
   <LinearDeterminate linear />
 </CardStoryLayout>
 
 ### 线性定量进度指示器
+
 Demo.tsx
 
 ```tsx
-<LinearDeterminate linear determinate/>
+<LinearDeterminate linear determinate />
 ```
 
 效果：
 
-<CardStoryLayout style={{height: '150px',display:'flex',flexDirection:'column',alignItems: 'flex-start'}}>
-  <LinearDeterminate linear determinate/>
+<CardStoryLayout
+  style={{
+    height: '150px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  }}
+>
+  <LinearDeterminate linear determinate />
 </CardStoryLayout>
 
 ### 线性缓冲进度指示器
+
 Demo.tsx
 
 线性缓冲进度指示器默认是定量的，所以指定线性缓冲进度指示器时，不需要显示传入`determinate`属性。
 
 ```tsx
-<LinearDeterminate linear  buffer/>
+<LinearDeterminate linear buffer />
 ```
 
 效果：
 
-<CardStoryLayout style={{height: '150px',display:'flex',flexDirection:'column',alignItems: 'flex-start'}}>
-  <LinearDeterminate linear  buffer />
+<CardStoryLayout
+  style={{
+    height: '150px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  }}
+>
+  <LinearDeterminate linear buffer />
 </CardStoryLayout>
 
 ### 指定线条宽度的线性进度指示器
 
-线性进度指示器的线条宽度默认是4px，通过指定`thickness`属性来更改指示器的大小，如`thickness={8}`。
+线性进度指示器的线条宽度默认是 4px，通过指定`thickness`属性来更改指示器的大小，如`thickness={8}`。
 
 Demo.tsx
 
 ```tsx
-<LinearDeterminate linear thickness={8}/>
+<LinearDeterminate linear thickness={8} />
 ```
 
 效果：
 
-<CardStoryLayout style={{height: '150px',display:'flex',alignItems: 'center'}}>
-  <LinearDeterminate linear thickness={8}/>
+<CardStoryLayout
+  style={{ height: '150px', display: 'flex', alignItems: 'center' }}
+>
+  <LinearDeterminate linear thickness={8} />
 </CardStoryLayout>
-

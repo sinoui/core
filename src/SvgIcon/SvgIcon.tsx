@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import classNames from 'classnames';
 import colorCss from '@sinoui/core/utils/colorCss';
 
-export interface SvgProps {
+export interface SvgIconProps {
   /**
    * 指定图标内容
    */
@@ -40,7 +40,7 @@ const SvgIcon = styled.svg.attrs(
     viewBox = '0 0 24 24',
     size = 24,
     title,
-  }: SvgProps) => ({
+  }: SvgIconProps) => ({
     children: (
       <>
         {!!title && <title>{title}</title>}
