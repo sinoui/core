@@ -94,11 +94,11 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
   }
 
   > .sinoui-input-adornment--start {
-    margin-left: 14px;
+    margin-left: ${({ multiline }) => (multiline ? 0 : 14)}px;
     margin-right: 0px;
   }
   > .sinoui-input-adornment--end {
-    margin-right: 12px;
+    margin-right: ${({ multiline }) => (multiline ? 0 : 12)}px;
     margin-left: -6px;
   }
   > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
@@ -108,7 +108,7 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
   > .sinoui-input-adornment--start.sinoui-input-adornment--text
     ~ .sinoui-base-input__input,
   > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-    margin-left: -14px;
+    margin-left: ${({ multiline }) => (multiline ? 0 : -14)}px;
   }
 `;
 
