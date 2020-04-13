@@ -214,7 +214,7 @@ export default function BaseCheckboxButton(props: Props) {
         'sinoui-checkbox--disabled': disabled,
         'sinoui-checkbox--checked': checked,
         'sinoui-checkbox--indeterminate': indeterminate,
-        'sinoui-checkbox-read-only': readOnly,
+        'sinoui-checkbox--read-only': readOnly,
       })}
       color={color}
       onClick={onClick}
