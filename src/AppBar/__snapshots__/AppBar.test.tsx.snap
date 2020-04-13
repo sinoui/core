@@ -2,90 +2,90 @@
 
 exports[`快照测试 固定模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 bwcCgG sinoui-app-bar"
+  className="sc-AxhCb cNUJJb sinoui-app-bar"
 >
   <div
-    className="NavigationIcon-sc-2b8xro-0 fvSiIS sinoui-app-bar--navigation"
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
   />
   <h1
-    className="AppBarTitle-sc-1lmkalg-0 bgybyW"
+    className="sc-AxjAm emMpHQ"
   >
      
   </h1>
   <div
-    className="AppBarActions-sl4kx3-0 euUhBN sinoui-app-bar--actions"
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
   />
 </div>
 `;
 
 exports[`快照测试 密集模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 ijhchH sinoui-app-bar"
+  className="sc-AxhCb cwDDHy sinoui-app-bar"
 >
   <div
-    className="NavigationIcon-sc-2b8xro-0 fvSiIS sinoui-app-bar--navigation"
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
   />
   <h1
-    className="AppBarTitle-sc-1lmkalg-0 bgybyW"
+    className="sc-AxjAm emMpHQ"
   >
      
   </h1>
   <div
-    className="AppBarActions-sl4kx3-0 euUhBN sinoui-app-bar--actions"
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
   />
 </div>
 `;
 
 exports[`快照测试 收缩模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 ijhchH sinoui-app-bar"
+  className="sc-AxhCb cwDDHy sinoui-app-bar"
 >
   <div
-    className="NavigationIcon-sc-2b8xro-0 fvSiIS sinoui-app-bar--navigation"
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
   />
   <h1
-    className="AppBarTitle-sc-1lmkalg-0 bgybyW"
+    className="sc-AxjAm emMpHQ"
   >
      
   </h1>
   <div
-    className="AppBarActions-sl4kx3-0 euUhBN sinoui-app-bar--actions"
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
   />
 </div>
 `;
 
 exports[`快照测试 标准模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 bwcCgG sinoui-app-bar"
+  className="sc-AxhCb cNUJJb sinoui-app-bar"
 >
   <div
-    className="NavigationIcon-sc-2b8xro-0 fvSiIS sinoui-app-bar--navigation"
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
   />
   <h1
-    className="AppBarTitle-sc-1lmkalg-0 bgybyW"
+    className="sc-AxjAm emMpHQ"
   >
      
   </h1>
   <div
-    className="AppBarActions-sl4kx3-0 euUhBN sinoui-app-bar--actions"
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
   />
 </div>
 `;
 
 exports[`快照测试 突出模式 1`] = `
 <div
-  className="AppBar__StyledAppBar-qqgfwp-0 kvfWFG sinoui-app-bar"
+  className="sc-AxhCb bVtlWJ sinoui-app-bar"
 >
   <div
-    className="NavigationIcon-sc-2b8xro-0 fvSiIS sinoui-app-bar--navigation"
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
   />
   <h1
-    className="AppBarTitle-sc-1lmkalg-0 bgybyW"
+    className="sc-AxjAm emMpHQ"
   >
      
   </h1>
   <div
-    className="AppBarActions-sl4kx3-0 euUhBN sinoui-app-bar--actions"
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
   />
 </div>
 `;

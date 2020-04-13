@@ -2,11 +2,11 @@
 
 exports[`Switch 镜像测试 不可用状态 1`] = `
 <span
-  className="Switch__Wrapper-m36o27-0 jpjEEk sinoui-switch sinoui-switch--disabled"
+  className="Switch__Wrapper-m36o27-0 djhusw sinoui-switch sinoui-switch--disabled"
   disabled={true}
 >
   <span
-    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 laIgyl sinoui-switch__label"
+    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 cyvRbu sinoui-switch__label"
     data-testid="switchLabel"
     disabled={true}
   >
@@ -24,7 +24,7 @@ exports[`Switch 镜像测试 不可用状态 1`] = `
     />
   </span>
   <span
-    className="SwitchTrack-sc-1s786x7-0 hcFYOd sinoui-switch__track"
+    className="SwitchTrack-sc-1s786x7-0 hXfEpE sinoui-switch__track"
     disabled={true}
   />
 </span>
@@ -32,10 +32,10 @@ exports[`Switch 镜像测试 不可用状态 1`] = `
 
 exports[`Switch 镜像测试 渲染Switch 1`] = `
 <span
-  className="Switch__Wrapper-m36o27-0 djFYIr sinoui-switch"
+  className="Switch__Wrapper-m36o27-0 jimTzk sinoui-switch"
 >
   <span
-    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 hRUBQv sinoui-switch__label"
+    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 gGAMdi sinoui-switch__label"
     color="primary"
     data-testid="switchLabel"
   >
@@ -52,7 +52,7 @@ exports[`Switch 镜像测试 渲染Switch 1`] = `
     />
   </span>
   <span
-    className="SwitchTrack-sc-1s786x7-0 cZlsMD sinoui-switch__track"
+    className="SwitchTrack-sc-1s786x7-0 jazQLR sinoui-switch__track"
     color="primary"
   />
 </span>
@@ -60,11 +60,11 @@ exports[`Switch 镜像测试 渲染Switch 1`] = `
 
 exports[`Switch 镜像测试 选中状态 1`] = `
 <span
-  className="Switch__Wrapper-m36o27-0 djFYIr sinoui-switch sinoui-switch--checked"
+  className="Switch__Wrapper-m36o27-0 jimTzk sinoui-switch sinoui-switch--checked"
 >
   <span
     checked={true}
-    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 kYUiAW sinoui-switch__label"
+    className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 gZpuOZ sinoui-switch__label"
     color="info"
     data-testid="switchLabel"
   >
@@ -83,7 +83,7 @@ exports[`Switch 镜像测试 选中状态 1`] = `
   </span>
   <span
     checked={true}
-    className="SwitchTrack-sc-1s786x7-0 dhVJWy sinoui-switch__track"
+    className="SwitchTrack-sc-1s786x7-0 diCGGz sinoui-switch__track"
     color="info"
   />
 </span>

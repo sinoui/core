@@ -1,0 +1,27 @@
+---
+id: text-input
+title: TextInput
+---
+
+输入框组件。
+
+## 属性
+
+| 属性名称      | 属性类型                             | 默认值              | 属性说明                                             |
+| ------------- | ------------------------------------ | ------------------- | ---------------------------------------------------- |
+| label         | string                               |                     | 标签内容                                             |
+| error         | string                               |                     | 错误信息                                             |
+| variant       | 'standard' \| 'filled' \| 'outlined' | 'standard'          | 输入框的三种模式                                     |
+| helperText    | string                               |                     | 帮助文字                                             |
+| dense         | boolean                              | false               | 如果设为`true`，则为密集模式                         |
+| baseClassName | string                               | 'sinoui-text-input' | 基础的 class 类名                                    |
+| shrink        | boolean                              | false               | 如果设置为`true`，则输入框的标签一直处于收缩悬浮状态 |
+| className     | string                               |                     | 为根元素指定 css 类                                  |
+| style         | CSSProperties                        |                     | 为根元素指定 css 样式                                |
+| wrapperProps  | object                               |                     | 为根元素指定额外的属性，如 `data-testid`             |
+
+除此之外，TextInput 继承了[BaseInput](./base-input)的所有属性。
+
+## 示例
+
+[TextInput Demo](../components/textInput)

@@ -1,5 +1,5 @@
 {
-  "include": ["src", "types", "stories"],
+  "include": ["src", "stories"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "incremental": true,

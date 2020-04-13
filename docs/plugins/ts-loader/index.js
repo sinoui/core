@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { resolve } = require('path');
 
-module.exports = function (_context, _options) {
+module.exports = (_context, _options) => {
   return {
     name: 'ts-loader',
     configureWebpack(config, _isServer) {
