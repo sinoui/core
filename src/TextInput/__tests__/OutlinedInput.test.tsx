@@ -34,7 +34,7 @@ it('渲染错误状态下边框模式的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <OutlinedInput error notched />
+        <OutlinedInput error="错误提示" notched />
       </ThemeProvider>,
     )
     .toJSON();

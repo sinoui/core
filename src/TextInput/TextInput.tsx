@@ -112,7 +112,7 @@ export default function TextInput(props: TextInputProps) {
     required,
     dense,
     disabled,
-    error: !!error,
+    error,
     readOnly,
     focused,
   };
@@ -144,6 +144,7 @@ export default function TextInput(props: TextInputProps) {
           shrink,
           noLabel,
           ...inputState,
+          error: !!error,
         },
         className,
       )}
@@ -155,6 +156,7 @@ export default function TextInput(props: TextInputProps) {
       {label && (
         <InputLabel
           {...inputState}
+          error={!!error}
           variant={variant}
           shrink={shrink}
           ref={labelRef}
