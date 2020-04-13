@@ -3,11 +3,11 @@ function getSizeData(element: HTMLElement) {
   const computedStyle = getComputedStyle(element);
   const getSizeValue = (key: keyof CSSStyleDeclaration) =>
     parseInt(computedStyle[key], 10) || 0;
-  const { boxSizing } = computedStyle;
+  const { boxSizing, width } = computedStyle;
   const padding = getSizeValue('paddingTop') + getSizeValue('paddingBottom');
   const border = getSizeValue('borderTop') + getSizeValue('borderBottom');
 
-  return { boxSizing, padding, border };
+  return { boxSizing, padding, border, width };
 }
 
 function getContentHeight(shadow: HTMLTextAreaElement, content = 'x') {
@@ -29,7 +29,8 @@ export default function resizeTextarea(
   minRows?: number,
   maxRows?: number,
 ) {
-  const { boxSizing, padding, border } = getSizeData(textarea);
+  const { boxSizing, padding, border, width } = getSizeData(textarea);
+  shadow.style.width = width;
   const contentHeight =
     getContentHeight(shadow, textarea.value || textarea.placeholder || 'x') -
     padding;
