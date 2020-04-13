@@ -12,13 +12,13 @@ const IconWrapper = styled.span`
   margin: 0 auto;
 `;
 
-const colorWrapper = (theme: Theme, color?: string, checked?: boolean) => {
+const colorWrapper = (theme: Theme, color?: string, selected?: boolean) => {
   let newColor;
-  if (checked && color) {
+  if (selected && color) {
     newColor = theme.palette.common.white;
-  } else if (checked) {
+  } else if (selected) {
     newColor = theme.palette.primary.main;
-  } else if (!checked && color) {
+  } else if (!selected && color) {
     newColor = opacify(-0.24, theme.palette.common.white);
   } else {
     newColor = theme.palette.text.secondary;
@@ -28,7 +28,7 @@ const colorWrapper = (theme: Theme, color?: string, checked?: boolean) => {
 
 const BaseButtonWrapper = styled(BaseButton)<{
   color?: string;
-  checked: boolean;
+  selected: boolean;
   showLabel?: boolean;
 }>`
   display: flex;
@@ -37,15 +37,15 @@ const BaseButtonWrapper = styled(BaseButton)<{
   height: 100%;
   align-items: center;
   vertical-align: middle;
-  color: ${({ theme, color, checked }) => colorWrapper(theme, color, checked)};
+  color: ${({ theme, color, selected }) =>
+    colorWrapper(theme, color, selected)};
   transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   max-width: 168px;
   min-width: 80px;
   padding: ${({ showLabel }) => (showLabel ? '8px 12px 12px' : '16px 12px')};
 
   > .sinoui-typography--body2 {
-    color: ${({ theme, color, checked }) =>
-      colorWrapper(theme, color, checked)};
+    color: currentColor;
     transition: font-size 0.2s, opacity 0.2s;
   }
 
@@ -74,7 +74,7 @@ export interface BottomNavActionProps {
   /**
    * 是否选中
    */
-  checked?: boolean;
+  selected?: boolean;
   /**
    * 指定背景颜色
    */
@@ -93,13 +93,13 @@ function BottomNavigationAction(props: BottomNavActionProps) {
     showLabel = true,
     icon,
     color,
-    checked = false,
+    selected = false,
     ...rest
   } = props;
   return (
     <BaseButtonWrapper
       color={color}
-      checked={checked}
+      selected={selected}
       showLabel={showLabel}
       {...rest}
     >
