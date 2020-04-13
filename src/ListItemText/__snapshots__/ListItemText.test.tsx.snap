@@ -2,15 +2,15 @@
 
 exports[`快照测试 默认 1`] = `
 <div
-  className="sc-AxjAm cRLtvi sinoui-list-item-text"
+  className="ListItemText__Wrapper-sc-1bivkap-0 gZnoXA sinoui-list-item-text"
 >
   <div
-    className="sc-AxirZ fBckif"
+    className="ListItemText__Title-sc-1bivkap-1 enZsVK"
   >
     标题
   </div>
   <div
-    className="sc-AxiKw eJHIXI"
+    className="ListItemText__SecondaryTitle-sc-1bivkap-2 jCunUg"
   >
     副标题
   </div>

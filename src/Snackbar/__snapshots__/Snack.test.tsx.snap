@@ -2,7 +2,7 @@
 
 exports[`Snackbar快照测试 不自动消失 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 eKJIdT sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -20,14 +20,14 @@ exports[`Snackbar快照测试 不自动消失 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxiKw jjBwQb sinoui-icon-button sc-AxhUy ZmzDj"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxjAm kFuAxU sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 llXVng"
           color="textSecondary"
           role="button"
           type="button"
         >
           <svg
             aria-hidden="true"
-            className="sc-AxhCb klcZHD sinoui-svg-icon"
+            className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
             data-testid="CloseIcon"
             focusable="false"
             role="presentation"
@@ -47,7 +47,7 @@ exports[`Snackbar快照测试 不自动消失 1`] = `
 
 exports[`Snackbar快照测试 含有操作区域 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 eKJIdT sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -65,7 +65,7 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
         className="sinoui-snackbar__action"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ irrPaL sinoui-button sinoui-button--raised"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 iIcgIq sinoui-button sinoui-button--raised"
           color="error"
           role="button"
           type="button"
@@ -77,14 +77,14 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxiKw jjBwQb sinoui-icon-button sc-AxhUy ZmzDj"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxjAm kFuAxU sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 llXVng"
           color="textSecondary"
           role="button"
           type="button"
         >
           <svg
             aria-hidden="true"
-            className="sc-AxhCb klcZHD sinoui-svg-icon"
+            className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
             data-testid="CloseIcon"
             focusable="false"
             role="presentation"
@@ -104,7 +104,7 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
 
 exports[`Snackbar快照测试 居左显示 1`] = `
 <div
-  className="sc-AxgMl gYqwOi sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--leading"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 lmNHQa sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--leading"
   open={true}
 >
   <div
@@ -122,14 +122,14 @@ exports[`Snackbar快照测试 居左显示 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxiKw jjBwQb sinoui-icon-button sc-AxhUy ZmzDj"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxjAm kFuAxU sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 llXVng"
           color="textSecondary"
           role="button"
           type="button"
         >
           <svg
             aria-hidden="true"
-            className="sc-AxhCb klcZHD sinoui-svg-icon"
+            className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
             data-testid="CloseIcon"
             focusable="false"
             role="presentation"
@@ -149,7 +149,7 @@ exports[`Snackbar快照测试 居左显示 1`] = `
 
 exports[`Snackbar快照测试 操作区域换行显示 1`] = `
 <div
-  className="sc-AxgMl dAEDZK sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--stacked sinoui-snackbar--leading"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 gJUJNo sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--stacked sinoui-snackbar--leading"
   open={true}
 >
   <div
@@ -167,7 +167,7 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
         className="sinoui-snackbar__action"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ irrPaL sinoui-button sinoui-button--raised"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 iIcgIq sinoui-button sinoui-button--raised"
           color="error"
           role="button"
           type="button"
@@ -179,14 +179,14 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxiKw jjBwQb sinoui-icon-button sc-AxhUy ZmzDj"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxjAm kFuAxU sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 llXVng"
           color="textSecondary"
           role="button"
           type="button"
         >
           <svg
             aria-hidden="true"
-            className="sc-AxhCb klcZHD sinoui-svg-icon"
+            className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
             data-testid="CloseIcon"
             focusable="false"
             role="presentation"
@@ -206,13 +206,13 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
 
 exports[`Snackbar快照测试 纯文本不显示 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 eKJIdT sinoui-snackbar"
 />
 `;
 
 exports[`Snackbar快照测试 纯文本显示 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 eKJIdT sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -230,14 +230,14 @@ exports[`Snackbar快照测试 纯文本显示 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxiKw jjBwQb sinoui-icon-button sc-AxhUy ZmzDj"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxjAm kFuAxU sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 llXVng"
           color="textSecondary"
           role="button"
           type="button"
         >
           <svg
             aria-hidden="true"
-            className="sc-AxhCb klcZHD sinoui-svg-icon"
+            className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
             data-testid="CloseIcon"
             focusable="false"
             role="presentation"
@@ -257,7 +257,7 @@ exports[`Snackbar快照测试 纯文本显示 1`] = `
 
 exports[`Snackbar快照测试 设置自定义时长 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar sinoui-snackbar--open"
+  className="Snackbar__SnackbarWrapper-sc-1xagtb1-1 eKJIdT sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -275,14 +275,14 @@ exports[`Snackbar快照测试 设置自定义时长 1`] = `
         className="sinoui-snackbar__dismiss"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxiKw jjBwQb sinoui-icon-button sc-AxhUy ZmzDj"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxjAm kFuAxU sinoui-icon-button Snackbar__DismissIconButton-sc-1xagtb1-0 llXVng"
           color="textSecondary"
           role="button"
           type="button"
         >
           <svg
             aria-hidden="true"
-            className="sc-AxhCb klcZHD sinoui-svg-icon"
+            className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
             data-testid="CloseIcon"
             focusable="false"
             role="presentation"
