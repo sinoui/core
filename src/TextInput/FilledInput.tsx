@@ -69,13 +69,13 @@ const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
     })};
 
   > .sinoui-input-adornment--end {
-    margin-right: 12px;
+    margin-right: ${({ multiline }) => (multiline ? 0 : 12)}px;
     margin-left: -6px;
   }
 
   > .sinoui-input-adornment--start {
     margin-right: 0px;
-    margin-left: 10px;
+    margin-left: ${({ multiline }) => (multiline ? -4 : 10)}px;
   }
 
   > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
@@ -85,7 +85,7 @@ const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
   > .sinoui-input-adornment--start.sinoui-input-adornment--text
     ~ .sinoui-base-input__input,
   > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-    margin-left: -12px;
+    margin-left: ${({ multiline }) => (multiline ? 0 : -12)}px;
   }
 
   > .sinoui-input-adornment--start,
