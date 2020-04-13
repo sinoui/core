@@ -21,7 +21,7 @@ export interface TransitionEasing {
  * })} defaultTimeout
  */
 export function getDuration(
-  timeout?: number | TransitionTimeout | any,
+  timeout?: number | TransitionTimeout,
   defaultTimeout?: TransitionTimeout,
 ): TransitionTimeout | undefined {
   if (!timeout) {

@@ -1,0 +1,81 @@
+---
+id: autosize-textarea
+title: AutosizeTextarea
+---
+
+高度自适应内容的文本域组件。
+
+## 引用方式
+
+```tsx
+import AutosizeTextarea from '@sinoui/core/AutosizeTextarea';
+```
+
+## 属性
+
+| 属性名称 | 属性类型 | 默认值 | 属性说明         |
+| -------- | -------- | ------ | ---------------- |
+| minRows  | number   |        | 指定最小显示行数 |
+| maxRows  | number   |        | 指定最大显示行数 |
+
+除此之外，AutosizeTextarea 继承了 textarea 的所有属性。
+
+## 限制
+
+AutosizeTextarea 不支持 rows 属性，可以使用 minRows 或者 maxRows 属性代替。
+
+不要通过 `style` 属性指定默认高度和溢出样式：
+
+```tsx
+// 🔴 不要通过 style 属性指定 height 和 overflow
+<AutosizeTextarea
+  style={{
+    height: 50,
+    overflow: 'hidden',
+  }}
+/>
+```
+
+可以这么做：
+
+```tsx
+// ✅ 使用 styled-components 添加默认样式
+const CustomTextarea = styled(AutosizeTextarea)`
+  height: 50px;
+  overflow: hidden;
+`;
+
+<CustomTextarea />;
+```
+
+或者：
+
+```css
+.textarea {
+  height: 50px;
+  overflow: hidden;
+}
+```
+
+```tsx
+//  ✅ 使用 className
+import './textarea.css';
+
+<AutosizeTextarea className="textarea" />;
+```
+
+不要针对 `height`、`max-height`、`min-height`和`overflow` 添加 `!important`：
+
+```css
+// 🔴 不要添加 !important
+.textarea {
+  height: 100px !important;
+  max-height: 100px !important;
+  min-height: 100px !important;
+  overflow: scroll !important;
+}
+```
+
+## 示例
+
+[TextInput Demo](../components/textInput)

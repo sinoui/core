@@ -14,6 +14,10 @@ module.exports = (_context, _options) => {
               __dirname,
               '../../node_modules/react-dom/index.js',
             ),
+            'styled-components': resolve(
+              __dirname,
+              '../../node_modules/styled-components/dist/styled-components.cjs.js',
+            ),
           },
           extensions: [
             ...(config.resolve.extensions || []),
@@ -29,7 +33,7 @@ module.exports = (_context, _options) => {
         module: {
           rules: [
             {
-              test: /\.(gif|png|jpe?g|svg)$/i,
+              test: /\.(gif|png|jpe?g)$/i,
               exclude: /\.(mdx?)$/i,
               use: ['file-loader', { loader: 'image-webpack-loader' }],
             },
@@ -45,6 +49,10 @@ module.exports = (_context, _options) => {
                   },
                 },
               ],
+            },
+            {
+              test: /\.svg$/,
+              use: ['@svgr/webpack'],
             },
           ],
         },

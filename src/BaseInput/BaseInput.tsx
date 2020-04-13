@@ -1,11 +1,31 @@
-import React, { ReactType, useCallback, useRef, useMemo } from 'react';
-import styled, { css } from 'styled-components';
+import React, { useCallback, useRef, useMemo, useEffect } from 'react';
 import classNames from 'classnames';
-import Textarea from 'react-textarea-autosize';
-import { MdClear } from 'react-icons/md';
+import AutosizeTextarea from '@sinoui/core/AutosizeTextarea';
 import useMultiRefs from '../utils/useMultiRefs';
+import BaseInputLayout from './BaseInputLayout';
+import mergeCallbacks from '../utils/mergeCallbacks';
+import bemClassNames from '../utils/bemClassNames';
 
-export interface BaseInputProps {
+interface MultilineProps {
+  /**
+   * 指定多行输入框的最大行数
+   */
+  maxRows?: number;
+  /**
+   * 指定多行输入框的最小行数
+   */
+  minRows?: number;
+  /**
+   * 指定多行输入框的行数
+   */
+  rows?: number;
+}
+
+export interface BaseInputProps<
+  InputComponentType extends React.ElementType = any,
+  InputElementType = any,
+  ExtendInputProps = {}
+> {
   /**
    * 值
    */
@@ -25,15 +45,17 @@ export interface BaseInputProps {
   /**
    * 输入框属性
    */
-  inputProps?: React.HTMLProps<
-    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-  >;
+  inputProps?: React.ComponentPropsWithRef<InputComponentType> &
+    Record<string, any> &
+    ExtendInputProps;
   /**
    * 为输入框元素指定 ref
    */
-  inputRef?: React.Ref<
-    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-  >;
+  inputRef?: React.Ref<InputElementType>;
+  /**
+   * 是否是多行文本输入框。如果设置为`true`，则采用 react-textarea-autosize 渲染出 textarea
+   */
+  multiline?: boolean;
   /**
    * 是否只读，默认为false
    */
@@ -42,10 +64,6 @@ export interface BaseInputProps {
    * 必填
    */
   required?: boolean;
-  /**
-   * 是否是多行文本
-   */
-  multiline?: boolean;
   /**
    * 自动补全
    */
@@ -65,39 +83,27 @@ export interface BaseInputProps {
   /**
    * 失去焦点时的回调函数
    */
-  onBlur?: (
-    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
+  onBlur?: (event: React.FocusEvent<InputElementType>) => void;
   /**
    * 获取焦点时的回调函数
    */
-  onFocus?: (
-    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
+  onFocus?: (event: React.FocusEvent<InputElementType>) => void;
   /**
    * 值变化时的回调函数
    */
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    value?: any,
-  ) => void;
+  onChange?: (event: React.ChangeEvent<InputElementType>) => void;
   /**
    * 点击事件的回调函数
    */
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   /**
-   * 前缀元素
+   * 在组件的开头添加装饰器`InputAdornment`。
    */
-  startComponent?: React.ReactNode;
+  startAdornment?: React.ReactNode;
   /**
-   * 后缀元素
+   * 在组件的末尾添加装饰器`InputAdornment`。
    */
-  endComponent?: React.ReactNode;
-  /**
-   * 输入区域渲染元素
-   */
-  inputComponent?: React.ReactType;
+  endAdornment?: React.ReactNode;
   /**
    * 不可用状态
    */
@@ -106,289 +112,211 @@ export interface BaseInputProps {
    * 全宽模式
    */
   fullWidth?: boolean;
-  renderSuffix?: (state: any) => React.ReactNode;
   /**
-   * 是否允许清除
+   * 指定包含的子元素
    */
-  allowClear?: boolean;
+  children?: React.ReactNode;
+  /**
+   * 输入区域渲染元素
+   */
+  inputComponent?: React.ElementType;
+  /**
+   * 输入框文本对齐方式。默认为`start`。
+   */
+  align?: 'start' | 'end';
+  /**
+   * 引用根元素
+   */
+  ref?: React.Ref<HTMLDivElement>;
+  /**
+   * 设置输入框元素的id
+   */
+  id?: string;
+  /**
+   * 设置输入框的name
+   */
+  name?: string;
+  /**
+   * 最小行数目
+   */
+  minRows?: number;
+  /**
+   * 最大行数目
+   */
+  maxRows?: number;
+  /**
+   * 指定输入框校验错误信息
+   */
+  error?: string;
 }
 
-const inputStyle = css<{ disabled?: boolean }>`
-  border: 0px;
-  box-sizing: content-box;
-  background: none;
-  margin: 0px;
-  font-size: ${({ theme }) => theme.typography.subtitle1.fontSize}rem;
-  font-family: ${({ theme }) => theme.typography.fontFamily};
-  color: ${({ theme, disabled }) =>
-    disabled ? theme.palette.text.disabled : theme.palette.text.primary};
-  -webkit-tap-highlight-color: transparent;
-  display: block;
-  min-width: 0px;
-  width: 100%;
-  height: 1.1875rem;
+export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
+  <C extends React.ElementType>(
+    props: {
+      inputComponent: C;
+    } & BaseInputProps<C, InputElementType>,
+  ): JSX.Element | null;
+  (
+    props: {
+      multiline: true;
+    } & BaseInputProps<'textarea', HTMLTextAreaElement, MultilineProps>,
+  ): JSX.Element | null;
+  (props: BaseInputProps<'input', InputElementType>): JSX.Element | null;
+}
 
-  ::-moz-placeholder {
-    color: ${(props) => props.theme.palette.text.hint};
-  }
-  ::-webkit-input-placeholder {
-    color: ${(props) => props.theme.palette.text.hint};
-  }
-  :-ms-input-placeholder {
-    color: ${(props) => props.theme.palette.text.hint};
-  }
+/**
+ * 基础输入框组件
+ *
+ * `BaseInput` 是一个包含尽量少样式的组件。它是用来简化构建输入框的基础组件。包含了输入框的重置样式和部分状态控制。
+ */
+const BaseInput: BaseInputComponentType = React.forwardRef<
+  HTMLDivElement,
+  BaseInputProps
+>(function BaseInput(props, ref) {
+  const {
+    value,
+    type,
+    inputProps: inputPropsProp = {},
+    inputRef: inputRefProp,
+    autoComplete,
+    autoFocus,
+    className,
+    multiline,
+    inputComponent = 'input',
+    startAdornment,
+    endAdornment,
+    required,
+    onChange,
+    onBlur,
+    onFocus,
+    onClick,
+    disabled,
+    fullWidth,
+    children,
+    placeholder,
+    align,
+    id,
+    name,
+    minRows,
+    maxRows,
+    error,
+    ...other
+  } = props;
 
-  ::-ms-clear {
-    display: none;
-  }
+  const inputRef = useRef<any>(null);
+  const handleInputRef = useMultiRefs(
+    inputRef,
+    inputRefProp,
+    inputPropsProp.ref as any,
+  );
 
-  :focus {
-    outline: 0;
-  }
-
-  :invalid {
-    box-shadow: none;
-  }
-`;
-
-const disabledStyle = css`
-  opacity: 1;
-`;
-
-const BaseInputLayout = styled.div<{
-  disabled?: boolean;
-  fullWidth?: boolean;
-  defaultShowClear?: boolean;
-  isShowClear?: boolean;
-}>`
-  display: inline-flex;
-  position: relative;
-  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
-  color: ${(props) => props.theme.palette.text.primary};
-  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
-  box-sizing: border-box;
-  align-items: center;
-  font-family: ${(props) => props.theme.typography.fontFamily};
-  line-height: 1.1875rem;
-
-  ${(props) => props.fullWidth && `width: 100%;`};
-
-  > input {
-    padding: 6px 0 7px;
-    ${inputStyle};
-    ${(props) => props.disabled && disabledStyle};
-  }
-
-  > .sinoui-base-input__clear {
-    display: ${(props) => (props.defaultShowClear ? 'block' : 'none')};
-  }
-
-  &:hover {
-    > .sinoui-base-input__clear {
-      display: block;
+  useEffect(() => {
+    const input: HTMLInputElement = inputRef.current;
+    if (input && input.setCustomValidity) {
+      input.setCustomValidity(error ?? '');
     }
+  }, [error]);
 
-    > .sinoui-base-input__endcomponent {
-      display: ${(props) => (props.isShowClear ? 'none' : 'block')};
-    }
-  }
-`;
+  const {
+    onChange: onChangeInputProp,
+    onBlur: onBlurInputProp,
+    onFocus: onFocusInputProp,
+  } = inputPropsProp;
 
-const StyleTextarea = styled(Textarea)`
-  ${inputStyle};
-  resize: none;
-  overflow: auto;
-  padding: 6px 0;
-  ${(props: { disabled?: boolean }) => props.disabled && disabledStyle};
-`;
+  /**
+   * 值变更时的回调函数
+   */
+  const handleChange = useMemo(
+    () => mergeCallbacks(onChange, onChangeInputProp),
+    [onChangeInputProp, onChange],
+  );
 
-export default React.forwardRef<HTMLDivElement, BaseInputProps>(
-  function BaseInput(props, ref) {
-    const {
-      type,
-      inputProps: inputPropsProp = {},
-      inputRef: inputRefProp,
-      autoComplete,
-      autoFocus,
-      className,
-      multiline,
-      inputComponent = 'input',
-      startComponent,
-      endComponent,
-      required,
-      onChange: onChangeProp,
-      onBlur,
-      onFocus,
-      onClick,
-      disabled,
-      fullWidth,
-      renderSuffix,
-      placeholder,
-      readOnly,
-      allowClear,
-      ...other
-    } = props;
+  /**
+   * 失去焦点时的回调函数
+   */
+  const handleBlur = useMemo(() => mergeCallbacks(onBlur, onBlurInputProp), [
+    onBlur,
+    onBlurInputProp,
+  ]);
 
-    const inputRef = useRef<any>(null);
-    const handleInputRef = useMultiRefs(
-      inputRef,
-      inputRefProp,
-      inputPropsProp.ref as any,
-    );
+  /**
+   * 获取焦点时的回调函数
+   */
+  const handleFocus = useMemo(() => mergeCallbacks(onFocus, onFocusInputProp), [
+    onFocus,
+    onFocusInputProp,
+  ]);
 
-    const isShowClear = useMemo(() => {
-      if (endComponent) {
-        return (
-          allowClear &&
-          (Array.isArray(props.value) ? props.value.length > 0 : !!props.value)
-        );
+  /**
+   * 处理点击事件的回调函数xx
+   */
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLDivElement>) => {
+      const input = inputRef.current;
+      if (input && event.currentTarget === event.target) {
+        input.focus();
       }
-      return allowClear && !!props.value;
-    }, [allowClear, endComponent, props.value]);
+      if (onClick) {
+        onClick(event);
+      }
+    },
+    [onClick],
+  );
 
-    const {
-      onChange: onChangeInputProp,
-      onBlur: onBlurInputProp,
-      onFocus: onFocusInputProp,
-    } = inputPropsProp;
+  const InputComonent = multiline ? AutosizeTextarea : inputComponent;
 
-    /**
-     * 值变更时的回调函数
-     */
-    const handleChange = useCallback(
-      (
-        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-        value,
-      ) => {
-        if (onChangeProp) {
-          onChangeProp(event, value);
-        }
+  const inputprops: Record<string, any> = {
+    ...inputPropsProp,
+    value,
+    id,
+    name,
+    type,
+    autoFocus,
+    autoComplete,
+    disabled,
+    readOnly: props.readOnly,
+    defaultValue: props.defaultValue,
+    onChange: handleChange,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+    placeholder,
+    'aria-required': required,
+    ref: handleInputRef,
+  };
 
-        if (onChangeInputProp) {
-          onChangeInputProp(event);
-        }
-      },
-      [onChangeInputProp, onChangeProp],
-    );
+  if (multiline) {
+    inputprops.minRows = minRows;
+    inputprops.maxRows = maxRows;
+  }
 
-    /**
-     * 失去焦点时的回调函数
-     */
-    const handleBlur = useCallback(
-      (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        if (onBlur) {
-          onBlur(event);
-        }
+  return (
+    <BaseInputLayout
+      className={bemClassNames(
+        'sinoui-base-input',
+        {
+          disabled,
+          multiline,
+        },
+        className,
+      )}
+      disabled={disabled}
+      $fullWidth={fullWidth}
+      $multiline={multiline}
+      $align={align}
+      data-testid="baseInput"
+      ref={ref}
+      onClick={handleClick}
+      {...other}
+    >
+      {startAdornment}
+      <InputComonent
+        {...inputprops}
+        className={classNames(inputprops.className, 'sinoui-base-input__input')}
+      />
+      {endAdornment}
+      {children}
+    </BaseInputLayout>
+  );
+});
 
-        if (onBlurInputProp) {
-          onBlurInputProp(event);
-        }
-      },
-      [onBlur, onBlurInputProp],
-    );
-
-    /**
-     * 获取焦点时的回调函数
-     */
-    const handleFocus = useCallback(
-      (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        if (onFocus) {
-          onFocus(event);
-        }
-
-        if (onFocusInputProp) {
-          onFocusInputProp(event);
-        }
-      },
-      [onFocus, onFocusInputProp],
-    );
-
-    /**
-     * 处理点击事件的回调函数
-     */
-    const handleClick = useCallback(
-      (event: React.MouseEvent<HTMLDivElement>) => {
-        if (disabled || readOnly) {
-          return;
-        }
-        const input = inputRef.current;
-        if (input && event.currentTarget === event.target) {
-          input.focus();
-        }
-        if (onClick) {
-          onClick(event);
-        }
-      },
-      [disabled, onClick, readOnly],
-    );
-
-    const handleClear = useCallback(
-      (event: React.MouseEvent<HTMLOrSVGElement>) => {
-        event.preventDefault();
-        event.persist();
-        event.stopPropagation();
-        const newValue = Array.isArray(props.value) ? [] : '';
-        Object.defineProperty(event, 'target', {
-          writable: true,
-          value: { value: newValue },
-        });
-        if (onChangeProp) {
-          onChangeProp(event as any, newValue);
-        }
-
-        if (onChangeInputProp) {
-          onChangeInputProp(event as any);
-        }
-      },
-      [onChangeInputProp, onChangeProp, props.value],
-    );
-
-    const InputComonent: ReactType = multiline ? StyleTextarea : inputComponent;
-    const inputprops = {
-      type,
-      autoFocus,
-      ...inputPropsProp,
-      autoComplete,
-      multiline,
-      disabled,
-      readOnly: props.readOnly,
-      value: props.value,
-      defaultValue: props.defaultValue,
-      ref: handleInputRef,
-      onChange: handleChange,
-      onBlur: handleBlur,
-      onFocus: handleFocus,
-      placeholder,
-      'aria-required': required,
-    };
-    return (
-      <BaseInputLayout
-        className={classNames('sinoui-base-input__layout', className)}
-        disabled={disabled}
-        fullWidth={fullWidth}
-        data-testid="baseInput"
-        ref={ref}
-        onClick={handleClick}
-        defaultShowClear={!endComponent}
-        isShowClear={isShowClear}
-        {...other}
-      >
-        {startComponent}
-        <InputComonent {...inputprops} />
-        {isShowClear && (
-          <MdClear
-            className="sinoui-base-input__clear"
-            onClick={handleClear}
-            data-testid="clearIcon"
-          />
-        )}
-        {endComponent
-          ? React.cloneElement(endComponent as any, {
-              className: 'sinoui-base-input__endcomponent',
-            })
-          : null}
-        {renderSuffix && renderSuffix({ disabled, required })}
-      </BaseInputLayout>
-    );
-  },
-);
+export default BaseInput;

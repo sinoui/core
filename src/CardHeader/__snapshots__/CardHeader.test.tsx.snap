@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 只有主标题的CardHeader 1`] = `
+<div
+  className="CardHeader__CardHeaderWrapper-sc-3c49dw-0 lcGMih"
+>
+  <div
+    className="card-header-content"
+  >
+    <div
+      className="CardHeader__CardHeaderTitle-sc-3c49dw-1 lkPuvY"
+    >
+      Shrimp and Chorizo Paella
+    </div>
+  </div>
+</div>
+`;
+
+exports[`快照测试 头像+主标题+副标题+操作的CardHeader 1`] = `
+<div
+  className="CardHeader__CardHeaderWrapper-sc-3c49dw-0 lcGMih"
+>
+  <div
+    className="card-header-avatar"
+  />
+  <div
+    className="card-header-content"
+  >
+    <div
+      className="card-header-title"
+    >
+      Shrimp and Chorizo Paella
+    </div>
+    <div
+      className="card-header-subheader"
+    >
+      subheader
+    </div>
+  </div>
+  <div
+    className="card-header-action"
+  >
+    <span>
+      icon
+    </span>
+  </div>
+</div>
+`;

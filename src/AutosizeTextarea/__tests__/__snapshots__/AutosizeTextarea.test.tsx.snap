@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`渲染文本域 1`] = `
+Array [
+  <textarea
+    onChange={[Function]}
+  />,
+  <textarea
+    aria-hidden="true"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "maxHeight": 0,
+        "minHeight": 0,
+        "overflow": "hidden",
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 0,
+        "transform": "translateZ(0)",
+        "visibility": "hidden",
+      }
+    }
+    tabIndex={-1}
+  />,
+]
+`;
+
+exports[`给文本域添加样式 1`] = `
+Array [
+  <textarea
+    onChange={[Function]}
+    style={
+      Object {
+        "boxSizing": "border-box",
+      }
+    }
+  />,
+  <textarea
+    aria-hidden="true"
+    style={
+      Object {
+        "boxSizing": "border-box",
+        "height": 0,
+        "left": 0,
+        "maxHeight": 0,
+        "minHeight": 0,
+        "overflow": "hidden",
+        "pointerEvents": "none",
+        "position": "absolute",
+        "top": 0,
+        "transform": "translateZ(0)",
+        "visibility": "hidden",
+      }
+    }
+    tabIndex={-1}
+  />,
+]
+`;

@@ -1,7 +1,3 @@
-import TextInputField from './TextInputField';
-import Label from './InputLabel';
-import HelperText from './HelperText';
+import TextInput from './TextInput';
 
-export { Label, HelperText };
-
-export default TextInputField;
+export default TextInput;

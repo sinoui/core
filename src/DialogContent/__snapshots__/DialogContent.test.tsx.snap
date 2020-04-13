@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogContent组件 快照测试 基本使用 1`] = `
+<h6
+  className="Typography__TypographyWrapper-sc-12agh80-0 oKTmz sinoui-typography sinoui-typography--subtitle1 DialogContent-rvt14v-0 fzaXwF sinoui-dialog-content children theme"
+  color="textSecondary"
+  type="subtitle1"
+>
+  Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
+</h6>
+`;

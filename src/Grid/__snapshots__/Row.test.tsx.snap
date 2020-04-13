@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`布局Row快照测试 gutter = 8 1`] = `
+<div
+  className="Row-y6j5gl-0 GlXNU sinoui-row"
+/>
+`;
+
+exports[`布局Row快照测试 gutterType = "around" 1`] = `
+<div
+  className="Row-y6j5gl-0 gvPXcC sinoui-row"
+/>
+`;
+
+exports[`布局Row快照测试 justifyContent = "center" alignItems="center" 1`] = `
+<div
+  className="Row-y6j5gl-0 iBEhRM sinoui-row"
+/>
+`;
+
+exports[`布局Row快照测试 justifyContent="center" 1`] = `
+<div
+  className="Row-y6j5gl-0 iGneth sinoui-row"
+/>
+`;
+
+exports[`布局Row快照测试 默认 1`] = `
+<div
+  className="Row-y6j5gl-0 bNhiEA sinoui-row"
+/>
+`;

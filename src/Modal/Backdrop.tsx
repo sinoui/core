@@ -2,44 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from '../transitions/Fade';
 
-export interface BackdropProps {
-  /**
-   * 是否显示
-   */
-  visible?: boolean;
-  /**
-   * 是否有open属性
-   */
-  open?: boolean;
-  /**
-   * transitionDuration
-   */
-  transitionDuration?: 'auto' | number;
-  /**
-   * 点击事件
-   */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  /**
-   * 指定组件样式
-   */
-  style?: React.CSSProperties;
-  /**
-   * 指定组件样式类名
-   */
-  className?: string;
-}
-
-export interface StyledBackdropProps {
-  /**
-   * 是否显示
-   */
-  visible?: boolean;
-}
-
-const StyledBackdrop = styled.div.attrs({
+const BackdropWrapper = styled.div.attrs({
   'aria-hidden': true,
   'data-testid': 'Backdrop',
-})<StyledBackdropProps>`
+})<BackdropProps>`
   position: fixed;
   z-index: -1;
   left: 0;
@@ -50,11 +16,40 @@ const StyledBackdrop = styled.div.attrs({
     props.visible === false ? 'transparent' : 'rgba(0, 0, 0, 0.5)'};
 `;
 
+export interface BackdropProps {
+  /**
+   * 是否显示
+   */
+  visible?: boolean;
+  /**
+   * 是否有open属性
+   */
+  open?: boolean;
+  /**
+   * 动画延长时间
+   */
+  transitionDuration?: 'auto' | number;
+  /**
+   * backdrop被点击时的回调函数
+   *
+   * @type {(SyntheticMouseEvent<*>) => void}
+   */
+  onBackdropClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * 点击事件
+   */
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * 添加自定义类名
+   */
+  className?: string;
+}
+
 export default function Backdrop(props: BackdropProps) {
   const { open, transitionDuration } = props;
   return (
     <Fade appear in={open} timeout={transitionDuration} {...props}>
-      <StyledBackdrop />
+      <BackdropWrapper />
     </Fade>
   );
 }

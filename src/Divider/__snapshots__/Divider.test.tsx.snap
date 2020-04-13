@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 flex布局下的垂直分割线 1`] = `
+<hr
+  className="sc-AxjAm vtVrU sinoui-divider sinoui-divider--vertical"
+/>
+`;
+
+exports[`快照测试 垂直分割线 1`] = `
+<hr
+  className="sc-AxjAm kCeUPN sinoui-divider sinoui-divider--vertical"
+/>
+`;
+
+exports[`快照测试 水平中间分割线 1`] = `
+<hr
+  className="sc-AxjAm dtCNbZ sinoui-divider"
+/>
+`;
+
+exports[`快照测试 水平插入分割线 1`] = `
+<hr
+  className="sc-AxjAm euGbIQ sinoui-divider"
+/>
+`;
+
+exports[`快照测试 默认水平分割线 1`] = `
+<hr
+  className="sc-AxjAm eVvreg sinoui-divider"
+/>
+`;

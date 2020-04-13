@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBarActions 1`] = `
+<div
+  className="sc-AxjAm iMxqKn sinoui-app-bar--actions"
+>
+  icons
+</div>
+`;

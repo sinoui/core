@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogTitle组件 快照测试 基本使用 1`] = `
+<h6
+  className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6 sc-AxjAm dnhkkP sinoui-dialog-title"
+  color="textPrimary"
+  type="h6"
+>
+  标题
+</h6>
+`;

@@ -1,13 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export interface ModalLayoutProps {
-  /**
-   * 是否全屏显示
-   */
   fullScreen?: boolean;
-  /**
-   * 自定义zIndex值
-   */
   zIndex?: number;
 }
 
@@ -16,12 +10,9 @@ const fullScreenCss = css`
   height: 100%;
 `;
 
-/**
- * Modal布局组件
- */
 const ModalLayout = styled.div<ModalLayoutProps>`
   ${(props) => props.fullScreen && fullScreenCss};
-  position: absolute;
+  position: fixed;
   display: flex;
   top: 0;
   left: 0;

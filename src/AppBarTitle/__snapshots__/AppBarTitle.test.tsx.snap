@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBarTitle 1`] = `
+<h1
+  className="sc-AxjAm emMpHQ"
+>
+  标题
+</h1>
+`;

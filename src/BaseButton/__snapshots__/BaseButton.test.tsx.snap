@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染文本按钮 1`] = `
+<button
+  className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+  role="button"
+  type="button"
+>
+  文本按钮
+</button>
+`;
+
+exports[`正确渲染链接按钮 1`] = `
+<div>
+  <a
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+    href="https://www.baidu.com/"
+  >
+    百度链接
+  </a>
+  <a
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+    href="https://github.com/"
+  >
+    github官网
+  </a>
+</div>
+`;
+
+exports[`禁用涟漪 1`] = `
+Array [
+  <button
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+    role="button"
+    type="button"
+  >
+    禁用涟漪效果
+  </button>,
+  <button
+    aria-disabled={true}
+    className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button"
+    disabled={true}
+    role="button"
+    type="button"
+  >
+    按钮不可用
+  </button>,
+]
+`;
+
+exports[`自定义涟漪颜色 1`] = `
+<button
+  className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+  role="button"
+  type="button"
+>
+  自定义涟漪效果
+</button>
+`;

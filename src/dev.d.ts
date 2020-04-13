@@ -7,7 +7,12 @@ declare module 'styled-components' {
   }
 }
 
-declare module 'dom-helpers/util/scrollbarSize' {
-  const value: any;
-  export = value;
+declare module 'react' {
+  interface FunctionComponent<P = {}> {
+    sinouiName?: string;
+  }
+
+  interface NamedExoticComponent {
+    sinouiName?: string;
+  }
 }

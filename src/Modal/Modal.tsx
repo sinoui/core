@@ -1,9 +1,9 @@
 import React, {
-  useEffect,
   useState,
+  useEffect,
+  useMemo,
   useRef,
   useCallback,
-  useMemo,
 } from 'react';
 import ReactDOM from 'react-dom';
 import omit from 'lodash/omit';
@@ -12,6 +12,9 @@ import { createChainFunction } from '../utils/createChainFunction';
 import ModalLayout from './ModalLayout';
 
 let modalRoot: null | HTMLElement;
+
+const MODAL_ROOT_CLASSNAME = 'sinoui-modal-root';
+export { MODAL_ROOT_CLASSNAME };
 
 /**
  * 获取模态框的根元素
@@ -23,7 +26,7 @@ export function getModalRoot() {
     modalRoot = document.getElementById('SinouiModalRoot');
     if (!modalRoot) {
       modalRoot = document.createElement('div');
-      modalRoot.classList.add('sinoui-modal-root');
+      modalRoot.classList.add(MODAL_ROOT_CLASSNAME);
       document.body.appendChild(modalRoot);
     }
   }
@@ -113,29 +116,28 @@ export interface ModalPropsType
   zIndex?: number;
   // 指定modal根节点容器
   container?: HTMLElement;
-
+  /**
+   * Modal根元素
+   */
   innerRef?: React.Ref<HTMLDivElement>;
-}
-
-export interface ModalStateType {
-  exited?: boolean;
 }
 
 /**
  * 模态框
  */
-function Modal(props: ModalPropsType): any {
+function Modal(props: ModalPropsType) {
   const {
     open = true,
-    fixed = true,
-    BackdropProps: backdropProps = {},
+    children,
+    BackdropProps: backdropProps,
     backdrop = true,
     backdropClick = true,
-    container = getModalRoot(),
-    onRequestClose,
-    onTransitionExited: onTransitionExitedProp,
-    children,
     onBackdropClick: onBackdropClickProp,
+    container = getModalRoot(),
+    onTransitionExited: onTransitionExitedProp,
+    onRequestClose,
+    fixed = true,
+    fullScreen = true,
     ...rest
   } = props;
 
@@ -151,7 +153,9 @@ function Modal(props: ModalPropsType): any {
       elRef.current = element;
     }
 
-    openRef.current = open;
+    if (openRef.current) {
+      openRef.current = open;
+    }
 
     return () => container.removeChild(elRef.current) as any;
   }, [container, element, open]);
@@ -167,6 +171,9 @@ function Modal(props: ModalPropsType): any {
     }
   }, [open, props]);
 
+  /**
+   * 点击遮罩层
+   */
   const onBackdropClick = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) => {
       if (event.target !== event.currentTarget) {
@@ -176,7 +183,6 @@ function Modal(props: ModalPropsType): any {
       if (!backdropClick) {
         return;
       }
-
       if (onBackdropClickProp) {
         onBackdropClickProp(event);
       }
@@ -185,13 +191,16 @@ function Modal(props: ModalPropsType): any {
         onRequestClose(event, 'backdropClick');
       }
     },
-    [backdropClick, onBackdropClickProp, onRequestClose],
+    [onBackdropClickProp, onRequestClose, backdropClick],
   );
 
   const onTransitionExited = useCallback(() => {
     setExited(true);
   }, []);
 
+  /**
+   * 点击Modal整体
+   */
   const onContainerClick = useCallback(
     (event: React.MouseEvent<HTMLElement>) => {
       event.stopPropagation();
@@ -209,10 +218,12 @@ function Modal(props: ModalPropsType): any {
   } = {};
 
   if (hasTransition) {
+    const child = React.Children.only(children);
     childProps.onExited = createChainFunction(
-      React.Children.only(children)?.props.onExited,
+      child && child.props.onExited,
       onTransitionExited,
     );
+
     if (!open) {
       childProps.in = false;
     }
@@ -220,7 +231,9 @@ function Modal(props: ModalPropsType): any {
 
   const Container = fixed ? ModalLayout : 'div';
 
-  const containerProps = fixed ? rest : omit(rest, ['fullScreen', 'zIndex']);
+  const containerProps = fixed
+    ? { ...rest, fullScreen }
+    : omit(rest, ['fullScreen', 'zIndex']);
 
   return ReactDOM.createPortal(
     <Container
@@ -229,7 +242,12 @@ function Modal(props: ModalPropsType): any {
       onClick={onContainerClick}
     >
       {backdrop && (
-        <Backdrop {...backdropProps} onClick={onBackdropClick} open={open} />
+        <Backdrop
+          {...backdropProps}
+          onClick={onBackdropClick}
+          open={props.open}
+          className="sinoui-modal--backdrop"
+        />
       )}
       {React.cloneElement(React.Children.only(children) as any, childProps)}
     </Container>,

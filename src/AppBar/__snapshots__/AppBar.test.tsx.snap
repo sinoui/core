@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 固定模式 1`] = `
+<div
+  className="sc-AxhCb cNUJJb sinoui-app-bar"
+>
+  <div
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
+  />
+  <h1
+    className="sc-AxjAm emMpHQ"
+  >
+     
+  </h1>
+  <div
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
+  />
+</div>
+`;
+
+exports[`快照测试 密集模式 1`] = `
+<div
+  className="sc-AxhCb cwDDHy sinoui-app-bar"
+>
+  <div
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
+  />
+  <h1
+    className="sc-AxjAm emMpHQ"
+  >
+     
+  </h1>
+  <div
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
+  />
+</div>
+`;
+
+exports[`快照测试 收缩模式 1`] = `
+<div
+  className="sc-AxhCb cwDDHy sinoui-app-bar"
+>
+  <div
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
+  />
+  <h1
+    className="sc-AxjAm emMpHQ"
+  >
+     
+  </h1>
+  <div
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
+  />
+</div>
+`;
+
+exports[`快照测试 标准模式 1`] = `
+<div
+  className="sc-AxhCb cNUJJb sinoui-app-bar"
+>
+  <div
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
+  />
+  <h1
+    className="sc-AxjAm emMpHQ"
+  >
+     
+  </h1>
+  <div
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
+  />
+</div>
+`;
+
+exports[`快照测试 突出模式 1`] = `
+<div
+  className="sc-AxhCb bVtlWJ sinoui-app-bar"
+>
+  <div
+    className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
+  />
+  <h1
+    className="sc-AxjAm emMpHQ"
+  >
+     
+  </h1>
+  <div
+    className="sc-AxirZ bnSjNE sinoui-app-bar--actions"
+  />
+</div>
+`;

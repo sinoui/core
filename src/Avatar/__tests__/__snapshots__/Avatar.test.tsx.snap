@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar组件 快照测试 图标头像 1`] = `
+<div
+  className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+  color="actionDisabled"
+>
+  <svg
+    aria-hidden="true"
+    className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+    focusable="false"
+    role="presentation"
+    size={24}
+    viewBox="0 0 24 24"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </svg>
+</div>
+`;
+
+exports[`Avatar组件 快照测试 图片头像 1`] = `
+Array [
+  <div
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+    color="actionDisabled"
+  >
+    <img
+      alt=""
+      src="avatarf.jpg"
+    />
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+    color="actionDisabled"
+  >
+    <img
+      alt=""
+      src="avatars.jpg"
+    />
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+    color="actionDisabled"
+  >
+    <img
+      alt=""
+      src="avatart.jpg"
+    />
+  </div>,
+]
+`;
+
+exports[`Avatar组件 快照测试 字母头像 1`] = `
+Array [
+  <div
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+    color="actionDisabled"
+  >
+    H
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+    color="actionDisabled"
+  >
+    N
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+    color="actionDisabled"
+  >
+    LX
+  </div>,
+]
+`;
+
+exports[`Avatar组件 快照测试 是否为密集模式 1`] = `
+Array [
+  <div
+    className="Avatar-gvflnr-0 jElJCw sinoui-avatar"
+    color="actionDisabled"
+  >
+    <img
+      alt=""
+      src="avatarf.jpg"
+    />
+  </div>,
+  <p />,
+  <div
+    className="Avatar-gvflnr-0 jElJCw sinoui-avatar"
+    color="actionDisabled"
+  >
+    <svg
+      aria-hidden="true"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      role="presentation"
+      size={24}
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </div>,
+  <p />,
+  <div
+    className="Avatar-gvflnr-0 jElJCw sinoui-avatar"
+    color="actionDisabled"
+  >
+    H
+  </div>,
+]
+`;
+
+exports[`Avatar组件 快照测试 设置不同背景颜色 1`] = `
+Array [
+  <div
+    className="Avatar-gvflnr-0 ipytFM sinoui-avatar"
+    color="primary"
+  >
+    LX
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 jLOYMD sinoui-avatar"
+    color="secondary"
+  >
+    LX
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 pWIdP sinoui-avatar"
+    color="warning"
+  >
+    LX
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 bocrdO sinoui-avatar"
+    color="error"
+  >
+    LX
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 jnqvZL sinoui-avatar"
+    color="success"
+  >
+    LX
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 jtimoL sinoui-avatar"
+    color="info"
+  >
+    LX
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 cra-DDW sinoui-avatar"
+    color="actionActive"
+  >
+    LX
+  </div>,
+  <div
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+    color="actionDisabled"
+  >
+    LX
+  </div>,
+]
+`;

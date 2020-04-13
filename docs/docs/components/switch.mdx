@@ -1,0 +1,116 @@
+---
+id: switch
+title: Switch 开关
+---
+
+import Switch from '@sinoui/core/Switch';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import SwitchDemo from './switch-demoes/SwitchDemo';
+import ColorfulDemo from './switch-demoes/ColorfulDemo';
+
+> 开关是改变单个设置状态打开或关闭的控件。
+
+## 引入方式
+
+```ts
+import Switch from '@sinoui/core/Switch';
+```
+
+## 使用场景
+
+### 基本使用
+
+```tsx
+import Switch from '@sinoui/core/Switch';
+
+function Demo() {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = useCallback((event) => {
+    setChecked(event.target.checked);
+  }, []);
+
+  return <Switch checked={checked} value="switch1" onChange={handleChange} />;
+}
+```
+
+效果如下：
+
+<SwitchDemo />
+
+### 切换颜色
+
+`Switch`组件颜色规范不仅支持`Material Designer`的`primary`和`secondary`，
+又支持`Bootstrap`的`success`、`error`、`warning`、`info`、。
+使用时可直接给 Switch 组件指定相应的`color`属性即可。
+
+```tsx
+import React, { useState, useCallback } from 'react';
+import Switch from '@sinoui/switch';
+
+export default function SwitchDemo() {
+  const [checked, setChecked] = useState<{ [name: string]: boolean }>({
+    switch3: true,
+  });
+   const handleChange = useCallback((event, name) => {
+    const value = event.target.checked;
+    setChecked((state) => ({ ...state, [name]: value }));
+  }, []);
+  return (
+    <>
+      <Switch
+        checked={checked.switch1}
+        value="switch1"
+        onChange={(event) => handleChange(event, 'switch1')}
+      />
+      <Switch
+        checked={checked.switch2}
+        value="switch2"
+        onChange={(event) => handleChange(event, 'switch2')}
+        color="secondary"
+      />
+      <Switch
+        checked={checked.switch3}
+        value="switch3"
+        onChange={(event) => handleChange(event, 'switch3')}
+        color="success"
+      />
+      <Switch
+        checked={checked.switch4}
+        value="switch4"
+        onChange={(event) => handleChange(event, 'switch4')}
+        color="error"
+      />
+      <Switch
+        checked={checked.switch5}
+        value="switch5"
+        onChange={(event) => handleChange(event, 'switch5')}
+        color="info"
+      />
+      <Switch
+        checked={checked.switch6}
+        value="switch6"
+        onChange={(event) => handleChange(event, 'switch6')}
+        color="warning"
+      />
+  );
+}
+```
+
+效果如下：
+
+<ColorfulDemo />
+
+### 不可用的Switch
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    <Switch disabled value="switch1" />
+    <Switch disabled checked value="switch2" />
+  </>
+</ThemeProvider>
+
+## API
+
+* [Switch](../components-apis/switch)

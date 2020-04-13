@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 嵌入图标 1`] = `
+<svg
+  enableBackground="new 0 0 72 56"
+  height="56px"
+  version="1.1"
+  viewBox="0 0 72 56"
+  width="72px"
+  x="0px"
+  y="0px"
+>
+  <path
+    d="M36,36.018c-19.882,0-36-16.154-36-36.08v56.125h72V-0.063C72,19.864,55.882,36.018,36,36.018z"
+    fill="#3f51b5"
+  />
+</svg>
+`;
+
+exports[`快照测试 浮动按钮居中嵌入 1`] = `
+<div
+  className="sc-AxhCb dKBcis"
+>
+  <div
+    className="sinoui-bottom-app-bar--fab"
+  />
+  <div
+    className="sc-AxjAm iMxqKn sinoui-app-bar--actions"
+  />
+  <div
+    className="sc-AxhUy bmWIcc"
+  >
+    <div
+      className="sinoui-bottom-app-bar--layer"
+    />
+    <svg
+      enableBackground="new 0 0 72 56"
+      height="56px"
+      version="1.1"
+      viewBox="0 0 72 56"
+      width="72px"
+      x="0px"
+      y="0px"
+    >
+      <path
+        d="M36,36.018c-19.882,0-36-16.154-36-36.08v56.125h72V-0.063C72,19.864,55.882,36.018,36,36.018z"
+        fill="#3f51b5"
+      />
+    </svg>
+    <div
+      className="sinoui-bottom-app-bar--layer"
+    />
+  </div>
+</div>
+`;
+
+exports[`快照测试 浮动按钮居右显示 1`] = `
+<div
+  className="sc-AxiKw dwZYIi"
+>
+  <div
+    className="sinoui-bottom-app-bar--fab"
+  />
+  <div
+    className="sc-AxjAm iMxqKn sinoui-app-bar--actions"
+  />
+</div>
+`;
+
+exports[`快照测试 默认 1`] = `
+<div
+  className="sc-AxiKw jeankl"
+>
+  <div
+    className="sinoui-bottom-app-bar--fab"
+  />
+  <div
+    className="sc-AxjAm iMxqKn sinoui-app-bar--actions"
+  />
+</div>
+`;

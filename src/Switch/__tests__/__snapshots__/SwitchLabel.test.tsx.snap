@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwitchLabel 镜像测试 不可用状态 1`] = `
+<span
+  className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 cyvRbu sinoui-switch__label"
+  data-testid="switchLabel"
+  disabled={true}
+>
+  <input
+    className="sinoui-switch__input"
+    disabled={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="sinoui-switch__thumb"
+  />
+</span>
+`;
+
+exports[`SwitchLabel 镜像测试 渲染SwitchLabel 1`] = `
+<span
+  className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 gGAMdi sinoui-switch__label"
+  data-testid="switchLabel"
+>
+  <input
+    className="sinoui-switch__input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="sinoui-switch__thumb"
+  />
+</span>
+`;
+
+exports[`SwitchLabel 镜像测试 选中状态 1`] = `
+<span
+  checked={true}
+  className="SwitchLabel__SwitchLabelWrapper-sc-1o7u2zc-0 gZpuOZ sinoui-switch__label"
+  color="info"
+  data-testid="switchLabel"
+>
+  <input
+    checked={true}
+    className="sinoui-switch__input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="sinoui-switch__thumb"
+  />
+</span>
+`;
