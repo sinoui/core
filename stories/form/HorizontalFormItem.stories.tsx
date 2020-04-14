@@ -38,7 +38,7 @@ export const 简单FormLabel = () => (
       </FormItem>
       <FormItem>
         <FormLabel layout="standard" colon required disabled>
-          用户名
+          用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名
         </FormLabel>
         <TextInput placeholder="请输入用户名" disabled />
       </FormItem>
