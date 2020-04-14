@@ -47,7 +47,9 @@ const standardStyle = css`
  *
  * @ReactComponent
  */
-const Label = styled.label<LabelProps>`
+const Label = styled.label.attrs(() => ({ className: 'sinoui-form-label' }))<
+  LabelProps
+>`
   display: flex;
   font-size: ${(props) => props.theme.typography.body1.fontSize};
   font-family: ${(props) => props.theme.typography.fontFamily};
