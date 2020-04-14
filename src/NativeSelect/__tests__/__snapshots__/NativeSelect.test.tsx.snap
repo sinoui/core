@@ -188,7 +188,7 @@ exports[`渲染三种模式下的选择框 1`] = `
   opacity: 0.04;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -204,14 +204,14 @@ exports[`渲染三种模式下的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c11 > div {
+.c12 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c11 > .sinoui-notched-outline__leading {
+.c12 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -220,14 +220,14 @@ exports[`渲染三种模式下的选择框 1`] = `
   width: 10px;
 }
 
-.c11 > .sinoui-notched-outline__notch {
+.c12 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c11 > .sinoui-notched-outline__trailing {
+.c12 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -235,48 +235,48 @@ exports[`渲染三种模式下的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c11.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c12.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c11.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c12.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c10 {
+.c11 {
   position: relative;
   border-radius: 4px;
 }
 
-.c10 > .sinoui-notched-outline > div {
+.c11 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c10:hover > .sinoui-notched-outline > div {
+.c11:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c10 > .sinoui-base-input__input {
+.c11 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c10 > .sinoui-input-adornment--start {
+.c11 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c10 > .sinoui-input-adornment--end {
+.c11 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c10 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c11 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c10 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c10 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c11 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c11 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -333,7 +333,7 @@ exports[`渲染三种模式下的选择框 1`] = `
   white-space: nowrap;
 }
 
-.c9 {
+.c10 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -465,6 +465,21 @@ label ~ .c3 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-right: -32px;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.c9.c9 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   margin-right: -30px;
   padding-right: 32px;
   cursor: pointer;
@@ -511,14 +526,12 @@ label ~ .c3 {
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -526,7 +539,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -534,7 +546,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -576,21 +587,19 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <select
-        className="c4 sinoui-base-input__input"
+        className="c9 sinoui-base-input__input"
         multiple={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -598,7 +607,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -606,7 +614,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -641,31 +648,29 @@ label ~ .c3 {
     onFocus={[Function]}
   >
     <label
-      className="c9 sinoui-input-label sinoui-input-label--outlined"
+      className="c10 sinoui-input-label sinoui-input-label--outlined"
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input c10"
+      className="c2 sinoui-base-input c11"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <select
-        className="c4 sinoui-base-input__input"
+        className="c9 sinoui-base-input__input"
         multiple={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -673,7 +678,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -681,7 +685,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -706,7 +709,7 @@ label ~ .c3 {
         </svg>
       </div>
       <div
-        className="c11 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c12 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -897,7 +900,7 @@ exports[`渲染不可用的选择框 1`] = `
   background-color: rgba(0,0,0,0.26);
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -913,14 +916,14 @@ exports[`渲染不可用的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c11 > div {
+.c12 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c11 > .sinoui-notched-outline__leading {
+.c12 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -929,14 +932,14 @@ exports[`渲染不可用的选择框 1`] = `
   width: 10px;
 }
 
-.c11 > .sinoui-notched-outline__notch {
+.c12 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c11 > .sinoui-notched-outline__trailing {
+.c12 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -944,48 +947,48 @@ exports[`渲染不可用的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c11.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c12.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c11.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c12.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c10 {
+.c11 {
   position: relative;
   border-radius: 4px;
 }
 
-.c10 > .sinoui-notched-outline > div {
+.c11 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.26);
   border-width: 1px;
 }
 
-.c10:hover > .sinoui-notched-outline > div {
+.c11:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.26);
 }
 
-.c10 > .sinoui-base-input__input {
+.c11 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c10 > .sinoui-input-adornment--start {
+.c11 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c10 > .sinoui-input-adornment--end {
+.c11 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c10 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c11 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c10 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c10 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c11 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c11 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -1038,7 +1041,7 @@ exports[`渲染不可用的选择框 1`] = `
   white-space: nowrap;
 }
 
-.c9 {
+.c10 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -1167,6 +1170,21 @@ label ~ .c3 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-right: -32px;
+  padding-right: 32px;
+  cursor: default;
+}
+
+.c9.c9 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   margin-right: -30px;
   padding-right: 32px;
   cursor: default;
@@ -1217,14 +1235,12 @@ label ~ .c3 {
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -1232,7 +1248,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -1240,7 +1255,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -1285,7 +1299,7 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <select
-        className="c4 sinoui-base-input__input"
+        className="c9 sinoui-base-input__input"
         disabled={true}
         multiple={false}
         onBlur={[Function]}
@@ -1293,14 +1307,12 @@ label ~ .c3 {
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -1308,7 +1320,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -1316,7 +1327,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -1352,19 +1362,19 @@ label ~ .c3 {
     onFocus={[Function]}
   >
     <label
-      className="c9 sinoui-input-label sinoui-input-label--disabled sinoui-input-label--outlined"
+      className="c10 sinoui-input-label sinoui-input-label--disabled sinoui-input-label--outlined"
       disabled={true}
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input sinoui-base-input--disabled c10"
+      className="c2 sinoui-base-input sinoui-base-input--disabled c11"
       data-testid="baseInput"
       disabled={true}
       onClick={[Function]}
     >
       <select
-        className="c4 sinoui-base-input__input"
+        className="c9 sinoui-base-input__input"
         disabled={true}
         multiple={false}
         onBlur={[Function]}
@@ -1372,14 +1382,12 @@ label ~ .c3 {
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -1387,7 +1395,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -1395,7 +1402,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -1420,7 +1426,7 @@ label ~ .c3 {
         </svg>
       </div>
       <div
-        className="c11 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c12 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -1630,7 +1636,7 @@ exports[`渲染不带标签的选择框 1`] = `
   opacity: 0.04;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1646,14 +1652,14 @@ exports[`渲染不带标签的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c8 > div {
+.c9 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c8 > .sinoui-notched-outline__leading {
+.c9 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -1662,14 +1668,14 @@ exports[`渲染不带标签的选择框 1`] = `
   width: 10px;
 }
 
-.c8 > .sinoui-notched-outline__notch {
+.c9 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c8 > .sinoui-notched-outline__trailing {
+.c9 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -1677,48 +1683,48 @@ exports[`渲染不带标签的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c8.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c9.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c8.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c9.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c7 {
+.c8 {
   position: relative;
   border-radius: 4px;
 }
 
-.c7 > .sinoui-notched-outline > div {
+.c8 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c7:hover > .sinoui-notched-outline > div {
+.c8:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c7 > .sinoui-base-input__input {
+.c8 > .sinoui-base-input__input {
   padding: 8px 14px;
 }
 
-.c7 > .sinoui-input-adornment--start {
+.c8 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c7 > .sinoui-input-adornment--end {
+.c8 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c7 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c8 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c7 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c7 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c8 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c8 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -1825,6 +1831,21 @@ label ~ .c2 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-right: -32px;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.c7.c7 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   margin-right: -30px;
   padding-right: 32px;
   cursor: pointer;
@@ -1866,14 +1887,12 @@ label ~ .c2 {
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -1881,7 +1900,6 @@ label ~ .c2 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -1889,7 +1907,6 @@ label ~ .c2 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -1926,21 +1943,19 @@ label ~ .c2 {
       onClick={[Function]}
     >
       <select
-        className="c3 sinoui-base-input__input"
+        className="c7 sinoui-base-input__input"
         multiple={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -1948,7 +1963,6 @@ label ~ .c2 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -1956,7 +1970,6 @@ label ~ .c2 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -1991,26 +2004,24 @@ label ~ .c2 {
     onFocus={[Function]}
   >
     <div
-      className="c1 sinoui-base-input c7"
+      className="c1 sinoui-base-input c8"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <select
-        className="c3 sinoui-base-input__input"
+        className="c7 sinoui-base-input__input"
         multiple={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -2018,7 +2029,6 @@ label ~ .c2 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -2026,7 +2036,6 @@ label ~ .c2 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -2051,7 +2060,7 @@ label ~ .c2 {
         </svg>
       </div>
       <div
-        className="c8 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c9 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -2261,7 +2270,7 @@ exports[`渲染多选选择框 1`] = `
   opacity: 0.04;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2277,14 +2286,14 @@ exports[`渲染多选选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c9 > div {
+.c10 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c9 > .sinoui-notched-outline__leading {
+.c10 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -2293,14 +2302,14 @@ exports[`渲染多选选择框 1`] = `
   width: 10px;
 }
 
-.c9 > .sinoui-notched-outline__notch {
+.c10 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c9 > .sinoui-notched-outline__trailing {
+.c10 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -2308,48 +2317,48 @@ exports[`渲染多选选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c9.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c10.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c9.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c10.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c8 {
+.c9 {
   position: relative;
   border-radius: 4px;
 }
 
-.c8 > .sinoui-notched-outline > div {
+.c9 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c8:hover > .sinoui-notched-outline > div {
+.c9:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c8 > .sinoui-base-input__input {
+.c9 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c8 > .sinoui-input-adornment--start {
+.c9 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c8 > .sinoui-input-adornment--end {
+.c9 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c8 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c9 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c8 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c8 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c9 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c9 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -2421,7 +2430,7 @@ exports[`渲染多选选择框 1`] = `
   white-space: nowrap;
 }
 
-.c7 {
+.c8 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -2539,6 +2548,23 @@ label ~ .c3 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-right: -32px;
+  padding-right: 32px;
+  cursor: pointer;
+  height: auto;
+  margin-right: 0px;
+}
+
+.c7.c7 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   margin-right: -30px;
   padding-right: 32px;
   cursor: pointer;
@@ -2570,14 +2596,12 @@ label ~ .c3 {
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={false}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -2585,7 +2609,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -2593,7 +2616,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -2619,21 +2641,19 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <select
-        className="c4 sinoui-base-input__input"
+        className="c7 sinoui-base-input__input"
         multiple={true}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={false}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -2641,7 +2661,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -2649,7 +2668,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -2668,31 +2686,29 @@ label ~ .c3 {
     onFocus={[Function]}
   >
     <label
-      className="c7 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
+      className="c8 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input c8"
+      className="c2 sinoui-base-input c9"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <select
-        className="c4 sinoui-base-input__input"
+        className="c7 sinoui-base-input__input"
         multiple={true}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={false}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -2700,7 +2716,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -2708,7 +2723,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -2717,7 +2731,7 @@ label ~ .c3 {
         </option>
       </select>
       <div
-        className="c9 sinoui-notched-outline sinoui-notched-outline--notched sinoui-notched-outline--no-label"
+        className="c10 sinoui-notched-outline sinoui-notched-outline--notched sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -2927,7 +2941,7 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   opacity: 0.04;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2943,14 +2957,14 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c13 > div {
+.c14 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c13 > .sinoui-notched-outline__leading {
+.c14 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -2959,14 +2973,14 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   width: 10px;
 }
 
-.c13 > .sinoui-notched-outline__notch {
+.c14 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c13 > .sinoui-notched-outline__trailing {
+.c14 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -2974,48 +2988,48 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c13.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c13.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c12 {
+.c13 {
   position: relative;
   border-radius: 4px;
 }
 
-.c12 > .sinoui-notched-outline > div {
+.c13 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c12:hover > .sinoui-notched-outline > div {
+.c13:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c12 > .sinoui-base-input__input {
+.c13 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c12 > .sinoui-input-adornment--start {
+.c13 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c12 > .sinoui-input-adornment--end {
+.c13 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c12 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c13 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c12 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c12 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c13 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c13 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -3072,7 +3086,7 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   white-space: nowrap;
 }
 
-.c11 {
+.c12 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -3171,7 +3185,7 @@ label ~ .c3 {
   margin-top: 8px;
 }
 
-.c10 {
+.c11 {
   color: rgba(0,0,0,0.6);
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 0.75rem;
@@ -3227,6 +3241,21 @@ label ~ .c3 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-right: -32px;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.c10.c10 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   margin-right: -30px;
   padding-right: 32px;
   cursor: pointer;
@@ -3273,14 +3302,12 @@ label ~ .c3 {
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -3288,7 +3315,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -3296,7 +3322,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -3343,21 +3368,19 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <select
-        className="c4 sinoui-base-input__input"
+        className="c10 sinoui-base-input__input"
         multiple={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -3365,7 +3388,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -3373,7 +3395,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -3402,7 +3423,7 @@ label ~ .c3 {
       />
     </div>
     <p
-      className="c10"
+      className="c11"
     >
       原生选择框
     </p>
@@ -3413,31 +3434,29 @@ label ~ .c3 {
     onFocus={[Function]}
   >
     <label
-      className="c11 sinoui-input-label sinoui-input-label--outlined"
+      className="c12 sinoui-input-label sinoui-input-label--outlined"
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input c12"
+      className="c2 sinoui-base-input c13"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <select
-        className="c4 sinoui-base-input__input"
+        className="c10 sinoui-base-input__input"
         multiple={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -3445,7 +3464,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -3453,7 +3471,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -3478,7 +3495,7 @@ label ~ .c3 {
         </svg>
       </div>
       <div
-        className="c13 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c14 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -3497,7 +3514,7 @@ label ~ .c3 {
       </div>
     </div>
     <p
-      className="c10"
+      className="c11"
     >
       原生选择框
     </p>
@@ -3691,7 +3708,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   opacity: 0.04;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3707,14 +3724,14 @@ exports[`渲染有错误提示的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c13 > div {
+.c14 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c13 > .sinoui-notched-outline__leading {
+.c14 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -3723,14 +3740,14 @@ exports[`渲染有错误提示的选择框 1`] = `
   width: 10px;
 }
 
-.c13 > .sinoui-notched-outline__notch {
+.c14 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c13 > .sinoui-notched-outline__trailing {
+.c14 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -3738,48 +3755,48 @@ exports[`渲染有错误提示的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c13.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c13.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c12 {
+.c13 {
   position: relative;
   border-radius: 4px;
 }
 
-.c12 > .sinoui-notched-outline > div {
+.c13 > .sinoui-notched-outline > div {
   border-color: #f44336;
   border-width: 1px;
 }
 
-.c12:hover > .sinoui-notched-outline > div {
+.c13:hover > .sinoui-notched-outline > div {
   border-color: #f44336;
 }
 
-.c12 > .sinoui-base-input__input {
+.c13 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c12 > .sinoui-input-adornment--start {
+.c13 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c12 > .sinoui-input-adornment--end {
+.c13 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c12 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c13 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c12 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c12 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c13 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c13 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -3848,7 +3865,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   padding: 4px;
 }
 
-.c11 {
+.c12 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -3878,7 +3895,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   white-space: nowrap;
 }
 
-.c11::after {
+.c12::after {
   content: '*';
   padding: 4px;
 }
@@ -3952,7 +3969,7 @@ label ~ .c3 {
   color: #f44336;
 }
 
-.c10 {
+.c11 {
   color: rgba(0,0,0,0.6);
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 0.75rem;
@@ -4000,6 +4017,21 @@ label ~ .c3 {
 }
 
 .c4.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: -32px;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.c10.c10 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -4057,14 +4089,12 @@ label ~ .c3 {
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -4072,7 +4102,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -4080,7 +4109,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -4129,21 +4157,19 @@ label ~ .c3 {
     >
       <select
         aria-required={true}
-        className="c4 sinoui-base-input__input"
+        className="c10 sinoui-base-input__input"
         multiple={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -4151,7 +4177,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -4159,7 +4184,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -4188,7 +4212,7 @@ label ~ .c3 {
       />
     </div>
     <p
-      className="c10"
+      className="c11"
     >
       必填
     </p>
@@ -4199,33 +4223,31 @@ label ~ .c3 {
     onFocus={[Function]}
   >
     <label
-      className="c11 sinoui-input-label sinoui-input-label--error sinoui-input-label--outlined"
+      className="c12 sinoui-input-label sinoui-input-label--error sinoui-input-label--outlined"
       required={true}
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input c12"
+      className="c2 sinoui-base-input c13"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <select
         aria-required={true}
-        className="c4 sinoui-base-input__input"
+        className="c10 sinoui-base-input__input"
         multiple={false}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
       >
         <option
-          $key={0}
           aria-label="None"
           onClick={[Function]}
           selected={true}
           value=""
         />
         <option
-          $key={1}
           onClick={[Function]}
           selected={false}
           value="1"
@@ -4233,7 +4255,6 @@ label ~ .c3 {
           选项一
         </option>
         <option
-          $key={2}
           onClick={[Function]}
           selected={false}
           value="2"
@@ -4241,7 +4262,6 @@ label ~ .c3 {
           选项二
         </option>
         <option
-          $key={3}
           onClick={[Function]}
           selected={false}
           value="3"
@@ -4266,7 +4286,7 @@ label ~ .c3 {
         </svg>
       </div>
       <div
-        className="c13 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c14 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -4285,7 +4305,7 @@ label ~ .c3 {
       </div>
     </div>
     <p
-      className="c10"
+      className="c11"
     >
       必填
     </p>

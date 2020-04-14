@@ -11,7 +11,7 @@ exports[`渲染不可用选择框 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin-right: -30px;
+  margin-right: -32px;
   padding-right: 32px;
   cursor: default;
 }
@@ -21,14 +21,12 @@ exports[`渲染不可用选择框 1`] = `
   disabled={true}
 >
   <option
-    $key={0}
     aria-label="None"
     onClick={[Function]}
     selected={true}
     value=""
   />
   <option
-    $key={1}
     onClick={[Function]}
     selected={false}
     value="1"
@@ -49,7 +47,7 @@ exports[`渲染原生选择框 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin-right: -30px;
+  margin-right: -32px;
   padding-right: 32px;
   cursor: pointer;
 }
@@ -58,14 +56,12 @@ exports[`渲染原生选择框 1`] = `
   className="c0"
 >
   <option
-    $key={0}
     aria-label="None"
     onClick={[Function]}
     selected={true}
     value=""
   />
   <option
-    $key={1}
     onClick={[Function]}
     selected={false}
     value="1"
@@ -86,7 +82,7 @@ exports[`渲染多选选择框 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin-right: -30px;
+  margin-right: -32px;
   padding-right: 32px;
   cursor: pointer;
   height: auto;
@@ -98,14 +94,12 @@ exports[`渲染多选选择框 1`] = `
   multiple={true}
 >
   <option
-    $key={0}
     aria-label="None"
     onClick={[Function]}
     selected={false}
     value=""
   />
   <option
-    $key={1}
     onClick={[Function]}
     selected={false}
     value="1"
@@ -113,7 +107,6 @@ exports[`渲染多选选择框 1`] = `
     选项一
   </option>
   <option
-    $key={2}
     onClick={[Function]}
     selected={false}
     value="2"

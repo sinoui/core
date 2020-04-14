@@ -19,6 +19,7 @@ export interface Props {
    * 是否不可用
    */
   disabled?: boolean;
+  variant?: 'filled' | 'standard' | 'outlined';
 }
 
 const multipleStyle = css`
@@ -32,7 +33,8 @@ const NativeSelectLayout = styled.select<Props>`
     min-width: 160px;
     width: 100%;
     user-select: none;
-    margin-right: -30px;
+    margin-right: ${({ variant }) =>
+      variant === 'filled' || variant === 'outlined' ? -30 : -32}px;
     padding-right: 32px;
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 
@@ -78,13 +80,12 @@ export default function NativeSelectInput(props: Props) {
     }
   };
 
-  const items = React.Children.map(children, (child, index) => {
+  const items = React.Children.map(children, (child) => {
     if (!React.isValidElement(child)) {
       return null;
     }
 
     return React.cloneElement(child, {
-      $key: index,
       selected: Array.isArray(value)
         ? value.indexOf(child.props.value) !== -1
         : value === child.props.value,

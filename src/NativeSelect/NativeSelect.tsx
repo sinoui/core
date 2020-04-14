@@ -1,9 +1,9 @@
 import React from 'react';
-import classNames from 'classnames';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import styled from 'styled-components';
+import classNames from 'classnames';
 import NativeSelectInput from './NativeSelectInput';
 import ArrowDropDownIcon from './ArrowDropDownIcon';
 
@@ -50,6 +50,7 @@ const NativeSelect = React.forwardRef<HTMLElement, Props>(function Select(
     inputProps: {
       children,
       multiple,
+      variant,
       ...inputProps,
     },
     ref,
