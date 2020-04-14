@@ -14,6 +14,7 @@ module.exports = {
         items: [
           'components/button',
           'components/textInput',
+          'components/select',
           'components/divider',
           'components/typography',
           'components/card',
