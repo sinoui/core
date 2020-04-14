@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 1`] = `
+Array [
+  .c0 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: rgba(0,0,0,0.6);
+  text-align: left;
+}
+
+<div
+    className="c0"
+  >
+    帮助性文本
+  </div>,
+  .c0 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: #f44336;
+  text-align: left;
+}
+
+<div
+    className="c0"
+  >
+    错误信息
+  </div>,
+  .c0 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: rgba(0,0,0,0.38);
+  text-align: left;
+}
+
+<div
+    className="c0"
+    disabled={true}
+  >
+    不可用
+  </div>,
+  .c0 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: #3f51b5;
+  text-align: left;
+}
+
+<div
+    className="c0"
+    color="primary"
+  >
+    指定其他颜色
+  </div>,
+]
+`;
