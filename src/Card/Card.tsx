@@ -35,9 +35,6 @@ const StyledCard = styled(Paper).attrs(({ outlined }: CardProps) => ({
   position: relative;
   display: inline-flex;
   flex-direction: column;
-  ${({ outlined }) => (outlined ? outlinedCss : normalCss)};
-
-  border-radius: 4px;
   outline: none;
 `;
 
