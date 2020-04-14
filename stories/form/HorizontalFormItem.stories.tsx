@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import FormLabel from '@sinoui/core/FormLabel';
 import TextInput from '@sinoui/core/TextInput';
+import { HorizontalFormItem } from '@sinoui/core/FormItem';
 
 export default {
   title: 'HorizontalFormItem',
@@ -14,10 +15,9 @@ const FormItem = styled.div`
 export const 简单FormLabel = () => (
   <ThemeProvider theme={defaultTheme}>
     <form>
-      <FormItem>
-        <FormLabel layout="standard">用户名</FormLabel>
+      <HorizontalFormItem label="用户名" helperText="用户名首字母大写" error>
         <TextInput placeholder="请输入用户名" />
-      </FormItem>
+      </HorizontalFormItem>
       <FormItem>
         <FormLabel layout="standard" focused>
           用户名
