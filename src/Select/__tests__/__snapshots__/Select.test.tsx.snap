@@ -559,7 +559,6 @@ label ~ .c4 {
     >
       <div
         aria-haspopup="listbox"
-        aria-labelledby=""
         className="c5 sinoui-select-layout sinoui-base-input__input"
         data-testid="SelectDisplay"
         onBlur={[Function]}
@@ -611,7 +610,6 @@ label ~ .c4 {
     >
       <div
         aria-haspopup="listbox"
-        aria-labelledby=""
         className="c5 sinoui-select-layout sinoui-base-input__input"
         data-testid="SelectDisplay"
         onBlur={[Function]}
@@ -666,7 +664,6 @@ label ~ .c4 {
     >
       <div
         aria-haspopup="listbox"
-        aria-labelledby=""
         className="c5 sinoui-select-layout sinoui-base-input__input"
         data-testid="SelectDisplay"
         onBlur={[Function]}
@@ -1015,7 +1012,6 @@ label ~ .c4 {
   >
     <div
       aria-haspopup="listbox"
-      aria-labelledby=""
       className="c5 sinoui-select-layout sinoui-base-input__input"
       data-testid="SelectDisplay"
       disabled={true}

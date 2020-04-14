@@ -12,43 +12,88 @@ import styled, { css } from 'styled-components';
 import useForkRef from '../utils/useForkRef';
 
 export interface Props {
+  /**
+   * 是否自动获取焦点
+   */
   autoFocus?: boolean;
-  autoWidth?: boolean;
+  /**
+   * 子元素
+   */
   children: React.ReactNode;
+  /**
+   * 自定义class名称
+   */
   className?: string;
+  /**
+   * 不可用
+   */
   disabled?: boolean;
+  /**
+   * 可输入区域的DOM
+   */
   inputRef?: any;
-  labelId?: string;
+  /**
+   * Menu属性
+   */
   MenuProps?: any;
+  /**
+   * 是否多选
+   */
   multiple?: boolean;
-  displayEmpty?: boolean;
-  name?: string;
+  /**
+   * 失去焦点时的回调函数
+   */
   onBlur?: (event?: React.FocusEvent<HTMLDivElement>) => void;
+  /**
+   * 获取焦点时的回调函数
+   */
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
+  /**
+   * 值变更时的回调函数
+   */
   onChange?: (
     event: React.ChangeEvent<HTMLSelectElement> | React.MouseEvent<HTMLElement>,
     value?: string | string[],
   ) => void;
+  /**
+   * 弹窗出现时的回调函数
+   */
   onOpen?: (event: any) => void;
+  /**
+   * 弹窗关闭时的回调函数
+   */
   onClose?: (event: any) => void;
+  /**
+   * 是否显示弹窗
+   */
   open?: boolean;
+  /**
+   * 是否只读
+   */
   readOnly?: boolean;
+  /**
+   * 渲染值的处理逻辑
+   */
   renderValue?: (value: string | string[]) => void;
   tabIndex?: number;
+  /**
+   * 值
+   */
   value: string | string[];
+  /**
+   * 最小宽度
+   */
   minWidth?: number;
 }
 
 type SelectLayoutProps = Omit<Props, 'value' | 'inputRef'>;
 
-function areEqualValues(a: any, b: any) {
-  if (typeof b === 'object' && b !== null) {
-    return a === b;
-  }
-
-  return String(a) === String(b);
-}
-
+/**
+ * 判断是否为空
+ *
+ * @param {*} display 判断的值
+ * @returns boolean
+ */
 function isEmpty(display: any) {
   return display == null || (typeof display === 'string' && !display.trim());
 }
@@ -94,22 +139,21 @@ const SelectLayout = styled.div<SelectLayoutProps>`
   ${(props) => props.disabled && disabledStyle};
 `;
 
+/**
+ * 处理复选框内部逻辑的组件
+ */
 export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
   props,
   ref,
 ) {
   const {
     autoFocus,
-    autoWidth,
     children,
     className,
     disabled,
-    displayEmpty,
     inputRef: inputRefProp,
-    labelId,
     MenuProps = {},
     multiple,
-    name,
     onBlur,
     onChange,
     onClose,
@@ -120,6 +164,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     renderValue,
     tabIndex: tabIndexProp,
     value: valueProp,
+    minWidth,
     ...other
   } = props;
 
@@ -156,6 +201,9 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     }
   }, [autoFocus]);
 
+  /**
+   * 更新弹窗状态
+   */
   const update = useCallback(
     (openState: boolean | undefined, event: any) => {
       if (openState) {
@@ -173,6 +221,10 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     [onClose, onOpen],
   );
 
+  /**
+   * 鼠标按下时的回调函数
+   * @param event
+   */
   const handleMouseDown = (event: React.MouseEvent<HTMLElement>) => {
     if (event.button !== 0) {
       return;
@@ -190,6 +242,9 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     update(false, event);
   };
 
+  /**
+   * enter键按下时的回调函数
+   */
   const handleEnterKeyDown = useCallback(
     (event: any) => {
       let newValue;
@@ -213,14 +268,17 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       if (onChange) {
         Object.defineProperty(event, 'target', {
           writable: true,
-          value: { value: newValue, name },
+          value: { value: newValue },
         });
         onChange(event);
       }
     },
-    [multiple, name, onChange, update, value],
+    [multiple, onChange, update, value],
   );
 
+  /**
+   * 点击选项时的回调函数
+   */
   const handleItemClick = (child: any) => (event: any) => {
     if (!multiple) {
       update(false, event);
@@ -247,7 +305,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       // Preact support, target is read only property on a native event.
       Object.defineProperty(event, 'target', {
         writable: true,
-        value: { value: newValue, name },
+        value: { value: newValue },
       });
       onChange(event, child);
     }
@@ -269,7 +327,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       event.persist();
       Object.defineProperty(event, 'target', {
         writable: true,
-        value: { value, name },
+        value: { value },
       });
       onBlur(event);
     }
@@ -281,10 +339,9 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
   let computeDisplay = false;
 
   if (
-    (value !== null &&
-      value !== undefined &&
-      !(Array.isArray(value) && value.length === 0)) ||
-    displayEmpty
+    value !== null &&
+    value !== undefined &&
+    !(Array.isArray(value) && value.length === 0)
   ) {
     if (renderValue) {
       display = renderValue(value);
@@ -308,12 +365,12 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         );
       }
 
-      selected = value.some((v) => areEqualValues(v, child.props.value));
+      selected = value.some((v) => v === child.props.value);
       if (selected && computeDisplay) {
         displayMultiple.push(child.props.children);
       }
     } else {
-      selected = areEqualValues(value, child.props.value);
+      selected = value === child.props.value;
       if (selected && computeDisplay) {
         displaySingle = child.props.children;
       }
@@ -323,7 +380,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       <MenuListItem
         role="option"
         {...child.props}
-        key={child.props.key || index}
+        $key={child.props.key || index}
         selected={selected}
         onClick={handleItemClick(child)}
       />
@@ -336,7 +393,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
 
   let menuMinWidth;
 
-  if (!autoWidth && anchorElRef.current && anchorElRef.current.parentNode) {
+  if (anchorElRef.current && anchorElRef.current.parentNode) {
     menuMinWidth = (anchorElRef.current.parentNode as any).clientWidth;
   }
 
@@ -356,18 +413,17 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         tabIndex={tabIndex as any}
         role="button"
         aria-expanded={open ? 'true' : undefined}
-        aria-labelledby={`${labelId || ''}`}
         aria-haspopup="listbox"
         onKeyDown={handleKeyDown}
         onMouseDown={(disabled || readOnly ? null : handleMouseDown) as any}
         onBlur={handleBlur as any}
         onFocus={onFocus}
         disabled={disabled || readOnly}
+        minWidth={minWidth}
       >
         {isEmpty(display) ? <span>&#8203;</span> : display}
       </SelectLayout>
       <input
-        name={name}
         ref={inputRef}
         type="hidden"
         // eslint-disable-next-line jsx-a11y/no-autofocus
@@ -375,7 +431,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         {...other}
       />
       <Menu
-        id={`menu-${name || ''}`}
         minWidth={
           anchorElRef.current?.parentNode
             ? (anchorElRef.current.parentNode as any).clientWidth
@@ -388,7 +443,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         onEnterKeyDown={handleEnterKeyDown}
         {...MenuProps}
         MenuListProps={{
-          'aria-labelledby': labelId,
           role: 'listbox',
           disableListWrap: true,
           ...MenuProps.MenuListProps,
