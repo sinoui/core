@@ -7,7 +7,8 @@ import classNames from 'classnames';
 import NativeSelectInput from './NativeSelectInput';
 import ArrowDropDownIcon from './ArrowDropDownIcon';
 
-export interface Props extends Omit<TextInputProps, 'value'> {
+export interface Props
+  extends Omit<TextInputProps, 'value' | 'multiline' | 'minRows' | 'maxRows'> {
   /**
    * 值
    */
