@@ -5,7 +5,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import Paper from '@sinoui/core/Paper';
 
-const Div = styled.div`
+const PaperWrapper = styled(Paper)`
   width: 128px;
   height: 128px;
   margin: 8px;
@@ -19,9 +19,7 @@ describe('Paper组件 快照测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <Paper>
-            <Div>Paper Content</Div>
-          </Paper>
+          <PaperWrapper>Paper Content</PaperWrapper>
         </ThemeProvider>,
       )
       .toJSON();
@@ -33,9 +31,7 @@ describe('Paper组件 快照测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <Paper elevation={4}>
-            <Div>Paper Content</Div>
-          </Paper>
+          <PaperWrapper elevation={4}>Paper Content</PaperWrapper>
         </ThemeProvider>,
       )
       .toJSON();
@@ -47,9 +43,7 @@ describe('Paper组件 快照测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <Paper square>
-            <Div>Paper Content</Div>
-          </Paper>
+          <PaperWrapper square>Paper Content</PaperWrapper>
         </ThemeProvider>,
       )
       .toJSON();
@@ -57,13 +51,11 @@ describe('Paper组件 快照测试', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('设置是否全屏显示', () => {
+  it('设置轮廓模式', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <Paper fullWidth>
-            <Div>Paper Content</Div>
-          </Paper>
+          <PaperWrapper outlined>Paper Content</PaperWrapper>
         </ThemeProvider>,
       )
       .toJSON();

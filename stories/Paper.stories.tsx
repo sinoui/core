@@ -7,7 +7,7 @@ export default {
   title: 'Paper',
 };
 
-const Div = styled.div`
+const PaperWrapper = styled(Paper)`
   width: 128px;
   height: 128px;
   margin: 8px;
@@ -15,32 +15,24 @@ const Div = styled.div`
 
 export const 基本使用 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Paper>
-      <Div>Paper Content</Div>
-    </Paper>
+    <PaperWrapper>Paper Content</PaperWrapper>
   </ThemeProvider>
 );
 
 export const 设置阴影高度 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Paper elevation={4}>
-      <Div>Paper Content</Div>
-    </Paper>
+    <PaperWrapper elevation={4}>Paper Content</PaperWrapper>
   </ThemeProvider>
 );
 
 export const 设置是否显示圆角 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Paper square>
-      <Div>Paper Content</Div>
-    </Paper>
+    <PaperWrapper square>Paper Content</PaperWrapper>
   </ThemeProvider>
 );
 
-export const 设置是否全屏显示 = () => (
+export const 设置轮廓模式 = () => (
   <ThemeProvider theme={defaultTheme}>
-    <Paper fullWidth>
-      <Div>Paper Content</Div>
-    </Paper>
+    <PaperWrapper outlined>Paper Content</PaperWrapper>
   </ThemeProvider>
 );

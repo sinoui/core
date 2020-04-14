@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 
 export interface PaperProps {
@@ -11,27 +11,34 @@ export interface PaperProps {
    */
   square?: boolean;
   /**
-   * 是否全屏显示
-   */
-  fullWidth?: boolean;
-  /**
    * 添加自定义类名
    */
   className?: string;
+  /**
+   * 轮廓模式
+   */
+  outlined?: boolean;
 }
+
+const normalCss = css<{ elevation?: number }>`
+  box-shadow: ${({ theme, elevation = 1 }) => theme.shadows[elevation]};
+`;
+
+const outlinedCss = css`
+  border: 1px solid ${({ theme }) => theme.palette.divider};
+`;
 
 /**
  * 纸张
  */
-const Paper = styled.div.attrs(({ className }) => ({
-  className: classNames('sinoui-paper', className),
-}))<PaperProps>`
-  padding: 0;
+const Paper = styled.div.attrs({
+  className: classNames('sinoui-paper'),
+})<PaperProps>`
   box-sizing: border-box;
-  display: ${(props) => (props.fullWidth ? 'block' : 'inline-block')};
-  box-shadow: ${({ theme, elevation }) => theme.shadows[elevation || 2]};
-  border-radius: ${(props) => (props.square ? '0px' : '2px')};
+  ${(props) => !props.square && 'border-radius:4px'};
   background-color: ${({ theme }) => theme.palette.background.paper};
+  ${({ outlined }) => (outlined ? outlinedCss : normalCss)};
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 `;
 
 export default Paper;

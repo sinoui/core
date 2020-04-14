@@ -14,28 +14,22 @@ import { defaultTheme } from '@sinoui/theme';
 ```tsx
 import Paper from '@sinoui/core/Paper';
 
-const Div = styled.div`
+const PaperWrapper = styled(Paper)`
   width: 128px;
   height: 128px;
   margin: 8px;
 `;
 
 function PaperDemo() {
-  return (
-    <Paper>
-      <Div>Paper Content</Div>
-    </Paper>
-  );
+  return <PaperWrapper>Paper Content</PaperWrapper>;
 }
 ```
 
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <Paper>
-    <div style={{ width: '128px', height: '128px', margin: '8px' }}>
-      Paper Content
-    </div>
+  <Paper style={{ width: '128px', height: '128px', margin: '8px' }}>
+    Paper Content
   </Paper>
 </ThemeProvider>
 
@@ -44,28 +38,25 @@ function PaperDemo() {
 ```tsx
 import Paper from '@sinoui/core/Paper';
 
-const Div = styled.div`
+const PaperWrapper = styled(Paper)`
   width: 128px;
   height: 128px;
   margin: 8px;
 `;
 
 function PaperDemo() {
-  return (
-    <Paper elevation={4}>
-      <Div>Paper Content</Div>
-    </Paper>
-  );
+  return <PaperWrapper elevation={4}>Paper Content</PaperWrapper>;
 }
 ```
 
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <Paper elevation={4}>
-    <div style={{ width: '128px', height: '128px', margin: '8px' }}>
-      Paper Content
-    </div>
+  <Paper
+    elevation={4}
+    style={{ width: '128px', height: '128px', margin: '8px' }}
+  >
+    Paper Content
   </Paper>
 </ThemeProvider>
 
@@ -74,58 +65,46 @@ function PaperDemo() {
 ```tsx
 import Paper from '@sinoui/core/Paper';
 
-const Div = styled.div`
+const PaperWrapper = styled(Paper)`
   width: 128px;
   height: 128px;
   margin: 8px;
 `;
 
 function PaperDemo() {
-  return (
-    <Paper square>
-      <Div>Paper Content</Div>
-    </Paper>
-  );
+  return <PaperWrapper square>Paper Content</PaperWrapper>;
 }
 ```
 
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <Paper square>
-    <div style={{ width: '128px', height: '128px', margin: '8px' }}>
-      Paper Content
-    </div>
+  <Paper square style={{ width: '128px', height: '128px', margin: '8px' }}>
+    Paper Content
   </Paper>
 </ThemeProvider>
 
-## 设置是否全屏显示
+## 设置轮廓模式
 
 ```tsx
 import Paper from '@sinoui/core/Paper';
 
-const Div = styled.div`
+const PaperWrapper = styled(Paper)`
   width: 128px;
   height: 128px;
   margin: 8px;
 `;
 
 function PaperDemo() {
-  return (
-    <Paper fullWidth>
-      <Div>Paper Content</Div>
-    </Paper>
-  );
+  return <PaperWrapper outlined>Paper Content</PaperWrapper>;
 }
 ```
 
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <Paper fullWidth>
-    <div style={{ width: '128px', height: '128px', margin: '8px' }}>
-      Paper Content
-    </div>
+  <Paper outlined style={{ width: '128px', height: '128px', margin: '8px' }}>
+    Paper Content
   </Paper>
 </ThemeProvider>
 
