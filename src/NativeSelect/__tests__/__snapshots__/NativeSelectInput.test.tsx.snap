@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`渲染不可用选择框 1`] = `
+.c0.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: -30px;
+  padding-right: 32px;
+  cursor: default;
+}
+
+<select
+  className="c0"
+  disabled={true}
+>
+  <option
+    $key={0}
+    aria-label="None"
+    onClick={[Function]}
+    selected={true}
+    value=""
+  />
+  <option
+    $key={1}
+    onClick={[Function]}
+    selected={false}
+    value="1"
+  >
+    选项一
+  </option>
+</select>
+`;
+
+exports[`渲染原生选择框 1`] = `
+.c0.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: -30px;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+<select
+  className="c0"
+>
+  <option
+    $key={0}
+    aria-label="None"
+    onClick={[Function]}
+    selected={true}
+    value=""
+  />
+  <option
+    $key={1}
+    onClick={[Function]}
+    selected={false}
+    value="1"
+  >
+    选项一
+  </option>
+</select>
+`;
+
+exports[`渲染多选选择框 1`] = `
+.c0.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: -30px;
+  padding-right: 32px;
+  cursor: pointer;
+  height: auto;
+  margin-right: 0px;
+}
+
+<select
+  className="c0"
+  multiple={true}
+>
+  <option
+    $key={0}
+    aria-label="None"
+    onClick={[Function]}
+    selected={false}
+    value=""
+  />
+  <option
+    $key={1}
+    onClick={[Function]}
+    selected={false}
+    value="1"
+  >
+    选项一
+  </option>
+  <option
+    $key={2}
+    onClick={[Function]}
+    selected={false}
+    value="2"
+  >
+    选项二
+  </option>
+</select>
+`;
