@@ -5,6 +5,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { act } from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
+import 'jest-styled-components';
 import FormItem from '../FormItem';
 import { useFormItemContext } from '..';
 import type { FormItemContextData } from '../FormItemContext';
