@@ -379,6 +379,10 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c3::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -759,6 +763,10 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 
 label ~ .c3 {
   margin-top: 16px;
+}
+
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
 }
 
 .c3::before {
@@ -1351,6 +1359,10 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 
 label ~ .c3 {
   margin-top: 16px;
+}
+
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
 }
 
 .c3::before {
@@ -1953,6 +1965,10 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c3::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -2391,6 +2407,10 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c3::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -2796,6 +2816,10 @@ exports[`渲染有错误提示的输入框 1`] = `
 
 label ~ .c3 {
   margin-top: 16px;
+}
+
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
 }
 
 .c3::before {

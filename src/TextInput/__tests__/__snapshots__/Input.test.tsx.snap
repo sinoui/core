@@ -86,6 +86,10 @@ label ~ .c1 {
   margin-top: 16px;
 }
 
+.c1 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c1::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -235,6 +239,10 @@ exports[`渲染不可用的Input 1`] = `
 
 label ~ .c1 {
   margin-top: 16px;
+}
+
+.c1 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
 }
 
 .c1::before {
@@ -389,6 +397,10 @@ label ~ .c1 {
   margin-top: 16px;
 }
 
+.c1 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c1::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -538,6 +550,10 @@ exports[`渲染错误状态下的input 1`] = `
 
 label ~ .c1 {
   margin-top: 16px;
+}
+
+.c1 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
 }
 
 .c1::before {
