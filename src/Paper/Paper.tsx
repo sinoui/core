@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
+import { transitions } from '@sinoui/theme';
 
 export interface PaperProps {
   /**
@@ -28,6 +29,10 @@ const outlinedCss = css`
   border: 1px solid ${({ theme }) => theme.palette.divider};
 `;
 
+const roundCss = css`
+  border-radius: 4px;
+`;
+
 /**
  * 纸张
  */
@@ -35,10 +40,18 @@ const Paper = styled.div.attrs({
   className: classNames('sinoui-paper'),
 })<PaperProps>`
   box-sizing: border-box;
-  ${(props) => !props.square && 'border-radius:4px'};
+  ${({ square }) => !square && roundCss};
   background-color: ${({ theme }) => theme.palette.background.paper};
   ${({ outlined }) => (outlined ? outlinedCss : normalCss)};
-  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: ${({
+    theme: {
+      transitions: { create, easing, duration },
+    },
+  }) =>
+    create(['box-shadow'], {
+      duration: duration.shorter,
+      easing: easing.easeInOut,
+    })};
 `;
 
 export default Paper;
