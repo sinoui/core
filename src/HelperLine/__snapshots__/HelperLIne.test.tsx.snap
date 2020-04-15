@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`快照测试 1`] = `
-Array [
-  .c0 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12,7 +11,7 @@ Array [
   -ms-flex-align: flex-start;
   align-items: flex-start;
   min-height: 24px;
-  padding: 2px 0;
+  padding: 2px 12px;
   box-sizing: border-box;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 0.75rem;
@@ -20,51 +19,6 @@ Array [
 }
 
 <div
-    className="c0 sinoui-helper-line"
-  />,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-height: 24px;
-  padding: 2px 0;
-  box-sizing: border-box;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  line-height: 1.66;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-<div
-    className="c0 sinoui-helper-line"
-  />,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-height: 24px;
-  padding: 2px 0;
-  box-sizing: border-box;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  line-height: 1.66;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-<div
-    className="c0 sinoui-helper-line"
-  />,
-]
+  className="c0 sinoui-helper-line"
+/>
 `;

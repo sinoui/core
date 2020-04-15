@@ -1,85 +1,102 @@
 import styled, { css } from 'styled-components';
-import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
+import type { Theme } from '@sinoui/theme';
+import React from 'react';
+import useFormItemContext from '../FormItem/useFormItemContext';
+import { removeUndefinedProperties } from '../utils/objects';
+import type FormLabelProps from './FormLabelProps';
+import floatingLabelCss from './floatingLabelCss';
 
 /**
- * 标签组件属性
- *
- * @export
- * @interface LabelProps
+ * 获取标签颜色
  */
-export interface LabelProps {
-  /**
-   * 是否显示冒号
-   */
-  colon?: boolean;
-  /**
-   * 必填项
-   */
-  required?: boolean;
-  /**
-   * 错误状态
-   */
-  error?: boolean;
-  /**
-   * 焦点状态
-   */
-  focused?: boolean;
-  /**
-   * 不可用状态
-   */
-  disabled?: boolean;
-  /**
-   * 标签处于聚焦状态时的颜色
-   */
-  color?: string;
-  /**
-   * 标签布局模式
-   */
-  layout?: 'floating' | 'shrink' | 'standard';
-}
+const getColor = ({
+  theme,
+  color = theme.palette.primary.main,
+  focused,
+  disabled,
+  error,
+}: FormLabelProps & { theme: Theme }) => {
+  if (error) {
+    return theme.palette.error.main;
+  }
+  if (disabled) {
+    return theme.palette.text.disabled;
+  }
+  if (focused) {
+    return color;
+  }
+  return theme.palette.text.secondary;
+};
 
-const standardStyle = css`
-  justify-content: flex-end;
-  padding: 4px 8px 4px 0;
+const colonCss = css`
+  &::after {
+    content: ':';
+  }
 `;
-/**
- * html标签组件
- *
- * @ReactComponent
- */
-const Label = styled.label.attrs(() => ({ className: 'sinoui-form-label' }))<
-  LabelProps
->`
+
+const requiredCss = css`
+  &::before {
+    content: '*';
+    padding: 4px;
+  }
+`;
+
+const shrinkCss = css`
+  font-size: ${({ theme }) => theme.typography.caption.fontSize};
+  padding-bottom: 4px;
+  padding-left: 12px;
+`;
+
+const standardCss = css`
+  padding-bottom: 4px;
+  padding-left: 12px;
+`;
+
+const FormLabelInner = styled.label.attrs({
+  className: 'sinoui-form-label' as any,
+})<FormLabelProps>`
   display: flex;
   font-size: ${(props) => props.theme.typography.body1.fontSize};
   font-family: ${(props) => props.theme.typography.fontFamily};
-  color: ${({ theme }) => theme.palette.text.primary};
-  color: ${({ color = 'primary', theme, focused }) =>
-    focused && getColorFromTheme(theme, color)};
-  color: ${({ theme, disabled }) => disabled && theme.palette.text.disabled};
-  margin: 0;
-  min-height: 40px;
-  width: 160px;
+  color: ${getColor};
   box-sizing: border-box;
+  transition: ${({ theme }) =>
+    theme.transitions.create(['color', 'transform'], {
+      easing: theme.transitions.easing.easeInOut,
+    })};
 
-  ${(props) =>
-    props.required &&
-    `
-    &:before {
-      content: '*';
-      padding: 4px;
-    }
-  `};
+  ${({ required }) => required && requiredCss};
+  ${({ colon }) => colon && colonCss};
 
-  ${(props) =>
-    props.colon &&
-    `
-    &:after {
-      content: ':';
-    }
-  `};
-
-  ${(props) => props.layout === 'standard' && standardStyle}
+  ${({ layout = 'shrink' }) => layout === 'shrink' && shrinkCss}
+  ${({ layout }) => layout === 'standard' && standardCss}
+  ${({ layout }) => layout === 'floating' && floatingLabelCss}
 `;
 
-export default Label;
+/**
+ * 表单标签组件
+ *
+ * @ReactComponent
+ */
+const FormLabel = React.forwardRef<HTMLLabelElement, FormLabelProps>(
+  (props, ref) => {
+    const formItemContext = useFormItemContext();
+    const state = formItemContext
+      ? removeUndefinedProperties({
+          colon: formItemContext.colon,
+          variant: formItemContext.variant,
+          layout: formItemContext.labelLayout,
+          filled: formItemContext.filled,
+          required: formItemContext.required,
+          disabled: formItemContext.disabled,
+          focused: formItemContext.focused,
+          htmlFor: formItemContext.id,
+          dense: formItemContext.dense,
+        })
+      : {};
+
+    return <FormLabelInner {...state} {...props} ref={ref} />;
+  },
+);
+
+export default FormLabel;

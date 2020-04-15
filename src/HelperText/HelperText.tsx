@@ -31,7 +31,9 @@ const getColor = ({ error, disabled, color = 'textSecondary' }: Props) => {
 /**
  * 帮助性文本
  */
-const HelperText = styled.div<Props>`
+const HelperText = styled.div.attrs({
+  className: 'sinoui-helper-text' as any,
+})<Props>`
   ${({ theme }) => theme.typography.caption}
   color: ${({ theme, ...rest }) => getColorFromTheme(theme, getColor(rest))};
   text-align: left;

@@ -8,6 +8,7 @@ import Input from './Input';
 import HelperText from './HelperText';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
+import { useFormItemContext } from '../FormItem';
 
 export interface TextInputProps extends BaseInputProps {
   /**
@@ -84,7 +85,7 @@ export default function TextInput(props: TextInputProps) {
     wrapperProps,
     ...other
   } = props;
-  const labelRef = useRef<HTMLLabelElement>(null);
+  const innerLabelRef = useRef<HTMLLabelElement>(null);
   const [focused, setFocused] = useState(false);
   const shrink =
     shrinkProp ||
@@ -93,7 +94,9 @@ export default function TextInput(props: TextInputProps) {
     !!defaultValue ||
     !!placeholder ||
     !!startAdornment;
-  const noLabel = !label;
+  const formItemContext = useFormItemContext();
+  const noLabel = !label && !formItemContext;
+  const labelRef = label ? innerLabelRef : formItemContext?.labelRef;
 
   const handleBlur = () => {
     if (!readOnly) {
@@ -178,3 +181,5 @@ export default function TextInput(props: TextInputProps) {
     </TextInputWrapper>
   );
 }
+
+TextInput.sinouiName = 'TextInput';

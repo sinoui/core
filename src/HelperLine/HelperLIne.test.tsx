@@ -21,40 +21,12 @@ it('渲染帮助区域', () => {
   expect(helperLine).not.toHaveStyleRule('padding-right');
 });
 
-it('在填充模式中使用', () => {
-  const { getByTestId } = render(
-    <ThemeProvider theme={defaultTheme}>
-      <HelperLine data-testid="helperline" variant="filled" />
-    </ThemeProvider>,
-  );
-
-  const helperLine = getByTestId('helperline');
-
-  expect(helperLine).toHaveStyleRule('padding-left', '12px');
-  expect(helperLine).toHaveStyleRule('padding-right', '12px');
-});
-
-it('在轮廓模式中使用', () => {
-  const { getByTestId } = render(
-    <ThemeProvider theme={defaultTheme}>
-      <HelperLine data-testid="helperline" variant="outlined" />
-    </ThemeProvider>,
-  );
-
-  const helperLine = getByTestId('helperline');
-
-  expect(helperLine).toHaveStyleRule('padding-left', '12px');
-  expect(helperLine).toHaveStyleRule('padding-right', '12px');
-});
-
 it('快照测试', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
         <>
           <HelperLine />
-          <HelperLine variant="filled" />
-          <HelperLine variant="outlined" />
         </>
       </ThemeProvider>,
     )

@@ -5,6 +5,7 @@ import useMultiRefs from '../utils/useMultiRefs';
 import BaseInputLayout from './BaseInputLayout';
 import mergeCallbacks from '../utils/mergeCallbacks';
 import bemClassNames from '../utils/bemClassNames';
+import { useFormItemContext } from '../FormItem';
 
 interface MultilineProps {
   /**
@@ -173,6 +174,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
   HTMLDivElement,
   BaseInputProps
 >(function BaseInput(props, ref) {
+  const formItemContext = useFormItemContext();
   const {
     value,
     type,
@@ -195,7 +197,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     children,
     placeholder,
     align,
-    id,
+    id = formItemContext?.id,
     name,
     minRows,
     maxRows,
@@ -231,21 +233,24 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     [onChangeInputProp, onChange],
   );
 
+  const onBlurFromContext = formItemContext?.onBlur;
+  const onFocusFromContext = formItemContext?.onFocus;
+
   /**
    * 失去焦点时的回调函数
    */
-  const handleBlur = useMemo(() => mergeCallbacks(onBlur, onBlurInputProp), [
-    onBlur,
-    onBlurInputProp,
-  ]);
+  const handleBlur = useMemo(
+    () => mergeCallbacks(onBlur, onBlurInputProp, onBlurFromContext),
+    [onBlur, onBlurFromContext, onBlurInputProp],
+  );
 
   /**
    * 获取焦点时的回调函数
    */
-  const handleFocus = useMemo(() => mergeCallbacks(onFocus, onFocusInputProp), [
-    onFocus,
-    onFocusInputProp,
-  ]);
+  const handleFocus = useMemo(
+    () => mergeCallbacks(onFocus, onFocusInputProp, onFocusFromContext),
+    [onFocus, onFocusFromContext, onFocusInputProp],
+  );
 
   /**
    * 处理点击事件的回调函数xx
