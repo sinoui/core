@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
-import { transitions } from '@sinoui/theme';
 
 export interface PaperProps {
   /**
@@ -8,7 +7,7 @@ export interface PaperProps {
    */
   elevation?: number;
   /**
-   * 是否显示圆角
+   * 是否显示方角
    */
   square?: boolean;
   /**

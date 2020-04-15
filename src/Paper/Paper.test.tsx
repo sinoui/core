@@ -39,7 +39,7 @@ describe('Paper组件 快照测试', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('设置是否显示圆角', () => {
+  it('设置是否显示方角', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>

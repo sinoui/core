@@ -25,7 +25,7 @@ export const 设置阴影高度 = () => (
   </ThemeProvider>
 );
 
-export const 设置是否显示圆角 = () => (
+export const 设置是否显示方角 = () => (
   <ThemeProvider theme={defaultTheme}>
     <PaperWrapper square>Paper Content</PaperWrapper>
   </ThemeProvider>
