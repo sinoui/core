@@ -23,7 +23,7 @@ export const 基础水平布局 = () => (
         helperText="用户名首字母大写"
         error
       >
-        <TextInput placeholder="请输入用户名" />
+        <TextInput placeholder="请输入用户名" variant="filled" />
       </FormItem>
 
       <FormItem layout="horizontal" label="爱好">
@@ -45,7 +45,7 @@ export const 基础水平布局 = () => (
         layout="horizontal"
         label="说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明"
       >
-        <TextInput multiline placeholder="说明" />
+        <TextInput multiline placeholder="说明" variant="outlined" />
       </FormItem>
     </form>
   </ThemeProvider>
