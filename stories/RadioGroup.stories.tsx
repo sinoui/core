@@ -48,7 +48,7 @@ export const 非受控使用 = () => (
 
 export const 设置纵向排列 = () => (
   <StoryLayout>
-    <RadioGroupDemo block />
+    <RadioGroupDemo column />
   </StoryLayout>
 );
 
