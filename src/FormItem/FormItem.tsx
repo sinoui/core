@@ -64,6 +64,7 @@ const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
             vertical: layout === 'vertical',
           })}
           ref={ref}
+          dense={dense}
           {...rest}
         >
           <FormLabel ref={labelRef}>{props.label}</FormLabel>

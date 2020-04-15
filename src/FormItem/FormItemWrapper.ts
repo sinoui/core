@@ -1,6 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import type FormItemProps from './FormItemProps';
 
-const FormItemWrapper = styled.div`
+const formItemHorizontalDenseStyle = css`
+  &.sinoui-form-item--horizontal > .sinoui-form-label {
+    min-height: 32px;
+    padding-top: 4px;
+  }
+`;
+const FormItemWrapper = styled.div<FormItemProps>`
   display: flex;
   position: relative;
 
@@ -27,6 +34,8 @@ const FormItemWrapper = styled.div`
     box-sizing: border-box;
     font-size: 16px;
   }
+
+  ${(props) => props.dense && formItemHorizontalDenseStyle}
 `;
 
 export default FormItemWrapper;
