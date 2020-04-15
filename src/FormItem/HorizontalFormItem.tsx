@@ -29,7 +29,9 @@ const Wrapper = styled.div.attrs(() => ({
   display: flex;
 
   & > .sinoui-form-item__content {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
   }
 `;
 
@@ -41,7 +43,11 @@ export default function HorizontalFormItemProps({
 }: HorizontalFormItemProps) {
   return (
     <Wrapper>
-      <FormLabel layout="standard">{label}</FormLabel>
+      {label && typeof label === 'string' ? (
+        <FormLabel layout="standard">{label}</FormLabel>
+      ) : (
+        label
+      )}
       <div className="sinoui-form-item__content">
         {children}
         <HelperLine>

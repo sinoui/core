@@ -1,0 +1,641 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  min-height: 40px;
+  width: 160px;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 4px 8px 4px 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.87);
+  color: #3f51b5;
+  margin: 0;
+  min-height: 40px;
+  width: 160px;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 4px 8px 4px 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  min-height: 40px;
+  width: 160px;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 4px 8px 4px 0;
+}
+
+.c8:before {
+  content: '*';
+  padding: 4px;
+}
+
+.c8:after {
+  content: ':';
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  min-height: 40px;
+  width: 160px;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 4px 8px 4px 0;
+}
+
+.c9:after {
+  content: ':';
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.87);
+  color: rgba(0,0,0,0.38);
+  margin: 0;
+  min-height: 40px;
+  width: 160px;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 4px 8px 4px 0;
+}
+
+.c10:after {
+  content: ':';
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: text;
+  color: rgba(0,0,0,0.87);
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  line-height: 1.5em;
+}
+
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0 4.5px;
+  display: block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  border: none;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 0px;
+  width: 100%;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c3 > .sinoui-base-input__input::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 > .sinoui-base-input__input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 > .sinoui-base-input__input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 > .sinoui-base-input__input::-ms-clear {
+  display: none;
+}
+
+.c3 > .sinoui-base-input__input:focus {
+  outline: 0;
+}
+
+.c3 > .sinoui-base-input__input:invalid {
+  box-shadow: none;
+  caret-color: #f44336;
+}
+
+.c3.sinoui-base-input--multiline > textarea {
+  resize: none;
+  padding: 0;
+}
+
+.c11 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: default;
+  color: rgba(0,0,0,0.38);
+  font-size: 1rem;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  line-height: 1.5em;
+}
+
+.c11 > .sinoui-base-input__input {
+  padding: 3.5px 0 4.5px;
+  display: block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  border: none;
+  box-sizing: content-box;
+  background: none;
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 0px;
+  width: 100%;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c11 > .sinoui-base-input__input::-moz-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c11 > .sinoui-base-input__input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c11 > .sinoui-base-input__input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.38);
+}
+
+.c11 > .sinoui-base-input__input::-ms-clear {
+  display: none;
+}
+
+.c11 > .sinoui-base-input__input:focus {
+  outline: 0;
+}
+
+.c11 > .sinoui-base-input__input:invalid {
+  box-shadow: none;
+  caret-color: #f44336;
+}
+
+.c11.sinoui-base-input--multiline > textarea {
+  resize: none;
+  padding: 0;
+}
+
+.c4 {
+  color: rgba(0,0,0,0.87);
+}
+
+label ~ .c4 {
+  margin-top: 16px;
+}
+
+.c4::before {
+  background-color: rgba(0,0,0,0.42);
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(1) scaleY(1);
+  -ms-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+}
+
+.c4:hover::before {
+  background-color: rgba(0,0,0,0.87);
+}
+
+.c4::after {
+  background-color: #3f51b5;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(0) scaleY(0);
+  -ms-transform: scaleX(0) scaleY(0);
+  transform: scaleX(0) scaleY(0);
+}
+
+.c4::before,
+.c4::after {
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  font-size: 0px;
+}
+
+.c4:hover::before {
+  background-color: rgba(0,0,0,0.87);
+  height: 2px;
+}
+
+.c12 {
+  color: rgba(0,0,0,0.38);
+}
+
+label ~ .c12 {
+  margin-top: 16px;
+}
+
+.c12::before {
+  background-color: rgba(0,0,0,0.42);
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(1) scaleY(1);
+  -ms-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+}
+
+.c12::after {
+  background-color: #3f51b5;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
+  pointer-events: none;
+  -webkit-transform: scaleX(0) scaleY(0);
+  -ms-transform: scaleX(0) scaleY(0);
+  transform: scaleX(0) scaleY(0);
+}
+
+.c12::before,
+.c12::after {
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  font-size: 0px;
+}
+
+.c12::before {
+  background: transparent;
+  background-image: linear-gradient( to right, rgba(0,0,0,0.42) 33%, transparent 0% );
+  background-position: left top;
+  background-repeat: repeat-x;
+  background-size: 5px 1px;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-height: 24px;
+  padding: 2px 0;
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-size: 0.75rem;
+  line-height: 1.66;
+}
+
+.c6 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: #f44336;
+  text-align: left;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 > .sinoui-form-item__content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 0%;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
+}
+
+<form>
+  <div
+    className="c0 sinoui-form-item--horizontal"
+  >
+    <label
+      className="c1 sinoui-form-label"
+    >
+      用户名
+    </label>
+    <div
+      className="sinoui-form-item__content"
+    >
+      <div
+        className="c2 sinoui-text-input sinoui-text-input--shrink sinoui-text-input--no-label"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="c3 sinoui-base-input c4"
+          data-testid="baseInput"
+          onClick={[Function]}
+        >
+          <input
+            className="sinoui-base-input__input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="请输入用户名"
+          />
+        </div>
+      </div>
+      <div
+        className="c5 sinoui-helper-line"
+      >
+        <div
+          className="c6"
+        >
+          用户名首字母大写
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c0 sinoui-form-item--horizontal"
+  >
+    <label
+      className="c7 sinoui-form-label"
+    >
+      用户名
+    </label>
+    <div
+      className="sinoui-form-item__content"
+    >
+      <div
+        className="c2 sinoui-text-input sinoui-text-input--shrink sinoui-text-input--no-label"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="c3 sinoui-base-input c4"
+          data-testid="baseInput"
+          onClick={[Function]}
+        >
+          <input
+            className="sinoui-base-input__input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="请输入用户名"
+          />
+        </div>
+      </div>
+      <div
+        className="c5 sinoui-helper-line"
+      >
+        <div
+          className="c6"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="c0 sinoui-form-item--horizontal"
+  >
+    <label
+      className="c8 sinoui-form-label"
+      required={true}
+    >
+      用户名
+    </label>
+    <div
+      className="sinoui-form-item__content"
+    >
+      <div
+        className="c2 sinoui-text-input sinoui-text-input--shrink sinoui-text-input--no-label"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="c3 sinoui-base-input c4"
+          data-testid="baseInput"
+          onClick={[Function]}
+        >
+          <input
+            className="sinoui-base-input__input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="请输入用户名"
+          />
+        </div>
+      </div>
+      <div
+        className="c5 sinoui-helper-line"
+      />
+    </div>
+  </div>
+  <div
+    className="c0 sinoui-form-item--horizontal"
+  >
+    <label
+      className="c9 sinoui-form-label"
+    >
+      用户名
+    </label>
+    <div
+      className="sinoui-form-item__content"
+    >
+      <div
+        className="c2 sinoui-text-input sinoui-text-input--shrink sinoui-text-input--no-label"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="c3 sinoui-base-input c4"
+          data-testid="baseInput"
+          onClick={[Function]}
+        >
+          <input
+            className="sinoui-base-input__input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="请输入用户名"
+          />
+        </div>
+      </div>
+      <div
+        className="c5 sinoui-helper-line"
+      />
+    </div>
+  </div>
+  <div
+    className="c0 sinoui-form-item--horizontal"
+  >
+    <label
+      className="c10 sinoui-form-label"
+      disabled={true}
+    >
+      用户名
+    </label>
+    <div
+      className="sinoui-form-item__content"
+    >
+      <div
+        className="c2 sinoui-text-input sinoui-text-input--shrink sinoui-text-input--no-label sinoui-text-input--disabled"
+        disabled={true}
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="c11 sinoui-base-input sinoui-base-input--disabled c12"
+          data-testid="baseInput"
+          disabled={true}
+          onClick={[Function]}
+        >
+          <input
+            className="sinoui-base-input__input"
+            disabled={true}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="请输入用户名"
+          />
+        </div>
+      </div>
+      <div
+        className="c5 sinoui-helper-line"
+      />
+    </div>
+  </div>
+</form>
+`;
