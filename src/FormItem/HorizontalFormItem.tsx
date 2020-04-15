@@ -43,11 +43,7 @@ export default function HorizontalFormItemProps({
 }: HorizontalFormItemProps) {
   return (
     <Wrapper>
-      {label && typeof label === 'string' ? (
-        <FormLabel layout="standard">{label}</FormLabel>
-      ) : (
-        label
-      )}
+      <FormLabel layout="standard">{label}</FormLabel>
       <div className="sinoui-form-item__content">
         {children}
         <HelperLine>

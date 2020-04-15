@@ -40,7 +40,9 @@ export interface LabelProps {
 
 const standardStyle = css`
   justify-content: flex-end;
-  padding: 4px 8px 4px 0;
+  align-self: flex-start;
+  padding-top: 8px;
+  padding-right: 8px;
 `;
 /**
  * html标签组件

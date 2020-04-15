@@ -17,7 +17,11 @@ exports[`快照测试 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 4px 8px 4px 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  padding-top: 8px;
+  padding-right: 8px;
 }
 
 .c7 {
@@ -37,7 +41,11 @@ exports[`快照测试 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 4px 8px 4px 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  padding-top: 8px;
+  padding-right: 8px;
 }
 
 .c8 {
@@ -56,7 +64,11 @@ exports[`快照测试 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 4px 8px 4px 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  padding-top: 8px;
+  padding-right: 8px;
 }
 
 .c8:before {
@@ -84,7 +96,11 @@ exports[`快照测试 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 4px 8px 4px 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  padding-top: 8px;
+  padding-right: 8px;
 }
 
 .c9:after {
@@ -108,7 +124,11 @@ exports[`快照测试 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 4px 8px 4px 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  padding-top: 8px;
+  padding-right: 8px;
 }
 
 .c10:after {
@@ -492,9 +512,13 @@ label ~ .c12 {
     className="c0 sinoui-form-item--horizontal"
   >
     <label
-      className="c7 sinoui-form-label"
+      className="c1 sinoui-form-label"
     >
-      用户名
+      <label
+        className="c7 sinoui-form-label"
+      >
+        用户名
+      </label>
     </label>
     <div
       className="sinoui-form-item__content"
@@ -531,10 +555,14 @@ label ~ .c12 {
     className="c0 sinoui-form-item--horizontal"
   >
     <label
-      className="c8 sinoui-form-label"
-      required={true}
+      className="c1 sinoui-form-label"
     >
-      用户名
+      <label
+        className="c8 sinoui-form-label"
+        required={true}
+      >
+        用户名
+      </label>
     </label>
     <div
       className="sinoui-form-item__content"
@@ -567,9 +595,13 @@ label ~ .c12 {
     className="c0 sinoui-form-item--horizontal"
   >
     <label
-      className="c9 sinoui-form-label"
+      className="c1 sinoui-form-label"
     >
-      用户名
+      <label
+        className="c9 sinoui-form-label"
+      >
+        用户名
+      </label>
     </label>
     <div
       className="sinoui-form-item__content"
@@ -602,10 +634,14 @@ label ~ .c12 {
     className="c0 sinoui-form-item--horizontal"
   >
     <label
-      className="c10 sinoui-form-label"
-      disabled={true}
+      className="c1 sinoui-form-label"
     >
-      用户名
+      <label
+        className="c10 sinoui-form-label"
+        disabled={true}
+      >
+        用户名
+      </label>
     </label>
     <div
       className="sinoui-form-item__content"
