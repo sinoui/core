@@ -1,0 +1,113 @@
+---
+id: paper
+title: Paper 纸张
+---
+
+应用程序的的背景类似纸张一样平坦、不透明，而其行为也像纸张一样，能够改变大小、与其他纸张绑定或者调换顺序。
+
+import Paper from '@sinoui/core/Paper';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+## 基本使用
+
+```tsx
+import Paper from '@sinoui/core/Paper';
+
+const PaperWrapper = styled(Paper)`
+  width: 128px;
+  height: 128px;
+  margin: 8px;
+`;
+
+function PaperDemo() {
+  return <PaperWrapper>Paper Content</PaperWrapper>;
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Paper style={{ width: '128px', height: '128px', margin: '8px' }}>
+    Paper Content
+  </Paper>
+</ThemeProvider>
+
+## 设置阴影高度
+
+```tsx
+import Paper from '@sinoui/core/Paper';
+
+const PaperWrapper = styled(Paper)`
+  width: 128px;
+  height: 128px;
+  margin: 8px;
+`;
+
+function PaperDemo() {
+  return <PaperWrapper elevation={4}>Paper Content</PaperWrapper>;
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Paper
+    elevation={4}
+    style={{ width: '128px', height: '128px', margin: '8px' }}
+  >
+    Paper Content
+  </Paper>
+</ThemeProvider>
+
+## 设置是否显示方角
+
+```tsx
+import Paper from '@sinoui/core/Paper';
+
+const PaperWrapper = styled(Paper)`
+  width: 128px;
+  height: 128px;
+  margin: 8px;
+`;
+
+function PaperDemo() {
+  return <PaperWrapper square>Paper Content</PaperWrapper>;
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Paper square style={{ width: '128px', height: '128px', margin: '8px' }}>
+    Paper Content
+  </Paper>
+</ThemeProvider>
+
+## 设置轮廓模式
+
+```tsx
+import Paper from '@sinoui/core/Paper';
+
+const PaperWrapper = styled(Paper)`
+  width: 128px;
+  height: 128px;
+  margin: 8px;
+`;
+
+function PaperDemo() {
+  return <PaperWrapper outlined>Paper Content</PaperWrapper>;
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Paper outlined style={{ width: '128px', height: '128px', margin: '8px' }}>
+    Paper Content
+  </Paper>
+</ThemeProvider>
+
+## API
+
+查看[Paper 组件 API](/docs/components-apis/paper)
