@@ -13,11 +13,25 @@ const PaddingRightStyle = css`
   }
 `;
 
+const marginLeftStyle = css`
+  > label:first-child {
+    margin-left: -12px;
+  }
+`;
+
+const columnMarginLeftStyle = css`
+  > label {
+    margin-left: -12px;
+  }
+`;
+
 const FormGroupWrapper = styled(FormGroup)<{ column?: boolean }>`
   &.sinoui-radio-group--column > .sinoui-form-control-label {
     width: 100%;
   }
-
+  ${({ labelPosition, column }) =>
+    labelPosition !== 'left' &&
+    (column ? columnMarginLeftStyle : marginLeftStyle)}
   ${(props) => !props.column && PaddingRightStyle};
 `;
 
