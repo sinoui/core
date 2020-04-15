@@ -4,13 +4,13 @@ exports[`Radio组件 快照测试 基本使用 1`] = `
 Array [
   <span
     checked={false}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
     color="primary"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -21,20 +21,20 @@ Array [
       />
     </svg>
     <input
-      className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+      className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 iZQbYb sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 bxzqbt sinoui-radio sinoui-radio--checked"
     color="primary"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -46,7 +46,7 @@ Array [
     </svg>
     <input
       checked={true}
-      className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+      className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
@@ -57,17 +57,17 @@ Array [
 exports[`Radio组件 快照测试 带文字单选框 1`] = `
 Array [
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -78,7 +78,7 @@ Array [
         />
       </svg>
       <input
-        className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
         onChange={[Function]}
         type="radio"
       />
@@ -90,17 +90,17 @@ Array [
     </span>
   </label>,
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 iZQbYb sinoui-radio sinoui-radio--checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 bxzqbt sinoui-radio sinoui-radio--checked"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -112,7 +112,7 @@ Array [
       </svg>
       <input
         checked={true}
-        className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
         onChange={[Function]}
         type="radio"
       />
@@ -129,19 +129,19 @@ Array [
 exports[`Radio组件 快照测试 指定颜色 1`] = `
 Array [
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gqPlXL sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
     disabled={true}
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio sinoui-radio--disabled"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -152,7 +152,7 @@ Array [
         />
       </svg>
       <input
-        className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
         disabled={true}
         onChange={[Function]}
         type="radio"
@@ -166,13 +166,13 @@ Array [
   </label>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 iZQbYb sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 bxzqbt sinoui-radio sinoui-radio--checked"
     color="primary"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -184,20 +184,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+      className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 ixcVmv sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jWyvYy sinoui-radio sinoui-radio--checked"
     color="secondary"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -209,20 +209,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+      className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 eHrrvN sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 dKiJtL sinoui-radio sinoui-radio--checked"
     color="error"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -234,20 +234,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+      className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 hHlPAY sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 bQVcrm sinoui-radio sinoui-radio--checked"
     color="warning"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -259,20 +259,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+      className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 cyPefX sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 fkMqQm sinoui-radio sinoui-radio--checked"
     color="success"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -284,20 +284,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+      className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 gVfdxk sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 ldQkwa sinoui-radio sinoui-radio--checked"
     color="info"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -309,7 +309,7 @@ Array [
     </svg>
     <input
       checked={true}
-      className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+      className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
@@ -320,19 +320,19 @@ Array [
 exports[`Radio组件 快照测试 设置只读 1`] = `
 Array [
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gqPlXL sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
     disabled={true}
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio sinoui-radio--disabled"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -343,7 +343,7 @@ Array [
         />
       </svg>
       <input
-        className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
         disabled={true}
         onChange={[Function]}
         type="radio"
@@ -356,19 +356,19 @@ Array [
     </span>
   </label>,
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gqPlXL sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
     readOnly={true}
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 jmRzZf sinoui-radio sinoui-radio--readOnly"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--readOnly"
       color="primary"
       disabled={true}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -379,7 +379,7 @@ Array [
         />
       </svg>
       <input
-        className="RadioButton__StyleInput-sc-7ebnoo-1 feqdPM sinoui-radio__input"
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
         onChange={[Function]}
         readOnly={true}
         type="radio"

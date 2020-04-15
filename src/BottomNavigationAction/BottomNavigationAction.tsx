@@ -36,7 +36,6 @@ const BaseButtonWrapper = styled(BaseButton)<{
   width: 100%;
   height: 100%;
   align-items: center;
-  vertical-align: middle;
   color: ${({ theme, color, selected }) =>
     colorWrapper(theme, color, selected)};
   transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;

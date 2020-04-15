@@ -66,16 +66,17 @@ const BottomNavigation = React.forwardRef(
       children as any,
       (item: React.ReactElement<BottomNavActionProps>, index: number) => {
         if (React.isValidElement(item)) {
-          const val = value === item.props.value || value === index.toString();
+          const selected =
+            value === item.props.value || value === index.toString();
           const type = removeUndefinedProperties({
-            showLabel: (showLabels === false && val) || showLabels,
+            showLabel: (showLabels === false && selected) || showLabels,
             value: item.props.value,
             onClick: (e: React.FormEvent<HTMLDivElement>) => {
               if (onChange) {
                 onChange(e, item.props.value || index.toString());
               }
             },
-            selected: val,
+            selected,
             color,
           });
           return React.cloneElement(item, type);
