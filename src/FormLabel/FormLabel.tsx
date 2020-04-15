@@ -48,7 +48,6 @@ const shrinkCss = css`
 
 const standardCss = css`
   padding-bottom: 4px;
-  padding-left: 12px;
 `;
 
 const FormLabelInner = styled.label.attrs({
