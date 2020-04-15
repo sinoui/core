@@ -2,7 +2,7 @@
 
 exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 cJHToH sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kHNyn sinoui-bottom-navigation"
 >
   <button
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
@@ -162,7 +162,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
 exports[`BottomNavigation组件 快照测试 指定背景颜色 1`] = `
 Array [
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 cJHToH sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kHNyn sinoui-bottom-navigation"
   >
     <button
       className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
@@ -318,7 +318,7 @@ Array [
     </button>
   </div>,
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 izctjG sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 hmCUAG sinoui-bottom-navigation"
     color="primary"
   >
     <button
@@ -479,7 +479,7 @@ Array [
     </button>
   </div>,
   <div
-    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 gmWRcg sinoui-bottom-navigation BottomNavigationtest__BottomNavigationWrapper-sc-1j4sf7f-0 dhzmwq"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jCLwUL sinoui-bottom-navigation"
     color="success"
   >
     <button
@@ -642,12 +642,12 @@ Array [
 ]
 `;
 
-exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] = `
+exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 cJHToH sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kHNyn sinoui-bottom-navigation"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -657,28 +657,43 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     <span
       className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
-      <svg
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
-        viewBox="0 0 24 24"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge sinoui-badge--dot"
       >
-        <path
-          d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"
+        <span
+          className="Badge__BadgeCircle-sc-1mox8ry-1 eDMdBr"
+          color="error"
         />
-      </svg>
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
+    >
+      Recents
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 dHfjCj"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iQaBmI"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -707,9 +722,16 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
         />
       </svg>
     </span>
+    <span
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
+    >
+      Favorites
+    </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -719,28 +741,45 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     <span
       className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
-      <svg
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
-        viewBox="0 0 24 24"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
       >
-        <path
-          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-        />
-      </svg>
+        <span
+          className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
+          color="error"
+        >
+          88
+        </span>
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
+    >
+      Nearby
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -750,32 +789,49 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     <span
       className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
-      <svg
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
-        viewBox="0 0 24 24"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
       >
-        <path
-          d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"
-        />
-      </svg>
+        <span
+          className="Badge__BadgeCircle-sc-1mox8ry-1 fMKCBt"
+          color="error"
+        >
+          99+
+        </span>
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
+    >
+      Folder
     </span>
   </button>
 </div>
 `;
 
-exports[`BottomNavigation组件 快照测试 设置隐藏标签名称 1`] = `
+exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] = `
 <div
-  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 cJHToH sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kHNyn sinoui-bottom-navigation"
 >
   <button
     className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
@@ -847,7 +903,7 @@ exports[`BottomNavigation组件 快照测试 设置隐藏标签名称 1`] = `
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -876,16 +932,9 @@ exports[`BottomNavigation组件 快照测试 设置隐藏标签名称 1`] = `
         />
       </svg>
     </span>
-    <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
-      color="textPrimary"
-      type="body2"
-    >
-      Nearby
-    </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 ePBISQ"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 iuTcHU"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -913,13 +962,6 @@ exports[`BottomNavigation组件 快照测试 设置隐藏标签名称 1`] = `
           d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"
         />
       </svg>
-    </span>
-    <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
-      color="textPrimary"
-      type="body2"
-    >
-      Folder
     </span>
   </button>
 </div>

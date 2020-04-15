@@ -1,12 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, cleanup } from '@testing-library/react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import '@testing-library/jest-dom/extend-expect';
 import { MdRestore, MdFavorite, MdLocationOn, MdFolder } from 'react-icons/md';
 import BottomNavigation from '@sinoui/core/BottomNavigation';
 import BottomNavigationAction from '@sinoui/core/BottomNavigationAction';
+import Badge from '@sinoui/core/Badge';
 
 /**
  * BottomNavigation组件 测试
@@ -45,7 +46,7 @@ describe('BottomNavigation组件 单元测试', () => {
     );
 
     const text = container.querySelector('.sinoui-typography--body2');
-    expect(text).toBeNull();
+    expect(text).toHaveTextContent('Favorites');
   });
 });
 
@@ -63,43 +64,6 @@ describe('BottomNavigation组件 快照测试', () => {
             label="Recents"
             value="recents"
             icon={<MdRestore />}
-          />
-          <BottomNavigationAction
-            label="Favorites"
-            value="favorites"
-            icon={<MdFavorite />}
-          />
-          <BottomNavigationAction
-            label="Nearby"
-            value="nearby"
-            icon={<MdLocationOn />}
-          />
-          <BottomNavigationAction
-            label="Folder"
-            value="folder"
-            icon={<MdFolder />}
-          />
-        </BottomNavigation>
-      </ThemeProvider>,
-    );
-
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('设置隐藏标签名称', () => {
-    const tree = renderer.create(
-      <ThemeProvider theme={defaultTheme}>
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-        >
-          <BottomNavigationAction
-            label="Recents"
-            value="recents"
-            icon={<MdRestore />}
-            showLabel={false}
           />
           <BottomNavigationAction
             label="Favorites"
@@ -161,14 +125,58 @@ describe('BottomNavigation组件 快照测试', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  const BottomNavigationWrapper = styled(BottomNavigation)`
-    position: static;
-  `;
+  it('结合Badge组件使用', () => {
+    const tree = renderer.create(
+      <ThemeProvider theme={defaultTheme}>
+        <BottomNavigation
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
+            console.log(value)
+          }
+          value="favorites"
+        >
+          <BottomNavigationAction
+            label="Recents"
+            value="recents"
+            icon={
+              <Badge count={8} dot>
+                <MdRestore />
+              </Badge>
+            }
+          />
+          <BottomNavigationAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <BottomNavigationAction
+            label="Nearby"
+            value="nearby"
+            icon={
+              <Badge count={88}>
+                <MdLocationOn />
+              </Badge>
+            }
+          />
+          <BottomNavigationAction
+            label="Folder"
+            value="folder"
+            icon={
+              <Badge count={888}>
+                <MdFolder />
+              </Badge>
+            }
+          />
+        </BottomNavigation>
+      </ThemeProvider>,
+    );
+
+    expect(tree).toMatchSnapshot();
+  });
 
   it('指定背景颜色', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>
-        <BottomNavigationWrapper
+        <BottomNavigation
           onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
             console.log(value)
           }
@@ -194,8 +202,8 @@ describe('BottomNavigation组件 快照测试', () => {
             value="folder"
             icon={<MdFolder />}
           />
-        </BottomNavigationWrapper>
-        <BottomNavigationWrapper
+        </BottomNavigation>
+        <BottomNavigation
           onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
             console.log(value)
           }
@@ -222,8 +230,8 @@ describe('BottomNavigation组件 快照测试', () => {
             value="folder"
             icon={<MdFolder />}
           />
-        </BottomNavigationWrapper>
-        <BottomNavigationWrapper
+        </BottomNavigation>
+        <BottomNavigation
           onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
             console.log(value)
           }
@@ -250,7 +258,7 @@ describe('BottomNavigation组件 快照测试', () => {
             value="folder"
             icon={<MdFolder />}
           />
-        </BottomNavigationWrapper>
+        </BottomNavigation>
       </ThemeProvider>,
     );
 

@@ -28,7 +28,7 @@ const colorWrapper = (theme: Theme, color?: string, selected?: boolean) => {
 
 const BaseButtonWrapper = styled(BaseButton)<{
   color?: string;
-  selected: boolean;
+  selected?: boolean;
   showLabel?: boolean;
 }>`
   display: flex;
@@ -70,7 +70,7 @@ export interface BottomNavActionProps {
   /**
    * value值
    */
-  value: string;
+  value?: string;
   /**
    * 是否选中
    */
@@ -84,14 +84,7 @@ export interface BottomNavActionProps {
  * @returns
  */
 function BottomNavigationAction(props: BottomNavActionProps) {
-  const {
-    label,
-    showLabel = true,
-    icon,
-
-    selected = false,
-    ...rest
-  } = props;
+  const { label, showLabel, icon, selected, ...rest } = props;
   return (
     <BaseButtonWrapper selected={selected} showLabel={showLabel} {...rest}>
       <IconWrapper>{icon}</IconWrapper>

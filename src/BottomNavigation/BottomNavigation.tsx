@@ -9,11 +9,7 @@ const BottomNavigationWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  vertical-align: middle;
   justify-content: center;
-  z-index: 1;
   width: 100%;
   height: 56px;
   ${({ theme }) =>
@@ -68,17 +64,18 @@ const BottomNavigation = React.forwardRef(
 
     const child = React.Children.map(
       children as any,
-      (item: React.ReactElement<BottomNavActionProps>) => {
+      (item: React.ReactElement<BottomNavActionProps>, index: number) => {
         if (React.isValidElement(item)) {
+          const val = value === item.props.value || value === index.toString();
           const type = removeUndefinedProperties({
-            showLabel: showLabels && item.props.showLabel,
+            showLabel: (showLabels === false && val) || showLabels,
             value: item.props.value,
             onClick: (e: React.FormEvent<HTMLDivElement>) => {
               if (onChange) {
-                onChange(e, item.props.value);
+                onChange(e, item.props.value || index.toString());
               }
             },
-            selected: value === item.props.value,
+            selected: val,
             color,
           });
           return React.cloneElement(item, type);
