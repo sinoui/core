@@ -6,7 +6,7 @@ exports[`水平布局 1`] = `
   data-testid="formitem"
 >
   <label
-    className="sc-AxhCb gvVVic sinoui-form-label"
+    className="sc-AxhCb hcVBLb sinoui-form-label"
     htmlFor="input_1"
   />
   <div

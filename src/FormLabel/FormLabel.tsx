@@ -44,7 +44,6 @@ const requiredCss = css`
 const shrinkCss = css`
   font-size: ${({ theme }) => theme.typography.caption.fontSize};
   padding-bottom: 4px;
-  padding-left: 12px;
 `;
 
 const standardCss = css`

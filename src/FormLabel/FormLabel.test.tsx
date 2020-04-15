@@ -115,7 +115,6 @@ it('shrink layout', () => {
 
   expect(getByTestId('label')).toHaveStyleRule('font-size', '0.75rem');
   expect(getByTestId('label')).toHaveStyleRule('padding-bottom', '4px');
-  expect(getByTestId('label')).toHaveStyleRule('padding-left', '12px');
 });
 
 it('className', () => {
