@@ -93,6 +93,22 @@ const BaseToggleButton = styled(BaseButton).attrs(() => ({
     width: 40px;
     height: 40px;
   }
+
+  &.sinoui-checkbox--dense {
+    height: 32px;
+    width: 32px;
+
+    & .sinoui-checkbox__ripple {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    & .sinoui-checkbox__ripple-layout {
+      width: 32px;
+      height: 32px;
+    }
+  }
 `;
 
 export interface Props {
@@ -157,6 +173,10 @@ export interface Props {
    * 指定颜色
    */
   color?: string;
+  /**
+   * true 表示是密集模式
+   */
+  dense?: boolean;
 }
 
 const checkedCheckboxIcon = <CheckBox />;
@@ -182,6 +202,7 @@ export default function BaseCheckboxButton(props: Props) {
     onClick,
     color = 'primary',
     inputClassName,
+    dense,
     ...rest
   } = props;
 
@@ -215,6 +236,7 @@ export default function BaseCheckboxButton(props: Props) {
         'sinoui-checkbox--checked': checked,
         'sinoui-checkbox--indeterminate': indeterminate,
         'sinoui-checkbox--readOnly': readOnly,
+        'sinoui-checkbox--dense': dense,
       })}
       color={color}
       onClick={onClick}

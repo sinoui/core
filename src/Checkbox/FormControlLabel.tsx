@@ -41,6 +41,7 @@ export default function FormControlLabel({
       labelPosition={labelPosition}
       readOnly={control.props.readOnly}
       disabled={control.props.disabled}
+      dense={control.props.dense}
     >
       {control}
       <span className="sinoui-form-control-label__title">{label}</span>

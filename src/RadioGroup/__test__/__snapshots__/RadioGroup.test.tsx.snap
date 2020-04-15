@@ -2,14 +2,14 @@
 
 exports[`radioGroup组件 快照测试 基本使用 1`] = `
 <div
-  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group"
+  className="sc-AxjAm sc-AxirZ cbsSDO sinoui-radio-group"
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+      className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
       color="primary"
       tabIndex="0"
     >
@@ -27,7 +27,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={false}
-        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+        className="sc-Axmtr iqrpne sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="1"
@@ -40,11 +40,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+      className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
       color="primary"
       tabIndex="0"
     >
@@ -62,7 +62,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={false}
-        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+        className="sc-Axmtr iqrpne sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="2"
@@ -75,11 +75,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
   >
     <span
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 bxzqbt sinoui-radio sinoui-radio--checked"
+      className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI cAOPJB sinoui-radio sinoui-radio--checked"
       color="primary"
       tabIndex="0"
     >
@@ -97,7 +97,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={true}
-        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+        className="sc-Axmtr iqrpne sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="3"
@@ -110,11 +110,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+      className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
       color="primary"
       tabIndex="0"
     >
@@ -132,7 +132,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={false}
-        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+        className="sc-Axmtr iqrpne sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="4"
@@ -150,15 +150,15 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
 exports[`radioGroup组件 快照测试 设置只读 1`] = `
 Array [
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group sinoui-radio-group--disabled"
+    className="sc-AxjAm sc-AxirZ cbsSDO sinoui-radio-group sinoui-radio-group--disabled"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gWBaBc sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
+        className="sc-AxiKw gsBAeJ sinoui-base-button sc-AxheI kQIa-DH sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
@@ -177,7 +177,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -191,12 +191,12 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gWBaBc sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
+        className="sc-AxiKw gsBAeJ sinoui-base-button sc-AxheI kQIa-DH sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
@@ -215,7 +215,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -229,12 +229,12 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gWBaBc sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
+        className="sc-AxiKw gsBAeJ sinoui-base-button sc-AxheI kQIa-DH sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
@@ -253,7 +253,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -267,12 +267,12 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gWBaBc sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
+        className="sc-AxiKw gsBAeJ sinoui-base-button sc-AxheI kQIa-DH sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
@@ -291,7 +291,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -306,15 +306,15 @@ Array [
     </label>
   </div>,
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group sinoui-radio-group--readOnly"
+    className="sc-AxjAm sc-AxirZ cbsSDO sinoui-radio-group sinoui-radio-group--readOnly"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gWBaBc sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--readOnly"
+        className="sc-AxiKw gsBAeJ sinoui-base-button sc-AxheI kQIa-DH sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -335,7 +335,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -349,12 +349,12 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gWBaBc sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--readOnly"
+        className="sc-AxiKw gsBAeJ sinoui-base-button sc-AxheI kQIa-DH sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -375,7 +375,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -389,12 +389,12 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gWBaBc sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--readOnly"
+        className="sc-AxiKw gsBAeJ sinoui-base-button sc-AxheI kQIa-DH sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -415,7 +415,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -429,12 +429,12 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gWBaBc sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--readOnly"
+        className="sc-AxiKw gsBAeJ sinoui-base-button sc-AxheI kQIa-DH sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -455,7 +455,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -475,14 +475,14 @@ Array [
 exports[`radioGroup组件 快照测试 设置标题显示位置 1`] = `
 Array [
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group"
+    className="sc-AxjAm sc-AxirZ cbsSDO sinoui-radio-group"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+        className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
         color="primary"
         tabIndex="0"
       >
@@ -500,7 +500,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="1"
@@ -513,11 +513,11 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+        className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
         color="primary"
         tabIndex="0"
       >
@@ -535,7 +535,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="2"
@@ -548,11 +548,11 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+        className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
         color="primary"
         tabIndex="0"
       >
@@ -570,7 +570,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="3"
@@ -584,14 +584,14 @@ Array [
     </label>
   </div>,
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group"
+    className="sc-AxjAm sc-AxirZ cbsSDO sinoui-radio-group"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gFFMKC sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gbRkLF sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+        className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
         color="primary"
         tabIndex="0"
       >
@@ -609,7 +609,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="1"
@@ -622,11 +622,11 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gFFMKC sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gbRkLF sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+        className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
         color="primary"
         tabIndex="0"
       >
@@ -644,7 +644,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="2"
@@ -657,11 +657,11 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gFFMKC sinoui-form-control-label"
+      className="sc-AxhUy sc-AxgMl gbRkLF sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+        className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
         color="primary"
         tabIndex="0"
       >
@@ -679,7 +679,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+          className="sc-Axmtr iqrpne sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="3"
@@ -697,14 +697,14 @@ Array [
 
 exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
 <div
-  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cIOYwa sinoui-radio-group sinoui-radio-group--block"
+  className="sc-AxjAm sc-AxirZ bEpKEH sinoui-radio-group sinoui-radio-group--block"
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+      className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
       color="primary"
       tabIndex="0"
     >
@@ -722,7 +722,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
-        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+        className="sc-Axmtr iqrpne sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="1"
@@ -735,11 +735,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+      className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
       color="primary"
       tabIndex="0"
     >
@@ -757,7 +757,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
-        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+        className="sc-Axmtr iqrpne sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="2"
@@ -770,11 +770,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+      className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
       color="primary"
       tabIndex="0"
     >
@@ -792,7 +792,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
-        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+        className="sc-Axmtr iqrpne sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="3"
@@ -805,11 +805,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    className="sc-AxhUy sc-AxgMl fYFsao sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+      className="sc-AxiKw fiAJmc sinoui-base-button sc-AxheI kQIa-DH sinoui-radio"
       color="primary"
       tabIndex="0"
     >
@@ -827,7 +827,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
-        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+        className="sc-Axmtr iqrpne sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="4"

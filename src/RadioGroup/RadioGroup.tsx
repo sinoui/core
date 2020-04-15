@@ -78,6 +78,10 @@ export interface RadioGroupProps {
    * 设置是否纵向排列
    */
   block?: boolean;
+  /**
+   * true 表示是密集模式
+   */
+  dense?: boolean;
 }
 
 /**
@@ -145,6 +149,7 @@ function RadioGroup(props: RadioGroupProps) {
               onFocus: !readOnly && onFocus,
               color,
               labelPosition,
+              dense: props.dense,
             });
             return React.cloneElement(radio, radioProps);
           }
