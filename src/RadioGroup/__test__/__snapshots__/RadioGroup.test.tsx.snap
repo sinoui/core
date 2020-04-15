@@ -2,7 +2,7 @@
 
 exports[`radioGroup组件 快照测试 基本使用 1`] = `
 <div
-  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group"
+  className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group"
 >
   <label
     className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gTuRQf sinoui-form-control-label"
@@ -150,7 +150,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
 exports[`radioGroup组件 快照测试 设置只读 1`] = `
 Array [
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group sinoui-radio-group--disabled"
+    className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group sinoui-radio-group--disabled"
   >
     <label
       className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gORrJv sinoui-form-control-label"
@@ -306,7 +306,7 @@ Array [
     </label>
   </div>,
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group sinoui-radio-group--readOnly"
+    className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group sinoui-radio-group--readOnly"
   >
     <label
       className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gORrJv sinoui-form-control-label"
@@ -475,7 +475,7 @@ Array [
 exports[`radioGroup组件 快照测试 设置标题显示位置 1`] = `
 Array [
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group"
+    className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group"
   >
     <label
       className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gTuRQf sinoui-form-control-label"
@@ -584,7 +584,7 @@ Array [
     </label>
   </div>,
   <div
-    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 fHZOFA sinoui-radio-group"
+    className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group"
   >
     <label
       className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 dGxRnR sinoui-form-control-label"
@@ -697,7 +697,7 @@ Array [
 
 exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
 <div
-  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cHzAoy sinoui-radio-group sinoui-radio-group--block"
+  className="FormGroup-urrsti-0 sc-AxjAm dkAwdl sinoui-radio-group sinoui-radio-group--column"
 >
   <label
     className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gTuRQf sinoui-form-control-label"
