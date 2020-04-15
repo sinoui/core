@@ -25,7 +25,10 @@ const columnMarginLeftStyle = css`
   }
 `;
 
-const FormGroupWrapper = styled(FormGroup)<{ column?: boolean }>`
+const FormGroupWrapper = styled(FormGroup)<{
+  column?: boolean;
+  labelPosition?: 'left' | 'right';
+}>`
   &.sinoui-radio-group--column > .sinoui-form-control-label {
     width: 100%;
   }
@@ -92,6 +95,10 @@ export interface RadioGroupProps {
    * 设置是否纵向排列
    */
   column?: boolean;
+  /**
+   * true 表示是密集模式
+   */
+  dense?: boolean;
 }
 
 /**
@@ -159,6 +166,7 @@ function RadioGroup(props: RadioGroupProps) {
               onFocus: !readOnly && onFocus,
               color,
               labelPosition,
+              dense: props.dense,
             });
             return React.cloneElement(radio, radioProps);
           }

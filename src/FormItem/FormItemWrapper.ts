@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
 import type FormItemProps from './FormItemProps';
 
-const formItemHorizontalDenseStyle = css`
+const formItemHorizontalDenseStyle = css<FormItemProps>`
   &.sinoui-form-item--horizontal > .sinoui-form-label {
     min-height: 32px;
     padding-top: 4px;
+    ${(props) => props.labelWidth && `width:${props.labelWidth}px`}
   }
 `;
 const FormItemWrapper = styled.div<FormItemProps>`

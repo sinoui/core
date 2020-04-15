@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export interface FormControlLabelContainerProps {
   labelPosition?: 'left' | 'right';
@@ -12,7 +12,17 @@ export interface FormControlLabelContainerProps {
    * 只读
    */
   readOnly?: boolean;
+  /**
+   * true 表示密集模式
+   */
+  dense?: boolean;
 }
+
+const denseStyle = css`
+  > .sinoui-form-control-label__title {
+    padding-top: 4px;
+  }
+`;
 
 const Label = styled.label`
   font-size: ${(props) => props.theme.typography.subtitle1.fontSize};
@@ -48,6 +58,8 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
   }
   cursor: ${(props) =>
     props.readOnly || props.disabled ? 'default' : 'pointer'};
+
+  ${(props) => props.dense && denseStyle}
 `;
 
 export default FormControlLabelContainer;

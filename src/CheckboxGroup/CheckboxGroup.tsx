@@ -28,14 +28,20 @@ const columnMarginLeftStyle = css`
   }
 `;
 
+const denseStyle = css`
+  height: 32px;
+`;
+
 const FormGroupWrapper = styled(FormGroup)<{
   column?: boolean;
   labelPosition?: 'left' | 'right';
+  dense?: boolean;
 }>`
   ${({ labelPosition, column }) =>
     labelPosition !== 'left' &&
     (column ? columnMarginLeftStyle : marginLeftStyle)}
   ${(props) => !props.column && PaddingRightStyle};
+  ${(props) => props.dense && denseStyle};
 `;
 
 export interface CheckboxGroupProps<T> {
@@ -113,6 +119,10 @@ export interface CheckboxGroupProps<T> {
    * 相当于children
    */
   items?: React.ReactElement<CheckboxProps<T>>[];
+  /**
+   * true 表示是密集模式
+   */
+  dense?: boolean;
 }
 
 /**
@@ -302,6 +312,7 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
         onFocus: !readOnly && onFocus,
         color,
         key: checkbox.props.value,
+        dense: props.dense,
       });
       return React.cloneElement(checkbox, checkboxProps);
     }

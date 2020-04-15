@@ -52,4 +52,8 @@ export default interface FormItemProps
    * 密集模式
    */
   dense?: boolean;
+  /**
+   * 标签宽度 只有水平布局支持此属性
+   */
+  labelWidth?: number;
 }
