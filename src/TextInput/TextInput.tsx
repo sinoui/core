@@ -95,7 +95,8 @@ export default function TextInput(props: TextInputProps) {
     !!placeholder ||
     !!startAdornment;
   const formItemContext = useFormItemContext();
-  const noLabel = !label && !formItemContext;
+  const noLabel =
+    !label && (!formItemContext || formItemContext.labelLayout !== 'floating');
   const labelRef = label ? innerLabelRef : formItemContext?.labelRef;
 
   const handleBlur = () => {

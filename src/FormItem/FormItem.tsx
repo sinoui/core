@@ -53,6 +53,7 @@ const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
       onBlur,
       labelRef,
       dense,
+      layout,
     };
 
     return (
@@ -66,11 +67,13 @@ const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
           {...rest}
         >
           <FormLabel ref={labelRef}>{props.label}</FormLabel>
-          {props.children}
-          <HelperLine>
-            {helperText && !error && <HelperText>{helperText}</HelperText>}
-            {error && <HelperText error>{error}</HelperText>}
-          </HelperLine>
+          <div className="sinoui-form-item__content">
+            {props.children}
+            <HelperLine>
+              {helperText && !error && <HelperText>{helperText}</HelperText>}
+              {error && <HelperText error>{error}</HelperText>}
+            </HelperLine>
+          </div>
         </FormItemWrapper>
       </FormItemContext.Provider>
     );

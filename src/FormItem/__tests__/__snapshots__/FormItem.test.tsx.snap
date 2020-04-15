@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`水平布局 1`] = `
+<div
+  className="sc-AxiKw iPbWaB sinoui-form-item sinoui-form-item--horizontal"
+  data-testid="formitem"
+>
+  <label
+    className="sc-AxhCb gvVVic sinoui-form-label"
+    htmlFor="input_1"
+  />
+  <div
+    className="sinoui-form-item__content"
+  >
+    <input />
+    <div
+      className="sc-AxirZ kIQeTu sinoui-helper-line"
+    />
+  </div>
+</div>
+`;

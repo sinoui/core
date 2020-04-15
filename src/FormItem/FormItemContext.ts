@@ -53,6 +53,10 @@ export interface FormItemContextData {
    * 标签元素引用
    */
   labelRef?: React.RefObject<HTMLLabelElement>;
+  /**
+   * 表单控件的布局模式
+   */
+  layout?: 'horizontal' | 'vertical';
 }
 
 const FormItemContext = React.createContext<FormItemContextData | null>(null);

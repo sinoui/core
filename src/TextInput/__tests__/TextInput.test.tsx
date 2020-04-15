@@ -6,6 +6,7 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 import InputAdornment from '@sinoui/core/InputAdornment';
+import FormItem from '@sinoui/core/FormItem';
 import TextInput from '../TextInput';
 
 it('正确渲染三种模式下的输入框', () => {
@@ -241,4 +242,36 @@ it('无标签', () => {
   );
 
   expect(getByTestId('input')).toHaveClass('sinoui-text-input--no-label');
+});
+
+it('在表单项中使用', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormItem label="姓名">
+        <TextInput
+          wrapperProps={{
+            'data-testid': 'input',
+          }}
+        />
+      </FormItem>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).toHaveClass('sinoui-text-input--no-label');
+});
+
+it('在表单项中使用浮动标签', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormItem label="姓名" labelLayout="floating">
+        <TextInput
+          wrapperProps={{
+            'data-testid': 'input',
+          }}
+        />
+      </FormItem>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).not.toHaveClass('sinoui-text-input--no-label');
 });
