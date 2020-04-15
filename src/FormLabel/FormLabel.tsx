@@ -69,7 +69,7 @@ const Label = styled.label.attrs(() => ({ className: 'sinoui-form-label' }))<
     `
     &:before {
       content: '*';
-      padding: 4px;
+      padding: 2px 4px;
     }
   `};
 

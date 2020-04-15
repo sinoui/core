@@ -7,10 +7,33 @@ import Checkbox from '@sinoui/core/Checkbox';
 import RadioGroup from '@sinoui/core/RadioGroup';
 import Radio from '@sinoui/core/Radio';
 import { HorizontalFormItem } from '@sinoui/core/FormItem';
+import FormLabel from '@sinoui/core/FormLabel';
 
 export default {
   title: 'HorizontalFormItem',
 };
+
+export const 标准模式FormLabel = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <form>
+      <div>
+        <FormLabel required layout="standard">
+          AAA
+        </FormLabel>
+      </div>
+      <div>
+        <FormLabel required layout="standard">
+          aaa
+        </FormLabel>
+      </div>
+      <div>
+        <FormLabel required layout="standard" colon>
+          用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名用户名
+        </FormLabel>
+      </div>
+    </form>
+  </ThemeProvider>
+);
 
 export const 基础水平布局 = () => (
   <ThemeProvider theme={defaultTheme}>

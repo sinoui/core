@@ -73,7 +73,7 @@ exports[`快照测试 1`] = `
 
 .c8:before {
   content: '*';
-  padding: 4px;
+  padding: 2px 4px;
 }
 
 .c8:after {
@@ -133,18 +133,6 @@ exports[`快照测试 1`] = `
 
 .c10:after {
   content: ':';
-}
-
-.c6 {
-  font-weight: 400;
-  font-size: 0.75rem;
-  line-height: 1.66;
-  -webkit-letter-spacing: 0.03333em;
-  -moz-letter-spacing: 0.03333em;
-  -ms-letter-spacing: 0.03333em;
-  letter-spacing: 0.03333em;
-  color: #f44336;
-  text-align: left;
 }
 
 .c3 {
@@ -444,6 +432,18 @@ label ~ .c12 {
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 0.75rem;
   line-height: 1.66;
+}
+
+.c6 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: #f44336;
+  text-align: left;
 }
 
 .c0 {
