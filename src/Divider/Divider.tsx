@@ -141,6 +141,7 @@ const StyledDivider = styled.hr.attrs(({ vertical }: Props) => ({
   margin: 0;
   border: none;
   box-sizing: border-box;
+  flex: 0 0 1px;
   background-color: ${({ theme }) => theme.palette.divider};
   ${({ vertical }) => (vertical ? verticalCss : horizontalCss)}
   ${({ vertical, middle }) => !vertical && middle && middleCss}

@@ -15,6 +15,9 @@ export default function IconButtonDemo() {
         <StyledIconButton>
           <FavoriteIcon />
         </StyledIconButton>
+        <StyledIconButton color="textPrimary">
+          <FavoriteIcon />
+        </StyledIconButton>
         <StyledIconButton color="primary">
           <FavoriteIcon />
         </StyledIconButton>

@@ -2,10 +2,10 @@ import React from 'react';
 import BaseButton from '@sinoui/core/BaseButton';
 import type { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled from 'styled-components';
-import classNames from 'classnames';
-import { opacify } from 'polished';
 import getColorFromTheme from '../utils/getColorFromTheme';
 import OverridableComponent from '../OverridableComponent';
+import adjustOpacity from '../utils/adjustOpacity';
+import bemClassNames from '../utils/bemClassNames';
 
 export interface IconButtonProps extends BaseButtonProps {
   /**
@@ -21,12 +21,9 @@ const rippleConfig: object = {
   fixSize: true,
 };
 
-const IconButtonLayout = styled(BaseButton).attrs(
-  ({ className, color = 'textPrimary' }: IconButtonProps) => ({
-    color,
-    className: classNames('sinoui-icon-button', className),
-  }),
-)<IconButtonProps>`
+const IconButtonLayout = styled(BaseButton)<
+  IconButtonProps & { color: string }
+>`
   width: ${({ theme }) => theme.spacing.unit * 6}px;
   height: ${({ theme }) => theme.spacing.unit * 6}px;
   border-radius: 50%;
@@ -36,9 +33,8 @@ const IconButtonLayout = styled(BaseButton).attrs(
 
   &:hover {
     background-color: ${({ theme, color }) =>
-      color !== 'textPrimary' &&
-      opacify(
-        theme.palette.action.hoverOpacity - 1,
+      adjustOpacity(
+        theme.palette.action.hoverOpacity,
         getColorFromTheme(theme, color),
       )};
 
@@ -60,6 +56,9 @@ const IconButtonLayout = styled(BaseButton).attrs(
   }
 `;
 
+/**
+ * 图标按钮
+ */
 const IconButton: OverridableComponent<
   IconButtonProps,
   'button'
@@ -67,10 +66,26 @@ const IconButton: OverridableComponent<
   props,
   ref,
 ) {
-  const { as, children, ...other } = props;
+  const {
+    as,
+    children,
+    color = 'textSecondary',
+    className,
+    disabled,
+    ...other
+  } = props;
   return (
     <IconButtonLayout
       ripple={rippleConfig}
+      disabled={disabled}
+      color={color}
+      className={bemClassNames(
+        'sinoui-icon-button',
+        {
+          disabled,
+        },
+        className,
+      )}
       {...other}
       forwardedAs={as}
       ref={ref}

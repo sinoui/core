@@ -2,20 +2,20 @@
 
 exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 iCmqDz sinoui-checkbox-group"
+  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 inkWlW sinoui-checkbox-group"
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -40,17 +40,17 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 gVleVx sinoui-checkbox sinoui-checkbox--checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dxiIaF sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -75,17 +75,17 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 gVleVx sinoui-checkbox sinoui-checkbox--checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dxiIaF sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -110,17 +110,17 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -149,20 +149,20 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
 
 exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 iCmqDz sinoui-checkbox-group"
+  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 inkWlW sinoui-checkbox-group"
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -187,17 +187,17 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -222,17 +222,17 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -257,17 +257,17 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -300,22 +300,22 @@ Array [
     不可用:
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 iCmqDz sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 inkWlW sinoui-checkbox-group"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gqPlXL sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox sinoui-checkbox--disabled"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox sinoui-checkbox--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -341,19 +341,19 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gqPlXL sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox sinoui-checkbox--disabled"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox sinoui-checkbox--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -383,15 +383,15 @@ Array [
     只读:
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 iCmqDz sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 inkWlW sinoui-checkbox-group"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gqPlXL sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox sinoui-checkbox--read-only"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox sinoui-checkbox--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -400,7 +400,7 @@ Array [
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -426,12 +426,12 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gqPlXL sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 bqhbKI sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox sinoui-checkbox--read-only"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox sinoui-checkbox--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -440,7 +440,7 @@ Array [
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -471,21 +471,21 @@ Array [
 
 exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 iCmqDz sinoui-checkbox-group"
+  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 inkWlW sinoui-checkbox-group"
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox sinoui-checkboxGroup-select"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox sinoui-checkboxGroup-select"
       color="primary"
       onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -509,17 +509,17 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -544,17 +544,17 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -579,17 +579,17 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -614,17 +614,17 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -653,20 +653,20 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
 
 exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 ggoGiy sinoui-checkbox-group"
+  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 fmbMvl sinoui-checkbox-group"
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -691,17 +691,17 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -734,20 +734,20 @@ Array [
     标题显示在右侧：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 iCmqDz sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 inkWlW sinoui-checkbox-group"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -772,17 +772,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -811,20 +811,20 @@ Array [
     标题显示在左侧：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 iCmqDz sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 inkWlW sinoui-checkbox-group"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jIDroM sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gFFMKC sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -849,17 +849,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jIDroM sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gFFMKC sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -893,20 +893,20 @@ Array [
     默认：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 lbzVNd sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 cuAncS sinoui-checkbox-group"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -931,17 +931,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -966,17 +966,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1001,17 +1001,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1036,17 +1036,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1075,20 +1075,20 @@ Array [
     设置colums为4：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 diThZK sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 bPuCwJ sinoui-checkbox-group"
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1113,17 +1113,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1148,17 +1148,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1183,17 +1183,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1218,17 +1218,17 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eWRdDW sinoui-form-control-label"
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 iMyvQz sinoui-checkbox"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 koaXsL sinoui-checkbox"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 fCQqNT sinoui-svg-icon"
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}

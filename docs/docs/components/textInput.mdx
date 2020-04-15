@@ -1,0 +1,576 @@
+---
+id: textInput
+title: TextInput 输入框
+---
+
+import TextInput from '@sinoui/core/TextInput';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import TextInputDemo from './textInput-demoes/TextInputDemo';
+import FormPropTextInputDemo from './textInput-demoes/FormPropTextInputDemo';
+import SearchInputDemo from './textInput-demoes/SearchInputDemo';
+import AdornmentInputDemo from './textInput-demoes/AdornmentInputDemo';
+import CustomizedBaseInput from './textInput-demoes/CustomizedBaseInput';
+import Demo from '../commons/Demo';
+import MultilineTextInputDemo from './textInput-demoes/MultilineTextInputDemo';
+
+> TextInput 是文本输入框，用户可以在输入框中输入或编辑文字。
+
+## 引入方式
+
+```ts
+import TextInput from '@sinoui/core/TextInput';
+```
+
+## TextInput
+
+`TextInput` 组件是一个完整的表单控件，包含标签、输入框和帮助文本。它有三种形态，分别是：标准(standard)、填充(filled)、轮廓(outlined)。
+
+```tsx
+import React, { useCallback, useState } from 'react';
+import TextInput from '@sinoui/core/TextInput';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+function TextInputDemo() {
+  const [value, setValue] = useState('');
+
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const inputValue = event.target.value;
+      setValue(inputValue);
+    },
+    [],
+  );
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <TextInput label="标准输入框" value={value} onChange={onChange} />
+        <TextInput
+          label="填充模式输入框"
+          value={value}
+          onChange={onChange}
+          variant="filled"
+        />
+        <TextInput
+          label="轮廓输入框"
+          value={value}
+          onChange={onChange}
+          variant="outlined"
+        />
+      </div>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果如下：
+
+<TextInputDemo />
+
+特别说明：[Material Design 设计指南](https://material.io)不再记录标准形态输入框，但是 sinoui 依然支持此形态。
+
+## TextInput 基础属性
+
+TextInput 支持基本的表单属性，包括：
+
+- `required` - 必填
+- `disabled` - 禁用
+- `readOnly` - 只读
+- `type` - 输入框类型
+- `placeholder` - 提示语
+
+TextInput 组件还支持一些常用的属性，如：
+
+- `helperText` - 帮助性文本，一帮用于描述输入框，譬如描述如何使用输入框。
+- `error` - 输入框的错误信息
+
+更多属性参见 [TextInput API](../components-apis/text-input)。
+
+```tsx
+import React, { useState, useCallback } from 'react';
+import TextInput from '@sinoui/core/TextInput';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+const TextInputField = styled(TextInput)`
+  width: 200px;
+  margin: 8px;
+`;
+
+function FormPropTextInputDemo() {
+  const [value, setValue] = useState();
+
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const inputValue = event.target.value;
+      setValue(inputValue);
+    },
+    [],
+  );
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <TextInputField
+          label="Required"
+          onChange={onChange}
+          value={value}
+          required
+        />
+        <TextInputField
+          label="Disabled"
+          onChange={onChange}
+          value={value}
+          disabled
+        />
+        <TextInputField
+          label="ReadOnly"
+          onChange={onChange}
+          value={value}
+          readOnly
+        />
+        <TextInputField
+          label="Error"
+          onChange={onChange}
+          value={value}
+          error="Error Message"
+        />
+        <TextInputField
+          label="Password"
+          onChange={onChange}
+          value={value}
+          type="password"
+        />
+        <TextInputField
+          label="Help Text"
+          onChange={onChange}
+          value={value}
+          helperText="请输入内容"
+        />
+        <TextInputField
+          label="Dense"
+          onChange={onChange}
+          value={value}
+          dense
+          helperText="请输入内容"
+        />
+      </div>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <TextInputField
+          label="Required"
+          onChange={onChange}
+          value={value}
+          required
+          variant="filled"
+        />
+        <TextInputField
+          label="Disabled"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          disabled
+        />
+        <TextInputField
+          label="ReadOnly"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          readOnly
+        />
+        <TextInputField
+          label="Error"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          error="Error Message"
+        />
+        <TextInputField
+          label="Password"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          type="password"
+        />
+        <TextInputField
+          label="Help Text"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          helperText="请输入内容"
+        />
+        <TextInputField
+          label="Dense"
+          onChange={onChange}
+          value={value}
+          dense
+          variant="filled"
+          helperText="请输入内容"
+        />
+      </div>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <TextInputField
+          label="Required"
+          onChange={onChange}
+          value={value}
+          required
+          variant="outlined"
+        />
+        <TextInputField
+          label="Disabled"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          disabled
+        />
+        <TextInputField
+          label="ReadOnly"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          readOnly
+        />
+        <TextInputField
+          label="Error"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          error="Error Message"
+        />
+        <TextInputField
+          label="Password"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          type="password"
+        />
+        <TextInputField
+          label="Help Text"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          helperText="请输入内容"
+        />
+        <TextInputField
+          label="Dense"
+          onChange={onChange}
+          value={value}
+          dense
+          variant="outlined"
+          helperText="请输入内容"
+        />
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export default FormPropTextInputDemo;
+```
+
+<FormPropTextInputDemo />
+
+可以通过 `inputProps` 传递更多输入框属性，如下所示：
+
+```tsx
+<TextInput
+  label="地址"
+  inputProps={{
+    id: 'address',
+  }}
+/>
+```
+
+通过 `inputProps` 给输入框传递了 `id` 属性。
+
+## 多行文本框
+
+`TextInput` 组件有 `multiline` 属性，指定文本框为多行。示例：
+
+```tsx
+<TextInput multiline />
+```
+
+运行效果如下：
+
+<Demo>
+  <MultilineTextInputDemo />
+</Demo>
+
+## 带装饰器的输入框
+
+我们可以通过`TextInput`的`startAdornment`和`endAdornment`属性分别指定前缀和后缀元素，比如：
+
+```tsx
+import React, { useState, useCallback } from 'react';
+import TextInput from '@sinoui/core/TextInput';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import InputAdornment from '@sinoui/core/InputAdornment';
+import Star from '@sinoui/icons/Star';
+import Visibility from '@sinoui/icons/Visibility';
+
+const TextInputField = styled(TextInput)`
+  margin: 8px;
+  width: 200px;
+`;
+
+function AdornmentInputDemo() {
+  const [value, setValue] = useState('');
+
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const inputValue = event.target.value;
+      setValue(inputValue);
+    },
+    [],
+  );
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
+        <TextInputField
+          value={value}
+          onChange={onChange}
+          label="金额"
+          startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        />
+        <TextInputField
+          value={value}
+          onChange={onChange}
+          label="Label"
+          startAdornment={
+            <InputAdornment position="start">
+              <Star color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+        <TextInputField
+          value={value}
+          onChange={onChange}
+          label="重量"
+          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+          align="end"
+        />
+        <TextInputField
+          value={value}
+          onChange={onChange}
+          label="Label"
+          endAdornment={
+            <InputAdornment position="end">
+              <Visibility color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+      </div>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
+        <TextInputField
+          variant="filled"
+          value={value}
+          onChange={onChange}
+          label="金额"
+          startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        />
+        <TextInputField
+          variant="filled"
+          value={value}
+          onChange={onChange}
+          label="Label"
+          startAdornment={
+            <InputAdornment position="start">
+              <Star color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+        <TextInputField
+          variant="filled"
+          value={value}
+          onChange={onChange}
+          label="重量"
+          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+        />
+        <TextInputField
+          variant="filled"
+          value={value}
+          onChange={onChange}
+          label="Label"
+          endAdornment={
+            <InputAdornment position="end">
+              <Visibility color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+      </div>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
+        <TextInputField
+          variant="outlined"
+          value={value}
+          onChange={onChange}
+          label="金额"
+          startAdornment={<InputAdornment position="start">￥</InputAdornment>}
+        />
+        <TextInputField
+          variant="outlined"
+          value={value}
+          onChange={onChange}
+          label="Label"
+          startAdornment={
+            <InputAdornment position="start">
+              <Star color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+        <TextInputField
+          variant="outlined"
+          value={value}
+          onChange={onChange}
+          label="重量"
+          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+        />
+        <TextInputField
+          variant="outlined"
+          value={value}
+          onChange={onChange}
+          label="Label"
+          endAdornment={
+            <InputAdornment position="end">
+              <Visibility color="textSecondary" />
+            </InputAdornment>
+          }
+        />
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export default AdornmentInputDemo;
+```
+
+运行效果如下：
+
+<AdornmentInputDemo />
+
+## 查询框
+
+我们可以使用`TextInput`和`Icon`结合实现查询框，示例如下：
+
+```tsx
+import React, { useState, useCallback } from 'react';
+import TextInput from '@sinoui/core/TextInput';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import InputAdornment from '@sinoui/core/InputAdornment';
+import Search from '@sinoui/icons/Search';
+
+const TextInputField = styled(TextInput)`
+  width: 200px;
+  margin: 8px;
+
+  .sinoui-notched-outline__leading {
+    width: 40px;
+    border-radius: 48px 0 0 48px;
+  }
+
+  .sinoui-notched-outline__trailing {
+    border-radius: 0 48px 48px 0;
+  }
+`;
+
+function SearchInputDemo() {
+  const [value, setValue] = useState('');
+
+  const onChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const inputValue = event.target.value;
+      setValue(inputValue);
+    },
+    [],
+  );
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <TextInputField
+        dense
+        variant="outlined"
+        placeholder="请输出查询内容"
+        value={value}
+        onChange={onChange}
+        startAdornment={
+          <InputAdornment position="start">
+            <Search />
+          </InputAdornment>
+        }
+      />
+    </ThemeProvider>
+  );
+}
+
+export default SearchInputDemo;
+```
+
+运行效果如下：
+
+<Demo>
+  <SearchInputDemo />
+</Demo>
+
+## 更复杂的查询框
+
+可以使用 [BaseInput](../components-apis/base-input)、[IconButton](button#图标按钮)、[Divider](divider) 等组件组合成更复杂的查询效果：
+
+<CustomizedBaseInput />
+
+代码如下：
+
+```tsx
+import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Paper from '@sinoui/core/Paper';
+import BaseInput from '@sinoui/core/BaseInput';
+import IconButton from '@sinoui/core/IconButton';
+import Divider from '@sinoui/core/Divider';
+import MenuIcon from '@sinoui/icons/Menu';
+import SearchIcon from '@sinoui/icons/Search';
+import DirectionsIcon from '@sinoui/icons/Directions';
+
+const Form = styled(Paper)`
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: flex-start;
+  padding: 2px 4px;
+`;
+
+const SearchInput = styled(BaseInput)`
+  flex: 1;
+  margin-left: 8px;
+`;
+
+function CustomizedBaseInput() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Form as="form">
+        <IconButton color="textSecondary">
+          <MenuIcon />
+        </IconButton>
+        <SearchInput placeholder="搜索人员信息" name="searchText" />
+        <IconButton type="submit" color="textSecondary">
+          <SearchIcon />
+        </IconButton>
+        <Divider vertical flexItem marginVertical={8} marginHorizontal={4} />
+        <IconButton color="primary">
+          <DirectionsIcon />
+        </IconButton>
+      </Form>
+    </ThemeProvider>
+  );
+}
+```
