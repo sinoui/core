@@ -53,41 +53,82 @@ export const 水平布局 = () => (
         </form>
       </div>
       <H4>密集模式</H4>
-      <div style={{ margin: 16 }} />
-      <form>
-        <FormItem
-          layout="horizontal"
-          label="用户名"
-          helperText="用户名首字母大写"
-          error
-          dense
-        >
-          <TextInput placeholder="请输入用户名" dense variant="filled" />
-        </FormItem>
+      <div style={{ margin: 16 }}>
+        <form>
+          <FormItem
+            layout="horizontal"
+            label="用户名"
+            helperText="用户名首字母大写"
+            error
+            dense
+          >
+            <TextInput placeholder="请输入用户名" dense variant="filled" />
+          </FormItem>
 
-        <FormItem layout="horizontal" label="爱好" dense>
-          <CheckboxGroup dense>
-            <Checkbox value="1">复选框1</Checkbox>
-            <Checkbox value="2">复选框2</Checkbox>
-            <Checkbox value="3">复选框3</Checkbox>
-            <Checkbox value="4">复选框4</Checkbox>
-          </CheckboxGroup>
-        </FormItem>
+          <FormItem layout="horizontal" label="爱好" dense>
+            <CheckboxGroup dense>
+              <Checkbox value="1">复选框1</Checkbox>
+              <Checkbox value="2">复选框2</Checkbox>
+              <Checkbox value="3">复选框3</Checkbox>
+              <Checkbox value="4">复选框4</Checkbox>
+            </CheckboxGroup>
+          </FormItem>
 
-        <FormItem layout="horizontal" label="性别" dense>
-          <RadioGroup dense>
-            <Radio value="1">男</Radio>
-            <Radio value="2">女</Radio>
-          </RadioGroup>
-        </FormItem>
-        <FormItem
-          layout="horizontal"
-          label="说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明"
-          dense
-        >
-          <TextInput multiline placeholder="说明" dense variant="outlined" />
-        </FormItem>
-      </form>
+          <FormItem layout="horizontal" label="性别" dense>
+            <RadioGroup dense>
+              <Radio value="1">男</Radio>
+              <Radio value="2">女</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            layout="horizontal"
+            label="说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明"
+            dense
+          >
+            <TextInput multiline placeholder="说明" dense variant="outlined" />
+          </FormItem>
+        </form>
+      </div>
+
+      <H4>FormLabel设置为固定宽度</H4>
+      <div style={{ margin: 16 }}>
+        <form>
+          <FormItem
+            layout="horizontal"
+            label="用户名"
+            labelWidth={120}
+            helperText="用户名首字母大写"
+            error
+            dense
+          >
+            <TextInput placeholder="请输入用户名" dense variant="filled" />
+          </FormItem>
+
+          <FormItem layout="horizontal" label="爱好" labelWidth={120} dense>
+            <CheckboxGroup dense>
+              <Checkbox value="1">复选框1</Checkbox>
+              <Checkbox value="2">复选框2</Checkbox>
+              <Checkbox value="3">复选框3</Checkbox>
+              <Checkbox value="4">复选框4</Checkbox>
+            </CheckboxGroup>
+          </FormItem>
+
+          <FormItem layout="horizontal" label="性别" labelWidth={120} dense>
+            <RadioGroup dense>
+              <Radio value="1">男</Radio>
+              <Radio value="2">女</Radio>
+            </RadioGroup>
+          </FormItem>
+          <FormItem
+            layout="horizontal"
+            label="说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明"
+            labelWidth={120}
+            dense
+          >
+            <TextInput multiline placeholder="说明" dense variant="outlined" />
+          </FormItem>
+        </form>
+      </div>
     </div>
   </ThemeProvider>
 );
