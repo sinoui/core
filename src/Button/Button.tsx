@@ -38,7 +38,11 @@ const textButtonStyle = css<Props>`
   color: ${({ theme, color, disabled }) =>
     disabled ? theme.palette.text.disabled : getColorFromTheme(theme, color)};
   user-select: none;
-  transition: background-color 100ms ease-in-out;
+  transition: ${({ theme: { transitions } }) =>
+    transitions.create(['color', 'background-color'], {
+      easing: transitions.easing.easeInOut,
+      duration: transitions.duration.shortest,
+    })};
   padding: 0px 8px;
   overflow: hidden;
   box-sizing: border-box;
@@ -75,7 +79,11 @@ const raisedStyle = css<Props>`
       ? theme.palette.action.disabledBackground
       : getColorFromTheme(theme, color)};
   border-radius: 4px;
-  transition: box-shadow 280ms;
+  transition: ${({ theme: { transitions } }) =>
+    transitions.create(['color', 'background-color', 'box-shadow'], {
+      easing: transitions.easing.easeInOut,
+      duration: transitions.duration.shortest,
+    })};
 
   &:hover {
     ${colorCss('background-color')};
