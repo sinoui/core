@@ -77,7 +77,7 @@ const breakpointsCss = css((props: Props & { theme: Theme }) => {
     const mediaKey = `@media screen and (min-width: ${props.theme.breakpoints[item]}px)`;
     if (colNum && colNum > 0) {
       mediaResult[mediaKey] = {
-        width: `${(Math.min(colNum, 24) / 24) * 100}%`,
+        maxWidth: `${(Math.min(colNum, 24) / 24) * 100}%`,
         flexBasis: `${(Math.min(colNum, 24) / 24) * 100}%`,
         flexGrow: 0,
       };
