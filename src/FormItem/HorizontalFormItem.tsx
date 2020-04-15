@@ -33,6 +33,18 @@ const Wrapper = styled.div.attrs(() => ({
     flex-direction: column;
     flex: 1 1 0%;
   }
+
+  & > .sinoui-form-label {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-start;
+    margin: 0;
+    min-height: 40px;
+    width: 160px;
+    padding-top: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+  }
 `;
 
 export default function HorizontalFormItemProps({

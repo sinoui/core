@@ -38,12 +38,7 @@ export interface LabelProps {
   layout?: 'floating' | 'shrink' | 'standard';
 }
 
-const standardStyle = css`
-  justify-content: flex-end;
-  align-self: flex-start;
-  padding-top: 8px;
-  padding-right: 8px;
-`;
+const standardStyle = css``;
 /**
  * html标签组件
  *
@@ -52,17 +47,12 @@ const standardStyle = css`
 const Label = styled.label.attrs(() => ({ className: 'sinoui-form-label' }))<
   LabelProps
 >`
-  display: flex;
   font-size: ${(props) => props.theme.typography.body1.fontSize};
   font-family: ${(props) => props.theme.typography.fontFamily};
   color: ${({ theme }) => theme.palette.text.primary};
   color: ${({ color = 'primary', theme, focused }) =>
     focused && getColorFromTheme(theme, color)};
   color: ${({ theme, disabled }) => disabled && theme.palette.text.disabled};
-  margin: 0;
-  min-height: 40px;
-  width: 160px;
-  box-sizing: border-box;
 
   ${(props) =>
     props.required &&
