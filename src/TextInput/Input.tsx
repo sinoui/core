@@ -5,10 +5,6 @@ import lineRippleStyle from './lineRippleStyle';
 
 export interface InputProps extends BaseInputProps {
   /**
-   * 设置为`true`，则表示输入框处于错误状态。
-   */
-  error?: boolean;
-  /**
    * 设置为`true`，则表示输入框处于聚焦状态。
    */
   focused?: boolean;
@@ -23,11 +19,7 @@ export interface InputProps extends BaseInputProps {
  */
 const StandardInput: React.SFC<InputProps> = styled(BaseInput).attrs({
   standard: true,
-})<{
-  error?: boolean;
-  warning?: boolean;
-  dense?: boolean;
-}>`
+})`
   color: ${({ theme, disabled }) =>
     disabled ? theme.palette.text.disabled : theme.palette.text.primary};
 
