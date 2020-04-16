@@ -8,6 +8,7 @@ import Input from './Input';
 import HelperText from './HelperText';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
+import isEmptyValue from './isEmptyValue';
 
 export interface TextInputProps extends BaseInputProps {
   /**
@@ -89,7 +90,7 @@ export default function TextInput(props: TextInputProps) {
   const shrink =
     shrinkProp ||
     focused ||
-    !!value ||
+    !isEmptyValue(value) ||
     !!defaultValue ||
     !!placeholder ||
     !!startAdornment;
