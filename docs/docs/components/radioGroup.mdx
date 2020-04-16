@@ -56,7 +56,7 @@ function RadioGroupDemo() {
   };
 
   return (
-    <RadioGroup block onChange={onChange} value={value}>
+    <RadioGroup column onChange={onChange} value={value}>
       <Radio value="1">单选框1</Radio>
       <Radio value="2">单选框2</Radio>
       <Radio value="3">单选框3</Radio>
@@ -69,7 +69,7 @@ function RadioGroupDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <RadioGroupDemo block/>
+  <RadioGroupDemo column />
 </ThemeProvider>
 
 ## 设置只读

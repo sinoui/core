@@ -35,7 +35,7 @@ const BaseToggleButton = styled(BaseButton).attrs(() => ({
       : theme.palette.text.secondary};
 
   & .sinoui-svg-icon {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   &:hover {
@@ -214,7 +214,7 @@ export default function BaseCheckboxButton(props: Props) {
         'sinoui-checkbox--disabled': disabled,
         'sinoui-checkbox--checked': checked,
         'sinoui-checkbox--indeterminate': indeterminate,
-        'sinoui-checkbox--readOnly': readOnly,
+        'sinoui-checkbox--read-only': readOnly,
       })}
       color={color}
       onClick={onClick}

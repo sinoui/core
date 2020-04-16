@@ -109,6 +109,10 @@ label ~ .c1 {
   margin-top: 16px;
 }
 
+.c1 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c1::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -157,7 +161,7 @@ label ~ .c1 {
 
 .c1:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 <div
@@ -283,6 +287,10 @@ label ~ .c1 {
   margin-top: 16px;
 }
 
+.c1 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c1::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -325,12 +333,12 @@ label ~ .c1 {
   font-size: 0px;
 }
 
+.c1::after {
+  display: none;
+}
+
 .c1::before {
-  background: transparent;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.42) 33%, transparent 0% );
-  background-position: left top;
-  background-repeat: repeat-x;
-  background-size: 5px 1px;
+  background-color: rgba(0,0,0,0.26);
 }
 
 <div
@@ -458,6 +466,10 @@ label ~ .c1 {
   margin-top: 16px;
 }
 
+.c1 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c1::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -506,7 +518,7 @@ label ~ .c1 {
 
 .c1:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 <div
@@ -630,6 +642,10 @@ exports[`渲染错误状态下的input 1`] = `
 
 label ~ .c1 {
   margin-top: 16px;
+}
+
+.c1 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
 }
 
 .c1::before {

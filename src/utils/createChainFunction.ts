@@ -3,7 +3,7 @@
  */
 export type FunctionType = (...args: any[]) => any;
 
-export function createChainFunction<T>(...funs: FunctionType[]) {
+export function createChainFunction(...funs: FunctionType[]) {
   const filteredFuns = funs.filter((fun) => typeof fun === 'function');
   return (...args: any[]) => filteredFuns.forEach((fun) => fun(...args));
 }
