@@ -11,7 +11,6 @@ import ArrowDropDownIcon from './ArrowDropDownIcon';
 const iconFocusedStyle = css`
   color: ${(props) => props.theme.palette.primary.main};
   transform: rotate(180deg);
-  transition: transform 200ms;
 `;
 
 const StyledTextInput = styled(TextInput)`
@@ -22,6 +21,11 @@ const StyledTextInput = styled(TextInput)`
 
   > .sinoui-base-input > .sinoui-input-adornment--end > svg {
     font-size: 24px;
+    transition: ${({ theme }) =>
+      theme.transitions.create('transform', {
+        easing: theme.transitions.easing.easeInOut,
+        duration: theme.transitions.duration.shorter,
+      })};
     ${(props: { focused?: boolean; theme: Theme }) =>
       props.focused && iconFocusedStyle};
     ${(props) => props.error && `color: ${props.theme.palette.error.main}`};
