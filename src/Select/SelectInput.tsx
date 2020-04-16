@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import Menu, { MenuListItem } from '@sinoui/core/Menu';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
@@ -148,20 +148,12 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     readOnly,
     renderValue,
     tabIndex = 0,
-    value: valueProp,
+    value,
     minWidth,
   } = props;
 
-  const [value, setValue] = useState(valueProp);
-
   const anchorElRef = useRef<HTMLDivElement | null>(null);
   const handleRef = useMultiRefs(ref, anchorElRef);
-
-  useEffect(() => {
-    if (valueProp !== value) {
-      setValue(valueProp);
-    }
-  }, [value, valueProp]);
 
   useEffect(() => {
     if (autoFocus && anchorElRef.current) {
@@ -216,8 +208,6 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     } else {
       newValue = child.props.value;
     }
-
-    setValue(newValue);
 
     if (onChange) {
       onChange(newValue);
