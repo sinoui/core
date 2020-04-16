@@ -410,7 +410,7 @@ function Popover(props: PopoverProps) {
             {children}
           </PopoverContent>
 
-          <Iframe frameBorder={0} scrolling={false} absolute />
+          <Iframe frameBorder={0} scrolling="false" absolute />
         </PopoverLayout>
       </TransitionProp>
     </Modal>
