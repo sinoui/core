@@ -250,16 +250,10 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
   const displayMultiple: string[] = [];
   let computeDisplay = false;
 
-  if (
-    value !== null &&
-    value !== undefined &&
-    !(Array.isArray(value) && value.length === 0)
-  ) {
-    if (renderValue) {
-      display = renderValue(value);
-    } else {
-      computeDisplay = true;
-    }
+  if (renderValue) {
+    display = renderValue(value);
+  } else {
+    computeDisplay = true;
   }
 
   const items = React.Children.map(children, (child, index) => {
