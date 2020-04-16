@@ -402,6 +402,10 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c3::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -450,7 +454,7 @@ label ~ .c3 {
 
 .c3:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 .c0 {
@@ -807,6 +811,10 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c3::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -849,12 +857,12 @@ label ~ .c3 {
   font-size: 0px;
 }
 
+.c3::after {
+  display: none;
+}
+
 .c3::before {
-  background: transparent;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.42) 33%, transparent 0% );
-  background-position: left top;
-  background-repeat: repeat-x;
-  background-size: 5px 1px;
+  background-color: rgba(0,0,0,0.26);
 }
 
 .c4 {
@@ -1422,6 +1430,10 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c3::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -1470,7 +1482,7 @@ label ~ .c3 {
 
 .c3:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 .c0 {
@@ -2042,6 +2054,10 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c3::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -2090,7 +2106,7 @@ label ~ .c3 {
 
 .c3:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 .c0 {
@@ -2503,6 +2519,10 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c3::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -2551,7 +2571,7 @@ label ~ .c3 {
 
 .c3:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 .c4 {
@@ -2931,6 +2951,10 @@ exports[`渲染有错误提示的输入框 1`] = `
 
 label ~ .c3 {
   margin-top: 16px;
+}
+
+.c3 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
 }
 
 .c3::before {

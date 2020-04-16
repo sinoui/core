@@ -436,6 +436,10 @@ label ~ .c4 {
   margin-top: 16px;
 }
 
+.c4 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c4::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -484,7 +488,7 @@ label ~ .c4 {
 
 .c4:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 .c0 {
@@ -890,6 +894,10 @@ label ~ .c4 {
   margin-top: 16px;
 }
 
+.c4 > .sinoui-base-input__input {
+  padding: 3.5px 0px 4.5px;
+}
+
 .c4::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
@@ -932,12 +940,12 @@ label ~ .c4 {
   font-size: 0px;
 }
 
+.c4::after {
+  display: none;
+}
+
 .c4::before {
-  background: transparent;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.42) 33%, transparent 0% );
-  background-position: left top;
-  background-repeat: repeat-x;
-  background-size: 5px 1px;
+  background-color: rgba(0,0,0,0.26);
 }
 
 .c0 {

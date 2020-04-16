@@ -30,14 +30,14 @@ describe('RadioGroup 单元测试', () => {
   test('纵向排列的class类名', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <RadioGroup block data-testid="radioGroup">
+        <RadioGroup column data-testid="radioGroup">
           <Radio value="1">单选框</Radio>
         </RadioGroup>
       </ThemeProvider>,
     );
 
     const radioGroup = getByTestId('radioGroup');
-    expect(radioGroup).toHaveClass('sinoui-radio-group--block');
+    expect(radioGroup).toHaveClass('sinoui-radio-group--column');
   });
   test('非受控使用，即无value', () => {
     const onChange = jest.fn();
@@ -116,7 +116,7 @@ describe('radioGroup组件 快照测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <RadioGroup block>
+          <RadioGroup column>
             <Radio value="1">单选框1</Radio>
             <Radio value="2">单选框2</Radio>
             <Radio value="3">单选框3</Radio>
