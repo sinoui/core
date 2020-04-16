@@ -540,6 +540,18 @@ label ~ .c3 {
 `;
 
 exports[`渲染不可用状态下三种形态输入框 1`] = `
+.c4 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: rgba(0,0,0,0.38);
+  text-align: left;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -819,31 +831,6 @@ label ~ .c3 {
   background-size: 5px 1px;
 }
 
-.c4 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  color: rgba(0,0,0,0.38);
-}
-
-.c7 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  color: rgba(0,0,0,0.38);
-  margin: 8px 12px 0;
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -882,11 +869,12 @@ label ~ .c3 {
         onFocus={[Function]}
       />
     </div>
-    <p
-      className="c4"
+    <div
+      className="c4 sinoui-helper-text"
+      disabled={true}
     >
       输入用户名
-    </p>
+    </div>
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--disabled"
@@ -917,11 +905,12 @@ label ~ .c3 {
         className="sinoui-input__overlay"
       />
     </div>
-    <p
-      className="c7"
+    <div
+      className="c4 sinoui-helper-text"
+      disabled={true}
     >
       输入用户名
-    </p>
+    </div>
   </div>
 </div>
 `;
@@ -2159,6 +2148,18 @@ label ~ .c3 {
 `;
 
 exports[`渲染有辅助性文字的输入框 1`] = `
+.c4 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: rgba(0,0,0,0.6);
+  text-align: left;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2462,29 +2463,6 @@ label ~ .c3 {
   height: 2px;
 }
 
-.c4 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-}
-
-.c7 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  margin: 8px 12px 0;
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2519,11 +2497,11 @@ label ~ .c3 {
         onFocus={[Function]}
       />
     </div>
-    <p
-      className="c4"
+    <div
+      className="c4 sinoui-helper-text"
     >
       输入用户名
-    </p>
+    </div>
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled"
@@ -2550,16 +2528,28 @@ label ~ .c3 {
         className="sinoui-input__overlay"
       />
     </div>
-    <p
-      className="c7"
+    <div
+      className="c4 sinoui-helper-text"
     >
       输入用户名
-    </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`渲染有错误提示的输入框 1`] = `
+.c4 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: #f44336;
+  text-align: left;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2871,31 +2861,6 @@ label ~ .c3 {
   transform: scaleX(1) scaleY(1);
 }
 
-.c4 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  color: #f44336;
-}
-
-.c7 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  color: #f44336;
-  margin: 8px 12px 0;
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2932,11 +2897,11 @@ label ~ .c3 {
         onFocus={[Function]}
       />
     </div>
-    <p
-      className="c4"
+    <div
+      className="c4 sinoui-helper-text"
     >
       必填
-    </p>
+    </div>
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--required sinoui-text-input--error"
@@ -2965,11 +2930,11 @@ label ~ .c3 {
         className="sinoui-input__overlay"
       />
     </div>
-    <p
-      className="c7"
+    <div
+      className="c4 sinoui-helper-text"
     >
       必填
-    </p>
+    </div>
   </div>
 </div>
 `;

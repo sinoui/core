@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
+import HelperText from '@sinoui/core/HelperText';
 import FilledInput from './FilledInput';
 import OutlinedInput from './OutlinedInput';
 import InputLabel from './InputLabel';
 import Input from './Input';
-import HelperText from './HelperText';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
 import { useFormControlContext } from '../FormControl';
@@ -170,15 +170,9 @@ export default function TextInput(props: TextInputProps) {
         </InputLabel>
       )}
       <InputComponent {...inputProps} />
-      {!!error && (
-        <HelperText error variant={variant} dense={dense}>
-          {error}
-        </HelperText>
-      )}
+      {!!error && <HelperText error>{error}</HelperText>}
       {!error && helperText && (
-        <HelperText disabeld={disabled} variant={variant} dense={dense}>
-          {helperText}
-        </HelperText>
+        <HelperText disabled={disabled}>{helperText}</HelperText>
       )}
     </TextInputWrapper>
   );
