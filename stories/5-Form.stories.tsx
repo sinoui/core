@@ -9,6 +9,9 @@ import { Row, Column } from '@sinoui/core/Grid';
 import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 import Checkbox from '@sinoui/core/Checkbox';
 import H4 from '@sinoui/core/H4';
+import PersonRounded from '@sinoui/icons/PersonRounded';
+import EmailRounded from '@sinoui/icons/EmailRounded';
+import PhoneRounded from '@sinoui/icons/PhoneRounded';
 
 export default {
   title: 'Form',
@@ -315,6 +318,299 @@ export const 浮动布局 = () => (
               <Checkbox value="足球">足球</Checkbox>
               <Checkbox value="足球">足球</Checkbox>
             </CheckboxGroup>
+          </FormControl>
+        </Column>
+      </Row>
+    </div>
+  </ThemeProvider>
+);
+
+export const Demo1 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <div style={{ margin: 16, width: '600px' }}>
+      <h4>Create task</h4>
+      <Row gutter={48}>
+        <Column xs={24}>
+          <FormControl label="Type" labelLayout="floating" variant="filled">
+            <TextInput variant="filled" />
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl label="Company" labelLayout="floating" variant="filled">
+            <TextInput variant="filled" />
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl
+            label="Opportunity"
+            labelLayout="floating"
+            variant="filled"
+            helperText="Optional"
+          >
+            <TextInput variant="filled" />
+          </FormControl>
+        </Column>
+        <Column xs={24}>
+          <FormControl
+            label="Task name"
+            labelLayout="floating"
+            variant="filled"
+          >
+            <TextInput variant="filled" />
+          </FormControl>
+        </Column>
+        <Column xs={24}>
+          <FormControl
+            label="CC"
+            labelLayout="floating"
+            variant="filled"
+            helperText="Optional"
+          >
+            <TextInput variant="filled" />
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl label="Nature of request">
+            <CheckboxGroup column>
+              <Checkbox value="1">Ads review</Checkbox>
+              <Checkbox value="2">Keywords review</Checkbox>
+              <Checkbox value="3">Extensions review</Checkbox>
+            </CheckboxGroup>
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl label="Current reviewable status">
+            <RadioGroup value="1" column>
+              <Radio value="1">Approved</Radio>
+              <Radio value="2">Not approved</Radio>
+            </RadioGroup>
+          </FormControl>
+        </Column>
+      </Row>
+    </div>
+  </ThemeProvider>
+);
+
+export const Demo2 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <div style={{ margin: 16, width: '600px' }}>
+      <h4>Create task</h4>
+      <Row gutter={48}>
+        <Column xs={24}>
+          <FormControl label="Type" labelLayout="floating" variant="outlined">
+            <TextInput variant="outlined" />
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl
+            label="Company"
+            labelLayout="floating"
+            variant="outlined"
+          >
+            <TextInput variant="outlined" />
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl
+            label="Opportunity"
+            labelLayout="floating"
+            variant="outlined"
+            helperText="Optional"
+          >
+            <TextInput variant="outlined" />
+          </FormControl>
+        </Column>
+        <Column xs={24}>
+          <FormControl
+            label="Task name"
+            labelLayout="floating"
+            variant="outlined"
+          >
+            <TextInput variant="outlined" />
+          </FormControl>
+        </Column>
+        <Column xs={24}>
+          <FormControl
+            label="CC"
+            labelLayout="floating"
+            variant="outlined"
+            helperText="Optional"
+          >
+            <TextInput variant="outlined" />
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl label="Nature of request">
+            <CheckboxGroup column>
+              <Checkbox value="1">Ads review</Checkbox>
+              <Checkbox value="2">Keywords review</Checkbox>
+              <Checkbox value="3">Extensions review</Checkbox>
+            </CheckboxGroup>
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl label="Current reviewable status">
+            <RadioGroup value="1" column>
+              <Radio value="1">Approved</Radio>
+              <Radio value="2">Not approved</Radio>
+            </RadioGroup>
+          </FormControl>
+        </Column>
+      </Row>
+    </div>
+  </ThemeProvider>
+);
+
+export const Demo3 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <div style={{ margin: 16, width: '600px' }}>
+      <h4>Checkout form</h4>
+      <Row gutter={48}>
+        <Column xs={12}>
+          <FormControl
+            label={<PersonRounded />}
+            layout="horizontal"
+            labelLayout="standard"
+            variant="standard"
+            labelWidth={40}
+          >
+            <TextInput placeholder="First name" />
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl
+            label={<PersonRounded />}
+            layout="horizontal"
+            labelLayout="standard"
+            variant="standard"
+            labelWidth={40}
+          >
+            <TextInput placeholder="Last name" />
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl
+            label={<EmailRounded />}
+            layout="horizontal"
+            labelLayout="standard"
+            variant="standard"
+            labelWidth={40}
+          >
+            <TextInput placeholder="Email" />
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl
+            label={<PhoneRounded />}
+            layout="horizontal"
+            labelLayout="standard"
+            variant="standard"
+            labelWidth={40}
+          >
+            <TextInput placeholder="Phone" />
+          </FormControl>
+        </Column>
+        <Column xs={24}>
+          <FormControl label="Address" labelLayout="floating">
+            <TextInput />
+          </FormControl>
+        </Column>
+        <Column xs={24}>
+          <FormControl label="Additional info">
+            <TextInput multiline />
+          </FormControl>
+        </Column>
+      </Row>
+      <div>
+        <h4>Card Details</h4>
+        <Row gutter={48}>
+          <Column xs={8}>
+            <FormControl>
+              <RadioGroup column>
+                <Radio value="1">Javascript</Radio>
+                <Radio value="2">Typescript</Radio>
+                <Radio value="3">css</Radio>
+              </RadioGroup>
+            </FormControl>
+          </Column>
+          <Column xs={16}>
+            <FormControl label="Name on card">
+              <TextInput />
+            </FormControl>
+            <Row gutter={8}>
+              <Column xs={20}>
+                <FormControl label="Card number">
+                  <TextInput />
+                </FormControl>
+              </Column>
+              <Column xs={4}>
+                <FormControl label="CVV2">
+                  <TextInput />
+                </FormControl>
+              </Column>
+            </Row>
+            <Row gutter={8}>
+              <Column xs={12}>
+                <FormControl label="Card exp month">
+                  <TextInput />
+                </FormControl>
+              </Column>
+              <Column xs={12}>
+                <FormControl label="Year">
+                  <TextInput />
+                </FormControl>
+              </Column>
+            </Row>
+          </Column>
+        </Row>
+      </div>
+    </div>
+  </ThemeProvider>
+);
+
+export const Demo4 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <div style={{ margin: 16, width: '600px' }}>
+      <h4>Description</h4>
+      <Row gutter={8}>
+        <Column xs={24}>
+          <FormControl label="Title" variant="filled">
+            <TextInput variant="filled" value="Pingan Dress" />
+          </FormControl>
+        </Column>
+        <Column xs={6}>
+          <FormControl label="price" variant="filled">
+            <TextInput variant="filled" value="$10" />
+          </FormControl>
+        </Column>
+        <Column xs={18}>
+          <FormControl label="Location" variant="filled">
+            <TextInput placeholder="Placeholder text" variant="filled" />
+          </FormControl>
+        </Column>
+      </Row>
+    </div>
+  </ThemeProvider>
+);
+
+export const Demo5 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <div style={{ margin: 16, width: '600px' }}>
+      <h4>Description</h4>
+      <Row gutter={8}>
+        <Column xs={24}>
+          <FormControl label="Title" variant="outlined">
+            <TextInput variant="outlined" value="Pingan Dress" />
+          </FormControl>
+        </Column>
+        <Column xs={6}>
+          <FormControl label="price" variant="outlined">
+            <TextInput variant="outlined" value="$10" />
+          </FormControl>
+        </Column>
+        <Column xs={18}>
+          <FormControl label="Location" variant="outlined">
+            <TextInput placeholder="Placeholder text" variant="outlined" />
           </FormControl>
         </Column>
       </Row>

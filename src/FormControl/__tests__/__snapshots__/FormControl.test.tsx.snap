@@ -96,10 +96,6 @@ exports[`水平布局 1`] = `
     padding-right: 8px;
     box-sizing: border-box;
   }
-
-  .c0.sinoui-form-item--horizontal > .sinoui-form-label::after {
-    content: ':';
-  }
 }
 
 <div

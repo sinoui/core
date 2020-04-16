@@ -65,6 +65,7 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
           })}
           ref={ref}
           dense={dense}
+          colon={colon}
           {...rest}
         >
           <FormLabel ref={labelRef}>{props.label}</FormLabel>

@@ -7,6 +7,13 @@ const formControlHorizontalDenseStyle = css<FormControlProps>`
     padding-top: 4px;
   }
 `;
+
+const colonStyle = css`
+  &::after {
+    content: ':';
+  }
+`;
+
 const FormControlWrapper = styled.div<FormControlProps>`
   display: flex;
   position: relative;
@@ -40,9 +47,7 @@ const FormControlWrapper = styled.div<FormControlProps>`
       padding-right: 8px;
       box-sizing: border-box;
 
-      &::after {
-        content: ':';
-      }
+      ${(props) => props.colon && colonStyle}
     }
   }
 
