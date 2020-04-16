@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
@@ -60,18 +60,6 @@ export interface Props
    */
   onChange?: (value: string | string[]) => void;
   /**
-   * 弹窗出现时的回调函数
-   */
-  onOpen?: () => void;
-  /**
-   * 弹窗消失时的回调函数
-   */
-  onClose?: () => void;
-  /**
-   * 是否显示弹窗
-   */
-  open?: boolean;
-  /**
    * 值的渲染方式
    */
   renderValue?: (value: string | string[]) => void;
@@ -96,14 +84,12 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
   props,
   ref,
 ) {
+  const [open, setOpen] = useState(false);
   const {
     children,
     inputProps,
     label,
     multiple = false,
-    onClose,
-    onOpen,
-    open,
     renderValue,
     variant = 'standard',
     error,
@@ -130,18 +116,23 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     }
   }, [multiple, onChange]);
 
+  const onOpen = useCallback(() => {
+    setOpen(true);
+  }, []);
+  const onClose = useCallback(() => {
+    setOpen(false);
+  }, []);
+
   return React.cloneElement(<StyledTextInput />, {
     inputComponent,
     inputProps: {
       children,
       multiple,
-      ...{
-        minWidth,
-        onClose,
-        onOpen,
-        open,
-        renderValue,
-      },
+      minWidth,
+      renderValue,
+      open,
+      onOpen,
+      onClose,
       ...inputProps,
     },
     ref,
@@ -159,6 +150,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     variant,
     onClear,
     onChange,
+    onClick: onOpen,
     helperText,
     dense,
     type: 'hidden',

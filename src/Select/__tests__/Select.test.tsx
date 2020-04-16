@@ -49,10 +49,9 @@ it('渲染不可用的下拉框', () => {
 });
 
 it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
-  const onClose = jest.fn();
   const { getByTestId, getByRole, getAllByRole, container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <Select onClose={onClose}>
+      <Select>
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
         <Option value="3">选项三</Option>
@@ -70,6 +69,5 @@ it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
     fireEvent.click(getAllByRole('option')[0]);
   });
 
-  expect(onClose).toHaveBeenCalled();
   expect(container.querySelector('ul')).toBeDefined();
 });

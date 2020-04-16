@@ -550,14 +550,13 @@ label ~ .c4 {
       onClick={[Function]}
     >
       <div
+        aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-layout sinoui-base-input__input"
         data-testid="SelectDisplay"
         onBlur={[Function]}
-        onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        onMouseDown={[Function]}
         role="button"
         tabIndex={0}
       >
@@ -602,14 +601,13 @@ label ~ .c4 {
       onClick={[Function]}
     >
       <div
+        aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-layout sinoui-base-input__input"
         data-testid="SelectDisplay"
         onBlur={[Function]}
-        onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        onMouseDown={[Function]}
         role="button"
         tabIndex={0}
       >
@@ -657,14 +655,13 @@ label ~ .c4 {
       onClick={[Function]}
     >
       <div
+        aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-layout sinoui-base-input__input"
         data-testid="SelectDisplay"
         onBlur={[Function]}
-        onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        onMouseDown={[Function]}
         role="button"
         tabIndex={0}
       >
@@ -1004,15 +1001,14 @@ label ~ .c4 {
     onClick={[Function]}
   >
     <div
+      aria-expanded="false"
       aria-haspopup="listbox"
       className="c5 sinoui-select-layout sinoui-base-input__input"
       data-testid="SelectDisplay"
       disabled={true}
       onBlur={[Function]}
-      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={null}
       role="button"
       tabIndex={null}
     >
