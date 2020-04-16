@@ -666,3 +666,35 @@ export const 多行输入框 = () => (
     <MultilineTextInputDemo />
   </ThemeProvider>
 );
+
+const ClearDemo = () => {
+  const [value, setValue] = useState('1');
+
+  return (
+    <>
+      <TextInputField
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        allowClear
+      />
+      <TextInputField
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        variant="filled"
+        allowClear
+      />
+      <TextInputField
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        variant="outlined"
+        allowClear
+      />
+    </>
+  );
+};
+
+export const 清除功能 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <ClearDemo />
+  </ThemeProvider>
+);

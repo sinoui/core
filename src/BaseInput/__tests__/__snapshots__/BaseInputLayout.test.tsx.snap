@@ -80,26 +80,12 @@ exports[`全宽模式 1`] = `
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 <div
@@ -188,26 +174,12 @@ exports[`单行输入框 1`] = `
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 <div
@@ -296,26 +268,12 @@ exports[`多行输入框 1`] = `
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 <div
@@ -404,26 +362,12 @@ exports[`禁用状态 1`] = `
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 <div

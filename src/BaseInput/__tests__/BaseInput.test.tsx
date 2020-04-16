@@ -84,8 +84,26 @@ it('渲染带后缀的支持清除功能的输入框', () => {
     )
     .toJSON();
 
-  expect(tree).toHaveStyleRule('display', 'none', {
-    modifier: '.sinoui-base-input__clear',
+  expect(tree).toMatchSnapshot();
+
+  expect(tree).toHaveStyleRule('opacity', '0', {
+    modifier: '> .sinoui-base-input__clear',
+  });
+  expect(tree).toHaveStyleRule('pointer-events', 'none', {
+    modifier: '> .sinoui-base-input__clear',
+  });
+  expect(tree).toHaveStyleRule('opacity', '1', {
+    modifier: '> .sinoui-input-adornment--end',
+  });
+
+  expect(tree).toHaveStyleRule('opacity', '1', {
+    modifier: '&:hover > .sinoui-base-input__clear',
+  });
+  expect(tree).toHaveStyleRule('pointer-events', 'auto', {
+    modifier: '&:hover > .sinoui-base-input__clear',
+  });
+  expect(tree).toHaveStyleRule('opacity', '0', {
+    modifier: '&:hover > .sinoui-input-adornment--end',
   });
 });
 
@@ -349,32 +367,4 @@ it('多行输入框', () => {
   );
 
   expect(getByTestId('input')).toHaveClass('sinoui-base-input--multiline');
-});
-
-xit('带后缀元素且支持清除功能', () => {
-  const { container, getByTestId } = render(
-    <ThemeProvider theme={defaultTheme}>
-      <BaseInput
-        allowClear
-        value="123"
-        endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
-        data-testid="input"
-      />
-    </ThemeProvider>,
-  );
-
-  const clearIcon = container.querySelector(
-    '.sinoui-base-input__clear',
-  ) as HTMLElement;
-  const endComp = container.querySelector(
-    '.sinoui-base-input__endAdornment',
-  ) as HTMLElement;
-
-  expect(clearIcon).toHaveStyle('display: none');
-  expect(endComp).toHaveStyle('display: flex');
-
-  fireEvent.mouseOver(getByTestId('input'));
-
-  expect(clearIcon).toHaveStyle('display: flex');
-  expect(endComp).toHaveStyle('display: none');
 });

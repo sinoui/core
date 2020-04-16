@@ -79,26 +79,12 @@ exports[`无标签 1`] = `
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
@@ -304,26 +290,12 @@ exports[`正确渲染边框模式下的Input 1`] = `
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
@@ -529,26 +501,12 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
@@ -757,26 +715,12 @@ Array [
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
@@ -981,26 +925,12 @@ Array [
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
@@ -1209,26 +1139,12 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
@@ -1434,26 +1350,12 @@ exports[`聚焦状态 1`] = `
 }
 
 .c0 .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c0:hover .sinoui-input-adornment--end {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0:hover .sinoui-base-input__clear {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
