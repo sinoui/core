@@ -114,7 +114,6 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
   } = props;
 
   const [open, setOpen] = useState(openProp ?? false);
-  const [focused, setFocused] = useState(false);
 
   const inputComponent = SelectInput;
 
@@ -124,7 +123,6 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     }
 
     setOpen(true);
-    setFocused(true);
   };
 
   const onClose = useCallback(
@@ -138,13 +136,9 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     [onCloseProp],
   );
 
-  const onBlur = (_event: React.FocusEvent<HTMLDivElement>) => {
-    setFocused(false);
-  };
-
   return React.cloneElement(<StyledTextInput />, {
     inputComponent,
-    focused,
+    focused: open,
     inputProps: {
       children,
       multiple,
@@ -154,7 +148,6 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
         onOpen,
         open,
         renderValue,
-        onBlur,
       },
       ...inputProps,
     },
