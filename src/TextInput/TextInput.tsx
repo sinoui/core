@@ -2,9 +2,9 @@ import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
 import HelperText from '@sinoui/core/HelperText';
+import FormLabel from '@sinoui/core/FormLabel';
 import FilledInput from './FilledInput';
 import OutlinedInput from './OutlinedInput';
-import InputLabel from './InputLabel';
 import Input from './Input';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
@@ -159,15 +159,16 @@ export default function TextInput(props: TextInputProps) {
       style={style}
     >
       {label && (
-        <InputLabel
+        <FormLabel
+          layout="floating"
           {...inputState}
           error={!!error}
           variant={variant}
-          shrink={shrink}
+          filled={shrink}
           ref={labelRef}
         >
           {label}
-        </InputLabel>
+        </FormLabel>
       )}
       <InputComponent {...inputProps} />
       {!!error && <HelperText error>{error}</HelperText>}
