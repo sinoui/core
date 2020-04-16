@@ -14,7 +14,7 @@ const getFocusStyle = (props: ListItemProps & { theme: Theme }) => {
 
     return `background-color: ${props.theme.palette.action.selected}`;
   }
-  return `background-color: ${props.theme.palette.action.hover}`;
+  return `background-color: ${props.theme.palette.action.selected}`;
 };
 
 const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
