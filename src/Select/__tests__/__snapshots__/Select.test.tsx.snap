@@ -533,11 +533,13 @@ label ~ .c4 {
   font-size: 18px;
 }
 
+.c1 .sinoui-input-adornment--end {
+  pointer-events: none;
+}
+
 <div>
   <div
     className="c0 sinoui-text-input c1 sinoui-select-base-layout"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c2 sinoui-input-label"
@@ -550,6 +552,7 @@ label ~ .c4 {
       onClick={[Function]}
     >
       <div
+        aria-disabled="false"
         aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-layout sinoui-base-input__input"
@@ -564,9 +567,6 @@ label ~ .c4 {
           ​
         </span>
       </div>
-      <input
-        type="hidden"
-      />
       <div
         className="c6 sinoui-input-adornment sinoui-input-adornment--end"
       >
@@ -587,8 +587,6 @@ label ~ .c4 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled c1 sinoui-select-base-layout"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c8 sinoui-input-label sinoui-input-label--filled"
@@ -601,6 +599,7 @@ label ~ .c4 {
       onClick={[Function]}
     >
       <div
+        aria-disabled="false"
         aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-layout sinoui-base-input__input"
@@ -615,9 +614,6 @@ label ~ .c4 {
           ​
         </span>
       </div>
-      <input
-        type="hidden"
-      />
       <div
         className="c6 sinoui-input-adornment sinoui-input-adornment--end"
       >
@@ -641,8 +637,6 @@ label ~ .c4 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--outlined c1 sinoui-select-base-layout"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c10 sinoui-input-label sinoui-input-label--outlined"
@@ -655,6 +649,7 @@ label ~ .c4 {
       onClick={[Function]}
     >
       <div
+        aria-disabled="false"
         aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-layout sinoui-base-input__input"
@@ -669,9 +664,6 @@ label ~ .c4 {
           ​
         </span>
       </div>
-      <input
-        type="hidden"
-      />
       <div
         className="c6 sinoui-input-adornment sinoui-input-adornment--end"
       >
@@ -982,11 +974,13 @@ label ~ .c4 {
   font-size: 18px;
 }
 
+.c1 .sinoui-input-adornment--end {
+  pointer-events: none;
+}
+
 <div
   className="c0 sinoui-text-input sinoui-text-input--disabled c1 sinoui-select-base-layout"
   disabled={true}
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <label
     className="c2 sinoui-input-label sinoui-input-label--disabled"
@@ -1001,6 +995,7 @@ label ~ .c4 {
     onClick={[Function]}
   >
     <div
+      aria-disabled="true"
       aria-expanded="false"
       aria-haspopup="listbox"
       className="c5 sinoui-select-layout sinoui-base-input__input"
@@ -1010,15 +1005,12 @@ label ~ .c4 {
       onFocus={[Function]}
       onKeyDown={[Function]}
       role="button"
-      tabIndex={null}
+      tabIndex={-1}
     >
       <span>
         ​
       </span>
     </div>
-    <input
-      type="hidden"
-    />
     <div
       className="c6 sinoui-input-adornment sinoui-input-adornment--end"
     >

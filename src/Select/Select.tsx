@@ -7,7 +7,7 @@ import InputAdornment from '@sinoui/core/InputAdornment';
 import SelectInput from './SelectInput';
 import ArrowDropDownIcon from './ArrowDropDownIcon';
 
-const StyledTextInput = styled(TextInput)`
+const StyledTextInput = styled(TextInput)<{ $isOpen: boolean }>`
   > .sinoui-base-input {
     cursor: ${({ disabled, readOnly }) =>
       disabled || readOnly ? 'default' : 'pointer'};
@@ -39,6 +39,13 @@ const StyledTextInput = styled(TextInput)`
     > .sinoui-input-adornment--end
     > .sinoui-base-input__clear {
     font-size: 18px;
+  }
+  & .sinoui-input-adornment--end {
+    pointer-events: none;
+  }
+
+  & .sinoui-input-adornment--end > svg {
+    ${({ $isOpen }) => $isOpen && `transform:rotate(180deg);`}
   }
 `;
 
@@ -101,6 +108,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     readOnly,
     minWidth,
     onChange,
+    allowClear = true,
     ...other
   } = props;
 
@@ -123,7 +131,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     setOpen(false);
   }, []);
 
-  return React.cloneElement(<StyledTextInput />, {
+  return React.cloneElement(<StyledTextInput $isOpen={open} />, {
     inputComponent,
     inputProps: {
       children,
@@ -154,6 +162,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     helperText,
     dense,
     type: 'hidden',
+    allowClear,
     ...other,
   });
 });

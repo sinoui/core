@@ -121,15 +121,6 @@ const selectStyle = css<SelectLayoutProps>`
   &::-ms-expand {
     display: none;
   }
-
-  & + input + .sinoui-input-adornment--end > svg,
-  &
-    + input
-    + .sinoui-input-adornment--end
-    + .sinoui-input-adornment--end
-    > svg {
-    ${({ $isOpen }) => $isOpen && `transform:rotate(180deg)`}
-  }
 `;
 
 const menuSelectStyle = css`
@@ -167,10 +158,9 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     open,
     readOnly,
     renderValue,
-    tabIndex: tabIndexProp,
+    tabIndex = 0,
     value: valueProp,
     minWidth,
-    ...other
   } = props;
 
   const [value, setValue] = useState(valueProp);
@@ -216,12 +206,11 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     if (disabled || readOnly) {
       return;
     }
-    handleFocus();
 
     if (onOpen) {
       onOpen();
     }
-  }, [disabled, handleFocus, onOpen, readOnly]);
+  }, [disabled, onOpen, readOnly]);
 
   const handleClose = useCallback(() => {
     if (anchorElRef.current) {
@@ -347,23 +336,17 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     menuMinWidth = (anchorElRef.current.parentNode as any).clientWidth;
   }
 
-  let tabIndex;
-  if (typeof tabIndexProp !== 'undefined') {
-    tabIndex = tabIndexProp;
-  } else {
-    tabIndex = disabled ? null : 0;
-  }
-
   return (
     <>
       <SelectLayout
         className={classNames('sinoui-select-layout', className)}
         ref={anchorElRef}
         data-testid="SelectDisplay"
-        tabIndex={tabIndex as any}
+        tabIndex={disabled ? -1 : tabIndex}
         role="button"
         aria-expanded={open ? 'true' : 'false'}
         aria-haspopup="listbox"
+        aria-disabled={disabled ? 'true' : 'false'}
         onKeyDown={handleKeyDown}
         onBlur={handleBlur}
         onFocus={handleFocus}
@@ -373,13 +356,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       >
         {isEmpty(display) ? <span>&#8203;</span> : display}
       </SelectLayout>
-      <input
-        ref={inputRef}
-        type="hidden"
-        // eslint-disable-next-line jsx-a11y/no-autofocus
-        autoFocus={autoFocus}
-        {...other}
-      />
       <Menu
         minWidth={
           anchorElRef.current?.parentNode
