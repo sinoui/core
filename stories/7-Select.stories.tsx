@@ -337,3 +337,14 @@ export const 多选下拉框 = () => (
     <MultipleSelectDemo />
   </ThemeProvider>
 );
+
+export const autoFocus = () => (
+  <ThemeProvider theme={theme}>
+    <SelectField multiple variant="outlined" label="Multiple" autoFocus>
+      <Option value="选项一">选项一</Option>
+      <Option value="选项二">选项二</Option>
+      <Option value="选项三">选项三</Option>
+      <Option value="选项四">选项四</Option>
+    </SelectField>
+  </ThemeProvider>
+);
