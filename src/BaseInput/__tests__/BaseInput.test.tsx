@@ -6,7 +6,7 @@ import { render, fireEvent, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 import InputAdornment from '@sinoui/core/InputAdornment';
-import FormItemContext from '@sinoui/core/FormItem/FormItemContext';
+import FormControlContext from '@sinoui/core/FormControl/FormControlContext';
 import BaseInput from '../BaseInput';
 
 afterEach(cleanup);
@@ -321,15 +321,15 @@ it('多行输入框', () => {
   expect(getByTestId('input')).toHaveClass('sinoui-base-input--multiline');
 });
 
-it('在FormItem上下文中使用', () => {
+it('在FormControl上下文中使用', () => {
   const onFocus = jest.fn();
   const onBlur = jest.fn();
 
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItemContext.Provider value={{ onFocus, onBlur }}>
+      <FormControlContext.Provider value={{ onFocus, onBlur }}>
         <BaseInput inputProps={{ 'data-testid': 'input' }} />
-      </FormItemContext.Provider>
+      </FormControlContext.Provider>
     </ThemeProvider>,
   );
 
@@ -345,9 +345,9 @@ it('在FormItem上下文中使用', () => {
 it('从表单项上下文中获取id', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItemContext.Provider value={{ id: 'input_1' } as any}>
+      <FormControlContext.Provider value={{ id: 'input_1' } as any}>
         <BaseInput inputProps={{ 'data-testid': 'input' }} />
-      </FormItemContext.Provider>
+      </FormControlContext.Provider>
     </ThemeProvider>,
   );
 

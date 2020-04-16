@@ -5,7 +5,7 @@ import useMultiRefs from '../utils/useMultiRefs';
 import BaseInputLayout from './BaseInputLayout';
 import mergeCallbacks from '../utils/mergeCallbacks';
 import bemClassNames from '../utils/bemClassNames';
-import { useFormItemContext } from '../FormItem';
+import { useFormControlContext } from '../FormControl';
 
 interface MultilineProps {
   /**
@@ -174,7 +174,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
   HTMLDivElement,
   BaseInputProps
 >(function BaseInput(props, ref) {
-  const formItemContext = useFormItemContext();
+  const formControlContext = useFormControlContext();
   const {
     value,
     type,
@@ -197,7 +197,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     children,
     placeholder,
     align,
-    id = formItemContext?.id,
+    id = formControlContext?.id,
     name,
     minRows,
     maxRows,
@@ -233,8 +233,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     [onChangeInputProp, onChange],
   );
 
-  const onBlurFromContext = formItemContext?.onBlur;
-  const onFocusFromContext = formItemContext?.onFocus;
+  const onBlurFromContext = formControlContext?.onBlur;
+  const onFocusFromContext = formControlContext?.onFocus;
 
   /**
    * 失去焦点时的回调函数

@@ -4,7 +4,7 @@ import { defaultTheme } from '@sinoui/theme';
 import React from 'react';
 import 'jest-styled-components';
 import FormLabel from './FormLabel';
-import FormItemContext from '../FormItem/FormItemContext';
+import FormControlContext from '../FormControl/FormControlContext';
 
 afterEach(cleanup);
 
@@ -132,7 +132,7 @@ it('className', () => {
 it('从表单项上下文中获取状态', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItemContext.Provider
+      <FormControlContext.Provider
         value={
           {
             colon: true,
@@ -144,7 +144,7 @@ it('从表单项上下文中获取状态', () => {
         }
       >
         <FormLabel data-testid="label">标签</FormLabel>
-      </FormItemContext.Provider>
+      </FormControlContext.Provider>
     </ThemeProvider>,
   );
 

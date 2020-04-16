@@ -105,7 +105,7 @@ exports[`水平布局 1`] = `
 
 <div
   className="c0 sinoui-form-item sinoui-form-item--horizontal"
-  data-testid="formitem"
+  data-testid="formcontrol"
 >
   <label
     className="c1 sinoui-form-label"

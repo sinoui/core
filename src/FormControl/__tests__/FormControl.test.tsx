@@ -6,9 +6,9 @@ import '@testing-library/jest-dom';
 import { act } from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import FormItem from '../FormItem';
-import { useFormItemContext } from '..';
-import type { FormItemContextData } from '../FormItemContext';
+import FormControl from '../FormControl';
+import { useFormControlContext } from '..';
+import type { FormControlContextData } from '../FormControlContext';
 
 jest.mock('../useId', () => () => 'input_1');
 
@@ -16,19 +16,19 @@ afterAll(() => jest.unmock('../useId'));
 
 afterEach(cleanup);
 
-it('渲染FormItem', () => {
+it('渲染FormControl', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItem label="姓名" data-testid="formitem" helperText="必填">
+      <FormControl label="姓名" data-testid="formcontrol" helperText="必填">
         <input />
-      </FormItem>
+      </FormControl>
     </ThemeProvider>,
   );
 
-  const formitem = getByTestId('formitem');
+  const formcontrol = getByTestId('formcontrol');
 
-  expect(formitem.querySelector('label')).toHaveTextContent('姓名');
-  expect(formitem.querySelector('.sinoui-helper-text')).toHaveTextContent(
+  expect(formcontrol.querySelector('label')).toHaveTextContent('姓名');
+  expect(formcontrol.querySelector('.sinoui-helper-text')).toHaveTextContent(
     '必填',
   );
 });
@@ -36,16 +36,16 @@ it('渲染FormItem', () => {
 it('渲染校验错误信息', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItem label="姓名" data-testid="formitem" error="必填">
+      <FormControl label="姓名" data-testid="formcontrol" error="必填">
         <input />
-      </FormItem>
+      </FormControl>
     </ThemeProvider>,
   );
 
-  const formitem = getByTestId('formitem');
+  const formcontrol = getByTestId('formcontrol');
 
-  expect(formitem.querySelector('label')).toHaveTextContent('姓名');
-  expect(formitem.querySelector('.sinoui-helper-text')).toHaveTextContent(
+  expect(formcontrol.querySelector('label')).toHaveTextContent('姓名');
+  expect(formcontrol.querySelector('.sinoui-helper-text')).toHaveTextContent(
     '必填',
   );
 });
@@ -54,25 +54,25 @@ it('ref指向根元素', () => {
   const ref = React.createRef<HTMLDivElement>();
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItem data-testid="formitem" ref={ref}>
+      <FormControl data-testid="formcontrol" ref={ref}>
         <input />
-      </FormItem>
+      </FormControl>
     </ThemeProvider>,
   );
 
-  expect(ref.current).toBe(getByTestId('formitem'));
+  expect(ref.current).toBe(getByTestId('formcontrol'));
 });
 
 it('className', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItem data-testid="formitem">
+      <FormControl data-testid="formcontrol">
         <input />
-      </FormItem>
+      </FormControl>
     </ThemeProvider>,
   );
 
-  expect(getByTestId('formitem')).toHaveClass(
+  expect(getByTestId('formcontrol')).toHaveClass(
     'sinoui-form-item',
     'sinoui-form-item--vertical',
   );
@@ -81,19 +81,21 @@ it('className', () => {
 it('水平布局', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItem data-testid="formitem" layout="horizontal">
+      <FormControl data-testid="formcontrol" layout="horizontal">
         <input />
-      </FormItem>
+      </FormControl>
     </ThemeProvider>,
   );
 
-  expect(getByTestId('formitem')).toHaveClass('sinoui-form-item--horizontal');
+  expect(getByTestId('formcontrol')).toHaveClass(
+    'sinoui-form-item--horizontal',
+  );
 
   const tree = renderer.create(
     <ThemeProvider theme={defaultTheme}>
-      <FormItem data-testid="formitem" layout="horizontal">
+      <FormControl data-testid="formcontrol" layout="horizontal">
         <input />
-      </FormItem>
+      </FormControl>
     </ThemeProvider>,
   );
 
@@ -101,17 +103,17 @@ it('水平布局', () => {
 });
 
 it('生成上下文', () => {
-  let context: FormItemContextData | null | undefined;
+  let context: FormControlContextData | null | undefined;
   const Input = () => {
-    context = useFormItemContext();
+    context = useFormControlContext();
     return null;
   };
 
   render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItem colon required={false} error="校验错误" filled dense={false}>
+      <FormControl colon required={false} error="校验错误" filled dense={false}>
         <Input />
-      </FormItem>
+      </FormControl>
     </ThemeProvider>,
   );
 

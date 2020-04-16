@@ -6,7 +6,7 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 import InputAdornment from '@sinoui/core/InputAdornment';
-import FormItem from '@sinoui/core/FormItem';
+import FormControl from '@sinoui/core/FormControl';
 import TextInput from '../TextInput';
 
 it('正确渲染三种模式下的输入框', () => {
@@ -247,13 +247,13 @@ it('无标签', () => {
 it('在表单项中使用', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItem label="姓名">
+      <FormControl label="姓名">
         <TextInput
           wrapperProps={{
             'data-testid': 'input',
           }}
         />
-      </FormItem>
+      </FormControl>
     </ThemeProvider>,
   );
 
@@ -263,13 +263,13 @@ it('在表单项中使用', () => {
 it('在表单项中使用浮动标签', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormItem label="姓名" labelLayout="floating">
+      <FormControl label="姓名" labelLayout="floating">
         <TextInput
           wrapperProps={{
             'data-testid': 'input',
           }}
         />
-      </FormItem>
+      </FormControl>
     </ThemeProvider>,
   );
 

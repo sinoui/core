@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
-import type FormItemProps from './FormItemProps';
+import type FormControlProps from './FormControlProps';
 
-const formItemHorizontalDenseStyle = css<FormItemProps>`
+const formControlHorizontalDenseStyle = css<FormControlProps>`
   &.sinoui-form-item--horizontal > .sinoui-form-label {
     min-height: 32px;
     padding-top: 4px;
   }
 `;
-const FormItemWrapper = styled.div<FormItemProps>`
+const FormControlWrapper = styled.div<FormControlProps>`
   display: flex;
   position: relative;
   flex-direction: column;
@@ -47,7 +47,7 @@ const FormItemWrapper = styled.div<FormItemProps>`
     }
   }
 
-  ${(props) => props.dense && formItemHorizontalDenseStyle}
+  ${(props) => props.dense && formControlHorizontalDenseStyle}
 `;
 
-export default FormItemWrapper;
+export default FormControlWrapper;

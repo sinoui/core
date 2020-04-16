@@ -3,15 +3,15 @@ import HelperText from '../HelperText';
 import bemClassNames from '../utils/bemClassNames';
 import useId from './useId';
 import HelperLine from '../HelperLine';
-import type FormItemProps from './FormItemProps';
-import FormItemWrapper from './FormItemWrapper';
+import type FormControlProps from './FormControlProps';
+import FormControlWrapper from './FormControlWrapper';
 import FormLabel from '../FormLabel';
-import FormItemContext from './FormItemContext';
+import FormControlContext from './FormControlContext';
 
 /**
  * 表单项组件
  */
-const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
+const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
   (props, ref) => {
     const inputId = useId('input');
     const labelRef = useRef<HTMLLabelElement>(null);
@@ -57,8 +57,8 @@ const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
     };
 
     return (
-      <FormItemContext.Provider value={childContext}>
-        <FormItemWrapper
+      <FormControlContext.Provider value={childContext}>
+        <FormControlWrapper
           className={bemClassNames('sinoui-form-item', {
             horizontal: layout === 'horizontal',
             vertical: layout === 'vertical',
@@ -75,10 +75,10 @@ const FormItem = React.forwardRef<HTMLDivElement, FormItemProps>(
               {error && <HelperText error>{error}</HelperText>}
             </HelperLine>
           </div>
-        </FormItemWrapper>
-      </FormItemContext.Provider>
+        </FormControlWrapper>
+      </FormControlContext.Provider>
     );
   },
 );
 
-export default FormItem;
+export default FormControl;

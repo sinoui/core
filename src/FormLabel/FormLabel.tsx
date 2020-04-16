@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import type { Theme } from '@sinoui/theme';
 import React from 'react';
-import useFormItemContext from '../FormItem/useFormItemContext';
+import useFormControlContext from '../FormControl/useFormControlContext';
 import { removeUndefinedProperties } from '../utils/objects';
 import type FormLabelProps from './FormLabelProps';
 import floatingLabelCss from './floatingLabelCss';
@@ -78,18 +78,18 @@ const FormLabelInner = styled.label.attrs({
  */
 const FormLabel = React.forwardRef<HTMLLabelElement, FormLabelProps>(
   (props, ref) => {
-    const formItemContext = useFormItemContext();
-    const state = formItemContext
+    const formControlContext = useFormControlContext();
+    const state = formControlContext
       ? removeUndefinedProperties({
-          colon: formItemContext.colon,
-          variant: formItemContext.variant,
-          layout: formItemContext.labelLayout,
-          filled: formItemContext.filled,
-          required: formItemContext.required,
-          disabled: formItemContext.disabled,
-          focused: formItemContext.focused,
-          htmlFor: formItemContext.id,
-          dense: formItemContext.dense,
+          colon: formControlContext.colon,
+          variant: formControlContext.variant,
+          layout: formControlContext.labelLayout,
+          filled: formControlContext.filled,
+          required: formControlContext.required,
+          disabled: formControlContext.disabled,
+          focused: formControlContext.focused,
+          htmlFor: formControlContext.id,
+          dense: formControlContext.dense,
         })
       : {};
 

@@ -1,6 +1,21 @@
-import React from 'react';
-
-export interface FormItemContextData {
+export default interface FormControlProps
+  extends React.ComponentPropsWithRef<'div'> {
+  /**
+   * 设置标签。
+   */
+  label?: React.ReactNode;
+  /**
+   * 设置表单项帮助性文本。
+   */
+  helperText?: React.ReactNode;
+  /**
+   * 表单项校验错误信息。
+   */
+  error?: React.ReactNode;
+  /**
+   * 指定标签与表单控件之间的布局模式。默认为垂直布局（`vertical`）。`horizontal`表示水平布局。
+   */
+  layout?: 'horizontal' | 'vertical';
   /**
    * 指定表单控件的id
    */
@@ -22,10 +37,6 @@ export interface FormItemContextData {
    */
   required?: boolean;
   /**
-   * 表单控件处于校验错误状态。
-   */
-  error?: boolean;
-  /**
    * 设置为`true`，表示不可用。
    */
   disabled?: boolean;
@@ -38,27 +49,11 @@ export interface FormItemContextData {
    */
   colon?: boolean;
   /**
-   * 输入框聚焦回调函数
-   */
-  onFocus(): void;
-  /**
-   * 输入框失去焦点时的回调函数
-   */
-  onBlur(): void;
-  /**
    * 密集模式
    */
   dense?: boolean;
   /**
-   * 标签元素引用
+   * 标签宽度 只有水平布局支持此属性
    */
-  labelRef?: React.RefObject<HTMLLabelElement>;
-  /**
-   * 表单控件的布局模式
-   */
-  layout?: 'horizontal' | 'vertical';
+  labelWidth?: number;
 }
-
-const FormItemContext = React.createContext<FormItemContextData | null>(null);
-
-export default FormItemContext;

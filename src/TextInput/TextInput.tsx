@@ -8,7 +8,7 @@ import Input from './Input';
 import HelperText from './HelperText';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
-import { useFormItemContext } from '../FormItem';
+import { useFormControlContext } from '../FormControl';
 
 export interface TextInputProps extends BaseInputProps {
   /**
@@ -94,10 +94,11 @@ export default function TextInput(props: TextInputProps) {
     !!defaultValue ||
     !!placeholder ||
     !!startAdornment;
-  const formItemContext = useFormItemContext();
+  const formControlContext = useFormControlContext();
   const noLabel =
-    !label && (!formItemContext || formItemContext.labelLayout !== 'floating');
-  const labelRef = label ? innerLabelRef : formItemContext?.labelRef;
+    !label &&
+    (!formControlContext || formControlContext.labelLayout !== 'floating');
+  const labelRef = label ? innerLabelRef : formControlContext?.labelRef;
 
   const handleBlur = () => {
     if (!readOnly) {
