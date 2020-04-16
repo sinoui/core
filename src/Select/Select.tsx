@@ -98,7 +98,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     label,
     multiple = false,
     onClose: onCloseProp,
-    onOpen,
+    onOpen: onOpenProp,
     open: openProp,
     renderValue,
     variant = 'standard',
@@ -122,10 +122,26 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     if (disabled || readOnly) {
       return;
     }
-
     setOpen(true);
   };
 
+  /**
+   * 弹窗打开时的回调函数
+   */
+  const onOpen = useCallback(
+    (event: any) => {
+      setOpen(true);
+
+      if (onOpenProp) {
+        onOpenProp(event);
+      }
+    },
+    [onOpenProp],
+  );
+
+  /**
+   * 弹窗关闭时的回调函数
+   */
   const onClose = useCallback(
     (event: any) => {
       setOpen(false);
@@ -137,6 +153,9 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     [onCloseProp],
   );
 
+  /**
+   * 点击清除按钮时的回调函数
+   */
   const onClear = useCallback(
     (event: React.MouseEvent<HTMLOrSVGElement>) => {
       event.preventDefault();

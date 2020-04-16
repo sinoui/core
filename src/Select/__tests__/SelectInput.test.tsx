@@ -38,8 +38,6 @@ it('复选时，点击选中', () => {
         value={['1']}
         open
         multiple
-        dense
-        variant="filled"
         onChange={onChange}
         onClose={onClose}
       >
@@ -70,14 +68,7 @@ it('单选时，打开弹窗，直接按enter键，弹窗关闭，onChange被调
   const onChange = jest.fn();
   const { getAllByRole } = render(
     <ThemeProvider theme={defaultTheme}>
-      <SelectInput
-        value="1"
-        open
-        onClose={onClose}
-        dense
-        variant="outlined"
-        onChange={onChange}
-      >
+      <SelectInput value="1" open onClose={onClose} onChange={onChange}>
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
       </SelectInput>
@@ -102,8 +93,6 @@ it('复选时，使用方向键和Enter键切换选中项', () => {
         value={['1']}
         open
         multiple
-        dense
-        variant="filled"
         onChange={onChange}
         onClose={onClose}
       >
@@ -143,4 +132,21 @@ it('关闭弹窗后,失去焦点时，onBlur被调用', () => {
 
   fireEvent.blur(getByTestId('SelectDisplay'));
   expect(onBlur).toHaveBeenCalled();
+});
+
+it('选择框聚焦状态下，按下enter键，onOpen被调用', () => {
+  const onOpen = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <SelectInput value="1" onOpen={onOpen}>
+        <Option value="1">选项一</Option>
+        <Option value="2">选项二</Option>
+      </SelectInput>
+    </ThemeProvider>,
+  );
+
+  fireEvent.focus(getByTestId('SelectDisplay'));
+  fireEvent.keyDown(getByTestId('SelectDisplay'), { keyCode: 13 });
+
+  expect(onOpen).toHaveBeenCalled();
 });
