@@ -62,11 +62,11 @@ export interface Props
   /**
    * 弹窗出现时的回调函数
    */
-  onOpen?: (event: any) => void;
+  onOpen?: () => void;
   /**
    * 弹窗消失时的回调函数
    */
-  onClose?: (event: any) => void;
+  onClose?: () => void;
   /**
    * 是否显示弹窗
    */

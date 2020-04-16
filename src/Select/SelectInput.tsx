@@ -55,7 +55,7 @@ export interface Props {
   /**
    * 弹窗出现时的回调函数
    */
-  onOpen?: (event: any) => void;
+  onOpen?: () => void;
   /**
    * 弹窗关闭时的回调函数
    */
@@ -207,19 +207,23 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     }
   }, [autoFocus]);
 
-  const handleFocus = () => {
+  const handleFocus = useCallback(() => {
     if (onFocus) {
       onFocus();
     }
-  };
+  }, [onFocus]);
 
-  const handleOpen = () => {
+  const handleOpen = useCallback(() => {
     if (disabled || readOnly) {
       return;
     }
     handleFocus();
     setIsOpen(true);
-  };
+
+    if (onOpen) {
+      onOpen();
+    }
+  }, [disabled, handleFocus, onOpen, readOnly]);
 
   const handleClose = useCallback(() => {
     setIsOpen(false);
@@ -236,16 +240,14 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
    * 更新弹窗状态
    */
   const update = useCallback(
-    (openState: boolean | undefined, event: any) => {
+    (openState: boolean | undefined) => {
       if (openState) {
-        if (onOpen) {
-          onOpen(event);
-        }
+        handleOpen();
       } else {
         handleClose();
       }
     },
-    [handleClose, onOpen],
+    [handleClose, handleOpen],
   );
 
   /**
@@ -262,15 +264,15 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
       anchorElRef.current.focus();
     }
 
-    update(true, event);
+    update(true);
   };
 
   /**
    * 点击选项时的回调函数
    */
-  const handleItemClick = (child: any) => (event: any) => {
+  const handleItemClick = (child: any) => () => {
     if (!multiple) {
-      update(false, event);
+      update(false);
     }
 
     let newValue;
@@ -300,7 +302,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
 
       if (validKeys.indexOf(event.key) !== -1) {
         event.preventDefault();
-        update(true, event);
+        update(true);
       }
     }
   };
