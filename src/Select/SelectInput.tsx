@@ -71,7 +71,7 @@ export interface Props {
   /**
    * 渲染值的处理逻辑
    */
-  renderValue?: (value: string | string[]) => void;
+  renderValue?: (value: string | string[]) => React.ReactNode;
   tabIndex?: number;
   /**
    * 值

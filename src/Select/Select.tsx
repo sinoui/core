@@ -68,7 +68,7 @@ export interface Props
   /**
    * 值的渲染方式
    */
-  renderValue?: (value: string | string[]) => void;
+  renderValue?: (value: string | string[]) => React.ReactNode;
   /**
    * 值
    */
