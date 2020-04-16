@@ -43,11 +43,11 @@ export interface Props {
   /**
    * 失去焦点时的回调函数
    */
-  onBlur?: (event?: React.FocusEvent<HTMLDivElement>) => void;
+  onBlur?: () => void;
   /**
    * 获取焦点时的回调函数
    */
-  onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
+  onFocus?: () => void;
   /**
    * 值变更时的回调函数
    */
@@ -59,7 +59,7 @@ export interface Props {
   /**
    * 弹窗关闭时的回调函数
    */
-  onClose?: (event: any) => void;
+  onClose?: () => void;
   /**
    * 是否显示弹窗
    */
@@ -81,6 +81,10 @@ export interface Props {
    * 最小宽度
    */
   minWidth?: number;
+  /**
+   * 弹窗是否打开
+   */
+  $isOpen?: boolean;
 }
 
 type SelectLayoutProps = Omit<Props, 'value' | 'inputRef'>;
@@ -101,7 +105,7 @@ const disabledStyle = css`
 
 const selectStyle = css<SelectLayoutProps>`
   && {
-    min-width: ${(props) => props.minWidth}px;
+    min-width: ${(props) => props.minWidth || 0}px;
   }
 
   user-select: none;
@@ -116,6 +120,15 @@ const selectStyle = css<SelectLayoutProps>`
 
   &::-ms-expand {
     display: none;
+  }
+
+  & + input + .sinoui-input-adornment--end > svg,
+  &
+    + input
+    + .sinoui-input-adornment--end
+    + .sinoui-input-adornment--end
+    > svg {
+    ${({ $isOpen }) => $isOpen && `transform:rotate(180deg)`}
   }
 `;
 
@@ -161,6 +174,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
   } = props;
 
   const [value, setValue] = useState(valueProp);
+  const [isOpen, setIsOpen] = useState(open ?? false);
 
   const inputRef = useRef(null);
   const handleRef = useForkRef(ref, inputRefProp);
@@ -193,6 +207,31 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     }
   }, [autoFocus]);
 
+  const handleFocus = () => {
+    if (onFocus) {
+      onFocus();
+    }
+  };
+
+  const handleOpen = () => {
+    if (disabled || readOnly) {
+      return;
+    }
+    handleFocus();
+    setIsOpen(true);
+  };
+
+  const handleClose = useCallback(() => {
+    setIsOpen(false);
+    if (anchorElRef.current) {
+      anchorElRef.current.focus();
+    }
+
+    if (onClose) {
+      onClose();
+    }
+  }, [onClose]);
+
   /**
    * 更新弹窗状态
    */
@@ -202,15 +241,11 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         if (onOpen) {
           onOpen(event);
         }
-      } else if (onClose) {
-        onClose(event);
-
-        if (anchorElRef.current) {
-          anchorElRef.current.focus();
-        }
+      } else {
+        handleClose();
       }
     },
-    [onClose, onOpen],
+    [handleClose, onOpen],
   );
 
   /**
@@ -228,10 +263,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     }
 
     update(true, event);
-  };
-
-  const handleClose = (event: any) => {
-    update(false, event);
   };
 
   /**
@@ -304,14 +335,13 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     }
   };
 
-  const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
-    if (!open && onBlur) {
-      event.persist();
-      Object.defineProperty(event, 'target', {
-        writable: true,
-        value: { value },
-      });
-      onBlur(event);
+  const handleBlur = () => {
+    if (isOpen) {
+      return;
+    }
+
+    if (onBlur) {
+      onBlur();
     }
   };
 
@@ -394,14 +424,16 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         data-testid="SelectDisplay"
         tabIndex={tabIndex as any}
         role="button"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={isOpen ? 'true' : undefined}
         aria-haspopup="listbox"
         onKeyDown={handleKeyDown}
         onMouseDown={(disabled || readOnly ? null : handleMouseDown) as any}
-        onBlur={handleBlur as any}
-        onFocus={onFocus}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onClick={handleOpen}
         disabled={disabled || readOnly}
         minWidth={minWidth}
+        $isOpen={isOpen}
       >
         {isEmpty(display) ? <span>&#8203;</span> : display}
       </SelectLayout>
@@ -419,7 +451,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
             : 0
         }
         anchorEl={anchorElRef.current}
-        open={open}
+        open={isOpen}
         onRequestClose={handleClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         onEnterKeyDown={handleEnterKeyDown}

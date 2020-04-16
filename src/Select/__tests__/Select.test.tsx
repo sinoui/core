@@ -61,7 +61,7 @@ it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
   );
 
   act(() => {
-    fireEvent.click(getByTestId('baseInput'));
+    fireEvent.click(getByTestId('SelectDisplay'));
   });
 
   expect(getByRole('listbox')).toBeInTheDOM();

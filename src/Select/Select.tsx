@@ -1,17 +1,11 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import classNames from 'classnames';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
-import { Theme } from '@sinoui/theme';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import SelectInput from './SelectInput';
 import ArrowDropDownIcon from './ArrowDropDownIcon';
-
-const iconFocusedStyle = css`
-  color: ${(props) => props.theme.palette.primary.main};
-  transform: rotate(180deg);
-`;
 
 const StyledTextInput = styled(TextInput)`
   > .sinoui-base-input {
@@ -26,9 +20,20 @@ const StyledTextInput = styled(TextInput)`
         easing: theme.transitions.easing.easeInOut,
         duration: theme.transitions.duration.shorter,
       })};
-    ${(props: { focused?: boolean; theme: Theme }) =>
-      props.focused && iconFocusedStyle};
-    ${(props) => props.error && `color: ${props.theme.palette.error.main}`};
+  }
+
+  &.sinoui-text-input--focused
+    > .sinoui-base-input
+    > .sinoui-input-adornment--end
+    > svg {
+    color: ${(props) => props.theme.palette.primary.main};
+  }
+
+  &.sinoui-text-input--error
+    > .sinoui-base-input
+    > .sinoui-input-adornment--end
+    > svg {
+    color: ${(props) => props.theme.palette.error.main};
   }
 
   > .sinoui-base-input
@@ -97,9 +102,9 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     inputProps,
     label,
     multiple = false,
-    onClose: onCloseProp,
-    onOpen: onOpenProp,
-    open: openProp,
+    onClose,
+    onOpen,
+    open,
     renderValue,
     variant = 'standard',
     error,
@@ -114,44 +119,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     ...other
   } = props;
 
-  const [open, setOpen] = useState(openProp ?? false);
-
   const inputComponent = SelectInput;
-
-  const onClick = () => {
-    if (disabled || readOnly) {
-      return;
-    }
-    setOpen(true);
-  };
-
-  /**
-   * 弹窗打开时的回调函数
-   */
-  const onOpen = useCallback(
-    (event: any) => {
-      setOpen(true);
-
-      if (onOpenProp) {
-        onOpenProp(event);
-      }
-    },
-    [onOpenProp],
-  );
-
-  /**
-   * 弹窗关闭时的回调函数
-   */
-  const onClose = useCallback(
-    (event: any) => {
-      setOpen(false);
-
-      if (onCloseProp) {
-        onCloseProp(event);
-      }
-    },
-    [onCloseProp],
-  );
 
   /**
    * 点击清除按钮时的回调函数
@@ -171,7 +139,6 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
 
   return React.cloneElement(<StyledTextInput />, {
     inputComponent,
-    focused: open,
     inputProps: {
       children,
       multiple,
@@ -184,7 +151,6 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
       },
       ...inputProps,
     },
-    onClick,
     ref,
     label,
     className: classNames('sinoui-select-base-layout', className),
