@@ -64,6 +64,7 @@ module.exports = {
       'components-apis/bottom-app-bar',
       'components-apis/dialog',
       'components-apis/bottomSheet',
+      'components-apis/select',
     ],
   },
 };
