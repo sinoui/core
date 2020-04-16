@@ -1,15 +1,9 @@
 /* eslint-disable react/no-danger */
-import React, {
-  useState,
-  useRef,
-  useImperativeHandle,
-  useEffect,
-  useCallback,
-} from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Menu, { MenuListItem } from '@sinoui/core/Menu';
 import classNames from 'classnames';
 import styled, { css } from 'styled-components';
-import useForkRef from '../utils/useForkRef';
+import useMultiRefs from '../utils/useMultiRefs';
 
 export interface Props {
   /**
@@ -28,10 +22,6 @@ export interface Props {
    * 不可用
    */
   disabled?: boolean;
-  /**
-   * 可输入区域的DOM
-   */
-  inputRef?: any;
   /**
    * Menu属性
    */
@@ -138,7 +128,7 @@ const SelectLayout = styled.div<SelectLayoutProps>`
 /**
  * 处理复选框内部逻辑的组件
  */
-export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
+export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
   props,
   ref,
 ) {
@@ -147,7 +137,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     children,
     className,
     disabled,
-    inputRef: inputRefProp,
     MenuProps = {},
     multiple,
     onBlur,
@@ -165,30 +154,14 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
 
   const [value, setValue] = useState(valueProp);
 
-  const inputRef = useRef(null);
-  const handleRef = useForkRef(ref, inputRefProp);
   const anchorElRef = useRef<HTMLDivElement | null>(null);
+  const handleRef = useMultiRefs(ref, anchorElRef);
 
   useEffect(() => {
     if (valueProp !== value) {
       setValue(valueProp);
     }
   }, [value, valueProp]);
-
-  useImperativeHandle(
-    handleRef,
-    () => ({
-      focus: () => {
-        if (anchorElRef.current) {
-          anchorElRef.current.focus();
-        }
-      },
-
-      node: inputRef.current,
-      value,
-    }),
-    [value],
-  );
 
   useEffect(() => {
     if (autoFocus && anchorElRef.current) {
@@ -334,7 +307,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     <>
       <SelectLayout
         className={classNames('sinoui-select-layout', className)}
-        ref={anchorElRef}
+        ref={handleRef}
         data-testid="SelectDisplay"
         tabIndex={disabled ? -1 : tabIndex}
         role="button"
