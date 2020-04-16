@@ -503,25 +503,20 @@ label ~ .c4 {
 }
 
 .c5 {
-  min-width: 160px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 6px 0 7px;
-  height: 1.1875rem;
-  width: 100%;
   cursor: pointer;
-  border: 0px;
-  box-sizing: content-box;
-  background: transparent;
-  font-size: 1remrem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   border-radius: 0;
   outline: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.c5.c5 {
+  min-width: px;
 }
 
 .c5:-moz-focusring {
@@ -960,26 +955,21 @@ label ~ .c4 {
 }
 
 .c5 {
-  min-width: 160px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 6px 0 7px;
-  height: 1.1875rem;
-  width: 100%;
   cursor: pointer;
-  border: 0px;
-  box-sizing: content-box;
-  background: transparent;
-  font-size: 1remrem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   border-radius: 0;
   outline: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   cursor: default;
+}
+
+.c5.c5 {
+  min-width: px;
 }
 
 .c5:-moz-focusring {

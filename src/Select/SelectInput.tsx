@@ -100,17 +100,12 @@ const disabledStyle = css`
 `;
 
 const selectStyle = css<SelectLayoutProps>`
-  min-width: ${(props) => props.minWidth || 160}px;
+  && {
+    min-width: ${(props) => props.minWidth}px;
+  }
+
   user-select: none;
-  padding: 6px 0 7px;
-  height: 1.1875rem;
-  width: 100%;
   cursor: ${(props) => (props.readOnly ? 'default' : 'pointer')};
-  border: 0px;
-  box-sizing: content-box;
-  background: transparent;
-  font-size: ${(props) => props.theme.typography.subtitle1.fontSize}rem;
-  font-family: ${(props) => props.theme.typography.fontFamily};
   border-radius: 0;
   outline: none;
 
