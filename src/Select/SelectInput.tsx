@@ -289,7 +289,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     setValue(newValue);
 
     if (onChange) {
-      event.persist();
       onChange(newValue);
     }
   };
