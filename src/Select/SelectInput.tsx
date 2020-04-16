@@ -51,10 +51,7 @@ export interface Props {
   /**
    * 值变更时的回调函数
    */
-  onChange?: (
-    event: React.ChangeEvent<HTMLSelectElement> | React.MouseEvent<HTMLElement>,
-    value?: string | string[],
-  ) => void;
+  onChange?: (value: string | string[]) => void;
   /**
    * 弹窗出现时的回调函数
    */
@@ -266,11 +263,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
 
       setValue(newValue);
       if (onChange) {
-        Object.defineProperty(event, 'target', {
-          writable: true,
-          value: { value: newValue },
-        });
-        onChange(event);
+        onChange(newValue);
       }
     },
     [multiple, onChange, update, value],
@@ -302,12 +295,7 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
 
     if (onChange) {
       event.persist();
-      // Preact support, target is read only property on a native event.
-      Object.defineProperty(event, 'target', {
-        writable: true,
-        value: { value: newValue },
-      });
-      onChange(event, child);
+      onChange(newValue);
     }
   };
 

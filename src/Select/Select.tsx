@@ -35,7 +35,10 @@ const StyledTextInput = styled(TextInput)`
 `;
 
 export interface Props
-  extends Omit<TextInputProps, 'value' | 'multiline' | 'minRows' | 'maxRows'> {
+  extends Omit<
+    TextInputProps,
+    'value' | 'multiline' | 'minRows' | 'maxRows' | 'onChange'
+  > {
   /**
    * 子元素
    */
@@ -47,10 +50,7 @@ export interface Props
   /**
    * 值变更时的回调函数
    */
-  onChange?: (
-    event: React.ChangeEvent<HTMLSelectElement> | React.MouseEvent<HTMLElement>,
-    value?: string | string[],
-  ) => void;
+  onChange?: (value: string | string[]) => void;
   /**
    * 弹窗出现时的回调函数
    */

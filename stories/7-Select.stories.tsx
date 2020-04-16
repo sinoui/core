@@ -26,8 +26,8 @@ const theme = createTheme({
 function SimpleDemo() {
   const [value, setValue] = useState('');
 
-  const onChange = (event: any) => {
-    setValue(event.target.value);
+  const onChange = (val: any) => {
+    setValue(val);
   };
 
   return (
@@ -280,8 +280,8 @@ function SimpleDemo() {
 function MultipleSelectDemo() {
   const [value, setValue] = useState([]);
 
-  const onChange = (event: any) => {
-    setValue(event.target.value);
+  const onChange = (val: any) => {
+    setValue(val);
   };
 
   return (

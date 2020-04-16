@@ -11,8 +11,8 @@ const SelectField = styled(Select)`
 export default function MultipleSelectDemo() {
   const [value, setValue] = useState([]);
 
-  const onChange = (event: any) => {
-    setValue(event.target.value);
+  const onChange = (val: any) => {
+    setValue(val);
   };
   return (
     <ThemeProvider theme={defaultTheme}>
