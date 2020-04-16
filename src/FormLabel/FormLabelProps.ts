@@ -6,10 +6,6 @@
  */
 export default interface FormLabelProps {
   /**
-   * 是否显示冒号
-   */
-  colon?: boolean;
-  /**
    * 必填项
    */
   required?: boolean;

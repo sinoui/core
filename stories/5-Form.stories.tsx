@@ -24,12 +24,12 @@ export const 水平布局 = () => (
             layout="horizontal"
             label="用户名"
             helperText="用户名首字母大写"
-            error
+            colon
           >
             <TextInput placeholder="请输入用户名" variant="filled" />
           </FormControl>
 
-          <FormControl layout="horizontal" label="爱好">
+          <FormControl layout="horizontal" label="爱好" colon>
             <CheckboxGroup>
               <Checkbox value="1">复选框1</Checkbox>
               <Checkbox value="2">复选框2</Checkbox>
@@ -38,7 +38,7 @@ export const 水平布局 = () => (
             </CheckboxGroup>
           </FormControl>
 
-          <FormControl layout="horizontal" label="性别">
+          <FormControl layout="horizontal" label="性别" colon>
             <RadioGroup>
               <Radio value="1">男</Radio>
               <Radio value="2">女</Radio>
@@ -47,6 +47,7 @@ export const 水平布局 = () => (
           <FormControl
             layout="horizontal"
             label="说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明"
+            colon
           >
             <TextInput multiline placeholder="说明" variant="outlined" />
           </FormControl>
@@ -59,7 +60,6 @@ export const 水平布局 = () => (
             layout="horizontal"
             label="用户名"
             helperText="用户名首字母大写"
-            error
             dense
           >
             <TextInput placeholder="请输入用户名" dense variant="filled" />
@@ -98,7 +98,6 @@ export const 水平布局 = () => (
             label="用户名"
             labelWidth={120}
             helperText="用户名首字母大写"
-            error
             dense
           >
             <TextInput placeholder="请输入用户名" dense variant="filled" />

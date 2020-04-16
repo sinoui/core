@@ -50,6 +50,27 @@ it('渲染校验错误信息', () => {
   );
 });
 
+// it('水平布局FormLabel显示冒号', () => {
+//   const { getByTestId } = render(
+//     <ThemeProvider theme={defaultTheme}>
+//       <FormControl
+//         label="姓名"
+//         data-testid="formcontrol"
+//         error="必填"
+//         layout="horizontal"
+//         colon
+//       >
+//         <input />
+//       </FormControl>
+//     </ThemeProvider>,
+//   );
+//   const formLabel = getByTestId('formcontrol').querySelector('label');
+//   expect(formLabel).toHaveClass('sinoui-form-label');
+//   expect(formLabel).toHaveStyleRule('content', "':'", {
+//     modifier: '::after',
+//   });
+// });
+
 it('ref指向根元素', () => {
   const ref = React.createRef<HTMLDivElement>();
   const { getByTestId } = render(

@@ -73,20 +73,6 @@ it('不同状态，不同颜色', () => {
   );
 });
 
-it('显示冒号', () => {
-  const { getByTestId } = render(
-    <ThemeProvider theme={defaultTheme}>
-      <FormLabel data-testid="label" colon>
-        标签
-      </FormLabel>
-    </ThemeProvider>,
-  );
-
-  expect(getByTestId('label')).toHaveStyleRule('content', "':'", {
-    modifier: '::after',
-  });
-});
-
 it('必填', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
@@ -139,6 +125,7 @@ it('从表单项上下文中获取状态', () => {
             required: true,
             disabled: true,
             focused: true,
+            layout: 'horizontal',
             id: 'input_1',
           } as any
         }
@@ -153,9 +140,6 @@ it('从表单项上下文中获取状态', () => {
     'color',
     defaultTheme.palette.text.disabled.replace(/ +/g, ''),
   );
-  expect(getByTestId('label')).toHaveStyleRule('content', "':'", {
-    modifier: '::after',
-  });
 });
 
 it('floating layout', () => {

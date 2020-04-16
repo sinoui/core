@@ -42,7 +42,6 @@ const FormControlWrapper = styled.div<FormControlProps>`
 
       &::after {
         content: ':';
-        padding-right: 4px;
       }
     }
   }

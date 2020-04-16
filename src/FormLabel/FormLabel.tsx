@@ -28,12 +28,6 @@ const getColor = ({
   return theme.palette.text.secondary;
 };
 
-const colonCss = css`
-  &::after {
-    content: ':';
-  }
-`;
-
 const requiredCss = css`
   &::before {
     content: '*';
@@ -64,7 +58,6 @@ const FormLabelInner = styled.label.attrs({
     })};
 
   ${({ required }) => required && requiredCss};
-  ${({ colon }) => colon && colonCss};
 
   ${({ layout = 'shrink' }) => layout === 'shrink' && shrinkCss}
   ${({ layout }) => layout === 'standard' && standardCss}

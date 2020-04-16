@@ -1,0 +1,27 @@
+---
+id: form-control
+title: FormControl
+---
+
+标签控制项组件。
+
+## 属性
+
+| 属性名称    | 属性类型                             | 默认值     | 属性说明                                              |
+| ----------- | ------------------------------------ | ---------- | ----------------------------------------------------- |
+| label       | React.ReactNode                      |            | 表单项标签                                            |
+| helperText  | React.ReactNode                      |            | 表单项帮助性文本                                      |
+| error       | React.ReactNode                      |            | 表单项校验错误信息                                    |
+| layout      | 'horizontal' \| 'vertical'           | 'vertical' | 指定标签与表单控件之间的布局模式                      |
+| id          | string                               |            | 如果表单控件的 id                                     |
+| variant     | 'standard' \| 'filled' \| 'outlined' | 'standard' | 输入框形态                                            |
+| labelLayout | 'standard' \| 'floating' \| 'shrink' |            | 标签布局模式                                          |
+| filled      | boolean                              |            | 如果设为`true`，则表示表单控件是已填充值              |
+| colon       | boolean                              |            | 表单项为水平布局模式时，如果设为`true`，标签右侧显示: |
+| required    | boolean                              |            | 如果设为`true`，标签左侧显示\*                        |
+| error       | boolean                              |            | 如果设为`true`，则为错误状态                          |
+| focused     | boolean                              |            | 如果设为`true`，则为焦点状态                          |
+| disabled    | boolean                              |            | 如果设为`true`，则为禁用状态                          |
+| dense       | boolean                              | false      | 如果设为`true`，则为密集模式                          |
+| labelWidth  | number                               |            | 标签宽度,只有水平表单项布局支持标签宽度的设置         |
+| children    | React.ReactNode                      |            | 子元素 ,为表单控件                                    |
