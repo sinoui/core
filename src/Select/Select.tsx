@@ -82,7 +82,7 @@ export interface Props
 /**
  * 选择框组件
  */
-const Select = React.forwardRef<HTMLElement, Props>(function Select(
+const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
   props,
   ref,
 ) {
@@ -90,19 +90,12 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
   const {
     children,
     inputProps,
-    label,
     multiple = false,
     renderValue,
-    variant = 'standard',
-    error,
-    disabled,
-    helperText,
-    dense,
-    value,
     className,
-    readOnly,
     minWidth,
     onChange,
+    value,
     allowClear = true,
     ...other
   } = props;
@@ -127,41 +120,38 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     setOpen(false);
   }, []);
 
-  return React.cloneElement(<StyledTextInput $isOpen={open} />, {
-    inputComponent,
-    inputProps: {
-      children,
-      multiple,
-      minWidth,
-      renderValue,
-      open,
-      onOpen,
-      onClose,
-      ...inputProps,
-    },
-    ref,
-    label,
-    className: classNames('sinoui-select-base-layout', className),
-    baseClassName: 'sinoui-select',
-    endAdornment: (
-      <InputAdornment position="end">
-        <ArrowDropDownIcon size={24} />
-      </InputAdornment>
-    ),
-    value,
-    disabled,
-    readOnly,
-    error,
-    variant,
-    onClear,
-    onChange,
-    onClick: onOpen,
-    helperText,
-    dense,
-    type: 'hidden',
-    allowClear,
-    ...other,
-  });
+  const inputCompProps = {
+    children,
+    multiple,
+    minWidth,
+    renderValue,
+    open,
+    onOpen,
+    onClose,
+    ...inputProps,
+  };
+
+  return (
+    <StyledTextInput
+      $isOpen={open}
+      inputComponent={inputComponent}
+      inputProps={inputCompProps}
+      ref={ref}
+      allowClear={allowClear}
+      baseClassName="sinoui-select"
+      className={classNames('sinoui-select-base-layout', className)}
+      onClear={onClear}
+      endAdornment={
+        <InputAdornment position="end">
+          <ArrowDropDownIcon size={24} />
+        </InputAdornment>
+      }
+      value={value as any}
+      onClick={onOpen}
+      onChange={onChange as any}
+      {...other}
+    />
+  );
 });
 
 export default Select;
