@@ -346,12 +346,6 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transform: translate(0,1.5px) scale(0.75);
-  -ms-transform: translate(0,1.5px) scale(0.75);
-  transform: translate(0,1.5px) scale(0.75);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
   will-change: transform;
   max-width: calc( 100% - 0px );
   overflow: hidden;
@@ -535,14 +529,16 @@ label ~ .c4 {
   color: #f44336;
 }
 
+.c1 .sinoui-input-adornment--end {
+  pointer-events: none;
+}
+
 <div>
   <div
-    className="c0 sinoui-select sinoui-select--shrink c1 sinoui-select-base-layout"
-    onBlur={[Function]}
-    onFocus={[Function]}
+    className="c0 sinoui-select c1 sinoui-select-base-layout"
   >
     <label
-      className="c2 sinoui-input-label sinoui-input-label--shrink"
+      className="c2 sinoui-input-label"
     >
       Required
     </label>
@@ -552,14 +548,14 @@ label ~ .c4 {
       onClick={[Function]}
     >
       <div
+        aria-disabled="false"
+        aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-layout sinoui-base-input__input"
         data-testid="SelectDisplay"
         onBlur={[Function]}
-        onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        onMouseDown={[Function]}
         role="button"
         tabIndex={0}
       >
@@ -567,9 +563,6 @@ label ~ .c4 {
           ​
         </span>
       </div>
-      <input
-        type="hidden"
-      />
       <div
         className="c6 sinoui-input-adornment sinoui-input-adornment--end"
       >
@@ -590,8 +583,6 @@ label ~ .c4 {
   </div>
   <div
     className="c0 sinoui-select sinoui-select--filled c1 sinoui-select-base-layout"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c8 sinoui-input-label sinoui-input-label--filled"
@@ -604,14 +595,14 @@ label ~ .c4 {
       onClick={[Function]}
     >
       <div
+        aria-disabled="false"
+        aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-layout sinoui-base-input__input"
         data-testid="SelectDisplay"
         onBlur={[Function]}
-        onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        onMouseDown={[Function]}
         role="button"
         tabIndex={0}
       >
@@ -619,9 +610,6 @@ label ~ .c4 {
           ​
         </span>
       </div>
-      <input
-        type="hidden"
-      />
       <div
         className="c6 sinoui-input-adornment sinoui-input-adornment--end"
       >
@@ -645,8 +633,6 @@ label ~ .c4 {
   </div>
   <div
     className="c0 sinoui-select sinoui-select--outlined c1 sinoui-select-base-layout"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c10 sinoui-input-label sinoui-input-label--outlined"
@@ -659,14 +645,14 @@ label ~ .c4 {
       onClick={[Function]}
     >
       <div
+        aria-disabled="false"
+        aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-layout sinoui-base-input__input"
         data-testid="SelectDisplay"
         onBlur={[Function]}
-        onClick={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        onMouseDown={[Function]}
         role="button"
         tabIndex={0}
       >
@@ -674,9 +660,6 @@ label ~ .c4 {
           ​
         </span>
       </div>
-      <input
-        type="hidden"
-      />
       <div
         className="c6 sinoui-input-adornment sinoui-input-adornment--end"
       >
@@ -983,11 +966,13 @@ label ~ .c4 {
   color: #f44336;
 }
 
+.c1 .sinoui-input-adornment--end {
+  pointer-events: none;
+}
+
 <div
   className="c0 sinoui-select sinoui-select--disabled c1 sinoui-select-base-layout"
   disabled={true}
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <label
     className="c2 sinoui-input-label sinoui-input-label--disabled"
@@ -1002,25 +987,22 @@ label ~ .c4 {
     onClick={[Function]}
   >
     <div
+      aria-disabled="true"
+      aria-expanded="false"
       aria-haspopup="listbox"
       className="c5 sinoui-select-layout sinoui-base-input__input"
       data-testid="SelectDisplay"
       disabled={true}
       onBlur={[Function]}
-      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={null}
       role="button"
-      tabIndex={null}
+      tabIndex={-1}
     >
       <span>
         ​
       </span>
     </div>
-    <input
-      type="hidden"
-    />
     <div
       className="c6 sinoui-input-adornment sinoui-input-adornment--end"
     >

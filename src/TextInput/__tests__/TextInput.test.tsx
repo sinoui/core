@@ -242,3 +242,13 @@ it('无标签', () => {
 
   expect(getByTestId('input')).toHaveClass('sinoui-text-input--no-label');
 });
+
+it('值是空数组', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput wrapperProps={{ 'data-testid': 'input' }} value={[] as any} />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).not.toHaveClass('sinoui-text-input--shrink');
+});

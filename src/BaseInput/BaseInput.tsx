@@ -277,13 +277,13 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   const handleClear = useCallback(
     (event: React.MouseEvent<HTMLOrSVGElement>) => {
+      event.preventDefault();
+      event.stopPropagation();
       if (onClear) {
         onClear(event);
         return;
       }
-      event.preventDefault();
       event.persist();
-      event.stopPropagation();
       Object.defineProperty(event, 'target', {
         writable: true,
         value: { value: '' },

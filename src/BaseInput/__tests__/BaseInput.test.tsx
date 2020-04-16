@@ -368,3 +368,31 @@ it('多行输入框', () => {
 
   expect(getByTestId('input')).toHaveClass('sinoui-base-input--multiline');
 });
+
+it('监听清除图标的点击事件', () => {
+  const onClear = jest.fn();
+  const onChange = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <BaseInput
+        allowClear
+        data-testid="input"
+        onClear={onClear}
+        onChange={onChange}
+        value="123"
+      />
+    </ThemeProvider>,
+  );
+
+  const clearIcon = getByTestId('input').querySelector(
+    '.sinoui-base-input__clear svg',
+  );
+
+  act(() => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    fireEvent.click(clearIcon!);
+  });
+
+  expect(onClear).toBeCalled();
+  expect(onChange).not.toBeCalled();
+});

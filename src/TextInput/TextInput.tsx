@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
 import FilledInput from './FilledInput';
@@ -8,6 +8,8 @@ import Input from './Input';
 import HelperText from './HelperText';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
+import isEmptyValue from './isEmptyValue';
+import mergeCallbacks from '../utils/mergeCallbacks';
 
 export interface TextInputProps extends BaseInputProps {
   /**
@@ -82,6 +84,8 @@ export default function TextInput(props: TextInputProps) {
     dense,
     startAdornment,
     wrapperProps,
+    onFocus,
+    onBlur,
     ...other
   } = props;
   const labelRef = useRef<HTMLLabelElement>(null);
@@ -89,23 +93,20 @@ export default function TextInput(props: TextInputProps) {
   const shrink =
     shrinkProp ||
     focused ||
-    !!value ||
+    !isEmptyValue(value) ||
     !!defaultValue ||
     !!placeholder ||
     !!startAdornment;
   const noLabel = !label;
 
-  const handleBlur = () => {
-    if (!readOnly) {
-      setFocused(false);
-    }
-  };
-
-  const handleFocus = () => {
-    if (!readOnly) {
-      setFocused(true);
-    }
-  };
+  const handleBlur = useMemo(
+    () => mergeCallbacks(onBlur, () => setFocused(false)),
+    [onBlur],
+  );
+  const handleFocus = useMemo(
+    () => mergeCallbacks(onFocus, () => setFocused(true)),
+    [onFocus],
+  );
 
   const InputComponent = variantComponent[variant];
   const inputState = {
@@ -120,6 +121,8 @@ export default function TextInput(props: TextInputProps) {
   const inputProps: Record<string, any> = {
     ...other,
     ...inputState,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
     startAdornment,
     placeholder,
     value,
@@ -148,8 +151,6 @@ export default function TextInput(props: TextInputProps) {
         },
         className,
       )}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
       disabled={disabled}
       style={style}
     >

@@ -457,8 +457,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-input-label"
@@ -480,8 +478,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c4 sinoui-input-label sinoui-input-label--filled"
@@ -506,8 +502,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c6 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
@@ -877,8 +871,6 @@ label ~ .c3 {
   <div
     className="c0 sinoui-text-input sinoui-text-input--disabled"
     disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-input-label sinoui-input-label--disabled"
@@ -909,8 +901,6 @@ label ~ .c3 {
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--disabled"
     disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c5 sinoui-input-label sinoui-input-label--disabled sinoui-input-label--filled"
@@ -1457,8 +1447,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--shrink"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-input-label sinoui-input-label--shrink"
@@ -1491,8 +1479,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--shrink"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c6 sinoui-input-label sinoui-input-label--filled sinoui-input-label--shrink"
@@ -1528,8 +1514,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c8 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
@@ -2070,8 +2054,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-input-label"
@@ -2104,8 +2086,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c6 sinoui-input-label sinoui-input-label--filled"
@@ -2141,8 +2121,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--outlined"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c8 sinoui-input-label sinoui-input-label--outlined"
@@ -2544,8 +2522,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-input-label"
@@ -2572,8 +2548,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c5 sinoui-input-label sinoui-input-label--filled"
@@ -2964,8 +2938,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--required sinoui-text-input--error"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-input-label sinoui-input-label--error"
@@ -2994,8 +2966,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--required sinoui-text-input--error"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c5 sinoui-input-label sinoui-input-label--error sinoui-input-label--filled"

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
@@ -7,7 +7,7 @@ import InputAdornment from '@sinoui/core/InputAdornment';
 import SelectInput from './SelectInput';
 import ArrowDropDownIcon from './ArrowDropDownIcon';
 
-const StyledTextInput = styled(TextInput)`
+const StyledTextInput = styled(TextInput)<{ $isOpen: boolean }>`
   > .sinoui-base-input {
     cursor: ${({ disabled, readOnly }) =>
       disabled || readOnly ? 'default' : 'pointer'};
@@ -34,6 +34,14 @@ const StyledTextInput = styled(TextInput)`
     > svg {
     color: ${(props) => props.theme.palette.error.main};
   }
+
+  & .sinoui-input-adornment--end {
+    pointer-events: none;
+  }
+
+  & .sinoui-input-adornment--end > svg {
+    ${({ $isOpen }) => $isOpen && `transform:rotate(180deg);`}
+  }
 `;
 
 export interface Props
@@ -53,18 +61,6 @@ export interface Props
    * 值变更时的回调函数
    */
   onChange?: (value: string | string[]) => void;
-  /**
-   * 弹窗出现时的回调函数
-   */
-  onOpen?: () => void;
-  /**
-   * 弹窗消失时的回调函数
-   */
-  onClose?: () => void;
-  /**
-   * 是否显示弹窗
-   */
-  open?: boolean;
   /**
    * 值的渲染方式
    */
@@ -90,14 +86,12 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
   props,
   ref,
 ) {
+  const [open, setOpen] = useState(false);
   const {
     children,
     inputProps,
     label,
     multiple = false,
-    onClose,
-    onOpen,
-    open,
     renderValue,
     variant = 'standard',
     error,
@@ -109,6 +103,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     readOnly,
     minWidth,
     onChange,
+    allowClear = true,
     ...other
   } = props;
 
@@ -117,31 +112,31 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
   /**
    * 点击清除按钮时的回调函数
    */
-  const onClear = useCallback(
-    (event: React.MouseEvent<HTMLOrSVGElement>) => {
-      event.preventDefault();
-      event.persist();
-      event.stopPropagation();
-      const defaultValue = multiple ? [] : '';
-      if (onChange) {
-        onChange(defaultValue);
-      }
-    },
-    [multiple, onChange],
-  );
+  const onClear = useCallback(() => {
+    const defaultValue = multiple ? [] : '';
+    if (onChange) {
+      onChange(defaultValue);
+    }
+  }, [multiple, onChange]);
 
-  return React.cloneElement(<StyledTextInput />, {
+  const onOpen = useCallback(() => {
+    setOpen(true);
+  }, []);
+
+  const onClose = useCallback(() => {
+    setOpen(false);
+  }, []);
+
+  return React.cloneElement(<StyledTextInput $isOpen={open} />, {
     inputComponent,
     inputProps: {
       children,
       multiple,
-      ...{
-        minWidth,
-        onClose,
-        onOpen,
-        open,
-        renderValue,
-      },
+      minWidth,
+      renderValue,
+      open,
+      onOpen,
+      onClose,
       ...inputProps,
     },
     ref,
@@ -160,9 +155,11 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     variant,
     onClear,
     onChange,
+    onClick: onOpen,
     helperText,
     dense,
     type: 'hidden',
+    allowClear,
     ...other,
   });
 });
