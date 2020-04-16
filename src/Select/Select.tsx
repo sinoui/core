@@ -123,18 +123,12 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
   /**
    * 点击清除按钮时的回调函数
    */
-  const onClear = useCallback(
-    (event: React.MouseEvent<HTMLOrSVGElement>) => {
-      event.preventDefault();
-      event.persist();
-      event.stopPropagation();
-      const defaultValue = multiple ? [] : '';
-      if (onChange) {
-        onChange(defaultValue);
-      }
-    },
-    [multiple, onChange],
-  );
+  const onClear = useCallback(() => {
+    const defaultValue = multiple ? [] : '';
+    if (onChange) {
+      onChange(defaultValue);
+    }
+  }, [multiple, onChange]);
 
   return React.cloneElement(<StyledTextInput />, {
     inputComponent,
