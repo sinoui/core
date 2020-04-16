@@ -527,21 +527,17 @@ label ~ .c4 {
   transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c1.sinoui-text-input--focused > .sinoui-base-input > .sinoui-input-adornment--end > svg {
+.c1.sinoui-select--focused > .sinoui-base-input > .sinoui-input-adornment--end > svg {
   color: #3f51b5;
 }
 
-.c1.sinoui-text-input--error > .sinoui-base-input > .sinoui-input-adornment--end > svg {
+.c1.sinoui-select--error > .sinoui-base-input > .sinoui-input-adornment--end > svg {
   color: #f44336;
-}
-
-.c1 > .sinoui-base-input > .sinoui-input-adornment--end > .sinoui-base-input__clear {
-  font-size: 18px;
 }
 
 <div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--shrink c1 sinoui-select-base-layout"
+    className="c0 sinoui-select sinoui-select--shrink c1 sinoui-select-base-layout"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -593,7 +589,7 @@ label ~ .c4 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--filled c1 sinoui-select-base-layout"
+    className="c0 sinoui-select sinoui-select--filled c1 sinoui-select-base-layout"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -648,7 +644,7 @@ label ~ .c4 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--outlined c1 sinoui-select-base-layout"
+    className="c0 sinoui-select sinoui-select--outlined c1 sinoui-select-base-layout"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -979,20 +975,16 @@ label ~ .c4 {
   transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c1.sinoui-text-input--focused > .sinoui-base-input > .sinoui-input-adornment--end > svg {
+.c1.sinoui-select--focused > .sinoui-base-input > .sinoui-input-adornment--end > svg {
   color: #3f51b5;
 }
 
-.c1.sinoui-text-input--error > .sinoui-base-input > .sinoui-input-adornment--end > svg {
+.c1.sinoui-select--error > .sinoui-base-input > .sinoui-input-adornment--end > svg {
   color: #f44336;
 }
 
-.c1 > .sinoui-base-input > .sinoui-input-adornment--end > .sinoui-base-input__clear {
-  font-size: 18px;
-}
-
 <div
-  className="c0 sinoui-text-input sinoui-text-input--disabled c1 sinoui-select-base-layout"
+  className="c0 sinoui-select sinoui-select--disabled c1 sinoui-select-base-layout"
   disabled={true}
   onBlur={[Function]}
   onFocus={[Function]}

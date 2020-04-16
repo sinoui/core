@@ -21,24 +21,18 @@ const StyledTextInput = styled(TextInput)`
       })};
   }
 
-  &.sinoui-text-input--focused
+  &.sinoui-select--focused
     > .sinoui-base-input
     > .sinoui-input-adornment--end
     > svg {
     color: ${(props) => props.theme.palette.primary.main};
   }
 
-  &.sinoui-text-input--error
+  &.sinoui-select--error
     > .sinoui-base-input
     > .sinoui-input-adornment--end
     > svg {
     color: ${(props) => props.theme.palette.error.main};
-  }
-
-  > .sinoui-base-input
-    > .sinoui-input-adornment--end
-    > .sinoui-base-input__clear {
-    font-size: 18px;
   }
 `;
 
@@ -153,6 +147,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     ref,
     label,
     className: classNames('sinoui-select-base-layout', className),
+    baseClassName: 'sinoui-select',
     endAdornment: (
       <InputAdornment position="end">
         <ArrowDropDownIcon size={24} />
