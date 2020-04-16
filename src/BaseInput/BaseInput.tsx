@@ -293,15 +293,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     [handleChange, onClear],
   );
 
-  const isShowClear = useMemo(() => {
-    if (endAdornment) {
-      return (
-        allowClear &&
-        (Array.isArray(props.value) ? props.value.length > 0 : !!props.value)
-      );
-    }
-    return allowClear && !!props.value;
-  }, [allowClear, endAdornment, props.value]);
+  const isShowClear =
+    allowClear && (Array.isArray(value) ? value.length > 0 : !!value);
 
   const InputComonent = multiline ? AutosizeTextarea : inputComponent;
 
