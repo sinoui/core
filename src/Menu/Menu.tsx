@@ -20,7 +20,6 @@ export interface MenuProps extends PopoverProps {
   dense?: boolean;
   color?: string;
   textStyle?: React.CSSProperties;
-  onEnterKeyDown?: (event: any) => void;
 }
 
 const LTR_ORIGIN: {
@@ -69,7 +68,6 @@ function Menu(props: MenuProps) {
     dense,
     color,
     textStyle,
-    onEnterKeyDown,
     ...other
   } = props;
 
@@ -126,13 +124,9 @@ function Menu(props: MenuProps) {
         if (onRequestClose) {
           onRequestClose();
         }
-      } else if (key === 'enter') {
-        if (onEnterKeyDown) {
-          onEnterKeyDown(event);
-        }
       }
     },
-    [onEnterKeyDown, onRequestClose],
+    [onRequestClose],
   );
 
   return (

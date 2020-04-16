@@ -266,36 +266,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
   };
 
   /**
-   * enter键按下时的回调函数
-   */
-  const handleEnterKeyDown = useCallback(
-    (event: any) => {
-      let newValue;
-      if (!multiple) {
-        update(false, event);
-      }
-
-      if (multiple) {
-        newValue = Array.isArray(value) ? [...value] : [];
-        const itemIndex = value.indexOf(event.target.value);
-        if (itemIndex === -1) {
-          newValue.push(event.target.value);
-        } else {
-          newValue.splice(itemIndex, 1);
-        }
-      } else {
-        newValue = event.target.value;
-      }
-
-      setValue(newValue);
-      if (onChange) {
-        onChange(newValue);
-      }
-    },
-    [multiple, onChange, update, value],
-  );
-
-  /**
    * 点击选项时的回调函数
    */
   const handleItemClick = (child: any) => (event: any) => {
@@ -454,7 +424,6 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
         open={isOpen}
         onRequestClose={handleClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        onEnterKeyDown={handleEnterKeyDown}
         {...MenuProps}
         MenuListProps={{
           role: 'listbox',

@@ -114,7 +114,7 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
     );
 
     const handleKeyDown = useCallback(
-      (event: React.KeyboardEvent<HTMLElement>) => {
+      (event: React.KeyboardEvent<HTMLElement>, childProps: ListItemProps) => {
         const key = keycode(event.nativeEvent);
         const focusItem = getFocusItem();
 
@@ -134,17 +134,8 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
           }
         } else if (key === 'enter') {
           event.preventDefault();
-          if (onKeyDown) {
-            onKeyDown(
-              {
-                ...event,
-                target: {
-                  ...event.target,
-                  value: focusItem.getAttribute('value'),
-                },
-              },
-              key,
-            );
+          if (childProps.onClick) {
+            childProps.onClick(event as any);
           }
         } else if (onKeyDown) {
           onKeyDown(event, key);
@@ -171,7 +162,7 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
               key: (child.props as any).key || index,
               tabIndex: index === currentTabIndex ? 0 : -1,
               onFocus: handleItemFocus,
-              onKeyDown: handleKeyDown,
+              onKeyDown: (event) => handleKeyDown(event, child.props),
             };
 
             const element = React.cloneElement(child, childProps);
