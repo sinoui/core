@@ -14,7 +14,6 @@ const StyledTextInput = styled(TextInput)`
   }
 
   > .sinoui-base-input > .sinoui-input-adornment--end > svg {
-    font-size: 24px;
     transition: ${({ theme }) =>
       theme.transitions.create('transform', {
         easing: theme.transitions.easing.easeInOut,
@@ -156,7 +155,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     className: classNames('sinoui-select-base-layout', className),
     endAdornment: (
       <InputAdornment position="end">
-        <ArrowDropDownIcon />
+        <ArrowDropDownIcon size={24} />
       </InputAdornment>
     ),
     value,
