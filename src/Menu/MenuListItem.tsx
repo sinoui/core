@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { Theme } from '@sinoui/theme';
-import { opacify } from 'polished';
+import adjustOpacity from '@sinoui/core/utils/adjustOpacity';
 import Item, { ListItemProps } from './ListItem';
 
 const getFocusStyle = (props: ListItemProps & { theme: Theme }) => {
   if (props.selected) {
     if (props.role === 'option') {
-      return `background-color: ${opacify(
-        -0.8,
+      return `background-color: ${adjustOpacity(
+        0.2,
         props.theme.palette.primary.main,
       )}`;
     }
@@ -32,13 +32,16 @@ const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
     props.selected &&
     `background-color:  ${
       props.role === 'option'
-        ? opacify(-0.92, props.theme.palette.primary.main)
+        ? adjustOpacity(
+            props.theme.palette.action.selectedOpacity,
+            props.theme.palette.primary.main,
+          )
         : props.theme.palette.action.selected
     }`};
   &:hover {
     background-color: ${(props) =>
       props.selected && props.role === 'option'
-        ? opacify(-0.88, props.theme.palette.primary.main)
+        ? adjustOpacity(0.12, props.theme.palette.primary.main)
         : props.theme.palette.action.hover};
   }
   &:focus {
