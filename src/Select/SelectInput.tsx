@@ -297,14 +297,8 @@ export default React.forwardRef<HTMLSelectElement, Props>(function SelectInput(
     let selected;
 
     if (multiple) {
-      if (!Array.isArray(value)) {
-        throw new Error(
-          'Material-UI: the `value` prop must be an array ' +
-            'when using the `Select` component with `multiple`.',
-        );
-      }
-
-      selected = value.some((v) => v === child.props.value);
+      selected =
+        Array.isArray(value) && value.some((v) => v === child.props.value);
       if (selected && computeDisplay) {
         displayMultiple.push(child.props.children);
       }
