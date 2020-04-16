@@ -2,10 +2,10 @@
 
 exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
 <div
-  className="sc-AxjAm epBuwE sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kHNyn sinoui-bottom-navigation"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw coTlqr"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 erzjUH sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -13,7 +13,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
     value="recents"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <svg
         fill="currentColor"
@@ -35,7 +35,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
       color="textPrimary"
       type="body2"
     >
@@ -43,7 +43,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw ldBZAV"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 dccYEu sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -51,7 +51,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
     value="favorites"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <svg
         fill="currentColor"
@@ -73,7 +73,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
       color="textPrimary"
       type="body2"
     >
@@ -81,7 +81,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw coTlqr"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 erzjUH sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -89,7 +89,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
     value="nearby"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <svg
         fill="currentColor"
@@ -111,7 +111,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
       color="textPrimary"
       type="body2"
     >
@@ -119,7 +119,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw coTlqr"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 erzjUH sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -127,7 +127,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
     value="folder"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <svg
         fill="currentColor"
@@ -149,7 +149,7 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
       color="textPrimary"
       type="body2"
     >
@@ -162,10 +162,10 @@ exports[`BottomNavigation组件 快照测试 基本使用 1`] = `
 exports[`BottomNavigation组件 快照测试 指定背景颜色 1`] = `
 Array [
   <div
-    className="sc-AxjAm epBuwE sinoui-bottom-navigation"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kHNyn sinoui-bottom-navigation"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw coTlqr"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 erzjUH sinoui-bottom-navigation--selected"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -173,7 +173,7 @@ Array [
       value="recents"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -195,7 +195,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -203,7 +203,7 @@ Array [
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw ldBZAV"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 dccYEu sinoui-bottom-navigation--selected"
       onClick={[Function]}
       role="button"
       selected={true}
@@ -211,7 +211,7 @@ Array [
       value="favorites"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -233,7 +233,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -241,7 +241,7 @@ Array [
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw coTlqr"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 erzjUH sinoui-bottom-navigation--selected"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -249,7 +249,7 @@ Array [
       value="nearby"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -271,7 +271,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -279,7 +279,7 @@ Array [
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw coTlqr"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 erzjUH sinoui-bottom-navigation--selected"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -287,7 +287,7 @@ Array [
       value="folder"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -309,7 +309,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -318,11 +318,11 @@ Array [
     </button>
   </div>,
   <div
-    className="sc-AxjAm efnVKw sinoui-bottom-navigation"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 hmCUAG sinoui-bottom-navigation"
     color="primary"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw lbXIiu"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 kwraZh sinoui-bottom-navigation--selected"
       color="primary"
       onClick={[Function]}
       role="button"
@@ -331,7 +331,7 @@ Array [
       value="recents"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -353,7 +353,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -361,7 +361,7 @@ Array [
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw gOanbJ"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 bpGXgP sinoui-bottom-navigation--selected"
       color="primary"
       onClick={[Function]}
       role="button"
@@ -370,7 +370,7 @@ Array [
       value="favorites"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -392,7 +392,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -400,7 +400,7 @@ Array [
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw lbXIiu"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 kwraZh sinoui-bottom-navigation--selected"
       color="primary"
       onClick={[Function]}
       role="button"
@@ -409,7 +409,7 @@ Array [
       value="nearby"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -431,7 +431,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -439,7 +439,7 @@ Array [
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw lbXIiu"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 kwraZh sinoui-bottom-navigation--selected"
       color="primary"
       onClick={[Function]}
       role="button"
@@ -448,7 +448,7 @@ Array [
       value="folder"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -470,7 +470,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -479,11 +479,11 @@ Array [
     </button>
   </div>,
   <div
-    className="sc-AxjAm jUAXjb sinoui-bottom-navigation"
+    className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 jCLwUL sinoui-bottom-navigation"
     color="success"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw lbXIiu"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 kwraZh sinoui-bottom-navigation--selected"
       color="success"
       onClick={[Function]}
       role="button"
@@ -492,7 +492,7 @@ Array [
       value="recents"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -514,7 +514,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -522,7 +522,7 @@ Array [
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw gOanbJ"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 bpGXgP sinoui-bottom-navigation--selected"
       color="success"
       onClick={[Function]}
       role="button"
@@ -531,7 +531,7 @@ Array [
       value="favorites"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -553,7 +553,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -561,7 +561,7 @@ Array [
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw lbXIiu"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 kwraZh sinoui-bottom-navigation--selected"
       color="success"
       onClick={[Function]}
       role="button"
@@ -570,7 +570,7 @@ Array [
       value="nearby"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -592,7 +592,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -600,7 +600,7 @@ Array [
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw lbXIiu"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 kwraZh sinoui-bottom-navigation--selected"
       color="success"
       onClick={[Function]}
       role="button"
@@ -609,7 +609,7 @@ Array [
       value="folder"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
       >
         <svg
           fill="currentColor"
@@ -631,7 +631,7 @@ Array [
         </svg>
       </span>
       <span
-        className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+        className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
         color="textPrimary"
         type="body2"
       >
@@ -644,10 +644,10 @@ Array [
 
 exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
 <div
-  className="sc-AxjAm epBuwE sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kHNyn sinoui-bottom-navigation"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw coTlqr"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 erzjUH sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -655,13 +655,13 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
     value="recents"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <span
-        className="Badge__BadgeWrapper-sc-1mox8ry-0 ljnePt sinoui-badge sinoui-badge--dot"
+        className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge sinoui-badge--dot"
       >
         <span
-          className="Badge__BadgeCircle-sc-1mox8ry-1 irelgB"
+          className="Badge__BadgeCircle-sc-1mox8ry-1 eDMdBr"
           color="error"
         />
         <svg
@@ -685,7 +685,7 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
       </span>
     </span>
     <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
       color="textPrimary"
       type="body2"
     >
@@ -693,7 +693,7 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw ldBZAV"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 dccYEu sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -701,7 +701,7 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
     value="favorites"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <svg
         fill="currentColor"
@@ -723,7 +723,7 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
       </svg>
     </span>
     <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
       color="textPrimary"
       type="body2"
     >
@@ -731,7 +731,7 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw coTlqr"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 erzjUH sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -739,13 +739,13 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
     value="nearby"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <span
-        className="Badge__BadgeWrapper-sc-1mox8ry-0 ljnePt sinoui-badge"
+        className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
       >
         <span
-          className="Badge__BadgeCircle-sc-1mox8ry-1 iUpzoi"
+          className="Badge__BadgeCircle-sc-1mox8ry-1 hranlD"
           color="error"
         >
           88
@@ -771,7 +771,7 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
       </span>
     </span>
     <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
       color="textPrimary"
       type="body2"
     >
@@ -779,7 +779,7 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw coTlqr"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 erzjUH sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -787,13 +787,13 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
     value="folder"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <span
-        className="Badge__BadgeWrapper-sc-1mox8ry-0 ljnePt sinoui-badge"
+        className="Badge__BadgeWrapper-sc-1mox8ry-0 bTVYlp sinoui-badge"
       >
         <span
-          className="Badge__BadgeCircle-sc-1mox8ry-1 fgEXpB"
+          className="Badge__BadgeCircle-sc-1mox8ry-1 fMKCBt"
           color="error"
         >
           99+
@@ -819,7 +819,7 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
       </span>
     </span>
     <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
       color="textPrimary"
       type="body2"
     >
@@ -831,10 +831,10 @@ exports[`BottomNavigation组件 快照测试 结合Badge组件使用 1`] = `
 
 exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] = `
 <div
-  className="sc-AxjAm epBuwE sinoui-bottom-navigation"
+  className="BottomNavigation__BottomNavigationWrapper-uh5psz-0 kHNyn sinoui-bottom-navigation"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw eOHiSL"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 exagYV sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -842,7 +842,7 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     value="recents"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <svg
         fill="currentColor"
@@ -865,7 +865,7 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw ldBZAV"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 dccYEu sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -873,7 +873,7 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     value="favorites"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <svg
         fill="currentColor"
@@ -895,7 +895,7 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
       </svg>
     </span>
     <span
-      className="Typography__TypographyWrapper-sc-12agh80-0 cwJExj sinoui-typography sinoui-typography--body2"
+      className="Typography__TypographyWrapper-sc-12agh80-0 hmVkjf sinoui-typography sinoui-typography--body2"
       color="textPrimary"
       type="body2"
     >
@@ -903,7 +903,7 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw eOHiSL"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 exagYV sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -911,7 +911,7 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     value="nearby"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <svg
         fill="currentColor"
@@ -934,7 +934,7 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw eOHiSL"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 gJsqSy sinoui-base-button BottomNavigationAction__BaseButtonWrapper-sc-1ulp24u-1 exagYV sinoui-bottom-navigation--selected"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -942,7 +942,7 @@ exports[`BottomNavigation组件 快照测试 设置隐藏所有标签名称 1`] 
     value="folder"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="BottomNavigationAction__IconWrapper-sc-1ulp24u-0 ciQLvZ"
     >
       <svg
         fill="currentColor"

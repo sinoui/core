@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import classNames from 'classnames';
 import BaseButton from '@sinoui/core/BaseButton';
 import Body2 from '@sinoui/core/Body2';
 import { opacify } from 'polished';
@@ -38,10 +39,18 @@ const BaseButtonWrapper = styled(BaseButton)<{
   align-items: center;
   color: ${({ theme, color, selected }) =>
     colorWrapper(theme, color, selected)};
-  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   max-width: 168px;
   min-width: 80px;
   padding: ${({ showLabel }) => (showLabel ? '8px 12px 12px' : '16px 12px')};
+  transition: ${({
+    theme: {
+      transitions: { create, easing, duration },
+    },
+  }) =>
+    create(['fill'], {
+      duration: duration.shorter,
+      easing: easing.easeInOut,
+    })};
 
   > .sinoui-typography--body2 {
     color: currentColor;
@@ -85,7 +94,12 @@ export interface BottomNavActionProps {
 function BottomNavigationAction(props: BottomNavActionProps) {
   const { label, showLabel, icon, selected, ...rest } = props;
   return (
-    <BaseButtonWrapper selected={selected} showLabel={showLabel} {...rest}>
+    <BaseButtonWrapper
+      selected={selected}
+      showLabel={showLabel}
+      {...rest}
+      className={classNames('sinoui-bottom-navigation--selected')}
+    >
       <IconWrapper>{icon}</IconWrapper>
       {showLabel && <Body2 as="span">{label}</Body2>}
     </BaseButtonWrapper>
