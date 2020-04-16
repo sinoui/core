@@ -88,14 +88,14 @@ exports[`全宽模式 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -196,14 +196,14 @@ exports[`单行输入框 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -304,14 +304,14 @@ exports[`多行输入框 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -412,14 +412,14 @@ exports[`禁用状态 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

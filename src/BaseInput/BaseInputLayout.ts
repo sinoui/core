@@ -65,12 +65,12 @@ const BaseInputLayout = styled.div<Props>`
   }
 
   &:hover {
-    .sinoui-base-input__clear {
-      display: flex;
+    .sinoui-input-adornment--end {
+      display: ${({ $isShowClear }) => ($isShowClear ? 'none' : 'flex')};
     }
 
-    .sinoui-base-input__endAdornment {
-      display: ${({ $isShowClear }) => ($isShowClear ? 'none' : 'flex')};
+    .sinoui-base-input__clear {
+      display: flex;
     }
   }
 

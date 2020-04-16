@@ -87,14 +87,14 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   cursor: pointer;
 }
 
-.c2:hover .sinoui-base-input__clear {
+.c2:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2:hover .sinoui-base-input__endAdornment {
+.c2:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -645,14 +645,14 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   cursor: pointer;
 }
 
-.c2:hover .sinoui-base-input__clear {
+.c2:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2:hover .sinoui-base-input__endAdornment {
+.c2:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1092,14 +1092,14 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   cursor: pointer;
 }
 
-.c2:hover .sinoui-base-input__clear {
+.c2:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2:hover .sinoui-base-input__endAdornment {
+.c2:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1736,14 +1736,14 @@ exports[`渲染带后缀元素的输入框 1`] = `
   cursor: pointer;
 }
 
-.c2:hover .sinoui-base-input__clear {
+.c2:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2:hover .sinoui-base-input__endAdornment {
+.c2:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2318,14 +2318,14 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   cursor: pointer;
 }
 
-.c2:hover .sinoui-base-input__clear {
+.c2:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2:hover .sinoui-base-input__endAdornment {
+.c2:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2738,14 +2738,14 @@ exports[`渲染有错误提示的输入框 1`] = `
   cursor: pointer;
 }
 
-.c2:hover .sinoui-base-input__clear {
+.c2:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2:hover .sinoui-base-input__endAdornment {
+.c2:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

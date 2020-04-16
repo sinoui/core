@@ -154,6 +154,10 @@ export interface BaseInputProps<
    * 是否允许清除
    */
   allowClear?: boolean;
+  /**
+   * 点击清除按钮时的回调函数
+   */
+  onClear?: (event: React.MouseEvent<HTMLOrSVGElement>) => void;
 }
 
 export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
@@ -207,6 +211,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     maxRows,
     error,
     allowClear,
+    onClear,
     ...other
   } = props;
 
@@ -272,23 +277,20 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   const handleClear = useCallback(
     (event: React.MouseEvent<HTMLOrSVGElement>) => {
+      if (onClear) {
+        onClear(event);
+        return;
+      }
       event.preventDefault();
       event.persist();
       event.stopPropagation();
-      const newValue = Array.isArray(props.value) ? [] : '';
       Object.defineProperty(event, 'target', {
         writable: true,
-        value: { value: newValue },
+        value: { value: '' },
       });
-      if (onChange) {
-        onChange(event);
-      }
-
-      if (onChangeInputProp) {
-        onChangeInputProp(event);
-      }
+      handleChange(event);
     },
-    [onChange, onChangeInputProp, props.value],
+    [handleChange, onClear],
   );
 
   const isShowClear = useMemo(() => {
@@ -358,11 +360,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
           <ClearIcon onClick={handleClear} />
         </InputAdornment>
       )}
-      {endAdornment && isShowClear
-        ? React.cloneElement(endAdornment as any, {
-            className: 'sinoui-base-input__endAdornment',
-          })
-        : endAdornment}
+      {endAdornment}
       {children}
     </BaseInputLayout>
   );

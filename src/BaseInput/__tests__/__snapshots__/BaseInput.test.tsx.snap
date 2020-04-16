@@ -128,14 +128,14 @@ exports[`前缀装饰器 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -292,14 +292,14 @@ exports[`后缀装饰器 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -418,14 +418,14 @@ exports[`正确渲染BaseInput 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -533,14 +533,14 @@ exports[`渲染disabled属性下的BaseInput 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -651,14 +651,14 @@ exports[`渲染全宽模式下的BaseInput 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -767,14 +767,14 @@ exports[`渲染多行输入框 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -901,14 +901,14 @@ exports[`渲染支持清除功能的输入框 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1017,14 +1017,14 @@ exports[`设置minRows和maxRows 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1117,14 +1117,14 @@ exports[`设置minRows和maxRows 1`] = `
   cursor: pointer;
 }
 
-.c1:hover .sinoui-base-input__clear {
+.c1:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c1:hover .sinoui-base-input__endAdornment {
+.c1:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

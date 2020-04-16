@@ -84,14 +84,14 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   cursor: pointer;
 }
 
-.c3:hover .sinoui-base-input__clear {
+.c3:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c3:hover .sinoui-base-input__endAdornment {
+.c3:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -806,14 +806,14 @@ exports[`渲染不可用的下拉框 1`] = `
   cursor: pointer;
 }
 
-.c3:hover .sinoui-base-input__clear {
+.c3:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c3:hover .sinoui-base-input__endAdornment {
+.c3:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

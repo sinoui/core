@@ -88,14 +88,14 @@ Array [
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -315,14 +315,14 @@ Array [
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -546,14 +546,14 @@ exports[`无标签 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -780,14 +780,14 @@ exports[`聚焦状态 1`] = `
   cursor: pointer;
 }
 
-.c0:hover .sinoui-base-input__clear {
+.c0:hover .sinoui-input-adornment--end {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0:hover .sinoui-base-input__endAdornment {
+.c0:hover .sinoui-base-input__clear {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

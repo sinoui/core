@@ -110,6 +110,7 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     className,
     readOnly,
     minWidth,
+    onChange,
     ...other
   } = props;
 
@@ -134,6 +135,19 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
       }
     },
     [onCloseProp],
+  );
+
+  const onClear = useCallback(
+    (event: React.MouseEvent<HTMLOrSVGElement>) => {
+      event.preventDefault();
+      event.persist();
+      event.stopPropagation();
+      const defaultValue = multiple ? [] : '';
+      if (onChange) {
+        onChange(defaultValue);
+      }
+    },
+    [multiple, onChange],
   );
 
   return React.cloneElement(<StyledTextInput />, {
@@ -165,6 +179,8 @@ const Select = React.forwardRef<HTMLElement, Props>(function Select(
     readOnly,
     error,
     variant,
+    onClear,
+    onChange,
     helperText,
     dense,
     type: 'hidden',
