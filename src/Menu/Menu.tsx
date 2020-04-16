@@ -120,7 +120,7 @@ function Menu(props: MenuProps) {
 
   const handleListKeyDown = useCallback(
     (event, key) => {
-      if (key === 'tab') {
+      if (key === 'tab' || key === 'esc') {
         event.preventDefault();
 
         if (onRequestClose) {
