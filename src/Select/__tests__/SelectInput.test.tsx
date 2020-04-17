@@ -4,7 +4,7 @@ import { act } from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import SelectInput from '../SelectInput';
 import Option from '../Option';
@@ -124,14 +124,19 @@ it('关闭弹窗后,失去焦点时，onBlur被调用', () => {
   const onBlur = jest.fn();
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <SelectInput value="1" onBlur={onBlur} autoFocus>
+      <SelectInput
+        value="1"
+        onBlur={onBlur}
+        autoFocus
+        data-testid="selectInput"
+      >
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
       </SelectInput>
     </ThemeProvider>,
   );
 
-  fireEvent.blur(getByTestId('SelectDisplay'));
+  fireEvent.blur(getByTestId('selectInput'));
   expect(onBlur).toHaveBeenCalled();
 });
 
@@ -139,15 +144,15 @@ it('选择框聚焦状态下，按下enter键，onOpen被调用', () => {
   const onOpen = jest.fn();
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <SelectInput value="1" onOpen={onOpen}>
+      <SelectInput value="1" onOpen={onOpen} data-testid="selectInput">
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
       </SelectInput>
     </ThemeProvider>,
   );
 
-  fireEvent.focus(getByTestId('SelectDisplay'));
-  fireEvent.keyDown(getByTestId('SelectDisplay'), { keyCode: 13 });
+  fireEvent.focus(getByTestId('selectInput'));
+  fireEvent.keyDown(getByTestId('selectInput'), { keyCode: 13 });
 
   expect(onOpen).toHaveBeenCalled();
 });
@@ -156,40 +161,40 @@ describe('tabindex', () => {
   it('可用时有tabindex', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <SelectInput data-testid="select" />
+        <SelectInput data-testid="selectInput" />
       </ThemeProvider>,
     );
 
-    expect(getByTestId('select')).toHaveAttribute('tabIndex', '0');
+    expect(getByTestId('selectInput')).toHaveAttribute('tabIndex', '0');
   });
 
   it('只读时有tabindex', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <SelectInput readOnly data-testid="select" />
+        <SelectInput readOnly data-testid="selectInput" />
       </ThemeProvider>,
     );
 
-    expect(getByTestId('select')).toHaveAttribute('tabIndex', '0');
+    expect(getByTestId('selectInput')).toHaveAttribute('tabIndex', '0');
   });
 
   it('tabIndex属性', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <SelectInput data-testid="select" tabIndex={2} />
+        <SelectInput data-testid="selectInput" tabIndex={2} />
       </ThemeProvider>,
     );
 
-    expect(getByTestId('select')).toHaveAttribute('tabIndex', '2');
+    expect(getByTestId('selectInput')).toHaveAttribute('tabIndex', '2');
   });
 
   it('不可用时无tabindex', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <SelectInput disabled data-testid="select" />
+        <SelectInput disabled data-testid="selectInput" />
       </ThemeProvider>,
     );
 
-    expect(getByTestId('select')).not.toHaveAttribute('tabIndex');
+    expect(getByTestId('selectInput')).not.toHaveAttribute('tabIndex');
   });
 });

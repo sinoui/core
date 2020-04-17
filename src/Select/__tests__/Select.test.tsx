@@ -3,7 +3,7 @@ import renderer, { act } from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import Select from '../Select';
 import Option from '../Option';
@@ -51,7 +51,11 @@ it('渲染不可用的下拉框', () => {
 it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
   const { getByTestId, getByRole, getAllByRole, container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <Select>
+      <Select
+        inputProps={{
+          'data-testid': 'selectInput',
+        }}
+      >
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
         <Option value="3">选项三</Option>
@@ -60,7 +64,7 @@ it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
   );
 
   act(() => {
-    fireEvent.click(getByTestId('SelectDisplay'));
+    fireEvent.click(getByTestId('selectInput'));
   });
 
   expect(getByRole('listbox')).toBeInTheDOM();

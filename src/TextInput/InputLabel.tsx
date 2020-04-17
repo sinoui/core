@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
+import singleLineTextCss from '../utils/singleLineTextCss';
 
 export interface InputLabelProps {
   /**
@@ -129,9 +130,7 @@ const InputLabel = styled.label.attrs<InputLabelProps>(
         }
       }}px
   );
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  ${singleLineTextCss}
 `;
 
 export default InputLabel;

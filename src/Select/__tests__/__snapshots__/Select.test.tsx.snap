@@ -24,11 +24,19 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
 }
 
 .c3 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c3 > input.sinoui-base-input__input,
+.c3 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -43,32 +51,35 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c3 > .sinoui-base-input__input::-moz-placeholder {
+.c3 > input.sinoui-base-input__input::-moz-placeholder,
+.c3 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c3 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c3 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > .sinoui-base-input__input:-ms-input-placeholder {
+.c3 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c3 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > .sinoui-base-input__input::-ms-clear {
+.c3 > input.sinoui-base-input__input::-ms-clear,
+.c3 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c3 > .sinoui-base-input__input:focus {
+.c3 > input.sinoui-base-input__input:focus,
+.c3 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c3 > .sinoui-base-input__input:invalid {
+.c3 > input.sinoui-base-input__input:invalid,
+.c3 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -348,9 +359,9 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   will-change: transform;
   max-width: calc( 100% - 0px );
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .c8 {
@@ -377,9 +388,9 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   will-change: transform;
   max-width: calc( 100% - 24px );
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .c10 {
@@ -406,9 +417,9 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   will-change: transform;
   max-width: calc( 100% - 28px );
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .c4 {
@@ -490,52 +501,34 @@ label ~ .c4 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: pointer;
-  border-radius: 0;
-  outline: none;
+  cursor: inherit;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.c5.c5 {
-  min-width: 0px;
-}
-
-.c5:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #000;
-}
-
-.c5::-ms-expand {
-  display: none;
 }
 
 .c1 > .sinoui-base-input {
   cursor: pointer;
 }
 
-.c1 > .sinoui-base-input > .sinoui-input-adornment--end > svg {
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-}
-
-.c1.sinoui-select--focused > .sinoui-base-input > .sinoui-input-adornment--end > svg {
+.c1.sinoui-select--focused .sinoui-input-adornment--end .sinoui-svg-icon {
   color: #3f51b5;
 }
 
-.c1.sinoui-select--error > .sinoui-base-input > .sinoui-input-adornment--end > svg {
+.c1.sinoui-select--error .sinoui-input-adornment--end .sinoui-svg-icon {
   color: #f44336;
 }
 
 .c1 .sinoui-input-adornment--end {
   pointer-events: none;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
 <div>
   <div
-    className="c0 sinoui-select c1 sinoui-select-base-layout"
+    className="c0 sinoui-select c1"
   >
     <label
       className="c2 sinoui-input-label"
@@ -551,8 +544,7 @@ label ~ .c4 {
         aria-disabled="false"
         aria-expanded="false"
         aria-haspopup="listbox"
-        className="c5 sinoui-select-layout sinoui-base-input__input"
-        data-testid="SelectDisplay"
+        className="c5 sinoui-select-input sinoui-base-input__input"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -582,7 +574,7 @@ label ~ .c4 {
     </div>
   </div>
   <div
-    className="c0 sinoui-select sinoui-select--filled c1 sinoui-select-base-layout"
+    className="c0 sinoui-select sinoui-select--filled c1"
   >
     <label
       className="c8 sinoui-input-label sinoui-input-label--filled"
@@ -598,8 +590,7 @@ label ~ .c4 {
         aria-disabled="false"
         aria-expanded="false"
         aria-haspopup="listbox"
-        className="c5 sinoui-select-layout sinoui-base-input__input"
-        data-testid="SelectDisplay"
+        className="c5 sinoui-select-input sinoui-base-input__input"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -632,7 +623,7 @@ label ~ .c4 {
     </div>
   </div>
   <div
-    className="c0 sinoui-select sinoui-select--outlined c1 sinoui-select-base-layout"
+    className="c0 sinoui-select sinoui-select--outlined c1"
   >
     <label
       className="c10 sinoui-input-label sinoui-input-label--outlined"
@@ -648,8 +639,7 @@ label ~ .c4 {
         aria-disabled="false"
         aria-expanded="false"
         aria-haspopup="listbox"
-        className="c5 sinoui-select-layout sinoui-base-input__input"
-        data-testid="SelectDisplay"
+        className="c5 sinoui-select-input sinoui-base-input__input"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -723,11 +713,19 @@ exports[`渲染不可用的下拉框 1`] = `
 }
 
 .c3 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c3 > input.sinoui-base-input__input,
+.c3 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -742,32 +740,35 @@ exports[`渲染不可用的下拉框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c3 > .sinoui-base-input__input::-moz-placeholder {
+.c3 > input.sinoui-base-input__input::-moz-placeholder,
+.c3 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c3 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c3 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > .sinoui-base-input__input:-ms-input-placeholder {
+.c3 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c3 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > .sinoui-base-input__input::-ms-clear {
+.c3 > input.sinoui-base-input__input::-ms-clear,
+.c3 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c3 > .sinoui-base-input__input:focus {
+.c3 > input.sinoui-base-input__input:focus,
+.c3 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c3 > .sinoui-base-input__input:invalid {
+.c3 > input.sinoui-base-input__input:invalid,
+.c3 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -843,9 +844,9 @@ exports[`渲染不可用的下拉框 1`] = `
   color: rgba(0,0,0,0.38);
   will-change: transform;
   max-width: calc( 100% - 0px );
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .c4 {
@@ -926,52 +927,33 @@ label ~ .c4 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: pointer;
-  border-radius: 0;
-  outline: none;
+  cursor: inherit;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  cursor: default;
-}
-
-.c5.c5 {
-  min-width: 0px;
-}
-
-.c5:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #000;
-}
-
-.c5::-ms-expand {
-  display: none;
 }
 
 .c1 > .sinoui-base-input {
   cursor: default;
 }
 
-.c1 > .sinoui-base-input > .sinoui-input-adornment--end > svg {
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-}
-
-.c1.sinoui-select--focused > .sinoui-base-input > .sinoui-input-adornment--end > svg {
+.c1.sinoui-select--focused .sinoui-input-adornment--end .sinoui-svg-icon {
   color: #3f51b5;
 }
 
-.c1.sinoui-select--error > .sinoui-base-input > .sinoui-input-adornment--end > svg {
+.c1.sinoui-select--error .sinoui-input-adornment--end .sinoui-svg-icon {
   color: #f44336;
 }
 
 .c1 .sinoui-input-adornment--end {
   pointer-events: none;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
 <div
-  className="c0 sinoui-select sinoui-select--disabled c1 sinoui-select-base-layout"
+  className="c0 sinoui-select sinoui-select--disabled c1"
   disabled={true}
 >
   <label
@@ -990,9 +972,7 @@ label ~ .c4 {
       aria-disabled="true"
       aria-expanded="false"
       aria-haspopup="listbox"
-      className="c5 sinoui-select-layout sinoui-base-input__input"
-      data-testid="SelectDisplay"
-      disabled={true}
+      className="c5 sinoui-select-input sinoui-base-input__input"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}

@@ -1,9 +1,11 @@
-/* eslint-disable react/no-danger */
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Menu, { MenuListItem } from '@sinoui/core/Menu';
 import classNames from 'classnames';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import useMultiRefs from '../utils/useMultiRefs';
+import singleLineTextCss from '../utils/singleLineTextCss';
+import type SelectItem from './SelectItem';
+import SelectValueDisplay from './SelectValueDisplay';
 
 export interface Props {
   /**
@@ -22,10 +24,6 @@ export interface Props {
    * 不可用
    */
   disabled?: boolean;
-  /**
-   * Menu属性
-   */
-  MenuProps?: any;
   /**
    * 是否多选
    */
@@ -61,69 +59,51 @@ export interface Props {
   /**
    * 渲染值的处理逻辑
    */
-  renderValue?: (value?: string | string[]) => React.ReactNode;
+  renderValue?: (
+    value: string | string[] | undefined,
+    items: SelectItem[],
+  ) => React.ReactNode;
+  /**
+   * tab键顺序值
+   */
   tabIndex?: number;
   /**
    * 值
    */
   value?: string | string[];
   /**
-   * 最小宽度
+   * 菜单的最小宽度
    */
-  minWidth?: number;
-  /**
-   * 弹窗是否打开
-   */
-  $isOpen?: boolean;
+  menuMinWidth?: number;
 }
 
-type SelectLayoutProps = Omit<Props, 'value' | 'inputRef'>;
+type SelectInputLayoutProps = Omit<Props, 'value' | 'inputRef'>;
+
+const SelectInputLayout = styled.div<SelectInputLayoutProps>`
+  user-select: none;
+  cursor: inherit;
+  ${singleLineTextCss}
+`;
 
 /**
- * 判断是否为空
+ * 从 children 中解析出选项
  *
- * @param {*} display 判断的值
- * @returns boolean
+ * @param children 下拉框叶子节点
  */
-function isEmpty(display: any) {
-  return display == null || (typeof display === 'string' && !display.trim());
+function parseItemsFromChildren(children: React.ReactNode): SelectItem[] {
+  return (
+    React.Children.map(children, (child, index) => {
+      if (!React.isValidElement(child)) {
+        return null;
+      }
+      return {
+        id: `${index}`,
+        value: child.props.value,
+        children: child.props.children as React.ReactNode,
+      };
+    })?.filter(Boolean) || []
+  );
 }
-
-const disabledStyle = css`
-  cursor: default;
-`;
-
-const selectStyle = css<SelectLayoutProps>`
-  && {
-    min-width: ${(props) => props.minWidth || 0}px;
-  }
-
-  user-select: none;
-  cursor: ${(props) => (props.readOnly ? 'default' : 'pointer')};
-  border-radius: 0;
-  outline: none;
-
-  &:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
-  }
-
-  &::-ms-expand {
-    display: none;
-  }
-`;
-
-const menuSelectStyle = css`
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-`;
-
-const SelectLayout = styled.div<SelectLayoutProps>`
-  ${selectStyle};
-  ${menuSelectStyle};
-  ${(props) => props.disabled && disabledStyle};
-`;
 
 /**
  * 处理复选框内部逻辑的组件
@@ -137,7 +117,6 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     children,
     className,
     disabled,
-    MenuProps = {},
     multiple,
     onBlur,
     onChange,
@@ -146,82 +125,73 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     onOpen,
     open,
     readOnly,
-    renderValue,
+    renderValue = (value, items) => (
+      <SelectValueDisplay value={value} items={items} />
+    ),
     tabIndex = 0,
     value,
-    minWidth,
+    menuMinWidth,
     ...other
   } = props;
 
-  const anchorElRef = useRef<HTMLDivElement | null>(null);
-  const handleRef = useMultiRefs(ref, anchorElRef);
+  const items = parseItemsFromChildren(children);
+  const selectedItems = typeof value === 'string' ? [value] : value ?? [];
+  const isItemSelected = (itemValue: string) =>
+    selectedItems.includes(itemValue);
+  const selectInputRef = useRef<HTMLDivElement>(null);
+  const handleRef = useMultiRefs(ref, selectInputRef);
 
   useEffect(() => {
-    if (autoFocus && anchorElRef.current) {
-      anchorElRef.current.focus();
+    if (autoFocus && selectInputRef.current) {
+      selectInputRef.current.focus();
     }
   }, [autoFocus]);
 
-  const handleFocus = useCallback(() => {
-    if (onFocus) {
-      onFocus();
-    }
-  }, [onFocus]);
-
-  const handleOpen = useCallback(() => {
-    if (disabled || readOnly) {
-      return;
-    }
-
-    if (onOpen) {
-      onOpen();
-    }
-  }, [disabled, onOpen, readOnly]);
-
-  const handleClose = useCallback(() => {
-    if (anchorElRef.current) {
-      anchorElRef.current.focus();
+  const handleClose = () => {
+    if (selectInputRef.current) {
+      selectInputRef.current.focus();
     }
 
     if (onClose) {
       onClose();
     }
-  }, [onClose]);
+  };
 
   /**
    * 点击选项时的回调函数
    */
-  const handleItemClick = (child: any) => () => {
+  const handleItemClick = (itemValue: string) => () => {
     if (!multiple) {
       handleClose();
     }
 
-    let newValue;
+    if (!onChange) {
+      return;
+    }
 
+    let newValue;
     if (multiple) {
-      newValue = Array.isArray(value) ? [...value] : [];
-      const itemIndex = newValue.indexOf(child.props.value);
-      if (itemIndex === -1) {
-        newValue.push(child.props.value);
+      newValue = [...selectedItems];
+      const selectedIdx = newValue.indexOf(itemValue);
+      if (selectedIdx === -1) {
+        newValue.push(itemValue);
       } else {
-        newValue.splice(itemIndex, 1);
+        newValue.splice(selectedIdx, 1);
       }
     } else {
-      newValue = child.props.value;
+      newValue = itemValue;
     }
 
-    if (onChange) {
-      onChange(newValue);
-    }
+    onChange(newValue);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
-    if (!readOnly) {
+    if (onOpen && !readOnly) {
       const validKeys = [' ', 'ArrowUp', 'ArrowDown', 'Enter'];
 
       if (validKeys.indexOf(event.key) !== -1) {
         event.preventDefault();
-        handleOpen();
+        onOpen();
       }
     }
   };
@@ -236,64 +206,11 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     }
   };
 
-  let display: any;
-  let displaySingle;
-  const displayMultiple: string[] = [];
-  let computeDisplay = false;
-
-  if (renderValue) {
-    display = renderValue(value);
-  } else {
-    computeDisplay = true;
-  }
-
-  const items = React.Children.map(children, (child, index) => {
-    if (!React.isValidElement(child)) {
-      return null;
-    }
-
-    let selected;
-
-    if (multiple) {
-      selected =
-        Array.isArray(value) && value.some((v) => v === child.props.value);
-      if (selected && computeDisplay) {
-        displayMultiple.push(child.props.children);
-      }
-    } else {
-      selected = value === child.props.value;
-      if (selected && computeDisplay) {
-        displaySingle = child.props.children;
-      }
-    }
-
-    return (
-      <MenuListItem
-        role="option"
-        {...child.props}
-        $key={child.props.key || index}
-        selected={selected}
-        onClick={handleItemClick(child)}
-      />
-    );
-  });
-
-  if (computeDisplay) {
-    display = multiple ? displayMultiple.join(', ') : displaySingle;
-  }
-
-  let menuMinWidth;
-
-  if (anchorElRef.current && anchorElRef.current.parentNode) {
-    menuMinWidth = (anchorElRef.current.parentNode as any).clientWidth;
-  }
-
   return (
     <>
-      <SelectLayout
-        className={classNames('sinoui-select-layout', className)}
+      <SelectInputLayout
+        className={classNames('sinoui-select-input', className)}
         ref={handleRef}
-        data-testid="SelectDisplay"
         tabIndex={disabled ? undefined : tabIndex}
         role="button"
         aria-expanded={open ? 'true' : 'false'}
@@ -301,42 +218,30 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
         aria-disabled={disabled ? 'true' : 'false'}
         onKeyDown={handleKeyDown}
         onBlur={handleBlur}
-        onFocus={handleFocus}
-        disabled={disabled || readOnly}
-        minWidth={minWidth}
-        $isOpen={open}
+        onFocus={onFocus}
         {...other}
       >
-        {isEmpty(display) ? <span>&#8203;</span> : display}
-      </SelectLayout>
+        {renderValue(value, items)}
+      </SelectInputLayout>
       <Menu
-        minWidth={
-          anchorElRef.current?.parentNode
-            ? (anchorElRef.current.parentNode as any).clientWidth
-            : 0
-        }
-        anchorEl={anchorElRef.current}
+        minWidth={menuMinWidth}
+        anchorEl={selectInputRef.current}
         open={open}
         onRequestClose={handleClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        {...MenuProps}
         MenuListProps={{
           role: 'listbox',
-          disableListWrap: true,
-          ...MenuProps.MenuListProps,
-        }}
-        PaperProps={{
-          ...MenuProps.PaperProps,
-          style: {
-            minWidth: menuMinWidth,
-            ...(MenuProps.PaperProps != null
-              ? MenuProps.PaperProps.style
-              : null),
-            margin: 0,
-          },
         }}
       >
-        {items}
+        {items.map((item) => (
+          <MenuListItem
+            role="option"
+            key={item.id}
+            {...item}
+            selected={isItemSelected(item.value)}
+            onClick={handleItemClick(item.value)}
+          />
+        ))}
       </Menu>
     </>
   );

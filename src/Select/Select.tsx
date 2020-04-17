@@ -1,46 +1,34 @@
-import React, { useCallback, useState } from 'react';
-import classNames from 'classnames';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import SelectInput from './SelectInput';
 import ArrowDropDownIcon from './ArrowDropDownIcon';
+import type SelectItem from './SelectItem';
+import useMultiRefs from '../utils/useMultiRefs';
 
 const StyledTextInput = styled(TextInput)<{ $isOpen: boolean }>`
   > .sinoui-base-input {
-    cursor: ${({ disabled, readOnly }) =>
-      disabled || readOnly ? 'default' : 'pointer'};
+    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   }
 
-  > .sinoui-base-input > .sinoui-input-adornment--end > svg {
-    transition: ${({ theme }) =>
-      theme.transitions.create('transform', {
-        easing: theme.transitions.easing.easeInOut,
-        duration: theme.transitions.duration.shorter,
-      })};
-  }
-
-  &.sinoui-select--focused
-    > .sinoui-base-input
-    > .sinoui-input-adornment--end
-    > svg {
+  &.sinoui-select--focused .sinoui-input-adornment--end .sinoui-svg-icon {
     color: ${(props) => props.theme.palette.primary.main};
   }
 
-  &.sinoui-select--error
-    > .sinoui-base-input
-    > .sinoui-input-adornment--end
-    > svg {
+  &.sinoui-select--error .sinoui-input-adornment--end .sinoui-svg-icon {
     color: ${(props) => props.theme.palette.error.main};
   }
 
   & .sinoui-input-adornment--end {
     pointer-events: none;
-  }
-
-  & .sinoui-input-adornment--end > svg {
-    ${({ $isOpen }) => $isOpen && `transform:rotate(180deg);`}
+    transition: ${({ theme }) =>
+      theme.transitions.create('transform', {
+        easing: theme.transitions.easing.easeInOut,
+        duration: theme.transitions.duration.shorter,
+      })};
+    ${({ $isOpen }) => $isOpen && 'transform: rotate(180deg);'}
   }
 `;
 
@@ -64,15 +52,14 @@ export interface Props
   /**
    * 值的渲染方式
    */
-  renderValue?: (value?: string | string[]) => React.ReactNode;
+  renderValue?: (
+    value: string | string[] | undefined,
+    items: SelectItem[],
+  ) => React.ReactNode;
   /**
    * 值
    */
   value?: string | string[];
-  /**
-   * 最小宽度
-   */
-  minWidth?: number;
   /**
    * 自定义class名称
    */
@@ -86,14 +73,15 @@ const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
   props,
   ref,
 ) {
+  const selectRef = useRef<HTMLDivElement>(null);
+  const handleRef = useMultiRefs(selectRef, ref);
   const [open, setOpen] = useState(false);
+  const [width, setWidth] = useState(0);
   const {
     children,
     inputProps,
     multiple = false,
     renderValue,
-    className,
-    minWidth,
     onChange,
     value,
     allowClear = true,
@@ -105,32 +93,31 @@ const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
   /**
    * 点击清除按钮时的回调函数
    */
-  const onClear = useCallback(() => {
+  const onClear = () => {
     const defaultValue = multiple ? [] : '';
     if (onChange) {
       onChange(defaultValue);
     }
-  }, [multiple, onChange]);
+  };
 
-  const onOpen = useCallback(() => {
+  const onOpen = () => {
     if (props.readOnly || props.disabled) {
       return;
     }
     setOpen(true);
-  }, [props.disabled, props.readOnly]);
+    setWidth(selectRef.current ? selectRef.current.clientWidth : 0);
+  };
 
-  const onClose = useCallback(() => {
-    setOpen(false);
-  }, []);
+  const onClose = () => setOpen(false);
 
   const inputCompProps = {
     children,
     multiple,
-    minWidth,
     renderValue,
     open,
     onOpen,
     onClose,
+    menuMinWidth: width,
     ...inputProps,
   };
 
@@ -139,10 +126,9 @@ const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
       $isOpen={open}
       inputComponent={inputComponent}
       inputProps={inputCompProps}
-      ref={ref}
+      ref={handleRef}
       allowClear={allowClear}
       baseClassName="sinoui-select"
-      className={classNames('sinoui-select-base-layout', className)}
       onClear={onClear}
       endAdornment={
         <InputAdornment position="end">
