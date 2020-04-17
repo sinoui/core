@@ -65,11 +65,19 @@ exports[`前缀装饰器 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -84,32 +92,35 @@ exports[`前缀装饰器 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -218,11 +229,19 @@ exports[`后缀装饰器 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -237,32 +256,35 @@ exports[`后缀装饰器 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -330,11 +352,19 @@ exports[`正确渲染BaseInput 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -349,32 +379,35 @@ exports[`正确渲染BaseInput 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -431,11 +464,19 @@ exports[`渲染disabled属性下的BaseInput 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -450,32 +491,35 @@ exports[`渲染disabled属性下的BaseInput 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -535,11 +579,19 @@ exports[`渲染全宽模式下的BaseInput 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -554,32 +606,35 @@ exports[`渲染全宽模式下的BaseInput 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -637,11 +692,19 @@ exports[`渲染多行输入框 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -656,32 +719,35 @@ exports[`渲染多行输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -821,11 +887,19 @@ exports[`渲染带后缀的支持清除功能的输入框 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -840,32 +914,35 @@ exports[`渲染带后缀的支持清除功能的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -1006,11 +1083,19 @@ exports[`渲染支持清除功能的输入框 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -1025,32 +1110,35 @@ exports[`渲染支持清除功能的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -1108,11 +1196,19 @@ exports[`设置minRows和maxRows 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -1127,32 +1223,35 @@ exports[`设置minRows和maxRows 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -1194,11 +1293,19 @@ exports[`设置minRows和maxRows 1`] = `
 }
 
 .c1 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c1 > input.sinoui-base-input__input,
+.c1 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -1213,32 +1320,35 @@ exports[`设置minRows和maxRows 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c1 > .sinoui-base-input__input::-moz-placeholder {
+.c1 > input.sinoui-base-input__input::-moz-placeholder,
+.c1 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c1 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c1 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c1 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c1 > .sinoui-base-input__input:-ms-input-placeholder {
+.c1 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c1 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c1 > .sinoui-base-input__input::-ms-clear {
+.c1 > input.sinoui-base-input__input::-ms-clear,
+.c1 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c1 > .sinoui-base-input__input:focus {
+.c1 > input.sinoui-base-input__input:focus,
+.c1 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c1 > .sinoui-base-input__input:invalid {
+.c1 > input.sinoui-base-input__input:invalid,
+.c1 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }

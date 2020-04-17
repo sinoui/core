@@ -8,7 +8,6 @@ import { ListItemProps } from './ListItem';
 import useMultiRefs from '../utils/useMultiRefs';
 
 export interface MenuListProps extends ListProps {
-  children: React.ReactNode;
   onBlur?: (event: React.FocusEvent<HTMLElement>) => void;
   onKeyDown?: (
     event: React.FocusEvent<HTMLElement> | any,
@@ -159,7 +158,6 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
               onFocus?: (event: React.FocusEvent<HTMLElement>) => void;
               onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
             } = {
-              key: (child.props as any).key || index,
               tabIndex: index === currentTabIndex ? 0 : -1,
               onFocus: handleItemFocus,
               onKeyDown: (event) => handleKeyDown(event, child.props),

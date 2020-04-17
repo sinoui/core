@@ -140,7 +140,7 @@ function Menu(props: MenuProps) {
         style: {
           maxHeight: 'calc(100vh - 96px)',
           WebkitOverflowScrolling: 'touch',
-          minWidth: `${minWidth}px`,
+          minWidth,
           ...PaperPropsStyle,
         },
         ref: paperRef,

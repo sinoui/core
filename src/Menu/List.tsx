@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 export interface ListProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   subheader?: React.ReactElement<any>;
   dense?: boolean;
   disablePadding?: boolean;

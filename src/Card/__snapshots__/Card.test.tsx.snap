@@ -2,7 +2,7 @@
 
 exports[`Card快照测试 海拔为0的Card 1`] = `
 <div
-  className="Card__StyledCard-zr26b8-0 fTOmbQ sinoui-card"
+  className="sc-AxjAm idvDiz sinoui-card"
   elevation={0}
   tabIndex="0"
 >
@@ -12,7 +12,7 @@ exports[`Card快照测试 海拔为0的Card 1`] = `
 
 exports[`Card快照测试 边框模式Card 1`] = `
 <div
-  className="Card__StyledCard-zr26b8-0 hwUPdi sinoui-card sinoui-card--outlined"
+  className="sc-AxjAm iOaiYB sinoui-card sinoui-card--outlined"
   tabIndex="0"
 >
   文本
@@ -21,7 +21,7 @@ exports[`Card快照测试 边框模式Card 1`] = `
 
 exports[`Card快照测试 默认(海拔为1的Card) 1`] = `
 <div
-  className="Card__StyledCard-zr26b8-0 kdSgVS sinoui-card"
+  className="sc-AxjAm fkolrR sinoui-card"
   tabIndex="0"
 >
   文本

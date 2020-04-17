@@ -4,7 +4,7 @@ import { defaultTheme } from '@sinoui/theme';
 import renderer from 'react-test-renderer';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import Button from '@sinoui/core/Button';
 import Snackbar from './Snackbar';
 

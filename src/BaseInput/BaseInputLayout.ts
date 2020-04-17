@@ -99,9 +99,18 @@ const BaseInputLayout = styled.div<Props>`
   ${({ $fullWidth }) => $fullWidth && 'width: 100%;'};
 
   > .sinoui-base-input__input {
+    outline: none;
+    flex: 1 1 auto;
     padding: 3.5px 0 4.5px;
-    ${inputResetStyle};
+    height: 1.5em;
+    min-height: 1.5em;
+    caret-color: ${({ theme }) => theme.palette.primary.main};
     ${({ $align }) => $align === 'end' && 'text-align: right;'}
+  }
+
+  > input.sinoui-base-input__input,
+  > textarea.sinoui-base-input__input {
+    ${inputResetStyle};
   }
 
   &.sinoui-base-input--multiline > textarea {

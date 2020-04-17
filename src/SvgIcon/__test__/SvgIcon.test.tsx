@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { WiDayCloudyGusts } from 'react-icons/wi';
 import TestWrapper from './TestWrapper';
 import SvgIcon from '../SvgIcon';

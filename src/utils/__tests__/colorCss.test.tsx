@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import styled from 'styled-components';
 import colorCss from '@sinoui/core/utils/colorCss';
 import TestWrapper from './TestWrapper';
@@ -18,7 +18,7 @@ const Comp3 = styled.p`
 `;
 
 const Comp4 = styled.p`
-  ${colorCss()}
+  ${colorCss('color')}
 `;
 
 describe('colorCss 单元测试', () => {
@@ -109,6 +109,6 @@ describe('colorCss 单元测试', () => {
     );
 
     const text = getByTestId('comp3');
-    expect(text).toHaveStyle('');
+    expect(text.style.color).toBeFalsy();
   });
 });
