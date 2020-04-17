@@ -26,7 +26,7 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
       filled,
       variant = 'standard',
       labelLayout,
-      colon,
+      colon = true,
       disabled,
       required,
       focused: focusedProp,
