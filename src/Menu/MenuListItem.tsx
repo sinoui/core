@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Theme } from '@sinoui/theme';
 import adjustOpacity from '@sinoui/core/utils/adjustOpacity';
 import Item, { ListItemProps } from './ListItem';
+import singleLineTextCss from '../utils/singleLineTextCss';
 
 const getFocusStyle = (props: ListItemProps & { theme: Theme }) => {
   if (props.selected) {
@@ -24,9 +25,7 @@ const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
   ${({ theme }) => ({ ...theme.typography.subtitle1 })};
   height: ${(props) => props.theme.spacing.unit * 3}px;
   box-sizing: content-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  ${singleLineTextCss}
   cursor: pointer;
   ${(props) =>
     props.selected &&

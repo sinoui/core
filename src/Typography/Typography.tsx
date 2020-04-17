@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import colorCss from '@sinoui/core/utils/colorCss';
+import singleLineTextCss from '../utils/singleLineTextCss';
 
 /**
  * 文本对齐方式
@@ -31,15 +32,6 @@ const marginBottomWrapper = (props: Props) => {
   return bot;
 };
 
-/**
- * 不换行处理
- */
-const noWrapStyle = css`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
-
 const TypographyStyle = css<Props>`
   margin: 0;
   padding: 0;
@@ -54,7 +46,7 @@ const TypographyStyle = css<Props>`
  */
 export const TypographyWrapper = styled.div<Props>`
   ${TypographyStyle};
-  ${(props) => props.noWrap && noWrapStyle};
+  ${(props) => props.noWrap && singleLineTextCss};
 `;
 
 /**

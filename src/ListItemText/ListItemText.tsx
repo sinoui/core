@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
+import singleLineTextCss from '../utils/singleLineTextCss';
 
 /**
  * ListItemText 列表项中的文本
@@ -35,16 +36,12 @@ const Wrapper = styled.div.attrs((props: ListItemProps) => ({
   }),
 }))`
   flex-grow: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  ${singleLineTextCss}
   ${(props) => ({ ...props.theme.typography.body1 })}
 `;
 
 const Title = styled.div`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  ${singleLineTextCss}
 `;
 
 const SecondaryTitle = styled.div((props) => {
