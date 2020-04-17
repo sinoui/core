@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import FormControl from '@sinoui/core/FormControl';
@@ -389,75 +389,118 @@ export const Demo1 = () => (
   </ThemeProvider>
 );
 
-export const Demo2 = () => (
-  <ThemeProvider theme={defaultTheme}>
-    <div style={{ margin: 16, width: '600px' }}>
-      <h4>Create task</h4>
-      <Row gutter={48}>
-        <Column xs={24}>
-          <FormControl label="Type" labelLayout="floating" variant="outlined">
-            <TextInput variant="outlined" />
-          </FormControl>
-        </Column>
-        <Column xs={12}>
-          <FormControl
-            label="Company"
-            labelLayout="floating"
-            variant="outlined"
-          >
-            <TextInput variant="outlined" />
-          </FormControl>
-        </Column>
-        <Column xs={12}>
-          <FormControl
-            label="Opportunity"
-            labelLayout="floating"
-            variant="outlined"
-            helperText="Optional"
-          >
-            <TextInput variant="outlined" />
-          </FormControl>
-        </Column>
-        <Column xs={24}>
-          <FormControl
-            label="Task name"
-            labelLayout="floating"
-            variant="outlined"
-          >
-            <TextInput variant="outlined" />
-          </FormControl>
-        </Column>
-        <Column xs={24}>
-          <FormControl
-            label="CC"
-            labelLayout="floating"
-            variant="outlined"
-            helperText="Optional"
-          >
-            <TextInput variant="outlined" />
-          </FormControl>
-        </Column>
-        <Column xs={12}>
-          <FormControl label="Nature of request">
-            <CheckboxGroup column>
-              <Checkbox value="1">Ads review</Checkbox>
-              <Checkbox value="2">Keywords review</Checkbox>
-              <Checkbox value="3">Extensions review</Checkbox>
-            </CheckboxGroup>
-          </FormControl>
-        </Column>
-        <Column xs={12}>
-          <FormControl label="Current reviewable status">
-            <RadioGroup value="1" column>
-              <Radio value="1">Approved</Radio>
-              <Radio value="2">Not approved</Radio>
-            </RadioGroup>
-          </FormControl>
-        </Column>
-      </Row>
-    </div>
-  </ThemeProvider>
-);
+function FormDemo2() {
+  const [value, setValue] = useState<{
+    type?: string;
+    company?: string;
+    opportunity?: string;
+    taskName?: string;
+    cc?: string;
+  }>({});
+
+  const onChange = (fieldName: string, newValue: string) => {
+    setValue({
+      ...value,
+      [fieldName]: newValue,
+    });
+  };
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div style={{ margin: 16, width: '600px' }}>
+        <h4>Create task</h4>
+        <Row gutter={48}>
+          <Column xs={24}>
+            <FormControl
+              label="Type"
+              labelLayout="floating"
+              variant="outlined"
+              filled={!!value.type}
+            >
+              <TextInput
+                variant="outlined"
+                value={value.type}
+                onChange={(e) => onChange('type', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={12}>
+            <FormControl
+              label="Company"
+              labelLayout="floating"
+              variant="outlined"
+              filled={!!value.company}
+            >
+              <TextInput
+                variant="outlined"
+                onChange={(e) => onChange('company', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={12}>
+            <FormControl
+              label="Opportunity"
+              labelLayout="floating"
+              variant="outlined"
+              helperText="Optional"
+              filled={!!value.opportunity}
+            >
+              <TextInput
+                variant="outlined"
+                onChange={(e) => onChange('opportunity', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={24}>
+            <FormControl
+              label="Task name"
+              labelLayout="floating"
+              variant="outlined"
+              filled={!!value.taskName}
+            >
+              <TextInput
+                variant="outlined"
+                onChange={(e) => onChange('taskName', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={24}>
+            <FormControl
+              label="CC"
+              labelLayout="floating"
+              variant="outlined"
+              helperText="Optional"
+              filled={!!value.cc}
+            >
+              <TextInput
+                variant="outlined"
+                onChange={(e) => onChange('cc', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={12}>
+            <FormControl label="Nature of request">
+              <CheckboxGroup column>
+                <Checkbox value="1">Ads review</Checkbox>
+                <Checkbox value="2">Keywords review</Checkbox>
+                <Checkbox value="3">Extensions review</Checkbox>
+              </CheckboxGroup>
+            </FormControl>
+          </Column>
+          <Column xs={12}>
+            <FormControl label="Current reviewable status">
+              <RadioGroup value="1" column>
+                <Radio value="1">Approved</Radio>
+                <Radio value="2">Not approved</Radio>
+              </RadioGroup>
+            </FormControl>
+          </Column>
+        </Row>
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export const Demo2 = () => <FormDemo2 />;
 
 export const Demo3 = () => (
   <ThemeProvider theme={defaultTheme}>
@@ -586,7 +629,7 @@ export const Demo4 = () => (
           </FormControl>
         </Column>
         <Column xs={18}>
-          <FormControl label="Location" variant="filled">
+          <FormControl label="Location" variant="filled" filled>
             <TextInput placeholder="Placeholder text" variant="filled" />
           </FormControl>
         </Column>
