@@ -58,7 +58,7 @@ const clearIconWithEndAdornmentCss = css`
   }
 
   & > .sinoui-base-input__clear {
-    transform: translateX(29px);
+    transform: translateX(27px);
     opacity: 0;
     pointer-events: none;
     ${exitTransitionCss}

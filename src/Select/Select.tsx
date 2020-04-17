@@ -21,7 +21,7 @@ const StyledTextInput = styled(TextInput)<{ $isOpen: boolean }>`
     color: ${(props) => props.theme.palette.error.main};
   }
 
-  & .sinoui-input-adornment--end {
+  & .sinoui-select__state-icon {
     pointer-events: none;
     transition: ${({ theme }) =>
       theme.transitions.create('transform', {
@@ -131,7 +131,7 @@ const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
       baseClassName="sinoui-select"
       onClear={onClear}
       endAdornment={
-        <InputAdornment position="end">
+        <InputAdornment position="end" className="sinoui-select__state-icon">
           <ArrowDropDownIcon size={24} />
         </InputAdornment>
       }

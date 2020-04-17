@@ -519,7 +519,7 @@ label ~ .c4 {
   color: #f44336;
 }
 
-.c1 .sinoui-input-adornment--end {
+.c1 .sinoui-select__state-icon {
   pointer-events: none;
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -556,7 +556,7 @@ label ~ .c4 {
         </span>
       </div>
       <div
-        className="c6 sinoui-input-adornment sinoui-input-adornment--end"
+        className="c6 sinoui-input-adornment sinoui-input-adornment--end sinoui-select__state-icon"
       >
         <svg
           aria-hidden="true"
@@ -602,7 +602,7 @@ label ~ .c4 {
         </span>
       </div>
       <div
-        className="c6 sinoui-input-adornment sinoui-input-adornment--end"
+        className="c6 sinoui-input-adornment sinoui-input-adornment--end sinoui-select__state-icon"
       >
         <svg
           aria-hidden="true"
@@ -651,7 +651,7 @@ label ~ .c4 {
         </span>
       </div>
       <div
-        className="c6 sinoui-input-adornment sinoui-input-adornment--end"
+        className="c6 sinoui-input-adornment sinoui-input-adornment--end sinoui-select__state-icon"
       >
         <svg
           aria-hidden="true"
@@ -945,7 +945,7 @@ label ~ .c4 {
   color: #f44336;
 }
 
-.c1 .sinoui-input-adornment--end {
+.c1 .sinoui-select__state-icon {
   pointer-events: none;
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -983,7 +983,7 @@ label ~ .c4 {
       </span>
     </div>
     <div
-      className="c6 sinoui-input-adornment sinoui-input-adornment--end"
+      className="c6 sinoui-input-adornment sinoui-input-adornment--end sinoui-select__state-icon"
     >
       <svg
         aria-hidden="true"
