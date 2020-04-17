@@ -147,7 +147,11 @@ export interface BaseInputProps<
   /**
    * 指定输入框校验错误信息
    */
-  error?: string;
+  error?: boolean;
+  /**
+   * 指定输入框校验错误信息
+   */
+  errorText?: string;
 }
 
 export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
@@ -200,6 +204,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     minRows,
     maxRows,
     error,
+    errorText,
     ...other
   } = props;
 
@@ -212,10 +217,10 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   useEffect(() => {
     const input: HTMLInputElement = inputRef.current;
-    if (input && input.setCustomValidity) {
-      input.setCustomValidity(error ?? '');
+    if (input && error && input.setCustomValidity) {
+      input.setCustomValidity(errorText ?? 'error');
     }
-  }, [error]);
+  }, [error, errorText]);
 
   const {
     onChange: onChangeInputProp,

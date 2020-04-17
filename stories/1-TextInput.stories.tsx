@@ -59,7 +59,14 @@ function SimpleInput() {
             label="Error"
             onChange={onChange}
             value={value}
-            error="Error Message"
+            error
+          />
+          <TextInputField
+            label="Error"
+            onChange={onChange}
+            value={value}
+            error
+            errorText="Error Message"
           />
           <TextInputField
             label="Password"
@@ -117,10 +124,18 @@ function SimpleInput() {
           />
           <TextInputField
             label="Error"
+            variant="filled"
+            onChange={onChange}
+            value={value}
+            error
+          />
+          <TextInputField
+            label="Error"
             onChange={onChange}
             value={value}
             variant="filled"
-            error="Error Message"
+            error
+            errorText="Error Message"
           />
           <TextInputField
             label="Password"
@@ -183,9 +198,17 @@ function SimpleInput() {
           <TextInputField
             label="Error"
             onChange={onChange}
-            value={value}
             variant="outlined"
-            error="Error Message"
+            value={value}
+            error
+          />
+          <TextInputField
+            label="Error"
+            variant="outlined"
+            onChange={onChange}
+            value={value}
+            error
+            errorText="Error Message"
           />
           <TextInputField
             label="Password"

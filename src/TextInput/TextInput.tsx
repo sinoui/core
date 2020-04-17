@@ -15,9 +15,13 @@ export interface TextInputProps extends BaseInputProps {
    */
   label?: string;
   /**
+   * 错误状态
+   */
+  error?: boolean;
+  /**
    * 错误信息
    */
-  error?: string;
+  errorText?: string;
   /**
    * input的渲染形式
    */
@@ -74,6 +78,7 @@ export default function TextInput(props: TextInputProps) {
     required,
     shrink: shrinkProp,
     error,
+    errorText,
     placeholder,
     className,
     style,
@@ -126,6 +131,7 @@ export default function TextInput(props: TextInputProps) {
     defaultValue,
     noLabel,
     error,
+    errorText,
   };
 
   if (variant === 'outlined') {
@@ -144,7 +150,7 @@ export default function TextInput(props: TextInputProps) {
           shrink,
           noLabel,
           ...inputState,
-          error: !!error,
+          error,
         },
         className,
       )}
@@ -156,7 +162,7 @@ export default function TextInput(props: TextInputProps) {
       {label && (
         <InputLabel
           {...inputState}
-          error={!!error}
+          error={error}
           variant={variant}
           shrink={shrink}
           ref={labelRef}
@@ -165,9 +171,9 @@ export default function TextInput(props: TextInputProps) {
         </InputLabel>
       )}
       <InputComponent {...inputProps} />
-      {!!error && (
+      {error && (
         <HelperText error variant={variant} dense={dense}>
-          {error}
+          {errorText}
         </HelperText>
       )}
       {!error && helperText && (
