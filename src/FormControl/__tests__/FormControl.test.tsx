@@ -99,6 +99,21 @@ it('className', () => {
   );
 });
 
+it('labelLayout为floating时的class名称', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl data-testid="formcontrol" labelLayout="floating">
+        <input />
+      </FormControl>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('formcontrol')).toHaveClass(
+    'sinoui-form-item',
+    'sinoui-form-item--floating',
+  );
+});
+
 it('水平布局', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>

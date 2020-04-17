@@ -62,6 +62,7 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
           className={bemClassNames('sinoui-form-item', {
             horizontal: layout === 'horizontal',
             vertical: layout === 'vertical',
+            floating: labelLayout === 'floating',
           })}
           ref={ref}
           dense={dense}

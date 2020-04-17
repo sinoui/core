@@ -86,6 +86,10 @@ label ~ .c1 {
   margin-top: 16px;
 }
 
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c1 {
+  margin-top: 16px;
+}
+
 .c1 > .sinoui-base-input__input {
   padding: 3.5px 0px 4.5px;
 }
@@ -238,6 +242,10 @@ exports[`渲染不可用的Input 1`] = `
 }
 
 label ~ .c1 {
+  margin-top: 16px;
+}
+
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c1 {
   margin-top: 16px;
 }
 
@@ -397,6 +405,10 @@ label ~ .c1 {
   margin-top: 16px;
 }
 
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c1 {
+  margin-top: 16px;
+}
+
 .c1 > .sinoui-base-input__input {
   padding: 3.5px 0px 4.5px;
 }
@@ -549,6 +561,10 @@ exports[`渲染错误状态下的input 1`] = `
 }
 
 label ~ .c1 {
+  margin-top: 16px;
+}
+
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c1 {
   margin-top: 16px;
 }
 
