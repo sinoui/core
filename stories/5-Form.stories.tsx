@@ -323,71 +323,118 @@ export const 浮动布局 = () => (
   </ThemeProvider>
 );
 
-export const Demo1 = () => (
-  <ThemeProvider theme={defaultTheme}>
-    <div style={{ margin: 16, width: '600px' }}>
-      <h4>Create task</h4>
-      <Row gutter={48}>
-        <Column xs={24}>
-          <FormControl label="Type" labelLayout="floating" variant="filled">
-            <TextInput variant="filled" />
-          </FormControl>
-        </Column>
-        <Column xs={12}>
-          <FormControl label="Company" labelLayout="floating" variant="filled">
-            <TextInput variant="filled" />
-          </FormControl>
-        </Column>
-        <Column xs={12}>
-          <FormControl
-            label="Opportunity"
-            labelLayout="floating"
-            variant="filled"
-            helperText="Optional"
-          >
-            <TextInput variant="filled" />
-          </FormControl>
-        </Column>
-        <Column xs={24}>
-          <FormControl
-            label="Task name"
-            labelLayout="floating"
-            variant="filled"
-          >
-            <TextInput variant="filled" />
-          </FormControl>
-        </Column>
-        <Column xs={24}>
-          <FormControl
-            label="CC"
-            labelLayout="floating"
-            variant="filled"
-            helperText="Optional"
-          >
-            <TextInput variant="filled" />
-          </FormControl>
-        </Column>
-        <Column xs={12}>
-          <FormControl label="Nature of request">
-            <CheckboxGroup column>
-              <Checkbox value="1">Ads review</Checkbox>
-              <Checkbox value="2">Keywords review</Checkbox>
-              <Checkbox value="3">Extensions review</Checkbox>
-            </CheckboxGroup>
-          </FormControl>
-        </Column>
-        <Column xs={12}>
-          <FormControl label="Current reviewable status">
-            <RadioGroup value="1" column>
-              <Radio value="1">Approved</Radio>
-              <Radio value="2">Not approved</Radio>
-            </RadioGroup>
-          </FormControl>
-        </Column>
-      </Row>
-    </div>
-  </ThemeProvider>
-);
+function FormDemo1() {
+  const [value, setValue] = useState<{
+    type?: string;
+    company?: string;
+    opportunity?: string;
+    taskName?: string;
+    cc?: string;
+  }>({});
+
+  const onChange = (fieldName: string, newValue: string) => {
+    setValue({
+      ...value,
+      [fieldName]: newValue,
+    });
+  };
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div style={{ margin: 16, width: '600px' }}>
+        <h4>Create task</h4>
+        <Row gutter={48}>
+          <Column xs={24}>
+            <FormControl
+              label="Type"
+              labelLayout="floating"
+              variant="filled"
+              filled={!!value.type}
+            >
+              <TextInput
+                variant="filled"
+                value={value.type}
+                onChange={(e) => onChange('type', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={12}>
+            <FormControl
+              label="Company"
+              labelLayout="floating"
+              variant="filled"
+              filled={!!value.company}
+            >
+              <TextInput
+                variant="filled"
+                onChange={(e) => onChange('company', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={12}>
+            <FormControl
+              label="Opportunity"
+              labelLayout="floating"
+              variant="filled"
+              helperText="Optional"
+              filled={!!value.opportunity}
+            >
+              <TextInput
+                variant="filled"
+                onChange={(e) => onChange('opportunity', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={24}>
+            <FormControl
+              label="Task name"
+              labelLayout="floating"
+              variant="filled"
+              filled={!!value.taskName}
+            >
+              <TextInput
+                variant="filled"
+                onChange={(e) => onChange('taskName', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={24}>
+            <FormControl
+              label="CC"
+              labelLayout="floating"
+              variant="filled"
+              helperText="Optional"
+              filled={!!value.cc}
+            >
+              <TextInput
+                variant="filled"
+                onChange={(e) => onChange('cc', e.target.value)}
+              />
+            </FormControl>
+          </Column>
+          <Column xs={12}>
+            <FormControl label="Nature of request">
+              <CheckboxGroup column>
+                <Checkbox value="1">Ads review</Checkbox>
+                <Checkbox value="2">Keywords review</Checkbox>
+                <Checkbox value="3">Extensions review</Checkbox>
+              </CheckboxGroup>
+            </FormControl>
+          </Column>
+          <Column xs={12}>
+            <FormControl label="Current reviewable status">
+              <RadioGroup value="1" column>
+                <Radio value="1">Approved</Radio>
+                <Radio value="2">Not approved</Radio>
+              </RadioGroup>
+            </FormControl>
+          </Column>
+        </Row>
+      </div>
+    </ThemeProvider>
+  );
+}
+export const Demo1 = () => <FormDemo1 />;
 
 function FormDemo2() {
   const [value, setValue] = useState<{
@@ -620,12 +667,12 @@ export const Demo4 = () => (
       <Row gutter={8}>
         <Column xs={24}>
           <FormControl label="Title" variant="filled">
-            <TextInput variant="filled" value="Pingan Dress" />
+            <TextInput variant="filled" defaultValue="Pingan Dress" />
           </FormControl>
         </Column>
         <Column xs={6}>
           <FormControl label="price" variant="filled">
-            <TextInput variant="filled" value="$10" />
+            <TextInput variant="filled" defaultValue="$10" />
           </FormControl>
         </Column>
         <Column xs={18}>
@@ -645,12 +692,12 @@ export const Demo5 = () => (
       <Row gutter={8}>
         <Column xs={24}>
           <FormControl label="Title" variant="outlined">
-            <TextInput variant="outlined" value="Pingan Dress" />
+            <TextInput variant="outlined" defaultValue="Pingan Dress" />
           </FormControl>
         </Column>
         <Column xs={6}>
           <FormControl label="price" variant="outlined">
-            <TextInput variant="outlined" value="$10" />
+            <TextInput variant="outlined" defaultValue="$10" />
           </FormControl>
         </Column>
         <Column xs={18}>
