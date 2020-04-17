@@ -1,4 +1,4 @@
-import Paper, { PaperProps } from './Paper';
+import Paper from './Paper';
 
-export { PaperProps };
+export type { PaperProps } from './Paper';
 export default Paper;
