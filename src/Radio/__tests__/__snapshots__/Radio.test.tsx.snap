@@ -4,13 +4,13 @@ exports[`Radio组件 快照测试 基本使用 1`] = `
 Array [
   <span
     checked={false}
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl hYhXSh sinoui-radio"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb gCgrxS sinoui-radio"
     color="primary"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="sc-AxirZ eBpvqz sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -21,20 +21,20 @@ Array [
       />
     </svg>
     <input
-      className="sc-AxheI ipwklB sinoui-radio__input"
+      className="sc-AxhUy ipgEft sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl jhKHtz sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb hfznvw sinoui-radio sinoui-radio--checked"
     color="primary"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="sc-AxirZ eBpvqz sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -46,7 +46,7 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sc-AxheI ipwklB sinoui-radio__input"
+      className="sc-AxhUy ipgEft sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
@@ -57,17 +57,17 @@ Array [
 exports[`Radio组件 快照测试 带文字单选框 1`] = `
 Array [
   <label
-    className="sc-AxhCb sc-AxhUy kIYCce sinoui-form-control-label"
+    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl hYhXSh sinoui-radio"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb gCgrxS sinoui-radio"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="sc-AxirZ eBpvqz sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -78,7 +78,7 @@ Array [
         />
       </svg>
       <input
-        className="sc-AxheI ipwklB sinoui-radio__input"
+        className="sc-AxhUy ipgEft sinoui-radio__input"
         onChange={[Function]}
         type="radio"
       />
@@ -90,17 +90,17 @@ Array [
     </span>
   </label>,
   <label
-    className="sc-AxhCb sc-AxhUy kIYCce sinoui-form-control-label"
+    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
   >
     <span
       checked={true}
-      className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl jhKHtz sinoui-radio sinoui-radio--checked"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb hfznvw sinoui-radio sinoui-radio--checked"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="sc-AxirZ eBpvqz sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -112,7 +112,7 @@ Array [
       </svg>
       <input
         checked={true}
-        className="sc-AxheI ipwklB sinoui-radio__input"
+        className="sc-AxhUy ipgEft sinoui-radio__input"
         onChange={[Function]}
         type="radio"
       />
@@ -129,19 +129,19 @@ Array [
 exports[`Radio组件 快照测试 指定颜色 1`] = `
 Array [
   <label
-    className="sc-AxhCb sc-AxhUy ibSVmC sinoui-form-control-label"
+    className="sc-AxirZ sc-AxiKw bYpoGb sinoui-form-control-label"
     disabled={true}
   >
     <span
       checked={false}
-      className="sc-AxjAm gIJowi sinoui-base-button sc-AxgMl hYhXSh sinoui-radio sinoui-radio--disabled"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxhCb gCgrxS sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="sc-AxirZ eBpvqz sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -152,7 +152,7 @@ Array [
         />
       </svg>
       <input
-        className="sc-AxheI ipwklB sinoui-radio__input"
+        className="sc-AxhUy ipgEft sinoui-radio__input"
         disabled={true}
         onChange={[Function]}
         type="radio"
@@ -166,13 +166,13 @@ Array [
   </label>,
   <span
     checked={true}
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl jhKHtz sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb hfznvw sinoui-radio sinoui-radio--checked"
     color="primary"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="sc-AxirZ eBpvqz sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -184,20 +184,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sc-AxheI ipwklB sinoui-radio__input"
+      className="sc-AxhUy ipgEft sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl bCjA-Do sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb cPAlwv sinoui-radio sinoui-radio--checked"
     color="secondary"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="sc-AxirZ eBpvqz sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -209,20 +209,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sc-AxheI ipwklB sinoui-radio__input"
+      className="sc-AxhUy ipgEft sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl dlYwed sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb bbUhKC sinoui-radio sinoui-radio--checked"
     color="error"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="sc-AxirZ eBpvqz sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -234,20 +234,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sc-AxheI ipwklB sinoui-radio__input"
+      className="sc-AxhUy ipgEft sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl YgiqI sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb eyGWtX sinoui-radio sinoui-radio--checked"
     color="warning"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="sc-AxirZ eBpvqz sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -259,20 +259,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sc-AxheI ipwklB sinoui-radio__input"
+      className="sc-AxhUy ipgEft sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl caWNZk sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb fixtsH sinoui-radio sinoui-radio--checked"
     color="success"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="sc-AxirZ eBpvqz sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -284,20 +284,20 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sc-AxheI ipwklB sinoui-radio__input"
+      className="sc-AxhUy ipgEft sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
   </span>,
   <span
     checked={true}
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxgMl HjFUs sinoui-radio sinoui-radio--checked"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxhCb iqFwCL sinoui-radio sinoui-radio--checked"
     color="info"
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="sc-AxirZ eBpvqz sinoui-svg-icon"
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -309,7 +309,7 @@ Array [
     </svg>
     <input
       checked={true}
-      className="sc-AxheI ipwklB sinoui-radio__input"
+      className="sc-AxhUy ipgEft sinoui-radio__input"
       onChange={[Function]}
       type="radio"
     />
@@ -320,19 +320,19 @@ Array [
 exports[`Radio组件 快照测试 设置只读 1`] = `
 Array [
   <label
-    className="sc-AxhCb sc-AxhUy ibSVmC sinoui-form-control-label"
+    className="sc-AxirZ sc-AxiKw bYpoGb sinoui-form-control-label"
     disabled={true}
   >
     <span
       checked={false}
-      className="sc-AxjAm gIJowi sinoui-base-button sc-AxgMl hYhXSh sinoui-radio sinoui-radio--disabled"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxhCb gCgrxS sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="sc-AxirZ eBpvqz sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -343,7 +343,7 @@ Array [
         />
       </svg>
       <input
-        className="sc-AxheI ipwklB sinoui-radio__input"
+        className="sc-AxhUy ipgEft sinoui-radio__input"
         disabled={true}
         onChange={[Function]}
         type="radio"
@@ -356,19 +356,19 @@ Array [
     </span>
   </label>,
   <label
-    className="sc-AxhCb sc-AxhUy ibSVmC sinoui-form-control-label"
+    className="sc-AxirZ sc-AxiKw bYpoGb sinoui-form-control-label"
     readOnly={true}
   >
     <span
       checked={false}
-      className="sc-AxjAm gIJowi sinoui-base-button sc-AxgMl hYhXSh sinoui-radio sinoui-radio--readOnly"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxhCb gCgrxS sinoui-radio sinoui-radio--readOnly"
       color="primary"
       disabled={true}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="sc-AxirZ eBpvqz sinoui-svg-icon"
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -379,7 +379,7 @@ Array [
         />
       </svg>
       <input
-        className="sc-AxheI ipwklB sinoui-radio__input"
+        className="sc-AxhUy ipgEft sinoui-radio__input"
         onChange={[Function]}
         readOnly={true}
         type="radio"
