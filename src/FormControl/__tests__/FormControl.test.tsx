@@ -50,26 +50,24 @@ it('渲染校验错误信息', () => {
   );
 });
 
-// it('水平布局FormLabel显示冒号', () => {
-//   const { getByTestId } = render(
-//     <ThemeProvider theme={defaultTheme}>
-//       <FormControl
-//         label="姓名"
-//         data-testid="formcontrol"
-//         error="必填"
-//         layout="horizontal"
-//         colon
-//       >
-//         <input />
-//       </FormControl>
-//     </ThemeProvider>,
-//   );
-//   const formLabel = getByTestId('formcontrol').querySelector('label');
-//   expect(formLabel).toHaveClass('sinoui-form-label');
-//   expect(formLabel).toHaveStyleRule('content', "':'", {
-//     modifier: '::after',
-//   });
-// });
+it('水平布局FormLabel显示冒号', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <FormControl
+          label="姓名"
+          data-testid="formcontrol"
+          error="必填"
+          layout="horizontal"
+        >
+          <input />
+        </FormControl>
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
 
 it('ref指向根元素', () => {
   const ref = React.createRef<HTMLDivElement>();
@@ -96,6 +94,21 @@ it('className', () => {
   expect(getByTestId('formcontrol')).toHaveClass(
     'sinoui-form-item',
     'sinoui-form-item--vertical',
+  );
+});
+
+it('labelLayout为floating时的class名称', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl data-testid="formcontrol" labelLayout="floating">
+        <input />
+      </FormControl>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('formcontrol')).toHaveClass(
+    'sinoui-form-item',
+    'sinoui-form-item--floating',
   );
 });
 

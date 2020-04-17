@@ -33,6 +33,7 @@ module.exports = {
           'components/bottom-app-bar',
           'components/dialog',
           'components/bottomSheet',
+          'components/paper',
         ],
       },
     ],
@@ -65,6 +66,7 @@ module.exports = {
       'components-apis/bottomSheet',
       'components-apis/form-label',
       'components-apis/form-control',
+      'components-apis/paper',
     ],
   },
 };

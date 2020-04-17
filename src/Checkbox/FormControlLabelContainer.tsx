@@ -40,7 +40,8 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
   display: inline-flex;
   flex-direction: ${(props) =>
     props.labelPosition === 'left' ? 'row-reverse' : 'row'};
-  align-items: flex-start;
+  align-items: center;
+  vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
 
@@ -50,9 +51,7 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
   }
 
   > .sinoui-form-control-label__title {
-    padding-top: 8px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 0px 4px;
     word-break: break-all;
     word-wrap: break-word;
   }
