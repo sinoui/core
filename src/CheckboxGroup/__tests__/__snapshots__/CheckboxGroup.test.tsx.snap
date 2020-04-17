@@ -2,10 +2,10 @@
 
 exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 sc-AxhCb cvjvsR sinoui-checkbox-group"
+  className="FormGroup-sc-1yfjhta-0 sc-Axmtr fIKEiH sinoui-checkbox-group"
 >
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -40,7 +40,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={true}
@@ -75,7 +75,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={true}
@@ -110,7 +110,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -149,10 +149,10 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
 
 exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 sc-AxhCb cvjvsR sinoui-checkbox-group"
+  className="FormGroup-sc-1yfjhta-0 sc-Axmtr fIKEiH sinoui-checkbox-group"
 >
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -187,7 +187,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -222,7 +222,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -257,7 +257,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -300,10 +300,10 @@ Array [
     不可用:
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 sc-AxhCb cvjvsR sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 sc-Axmtr fIKEiH sinoui-checkbox-group"
   >
     <label
-      className="sc-AxirZ sc-AxiKw bYpoGb sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dYGcrC sinoui-form-control-label"
       disabled={true}
     >
       <span
@@ -341,7 +341,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw bYpoGb sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dYGcrC sinoui-form-control-label"
       disabled={true}
     >
       <span
@@ -383,10 +383,10 @@ Array [
     只读:
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 sc-AxhCb cvjvsR sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 sc-Axmtr fIKEiH sinoui-checkbox-group"
   >
     <label
-      className="sc-AxirZ sc-AxiKw bYpoGb sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dYGcrC sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -426,7 +426,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw bYpoGb sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dYGcrC sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -471,10 +471,10 @@ Array [
 
 exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 sc-AxhCb cvjvsR sinoui-checkbox-group"
+  className="FormGroup-sc-1yfjhta-0 sc-Axmtr fIKEiH sinoui-checkbox-group"
 >
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -509,7 +509,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -544,7 +544,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -579,7 +579,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -614,7 +614,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -653,10 +653,10 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
 
 exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
 <div
-  className="FormGroup-sc-1yfjhta-0 sc-AxhCb iNWZsY sinoui-checkbox-group"
+  className="FormGroup-sc-1yfjhta-0 sc-Axmtr cNPjHe sinoui-checkbox-group"
 >
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -691,7 +691,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+    className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -734,10 +734,10 @@ Array [
     标题显示在右侧：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 sc-AxhCb cvjvsR sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 sc-Axmtr fIKEiH sinoui-checkbox-group"
   >
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -772,7 +772,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -811,10 +811,10 @@ Array [
     标题显示在左侧：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 sc-AxhCb fPdCGB sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 sc-Axmtr ckDtnf sinoui-checkbox-group"
   >
     <label
-      className="sc-AxirZ sc-AxiKw hESzse sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI beTyyn sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -849,7 +849,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw hESzse sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI beTyyn sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -893,10 +893,10 @@ Array [
     默认：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 sc-AxhCb irSnoJ sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 sc-Axmtr hVnOoX sinoui-checkbox-group"
   >
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -931,7 +931,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -966,7 +966,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1001,7 +1001,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1036,7 +1036,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1075,10 +1075,10 @@ Array [
     设置colums为4：
   </p>,
   <div
-    className="FormGroup-sc-1yfjhta-0 sc-AxhCb eIWcLq sinoui-checkbox-group"
+    className="FormGroup-sc-1yfjhta-0 sc-Axmtr kUkFWg sinoui-checkbox-group"
   >
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1113,7 +1113,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1148,7 +1148,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1183,7 +1183,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -1218,7 +1218,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxirZ sc-AxiKw NtGGX sinoui-form-control-label"
+      className="sc-AxgMl sc-AxheI dBRDFe sinoui-form-control-label"
     >
       <span
         checked={false}

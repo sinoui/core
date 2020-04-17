@@ -2,10 +2,10 @@
 
 exports[`正确渲染FormControLabel 1`] = `
 <label
-  className="sc-AxjAm sc-AxirZ fcMBzb sinoui-form-control-label"
+  className="sc-AxhUy sc-AxgMl fqdhno sinoui-form-control-label"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw fdnOjC sinoui-button"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxheI jeomXn sinoui-button"
     color="primary"
     role="button"
     type="button"
