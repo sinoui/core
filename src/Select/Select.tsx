@@ -52,7 +52,7 @@ export interface Props
   /**
    * 子元素
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /**
    * 多选
    */
@@ -60,11 +60,11 @@ export interface Props
   /**
    * 值变更时的回调函数
    */
-  onChange?: (value: string | string[]) => void;
+  onChange?: (value?: string | string[]) => void;
   /**
    * 值的渲染方式
    */
-  renderValue?: (value: string | string[]) => React.ReactNode;
+  renderValue?: (value?: string | string[]) => React.ReactNode;
   /**
    * 值
    */
@@ -113,8 +113,11 @@ const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
   }, [multiple, onChange]);
 
   const onOpen = useCallback(() => {
+    if (props.readOnly || props.disabled) {
+      return;
+    }
     setOpen(true);
-  }, []);
+  }, [props.disabled, props.readOnly]);
 
   const onClose = useCallback(() => {
     setOpen(false);

@@ -13,7 +13,7 @@ export interface Props {
   /**
    * 子元素
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /**
    * 自定义class名称
    */
@@ -41,7 +41,7 @@ export interface Props {
   /**
    * 值变更时的回调函数
    */
-  onChange?: (value: string | string[]) => void;
+  onChange?: (value?: string | string[]) => void;
   /**
    * 弹窗出现时的回调函数
    */
@@ -61,12 +61,12 @@ export interface Props {
   /**
    * 渲染值的处理逻辑
    */
-  renderValue?: (value: string | string[]) => React.ReactNode;
+  renderValue?: (value?: string | string[]) => React.ReactNode;
   tabIndex?: number;
   /**
    * 值
    */
-  value: string | string[];
+  value?: string | string[];
   /**
    * 最小宽度
    */
@@ -150,6 +150,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     tabIndex = 0,
     value,
     minWidth,
+    ...other
   } = props;
 
   const anchorElRef = useRef<HTMLDivElement | null>(null);
@@ -199,7 +200,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
 
     if (multiple) {
       newValue = Array.isArray(value) ? [...value] : [];
-      const itemIndex = value.indexOf(child.props.value);
+      const itemIndex = newValue.indexOf(child.props.value);
       if (itemIndex === -1) {
         newValue.push(child.props.value);
       } else {
@@ -293,7 +294,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
         className={classNames('sinoui-select-layout', className)}
         ref={handleRef}
         data-testid="SelectDisplay"
-        tabIndex={disabled ? -1 : tabIndex}
+        tabIndex={disabled ? undefined : tabIndex}
         role="button"
         aria-expanded={open ? 'true' : 'false'}
         aria-haspopup="listbox"
@@ -304,6 +305,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
         disabled={disabled || readOnly}
         minWidth={minWidth}
         $isOpen={open}
+        {...other}
       >
         {isEmpty(display) ? <span>&#8203;</span> : display}
       </SelectLayout>

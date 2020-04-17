@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/tabindex-no-positive */
 import React from 'react';
 import { act } from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
@@ -149,4 +150,46 @@ it('选择框聚焦状态下，按下enter键，onOpen被调用', () => {
   fireEvent.keyDown(getByTestId('SelectDisplay'), { keyCode: 13 });
 
   expect(onOpen).toHaveBeenCalled();
+});
+
+describe('tabindex', () => {
+  it('可用时有tabindex', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <SelectInput data-testid="select" />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('select')).toHaveAttribute('tabIndex', '0');
+  });
+
+  it('只读时有tabindex', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <SelectInput readOnly data-testid="select" />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('select')).toHaveAttribute('tabIndex', '0');
+  });
+
+  it('tabIndex属性', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <SelectInput data-testid="select" tabIndex={2} />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('select')).toHaveAttribute('tabIndex', '2');
+  });
+
+  it('不可用时无tabindex', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <SelectInput disabled data-testid="select" />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('select')).not.toHaveAttribute('tabIndex');
+  });
 });

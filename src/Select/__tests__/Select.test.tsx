@@ -71,3 +71,41 @@ it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
 
   expect(container.querySelector('ul')).toBeDefined();
 });
+
+it('不可用时点击不弹框', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Select disabled wrapperProps={{ 'data-testid': 'select' }}>
+        <Option value="1">选项一</Option>
+        <Option value="2">选项二</Option>
+        <Option value="3">选项三</Option>
+      </Select>
+    </ThemeProvider>,
+  );
+
+  const select = getByTestId('select');
+  act(() => {
+    fireEvent.click(select);
+  });
+
+  expect(select).not.toHaveTextContent('选项一');
+});
+
+it('只读时点击不弹窗', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Select readOnly wrapperProps={{ 'data-testid': 'select' }}>
+        <Option value="1">选项一</Option>
+        <Option value="2">选项二</Option>
+        <Option value="3">选项三</Option>
+      </Select>
+    </ThemeProvider>,
+  );
+
+  const select = getByTestId('select');
+  act(() => {
+    fireEvent.click(select);
+  });
+
+  expect(select).not.toHaveTextContent('选项一');
+});
