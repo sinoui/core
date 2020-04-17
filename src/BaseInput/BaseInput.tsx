@@ -294,7 +294,10 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
   );
 
   const isShowClear =
-    allowClear && (Array.isArray(value) ? value.length > 0 : !!value);
+    allowClear &&
+    (Array.isArray(value) ? value.length > 0 : !!value) &&
+    !disabled &&
+    !props.readOnly;
 
   const InputComonent = multiline ? AutosizeTextarea : inputComponent;
 
