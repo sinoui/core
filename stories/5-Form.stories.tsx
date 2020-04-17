@@ -27,12 +27,11 @@ export const 水平布局 = () => (
             layout="horizontal"
             label="用户名"
             helperText="用户名首字母大写"
-            colon
           >
             <TextInput placeholder="请输入用户名" variant="filled" />
           </FormControl>
 
-          <FormControl layout="horizontal" label="爱好" colon>
+          <FormControl layout="horizontal" label="爱好">
             <CheckboxGroup>
               <Checkbox value="1">复选框1</Checkbox>
               <Checkbox value="2">复选框2</Checkbox>
@@ -41,7 +40,7 @@ export const 水平布局 = () => (
             </CheckboxGroup>
           </FormControl>
 
-          <FormControl layout="horizontal" label="性别" colon>
+          <FormControl layout="horizontal" label="性别">
             <RadioGroup>
               <Radio value="1">男</Radio>
               <Radio value="2">女</Radio>
@@ -50,7 +49,6 @@ export const 水平布局 = () => (
           <FormControl
             layout="horizontal"
             label="说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明"
-            colon
           >
             <TextInput multiline placeholder="说明" variant="outlined" />
           </FormControl>
@@ -473,6 +471,7 @@ export const Demo3 = () => (
             labelLayout="standard"
             variant="standard"
             labelWidth={40}
+            colon={false}
           >
             <TextInput placeholder="First name" />
           </FormControl>
@@ -484,6 +483,7 @@ export const Demo3 = () => (
             labelLayout="standard"
             variant="standard"
             labelWidth={40}
+            colon={false}
           >
             <TextInput placeholder="Last name" />
           </FormControl>
@@ -495,6 +495,7 @@ export const Demo3 = () => (
             labelLayout="standard"
             variant="standard"
             labelWidth={40}
+            colon={false}
           >
             <TextInput placeholder="Email" />
           </FormControl>
@@ -506,6 +507,7 @@ export const Demo3 = () => (
             labelLayout="standard"
             variant="standard"
             labelWidth={40}
+            colon={false}
           >
             <TextInput placeholder="Phone" />
           </FormControl>
