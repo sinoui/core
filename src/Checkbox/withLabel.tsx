@@ -1,5 +1,5 @@
 import React from 'react';
-import FormControlLabel from './FormControlLabel';
+import FormControlLabel from '@sinoui/core/FormControlLabel';
 import { ColorProp } from '../types';
 
 function getDisplayName(WrappedComponent: any, displayName?: string) {
@@ -72,12 +72,9 @@ function withLabel<V, T, P extends FormControlBaseProps<V, T>>(
   displayName: string,
 ) {
   return (BaseComponent: React.ComponentType<P>) => {
-    const FormControlWithLabel: React.SFC<P &
-      FormControlWithLabelProps<V, T>> = ({
-      children,
-      labelPosition,
-      ...props
-    }: any) => {
+    const FormControlWithLabel: React.SFC<
+      P & FormControlWithLabelProps<V, T>
+    > = ({ children, labelPosition, ...props }: any) => {
       if (!children) {
         return <BaseComponent {...props} />;
       }
