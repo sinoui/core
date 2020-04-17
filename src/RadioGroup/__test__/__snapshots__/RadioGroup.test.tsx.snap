@@ -2,7 +2,7 @@
 
 exports[`radioGroup组件 快照测试 基本使用 1`] = `
 <div
-  className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group"
+  className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group"
 >
   <label
     className="sc-AxiKw sc-AxhCb jVnfPj sinoui-form-control-label"
@@ -150,7 +150,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
 exports[`radioGroup组件 快照测试 设置只读 1`] = `
 Array [
   <div
-    className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group sinoui-radio-group--disabled"
+    className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group sinoui-radio-group--disabled"
   >
     <label
       className="sc-AxiKw sc-AxhCb gDPdTP sinoui-form-control-label"
@@ -306,7 +306,7 @@ Array [
     </label>
   </div>,
   <div
-    className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group sinoui-radio-group--readOnly"
+    className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group sinoui-radio-group--readOnly"
   >
     <label
       className="sc-AxiKw sc-AxhCb gDPdTP sinoui-form-control-label"
@@ -475,7 +475,7 @@ Array [
 exports[`radioGroup组件 快照测试 设置标题显示位置 1`] = `
 Array [
   <div
-    className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group"
+    className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group"
   >
     <label
       className="sc-AxiKw sc-AxhCb jVnfPj sinoui-form-control-label"
@@ -584,7 +584,7 @@ Array [
     </label>
   </div>,
   <div
-    className="FormGroup-urrsti-0 sc-AxjAm eUFuLf sinoui-radio-group"
+    className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group"
   >
     <label
       className="sc-AxiKw sc-AxhCb fLZhNe sinoui-form-control-label"
@@ -697,7 +697,7 @@ Array [
 
 exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
 <div
-  className="FormGroup-urrsti-0 sc-AxjAm dkAwdl sinoui-radio-group sinoui-radio-group--column"
+  className="FormGroup-urrsti-0 sc-AxjAm VLHia sinoui-radio-group sinoui-radio-group--column"
 >
   <label
     className="sc-AxiKw sc-AxhCb jVnfPj sinoui-form-control-label"

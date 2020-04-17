@@ -13,16 +13,8 @@ const PaddingRightStyle = css`
   }
 `;
 
-const marginLeftStyle = css`
-  > label:first-child {
-    margin-left: -12px;
-  }
-`;
-
-const columnMarginLeftStyle = css`
-  > label {
-    margin-left: -12px;
-  }
+const labelStyle = css<{ dense?: boolean }>`
+  transform: ${({ dense }) => `translate(-${dense ? 8 : 12}px, 0px)`};
 `;
 
 const FormGroupWrapper = styled(FormGroup)<{
@@ -32,9 +24,9 @@ const FormGroupWrapper = styled(FormGroup)<{
   &.sinoui-radio-group--column > .sinoui-form-control-label {
     width: 100%;
   }
-  ${({ labelPosition, column }) =>
-    labelPosition !== 'left' &&
-    (column ? columnMarginLeftStyle : marginLeftStyle)}
+  > label {
+    ${({ labelPosition }) => labelPosition !== 'left' && labelStyle}
+  }
   ${(props) => !props.column && PaddingRightStyle};
 `;
 

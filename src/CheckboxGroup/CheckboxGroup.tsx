@@ -16,20 +16,12 @@ const PaddingRightStyle = css<{ labelPosition?: 'left' | 'right' }>`
   }
 `;
 
-const marginLeftStyle = css`
-  > label:first-child {
-    margin-left: -12px;
-  }
-`;
-
-const columnMarginLeftStyle = css`
-  > label {
-    margin-left: -12px;
-  }
-`;
-
 const denseStyle = css`
   height: 32px;
+`;
+
+const labelStyle = css<{ dense?: boolean }>`
+  transform: ${({ dense }) => `translate(-${dense ? 8 : 12}px, 0px)`};
 `;
 
 const FormGroupWrapper = styled(FormGroup)<{
@@ -37,9 +29,9 @@ const FormGroupWrapper = styled(FormGroup)<{
   labelPosition?: 'left' | 'right';
   dense?: boolean;
 }>`
-  ${({ labelPosition, column }) =>
-    labelPosition !== 'left' &&
-    (column ? columnMarginLeftStyle : marginLeftStyle)}
+  > label {
+    ${({ labelPosition }) => labelPosition !== 'left' && labelStyle}
+  }
   ${(props) => !props.column && PaddingRightStyle};
   ${(props) => props.dense && denseStyle};
 `;
