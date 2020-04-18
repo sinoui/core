@@ -44,8 +44,14 @@ it('渲染有错误提示的输入框', () => {
     .create(
       <ThemeProvider theme={defaultTheme}>
         <div>
-          <TextInput label="用户名" required error="必填" />
-          <TextInput label="用户名" variant="filled" required error="必填" />
+          <TextInput label="用户名" required error errorText="必填" />
+          <TextInput
+            label="用户名"
+            variant="filled"
+            required
+            error
+            errorText="必填"
+          />
         </div>
       </ThemeProvider>,
     )
@@ -241,4 +247,36 @@ it('无标签', () => {
   );
 
   expect(getByTestId('input')).toHaveClass('sinoui-text-input--no-label');
+});
+
+it('错误状态', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput
+        variant="outlined"
+        error
+        wrapperProps={{
+          'data-testid': 'input',
+        }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).toHaveClass('sinoui-text-input--error');
+});
+
+it('只有errorText属性时，不会显示错误状态', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput
+        variant="outlined"
+        errorText="必填"
+        wrapperProps={{
+          'data-testid': 'input',
+        }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).not.toHaveClass('sinoui-text-input--error');
 });

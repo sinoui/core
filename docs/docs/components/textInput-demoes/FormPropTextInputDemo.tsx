@@ -9,7 +9,7 @@ const TextInputField = styled(TextInput)`
 `;
 
 function FormPropTextInputDemo() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
 
   const onChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,10 +43,17 @@ function FormPropTextInputDemo() {
           readOnly
         />
         <TextInputField
+          label="Error State"
+          onChange={onChange}
+          value={value}
+          error
+        />
+        <TextInputField
           label="Error"
           onChange={onChange}
           value={value}
-          error="Error Message"
+          error
+          errorText="Error Message"
         />
         <TextInputField
           label="Password"
@@ -93,11 +100,19 @@ function FormPropTextInputDemo() {
           readOnly
         />
         <TextInputField
+          label="Error State"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          error
+        />
+        <TextInputField
           label="Error"
           onChange={onChange}
           value={value}
           variant="filled"
-          error="Error Message"
+          error
+          errorText="Error Message"
         />
         <TextInputField
           label="Password"
@@ -147,11 +162,19 @@ function FormPropTextInputDemo() {
           readOnly
         />
         <TextInputField
+          label="Error State"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          error
+        />
+        <TextInputField
           label="Error"
           onChange={onChange}
           value={value}
           variant="outlined"
-          error="Error Message"
+          error
+          errorText="Error Message"
         />
         <TextInputField
           label="Password"

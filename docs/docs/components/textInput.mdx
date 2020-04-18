@@ -84,7 +84,8 @@ TextInput 支持基本的表单属性，包括：
 TextInput 组件还支持一些常用的属性，如：
 
 - `helperText` - 帮助性文本，一帮用于描述输入框，譬如描述如何使用输入框。
-- `error` - 输入框的错误信息
+- `error` - 输入框的错误状态
+- `errorText` - 输入框的错误信息
 
 更多属性参见 [TextInput API](../components-apis/text-input)。
 
@@ -100,7 +101,7 @@ const TextInputField = styled(TextInput)`
 `;
 
 function FormPropTextInputDemo() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
 
   const onChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -112,7 +113,9 @@ function FormPropTextInputDemo() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -132,10 +135,17 @@ function FormPropTextInputDemo() {
           readOnly
         />
         <TextInputField
+          label="Error State"
+          onChange={onChange}
+          value={value}
+          error
+        />
+        <TextInputField
           label="Error"
           onChange={onChange}
           value={value}
-          error="Error Message"
+          error
+          errorText="Error Message"
         />
         <TextInputField
           label="Password"
@@ -157,7 +167,9 @@ function FormPropTextInputDemo() {
           helperText="请输入内容"
         />
       </div>
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -180,11 +192,19 @@ function FormPropTextInputDemo() {
           readOnly
         />
         <TextInputField
+          label="Error State"
+          onChange={onChange}
+          value={value}
+          variant="filled"
+          error
+        />
+        <TextInputField
           label="Error"
           onChange={onChange}
           value={value}
           variant="filled"
-          error="Error Message"
+          error
+          errorText="Error Message"
         />
         <TextInputField
           label="Password"
@@ -209,7 +229,9 @@ function FormPropTextInputDemo() {
           helperText="请输入内容"
         />
       </div>
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'flex-start', flexWrap: 'wrap' }}
+      >
         <TextInputField
           label="Required"
           onChange={onChange}
@@ -232,11 +254,19 @@ function FormPropTextInputDemo() {
           readOnly
         />
         <TextInputField
+          label="Error State"
+          onChange={onChange}
+          value={value}
+          variant="outlined"
+          error
+        />
+        <TextInputField
           label="Error"
           onChange={onChange}
           value={value}
           variant="outlined"
-          error="Error Message"
+          error
+          errorText="Error Message"
         />
         <TextInputField
           label="Password"
