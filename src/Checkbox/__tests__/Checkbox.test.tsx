@@ -5,6 +5,7 @@ import { render, cleanup, fireEvent } from '@testing-library/react';
 import Checkbox from '@sinoui/core/Checkbox';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import 'jest-styled-components';
 
 describe('Checkbox 单元测试', () => {
   afterEach(cleanup);

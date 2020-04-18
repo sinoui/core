@@ -1,21 +1,292 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`radioGroup组件 快照测试 基本使用 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c3 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3 > .sinoui-icon,
+.c3 > .sinoui-svg-icon {
+  font-size: 20px;
+}
+
+.c3.sinoui-radio--disabled {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-radio--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-radio__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-radio__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-radio--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+.c6 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #3f51b5;
+}
+
+.c6 > .sinoui-icon,
+.c6 > .sinoui-svg-icon {
+  font-size: 20px;
+}
+
+.c6.sinoui-radio--disabled {
+  color: rgba(0,0,0,0.38);
+}
+
+.c6.sinoui-radio--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c6 .sinoui-radio__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c6 .sinoui-radio__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c6:hover {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c6:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c6.sinoui-radio--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c6.sinoui-radio--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c6.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+.c5 {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c6:hover {
+    background-color: transparent;
+  }
+}
+
 <div
-  className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group"
+  className="sc-AxjAm c0 sinoui-radio-group"
 >
   <label
-    className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+    className="sc-fzozJi c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+      className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -27,7 +298,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={false}
-        className="sc-fzozJi fudtma sinoui-radio__input"
+        className="c5 sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="1"
@@ -40,17 +311,17 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+    className="sc-fzozJi c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+      className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -62,7 +333,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={false}
-        className="sc-fzozJi fudtma sinoui-radio__input"
+        className="c5 sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="2"
@@ -75,17 +346,17 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+    className="sc-fzozJi c1 sinoui-form-control-label"
   >
     <span
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO hVqpfz sinoui-radio sinoui-radio--checked"
+      className="c2 sinoui-base-button c6 sinoui-radio sinoui-radio--checked"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -97,7 +368,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={true}
-        className="sc-fzozJi fudtma sinoui-radio__input"
+        className="c5 sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="3"
@@ -110,17 +381,17 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+    className="sc-fzozJi c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+      className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -132,7 +403,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={false}
-        className="sc-fzozJi fudtma sinoui-radio__input"
+        className="c5 sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="4"
@@ -149,23 +420,233 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
 
 exports[`radioGroup组件 快照测试 设置只读 1`] = `
 Array [
-  <div
-    className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group sinoui-radio-group--disabled"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c3 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3 > .sinoui-icon,
+.c3 > .sinoui-svg-icon {
+  font-size: 20px;
+}
+
+.c3.sinoui-radio--disabled {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-radio--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-radio__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-radio__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-radio--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+.c5 {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--disabled"
   >
     <label
-      className="sc-AxheI sc-Axmtr bYuusx sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxmLO ghXloh sinoui-radio sinoui-radio--disabled"
+        className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -177,7 +658,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -191,19 +672,19 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr bYuusx sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxmLO ghXloh sinoui-radio sinoui-radio--disabled"
+        className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -215,7 +696,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -229,19 +710,19 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr bYuusx sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxmLO ghXloh sinoui-radio sinoui-radio--disabled"
+        className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -253,7 +734,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -267,19 +748,19 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr bYuusx sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxmLO ghXloh sinoui-radio sinoui-radio--disabled"
+        className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -291,7 +772,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -305,16 +786,226 @@ Array [
       </span>
     </label>
   </div>,
-  <div
-    className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group sinoui-radio-group--readOnly"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c3 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3 > .sinoui-icon,
+.c3 > .sinoui-svg-icon {
+  font-size: 20px;
+}
+
+.c3.sinoui-radio--disabled {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-radio--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-radio__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-radio__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-radio--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+.c5 {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--readOnly"
   >
     <label
-      className="sc-AxheI sc-Axmtr bYuusx sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxmLO ghXloh sinoui-radio sinoui-radio--readOnly"
+        className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -323,7 +1014,7 @@ Array [
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -335,7 +1026,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -349,12 +1040,12 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr bYuusx sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxmLO ghXloh sinoui-radio sinoui-radio--readOnly"
+        className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -363,7 +1054,7 @@ Array [
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -375,7 +1066,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -389,12 +1080,12 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr bYuusx sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxmLO ghXloh sinoui-radio sinoui-radio--readOnly"
+        className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -403,7 +1094,7 @@ Array [
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -415,7 +1106,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -429,12 +1120,12 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr bYuusx sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button sc-AxmLO ghXloh sinoui-radio sinoui-radio--readOnly"
+        className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
         onBlur={false}
@@ -443,7 +1134,7 @@ Array [
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -455,7 +1146,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -474,21 +1165,231 @@ Array [
 
 exports[`radioGroup组件 快照测试 设置标题显示位置 1`] = `
 Array [
-  <div
-    className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c3 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3 > .sinoui-icon,
+.c3 > .sinoui-svg-icon {
+  font-size: 20px;
+}
+
+.c3.sinoui-radio--disabled {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-radio--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-radio__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-radio__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-radio--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+.c5 {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="sc-AxjAm c0 sinoui-radio-group"
   >
     <label
-      className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+        className="c2 sinoui-base-button c3 sinoui-radio"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -500,7 +1401,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="1"
@@ -513,17 +1414,17 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+        className="c2 sinoui-base-button c3 sinoui-radio"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -535,7 +1436,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="2"
@@ -548,17 +1449,17 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+        className="c2 sinoui-base-button c3 sinoui-radio"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -570,7 +1471,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="3"
@@ -583,21 +1484,231 @@ Array [
       </span>
     </label>
   </div>,
-  <div
-    className="FormGroup-urrsti-0 sc-AxjAm hAeyhn sinoui-radio-group"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c3 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3 > .sinoui-icon,
+.c3 > .sinoui-svg-icon {
+  font-size: 20px;
+}
+
+.c3.sinoui-radio--disabled {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-radio--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-radio__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-radio__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-radio--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+.c5 {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="sc-AxjAm c0 sinoui-radio-group"
   >
     <label
-      className="sc-AxheI sc-Axmtr hDcTyY sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+        className="c2 sinoui-base-button c3 sinoui-radio"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -609,7 +1720,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="1"
@@ -622,17 +1733,17 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr hDcTyY sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+        className="c2 sinoui-base-button c3 sinoui-radio"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -644,7 +1755,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="2"
@@ -657,17 +1768,17 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxheI sc-Axmtr hDcTyY sinoui-form-control-label"
+      className="sc-fzozJi c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+        className="c2 sinoui-base-button c3 sinoui-radio"
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -679,7 +1790,7 @@ Array [
         </svg>
         <input
           checked={false}
-          className="sc-fzozJi fudtma sinoui-radio__input"
+          className="c5 sinoui-radio__input"
           onChange={[Function]}
           type="radio"
           value="3"
@@ -696,21 +1807,223 @@ Array [
 `;
 
 exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c3 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3 > .sinoui-icon,
+.c3 > .sinoui-svg-icon {
+  font-size: 20px;
+}
+
+.c3.sinoui-radio--disabled {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-radio--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-radio__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-radio__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-radio--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+.c5 {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
 <div
-  className="FormGroup-urrsti-0 sc-AxjAm VLHia sinoui-radio-group sinoui-radio-group--column"
+  className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--column"
 >
   <label
-    className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+    className="sc-fzozJi c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+      className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -722,7 +2035,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
-        className="sc-fzozJi fudtma sinoui-radio__input"
+        className="c5 sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="1"
@@ -735,17 +2048,17 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+    className="sc-fzozJi c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+      className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -757,7 +2070,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
-        className="sc-fzozJi fudtma sinoui-radio__input"
+        className="c5 sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="2"
@@ -770,17 +2083,17 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+    className="sc-fzozJi c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+      className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -792,7 +2105,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
-        className="sc-fzozJi fudtma sinoui-radio__input"
+        className="c5 sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="3"
@@ -805,17 +2118,17 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxheI sc-Axmtr dupmxd sinoui-form-control-label"
+    className="sc-fzozJi c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxmLO ghXloh sinoui-radio"
+      className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -827,7 +2140,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
-        className="sc-fzozJi fudtma sinoui-radio__input"
+        className="c5 sinoui-radio__input"
         onChange={[Function]}
         type="radio"
         value="4"

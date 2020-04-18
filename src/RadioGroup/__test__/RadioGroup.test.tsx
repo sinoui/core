@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import RadioGroup from '@sinoui/core/RadioGroup';
 import Radio from '@sinoui/core/Radio';
+import 'jest-styled-components';
 
 /**
  * RadioGroup 单元测试

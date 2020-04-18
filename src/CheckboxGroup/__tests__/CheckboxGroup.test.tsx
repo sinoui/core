@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 import Checkbox from '@sinoui/core/Checkbox';
+import 'jest-styled-components';
 
 /**
  * CheckboxGroup 单元测试

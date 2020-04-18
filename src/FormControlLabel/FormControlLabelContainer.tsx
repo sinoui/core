@@ -1,7 +1,10 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export interface FormControlLabelContainerProps {
+  /**
+   * 标签位置
+   */
   labelPosition?: 'left' | 'right';
   children: React.ReactNode;
   /**
@@ -17,12 +20,6 @@ export interface FormControlLabelContainerProps {
    */
   dense?: boolean;
 }
-
-const denseStyle = css`
-  > .sinoui-form-control-label__title {
-    padding-top: 4px;
-  }
-`;
 
 const Label = styled.label`
   font-size: ${(props) => props.theme.typography.subtitle1.fontSize};
@@ -51,14 +48,12 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
   }
 
   > .sinoui-form-control-label__title {
-    padding: 0px 4px;
     word-break: break-all;
     word-wrap: break-word;
   }
+
   cursor: ${(props) =>
     props.readOnly || props.disabled ? 'default' : 'pointer'};
-
-  ${(props) => props.dense && denseStyle}
 `;
 
 export default FormControlLabelContainer;

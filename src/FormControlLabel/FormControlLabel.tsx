@@ -17,7 +17,7 @@ export interface FormControlLabelProps {
   /**
    * 表单控件
    */
-  control: any;
+  control: React.ReactElement;
   /**
    * 不可用
    */
