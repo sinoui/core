@@ -157,7 +157,7 @@ export const 垂直布局 = () => (
           </Column>
           <Column sm={12}>
             <FormControl label="性别">
-              <RadioGroup block>
+              <RadioGroup column>
                 <Radio value="female">女</Radio>
                 <Radio value="male">男</Radio>
               </RadioGroup>
@@ -199,7 +199,7 @@ export const 垂直布局 = () => (
           </Column>
           <Column sm={12}>
             <FormControl label="性别">
-              <RadioGroup block>
+              <RadioGroup column>
                 <Radio value="female">女</Radio>
                 <Radio value="male">男</Radio>
               </RadioGroup>
@@ -253,7 +253,7 @@ export const 垂直布局 = () => (
             </Column>
             <Column sm={12}>
               <FormControl label="性别" labelLayout="standard">
-                <RadioGroup block>
+                <RadioGroup column>
                   <Radio value="female">女</Radio>
                   <Radio value="male">男</Radio>
                 </RadioGroup>
