@@ -12,6 +12,7 @@ import H4 from '@sinoui/core/H4';
 import PersonRounded from '@sinoui/icons/PersonRounded';
 import EmailRounded from '@sinoui/icons/EmailRounded';
 import PhoneRounded from '@sinoui/icons/PhoneRounded';
+import InputAdornment from '@sinoui/core/InputAdornment';
 
 export default {
   title: 'Form',
@@ -672,7 +673,13 @@ export const Demo4 = () => (
         </Column>
         <Column xs={6}>
           <FormControl label="price" variant="filled">
-            <TextInput variant="filled" defaultValue="$10" />
+            <TextInput
+              variant="filled"
+              defaultValue="10"
+              startAdornment={
+                <InputAdornment position="start">$</InputAdornment>
+              }
+            />
           </FormControl>
         </Column>
         <Column xs={18}>
@@ -697,7 +704,13 @@ export const Demo5 = () => (
         </Column>
         <Column xs={6}>
           <FormControl label="price" variant="outlined">
-            <TextInput variant="outlined" defaultValue="$10" />
+            <TextInput
+              variant="outlined"
+              defaultValue="10"
+              startAdornment={
+                <InputAdornment position="start">$</InputAdornment>
+              }
+            />
           </FormControl>
         </Column>
         <Column xs={18}>
