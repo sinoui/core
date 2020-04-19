@@ -15,10 +15,6 @@ export interface FormControlLabelContainerProps {
    * 只读
    */
   readOnly?: boolean;
-  /**
-   * true 表示密集模式
-   */
-  dense?: boolean;
 }
 
 const Label = styled.label`

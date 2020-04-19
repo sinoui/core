@@ -10,6 +10,7 @@ import Checkbox from '@sinoui/core/Checkbox';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import CheckboxDemo from './checkbox-demos/CheckboxDemo';
+import CheckboxGroupDemo from './checkbox-demos/CheckboxGroupDemo';
 
 ## Checkbox
 
@@ -19,21 +20,23 @@ import Checkbox from '@sinoui/core/Checkbox';
 function CheckboxDemo() {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(e.target.checked);
-  };
-
-  return <Checkbox checked={checked} onChange={handleChange} />;
+  return (
+    <Checkbox checked={checked} onChange={setChecked}>
+      选项1
+    </Checkbox>
+  );
 }
 ```
 
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <CheckboxDemo />
+  <CheckboxDemo>选项1</CheckboxDemo>
 </ThemeProvider>
 
-## 基本使用
+## 状态
+
+通过 `checked` 属性可以控制复选框的选中状态。`indeterminate` 属性用来指示复选框处于半选中状态。
 
 ```tsx
 import Checkbox from '@sinoui/core/Checkbox';
@@ -56,21 +59,25 @@ function CheckboxDemo() {
     <Checkbox />
     <Checkbox checked />
     <Checkbox indeterminate />
-  </>  
+  </>
 </ThemeProvider>
 
-## 带有文字
+## 复选框分组
+
+可以使用 `CheckboxGroup` 组件对复选框进行分组，如下所示：
 
 ```tsx
+import CheckboxGorup from '@sinoui/core/CheckboxGroup';
 import Checkbox from '@sinoui/core/Checkbox';
 
-function CheckboxDemo() {
+function CheckboxGroupDemo() {
   return (
-    <>
-      <Checkbox>爱好1</Checkbox>
-      <Checkbox checked>爱好2</Checkbox>
-      <Checkbox>爱好3</Checkbox>
-    </>
+    <CheckboxGroup>
+      <Checkbox value="1">选项1</Checkbox>
+      <Checkbox value="2">选项2</Checkbox>
+      <Checkbox value="3">选项3</Checkbox>
+      <Checkbox value="4">选项4</Checkbox>
+    </CheckboxGroup>
   );
 }
 ```
@@ -78,11 +85,7 @@ function CheckboxDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <>
-    <Checkbox>爱好1</Checkbox>
-    <Checkbox checked>爱好2</Checkbox>
-    <Checkbox>爱好3</Checkbox>
-  </>  
+  <CheckboxGroupDemo />
 </ThemeProvider>
 
 ## 设置只读
@@ -110,7 +113,7 @@ function CheckboxDemo() {
     <Checkbox disabled />
     只读：
     <Checkbox readOnly />
-  </>  
+  </>
 </ThemeProvider>
 
 ## 指定颜色
@@ -146,9 +149,9 @@ function CheckboxDemo() {
     <Checkbox checked color="info" />
     <Checkbox checked color="actionActive" />
     <Checkbox checked color="actionDisabled" />
-  </>  
+  </>
 </ThemeProvider>
 
 ## API
 
-查看[Checkbox 组件 API](/docs/components-apis/checkbox)
+查看[Checkbox 组件 API](../components-apis/checkbox)

@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import Checkbox from '@sinoui/core/Checkbox';
+import type { CheckboxProps } from '@sinoui/core/Checkbox';
 
-export default function CheckboxDemo() {
+export default function CheckboxDemo(props: CheckboxProps<string>) {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(e.target.checked);
-  };
-
-  return <Checkbox checked={checked} onChange={handleChange} />;
+  return <Checkbox checked={checked} onChange={setChecked} {...props} />;
 }

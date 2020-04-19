@@ -19,13 +19,13 @@ export interface CheckboxExtendProps {
    */
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /**
-   * 双击时的回调函数
-   */
-  onDoubleClick?: (event: React.MouseEvent<HTMLElement>) => void;
-  /**
    * 错误状态
    */
   error?: any;
+  /**
+   * 设置为`true`，表示密集模式。
+   */
+  dense?: boolean;
 }
 
 /**

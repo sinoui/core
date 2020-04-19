@@ -1,6 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -292,33 +319,6 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -338,7 +338,8 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
 }
 
 <div
-  className="sc-AxjAm c0 sinoui-checkbox-group"
+  className="c0 sinoui-checkbox-group sinoui-form-group"
+  onChange={[Function]}
 >
   <label
     className="sc-AxmLO c1 sinoui-form-control-label"
@@ -347,6 +348,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -382,6 +384,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
       checked={true}
       className="c2 sinoui-base-button c5 sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -417,6 +420,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
       checked={true}
       className="c2 sinoui-base-button c5 sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -452,6 +456,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -484,6 +489,33 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
 `;
 
 exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -679,33 +711,6 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -719,7 +724,8 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
 }
 
 <div
-  className="sc-AxjAm c0 sinoui-checkbox-group"
+  className="c0 sinoui-checkbox-group sinoui-form-group"
+  onChange={[Function]}
 >
   <label
     className="sc-AxmLO c1 sinoui-form-control-label"
@@ -728,6 +734,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -753,7 +760,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     <span
       className="sinoui-form-control-label__title"
     >
-      复选框1
+      选项1
     </span>
   </label>
   <label
@@ -763,6 +770,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -788,77 +796,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     <span
       className="sinoui-form-control-label__title"
     >
-      复选框2
-    </span>
-  </label>
-  <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
-  >
-    <span
-      checked={false}
-      className="c2 sinoui-base-button c3 sinoui-checkbox"
-      color="primary"
-      tabIndex="0"
-    >
-      <svg
-        aria-hidden="true"
-        className="c4 sinoui-svg-icon"
-        focusable="false"
-        role="presentation"
-        size={24}
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-      <input
-        checked={false}
-        className="sinoui-checkbox__input"
-        onChange={[Function]}
-        type="checkbox"
-        value="3"
-      />
-    </span>
-    <span
-      className="sinoui-form-control-label__title"
-    >
-      复选框3
-    </span>
-  </label>
-  <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
-  >
-    <span
-      checked={false}
-      className="c2 sinoui-base-button c3 sinoui-checkbox"
-      color="primary"
-      tabIndex="0"
-    >
-      <svg
-        aria-hidden="true"
-        className="c4 sinoui-svg-icon"
-        focusable="false"
-        role="presentation"
-        size={24}
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-      <input
-        checked={false}
-        className="sinoui-checkbox__input"
-        onChange={[Function]}
-        type="checkbox"
-        value="4"
-      />
-    </span>
-    <span
-      className="sinoui-form-control-label__title"
-    >
-      复选框4
+      选项2
     </span>
   </label>
 </div>
@@ -877,7 +815,34 @@ Array [
 <p>
     不可用:
   </p>,
-  .c2 {
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1072,33 +1037,6 @@ Array [
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -1112,7 +1050,8 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-checkbox-group"
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
       className="sc-AxmLO c1 sinoui-form-control-label"
@@ -1123,6 +1062,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--disabled"
         color="primary"
         disabled={true}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1161,6 +1101,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--disabled"
         color="primary"
         disabled={true}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1202,7 +1143,34 @@ Array [
 <p>
     只读:
   </p>,
-  .c2 {
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1397,33 +1365,6 @@ Array [
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -1437,7 +1378,8 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-checkbox-group"
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
       className="sc-AxmLO c1 sinoui-form-control-label"
@@ -1448,8 +1390,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--read-only"
         color="primary"
         disabled={true}
-        onBlur={false}
-        onFocus={false}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1488,8 +1429,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--read-only"
         color="primary"
         disabled={true}
-        onBlur={false}
-        onFocus={false}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1524,6 +1464,33 @@ Array [
 `;
 
 exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1719,33 +1686,6 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -1759,14 +1699,15 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
 }
 
 <div
-  className="sc-AxjAm c0 sinoui-checkbox-group"
+  className="c0 sinoui-checkbox-group sinoui-form-group"
+  onChange={[Function]}
 >
   <label
     className="sc-AxmLO c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkboxGroup-select"
+      className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox-group__select-all"
       color="primary"
       onClick={[Function]}
       tabIndex="0"
@@ -1803,6 +1744,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -1838,6 +1780,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -1873,6 +1816,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -1908,6 +1852,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -1940,6 +1885,37 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
 `;
 
 exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2135,25 +2111,6 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -2167,7 +2124,8 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
 }
 
 <div
-  className="sc-AxjAm c0 sinoui-checkbox-group"
+  className="c0 sinoui-checkbox-group sinoui-form-group"
+  onChange={[Function]}
 >
   <label
     className="sc-AxmLO c1 sinoui-form-control-label"
@@ -2176,6 +2134,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -2211,6 +2170,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -2255,7 +2215,34 @@ Array [
 <p>
     标题显示在右侧：
   </p>,
-  .c2 {
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2450,33 +2437,6 @@ Array [
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -2490,7 +2450,8 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-checkbox-group"
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
       className="sc-AxmLO c1 sinoui-form-control-label"
@@ -2499,6 +2460,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -2534,6 +2496,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -2574,7 +2537,28 @@ Array [
 <p>
     标题显示在左侧：
   </p>,
-  .c2 {
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2769,27 +2753,6 @@ Array [
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -2803,7 +2766,8 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-checkbox-group"
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
       className="sc-AxmLO c1 sinoui-form-control-label"
@@ -2812,6 +2776,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -2847,6 +2812,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -2892,7 +2858,38 @@ Array [
 <p>
     默认：
   </p>,
-  .c2 {
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  width: 33.333333333333336%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3087,37 +3084,6 @@ Array [
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > * {
-  width: 33.333333333333336%;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -3131,7 +3097,8 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-checkbox-group"
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
       className="sc-AxmLO c1 sinoui-form-control-label"
@@ -3140,6 +3107,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -3175,6 +3143,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -3210,6 +3179,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -3245,6 +3215,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -3280,6 +3251,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -3320,7 +3292,38 @@ Array [
 <p>
     设置colums为4：
   </p>,
-  .c2 {
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  width: 25%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3515,37 +3518,6 @@ Array [
   word-wrap: break-word;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 > * {
-  width: 25%;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -3559,7 +3531,8 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-checkbox-group"
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
       className="sc-AxmLO c1 sinoui-form-control-label"
@@ -3568,6 +3541,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -3603,6 +3577,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -3638,6 +3613,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -3673,6 +3649,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -3708,6 +3685,7 @@ Array [
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg

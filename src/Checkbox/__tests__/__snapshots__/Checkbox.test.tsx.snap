@@ -180,6 +180,7 @@ Array [
 <span
     className="c0 sinoui-base-button c1 sinoui-checkbox"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -196,6 +197,7 @@ Array [
     </svg>
     <input
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -378,6 +380,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -395,6 +398,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -576,6 +580,7 @@ Array [
 <span
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--indeterminate"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -592,6 +597,7 @@ Array [
     </svg>
     <input
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -817,6 +823,7 @@ Array [
     <span
       className="c1 sinoui-base-button c2 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -833,6 +840,7 @@ Array [
       </svg>
       <input
         className="sinoui-checkbox__input"
+        onChange={[Function]}
         type="checkbox"
       />
     </span>
@@ -1060,6 +1068,7 @@ Array [
       checked={true}
       className="c1 sinoui-base-button c2 sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -1077,6 +1086,7 @@ Array [
       <input
         checked={true}
         className="sinoui-checkbox__input"
+        onChange={[Function]}
         type="checkbox"
       />
     </span>
@@ -1303,6 +1313,7 @@ Array [
     <span
       className="c1 sinoui-base-button c2 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -1319,6 +1330,7 @@ Array [
       </svg>
       <input
         className="sinoui-checkbox__input"
+        onChange={[Function]}
         type="checkbox"
       />
     </span>
@@ -1536,6 +1548,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -1553,6 +1566,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -1759,6 +1773,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="secondary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -1776,6 +1791,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -1982,6 +1998,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="error"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -1999,6 +2016,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -2205,6 +2223,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="warning"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -2222,6 +2241,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -2428,6 +2448,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="success"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -2445,6 +2466,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -2651,6 +2673,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="info"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -2668,6 +2691,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -2874,6 +2898,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="actionActive"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -2891,6 +2916,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -3097,6 +3123,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="actionDisabled"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -3114,6 +3141,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -3297,6 +3325,7 @@ Array [
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--disabled"
     color="primary"
     disabled={true}
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -3314,6 +3343,7 @@ Array [
     <input
       className="sinoui-checkbox__input"
       disabled={true}
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -3492,6 +3522,7 @@ Array [
     className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--read-only"
     color="primary"
     disabled={true}
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -3508,6 +3539,7 @@ Array [
     </svg>
     <input
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       readOnly={true}
       type="checkbox"
     />

@@ -22,16 +22,12 @@ import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 function CheckboxGroupDemo() {
   const [value, setValue] = useState(['2', '3']);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement | any>) => {
-    setValue(event.target.value);
-  };
-
   return (
-    <CheckboxGroup onChange={onChange} value={value}>
-      <Checkbox value="1">复选框1</Checkbox>
-      <Checkbox value="2">复选框2</Checkbox>
-      <Checkbox value="3">复选框3</Checkbox>
-      <Checkbox value="4">复选框4</Checkbox>
+    <CheckboxGroup onChange={setValue} value={value}>
+      <Checkbox value="1">选项1</Checkbox>
+      <Checkbox value="2">选项2</Checkbox>
+      <Checkbox value="3">选项3</Checkbox>
+      <Checkbox value="4">选项4</Checkbox>
     </CheckboxGroup>
   );
 }
@@ -43,7 +39,7 @@ function CheckboxGroupDemo() {
   <CheckboxGroupDemo />
 </ThemeProvider>
 
-## 设置items属性
+## 设置 items 属性
 
 ```tsx
 import CheckboxGroup from '@sinoui/core/CheckboxGroup';
@@ -51,20 +47,16 @@ import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 function CheckboxGroupDemo() {
   const [value, setValue] = useState(['2', '3']);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement | any>) => {
-    setValue(event.target.value);
-  };
-
   return (
-    <CheckboxGroup 
-    onChange={onChange} 
-    value={value} 
-    items={[
-      <Checkbox value="1">复选框1</Checkbox>,
-      <Checkbox value="2">复选框2</Checkbox>,
-      <Checkbox value="3">复选框3</Checkbox>,
-      <Checkbox value="4">复选框4</Checkbox>,
-    ]} 
+    <CheckboxGroup
+      onChange={setValue}
+      value={value}
+      items={[
+        { value: '1', label: '选项1' },
+        { value: '2', label: '选项2' },
+        { value: '3', label: '选项3' },
+        { value: '4', label: '选项4' },
+      ]}
     />
   );
 }
@@ -75,12 +67,12 @@ function CheckboxGroupDemo() {
 <ThemeProvider theme={defaultTheme}>
   <CheckboxGroupDemo
     items={[
-      <Checkbox value="1">复选框1</Checkbox>,
-      <Checkbox value="2">复选框2</Checkbox>,
-      <Checkbox value="3">复选框3</Checkbox>,
-      <Checkbox value="4">复选框4</Checkbox>,
+      { value: '1', label: '选项1' },
+      { value: '2', label: '选项2' },
+      { value: '3', label: '选项3' },
+      { value: '4', label: '选项4' },
     ]}
-  /> 
+  />
 </ThemeProvider>
 
 ## 设置是否支持全选
@@ -91,16 +83,12 @@ import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 function CheckboxGroupDemo() {
   const [value, setValue] = useState(['2', '3']);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement | any>) => {
-    setValue(event.target.value);
-  };
-
   return (
-    <CheckboxGroup enableSelectAll onChange={onChange} value={value}>
-      <Checkbox value="1">复选框1</Checkbox>
-      <Checkbox value="2">复选框2</Checkbox>
-      <Checkbox value="3">复选框3</Checkbox>
-      <Checkbox value="4">复选框4</Checkbox>
+    <CheckboxGroup enableSelectAll onChange={setValue} value={value}>
+      <Checkbox value="1">选项1</Checkbox>
+      <Checkbox value="2">选项2</Checkbox>
+      <Checkbox value="3">选项3</Checkbox>
+      <Checkbox value="4">选项4</Checkbox>
     </CheckboxGroup>
   );
 }
@@ -109,7 +97,7 @@ function CheckboxGroupDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <CheckboxGroupDemo enableSelectAll />  
+  <CheckboxGroupDemo enableSelectAll />
 </ThemeProvider>
 
 ## 设置不可用
@@ -122,14 +110,14 @@ function CheckboxGroupDemo() {
     <>
       不可用:
       <CheckboxGroup disabled value={['2']}>
-        <Checkbox value="1">复选框1</Checkbox>
-        <Checkbox value="2">复选框2</Checkbox>
+        <Checkbox value="1">选项1</Checkbox>
+        <Checkbox value="2">选项2</Checkbox>
       </CheckboxGroup>
-      <br/>
+      <br />
       只读:
       <CheckboxGroup readOnly value={['2']}>
-        <Checkbox value="1">复选框1</Checkbox>
-        <Checkbox value="2">复选框2</Checkbox>
+        <Checkbox value="1">选项1</Checkbox>
+        <Checkbox value="2">选项2</Checkbox>
       </CheckboxGroup>
     </>
   );
@@ -142,16 +130,16 @@ function CheckboxGroupDemo() {
   <>
     不可用:
     <CheckboxGroup disabled value={['2']}>
-      <Checkbox value="1">复选框1</Checkbox>
-      <Checkbox value="2">复选框2</Checkbox>
+      <Checkbox value="1">选项1</Checkbox>
+      <Checkbox value="2">选项2</Checkbox>
     </CheckboxGroup>
-    <br/>
+    <br />
     只读:
     <CheckboxGroup readOnly value={['2']}>
-      <Checkbox value="1">复选框1</Checkbox>
-      <Checkbox value="2">复选框2</Checkbox>
+      <Checkbox value="1">选项1</Checkbox>
+      <Checkbox value="2">选项2</Checkbox>
     </CheckboxGroup>
-  </> 
+  </>
 </ThemeProvider>
 
 ## 设置是否纵向显示
@@ -162,16 +150,12 @@ import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 function CheckboxGroupDemo() {
   const [value, setValue] = useState(['2', '3']);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement | any>) => {
-    setValue(event.target.value);
-  };
-
   return (
-    <CheckboxGroup column onChange={onChange} value={value}>
-      <Checkbox value="1">复选框1</Checkbox>
-      <Checkbox value="2">复选框2</Checkbox>
-      <Checkbox value="3">复选框3</Checkbox>
-      <Checkbox value="4">复选框4</Checkbox>
+    <CheckboxGroup column onChange={setValue} value={value}>
+      <Checkbox value="1">选项1</Checkbox>
+      <Checkbox value="2">选项2</Checkbox>
+      <Checkbox value="3">选项3</Checkbox>
+      <Checkbox value="4">选项4</Checkbox>
     </CheckboxGroup>
   );
 }
@@ -180,7 +164,7 @@ function CheckboxGroupDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <CheckboxGroupDemo column />  
+  <CheckboxGroupDemo column />
 </ThemeProvider>
 
 ## 设置标题显示位置
@@ -191,22 +175,18 @@ import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 function CheckboxGroupDemo() {
   const [value, setValue] = useState(['2', '3']);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement | any>) => {
-    setValue(event.target.value);
-  };
-
   return (
     <>
       标题显示在右侧：
-      <CheckboxGroup onChange={onChange} value={value}>
-        <Checkbox value="1">复选框1</Checkbox>
-        <Checkbox value="2">复选框2</Checkbox>
+      <CheckboxGroup onChange={setValue} value={value}>
+        <Checkbox value="1">选项1</Checkbox>
+        <Checkbox value="2">选项2</Checkbox>
       </CheckboxGroup>
-      <br/>
+      <br />
       标题显示在左侧：
-      <CheckboxGroup labelPosition="left" onChange={onChange} value={value}>
-        <Checkbox value="1">复选框1</Checkbox>
-        <Checkbox value="2">复选框2</Checkbox>
+      <CheckboxGroup labelPosition="left" onChange={setValue} value={value}>
+        <Checkbox value="1">选项1</Checkbox>
+        <Checkbox value="2">选项2</Checkbox>
       </CheckboxGroup>
     </>
   );
@@ -219,13 +199,15 @@ function CheckboxGroupDemo() {
   <>
     标题显示在右侧：
     <CheckboxGroupDemo />
-    <br/>
+    <br />
     标题显示在左侧：
     <CheckboxGroupDemo labelPosition="left" />
   </>
 </ThemeProvider>
 
-## 设置网格对齐布局，默认3列
+## 设置网格对齐布局
+
+可以通过 `columns` 属性指定网格布局的列数，如下所示：
 
 ```tsx
 import CheckboxGroup from '@sinoui/core/CheckboxGroup';
@@ -233,30 +215,14 @@ import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 function CheckboxGroupDemo() {
   const [value, setValue] = useState(['2', '3']);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement | any>) => {
-    setValue(event.target.value);
-  };
-
   return (
-    <>
-      默认：
-      <CheckboxGroup gridLayout onChange={onChange} value={value}>
-        <Checkbox value="1">复选框1</Checkbox>
-        <Checkbox value="2">复选框2</Checkbox>
-        <Checkbox value="3">复选框3</Checkbox>
-        <Checkbox value="4">复选框4</Checkbox>
-        <Checkbox value="5">复选框5</Checkbox>
-      </CheckboxGroup>
-      <br/>
-      设置colums为4：
-      <CheckboxGroup gridLayout columns={4} onChange={onChange} value={value}>
-        <Checkbox value="1">复选框1</Checkbox>
-        <Checkbox value="2">复选框2</Checkbox>
-        <Checkbox value="3">复选框3</Checkbox>
-        <Checkbox value="4">复选框4</Checkbox>
-        <Checkbox value="5">复选框5</Checkbox>
-      </CheckboxGroup>
-    </>
+    <CheckboxGroup columns={3} onChange={setValue} value={value}>
+      <Checkbox value="1">选项1</Checkbox>
+      <Checkbox value="2">选项2</Checkbox>
+      <Checkbox value="3">选项3</Checkbox>
+      <Checkbox value="4">选项4</Checkbox>
+      <Checkbox value="5">选项5</Checkbox>
+    </CheckboxGroup>
   );
 }
 ```
@@ -264,15 +230,9 @@ function CheckboxGroupDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <>
-    默认：
-    <CheckboxGroupDemo gridLayout />
-    <br/>
-    设置colums为4：
-    <CheckboxGroupDemo gridLayout columns={4} />
-  </>
+  <CheckboxGroupDemo columns={3} />
 </ThemeProvider>
 
 ## API
 
-查看[CheckboxGroup 组件 API](/docs/components-apis/checkboxGroup)
+查看[CheckboxGroup 组件 API](../components-apis/checkboxGroup)

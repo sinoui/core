@@ -9,11 +9,7 @@ export default {
 function StatefulCheckbox() {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(e.target.checked);
-  };
-
-  return <Checkbox checked={checked} onChange={handleChange} />;
+  return <Checkbox checked={checked} onChange={setChecked} />;
 }
 
 export const 基本使用 = () => (

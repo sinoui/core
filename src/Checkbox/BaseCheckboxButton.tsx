@@ -139,7 +139,7 @@ export interface Props {
   /**
    * 复选框发生状态变化时调用的回调函数
    */
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (checked: boolean) => void;
   /**
    * 添加自定义类名
    */
@@ -228,6 +228,15 @@ export default function BaseCheckboxButton(props: Props) {
     fixSize: true,
   };
 
+  const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
+    if (onChange && !disabled && !readOnly) {
+      onChange(!checked);
+    }
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
   return (
     <BaseToggleButton
       disabled={disabled || readOnly}
@@ -239,10 +248,10 @@ export default function BaseCheckboxButton(props: Props) {
         'sinoui-checkbox--dense': dense,
       })}
       color={color}
-      onClick={onClick}
       ripple={rippleConfig}
       checked={checked}
       indeterminate={indeterminate}
+      onClick={handleClick}
       {...rest}
     >
       {iconWrapper()}
@@ -251,7 +260,7 @@ export default function BaseCheckboxButton(props: Props) {
         type="checkbox"
         name={name}
         checked={checked}
-        onChange={onChange}
+        onChange={(event) => event.stopPropagation()}
         disabled={disabled}
         readOnly={readOnly}
         tabIndex={tabIndex}

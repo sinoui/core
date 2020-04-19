@@ -19,7 +19,7 @@ export interface FormControlBaseProps<V, T> {
   /**
    * 值发生变化时的回调函数
    */
-  onChange?: (event: React.ChangeEvent<T>, value?: string) => void;
+  onChange?: (checked: boolean) => void;
   /**
    * 获取焦点时的回调函数
    */
@@ -28,6 +28,10 @@ export interface FormControlBaseProps<V, T> {
    * 失去焦点时的回调函数
    */
   onBlur?: (event: React.FocusEvent<T>) => void;
+  /**
+   * 添加点击事件回调函数
+   */
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /**
    * 选中状态
    */

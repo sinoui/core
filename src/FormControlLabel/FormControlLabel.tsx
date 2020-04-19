@@ -43,7 +43,6 @@ export default function FormControlLabel({
       labelPosition={labelPosition}
       readOnly={control.props.readOnly}
       disabled={control.props.disabled}
-      dense={control.props.dense}
       onFocus={formControlContext?.onFocus}
       onBlur={formControlContext?.onBlur}
     >

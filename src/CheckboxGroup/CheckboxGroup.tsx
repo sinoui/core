@@ -1,46 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames';
-import styled, { css } from 'styled-components';
-import { removeUndefinedProperties } from '@sinoui/core/utils/objects';
-import FormGroup from './FormGroup';
+import FormGroup from '@sinoui/core/FormGroup';
+import Checkbox from '@sinoui/core/Checkbox';
 import { toggleItem } from './arrays';
-
-import Checkbox, { CheckboxProps } from '../Checkbox';
-
-const PaddingRightStyle = css<{ labelPosition?: 'left' | 'right' }>`
-  > label {
-    padding-right: 8px;
-  }
-  > label:last-child {
-    padding-right: 0px;
-  }
-`;
-
-const denseStyle = css`
-  height: 32px;
-`;
-
-const labelStyle = css<{ dense?: boolean }>`
-  transform: ${({ dense }) => `translate(-${dense ? 8 : 12}px, 0px)`};
-`;
-
-const FormGroupWrapper = styled(FormGroup)<{
-  column?: boolean;
-  labelPosition?: 'left' | 'right';
-  dense?: boolean;
-}>`
-  > label {
-    ${({ labelPosition }) => labelPosition !== 'left' && labelStyle}
-  }
-  ${(props) => !props.column && PaddingRightStyle};
-  ${(props) => props.dense && denseStyle};
-`;
+import type CheckboxGroupItem from './CheckboxGroupItem';
 
 export interface CheckboxGroupProps<T> {
   /**
    * 子元素。一般为一组`Checkbox`或者`<input type="checkbox" />`之类的
    */
-  children?: React.ReactNode | any;
+  children?: React.ReactNode;
   /**
    * 复选框的值
    */
@@ -48,9 +17,9 @@ export interface CheckboxGroupProps<T> {
   /**
    * 值发生变化的回调函数
    */
-  onChange?: (event: React.ChangeEvent<HTMLInputElement | any>) => void;
+  onChange?: (value: T[]) => void;
   /**
-   * 复选框不可用
+   * 不可用
    */
   disabled?: boolean;
   /**
@@ -70,10 +39,6 @@ export interface CheckboxGroupProps<T> {
    */
   onFocus?: () => void;
   /**
-   * 设置是否纵向排列
-   */
-  column?: boolean;
-  /**
    * 添加自定义类名
    */
   className?: string;
@@ -82,20 +47,13 @@ export interface CheckboxGroupProps<T> {
    */
   color?: string;
   /**
-   * 错误状态
-   */
-  error?: any;
-  /**
    * dom元素的id
    */
   id?: string;
   /**
-   * 网格对齐布局
-   *
-   * @type {boolean}
-   * @memberof CheckboxGroupProps
+   * 设置是否纵向排列
    */
-  gridLayout?: boolean;
+  column?: boolean;
   /**
    * 按照几列做网格布局，默认为3列
    *
@@ -110,7 +68,7 @@ export interface CheckboxGroupProps<T> {
   /**
    * 相当于children
    */
-  items?: React.ReactElement<CheckboxProps<T>>[];
+  items?: CheckboxGroupItem<T>[];
   /**
    * true 表示是密集模式
    */
@@ -118,143 +76,71 @@ export interface CheckboxGroupProps<T> {
 }
 
 /**
+ * 从子节点中解析出选项
+ *
+ * @param children 子节点
+ */
+const parseItemsFromChildren = (
+  children: React.ReactNode,
+): CheckboxGroupItem<any>[] => {
+  return (
+    React.Children.map(children, (item) => {
+      if (React.isValidElement(item) && item.props) {
+        const { children: label, value = label, id = value } = item.props;
+        return { id, value, label };
+      }
+      return null;
+    })?.filter(Boolean) ?? []
+  );
+};
+
+/**
  * 复选框组组件。不指定value属性时，此组件为非受控状态，自身维护选中状态
  */
 function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
   const {
     children,
-    value: valueProp,
+    value = [],
     labelPosition,
     disabled,
     readOnly,
-    onBlur,
-    onFocus,
     color,
     onChange,
-    items,
     className,
+    enableSelectAll,
+    items = parseItemsFromChildren(children),
+    dense,
     ...rest
   } = props;
 
-  const isControlled: boolean = typeof valueProp !== 'undefined';
-
-  const [groupVal, setGroupVal] = useState(!isControlled && []);
-
-  const getCheckboxValue = (checkboxProps: any) => {
-    if (checkboxProps.value) {
-      return checkboxProps.value;
-    }
-    if (checkboxProps.children && typeof checkboxProps.children === 'string') {
-      return checkboxProps.children;
-    }
-    return undefined;
-  };
+  const isSelectedAll =
+    value &&
+    value.length === items.length &&
+    items.every((item) => value.includes(item.value));
 
   /**
-   *获取所有子元素的值
-   *
-   * @private
-   * @memberof CheckboxGroup
-   */
-  const getItemValues = () => {
-    return React.Children.map(
-      props.children,
-      (item) =>
-        item && React.isValidElement(item) && getCheckboxValue(item.props),
-    ).filter(Boolean);
-  };
-
-  /**
-   * 是否选中所有
-   */
-  const selectedAll = () => {
-    const lists = getItemValues();
-    const newValue = isControlled ? props.value : groupVal;
-    return newValue && lists.every((_: T) => newValue.indexOf(_) !== -1);
-  };
-
-  /**
-   *处理全选
-   *
-   * @private
-   * @memberof CheckboxGroup
+   * 处理全选
    */
   const onSelectAllClick = (event: React.MouseEvent<HTMLElement>) => {
-    const newValue: any = isControlled ? props.value : groupVal;
-
     event.stopPropagation();
-    const lists = getItemValues();
-    if (selectedAll()) {
-      const val: any =
-        newValue && newValue.filter((el: T) => lists.indexOf(el) === -1);
-
-      Object.defineProperty(event, 'target', {
-        writable: true,
-        value: { value: val },
-      });
-
-      if (!isControlled) {
-        setGroupVal(val);
-      }
-      if (props.onChange) {
-        props.onChange(event);
-      }
-    } else {
-      const arr = new Set([...newValue, ...lists]);
-      const newArr: any = Array.from(arr);
-
-      Object.defineProperty(event, 'target', {
-        writable: true,
-        value: { value: newArr },
-      });
-
-      if (!isControlled) {
-        setGroupVal(newArr);
-      }
-      if (props.onChange) {
-        props.onChange(event);
-      }
+    if (onChange) {
+      onChange(isSelectedAll ? [] : items.map((item) => item.value));
     }
   };
 
   /**
-   * 处理选中的值
+   * 处理选项点击事件
    *
-   * @private
-   * @param {React.MouseEvent<HTMLElement>} event
-   * @param {T} checkboxValue
-   * @returns
-   * @memberof CheckboxGroup
+   * @param itemValue 选项值
    */
-  function onCheckboxChange<T>(
-    event: React.ChangeEvent<HTMLInputElement>,
-    checkboxValue: T,
-  ) {
-    const el: any = isControlled ? valueProp : groupVal;
-    const val: any = toggleItem<T>(el, checkboxValue);
-
-    if (props.readOnly) {
+  const handleItemClick = (itemValue: T) => () => {
+    if (readOnly) {
       return;
     }
-    if (!isControlled) {
-      setGroupVal(val);
+    if (onChange) {
+      const newValue = toggleItem<T>(value, itemValue);
+      onChange(newValue);
     }
-
-    if (props.onChange) {
-      event.stopPropagation();
-      Object.defineProperty(event, 'target', {
-        writable: true,
-        value: { value: val },
-      });
-      props.onChange(event);
-    }
-  }
-
-  /**
-   * onChange事件
-   */
-  const onSelectAllChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.stopPropagation();
   };
 
   /**
@@ -265,18 +151,14 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
    * @memberof CheckboxGroup
    */
   const renderSelectAll = () => {
-    const newValue = isControlled ? props.value : groupVal;
-    const selectAll = props.enableSelectAll && (
+    const selectAll = enableSelectAll && (
       <Checkbox
-        indeterminate={newValue && newValue.length > 0 && !selectedAll()}
+        indeterminate={!isSelectedAll && value.length > 0}
         onClick={onSelectAllClick}
-        checked={selectedAll()}
-        onChange={onSelectAllChange}
+        checked={isSelectedAll}
         readOnly={props.readOnly}
         disabled={props.disabled}
-        className={classNames('sinoui-checkboxGroup-select', {
-          'sinoui-checkboxGroup-selectAll': selectedAll(),
-        })}
+        className="sinoui-checkbox-group__select-all"
       >
         全选
       </Checkbox>
@@ -284,42 +166,32 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
 
     return selectAll;
   };
-  const newValue = isControlled ? valueProp : groupVal;
-
-  const child = (checkbox: React.ReactElement<CheckboxProps<T>>) => {
-    if (React.isValidElement(checkbox)) {
-      const checkboxProps: any = removeUndefinedProperties({
-        checked:
-          newValue && newValue.indexOf(getCheckboxValue(checkbox.props)) !== -1,
-        onChange: (e: React.ChangeEvent<HTMLInputElement>, v: string) => {
-          if (checkbox.props.onChange) {
-            checkbox.props.onChange(e, v);
-          }
-          onCheckboxChange(e, checkbox.props.value);
-        },
-        labelPosition,
-        disabled: checkbox.props.disabled || disabled,
-        readOnly,
-        onBlur: !readOnly && onBlur,
-        onFocus: !readOnly && onFocus,
-        color,
-        key: checkbox.props.value,
-        dense: props.dense,
-      });
-      return React.cloneElement(checkbox, checkboxProps);
-    }
-    return checkbox;
-  };
 
   return (
-    <FormGroupWrapper
+    <FormGroup
       {...rest}
+      dense={dense}
       className={classNames('sinoui-checkbox-group', className)}
-      labelPosition={labelPosition}
+      disabledIndent={labelPosition === 'left'}
+      onChange={(event) => event.stopPropagation()}
     >
       {renderSelectAll()}
-      {items ? items.map(child) : React.Children.map(children, child)}
-    </FormGroupWrapper>
+      {items.map((item) => (
+        <Checkbox
+          key={item.id ?? item.value}
+          value={item.value}
+          readOnly={readOnly}
+          disabled={disabled}
+          dense={dense}
+          labelPosition={labelPosition}
+          color={color}
+          onClick={handleItemClick(item.value)}
+          checked={value.includes(item.value)}
+        >
+          {item.label}
+        </Checkbox>
+      ))}
+    </FormGroup>
   );
 }
 
