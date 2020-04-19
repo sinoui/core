@@ -13,15 +13,14 @@ import Select from '@sinoui/core/Select';
 
 ## 属性
 
-| 属性名称    | 属性类型                                       | 默认值 | 属性说明           |
-| ----------- | ---------------------------------------------- | ------ | ------------------ |
-| multiple    | boolean                                        | false  | 是否支持多选       |
-| children    | React.ReactNode                                |        | 子元素             |
-| onChange    | (value:string\|string[])=>void                 |        | 值变更时的回调函数 |
-| renderValue | (value: string \| string[]) => React.ReactNode |        | 值的渲染方式       |
-| value       | string \| string[]                             |        | 值                 |
-| minWidth    | number                                         |        | 最小宽度           |
-| className   | string                                         |        | 自定义类名         |
+| 属性名称    | 属性类型                                        | 默认值 | 属性说明           |
+| ----------- | ----------------------------------------------- | ------ | ------------------ |
+| multiple    | boolean                                         | false  | 是否支持多选       |
+| children    | React.ReactNode                                 |        | 子元素             |
+| onChange    | (value?: string\|string[]) => void              |        | 值变更时的回调函数 |
+| renderValue | (value?: string \| string[]) => React.ReactNode |        | 值的渲染方式       |
+| value       | string \| string[]                              |        | 值                 |
+| className   | string                                          |        | 自定义类名         |
 
 除此之外，Select 继承了[TextInput](./text-input)的除了`multiline`、`minRows`、`maxRows`之外的所有属性。
 
