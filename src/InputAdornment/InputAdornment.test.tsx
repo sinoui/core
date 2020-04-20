@@ -87,3 +87,19 @@ it('替换根元素', () => {
 
   expect(tree).toMatchSnapshot();
 });
+
+it('className', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <InputAdornment
+        data-testid="adornment"
+        className="x-input-adornment"
+        position="start"
+      >
+        装饰器
+      </InputAdornment>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('adornment')).toHaveClass('x-input-adornment');
+});

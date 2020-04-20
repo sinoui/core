@@ -5,6 +5,8 @@ import useMultiRefs from '../utils/useMultiRefs';
 import BaseInputLayout from './BaseInputLayout';
 import mergeCallbacks from '../utils/mergeCallbacks';
 import bemClassNames from '../utils/bemClassNames';
+import InputAdornment from '../InputAdornment';
+import ClearIcon from './ClearIcon';
 
 interface MultilineProps {
   /**
@@ -147,7 +149,19 @@ export interface BaseInputProps<
   /**
    * 指定输入框校验错误信息
    */
-  error?: string;
+  error?: boolean;
+  /**
+   * 指定输入框校验错误信息
+   */
+  errorText?: string;
+  /**
+   * 是否允许清除
+   */
+  allowClear?: boolean;
+  /**
+   * 点击清除按钮时的回调函数
+   */
+  onClear?: (event: React.MouseEvent<HTMLOrSVGElement>) => void;
 }
 
 export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
@@ -200,6 +214,9 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     minRows,
     maxRows,
     error,
+    errorText,
+    allowClear,
+    onClear,
     ...other
   } = props;
 
@@ -212,10 +229,10 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   useEffect(() => {
     const input: HTMLInputElement = inputRef.current;
-    if (input && input.setCustomValidity) {
-      input.setCustomValidity(error ?? '');
+    if (input && error && input.setCustomValidity) {
+      input.setCustomValidity(errorText ?? 'error');
     }
-  }, [error]);
+  }, [error, errorText]);
 
   const {
     onChange: onChangeInputProp,
@@ -263,6 +280,30 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     [onClick],
   );
 
+  const handleClear = useCallback(
+    (event: React.MouseEvent<HTMLOrSVGElement>) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (onClear) {
+        onClear(event);
+        return;
+      }
+      event.persist();
+      Object.defineProperty(event, 'target', {
+        writable: true,
+        value: { value: '' },
+      });
+      handleChange(event);
+    },
+    [handleChange, onClear],
+  );
+
+  const isShowClear =
+    allowClear &&
+    (Array.isArray(value) ? value.length > 0 : !!value) &&
+    !disabled &&
+    !props.readOnly;
+
   const InputComonent = multiline ? AutosizeTextarea : inputComponent;
 
   const inputprops: Record<string, any> = {
@@ -303,6 +344,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
       $fullWidth={fullWidth}
       $multiline={multiline}
       $align={align}
+      $isShowClear={isShowClear}
+      $hasEndAdornment={!!endAdornment}
       data-testid="baseInput"
       ref={ref}
       onClick={handleClick}
@@ -313,6 +356,11 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
         {...inputprops}
         className={classNames(inputprops.className, 'sinoui-base-input__input')}
       />
+      {isShowClear && (
+        <InputAdornment position="end" className="sinoui-base-input__clear">
+          <ClearIcon onClick={handleClear} />
+        </InputAdornment>
+      )}
       {endAdornment}
       {children}
     </BaseInputLayout>

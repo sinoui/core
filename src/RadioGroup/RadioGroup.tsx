@@ -13,12 +13,29 @@ const PaddingRightStyle = css`
   }
 `;
 
-const FormGroupWrapper = styled(FormGroup)<{ block?: boolean }>`
-  &.sinoui-radio-group--block > .sinoui-form-control-label {
+const marginLeftStyle = css`
+  > label:first-child {
+    margin-left: -12px;
+  }
+`;
+
+const columnMarginLeftStyle = css`
+  > label {
+    margin-left: -12px;
+  }
+`;
+
+const FormGroupWrapper = styled(FormGroup)<{
+  column?: boolean;
+  labelPosition?: 'left' | 'right';
+}>`
+  &.sinoui-radio-group--column > .sinoui-form-control-label {
     width: 100%;
   }
-
-  ${(props) => !props.block && PaddingRightStyle};
+  ${({ labelPosition, column }) =>
+    labelPosition !== 'left' &&
+    (column ? columnMarginLeftStyle : marginLeftStyle)}
+  ${(props) => !props.column && PaddingRightStyle};
 `;
 
 export interface RadioGroupProps {
@@ -77,7 +94,7 @@ export interface RadioGroupProps {
   /**
    * 设置是否纵向排列
    */
-  block?: boolean;
+  column?: boolean;
 }
 
 /**
@@ -116,7 +133,7 @@ function RadioGroup(props: RadioGroupProps) {
     color,
     readOnly,
     onChange,
-    block,
+    column,
     className,
     ...rest
   } = props;
@@ -125,11 +142,12 @@ function RadioGroup(props: RadioGroupProps) {
     <FormGroupWrapper
       {...rest}
       className={classNames('sinoui-radio-group', className, {
-        'sinoui-radio-group--block': block,
+        'sinoui-radio-group--column': column,
         'sinoui-radio-group--disabled': disabled,
         'sinoui-radio-group--readOnly': readOnly,
       })}
-      block={block}
+      column={column}
+      labelPosition={labelPosition}
     >
       {React.Children.map(
         children,

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { render, cleanup } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import CardMedia from './CardMedia';
 
 const mediaImgUrl =

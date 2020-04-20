@@ -1,6 +1,5 @@
 import TextInput from './TextInput';
-import type { TextInputProps } from './TextInput';
 
-export type { TextInputProps };
+export type { TextInputProps } from './TextInput';
 
 export default TextInput;

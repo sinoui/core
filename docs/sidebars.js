@@ -14,6 +14,7 @@ module.exports = {
         items: [
           'components/button',
           'components/textInput',
+          'components/select',
           'components/divider',
           'components/typography',
           'components/card',
@@ -34,6 +35,7 @@ module.exports = {
           'components/dialog',
           'components/bottomSheet',
           'components/native-select',
+          'components/paper',
         ],
       },
     ],
@@ -65,6 +67,8 @@ module.exports = {
       'components-apis/dialog',
       'components-apis/bottomSheet',
       'components-apis/native-select',
+      'components-apis/paper',
+      'components-apis/select',
     ],
   },
 };

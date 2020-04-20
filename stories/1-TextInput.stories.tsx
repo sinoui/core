@@ -42,6 +42,7 @@ function SimpleInput() {
             onChange={onChange}
             value={value}
             required
+            allowClear
           />
           <TextInputField
             label="Disabled"
@@ -59,7 +60,14 @@ function SimpleInput() {
             label="Error"
             onChange={onChange}
             value={value}
-            error="Error Message"
+            error
+          />
+          <TextInputField
+            label="Error"
+            onChange={onChange}
+            value={value}
+            error
+            errorText="Error Message"
           />
           <TextInputField
             label="Password"
@@ -100,6 +108,7 @@ function SimpleInput() {
             value={value}
             required
             variant="filled"
+            allowClear
           />
           <TextInputField
             label="Disabled"
@@ -117,10 +126,18 @@ function SimpleInput() {
           />
           <TextInputField
             label="Error"
+            variant="filled"
+            onChange={onChange}
+            value={value}
+            error
+          />
+          <TextInputField
+            label="Error"
             onChange={onChange}
             value={value}
             variant="filled"
-            error="Error Message"
+            error
+            errorText="Error Message"
           />
           <TextInputField
             label="Password"
@@ -165,6 +182,7 @@ function SimpleInput() {
             value={value}
             required
             variant="outlined"
+            allowClear
           />
           <TextInputField
             label="Disabled"
@@ -183,9 +201,17 @@ function SimpleInput() {
           <TextInputField
             label="Error"
             onChange={onChange}
-            value={value}
             variant="outlined"
-            error="Error Message"
+            value={value}
+            error
+          />
+          <TextInputField
+            label="Error"
+            variant="outlined"
+            onChange={onChange}
+            value={value}
+            error
+            errorText="Error Message"
           />
           <TextInputField
             label="Password"
@@ -271,12 +297,14 @@ function AdornmentInput() {
             }
           />
           <TextInputField
+            allowClear
             value={value}
             onChange={onChange}
             label="重量"
             endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
           />
           <TextInputField
+            allowClear
             value={value}
             onChange={onChange}
             label="Label"
@@ -659,5 +687,37 @@ const MultilineTextInputDemo = () => {
 export const 多行输入框 = () => (
   <ThemeProvider theme={defaultTheme}>
     <MultilineTextInputDemo />
+  </ThemeProvider>
+);
+
+const ClearDemo = () => {
+  const [value, setValue] = useState('1');
+
+  return (
+    <>
+      <TextInputField
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        allowClear
+      />
+      <TextInputField
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        variant="filled"
+        allowClear
+      />
+      <TextInputField
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        variant="outlined"
+        allowClear
+      />
+    </>
+  );
+};
+
+export const 清除功能 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <ClearDemo />
   </ThemeProvider>
 );

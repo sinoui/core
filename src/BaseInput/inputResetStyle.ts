@@ -5,7 +5,6 @@ import { css } from 'styled-components';
  */
 const inputResetStyle = css`
   display: block;
-  flex: 1 1 auto;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -17,9 +16,6 @@ const inputResetStyle = css`
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: ${({ theme }) => theme.palette.primary.main};
 
   ::-moz-placeholder {
     color: ${(props) => props.theme.palette.text.hint};

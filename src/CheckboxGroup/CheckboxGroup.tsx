@@ -16,10 +16,25 @@ const PaddingRightStyle = css<{ labelPosition?: 'left' | 'right' }>`
   }
 `;
 
+const marginLeftStyle = css`
+  > label:first-child {
+    margin-left: -12px;
+  }
+`;
+
+const columnMarginLeftStyle = css`
+  > label {
+    margin-left: -12px;
+  }
+`;
+
 const FormGroupWrapper = styled(FormGroup)<{
   column?: boolean;
   labelPosition?: 'left' | 'right';
 }>`
+  ${({ labelPosition, column }) =>
+    labelPosition !== 'left' &&
+    (column ? columnMarginLeftStyle : marginLeftStyle)}
   ${(props) => !props.column && PaddingRightStyle};
 `;
 
