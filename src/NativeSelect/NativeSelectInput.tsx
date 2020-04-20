@@ -102,7 +102,7 @@ export default function NativeSelectInput(props: Props) {
       if (typeof optionLabel === 'string') {
         return `${optionLabel}${index === values.length - 1 ? '' : ', '}`;
       }
-      return children;
+      return optionLabel;
     });
   };
 
