@@ -402,7 +402,6 @@ function Popover(props: PopoverProps) {
           <EventListener target="window" onResize={handleResize} />
 
           <PopoverContent
-            fullWidth
             elevation={elevation}
             {...PaperProps}
             ref={contentRef}

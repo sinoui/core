@@ -1,6 +1,5 @@
 import React from 'react';
 import FormControlLabel from './FormControlLabel';
-import { ColorProp } from '../types';
 
 function getDisplayName(WrappedComponent: any, displayName?: string) {
   return (
@@ -43,7 +42,7 @@ export interface FormControlBaseProps<V, T> {
   /**
    * 指定颜色
    */
-  color?: ColorProp;
+  color?: string;
   /**
    * 子元素
    */
@@ -72,12 +71,9 @@ function withLabel<V, T, P extends FormControlBaseProps<V, T>>(
   displayName: string,
 ) {
   return (BaseComponent: React.ComponentType<P>) => {
-    const FormControlWithLabel: React.SFC<P &
-      FormControlWithLabelProps<V, T>> = ({
-      children,
-      labelPosition,
-      ...props
-    }: any) => {
+    const FormControlWithLabel: React.SFC<
+      P & FormControlWithLabelProps<V, T>
+    > = ({ children, labelPosition, ...props }: any) => {
       if (!children) {
         return <BaseComponent {...props} />;
       }

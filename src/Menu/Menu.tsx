@@ -72,7 +72,7 @@ function Menu(props: MenuProps) {
   } = props;
 
   const menuListRef = useRef<any>(null);
-  const PaperPropsStyle = paperProps.style || {};
+  const PaperPropsStyle = {};
 
   const focus = useCallback(() => {
     if (menuListRef.current) {

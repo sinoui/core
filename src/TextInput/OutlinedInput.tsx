@@ -30,7 +30,7 @@ export interface OutlinedInputProps extends BaseInputProps {
 }
 
 interface StyledBaseInputProps {
-  error?: string;
+  error?: boolean;
   $focused?: boolean;
   $dense?: boolean;
   disabled?: boolean;

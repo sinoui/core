@@ -25,7 +25,10 @@ const columnMarginLeftStyle = css`
   }
 `;
 
-const FormGroupWrapper = styled(FormGroup)<{ column?: boolean }>`
+const FormGroupWrapper = styled(FormGroup)<{
+  column?: boolean;
+  labelPosition?: 'left' | 'right';
+}>`
   &.sinoui-radio-group--column > .sinoui-form-control-label {
     width: 100%;
   }
@@ -144,6 +147,7 @@ function RadioGroup(props: RadioGroupProps) {
         'sinoui-radio-group--readOnly': readOnly,
       })}
       column={column}
+      labelPosition={labelPosition}
     >
       {React.Children.map(
         children,
