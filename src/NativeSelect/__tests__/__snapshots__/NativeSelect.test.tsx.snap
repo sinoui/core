@@ -586,28 +586,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="标准选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -653,28 +654,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="填充模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -723,28 +725,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="框模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -1351,28 +1354,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="标准选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -1423,28 +1427,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="填充模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -1498,28 +1503,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="框模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -2061,28 +2067,27 @@ label ~ .c2 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
-          >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+          <optgroup>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -2123,28 +2128,27 @@ label ~ .c2 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
-          >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+          <optgroup>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -2188,28 +2192,27 @@ label ~ .c2 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
-          >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+          <optgroup>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -2821,28 +2824,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="标准选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -2872,28 +2876,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="填充模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -2926,28 +2931,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="框模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -3582,28 +3588,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="标准选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -3654,28 +3661,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="填充模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -3729,28 +3737,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="框模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -4425,28 +4434,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="标准选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -4498,28 +4508,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="填充模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div
@@ -4574,28 +4585,29 @@ label ~ .c3 {
           onChange={[Function]}
           onFocus={[Function]}
         >
-          <option
-            selected={false}
-            value=""
-          />
-          <option
-            selected={false}
-            value="1"
+          <optgroup
+            label="框模式选择框"
           >
-            选项一
-          </option>
-          <option
-            selected={false}
-            value="2"
-          >
-            选项二
-          </option>
-          <option
-            selected={false}
-            value="3"
-          >
-            选项三
-          </option>
+            <option
+              aria-label="None"
+              value=""
+            />
+            <option
+              value="1"
+            >
+              选项一
+            </option>
+            <option
+              value="2"
+            >
+              选项二
+            </option>
+            <option
+              value="3"
+            >
+              选项三
+            </option>
+          </optgroup>
         </select>
       </div>
       <div

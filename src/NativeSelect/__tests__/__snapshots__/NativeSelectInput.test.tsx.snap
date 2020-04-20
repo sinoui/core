@@ -45,16 +45,17 @@ exports[`渲染不可用选择框 1`] = `
     disabled={true}
     onChange={[Function]}
   >
-    <option
-      selected={false}
-      value=""
-    />
-    <option
-      selected={false}
-      value="1"
-    >
-      选项一
-    </option>
+    <optgroup>
+      <option
+        aria-label="None"
+        value=""
+      />
+      <option
+        value="1"
+      >
+        选项一
+      </option>
+    </optgroup>
   </select>
 </div>
 `;
@@ -102,16 +103,17 @@ exports[`渲染原生选择框 1`] = `
     className="c1"
     onChange={[Function]}
   >
-    <option
-      selected={false}
-      value=""
-    />
-    <option
-      selected={false}
-      value="1"
-    >
-      选项一
-    </option>
+    <optgroup>
+      <option
+        aria-label="None"
+        value=""
+      />
+      <option
+        value="1"
+      >
+        选项一
+      </option>
+    </optgroup>
   </select>
 </div>
 `;
@@ -160,22 +162,22 @@ exports[`渲染多选选择框 1`] = `
     multiple={true}
     onChange={[Function]}
   >
-    <option
-      selected={false}
-      value=""
-    />
-    <option
-      selected={false}
-      value="1"
-    >
-      选项一
-    </option>
-    <option
-      selected={false}
-      value="2"
-    >
-      选项二
-    </option>
+    <optgroup>
+      <option
+        aria-label="None"
+        value=""
+      />
+      <option
+        value="1"
+      >
+        选项一
+      </option>
+      <option
+        value="2"
+      >
+        选项二
+      </option>
+    </optgroup>
   </select>
 </div>
 `;

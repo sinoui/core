@@ -19,6 +19,10 @@ export interface Props {
    * 是否不可用
    */
   disabled?: boolean;
+  /**
+   * 标签
+   */
+  label?: string;
   variant?: 'filled' | 'standard' | 'outlined';
 }
 
@@ -70,10 +74,7 @@ const parseOptionsFromChildren = (children: React.ReactNode) => {
 };
 
 export default function NativeSelectInput(props: Props) {
-  const { onChange, value, multiple, children, ...rest } = props;
-  const options = parseOptionsFromChildren(children);
-  const isOptionSeleted = (itemValue: string) =>
-    value === itemValue || (Array.isArray(value) && value.includes(itemValue));
+  const { onChange, value, multiple, children, label, ...rest } = props;
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (!onChange) {
@@ -90,17 +91,18 @@ export default function NativeSelectInput(props: Props) {
   };
 
   const renderText = () => {
-    const selectedOptions = options.filter((option) =>
-      isOptionSeleted(option.value),
-    );
-
-    return selectedOptions.map((option, index) => {
-      const { label } = option;
-
-      if (typeof label === 'string') {
-        return `${label}${index === selectedOptions.length - 1 ? '' : ', '}`;
+    const options = parseOptionsFromChildren(children);
+    const values = Array.isArray(value) ? value : [value];
+    return values.map((itemValue, index) => {
+      const item = options.find((_) => _.value === itemValue);
+      if (!item) {
+        return null;
       }
-      return label;
+      const { label: optionLabel } = item;
+      if (typeof optionLabel === 'string') {
+        return `${optionLabel}${index === values.length - 1 ? '' : ', '}`;
+      }
+      return children;
     });
   };
 
@@ -109,18 +111,11 @@ export default function NativeSelectInput(props: Props) {
       {value && <div>{renderText()}</div>}
       <NativeSelectInputContent
         {...rest}
+        value={value}
         multiple={multiple}
         onChange={handleChange}
       >
-        {options.map((item) => (
-          <option
-            key={item.id}
-            value={item.value}
-            selected={isOptionSeleted(item.value)}
-          >
-            {item.label}
-          </option>
-        ))}
+        <optgroup label={label}>{children}</optgroup>
       </NativeSelectInputContent>
     </NativeSelectInputLayout>
   );
