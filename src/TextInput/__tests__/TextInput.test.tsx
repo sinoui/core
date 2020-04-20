@@ -275,3 +275,16 @@ it('在表单项中使用浮动标签', () => {
 
   expect(getByTestId('input')).not.toHaveClass('sinoui-text-input--no-label');
 });
+
+it('输入框作为表单控件使用', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput field wrapperProps={{ 'data-testid': 'input' }} />
+    </ThemeProvider>,
+  );
+
+  const input = getByTestId('input');
+
+  expect(input).toHaveClass('sinoui-form-control');
+  expect(input.querySelector('.sinoui-helper-line')).toBeTruthy();
+});

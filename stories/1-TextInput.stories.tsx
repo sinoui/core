@@ -661,3 +661,15 @@ export const 多行输入框 = () => (
     <MultilineTextInputDemo />
   </ThemeProvider>
 );
+
+export const 作为表单控件使用 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <TextInputField
+      variant="outlined"
+      multiline
+      maxRows={2}
+      label="多行输入框"
+      field
+    />
+  </ThemeProvider>
+);

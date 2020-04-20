@@ -9,6 +9,7 @@ import Input from './Input';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
 import { useFormControlContext } from '../FormControl';
+import HelperLine from '../HelperLine';
 
 export interface TextInputProps extends BaseInputProps {
   /**
@@ -47,6 +48,10 @@ export interface TextInputProps extends BaseInputProps {
    * 给根元素指定属性
    */
   wrapperProps?: Record<string, any>;
+  /**
+   * 将输入框作为表单控件使用
+   */
+  field?: boolean;
 }
 
 const variantComponent = {
@@ -55,9 +60,10 @@ const variantComponent = {
   outlined: OutlinedInput,
 };
 
-const TextInputWrapper = styled.div<{ disabled?: boolean }>`
-  display: inline-flex;
+const TextInputWrapper = styled.div<{ disabled?: boolean; field?: boolean }>`
+  display: ${({ field }) => (field ? 'flex' : 'inline-flex')};
   flex-direction: column;
+  align-items: stretch;
   position: relative;
 `;
 
@@ -83,6 +89,7 @@ export default function TextInput(props: TextInputProps) {
     dense,
     startAdornment,
     wrapperProps,
+    field,
     ...other
   } = props;
   const innerLabelRef = useRef<HTMLLabelElement>(null);
@@ -138,6 +145,15 @@ export default function TextInput(props: TextInputProps) {
     inputProps.labelRef = labelRef;
   }
 
+  const helperTextContent = (
+    <>
+      {!!error && <HelperText error>{error}</HelperText>}
+      {!error && helperText && (
+        <HelperText disabled={disabled}>{helperText}</HelperText>
+      )}
+    </>
+  );
+
   return (
     <TextInputWrapper
       {...wrapperProps}
@@ -152,11 +168,13 @@ export default function TextInput(props: TextInputProps) {
           error: !!error,
         },
         className,
+        field && 'sinoui-form-control',
       )}
       onFocus={handleFocus}
       onBlur={handleBlur}
       disabled={disabled}
       style={style}
+      field={field}
     >
       {label && (
         <FormLabel
@@ -171,10 +189,7 @@ export default function TextInput(props: TextInputProps) {
         </FormLabel>
       )}
       <InputComponent {...inputProps} />
-      {!!error && <HelperText error>{error}</HelperText>}
-      {!error && helperText && (
-        <HelperText disabled={disabled}>{helperText}</HelperText>
-      )}
+      {field ? <HelperLine>{helperTextContent}</HelperLine> : helperTextContent}
     </TextInputWrapper>
   );
 }
