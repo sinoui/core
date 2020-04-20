@@ -1985,7 +1985,7 @@
   dependencies:
     "@types/color-convert" "*"
 
-"@types/dom-helpers@^3.3.0":
+"@types/dom-helpers@^3.4.0":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@types/dom-helpers/-/dom-helpers-3.4.1.tgz#9a9b1be9cbbf289d2192964d65064f1279a3b5ed"
   integrity sha512-j6d+NJ8TaPKoIdyjJx7nuhhCaNmxZF86wBSc4wAT5AKikwftpPjVKi9HxEKLrmRztFEYRpje6T8W3R7Q9nyHcg==

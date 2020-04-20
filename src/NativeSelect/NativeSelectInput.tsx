@@ -29,10 +29,14 @@ const multipleStyle = css`
 
 const NativeSelectLayout = styled.select<Props>`
   && {
+    ${({ theme }) => ({ ...theme.typography.body1 })}
     appearance: none;
     min-width: 160px;
     width: 100%;
+    height: 100%;
     user-select: none;
+    border: 0px;
+    background: transparent;
     margin-right: ${({ variant }) =>
       variant === 'filled' || variant === 'outlined' ? -30 : -32}px;
     padding-right: 32px;

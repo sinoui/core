@@ -497,30 +497,50 @@ label ~ .c3 {
 }
 
 .c4.c4 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -32px;
   padding-right: 32px;
   cursor: pointer;
 }
 
 .c9.c9 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -30px;
   padding-right: 32px;
   cursor: pointer;
@@ -528,7 +548,7 @@ label ~ .c3 {
 
 <div>
   <div
-    className="c0 sinoui-text-input sinoui-native-select-layout"
+    className="c0 sinoui-native-select "
   >
     <label
       className="c1 sinoui-input-label"
@@ -594,7 +614,7 @@ label ~ .c3 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--filled sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--filled "
   >
     <label
       className="c7 sinoui-input-label sinoui-input-label--filled"
@@ -663,7 +683,7 @@ label ~ .c3 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--outlined "
   >
     <label
       className="c10 sinoui-input-label sinoui-input-label--outlined"
@@ -1220,30 +1240,50 @@ label ~ .c3 {
 }
 
 .c4.c4 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -32px;
   padding-right: 32px;
   cursor: default;
 }
 
 .c9.c9 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -30px;
   padding-right: 32px;
   cursor: default;
@@ -1251,7 +1291,7 @@ label ~ .c3 {
 
 <div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--disabled sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--disabled "
     disabled={true}
   >
     <label
@@ -1321,7 +1361,7 @@ label ~ .c3 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--disabled sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--filled sinoui-native-select--disabled "
     disabled={true}
   >
     <label
@@ -1394,7 +1434,7 @@ label ~ .c3 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--disabled sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--disabled "
     disabled={true}
   >
     <label
@@ -1900,30 +1940,50 @@ label ~ .c2 {
 }
 
 .c3.c3 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -32px;
   padding-right: 32px;
   cursor: pointer;
 }
 
 .c7.c7 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -30px;
   padding-right: 32px;
   cursor: pointer;
@@ -1931,7 +1991,7 @@ label ~ .c2 {
 
 <div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--no-label sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--no-label "
   >
     <div
       className="c1 sinoui-base-input c2"
@@ -1992,7 +2052,7 @@ label ~ .c2 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--no-label sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--filled sinoui-native-select--no-label "
   >
     <div
       className="c1 sinoui-base-input c6"
@@ -2056,7 +2116,7 @@ label ~ .c2 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--no-label sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--no-label "
   >
     <div
       className="c1 sinoui-base-input c8"
@@ -2618,15 +2678,25 @@ label ~ .c3 {
 }
 
 .c4.c4 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -32px;
   padding-right: 32px;
   cursor: pointer;
@@ -2635,15 +2705,25 @@ label ~ .c3 {
 }
 
 .c7.c7 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -30px;
   padding-right: 32px;
   cursor: pointer;
@@ -2653,7 +2733,7 @@ label ~ .c3 {
 
 <div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--shrink sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--shrink "
   >
     <label
       className="c1 sinoui-input-label sinoui-input-label--shrink"
@@ -2703,7 +2783,7 @@ label ~ .c3 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--shrink sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--filled sinoui-native-select--shrink "
   >
     <label
       className="c5 sinoui-input-label sinoui-input-label--filled sinoui-input-label--shrink"
@@ -2756,7 +2836,7 @@ label ~ .c3 {
     </div>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--shrink "
   >
     <label
       className="c8 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
@@ -3346,30 +3426,50 @@ label ~ .c3 {
 }
 
 .c4.c4 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -32px;
   padding-right: 32px;
   cursor: pointer;
 }
 
 .c10.c10 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -30px;
   padding-right: 32px;
   cursor: pointer;
@@ -3377,7 +3477,7 @@ label ~ .c3 {
 
 <div>
   <div
-    className="c0 sinoui-text-input sinoui-native-select-layout"
+    className="c0 sinoui-native-select "
   >
     <label
       className="c1 sinoui-input-label"
@@ -3448,7 +3548,7 @@ label ~ .c3 {
     </p>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--filled sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--filled "
   >
     <label
       className="c8 sinoui-input-label sinoui-input-label--filled"
@@ -3522,7 +3622,7 @@ label ~ .c3 {
     </p>
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--outlined "
   >
     <label
       className="c12 sinoui-input-label sinoui-input-label--outlined"
@@ -4149,30 +4249,50 @@ label ~ .c3 {
 }
 
 .c4.c4 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -32px;
   padding-right: 32px;
   cursor: pointer;
 }
 
 .c10.c10 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   min-width: 160px;
   width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 0px;
+  background: transparent;
   margin-right: -30px;
   padding-right: 32px;
   cursor: pointer;
@@ -4180,7 +4300,7 @@ label ~ .c3 {
 
 <div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--required sinoui-text-input--error sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--required sinoui-native-select--error "
   >
     <label
       className="c1 sinoui-input-label sinoui-input-label--error"
@@ -4251,7 +4371,7 @@ label ~ .c3 {
     />
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--required sinoui-text-input--error sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--filled sinoui-native-select--required sinoui-native-select--error "
   >
     <label
       className="c8 sinoui-input-label sinoui-input-label--error sinoui-input-label--filled"
@@ -4325,7 +4445,7 @@ label ~ .c3 {
     />
   </div>
   <div
-    className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--required sinoui-text-input--error sinoui-native-select-layout"
+    className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--required sinoui-native-select--error "
   >
     <label
       className="c12 sinoui-input-label sinoui-input-label--error sinoui-input-label--outlined"

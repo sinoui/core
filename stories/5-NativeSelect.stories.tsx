@@ -47,7 +47,8 @@ export const 标准的NativeSelect = () => {
         <StyleNativeSelect
           label="Error"
           required
-          error="必填"
+          error
+          errorText="必填"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         >
@@ -129,7 +130,8 @@ export const 填充模式的NativeSelect = () => {
         <StyleNativeSelect
           label="Error"
           required
-          error="必填"
+          error
+          errorText="必填"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           variant="filled"
@@ -215,7 +217,8 @@ export const 框模式的NativeSelect = () => {
         <StyleNativeSelect
           label="Error"
           required
-          error="必填"
+          error
+          errorText="必填"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           variant="outlined"

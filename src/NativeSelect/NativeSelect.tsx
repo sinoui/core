@@ -3,7 +3,6 @@ import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import styled from 'styled-components';
-import classNames from 'classnames';
 import NativeSelectInput from './NativeSelectInput';
 import ArrowDropDownIcon from './ArrowDropDownIcon';
 
@@ -24,54 +23,45 @@ const NativeSelectLayout = styled(TextInput)``;
 /**
  * 原生的选择框组件
  */
-const NativeSelect = React.forwardRef<HTMLElement, Props>(function Select(
+const NativeSelect = React.forwardRef<HTMLDivElement, Props>(function Select(
   props,
   ref,
 ) {
   const {
     children,
     inputProps,
-    label,
+    value,
     multiple = false,
     variant = 'standard',
-    error,
-    disabled,
-    helperText,
-    dense,
-    value,
-    className,
-    readOnly,
     ...other
   } = props;
 
-  const inputComponent = NativeSelectInput;
-
-  return React.cloneElement(<NativeSelectLayout />, {
-    inputComponent,
-    inputProps: {
-      children,
-      multiple,
-      variant,
-      ...inputProps,
-    },
-    ref,
-    label,
-    className: classNames('sinoui-native-select-layout', className),
-    endAdornment: multiple ? null : (
-      <InputAdornment position="end">
-        <ArrowDropDownIcon />
-      </InputAdornment>
-    ),
-    value,
-    disabled,
-    readOnly,
-    error,
+  const inputCompProps = {
+    children,
+    multiple,
     variant,
-    helperText,
-    shrink: multiple,
-    dense,
-    ...other,
-  });
+    ...inputProps,
+  };
+
+  return (
+    <NativeSelectLayout
+      inputComponent={NativeSelectInput}
+      inputProps={inputCompProps}
+      baseClassName="sinoui-native-select"
+      ref={ref}
+      endAdornment={
+        multiple ? null : (
+          <InputAdornment position="end">
+            <ArrowDropDownIcon />
+          </InputAdornment>
+        )
+      }
+      shrink={multiple}
+      variant={variant}
+      value={value as any}
+      {...other}
+    />
+  );
 });
 
 export default NativeSelect;
