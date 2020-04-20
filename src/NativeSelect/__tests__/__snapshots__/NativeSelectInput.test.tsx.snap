@@ -29,16 +29,13 @@ exports[`渲染不可用选择框 1`] = `
 <select
   className="c0"
   disabled={true}
+  onChange={[Function]}
 >
   <option
     aria-label="None"
-    onClick={[Function]}
-    selected={true}
     value=""
   />
   <option
-    onClick={[Function]}
-    selected={false}
     value="1"
   >
     选项一
@@ -74,16 +71,13 @@ exports[`渲染原生选择框 1`] = `
 
 <select
   className="c0"
+  onChange={[Function]}
 >
   <option
     aria-label="None"
-    onClick={[Function]}
-    selected={true}
     value=""
   />
   <option
-    onClick={[Function]}
-    selected={false}
     value="1"
   >
     选项一
@@ -122,23 +116,18 @@ exports[`渲染多选选择框 1`] = `
 <select
   className="c0"
   multiple={true}
+  onChange={[Function]}
 >
   <option
     aria-label="None"
-    onClick={[Function]}
-    selected={false}
     value=""
   />
   <option
-    onClick={[Function]}
-    selected={false}
     value="1"
   >
     选项一
   </option>
   <option
-    onClick={[Function]}
-    selected={false}
     value="2"
   >
     选项二

@@ -9,8 +9,11 @@ const StyleNativeSelect = styled(NativeSelect)`
 `;
 
 export default function NativeSelectDemo() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
 
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
   return (
     <ThemeProvider theme={defaultTheme}>
       <>
@@ -24,7 +27,7 @@ export default function NativeSelectDemo() {
           <StyleNativeSelect
             label="标准选择框"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
           >
             <option aria-label="None" value="" />
             <option value="1">选项一</option>
@@ -35,7 +38,7 @@ export default function NativeSelectDemo() {
             label="Disabled"
             disabled
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
           >
             <option aria-label="None" value="" />
             <option value="1">选项一</option>
@@ -45,9 +48,10 @@ export default function NativeSelectDemo() {
           <StyleNativeSelect
             label="Error"
             required
-            error="必填"
+            error
+            errorText="必填"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
           >
             <option aria-label="None" value="" />
             <option value="1">选项一</option>
@@ -58,7 +62,7 @@ export default function NativeSelectDemo() {
             label="Helper Text"
             helperText="帮助文本"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
           >
             <option aria-label="None" value="" />
             <option value="1">选项一</option>
@@ -69,17 +73,14 @@ export default function NativeSelectDemo() {
             label="Dense"
             dense
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
           >
             <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
           </StyleNativeSelect>
-          <StyleNativeSelect
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          >
+          <StyleNativeSelect value={value} onChange={handleChange}>
             <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
@@ -96,7 +97,7 @@ export default function NativeSelectDemo() {
           <StyleNativeSelect
             label="填充模式选择框"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="filled"
           >
             <option aria-label="None" value="" />
@@ -108,7 +109,7 @@ export default function NativeSelectDemo() {
             label="Disabled"
             disabled
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="filled"
           >
             <option aria-label="None" value="" />
@@ -119,9 +120,10 @@ export default function NativeSelectDemo() {
           <StyleNativeSelect
             label="Error"
             required
-            error="必填"
+            error
+            errorText="必填"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="filled"
           >
             <option aria-label="None" value="" />
@@ -133,7 +135,7 @@ export default function NativeSelectDemo() {
             label="Helper Text"
             helperText="辅助性文字"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="filled"
           >
             <option aria-label="None" value="" />
@@ -145,7 +147,7 @@ export default function NativeSelectDemo() {
             label="Dense"
             dense
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="filled"
           >
             <option aria-label="None" value="" />
@@ -155,7 +157,7 @@ export default function NativeSelectDemo() {
           </StyleNativeSelect>
           <StyleNativeSelect
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="filled"
           >
             <option aria-label="None" value="" />
@@ -174,7 +176,7 @@ export default function NativeSelectDemo() {
           <StyleNativeSelect
             label="框模式选择框"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="outlined"
           >
             <option aria-label="None" value="" />
@@ -186,7 +188,7 @@ export default function NativeSelectDemo() {
             label="Disabled"
             disabled
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="outlined"
           >
             <option aria-label="None" value="" />
@@ -197,9 +199,10 @@ export default function NativeSelectDemo() {
           <StyleNativeSelect
             label="Error"
             required
-            error="必填"
+            error
+            errorText="必填"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="outlined"
           >
             <option aria-label="None" value="" />
@@ -211,7 +214,7 @@ export default function NativeSelectDemo() {
             label="Helper Text"
             helperText="辅助性文字"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="outlined"
           >
             <option aria-label="None" value="" />
@@ -223,7 +226,7 @@ export default function NativeSelectDemo() {
             label="Dense"
             dense
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="outlined"
           >
             <option aria-label="None" value="" />
@@ -233,7 +236,7 @@ export default function NativeSelectDemo() {
           </StyleNativeSelect>
           <StyleNativeSelect
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleChange}
             variant="outlined"
           >
             <option aria-label="None" value="" />

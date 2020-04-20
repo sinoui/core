@@ -7,7 +7,10 @@ import NativeSelectInput from './NativeSelectInput';
 import ArrowDropDownIcon from './ArrowDropDownIcon';
 
 export interface Props
-  extends Omit<TextInputProps, 'value' | 'multiline' | 'minRows' | 'maxRows'> {
+  extends Omit<
+    TextInputProps,
+    'value' | 'multiline' | 'minRows' | 'maxRows' | 'onChange'
+  > {
   /**
    * 值
    */
@@ -16,6 +19,10 @@ export interface Props
    * 是否多选
    */
   multiple?: boolean;
+  /**
+   * 值变更时的回调函数
+   */
+  onChange?: (value: string | string[]) => void;
 }
 
 const NativeSelectLayout = styled(TextInput)``;
@@ -31,6 +38,7 @@ const NativeSelect = React.forwardRef<HTMLDivElement, Props>(function Select(
     children,
     inputProps,
     value,
+    onChange,
     multiple = false,
     variant = 'standard',
     ...other
@@ -59,6 +67,7 @@ const NativeSelect = React.forwardRef<HTMLDivElement, Props>(function Select(
       shrink={multiple}
       variant={variant}
       value={value as any}
+      onChange={onChange as any}
       {...other}
     />
   );

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
 export interface Props {
@@ -10,7 +10,7 @@ export interface Props {
   /**
    * 值变更时的回调函数
    */
-  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange?: (value: string | string[]) => void;
   /**
    * 是否多选
    */
@@ -27,7 +27,7 @@ const multipleStyle = css`
   margin-right: 0px;
 `;
 
-const NativeSelectLayout = styled.select<Props>`
+const NativeSelectLayout = styled.select<Omit<Props, 'onChange'>>`
   && {
     ${({ theme }) => ({ ...theme.typography.body1 })}
     appearance: none;
@@ -47,55 +47,27 @@ const NativeSelectLayout = styled.select<Props>`
 `;
 
 export default function NativeSelectInput(props: Props) {
-  const { children, onChange, value: valueProp, multiple } = props;
+  const { onChange, value, multiple } = props;
 
-  const defaultValue = useMemo(() => valueProp ?? (multiple ? [] : ''), [
-    multiple,
-    valueProp,
-  ]);
-
-  const [value, setValue] = useState(defaultValue);
-
-  const handleOptionClick = (child: any) => (event: any) => {
+  const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     let newValue;
 
     if (multiple) {
       newValue = Array.isArray(value) ? [...value] : [];
-      const itemIndex = value.indexOf(child.props.value);
+      const itemIndex = (value as string).indexOf(event.target.value);
       if (itemIndex === -1) {
-        newValue.push(child.props.value);
+        newValue.push(event.target.value);
       } else {
         newValue.splice(itemIndex, 1);
       }
     } else {
-      newValue = child.props.value;
+      newValue = event.target.value;
     }
 
-    setValue(newValue);
-
     if (onChange) {
-      event.persist();
-      Object.defineProperty(event, 'target', {
-        writable: true,
-        value: { value: newValue },
-      });
-
-      onChange(event);
+      onChange(newValue);
     }
   };
 
-  const items = React.Children.map(children, (child) => {
-    if (!React.isValidElement(child)) {
-      return null;
-    }
-
-    return React.cloneElement(child, {
-      selected: Array.isArray(value)
-        ? value.indexOf(child.props.value) !== -1
-        : value === child.props.value,
-      onClick: () => handleOptionClick(child),
-    });
-  });
-
-  return <NativeSelectLayout {...props}>{items}</NativeSelectLayout>;
+  return <NativeSelectLayout {...props} onChange={handleOnChange} />;
 }

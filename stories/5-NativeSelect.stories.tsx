@@ -13,7 +13,12 @@ const StyleNativeSelect = styled(NativeSelect)`
 `;
 
 export const 标准的NativeSelect = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
+
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <div
@@ -26,7 +31,7 @@ export const 标准的NativeSelect = () => {
         <StyleNativeSelect
           label="标准选择框"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
@@ -37,7 +42,7 @@ export const 标准的NativeSelect = () => {
           label="Disabled"
           disabled
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
@@ -50,7 +55,7 @@ export const 标准的NativeSelect = () => {
           error
           errorText="必填"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
@@ -61,7 +66,7 @@ export const 标准的NativeSelect = () => {
           label="Helper Text"
           helperText="帮助文本"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
@@ -72,17 +77,14 @@ export const 标准的NativeSelect = () => {
           label="Dense"
           dense
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
         </StyleNativeSelect>
-        <StyleNativeSelect
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        >
+        <StyleNativeSelect value={value} onChange={handleChange}>
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
@@ -94,7 +96,11 @@ export const 标准的NativeSelect = () => {
 };
 
 export const 填充模式的NativeSelect = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
+
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
   return (
     <ThemeProvider theme={defaultTheme}>
       <div
@@ -107,7 +113,7 @@ export const 填充模式的NativeSelect = () => {
         <StyleNativeSelect
           label="填充模式选择框"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="filled"
         >
           <option aria-label="None" value="" />
@@ -119,7 +125,7 @@ export const 填充模式的NativeSelect = () => {
           label="Disabled"
           disabled
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="filled"
         >
           <option aria-label="None" value="" />
@@ -133,7 +139,7 @@ export const 填充模式的NativeSelect = () => {
           error
           errorText="必填"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="filled"
         >
           <option aria-label="None" value="" />
@@ -145,7 +151,7 @@ export const 填充模式的NativeSelect = () => {
           label="Helper Text"
           helperText="辅助性文字"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="filled"
         >
           <option aria-label="None" value="" />
@@ -157,7 +163,7 @@ export const 填充模式的NativeSelect = () => {
           label="Dense"
           dense
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="filled"
         >
           <option aria-label="None" value="" />
@@ -167,7 +173,7 @@ export const 填充模式的NativeSelect = () => {
         </StyleNativeSelect>
         <StyleNativeSelect
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="filled"
         >
           <option aria-label="None" value="" />
@@ -181,7 +187,11 @@ export const 填充模式的NativeSelect = () => {
 };
 
 export const 框模式的NativeSelect = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
+
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
   return (
     <ThemeProvider theme={defaultTheme}>
       <div
@@ -194,7 +204,7 @@ export const 框模式的NativeSelect = () => {
         <StyleNativeSelect
           label="框模式选择框"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="outlined"
         >
           <option aria-label="None" value="" />
@@ -206,7 +216,7 @@ export const 框模式的NativeSelect = () => {
           label="Disabled"
           disabled
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="outlined"
         >
           <option aria-label="None" value="" />
@@ -220,7 +230,7 @@ export const 框模式的NativeSelect = () => {
           error
           errorText="必填"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="outlined"
         >
           <option aria-label="None" value="" />
@@ -232,7 +242,7 @@ export const 框模式的NativeSelect = () => {
           label="Helper Text"
           helperText="辅助性文字"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="outlined"
         >
           <option aria-label="None" value="" />
@@ -244,7 +254,7 @@ export const 框模式的NativeSelect = () => {
           label="Dense"
           dense
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="outlined"
         >
           <option aria-label="None" value="" />
@@ -254,7 +264,7 @@ export const 框模式的NativeSelect = () => {
         </StyleNativeSelect>
         <StyleNativeSelect
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="outlined"
         >
           <option aria-label="None" value="" />
@@ -269,6 +279,10 @@ export const 框模式的NativeSelect = () => {
 
 export const 多选的NativeSelect = () => {
   const [value, setValue] = useState([]);
+
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
   return (
     <ThemeProvider theme={defaultTheme}>
       <div
@@ -289,7 +303,7 @@ export const 多选的NativeSelect = () => {
           label="填充模式选择框"
           multiple
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="filled"
         >
           <option aria-label="None" value="" />
@@ -301,7 +315,7 @@ export const 多选的NativeSelect = () => {
           multiple
           label="框模式选择框"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
           variant="outlined"
         >
           <option aria-label="None" value="" />

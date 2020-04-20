@@ -9,7 +9,11 @@ const StyleNativeSelect = styled(NativeSelect)`
 `;
 
 export default function SimpleDemo() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
+
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -23,7 +27,7 @@ export default function SimpleDemo() {
         <StyleNativeSelect
           label="标准选择框"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
@@ -34,7 +38,7 @@ export default function SimpleDemo() {
           variant="filled"
           label="填充模式选择框"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
@@ -45,7 +49,7 @@ export default function SimpleDemo() {
           variant="outlined"
           label="框模式选择框"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>

@@ -4,8 +4,11 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 
 export default function MultipleSelectDemo() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState([]);
 
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
   return (
     <ThemeProvider theme={defaultTheme}>
       <div
@@ -20,7 +23,7 @@ export default function MultipleSelectDemo() {
           label="标准选择框"
           multiple
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
@@ -32,7 +35,7 @@ export default function MultipleSelectDemo() {
           label="填充模式选择框"
           multiple
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
@@ -44,7 +47,7 @@ export default function MultipleSelectDemo() {
           multiple
           label="框模式选择框"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         >
           <option aria-label="None" value="" />
           <option value="1">选项一</option>

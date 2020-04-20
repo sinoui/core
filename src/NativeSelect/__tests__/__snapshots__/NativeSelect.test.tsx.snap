@@ -569,27 +569,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -635,27 +627,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -704,27 +688,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -1316,27 +1292,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -1386,27 +1354,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -1459,27 +1419,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -2007,27 +1959,19 @@ label ~ .c2 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -2068,27 +2012,19 @@ label ~ .c2 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -2132,27 +2068,19 @@ label ~ .c2 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -2754,27 +2682,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={false}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -2804,27 +2724,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={false}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -2857,27 +2769,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={false}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -3498,27 +3402,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -3569,27 +3465,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -3643,27 +3531,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -4323,27 +4203,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -4394,27 +4266,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
@@ -4468,27 +4332,19 @@ label ~ .c3 {
       >
         <option
           aria-label="None"
-          onClick={[Function]}
-          selected={true}
           value=""
         />
         <option
-          onClick={[Function]}
-          selected={false}
           value="1"
         >
           选项一
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="2"
         >
           选项二
         </option>
         <option
-          onClick={[Function]}
-          selected={false}
           value="3"
         >
           选项三
