@@ -20,6 +20,10 @@ export interface Props {
    * 根元素使用的组件。默认为 `div`。
    */
   as?: React.ReactType;
+  /**
+   * 自定义样式类名称
+   */
+  className?: string;
 }
 
 const endCss = css`
@@ -68,7 +72,13 @@ const InputAdornmentLayout = styled.div<InputAdornmentLayoutProps>`
  * 输入框装饰器
  */
 const InputAdornment = (props: Props) => {
-  const { children, disablePointerEvents, position, ...rest } = props;
+  const {
+    children,
+    disablePointerEvents,
+    position,
+    className,
+    ...rest
+  } = props;
   const isTextChildren = typeof children === 'string';
   const $disablePointerEvents = disablePointerEvents ?? isTextChildren;
 
@@ -78,11 +88,15 @@ const InputAdornment = (props: Props) => {
       $disablePointerEvents={$disablePointerEvents}
       $position={position}
       $isText={isTextChildren}
-      className={bemClassNames('sinoui-input-adornment', {
-        start: position === 'start',
-        end: position === 'end',
-        text: isTextChildren,
-      })}
+      className={bemClassNames(
+        'sinoui-input-adornment',
+        {
+          start: position === 'start',
+          end: position === 'end',
+          text: isTextChildren,
+        },
+        className,
+      )}
     >
       {isTextChildren ? <Body1 color="inherit">{children}</Body1> : children}
     </InputAdornmentLayout>

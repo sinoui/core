@@ -3,7 +3,7 @@ import renderer, { act } from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import BaseInput from '../BaseInput';
@@ -56,6 +56,55 @@ it('渲染多行输入框', () => {
     .toJSON();
 
   expect(tree).toMatchSnapshot();
+});
+
+it('渲染支持清除功能的输入框', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <BaseInput allowClear />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('渲染带后缀的支持清除功能的输入框', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <BaseInput
+          allowClear
+          value="123"
+          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+          data-testid="input"
+        />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+
+  expect(tree).toHaveStyleRule('opacity', '0', {
+    modifier: '> .sinoui-base-input__clear',
+  });
+  expect(tree).toHaveStyleRule('pointer-events', 'none', {
+    modifier: '> .sinoui-base-input__clear',
+  });
+  expect(tree).toHaveStyleRule('opacity', '1', {
+    modifier: '> .sinoui-input-adornment--end',
+  });
+
+  expect(tree).toHaveStyleRule('opacity', '1', {
+    modifier: '&:hover > .sinoui-base-input__clear',
+  });
+  expect(tree).toHaveStyleRule('pointer-events', 'auto', {
+    modifier: '&:hover > .sinoui-base-input__clear',
+  });
+  expect(tree).toHaveStyleRule('opacity', '0', {
+    modifier: '&:hover > .sinoui-input-adornment--end',
+  });
 });
 
 it('值改变时，onChange被调用', () => {
@@ -311,4 +360,32 @@ it('多行输入框', () => {
   );
 
   expect(getByTestId('input')).toHaveClass('sinoui-base-input--multiline');
+});
+
+it('监听清除图标的点击事件', () => {
+  const onClear = jest.fn();
+  const onChange = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <BaseInput
+        allowClear
+        data-testid="input"
+        onClear={onClear}
+        onChange={onChange}
+        value="123"
+      />
+    </ThemeProvider>,
+  );
+
+  const clearIcon = getByTestId('input').querySelector(
+    '.sinoui-base-input__clear svg',
+  );
+
+  act(() => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    fireEvent.click(clearIcon!);
+  });
+
+  expect(onClear).toBeCalled();
+  expect(onChange).not.toBeCalled();
 });

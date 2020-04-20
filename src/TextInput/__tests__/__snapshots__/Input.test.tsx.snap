@@ -24,11 +24,19 @@ exports[`正确渲染input 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -43,32 +51,35 @@ exports[`正确渲染input 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -76,6 +87,15 @@ exports[`正确渲染input 1`] = `
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c0 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c1 {
@@ -138,7 +158,7 @@ label ~ .c1 {
 
 .c1:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 <div
@@ -179,11 +199,19 @@ exports[`渲染不可用的Input 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -198,32 +226,35 @@ exports[`渲染不可用的Input 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -231,6 +262,15 @@ exports[`渲染不可用的Input 1`] = `
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c0 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c1 {
@@ -287,12 +327,12 @@ label ~ .c1 {
   font-size: 0px;
 }
 
+.c1::after {
+  display: none;
+}
+
 .c1::before {
-  background: transparent;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.42) 33%, transparent 0% );
-  background-position: left top;
-  background-repeat: repeat-x;
-  background-size: 5px 1px;
+  background-color: rgba(0,0,0,0.26);
 }
 
 <div
@@ -335,11 +375,19 @@ exports[`渲染密集模式下的Input 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -354,32 +402,35 @@ exports[`渲染密集模式下的Input 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -387,6 +438,15 @@ exports[`渲染密集模式下的Input 1`] = `
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c0 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c1 {
@@ -449,7 +509,7 @@ label ~ .c1 {
 
 .c1:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 <div
@@ -490,11 +550,19 @@ exports[`渲染错误状态下的input 1`] = `
 }
 
 .c0 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c0 > input.sinoui-base-input__input,
+.c0 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -509,32 +577,35 @@ exports[`渲染错误状态下的input 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c0 > .sinoui-base-input__input::-moz-placeholder {
+.c0 > input.sinoui-base-input__input::-moz-placeholder,
+.c0 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c0 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c0 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input:-ms-input-placeholder {
+.c0 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c0 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c0 > .sinoui-base-input__input::-ms-clear {
+.c0 > input.sinoui-base-input__input::-ms-clear,
+.c0 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c0 > .sinoui-base-input__input:focus {
+.c0 > input.sinoui-base-input__input:focus,
+.c0 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c0 > .sinoui-base-input__input:invalid {
+.c0 > input.sinoui-base-input__input:invalid,
+.c0 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -542,6 +613,15 @@ exports[`渲染错误状态下的input 1`] = `
 .c0.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c0 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c0 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c1 {

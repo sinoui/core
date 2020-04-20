@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import styled from 'styled-components';
 import colorCss from '@sinoui/core/utils/colorCss';
 import TestWrapper from './TestWrapper';
@@ -15,6 +15,10 @@ const Comp2 = styled.p`
 
 const Comp3 = styled.p`
   ${colorCss(['border-color', 'color'], 'primary')}
+`;
+
+const Comp4 = styled.p`
+  ${colorCss('color')}
 `;
 
 describe('colorCss 单元测试', () => {
@@ -95,5 +99,16 @@ describe('colorCss 单元测试', () => {
 
     const text = getByTestId('comp1');
     expect(text).toHaveStyle(`color: rgba(0,0,0,0.87)`);
+  });
+
+  test('测试没有默认值，并不指定color属性，应没有颜色样式', async () => {
+    const { getByTestId } = render(
+      <TestWrapper>
+        <Comp4 data-testid="comp3" />
+      </TestWrapper>,
+    );
+
+    const text = getByTestId('comp3');
+    expect(text.style.color).toBeFalsy();
   });
 });

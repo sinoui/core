@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
 import FilledInput from './FilledInput';
@@ -8,6 +8,8 @@ import Input from './Input';
 import HelperText from './HelperText';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
+import isEmptyValue from './isEmptyValue';
+import mergeCallbacks from '../utils/mergeCallbacks';
 
 export interface TextInputProps extends BaseInputProps {
   /**
@@ -67,120 +69,128 @@ const TextInputWrapper = styled.div<{ disabled?: boolean }>`
 /**
  * 文本输入框组件。符合 Material Design Text Field 规范。
  */
-export default function TextInput(props: TextInputProps) {
-  const {
-    variant = 'standard',
-    baseClassName = cssClasses.textInput,
-    label,
-    value,
-    defaultValue,
-    disabled,
-    required,
-    shrink: shrinkProp,
-    error,
-    errorText,
-    placeholder,
-    className,
-    style,
-    helperText,
-    readOnly,
-    dense,
-    startAdornment,
-    wrapperProps,
-    ...other
-  } = props;
-  const labelRef = useRef<HTMLLabelElement>(null);
-  const [focused, setFocused] = useState(false);
-  const shrink =
-    shrinkProp ||
-    focused ||
-    !!value ||
-    !!defaultValue ||
-    !!placeholder ||
-    !!startAdornment;
-  const noLabel = !label;
+const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
+  (props, ref) => {
+    const {
+      variant = 'standard',
+      baseClassName = cssClasses.textInput,
+      label,
+      value,
+      defaultValue,
+      disabled,
+      required,
+      shrink: shrinkProp,
+      error,
+      errorText,
+      placeholder,
+      className,
+      style,
+      helperText,
+      readOnly,
+      dense,
+      startAdornment,
+      wrapperProps,
+      onFocus,
+      onBlur,
+      ...other
+    } = props;
+    const labelRef = useRef<HTMLLabelElement>(null);
+    const [focused, setFocused] = useState(false);
+    const shrink =
+      shrinkProp ||
+      focused ||
+      !isEmptyValue(value) ||
+      !!defaultValue ||
+      !!placeholder ||
+      !!startAdornment;
+    const noLabel = !label;
 
-  const handleBlur = () => {
-    if (!readOnly) {
-      setFocused(false);
+    const handleBlur = useMemo(
+      () => mergeCallbacks(onBlur, () => setFocused(false)),
+      [onBlur],
+    );
+    const handleFocus = useMemo(
+      () => mergeCallbacks(onFocus, () => setFocused(true)),
+      [onFocus],
+    );
+
+    const InputComponent = variantComponent[variant];
+    const inputState = {
+      required,
+      dense,
+      disabled,
+      error,
+      readOnly,
+      focused,
+    };
+
+    const inputProps: Record<string, any> = {
+      ...other,
+      ...inputState,
+      onBlur: handleBlur,
+      onFocus: handleFocus,
+      startAdornment,
+      placeholder,
+      value,
+      defaultValue,
+      noLabel,
+      error,
+      errorText,
+    };
+
+    if (variant === 'outlined') {
+      inputProps.notched = shrink;
+      inputProps.labelRef = labelRef;
     }
-  };
 
-  const handleFocus = () => {
-    if (!readOnly) {
-      setFocused(true);
-    }
-  };
+    return (
+      <TextInputWrapper
+        {...wrapperProps}
+        className={bemClassNames(
+          baseClassName,
+          {
+            outlined: variant === 'outlined',
+            filled: variant === 'filled',
+            shrink,
+            noLabel,
+            ...inputState,
+            error,
+          },
+          className,
+        )}
+        disabled={disabled}
+        style={style}
+        ref={ref}
+      >
+        {label && (
+          <InputLabel
+            {...inputState}
+            error={!!error}
+            variant={variant}
+            shrink={shrink}
+            ref={labelRef}
+          >
+            {label}
+          </InputLabel>
+        )}
+        <InputComponent {...inputProps} />
+        {!!error && (
+          <HelperText error variant={variant} dense={dense}>
+            {errorText}
+          </HelperText>
+        )}
+        {!error && helperText && (
+          <HelperText disabeld={disabled} variant={variant} dense={dense}>
+            {helperText}
+          </HelperText>
+        )}
+      </TextInputWrapper>
+    );
+  },
+);
 
-  const InputComponent = variantComponent[variant];
-  const inputState = {
-    required,
-    dense,
-    disabled,
-    error,
-    readOnly,
-    focused,
-  };
-
-  const inputProps: Record<string, any> = {
-    ...other,
-    ...inputState,
-    startAdornment,
-    placeholder,
-    value,
-    defaultValue,
-    noLabel,
-    error,
-    errorText,
-  };
-
-  if (variant === 'outlined') {
-    inputProps.notched = shrink;
-    inputProps.labelRef = labelRef;
-  }
-
-  return (
-    <TextInputWrapper
-      {...wrapperProps}
-      className={bemClassNames(
-        baseClassName,
-        {
-          outlined: variant === 'outlined',
-          filled: variant === 'filled',
-          shrink,
-          noLabel,
-          ...inputState,
-          error,
-        },
-        className,
-      )}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-      disabled={disabled}
-      style={style}
-    >
-      {label && (
-        <InputLabel
-          {...inputState}
-          error={error}
-          variant={variant}
-          shrink={shrink}
-          ref={labelRef}
-        >
-          {label}
-        </InputLabel>
-      )}
-      <InputComponent {...inputProps} />
-      {error && (
-        <HelperText error variant={variant} dense={dense}>
-          {errorText}
-        </HelperText>
-      )}
-      {!error && helperText && (
-        <HelperText disabeld={disabled} variant={variant} dense={dense}>
-          {helperText}
-        </HelperText>
-      )}
-    </TextInputWrapper>
-  );
+if (process.env.NODE_ENV === 'development') {
+  TextInput.displayName = 'TextInput';
 }
+
+export default TextInput;

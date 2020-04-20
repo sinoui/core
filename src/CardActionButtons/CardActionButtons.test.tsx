@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import CardActionButtons from './CardActionButtons';
 
 describe('快照测试', () => {

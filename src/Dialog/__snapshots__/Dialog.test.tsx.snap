@@ -60,7 +60,7 @@ exports[`Dialog组件 快照测试 基本使用 1`] = `
   <div
     aria-hidden={true}
     className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-sinoui-test="Backdrop"
+    data-testid="Backdrop"
     onClick={[Function]}
   />
   <div
@@ -118,7 +118,7 @@ exports[`Dialog组件 快照测试 宽度自适应 1`] = `
   <div
     aria-hidden={true}
     className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-sinoui-test="Backdrop"
+    data-testid="Backdrop"
     onClick={[Function]}
   />
   <div
@@ -176,7 +176,7 @@ exports[`Dialog组件 快照测试 对话框将根据maxWidth的值进行自我�
   <div
     aria-hidden={true}
     className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-sinoui-test="Backdrop"
+    data-testid="Backdrop"
     onClick={[Function]}
   />
   <div
@@ -234,7 +234,7 @@ exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
   <div
     aria-hidden={true}
     className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-sinoui-test="Backdrop"
+    data-testid="Backdrop"
     onClick={[Function]}
   />
   <div
@@ -322,7 +322,7 @@ exports[`Dialog组件 快照测试 设置全屏显示 1`] = `
   <div
     aria-hidden={true}
     className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-sinoui-test="Backdrop"
+    data-testid="Backdrop"
     onClick={[Function]}
   />
   <div
@@ -381,7 +381,7 @@ exports[`Dialog组件 快照测试 设置弹窗不可以拖拽 1`] = `
   <div
     aria-hidden={true}
     className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-sinoui-test="Backdrop"
+    data-testid="Backdrop"
     onClick={[Function]}
   />
   <div

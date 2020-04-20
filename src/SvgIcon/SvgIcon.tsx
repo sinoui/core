@@ -54,7 +54,7 @@ const SvgIcon = styled.svg.attrs(
     role: title ? 'img' : 'presentation',
     focusable: 'false',
   }),
-)`
+)<SvgIconProps>`
   font-size: ${(props) =>
     typeof props.size === 'string' ? props.size : `${props.size}px`};
   width: 1em;

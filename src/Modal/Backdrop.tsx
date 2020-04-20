@@ -4,7 +4,7 @@ import Fade from '../transitions/Fade';
 
 const BackdropWrapper = styled.div.attrs({
   'aria-hidden': true,
-  'data-sinoui-test': 'Backdrop',
+  'data-testid': 'Backdrop',
 })<BackdropProps>`
   position: fixed;
   z-index: -1;

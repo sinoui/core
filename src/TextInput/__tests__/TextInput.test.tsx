@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import TextInput from '../TextInput';
@@ -279,4 +279,25 @@ it('只有errorText属性时，不会显示错误状态', () => {
   );
 
   expect(getByTestId('input')).not.toHaveClass('sinoui-text-input--error');
+});
+
+it('值是空数组', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput wrapperProps={{ 'data-testid': 'input' }} value={[] as any} />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).not.toHaveClass('sinoui-text-input--shrink');
+});
+
+it('ref', () => {
+  const ref = React.createRef<HTMLDivElement>();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput wrapperProps={{ 'data-testid': 'input' }} ref={ref} />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).toBe(ref.current);
 });
