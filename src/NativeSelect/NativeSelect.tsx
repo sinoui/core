@@ -2,7 +2,6 @@ import React from 'react';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import InputAdornment from '@sinoui/core/InputAdornment';
-import styled from 'styled-components';
 import NativeSelectInput from './NativeSelectInput';
 import ArrowDropDownIcon from './ArrowDropDownIcon';
 
@@ -24,8 +23,6 @@ export interface Props
    */
   onChange?: (value: string | string[]) => void;
 }
-
-const NativeSelectLayout = styled(TextInput)``;
 
 /**
  * 原生的选择框组件
@@ -52,7 +49,7 @@ const NativeSelect = React.forwardRef<HTMLDivElement, Props>(function Select(
   };
 
   return (
-    <NativeSelectLayout
+    <TextInput
       inputComponent={NativeSelectInput}
       inputProps={inputCompProps}
       baseClassName="sinoui-native-select"

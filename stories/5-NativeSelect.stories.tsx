@@ -281,6 +281,7 @@ export const 多选的NativeSelect = () => {
   const [value, setValue] = useState([]);
 
   const handleChange = (val: any) => {
+    alert('123');
     setValue(val);
   };
   return (

@@ -10,7 +10,7 @@ export interface Props {
   /**
    * 值变更时的回调函数
    */
-  onChange?: (value: string | string[]) => void;
+  onChange?: (value: string | string[] | undefined) => void;
   /**
    * 是否多选
    */
@@ -46,28 +46,57 @@ const NativeSelectLayout = styled.select<Omit<Props, 'onChange'>>`
   }
 `;
 
-export default function NativeSelectInput(props: Props) {
-  const { onChange, value, multiple } = props;
-
-  const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    let newValue;
-
-    if (multiple) {
-      newValue = Array.isArray(value) ? [...value] : [];
-      const itemIndex = (value as string).indexOf(event.target.value);
-      if (itemIndex === -1) {
-        newValue.push(event.target.value);
-      } else {
-        newValue.splice(itemIndex, 1);
+/**
+ * 从子节点中解析出选项
+ * @param children 子节点
+ */
+const parseOptionsFromChildren = (children: React.ReactNode) => {
+  return (
+    React.Children.map(children, (child) => {
+      if (React.isValidElement(child)) {
+        const { children: label, value = label, id = value } = child.props;
+        return {
+          id,
+          value,
+          label,
+        };
       }
-    } else {
-      newValue = event.target.value;
-    }
+      return null;
+    })?.filter(Boolean) ?? []
+  );
+};
 
-    if (onChange) {
-      onChange(newValue);
+export default function NativeSelectInput(props: Props) {
+  const { onChange, value, multiple, children, ...rest } = props;
+  const options = parseOptionsFromChildren(children);
+  const isOptionSeleted = (itemValue: string) =>
+    value === itemValue || (Array.isArray(value) && value.includes(itemValue));
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    if (!onChange) {
+      return;
     }
+    const allOptions = event.target.querySelectorAll('option');
+    const selectedOptions: string[] = [];
+    allOptions.forEach((optionElement) => {
+      if (optionElement.selected) {
+        selectedOptions.push(optionElement.value);
+      }
+    });
+    onChange(multiple ? selectedOptions : selectedOptions[0]);
   };
 
-  return <NativeSelectLayout {...props} onChange={handleOnChange} />;
+  return (
+    <NativeSelectLayout {...rest} multiple={multiple} onChange={handleChange}>
+      {options.map((item) => (
+        <option
+          key={item.id}
+          value={item.value}
+          selected={isOptionSeleted(item.value)}
+        >
+          {item.label}
+        </option>
+      ))}
+    </NativeSelectLayout>
+  );
 }
