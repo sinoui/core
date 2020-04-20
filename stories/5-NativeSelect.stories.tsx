@@ -281,7 +281,6 @@ export const 多选的NativeSelect = () => {
   const [value, setValue] = useState([]);
 
   const handleChange = (val: any) => {
-    alert('123');
     setValue(val);
   };
   return (
@@ -294,7 +293,7 @@ export const 多选的NativeSelect = () => {
           flexWrap: 'wrap',
         }}
       >
-        <NativeSelect label="标准选择框" multiple>
+        <NativeSelect label="标准选择框" multiple onChange={handleChange}>
           <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>

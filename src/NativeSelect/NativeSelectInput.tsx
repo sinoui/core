@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export interface Props {
   value?: string | string[];
@@ -22,28 +22,31 @@ export interface Props {
   variant?: 'filled' | 'standard' | 'outlined';
 }
 
-const multipleStyle = css`
-  height: auto;
-  margin-right: 0px;
-`;
-
-const NativeSelectLayout = styled.select<Omit<Props, 'onChange'>>`
+const NativeSelectInputLayout = styled.div`
   && {
-    ${({ theme }) => ({ ...theme.typography.body1 })}
-    appearance: none;
     min-width: 160px;
     width: 100%;
     height: 100%;
-    user-select: none;
-    border: 0px;
-    background: transparent;
-    margin-right: ${({ variant }) =>
-      variant === 'filled' || variant === 'outlined' ? -30 : -32}px;
-    padding-right: 32px;
-    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
-
-    ${({ multiple }) => multiple && multipleStyle}
   }
+`;
+
+const NativeSelectInputContent = styled.select<Omit<Props, 'onChange'>>`
+  ${({ theme }) => ({ ...theme.typography.body1 })}
+  appearance: none;
+  min-width: 160px;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  border: 0px;
+  background: transparent;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: ${({ variant }) =>
+    variant === 'filled' || variant === 'outlined' ? -30 : -32}px;
+  padding-right: 32px;
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 `;
 
 /**
@@ -86,17 +89,39 @@ export default function NativeSelectInput(props: Props) {
     onChange(multiple ? selectedOptions : selectedOptions[0]);
   };
 
+  const renderText = () => {
+    const selectedOptions = options.filter((option) =>
+      isOptionSeleted(option.value),
+    );
+
+    return selectedOptions.map((option, index) => {
+      const { label } = option;
+
+      if (typeof label === 'string') {
+        return `${label}${index === selectedOptions.length - 1 ? '' : ', '}`;
+      }
+      return label;
+    });
+  };
+
   return (
-    <NativeSelectLayout {...rest} multiple={multiple} onChange={handleChange}>
-      {options.map((item) => (
-        <option
-          key={item.id}
-          value={item.value}
-          selected={isOptionSeleted(item.value)}
-        >
-          {item.label}
-        </option>
-      ))}
-    </NativeSelectLayout>
+    <NativeSelectInputLayout {...rest}>
+      {value && <div>{renderText()}</div>}
+      <NativeSelectInputContent
+        {...rest}
+        multiple={multiple}
+        onChange={handleChange}
+      >
+        {options.map((item) => (
+          <option
+            key={item.id}
+            value={item.value}
+            selected={isOptionSeleted(item.value)}
+          >
+            {item.label}
+          </option>
+        ))}
+      </NativeSelectInputContent>
+    </NativeSelectInputLayout>
   );
 }

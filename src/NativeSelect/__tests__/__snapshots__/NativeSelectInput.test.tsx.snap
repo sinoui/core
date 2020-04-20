@@ -2,6 +2,12 @@
 
 exports[`渲染不可用选择框 1`] = `
 .c0.c0 {
+  min-width: 160px;
+  width: 100%;
+  height: 100%;
+}
+
+.c1 {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -21,30 +27,46 @@ exports[`渲染不可用选择框 1`] = `
   user-select: none;
   border: 0px;
   background: transparent;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   margin-right: -32px;
   padding-right: 32px;
   cursor: default;
 }
 
-<select
+<div
   className="c0"
   disabled={true}
-  onChange={[Function]}
 >
-  <option
-    aria-label="None"
-    value=""
-  />
-  <option
-    value="1"
+  <select
+    className="c1"
+    disabled={true}
+    onChange={[Function]}
   >
-    选项一
-  </option>
-</select>
+    <option
+      selected={false}
+      value=""
+    />
+    <option
+      selected={false}
+      value="1"
+    >
+      选项一
+    </option>
+  </select>
+</div>
 `;
 
 exports[`渲染原生选择框 1`] = `
 .c0.c0 {
+  min-width: 160px;
+  width: 100%;
+  height: 100%;
+}
+
+.c1 {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -64,29 +86,44 @@ exports[`渲染原生选择框 1`] = `
   user-select: none;
   border: 0px;
   background: transparent;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   margin-right: -32px;
   padding-right: 32px;
   cursor: pointer;
 }
 
-<select
+<div
   className="c0"
-  onChange={[Function]}
 >
-  <option
-    aria-label="None"
-    value=""
-  />
-  <option
-    value="1"
+  <select
+    className="c1"
+    onChange={[Function]}
   >
-    选项一
-  </option>
-</select>
+    <option
+      selected={false}
+      value=""
+    />
+    <option
+      selected={false}
+      value="1"
+    >
+      选项一
+    </option>
+  </select>
+</div>
 `;
 
 exports[`渲染多选选择框 1`] = `
 .c0.c0 {
+  min-width: 160px;
+  width: 100%;
+  height: 100%;
+}
+
+.c1 {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -106,31 +143,39 @@ exports[`渲染多选选择框 1`] = `
   user-select: none;
   border: 0px;
   background: transparent;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   margin-right: -32px;
   padding-right: 32px;
   cursor: pointer;
-  height: auto;
-  margin-right: 0px;
 }
 
-<select
+<div
   className="c0"
-  multiple={true}
-  onChange={[Function]}
 >
-  <option
-    aria-label="None"
-    value=""
-  />
-  <option
-    value="1"
+  <select
+    className="c1"
+    multiple={true}
+    onChange={[Function]}
   >
-    选项一
-  </option>
-  <option
-    value="2"
-  >
-    选项二
-  </option>
-</select>
+    <option
+      selected={false}
+      value=""
+    />
+    <option
+      selected={false}
+      value="1"
+    >
+      选项一
+    </option>
+    <option
+      selected={false}
+      value="2"
+    >
+      选项二
+    </option>
+  </select>
+</div>
 `;
