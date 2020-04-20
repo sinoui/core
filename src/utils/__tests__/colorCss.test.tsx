@@ -17,10 +17,6 @@ const Comp3 = styled.p`
   ${colorCss(['border-color', 'color'], 'primary')}
 `;
 
-const Comp4 = styled.p`
-  ${colorCss()}
-`;
-
 describe('colorCss 单元测试', () => {
   afterEach(cleanup);
 
@@ -99,16 +95,5 @@ describe('colorCss 单元测试', () => {
 
     const text = getByTestId('comp1');
     expect(text).toHaveStyle(`color: rgba(0,0,0,0.87)`);
-  });
-
-  test('测试没有默认值，并不指定color属性，应没有颜色样式', async () => {
-    const { getByTestId } = render(
-      <TestWrapper>
-        <Comp4 data-testid="comp3" />
-      </TestWrapper>,
-    );
-
-    const text = getByTestId('comp3');
-    expect(text).toHaveStyle('');
   });
 });

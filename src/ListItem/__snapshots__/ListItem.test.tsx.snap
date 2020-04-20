@@ -5,7 +5,7 @@ exports[`快照测试 设置属性 1`] = `
   className="sc-AxjAm jSMlTn sinoui-list"
 >
   <li
-    className="ListItem__Wrapper-sc-1jwmghb-0 gAgLmP sinoui-list-item sinoui-list-item--insert sinoui-list-item--disabled sinoui-list-item--disabled-ripple"
+    className="sc-AxirZ cJHOzn sinoui-list-item sinoui-list-item--insert sinoui-list-item--disabled sinoui-list-item--disabled-ripple"
     disabled={true}
     tabIndex="0"
   >
@@ -19,7 +19,7 @@ exports[`快照测试 默认 1`] = `
   className="sc-AxjAm jSMlTn sinoui-list"
 >
   <li
-    className="ListItem__Wrapper-sc-1jwmghb-0 kUYwzV sinoui-list-item"
+    className="sc-AxirZ ctYxQP sinoui-list-item"
     tabIndex="0"
   >
     item
