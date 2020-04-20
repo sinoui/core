@@ -33,7 +33,6 @@ export const 标准的NativeSelect = () => {
           value={value}
           onChange={handleChange}
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -44,7 +43,6 @@ export const 标准的NativeSelect = () => {
           value={value}
           onChange={handleChange}
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -57,7 +55,6 @@ export const 标准的NativeSelect = () => {
           value={value}
           onChange={handleChange}
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -68,7 +65,6 @@ export const 标准的NativeSelect = () => {
           value={value}
           onChange={handleChange}
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -79,13 +75,11 @@ export const 标准的NativeSelect = () => {
           value={value}
           onChange={handleChange}
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
         </StyleNativeSelect>
         <StyleNativeSelect value={value} onChange={handleChange}>
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -116,7 +110,6 @@ export const 填充模式的NativeSelect = () => {
           onChange={handleChange}
           variant="filled"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -128,7 +121,6 @@ export const 填充模式的NativeSelect = () => {
           onChange={handleChange}
           variant="filled"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -142,7 +134,6 @@ export const 填充模式的NativeSelect = () => {
           onChange={handleChange}
           variant="filled"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -154,7 +145,6 @@ export const 填充模式的NativeSelect = () => {
           onChange={handleChange}
           variant="filled"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -166,7 +156,6 @@ export const 填充模式的NativeSelect = () => {
           onChange={handleChange}
           variant="filled"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -176,7 +165,6 @@ export const 填充模式的NativeSelect = () => {
           onChange={handleChange}
           variant="filled"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -207,7 +195,6 @@ export const 框模式的NativeSelect = () => {
           onChange={handleChange}
           variant="outlined"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -219,7 +206,6 @@ export const 框模式的NativeSelect = () => {
           onChange={handleChange}
           variant="outlined"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -233,7 +219,6 @@ export const 框模式的NativeSelect = () => {
           onChange={handleChange}
           variant="outlined"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -245,7 +230,6 @@ export const 框模式的NativeSelect = () => {
           onChange={handleChange}
           variant="outlined"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -257,7 +241,6 @@ export const 框模式的NativeSelect = () => {
           onChange={handleChange}
           variant="outlined"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -267,7 +250,6 @@ export const 框模式的NativeSelect = () => {
           onChange={handleChange}
           variant="outlined"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -278,10 +260,9 @@ export const 框模式的NativeSelect = () => {
 };
 
 export const 多选的NativeSelect = () => {
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState(['1', '2', '3']);
 
   const handleChange = (val: any) => {
-    alert('123');
     setValue(val);
   };
   return (
@@ -295,7 +276,6 @@ export const 多选的NativeSelect = () => {
         }}
       >
         <NativeSelect label="标准选择框" multiple>
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -307,7 +287,6 @@ export const 多选的NativeSelect = () => {
           onChange={handleChange}
           variant="filled"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>
@@ -319,7 +298,6 @@ export const 多选的NativeSelect = () => {
           onChange={handleChange}
           variant="outlined"
         >
-          <option aria-label="None" value="" />
           <option value="1">选项一</option>
           <option value="2">选项二</option>
           <option value="3">选项三</option>

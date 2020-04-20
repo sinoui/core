@@ -19,6 +19,10 @@ export interface Props {
    * 是否不可用
    */
   disabled?: boolean;
+  /**
+   * 标签
+   */
+  label?: string;
   variant?: 'filled' | 'standard' | 'outlined';
 }
 
@@ -46,31 +50,8 @@ const NativeSelectLayout = styled.select<Omit<Props, 'onChange'>>`
   }
 `;
 
-/**
- * 从子节点中解析出选项
- * @param children 子节点
- */
-const parseOptionsFromChildren = (children: React.ReactNode) => {
-  return (
-    React.Children.map(children, (child) => {
-      if (React.isValidElement(child)) {
-        const { children: label, value = label, id = value } = child.props;
-        return {
-          id,
-          value,
-          label,
-        };
-      }
-      return null;
-    })?.filter(Boolean) ?? []
-  );
-};
-
 export default function NativeSelectInput(props: Props) {
-  const { onChange, value, multiple, children, ...rest } = props;
-  const options = parseOptionsFromChildren(children);
-  const isOptionSeleted = (itemValue: string) =>
-    value === itemValue || (Array.isArray(value) && value.includes(itemValue));
+  const { onChange, value, multiple, children, label, ...rest } = props;
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (!onChange) {
@@ -87,16 +68,13 @@ export default function NativeSelectInput(props: Props) {
   };
 
   return (
-    <NativeSelectLayout {...rest} multiple={multiple} onChange={handleChange}>
-      {options.map((item) => (
-        <option
-          key={item.id}
-          value={item.value}
-          selected={isOptionSeleted(item.value)}
-        >
-          {item.label}
-        </option>
-      ))}
+    <NativeSelectLayout
+      {...rest}
+      value={value}
+      multiple={multiple}
+      onChange={handleChange}
+    >
+      <optgroup label={label}>{children}</optgroup>
     </NativeSelectLayout>
   );
 }

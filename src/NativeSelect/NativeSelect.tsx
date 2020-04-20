@@ -38,6 +38,7 @@ const NativeSelect = React.forwardRef<HTMLDivElement, Props>(function Select(
     onChange,
     multiple = false,
     variant = 'standard',
+    label,
     ...other
   } = props;
 
@@ -45,6 +46,7 @@ const NativeSelect = React.forwardRef<HTMLDivElement, Props>(function Select(
     children,
     multiple,
     variant,
+    label,
     ...inputProps,
   };
 
@@ -65,6 +67,8 @@ const NativeSelect = React.forwardRef<HTMLDivElement, Props>(function Select(
       variant={variant}
       value={value as any}
       onChange={onChange as any}
+      label={label}
+      onClear={() => onChange && onChange(multiple ? [] : '')}
       {...other}
     />
   );
