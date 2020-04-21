@@ -74,50 +74,55 @@ const parseOptionsFromChildren = (children: React.ReactNode) => {
   );
 };
 
-export default function NativeSelectInput(props: Props) {
-  const { onChange, value, multiple, children, label, ...rest } = props;
+const NativeSelectInput = React.forwardRef<HTMLSelectElement, Props>(
+  (props, ref) => {
+    const { onChange, value, multiple, children, label, ...rest } = props;
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    if (!onChange) {
-      return;
-    }
-    const allOptions = event.target.querySelectorAll('option');
-    const selectedOptions: string[] = [];
-    allOptions.forEach((optionElement) => {
-      if (optionElement.selected) {
-        selectedOptions.push(optionElement.value);
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      if (!onChange) {
+        return;
       }
-    });
-    onChange(multiple ? selectedOptions : selectedOptions[0]);
-  };
+      const allOptions = event.target.querySelectorAll('option');
+      const selectedOptions: string[] = [];
+      allOptions.forEach((optionElement) => {
+        if (optionElement.selected) {
+          selectedOptions.push(optionElement.value);
+        }
+      });
+      onChange(multiple ? selectedOptions : selectedOptions[0]);
+    };
 
-  const renderText = () => {
-    const options = parseOptionsFromChildren(children);
-    const values = Array.isArray(value) ? value : [value];
-    return values.map((itemValue, index) => {
-      const item = options.find((_) => _.value === itemValue);
-      if (!item) {
-        return null;
-      }
-      const { label: optionLabel } = item;
-      if (typeof optionLabel === 'string') {
-        return `${optionLabel}${index === values.length - 1 ? '' : ', '}`;
-      }
-      return optionLabel;
-    });
-  };
+    const renderText = () => {
+      const options = parseOptionsFromChildren(children);
+      const values = Array.isArray(value) ? value : [value];
+      return values.map((itemValue, index) => {
+        const item = options.find((_) => _.value === itemValue);
+        if (!item) {
+          return null;
+        }
+        const { label: optionLabel } = item;
+        if (typeof optionLabel === 'string') {
+          return `${optionLabel}${index === values.length - 1 ? '' : ', '}`;
+        }
+        return optionLabel;
+      });
+    };
 
-  return (
-    <NativeSelectInputLayout {...rest}>
-      {value && <div>{renderText()}</div>}
-      <NativeSelectInputContent
-        {...rest}
-        value={value}
-        multiple={multiple}
-        onChange={handleChange}
-      >
-        <optgroup label={label}>{children}</optgroup>
-      </NativeSelectInputContent>
-    </NativeSelectInputLayout>
-  );
-}
+    return (
+      <NativeSelectInputLayout {...rest}>
+        {value && <div>{renderText()}</div>}
+        <NativeSelectInputContent
+          {...rest}
+          value={value}
+          multiple={multiple}
+          onChange={handleChange}
+          ref={ref}
+        >
+          <optgroup label={label}>{children}</optgroup>
+        </NativeSelectInputContent>
+      </NativeSelectInputLayout>
+    );
+  },
+);
+
+export default NativeSelectInput;
