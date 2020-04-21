@@ -248,7 +248,7 @@ exports[`渲染三种模式下的选择框 1`] = `
   opacity: 0.04;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -264,14 +264,14 @@ exports[`渲染三种模式下的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c13 > div {
+.c12 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c13 > .sinoui-notched-outline__leading {
+.c12 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -280,14 +280,14 @@ exports[`渲染三种模式下的选择框 1`] = `
   width: 10px;
 }
 
-.c13 > .sinoui-notched-outline__notch {
+.c12 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c13 > .sinoui-notched-outline__trailing {
+.c12 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -295,48 +295,48 @@ exports[`渲染三种模式下的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c13.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c12.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c13.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c12.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c12 {
+.c11 {
   position: relative;
   border-radius: 4px;
 }
 
-.c12 > .sinoui-notched-outline > div {
+.c11 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c12:hover > .sinoui-notched-outline > div {
+.c11:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c12 > .sinoui-base-input__input {
+.c11 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c12 > .sinoui-input-adornment--start {
+.c11 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c12 > .sinoui-input-adornment--end {
+.c11 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c12 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c11 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c12 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c12 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c11 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c11 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -393,7 +393,7 @@ exports[`渲染三种模式下的选择框 1`] = `
   overflow: hidden;
 }
 
-.c11 {
+.c10 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -514,7 +514,6 @@ label ~ .c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  min-width: 160px;
   width: 100%;
   height: 100%;
   -webkit-user-select: none;
@@ -527,37 +526,6 @@ label ~ .c3 {
   position: absolute;
   top: 0;
   left: 0;
-  margin-right: -32px;
-  padding-right: 32px;
-  cursor: pointer;
-}
-
-.c10 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-letter-spacing: 0.00938em;
-  -moz-letter-spacing: 0.00938em;
-  -ms-letter-spacing: 0.00938em;
-  letter-spacing: 0.00938em;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  min-width: 160px;
-  width: 100%;
-  height: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 0px;
-  background: transparent;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-right: -30px;
-  padding-right: 32px;
   cursor: pointer;
 }
 
@@ -577,11 +545,9 @@ label ~ .c3 {
     >
       <div
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c5 sinoui-base-input__input"
+          className="c5"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -645,11 +611,9 @@ label ~ .c3 {
     >
       <div
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c10 sinoui-base-input__input"
+          className="c5"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -705,22 +669,20 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--outlined"
   >
     <label
-      className="c11 sinoui-input-label sinoui-input-label--outlined"
+      className="c10 sinoui-input-label sinoui-input-label--outlined"
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input c12"
+      className="c2 sinoui-base-input c11"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <div
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c10 sinoui-base-input__input"
+          className="c5"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -768,7 +730,7 @@ label ~ .c3 {
         </svg>
       </div>
       <div
-        className="c13 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c12 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -1019,7 +981,7 @@ exports[`渲染不可用的选择框 1`] = `
   background-color: rgba(0,0,0,0.26);
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1035,14 +997,14 @@ exports[`渲染不可用的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c13 > div {
+.c12 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c13 > .sinoui-notched-outline__leading {
+.c12 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -1051,14 +1013,14 @@ exports[`渲染不可用的选择框 1`] = `
   width: 10px;
 }
 
-.c13 > .sinoui-notched-outline__notch {
+.c12 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c13 > .sinoui-notched-outline__trailing {
+.c12 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -1066,48 +1028,48 @@ exports[`渲染不可用的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c13.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c12.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c13.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c12.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c12 {
+.c11 {
   position: relative;
   border-radius: 4px;
 }
 
-.c12 > .sinoui-notched-outline > div {
+.c11 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.26);
   border-width: 1px;
 }
 
-.c12:hover > .sinoui-notched-outline > div {
+.c11:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.26);
 }
 
-.c12 > .sinoui-base-input__input {
+.c11 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c12 > .sinoui-input-adornment--start {
+.c11 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c12 > .sinoui-input-adornment--end {
+.c11 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c12 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c11 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c12 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c12 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c11 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c11 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -1160,7 +1122,7 @@ exports[`渲染不可用的选择框 1`] = `
   overflow: hidden;
 }
 
-.c11 {
+.c10 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -1278,7 +1240,6 @@ label ~ .c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  min-width: 160px;
   width: 100%;
   height: 100%;
   -webkit-user-select: none;
@@ -1291,37 +1252,6 @@ label ~ .c3 {
   position: absolute;
   top: 0;
   left: 0;
-  margin-right: -32px;
-  padding-right: 32px;
-  cursor: default;
-}
-
-.c10 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-letter-spacing: 0.00938em;
-  -moz-letter-spacing: 0.00938em;
-  -ms-letter-spacing: 0.00938em;
-  letter-spacing: 0.00938em;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  min-width: 160px;
-  width: 100%;
-  height: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 0px;
-  background: transparent;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-right: -30px;
-  padding-right: 32px;
   cursor: default;
 }
 
@@ -1344,12 +1274,9 @@ label ~ .c3 {
     >
       <div
         className="c4 sinoui-base-input__input"
-        disabled={true}
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c5 sinoui-base-input__input"
+          className="c5"
           disabled={true}
           multiple={false}
           onBlur={[Function]}
@@ -1417,12 +1344,9 @@ label ~ .c3 {
     >
       <div
         className="c4 sinoui-base-input__input"
-        disabled={true}
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c10 sinoui-base-input__input"
+          className="c5"
           disabled={true}
           multiple={false}
           onBlur={[Function]}
@@ -1480,25 +1404,22 @@ label ~ .c3 {
     disabled={true}
   >
     <label
-      className="c11 sinoui-input-label sinoui-input-label--disabled sinoui-input-label--outlined"
+      className="c10 sinoui-input-label sinoui-input-label--disabled sinoui-input-label--outlined"
       disabled={true}
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input sinoui-base-input--disabled c12"
+      className="c2 sinoui-base-input sinoui-base-input--disabled c11"
       data-testid="baseInput"
       disabled={true}
       onClick={[Function]}
     >
       <div
         className="c4 sinoui-base-input__input"
-        disabled={true}
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c10 sinoui-base-input__input"
+          className="c5"
           disabled={true}
           multiple={false}
           onBlur={[Function]}
@@ -1547,7 +1468,7 @@ label ~ .c3 {
         </svg>
       </div>
       <div
-        className="c13 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c12 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -1817,7 +1738,7 @@ exports[`渲染不带标签的选择框 1`] = `
   opacity: 0.04;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1833,14 +1754,14 @@ exports[`渲染不带标签的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c10 > div {
+.c9 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c10 > .sinoui-notched-outline__leading {
+.c9 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -1849,14 +1770,14 @@ exports[`渲染不带标签的选择框 1`] = `
   width: 10px;
 }
 
-.c10 > .sinoui-notched-outline__notch {
+.c9 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c10 > .sinoui-notched-outline__trailing {
+.c9 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -1864,48 +1785,48 @@ exports[`渲染不带标签的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c10.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c9.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c10.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c9.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c9 {
+.c8 {
   position: relative;
   border-radius: 4px;
 }
 
-.c9 > .sinoui-notched-outline > div {
+.c8 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c9:hover > .sinoui-notched-outline > div {
+.c8:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c9 > .sinoui-base-input__input {
+.c8 > .sinoui-base-input__input {
   padding: 8px 14px;
 }
 
-.c9 > .sinoui-input-adornment--start {
+.c8 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c9 > .sinoui-input-adornment--end {
+.c8 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c9 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c8 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c9 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c9 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c8 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c8 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -2002,7 +1923,6 @@ label ~ .c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  min-width: 160px;
   width: 100%;
   height: 100%;
   -webkit-user-select: none;
@@ -2015,37 +1935,6 @@ label ~ .c2 {
   position: absolute;
   top: 0;
   left: 0;
-  margin-right: -32px;
-  padding-right: 32px;
-  cursor: pointer;
-}
-
-.c8 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-letter-spacing: 0.00938em;
-  -moz-letter-spacing: 0.00938em;
-  -ms-letter-spacing: 0.00938em;
-  letter-spacing: 0.00938em;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  min-width: 160px;
-  width: 100%;
-  height: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 0px;
-  background: transparent;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-right: -30px;
-  padding-right: 32px;
   cursor: pointer;
 }
 
@@ -2060,11 +1949,9 @@ label ~ .c2 {
     >
       <div
         className="c3 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c4 sinoui-base-input__input"
+          className="c4"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -2121,11 +2008,9 @@ label ~ .c2 {
     >
       <div
         className="c3 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c8 sinoui-base-input__input"
+          className="c4"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -2179,17 +2064,15 @@ label ~ .c2 {
     className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--no-label"
   >
     <div
-      className="c1 sinoui-base-input c9"
+      className="c1 sinoui-base-input c8"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <div
         className="c3 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c8 sinoui-base-input__input"
+          className="c4"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -2235,7 +2118,7 @@ label ~ .c2 {
         </svg>
       </div>
       <div
-        className="c10 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c9 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -2465,7 +2348,7 @@ exports[`渲染多选选择框 1`] = `
   opacity: 0.04;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2481,14 +2364,14 @@ exports[`渲染多选选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c11 > div {
+.c10 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c11 > .sinoui-notched-outline__leading {
+.c10 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -2497,14 +2380,14 @@ exports[`渲染多选选择框 1`] = `
   width: 10px;
 }
 
-.c11 > .sinoui-notched-outline__notch {
+.c10 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c11 > .sinoui-notched-outline__trailing {
+.c10 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -2512,48 +2395,48 @@ exports[`渲染多选选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c11.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c10.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c11.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c10.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c10 {
+.c9 {
   position: relative;
   border-radius: 4px;
 }
 
-.c10 > .sinoui-notched-outline > div {
+.c9 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c10:hover > .sinoui-notched-outline > div {
+.c9:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c10 > .sinoui-base-input__input {
+.c9 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c10 > .sinoui-input-adornment--start {
+.c9 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c10 > .sinoui-input-adornment--end {
+.c9 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c10 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c9 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c10 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c10 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c9 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c9 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -2625,7 +2508,7 @@ exports[`渲染多选选择框 1`] = `
   overflow: hidden;
 }
 
-.c9 {
+.c8 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -2755,7 +2638,6 @@ label ~ .c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  min-width: 160px;
   width: 100%;
   height: 100%;
   -webkit-user-select: none;
@@ -2768,37 +2650,6 @@ label ~ .c3 {
   position: absolute;
   top: 0;
   left: 0;
-  margin-right: -32px;
-  padding-right: 32px;
-  cursor: pointer;
-}
-
-.c8 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-letter-spacing: 0.00938em;
-  -moz-letter-spacing: 0.00938em;
-  -ms-letter-spacing: 0.00938em;
-  letter-spacing: 0.00938em;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  min-width: 160px;
-  width: 100%;
-  height: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 0px;
-  background: transparent;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-right: -30px;
-  padding-right: 32px;
   cursor: pointer;
 }
 
@@ -2818,11 +2669,9 @@ label ~ .c3 {
     >
       <div
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c5 sinoui-base-input__input"
+          className="c5"
           multiple={true}
           onBlur={[Function]}
           onChange={[Function]}
@@ -2870,11 +2719,9 @@ label ~ .c3 {
     >
       <div
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c8 sinoui-base-input__input"
+          className="c5"
           multiple={true}
           onBlur={[Function]}
           onChange={[Function]}
@@ -2914,22 +2761,20 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--shrink"
   >
     <label
-      className="c9 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
+      className="c8 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input c10"
+      className="c2 sinoui-base-input c9"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <div
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c8 sinoui-base-input__input"
+          className="c5"
           multiple={true}
           onBlur={[Function]}
           onChange={[Function]}
@@ -2961,7 +2806,7 @@ label ~ .c3 {
         </select>
       </div>
       <div
-        className="c11 sinoui-notched-outline sinoui-notched-outline--notched sinoui-notched-outline--no-label"
+        className="c10 sinoui-notched-outline sinoui-notched-outline--notched sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -3231,7 +3076,7 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   opacity: 0.04;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3247,14 +3092,14 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c15 > div {
+.c14 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c15 > .sinoui-notched-outline__leading {
+.c14 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -3263,14 +3108,14 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   width: 10px;
 }
 
-.c15 > .sinoui-notched-outline__notch {
+.c14 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c15 > .sinoui-notched-outline__trailing {
+.c14 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -3278,48 +3123,48 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c15.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c15.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c14 {
+.c13 {
   position: relative;
   border-radius: 4px;
 }
 
-.c14 > .sinoui-notched-outline > div {
+.c13 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c14:hover > .sinoui-notched-outline > div {
+.c13:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c14 > .sinoui-base-input__input {
+.c13 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c14 > .sinoui-input-adornment--start {
+.c13 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c14 > .sinoui-input-adornment--end {
+.c13 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c14 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c13 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c14 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c14 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c13 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c13 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -3376,7 +3221,7 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   overflow: hidden;
 }
 
-.c13 {
+.c12 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -3479,7 +3324,7 @@ label ~ .c3 {
   margin-top: 8px;
 }
 
-.c12 {
+.c11 {
   color: rgba(0,0,0,0.6);
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 0.75rem;
@@ -3520,7 +3365,6 @@ label ~ .c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  min-width: 160px;
   width: 100%;
   height: 100%;
   -webkit-user-select: none;
@@ -3533,37 +3377,6 @@ label ~ .c3 {
   position: absolute;
   top: 0;
   left: 0;
-  margin-right: -32px;
-  padding-right: 32px;
-  cursor: pointer;
-}
-
-.c11 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-letter-spacing: 0.00938em;
-  -moz-letter-spacing: 0.00938em;
-  -ms-letter-spacing: 0.00938em;
-  letter-spacing: 0.00938em;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  min-width: 160px;
-  width: 100%;
-  height: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 0px;
-  background: transparent;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-right: -30px;
-  padding-right: 32px;
   cursor: pointer;
 }
 
@@ -3583,11 +3396,9 @@ label ~ .c3 {
     >
       <div
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c5 sinoui-base-input__input"
+          className="c5"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -3656,11 +3467,9 @@ label ~ .c3 {
     >
       <div
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c11 sinoui-base-input__input"
+          className="c5"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -3712,7 +3521,7 @@ label ~ .c3 {
       />
     </div>
     <p
-      className="c12"
+      className="c11"
     >
       原生选择框
     </p>
@@ -3721,22 +3530,20 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--outlined"
   >
     <label
-      className="c13 sinoui-input-label sinoui-input-label--outlined"
+      className="c12 sinoui-input-label sinoui-input-label--outlined"
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input c14"
+      className="c2 sinoui-base-input c13"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <div
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
-          className="c11 sinoui-base-input__input"
+          className="c5"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -3784,7 +3591,7 @@ label ~ .c3 {
         </svg>
       </div>
       <div
-        className="c15 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c14 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -3803,7 +3610,7 @@ label ~ .c3 {
       </div>
     </div>
     <p
-      className="c12"
+      className="c11"
     >
       原生选择框
     </p>
@@ -4057,7 +3864,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   opacity: 0.04;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4073,14 +3880,14 @@ exports[`渲染有错误提示的选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c15 > div {
+.c14 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c15 > .sinoui-notched-outline__leading {
+.c14 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -4089,14 +3896,14 @@ exports[`渲染有错误提示的选择框 1`] = `
   width: 10px;
 }
 
-.c15 > .sinoui-notched-outline__notch {
+.c14 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c15 > .sinoui-notched-outline__trailing {
+.c14 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -4104,48 +3911,48 @@ exports[`渲染有错误提示的选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c15.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c15.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c14 {
+.c13 {
   position: relative;
   border-radius: 4px;
 }
 
-.c14 > .sinoui-notched-outline > div {
+.c13 > .sinoui-notched-outline > div {
   border-color: #f44336;
   border-width: 1px;
 }
 
-.c14:hover > .sinoui-notched-outline > div {
+.c13:hover > .sinoui-notched-outline > div {
   border-color: #f44336;
 }
 
-.c14 > .sinoui-base-input__input {
+.c13 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c14 > .sinoui-input-adornment--start {
+.c13 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c14 > .sinoui-input-adornment--end {
+.c13 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c14 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c13 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c14 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c14 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c13 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c13 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -4214,7 +4021,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   padding: 4px;
 }
 
-.c13 {
+.c12 {
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -4244,7 +4051,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   overflow: hidden;
 }
 
-.c13::after {
+.c12::after {
   content: '*';
   padding: 4px;
 }
@@ -4322,7 +4129,7 @@ label ~ .c3 {
   color: #f44336;
 }
 
-.c12 {
+.c11 {
   color: rgba(0,0,0,0.6);
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 0.75rem;
@@ -4364,7 +4171,6 @@ label ~ .c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  min-width: 160px;
   width: 100%;
   height: 100%;
   -webkit-user-select: none;
@@ -4377,37 +4183,6 @@ label ~ .c3 {
   position: absolute;
   top: 0;
   left: 0;
-  margin-right: -32px;
-  padding-right: 32px;
-  cursor: pointer;
-}
-
-.c11 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-letter-spacing: 0.00938em;
-  -moz-letter-spacing: 0.00938em;
-  -ms-letter-spacing: 0.00938em;
-  letter-spacing: 0.00938em;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  min-width: 160px;
-  width: 100%;
-  height: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 0px;
-  background: transparent;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-right: -30px;
-  padding-right: 32px;
   cursor: pointer;
 }
 
@@ -4427,14 +4202,11 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <div
-        aria-required={true}
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
           aria-required={true}
-          className="c5 sinoui-base-input__input"
+          className="c5"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -4503,14 +4275,11 @@ label ~ .c3 {
       onClick={[Function]}
     >
       <div
-        aria-required={true}
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
           aria-required={true}
-          className="c11 sinoui-base-input__input"
+          className="c5"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -4562,7 +4331,7 @@ label ~ .c3 {
       />
     </div>
     <p
-      className="c12"
+      className="c11"
     >
       必填
     </p>
@@ -4571,25 +4340,22 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--required sinoui-native-select--error"
   >
     <label
-      className="c13 sinoui-input-label sinoui-input-label--error sinoui-input-label--outlined"
+      className="c12 sinoui-input-label sinoui-input-label--error sinoui-input-label--outlined"
       required={true}
     >
       框模式选择框
     </label>
     <div
-      className="c2 sinoui-base-input c14"
+      className="c2 sinoui-base-input c13"
       data-testid="baseInput"
       onClick={[Function]}
     >
       <div
-        aria-required={true}
         className="c4 sinoui-base-input__input"
-        onBlur={[Function]}
-        onFocus={[Function]}
       >
         <select
           aria-required={true}
-          className="c11 sinoui-base-input__input"
+          className="c5"
           multiple={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -4637,7 +4403,7 @@ label ~ .c3 {
         </svg>
       </div>
       <div
-        className="c15 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c14 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -4656,7 +4422,7 @@ label ~ .c3 {
       </div>
     </div>
     <p
-      className="c12"
+      className="c11"
     >
       必填
     </p>

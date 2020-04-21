@@ -24,6 +24,10 @@ export interface Props {
    */
   label?: string;
   variant?: 'filled' | 'standard' | 'outlined';
+  /**
+   * 自定义样式类名称
+   */
+  className?: string;
 }
 
 const NativeSelectInputLayout = styled.div`
@@ -36,9 +40,8 @@ const NativeSelectInputLayout = styled.div`
 `;
 
 const NativeSelectInputContent = styled.select<Omit<Props, 'onChange'>>`
-  ${({ theme }) => ({ ...theme.typography.body1 })}
+  ${({ theme }) => theme.typography.body1}
   appearance: none;
-  min-width: 160px;
   width: 100%;
   height: 100%;
   user-select: none;
@@ -48,9 +51,6 @@ const NativeSelectInputContent = styled.select<Omit<Props, 'onChange'>>`
   position: absolute;
   top: 0;
   left: 0;
-  margin-right: ${({ variant }) =>
-    variant === 'filled' || variant === 'outlined' ? -30 : -32}px;
-  padding-right: 32px;
   cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 `;
 
@@ -76,7 +76,15 @@ const parseOptionsFromChildren = (children: React.ReactNode) => {
 
 const NativeSelectInput = React.forwardRef<HTMLSelectElement, Props>(
   (props, ref) => {
-    const { onChange, value, multiple, children, label, ...rest } = props;
+    const {
+      onChange,
+      value,
+      multiple,
+      children,
+      label,
+      className,
+      ...rest
+    } = props;
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
       if (!onChange) {
@@ -109,7 +117,7 @@ const NativeSelectInput = React.forwardRef<HTMLSelectElement, Props>(
     };
 
     return (
-      <NativeSelectInputLayout {...rest}>
+      <NativeSelectInputLayout className={className}>
         {value && <div>{renderText()}</div>}
         <NativeSelectInputContent
           {...rest}
