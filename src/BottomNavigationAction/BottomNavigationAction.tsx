@@ -62,6 +62,10 @@ const BaseButtonWrapper = styled(BaseButton)<{
   }
 `;
 
+const BodyWrapper = styled(Body2)`
+  transition: opacity 200ms;
+`;
+
 export interface BottomNavActionProps {
   /**
    * 标签名称
@@ -101,7 +105,7 @@ function BottomNavigationAction(props: BottomNavActionProps) {
       className={classNames('sinoui-bottom-navigation--selected')}
     >
       <IconWrapper>{icon}</IconWrapper>
-      {showLabel && <Body2 as="span">{label}</Body2>}
+      {showLabel && <BodyWrapper as="span">{label}</BodyWrapper>}
     </BaseButtonWrapper>
   );
 }
