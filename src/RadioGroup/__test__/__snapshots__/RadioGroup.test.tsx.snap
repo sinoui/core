@@ -6,12 +6,26 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
 }
 
 .c0.sinoui-radio-group--column > .sinoui-form-control-label {
@@ -273,7 +287,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
 }
 
 <div
-  className="sc-AxjAm c0 sinoui-radio-group"
+  className="sc-AxjAm c0 sinoui-radio-group sinoui-form-group"
 >
   <label
     className="sc-fzozJi c1 sinoui-form-control-label"
@@ -425,12 +439,26 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
 }
 
 .c0.sinoui-radio-group--column > .sinoui-form-control-label {
@@ -631,7 +659,7 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--disabled"
+    className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--disabled sinoui-form-group"
   >
     <label
       className="sc-fzozJi c1 sinoui-form-control-label"
@@ -791,12 +819,26 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
 }
 
 .c0.sinoui-radio-group--column > .sinoui-form-control-label {
@@ -997,7 +1039,7 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--readOnly"
+    className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--readOnly sinoui-form-group"
   >
     <label
       className="sc-fzozJi c1 sinoui-form-control-label"
@@ -1170,12 +1212,26 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
 }
 
 .c0.sinoui-radio-group--column > .sinoui-form-control-label {
@@ -1376,7 +1432,7 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-radio-group"
+    className="sc-AxjAm c0 sinoui-radio-group sinoui-form-group"
   >
     <label
       className="sc-fzozJi c1 sinoui-form-control-label"
@@ -1489,12 +1545,26 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
 }
 
 .c0.sinoui-radio-group--column > .sinoui-form-control-label {
@@ -1695,7 +1765,7 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-radio-group"
+    className="sc-AxjAm c0 sinoui-radio-group sinoui-form-group"
   >
     <label
       className="sc-fzozJi c1 sinoui-form-control-label"
@@ -1812,12 +1882,30 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
 }
 
 .c0.sinoui-radio-group--column > .sinoui-form-control-label {
@@ -2010,7 +2098,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
 }
 
 <div
-  className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--column"
+  className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--column sinoui-form-group"
 >
   <label
     className="sc-fzozJi c1 sinoui-form-control-label"
