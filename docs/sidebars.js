@@ -34,7 +34,6 @@ module.exports = {
           'components/bottom-app-bar',
           'components/dialog',
           'components/bottomSheet',
-          'components/native-select',
           'components/paper',
         ],
       },

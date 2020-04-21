@@ -6,6 +6,7 @@ title: Select 选择框
 import SimpleDemo from './select-demoes/SimpleDemo';
 import SelectDemo from './select-demoes/SelectDemo';
 import MultipleSelectDemo from './select-demoes/MultipleSelectDemo';
+import NativeSelectDemo from './select-demoes/NativeSelectDemo';
 
 > 选择框组件。能从一个选项列表中去获得用户所提供的信息。
 
@@ -460,3 +461,265 @@ export default function MultipleSelectDemo() {
 运行效果如下：
 
 <MultipleSelectDemo />
+
+## NativeSelect
+
+`NativeSelect`原生选择器，主要用在移动设备。
+
+```tsx
+import React, { useState } from 'react';
+import NativeSelect from '@sinoui/core/NativeSelect';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+const StyleNativeSelect = styled(NativeSelect)`
+  width: 200px;
+  margin: 8px;
+`;
+
+export default function NativeSelectDemo() {
+  const [value, setValue] = useState('');
+
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <StyleNativeSelect
+            label="标准选择框"
+            value={value}
+            onChange={handleChange}
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Disabled"
+            disabled
+            value={value}
+            onChange={handleChange}
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Error"
+            required
+            error
+            errorText="必填"
+            value={value}
+            onChange={handleChange}
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Helper Text"
+            helperText="帮助文本"
+            value={value}
+            onChange={handleChange}
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Dense"
+            dense
+            value={value}
+            onChange={handleChange}
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect value={value} onChange={handleChange}>
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <StyleNativeSelect
+            label="填充模式选择框"
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Disabled"
+            disabled
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Error"
+            required
+            error
+            errorText="必填"
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Helper Text"
+            helperText="辅助性文字"
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Dense"
+            dense
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <StyleNativeSelect
+            label="框模式选择框"
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Disabled"
+            disabled
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Error"
+            required
+            error
+            errorText="必填"
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Helper Text"
+            helperText="辅助性文字"
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Dense"
+            dense
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option aria-label="None" value="" />
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+        </div>
+      </>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果如下：
+
+<NativeSelectDemo />
