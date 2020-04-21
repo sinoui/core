@@ -10,7 +10,54 @@ import RadioGroup from '@sinoui/core/RadioGroup';
 import Radio from '@sinoui/core/Radio';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import RadioDemo from './radioGroup-demos/RadioDemo';
 import RadioGroupDemo from './radioGroup-demos/RadioGroupDemo';
+
+## Radio
+
+```tsx
+import React, { useState } from 'react';
+import Radio from '@sinoui/core/Radio';
+import type { RadioProps } from '@sinoui/core/Radio';
+
+export default function RadioDemo(props: RadioProps<string>) {
+  const [checked, setChecked] = useState(false);
+
+  return <Radio checked={checked} onChange={setChecked} {...props} />;
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <RadioDemo>选项1</RadioDemo>
+</ThemeProvider>
+
+## 状态
+
+通过 `checked` 属性可以控制单选按钮的选中状态。
+
+```tsx
+import Radio from '@sinoui/core/Radio';
+
+function RadioDemo() {
+  return (
+    <>
+      <Radio />
+      <Radio checked />
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    <Radio />
+    <Radio checked />
+  </>
+</ThemeProvider>
 
 ## RadioGroup
 

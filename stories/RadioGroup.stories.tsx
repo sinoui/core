@@ -9,7 +9,7 @@ export default {
 };
 
 const RadioGroupDemo = (props: RadioGroupProps<string>) => {
-  const [value, setValue] = useState('2');
+  const [value, setValue] = useState<string | undefined>('2');
 
   return (
     <RadioGroup onChange={setValue} value={value} {...props}>
@@ -42,7 +42,14 @@ export const 基本使用 = () => (
 
 export const 设置items属性 = () => (
   <StoryLayout>
-    <RadioGroupDemo items={[{ value: '1', name: 'item1' },{ value: '2', name: 'item2' },{ value: '3', name: 'item3' },{ value: '4', name: 'item4' }]}/>
+    <RadioGroupDemo
+      items={[
+        { value: '1', label: 'item1' },
+        { value: '2', label: 'item2' },
+        { value: '3', label: 'item3' },
+        { value: '4', label: 'item4' },
+      ]}
+    />
   </StoryLayout>
 );
 
