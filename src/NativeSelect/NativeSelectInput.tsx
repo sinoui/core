@@ -28,9 +28,10 @@ export interface Props {
 
 const NativeSelectInputLayout = styled.div`
   && {
-    min-width: 160px;
+    min-width: 120px;
     width: 100%;
     height: 100%;
+    box-sizing: content-box;
   }
 `;
 

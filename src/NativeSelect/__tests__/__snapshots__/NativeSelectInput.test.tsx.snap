@@ -2,9 +2,10 @@
 
 exports[`渲染不可用选择框 1`] = `
 .c0.c0 {
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .c1 {
@@ -62,9 +63,10 @@ exports[`渲染不可用选择框 1`] = `
 
 exports[`渲染原生选择框 1`] = `
 .c0.c0 {
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .c1 {
@@ -120,9 +122,10 @@ exports[`渲染原生选择框 1`] = `
 
 exports[`渲染多选选择框 1`] = `
 .c0.c0 {
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .c1 {

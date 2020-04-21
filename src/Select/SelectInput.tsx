@@ -81,6 +81,7 @@ type SelectInputLayoutProps = Omit<Props, 'value' | 'inputRef'>;
 
 const SelectInputLayout = styled.div<SelectInputLayoutProps>`
   user-select: none;
+  box-sizing: content-box;
   cursor: inherit;
   ${singleLineTextCss}
 `;

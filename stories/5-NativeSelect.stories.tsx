@@ -260,7 +260,7 @@ export const 框模式的NativeSelect = () => {
 };
 
 export const 多选的NativeSelect = () => {
-  const [value, setValue] = useState(['1', '2', '3']);
+  const [value, setValue] = useState([]);
 
   const handleChange = (val: any) => {
     setValue(val);

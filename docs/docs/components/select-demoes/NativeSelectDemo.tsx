@@ -29,7 +29,6 @@ export default function NativeSelectDemo() {
             value={value}
             onChange={handleChange}
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -40,7 +39,6 @@ export default function NativeSelectDemo() {
             value={value}
             onChange={handleChange}
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -53,7 +51,6 @@ export default function NativeSelectDemo() {
             value={value}
             onChange={handleChange}
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -64,7 +61,6 @@ export default function NativeSelectDemo() {
             value={value}
             onChange={handleChange}
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -75,13 +71,11 @@ export default function NativeSelectDemo() {
             value={value}
             onChange={handleChange}
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
           </StyleNativeSelect>
           <StyleNativeSelect value={value} onChange={handleChange}>
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -100,7 +94,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="filled"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -112,7 +105,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="filled"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -126,7 +118,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="filled"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -138,7 +129,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="filled"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -150,7 +140,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="filled"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -160,7 +149,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="filled"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -179,7 +167,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="outlined"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -191,7 +178,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="outlined"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -205,7 +191,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="outlined"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -217,7 +202,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="outlined"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -229,7 +213,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="outlined"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>
@@ -239,7 +222,6 @@ export default function NativeSelectDemo() {
             onChange={handleChange}
             variant="outlined"
           >
-            <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
             <option value="3">选项三</option>

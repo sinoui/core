@@ -497,9 +497,10 @@ label ~ .c3 {
 }
 
 .c4.c4 {
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .c5 {
@@ -1260,9 +1261,10 @@ label ~ .c3 {
 }
 
 .c4.c4 {
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .c5 {
@@ -1983,9 +1985,10 @@ label ~ .c2 {
 }
 
 .c3.c3 {
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .c4 {
@@ -2735,9 +2738,10 @@ label ~ .c3 {
 }
 
 .c4.c4 {
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .c5 {
@@ -3499,9 +3503,10 @@ label ~ .c3 {
 }
 
 .c4.c4 {
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .c5 {
@@ -4342,9 +4347,10 @@ label ~ .c3 {
 }
 
 .c4.c4 {
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .c5 {
