@@ -2,11 +2,7 @@
 
 exports[`文字排版 快照测试 基本文字排版 1`] = `
 <p
-<<<<<<< HEAD
-  className="sc-AxjAm iVSsOx sinoui-typography sinoui-typography--caption"
-=======
   className="Typography__TypographyWrapper-sc-12agh80-0 bZzonP sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
   color="textPrimary"
   type="caption"
 >
@@ -17,44 +13,28 @@ exports[`文字排版 快照测试 基本文字排版 1`] = `
 exports[`文字排版 快照测试 设置属性 1`] = `
 Array [
   <h2
-<<<<<<< HEAD
-    className="sc-AxjAm iVSsOx sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 bZzonP sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="caption"
   >
     Caption
   </h2>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm gflNzd sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 MXuIv sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm lcoFoA sinoui-typography sinoui-typography--caption"
-=======
-    className="Typography__TypographyWrapper-sc-12agh80-0 jNPEUG sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
+    className="Typography__TypographyWrapper-sc-12agh80-0 jowJHu sinoui-typography sinoui-typography--caption"
     color="textPrimary"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm beMvsd sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 iWdYBL sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="success"
     type="caption"
   >
@@ -66,99 +46,63 @@ Array [
 exports[`文字排版 快照测试 颜色设置 1`] = `
 Array [
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm iVSsOx sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 bZzonP sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm jBskRm sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 SitvE sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="primary"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm dzyEnB sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 hFFznX sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="secondary"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm iVSsOx sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 bZzonP sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm fTevuo sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 gzicwC sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="textSecondary"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm ijLwHk sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 kgsQli sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="error"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm ihQgsh sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 bdvymf sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="warning"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm beMvsd sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 iWdYBL sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="success"
     type="caption"
   >
     Caption
   </p>,
   <p
-<<<<<<< HEAD
-    className="sc-AxjAm hbCWnZ sinoui-typography sinoui-typography--caption"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 jzDfWD sinoui-typography sinoui-typography--caption"
->>>>>>> origin/bottomNavigation
     color="info"
     type="caption"
   >

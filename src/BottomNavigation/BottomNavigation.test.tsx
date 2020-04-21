@@ -45,8 +45,8 @@ describe('BottomNavigation组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const text = container.querySelector('.sinoui-typography--body2');
-    expect(text).toHaveTextContent('Favorites');
+    const text = container.querySelector('.sinoui-bottom-navigation--selected');
+    expect(text && text.lastChild).toHaveTextContent('Favorites');
   });
 });
 

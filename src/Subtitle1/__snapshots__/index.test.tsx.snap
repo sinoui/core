@@ -2,11 +2,7 @@
 
 exports[`文字排版 快照测试 基本文字排版 1`] = `
 <h6
-<<<<<<< HEAD
-  className="sc-AxjAm iJWNeA sinoui-typography sinoui-typography--subtitle1"
-=======
   className="Typography__TypographyWrapper-sc-12agh80-0 hGmyZe sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
   color="textPrimary"
   type="subtitle1"
 >
@@ -17,55 +13,35 @@ exports[`文字排版 快照测试 基本文字排版 1`] = `
 exports[`文字排版 快照测试 设置属性 1`] = `
 Array [
   <h2
-<<<<<<< HEAD
-    className="sc-AxjAm iJWNeA sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 hGmyZe sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="subtitle1"
   >
     Subtitle1
   </h2>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm Ga-Drg sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 hjJOnm sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm gssDFZ sinoui-typography sinoui-typography--subtitle1"
-=======
-    className="Typography__TypographyWrapper-sc-12agh80-0 bzYdif sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
+    className="Typography__TypographyWrapper-sc-12agh80-0 gXbLPr sinoui-typography sinoui-typography--subtitle1"
     color="textPrimary"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm jvOyQU sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 gelpNW sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="success"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm kREAkI sinoui-typography sinoui-typography--subtitle1 sinoui-typography--gutter-bottom"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 giRPaG sinoui-typography sinoui-typography--subtitle1 sinoui-typography--gutter-bottom"
->>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="subtitle1"
   >
@@ -77,99 +53,63 @@ Array [
 exports[`文字排版 快照测试 颜色设置 1`] = `
 Array [
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm iJWNeA sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 hGmyZe sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm hFJeLH sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 kNiPbB sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="primary"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm dvnuhM sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 hUFLVm sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="secondary"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm iJWNeA sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 hGmyZe sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm dltSeZ sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 oKTmz sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="textSecondary"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm fMLOph sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 bbSyj sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="error"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm iFhwKs sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 jeBNhC sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="warning"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm jvOyQU sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 gelpNW sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="success"
     type="subtitle1"
   >
     Subtitle1
   </h6>,
   <h6
-<<<<<<< HEAD
-    className="sc-AxjAm jeZwCk sinoui-typography sinoui-typography--subtitle1"
-=======
     className="Typography__TypographyWrapper-sc-12agh80-0 cLeVci sinoui-typography sinoui-typography--subtitle1"
->>>>>>> origin/bottomNavigation
     color="info"
     type="subtitle1"
   >

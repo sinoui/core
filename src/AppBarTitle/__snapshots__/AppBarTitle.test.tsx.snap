@@ -2,7 +2,7 @@
 
 exports[`AppBarTitle 1`] = `
 <h1
-  className="sc-AxjAm emMpHQ"
+  className="AppBarTitle-sc-1lmkalg-0 bgybyW"
 >
   标题
 </h1>

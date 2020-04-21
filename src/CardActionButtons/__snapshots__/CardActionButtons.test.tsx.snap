@@ -2,10 +2,6 @@
 
 exports[`快照测试 CardActionButtons 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm iMxqKn"
-=======
   className="CardActionButtons-pzeh27-0 dVsMyi"
->>>>>>> origin/bottomNavigation
 />
 `;

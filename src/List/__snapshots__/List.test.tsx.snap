@@ -2,10 +2,6 @@
 
 exports[`快照测试 默认 1`] = `
 <ul
-<<<<<<< HEAD
-  className="sc-AxjAm jSMlTn sinoui-list"
-=======
-  className="List__StyledList-sc-1djj80a-0 dJeuTY sinoui-list"
->>>>>>> origin/bottomNavigation
+  className="List__StyledList-sc-1djj80a-0 gWUUDc sinoui-list"
 />
 `;

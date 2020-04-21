@@ -42,8 +42,8 @@ describe('BottomNavigationAction组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const text = container.querySelector('.sinoui-typography--body2');
-    expect(text).toHaveTextContent('Recents');
+    const text = container.querySelector('.sinoui-bottom-navigation');
+    expect(text && text.lastChild).toHaveTextContent('Recents');
   });
 
   it('测试是否选中', () => {
@@ -59,7 +59,7 @@ describe('BottomNavigationAction组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const text = container.querySelector('.sinoui-bottom-navigation--selected');
-    expect(text).toHaveTextContent('Recents');
+    const text = container.querySelector('.sinoui-bottom-navigation');
+    expect(text && text.lastChild).toHaveTextContent('Recents');
   });
 });

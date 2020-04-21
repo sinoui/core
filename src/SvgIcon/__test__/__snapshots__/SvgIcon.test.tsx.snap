@@ -2,19 +2,11 @@
 
 exports[`SvgIcon组件 快照测试 基本使用 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm ldsEo"
->
-  <svg
-    aria-hidden="true"
-    className="sc-AxirZ eBpvqz sinoui-svg-icon"
-=======
   className="TestWrapper__Container-sc-1j2x5li-0 bVnmdU"
 >
   <svg
     aria-hidden="true"
     className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     focusable="false"
     role="presentation"
     size={24}
@@ -29,19 +21,11 @@ exports[`SvgIcon组件 快照测试 基本使用 1`] = `
 
 exports[`SvgIcon组件 快照测试 添加自定义className 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm ldsEo"
->
-  <svg
-    aria-hidden="true"
-    className="sc-AxirZ eBpvqz sinoui-svg-icon--img sinoui-svg-icon sinoui-svg-icon--img"
-=======
   className="TestWrapper__Container-sc-1j2x5li-0 bVnmdU"
 >
   <svg
     aria-hidden="true"
     className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon--img sinoui-svg-icon sinoui-svg-icon--img"
->>>>>>> origin/bottomNavigation
     focusable="false"
     role="presentation"
     size={24}
@@ -56,19 +40,11 @@ exports[`SvgIcon组件 快照测试 添加自定义className 1`] = `
 
 exports[`SvgIcon组件 快照测试 设置svg可见区域 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm ldsEo"
->
-  <svg
-    aria-hidden="true"
-    className="sc-AxirZ eBpvqz sinoui-svg-icon"
-=======
   className="TestWrapper__Container-sc-1j2x5li-0 bVnmdU"
 >
   <svg
     aria-hidden="true"
     className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     focusable="false"
     role="presentation"
     size={24}
@@ -83,19 +59,11 @@ exports[`SvgIcon组件 快照测试 设置svg可见区域 1`] = `
 
 exports[`SvgIcon组件 快照测试 设置图标大小 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm ldsEo"
->
-  <svg
-    aria-hidden="true"
-    className="sc-AxirZ esYPjb sinoui-svg-icon"
-=======
   className="TestWrapper__Container-sc-1j2x5li-0 bVnmdU"
 >
   <svg
     aria-hidden="true"
     className="SvgIcon-sc-1015m7s-0 hfODPe sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     focusable="false"
     role="presentation"
     size={28}
@@ -107,11 +75,7 @@ exports[`SvgIcon组件 快照测试 设置图标大小 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-<<<<<<< HEAD
-    className="sc-AxirZ fPUUWV sinoui-svg-icon"
-=======
     className="SvgIcon-sc-1015m7s-0 hokBvo sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     focusable="false"
     role="presentation"
     size="2rem"
@@ -126,17 +90,10 @@ exports[`SvgIcon组件 快照测试 设置图标大小 1`] = `
 
 exports[`SvgIcon组件 快照测试 设置指定标题 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm ldsEo"
->
-  <svg
-    className="sc-AxirZ eBpvqz sinoui-svg-icon"
-=======
   className="TestWrapper__Container-sc-1j2x5li-0 bVnmdU"
 >
   <svg
     className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     focusable="false"
     role="img"
     size={24}
@@ -155,19 +112,11 @@ exports[`SvgIcon组件 快照测试 设置指定标题 1`] = `
 
 exports[`SvgIcon组件 快照测试 设置指定根元素 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm ldsEo"
->
-  <svg
-    aria-hidden="true"
-    className="sc-AxirZ eBpvqz sinoui-svg-icon"
-=======
   className="TestWrapper__Container-sc-1j2x5li-0 bVnmdU"
 >
   <svg
     aria-hidden="true"
     className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     fill="currentColor"
     focusable="false"
     height={24}
@@ -226,19 +175,11 @@ exports[`SvgIcon组件 快照测试 设置指定根元素 1`] = `
 
 exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm ldsEo"
->
-  <svg
-    aria-hidden="true"
-    className="sc-AxirZ eckCLS sinoui-svg-icon"
-=======
   className="TestWrapper__Container-sc-1j2x5li-0 bVnmdU"
 >
   <svg
     aria-hidden="true"
     className="SvgIcon-sc-1015m7s-0 kjxSiD sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     color="primary"
     focusable="false"
     role="presentation"
@@ -251,11 +192,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-<<<<<<< HEAD
-    className="sc-AxirZ feRgyh sinoui-svg-icon"
-=======
     className="SvgIcon-sc-1015m7s-0 dqOWUs sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     color="secondary"
     focusable="false"
     role="presentation"
@@ -268,11 +205,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-<<<<<<< HEAD
-    className="sc-AxirZ lpmrJA sinoui-svg-icon"
-=======
     className="SvgIcon-sc-1015m7s-0 gFoZbN sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     color="error"
     focusable="false"
     role="presentation"
@@ -285,11 +218,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-<<<<<<< HEAD
-    className="sc-AxirZ iTyYeN sinoui-svg-icon"
-=======
     className="SvgIcon-sc-1015m7s-0 cTgdHw sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     color="warning"
     focusable="false"
     role="presentation"
@@ -302,11 +231,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-<<<<<<< HEAD
-    className="sc-AxirZ gaIAHp sinoui-svg-icon"
-=======
     className="SvgIcon-sc-1015m7s-0 jNMCvk sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     color="success"
     focusable="false"
     role="presentation"
@@ -319,11 +244,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-<<<<<<< HEAD
-    className="sc-AxirZ llGqTR sinoui-svg-icon"
-=======
     className="SvgIcon-sc-1015m7s-0 ksMuCY sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     color="info"
     focusable="false"
     role="presentation"
@@ -336,11 +257,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-<<<<<<< HEAD
-    className="sc-AxirZ fwhrAE sinoui-svg-icon"
-=======
     className="SvgIcon-sc-1015m7s-0 jkwWNV sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     color="actionActive"
     focusable="false"
     role="presentation"
@@ -353,11 +270,7 @@ exports[`SvgIcon组件 快照测试 设置颜色 1`] = `
   </svg>
   <svg
     aria-hidden="true"
-<<<<<<< HEAD
-    className="sc-AxirZ qwCqK sinoui-svg-icon"
-=======
     className="SvgIcon-sc-1015m7s-0 bNfEWj sinoui-svg-icon"
->>>>>>> origin/bottomNavigation
     color="actionDisabled"
     focusable="false"
     role="presentation"

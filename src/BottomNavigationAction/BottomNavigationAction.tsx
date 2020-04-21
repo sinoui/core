@@ -102,7 +102,9 @@ function BottomNavigationAction(props: BottomNavActionProps) {
       selected={selected}
       showLabel={showLabel}
       {...rest}
-      className={classNames('sinoui-bottom-navigation--selected')}
+      className={classNames('sinoui-bottom-navigation', {
+        'sinoui-bottom-navigation--selected': selected,
+      })}
     >
       <IconWrapper>{icon}</IconWrapper>
       {showLabel && <BodyWrapper as="span">{label}</BodyWrapper>}

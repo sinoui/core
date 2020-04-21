@@ -2,11 +2,7 @@
 
 exports[`正确渲染CardPrimaryAction 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm hAydpj"
-=======
   className="CardPrimaryAction__StyledCardPrimaryAction-sc-2ihx33-0 fwVVkG"
->>>>>>> origin/bottomNavigation
   tabIndex="0"
 >
   文本

@@ -2,11 +2,7 @@
 
 exports[`正确渲染文本按钮 1`] = `
 <button
-<<<<<<< HEAD
-  className="sc-AxjAm hmYuEz sinoui-base-button"
-=======
   className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
->>>>>>> origin/bottomNavigation
   role="button"
   type="button"
 >
@@ -17,21 +13,13 @@ exports[`正确渲染文本按钮 1`] = `
 exports[`正确渲染链接按钮 1`] = `
 <div>
   <a
-<<<<<<< HEAD
-    className="sc-AxjAm hmYuEz sinoui-base-button"
-=======
     className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
->>>>>>> origin/bottomNavigation
     href="https://www.baidu.com/"
   >
     百度链接
   </a>
   <a
-<<<<<<< HEAD
-    className="sc-AxjAm hmYuEz sinoui-base-button"
-=======
     className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
->>>>>>> origin/bottomNavigation
     href="https://github.com/"
   >
     github官网
@@ -42,11 +30,7 @@ exports[`正确渲染链接按钮 1`] = `
 exports[`禁用涟漪 1`] = `
 Array [
   <button
-<<<<<<< HEAD
-    className="sc-AxjAm hmYuEz sinoui-base-button"
-=======
     className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
->>>>>>> origin/bottomNavigation
     role="button"
     type="button"
   >
@@ -54,11 +38,7 @@ Array [
   </button>,
   <button
     aria-disabled={true}
-<<<<<<< HEAD
-    className="sc-AxjAm gIJowi sinoui-base-button"
-=======
     className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button"
->>>>>>> origin/bottomNavigation
     disabled={true}
     role="button"
     type="button"
@@ -70,11 +50,7 @@ Array [
 
 exports[`自定义涟漪颜色 1`] = `
 <button
-<<<<<<< HEAD
-  className="sc-AxjAm hmYuEz sinoui-base-button"
-=======
   className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
->>>>>>> origin/bottomNavigation
   role="button"
   type="button"
 >

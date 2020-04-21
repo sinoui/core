@@ -2,10 +2,6 @@
 
 exports[`快照测试 CardContent 1`] = `
 <div
-<<<<<<< HEAD
-  className="sc-AxjAm fGMBXC"
-=======
   className="CardContent-sc-1f1zf07-0 fMTfzl"
->>>>>>> origin/bottomNavigation
 />
 `;
