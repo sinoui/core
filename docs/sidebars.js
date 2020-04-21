@@ -13,6 +13,7 @@ module.exports = {
         label: '通用',
         items: [
           'components/button',
+          'components/form',
           'components/textInput',
           'components/divider',
           'components/typography',
