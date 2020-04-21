@@ -74,3 +74,34 @@ it('值变更时，onChange被调用', () => {
 
   expect(onChange).toHaveBeenCalledWith('1');
 });
+
+it('多选值变更时，onChange被调用', () => {
+  const onChange = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <NativeSelectInput onChange={onChange} value={['1', '3']} multiple>
+        <option value="1">选项一</option>
+        <option value="2">选项二</option>
+        <option value="3">选项三</option>
+        <option value="4">选项四</option>
+      </NativeSelectInput>
+    </ThemeProvider>,
+  );
+
+  const select = container.querySelector('select') as HTMLSelectElement;
+
+  act(() => {
+    (select.querySelector(
+      'option[value="1"]',
+    ) as HTMLOptionElement).selected = true;
+    (select.querySelector(
+      'option[value="2"]',
+    ) as HTMLOptionElement).selected = true;
+    (select.querySelector(
+      'option[value="3"]',
+    ) as HTMLOptionElement).selected = false;
+    fireEvent.change(select);
+  });
+
+  expect(onChange).toHaveBeenCalledWith(['1', '2']);
+});
