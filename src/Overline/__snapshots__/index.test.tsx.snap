@@ -2,7 +2,7 @@
 
 exports[`文字排版 快照测试 基本文字排版 1`] = `
 <p
-  className="Typography__TypographyWrapper-sc-12agh80-0 ekHPVY sinoui-typography sinoui-typography--overline"
+  className="sc-bdVaJa ipNZCV sinoui-typography sinoui-typography--overline"
   color="textPrimary"
   type="overline"
 >
@@ -13,28 +13,28 @@ exports[`文字排版 快照测试 基本文字排版 1`] = `
 exports[`文字排版 快照测试 设置属性 1`] = `
 Array [
   <h2
-    className="Typography__TypographyWrapper-sc-12agh80-0 ekHPVY sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa ipNZCV sinoui-typography sinoui-typography--overline"
     color="textPrimary"
     type="overline"
   >
     Overline
   </h2>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 eApNRY sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa eOULuq sinoui-typography sinoui-typography--overline"
     color="textPrimary"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 goEONp sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa gvleOr sinoui-typography sinoui-typography--overline"
     color="textPrimary"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 jLIVtw sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa ckGxJo sinoui-typography sinoui-typography--overline"
     color="success"
     type="overline"
   >
@@ -46,63 +46,63 @@ Array [
 exports[`文字排版 快照测试 颜色设置 1`] = `
 Array [
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 ekHPVY sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa ipNZCV sinoui-typography sinoui-typography--overline"
     color="textPrimary"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 bqTgsP sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa iZjWRF sinoui-typography sinoui-typography--overline"
     color="primary"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 dqvyw sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa fPPez sinoui-typography sinoui-typography--overline"
     color="secondary"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 ekHPVY sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa ipNZCV sinoui-typography sinoui-typography--overline"
     color="textPrimary"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 bvmFLd sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa kGesJL sinoui-typography sinoui-typography--overline"
     color="textSecondary"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 dYpqqh sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa cAhCnp sinoui-typography sinoui-typography--overline"
     color="error"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 huDQKM sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa jAGTVX sinoui-typography sinoui-typography--overline"
     color="warning"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 jLIVtw sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa ckGxJo sinoui-typography sinoui-typography--overline"
     color="success"
     type="overline"
   >
     Overline
   </p>,
   <p
-    className="Typography__TypographyWrapper-sc-12agh80-0 hSzcQM sinoui-typography sinoui-typography--overline"
+    className="sc-bdVaJa knfRiK sinoui-typography sinoui-typography--overline"
     color="info"
     type="overline"
   >

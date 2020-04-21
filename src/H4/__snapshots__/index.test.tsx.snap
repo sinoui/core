@@ -2,7 +2,7 @@
 
 exports[`文字排版 快照测试 基本文字排版 1`] = `
 <h4
-  className="Typography__TypographyWrapper-sc-12agh80-0 hbWGvk sinoui-typography sinoui-typography--h4"
+  className="sc-bdVaJa glFwjQ sinoui-typography sinoui-typography--h4"
   color="textPrimary"
   type="h4"
 >
@@ -13,35 +13,35 @@ exports[`文字排版 快照测试 基本文字排版 1`] = `
 exports[`文字排版 快照测试 设置属性 1`] = `
 Array [
   <h2
-    className="Typography__TypographyWrapper-sc-12agh80-0 hbWGvk sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa glFwjQ sinoui-typography sinoui-typography--h4"
     color="textPrimary"
     type="h4"
   >
     H4
   </h2>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 fAOxRY sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa dqlDXD sinoui-typography sinoui-typography--h4"
     color="textPrimary"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 hSDyAZ sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa ghIDpz sinoui-typography sinoui-typography--h4"
     color="textPrimary"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 iWrdno sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa cdfnbd sinoui-typography sinoui-typography--h4"
     color="success"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 fPdRcg sinoui-typography sinoui-typography--h4 sinoui-typography--gutter-bottom"
+    className="sc-bdVaJa jHuxGJ sinoui-typography sinoui-typography--h4 sinoui-typography--gutter-bottom"
     color="textPrimary"
     type="h4"
   >
@@ -53,63 +53,63 @@ Array [
 exports[`文字排版 快照测试 颜色设置 1`] = `
 Array [
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 hbWGvk sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa glFwjQ sinoui-typography sinoui-typography--h4"
     color="textPrimary"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 epYisj sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa wOymM sinoui-typography sinoui-typography--h4"
     color="primary"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 jBVOzY sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa fUtzfy sinoui-typography sinoui-typography--h4"
     color="secondary"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 hbWGvk sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa glFwjQ sinoui-typography sinoui-typography--h4"
     color="textPrimary"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 jIJebd sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa fbMQkC sinoui-typography sinoui-typography--h4"
     color="textSecondary"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 fSUvAV sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa bYpybc sinoui-typography sinoui-typography--h4"
     color="error"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 kurfUU sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa eBePSW sinoui-typography sinoui-typography--h4"
     color="warning"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 iWrdno sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa cdfnbd sinoui-typography sinoui-typography--h4"
     color="success"
     type="h4"
   >
     H4
   </h4>,
   <h4
-    className="Typography__TypographyWrapper-sc-12agh80-0 kcMvKU sinoui-typography sinoui-typography--h4"
+    className="sc-bdVaJa XwHEq sinoui-typography sinoui-typography--h4"
     color="info"
     type="h4"
   >

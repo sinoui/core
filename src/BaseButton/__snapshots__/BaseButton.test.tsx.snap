@@ -2,7 +2,7 @@
 
 exports[`正确渲染文本按钮 1`] = `
 <button
-  className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+  className="sc-bdVaJa iZyHAL sinoui-base-button"
   role="button"
   type="button"
 >
@@ -13,13 +13,13 @@ exports[`正确渲染文本按钮 1`] = `
 exports[`正确渲染链接按钮 1`] = `
 <div>
   <a
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+    className="sc-bdVaJa iZyHAL sinoui-base-button"
     href="https://www.baidu.com/"
   >
     百度链接
   </a>
   <a
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+    className="sc-bdVaJa iZyHAL sinoui-base-button"
     href="https://github.com/"
   >
     github官网
@@ -30,7 +30,7 @@ exports[`正确渲染链接按钮 1`] = `
 exports[`禁用涟漪 1`] = `
 Array [
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+    className="sc-bdVaJa iZyHAL sinoui-base-button"
     role="button"
     type="button"
   >
@@ -38,7 +38,7 @@ Array [
   </button>,
   <button
     aria-disabled={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button"
+    className="sc-bdVaJa gLtfBW sinoui-base-button"
     disabled={true}
     role="button"
     type="button"
@@ -50,7 +50,7 @@ Array [
 
 exports[`自定义涟漪颜色 1`] = `
 <button
-  className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button"
+  className="sc-bdVaJa iZyHAL sinoui-base-button"
   role="button"
   type="button"
 >
