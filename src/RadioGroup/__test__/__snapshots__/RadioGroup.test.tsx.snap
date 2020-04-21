@@ -1,51 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`radioGroup组件 快照测试 基本使用 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-11px,0px);
-  -ms-transform: translate(-11px,0px);
-  transform: translate(-11px,0px);
-}
-
-.c0.sinoui-radio-group--column > .sinoui-form-control-label {
-  width: 100%;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -268,6 +223,51 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
   border: none;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -290,12 +290,13 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
   className="sc-AxjAm c0 sinoui-radio-group sinoui-form-group"
 >
   <label
-    className="sc-fzozJi c1 sinoui-form-control-label"
+    className="sc-AxmLO c1 sinoui-form-control-label"
   >
     <span
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -325,12 +326,13 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-fzozJi c1 sinoui-form-control-label"
+    className="sc-AxmLO c1 sinoui-form-control-label"
   >
     <span
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -360,12 +362,13 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-fzozJi c1 sinoui-form-control-label"
+    className="sc-AxmLO c1 sinoui-form-control-label"
   >
     <span
       checked={true}
       className="c2 sinoui-base-button c6 sinoui-radio sinoui-radio--checked"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -395,12 +398,13 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-fzozJi c1 sinoui-form-control-label"
+    className="sc-AxmLO c1 sinoui-form-control-label"
   >
     <span
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -434,52 +438,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
 
 exports[`radioGroup组件 快照测试 设置只读 1`] = `
 Array [
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-11px,0px);
-  -ms-transform: translate(-11px,0px);
-  transform: translate(-11px,0px);
-}
-
-.c0.sinoui-radio-group--column > .sinoui-form-control-label {
-  width: 100%;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
-.c2 {
+  .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -646,6 +605,51 @@ Array [
   border: none;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -662,7 +666,7 @@ Array [
     className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--disabled sinoui-form-group"
   >
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
@@ -670,6 +674,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -700,7 +705,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
@@ -708,6 +713,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -738,7 +744,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
@@ -746,6 +752,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -776,7 +783,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
@@ -784,6 +791,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
         color="primary"
         disabled={true}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -814,52 +822,7 @@ Array [
       </span>
     </label>
   </div>,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-11px,0px);
-  -ms-transform: translate(-11px,0px);
-  transform: translate(-11px,0px);
-}
-
-.c0.sinoui-radio-group--column > .sinoui-form-control-label {
-  width: 100%;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
-.c2 {
+  .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1026,6 +989,51 @@ Array [
   border: none;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -1042,7 +1050,7 @@ Array [
     className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--readOnly sinoui-form-group"
   >
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -1050,8 +1058,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
-        onBlur={false}
-        onFocus={false}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1082,7 +1089,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -1090,8 +1097,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
-        onBlur={false}
-        onFocus={false}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1122,7 +1128,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -1130,8 +1136,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
-        onBlur={false}
-        onFocus={false}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1162,7 +1167,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -1170,8 +1175,7 @@ Array [
         className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--readOnly"
         color="primary"
         disabled={true}
-        onBlur={false}
-        onFocus={false}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1207,52 +1211,7 @@ Array [
 
 exports[`radioGroup组件 快照测试 设置标题显示位置 1`] = `
 Array [
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-11px,0px);
-  -ms-transform: translate(-11px,0px);
-  transform: translate(-11px,0px);
-}
-
-.c0.sinoui-radio-group--column > .sinoui-form-control-label {
-  width: 100%;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
-.c2 {
+  .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1419,128 +1378,7 @@ Array [
   border: none;
 }
 
-@media (hover:none) {
-  .c2:hover {
-    background-color: transparent;
-  }
-}
-
-@media (hover:none) {
-  .c3:hover {
-    background-color: transparent;
-  }
-}
-
-<div
-    className="sc-AxjAm c0 sinoui-radio-group sinoui-form-group"
-  >
-    <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
-    >
-      <span
-        checked={false}
-        className="c2 sinoui-base-button c3 sinoui-radio"
-        color="primary"
-        tabIndex="0"
-      >
-        <svg
-          aria-hidden="true"
-          className="c4 sinoui-svg-icon"
-          focusable="false"
-          role="presentation"
-          size={24}
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-          />
-        </svg>
-        <input
-          checked={false}
-          className="c5 sinoui-radio__input"
-          onChange={[Function]}
-          type="radio"
-          value="1"
-        />
-      </span>
-      <span
-        className="sinoui-form-control-label__title"
-      >
-        单选框1
-      </span>
-    </label>
-    <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
-    >
-      <span
-        checked={false}
-        className="c2 sinoui-base-button c3 sinoui-radio"
-        color="primary"
-        tabIndex="0"
-      >
-        <svg
-          aria-hidden="true"
-          className="c4 sinoui-svg-icon"
-          focusable="false"
-          role="presentation"
-          size={24}
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-          />
-        </svg>
-        <input
-          checked={false}
-          className="c5 sinoui-radio__input"
-          onChange={[Function]}
-          type="radio"
-          value="2"
-        />
-      </span>
-      <span
-        className="sinoui-form-control-label__title"
-      >
-        单选框2
-      </span>
-    </label>
-    <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
-    >
-      <span
-        checked={false}
-        className="c2 sinoui-base-button c3 sinoui-radio"
-        color="primary"
-        tabIndex="0"
-      >
-        <svg
-          aria-hidden="true"
-          className="c4 sinoui-svg-icon"
-          focusable="false"
-          role="presentation"
-          size={24}
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-          />
-        </svg>
-        <input
-          checked={false}
-          className="c5 sinoui-radio__input"
-          onChange={[Function]}
-          type="radio"
-          value="3"
-        />
-      </span>
-      <span
-        className="sinoui-form-control-label__title"
-      >
-        单选框3
-      </span>
-    </label>
-  </div>,
-  .c0 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1585,7 +1423,131 @@ Array [
   padding-right: 0px;
 }
 
-.c2 {
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="sc-AxjAm c0 sinoui-radio-group sinoui-form-group"
+  >
+    <label
+      className="sc-AxmLO c1 sinoui-form-control-label"
+    >
+      <span
+        checked={false}
+        className="c2 sinoui-base-button c3 sinoui-radio"
+        color="primary"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <svg
+          aria-hidden="true"
+          className="c4 sinoui-svg-icon"
+          focusable="false"
+          role="presentation"
+          size={24}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+          />
+        </svg>
+        <input
+          checked={false}
+          className="c5 sinoui-radio__input"
+          onChange={[Function]}
+          type="radio"
+          value="1"
+        />
+      </span>
+      <span
+        className="sinoui-form-control-label__title"
+      >
+        单选框1
+      </span>
+    </label>
+    <label
+      className="sc-AxmLO c1 sinoui-form-control-label"
+    >
+      <span
+        checked={false}
+        className="c2 sinoui-base-button c3 sinoui-radio"
+        color="primary"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <svg
+          aria-hidden="true"
+          className="c4 sinoui-svg-icon"
+          focusable="false"
+          role="presentation"
+          size={24}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+          />
+        </svg>
+        <input
+          checked={false}
+          className="c5 sinoui-radio__input"
+          onChange={[Function]}
+          type="radio"
+          value="2"
+        />
+      </span>
+      <span
+        className="sinoui-form-control-label__title"
+      >
+        单选框2
+      </span>
+    </label>
+    <label
+      className="sc-AxmLO c1 sinoui-form-control-label"
+    >
+      <span
+        checked={false}
+        className="c2 sinoui-base-button c3 sinoui-radio"
+        color="primary"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <svg
+          aria-hidden="true"
+          className="c4 sinoui-svg-icon"
+          focusable="false"
+          role="presentation"
+          size={24}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+          />
+        </svg>
+        <input
+          checked={false}
+          className="c5 sinoui-radio__input"
+          onChange={[Function]}
+          type="radio"
+          value="3"
+        />
+      </span>
+      <span
+        className="sinoui-form-control-label__title"
+      >
+        单选框3
+      </span>
+    </label>
+  </div>,
+  .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1752,6 +1714,51 @@ Array [
   border: none;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -1768,12 +1775,13 @@ Array [
     className="sc-AxjAm c0 sinoui-radio-group sinoui-form-group"
   >
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
     >
       <span
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-radio"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1803,12 +1811,13 @@ Array [
       </span>
     </label>
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
     >
       <span
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-radio"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1838,12 +1847,13 @@ Array [
       </span>
     </label>
     <label
-      className="sc-fzozJi c1 sinoui-form-control-label"
+      className="sc-AxmLO c1 sinoui-form-control-label"
     >
       <span
         checked={false}
         className="c2 sinoui-base-button c3 sinoui-radio"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
@@ -1877,47 +1887,6 @@ Array [
 `;
 
 exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c0 > label {
-  padding-right: 8px;
-}
-
-.c0 > label:last-child {
-  padding-right: 0px;
-}
-
-.c0 > label {
-  width: 100%;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-11px,0px);
-  -ms-transform: translate(-11px,0px);
-  transform: translate(-11px,0px);
-}
-
-.c0.sinoui-radio-group--column > .sinoui-form-control-label {
-  width: 100%;
-}
-
-.c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2085,6 +2054,47 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
   border: none;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c0.sinoui-radio-group--column > .sinoui-form-control-label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-12px,0px);
+  -ms-transform: translate(-12px,0px);
+  transform: translate(-12px,0px);
+}
+
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -2101,12 +2111,13 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
   className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--column sinoui-form-group"
 >
   <label
-    className="sc-fzozJi c1 sinoui-form-control-label"
+    className="sc-AxmLO c1 sinoui-form-control-label"
   >
     <span
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -2136,12 +2147,13 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="sc-fzozJi c1 sinoui-form-control-label"
+    className="sc-AxmLO c1 sinoui-form-control-label"
   >
     <span
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -2171,12 +2183,13 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="sc-fzozJi c1 sinoui-form-control-label"
+    className="sc-AxmLO c1 sinoui-form-control-label"
   >
     <span
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -2206,12 +2219,13 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
-    className="sc-fzozJi c1 sinoui-form-control-label"
+    className="sc-AxmLO c1 sinoui-form-control-label"
   >
     <span
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg

@@ -527,7 +527,10 @@ function FormDemo2() {
           </Column>
           <Column xs={12}>
             <FormControl label="Nature of request">
-              <CheckboxGroup column>
+              <CheckboxGroup
+                column
+                items={[{ value: 'item1', label: 'item1' }]}
+              >
                 <Checkbox value="1">Ads review</Checkbox>
                 <Checkbox value="2">Keywords review</Checkbox>
                 <Checkbox value="3">Extensions review</Checkbox>
@@ -536,7 +539,11 @@ function FormDemo2() {
           </Column>
           <Column xs={12}>
             <FormControl label="Current reviewable status">
-              <RadioGroup value="1" column>
+              <RadioGroup
+                value="1"
+                column
+                items={[{ value: 'item1', label: 'item1' }]}
+              >
                 <Radio value="1">Approved</Radio>
                 <Radio value="2">Not approved</Radio>
               </RadioGroup>

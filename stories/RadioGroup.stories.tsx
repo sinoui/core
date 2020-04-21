@@ -1,22 +1,18 @@
 import React, { useState } from 'react';
 import Radio from '@sinoui/core/Radio';
 import RadioGroup from '@sinoui/core/RadioGroup';
+import type { RadioGroupProps } from '../src/RadioGroup';
 import StoryLayout from './StoryLayout';
 
 export default {
   title: 'RadioGroup',
 };
 
-const RadioGroupDemo = (props: any) => {
+const RadioGroupDemo = (props: RadioGroupProps<string>) => {
   const [value, setValue] = useState('2');
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
-  console.log(value);
-
   return (
-    <RadioGroup onChange={onChange} value={value} {...props}>
+    <RadioGroup onChange={setValue} value={value} {...props}>
       <Radio value="1">单选框1</Radio>
       <Radio value="2">单选框2</Radio>
       <Radio value="3">单选框3</Radio>
@@ -25,24 +21,28 @@ const RadioGroupDemo = (props: any) => {
   );
 };
 
+// const RadioGroupComplexDemo = (props: RadioGroupProps<string>) => {
+//   const [value, setValue] = useState({ value: '3', name: 'item3' });
+
+//   return (
+//     <RadioGroup onChange={setValue} value={value} {...props}>
+//       <Radio value={{ value: '1', name: 'item1' }}>单选框1</Radio>
+//       <Radio value={{ value: '2', name: 'item2' }}>单选框2</Radio>
+//       <Radio value={{ value: '3', name: 'item3' }}>单选框3</Radio>
+//       <Radio value={{ value: '4', name: 'item4' }}>单选框4</Radio>
+//     </RadioGroup>
+//   );
+// };
+
 export const 基本使用 = () => (
   <StoryLayout>
     <RadioGroupDemo />
   </StoryLayout>
 );
 
-export const 非受控使用 = () => (
+export const 设置items属性 = () => (
   <StoryLayout>
-    <RadioGroup
-      onChange={(event: React.ChangeEvent<HTMLInputElement>, value) =>
-        console.log(event.target.value)
-      }
-    >
-      <Radio value="1">单选框1</Radio>
-      <Radio value="2">单选框2</Radio>
-      <Radio value="3">单选框3</Radio>
-      <Radio value="4">单选框4</Radio>
-    </RadioGroup>
+    <RadioGroupDemo items={[{ value: '1', name: 'item1' },{ value: '2', name: 'item2' },{ value: '3', name: 'item3' },{ value: '4', name: 'item4' }]}/>
   </StoryLayout>
 );
 
