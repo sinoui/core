@@ -4,7 +4,7 @@ import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import SelectInput from './SelectInput';
-import ArrowDropDownIcon from './ArrowDropDownIcon';
+import ArrowDropDownIcon from '../svg-icons/ArrowDropDownIcon';
 import type SelectItem from './SelectItem';
 import useMultiRefs from '../utils/useMultiRefs';
 

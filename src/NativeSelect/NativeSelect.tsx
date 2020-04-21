@@ -3,7 +3,7 @@ import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import NativeSelectInput from './NativeSelectInput';
-import ArrowDropDownIcon from './ArrowDropDownIcon';
+import ArrowDropDownIcon from '../svg-icons/ArrowDropDownIcon';
 
 export interface Props
   extends Omit<
