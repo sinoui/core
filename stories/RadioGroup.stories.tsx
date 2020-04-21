@@ -21,22 +21,38 @@ const RadioGroupDemo = (props: RadioGroupProps<string>) => {
   );
 };
 
-// const RadioGroupComplexDemo = (props: RadioGroupProps<string>) => {
-//   const [value, setValue] = useState({ value: '3', name: 'item3' });
+const items = [
+  { value: '1', name: 'item1' },
+  { value: '2', name: 'item2' },
+  { value: '3', name: 'item3' },
+];
+const RadioGroupComplexDemo = (
+  props: RadioGroupProps<{ value: string; name: string }>,
+) => {
+  const [value, setValue] = useState<
+    undefined | { value: string; name: string }
+  >(items[1]);
 
-//   return (
-//     <RadioGroup onChange={setValue} value={value} {...props}>
-//       <Radio value={{ value: '1', name: 'item1' }}>单选框1</Radio>
-//       <Radio value={{ value: '2', name: 'item2' }}>单选框2</Radio>
-//       <Radio value={{ value: '3', name: 'item3' }}>单选框3</Radio>
-//       <Radio value={{ value: '4', name: 'item4' }}>单选框4</Radio>
-//     </RadioGroup>
-//   );
-// };
+  return (
+    <RadioGroup onChange={setValue} value={value} {...props}>
+      {items.map((item) => (
+        <Radio value={item} id={item.value}>
+          单选框{item.value}
+        </Radio>
+      ))}
+    </RadioGroup>
+  );
+};
 
 export const 基本使用 = () => (
   <StoryLayout>
     <RadioGroupDemo />
+  </StoryLayout>
+);
+
+export const 复杂数据结构使用 = () => (
+  <StoryLayout>
+    <RadioGroupComplexDemo />
   </StoryLayout>
 );
 

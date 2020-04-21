@@ -26,6 +26,7 @@ export interface RadioExtendProps {
    * 设置为`true`，表示密集模式。
    */
   dense?: boolean;
+  id?: string;
 }
 
 /**
