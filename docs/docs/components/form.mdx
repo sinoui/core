@@ -1,0 +1,457 @@
+---
+id: form
+title: Form 表单
+---
+
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import TextInput from '@sinoui/core/TextInput';
+import FormControl from '@sinoui/core/FormControl';
+import { Row, Column } from '@sinoui/core/Grid';
+import FormDemo from './form-demos/FormDemo';
+import Demo from '../commons/Demo';
+import CheckboxGroupDemo from './form-demos/CheckboxGroupDemo';
+
+表单是由表单控件组成的，表单控件是由表单标签和各种不同类型的输入框组成的。@sinoui/core 提供了 `FormControl` 组件表示表单控件，辅助您快速构建表单。
+
+## 入门示例
+
+Material Design 推荐采用浮动标签，如下示例，表单中采用浮动标签的轮廓输入框：
+
+```tsx
+import React, { useState } from 'react';
+import FormControl from '@sinoui/core/FormControl';
+import { Row, Column } from '@sinoui/core/Grid';
+import TextInput from '@sinoui/core/TextInput';
+import RadioGroup from '@sinoui/core/RadioGroup';
+import Radio from '@sinoui/core/Radio';
+import CheckboxGroup from '@sinoui/core/CheckboxGroup';
+import Checkbox from '@sinoui/core/Checkbox';
+
+function FormDemo() {
+  const [formValues, setFormValues] = useState({});
+
+  return (
+    <form>
+      <Row gutter={24}>
+        <Column xs={24}>
+          <TextInput
+            field
+            variant="outlined"
+            label="姓名"
+            required
+            value={formValues.userName}
+            onChange={(event) =>
+              setFormValues({ ...formValues, userName: event.target.value })
+            }
+          />
+        </Column>
+        <Column xs={24}>
+          <TextInput
+            field
+            variant="outlined"
+            type="number"
+            label="年龄"
+            value={formValues.age}
+            onChange={(event) =>
+              setFormValues({ ...formValues, age: event.target.value })
+            }
+          />
+        </Column>
+        <Column xs={12}>
+          <FormControl label="性别">
+            <RadioGroup
+              value={formValues.sex}
+              onChange={(event) =>
+                setFormValues({ ...formValues, sex: event.target.value })
+              }
+            >
+              <Radio value="female">女</Radio>
+              <Radio value="male">男</Radio>
+            </RadioGroup>
+          </FormControl>
+        </Column>
+        <Column xs={12}>
+          <FormControl label="兴趣爱好">
+            <CheckboxGroup
+              value={formValues.fav}
+              onChange={(value) => setFormValues({ ...formValues, fav: value })}
+            >
+              <Checkbox>足球</Checkbox>
+              <Checkbox>篮球</Checkbox>
+            </CheckboxGroup>
+          </FormControl>
+        </Column>
+        <Column xs={24}>
+          <TextInput
+            field
+            multiline
+            minRows={3}
+            variant="outlined"
+            label="简介"
+            value={formValues.description}
+            onChange={(event) =>
+              setFormValues({ ...formValues, description: event.target.value })
+            }
+          />
+        </Column>
+      </Row>
+    </form>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <FormDemo />
+  </Demo>
+</ThemeProvider>
+
+## 输入框
+
+Material Design 推荐采用浮动标签的输入框，如下所示：
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo style={{ flexDirection: 'column' }}>
+    <TextInput field variant="filled" label="姓名" />
+  </Demo>
+</ThemeProvider>
+
+```tsx
+<TextInput variant="filled" label="姓名" />
+```
+
+### 输入框模式
+
+输入框支持两种模式，即填充(`filled`)和轮廓模式(`outlined`)。如下所示：
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo style={{ flexDirection: 'column' }}>
+    <TextInput field variant="filled" label="姓名" />
+    <TextInput field variant="outlined" label="姓名" />
+  </Demo>
+</ThemeProvider>
+
+```tsx
+<TextInput variant="filled" label="姓名" />
+<TextInput variant="outlined" label="姓名" />
+```
+
+你可以在一个应用中同时使用两种模式的输入框，但是不要在同一个表单中同时使用两种模式的输入框。
+
+### 将 TextInput 当成表单控件使用
+
+在表单中将`TextInput`组件作为表单控件使用时，需要添加 `field` 属性，如下所示：
+
+```tsx
+<TextInput field variant="filled" label="姓名" />
+```
+
+### 与 FormControl 组合使用
+
+TextInput 本身集成了标签，可以作为表单控件使用。当然，也可以使用`FormControl`来组织标签与输入框之前的关系：
+
+```tsx
+function Demo() {
+  const [value, setValue] = useState('');
+  return (
+    <FormControl
+      labelLayout="floating"
+      variant="filled"
+      filled={!!value}
+      label="姓名"
+    >
+      <TextInput
+        variant="filled"
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+      />
+    </FormControl>
+  );
+}
+```
+
+FormControl 组件的`labelLayout`是用来控制标签布局的，设置为`floating`则是浮动标签。`filled`属性是用来指定输入框是否有填充的值，有填充值设置为`true`，则浮动标签会浮动起来。
+
+`field`属性的目的是为了让输入框的底部留白样式保持与其他表单控件一直。
+
+更多`TextInput`组件的用法，请参见[TextInput 输入框](./textInput)章节。
+
+### 选择框
+
+选择框与标签的关系与`TextInput`组件是类似的。参见 [Select 选择框](./select) 章节。
+
+## 单选、复选按钮组
+
+可以使用`RadioGroup`和`CheckboxGroup`组件分别展示单选、复选按钮组。如下所示：
+
+```tsx
+import React, { useState } from 'react';
+import FormControl from '@sinoui/core/FormControl';
+import RadioGroup from '@sinoui/core/RadioGroup';
+import Radio from '@sinoui/core/Radio';
+import CheckboxGroup from '@sinoui/core/CheckboxGroup';
+import Checkbox from '@sinoui/core/Checkbox';
+
+function Demo() {
+  const [formValue, setFormValue] = useState({});
+  return (
+    <form>
+      <FormControl label="性别">
+        <RadioGroup
+          value={formValue.sex}
+          onChange={(value) => setFormValue({ ...formValue, sex: value })}
+        >
+          <Radio value="female">女</Radio>
+          <Radio value="male">男</Radio>
+        </RadioGroup>
+      </FormControl>
+      <FormControl label="兴趣爱好">
+        <CheckboxGroup
+          value={formValue.fav}
+          onChange={(value) => setFormValue({ ...formValue, fav: value })}
+        >
+          <Checkbox value="football">足球</Checkbox>
+          <Checkbox value="basketball">篮球</Checkbox>
+        </CheckboxGroup>
+      </FormControl>
+    </form>
+  );
+}
+```
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <CheckboxGroupDemo />
+  </Demo>
+</ThemeProvider>
+
+单选、复选按钮组不能采用浮动标签，默认情况下采用的是`shrink`布局标签，即字体大小为`12px`的标签。也可以设置为`standard`布局标签，即字体大小为`16px`的标题，如下所示：
+
+```tsx
+<FormControl label="性别" labelLayout="standard">
+  <RadioGroup
+    value={formValue.sex}
+    onChange={(value) => setFormValue({ ...formValue, sex: value })}
+  >
+    <Radio value="female">女</Radio>
+    <Radio value="male">男</Radio>
+  </RadioGroup>
+</FormControl>
+```
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <CheckboxGroupDemo standard />
+  </Demo>
+</ThemeProvider>
+
+更过关于单选、复选按钮的用法，参见 [Radio 单选按钮](./radio) 和 [Checkbox 复选按钮](./checkbox) 章节。
+
+## 标签排列
+
+标签排列支持`水平（horizontal）`和`垂直（vertical）`。
+
+水平排列的标签支持响应式设计，即在小屏幕上（移动端）会自动变成垂直排列的布局。可以通过`FormControl`组件的`layout`属性来控制标签排列，默认为垂直布局。
+
+在同一个表单中，应只应用一种标签排列方式。
+
+### 水平排列
+
+```tsx
+<>
+  <FormControl label="姓名" layout="horizontal">
+    <TextInput variant="outlined" />
+  </FormControl>
+  <FormControl label="年龄" layout="horizontal">
+    <TextInput variant="outlined" />
+  </FormControl>
+</>
+```
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <Row>
+      <Column xs={24}>
+        <FormControl label="姓名" layout="horizontal">
+          <TextInput variant="outlined" />
+        </FormControl>
+      </Column>
+      <Column xs={24}>
+        <FormControl label="年龄" layout="horizontal">
+          <TextInput variant="outlined" />
+        </FormControl>
+      </Column>
+    </Row>
+  </Demo>
+</ThemeProvider>
+
+### 垂直排列
+
+```tsx
+<>
+  <FormControl label="姓名">
+    <TextInput variant="outlined" />
+  </FormControl>
+  <FormControl label="年龄" layout="vertical">
+    <TextInput variant="outlined" />
+  </FormControl>
+</>
+```
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <Row style={{ width: '100%' }}>
+      <Column xs={24}>
+        <FormControl label="姓名">
+          <TextInput variant="outlined" />
+        </FormControl>
+      </Column>
+      <Column xs={24}>
+        <FormControl label="年龄">
+          <TextInput variant="outlined" />
+        </FormControl>
+      </Column>
+    </Row>
+  </Demo>
+</ThemeProvider>
+
+## 标签布局
+
+在标准垂直排列时，标签布局支持`标准（standard）`、`收缩（shrink）`和`浮动（floating)`。通过`FormControl`的`labelLayout`属性控制标签布局。
+
+### 收缩（shrink）
+
+`shrink`布局是默认布局。如下所示：
+
+```tsx
+<>
+  <FormControl label="姓名">
+    <TextInput variant="outlined" />
+  </FormControl>
+  <FormControl label="年龄" labelLayout="shrink">
+    <TextInput variant="outlined" />
+  </FormControl>
+</>
+```
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <Row style={{ width: '100%' }}>
+      <Column xs={24}>
+        <FormControl label="姓名">
+          <TextInput variant="outlined" />
+        </FormControl>
+      </Column>
+      <Column xs={24}>
+        <FormControl label="年龄">
+          <TextInput variant="outlined" />
+        </FormControl>
+      </Column>
+    </Row>
+  </Demo>
+</ThemeProvider>
+
+### 标准（standard）
+
+标准布局与收缩布局基本一致，唯一的区别是：收缩布局的标签字体大小为`12px`，而标准布局的标签字体大小为`16px`。通过给`FormControl`组件的`labelLayout`设置为`standard`实现。
+
+```tsx
+<>
+  <FormControl label="姓名" labelLayout="standard">
+    <TextInput variant="outlined" />
+  </FormControl>
+  <FormControl label="年龄" labelLayout="standard">
+    <TextInput variant="outlined" />
+  </FormControl>
+</>
+```
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <Row style={{ width: '100%' }}>
+      <Column xs={24}>
+        <FormControl label="姓名" labelLayout="standard">
+          <TextInput variant="outlined" />
+        </FormControl>
+      </Column>
+      <Column xs={24}>
+        <FormControl label="年龄" labelLayout="standard">
+          <TextInput variant="outlined" />
+        </FormControl>
+      </Column>
+    </Row>
+  </Demo>
+</ThemeProvider>
+
+### 浮动（floating）
+
+浮动标签只能用于输入框、选择框之类的组件。`FormControl`组件提供了以下属性来控制浮动标签：
+
+- labelLayout - 设置为`floating`，启用浮动标签布局
+- filled - 设置为`true`，则标签会浮动起来。一般在有值的时候，将`filled`属性设置为`true`
+- variant - 设置输入框的形态
+
+大部分输入框、选择框组件会自动浮动标签功能，简化在表单中的使用。
+
+使用 FormControl 定义浮动标签：
+
+```tsx
+<FormControl labelLayout="floating" variant="filled" filled label="姓名">
+  <TextInput variant="filled" value="张三" />
+</FormControl>
+```
+
+等同于：
+
+```tsx
+<TextInput field variant="filled" value="张三" label="姓名" />
+```
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <Row style={{ width: '100%' }}>
+      <Column xs={24}>
+        <TextInput field variant="filled" value="张三" label="姓名" />
+      </Column>
+      <Column xs={24}>
+        <TextInput field variant="filled" label="年龄" />
+      </Column>
+    </Row>
+  </Demo>
+</ThemeProvider>
+
+## 密集表单
+
+密集表单适合大表单。密集表单更便于扫描。`FormControl`组件的`dense`属性用来控制密集模式。
+
+```tsx
+<FormControl label="姓名" labelLayout="standard" dense>
+  <TextInput variant="outlined" dense />
+</FormControl>
+```
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <FormDemo dense />
+  </Demo>
+</ThemeProvider>
+
+## 表单状态
+
+建议采用 [@sinoui/rx-form-state](https://sinoui.github.io/sinoui-forms-library/)、[formik](https://jaredpalmer.com/formik/) 等表单状态管理库。
+
+[@sinoui/rx-core-form](https://sinoui.github.io/rx-core-form) 库是 @sinoui/rx-form-state 与 @sinoui/core 组合库。推荐大家在项目中采纳使用。
+
+## API
+
+- [`<FormControl>`](../components/form-control)
+- [`<FormLabel>`](../components/form-label)
+- [`<HelperText>`](../components/HelperText)
+- [`<TextInput>`](../components/text-input)
+- [`<RadiGroup>`](../components/radioGroup)
+- [`<Radio>`](../components/radio)
+- [`<CheckboxGroup>`](../components/checkbox-group)
+- [`<Checkbox>`](../components/checkbox)
