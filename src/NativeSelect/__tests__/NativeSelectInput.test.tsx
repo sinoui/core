@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-
+import { render, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 import NativeSelectInput from '../NativeSelectInput';
@@ -51,4 +51,26 @@ it('渲染多选选择框', () => {
     .toJSON();
 
   expect(tree).toMatchSnapshot();
+});
+
+it('值变更时，onChange被调用', () => {
+  const onChange = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <NativeSelectInput onChange={onChange}>
+        <option value="1">选项一</option>
+        <option value="2">选项二</option>
+        <option value="3">选项三</option>
+        <option value="4">选项四</option>
+      </NativeSelectInput>
+    </ThemeProvider>,
+  );
+
+  const select = container.querySelector('select') as HTMLSelectElement;
+
+  act(() => {
+    fireEvent.change(select, { target: { value: '1' } });
+  });
+
+  expect(onChange).toHaveBeenCalledWith('1');
 });

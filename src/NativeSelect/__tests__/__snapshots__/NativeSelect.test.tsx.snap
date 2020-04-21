@@ -4478,7 +4478,9 @@ label ~ .c3 {
     </div>
     <p
       className="c8"
-    />
+    >
+      必填
+    </p>
   </div>
   <div
     className="c0 sinoui-native-select sinoui-native-select--filled sinoui-native-select--required sinoui-native-select--error"
@@ -4555,7 +4557,9 @@ label ~ .c3 {
     </div>
     <p
       className="c12"
-    />
+    >
+      必填
+    </p>
   </div>
   <div
     className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--required sinoui-native-select--error"
@@ -4647,7 +4651,9 @@ label ~ .c3 {
     </div>
     <p
       className="c12"
-    />
+    >
+      必填
+    </p>
   </div>
 </div>
 `;

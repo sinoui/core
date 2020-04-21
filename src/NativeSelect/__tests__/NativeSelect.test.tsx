@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 import NativeSelect from '../NativeSelect';
@@ -112,7 +113,7 @@ it('渲染有错误提示的选择框', () => {
     .create(
       <ThemeProvider theme={defaultTheme}>
         <div>
-          <NativeSelect label="标准选择框" required error="必填">
+          <NativeSelect label="标准选择框" required error errorText="必填">
             <option aria-label="None" value="" />
             <option value="1">选项一</option>
             <option value="2">选项二</option>
@@ -122,7 +123,8 @@ it('渲染有错误提示的选择框', () => {
             label="填充模式选择框"
             variant="filled"
             required
-            error="必填"
+            error
+            errorText="必填"
           >
             <option aria-label="None" value="" />
             <option value="1">选项一</option>
@@ -133,7 +135,8 @@ it('渲染有错误提示的选择框', () => {
             label="框模式选择框"
             variant="outlined"
             required
-            error="必填"
+            error
+            errorText="必填"
           >
             <option aria-label="None" value="" />
             <option value="1">选项一</option>
@@ -208,4 +211,34 @@ it('渲染不带标签的选择框', () => {
     .toJSON();
 
   expect(tree).toMatchSnapshot();
+});
+
+it('允许清空', () => {
+  const onChange = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <NativeSelect
+        variant="filled"
+        multiple
+        onChange={onChange}
+        allowClear
+        value={['1', '2']}
+      >
+        <option aria-label="None" value="" />
+        <option value="1">选项一</option>
+        <option value="2">选项二</option>
+        <option value="3">选项三</option>
+      </NativeSelect>
+    </ThemeProvider>,
+  );
+
+  const clearButton = container.querySelector(
+    '.sinoui-base-input__clear > svg',
+  ) as HTMLElement;
+
+  expect(clearButton).toBeDefined();
+
+  fireEvent.click(clearButton);
+
+  expect(onChange).toHaveBeenCalledWith([]);
 });
