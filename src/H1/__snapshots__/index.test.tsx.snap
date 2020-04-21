@@ -2,7 +2,11 @@
 
 exports[`文字排版 快照测试 基本文字排版 1`] = `
 <h1
+<<<<<<< HEAD
   className="sc-AxjAm kNLUWN sinoui-typography sinoui-typography--h1"
+=======
+  className="Typography__TypographyWrapper-sc-12agh80-0 hgKwhr sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
   color="textPrimary"
   type="h1"
 >
@@ -13,35 +17,55 @@ exports[`文字排版 快照测试 基本文字排版 1`] = `
 exports[`文字排版 快照测试 设置属性 1`] = `
 Array [
   <h2
+<<<<<<< HEAD
     className="sc-AxjAm kNLUWN sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 hgKwhr sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h1"
   >
     H1
   </h2>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm hIcozJ sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 ciUzCn sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm hSkETU sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 hIYVyy sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm leiwdV sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 gCAllf sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="success"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm glccFR sinoui-typography sinoui-typography--h1 sinoui-typography--gutter-bottom"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 jXczHj sinoui-typography sinoui-typography--h1 sinoui-typography--gutter-bottom"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h1"
   >
@@ -53,63 +77,99 @@ Array [
 exports[`文字排版 快照测试 颜色设置 1`] = `
 Array [
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm kNLUWN sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 hgKwhr sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm lceypS sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 fFlERg sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="primary"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm hpaERZ sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 bPIvJP sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="secondary"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm kNLUWN sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 hgKwhr sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm dyVuxs sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 iCzFLq sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="textSecondary"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm hWqQRY sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 hOtwpO sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="error"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm ivPsXl sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 gCrBwD sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="warning"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm leiwdV sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 gCAllf sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="success"
     type="h1"
   >
     H1
   </h1>,
   <h1
+<<<<<<< HEAD
     className="sc-AxjAm kUEsvJ sinoui-typography sinoui-typography--h1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 eKDXXz sinoui-typography sinoui-typography--h1"
+>>>>>>> origin/bottomNavigation
     color="info"
     type="h1"
   >

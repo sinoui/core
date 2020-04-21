@@ -2,7 +2,11 @@
 
 exports[`文字排版 快照测试 基本文字排版 1`] = `
 <h6
+<<<<<<< HEAD
   className="sc-AxjAm jwSFFA sinoui-typography sinoui-typography--h6"
+=======
+  className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
   color="textPrimary"
   type="h6"
 >
@@ -13,35 +17,55 @@ exports[`文字排版 快照测试 基本文字排版 1`] = `
 exports[`文字排版 快照测试 设置属性 1`] = `
 Array [
   <h2
+<<<<<<< HEAD
     className="sc-AxjAm jwSFFA sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h6"
   >
     H6
   </h2>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm chfWhA sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 hbFxEu sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm bjcqbp sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 kPqgUb sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm fiplJU sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 llOxpK sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="success"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm dTZfdA sinoui-typography sinoui-typography--h6 sinoui-typography--gutter-bottom"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 ftUXqm sinoui-typography sinoui-typography--h6 sinoui-typography--gutter-bottom"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h6"
   >
@@ -53,63 +77,99 @@ Array [
 exports[`文字排版 快照测试 颜色设置 1`] = `
 Array [
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm jwSFFA sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm kOcMdT sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 jgUhRh sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="primary"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm jKeEgg sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 eBNOJO sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="secondary"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm jwSFFA sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm btnurB sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 jqvidz sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="textSecondary"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm hFGdEx sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 ddWhbH sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="error"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm ldnQGU sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 jACCee sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="warning"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm fiplJU sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 llOxpK sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="success"
     type="h6"
   >
     H6
   </h6>,
   <h6
+<<<<<<< HEAD
     className="sc-AxjAm jkRxTc sinoui-typography sinoui-typography--h6"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 dXzOcK sinoui-typography sinoui-typography--h6"
+>>>>>>> origin/bottomNavigation
     color="info"
     type="h6"
   >

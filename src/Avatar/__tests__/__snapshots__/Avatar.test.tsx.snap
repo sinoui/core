@@ -2,12 +2,20 @@
 
 exports[`Avatar组件 快照测试 图标头像 1`] = `
 <div
+<<<<<<< HEAD
   className="sc-AxjAm eQSrhC sinoui-avatar"
+=======
+  className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+>>>>>>> origin/bottomNavigation
   color="actionDisabled"
 >
   <svg
     aria-hidden="true"
+<<<<<<< HEAD
     className="sc-AxirZ eBpvqz sinoui-svg-icon"
+=======
+    className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
     focusable="false"
     role="presentation"
     size={24}
@@ -38,7 +46,11 @@ exports[`Avatar组件 快照测试 图标头像 1`] = `
 exports[`Avatar组件 快照测试 图片头像 1`] = `
 Array [
   <div
+<<<<<<< HEAD
     className="sc-AxjAm eQSrhC sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     <img
@@ -47,7 +59,11 @@ Array [
     />
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm eQSrhC sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     <img
@@ -56,7 +72,11 @@ Array [
     />
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm eQSrhC sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     <img
@@ -70,19 +90,31 @@ Array [
 exports[`Avatar组件 快照测试 字母头像 1`] = `
 Array [
   <div
+<<<<<<< HEAD
     className="sc-AxjAm eQSrhC sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     H
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm eQSrhC sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     N
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm eQSrhC sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     LX
@@ -93,7 +125,11 @@ Array [
 exports[`Avatar组件 快照测试 是否为密集模式 1`] = `
 Array [
   <div
+<<<<<<< HEAD
     className="sc-AxjAm jfWGNS sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 jElJCw sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     <img
@@ -103,12 +139,20 @@ Array [
   </div>,
   <p />,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm jfWGNS sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 jElJCw sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     <svg
       aria-hidden="true"
+<<<<<<< HEAD
       className="sc-AxirZ eBpvqz sinoui-svg-icon"
+=======
+      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
       fill="currentColor"
       focusable="false"
       height={24}
@@ -132,7 +176,11 @@ Array [
   </div>,
   <p />,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm jfWGNS sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 jElJCw sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     H
@@ -143,49 +191,81 @@ Array [
 exports[`Avatar组件 快照测试 设置不同背景颜色 1`] = `
 Array [
   <div
+<<<<<<< HEAD
     className="sc-AxjAm eoHkWS sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 ipytFM sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="primary"
   >
     LX
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm hMxpLh sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 jLOYMD sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="secondary"
   >
     LX
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm VSHul sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 pWIdP sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="warning"
   >
     LX
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm iKnTdo sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 bocrdO sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="error"
   >
     LX
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm dCjufB sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 jnqvZL sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="success"
   >
     LX
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm fKPxER sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 jtimoL sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="info"
   >
     LX
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm jQygik sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 cra-DDW sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionActive"
   >
     LX
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm eQSrhC sinoui-avatar"
+=======
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
+>>>>>>> origin/bottomNavigation
     color="actionDisabled"
   >
     LX

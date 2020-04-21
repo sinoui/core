@@ -58,7 +58,7 @@ function BadgeDemo() {
   </Badge>
 </ThemeProvider>
 
-## 设置数字为0时显示
+## 设置数字为 0 时显示
 
 简单的徽章展示，当 count 为 0 时，默认不显示，但是可以使用 showZero 修改为显示。
 
@@ -84,7 +84,7 @@ function BadgeDemo() {
 
 ## 设置为圆点形式
 
-dot属性将徽章更改为小点。这可以作为一个通知，说明某些内容已更改，而不给出计数。
+dot 属性将徽章更改为小点。这可以作为一个通知，说明某些内容已更改，而不给出计数。
 
 ```tsx
 import Badge from '@sinoui/core/Badge';
@@ -128,7 +128,7 @@ function BadgeDemo() {
   </Badge>
 </ThemeProvider>
 
-## 设置自定义badge的内容
+## 设置自定义 badge 的内容
 
 ```tsx
 import Badge from '@sinoui/core/Badge';
@@ -179,7 +179,7 @@ function BadgeDemo() {
 
 ## 指定封顶数值
 
-超过 overflowCount 的会显示为 ${overflowCount}+，默认的 overflowCount 为 99。
+超过 overflowCount 的会显示为 \${overflowCount}+，默认的 overflowCount 为 99。
 
 ```tsx
 import Badge from '@sinoui/core/Badge';
@@ -213,7 +213,7 @@ function BadgeDemo() {
 
 ## 设置徽标的显示位置
 
-您可以使用anchorOrigin道具将徽章移动到包装元素的任何角落。
+您可以使用 anchorOrigin 道具将徽章移动到包装元素的任何角落。
 
 ```tsx
 import Badge from '@sinoui/core/Badge';
@@ -229,11 +229,17 @@ function BadgeDemo() {
         <SvgIcon as={MdEmail} />
       </Badge>
       <p />
-      <Badge count={8} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+      <Badge
+        count={8}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
         <SvgIcon as={MdEmail} />
       </Badge>
       <p />
-      <Badge count={8} anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
+      <Badge
+        count={8}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+      >
         <SvgIcon as={MdEmail} />
       </Badge>
     </>

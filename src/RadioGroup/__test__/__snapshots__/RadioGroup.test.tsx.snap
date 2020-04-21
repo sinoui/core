@@ -2,6 +2,7 @@
 
 exports[`radioGroup组件 快照测试 基本使用 1`] = `
 <div
+<<<<<<< HEAD
   className="sc-AxjAm sc-AxirZ bAOEJO sinoui-radio-group"
 >
   <label
@@ -10,12 +11,26 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     <span
       checked={false}
       className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group"
+>
+  <label
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+  >
+    <span
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
+<<<<<<< HEAD
         className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
         focusable="false"
         role="presentation"
         size={24}
@@ -27,7 +42,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={false}
+<<<<<<< HEAD
         className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
         onChange={[Function]}
         type="radio"
         value="1"
@@ -40,17 +59,29 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
+<<<<<<< HEAD
     className="sc-AxgMl sc-AxheI dOlXvT sinoui-form-control-label"
   >
     <span
       checked={false}
       className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+  >
+    <span
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
+<<<<<<< HEAD
         className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
         focusable="false"
         role="presentation"
         size={24}
@@ -62,7 +93,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={false}
+<<<<<<< HEAD
         className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
         onChange={[Function]}
         type="radio"
         value="2"
@@ -75,17 +110,29 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
+<<<<<<< HEAD
     className="sc-AxgMl sc-AxheI dOlXvT sinoui-form-control-label"
   >
     <span
       checked={true}
       className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr kBTeec sinoui-radio sinoui-radio--checked"
+=======
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+  >
+    <span
+      checked={true}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 bxzqbt sinoui-radio sinoui-radio--checked"
+>>>>>>> origin/bottomNavigation
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
+<<<<<<< HEAD
         className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
         focusable="false"
         role="presentation"
         size={24}
@@ -97,7 +144,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={true}
+<<<<<<< HEAD
         className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
         onChange={[Function]}
         type="radio"
         value="3"
@@ -110,17 +161,29 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
+<<<<<<< HEAD
     className="sc-AxgMl sc-AxheI dOlXvT sinoui-form-control-label"
   >
     <span
       checked={false}
       className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+  >
+    <span
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
+<<<<<<< HEAD
         className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
         focusable="false"
         role="presentation"
         size={24}
@@ -132,7 +195,11 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
       </svg>
       <input
         checked={false}
+<<<<<<< HEAD
         className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
         onChange={[Function]}
         type="radio"
         value="4"
@@ -150,22 +217,37 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
 exports[`radioGroup组件 快照测试 设置只读 1`] = `
 Array [
   <div
+<<<<<<< HEAD
     className="sc-AxjAm sc-AxirZ bAOEJO sinoui-radio-group sinoui-radio-group--disabled"
   >
     <label
       className="sc-AxgMl sc-AxheI gLhyWr sinoui-form-control-label"
+=======
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group sinoui-radio-group--disabled"
+  >
+    <label
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+>>>>>>> origin/bottomNavigation
       disabled={true}
     >
       <span
         checked={false}
+<<<<<<< HEAD
         className="sc-AxiKw gsBAeJ sinoui-base-button sc-Axmtr cmIXtK sinoui-radio sinoui-radio--disabled"
+=======
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
+>>>>>>> origin/bottomNavigation
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -177,7 +259,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -191,19 +277,31 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI gLhyWr sinoui-form-control-label"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+>>>>>>> origin/bottomNavigation
       disabled={true}
     >
       <span
         checked={false}
+<<<<<<< HEAD
         className="sc-AxiKw gsBAeJ sinoui-base-button sc-Axmtr cmIXtK sinoui-radio sinoui-radio--disabled"
+=======
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
+>>>>>>> origin/bottomNavigation
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -215,7 +313,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -229,19 +331,31 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI gLhyWr sinoui-form-control-label"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+>>>>>>> origin/bottomNavigation
       disabled={true}
     >
       <span
         checked={false}
+<<<<<<< HEAD
         className="sc-AxiKw gsBAeJ sinoui-base-button sc-Axmtr cmIXtK sinoui-radio sinoui-radio--disabled"
+=======
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
+>>>>>>> origin/bottomNavigation
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -253,7 +367,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -267,19 +385,31 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI gLhyWr sinoui-form-control-label"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+>>>>>>> origin/bottomNavigation
       disabled={true}
     >
       <span
         checked={false}
+<<<<<<< HEAD
         className="sc-AxiKw gsBAeJ sinoui-base-button sc-Axmtr cmIXtK sinoui-radio sinoui-radio--disabled"
+=======
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--disabled"
+>>>>>>> origin/bottomNavigation
         color="primary"
         disabled={true}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -291,7 +421,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           disabled={true}
           onChange={[Function]}
           type="radio"
@@ -306,15 +440,26 @@ Array [
     </label>
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm sc-AxirZ bAOEJO sinoui-radio-group sinoui-radio-group--readOnly"
   >
     <label
       className="sc-AxgMl sc-AxheI gLhyWr sinoui-form-control-label"
+=======
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group sinoui-radio-group--readOnly"
+  >
+    <label
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+>>>>>>> origin/bottomNavigation
       readOnly={true}
     >
       <span
         checked={false}
+<<<<<<< HEAD
         className="sc-AxiKw gsBAeJ sinoui-base-button sc-Axmtr cmIXtK sinoui-radio sinoui-radio--readOnly"
+=======
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--readOnly"
+>>>>>>> origin/bottomNavigation
         color="primary"
         disabled={true}
         onBlur={false}
@@ -323,7 +468,11 @@ Array [
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -335,7 +484,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -349,12 +502,20 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI gLhyWr sinoui-form-control-label"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+>>>>>>> origin/bottomNavigation
       readOnly={true}
     >
       <span
         checked={false}
+<<<<<<< HEAD
         className="sc-AxiKw gsBAeJ sinoui-base-button sc-Axmtr cmIXtK sinoui-radio sinoui-radio--readOnly"
+=======
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--readOnly"
+>>>>>>> origin/bottomNavigation
         color="primary"
         disabled={true}
         onBlur={false}
@@ -363,7 +524,11 @@ Array [
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -375,7 +540,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -389,12 +558,20 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI gLhyWr sinoui-form-control-label"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+>>>>>>> origin/bottomNavigation
       readOnly={true}
     >
       <span
         checked={false}
+<<<<<<< HEAD
         className="sc-AxiKw gsBAeJ sinoui-base-button sc-Axmtr cmIXtK sinoui-radio sinoui-radio--readOnly"
+=======
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--readOnly"
+>>>>>>> origin/bottomNavigation
         color="primary"
         disabled={true}
         onBlur={false}
@@ -403,7 +580,11 @@ Array [
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -415,7 +596,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -429,12 +614,20 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI gLhyWr sinoui-form-control-label"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 AQksP sinoui-form-control-label"
+>>>>>>> origin/bottomNavigation
       readOnly={true}
     >
       <span
         checked={false}
+<<<<<<< HEAD
         className="sc-AxiKw gsBAeJ sinoui-base-button sc-Axmtr cmIXtK sinoui-radio sinoui-radio--readOnly"
+=======
+        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio sinoui-radio--readOnly"
+>>>>>>> origin/bottomNavigation
         color="primary"
         disabled={true}
         onBlur={false}
@@ -443,7 +636,11 @@ Array [
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -455,7 +652,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           readOnly={true}
           type="radio"
@@ -475,6 +676,7 @@ Array [
 exports[`radioGroup组件 快照测试 设置标题显示位置 1`] = `
 Array [
   <div
+<<<<<<< HEAD
     className="sc-AxjAm sc-AxirZ bAOEJO sinoui-radio-group"
   >
     <label
@@ -483,12 +685,26 @@ Array [
       <span
         checked={false}
         className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group"
+  >
+    <label
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    >
+      <span
+        checked={false}
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -500,7 +716,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           type="radio"
           value="1"
@@ -513,17 +733,29 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI dOlXvT sinoui-form-control-label"
     >
       <span
         checked={false}
         className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    >
+      <span
+        checked={false}
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -535,7 +767,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           type="radio"
           value="2"
@@ -548,17 +784,29 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI dOlXvT sinoui-form-control-label"
     >
       <span
         checked={false}
         className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+    >
+      <span
+        checked={false}
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -570,7 +818,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           type="radio"
           value="3"
@@ -584,6 +836,7 @@ Array [
     </label>
   </div>,
   <div
+<<<<<<< HEAD
     className="sc-AxjAm sc-AxirZ bvZHYA sinoui-radio-group"
   >
     <label
@@ -592,12 +845,26 @@ Array [
       <span
         checked={false}
         className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+    className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cGSDzd sinoui-radio-group"
+  >
+    <label
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gFFMKC sinoui-form-control-label"
+    >
+      <span
+        checked={false}
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -609,7 +876,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           type="radio"
           value="1"
@@ -622,17 +893,29 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI loEPsu sinoui-form-control-label"
     >
       <span
         checked={false}
         className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gFFMKC sinoui-form-control-label"
+    >
+      <span
+        checked={false}
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -644,7 +927,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           type="radio"
           value="2"
@@ -657,17 +944,29 @@ Array [
       </span>
     </label>
     <label
+<<<<<<< HEAD
       className="sc-AxgMl sc-AxheI loEPsu sinoui-form-control-label"
     >
       <span
         checked={false}
         className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 gFFMKC sinoui-form-control-label"
+    >
+      <span
+        checked={false}
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
         color="primary"
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
+<<<<<<< HEAD
           className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
           focusable="false"
           role="presentation"
           size={24}
@@ -679,7 +978,11 @@ Array [
         </svg>
         <input
           checked={false}
+<<<<<<< HEAD
           className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+          className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
           onChange={[Function]}
           type="radio"
           value="3"
@@ -697,6 +1000,7 @@ Array [
 
 exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
 <div
+<<<<<<< HEAD
   className="sc-AxjAm sc-AxirZ hCgMeA sinoui-radio-group sinoui-radio-group--column"
 >
   <label
@@ -705,12 +1009,26 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     <span
       checked={false}
       className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+  className="FormGroup-urrsti-0 RadioGroup__FormGroupWrapper-sc-12x31w9-0 cIOYwa sinoui-radio-group sinoui-radio-group--block"
+>
+  <label
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+  >
+    <span
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
+<<<<<<< HEAD
         className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
         focusable="false"
         role="presentation"
         size={24}
@@ -722,7 +1040,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
+<<<<<<< HEAD
         className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
         onChange={[Function]}
         type="radio"
         value="1"
@@ -735,17 +1057,29 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
+<<<<<<< HEAD
     className="sc-AxgMl sc-AxheI dOlXvT sinoui-form-control-label"
   >
     <span
       checked={false}
       className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+  >
+    <span
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
+<<<<<<< HEAD
         className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
         focusable="false"
         role="presentation"
         size={24}
@@ -757,7 +1091,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
+<<<<<<< HEAD
         className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
         onChange={[Function]}
         type="radio"
         value="2"
@@ -770,17 +1108,29 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
+<<<<<<< HEAD
     className="sc-AxgMl sc-AxheI dOlXvT sinoui-form-control-label"
   >
     <span
       checked={false}
       className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+  >
+    <span
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
+<<<<<<< HEAD
         className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
         focusable="false"
         role="presentation"
         size={24}
@@ -792,7 +1142,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
+<<<<<<< HEAD
         className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
         onChange={[Function]}
         type="radio"
         value="3"
@@ -805,17 +1159,29 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
     </span>
   </label>
   <label
+<<<<<<< HEAD
     className="sc-AxgMl sc-AxheI dOlXvT sinoui-form-control-label"
   >
     <span
       checked={false}
       className="sc-AxiKw fiAJmc sinoui-base-button sc-Axmtr cmIXtK sinoui-radio"
+=======
+    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 cZgDxL sinoui-form-control-label"
+  >
+    <span
+      checked={false}
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button RadioButton__ToggleButton-sc-7ebnoo-0 llRTtz sinoui-radio"
+>>>>>>> origin/bottomNavigation
       color="primary"
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
+<<<<<<< HEAD
         className="sc-AxhCb klcZHD sinoui-svg-icon"
+=======
+        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+>>>>>>> origin/bottomNavigation
         focusable="false"
         role="presentation"
         size={24}
@@ -827,7 +1193,11 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
       </svg>
       <input
         checked={false}
+<<<<<<< HEAD
         className="sc-AxmLO kMIxgv sinoui-radio__input"
+=======
+        className="RadioButton__StyleInput-sc-7ebnoo-1 cVfeND sinoui-radio__input"
+>>>>>>> origin/bottomNavigation
         onChange={[Function]}
         type="radio"
         value="4"

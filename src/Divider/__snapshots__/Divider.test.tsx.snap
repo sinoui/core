@@ -2,30 +2,50 @@
 
 exports[`快照测试 flex布局下的垂直分割线 1`] = `
 <hr
+<<<<<<< HEAD
   className="sc-AxjAm vtVrU sinoui-divider sinoui-divider--vertical"
+=======
+  className="Divider__StyledDivider-sc-1o8mxdo-0 BlgHL sinoui-divider sinoui-divider--vertical"
+>>>>>>> origin/bottomNavigation
 />
 `;
 
 exports[`快照测试 垂直分割线 1`] = `
 <hr
+<<<<<<< HEAD
   className="sc-AxjAm kCeUPN sinoui-divider sinoui-divider--vertical"
+=======
+  className="Divider__StyledDivider-sc-1o8mxdo-0 khJaPM sinoui-divider sinoui-divider--vertical"
+>>>>>>> origin/bottomNavigation
 />
 `;
 
 exports[`快照测试 水平中间分割线 1`] = `
 <hr
+<<<<<<< HEAD
   className="sc-AxjAm dtCNbZ sinoui-divider"
+=======
+  className="Divider__StyledDivider-sc-1o8mxdo-0 bNnKzO sinoui-divider"
+>>>>>>> origin/bottomNavigation
 />
 `;
 
 exports[`快照测试 水平插入分割线 1`] = `
 <hr
+<<<<<<< HEAD
   className="sc-AxjAm euGbIQ sinoui-divider"
+=======
+  className="Divider__StyledDivider-sc-1o8mxdo-0 hmDjSd sinoui-divider"
+>>>>>>> origin/bottomNavigation
 />
 `;
 
 exports[`快照测试 默认水平分割线 1`] = `
 <hr
+<<<<<<< HEAD
   className="sc-AxjAm eVvreg sinoui-divider"
+=======
+  className="Divider__StyledDivider-sc-1o8mxdo-0 foHWpB sinoui-divider"
+>>>>>>> origin/bottomNavigation
 />
 `;

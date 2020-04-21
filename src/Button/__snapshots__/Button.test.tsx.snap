@@ -3,7 +3,11 @@
 exports[`指定颜色 1`] = `
 Array [
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ gDFmot sinoui-button"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 bsPIqm sinoui-button"
+>>>>>>> origin/bottomNavigation
     color="secondary"
     role="button"
     type="button"
@@ -11,7 +15,11 @@ Array [
     文本按钮
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ jfUybQ sinoui-button sinoui-button--outlined"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 cduSVn sinoui-button sinoui-button--outlined"
+>>>>>>> origin/bottomNavigation
     color="secondary"
     role="button"
     type="button"
@@ -19,7 +27,11 @@ Array [
     轮廓按钮
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ fiiDZA sinoui-button sinoui-button--raised"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 juCrAU sinoui-button sinoui-button--raised"
+>>>>>>> origin/bottomNavigation
     color="secondary"
     role="button"
     type="button"
@@ -27,7 +39,11 @@ Array [
     容器按钮
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ bOeCmL sinoui-button"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 iPCsis sinoui-button"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     role="button"
     type="button"
@@ -35,7 +51,11 @@ Array [
     文本按钮
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ dUaKfC sinoui-button sinoui-button--outlined"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 dqwuyh sinoui-button sinoui-button--outlined"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     role="button"
     type="button"
@@ -43,7 +63,11 @@ Array [
     轮廓按钮
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ bMlrCW sinoui-button sinoui-button--raised"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 UJYAi sinoui-button sinoui-button--raised"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     role="button"
     type="button"
@@ -56,7 +80,11 @@ Array [
 exports[`正确渲染三种形式按钮 1`] = `
 Array [
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ TiPuK sinoui-button"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 cKZBHF sinoui-button"
+>>>>>>> origin/bottomNavigation
     color="primary"
     role="button"
     type="button"
@@ -64,7 +92,11 @@ Array [
     文本按钮
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ feKvGH sinoui-button sinoui-button--outlined"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 lagLDI sinoui-button sinoui-button--outlined"
+>>>>>>> origin/bottomNavigation
     color="primary"
     role="button"
     type="button"
@@ -72,7 +104,11 @@ Array [
     轮廓按钮
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ cDxDcg sinoui-button sinoui-button--raised"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 gksiFY sinoui-button sinoui-button--raised"
+>>>>>>> origin/bottomNavigation
     color="primary"
     role="button"
     type="button"
@@ -86,7 +122,11 @@ exports[`渲染不可用状态下的三种形式按钮 1`] = `
 Array [
   <button
     aria-disabled={true}
+<<<<<<< HEAD
     className="sc-AxjAm gIJowi sinoui-base-button sc-AxirZ exXMrR sinoui-button"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button Button__ButtonLayout-sc-15sa99-0 izXRfK sinoui-button"
+>>>>>>> origin/bottomNavigation
     color="primary"
     disabled={true}
     role="button"
@@ -96,7 +136,11 @@ Array [
   </button>,
   <button
     aria-disabled={true}
+<<<<<<< HEAD
     className="sc-AxjAm gIJowi sinoui-base-button sc-AxirZ fVlgDg sinoui-button sinoui-button--outlined"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button Button__ButtonLayout-sc-15sa99-0 cWYRmn sinoui-button sinoui-button--outlined"
+>>>>>>> origin/bottomNavigation
     color="primary"
     disabled={true}
     role="button"
@@ -106,7 +150,11 @@ Array [
   </button>,
   <button
     aria-disabled={true}
+<<<<<<< HEAD
     className="sc-AxjAm gIJowi sinoui-base-button sc-AxirZ kQyZVP sinoui-button sinoui-button--raised"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button Button__ButtonLayout-sc-15sa99-0 faemsD sinoui-button sinoui-button--raised"
+>>>>>>> origin/bottomNavigation
     color="primary"
     disabled={true}
     role="button"
@@ -120,7 +168,11 @@ Array [
 exports[`渲染带图标按钮 1`] = `
 Array [
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ TiPuK sinoui-button"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 cKZBHF sinoui-button"
+>>>>>>> origin/bottomNavigation
     color="primary"
     role="button"
     type="button"
@@ -138,7 +190,11 @@ Array [
     icon
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ bfKOwL sinoui-button"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 bHDpWa sinoui-button"
+>>>>>>> origin/bottomNavigation
     color="primary"
     role="button"
     type="button"
@@ -156,7 +212,11 @@ Array [
     </svg>
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ feKvGH sinoui-button sinoui-button--outlined"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 lagLDI sinoui-button sinoui-button--outlined"
+>>>>>>> origin/bottomNavigation
     color="primary"
     role="button"
     type="button"
@@ -174,7 +234,11 @@ Array [
     icon
   </button>,
   <button
+<<<<<<< HEAD
     className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ cDxDcg sinoui-button sinoui-button--raised"
+=======
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button Button__ButtonLayout-sc-15sa99-0 gksiFY sinoui-button sinoui-button--raised"
+>>>>>>> origin/bottomNavigation
     color="primary"
     role="button"
     type="button"

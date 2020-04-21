@@ -2,8 +2,13 @@
 
 exports[`正确渲染IconButton 1`] = `
 <button
+<<<<<<< HEAD
   className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ eGIukv sinoui-icon-button"
   color="textSecondary"
+=======
+  className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 brWspa sinoui-icon-button"
+  color="textPrimary"
+>>>>>>> origin/bottomNavigation
   role="button"
   type="button"
 >
@@ -22,7 +27,11 @@ exports[`正确渲染IconButton 1`] = `
 
 exports[`渲染color为primary的图标按钮 1`] = `
 <button
+<<<<<<< HEAD
   className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ fGeGzR sinoui-icon-button"
+=======
+  className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 kkQqbs sinoui-icon-button"
+>>>>>>> origin/bottomNavigation
   color="primary"
   role="button"
   type="button"
@@ -43,8 +52,13 @@ exports[`渲染color为primary的图标按钮 1`] = `
 exports[`渲染不可用的图标按钮 1`] = `
 <button
   aria-disabled={true}
+<<<<<<< HEAD
   className="sc-AxjAm gIJowi sinoui-base-button sc-AxirZ HWKGa sinoui-icon-button sinoui-icon-button--disabled"
   color="textSecondary"
+=======
+  className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button IconButton__IconButtonLayout-sc-11batye-0 fjxIW sinoui-icon-button"
+  color="textPrimary"
+>>>>>>> origin/bottomNavigation
   disabled={true}
   role="button"
   type="button"

@@ -2,30 +2,50 @@
 
 exports[`布局Row快照测试 gutter = 8 1`] = `
 <div
+<<<<<<< HEAD
   className="sc-AxjAm eKpneP sinoui-row"
+=======
+  className="Row-y6j5gl-0 GlXNU sinoui-row"
+>>>>>>> origin/bottomNavigation
 />
 `;
 
 exports[`布局Row快照测试 gutterType = "around" 1`] = `
 <div
+<<<<<<< HEAD
   className="sc-AxjAm MoYYv sinoui-row"
+=======
+  className="Row-y6j5gl-0 gvPXcC sinoui-row"
+>>>>>>> origin/bottomNavigation
 />
 `;
 
 exports[`布局Row快照测试 justifyContent = "center" alignItems="center" 1`] = `
 <div
+<<<<<<< HEAD
   className="sc-AxjAm cOPYLT sinoui-row"
+=======
+  className="Row-y6j5gl-0 iBEhRM sinoui-row"
+>>>>>>> origin/bottomNavigation
 />
 `;
 
 exports[`布局Row快照测试 justifyContent="center" 1`] = `
 <div
+<<<<<<< HEAD
   className="sc-AxjAm fdOXIO sinoui-row"
+=======
+  className="Row-y6j5gl-0 iGneth sinoui-row"
+>>>>>>> origin/bottomNavigation
 />
 `;
 
 exports[`布局Row快照测试 默认 1`] = `
 <div
+<<<<<<< HEAD
   className="sc-AxjAm dIKvAz sinoui-row"
+=======
+  className="Row-y6j5gl-0 bNhiEA sinoui-row"
+>>>>>>> origin/bottomNavigation
 />
 `;

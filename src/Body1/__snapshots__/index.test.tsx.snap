@@ -2,7 +2,11 @@
 
 exports[`文字排版 快照测试 基本文字排版 1`] = `
 <p
+<<<<<<< HEAD
   className="sc-AxjAm igJlAv sinoui-typography sinoui-typography--body1"
+=======
+  className="Typography__TypographyWrapper-sc-12agh80-0 eEUdSx sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
   color="textPrimary"
   type="body1"
 >
@@ -13,35 +17,55 @@ exports[`文字排版 快照测试 基本文字排版 1`] = `
 exports[`文字排版 快照测试 设置属性 1`] = `
 Array [
   <h2
+<<<<<<< HEAD
     className="sc-AxjAm igJlAv sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 eEUdSx sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="body1"
   >
     Body1
   </h2>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm ffGbHz sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 jrTcnJ sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm fafbIa sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 iZhNDU sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm kWZJhf sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 dycibN sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="success"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm igJlAv sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 eEUdSx sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="body1"
   >
@@ -53,63 +77,99 @@ Array [
 exports[`文字排版 快照测试 颜色设置 1`] = `
 Array [
   <p
+<<<<<<< HEAD
     className="sc-AxjAm igJlAv sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 eEUdSx sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm iSaVBg sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 bbhLxm sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="primary"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm iulKID sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 kXpneF sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="secondary"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm igJlAv sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 eEUdSx sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="textPrimary"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm eATqAS sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 hrkplc sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="textSecondary"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm gcNqBi sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 hBxxcM sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="error"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm dfTFbX sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 dbPkap sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="warning"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm kWZJhf sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 dycibN sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="success"
     type="body1"
   >
     Body1
   </p>,
   <p
+<<<<<<< HEAD
     className="sc-AxjAm xHUL sinoui-typography sinoui-typography--body1"
+=======
+    className="Typography__TypographyWrapper-sc-12agh80-0 hLrZMp sinoui-typography sinoui-typography--body1"
+>>>>>>> origin/bottomNavigation
     color="info"
     type="body1"
   >
