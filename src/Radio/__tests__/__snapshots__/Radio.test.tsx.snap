@@ -350,7 +350,43 @@ Array [
 
 exports[`Radio组件 快照测试 带文字单选框 1`] = `
 Array [
-  .c1 {
+  .c0 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c0 > .sinoui-checkbox,
+.c0 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -411,42 +447,6 @@ Array [
   -ms-user-select: none;
   user-select: none;
   display: inline-block;
-}
-
-.c0 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c0 > .sinoui-checkbox,
-.c0 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c0 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
 }
 
 .c2 {
@@ -534,7 +534,7 @@ Array [
 }
 
 <label
-    className="sc-Axmtr c0 sinoui-form-control-label"
+    className="sc-AxhUy c0 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -566,7 +566,43 @@ Array [
       单选框1
     </span>
   </label>,
-  .c1 {
+  .c0 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c0 > .sinoui-checkbox,
+.c0 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -627,42 +663,6 @@ Array [
   -ms-user-select: none;
   user-select: none;
   display: inline-block;
-}
-
-.c0 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c0 > .sinoui-checkbox,
-.c0 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c0 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
 }
 
 .c2 {
@@ -750,7 +750,7 @@ Array [
 }
 
 <label
-    className="sc-Axmtr c0 sinoui-form-control-label"
+    className="sc-AxhUy c0 sinoui-form-control-label"
   >
     <span
       checked={true}
@@ -788,7 +788,43 @@ Array [
 
 exports[`Radio组件 快照测试 指定颜色 1`] = `
 Array [
-  .c1 {
+  .c0 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.c0 > .sinoui-checkbox,
+.c0 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -849,42 +885,6 @@ Array [
   -ms-user-select: none;
   user-select: none;
   display: inline-block;
-}
-
-.c0 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: default;
-}
-
-.c0 > .sinoui-checkbox,
-.c0 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c0 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
 }
 
 .c2 {
@@ -996,7 +996,7 @@ Array [
 }
 
 <label
-    className="sc-Axmtr c0 sinoui-form-control-label"
+    className="sc-AxhUy c0 sinoui-form-control-label"
     disabled={true}
   >
     <span
@@ -2212,7 +2212,43 @@ Array [
 
 exports[`Radio组件 快照测试 设置只读 1`] = `
 Array [
-  .c1 {
+  .c0 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.c0 > .sinoui-checkbox,
+.c0 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2273,42 +2309,6 @@ Array [
   -ms-user-select: none;
   user-select: none;
   display: inline-block;
-}
-
-.c0 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: default;
-}
-
-.c0 > .sinoui-checkbox,
-.c0 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c0 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
 }
 
 .c2 {
@@ -2392,7 +2392,7 @@ Array [
 }
 
 <label
-    className="sc-Axmtr c0 sinoui-form-control-label"
+    className="sc-AxhUy c0 sinoui-form-control-label"
     disabled={true}
   >
     <span
@@ -2427,7 +2427,43 @@ Array [
       单选框1
     </span>
   </label>,
-  .c1 {
+  .c0 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.c0 > .sinoui-checkbox,
+.c0 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2488,42 +2524,6 @@ Array [
   -ms-user-select: none;
   user-select: none;
   display: inline-block;
-}
-
-.c0 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: default;
-}
-
-.c0 > .sinoui-checkbox,
-.c0 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c0 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
 }
 
 .c2 {
@@ -2607,7 +2607,7 @@ Array [
 }
 
 <label
-    className="sc-Axmtr c0 sinoui-form-control-label"
+    className="sc-AxhUy c0 sinoui-form-control-label"
     readOnly={true}
   >
     <span

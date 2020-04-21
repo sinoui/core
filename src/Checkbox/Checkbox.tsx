@@ -1,6 +1,9 @@
 import React from 'react';
+import {
+  withLabel,
+  FormControlWithLabelProps,
+} from '@sinoui/core/FormControlLabel';
 import CheckboxButton from './BaseCheckboxButton';
-import withLabel, { FormControlWithLabelProps } from './withLabel';
 
 export type CheckboxProps<T> = FormControlWithLabelProps<T, HTMLInputElement> &
   CheckboxExtendProps;

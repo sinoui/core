@@ -1,5 +1,5 @@
 import React from 'react';
-import FormControlLabel from '@sinoui/core/FormControlLabel';
+import FormControlLabel from './FormControlLabel';
 import { ColorProp } from '../types';
 
 function getDisplayName(WrappedComponent: any, displayName?: string) {

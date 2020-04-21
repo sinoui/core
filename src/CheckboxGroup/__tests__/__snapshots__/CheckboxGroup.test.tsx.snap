@@ -28,6 +28,42 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
   transform: translate(-11px,0px);
 }
 
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -283,42 +319,6 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -342,7 +342,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
   onChange={[Function]}
 >
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -378,7 +378,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={true}
@@ -414,7 +414,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={true}
@@ -450,7 +450,7 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -514,6 +514,42 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
   -webkit-transform: translate(-11px,0px);
   -ms-transform: translate(-11px,0px);
   transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .c2 {
@@ -675,42 +711,6 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -728,7 +728,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
   onChange={[Function]}
 >
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -764,7 +764,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -842,6 +842,42 @@ Array [
   transform: translate(-11px,0px);
 }
 
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1001,42 +1037,6 @@ Array [
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: default;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -1054,7 +1054,7 @@ Array [
     onChange={[Function]}
   >
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
@@ -1093,7 +1093,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
@@ -1170,6 +1170,42 @@ Array [
   transform: translate(-11px,0px);
 }
 
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1329,42 +1365,6 @@ Array [
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: default;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -1382,7 +1382,7 @@ Array [
     onChange={[Function]}
   >
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -1421,7 +1421,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
@@ -1491,6 +1491,42 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
   transform: translate(-11px,0px);
 }
 
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1650,42 +1686,6 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -1703,7 +1703,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
   onChange={[Function]}
 >
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -1738,7 +1738,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -1774,7 +1774,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -1810,7 +1810,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -1846,7 +1846,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -1916,6 +1916,42 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
   transform: translate(-11px,0px);
 }
 
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2075,42 +2111,6 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -2128,7 +2128,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
   onChange={[Function]}
 >
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -2164,7 +2164,7 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
     </span>
   </label>
   <label
-    className="sc-AxmLO c1 sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
@@ -2242,6 +2242,42 @@ Array [
   transform: translate(-11px,0px);
 }
 
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2401,42 +2437,6 @@ Array [
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -2454,7 +2454,7 @@ Array [
     onChange={[Function]}
   >
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -2490,7 +2490,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -2558,6 +2558,42 @@ Array [
   padding-right: 0px;
 }
 
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2717,42 +2753,6 @@ Array [
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -2770,7 +2770,7 @@ Array [
     onChange={[Function]}
   >
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -2806,7 +2806,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -2889,6 +2889,42 @@ Array [
   transform: translate(-11px,0px);
 }
 
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -3048,42 +3084,6 @@ Array [
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -3101,7 +3101,7 @@ Array [
     onChange={[Function]}
   >
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -3137,7 +3137,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -3173,7 +3173,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -3209,7 +3209,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -3245,7 +3245,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -3323,6 +3323,42 @@ Array [
   transform: translate(-11px,0px);
 }
 
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -3482,42 +3518,6 @@ Array [
   height: 32px;
 }
 
-.c1 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.87);
-  margin: 0;
-  padding: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.c1 > .sinoui-checkbox,
-.c1 > .sinoui-radio {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.c1 > .sinoui-form-control-label__title {
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
 @media (hover:none) {
   .c2:hover {
     background-color: transparent;
@@ -3535,7 +3535,7 @@ Array [
     onChange={[Function]}
   >
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -3571,7 +3571,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -3607,7 +3607,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -3643,7 +3643,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
@@ -3679,7 +3679,7 @@ Array [
       </span>
     </label>
     <label
-      className="sc-AxmLO c1 sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
