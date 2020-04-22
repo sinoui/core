@@ -412,7 +412,7 @@ it('在FormControl上下文中使用', () => {
   expect(onBlur).toBeCalled();
 });
 
-it('从表单项上下文中获取id', () => {
+it('从表单控件上下文中获取id', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <FormControlContext.Provider value={{ id: 'input_1' } as any}>

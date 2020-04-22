@@ -135,7 +135,7 @@ it('className', () => {
   expect(getByTestId('label')).toHaveClass('x-label', 'sinoui-form-label');
 });
 
-it('从表单项上下文中获取状态', () => {
+it('从表单控件上下文中获取状态', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <FormControlContext.Provider

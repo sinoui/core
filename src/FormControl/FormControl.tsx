@@ -9,7 +9,7 @@ import FormLabel from '../FormLabel';
 import FormControlContext from './FormControlContext';
 
 /**
- * 表单项组件
+ * 表单控件组件
  */
 const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
   (props, ref) => {

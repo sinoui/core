@@ -5,11 +5,11 @@ export default interface FormControlProps
    */
   label?: React.ReactNode;
   /**
-   * 设置表单项帮助性文本。
+   * 设置表单控件帮助性文本。
    */
   helperText?: React.ReactNode;
   /**
-   * 表单项校验错误信息。
+   * 表单控件校验错误信息。
    */
   error?: React.ReactNode;
   /**

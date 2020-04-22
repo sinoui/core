@@ -250,7 +250,7 @@ it('无标签', () => {
   expect(getByTestId('input')).toHaveClass('sinoui-text-input--no-label');
 });
 
-it('在表单项中使用', () => {
+it('在表单控件中使用', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <FormControl label="姓名">
@@ -266,7 +266,7 @@ it('在表单项中使用', () => {
   expect(getByTestId('input')).toHaveClass('sinoui-text-input--no-label');
 });
 
-it('在表单项中使用浮动标签', () => {
+it('在表单控件中使用浮动标签', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <FormControl label="姓名" labelLayout="floating">
