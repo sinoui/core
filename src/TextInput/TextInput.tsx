@@ -157,7 +157,7 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
 
     const helperTextContent = (
       <>
-        {!!error && <HelperText error>{error}</HelperText>}
+        {error && errorText && <HelperText error>{errorText}</HelperText>}
         {!error && helperText && (
           <HelperText disabled={disabled}>{helperText}</HelperText>
         )}

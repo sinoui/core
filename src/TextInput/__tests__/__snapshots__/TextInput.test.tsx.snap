@@ -3068,7 +3068,9 @@ label ~ .c3 {
     </div>
     <div
       className="c4 sinoui-helper-text"
-    />
+    >
+      必填
+    </div>
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--required sinoui-text-input--error"
@@ -3097,7 +3099,9 @@ label ~ .c3 {
     </div>
     <div
       className="c4 sinoui-helper-text"
-    />
+    >
+      必填
+    </div>
   </div>
 </div>
 `;
