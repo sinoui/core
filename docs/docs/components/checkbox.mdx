@@ -11,6 +11,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import CheckboxDemo from './checkbox-demos/CheckboxDemo';
 import CheckboxGroupDemo from './checkbox-demos/CheckboxGroupDemo';
+import Demo from '../commons/Demo';
 
 ## Checkbox
 
@@ -31,7 +32,9 @@ function CheckboxDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <CheckboxDemo>选项1</CheckboxDemo>
+  <Demo>
+    <CheckboxDemo>选项1</CheckboxDemo>
+  </Demo>
 </ThemeProvider>
 
 ## 状态
@@ -55,11 +58,11 @@ function CheckboxDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <>
+  <Demo>
     <Checkbox />
     <Checkbox checked />
     <Checkbox indeterminate />
-  </>
+  </Demo>
 </ThemeProvider>
 
 ## 复选框分组
@@ -71,8 +74,9 @@ import CheckboxGorup from '@sinoui/core/CheckboxGroup';
 import Checkbox from '@sinoui/core/Checkbox';
 
 function CheckboxGroupDemo() {
+  const [value, setValue] = useState(['2', '3']);
   return (
-    <CheckboxGroup>
+    <CheckboxGroup value={value} onChange={setValue}>
       <Checkbox value="1">选项1</Checkbox>
       <Checkbox value="2">选项2</Checkbox>
       <Checkbox value="3">选项3</Checkbox>
@@ -85,10 +89,96 @@ function CheckboxGroupDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <CheckboxGroupDemo />
+  <Demo>
+    <CheckboxGroupDemo />
+  </Demo>
 </ThemeProvider>
 
-## 设置只读
+### 使用 items 指定一组复选框
+
+`CheckboxGroup`组件支持使用`items`属性而非`children`指定一组复选框，如下所示：
+
+```tsx
+<CheckboxGroupDemo
+  items={[
+    { value: '1', label: '选项1' },
+    { value: '2', label: '选项2' },
+    { value: '3', label: '选项3' },
+    { value: '4', label: '选项4' },
+  ]}
+/>
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <CheckboxGroupDemo />
+  </Demo>
+</ThemeProvider>
+
+### 分组布局
+
+复选框分组默认按照水平换行的方式布局复选框。`CheckboxGorup`组件支持以列的方式布局，如下所示：
+
+```tsx
+<CheckboxGroup column>
+  <Checkbox value="1">选项1</Checkbox>
+  <Checkbox value="2">选项2</Checkbox>
+  <Checkbox value="3">选项3</Checkbox>
+  <Checkbox value="4">选项4</Checkbox>
+</CheckboxGroup>
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <CheckboxGroupDemo column />
+  </Demo>
+</ThemeProvider>
+
+也可以通过`columns`属性指定列数，如下所示：
+
+```tsx
+<CheckboxGroup columns={2}>
+  <Checkbox value="1">选项1</Checkbox>
+  <Checkbox value="2">选项2</Checkbox>
+  <Checkbox value="3">选项3</Checkbox>
+  <Checkbox value="4">选项4</Checkbox>
+</CheckboxGroup>
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <CheckboxGroupDemo columns={2} />
+  </Demo>
+</ThemeProvider>
+
+### 全选
+
+`CheckboxGroup`组件有`enableSelectAll`属性，支持全选功能：
+
+```tsx
+<CheckboxGroup enableSelectAll>
+  <Checkbox value="1">选项1</Checkbox>
+  <Checkbox value="2">选项2</Checkbox>
+  <Checkbox value="3">选项3</Checkbox>
+  <Checkbox value="4">选项4</Checkbox>
+</CheckboxGroup>
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <CheckboxGroupDemo enableSelectAll />
+  </Demo>
+</ThemeProvider>
+
+## 不可用、只读
 
 ```tsx
 import Checkbox from '@sinoui/core/Checkbox';
@@ -100,6 +190,20 @@ function CheckboxDemo() {
       <Checkbox disabled />
       只读：
       <Checkbox readOnly />
+      分组不可用：
+      <CheckboxGroup disabled>
+        <Checkbox value="1">选项1</Checkbox>
+        <Checkbox value="2">选项2</Checkbox>
+        <Checkbox value="3">选项3</Checkbox>
+        <Checkbox value="4">选项4</Checkbox>
+      </CheckboxGroup>
+      分组只读：
+      <CheckboxGroup readOnly>
+        <Checkbox value="1">选项1</Checkbox>
+        <Checkbox value="2">选项2</Checkbox>
+        <Checkbox value="3">选项3</Checkbox>
+        <Checkbox value="4">选项4</Checkbox>
+      </CheckboxGroup>
     </>
   );
 }
@@ -108,12 +212,16 @@ function CheckboxDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <>
-    不可用：
+  <Demo style={{ flexDirection: 'column' }}>
+    <span>不可用：</span>
     <Checkbox disabled />
-    只读：
+    <span>只读：</span>
     <Checkbox readOnly />
-  </>
+    <span>分组不可用：</span>
+    <CheckboxGroupDemo disabled />
+    <span>分组只读：</span>
+    <CheckboxGroupDemo readOnly />
+  </Demo>
 </ThemeProvider>
 
 ## 指定颜色
@@ -140,7 +248,7 @@ function CheckboxDemo() {
 效果如下：
 
 <ThemeProvider theme={defaultTheme}>
-  <>
+  <Demo>
     <Checkbox checked color="primary" />
     <Checkbox checked color="secondary" />
     <Checkbox checked color="error" />
@@ -149,9 +257,10 @@ function CheckboxDemo() {
     <Checkbox checked color="info" />
     <Checkbox checked color="actionActive" />
     <Checkbox checked color="actionDisabled" />
-  </>
+  </Demo>
 </ThemeProvider>
 
 ## API
 
-查看[Checkbox 组件 API](../components-apis/checkbox)
+- [Checkbox](../components-apis/checkbox)
+- [CheckboxGroup](../components-apis/checkboxGroup)

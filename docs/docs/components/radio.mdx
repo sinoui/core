@@ -1,9 +1,11 @@
 ---
-id: radioGroup
-title: RadioGroup 单选框组
+id: radio
+title: Radio 单选框
 ---
 
-RadioGroup 单选框组组件。
+Radio 单选框组件。
+
+RadioGroup 单选框分组组件。
 
 import { useCallback } from 'react';
 import RadioGroup from '@sinoui/core/RadioGroup';
@@ -18,12 +20,11 @@ import RadioGroupDemo from './radioGroup-demos/RadioGroupDemo';
 ```tsx
 import React, { useState } from 'react';
 import Radio from '@sinoui/core/Radio';
-import type { RadioProps } from '@sinoui/core/Radio';
 
-export default function RadioDemo(props: RadioProps<string>) {
+export default function RadioDemo() {
   const [checked, setChecked] = useState(false);
 
-  return <Radio checked={checked} onChange={setChecked} {...props} />;
+  return <Radio checked={checked} onChange={setChecked} />;
 }
 ```
 
@@ -214,3 +215,8 @@ function RadioGroupDemo() {
     <RadioGroupDemo labelPosition="left" />
   </>
 </ThemeProvider>
+
+## API
+
+- [Radio](../components-apis/radio)
+- [RadioGroup](../components-apis/radioGroup)
