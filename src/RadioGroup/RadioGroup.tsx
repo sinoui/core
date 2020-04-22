@@ -1,9 +1,9 @@
 import React from 'react';
-import classNames from 'classnames';
 import styled, { css } from 'styled-components';
 import FormGroup from '@sinoui/core/FormGroup';
 import Radio from '@sinoui/core/Radio';
 import type RadioGroupItem from './RadioGroupItem';
+import bemClassNames from '../utils/bemClassNames';
 
 const PaddingRightStyle = css`
   > label {
@@ -155,11 +155,15 @@ function RadioGroup<T = string>(props: RadioGroupProps<T>) {
   return (
     <FormGroupWrapper
       {...rest}
-      className={classNames('sinoui-radio-group', className, {
-        'sinoui-radio-group--column': column,
-        'sinoui-radio-group--disabled': disabled,
-        'sinoui-radio-group--readOnly': readOnly,
-      })}
+      className={bemClassNames(
+        'sinoui-radio-group',
+        {
+          column,
+          disabled,
+          readOnly,
+        },
+        className,
+      )}
       column={column}
       labelPosition={labelPosition}
     >

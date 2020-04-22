@@ -1047,7 +1047,7 @@ Array [
 }
 
 <div
-    className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--readOnly sinoui-form-group"
+    className="sc-AxjAm c0 sinoui-radio-group sinoui-radio-group--read-only sinoui-form-group"
   >
     <label
       className="sc-AxgMl c1 sinoui-form-control-label"
