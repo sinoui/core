@@ -11,6 +11,7 @@ import { Row, Column } from '@sinoui/core/Grid';
 import FormDemo from './form-demos/FormDemo';
 import Demo from '../commons/Demo';
 import CheckboxGroupDemo from './form-demos/CheckboxGroupDemo';
+import CustomRequiredDemo from './form-demos/CustomRequiredDemo';
 
 表单是由表单控件组成的，表单控件是由表单标签和各种不同类型的输入框组成的。@sinoui/core 提供了 `FormControl` 组件表示表单控件，辅助您快速构建表单。
 
@@ -273,7 +274,7 @@ function Demo() {
   <Demo>
     <Row>
       <Column xs={24}>
-        <FormControl label="姓名" layout="horizontal">
+        <FormControl label="姓名" layout="horizontal" required>
           <TextInput variant="outlined" />
         </FormControl>
       </Column>
@@ -418,6 +419,53 @@ function Demo() {
         <TextInput field variant="filled" label="年龄" />
       </Column>
     </Row>
+  </Demo>
+</ThemeProvider>
+
+### 定制标签必填\*号的样式
+
+有一大部分应用可能会将标签的必填\*号的颜色定制为红色。sinoui 的标签组件是可以定制其颜色的：
+
+```tsx
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  .sinoui-form-label::before {
+    color: red;
+  }
+`;
+
+function Demo() {
+  return (
+    <Wrapper>
+      <FormControl label="姓名" layout="horizontal">
+        <TextInput variant="outlined" />
+      </FormControl>
+      <FormControl label="年龄" layout="horizontal">
+        <TextInput variant="outlined" />
+      </FormControl>
+    </Wrapper>
+  );
+}
+```
+
+也可以定义全局样式：
+
+```tsx
+import { createGlobalStyle } from 'styled-components';
+
+const RedLabelRequired = createGlobalStyle`
+  .sinoui-form-label::before {
+    color: red;
+  }
+`;
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <Demo>
+    <CustomRequiredDemo />
   </Demo>
 </ThemeProvider>
 
