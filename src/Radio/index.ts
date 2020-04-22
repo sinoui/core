@@ -1,6 +1,6 @@
-import Radio, { RadioProps } from './Radio';
+import Radio from './Radio';
 import RadioButton from './RadioButton';
 
 export { RadioButton };
-export type { RadioProps };
+export type { RadioProps } from './Radio';
 export default Radio;
