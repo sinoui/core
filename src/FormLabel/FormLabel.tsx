@@ -28,8 +28,8 @@ const getColor = ({
   return theme.palette.text.secondary;
 };
 
-const requiredCss = css`
-  &::before {
+const requiredCss = css<{ $isAfterRequired: boolean }>`
+  &::${({ $isAfterRequired }) => ($isAfterRequired ? 'after' : 'before')} {
     content: '*';
     padding: 4px;
   }
@@ -46,7 +46,7 @@ const standardCss = css`
 
 const FormLabelInner = styled.label.attrs({
   className: 'sinoui-form-label' as any,
-})<FormLabelProps>`
+})<FormLabelProps & { $isAfterRequired: boolean }>`
   display: flex;
   font-size: ${(props) => props.theme.typography.body1.fontSize};
   font-family: ${(props) => props.theme.typography.fontFamily};
@@ -86,7 +86,14 @@ const FormLabel = React.forwardRef<HTMLLabelElement, FormLabelProps>(
         })
       : {};
 
-    return <FormLabelInner {...state} {...props} ref={ref} />;
+    return (
+      <FormLabelInner
+        {...state}
+        {...props}
+        ref={ref}
+        $isAfterRequired={formControlContext?.layout !== 'horizontal'}
+      />
+    );
   },
 );
 

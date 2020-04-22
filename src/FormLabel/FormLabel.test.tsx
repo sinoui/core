@@ -5,6 +5,7 @@ import React from 'react';
 import 'jest-styled-components';
 import FormLabel from './FormLabel';
 import FormControlContext from '../FormControl/FormControlContext';
+import FormControl from '../FormControl';
 
 afterEach(cleanup);
 
@@ -79,6 +80,25 @@ it('必填', () => {
       <FormLabel data-testid="label" required>
         标签
       </FormLabel>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('label')).toHaveStyleRule('content', "'*'", {
+    modifier: '::after',
+  });
+  expect(getByTestId('label')).toHaveStyleRule('padding', '4px', {
+    modifier: '::after',
+  });
+});
+
+it('在水平布局模式下，必填显示在左侧', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl layout="horizontal">
+        <FormLabel data-testid="label" required>
+          标签
+        </FormLabel>
+      </FormControl>
     </ThemeProvider>,
   );
 

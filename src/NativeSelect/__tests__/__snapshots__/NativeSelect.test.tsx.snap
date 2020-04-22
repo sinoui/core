@@ -3717,7 +3717,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   white-space: nowrap;
 }
 
-.c1::before {
+.c1::after {
   content: '*';
   padding: 4px;
 }
@@ -3753,7 +3753,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   white-space: nowrap;
 }
 
-.c9::before {
+.c9::after {
   content: '*';
   padding: 4px;
 }
@@ -3789,7 +3789,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   white-space: nowrap;
 }
 
-.c11::before {
+.c11::after {
   content: '*';
   padding: 4px;
 }

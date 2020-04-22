@@ -2717,7 +2717,7 @@ exports[`渲染有错误提示的输入框 1`] = `
   white-space: nowrap;
 }
 
-.c1::before {
+.c1::after {
   content: '*';
   padding: 4px;
 }
@@ -2753,7 +2753,7 @@ exports[`渲染有错误提示的输入框 1`] = `
   white-space: nowrap;
 }
 
-.c5::before {
+.c5::after {
   content: '*';
   padding: 4px;
 }
