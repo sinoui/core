@@ -144,13 +144,13 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
   width: 32px;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c3.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c3.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -199,13 +199,13 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
   width: 32px;
 }
 
-.c6.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c6.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c6.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c6.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -581,13 +581,13 @@ Array [
   width: 32px;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c3.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c3.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -965,13 +965,13 @@ Array [
   width: 32px;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c3.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c3.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -1354,13 +1354,13 @@ Array [
   width: 32px;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c3.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c3.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -1690,13 +1690,13 @@ Array [
   width: 32px;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c3.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c3.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -2024,13 +2024,13 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
   width: 32px;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c3.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c3.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c3.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }

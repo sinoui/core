@@ -63,13 +63,13 @@ const ToggleButton = styled(BaseButton).attrs(() => ({
     height: 32px;
     width: 32px;
 
-    & .sinoui-checkbox__ripple {
+    & .sinoui-radio__ripple {
       width: 32px;
       height: 32px;
       border-radius: 50%;
     }
 
-    & .sinoui-checkbox__ripple-layout {
+    & .sinoui-radio__ripple-layout {
       width: 32px;
       height: 32px;
     }

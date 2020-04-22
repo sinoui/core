@@ -109,13 +109,13 @@ Array [
   width: 32px;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c1.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c1.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -280,13 +280,13 @@ Array [
   width: 32px;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c1.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c1.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -493,13 +493,13 @@ Array [
   width: 32px;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c2.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c2.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -709,13 +709,13 @@ Array [
   width: 32px;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c2.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c2.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -931,13 +931,13 @@ Array [
   width: 32px;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c2.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c2.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -1138,13 +1138,13 @@ Array [
   width: 32px;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c1.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c1.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -1334,13 +1334,13 @@ Array [
   width: 32px;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c1.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c1.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -1530,13 +1530,13 @@ Array [
   width: 32px;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c1.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c1.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -1726,13 +1726,13 @@ Array [
   width: 32px;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c1.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c1.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -1922,13 +1922,13 @@ Array [
   width: 32px;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c1.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c1.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -2118,13 +2118,13 @@ Array [
   width: 32px;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c1.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c1.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c1.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -2355,13 +2355,13 @@ Array [
   width: 32px;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c2.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c2.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
@@ -2570,13 +2570,13 @@ Array [
   width: 32px;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple {
+.c2.sinoui-radio--dense .sinoui-radio__ripple {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.c2.sinoui-radio--dense .sinoui-checkbox__ripple-layout {
+.c2.sinoui-radio--dense .sinoui-radio__ripple-layout {
   width: 32px;
   height: 32px;
 }
