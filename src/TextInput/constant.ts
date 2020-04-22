@@ -15,6 +15,5 @@ export const FILLED_INPUT_BGCOLOR = {
 };
 
 export const cssClasses = {
-  inputLabel: 'sinoui-input-label',
   textInput: 'sinoui-text-input',
 };
