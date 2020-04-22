@@ -114,7 +114,7 @@ const parseItemsFromChildren = (
 };
 
 /**
- * 单选按钮组组件。如果没有指定value属性或者value属性值为undefined时，RadioGroup组件就处于非受控状态，会自身维护选中状态。
+ * 单选按钮组组件。
  */
 function RadioGroup<T = string>(props: RadioGroupProps<T>) {
   const {
