@@ -35,7 +35,7 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
     } = props;
 
     const [_focused, setFocused] = useState(false);
-    const focused = focusedProp != null ? focusedProp : _focused;
+    const focused = focusedProp ?? _focused;
     const onFocus = useCallback(() => setFocused(true), [setFocused]);
     const onBlur = useCallback(() => setFocused(false), [setFocused]);
 
