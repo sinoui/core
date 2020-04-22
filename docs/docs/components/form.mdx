@@ -16,7 +16,7 @@ import CheckboxGroupDemo from './form-demos/CheckboxGroupDemo';
 
 ## 入门示例
 
-Material Design 推荐采用浮动标签，如下示例，表单中采用浮动标签的轮廓输入框：
+Material Design 推荐采用浮动标签，如下示例：
 
 ```tsx
 import React, { useState } from 'react';
@@ -62,9 +62,7 @@ function FormDemo() {
           <FormControl label="性别">
             <RadioGroup
               value={formValues.sex}
-              onChange={(event) =>
-                setFormValues({ ...formValues, sex: event.target.value })
-              }
+              onChange={(value) => setFormValues({ ...formValues, sex: value })}
             >
               <Radio value="female">女</Radio>
               <Radio value="male">男</Radio>
@@ -115,12 +113,12 @@ Material Design 推荐采用浮动标签的输入框，如下所示：
 
 <ThemeProvider theme={defaultTheme}>
   <Demo style={{ flexDirection: 'column' }}>
-    <TextInput field variant="filled" label="姓名" />
+    <TextInput field variant="outlined" label="姓名" />
   </Demo>
 </ThemeProvider>
 
 ```tsx
-<TextInput variant="filled" label="姓名" />
+<TextInput field variant="outlined" label="姓名" />
 ```
 
 ### 输入框模式
@@ -129,8 +127,8 @@ Material Design 推荐采用浮动标签的输入框，如下所示：
 
 <ThemeProvider theme={defaultTheme}>
   <Demo style={{ flexDirection: 'column' }}>
-    <TextInput field variant="filled" label="姓名" />
-    <TextInput field variant="outlined" label="姓名" />
+    <TextInput field variant="filled" label="姓名(filled)" />
+    <TextInput field variant="outlined" label="姓名(outlined)" />
   </Demo>
 </ThemeProvider>
 
@@ -149,9 +147,11 @@ Material Design 推荐采用浮动标签的输入框，如下所示：
 <TextInput field variant="filled" label="姓名" />
 ```
 
+`field`属性的目的是为了让输入框的底部留白样式保持与其他表单控件一直。
+
 ### 与 FormControl 组合使用
 
-TextInput 本身集成了标签，可以作为表单控件使用。当然，也可以使用`FormControl`来组织标签与输入框之前的关系：
+TextInput 本身集成了标签，可以作为表单控件使用。当然，也可以使用`FormControl`来组织标签与输入框之间的关系：
 
 ```tsx
 function Demo() {
@@ -174,8 +174,6 @@ function Demo() {
 ```
 
 FormControl 组件的`labelLayout`是用来控制标签布局的，设置为`floating`则是浮动标签。`filled`属性是用来指定输入框是否有填充的值，有填充值设置为`true`，则浮动标签会浮动起来。
-
-`field`属性的目的是为了让输入框的底部留白样式保持与其他表单控件一直。
 
 更多`TextInput`组件的用法，请参见[TextInput 输入框](./textInput)章节。
 
@@ -394,7 +392,7 @@ function Demo() {
 - filled - 设置为`true`，则标签会浮动起来。一般在有值的时候，将`filled`属性设置为`true`
 - variant - 设置输入框的形态
 
-大部分输入框、选择框组件会自动浮动标签功能，简化在表单中的使用。
+大部分输入框、选择框组件会自动浮动标签，简化在表单中的使用。
 
 使用 FormControl 定义浮动标签：
 

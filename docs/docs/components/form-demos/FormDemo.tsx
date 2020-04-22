@@ -57,9 +57,7 @@ function FormDemo({
           <FormControl label="性别" dense={dense}>
             <RadioGroup
               value={formValues.sex}
-              onChange={(event) =>
-                setFormValues({ ...formValues, sex: event.target.value })
-              }
+              onChange={(value) => setFormValues({ ...formValues, sex: value })}
               dense={dense}
             >
               <Radio value="female">女</Radio>
