@@ -1,21 +1,359 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+.c5 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #3f51b5;
+}
+
+.c5::-moz-focus-inner {
+  border-style: none;
+}
+
+.c5 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c5:hover {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c5:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c5.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c5.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c5 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c5 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c5 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c5.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c5.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c5.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c5:hover {
+    background-color: transparent;
+  }
+}
+
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 kkZacT sinoui-checkbox-group"
+  className="c0 sinoui-checkbox-group sinoui-form-group"
+  onChange={[Function]}
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -40,17 +378,18 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jHLTaR sinoui-checkbox sinoui-checkbox--checked"
+      className="c2 sinoui-base-button c5 sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -75,17 +414,18 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jHLTaR sinoui-checkbox sinoui-checkbox--checked"
+      className="c2 sinoui-base-button c5 sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -110,17 +450,18 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -148,21 +489,257 @@ exports[`CheckboxGroup组件 快照测试 基本使用 1`] = `
 `;
 
 exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 kkZacT sinoui-checkbox-group"
+  className="c0 sinoui-checkbox-group sinoui-form-group"
+  onChange={[Function]}
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -183,21 +760,22 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     <span
       className="sinoui-form-control-label__title"
     >
-      复选框1
+      选项1
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -218,77 +796,7 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
     <span
       className="sinoui-form-control-label__title"
     >
-      复选框2
-    </span>
-  </label>
-  <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
-  >
-    <span
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
-      color="primary"
-      tabIndex="0"
-    >
-      <svg
-        aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
-        focusable="false"
-        role="presentation"
-        size={24}
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-      <input
-        checked={false}
-        className="sinoui-checkbox__input"
-        onChange={[Function]}
-        type="checkbox"
-        value="3"
-      />
-    </span>
-    <span
-      className="sinoui-form-control-label__title"
-    >
-      复选框3
-    </span>
-  </label>
-  <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
-  >
-    <span
-      checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
-      color="primary"
-      tabIndex="0"
-    >
-      <svg
-        aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
-        focusable="false"
-        role="presentation"
-        size={24}
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-      <input
-        checked={false}
-        className="sinoui-checkbox__input"
-        onChange={[Function]}
-        type="checkbox"
-        value="4"
-      />
-    </span>
-    <span
-      className="sinoui-form-control-label__title"
-    >
-      复选框4
+      选项2
     </span>
   </label>
 </div>
@@ -296,26 +804,270 @@ exports[`CheckboxGroup组件 快照测试 设置items属性 1`] = `
 
 exports[`CheckboxGroup组件 快照测试 设置不可用 1`] = `
 Array [
-  <p>
+  @media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<p>
     不可用:
   </p>,
-  <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 kkZacT sinoui-checkbox-group"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eVndhB sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox sinoui-checkbox--disabled"
+        className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--disabled"
         color="primary"
         disabled={true}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -341,19 +1093,20 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eVndhB sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
       disabled={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox sinoui-checkbox--disabled"
+        className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--disabled"
         color="primary"
         disabled={true}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -379,28 +1132,270 @@ Array [
       </span>
     </label>
   </div>,
-  <p>
+  @media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<p>
     只读:
   </p>,
-  <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 kkZacT sinoui-checkbox-group"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eVndhB sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox sinoui-checkbox--read-only"
+        className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--read-only"
         color="primary"
         disabled={true}
-        onBlur={false}
-        onFocus={false}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -426,21 +1421,20 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 eVndhB sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
       readOnly={true}
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox sinoui-checkbox--read-only"
+        className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--read-only"
         color="primary"
         disabled={true}
-        onBlur={false}
-        onFocus={false}
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -470,22 +1464,257 @@ Array [
 `;
 
 exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 kkZacT sinoui-checkbox-group"
+  className="c0 sinoui-checkbox-group sinoui-form-group"
+  onChange={[Function]}
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox sinoui-checkboxGroup-select"
+      className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox-group__select-all"
       color="primary"
       onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -509,17 +1738,18 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -544,17 +1774,18 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -579,17 +1810,18 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -614,17 +1846,18 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -652,21 +1885,261 @@ exports[`CheckboxGroup组件 快照测试 设置是否支持全选 1`] = `
 `;
 
 exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  width: 100%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
 <div
-  className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 gzFqCb sinoui-checkbox-group"
+  className="c0 sinoui-checkbox-group sinoui-form-group"
+  onChange={[Function]}
 >
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -691,17 +2164,18 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
     </span>
   </label>
   <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+    className="sc-AxgMl c1 sinoui-form-control-label"
   >
     <span
       checked={false}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c2 sinoui-base-button c3 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c4 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -730,24 +2204,268 @@ exports[`CheckboxGroup组件 快照测试 设置是否纵向显示 1`] = `
 
 exports[`CheckboxGroup组件 快照测试 设置标题显示位置 1`] = `
 Array [
-  <p>
+  @media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<p>
     标题显示在右侧：
   </p>,
-  <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 kkZacT sinoui-checkbox-group"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -772,17 +2490,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -807,24 +2526,262 @@ Array [
       </span>
     </label>
   </div>,
-  <p>
+  @media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<p>
     标题显示在左侧：
   </p>,
-  <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 iEFRaZ sinoui-checkbox-group"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 ezKajw sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -849,17 +2806,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 ezKajw sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -889,24 +2847,272 @@ Array [
 
 exports[`CheckboxGroup组件 快照测试 设置网格对齐布局默认3列 1`] = `
 Array [
-  <p>
+  @media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<p>
     默认：
   </p>,
-  <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 jmUeEf sinoui-checkbox-group"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  width: 33.333333333333336%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -931,17 +3137,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -966,17 +3173,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1001,17 +3209,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1036,17 +3245,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1071,24 +3281,272 @@ Array [
       </span>
     </label>
   </div>,
-  <p>
+  @media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<p>
     设置colums为4：
   </p>,
-  <div
-    className="FormGroup-sc-1yfjhta-0 CheckboxGroup__FormGroupWrapper-sc-52zwwd-0 elgcxw sinoui-checkbox-group"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 > label {
+  padding-right: 8px;
+}
+
+.c0 > label:last-child {
+  padding-right: 0px;
+}
+
+.c0 > label {
+  width: 25%;
+}
+
+.c0 > label {
+  -webkit-transform: translate(-11px,0px);
+  -ms-transform: translate(-11px,0px);
+  transform: translate(-11px,0px);
+}
+
+.c1 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c1 > .sinoui-checkbox,
+.c1 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3::-moz-focus-inner {
+  border-style: none;
+}
+
+.c3 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c3:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c3.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c3.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c3 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c3 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c3 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c3.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c3.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+    className="c0 sinoui-checkbox-group sinoui-form-group"
+    onChange={[Function]}
   >
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1113,17 +3571,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1148,17 +3607,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1183,17 +3643,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}
@@ -1218,17 +3679,18 @@ Array [
       </span>
     </label>
     <label
-      className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+      className="sc-AxgMl c1 sinoui-form-control-label"
     >
       <span
         checked={false}
-        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+        className="c2 sinoui-base-button c3 sinoui-checkbox"
         color="primary"
+        onClick={[Function]}
         tabIndex="0"
       >
         <svg
           aria-hidden="true"
-          className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+          className="c4 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}

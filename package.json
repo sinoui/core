@@ -1,6 +1,6 @@
 {
   "name": "@sinoui/core",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.8",
   "description": "sinoui基础组件库",
   "license": "MIT",
   "main": "index.js",
@@ -56,8 +56,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "@babel/runtime": "^7.9.2",
-    "@sinoui/ripple": "^1.0.11",
     "@sinoui/theme": "^1.0.0-beta.8",
+    "@sinoui/ripple": "^1.0.12",
     "@sinoui/utils": "^0.2.1",
     "classnames": "^2.2.6",
     "dom-helpers": "^3.4.0",

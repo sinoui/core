@@ -2,14 +2,190 @@
 
 exports[`Checkbox组件 快照测试 基本使用 1`] = `
 Array [
-  <span
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+<span
+    className="c0 sinoui-base-button c1 sinoui-checkbox"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -21,18 +197,195 @@ Array [
     </svg>
     <input
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #3f51b5;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+<span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jHLTaR sinoui-checkbox sinoui-checkbox--checked"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -45,17 +398,194 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jHLTaR sinoui-checkbox sinoui-checkbox--indeterminate"
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #3f51b5;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+<span
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--indeterminate"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -67,6 +597,7 @@ Array [
     </svg>
     <input
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -75,17 +606,229 @@ Array [
 
 exports[`Checkbox组件 快照测试 带有文字复选框 1`] = `
 Array [
-  <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+  .c0 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c0 > .sinoui-checkbox,
+.c0 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c2.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c2.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c2 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c2 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c2 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c2.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c2.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c2.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+<label
+    className="sc-AxhUy c0 sinoui-form-control-label"
   >
     <span
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c1 sinoui-base-button c2 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c3 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -97,6 +840,7 @@ Array [
       </svg>
       <input
         className="sinoui-checkbox__input"
+        onChange={[Function]}
         type="checkbox"
       />
     </span>
@@ -106,18 +850,230 @@ Array [
       爱好1
     </span>
   </label>,
-  <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+  .c0 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c0 > .sinoui-checkbox,
+.c0 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #3f51b5;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c2:hover {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c2:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c2.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c2.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c2 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c2 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c2 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c2.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c2.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c2.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+<label
+    className="sc-AxhUy c0 sinoui-form-control-label"
   >
     <span
       checked={true}
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jHLTaR sinoui-checkbox sinoui-checkbox--checked"
+      className="c1 sinoui-base-button c2 sinoui-checkbox sinoui-checkbox--checked"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c3 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -130,6 +1086,7 @@ Array [
       <input
         checked={true}
         className="sinoui-checkbox__input"
+        onChange={[Function]}
         type="checkbox"
       />
     </span>
@@ -139,17 +1096,229 @@ Array [
       爱好2
     </span>
   </label>,
-  <label
-    className="FormControlLabelContainer__Label-sc-136va0i-0 FormControlLabelContainer-sc-136va0i-1 jUfgZR sinoui-form-control-label"
+  .c0 {
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
+  color: rgba(0,0,0,0.87);
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c0 > .sinoui-checkbox,
+.c0 > .sinoui-radio {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0 > .sinoui-form-control-label__title {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c2.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c2.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c2 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c2 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c2 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c2.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c2.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c2.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+<label
+    className="sc-AxhUy c0 sinoui-form-control-label"
   >
     <span
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox"
+      className="c1 sinoui-base-button c2 sinoui-checkbox"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
         aria-hidden="true"
-        className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+        className="c3 sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -161,6 +1330,7 @@ Array [
       </svg>
       <input
         className="sinoui-checkbox__input"
+        onChange={[Function]}
         type="checkbox"
       />
     </span>
@@ -175,15 +1345,215 @@ Array [
 
 exports[`Checkbox组件 快照测试 指定颜色 1`] = `
 Array [
-  <span
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #3f51b5;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jHLTaR sinoui-checkbox sinoui-checkbox--checked"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -196,18 +1566,219 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #f50057;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(245,0,87,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(245,0,87,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jBFTCS sinoui-checkbox sinoui-checkbox--checked"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="secondary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -220,18 +1791,219 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #f44336;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(244,67,54,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(244,67,54,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 gzBgaT sinoui-checkbox sinoui-checkbox--checked"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="error"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -244,18 +2016,219 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #ff9800;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(255,152,0,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(255,152,0,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dPwwdG sinoui-checkbox sinoui-checkbox--checked"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="warning"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -268,18 +2241,219 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #4caf50;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(76,175,80,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(76,175,80,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 FhDfu sinoui-checkbox sinoui-checkbox--checked"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="success"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -292,18 +2466,219 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #2196f3;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(33,150,243,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(33,150,243,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 aFmZi sinoui-checkbox sinoui-checkbox--checked"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="info"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -316,18 +2691,219 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0);
+}
+
+.c1:focus {
+  background-color: rgba(0,0,0,0);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+<span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 dMlvTj sinoui-checkbox sinoui-checkbox--checked"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="actionActive"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -340,18 +2916,219 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.26);
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0);
+}
+
+.c1:focus {
+  background-color: rgba(0,0,0,0);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+<span
     checked={true}
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 feGvgh sinoui-checkbox sinoui-checkbox--checked"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--checked"
     color="actionDisabled"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -364,6 +3141,7 @@ Array [
     <input
       checked={true}
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
@@ -372,15 +3150,187 @@ Array [
 
 exports[`Checkbox组件 快照测试 设置只读 1`] = `
 Array [
-  <span
-    className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox sinoui-checkbox--disabled"
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+<span
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--disabled"
     color="primary"
     disabled={true}
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -393,18 +3343,191 @@ Array [
     <input
       className="sinoui-checkbox__input"
       disabled={true}
+      onChange={[Function]}
       type="checkbox"
     />
   </span>,
-  <span
-    className="BaseButton__BaseButtonLayout-wk8p17-0 GZpaL sinoui-base-button BaseCheckboxButton__BaseToggleButton-sc-13yu3k8-0 jpvRn sinoui-checkbox sinoui-checkbox--read-only"
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  border: 0px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: rgba(0,0,0,0.6);
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+}
+
+.c1 .sinoui-svg-icon {
+  font-size: 24px;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c1:focus {
+  background-color: rgba(63,81,181,0.04);
+}
+
+.c1.sinoui-checkbox--disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c1.sinoui-checkbox--readOnly {
+  color: rgba(0,0,0,0.38);
+}
+
+.c1 .sinoui-checkbox__input {
+  cursor: inherit;
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.c1 .sinoui-checkbox__ripple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.c1 .sinoui-checkbox__ripple-layout {
+  width: 40px;
+  height: 40px;
+}
+
+.c1.sinoui-checkbox--dense {
+  height: 32px;
+  width: 32px;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.c1.sinoui-checkbox--dense .sinoui-checkbox__ripple-layout {
+  width: 32px;
+  height: 32px;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c1:hover {
+    background-color: transparent;
+  }
+}
+
+<span
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--read-only"
     color="primary"
     disabled={true}
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
       aria-hidden="true"
-      className="SvgIcon-sc-1015m7s-0 kTyazq sinoui-svg-icon"
+      className="c2 sinoui-svg-icon"
       focusable="false"
       role="presentation"
       size={24}
@@ -416,6 +3539,7 @@ Array [
     </svg>
     <input
       className="sinoui-checkbox__input"
+      onChange={[Function]}
       readOnly={true}
       type="checkbox"
     />

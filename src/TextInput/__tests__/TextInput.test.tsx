@@ -6,6 +6,7 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import InputAdornment from '@sinoui/core/InputAdornment';
+import FormControl from '@sinoui/core/FormControl';
 import TextInput from '../TextInput';
 
 it('正确渲染三种模式下的输入框', () => {
@@ -249,6 +250,50 @@ it('无标签', () => {
   expect(getByTestId('input')).toHaveClass('sinoui-text-input--no-label');
 });
 
+it('在表单控件中使用', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl label="姓名">
+        <TextInput
+          wrapperProps={{
+            'data-testid': 'input',
+          }}
+        />
+      </FormControl>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).toHaveClass('sinoui-text-input--no-label');
+});
+
+it('在表单控件中使用浮动标签', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl label="姓名" labelLayout="floating">
+        <TextInput
+          wrapperProps={{
+            'data-testid': 'input',
+          }}
+        />
+      </FormControl>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).not.toHaveClass('sinoui-text-input--no-label');
+});
+
+it('输入框作为表单控件使用', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TextInput field wrapperProps={{ 'data-testid': 'input' }} />
+    </ThemeProvider>,
+  );
+
+  const input = getByTestId('input');
+
+  expect(input).toHaveClass('sinoui-form-control');
+  expect(input.querySelector('.sinoui-helper-line')).toBeTruthy();
+});
 it('错误状态', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>

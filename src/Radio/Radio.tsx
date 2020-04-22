@@ -1,28 +1,38 @@
 import React from 'react';
-import { withLabel } from '@sinoui/core/Checkbox';
-import type { FormControlWithLabelProps } from '@sinoui/core/Checkbox';
+import {
+  withLabel,
+  FormControlWithLabelProps,
+} from '@sinoui/core/FormControlLabel';
 import RadioButton from './RadioButton';
 
-export interface RadioProps
-  extends FormControlWithLabelProps<string, HTMLInputElement> {
+export type RadioProps<T> = FormControlWithLabelProps<T, HTMLInputElement> &
+  RadioExtendProps;
+
+export interface RadioExtendProps {
   /**
-   * 单选框的值
+   * 添加自定义类名
    */
-  value?: string;
+  className?: string;
+
   /**
-   * 子元素
+   * 点击时的回调函数
    */
-  children?: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /**
-   * 是否不可用
+   * 错误状态
    */
-  disabled?: boolean;
+  error?: any;
+  /**
+   * 设置为`true`，表示密集模式。
+   */
+  dense?: boolean;
+  id?: string;
 }
 
 /**
- * 带文字的Radio组件
+ * 带文字的单选按组件。
  */
-const Radio = withLabel<string, HTMLInputElement, RadioProps>('Radio')(
+const Radio = withLabel<any, HTMLInputElement, RadioProps<any>>('Radio')(
   RadioButton,
 );
 

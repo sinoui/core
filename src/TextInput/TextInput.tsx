@@ -1,13 +1,15 @@
 import React, { useState, useRef, useMemo } from 'react';
 import styled from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
+import HelperText from '@sinoui/core/HelperText';
+import FormLabel from '@sinoui/core/FormLabel';
 import FilledInput from './FilledInput';
 import OutlinedInput from './OutlinedInput';
-import InputLabel from './InputLabel';
 import Input from './Input';
-import HelperText from './HelperText';
 import bemClassNames from '../utils/bemClassNames';
 import { cssClasses } from './constant';
+import { useFormControlContext } from '../FormControl';
+import HelperLine from '../HelperLine';
 import isEmptyValue from './isEmptyValue';
 import mergeCallbacks from '../utils/mergeCallbacks';
 
@@ -52,6 +54,10 @@ export interface TextInputProps extends BaseInputProps {
    * 给根元素指定属性
    */
   wrapperProps?: Record<string, any>;
+  /**
+   * 将输入框作为表单控件使用
+   */
+  field?: boolean;
 }
 
 const variantComponent = {
@@ -60,9 +66,10 @@ const variantComponent = {
   outlined: OutlinedInput,
 };
 
-const TextInputWrapper = styled.div<{ disabled?: boolean }>`
-  display: inline-flex;
+const TextInputWrapper = styled.div<{ disabled?: boolean; field?: boolean }>`
+  display: ${({ field }) => (field ? 'flex' : 'inline-flex')};
   flex-direction: column;
+  align-items: stretch;
   position: relative;
 `;
 
@@ -75,6 +82,7 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
       variant = 'standard',
       baseClassName = cssClasses.textInput,
       label,
+      field,
       value,
       defaultValue,
       disabled,
@@ -94,7 +102,7 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
       onBlur,
       ...other
     } = props;
-    const labelRef = useRef<HTMLLabelElement>(null);
+    const innerLabelRef = useRef<HTMLLabelElement>(null);
     const [focused, setFocused] = useState(false);
     const shrink =
       shrinkProp ||
@@ -103,7 +111,11 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
       !!defaultValue ||
       !!placeholder ||
       !!startAdornment;
-    const noLabel = !label;
+    const formControlContext = useFormControlContext();
+    const noLabel =
+      !label &&
+      (!formControlContext || formControlContext.labelLayout !== 'floating');
+    const labelRef = label ? innerLabelRef : formControlContext?.labelRef;
 
     const handleBlur = useMemo(
       () => mergeCallbacks(onBlur, () => setFocused(false)),
@@ -143,6 +155,15 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
       inputProps.labelRef = labelRef;
     }
 
+    const helperTextContent = (
+      <>
+        {error && errorText && <HelperText error>{errorText}</HelperText>}
+        {!error && helperText && (
+          <HelperText disabled={disabled}>{helperText}</HelperText>
+        )}
+      </>
+    );
+
     return (
       <TextInputWrapper
         {...wrapperProps}
@@ -154,40 +175,40 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
             shrink,
             noLabel,
             ...inputState,
-            error,
+            error: !!error,
           },
           className,
+          field && 'sinoui-form-control',
         )}
         disabled={disabled}
         style={style}
         ref={ref}
+        field={field}
       >
         {label && (
-          <InputLabel
+          <FormLabel
+            layout="floating"
             {...inputState}
             error={!!error}
             variant={variant}
-            shrink={shrink}
+            filled={shrink}
             ref={labelRef}
           >
             {label}
-          </InputLabel>
+          </FormLabel>
         )}
         <InputComponent {...inputProps} />
-        {!!error && (
-          <HelperText error variant={variant} dense={dense}>
-            {errorText}
-          </HelperText>
-        )}
-        {!error && helperText && (
-          <HelperText disabeld={disabled} variant={variant} dense={dense}>
-            {helperText}
-          </HelperText>
+        {field ? (
+          <HelperLine>{helperTextContent}</HelperLine>
+        ) : (
+          helperTextContent
         )}
       </TextInputWrapper>
     );
   },
 );
+
+TextInput.sinouiName = 'TextInput';
 
 if (process.env.NODE_ENV === 'development') {
   TextInput.displayName = 'TextInput';

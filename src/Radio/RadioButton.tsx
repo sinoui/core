@@ -58,6 +58,22 @@ const ToggleButton = styled(BaseButton).attrs(() => ({
         getColorFromTheme(theme, color) as string,
       )};
   }
+
+  &.sinoui-radio--dense {
+    height: 32px;
+    width: 32px;
+
+    & .sinoui-radio__ripple {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    & .sinoui-radio__ripple-layout {
+      width: 32px;
+      height: 32px;
+    }
+  }
 `;
 
 const StyleInput = styled.input`
@@ -133,6 +149,10 @@ export interface Props {
    * 给input元素应用上样式类
    */
   inputClassName?: string;
+  /**
+   * true 表示是密集模式
+   */
+  dense?: boolean;
 }
 
 /**
@@ -172,6 +192,7 @@ function RadioButton(props: Props) {
     color = 'primary',
     className,
     inputClassName,
+    dense,
     ...other
   } = props;
 
@@ -200,6 +221,7 @@ function RadioButton(props: Props) {
         'sinoui-radio--checked': checked,
         'sinoui-radio--disabled': disabledProp,
         'sinoui-radio--readOnly': readOnlyProp,
+        'sinoui-radio--dense': dense,
       })}
       ripple={rippleConfig}
     >

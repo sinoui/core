@@ -1,6 +1,9 @@
 import React from 'react';
+import {
+  withLabel,
+  FormControlWithLabelProps,
+} from '@sinoui/core/FormControlLabel';
 import CheckboxButton from './BaseCheckboxButton';
-import withLabel, { FormControlWithLabelProps } from './withLabel';
 
 export type CheckboxProps<T> = FormControlWithLabelProps<T, HTMLInputElement> &
   CheckboxExtendProps;
@@ -19,13 +22,13 @@ export interface CheckboxExtendProps {
    */
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /**
-   * 双击时的回调函数
-   */
-  onDoubleClick?: (event: React.MouseEvent<HTMLElement>) => void;
-  /**
    * 错误状态
    */
   error?: any;
+  /**
+   * 设置为`true`，表示密集模式。
+   */
+  dense?: boolean;
 }
 
 /**

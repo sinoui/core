@@ -1,4 +1,5 @@
 import React from 'react';
+import { useFormControlContext } from '@sinoui/core/FormControl';
 import FormControlLabelContainer from './FormControlLabelContainer';
 
 export interface FormControlLabelProps {
@@ -16,7 +17,7 @@ export interface FormControlLabelProps {
   /**
    * 表单控件
    */
-  control: any;
+  control: React.ReactElement;
   /**
    * 不可用
    */
@@ -35,12 +36,15 @@ export default function FormControlLabel({
   control,
   labelPosition = 'right',
 }: FormControlLabelProps) {
+  const formControlContext = useFormControlContext();
   return (
     <FormControlLabelContainer
       className="sinoui-form-control-label"
       labelPosition={labelPosition}
       readOnly={control.props.readOnly}
       disabled={control.props.disabled}
+      onFocus={formControlContext?.onFocus}
+      onBlur={formControlContext?.onBlur}
     >
       {control}
       <span className="sinoui-form-control-label__title">{label}</span>

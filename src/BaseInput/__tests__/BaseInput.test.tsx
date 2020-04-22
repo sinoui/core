@@ -6,6 +6,7 @@ import { render, fireEvent, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import InputAdornment from '@sinoui/core/InputAdornment';
+import FormControlContext from '@sinoui/core/FormControl/FormControlContext';
 import BaseInput from '../BaseInput';
 
 afterEach(cleanup);
@@ -388,4 +389,37 @@ it('监听清除图标的点击事件', () => {
 
   expect(onClear).toBeCalled();
   expect(onChange).not.toBeCalled();
+});
+
+it('在FormControl上下文中使用', () => {
+  const onFocus = jest.fn();
+  const onBlur = jest.fn();
+
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControlContext.Provider value={{ onFocus, onBlur }}>
+        <BaseInput inputProps={{ 'data-testid': 'input' }} />
+      </FormControlContext.Provider>
+    </ThemeProvider>,
+  );
+
+  const input = getByTestId('input');
+
+  fireEvent.focus(input);
+  expect(onFocus).toBeCalled();
+
+  fireEvent.blur(input);
+  expect(onBlur).toBeCalled();
+});
+
+it('从表单控件上下文中获取id', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControlContext.Provider value={{ id: 'input_1' } as any}>
+        <BaseInput inputProps={{ 'data-testid': 'input' }} />
+      </FormControlContext.Provider>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('input')).toHaveAttribute('id', 'input_1');
 });

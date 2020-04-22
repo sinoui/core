@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface FormControlLabelContainerProps {
+  /**
+   * 标签位置
+   */
   labelPosition?: 'left' | 'right';
   children: React.ReactNode;
   /**
@@ -41,10 +44,10 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
   }
 
   > .sinoui-form-control-label__title {
-    padding: 0px 4px;
     word-break: break-all;
     word-wrap: break-word;
   }
+
   cursor: ${(props) =>
     props.readOnly || props.disabled ? 'default' : 'pointer'};
 `;

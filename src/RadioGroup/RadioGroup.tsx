@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import { removeUndefinedProperties } from '@sinoui/core/utils/objects';
-import FormGroup from './FormGroup';
+import FormGroup from '@sinoui/core/FormGroup';
+import Radio from '@sinoui/core/Radio';
+import type RadioGroupItem from './RadioGroupItem';
+import bemClassNames from '../utils/bemClassNames';
 
 const PaddingRightStyle = css`
   > label {
@@ -13,16 +14,8 @@ const PaddingRightStyle = css`
   }
 `;
 
-const marginLeftStyle = css`
-  > label:first-child {
-    margin-left: -12px;
-  }
-`;
-
-const columnMarginLeftStyle = css`
-  > label {
-    margin-left: -12px;
-  }
+const labelStyle = css<{ dense?: boolean }>`
+  transform: ${({ dense }) => `translate(-${dense ? 8 : 12}px, 0px)`};
 `;
 
 const FormGroupWrapper = styled(FormGroup)<{
@@ -32,29 +25,25 @@ const FormGroupWrapper = styled(FormGroup)<{
   &.sinoui-radio-group--column > .sinoui-form-control-label {
     width: 100%;
   }
-  ${({ labelPosition, column }) =>
-    labelPosition !== 'left' &&
-    (column ? columnMarginLeftStyle : marginLeftStyle)}
+  > label {
+    ${({ labelPosition }) => labelPosition !== 'left' && labelStyle}
+  }
   ${(props) => !props.column && PaddingRightStyle};
 `;
 
-export interface RadioGroupProps {
+export interface RadioGroupProps<T> {
   /**
    * 子元素。一般为一组`Radio`组件
    */
-  children: React.ReactNode | any;
+  children?: React.ReactNode | any;
   /**
-   * 选中选项的值
+   * 单选按钮的值
    */
-  value?: string | number;
+  value?: T;
   /**
-   * 值发生变化事件监听器
+   * 值发生变化的回调函数
    */
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    value: string | number,
-    form?: any,
-  ) => void;
+  onChange?: (value?: T) => void;
   /**
    * 标题位置。默认为right，标题会显示在radio图标的右侧
    */
@@ -74,7 +63,7 @@ export interface RadioGroupProps {
   /**
    * 指定Radio的颜色
    */
-  color?: boolean;
+  color?: string;
   /**
    * 只读
    */
@@ -95,37 +84,42 @@ export interface RadioGroupProps {
    * 设置是否纵向排列
    */
   column?: boolean;
+  /**
+   * true 表示是密集模式
+   */
+  dense?: boolean;
+  /**
+   * 相当于children
+   */
+  items?: RadioGroupItem<T>[];
 }
 
 /**
- * 单选按钮组组件。如果没有指定value属性或者value属性值为undefined时，RadioGroup组件就处于非受控状态，会自身维护选中状态。
+ * 从子节点中解析出选项
+ *
+ * @param children 子节点
  */
-function RadioGroup(props: RadioGroupProps) {
-  const { value } = props;
-  const isControlled: boolean = typeof value !== 'undefined';
-  const [val, setVal] = useState<string | number | any>(!isControlled && null);
-
-  const onRadioChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean,
-  ) => {
-    if (props.readOnly) {
-      return;
-    }
-
-    if (checked && props.onChange) {
-      if (!isControlled) {
-        setVal(event.target.value);
+const parseItemsFromChildren = (
+  children: React.ReactNode,
+): RadioGroupItem<any>[] => {
+  return (
+    React.Children.map(children, (item) => {
+      if (React.isValidElement(item) && item.props) {
+        const { children: label, value = label, id = value } = item.props;
+        return { id, value, label };
       }
+      return null;
+    })?.filter(Boolean) ?? []
+  );
+};
 
-      event.stopPropagation();
-      props.onChange(event, event.target.value);
-    }
-  };
-
+/**
+ * 单选按钮组组件。
+ */
+function RadioGroup<T = string>(props: RadioGroupProps<T>) {
   const {
     children,
-    value: valueProp,
+    value,
     labelPosition,
     disabled,
     onFocus,
@@ -135,40 +129,59 @@ function RadioGroup(props: RadioGroupProps) {
     onChange,
     column,
     className,
+    items = parseItemsFromChildren(children),
+    dense,
     ...rest
   } = props;
-  const valueNew = isControlled ? valueProp : val;
+
+  /**
+   * 处理选项点击事件
+   *
+   * @param itemValue 选项值
+   */
+  const handleItemClick = (itemValue: T) => () => {
+    if (readOnly) {
+      return;
+    }
+    if (onChange) {
+      if (value === itemValue) {
+        onChange();
+      } else {
+        onChange(itemValue);
+      }
+    }
+  };
+
   return (
     <FormGroupWrapper
       {...rest}
-      className={classNames('sinoui-radio-group', className, {
-        'sinoui-radio-group--column': column,
-        'sinoui-radio-group--disabled': disabled,
-        'sinoui-radio-group--readOnly': readOnly,
-      })}
+      className={bemClassNames(
+        'sinoui-radio-group',
+        {
+          column,
+          disabled,
+          readOnly,
+        },
+        className,
+      )}
       column={column}
       labelPosition={labelPosition}
     >
-      {React.Children.map(
-        children,
-        (radio: React.ReactElement<RadioGroupProps>) => {
-          if (React.isValidElement(radio)) {
-            const radioValue = radio.props.value || radio.props.children;
-            const radioProps: {} = removeUndefinedProperties({
-              checked: valueNew === radioValue,
-              onChange: onRadioChange,
-              disabled: radio.props.disabled || disabled,
-              readOnly,
-              onBlur: !readOnly && onBlur,
-              onFocus: !readOnly && onFocus,
-              color,
-              labelPosition,
-            });
-            return React.cloneElement(radio, radioProps);
-          }
-          return radio;
-        },
-      )}
+      {items.map((item) => (
+        <Radio
+          key={item.id ?? item.value}
+          value={item.value}
+          readOnly={readOnly}
+          disabled={disabled}
+          dense={dense}
+          labelPosition={labelPosition}
+          color={color}
+          checked={value === item.value}
+          onClick={handleItemClick(item.value)}
+        >
+          {item.label}
+        </Radio>
+      ))}
     </FormGroupWrapper>
   );
 }

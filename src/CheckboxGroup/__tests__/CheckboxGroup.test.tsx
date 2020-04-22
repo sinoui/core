@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 import Checkbox from '@sinoui/core/Checkbox';
+import 'jest-styled-components';
 
 /**
  * CheckboxGroup 单元测试
@@ -30,15 +31,21 @@ describe('CheckboxGroup 单元测试', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
         <CheckboxGroup
-          items={[<Checkbox value="1">复选框</Checkbox>]}
+          items={[
+            {
+              value: '1',
+              label: '选项1',
+            },
+          ]}
           data-testid="checkboxGroup"
         />
       </ThemeProvider>,
     );
 
     const checkboxGroup = getByTestId('checkboxGroup');
-    expect(checkboxGroup).toHaveTextContent('复选框');
+    expect(checkboxGroup).toHaveTextContent('选项1');
   });
+
   test('测试复选框不可用', async () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
@@ -67,7 +74,7 @@ describe('CheckboxGroup 单元测试', () => {
     expect(check.length).toBe(4);
 
     const selectAll = container.querySelector(
-      '.sinoui-checkboxGroup-selectAll',
+      '.sinoui-checkbox-group__select-all',
     );
 
     expect(selectAll).toBeTruthy();
@@ -105,35 +112,32 @@ describe('CheckboxGroup 单元测试', () => {
       fireEvent.click(allSelectCheckbox);
     });
 
-    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toBeCalledWith(['1', '2', '3']);
   });
 
-  test('非受控使用，即无value', () => {
+  test('全选状态点击全选', () => {
     const onChange = jest.fn();
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <CheckboxGroup onChange={onChange}>
+        <CheckboxGroup
+          enableSelectAll
+          onChange={onChange}
+          value={['1', '2', '3']}
+        >
           <Checkbox value="1">复选框</Checkbox>
           <Checkbox value="2">复选框2</Checkbox>
           <Checkbox value="3">复选框3</Checkbox>
         </CheckboxGroup>
       </ThemeProvider>,
     );
-    const checkboxInput = container.querySelectorAll(
-      '.sinoui-checkbox__input',
-    )[1] as HTMLElement;
 
-    expect(checkboxInput).not.toBeChecked();
+    const allSelectCheckbox = container.querySelectorAll('.sinoui-checkbox')[0];
 
     act(() => {
-      fireEvent.change(checkboxInput, {
-        target: {
-          checked: true,
-        },
-      });
+      fireEvent.click(allSelectCheckbox);
     });
 
-    expect(checkboxInput).toBeChecked();
+    expect(onChange).toBeCalledWith([]);
   });
 
   test('切换选中状态', () => {
@@ -192,10 +196,14 @@ describe('CheckboxGroup组件 快照测试', () => {
           <CheckboxGroup
             onChange={(value) => console.log(value)}
             items={[
-              <Checkbox value="1">复选框1</Checkbox>,
-              <Checkbox value="2">复选框2</Checkbox>,
-              <Checkbox value="3">复选框3</Checkbox>,
-              <Checkbox value="4">复选框4</Checkbox>,
+              {
+                value: '1',
+                label: '选项1',
+              },
+              {
+                value: '2',
+                label: '选项2',
+              },
             ]}
           />
         </ThemeProvider>,
@@ -285,7 +293,7 @@ describe('CheckboxGroup组件 快照测试', () => {
         <ThemeProvider theme={defaultTheme}>
           <>
             <p>默认：</p>
-            <CheckboxGroup gridLayout>
+            <CheckboxGroup columns={3}>
               <Checkbox value="1">复选框1</Checkbox>
               <Checkbox value="2">复选框2</Checkbox>
               <Checkbox value="3">复选框3</Checkbox>
@@ -293,7 +301,7 @@ describe('CheckboxGroup组件 快照测试', () => {
               <Checkbox value="5">复选框5</Checkbox>
             </CheckboxGroup>
             <p>设置colums为4：</p>
-            <CheckboxGroup gridLayout columns={4}>
+            <CheckboxGroup columns={4}>
               <Checkbox value="1">复选框1</Checkbox>
               <Checkbox value="2">复选框2</Checkbox>
               <Checkbox value="3">复选框3</Checkbox>

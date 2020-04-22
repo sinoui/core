@@ -1,0 +1,23 @@
+---
+id: form-label
+title: FormLabel
+---
+
+标签组件。
+
+## 属性
+
+| 属性名称  | 属性类型                             | 默认值     | 属性说明                                                                                   |
+| --------- | ------------------------------------ | ---------- | ------------------------------------------------------------------------------------------ |
+| required  | boolean                              |            | 如果设为`true`，则标签左侧显示\*                                                           |
+| error     | boolean                              |            | 如果设为`true`，则为错误状态                                                               |
+| focused   | boolean                              |            | 如果设为`true`，则为焦点状态                                                               |
+| disabled  | boolean                              |            | 如果设为`true`，则为禁用状态                                                               |
+| color     | string                               | 'primary'  | 标签处于聚焦状态时的颜色                                                                   |
+| layout    | 'floating' \| 'shrink' \| 'standard' | 'shrink'   | 标签布局模式                                                                               |
+| filled    | boolean                              |            | 如果设为`true`，则表示输入框有值，此时标签处于浮动状态(需要同时将 layout 设置为`floating`) |
+| variant   | 'standard' \| 'filled' \| 'outlined' | 'standard' | 输入框的三种形态                                                                           |
+| dense     | boolean                              | false      | 如果设为`true`，则为密集模式                                                               |
+| className | string                               |            | 为根元素指定 css 类                                                                        |
+| style     | CSSProperties                        |            | 为根元素指定 css 样式                                                                      |
+| children  | React.ReactNode                      |            | 子元素                                                                                     |

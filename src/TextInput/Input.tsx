@@ -37,6 +37,13 @@ const StandardInput: React.SFC<InputProps> = styled(BaseInput)<InputProps>`
     margin-top: 16px;
   }
 
+  .sinoui-form-item--floating
+    > .sinoui-form-item__content
+    > .sinoui-text-input
+    > & {
+    margin-top: 16px;
+  }
+
   ${({ multiline }) => (multiline ? '&' : '> .sinoui-base-input__input')} {
     padding: 3.5px 0px 4.5px;
     ${({ noLabel }) => noLabel && noLabelStyle}

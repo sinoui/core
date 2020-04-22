@@ -1,8 +1,6 @@
-import Checkbox, { CheckboxProps } from './Checkbox';
+import Checkbox from './Checkbox';
 import CheckboxButton from './BaseCheckboxButton';
-import withLabel, { FormControlWithLabelProps } from './withLabel';
 
-export type { CheckboxProps, FormControlWithLabelProps };
-export { CheckboxButton, withLabel };
-
+export type { CheckboxProps } from './Checkbox';
+export { CheckboxButton };
 export default Checkbox;

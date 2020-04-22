@@ -1,6 +1,99 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`正确渲染三种模式下的输入框 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(0px,24px) scale(1);
+  -ms-transform: translate(0px,24px) scale(1);
+  transform: translate(0px,24px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(14px,-6px) scale(0.75);
+  -ms-transform: translate(14px,-6px) scale(0.75);
+  transform: translate(14px,-6px) scale(0.75);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -300,102 +393,15 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   margin-left: -14px;
 }
 
-.c1 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  will-change: transform;
-  max-width: calc( 100% - 0px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c4 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transform: translate(12px,20px) scale(1);
-  -ms-transform: translate(12px,20px) scale(1);
-  transform: translate(12px,20px) scale(1);
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  will-change: transform;
-  max-width: calc( 100% - 24px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c6 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transform: translate(14px,20px) scale(1);
-  -ms-transform: translate(14px,20px) scale(1);
-  transform: translate(14px,20px) scale(1);
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transform: translate(0,1.5px) scale(0.75);
-  -ms-transform: translate(0,1.5px) scale(0.75);
-  transform: translate(0,1.5px) scale(0.75);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: translate(14px,-6px) scale(0.75);
-  -ms-transform: translate(14px,-6px) scale(0.75);
-  transform: translate(14px,-6px) scale(0.75);
-  will-change: transform;
-  max-width: calc( 100% - 28px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .c3 {
   color: rgba(0,0,0,0.87);
 }
 
 label ~ .c3 {
+  margin-top: 16px;
+}
+
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
   margin-top: 16px;
 }
 
@@ -462,6 +468,10 @@ label ~ .c3 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   position: relative;
 }
 
@@ -470,7 +480,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input"
   >
     <label
-      className="c1 sinoui-input-label"
+      className="c1 sinoui-form-label"
     >
       用户名
     </label>
@@ -491,7 +501,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--filled"
   >
     <label
-      className="c4 sinoui-input-label sinoui-input-label--filled"
+      className="c4 sinoui-form-label"
     >
       用户名
     </label>
@@ -515,7 +525,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink"
   >
     <label
-      className="c6 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
+      className="c6 sinoui-form-label"
     >
       用户名
     </label>
@@ -554,6 +564,80 @@ label ~ .c3 {
 `;
 
 exports[`渲染不可用状态下三种形态输入框 1`] = `
+.c4 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: rgba(0,0,0,0.38);
+  text-align: left;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.38);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(0px,24px) scale(1);
+  -ms-transform: translate(0px,24px) scale(1);
+  transform: translate(0px,24px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.38);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -742,60 +826,15 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   background-color: rgba(0,0,0,0.26);
 }
 
-.c1 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  color: rgba(0,0,0,0.38);
-  will-change: transform;
-  max-width: calc( 100% - 0px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c5 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transform: translate(12px,20px) scale(1);
-  -ms-transform: translate(12px,20px) scale(1);
-  transform: translate(12px,20px) scale(1);
-  z-index: 1;
-  pointer-events: none;
-  color: rgba(0,0,0,0.38);
-  will-change: transform;
-  max-width: calc( 100% - 24px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .c3 {
   color: rgba(0,0,0,0.38);
 }
 
 label ~ .c3 {
+  margin-top: 16px;
+}
+
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
   margin-top: 16px;
 }
 
@@ -853,31 +892,6 @@ label ~ .c3 {
   background-color: rgba(0,0,0,0.26);
 }
 
-.c4 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  color: rgba(0,0,0,0.38);
-}
-
-.c7 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  color: rgba(0,0,0,0.38);
-  margin: 8px 12px 0;
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -886,6 +900,10 @@ label ~ .c3 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   position: relative;
 }
 
@@ -895,7 +913,7 @@ label ~ .c3 {
     disabled={true}
   >
     <label
-      className="c1 sinoui-input-label sinoui-input-label--disabled"
+      className="c1 sinoui-form-label"
       disabled={true}
     >
       用户名
@@ -914,18 +932,19 @@ label ~ .c3 {
         onFocus={[Function]}
       />
     </div>
-    <p
-      className="c4"
+    <div
+      className="c4 sinoui-helper-text"
+      disabled={true}
     >
       输入用户名
-    </p>
+    </div>
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--disabled"
     disabled={true}
   >
     <label
-      className="c5 sinoui-input-label sinoui-input-label--disabled sinoui-input-label--filled"
+      className="c5 sinoui-form-label"
       disabled={true}
     >
       用户名
@@ -947,11 +966,12 @@ label ~ .c3 {
         className="sinoui-input__overlay"
       />
     </div>
-    <p
-      className="c7"
+    <div
+      className="c4 sinoui-helper-text"
+      disabled={true}
     >
       输入用户名
-    </p>
+    </div>
   </div>
 </div>
 `;
@@ -996,6 +1016,99 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 
 [disabled] > .c4 {
   color: rgba(0,0,0,0.38);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(0px,1.5px) scale(0.75);
+  -ms-transform: translate(0px,1.5px) scale(0.75);
+  transform: translate(0px,1.5px) scale(0.75);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(12px,9px) scale(0.75);
+  -ms-transform: translate(12px,9px) scale(0.75);
+  transform: translate(12px,9px) scale(0.75);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(14px,-6px) scale(0.75);
+  -ms-transform: translate(14px,-6px) scale(0.75);
+  transform: translate(14px,-6px) scale(0.75);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c2 {
@@ -1297,117 +1410,15 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   margin-left: -14px;
 }
 
-.c1 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transform: translate(0,1.5px) scale(0.75);
-  -ms-transform: translate(0,1.5px) scale(0.75);
-  transform: translate(0,1.5px) scale(0.75);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  will-change: transform;
-  max-width: calc( 100% - 0px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c6 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transform: translate(12px,20px) scale(1);
-  -ms-transform: translate(12px,20px) scale(1);
-  transform: translate(12px,20px) scale(1);
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transform: translate(0,1.5px) scale(0.75);
-  -ms-transform: translate(0,1.5px) scale(0.75);
-  transform: translate(0,1.5px) scale(0.75);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: translate(12px,9px) scale(0.75);
-  -ms-transform: translate(12px,9px) scale(0.75);
-  transform: translate(12px,9px) scale(0.75);
-  will-change: transform;
-  max-width: calc( 100% - 24px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c8 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transform: translate(14px,20px) scale(1);
-  -ms-transform: translate(14px,20px) scale(1);
-  transform: translate(14px,20px) scale(1);
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transform: translate(0,1.5px) scale(0.75);
-  -ms-transform: translate(0,1.5px) scale(0.75);
-  transform: translate(0,1.5px) scale(0.75);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: translate(14px,-6px) scale(0.75);
-  -ms-transform: translate(14px,-6px) scale(0.75);
-  transform: translate(14px,-6px) scale(0.75);
-  will-change: transform;
-  max-width: calc( 100% - 28px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .c3 {
   color: rgba(0,0,0,0.87);
 }
 
 label ~ .c3 {
+  margin-top: 16px;
+}
+
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
   margin-top: 16px;
 }
 
@@ -1474,6 +1485,10 @@ label ~ .c3 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   position: relative;
 }
 
@@ -1482,7 +1497,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--shrink"
   >
     <label
-      className="c1 sinoui-input-label sinoui-input-label--shrink"
+      className="c1 sinoui-form-label"
     >
       金额
     </label>
@@ -1514,7 +1529,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--shrink"
   >
     <label
-      className="c6 sinoui-input-label sinoui-input-label--filled sinoui-input-label--shrink"
+      className="c6 sinoui-form-label"
     >
       金额
     </label>
@@ -1549,7 +1564,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink"
   >
     <label
-      className="c8 sinoui-input-label sinoui-input-label--outlined sinoui-input-label--shrink"
+      className="c8 sinoui-form-label"
     >
       金额
     </label>
@@ -1640,6 +1655,99 @@ exports[`渲染带后缀元素的输入框 1`] = `
   color: rgba(0,0,0,0.38);
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(0px,24px) scale(1);
+  -ms-transform: translate(0px,24px) scale(1);
+  transform: translate(0px,24px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(14px,20px) scale(1);
+  -ms-transform: translate(14px,20px) scale(1);
+  transform: translate(14px,20px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1939,93 +2047,15 @@ exports[`渲染带后缀元素的输入框 1`] = `
   margin-left: -14px;
 }
 
-.c1 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  will-change: transform;
-  max-width: calc( 100% - 0px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c6 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transform: translate(12px,20px) scale(1);
-  -ms-transform: translate(12px,20px) scale(1);
-  transform: translate(12px,20px) scale(1);
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  will-change: transform;
-  max-width: calc( 100% - 24px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c8 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transform: translate(14px,20px) scale(1);
-  -ms-transform: translate(14px,20px) scale(1);
-  transform: translate(14px,20px) scale(1);
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  will-change: transform;
-  max-width: calc( 100% - 28px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .c3 {
   color: rgba(0,0,0,0.87);
 }
 
 label ~ .c3 {
+  margin-top: 16px;
+}
+
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
   margin-top: 16px;
 }
 
@@ -2092,6 +2122,10 @@ label ~ .c3 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   position: relative;
 }
 
@@ -2100,7 +2134,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input"
   >
     <label
-      className="c1 sinoui-input-label"
+      className="c1 sinoui-form-label"
     >
       重量
     </label>
@@ -2132,7 +2166,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--filled"
   >
     <label
-      className="c6 sinoui-input-label sinoui-input-label--filled"
+      className="c6 sinoui-form-label"
     >
       重量
     </label>
@@ -2167,7 +2201,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--outlined"
   >
     <label
-      className="c8 sinoui-input-label sinoui-input-label--outlined"
+      className="c8 sinoui-form-label"
     >
       重量
     </label>
@@ -2217,6 +2251,80 @@ label ~ .c3 {
 `;
 
 exports[`渲染有辅助性文字的输入框 1`] = `
+.c4 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: rgba(0,0,0,0.6);
+  text-align: left;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(0px,24px) scale(1);
+  -ms-transform: translate(0px,24px) scale(1);
+  transform: translate(0px,24px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: rgba(0,0,0,0.6);
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2424,64 +2532,15 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   opacity: 0.04;
 }
 
-.c1 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  will-change: transform;
-  max-width: calc( 100% - 0px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c5 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transform: translate(12px,20px) scale(1);
-  -ms-transform: translate(12px,20px) scale(1);
-  transform: translate(12px,20px) scale(1);
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  will-change: transform;
-  max-width: calc( 100% - 24px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 .c3 {
   color: rgba(0,0,0,0.87);
 }
 
 label ~ .c3 {
+  margin-top: 16px;
+}
+
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
   margin-top: 16px;
 }
 
@@ -2540,29 +2599,6 @@ label ~ .c3 {
   height: 1px;
 }
 
-.c4 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-}
-
-.c7 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  margin: 8px 12px 0;
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2571,6 +2607,10 @@ label ~ .c3 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   position: relative;
 }
 
@@ -2579,7 +2619,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input"
   >
     <label
-      className="c1 sinoui-input-label"
+      className="c1 sinoui-form-label"
     >
       用户名
     </label>
@@ -2595,17 +2635,17 @@ label ~ .c3 {
         onFocus={[Function]}
       />
     </div>
-    <p
-      className="c4"
+    <div
+      className="c4 sinoui-helper-text"
     >
       输入用户名
-    </p>
+    </div>
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled"
   >
     <label
-      className="c5 sinoui-input-label sinoui-input-label--filled"
+      className="c5 sinoui-form-label"
     >
       用户名
     </label>
@@ -2624,16 +2664,100 @@ label ~ .c3 {
         className="sinoui-input__overlay"
       />
     </div>
-    <p
-      className="c7"
+    <div
+      className="c4 sinoui-helper-text"
     >
       输入用户名
-    </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`渲染有错误提示的输入框 1`] = `
+.c4 {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  -webkit-letter-spacing: 0.03333em;
+  -moz-letter-spacing: 0.03333em;
+  -ms-letter-spacing: 0.03333em;
+  letter-spacing: 0.03333em;
+  color: #f44336;
+  text-align: left;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: #f44336;
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(0px,24px) scale(1);
+  -ms-transform: translate(0px,24px) scale(1);
+  transform: translate(0px,24px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c1::after {
+  content: '*';
+  padding: 4px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  color: #f44336;
+  box-sizing: border-box;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  line-height: 1.15;
+  -webkit-transform: translate(12px,20px) scale(1);
+  -ms-transform: translate(12px,20px) scale(1);
+  transform: translate(12px,20px) scale(1);
+  will-change: transform;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c5::after {
+  content: '*';
+  padding: 4px;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2839,76 +2963,15 @@ exports[`渲染有错误提示的输入框 1`] = `
   opacity: 0.04;
 }
 
-.c1 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  color: #f44336;
-  will-change: transform;
-  max-width: calc( 100% - 0px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c1::after {
-  content: '*';
-  padding: 4px;
-}
-
-.c5 {
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
-  line-height: 1.15;
-  font-size: 1rem;
-  -webkit-transform: translate(0,24px) scale(1);
-  -ms-transform: translate(0,24px) scale(1);
-  transform: translate(0,24px) scale(1);
-  -webkit-transform: translate(12px,20px) scale(1);
-  -ms-transform: translate(12px,20px) scale(1);
-  transform: translate(12px,20px) scale(1);
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
-  color: #f44336;
-  will-change: transform;
-  max-width: calc( 100% - 24px );
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.c5::after {
-  content: '*';
-  padding: 4px;
-}
-
 .c3 {
   color: rgba(0,0,0,0.87);
 }
 
 label ~ .c3 {
+  margin-top: 16px;
+}
+
+.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
   margin-top: 16px;
 }
 
@@ -2965,31 +3028,6 @@ label ~ .c3 {
   transform: scaleX(1) scaleY(1);
 }
 
-.c4 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  color: #f44336;
-}
-
-.c7 {
-  color: rgba(0,0,0,0.6);
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-size: 0.75rem;
-  text-align: left;
-  line-height: 0.75rem;
-  min-height: 0.75rem;
-  margin: 0;
-  margin-top: 8px;
-  color: #f44336;
-  margin: 8px 12px 0;
-}
-
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -2998,6 +3036,10 @@ label ~ .c3 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   position: relative;
 }
 
@@ -3006,7 +3048,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--required sinoui-text-input--error"
   >
     <label
-      className="c1 sinoui-input-label sinoui-input-label--error"
+      className="c1 sinoui-form-label"
       required={true}
     >
       用户名
@@ -3024,17 +3066,17 @@ label ~ .c3 {
         onFocus={[Function]}
       />
     </div>
-    <p
-      className="c4"
+    <div
+      className="c4 sinoui-helper-text"
     >
       必填
-    </p>
+    </div>
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--required sinoui-text-input--error"
   >
     <label
-      className="c5 sinoui-input-label sinoui-input-label--error sinoui-input-label--filled"
+      className="c5 sinoui-form-label"
       required={true}
     >
       用户名
@@ -3055,11 +3097,11 @@ label ~ .c3 {
         className="sinoui-input__overlay"
       />
     </div>
-    <p
-      className="c7"
+    <div
+      className="c4 sinoui-helper-text"
     >
       必填
-    </p>
+    </div>
   </div>
 </div>
 `;

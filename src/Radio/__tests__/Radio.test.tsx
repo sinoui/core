@@ -5,6 +5,7 @@ import { render, cleanup, act, fireEvent } from '@testing-library/react';
 import Radio from '@sinoui/core/Radio';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import 'jest-styled-components';
 
 /**
  * Radio组件 单元测试

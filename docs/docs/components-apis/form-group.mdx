@@ -1,0 +1,23 @@
+---
+id: form-group
+title: FormGroup
+---
+
+表单分组组件。可以用来分组复选按钮、开关和单选按钮。推荐使用 `CheckboxGroup` 分组复选按钮，使用 `RadioGroup` 分组单选按钮。
+
+`FormGroup` 默认会水平排列选项，可以通过 `column` 属性设置为纵向排序分组中的选项。
+
+## 属性
+
+| 属性名称 | 属性类型        | 默认值 | 属性说明                                                                   |
+| -------- | --------------- | ------ | -------------------------------------------------------------------------- |
+| column   | boolean         | false  | 设置为`true`，则会纵向排列分组中的选项。默认为 `false`，表示水平排列。     |
+| columns  | number          | 0      | 设置纵向排列分组选项的列数，如设置为 `3` 表示将选项按照 3 列进行分组排列。 |
+| as       | React.ReactType | 'div'  | 设置根元素类型。                                                           |
+
+`FormGroup` 组件还继承 `div` 元素所有的属性，也支持通过 `ref` 属性引用 dom 元素。
+
+## 示例
+
+- [Checkbox](../components/checkbox)
+- [Radio](../components/radio)

@@ -93,6 +93,22 @@ const BaseToggleButton = styled(BaseButton).attrs(() => ({
     width: 40px;
     height: 40px;
   }
+
+  &.sinoui-checkbox--dense {
+    height: 32px;
+    width: 32px;
+
+    & .sinoui-checkbox__ripple {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    & .sinoui-checkbox__ripple-layout {
+      width: 32px;
+      height: 32px;
+    }
+  }
 `;
 
 export interface Props {
@@ -123,7 +139,7 @@ export interface Props {
   /**
    * 复选框发生状态变化时调用的回调函数
    */
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (checked: boolean) => void;
   /**
    * 添加自定义类名
    */
@@ -157,6 +173,10 @@ export interface Props {
    * 指定颜色
    */
   color?: string;
+  /**
+   * true 表示是密集模式
+   */
+  dense?: boolean;
 }
 
 const checkedCheckboxIcon = <CheckBox />;
@@ -182,6 +202,7 @@ export default function BaseCheckboxButton(props: Props) {
     onClick,
     color = 'primary',
     inputClassName,
+    dense,
     ...rest
   } = props;
 
@@ -207,6 +228,15 @@ export default function BaseCheckboxButton(props: Props) {
     fixSize: true,
   };
 
+  const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
+    if (onChange && !disabled && !readOnly) {
+      onChange(!checked);
+    }
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
   return (
     <BaseToggleButton
       disabled={disabled || readOnly}
@@ -215,12 +245,13 @@ export default function BaseCheckboxButton(props: Props) {
         'sinoui-checkbox--checked': checked,
         'sinoui-checkbox--indeterminate': indeterminate,
         'sinoui-checkbox--read-only': readOnly,
+        'sinoui-checkbox--dense': dense,
       })}
       color={color}
-      onClick={onClick}
       ripple={rippleConfig}
       checked={checked}
       indeterminate={indeterminate}
+      onClick={handleClick}
       {...rest}
     >
       {iconWrapper()}
@@ -229,7 +260,7 @@ export default function BaseCheckboxButton(props: Props) {
         type="checkbox"
         name={name}
         checked={checked}
-        onChange={onChange}
+        onChange={(event) => event.stopPropagation()}
         disabled={disabled}
         readOnly={readOnly}
         tabIndex={tabIndex}

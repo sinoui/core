@@ -11,10 +11,10 @@ const DemoWrapper = styled.div`
   margin: 16px 0 32px;
 `;
 
-const Demo: React.SFC = ({ children }) => {
+const Demo: React.SFC = (props) => {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <DemoWrapper>{children}</DemoWrapper>
+      <DemoWrapper {...props} />
     </ThemeProvider>
   );
 };

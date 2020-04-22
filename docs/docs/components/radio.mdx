@@ -1,16 +1,64 @@
 ---
-id: radioGroup
-title: RadioGroup 单选框组
+id: radio
+title: Radio 单选框
 ---
 
-RadioGroup 单选框组组件。
+Radio 单选框组件。
+
+RadioGroup 单选框分组组件。
 
 import { useCallback } from 'react';
 import RadioGroup from '@sinoui/core/RadioGroup';
 import Radio from '@sinoui/core/Radio';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import RadioDemo from './radioGroup-demos/RadioDemo';
 import RadioGroupDemo from './radioGroup-demos/RadioGroupDemo';
+
+## Radio
+
+```tsx
+import React, { useState } from 'react';
+import Radio from '@sinoui/core/Radio';
+
+export default function RadioDemo() {
+  const [checked, setChecked] = useState(false);
+
+  return <Radio checked={checked} onChange={setChecked} />;
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <RadioDemo>选项1</RadioDemo>
+</ThemeProvider>
+
+## 状态
+
+通过 `checked` 属性可以控制单选按钮的选中状态。
+
+```tsx
+import Radio from '@sinoui/core/Radio';
+
+function RadioDemo() {
+  return (
+    <>
+      <Radio />
+      <Radio checked />
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <>
+    <Radio />
+    <Radio checked />
+  </>
+</ThemeProvider>
 
 ## RadioGroup
 
@@ -167,3 +215,8 @@ function RadioGroupDemo() {
     <RadioGroupDemo labelPosition="left" />
   </>
 </ThemeProvider>
+
+## API
+
+- [Radio](../components-apis/radio)
+- [RadioGroup](../components-apis/radioGroup)

@@ -17,7 +17,7 @@ const optionStyle = {
 };
 
 const toNum = (v: string | undefined) =>
-  !v || isNaN(v) ? undefined : parseInt(v, 10);
+  !v || isNaN(parseInt(v, 0)) ? undefined : parseInt(v, 10);
 
 function MultilineTextInputDemo() {
   const [value, setValue] = useState('');
@@ -46,11 +46,7 @@ function MultilineTextInputDemo() {
         >
           variant
         </label>
-        <RadioGroup
-          id="variant"
-          value={variant}
-          onChange={(event) => setVariant(event.target.value as any)}
-        >
+        <RadioGroup id="variant" value={variant} onChange={setVariant as any}>
           <Radio value="standard">standard</Radio>
           <Radio value="filled">filled</Radio>
           <Radio value="outlined">outlined</Radio>
