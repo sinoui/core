@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`渲染不可用选择框 1`] = `
+.c0.c0 {
+  min-width: 120px;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+}
+
+.c1 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0px;
+  background: transparent;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+
+<div
+  className="c0"
+>
+  <select
+    className="c1"
+    disabled={true}
+    onChange={[Function]}
+  >
+    <optgroup>
+      <option
+        aria-label="None"
+        value=""
+      />
+      <option
+        value="1"
+      >
+        选项一
+      </option>
+    </optgroup>
+  </select>
+</div>
+`;
+
+exports[`渲染原生选择框 1`] = `
+.c0.c0 {
+  min-width: 120px;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+}
+
+.c1 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0px;
+  background: transparent;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+>
+  <select
+    className="c1"
+    onChange={[Function]}
+  >
+    <optgroup>
+      <option
+        aria-label="None"
+        value=""
+      />
+      <option
+        value="1"
+      >
+        选项一
+      </option>
+    </optgroup>
+  </select>
+</div>
+`;
+
+exports[`渲染多选选择框 1`] = `
+.c0.c0 {
+  min-width: 120px;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+}
+
+.c1 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.00938em;
+  -moz-letter-spacing: 0.00938em;
+  -ms-letter-spacing: 0.00938em;
+  letter-spacing: 0.00938em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0px;
+  background: transparent;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+>
+  <select
+    className="c1"
+    multiple={true}
+    onChange={[Function]}
+  >
+    <optgroup>
+      <option
+        aria-label="None"
+        value=""
+      />
+      <option
+        value="1"
+      >
+        选项一
+      </option>
+      <option
+        value="2"
+      >
+        选项二
+      </option>
+    </optgroup>
+  </select>
+</div>
+`;

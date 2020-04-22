@@ -501,6 +501,7 @@ label ~ .c4 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  box-sizing: content-box;
   cursor: inherit;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -927,6 +928,7 @@ label ~ .c4 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  box-sizing: content-box;
   cursor: inherit;
   text-overflow: ellipsis;
   white-space: nowrap;
