@@ -1,0 +1,55 @@
+---
+id: select
+title: Select
+---
+
+> 选择框组件。
+
+## 引入方式
+
+```ts
+import Select from '@sinoui/core/Select';
+```
+
+## 属性
+
+| 属性名称    | 属性类型                                        | 默认值 | 属性说明           |
+| ----------- | ----------------------------------------------- | ------ | ------------------ |
+| multiple    | boolean                                         | false  | 是否支持多选       |
+| children    | React.ReactNode                                 |        | 子元素             |
+| onChange    | (value?: string\|string[]) => void              |        | 值变更时的回调函数 |
+| renderValue | (value?: string \| string[]) => React.ReactNode |        | 值的渲染方式       |
+| value       | string \| string[]                              |        | 值                 |
+| className   | string                                          |        | 自定义类名         |
+
+除此之外，Select 继承了[TextInput](./text-input)的除了`multiline`、`minRows`、`maxRows`之外的所有属性。
+
+## 入门示例
+
+```tsx
+import React, { useState } from 'react';
+import Select, { Option } from '@sinoui/core/Select';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+function SimpleDemo() {
+  const [value, setValue] = useState('');
+
+  const onChange = (val: any) => {
+    setValue(val);
+  };
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Select value={value} onChange={onChange} label="Select">
+        <Option value="选项一">选项一</Option>
+        <Option value="选项二">选项二</Option>
+        <Option value="选项三">选项三</Option>
+        <Option value="选项四">选项四</Option>
+      </Select>
+    </ThemeProvider>
+  );
+}
+```
+
+更多关于 Select 的示例，请参考[Select 组件文档](../components/select)。

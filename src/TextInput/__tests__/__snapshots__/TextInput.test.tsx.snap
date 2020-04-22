@@ -117,11 +117,19 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 }
 
 .c2 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c2 > input.sinoui-base-input__input,
+.c2 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -136,32 +144,35 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c2 > .sinoui-base-input__input::-moz-placeholder {
+.c2 > input.sinoui-base-input__input::-moz-placeholder,
+.c2 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c2 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c2 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input:-ms-input-placeholder {
+.c2 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c2 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-ms-clear {
+.c2 > input.sinoui-base-input__input::-ms-clear,
+.c2 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > .sinoui-base-input__input:focus {
+.c2 > input.sinoui-base-input__input:focus,
+.c2 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > .sinoui-base-input__input:invalid {
+.c2 > input.sinoui-base-input__input:invalid,
+.c2 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -169,6 +180,15 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 .c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c2 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c2 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c5 {
@@ -437,7 +457,7 @@ label ~ .c3 {
 
 .c3:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 .c0 {
@@ -458,8 +478,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-form-label"
@@ -481,8 +499,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c4 sinoui-form-label"
@@ -507,8 +523,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c6 sinoui-form-label"
@@ -647,11 +661,19 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 }
 
 .c2 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c2 > input.sinoui-base-input__input,
+.c2 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -666,32 +688,35 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c2 > .sinoui-base-input__input::-moz-placeholder {
+.c2 > input.sinoui-base-input__input::-moz-placeholder,
+.c2 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c2 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c2 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input:-ms-input-placeholder {
+.c2 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c2 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-ms-clear {
+.c2 > input.sinoui-base-input__input::-ms-clear,
+.c2 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > .sinoui-base-input__input:focus {
+.c2 > input.sinoui-base-input__input:focus,
+.c2 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > .sinoui-base-input__input:invalid {
+.c2 > input.sinoui-base-input__input:invalid,
+.c2 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -699,6 +724,15 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 .c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c2 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c2 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c6 {
@@ -850,12 +884,12 @@ label ~ .c3 {
   font-size: 0px;
 }
 
+.c3::after {
+  display: none;
+}
+
 .c3::before {
-  background: transparent;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.42) 33%, transparent 0% );
-  background-position: left top;
-  background-repeat: repeat-x;
-  background-size: 5px 1px;
+  background-color: rgba(0,0,0,0.26);
 }
 
 .c0 {
@@ -877,8 +911,6 @@ label ~ .c3 {
   <div
     className="c0 sinoui-text-input sinoui-text-input--disabled"
     disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-form-label"
@@ -910,8 +942,6 @@ label ~ .c3 {
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--disabled"
     disabled={true}
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c5 sinoui-form-label"
@@ -1104,11 +1134,19 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 }
 
 .c2 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c2 > input.sinoui-base-input__input,
+.c2 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -1123,32 +1161,35 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c2 > .sinoui-base-input__input::-moz-placeholder {
+.c2 > input.sinoui-base-input__input::-moz-placeholder,
+.c2 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c2 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c2 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input:-ms-input-placeholder {
+.c2 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c2 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-ms-clear {
+.c2 > input.sinoui-base-input__input::-ms-clear,
+.c2 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > .sinoui-base-input__input:focus {
+.c2 > input.sinoui-base-input__input:focus,
+.c2 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > .sinoui-base-input__input:invalid {
+.c2 > input.sinoui-base-input__input:invalid,
+.c2 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -1156,6 +1197,15 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 .c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c2 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c2 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c7 {
@@ -1424,7 +1474,7 @@ label ~ .c3 {
 
 .c3:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 .c0 {
@@ -1445,8 +1495,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--shrink"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-form-label"
@@ -1479,8 +1527,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--shrink"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c6 sinoui-form-label"
@@ -1516,8 +1562,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c8 sinoui-form-label"
@@ -1727,11 +1771,19 @@ exports[`渲染带后缀元素的输入框 1`] = `
 }
 
 .c2 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c2 > input.sinoui-base-input__input,
+.c2 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -1746,32 +1798,35 @@ exports[`渲染带后缀元素的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c2 > .sinoui-base-input__input::-moz-placeholder {
+.c2 > input.sinoui-base-input__input::-moz-placeholder,
+.c2 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c2 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c2 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input:-ms-input-placeholder {
+.c2 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c2 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-ms-clear {
+.c2 > input.sinoui-base-input__input::-ms-clear,
+.c2 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > .sinoui-base-input__input:focus {
+.c2 > input.sinoui-base-input__input:focus,
+.c2 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > .sinoui-base-input__input:invalid {
+.c2 > input.sinoui-base-input__input:invalid,
+.c2 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -1779,6 +1834,15 @@ exports[`渲染带后缀元素的输入框 1`] = `
 .c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c2 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c2 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c7 {
@@ -2047,7 +2111,7 @@ label ~ .c3 {
 
 .c3:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 .c0 {
@@ -2068,8 +2132,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-form-label"
@@ -2102,8 +2164,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c6 sinoui-form-label"
@@ -2139,8 +2199,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--outlined"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c8 sinoui-form-label"
@@ -2290,11 +2348,19 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 }
 
 .c2 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c2 > input.sinoui-base-input__input,
+.c2 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -2309,32 +2375,35 @@ exports[`渲染有辅助性文字的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c2 > .sinoui-base-input__input::-moz-placeholder {
+.c2 > input.sinoui-base-input__input::-moz-placeholder,
+.c2 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c2 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c2 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input:-ms-input-placeholder {
+.c2 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c2 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-ms-clear {
+.c2 > input.sinoui-base-input__input::-ms-clear,
+.c2 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > .sinoui-base-input__input:focus {
+.c2 > input.sinoui-base-input__input:focus,
+.c2 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > .sinoui-base-input__input:invalid {
+.c2 > input.sinoui-base-input__input:invalid,
+.c2 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -2342,6 +2411,15 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 .c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c2 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c2 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c6 {
@@ -2518,7 +2596,7 @@ label ~ .c3 {
 
 .c3:hover::before {
   background-color: rgba(0,0,0,0.87);
-  height: 2px;
+  height: 1px;
 }
 
 .c0 {
@@ -2539,8 +2617,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-form-label"
@@ -2567,8 +2643,6 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c5 sinoui-form-label"
@@ -2707,11 +2781,19 @@ exports[`渲染有错误提示的输入框 1`] = `
 }
 
 .c2 > .sinoui-base-input__input {
-  padding: 3.5px 0 4.5px;
-  display: block;
+  outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 3.5px 0 4.5px;
+  height: 1.5em;
+  min-height: 1.5em;
+  caret-color: #3f51b5;
+}
+
+.c2 > input.sinoui-base-input__input,
+.c2 > textarea.sinoui-base-input__input {
+  display: block;
   line-height: inherit;
   font: inherit;
   color: inherit;
@@ -2726,32 +2808,35 @@ exports[`渲染有错误提示的输入框 1`] = `
   -webkit-tap-highlight-color: transparent;
   min-width: 0px;
   width: 100%;
-  height: 1.5em;
-  min-height: 1.5em;
-  caret-color: #3f51b5;
 }
 
-.c2 > .sinoui-base-input__input::-moz-placeholder {
+.c2 > input.sinoui-base-input__input::-moz-placeholder,
+.c2 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-webkit-input-placeholder {
+.c2 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c2 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input:-ms-input-placeholder {
+.c2 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c2 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c2 > .sinoui-base-input__input::-ms-clear {
+.c2 > input.sinoui-base-input__input::-ms-clear,
+.c2 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c2 > .sinoui-base-input__input:focus {
+.c2 > input.sinoui-base-input__input:focus,
+.c2 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c2 > .sinoui-base-input__input:invalid {
+.c2 > input.sinoui-base-input__input:invalid,
+.c2 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
@@ -2759,6 +2844,15 @@ exports[`渲染有错误提示的输入框 1`] = `
 .c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
+}
+
+.c2 .sinoui-base-input__clear {
+  width: 18px;
+}
+
+.c2 .sinoui-base-input__clear > .sinoui-svg-icon {
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .c6 {
@@ -2952,8 +3046,6 @@ label ~ .c3 {
 <div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--required sinoui-text-input--error"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c1 sinoui-form-label"
@@ -2976,14 +3068,10 @@ label ~ .c3 {
     </div>
     <div
       className="c4 sinoui-helper-text"
-    >
-      必填
-    </div>
+    />
   </div>
   <div
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--required sinoui-text-input--error"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c5 sinoui-form-label"
@@ -3009,9 +3097,7 @@ label ~ .c3 {
     </div>
     <div
       className="c4 sinoui-helper-text"
-    >
-      必填
-    </div>
+    />
   </div>
 </div>
 `;

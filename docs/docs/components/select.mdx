@@ -1,0 +1,707 @@
+---
+id: select
+title: Select 选择框
+---
+
+import SimpleDemo from './select-demoes/SimpleDemo';
+import SelectDemo from './select-demoes/SelectDemo';
+import MultipleSelectDemo from './select-demoes/MultipleSelectDemo';
+import NativeSelectDemo from './select-demoes/NativeSelectDemo';
+
+> 选择框组件。能从一个选项列表中去获得用户所提供的信息。
+
+## 引入方式
+
+```ts
+import Select from '@sinoui/core/Select';
+```
+
+## 基本使用
+
+```tsx
+import React, { useState } from 'react';
+import Select, { Option } from '@sinoui/core/Select';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+const SelectField = styled(Select)`
+  margin: 8px;
+  width: 200px;
+`;
+
+export default function SimpleDemo() {
+  const [value, setValue] = useState('');
+
+  const onChange = (val: any) => {
+    setValue(val);
+  };
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'flex-start',
+          flexWrap: 'wrap',
+        }}
+      >
+        <SelectField value={value} onChange={onChange} label="Select">
+          <Option value="选项一">选项一</Option>
+          <Option value="选项二">选项二</Option>
+          <Option value="选项三">选项三</Option>
+          <Option value="选项四">选项四</Option>
+        </SelectField>
+        <SelectField
+          value={value}
+          onChange={onChange}
+          label="Select"
+          variant="filled"
+        >
+          <Option value="选项一">选项一</Option>
+          <Option value="选项二">选项二</Option>
+          <Option value="选项三">选项三</Option>
+          <Option value="选项四">选项四</Option>
+        </SelectField>
+        <SelectField
+          value={value}
+          onChange={onChange}
+          label="Select"
+          variant="outlined"
+        >
+          <Option value="选项一">选项一</Option>
+          <Option value="选项二">选项二</Option>
+          <Option value="选项三">选项三</Option>
+          <Option value="选项四">选项四</Option>
+        </SelectField>
+      </div>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果如下：
+
+<SimpleDemo />
+
+## 不同状态的选择框
+
+`Select` 支持基本的表单属性，包括：
+
+- `required` - 必填
+- `disabled` - 禁用
+- `readOnly` - 只读
+
+Select 组件还支持一些常用的属性，如：
+
+- `helperText` - 帮助性文本
+- `error` - 选择框的错误信息
+
+更多关于 Select 的属性，请参考[Select API 文档](../components-apis/select)。
+
+```tsx
+import React, { useState } from 'react';
+import Select, { Option } from '@sinoui/core/Select';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+const SelectField = styled(Select)`
+  margin: 8px;
+  width: 200px;
+`;
+
+export default function SimpleDemo() {
+  const [value, setValue] = useState('');
+
+  const onChange = (val: any) => {
+    setValue(val);
+  };
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <SelectField value={value} onChange={onChange} label="Select">
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="Disabled"
+            disabled
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="ReadOnly"
+            readOnly
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="Error"
+            required
+            error="必填"
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="Helper Text"
+            helperText="帮助文本"
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField value={value} onChange={onChange} label="Dense" dense>
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="AllowClear"
+            allowClear
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="Select"
+            variant="filled"
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="Disabled"
+            variant="filled"
+            disabled
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="ReadOnly"
+            variant="filled"
+            readOnly
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="Error"
+            variant="filled"
+            required
+            error="必填"
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            variant="filled"
+            value={value}
+            onChange={onChange}
+            label="Helper Text"
+            helperText="帮助文本"
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            variant="filled"
+            value={value}
+            onChange={onChange}
+            label="Dense"
+            dense
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            variant="filled"
+            value={value}
+            onChange={onChange}
+            label="AllowClear"
+            allowClear
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <SelectField
+            value={value}
+            onChange={onChange}
+            label="Select"
+            variant="outlined"
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            variant="outlined"
+            value={value}
+            onChange={onChange}
+            label="Disabled"
+            disabled
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            variant="outlined"
+            value={value}
+            onChange={onChange}
+            label="ReadOnly"
+            readOnly
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            variant="outlined"
+            value={value}
+            onChange={onChange}
+            label="Error"
+            required
+            error="必填"
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            variant="outlined"
+            value={value}
+            onChange={onChange}
+            label="Helper Text"
+            helperText="帮助文本"
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            variant="outlined"
+            value={value}
+            onChange={onChange}
+            label="Dense"
+            dense
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+          <SelectField
+            variant="outlined"
+            value={value}
+            onChange={onChange}
+            label="AllowClear"
+            allowClear
+          >
+            <Option value="选项一">选项一</Option>
+            <Option value="选项二">选项二</Option>
+            <Option value="选项三">选项三</Option>
+            <Option value="选项四">选项四</Option>
+          </SelectField>
+        </div>
+      </>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果如下：
+
+<SelectDemo />
+
+## 多重选择
+
+我们可以将`Select`的`multiple`属性设置为`true`，从而支持多重选择。
+
+```tsx
+import React, { useState } from 'react';
+import Select, { Option } from '@sinoui/core/Select';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+const SelectField = styled(Select)`
+  margin: 8px;
+  width: 200px;
+`;
+
+export default function MultipleSelectDemo() {
+  const [value, setValue] = useState([]);
+
+  const onChange = (val: any) => {
+    setValue(val);
+  };
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'flex-start',
+          flexWrap: 'wrap',
+        }}
+      >
+        <SelectField
+          value={value}
+          onChange={onChange}
+          label="Multiple Select"
+          multiple
+        >
+          <Option value="选项一">选项一</Option>
+          <Option value="选项二">选项二</Option>
+          <Option value="选项三">选项三</Option>
+          <Option value="选项四">选项四</Option>
+        </SelectField>
+        <SelectField
+          value={value}
+          onChange={onChange}
+          label="Multiple Select"
+          multiple
+          variant="filled"
+        >
+          <Option value="选项一">选项一</Option>
+          <Option value="选项二">选项二</Option>
+          <Option value="选项三">选项三</Option>
+          <Option value="选项四">选项四</Option>
+        </SelectField>
+        <SelectField
+          value={value}
+          onChange={onChange}
+          label="Multiple Select"
+          multiple
+          variant="outlined"
+        >
+          <Option value="选项一">选项一</Option>
+          <Option value="选项二">选项二</Option>
+          <Option value="选项三">选项三</Option>
+          <Option value="选项四">选项四</Option>
+        </SelectField>
+      </div>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果如下：
+
+<MultipleSelectDemo />
+
+## NativeSelect
+
+`NativeSelect`原生选择器，主要用在移动设备。
+
+```tsx
+import React, { useState } from 'react';
+import NativeSelect from '@sinoui/core/NativeSelect';
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+const StyleNativeSelect = styled(NativeSelect)`
+  width: 200px;
+  margin: 8px;
+`;
+
+export default function NativeSelectDemo() {
+  const [value, setValue] = useState('');
+
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <StyleNativeSelect
+            label="标准选择框"
+            value={value}
+            onChange={handleChange}
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Disabled"
+            disabled
+            value={value}
+            onChange={handleChange}
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Error"
+            required
+            error
+            errorText="必填"
+            value={value}
+            onChange={handleChange}
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Helper Text"
+            helperText="帮助文本"
+            value={value}
+            onChange={handleChange}
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Dense"
+            dense
+            value={value}
+            onChange={handleChange}
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect value={value} onChange={handleChange}>
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <StyleNativeSelect
+            label="填充模式选择框"
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Disabled"
+            disabled
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Error"
+            required
+            error
+            errorText="必填"
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Helper Text"
+            helperText="辅助性文字"
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Dense"
+            dense
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            value={value}
+            onChange={handleChange}
+            variant="filled"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <StyleNativeSelect
+            label="框模式选择框"
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Disabled"
+            disabled
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Error"
+            required
+            error
+            errorText="必填"
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Helper Text"
+            helperText="辅助性文字"
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            label="Dense"
+            dense
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+          <StyleNativeSelect
+            value={value}
+            onChange={handleChange}
+            variant="outlined"
+          >
+            <option value="1">选项一</option>
+            <option value="2">选项二</option>
+            <option value="3">选项三</option>
+          </StyleNativeSelect>
+        </div>
+      </>
+    </ThemeProvider>
+  );
+}
+```
+
+运行效果如下：
+
+<NativeSelectDemo />

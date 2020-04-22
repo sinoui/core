@@ -7,6 +7,7 @@ import createFoundation from './utils/createFoundation';
 import useMultiRefs from '../utils/useMultiRefs';
 import isRefObject from '../utils/isRefObject';
 import type { AppBarProps, AppBarStatusTypes } from './types';
+import singleLineTextCss from '../utils/singleLineTextCss';
 /**
  * AppBar 顶部应用栏容器
  */
@@ -140,10 +141,8 @@ const StyledAppBar = styled.div.attrs(() => ({
   &  ${AppBarTitle} {
     flex: 1;
     margin-left: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     min-width: 0;
+    ${singleLineTextCss}
   }
 
   &.sinoui-top-app-bar--fixed-scrolled {

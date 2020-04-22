@@ -29,9 +29,7 @@ const denseNoLabelStyle = css`
 /**
  * 标准文本输入框
  */
-const StandardInput: React.SFC<InputProps> = styled(BaseInput).attrs({
-  standard: true,
-})<InputProps>`
+const StandardInput: React.SFC<InputProps> = styled(BaseInput)<InputProps>`
   color: ${({ theme, disabled }) =>
     disabled ? theme.palette.text.disabled : theme.palette.text.primary};
 

@@ -1746,12 +1746,6 @@ Array [
 }
 
 .c0 > label {
-  -webkit-transform: translate(-12px,0px);
-  -ms-transform: translate(-12px,0px);
-  transform: translate(-12px,0px);
-}
-
-.c0 > label {
   padding-right: 8px;
 }
 

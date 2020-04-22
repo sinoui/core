@@ -161,6 +161,7 @@ function RadioGroup<T = string>(props: RadioGroupProps<T>) {
         'sinoui-radio-group--readOnly': readOnly,
       })}
       column={column}
+      labelPosition={labelPosition}
     >
       {items.map((item) => (
         <Radio

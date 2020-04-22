@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import resizeTextarea from '../resizeTextarea';
 
 function mockLayout(

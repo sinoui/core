@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import OutlinedInput from '../OutlinedInput';
 
@@ -34,7 +34,7 @@ it('渲染错误状态下边框模式的Input', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <OutlinedInput error="错误提示" notched />
+        <OutlinedInput error notched />
       </ThemeProvider>,
     )
     .toJSON();

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import singleLineTextCss from '../utils/singleLineTextCss';
 
 export interface Props {
   /**
@@ -33,23 +34,17 @@ const CardHeaderWrapper = styled.div`
 
   & .card-header-content {
     flex: 1 1 auto;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    ${singleLineTextCss}
   }
 
   & .card-header-title {
     color: ${(props) => props.theme.palette.text.primary};
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    ${singleLineTextCss}
   }
 
   & .card-header-subheader {
     color: ${(props) => props.theme.palette.text.secondary};
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    ${singleLineTextCss}
   }
 
   & .card-header-action {

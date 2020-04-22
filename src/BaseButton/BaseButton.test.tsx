@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import BaseButton from './BaseButton';
 
 it('正确渲染文本按钮', () => {

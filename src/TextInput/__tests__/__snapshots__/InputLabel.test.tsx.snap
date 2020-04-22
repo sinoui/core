@@ -40,9 +40,9 @@ exports[`渲染上浮之后的Label 1`] = `
   transform: translate(12px,7px) scale(0.75);
   will-change: transform;
   max-width: calc( 100% - 24px );
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 <label
@@ -80,9 +80,9 @@ exports[`渲染密集模式下的Label 1`] = `
   transition: transform 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms,color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
   will-change: transform;
   max-width: calc( 100% - 24px );
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 <label

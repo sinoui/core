@@ -1,0 +1,26 @@
+---
+id: native-select
+title: NativeSelect
+---
+
+原生选择框组件。
+
+## 引入方式
+
+```ts
+import NativeSelect from '@sinoui/core/NativeSelect';
+```
+
+## 属性
+
+| 属性名称 | 属性类型                       | 默认值 | 属性说明           |
+| -------- | ------------------------------ | ------ | ------------------ |
+| multiple | boolean                        | false  | 是否支持多选       |
+| value    | string \| string[]             |        | 值                 |
+| onChange | (value:string\|string[])=>void |        | 值变更时的回调函数 |
+
+除此之外，NativeSelect 继承了[TextInput](./text-input)的除了`multiline`、`minRows`、`maxRows`、`onChange`之外的所有属性。
+
+## 示例
+
+[NativeSelect Demo](../components/native-select)
