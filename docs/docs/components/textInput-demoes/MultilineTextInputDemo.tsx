@@ -46,11 +46,7 @@ function MultilineTextInputDemo() {
         >
           variant
         </label>
-        <RadioGroup
-          id="variant"
-          value={variant}
-          onChange={(event) => setVariant(event.target.value as any)}
-        >
+        <RadioGroup id="variant" value={variant} onChange={setVariant as any}>
           <Radio value="standard">standard</Radio>
           <Radio value="filled">filled</Radio>
           <Radio value="outlined">outlined</Radio>
