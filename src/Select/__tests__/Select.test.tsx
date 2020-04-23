@@ -67,7 +67,7 @@ it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
     fireEvent.click(getByTestId('selectInput'));
   });
 
-  expect(getByRole('listbox')).toBeInTheDOM();
+  expect(getByRole('listbox')).toBeInTheDocument();
 
   act(() => {
     fireEvent.click(getAllByRole('option')[0]);

@@ -336,7 +336,7 @@ it('设置minRows和maxRows', () => {
 });
 
 it('设置校验错误信息', () => {
-  const { getByTestId } = render(
+  const { getByTestId, rerender } = render(
     <ThemeProvider theme={defaultTheme}>
       <BaseInput
         error
@@ -349,8 +349,19 @@ it('设置校验错误信息', () => {
   );
 
   const input = getByTestId('input') as HTMLInputElement;
-
   expect(input.validationMessage).toBe('错误信息');
+
+  rerender(
+    <ThemeProvider theme={defaultTheme}>
+      <BaseInput
+        inputProps={{
+          'data-testid': 'input',
+        }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(input.validationMessage).toBe('');
 });
 
 it('多行输入框', () => {

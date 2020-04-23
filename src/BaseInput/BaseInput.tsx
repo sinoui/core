@@ -231,8 +231,8 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
 
   useEffect(() => {
     const input: HTMLInputElement = inputRef.current;
-    if (input && error && input.setCustomValidity) {
-      input.setCustomValidity(errorText ?? 'error');
+    if (input && input.setCustomValidity) {
+      input.setCustomValidity(error ? errorText ?? 'error' : '');
     }
   }, [error, errorText]);
 
