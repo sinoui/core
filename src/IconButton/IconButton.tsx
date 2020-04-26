@@ -12,6 +12,10 @@ export interface IconButtonProps extends BaseButtonProps {
    * 按钮颜色
    */
   color?: string;
+  /**
+   * 密集模式
+   */
+  dense?: boolean;
 }
 
 const rippleConfig: object = {
@@ -21,11 +25,16 @@ const rippleConfig: object = {
   fixSize: true,
 };
 
-const IconButtonLayout = styled(BaseButton)<
-  IconButtonProps & { color: string }
->`
-  width: ${({ theme }) => theme.spacing.unit * 6}px;
-  height: ${({ theme }) => theme.spacing.unit * 6}px;
+const denseRippleConfig: object = {
+  center: true,
+  rippleLayoutClassName: 'sinoui-icon-button--dense__ripple-layout',
+  rippleClassName: 'sinoui-icon-button--dense__ripple',
+  fixSize: true,
+};
+
+const IconButtonLayout = styled(BaseButton)<IconButtonProps>`
+  width: ${({ theme, dense }) => theme.spacing.unit * (dense ? 4 : 6)}px;
+  height: ${({ theme, dense }) => theme.spacing.unit * (dense ? 4 : 6)}px;
   border-radius: 50%;
   box-sizing: border-box;
   color: ${({ theme, color, disabled }) =>
@@ -35,12 +44,16 @@ const IconButtonLayout = styled(BaseButton)<
     background-color: ${({ theme, color }) =>
       adjustOpacity(
         theme.palette.action.hoverOpacity,
-        getColorFromTheme(theme, color),
+        getColorFromTheme(theme, color ?? 'textSecondary'),
       )};
 
     @media (hover: none) {
       background-color: transparent;
     }
+  }
+
+  > .sinoui-svg-icon {
+    ${({ dense }) => dense && `font-size: 20px;`}
   }
 
   > .sinoui-icon-button__ripple-layout {
@@ -53,6 +66,19 @@ const IconButtonLayout = styled(BaseButton)<
   > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
     width: 48px;
     height: 48px;
+  }
+
+  > .sinoui-icon-button--dense__ripple-layout {
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+  }
+
+  > .sinoui-icon-button--dense__ripple-layout
+    > .sinoui-icon-button--dense__ripple {
+    width: 32px;
+    height: 32px;
   }
 `;
 
@@ -72,17 +98,23 @@ const IconButton: OverridableComponent<
     color = 'textSecondary',
     className,
     disabled,
+    dense,
     ...other
   } = props;
+
+  const ripple = dense ? denseRippleConfig : rippleConfig;
+
   return (
     <IconButtonLayout
-      ripple={rippleConfig}
+      ripple={ripple}
       disabled={disabled}
+      dense={dense}
       color={color}
       className={bemClassNames(
         'sinoui-icon-button',
         {
           disabled,
+          dense,
         },
         className,
       )}

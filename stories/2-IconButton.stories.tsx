@@ -49,6 +49,37 @@ export const 基础图标按钮 = () => (
   </ThemeProvider>
 );
 
+export const 密集形式图标按钮 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <>
+      <StyledIconButton dense>
+        <SvgIcon />
+      </StyledIconButton>
+      <StyledIconButton color="primary" dense>
+        <SvgIcon />
+      </StyledIconButton>
+      <StyledIconButton color="secondary" dense>
+        <SvgIcon />
+      </StyledIconButton>
+      <StyledIconButton color="error" dense>
+        <SvgIcon />
+      </StyledIconButton>
+      <StyledIconButton color="warning" dense>
+        <SvgIcon />
+      </StyledIconButton>
+      <StyledIconButton color="info" dense>
+        <SvgIcon />
+      </StyledIconButton>
+      <StyledIconButton color="success" dense>
+        <SvgIcon />
+      </StyledIconButton>
+      <StyledIconButton disabled dense>
+        <SvgIcon />
+      </StyledIconButton>
+    </>
+  </ThemeProvider>
+);
+
 export const 自定义dom元素 = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
