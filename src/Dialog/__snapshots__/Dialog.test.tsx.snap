@@ -248,7 +248,7 @@ exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
     >
       Use Google location service?
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-Axmtr kWUQPd sinoui-icon-button sc-fzozJi cfAFtJ sinoui-dialog-title__icon"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-Axmtr eYgLQu sinoui-icon-button sc-fzozJi cfAFtJ sinoui-dialog-title__icon"
         color="textSecondary"
         role="button"
         type="button"
