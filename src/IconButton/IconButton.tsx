@@ -16,6 +16,10 @@ export interface IconButtonProps extends BaseButtonProps {
    * 密集模式
    */
   dense?: boolean;
+  /**
+   * 指定图标大小。密集模式默认为20px，正常模式下不设置图标大小，即会采用图标组件自身默认的大小，一般为`24px`。
+   */
+  size?: number;
 }
 
 const rippleConfig: object = {
@@ -32,7 +36,11 @@ const denseRippleConfig: object = {
   fixSize: true,
 };
 
-const IconButtonLayout = styled(BaseButton)<IconButtonProps>`
+const IconButtonLayout = styled(BaseButton)<
+  IconButtonProps & {
+    $size?: number;
+  }
+>`
   width: ${({ theme, dense }) => theme.spacing.unit * (dense ? 4 : 6)}px;
   height: ${({ theme, dense }) => theme.spacing.unit * (dense ? 4 : 6)}px;
   border-radius: 50%;
@@ -53,7 +61,7 @@ const IconButtonLayout = styled(BaseButton)<IconButtonProps>`
   }
 
   > .sinoui-svg-icon {
-    ${({ dense }) => dense && `font-size: 20px;`}
+    ${({ $size }) => $size && `font-size: ${$size}px;`}
   }
 
   > .sinoui-icon-button__ripple-layout {
@@ -99,6 +107,7 @@ const IconButton: OverridableComponent<
     className,
     disabled,
     dense,
+    size = dense ? 20 : undefined,
     ...other
   } = props;
 
@@ -121,6 +130,7 @@ const IconButton: OverridableComponent<
       {...other}
       forwardedAs={as}
       ref={ref}
+      $size={size}
     >
       {children}
     </IconButtonLayout>

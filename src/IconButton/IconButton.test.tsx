@@ -68,3 +68,15 @@ it('渲染密集模式下的图标按钮', () => {
 
   expect(tree).toMatchSnapshot();
 });
+
+it('size', () => {
+  const tree = renderer.create(
+    <ThemeProvider theme={defaultTheme}>
+      <IconButton color="primary" dense size={36}>
+        <Favorite />
+      </IconButton>
+    </ThemeProvider>,
+  );
+
+  expect(tree).toMatchSnapshot();
+});
