@@ -74,6 +74,7 @@ const FormLabel = React.forwardRef<HTMLLabelElement, FormLabelProps>(
     const formControlContext = useFormControlContext();
     const state = formControlContext
       ? removeUndefinedProperties({
+          error: formControlContext.error,
           colon: formControlContext.colon,
           variant: formControlContext.variant,
           layout: formControlContext.labelLayout,
