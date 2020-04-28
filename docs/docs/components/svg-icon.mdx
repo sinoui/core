@@ -100,6 +100,23 @@ import { WiDayCloudyGusts } from 'react-icons/wi';
   <SvgIcon as={WiDayCloudyGusts} />
 </StoryLayout>
 
+有时，第三方图标库提供的 Svg 图标的`viewBox`不是默认的`0 0 24 24`，且图标库已经包含合适的`viewBox`时，可以使用`SvgIcon`组件的`disabledViewBox`属性禁止`SvgIcon`向图标组件传递`viewBox`属性，如下所示：
+
+```tsx
+import SvgIcon from '@sinoui/core/SvgIcon';
+import { FaWpforms } from 'react-icons/fa';
+
+const SvgIconDemo = () => <SvgIcon as={FaWpforms} disabledViewBox />;
+```
+
+效果如下：
+
+import { FaWpforms } from 'react-icons/fa';
+
+<StoryLayout>
+  <SvgIcon as={FaWpforms} disabledViewBox />
+</StoryLayout>
+
 ## 引用 svg 文件
 
 通过 svgr 可在打包时自动将 svg 文件转换成 React 组件，在 webpack.config.js 中的配置如下：

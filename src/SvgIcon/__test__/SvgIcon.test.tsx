@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom';
 import { WiDayCloudyGusts } from 'react-icons/wi';
+import { render, cleanup } from '@testing-library/react';
 import TestWrapper from './TestWrapper';
 import SvgIcon from '../SvgIcon';
 
@@ -121,5 +122,19 @@ describe('SvgIcon组件 快照测试', () => {
       .toJSON();
 
     expect(tree).toMatchSnapshot();
+  });
+});
+
+describe('单元测试', () => {
+  afterEach(cleanup);
+
+  it('disabledViewBox', () => {
+    const CustomIcon = (props: any) => <div {...props} />;
+    const { getByTestId } = render(
+      <TestWrapper>
+        <SvgIcon as={CustomIcon} disabledViewBox data-testid="icon" />
+      </TestWrapper>,
+    );
+    expect(getByTestId('icon')).not.toHaveAttribute('viewBox');
   });
 });

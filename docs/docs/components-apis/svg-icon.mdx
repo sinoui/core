@@ -13,19 +13,20 @@ import SvgIcon from '@sinoui/core/SvgIcon';
 
 ## API
 
-SvgIcon组件属性：
+SvgIcon 组件属性：
 
-| 参数名称    | 参数类型   | 默认值        | 说明                                                         |
-| ----------- | --------------- | ------------------------ | ----------------------------------- |
-| size   | number \| string |  24|设置图标大小。数字或者字符串。如果是数字，则单位是像素。   |
-| viewBox   | string | 0 0 24 24 | 设置 svg 元素的 viewBox，默认为0 0 24 24  |
-| color  | string |  |设置颜色   |
-| children    | React.ReactNode | |指定图标内容    |
-| title  | string | | 指定图标的标题   |
-| ref  | React.ref | | 用来在组件外部引用组件内部根元素   |
-| as  | React.ReactType |svg | 变更 DOM 元素   |
-| className   | string      |    | 添加自定义类名    |   
+| 参数名称        | 参数类型         | 默认值    | 说明                                                                                                                               |
+| --------------- | ---------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| size            | number \| string | 24        | 设置图标大小。数字或者字符串。如果是数字，则单位是像素。                                                                           |
+| viewBox         | string           | 0 0 24 24 | 设置 svg 元素的 viewBox，默认为 0 0 24 24                                                                                          |
+| color           | string           |           | 设置颜色                                                                                                                           |
+| children        | React.ReactNode  |           | 指定图标内容                                                                                                                       |
+| title           | string           |           | 指定图标的标题                                                                                                                     |
+| ref             | React.ref        |           | 用来在组件外部引用组件内部根元素                                                                                                   |
+| as              | React.ReactType  | svg       | 变更 DOM 元素                                                                                                                      |
+| className       | string           |           | 添加自定义类名                                                                                                                     |
+| disabledViewBox | boolean          | false     | 设置为`true`，则不会设置默认的`viewBox`。这一般用于`<SvgIcon as={CustomIcon} disabledViewBox />`，CustomIcon 已有 viewBox 的情况。 |
 
-SvgIcon组件继承svg根元素所有属性。
+SvgIcon 组件继承 svg 根元素所有属性。
 
 更多使用示例，请参考[SvgIcon Demos](/docs/components/svg-icon)
