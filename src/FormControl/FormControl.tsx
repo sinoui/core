@@ -22,7 +22,7 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
       error,
       layout = 'vertical',
       className,
-      id = inputId,
+      id = process.env.NODE_ENV !== 'test' ? inputId : undefined,
       filled,
       variant = 'standard',
       labelLayout,
