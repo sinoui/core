@@ -47,7 +47,6 @@ const standardCss = css`
 const FormLabelInner = styled.label.attrs({
   className: 'sinoui-form-label' as any,
 })<FormLabelProps & { $isAfterRequired: boolean }>`
-  display: flex;
   font-size: ${(props) => props.theme.typography.body1.fontSize};
   font-family: ${(props) => props.theme.typography.fontFamily};
   color: ${getColor};
@@ -58,7 +57,6 @@ const FormLabelInner = styled.label.attrs({
     })};
 
   ${({ required }) => required && requiredCss};
-
   ${({ layout = 'shrink' }) => layout === 'shrink' && shrinkCss}
   ${({ layout }) => layout === 'standard' && standardCss}
   ${({ layout }) => layout === 'floating' && floatingLabelCss}
