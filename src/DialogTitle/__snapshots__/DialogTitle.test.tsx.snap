@@ -2,7 +2,7 @@
 
 exports[`DialogTitle组件 快照测试 基本使用 1`] = `
 <h6
-  className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 kcGMPc sinoui-dialog-title"
+  className="sc-AxjAm jwSFFA sinoui-typography sinoui-typography--h6 sc-AxirZ dHnriM sinoui-dialog-title"
   color="textPrimary"
   type="h6"
 >
