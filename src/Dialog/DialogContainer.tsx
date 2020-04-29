@@ -47,6 +47,10 @@ export interface DialogContainerProps {
    * 点击关闭按钮的回调函数
    */
   onRequestClose?: () => void;
+  /**
+   * 自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
 /**
@@ -64,6 +68,7 @@ function DialogContainer(props: DialogContainerProps) {
     containsIframe = true,
     showCloseIcon,
     onRequestClose,
+    style,
     ...rest
   } = props;
 
@@ -113,6 +118,7 @@ function DialogContainer(props: DialogContainerProps) {
       autoWidth={autoWidth}
       {...rest}
       ref={dialogContainerRef}
+      style={style}
     >
       {nodes}
       {containsIframe && (

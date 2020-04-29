@@ -51,6 +51,10 @@ export interface DialogProps extends DialogContainerProps {
    * 过渡结束监听器
    */
   addEndListener?: any;
+  /**
+   * 自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
 function Dialog(props: DialogProps) {
@@ -60,6 +64,7 @@ function Dialog(props: DialogProps) {
     addEndListener,
     transition: Transition = Fade,
     transitionDuration,
+    style,
     ...rest
   } = props;
   return (

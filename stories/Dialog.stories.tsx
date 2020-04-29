@@ -30,6 +30,31 @@ function DialogDemo(props: any) {
   );
 }
 
+function DialogShow(props: any) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>CLICK</Button>
+      <Dialog
+        open={open}
+        {...props}
+        autoWidth
+        style={{ width: '610px', height: '400px' }}
+      >
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent style={{ width: '560px' }}>
+          Let Google help apps determine location. This means sending anonymous
+          location data to Google, even when no apps are running.
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
+
 export const 基本使用 = () => (
   <StoryLayout>
     <DialogDemo />
@@ -136,5 +161,11 @@ export const 设置最大宽度显示 = () => (
 export const 设置宽度自适应 = () => (
   <StoryLayout>
     <DialogDemo autoWidth />
+  </StoryLayout>
+);
+
+export const 设置自定义宽度 = () => (
+  <StoryLayout>
+    <DialogShow />
   </StoryLayout>
 );
