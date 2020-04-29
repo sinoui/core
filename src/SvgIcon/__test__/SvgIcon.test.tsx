@@ -137,4 +137,19 @@ describe('单元测试', () => {
     );
     expect(getByTestId('icon')).not.toHaveAttribute('viewBox');
   });
+
+  it('disabledViewBox不会传递给底层组件', () => {
+    const CustomIcon = ({ disabledViewBox }: any) => (
+      <svg
+        viewBox={disabledViewBox ? undefined : '0 0 24 24'}
+        data-testid="svg"
+      />
+    );
+    const { getByTestId } = render(
+      <TestWrapper>
+        <SvgIcon as={CustomIcon} disabledViewBox />
+      </TestWrapper>,
+    );
+    expect(getByTestId('svg')).toHaveAttribute('viewBox', '0 0 24 24');
+  });
 });

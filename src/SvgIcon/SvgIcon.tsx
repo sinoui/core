@@ -38,30 +38,34 @@ export interface SvgIconProps {
 /**
  * SvgIcon组件
  */
-const SvgIcon = styled.svg.attrs(
-  ({
-    children,
-    className,
-    disabledViewBox,
-    viewBox = !disabledViewBox ? '0 0 24 24' : undefined,
-    size = 24,
-    title,
-  }: SvgIconProps) =>
-    removeUndefinedProperties({
-      children: (
-        <>
-          {!!title && <title>{title}</title>}
-          {children}
-        </>
-      ),
-      className: classNames('sinoui-svg-icon', className),
-      viewBox,
-      size,
-      'aria-hidden': title ? undefined : 'true',
-      role: title ? 'img' : 'presentation',
-      focusable: 'false',
-    }),
-)<SvgIconProps>`
+const SvgIcon = styled.svg
+  .withConfig({
+    shouldForwardProp: (prop) => !['disabledViewBox'].includes(prop),
+  })
+  .attrs(
+    ({
+      children,
+      className,
+      disabledViewBox,
+      viewBox = !disabledViewBox ? '0 0 24 24' : undefined,
+      size = 24,
+      title,
+    }: SvgIconProps) =>
+      removeUndefinedProperties({
+        children: (
+          <>
+            {!!title && <title>{title}</title>}
+            {children}
+          </>
+        ),
+        className: classNames('sinoui-svg-icon', className),
+        viewBox,
+        size,
+        'aria-hidden': title ? undefined : 'true',
+        role: title ? 'img' : 'presentation',
+        focusable: 'false',
+      }),
+  )<SvgIconProps>`
   font-size: ${(props) =>
     typeof props.size === 'string' ? props.size : `${props.size}px`};
   width: 1em;
