@@ -6,7 +6,7 @@ exports[`Dialog组件 快照测试 不显示遮罩层 1`] = `
   onClick={[Function]}
 >
   <div
-    className="DialogWrapper-otdr06-0 dMkviJ sinoui-dialog--draggable"
+    className="DialogWrapper-otdr06-0 dMkviJ sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 jsijYV sinoui-dialog-title"
@@ -64,7 +64,7 @@ exports[`Dialog组件 快照测试 基本使用 1`] = `
     onClick={[Function]}
   />
   <div
-    className="DialogWrapper-otdr06-0 dMkviJ sinoui-dialog--draggable"
+    className="DialogWrapper-otdr06-0 dMkviJ sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 jsijYV sinoui-dialog-title"
@@ -122,7 +122,7 @@ exports[`Dialog组件 快照测试 宽度自适应 1`] = `
     onClick={[Function]}
   />
   <div
-    className="DialogWrapper-otdr06-0 ffitAe sinoui-dialog--draggable"
+    className="DialogWrapper-otdr06-0 ffitAe sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 jsijYV sinoui-dialog-title"
@@ -180,7 +180,7 @@ exports[`Dialog组件 快照测试 对话框将根据maxWidth的值进行自我�
     onClick={[Function]}
   />
   <div
-    className="DialogWrapper-otdr06-0 kwpLVU sinoui-dialog--draggable"
+    className="DialogWrapper-otdr06-0 kwpLVU sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 jsijYV sinoui-dialog-title"
@@ -238,7 +238,7 @@ exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
     onClick={[Function]}
   />
   <div
-    className="DialogWrapper-otdr06-0 dMkviJ sinoui-dialog--draggable"
+    className="DialogWrapper-otdr06-0 dMkviJ sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 fwTQJu sinoui-dialog-title"
@@ -326,7 +326,7 @@ exports[`Dialog组件 快照测试 设置全屏显示 1`] = `
     onClick={[Function]}
   />
   <div
-    className="DialogWrapper-otdr06-0 dBZtLM sinoui-dialog--draggable"
+    className="DialogWrapper-otdr06-0 dBZtLM sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 jsijYV sinoui-dialog-title"
@@ -385,7 +385,7 @@ exports[`Dialog组件 快照测试 设置弹窗不可以拖拽 1`] = `
     onClick={[Function]}
   />
   <div
-    className="DialogWrapper-otdr06-0 dMkviJ"
+    className="DialogWrapper-otdr06-0 dMkviJ sinoui-dialog"
   >
     <h6
       className="Typography__TypographyWrapper-sc-12agh80-0 eNzgYe sinoui-typography sinoui-typography--h6 DialogTitle-sc-1z056jx-0 kcGMPc sinoui-dialog-title"
