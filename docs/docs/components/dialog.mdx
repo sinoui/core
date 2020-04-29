@@ -319,12 +319,19 @@ import DialogContent from '@sinoui/core/DialogContent';
 import DialogActions from '@sinoui/core/DialogActions';
 import Button from '@sinoui/core/Button';
 
+const DialogWrapper = styled(Dialog)`
+  &.sinoui-dialog {
+    width: 610px;
+    height: 400px;
+  }
+`;
+
 function DialogDemo() {
   const [open, setOpen] = useState(false);
   return (
     <>
       <Button onClick={() => setOpen(true)}>点击</Button>
-      <Dialog autoWidth style={{ width: '610px', height: '400px' }}>
+      <DialogWrapper autoWidth >
         <DialogTitle>Use Google location service</DialogTitle>
         <DialogContent>
           Let Google help apps determine location. This means sending anonymous
@@ -334,7 +341,7 @@ function DialogDemo() {
           <Button onClick={() => setOpen(false)}>DISAGREE</Button>
           <Button onClick={() => setOpen(false)}>AGREE</Button>
         </DialogActions>
-      </Dialog>
+      </DialogWrapper>
     </>
   );
 }

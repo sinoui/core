@@ -65,6 +65,7 @@ function Dialog(props: DialogProps) {
     transition: Transition = Fade,
     transitionDuration,
     style,
+    className,
     ...rest
   } = props;
   return (

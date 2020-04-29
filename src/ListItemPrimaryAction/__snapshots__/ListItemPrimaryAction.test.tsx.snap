@@ -2,17 +2,17 @@
 
 exports[`快照测试 主操作区有IconButton 1`] = `
 <div
-  className="sc-AxjAm kbWQud"
+  className="ListItemPrimaryAction-sc-15cqqb4-0 JnWru"
 >
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw euwsas sinoui-icon-button"
+    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxjAm hpiscz sinoui-icon-button"
     color="textSecondary"
     role="button"
     type="button"
   >
     <svg
       aria-hidden="true"
-      className="sc-AxhCb klcZHD sinoui-svg-icon"
+      className="sc-AxirZ eBpvqz sinoui-svg-icon"
       data-testid="BookmarkBorderIcon"
       focusable="false"
       role="presentation"
@@ -29,11 +29,11 @@ exports[`快照测试 主操作区有IconButton 1`] = `
 
 exports[`快照测试 主操作区有图标 1`] = `
 <div
-  className="sc-AxjAm kbWQud"
+  className="ListItemPrimaryAction-sc-15cqqb4-0 JnWru"
 >
   <svg
     aria-hidden="true"
-    className="sc-AxhCb klcZHD sinoui-svg-icon"
+    className="sc-AxirZ eBpvqz sinoui-svg-icon"
     data-testid="BookmarkBorderIcon"
     focusable="false"
     role="presentation"
@@ -49,10 +49,10 @@ exports[`快照测试 主操作区有图标 1`] = `
 
 exports[`快照测试 主操作区有头像 1`] = `
 <div
-  className="sc-AxjAm kbWQud"
+  className="ListItemPrimaryAction-sc-15cqqb4-0 JnWru"
 >
   <div
-    className="sc-AxhUy XEnYI sinoui-avatar"
+    className="Avatar-gvflnr-0 cSfgjc sinoui-avatar"
     color="actionDisabled"
   >
     M
