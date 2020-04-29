@@ -309,7 +309,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     !disabled &&
     !props.readOnly;
 
-  const InputComonent = multiline ? AutosizeTextarea : inputComponent;
+  const InputComponent = multiline ? AutosizeTextarea : inputComponent;
 
   const inputprops: Record<string, any> = {
     ...inputPropsProp,
@@ -357,7 +357,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
       {...other}
     >
       {startAdornment}
-      <InputComonent
+      <InputComponent
         {...inputprops}
         className={classNames(inputprops.className, 'sinoui-base-input__input')}
       />
