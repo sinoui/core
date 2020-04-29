@@ -7,10 +7,8 @@ import DialogActions from '@sinoui/core/DialogActions';
 import Button from '@sinoui/core/Button';
 
 const DialogWrapper = styled(Dialog)`
-  &.sinoui-dialog {
-    width: 610px;
-    height: 400px;
-  }
+  width: 610px;
+  height: 400px;
 `;
 
 function DialogSetWidth() {

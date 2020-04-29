@@ -32,10 +32,8 @@ function DialogDemo(props: any) {
 }
 
 const DialogWrapper = styled(Dialog)`
-  &.sinoui-dialog {
-    width: 610px;
-    height: 400px;
-  }
+  width: 610px;
+  height: 400px;
 `;
 
 function DialogShow(props: any) {
