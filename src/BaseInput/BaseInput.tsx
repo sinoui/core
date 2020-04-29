@@ -163,6 +163,10 @@ export interface BaseInputProps<
    * 点击清除按钮时的回调函数
    */
   onClear?: (event: React.MouseEvent<HTMLOrSVGElement>) => void;
+  /**
+   * 输入框区域描述性文字
+   */
+  title?: string;
 }
 
 export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
@@ -219,6 +223,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     errorText,
     allowClear,
     onClear,
+    title,
     ...other
   } = props;
 
@@ -326,6 +331,7 @@ const BaseInput: BaseInputComponentType = React.forwardRef<
     onBlur: handleBlur,
     onFocus: handleFocus,
     placeholder,
+    title,
     'aria-required': required,
     ref: handleInputRef,
   };
