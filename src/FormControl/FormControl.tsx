@@ -59,11 +59,15 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
     return (
       <FormControlContext.Provider value={childContext}>
         <FormControlWrapper
-          className={bemClassNames('sinoui-form-item', {
-            horizontal: layout === 'horizontal',
-            vertical: layout === 'vertical',
-            floating: labelLayout === 'floating',
-          })}
+          className={bemClassNames(
+            'sinoui-form-item',
+            {
+              horizontal: layout === 'horizontal',
+              vertical: layout === 'vertical',
+              floating: labelLayout === 'floating',
+            },
+            className,
+          )}
           ref={ref}
           dense={dense}
           colon={colon}

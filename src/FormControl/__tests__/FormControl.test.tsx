@@ -98,6 +98,22 @@ it('className', () => {
   );
 });
 
+it('自定义className', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl data-testid="formcontrol" className="custom-className">
+        <input />
+      </FormControl>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('formcontrol')).toHaveClass(
+    'sinoui-form-item',
+    'sinoui-form-item--vertical',
+    'custom-className',
+  );
+});
+
 it('labelLayout为floating时的class名称', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
