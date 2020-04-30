@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Checkbox from '@sinoui/core/Checkbox';
+import TextInput from '@sinoui/core/TextInput';
+import styled from 'styled-components';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -53,5 +55,19 @@ export const 指定颜色 = () => (
     <Checkbox checked color="info" />
     <Checkbox checked color="actionActive" />
     <Checkbox checked color="actionDisabled" />
+  </StoryLayout>
+);
+
+const Label = styled.span`
+  display: inline-block;
+  margin-right: 8px;
+`;
+
+export const 输入框与复选框组合 = () => (
+  <StoryLayout>
+    <Checkbox checked color="primary">
+      <Label>字数</Label>
+      <TextInput dense />
+    </Checkbox>
   </StoryLayout>
 );

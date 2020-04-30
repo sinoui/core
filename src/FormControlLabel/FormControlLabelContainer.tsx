@@ -46,6 +46,9 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
   > .sinoui-form-control-label__title {
     word-break: break-all;
     word-wrap: break-word;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.5;
   }
 
   cursor: ${(props) =>

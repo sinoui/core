@@ -2,7 +2,8 @@ import React from 'react';
 import { useFormControlContext } from '@sinoui/core/FormControl';
 import FormControlLabelContainer from './FormControlLabelContainer';
 
-export interface FormControlLabelProps {
+export interface FormControlLabelProps
+  extends React.ComponentPropsWithoutRef<'label'> {
   /**
    * 标签位置
    */
@@ -31,11 +32,10 @@ export interface FormControlLabelProps {
 /**
  * 用于给Radio、Checkbox、Switch等组件添加上文本的组件。
  */
-export default function FormControlLabel({
-  label,
-  control,
-  labelPosition = 'right',
-}: FormControlLabelProps) {
+const FormControlLabel = React.forwardRef<
+  HTMLLabelElement,
+  FormControlLabelProps
+>(({ label, control, labelPosition = 'right', ...rest }, ref) => {
   const formControlContext = useFormControlContext();
   return (
     <FormControlLabelContainer
@@ -45,9 +45,13 @@ export default function FormControlLabel({
       disabled={control.props.disabled}
       onFocus={formControlContext?.onFocus}
       onBlur={formControlContext?.onBlur}
+      ref={ref}
+      {...rest}
     >
       {control}
       <span className="sinoui-form-control-label__title">{label}</span>
     </FormControlLabelContainer>
   );
-}
+});
+
+export default FormControlLabel;
