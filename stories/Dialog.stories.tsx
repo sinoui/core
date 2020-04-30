@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Dialog from '@sinoui/core/Dialog';
 import DialogTitle from '@sinoui/core/DialogTitle';
 import DialogContent from '@sinoui/core/DialogContent';
@@ -26,6 +27,31 @@ function DialogDemo(props: any) {
           <Button onClick={() => setOpen(false)}>AGREE</Button>
         </DialogActions>
       </Dialog>
+    </>
+  );
+}
+
+const DialogWrapper = styled(Dialog)`
+  width: 610px;
+  height: 400px;
+`;
+
+function DialogShow(props: any) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>CLICK</Button>
+      <DialogWrapper open={open} {...props} autoWidth>
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent style={{ width: '560px' }}>
+          Let Google help apps determine location. This means sending anonymous
+          location data to Google, even when no apps are running.
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </DialogWrapper>
     </>
   );
 }
@@ -136,5 +162,11 @@ export const 设置最大宽度显示 = () => (
 export const 设置宽度自适应 = () => (
   <StoryLayout>
     <DialogDemo autoWidth />
+  </StoryLayout>
+);
+
+export const 设置自定义宽度 = () => (
+  <StoryLayout>
+    <DialogShow />
   </StoryLayout>
 );
