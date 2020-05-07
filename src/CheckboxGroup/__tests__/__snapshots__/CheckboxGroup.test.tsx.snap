@@ -1423,7 +1423,7 @@ Array [
     >
       <span
         checked={false}
-        className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--read-only"
+        className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--readOnly"
         color="primary"
         disabled={true}
         onClick={[Function]}
@@ -1462,7 +1462,7 @@ Array [
     >
       <span
         checked={false}
-        className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--read-only"
+        className="c2 sinoui-base-button c3 sinoui-checkbox sinoui-checkbox--readOnly"
         color="primary"
         disabled={true}
         onClick={[Function]}

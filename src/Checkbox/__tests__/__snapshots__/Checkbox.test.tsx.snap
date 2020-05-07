@@ -3546,7 +3546,7 @@ Array [
 }
 
 <span
-    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--read-only"
+    className="c0 sinoui-base-button c1 sinoui-checkbox sinoui-checkbox--readOnly"
     color="primary"
     disabled={true}
     onClick={[Function]}
