@@ -59,6 +59,7 @@ it('水平布局FormLabel显示冒号', () => {
           data-testid="formcontrol"
           error="必填"
           layout="horizontal"
+          id="input_1"
         >
           <input />
         </FormControl>
@@ -97,6 +98,22 @@ it('className', () => {
   );
 });
 
+it('自定义className', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl data-testid="formcontrol" className="custom-className">
+        <input />
+      </FormControl>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('formcontrol')).toHaveClass(
+    'sinoui-form-item',
+    'sinoui-form-item--vertical',
+    'custom-className',
+  );
+});
+
 it('labelLayout为floating时的class名称', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
@@ -115,7 +132,7 @@ it('labelLayout为floating时的class名称', () => {
 it('水平布局', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormControl data-testid="formcontrol" layout="horizontal">
+      <FormControl data-testid="formcontrol" layout="horizontal" id="input_1">
         <input />
       </FormControl>
     </ThemeProvider>,
@@ -127,7 +144,7 @@ it('水平布局', () => {
 
   const tree = renderer.create(
     <ThemeProvider theme={defaultTheme}>
-      <FormControl data-testid="formcontrol" layout="horizontal">
+      <FormControl data-testid="formcontrol" layout="horizontal" id="input_1">
         <input />
       </FormControl>
     </ThemeProvider>,

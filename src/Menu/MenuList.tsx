@@ -129,7 +129,7 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
         } else if (key === 'up') {
           event.preventDefault();
           if (focusItem.previousElementSibling) {
-            (focusItem.nextElementSibling as HTMLLIElement).focus();
+            (focusItem.previousElementSibling as HTMLLIElement).focus();
           }
         } else if (key === 'enter') {
           event.preventDefault();

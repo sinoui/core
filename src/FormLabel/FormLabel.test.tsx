@@ -336,3 +336,24 @@ it('floating label: 轮廓输入框，聚焦状态', () => {
     'translate(14px,-6px) scale(0.75)',
   );
 });
+
+it('从上下文中获取error状态', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControlContext.Provider
+        value={
+          {
+            error: true,
+          } as any
+        }
+      >
+        <FormLabel data-testid="label">标签</FormLabel>
+      </FormControlContext.Provider>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('label')).toHaveStyleRule(
+    'color',
+    defaultTheme.palette.error.main,
+  );
+});

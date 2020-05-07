@@ -6,7 +6,7 @@ exports[`Dialog组件 快照测试 不显示遮罩层 1`] = `
   onClick={[Function]}
 >
   <div
-    className="sc-AxhUy bgoGKd sinoui-dialog--draggable"
+    className="sc-AxhUy bgoGKd sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
@@ -64,7 +64,7 @@ exports[`Dialog组件 快照测试 基本使用 1`] = `
     onClick={[Function]}
   />
   <div
-    className="sc-AxhUy bgoGKd sinoui-dialog--draggable"
+    className="sc-AxhUy bgoGKd sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
@@ -122,7 +122,7 @@ exports[`Dialog组件 快照测试 宽度自适应 1`] = `
     onClick={[Function]}
   />
   <div
-    className="sc-AxhUy doOZgu sinoui-dialog--draggable"
+    className="sc-AxhUy doOZgu sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
@@ -180,7 +180,7 @@ exports[`Dialog组件 快照测试 对话框将根据maxWidth的值进行自我�
     onClick={[Function]}
   />
   <div
-    className="sc-AxhUy fXWTBE sinoui-dialog--draggable"
+    className="sc-AxhUy fXWTBE sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
@@ -238,7 +238,7 @@ exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
     onClick={[Function]}
   />
   <div
-    className="sc-AxhUy bgoGKd sinoui-dialog--draggable"
+    className="sc-AxhUy bgoGKd sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb bpVhOc sinoui-dialog-title"
@@ -248,7 +248,7 @@ exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
     >
       Use Google location service?
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-Axmtr kWUQPd sinoui-icon-button sc-fzozJi cfAFtJ sinoui-dialog-title__icon"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-Axmtr eYgLQu sinoui-icon-button sc-fzozJi cfAFtJ sinoui-dialog-title__icon"
         color="textSecondary"
         role="button"
         type="button"
@@ -326,7 +326,7 @@ exports[`Dialog组件 快照测试 设置全屏显示 1`] = `
     onClick={[Function]}
   />
   <div
-    className="sc-AxhUy fNAKwc sinoui-dialog--draggable"
+    className="sc-AxhUy fNAKwc sinoui-dialog sinoui-dialog--draggable"
   >
     <h6
       className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
@@ -385,7 +385,7 @@ exports[`Dialog组件 快照测试 设置弹窗不可以拖拽 1`] = `
     onClick={[Function]}
   />
   <div
-    className="sc-AxhUy bgoGKd"
+    className="sc-AxhUy bgoGKd sinoui-dialog"
   >
     <h6
       className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb bEHJJY sinoui-dialog-title"

@@ -15,6 +15,7 @@ import Button from '@sinoui/core/Button';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import DialogDemo from './dialog-demos/DialogDemo';
+import DialogSetWidthDemo from './dialog-demos/DialogSetWidthDemo';
 
 ## 基本使用
 
@@ -307,4 +308,45 @@ function DialogDemo() {
 
 <ThemeProvider theme={defaultTheme}>
   <DialogDemo autoWidth />
+</ThemeProvider>
+
+## 设置自定义宽度和高度
+
+```tsx
+import Dialog from '@sinoui/core/Dialog';
+import DialogTitle from '@sinoui/core/DialogTitle';
+import DialogContent from '@sinoui/core/DialogContent';
+import DialogActions from '@sinoui/core/DialogActions';
+import Button from '@sinoui/core/Button';
+
+const DialogWrapper = styled(Dialog)`
+  width: 610px;
+  height: 400px;
+`;
+
+function DialogDemo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>点击</Button>
+      <DialogWrapper autoWidth>
+        <DialogTitle>Use Google location service</DialogTitle>
+        <DialogContent>
+          Let Google help apps determine location. This means sending anonymous
+          location data to Google, even when no apps are running.
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>DISAGREE</Button>
+          <Button onClick={() => setOpen(false)}>AGREE</Button>
+        </DialogActions>
+      </DialogWrapper>
+    </>
+  );
+}
+```
+
+效果如下：
+
+<ThemeProvider theme={defaultTheme}>
+  <DialogSetWidthDemo />
 </ThemeProvider>

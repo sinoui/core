@@ -22,7 +22,7 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
       error,
       layout = 'vertical',
       className,
-      id = inputId,
+      id = process.env.NODE_ENV !== 'test' ? inputId : undefined,
       filled,
       variant = 'standard',
       labelLayout,
@@ -59,11 +59,15 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
     return (
       <FormControlContext.Provider value={childContext}>
         <FormControlWrapper
-          className={bemClassNames('sinoui-form-item', {
-            horizontal: layout === 'horizontal',
-            vertical: layout === 'vertical',
-            floating: labelLayout === 'floating',
-          })}
+          className={bemClassNames(
+            'sinoui-form-item',
+            {
+              horizontal: layout === 'horizontal',
+              vertical: layout === 'vertical',
+              floating: labelLayout === 'floating',
+            },
+            className,
+          )}
           ref={ref}
           dense={dense}
           colon={colon}
