@@ -28,7 +28,7 @@ describe('RadioGroup 单元测试', () => {
     expect(radioGroup).toHaveTextContent('单选框');
   });
 
-  test('纵向排列的class类名', async () => {
+  it('纵向排列的class类名', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
         <RadioGroup column data-testid="radioGroup">
@@ -36,9 +36,9 @@ describe('RadioGroup 单元测试', () => {
         </RadioGroup>
       </ThemeProvider>,
     );
-
-    const radioGroup = getByTestId('radioGroup');
-    expect(radioGroup).toHaveClass('sinoui-radio-group--column');
+    expect(getByTestId('radioGroup')).toHaveStyleRule('width', '100%', {
+      modifier: '> label',
+    });
   });
 
   test('切换选中状态', () => {
@@ -63,6 +63,46 @@ describe('RadioGroup 单元测试', () => {
 
     expect(onChange).toHaveBeenCalled();
   });
+
+  it('dense', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <RadioGroup dense data-testid="radiogroup">
+          <Radio value="1">单选框1</Radio>
+          <Radio value="2">单选框2</Radio>
+          <Radio value="3">单选框3</Radio>
+          <Radio value="4">单选框4</Radio>
+        </RadioGroup>
+      </ThemeProvider>,
+    );
+    expect(getByTestId('radiogroup')).toHaveStyleRule(
+      'transform',
+      'translate(-7px,0px)',
+      {
+        modifier: '> label',
+      },
+    );
+  });
+
+  it('标签在图标左侧显示时，不缩进', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <RadioGroup dense data-testid="radiogroup" labelPosition="left">
+          <Radio value="1">单选框1</Radio>
+          <Radio value="2">单选框2</Radio>
+          <Radio value="3">单选框3</Radio>
+          <Radio value="4">单选框4</Radio>
+        </RadioGroup>
+      </ThemeProvider>,
+    );
+    expect(getByTestId('radiogroup')).not.toHaveStyleRule(
+      'transform',
+      'translate(-7px,0px)',
+      {
+        modifier: '> label',
+      },
+    );
+  });
 });
 
 describe('radioGroup组件 快照测试', () => {
@@ -70,10 +110,7 @@ describe('radioGroup组件 快照测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <RadioGroup
-            onChange={(_event, value) => console.log(value)}
-            value="3"
-          >
+          <RadioGroup onChange={(value) => console.log(value)} value="3">
             <Radio value="1">单选框1</Radio>
             <Radio value="2">单选框2</Radio>
             <Radio value="3">单选框3</Radio>

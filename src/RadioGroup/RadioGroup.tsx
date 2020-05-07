@@ -1,35 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
 import FormGroup from '@sinoui/core/FormGroup';
 import Radio from '@sinoui/core/Radio';
+import classNames from 'classnames';
 import type RadioGroupItem from './RadioGroupItem';
-import bemClassNames from '../utils/bemClassNames';
-
-const PaddingRightStyle = css`
-  > label {
-    padding-right: 8px;
-  }
-  > label:last-child {
-    padding-right: 0px;
-  }
-`;
-
-const labelStyle = css<{ dense?: boolean }>`
-  transform: ${({ dense }) => `translate(-${dense ? 7 : 12}px, 0px)`};
-`;
-
-const FormGroupWrapper = styled(FormGroup)<{
-  column?: boolean;
-  labelPosition?: 'left' | 'right';
-}>`
-  &.sinoui-radio-group--column > .sinoui-form-control-label {
-    width: 100%;
-  }
-  > label {
-    ${({ labelPosition }) => labelPosition !== 'left' && labelStyle}
-  }
-  ${(props) => !props.column && PaddingRightStyle};
-`;
 
 export interface RadioGroupProps<T> {
   /**
@@ -153,20 +126,13 @@ function RadioGroup<T = string>(props: RadioGroupProps<T>) {
   };
 
   return (
-    <FormGroupWrapper
+    <FormGroup
       {...rest}
       dense={dense}
-      className={bemClassNames(
-        'sinoui-radio-group',
-        {
-          column,
-          disabled,
-          readOnly,
-        },
-        className,
-      )}
+      className={classNames('sinoui-checkbox-group', className)}
       column={column}
-      labelPosition={labelPosition}
+      disabledIndent={labelPosition === 'left'}
+      onChange={(event) => event.stopPropagation()}
     >
       {items.map((item) => (
         <Radio
@@ -183,7 +149,7 @@ function RadioGroup<T = string>(props: RadioGroupProps<T>) {
           {item.label}
         </Radio>
       ))}
-    </FormGroupWrapper>
+    </FormGroup>
   );
 }
 
