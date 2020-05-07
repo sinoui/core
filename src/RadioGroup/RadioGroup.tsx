@@ -15,7 +15,7 @@ const PaddingRightStyle = css`
 `;
 
 const labelStyle = css<{ dense?: boolean }>`
-  transform: ${({ dense }) => `translate(-${dense ? 8 : 12}px, 0px)`};
+  transform: ${({ dense }) => `translate(-${dense ? 7 : 12}px, 0px)`};
 `;
 
 const FormGroupWrapper = styled(FormGroup)<{
@@ -155,6 +155,7 @@ function RadioGroup<T = string>(props: RadioGroupProps<T>) {
   return (
     <FormGroupWrapper
       {...rest}
+      dense={dense}
       className={bemClassNames(
         'sinoui-radio-group',
         {
