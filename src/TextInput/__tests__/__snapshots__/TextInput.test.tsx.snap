@@ -4,8 +4,10 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 .c1 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -31,8 +33,10 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 .c4 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -58,8 +62,10 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 .c6 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -567,8 +573,10 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 .c1 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.38);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -594,8 +602,10 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 .c5 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.38);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -1001,8 +1011,10 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 .c1 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -1028,8 +1040,10 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 .c6 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -1055,8 +1069,10 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 .c8 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -1626,8 +1642,10 @@ exports[`渲染带后缀元素的输入框 1`] = `
 .c1 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -1653,8 +1671,10 @@ exports[`渲染带后缀元素的输入框 1`] = `
 .c6 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -1680,8 +1700,10 @@ exports[`渲染带后缀元素的输入框 1`] = `
 .c8 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -2222,8 +2244,10 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 .c1 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -2249,8 +2273,10 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 .c5 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: rgba(0,0,0,0.6);
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -2637,8 +2663,10 @@ exports[`渲染有错误提示的输入框 1`] = `
 .c1 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: #f44336;
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
@@ -2669,8 +2697,10 @@ exports[`渲染有错误提示的输入框 1`] = `
 .c5 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-weight: 400;
   color: #f44336;
   box-sizing: border-box;
+  margin: 0px;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;

@@ -49,8 +49,10 @@ const FormLabelInner = styled.label.attrs({
 })<FormLabelProps & { $isAfterRequired: boolean }>`
   font-size: ${(props) => props.theme.typography.body1.fontSize};
   font-family: ${(props) => props.theme.typography.fontFamily};
+  font-weight:${(props) => props.theme.typography.fontWeightRegular};
   color: ${getColor};
   box-sizing: border-box;
+  margin: 0px;
   transition: ${({ theme }) =>
     theme.transitions.create(['color', 'transform'], {
       easing: theme.transitions.easing.easeInOut,
