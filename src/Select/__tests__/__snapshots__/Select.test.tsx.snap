@@ -435,7 +435,7 @@ label ~ .c4 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c4 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c4 {
   margin-top: 16px;
 }
 
@@ -878,7 +878,7 @@ label ~ .c4 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c4 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c4 {
   margin-top: 16px;
 }
 

@@ -37,10 +37,7 @@ const StandardInput: React.SFC<InputProps> = styled(BaseInput)<InputProps>`
     margin-top: 16px;
   }
 
-  .sinoui-form-item--floating
-    > .sinoui-form-item__content
-    > .sinoui-text-input
-    > & {
+  .sinoui-form-item--floating > .sinoui-form-item__content & {
     margin-top: 16px;
   }
 

@@ -395,7 +395,7 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c3 {
   margin-top: 16px;
 }
 
@@ -824,7 +824,7 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c3 {
   margin-top: 16px;
 }
 
@@ -1402,7 +1402,7 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c3 {
   margin-top: 16px;
 }
 
@@ -2033,7 +2033,7 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c3 {
   margin-top: 16px;
 }
 
@@ -2514,7 +2514,7 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c3 {
   margin-top: 16px;
 }
 
@@ -2941,7 +2941,7 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content > .sinoui-text-input > .c3 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c3 {
   margin-top: 16px;
 }
 
