@@ -2,7 +2,7 @@
 
 exports[`Snackbar快照测试 不自动消失 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar sinoui-snackbar--open"
+  className="sc-AxgMl bAOVCq sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -47,7 +47,7 @@ exports[`Snackbar快照测试 不自动消失 1`] = `
 
 exports[`Snackbar快照测试 含有操作区域 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar sinoui-snackbar--open"
+  className="sc-AxgMl bAOVCq sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -104,7 +104,7 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
 
 exports[`Snackbar快照测试 居左显示 1`] = `
 <div
-  className="sc-AxgMl gYqwOi sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--leading"
+  className="sc-AxgMl cvHYxv sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--leading"
   open={true}
 >
   <div
@@ -149,7 +149,7 @@ exports[`Snackbar快照测试 居左显示 1`] = `
 
 exports[`Snackbar快照测试 操作区域换行显示 1`] = `
 <div
-  className="sc-AxgMl dAEDZK sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--stacked sinoui-snackbar--leading"
+  className="sc-AxgMl kTqUNT sinoui-snackbar sinoui-snackbar--open sinoui-snackbar--stacked sinoui-snackbar--leading"
   open={true}
 >
   <div
@@ -206,13 +206,13 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
 
 exports[`Snackbar快照测试 纯文本不显示 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar"
+  className="sc-AxgMl cEma-di sinoui-snackbar"
 />
 `;
 
 exports[`Snackbar快照测试 纯文本显示 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar sinoui-snackbar--open"
+  className="sc-AxgMl bAOVCq sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div
@@ -257,7 +257,7 @@ exports[`Snackbar快照测试 纯文本显示 1`] = `
 
 exports[`Snackbar快照测试 设置自定义时长 1`] = `
 <div
-  className="sc-AxgMl LxfnL sinoui-snackbar sinoui-snackbar--open"
+  className="sc-AxgMl bAOVCq sinoui-snackbar sinoui-snackbar--open"
   open={true}
 >
   <div

@@ -62,6 +62,13 @@ const leadingStyle = css`
   justify-content: flex-start;
 `;
 
+const openSnackBarStyle = css`
+  .sinoui-snackbar__surface {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
 const snackbarStyle = css`
   position: fixed;
   display: flex;
@@ -96,17 +103,6 @@ const snackbarStyle = css`
         duration: duration.shortest,
         easing: easing.easeInOut,
       })};
-
-    &.sinoui-snackbar--enter-active,
-    &.sinoui-snackbar--enter-done {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .sinoui-snackbar--exit-active {
-      opacity: 0;
-      transform: scale(0.9);
-    }
   }
 
   & .sinoui-snackbar__label {
@@ -149,6 +145,7 @@ const SnackbarWrapper = styled.div.attrs((props: SnackbarProps) => ({
   }
 >`
   ${snackbarStyle};
+  ${(props) => props.open && openSnackBarStyle}
   ${(props) => props.stacked && stackStyle}
   ${(props) => props.leading && leadingStyle}
 `;
