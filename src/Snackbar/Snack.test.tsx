@@ -104,6 +104,24 @@ describe('Snackbar单元测试', () => {
     });
     expect(onClose).toHaveBeenCalled();
   });
+
+  it('不显示关闭按钮', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Snackbar
+          data-testid="snackbar"
+          open
+          duration={-1}
+          message="提示信息"
+          showCloseIcon={false}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(
+      container.querySelector('.sinoui-snackbar__dismiss'),
+    ).not.toBeInTheDocument();
+  });
 });
 
 describe('Snackbar快照测试', () => {

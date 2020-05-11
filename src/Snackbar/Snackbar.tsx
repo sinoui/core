@@ -38,6 +38,10 @@ interface SnackbarProps {
   leading?: boolean;
   style?: React.CSSProperties;
   className?: string;
+  /**
+   * 是否显示关闭按钮，默认显示
+   */
+  showCloseIcon?: boolean;
 }
 
 /**
@@ -159,6 +163,7 @@ export default function Snackbar(props: SnackbarProps) {
     duration = 5000,
     action,
     onClose,
+    showCloseIcon = true,
     ...rest
   } = props;
 
@@ -185,11 +190,13 @@ export default function Snackbar(props: SnackbarProps) {
           <div className="sinoui-snackbar__label">{message}</div>
           <div className="sinoui-snackbar__actions">
             {action && <div className="sinoui-snackbar__action">{action}</div>}
-            <div className="sinoui-snackbar__dismiss">
-              <DismissIconButton onClick={onClose}>
-                <Close />
-              </DismissIconButton>
-            </div>
+            {showCloseIcon && (
+              <div className="sinoui-snackbar__dismiss">
+                <DismissIconButton onClick={onClose}>
+                  <Close />
+                </DismissIconButton>
+              </div>
+            )}
           </div>
         </div>
       </CSSTransition>
