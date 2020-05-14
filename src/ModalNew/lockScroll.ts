@@ -41,6 +41,5 @@ export default function lockScroll(container: HTMLElement) {
     return unlock;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  return () => {};
+  return undefined;
 }
