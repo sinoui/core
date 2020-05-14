@@ -7,7 +7,7 @@ import { zIndex } from '@sinoui/theme';
 import Modal from '@sinoui/core/Modal';
 import Iframe from './Iframe';
 import { getScrollTop } from '../utils/domHelpers';
-import Grow from '../transitions/Grow';
+import Grow from '../Grow';
 import PopoverPosition from './PopoverPosition';
 import PopoverLayout from './PopoverLayout';
 import PopoverContent from './PopoverContent';
@@ -394,7 +394,6 @@ function Popover(props: PopoverProps) {
         onExit={onExit}
         onExited={onExited}
         onExiting={onExiting}
-        role={role}
         ref={transitionElRef}
         {...transitionProps}
       >
