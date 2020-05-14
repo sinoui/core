@@ -5,7 +5,7 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
   className="sc-AxjAm cKvraX sinoui-navigation-rail"
 >
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -41,7 +41,7 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
     </span>
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy kTushm sinoui-navigation-rail sinoui-navigation-rail--selected"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -77,7 +77,7 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
     </span>
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -113,7 +113,7 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
     </span>
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -157,7 +157,7 @@ Array [
     className="sc-AxjAm jagZqa sinoui-navigation-rail"
   >
     <button
-      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -193,7 +193,7 @@ Array [
       </span>
     </button>
     <button
-      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy kTushm sinoui-navigation-rail sinoui-navigation-rail--selected"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
       onClick={[Function]}
       role="button"
       selected={true}
@@ -229,7 +229,7 @@ Array [
       </span>
     </button>
     <button
-      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -265,7 +265,7 @@ Array [
       </span>
     </button>
     <button
-      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -305,7 +305,7 @@ Array [
     className="sc-AxjAm AhsHA sinoui-navigation-rail"
   >
     <button
-      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -341,7 +341,7 @@ Array [
       </span>
     </button>
     <button
-      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy kTushm sinoui-navigation-rail sinoui-navigation-rail--selected"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
       onClick={[Function]}
       role="button"
       selected={true}
@@ -377,7 +377,7 @@ Array [
       </span>
     </button>
     <button
-      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -413,7 +413,7 @@ Array [
       </span>
     </button>
     <button
-      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -457,7 +457,7 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
   className="sc-AxjAm cKvraX sinoui-navigation-rail"
 >
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -501,7 +501,7 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
     </span>
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy kTushm sinoui-navigation-rail sinoui-navigation-rail--selected"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -537,7 +537,7 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
     </span>
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -583,7 +583,7 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
     </span>
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -636,7 +636,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
   className="sc-AxjAm cKvraX sinoui-navigation-rail"
 >
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy iFocuE sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -667,7 +667,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
     </span>
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy kTushm sinoui-navigation-rail sinoui-navigation-rail--selected"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -703,7 +703,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
     </span>
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy iFocuE sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -734,7 +734,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
     </span>
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy BkEGE sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy iFocuE sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}

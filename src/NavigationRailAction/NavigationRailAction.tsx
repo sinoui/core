@@ -38,7 +38,7 @@ const BaseButtonWrapper = styled(BaseButton)<{
   align-items: center;
   color: ${({ theme, color, selected }) =>
     colorWrapper(theme, color, selected)};
-  padding: ${({ showLabel }) => (showLabel ? '8px 10px 12px' : '16px 10px')};
+  padding: ${({ showLabel }) => (showLabel ? '14px 0px 16px' : '24px 0px')};
   width: 100%;
   min-height: 72px;
   transition: ${({
@@ -105,7 +105,8 @@ function NavigationRailAction(props: BottomNavActionProps) {
     }
   };
 
-  const show = (showLabels === false && value === selectedValue) || showLabels;
+  const showLabel =
+    (showLabels === false && value === selectedValue) || showLabels;
 
   return (
     <BaseButtonWrapper
@@ -117,9 +118,10 @@ function NavigationRailAction(props: BottomNavActionProps) {
       onClick={(e) => onClick(e)}
       color={color}
       value={value}
+      showLabel={showLabel}
     >
       <IconWrapper>{icon}</IconWrapper>
-      {show && <BodyWrapper as="span">{label}</BodyWrapper>}
+      {showLabel && <BodyWrapper as="span">{label}</BodyWrapper>}
     </BaseButtonWrapper>
   );
 }
