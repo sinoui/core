@@ -14,7 +14,7 @@ export interface ScrimProps {
 /**
  * 遮罩层样式组件。
  *
- * 此组件的命名`Scrim`来自`material design`设计规范关注遮罩层的描述中。
+ * 此组件的命名`Scrim`来自`material design`设计规范关于遮罩层的描述中。
  */
 const Scrim = styled.div<ScrimProps>`
   position: fixed;

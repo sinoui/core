@@ -19,6 +19,9 @@ interface Props extends ScrimProps, React.ComponentPropsWithoutRef<'div'> {
   transitionDuration?: number;
 }
 
+/**
+ * 遮罩层
+ */
 const Backdrop = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const theme = useTheme();
   const {
