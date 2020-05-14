@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Modal from '@sinoui/core/Modal';
-import Fade from '../transitions/Fade';
+import Fade from '../Fade';
 import DialogContainer, { DialogContainerProps } from './DialogContainer';
 
 const ModalWrapper = styled(Modal)`

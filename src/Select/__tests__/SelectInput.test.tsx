@@ -6,8 +6,17 @@ import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
+import { config } from 'react-transition-group';
 import SelectInput from '../SelectInput';
 import Option from '../Option';
+
+beforeAll(() => {
+  config.disabled = true;
+});
+
+afterAll(() => {
+  config.disabled = false;
+});
 
 it('单选时，点击选项，onClose被调用', () => {
   const onClose = jest.fn();

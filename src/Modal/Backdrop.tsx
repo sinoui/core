@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Fade from '../transitions/Fade';
+import type { TransitionProps } from 'react-transition-group/Transition';
+import Fade from '../Fade';
 
 const BackdropWrapper = styled.div.attrs({
   'aria-hidden': true,
@@ -28,7 +29,7 @@ export interface BackdropProps {
   /**
    * 动画延长时间
    */
-  transitionDuration?: 'auto' | number;
+  transitionDuration?: number | TransitionProps['timeout'];
   /**
    * backdrop被点击时的回调函数
    *
@@ -48,7 +49,7 @@ export interface BackdropProps {
 export default function Backdrop(props: BackdropProps) {
   const { open, transitionDuration } = props;
   return (
-    <Fade appear in={open} timeout={transitionDuration} {...props}>
+    <Fade in={open} timeout={transitionDuration} {...props}>
       <BackdropWrapper />
     </Fade>
   );
