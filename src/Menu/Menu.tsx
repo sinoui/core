@@ -1,7 +1,7 @@
 /* eslint-disable react/no-find-dom-node */
 /* eslint-disable no-param-reassign */
 import React, { useCallback, useRef, useEffect } from 'react';
-import getScrollbarSize from 'dom-helpers/util/scrollbarSize';
+import getScrollbarSize from 'dom-helpers/scrollbarSize';
 import Popover, { PopoverProps } from '@sinoui/core/Popover';
 import { PaperProps } from '@sinoui/core/Paper';
 import MenuList, { MenuListProps } from './MenuList';

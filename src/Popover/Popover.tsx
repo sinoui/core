@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import React, { useRef, useCallback, useEffect } from 'react';
-import contains from 'dom-helpers/query/contains';
+import contains from 'dom-helpers/contains';
 import debounce from 'lodash/debounce';
 import EventListener from 'react-event-listener';
 import { zIndex } from '@sinoui/theme';
