@@ -11,6 +11,15 @@ afterEach(cleanup);
 
 jest.useFakeTimers();
 
+const handleRef = (node: HTMLDivElement) => {
+  if (node) {
+    Object.defineProperty(node.firstChild, 'clientHeight', {
+      configurable: true,
+      value: 200,
+    });
+  }
+};
+
 it('默认展现', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
@@ -66,15 +75,6 @@ it('collapseHeight', () => {
 });
 
 it('显示 -> 隐藏', () => {
-  const handleRef = (node: HTMLDivElement) => {
-    if (node) {
-      Object.defineProperty(node.firstChild, 'clientHeight', {
-        configurable: true,
-        value: 200,
-      });
-    }
-  };
-
   const { getByTestId, rerender } = render(
     <ThemeProvider theme={defaultTheme}>
       <Collapse data-testid="collapse" in ref={handleRef}>
@@ -107,15 +107,6 @@ it('显示 -> 隐藏', () => {
 });
 
 it('隐藏 -> 显示', () => {
-  const handleRef = (node: HTMLDivElement) => {
-    if (node) {
-      Object.defineProperty(node.firstChild, 'clientHeight', {
-        configurable: true,
-        value: 200,
-      });
-    }
-  };
-
   const { getByTestId, rerender } = render(
     <ThemeProvider theme={defaultTheme}>
       <Collapse
@@ -153,4 +144,118 @@ it('隐藏 -> 显示', () => {
   // onEntered: `height: auto`
   jest.runAllTimers();
   expect(getByTestId('collapse')).toHaveStyle('height: auto');
+});
+
+it('auto timeout', () => {
+  const { getByTestId, rerender } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Collapse in timeout="auto" ref={handleRef} data-testid="collapse">
+        <div>测试</div>
+      </Collapse>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('collapse')).toHaveStyle('transition-duration: 281ms');
+
+  // 验证addEndListener
+  jest.runAllTimers();
+  expect(getByTestId('collapse')).toHaveStyle('height: auto');
+
+  rerender(
+    <ThemeProvider theme={defaultTheme}>
+      <Collapse
+        in={false}
+        timeout="auto"
+        ref={handleRef}
+        data-testid="collapse"
+      >
+        <div>测试</div>
+      </Collapse>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('collapse')).toHaveStyle('transition-duration: 281ms');
+});
+
+it('clean timeout after unmounted', () => {
+  const onEntered = jest.fn();
+  const { unmount } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Collapse
+        in
+        timeout="auto"
+        ref={handleRef}
+        data-testid="collapse"
+        onEntered={onEntered}
+      >
+        <div>测试</div>
+      </Collapse>
+    </ThemeProvider>,
+  );
+
+  unmount();
+  jest.runAllTimers();
+  expect(onEntered).not.toBeCalled();
+});
+
+it('ref', () => {
+  const ref = React.createRef<HTMLDivElement>();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Collapse in timeout="auto" data-testid="collapse" ref={ref}>
+        <div>测试</div>
+      </Collapse>
+    </ThemeProvider>,
+  );
+
+  expect(ref.current).toBe(getByTestId('collapse'));
+});
+
+it('onEnter, onEntering, onEntered', () => {
+  const onEnter = jest.fn();
+  const onEntering = jest.fn();
+  const onEntered = jest.fn();
+
+  render(
+    <ThemeProvider theme={defaultTheme}>
+      <Collapse
+        in
+        onEnter={onEnter}
+        onEntering={onEntering}
+        onEntered={onEntered}
+      >
+        <div>测试</div>
+      </Collapse>
+    </ThemeProvider>,
+  );
+
+  expect(onEnter).toBeCalled();
+  expect(onEntering).toBeCalled();
+  expect(onEntered).not.toBeCalled();
+
+  jest.runAllTimers();
+
+  expect(onEntered).toBeCalled();
+});
+
+it('onExit, onExiting', () => {
+  const onExit = jest.fn();
+  const onExiting = jest.fn();
+  const { rerender } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Collapse in onExit={onExit} onExiting={onExiting}>
+        <div>测试</div>
+      </Collapse>
+    </ThemeProvider>,
+  );
+  rerender(
+    <ThemeProvider theme={defaultTheme}>
+      <Collapse in={false} onExit={onExit} onExiting={onExiting}>
+        <div>测试</div>
+      </Collapse>
+    </ThemeProvider>,
+  );
+
+  expect(onExit).toBeCalled();
+  expect(onExiting).toBeCalled();
 });

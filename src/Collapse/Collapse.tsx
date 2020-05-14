@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 import transitions from '@sinoui/theme/transitions';
@@ -111,6 +111,10 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
   const addEndListener = (_: HTMLElement, done: () => void) => {
     timerRef.current = setTimeout(done, autoTimeout.current);
   };
+
+  useEffect(() => {
+    return () => window.clearTimeout(timerRef.current);
+  }, []);
 
   return (
     <Transition
