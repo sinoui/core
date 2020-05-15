@@ -94,7 +94,7 @@ export interface NavigationRailActionProps {
  * @param {Props} props
  * @returns
  */
-function NavigationRailAction(props: BottomNavActionProps) {
+function NavigationRailAction(props: NavigationRailActionProps) {
   const { label, icon, value, color, ...rest } = props;
 
   const { showLabels, selectedValue, onChange } = useContext(MyContext);
