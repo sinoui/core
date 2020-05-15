@@ -25,11 +25,13 @@ const NavigationRailWrapper = styled.div<{
   height: 100%;
   ${({ theme }) =>
     colorCss('background-color', theme.palette.background.paper)};
-  box-shadow: ${({ theme }) => theme.shadows[8]};
+  box-shadow: ${({ theme }) => theme.shadows[0]};
+  border-right: 1px solid ${(props) => props.theme.palette.divider};
 
   .sinoui-fab {
     position: absolute;
-    top: 8px;
+    top: 16px;
+    left: 8px;
     margin-bottom: 8px;
   }
 `;
