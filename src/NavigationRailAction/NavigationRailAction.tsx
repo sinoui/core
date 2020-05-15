@@ -65,7 +65,7 @@ const BodyWrapper = styled(Body2)`
   transition: opacity 200ms;
 `;
 
-export interface BottomNavActionProps {
+export interface NavigationRailActionProps {
   /**
    * 标签名称
    */
