@@ -7,6 +7,7 @@ import type { TransitionStatus } from 'react-transition-group/Transition';
 import type BaseTransitionProps from '../transitions/BaseTransitionProps';
 import getDuration from '../transitions/getDuration';
 import type { TransitionTimeout } from '../transitions/getDuration';
+import useMultiRefs from '../utils/useMultiRefs';
 
 interface CollapseWrapperProps {
   $entered?: boolean;
@@ -58,18 +59,28 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     onExiting,
     ...rest
   } = props;
+  const contentRef = useRef<HTMLElement>(null);
+  const handleContentRef = useMultiRefs(contentRef, ref);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const autoTimeout = useRef<number>(0);
   const timerRef = useRef<number>();
 
-  const handleEnter = (node: HTMLElement, isAppearing: boolean) => {
+  const handleEnter: any = (isAppearing: boolean) => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     node.style.height = `${collapsedHeight}px`;
     if (onEnter) {
       onEnter(node, isAppearing);
     }
   };
 
-  const handleEntering = (node: HTMLElement, isAppearing: boolean) => {
+  const handleEntering: any = (isAppearing: boolean) => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     const wrapper = wrapperRef.current;
     const duration = getDuration(timeout, 'enter', wrapper);
     node.style.transitionDuration = `${duration}ms`;
@@ -81,14 +92,22 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     }
   };
 
-  const handleEntered = (node: HTMLElement, isAppearing: boolean) => {
+  const handleEntered: any = (isAppearing: boolean) => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     node.style.height = 'auto';
     if (onEntered) {
       onEntered(node, isAppearing);
     }
   };
 
-  const handleExit = (node: HTMLElement) => {
+  const handleExit = () => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     node.style.height = `${wrapperRef.current?.clientHeight ?? 0}px`;
     reflow(node);
     if (onExit) {
@@ -96,7 +115,11 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     }
   };
 
-  const handleExiting = (node: HTMLElement) => {
+  const handleExiting = () => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     const wrapper = wrapperRef.current;
     const duration = getDuration(timeout, 'exit', wrapper);
     node.style.transitionDuration = `${duration}ms`;
@@ -108,7 +131,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     }
   };
 
-  const addEndListener = (_: HTMLElement, done: () => void) => {
+  const addEndListener: any = (done: () => void) => {
     timerRef.current = setTimeout(done, autoTimeout.current);
   };
 
@@ -127,6 +150,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
       onExit={handleExit}
       onExiting={handleExiting}
       addEndListener={(timeout === 'auto' ? addEndListener : undefined) as any}
+      nodeRef={wrapperRef}
       {...rest}
     >
       {(status: TransitionStatus, childProps: any) => (
@@ -134,7 +158,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
           $entered={status === 'entered'}
           $hidden={status === 'exited' && !inProp && collapsedHeight === 0}
           $minHeight={collapsedHeight}
-          ref={ref}
+          ref={handleContentRef}
           {...childProps}
         >
           <div ref={wrapperRef}>

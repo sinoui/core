@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { transitions } from '@sinoui/theme';
 import '@testing-library/jest-dom';
+import { create } from 'react-test-renderer';
 import Zoom from './Zoom';
 
 jest.useFakeTimers();
@@ -140,4 +141,18 @@ it('子元素属性', () => {
   );
 
   expect(getByTestId('zoom')).toHaveClass('zoom');
+});
+
+describe('快照测试', () => {
+  it('展现', () => {
+    const tree = create(
+      <React.StrictMode>
+        <Zoom in>
+          <div>测试</div>
+        </Zoom>
+      </React.StrictMode>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

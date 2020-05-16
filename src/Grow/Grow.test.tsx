@@ -2,6 +2,7 @@ import React, { createRef } from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import transitions from '@sinoui/theme/transitions';
+import { create } from 'react-test-renderer';
 import Grow from './Grow';
 
 afterEach(cleanup);
@@ -154,4 +155,18 @@ it('子元素属性', () => {
   expect(growRef.current).toBe(getByTestId('grow'));
   expect(getByTestId('grow')).toHaveAttribute('id', 'div123');
   expect(getByTestId('grow')).toHaveClass('div121');
+});
+
+describe('快照测试', () => {
+  it('展现', () => {
+    const tree = create(
+      <React.StrictMode>
+        <Grow in>
+          <div>测试</div>
+        </Grow>
+      </React.StrictMode>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import { transitions } from '@sinoui/theme';
+import { create } from 'react-test-renderer';
 import Slide, { getTranslate } from './Slide';
 
 afterEach(cleanup);
@@ -241,4 +242,18 @@ it('子元素属性', () => {
   );
 
   expect(getByTestId('slide')).toHaveClass('slide');
+});
+
+describe('快照测试', () => {
+  it('展现', () => {
+    const tree = create(
+      <React.StrictMode>
+        <Slide in>
+          <div>测试</div>
+        </Slide>
+      </React.StrictMode>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

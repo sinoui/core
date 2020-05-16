@@ -2,6 +2,7 @@ import React, { createRef } from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import transitions, { duration } from '@sinoui/theme/transitions';
+import { create } from 'react-test-renderer';
 import Fade from './Fade';
 
 afterEach(cleanup);
@@ -172,4 +173,18 @@ it('timeout', () => {
       duration: 100,
     })}`,
   );
+});
+
+describe('快照测试', () => {
+  it('展现', () => {
+    const tree = create(
+      <React.StrictMode>
+        <Fade in>
+          <div>测试</div>
+        </Fade>
+      </React.StrictMode>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -39,7 +39,8 @@ const Grow = React.forwardRef<
     onExit,
     ...rest
   } = props;
-  const handleRef = useMultiRefs(ref, (children as any).ref);
+  const contentRef = useRef<HTMLElement>(null);
+  const handleRef = useMultiRefs(contentRef, ref, (children as any).ref);
   const autoTimeout = useRef<number>(0);
   const timeoutRef = useRef<number>();
 
@@ -49,7 +50,11 @@ const Grow = React.forwardRef<
    * @param node 应用过渡效果的节点
    * @param isAppear 指示进场动画是否触发在初始挂载时
    */
-  const handleEnter = (node: HTMLElement, isAppear: boolean) => {
+  const handleEnter: any = (isAppear: boolean) => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     const duration = getDuration(timeout, 'enter', node);
     autoTimeout.current = timeout === 'auto' ? duration : 0;
 
@@ -66,7 +71,11 @@ const Grow = React.forwardRef<
    *
    * @param node 应用过渡的节点
    */
-  const handleExit = (node: HTMLElement) => {
+  const handleExit = () => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     const duration = getDuration(timeout, 'exit', node);
     autoTimeout.current = timeout === 'auto' ? duration : 0;
 
@@ -84,10 +93,9 @@ const Grow = React.forwardRef<
   /**
    * 添加过渡结束监听。在此回调函数中处理 `timeout = 'auto'`
    *
-   * @param _node 应用过渡的节点
    * @param done 过渡完成回调函数
    */
-  const addEndListener = (_node: HTMLElement, done: () => void) => {
+  const addEndListener: any = (done: () => void) => {
     if (timeout === 'auto') {
       timeoutRef.current = setTimeout(done, autoTimeout.current);
     }
@@ -104,6 +112,7 @@ const Grow = React.forwardRef<
       addEndListener={(timeout === 'auto' ? addEndListener : undefined) as any}
       onEnter={handleEnter}
       onExit={handleExit}
+      nodeRef={contentRef}
       {...rest}
     >
       {(status: any, childProps: any) =>

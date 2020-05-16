@@ -5,6 +5,7 @@ import { duration } from '@sinoui/theme/transitions';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import 'jest-styled-components';
+import { create } from 'react-test-renderer';
 import Collapse from './Collapse';
 
 afterEach(cleanup);
@@ -258,4 +259,20 @@ it('onExit, onExiting', () => {
 
   expect(onExit).toBeCalled();
   expect(onExiting).toBeCalled();
+});
+
+describe('快照测试', () => {
+  it('展现', () => {
+    const tree = create(
+      <React.StrictMode>
+        <ThemeProvider theme={defaultTheme}>
+          <Collapse in>
+            <div>测试</div>
+          </Collapse>
+        </ThemeProvider>
+      </React.StrictMode>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import React from 'react';
+import React, { useRef } from 'react';
 import { Transition } from 'react-transition-group';
 import transitions, { duration } from '@sinoui/theme/transitions';
 import type { TransitionStatus } from 'react-transition-group/Transition';
@@ -62,16 +62,19 @@ const Slide = React.forwardRef<HTMLElement, Props>(function Slide(props, ref) {
     onExited,
     ...rest
   } = props;
-
-  const handleRef = useMultiRefs(ref, (children as any).ref);
+  const contentRef = useRef<HTMLElement>(null);
+  const handleRef = useMultiRefs(contentRef, ref, (children as any).ref);
 
   /**
    * 进入过渡的初始化回调函数。在初始化步骤需要将元素设置到屏幕外部。
    *
-   * @param node 节点
    * @param isAppearing 指示进场动画是否触发在初始挂载时
    */
-  const handleEnter = (node: HTMLElement, isAppearing: boolean) => {
+  const handleEnter: any = (isAppearing: boolean) => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     node.style.transform = getTranslate(node, direction);
     reflow(node); // 修复初始化隐藏到展现时无过渡的缺陷
     if (onEnter) {
@@ -82,10 +85,13 @@ const Slide = React.forwardRef<HTMLElement, Props>(function Slide(props, ref) {
   /**
    * 进入过渡的开始回调函数。在开始步骤中设置过渡效果，并让元素出现在之前的位置。
    *
-   * @param node 节点
    * @param isAppearing 指示进场动画是否触发在初始挂载时
    */
-  const handleEntering = (node: HTMLElement, isAppearinging: boolean) => {
+  const handleEntering: any = (isAppearinging: boolean) => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     node.style.transition = transitions.create('transform', {
       duration: typeof timeout === 'number' ? timeout : timeout.enter,
       easing: transitions.easing.easeOut,
@@ -98,10 +104,12 @@ const Slide = React.forwardRef<HTMLElement, Props>(function Slide(props, ref) {
 
   /**
    * 退出过渡的回调函数。需要将元素设置到屏幕之外，并设置过渡效果。
-   *
-   * @param node 节点
    */
-  const handleExit = (node: HTMLElement) => {
+  const handleExit = () => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     node.style.transition = transitions.create('transform', {
       duration: typeof timeout === 'number' ? timeout : timeout.exit,
       easing: transitions.easing.sharp,
@@ -114,9 +122,12 @@ const Slide = React.forwardRef<HTMLElement, Props>(function Slide(props, ref) {
 
   /**
    * 退出过渡的完成回调函数。需要在过渡结束时清除过渡效果。
-   * @param node 节点
    */
-  const handleExited = (node: HTMLElement) => {
+  const handleExited = () => {
+    const node = contentRef.current;
+    if (!node) {
+      return;
+    }
     node.style.transition = 'none';
     node.style.transform = 'none';
     if (onExited) {
@@ -133,6 +144,7 @@ const Slide = React.forwardRef<HTMLElement, Props>(function Slide(props, ref) {
       onEntering={handleEntering}
       onExit={handleExit}
       onExited={handleExited}
+      nodeRef={contentRef}
       {...rest}
     >
       {(status: TransitionStatus, childProps: any) =>
