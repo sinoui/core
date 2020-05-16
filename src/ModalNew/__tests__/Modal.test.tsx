@@ -810,6 +810,29 @@ describe('scrollLock', () => {
     );
     expect(getByTestId('fixed')).toHaveStyle('padding-right: 10px');
   });
+
+  it('html元素设置为溢出滚动', () => {
+    const html = document.body.parentElement as HTMLElement;
+    html.style.overflow = 'scroll';
+    const { rerender } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open>
+          <div />
+        </Modal>
+      </ThemeProvider>,
+    );
+    expect(html).toHaveStyle('overflow:hidden');
+
+    rerender(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open={false}>
+          <div />
+        </Modal>
+      </ThemeProvider>,
+    );
+
+    expect(html).toHaveStyle('overflow: scroll');
+  });
 });
 
 describe('可访问性', () => {
