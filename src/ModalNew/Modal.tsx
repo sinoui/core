@@ -7,6 +7,7 @@ import { createChainFunction } from '../utils/createChainFunction';
 import useMultiRefs from '../utils/useMultiRefs';
 import lockScroll from './lockScroll';
 import ModalManager from './ModalManager';
+import ariaHiddenModal from './ariaHiddenModal';
 
 type ModalContainer =
   | React.RefObject<HTMLElement>
@@ -183,6 +184,14 @@ export default function Modal({
     return lockScroll(containerElement); // 注意，lockScroll函数返回了解除滚动锁定的回调函数。这里必须使用 return。
   }, [containerElement, isShowModal, scrollLock]);
 
+  useEffect(() => {
+    const modalNode = modalNodeRef.current;
+    if (!isShowModal || !containerElement || !modalNode) {
+      return undefined;
+    }
+    return ariaHiddenModal(modalNode, containerElement);
+  }, [containerElement, isShowModal]);
+
   /**
    * 处理点击遮罩层的点击事件
    *
@@ -239,7 +248,10 @@ export default function Modal({
     return null;
   }
 
-  const childProps: Record<string, any> = { ref: handleModalContentRef };
+  const childProps: Record<string, any> = {
+    ref: handleModalContentRef,
+    'aria-modal': 'true',
+  };
 
   if (!('tabIndex' in children.props)) {
     childProps.tabIndex = -1;
@@ -271,6 +283,7 @@ export default function Modal({
             onClick: handleBackdropClick,
             opacity: backdropOpacity,
             'data-testid': 'sinoui-modal-backdrop',
+            'aria-hidden': 'true',
             ...BackdropProps,
           })
         : null}

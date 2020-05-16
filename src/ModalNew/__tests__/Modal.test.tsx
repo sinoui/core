@@ -704,3 +704,90 @@ describe('scrollLock', () => {
     expect(document.body).not.toHaveStyle('overflow: hidden');
   });
 });
+
+describe('可访问性', () => {
+  it('aria-modal', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open scrollLock={false}>
+          <div data-testid="dialog" />
+        </Modal>
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('dialog')).toHaveAttribute('aria-modal', 'true');
+  });
+
+  it('打开模态框时，容器内其它元素aria-hidden设置为hidden', () => {
+    const content = document.createElement('div');
+    document.body.append(content);
+
+    render(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open scrollLock={false}>
+          <div data-testid="dialog" />
+        </Modal>
+      </ThemeProvider>,
+    );
+
+    expect(content).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('隐藏模态框时删除容器内其它元素aria-hidden', () => {
+    const content = document.createElement('div');
+    document.body.append(content);
+
+    const { rerender } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open scrollLock={false}>
+          <div data-testid="dialog" />
+        </Modal>
+      </ThemeProvider>,
+    );
+
+    rerender(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open={false} scrollLock={false}>
+          <div data-testid="dialog" />
+        </Modal>
+      </ThemeProvider>,
+    );
+
+    expect(content).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('遮罩层的aria-hidden为true', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open scrollLock={false}>
+          <div data-testid="dialog" />
+        </Modal>
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('sinoui-modal-backdrop')).toHaveAttribute(
+      'aria-hidden',
+      'true',
+    );
+  });
+
+  it('dialog示例', () => {
+    render(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open scrollLock={false}>
+          <div
+            data-testid="dialog"
+            role="dialog"
+            aria-labelledby="modal-title"
+            aria-describedby="modal-content"
+          >
+            <div role="document">
+              <h4 id="modal-title">模态框标题</h4>
+              <p id="modal-content">模态框内容</p>
+            </div>
+          </div>
+        </Modal>
+      </ThemeProvider>,
+    );
+  });
+});
