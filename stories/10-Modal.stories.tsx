@@ -5,6 +5,8 @@ import Paper from '@sinoui/core/Paper';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import Grow from '@sinoui/core/Grow';
+import Button from '@sinoui/core/Button';
+import TextInput from '@sinoui/core/TextInput';
 
 export default {
   title: 'Modal',
@@ -12,6 +14,7 @@ export default {
 
 function SimpleDemo() {
   const [open, setOpen] = useState(false);
+  const [innerOpen, setInnerOpen] = useState(false);
 
   return (
     <div style={{ height: 10000 }}>
@@ -28,8 +31,15 @@ function SimpleDemo() {
 
       <Modal open={open} center onClose={() => setOpen(false)}>
         <Grow in={open}>
-          <Paper style={{ width: 200, height: 150, padding: 8 }}>
-            这是弹出内容
+          <Paper style={{ width: 300, height: 200, padding: 8 }}>
+            <div>这是弹出内容</div>
+            <Button onClick={() => setInnerOpen(true)}>打开</Button>
+            <Modal open={innerOpen} center onClose={() => setInnerOpen(false)}>
+              <Paper style={{ width: 200, height: 150, padding: 8 }}>
+                这是内层弹出内容
+                <TextInput autoFocus />
+              </Paper>
+            </Modal>
           </Paper>
         </Grow>
       </Modal>

@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import activeElement from 'dom-helpers/activeElement';
-import contains from 'dom-helpers/contains';
 import ModalWrapper from './ModalWrapper';
 import Backdrop from '../Backdrop';
 import RenderModalBackdropProps from './RenderModalBackdropProps';
 import { createChainFunction } from '../utils/createChainFunction';
 import useMultiRefs from '../utils/useMultiRefs';
 import lockScroll from './lockScroll';
+import ModalManager from './ModalManager';
 
 type ModalContainer =
   | React.RefObject<HTMLElement>
@@ -81,6 +80,12 @@ interface Props {
    * 设置为`true`时，会在模态框打开时阻止页面内容的滚动。
    */
   scrollLock?: boolean;
+  /**
+   * 模态框管理器
+   *
+   * @private
+   */
+  modalManager?: ModalManager;
 }
 
 const isRefObject = (ref: any): ref is React.RefObject<HTMLElement> => {
@@ -105,6 +110,14 @@ const defaultRenderBackdrop = (props: RenderModalBackdropProps) => {
   return <Backdrop {...props} />;
 };
 
+let defaultModalManager: ModalManager | undefined;
+const getDefaultModalManager = () => {
+  if (!defaultModalManager) {
+    defaultModalManager = new ModalManager();
+  }
+  return defaultModalManager;
+};
+
 /**
  * 模态框。
  */
@@ -125,63 +138,43 @@ export default function Modal({
   autoFocus = true,
   enforceFocus = true,
   scrollLock = true,
+  modalManager = getDefaultModalManager(),
   ...rest
 }: Props) {
   const containerElement = getContainerElement(container);
   const hasTransition = 'in' in children.props;
   const [exited, setExited] = useState(!open);
-  const ref = useRef<HTMLDivElement>(null);
-  const handleRef = useMultiRefs(ref, (children as any).ref);
-  const lastFocusRef = useRef<HTMLElement | null>(null);
+
+  const modalNodeRef = useRef<HTMLDivElement>(null);
+  const modalContentRef = useRef<HTMLDivElement>(null);
+  const handleModalContentRef = useMultiRefs(
+    modalContentRef,
+    (children as any).ref,
+  );
   const isShowModal = open || (!open && hasTransition && !exited);
+  const prevOpenRef = useRef<boolean>(false);
 
   useEffect(() => {
-    if (!autoFocus || !open) {
-      return undefined;
-    }
-
-    const currentActiveElement = activeElement(document) as HTMLElement;
-    const modalWrapper = ref.current;
-
-    if (
-      modalWrapper &&
-      (!currentActiveElement || !contains(modalWrapper, currentActiveElement))
-    ) {
-      lastFocusRef.current = currentActiveElement;
-      modalWrapper.focus();
-    }
-
-    return () => {
-      // 在 open = false 或者 组件卸载时还原焦点
-      const lastFocus = lastFocusRef.current;
-      if (lastFocus) {
-        lastFocus.focus();
-      }
-    };
-  }, [autoFocus, open]);
+    prevOpenRef.current = open;
+  }, [open]);
 
   useEffect(() => {
-    if (!open || !enforceFocus) {
+    const modalNode = modalNodeRef.current;
+    const modalContent = modalContentRef.current;
+    if (!isShowModal || !modalNode || !modalContent) {
       return undefined;
     }
-
-    const listener = () => {
-      const currentActiveElement = activeElement();
-      const modalWrapper = ref.current;
-      if (
-        currentActiveElement &&
-        modalWrapper &&
-        !contains(modalWrapper, currentActiveElement)
-      ) {
-        modalWrapper.focus();
-      }
-    };
-    const delayListener = () => setTimeout(listener);
-
-    document.addEventListener('focus', delayListener, true);
-
-    return () => document.removeEventListener('focus', delayListener, true);
-  }, [enforceFocus, open]);
+    // 在展现模态框时添加
+    modalManager.add({
+      node: modalNode,
+      content: modalContent,
+      container: containerElement,
+      autoFocus,
+      enforceFocus,
+    });
+    // 在隐藏或者卸载模态框时移除
+    return () => modalManager.remove(modalNode);
+  }, [autoFocus, containerElement, enforceFocus, isShowModal, modalManager]);
 
   useEffect(() => {
     if (!isShowModal || !containerElement || !scrollLock) {
@@ -246,7 +239,7 @@ export default function Modal({
     return null;
   }
 
-  const childProps: Record<string, any> = { ref: handleRef };
+  const childProps: Record<string, any> = { ref: handleModalContentRef };
 
   if (!('tabIndex' in children.props)) {
     childProps.tabIndex = -1;
@@ -264,7 +257,13 @@ export default function Modal({
   }
 
   return ReactDOM.createPortal(
-    <ModalWrapper $center={center} onKeyDown={handleKeydown} {...rest}>
+    <ModalWrapper
+      data-sinoui-id="modal"
+      $center={center}
+      onKeyDown={handleKeydown}
+      ref={modalNodeRef}
+      {...rest}
+    >
       {backdrop
         ? renderBackdrop({
             open,

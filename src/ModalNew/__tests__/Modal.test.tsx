@@ -520,11 +520,22 @@ describe('焦点管理', () => {
   });
 
   it('关闭模态框，将焦点还原给之前的焦点元素', () => {
+    const modalManager = {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      add() {},
+      isTopModal() {
+        return true;
+      },
+      remove() {
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        getByTestId('input').focus();
+      },
+    } as any;
     const { getByTestId, rerender } = render(
       <ThemeProvider theme={defaultTheme}>
         <div>
           <input data-testid="input" autoFocus />
-          <Modal open data-testid="modal">
+          <Modal open data-testid="modal" modalManager={modalManager}>
             <div data-testid="content" />
           </Modal>
         </div>
@@ -535,22 +546,36 @@ describe('焦点管理', () => {
       <ThemeProvider theme={defaultTheme}>
         <div>
           <input data-testid="input" autoFocus />
-          <Modal open={false} data-testid="modal">
+          <Modal open={false} data-testid="modal" modalManager={modalManager}>
             <div data-testid="content" />
           </Modal>
         </div>
       </ThemeProvider>,
     );
+
+    jest.runAllTimers();
 
     expect(document.activeElement).toBe(getByTestId('input'));
   });
 
   it('卸载模态框时，将焦点还原给之前的焦点元素', () => {
+    const modalManager = {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      add() {},
+      isTopModal() {
+        return true;
+      },
+      remove() {
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        getByTestId('input').focus();
+      },
+    } as any;
+
     const { getByTestId, rerender } = render(
       <ThemeProvider theme={defaultTheme}>
         <div>
           <input data-testid="input" autoFocus />
-          <Modal open data-testid="modal">
+          <Modal open data-testid="modal" modalManager={modalManager}>
             <div data-testid="content" />
           </Modal>
         </div>
@@ -565,45 +590,54 @@ describe('焦点管理', () => {
       </ThemeProvider>,
     );
 
+    jest.runAllTimers();
+
     expect(document.activeElement).toBe(getByTestId('input'));
   });
 
   it('阻止焦点移出模态框', () => {
-    const { getByTestId } = render(
+    const add = jest.fn();
+    const modalManager = {
+      add,
+      isTopModal() {
+        return true;
+      },
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      remove() {},
+    } as any;
+    render(
       <ThemeProvider theme={defaultTheme}>
-        <div>
-          <input data-testid="input" autoFocus />
-          <Modal open data-testid="modal">
-            <div data-testid="content" />
-          </Modal>
-        </div>
+        <Modal open data-testid="modal" modalManager={modalManager}>
+          <div data-testid="content" />
+        </Modal>
       </ThemeProvider>,
     );
-
-    getByTestId('input').focus();
-
-    jest.runAllTimers();
-
-    expect(document.activeElement).toBe(getByTestId('content'));
+    expect(add.mock.calls[0][0].enforceFocus).toBe(true);
   });
 
   it('enforceFocus = false 时，焦点可以移出模态框', () => {
-    const { getByTestId } = render(
+    const add = jest.fn();
+    const modalManager = {
+      add,
+      isTopModal() {
+        return true;
+      },
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      remove() {},
+    } as any;
+    render(
       <ThemeProvider theme={defaultTheme}>
-        <div>
-          <input data-testid="input" autoFocus />
-          <Modal open data-testid="modal" enforceFocus={false}>
-            <div data-testid="content" />
-          </Modal>
-        </div>
+        <Modal
+          open
+          data-testid="modal"
+          enforceFocus={false}
+          modalManager={modalManager}
+        >
+          <div data-testid="content" />
+        </Modal>
       </ThemeProvider>,
     );
-
-    getByTestId('input').focus();
-
-    jest.runAllTimers();
-
-    expect(document.activeElement).toBe(getByTestId('input'));
+    expect(add.mock.calls[0][0].enforceFocus).toBe(false);
   });
 });
 
