@@ -7,6 +7,9 @@ import { defaultTheme } from '@sinoui/theme';
 import Grow from '@sinoui/core/Grow';
 import Button from '@sinoui/core/Button';
 import TextInput from '@sinoui/core/TextInput';
+import AppBar from '@sinoui/core/AppBar';
+import Save from '@sinoui/icons/Save';
+import IconButton from '@sinoui/core/IconButton';
 
 export default {
   title: 'Modal',
@@ -18,6 +21,15 @@ function SimpleDemo() {
 
   return (
     <div style={{ height: 10000 }}>
+      <AppBar
+        title="模态框"
+        actionItems={
+          <IconButton color="white">
+            <Save />
+          </IconButton>
+        }
+        fixed
+      />
       <div style={{ height: 100 }} />
       <button type="button" onClick={() => setOpen(true)}>
         打开模态框
