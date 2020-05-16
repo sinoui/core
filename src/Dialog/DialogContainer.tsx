@@ -5,6 +5,7 @@ import Draggable from './utils/Draggable';
 import DialogWrapper from './DialogWrapper';
 import Iframe from './Iframe';
 import CloseIcon from './CloseIcon';
+import useMultiRefs from '../utils/useMultiRefs';
 
 export interface DialogContainerProps {
   /**
@@ -46,7 +47,9 @@ export interface DialogContainerProps {
   /**
    * 点击关闭按钮的回调函数
    */
-  onRequestClose?: () => void;
+  onRequestClose?: (
+    reason: 'backdropClick' | 'escapeKeydown' | 'closeIconClick',
+  ) => void;
   /**
    * 自定义样式
    */
@@ -56,76 +59,81 @@ export interface DialogContainerProps {
 /**
  * 弹窗的根组件
  */
-function DialogContainer(props: DialogContainerProps) {
-  const {
-    children,
-    absolute,
-    fullScreen,
-    fullWidth,
-    autoWidth,
-    className,
-    draggable = true,
-    containsIframe = true,
-    showCloseIcon,
-    onRequestClose,
-    style,
-    ...rest
-  } = props;
+const DialogContainer = React.forwardRef<HTMLDivElement, DialogContainerProps>(
+  function DialogContainer(props, ref) {
+    const {
+      children,
+      absolute,
+      fullScreen,
+      fullWidth,
+      autoWidth,
+      className,
+      draggable = true,
+      containsIframe = true,
+      showCloseIcon,
+      onRequestClose,
+      ...rest
+    } = props;
 
-  const dialogContainerRef = React.createRef<HTMLElement | any>();
+    const dialogContainerRef = React.useRef<HTMLElement>(null);
+    const handleRef = useMultiRefs(ref, dialogContainerRef);
 
-  useEffect(() => {
-    let drag: Draggable;
-    if (draggable) {
-      drag = new Draggable({
-        container: dialogContainerRef.current,
-        handler: '.sinoui-dialog-title',
-        bounds: true,
-      });
-    }
+    useEffect(() => {
+      const dialogContainer = dialogContainerRef.current;
+      if (draggable && dialogContainer) {
+        const drag = new Draggable({
+          container: dialogContainer,
+          handler: '.sinoui-dialog-title',
+          bounds: true,
+        });
 
-    return () => {
-      if (draggable) {
-        drag.teardown();
+        return () => drag.teardown();
       }
-    };
-  });
+      return undefined;
+    }, [draggable]);
 
-  const nodes = React.Children.toArray(children).map((node: any) => {
-    if (node.type === DialogTitle) {
-      return (
-        <DialogTitle
-          key="dialogTitle"
-          {...node.props}
-          showCloseIcon={showCloseIcon}
-          draggable={draggable}
+    const nodes = React.Children.toArray(children).map((node: any) => {
+      if (node.type === DialogTitle) {
+        return (
+          <DialogTitle
+            key="dialogTitle"
+            {...node.props}
+            showCloseIcon={showCloseIcon}
+          >
+            {node.props.children}
+            {showCloseIcon && (
+              <CloseIcon
+                onClick={() =>
+                  onRequestClose && onRequestClose('closeIconClick')
+                }
+              />
+            )}
+          </DialogTitle>
+        );
+      }
+      return node;
+    });
+
+    return (
+      <>
+        <DialogWrapper
+          fullScreen={fullScreen}
+          fullWidth={fullWidth}
+          className={classNames(className, 'sinoui-dialog', {
+            'sinoui-dialog--draggable': draggable,
+          })}
+          autoWidth={autoWidth}
+          ref={handleRef}
+          {...rest}
         >
-          {node.props.children}
-          {showCloseIcon && <CloseIcon onClick={onRequestClose} />}
-        </DialogTitle>
-      );
-    }
-    return node;
-  });
-
-  return (
-    <DialogWrapper
-      fullScreen={fullScreen}
-      fullWidth={fullWidth}
-      className={classNames(className, 'sinoui-dialog', {
-        'sinoui-dialog--draggable': draggable,
-      })}
-      autoWidth={autoWidth}
-      {...rest}
-      ref={dialogContainerRef}
-      style={style}
-    >
-      {nodes}
-      {containsIframe && (
-        <Iframe frameBorder={0} scrolling="false" absolute={absolute} />
-      )}
-    </DialogWrapper>
-  );
-}
+          {nodes}
+        </DialogWrapper>
+        {containsIframe && (
+          <Iframe frameBorder={0} scrolling="false" absolute={absolute} />
+        )}
+      </>
+    );
+  },
+);
 
 export default DialogContainer;

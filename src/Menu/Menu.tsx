@@ -8,7 +8,7 @@ import MenuList, { MenuListProps } from './MenuList';
 
 export interface MenuProps extends PopoverProps {
   children?: React.ReactNode;
-  open?: boolean;
+  open: boolean;
   onEnter?: (element: HTMLElement) => void;
   onRequestClose?: () => void;
   MenuListProps?: MenuListProps;

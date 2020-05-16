@@ -1,5 +1,7 @@
-import Modal, { ModalPropsType } from './Modal';
+import Modal from './Modal';
+import type RenderModalBackdropProps from './RenderModalBackdropProps';
+import type { Props } from './Modal';
 
-export type { ModalPropsType as ModalProps };
+export type { RenderModalBackdropProps, Props as ModalProps };
 
 export default Modal;

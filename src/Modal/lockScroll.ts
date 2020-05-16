@@ -23,8 +23,14 @@ const getPaddingRight = (node: HTMLElement) =>
 
 /**
  * 锁定固定元素
+ *
+ * @param container 容器元素
+ * @param overflowing 容器是否溢出
  */
-const scrollFixedNodes = () => {
+const scrollFixedNodes = (_: HTMLElement, overflowing: boolean) => {
+  if (!overflowing) {
+    return undefined;
+  }
   const fixedNodes = document.body.querySelectorAll('.sinoui-fixed');
   const resets = [].map.call(fixedNodes, (node: HTMLElement) => {
     const { paddingRight } = node.style;
@@ -94,9 +100,11 @@ const setContainerPaddingRight = (
 export default function lockScroll(container: HTMLElement) {
   const overflowing = isOverflowing(container);
   const resets = [
-    setContainerOverflowHidden(container, overflowing),
-    setContainerPaddingRight(container, overflowing),
-    scrollFixedNodes(),
-  ].filter(Boolean) as Function[];
+    setContainerOverflowHidden,
+    setContainerPaddingRight,
+    scrollFixedNodes,
+  ]
+    .map((fn) => fn(container, overflowing))
+    .filter(Boolean) as Function[];
   return () => resets.forEach((fn) => fn());
 }

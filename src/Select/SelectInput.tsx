@@ -51,7 +51,7 @@ export interface Props {
   /**
    * 是否显示弹窗
    */
-  open?: boolean;
+  open: boolean;
   /**
    * 是否只读
    */
@@ -77,9 +77,7 @@ export interface Props {
   menuMinWidth?: number;
 }
 
-type SelectInputLayoutProps = Omit<Props, 'value' | 'inputRef'>;
-
-const SelectInputLayout = styled.div<SelectInputLayoutProps>`
+const SelectInputLayout = styled.div`
   user-select: none;
   box-sizing: content-box;
   cursor: inherit;
@@ -148,22 +146,15 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     }
   }, [autoFocus]);
 
-  const handleClose = () => {
-    if (selectInputRef.current) {
-      selectInputRef.current.focus();
-    }
-
-    if (onClose) {
-      onClose();
-    }
-  };
-
   /**
    * 点击选项时的回调函数
    */
-  const handleItemClick = (itemValue: string) => () => {
-    if (!multiple) {
-      handleClose();
+  const handleItemClick = (itemValue: string) => (
+    event: React.MouseEvent<HTMLElement>,
+  ) => {
+    event.stopPropagation();
+    if (!multiple && onClose) {
+      onClose();
     }
 
     if (!onChange) {
@@ -228,7 +219,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
         minWidth={menuMinWidth}
         anchorEl={selectInputRef.current}
         open={open}
-        onRequestClose={handleClose}
+        onRequestClose={onClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         MenuListProps={{
           role: 'listbox',

@@ -81,7 +81,7 @@ export interface PopoverProps {
    *
    * @type {boolean}
    */
-  open?: boolean;
+  open: boolean;
   role?: string;
   /**
    * 指定CSS3 transform的变换原点。
@@ -379,12 +379,7 @@ function Popover(props: PopoverProps) {
   }
 
   return (
-    <Modal
-      open={open}
-      BackdropProps={{ visible: false }}
-      {...other}
-      zIndex={zIndex.popover}
-    >
+    <Modal open={open} backdropOpacity={0} {...other} zIndex={zIndex.popover}>
       <TransitionProp
         appear
         in={open}

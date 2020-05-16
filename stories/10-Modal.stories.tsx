@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import React, { useState } from 'react';
-import Modal from '@sinoui/core/ModalNew';
+import Modal from '@sinoui/core/Modal';
 import Paper from '@sinoui/core/Paper';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';

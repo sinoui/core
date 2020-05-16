@@ -12198,10 +12198,10 @@ ts-lib-scripts-utils@^0.11.0:
     execa "^3.4.0"
     fs-extra "^8.1.0"
 
-ts-lib-tools@^0.11.3:
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/ts-lib-tools/-/ts-lib-tools-0.11.3.tgz#99f2d3c653c1929dd5fba1a2c884ec41a608fca6"
-  integrity sha512-5VQfLoqHTC47ikr8y6Z1sDGa8zyN5lEXGMRnpu6jCtVurY67MvCda3DZNfBLra9NlMs017wH+1+DiyhRWoJb+w==
+ts-lib-tools@^0.11.6:
+  version "0.11.6"
+  resolved "https://registry.yarnpkg.com/ts-lib-tools/-/ts-lib-tools-0.11.6.tgz#f8d41595324ec1aca1cf88b5faf6e5ccb2fb77a0"
+  integrity sha512-Kkyp7QhVbfEzYLEv7MikuG0+72Fhmli0tOySxnnyJOEtSSgdUoKhJGWzrwfym0nO6ozaw9+wuH5LYAlZX/OiRg==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/plugin-transform-modules-commonjs" "^7.9.0"

@@ -2,38 +2,40 @@
 
 exports[`Dialog组件 快照测试 不显示遮罩层 1`] = `
 <div
-  className="sc-AxirZ jCTmlg sc-fzoLsD Tqcoi"
-  onClick={[Function]}
+  className="sc-AxjAm eAeOPT"
+  data-sinoui-id="modal"
+  onKeyDown={[Function]}
 >
   <div
-    className="sc-AxhUy bgoGKd sinoui-dialog sinoui-dialog--draggable"
+    aria-modal="true"
+    className="sc-AxhUy exMlok sinoui-dialog sinoui-dialog--draggable"
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
+    tabIndex={-1}
   >
     <h6
-      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
+      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb bEHJJY sinoui-dialog-title"
       color="textPrimary"
-      draggable={true}
       type="h6"
     >
       Use Google location service?
     </h6>
     <h6
-      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzpans hxlBTd sinoui-dialog-content children theme"
+      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzoLsD jAICxJ sinoui-dialog-content children theme"
       color="textSecondary"
       type="subtitle1"
     >
       Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
     </h6>
     <div
-      className="sc-fzplWN jvGVho sinoui-dialog-actions"
+      className="sc-fzpans kwQeid sinoui-dialog-actions"
     >
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -41,7 +43,7 @@ exports[`Dialog组件 快照测试 不显示遮罩层 1`] = `
         Disagree
       </button>
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -49,61 +51,63 @@ exports[`Dialog组件 快照测试 不显示遮罩层 1`] = `
         Agree
       </button>
     </div>
-    <iframe
-      className="sc-AxgMl eOOySL"
-      frameBorder={0}
-      scrolling="false"
-    />
   </div>
+  <iframe
+    className="sc-AxgMl kjFbYE"
+    frameBorder={0}
+    scrolling="false"
+  />
 </div>
 `;
 
 exports[`Dialog组件 快照测试 基本使用 1`] = `
 <div
-  className="sc-AxirZ jCTmlg sc-fzoLsD Tqcoi"
-  onClick={[Function]}
+  className="sc-AxjAm eAeOPT"
+  data-sinoui-id="modal"
+  onKeyDown={[Function]}
 >
   <div
-    aria-hidden={true}
-    className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-testid="Backdrop"
+    aria-hidden="true"
+    className="sc-AxirZ dXSBgW"
+    data-testid="sinoui-modal-backdrop"
     onClick={[Function]}
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
   />
   <div
-    className="sc-AxhUy bgoGKd sinoui-dialog sinoui-dialog--draggable"
+    aria-modal="true"
+    className="sc-AxhUy exMlok sinoui-dialog sinoui-dialog--draggable"
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
+    tabIndex={-1}
   >
     <h6
-      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
+      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb bEHJJY sinoui-dialog-title"
       color="textPrimary"
-      draggable={true}
       type="h6"
     >
       Use Google location service?
     </h6>
     <h6
-      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzpans hxlBTd sinoui-dialog-content children theme"
+      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzoLsD jAICxJ sinoui-dialog-content children theme"
       color="textSecondary"
       type="subtitle1"
     >
       Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
     </h6>
     <div
-      className="sc-fzplWN jvGVho sinoui-dialog-actions"
+      className="sc-fzpans kwQeid sinoui-dialog-actions"
     >
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -111,7 +115,7 @@ exports[`Dialog组件 快照测试 基本使用 1`] = `
         Disagree
       </button>
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -119,61 +123,63 @@ exports[`Dialog组件 快照测试 基本使用 1`] = `
         Agree
       </button>
     </div>
-    <iframe
-      className="sc-AxgMl eOOySL"
-      frameBorder={0}
-      scrolling="false"
-    />
   </div>
+  <iframe
+    className="sc-AxgMl kjFbYE"
+    frameBorder={0}
+    scrolling="false"
+  />
 </div>
 `;
 
 exports[`Dialog组件 快照测试 宽度自适应 1`] = `
 <div
-  className="sc-AxirZ jCTmlg sc-fzoLsD Tqcoi"
-  onClick={[Function]}
+  className="sc-AxjAm eAeOPT"
+  data-sinoui-id="modal"
+  onKeyDown={[Function]}
 >
   <div
-    aria-hidden={true}
-    className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-testid="Backdrop"
+    aria-hidden="true"
+    className="sc-AxirZ dXSBgW"
+    data-testid="sinoui-modal-backdrop"
     onClick={[Function]}
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
   />
   <div
-    className="sc-AxhUy doOZgu sinoui-dialog sinoui-dialog--draggable"
+    aria-modal="true"
+    className="sc-AxhUy lefgjP sinoui-dialog sinoui-dialog--draggable"
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
+    tabIndex={-1}
   >
     <h6
-      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
+      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb bEHJJY sinoui-dialog-title"
       color="textPrimary"
-      draggable={true}
       type="h6"
     >
       Use Google location service?
     </h6>
     <h6
-      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzpans hxlBTd sinoui-dialog-content children theme"
+      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzoLsD jAICxJ sinoui-dialog-content children theme"
       color="textSecondary"
       type="subtitle1"
     >
       Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
     </h6>
     <div
-      className="sc-fzplWN jvGVho sinoui-dialog-actions"
+      className="sc-fzpans kwQeid sinoui-dialog-actions"
     >
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -181,7 +187,7 @@ exports[`Dialog组件 快照测试 宽度自适应 1`] = `
         Disagree
       </button>
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -189,61 +195,63 @@ exports[`Dialog组件 快照测试 宽度自适应 1`] = `
         Agree
       </button>
     </div>
-    <iframe
-      className="sc-AxgMl eOOySL"
-      frameBorder={0}
-      scrolling="false"
-    />
   </div>
+  <iframe
+    className="sc-AxgMl kjFbYE"
+    frameBorder={0}
+    scrolling="false"
+  />
 </div>
 `;
 
 exports[`Dialog组件 快照测试 对话框将根据maxWidth的值进行自我调整 1`] = `
 <div
-  className="sc-AxirZ jCTmlg sc-fzoLsD Tqcoi"
-  onClick={[Function]}
+  className="sc-AxjAm eAeOPT"
+  data-sinoui-id="modal"
+  onKeyDown={[Function]}
 >
   <div
-    aria-hidden={true}
-    className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-testid="Backdrop"
+    aria-hidden="true"
+    className="sc-AxirZ dXSBgW"
+    data-testid="sinoui-modal-backdrop"
     onClick={[Function]}
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
   />
   <div
-    className="sc-AxhUy fXWTBE sinoui-dialog sinoui-dialog--draggable"
+    aria-modal="true"
+    className="sc-AxhUy ksLWpF sinoui-dialog sinoui-dialog--draggable"
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
+    tabIndex={-1}
   >
     <h6
-      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
+      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb bEHJJY sinoui-dialog-title"
       color="textPrimary"
-      draggable={true}
       type="h6"
     >
       Use Google location service?
     </h6>
     <h6
-      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzpans hxlBTd sinoui-dialog-content children theme"
+      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzoLsD jAICxJ sinoui-dialog-content children theme"
       color="textSecondary"
       type="subtitle1"
     >
       Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
     </h6>
     <div
-      className="sc-fzplWN jvGVho sinoui-dialog-actions"
+      className="sc-fzpans kwQeid sinoui-dialog-actions"
     >
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -251,7 +259,7 @@ exports[`Dialog组件 快照测试 对话框将根据maxWidth的值进行自我�
         Disagree
       </button>
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -259,51 +267,54 @@ exports[`Dialog组件 快照测试 对话框将根据maxWidth的值进行自我�
         Agree
       </button>
     </div>
-    <iframe
-      className="sc-AxgMl eOOySL"
-      frameBorder={0}
-      scrolling="false"
-    />
   </div>
+  <iframe
+    className="sc-AxgMl kjFbYE"
+    frameBorder={0}
+    scrolling="false"
+  />
 </div>
 `;
 
 exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
 <div
-  className="sc-AxirZ jCTmlg sc-fzoLsD Tqcoi"
-  onClick={[Function]}
+  className="sc-AxjAm eAeOPT"
+  data-sinoui-id="modal"
+  onKeyDown={[Function]}
 >
   <div
-    aria-hidden={true}
-    className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-testid="Backdrop"
+    aria-hidden="true"
+    className="sc-AxirZ dXSBgW"
+    data-testid="sinoui-modal-backdrop"
     onClick={[Function]}
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
   />
   <div
-    className="sc-AxhUy bgoGKd sinoui-dialog sinoui-dialog--draggable"
+    aria-modal="true"
+    className="sc-AxhUy exMlok sinoui-dialog sinoui-dialog--draggable"
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
+    tabIndex={-1}
   >
     <h6
-      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb bpVhOc sinoui-dialog-title"
+      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb kKZPqZ sinoui-dialog-title"
       color="textPrimary"
-      draggable={true}
       type="h6"
     >
       Use Google location service?
       <button
         className="sc-AxheI hqGAlx sinoui-base-button sc-Axmtr eYgLQu sinoui-icon-button sc-fzozJi cfAFtJ sinoui-dialog-title__icon"
         color="textSecondary"
+        onClick={[Function]}
         role="button"
         type="button"
       >
@@ -333,17 +344,17 @@ exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
       </button>
     </h6>
     <h6
-      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzpans hxlBTd sinoui-dialog-content children theme"
+      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzoLsD jAICxJ sinoui-dialog-content children theme"
       color="textSecondary"
       type="subtitle1"
     >
       Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
     </h6>
     <div
-      className="sc-fzplWN jvGVho sinoui-dialog-actions"
+      className="sc-fzpans kwQeid sinoui-dialog-actions"
     >
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -351,7 +362,7 @@ exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
         Disagree
       </button>
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -359,61 +370,63 @@ exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
         Agree
       </button>
     </div>
-    <iframe
-      className="sc-AxgMl eOOySL"
-      frameBorder={0}
-      scrolling="false"
-    />
   </div>
+  <iframe
+    className="sc-AxgMl kjFbYE"
+    frameBorder={0}
+    scrolling="false"
+  />
 </div>
 `;
 
 exports[`Dialog组件 快照测试 设置全屏显示 1`] = `
 <div
-  className="sc-AxirZ jCTmlg sc-fzoLsD Tqcoi"
-  onClick={[Function]}
+  className="sc-AxjAm eAeOPT"
+  data-sinoui-id="modal"
+  onKeyDown={[Function]}
 >
   <div
-    aria-hidden={true}
-    className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-testid="Backdrop"
+    aria-hidden="true"
+    className="sc-AxirZ dXSBgW"
+    data-testid="sinoui-modal-backdrop"
     onClick={[Function]}
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
   />
   <div
-    className="sc-AxhUy fNAKwc sinoui-dialog sinoui-dialog--draggable"
+    aria-modal="true"
+    className="sc-AxhUy hsgtLN sinoui-dialog sinoui-dialog--draggable"
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
+    tabIndex={-1}
   >
     <h6
-      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb fkPdMh sinoui-dialog-title"
+      className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb bEHJJY sinoui-dialog-title"
       color="textPrimary"
-      draggable={true}
       type="h6"
     >
       Use Google location service?
     </h6>
     <h6
-      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzpans hxlBTd sinoui-dialog-content children theme"
+      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzoLsD jAICxJ sinoui-dialog-content children theme"
       color="textSecondary"
       type="subtitle1"
     >
       Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
     </h6>
     <div
-      className="sc-fzplWN jvGVho sinoui-dialog-actions"
+      className="sc-fzpans kwQeid sinoui-dialog-actions"
     >
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -421,7 +434,7 @@ exports[`Dialog组件 快照测试 设置全屏显示 1`] = `
         Disagree
       </button>
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -429,62 +442,63 @@ exports[`Dialog组件 快照测试 设置全屏显示 1`] = `
         Agree
       </button>
     </div>
-    <iframe
-      className="sc-AxgMl eOOySL"
-      frameBorder={0}
-      scrolling="false"
-    />
   </div>
+  <iframe
+    className="sc-AxgMl kjFbYE"
+    frameBorder={0}
+    scrolling="false"
+  />
 </div>
 `;
 
 exports[`Dialog组件 快照测试 设置弹窗不可以拖拽 1`] = `
 <div
-  className="sc-AxirZ jCTmlg sc-fzoLsD Tqcoi"
-  draggable={false}
-  onClick={[Function]}
+  className="sc-AxjAm eAeOPT"
+  data-sinoui-id="modal"
+  onKeyDown={[Function]}
 >
   <div
-    aria-hidden={true}
-    className="sc-AxjAm emWxSE sinoui-modal--backdrop"
-    data-testid="Backdrop"
+    aria-hidden="true"
+    className="sc-AxirZ dXSBgW"
+    data-testid="sinoui-modal-backdrop"
     onClick={[Function]}
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
   />
   <div
-    className="sc-AxhUy bgoGKd sinoui-dialog"
+    aria-modal="true"
+    className="sc-AxhUy exMlok sinoui-dialog"
     style={
       Object {
-        "opacity": 0,
-        "visibility": "hidden",
+        "opacity": 1,
+        "visibility": undefined,
       }
     }
+    tabIndex={-1}
   >
     <h6
       className="sc-AxiKw bKjaHr sinoui-typography sinoui-typography--h6 sc-AxhCb bEHJJY sinoui-dialog-title"
       color="textPrimary"
-      draggable={false}
       type="h6"
     >
       Use Google location service?
     </h6>
     <h6
-      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzpans hxlBTd sinoui-dialog-content children theme"
+      className="sc-AxiKw eMvaxK sinoui-typography sinoui-typography--subtitle1 sc-fzoLsD jAICxJ sinoui-dialog-content children theme"
       color="textSecondary"
       type="subtitle1"
     >
       Let Google help apps determine location. This means sending anonymous location data toGoogle, even when no apps are running.
     </h6>
     <div
-      className="sc-fzplWN jvGVho sinoui-dialog-actions"
+      className="sc-fzpans kwQeid sinoui-dialog-actions"
     >
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -492,7 +506,7 @@ exports[`Dialog组件 快照测试 设置弹窗不可以拖拽 1`] = `
         Disagree
       </button>
       <button
-        className="sc-AxheI hqGAlx sinoui-base-button sc-fznyAO eMlDcb sinoui-button"
+        className="sc-AxheI hqGAlx sinoui-base-button sc-fzplWN dGMzTX sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -500,11 +514,11 @@ exports[`Dialog组件 快照测试 设置弹窗不可以拖拽 1`] = `
         Agree
       </button>
     </div>
-    <iframe
-      className="sc-AxgMl eOOySL"
-      frameBorder={0}
-      scrolling="false"
-    />
   </div>
+  <iframe
+    className="sc-AxgMl kjFbYE"
+    frameBorder={0}
+    scrolling="false"
+  />
 </div>
 `;

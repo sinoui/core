@@ -164,10 +164,13 @@ describe('backdrop', () => {
   });
 
   it('点击遮罩层，调用onClose回调函数', () => {
+    const onBackdropClick = jest
+      .fn()
+      .mockImplementation((event) => event.persist());
     const onClose = jest.fn();
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Modal open onClose={onClose}>
+        <Modal open onClose={onClose} onBackdropClick={onBackdropClick}>
           <div />
         </Modal>
       </ThemeProvider>,
@@ -178,6 +181,10 @@ describe('backdrop', () => {
     });
 
     expect(onClose).toBeCalledWith('backdropClick');
+    expect(
+      (onBackdropClick.mock.calls[0][0] as React.MouseEvent)
+        .isPropagationStopped,
+    ).toBeTruthy();
   });
 
   it('backdropClick = false时，点击遮罩层不调用onClose', () => {
@@ -411,10 +418,18 @@ it('tabIndex默认为-1', () => {
 
 describe('keyboard', () => {
   it('按下Escape键退出模态框', () => {
+    const onEscapeKeydown = jest
+      .fn()
+      .mockImplementation((event) => event.persist());
     const onClose = jest.fn();
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Modal open data-testid="modal" onClose={onClose}>
+        <Modal
+          open
+          data-testid="modal"
+          onClose={onClose}
+          onEscapeKeydown={onEscapeKeydown}
+        >
           <Grow in>
             <div data-testid="content" />
           </Grow>
@@ -430,6 +445,10 @@ describe('keyboard', () => {
     });
 
     expect(onClose).toBeCalledWith('escapeKeydown');
+    expect(
+      (onEscapeKeydown.mock.calls[0][0] as React.MouseEvent)
+        .isPropagationStopped,
+    ).toBeTruthy();
   });
 
   it('keyboard = false，阻止Escape键关闭模态框', () => {

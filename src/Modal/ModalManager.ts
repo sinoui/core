@@ -186,7 +186,7 @@ export default class ModalManager {
         if (
           this.isTopModal(modal.node) &&
           currentActiveElement &&
-          !contains(modal.node, currentActiveElement)
+          !contains(modal.content, currentActiveElement)
         ) {
           modal.content.focus();
         }
@@ -208,7 +208,7 @@ export default class ModalManager {
     if (
       !this.activeElementsInModals.get(modal.node) &&
       currentActiveElement &&
-      !contains(modal.node, currentActiveElement)
+      !contains(modal.content, currentActiveElement)
     ) {
       modal.content.focus();
     }

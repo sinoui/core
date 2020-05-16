@@ -1,14 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import Modal from '@sinoui/core/Modal';
 import Fade from '../Fade';
 import DialogContainer, { DialogContainerProps } from './DialogContainer';
-
-const ModalWrapper = styled(Modal)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 export interface DialogProps extends DialogContainerProps {
   /**
@@ -42,11 +35,14 @@ export interface DialogProps extends DialogContainerProps {
    *
    * @type {(SyntheticMouseEvent<*>) => void}
    */
-  onBackdropClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onBackdropClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /**
    * 是否显示遮罩层
    */
   backdrop?: boolean;
+  onClose?: (
+    reason: 'backdropClick' | 'escapeKeydown' | 'closeIconClick',
+  ) => void;
   /**
    * 过渡结束监听器
    */
@@ -59,21 +55,40 @@ export interface DialogProps extends DialogContainerProps {
 
 function Dialog(props: DialogProps) {
   const {
-    backdropClick = true,
-    open,
+    open = true,
     addEndListener,
     transition: Transition = Fade,
     transitionDuration,
-    style,
-    className,
+    backdrop,
+    backdropClick,
+    onBackdropClick,
+    onRequestClose,
+    onClose,
     ...rest
   } = props;
+  const handleClose = (
+    reason: 'backdropClick' | 'escapeKeydown' | 'closeIconClick',
+  ) => {
+    if (onRequestClose) {
+      onRequestClose(reason);
+    }
+    if (onClose) {
+      onClose(reason);
+    }
+  };
   return (
-    <ModalWrapper {...rest} backdropClick={backdropClick} open={open}>
+    <Modal
+      backdrop={backdrop}
+      backdropClick={backdropClick}
+      onBackdropClick={onBackdropClick}
+      open={open}
+      center
+      onClose={handleClose}
+    >
       <Transition timeout={transitionDuration} appear in={open}>
-        <DialogContainer {...props} />
+        <DialogContainer onRequestClose={handleClose} {...rest} />
       </Transition>
-    </ModalWrapper>
+    </Modal>
   );
 }
 

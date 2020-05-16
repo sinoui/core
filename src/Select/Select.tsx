@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
@@ -100,15 +100,17 @@ const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
     }
   };
 
-  const onOpen = () => {
+  const onOpen = useCallback(() => {
     if (props.readOnly || props.disabled) {
       return;
     }
     setOpen(true);
     setWidth(selectRef.current ? selectRef.current.clientWidth : 0);
-  };
+  }, [props.disabled, props.readOnly]);
 
-  const onClose = () => setOpen(false);
+  const onClose = useCallback(() => {
+    setOpen(false);
+  }, []);
 
   const inputCompProps = {
     children,
