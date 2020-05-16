@@ -429,7 +429,7 @@ describe('keyboard', () => {
       });
     });
 
-    expect(onClose).toBeCalled();
+    expect(onClose).toBeCalledWith('escapeKeydown');
   });
 
   it('keyboard = false，阻止Escape键关闭模态框', () => {
@@ -474,6 +474,47 @@ describe('keyboard', () => {
     });
 
     expect(onEscapeKeydown).toBeCalled();
+  });
+});
+
+describe('onRequestClose', () => {
+  it('点击遮罩层，调用onRequestClose回调函数', () => {
+    const onRequestClose = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open onRequestClose={onRequestClose}>
+          <div />
+        </Modal>
+      </ThemeProvider>,
+    );
+
+    act(() => {
+      fireEvent.click(getByTestId('sinoui-modal-backdrop'));
+    });
+
+    expect(onRequestClose).toBeCalledWith(expect.anything(), 'backdropClick');
+  });
+
+  it('按下Escape键，调用onRequestClose回调函数', () => {
+    const onRequestClose = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Modal open data-testid="modal" onRequestClose={onRequestClose}>
+          <Grow in>
+            <div data-testid="content" />
+          </Grow>
+        </Modal>
+      </ThemeProvider>,
+    );
+
+    act(() => {
+      fireEvent.keyDown(getByTestId('modal'), {
+        key: 'Escape',
+        code: 'Escape',
+      });
+    });
+
+    expect(onRequestClose).toBeCalledWith(expect.anything(), 'escapeKeydown');
   });
 });
 

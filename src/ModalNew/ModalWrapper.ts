@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 interface Props {
   $center?: boolean;
+  zIndex?: number;
 }
 
 const centerCss = css`
@@ -15,7 +16,7 @@ const centerCss = css`
  */
 const ModalWrapper = styled.div<Props>`
   position: fixed;
-  z-index: ${({ theme }) => theme.zIndex.modal};
+  z-index: ${({ theme, zIndex }) => zIndex ?? theme.zIndex.modal};
   top: 0;
   right: 0;
   bottom: 0;

@@ -26,6 +26,25 @@ interface Props {
    */
   onClose?: (reason: 'backdropClick' | 'escapeKeydown') => void;
   /**
+   * Modal组件请求关闭时的回调函数。
+   *
+   * @deprecated 请使用 onClose
+   *
+   * 回调函数签名：
+   *
+   * `function(event: object, reason: string) => void`
+   *
+   * * **event**: 事件源
+   * * **reason**: 引起关闭的原因。
+   * 'escapeKeydown'表示按ESC键引起关闭，
+   * 'backdropClick'表示点击backdrop引起关闭。
+   *
+   */
+  onRequestClose?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    reason: string,
+  ) => void;
+  /**
    * 指定模态框的容器
    */
   container?: ModalContainer;
@@ -87,6 +106,10 @@ interface Props {
    * @private
    */
   modalManager?: ModalManager;
+  /**
+   * 指定z-index
+   */
+  zIndex?: number;
 }
 
 const isRefObject = (ref: any): ref is React.RefObject<HTMLElement> => {
@@ -125,6 +148,7 @@ const getDefaultModalManager = () => {
 export default function Modal({
   open,
   onClose,
+  onRequestClose,
   children,
   container,
   center,
@@ -204,6 +228,9 @@ export default function Modal({
     if (onClose && backdropClick) {
       onClose('backdropClick');
     }
+    if (onRequestClose && backdropClick) {
+      onRequestClose(event as any, 'backdropClick');
+    }
     if (onBackdropClick) {
       onBackdropClick(event);
     }
@@ -241,6 +268,10 @@ export default function Modal({
     if (keyboard && onClose) {
       event.stopPropagation();
       onClose('escapeKeydown');
+    }
+
+    if (keyboard && onRequestClose) {
+      onRequestClose(event as any, 'escapeKeydown');
     }
   };
 
