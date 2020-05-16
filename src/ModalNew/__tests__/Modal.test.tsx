@@ -7,7 +7,10 @@ import '@testing-library/jest-dom';
 import { ThemeProvider } from 'styled-components';
 import defaultTheme from '@sinoui/theme/defaultTheme';
 import Grow from '@sinoui/core/Grow';
+import getScrollSize from 'dom-helpers/scrollbarSize';
 import Modal from '../Modal';
+
+jest.mock('dom-helpers/scrollbarSize');
 
 afterEach(cleanup);
 
@@ -642,6 +645,21 @@ describe('焦点管理', () => {
 });
 
 describe('scrollLock', () => {
+  beforeEach(() => {
+    (getScrollSize as jest.Mock).mockReturnValue(17);
+  });
+  beforeEach(() => {
+    Object.defineProperty(window, 'innerWidth', {
+      configurable: true,
+      value: 180,
+    });
+
+    Object.defineProperty(document.documentElement, 'clientWidth', {
+      configurable: true,
+      value: 163,
+    });
+  });
+
   it('默认锁定页面', () => {
     render(
       <ThemeProvider theme={defaultTheme}>
@@ -652,6 +670,7 @@ describe('scrollLock', () => {
     );
 
     expect(document.body).toHaveStyle('overflow: hidden');
+    expect(document.body).toHaveStyle('padding-right: 17px');
   });
 
   it('关闭模态框，解除页面滚动锁定', () => {
@@ -702,6 +721,53 @@ describe('scrollLock', () => {
     );
 
     expect(document.body).not.toHaveStyle('overflow: hidden');
+  });
+
+  it('sinoui-fixed', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <div>
+          <div className="sinoui-fixed" data-testid="fixed" />
+          <Modal open>
+            <div />
+          </Modal>
+        </div>
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('fixed')).toHaveStyle('padding-right: 17px');
+  });
+
+  it('卸载模态框后，恢复 sinoui-fixed', () => {
+    const { getByTestId, rerender } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <div>
+          <div
+            className="sinoui-fixed"
+            data-testid="fixed"
+            style={{ paddingRight: 10 }}
+          />
+          <Modal open>
+            <div />
+          </Modal>
+        </div>
+      </ThemeProvider>,
+    );
+    rerender(
+      <ThemeProvider theme={defaultTheme}>
+        <div>
+          <div
+            className="sinoui-fixed"
+            data-testid="fixed"
+            style={{ paddingRight: 10 }}
+          />
+          <Modal open={false}>
+            <div />
+          </Modal>
+        </div>
+      </ThemeProvider>,
+    );
+    expect(getByTestId('fixed')).toHaveStyle('padding-right: 10px');
   });
 });
 
