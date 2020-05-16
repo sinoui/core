@@ -16,7 +16,7 @@ type ModalContainer =
   | undefined
   | null;
 
-interface Props {
+export interface Props {
   /**
    * 设置为`true`，则打开模态框。
    */
