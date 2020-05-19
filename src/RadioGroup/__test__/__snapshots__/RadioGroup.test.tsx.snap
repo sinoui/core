@@ -71,6 +71,7 @@ exports[`radioGroup组件 快照测试 基本使用 1`] = `
   -ms-flex-align: center;
   align-items: center;
   line-height: 1.5;
+  padding: 4px 0px;
 }
 
 .c2 {
@@ -500,6 +501,7 @@ Array [
   -ms-flex-align: center;
   align-items: center;
   line-height: 1.5;
+  padding: 4px 0px;
 }
 
 .c2 {
@@ -876,6 +878,7 @@ Array [
   -ms-flex-align: center;
   align-items: center;
   line-height: 1.5;
+  padding: 4px 0px;
 }
 
 .c2 {
@@ -1257,6 +1260,7 @@ Array [
   -ms-flex-align: center;
   align-items: center;
   line-height: 1.5;
+  padding: 4px 0px;
 }
 
 .c2 {
@@ -1579,6 +1583,7 @@ Array [
   -ms-flex-align: center;
   align-items: center;
   line-height: 1.5;
+  padding: 4px 0px;
 }
 
 .c2 {
@@ -1915,6 +1920,7 @@ exports[`radioGroup组件 快照测试 设置纵向排列 1`] = `
   -ms-flex-align: center;
   align-items: center;
   line-height: 1.5;
+  padding: 4px 0px;
 }
 
 .c2 {
