@@ -124,9 +124,7 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
     useLayoutEffect(() => {
       const label = labelRef?.current;
       if (label && !noLabel) {
-        setNotchWidth(
-          label.getBoundingClientRect().width * (isInitedShrink ? 1 : 0.75),
-        );
+        setNotchWidth(label.clientWidth * (isInitedShrink ? 1 : 0.75));
       }
     }, [isInitedShrink, labelRef, noLabel]);
 
