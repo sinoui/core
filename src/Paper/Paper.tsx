@@ -54,4 +54,3 @@ const Paper = styled.div.attrs({
 `;
 
 export default Paper;
-export { roundCss };

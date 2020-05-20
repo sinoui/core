@@ -50,10 +50,6 @@ const CardHeaderWrapper = styled.div`
   & .card-header-action {
     flex: 0 0 auto;
   }
-
-  & + .sinoui-card_primary-action > .sinoui-card__media {
-    border-radius: 0;
-  }
 `;
 
 /**

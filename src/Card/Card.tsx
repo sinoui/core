@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import classnames from 'classnames';
-import Paper, { roundCss } from '@sinoui/core/Paper';
+import Paper from '@sinoui/core/Paper';
 
 export interface CardProps {
   /**
@@ -29,12 +29,7 @@ const StyledCard = styled(Paper).attrs(({ outlined }: CardProps) => ({
   display: inline-flex;
   flex-direction: column;
   outline: none;
-
-  .sinoui-card__media {
-    ${roundCss};
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
+  overflow: hidden;
 `;
 
 export default StyledCard;
