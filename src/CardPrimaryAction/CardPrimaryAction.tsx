@@ -14,7 +14,7 @@ export interface Props {
 }
 
 const StyledCardPrimaryAction = styled.div.attrs(() => ({
-  className: 'sinoui-card_primary-action',
+  className: 'sinoui-card__primary-action',
   tabIndex: '0',
 }))`
   overflow: hidden;
