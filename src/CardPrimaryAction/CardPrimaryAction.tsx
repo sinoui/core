@@ -13,7 +13,10 @@ export interface Props {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const StyledCardPrimaryAction = styled.div.attrs(() => ({ tabIndex: '0' }))`
+const StyledCardPrimaryAction = styled.div.attrs(() => ({
+  className: 'sinoui-card_primary-action',
+  tabIndex: '0',
+}))`
   overflow: hidden;
   cursor: pointer;
   outline: none;
