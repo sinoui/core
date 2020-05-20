@@ -19,7 +19,7 @@ exports[`快照测试 嵌入图标 1`] = `
 
 exports[`快照测试 浮动按钮居中嵌入 1`] = `
 <div
-  className="sc-AxhCb dKBcis"
+  className="sc-AxhCb cunWQR"
 >
   <div
     className="sinoui-bottom-app-bar--fab"
@@ -56,7 +56,7 @@ exports[`快照测试 浮动按钮居中嵌入 1`] = `
 
 exports[`快照测试 浮动按钮居右显示 1`] = `
 <div
-  className="sc-AxiKw dwZYIi"
+  className="sc-AxiKw qOdyb"
 >
   <div
     className="sinoui-bottom-app-bar--fab"
@@ -69,7 +69,7 @@ exports[`快照测试 浮动按钮居右显示 1`] = `
 
 exports[`快照测试 默认 1`] = `
 <div
-  className="sc-AxiKw jeankl"
+  className="sc-AxiKw eWqRzE"
 >
   <div
     className="sinoui-bottom-app-bar--fab"

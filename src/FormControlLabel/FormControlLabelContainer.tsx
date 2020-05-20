@@ -49,6 +49,7 @@ const FormControlLabelContainer = styled(Label)<FormControlLabelContainerProps>`
     display: inline-flex;
     align-items: center;
     line-height: 1.5;
+    padding: 4px 0px;
   }
 
   cursor: ${(props) =>

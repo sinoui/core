@@ -76,6 +76,16 @@ const clearIconWithEndAdornmentCss = css`
       pointer-events: auto;
       ${enterTransitionCss}
     }
+
+    @media (hover: none) {
+      .sinoui-base-input__clear {
+        display: none;
+      }
+
+      .sinoui-input-adornment--end {
+        opacity: 1;
+      }
+    }
   }
 `;
 
