@@ -56,8 +56,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "@babel/runtime": "^7.9.2",
-    "@sinoui/theme": "^1.0.0-beta.8",
+    "@popperjs/core": "^2.4.0",
     "@sinoui/ripple": "^1.0.12",
+    "@sinoui/theme": "^1.0.0-beta.8",
     "@sinoui/utils": "^0.2.1",
     "classnames": "^2.2.6",
     "dom-helpers": "^5.1.4",
