@@ -8,13 +8,8 @@ import useMultiRefs from '../utils/useMultiRefs';
 import lockScroll from './lockScroll';
 import ModalManager from './ModalManager';
 import ariaHiddenModal from './ariaHiddenModal';
-
-type ModalContainer =
-  | React.RefObject<HTMLElement>
-  | HTMLElement
-  | (() => React.RefObject<HTMLElement> | HTMLElement | undefined | null)
-  | undefined
-  | null;
+import getContainerElement from '../utils/getContainerElement';
+import type { ContainerElement } from '../utils/getContainerElement';
 
 export interface Props {
   /**
@@ -47,7 +42,7 @@ export interface Props {
   /**
    * 指定模态框的容器
    */
-  container?: ModalContainer;
+  container?: ContainerElement;
   /**
    * 指定模态框子元素。
    */
@@ -110,24 +105,6 @@ export interface Props {
    * 指定z-index
    */
   zIndex?: number;
-}
-
-const isRefObject = (ref: any): ref is React.RefObject<HTMLElement> => {
-  return ref && typeof ref === 'object' && 'current' in ref;
-};
-
-/**
- * 获取容器元素
- * @param container 容器
- */
-export function getContainerElement(container: ModalContainer): HTMLElement {
-  if (isRefObject(container)) {
-    return container.current ?? document.body;
-  }
-  if (typeof container === 'function') {
-    return getContainerElement(container());
-  }
-  return container ?? document.body;
 }
 
 const defaultRenderBackdrop = (props: RenderModalBackdropProps) => {
