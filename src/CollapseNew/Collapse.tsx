@@ -11,16 +11,16 @@ import type { TransitionTimeout } from '../transitions/getDuration';
 import useMultiRefs from '../utils/useMultiRefs';
 
 interface CollapseWrapperProps {
-  $entered?: boolean;
+  $unmounted?: boolean;
   $hidden?: boolean;
   $minHeight: number;
 }
 
 const CollapseWrapper = styled.div<CollapseWrapperProps>`
   overflow: hidden;
-  height: ${({ $entered }) => ($entered ? 'auto' : '0px')};
   visibility: ${({ $hidden }) => ($hidden ? 'hidden' : '')};
   min-height: ${({ $minHeight }) => $minHeight}px;
+  ${({ $unmounted, $minHeight }) => $unmounted && `height: ${$minHeight}px`};
   transform-origin: top left;
 
   & > div {
@@ -71,8 +71,8 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     if (!node || !content) {
       return;
     }
-
-    enterAnimateRef.current = animate(0, 1, 200, (value) => {
+    const start = collapsedHeight / content.clientHeight;
+    enterAnimateRef.current = animate(start, 1, 200, (value) => {
       node.style.transform = `scale(1, ${value})`;
       content.style.transform = `scale(1, ${value === 0 ? 60 : 1 / value})`;
     });
@@ -113,7 +113,8 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     if (!node || !content) {
       return;
     }
-    exitAnimateRef.current = animate(1, 0, 200, (value) => {
+    const end = collapsedHeight / content.clientHeight;
+    exitAnimateRef.current = animate(1, end, 200, (value) => {
       node.style.transform = `scale(1, ${value})`;
       content.style.transform = `scale(1, ${value === 0 ? 60 : 1 / value})`;
     });
@@ -168,7 +169,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
       {(status: TransitionStatus, childProps: any) => (
         <CollapseWrapper
           className="sinoui-collapse-container"
-          $entered={status === 'entered'}
+          $unmounted={status === 'unmounted'}
           $hidden={status === 'exited' && !inProp && collapsedHeight === 0}
           $minHeight={collapsedHeight}
           ref={handleContentRef}
