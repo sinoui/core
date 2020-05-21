@@ -24,6 +24,7 @@ import FormControlLabel from '@sinoui/core/FormControlLabel';
 import Collapse from '@sinoui/core/Collapse';
 import Body2 from '@sinoui/core/Body2';
 import Zoom from '@sinoui/core/Zoom';
+import CollapseNew from '@sinoui/core/CollapseNew';
 import StoryLayout from './StoryLayout';
 import { Button, IconButton } from '../src';
 
@@ -289,3 +290,35 @@ function ZoomDemo() {
 }
 
 export const zoom = () => <ZoomDemo />;
+
+function CollapseNewDemo() {
+  const [isIn, setIsIn] = useState(false);
+  return (
+    <StoryLayout>
+      <Button onClick={() => setIsIn(!isIn)} outlined>
+        {isIn ? '关闭' : '打开'}
+      </Button>
+      <Row>
+        <Column xs={8}>
+          <CollapseNew in={isIn}>
+            <CardDemo />
+          </CollapseNew>
+        </Column>
+        <Column xs={8}>
+          <CollapseNew in={isIn} collapsedHeight={100}>
+            <CardDemo />
+          </CollapseNew>
+        </Column>
+        <Column xs={8}>
+          {isIn && (
+            <CollapseNew in={isIn}>
+              <CardDemo />
+            </CollapseNew>
+          )}
+        </Column>
+      </Row>
+    </StoryLayout>
+  );
+}
+
+export const collapseNew = () => <CollapseNewDemo />;
