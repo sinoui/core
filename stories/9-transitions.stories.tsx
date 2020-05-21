@@ -322,3 +322,43 @@ function CollapseNewDemo() {
 }
 
 export const collapseNew = () => <CollapseNewDemo />;
+
+function CollapseHorizontal() {
+  const [isIn, setIsIn] = useState(false);
+  return (
+    <StoryLayout>
+      <Button onClick={() => setIsIn(!isIn)} outlined>
+        {isIn ? '关闭' : '打开'}
+      </Button>
+      <Row>
+        <Column xs={12}>
+          <CollapseNew in={isIn} direction="horizontal">
+            <CardDemo />
+          </CollapseNew>
+        </Column>
+      </Row>
+    </StoryLayout>
+  );
+}
+
+export const collapseHorizontal = () => <CollapseHorizontal />;
+
+function CollapseAuto() {
+  const [isIn, setIsIn] = useState(false);
+  return (
+    <StoryLayout>
+      <Button onClick={() => setIsIn(!isIn)} outlined>
+        {isIn ? '关闭' : '打开'}
+      </Button>
+      <Row>
+        <Column xs={12}>
+          <CollapseNew in={isIn} direction="auto">
+            <CardDemo />
+          </CollapseNew>
+        </Column>
+      </Row>
+    </StoryLayout>
+  );
+}
+
+export const collapseAuto = () => <CollapseAuto />;

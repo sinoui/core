@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useLayoutEffect } from 'react';
 import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 import transitions from '@sinoui/theme/transitions';
@@ -11,16 +11,12 @@ import type { TransitionTimeout } from '../transitions/getDuration';
 import useMultiRefs from '../utils/useMultiRefs';
 
 interface CollapseWrapperProps {
-  $unmounted?: boolean;
   $hidden?: boolean;
-  $minHeight: number;
 }
 
 const CollapseWrapper = styled.div<CollapseWrapperProps>`
   overflow: hidden;
   visibility: ${({ $hidden }) => ($hidden ? 'hidden' : '')};
-  min-height: ${({ $minHeight }) => $minHeight}px;
-  ${({ $unmounted, $minHeight }) => $unmounted && `height: ${$minHeight}px`};
   transform-origin: top left;
 
   & > div {
@@ -36,6 +32,10 @@ type Props = Omit<BaseTransitionProps, 'timeout'> & {
    */
   collapsedHeight?: number;
   timeout?: TransitionTimeout;
+  /**
+   * 收缩方向，auto表示垂直和水平方向同时收缩
+   */
+  direction?: 'vertical' | 'horizontal' | 'auto';
 };
 
 /**
@@ -55,6 +55,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     onEntered,
     onExit,
     onExiting,
+    direction = 'vertical',
     ...rest
   } = props;
   const contentRef = useRef<HTMLElement>(null);
@@ -64,6 +65,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
   const timerRef = useRef<number>();
   const enterAnimateRef = useRef<any>(null);
   const exitAnimateRef = useRef<any>(null);
+  const inRef = useRef<boolean>(!!inProp);
 
   const handleEnter: any = (isAppearing: boolean) => {
     const node = contentRef.current;
@@ -72,9 +74,14 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
       return;
     }
     const start = collapsedHeight / content.clientHeight;
+
     enterAnimateRef.current = animate(start, 1, 200, (value) => {
-      node.style.transform = `scale(1, ${value})`;
-      content.style.transform = `scale(1, ${value === 0 ? 60 : 1 / value})`;
+      const scaleX = direction === 'vertical' ? 1 : value;
+      const scaleY = direction === 'horizontal' ? 1 : value;
+      const invScaleX = scaleX === 0 ? 60 : 1 / scaleX;
+      const invScalY = scaleY === 0 ? 60 : 1 / scaleY;
+      node.style.transform = `scale(${scaleX}, ${scaleY})`;
+      content.style.transform = `scale(${invScaleX}, ${invScalY})`;
     });
 
     if (onEnter) {
@@ -115,8 +122,12 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     }
     const end = collapsedHeight / content.clientHeight;
     exitAnimateRef.current = animate(1, end, 200, (value) => {
-      node.style.transform = `scale(1, ${value})`;
-      content.style.transform = `scale(1, ${value === 0 ? 60 : 1 / value})`;
+      const scaleX = direction === 'vertical' ? 1 : value;
+      const scaleY = direction === 'horizontal' ? 1 : value;
+      const invScaleX = scaleX === 0 ? 60 : 1 / scaleX;
+      const invScalY = scaleY === 0 ? 60 : 1 / scaleY;
+      node.style.transform = `scale(${scaleX}, ${scaleY})`;
+      content.style.transform = `scale(${invScaleX}, ${invScalY})`;
     });
 
     if (onExit) {
@@ -151,6 +162,22 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     return () => window.clearTimeout(timerRef.current);
   }, []);
 
+  useLayoutEffect(() => {
+    if (!inRef.current) {
+      const node = contentRef.current;
+      const content = wrapperRef.current;
+      if (!node || !content) {
+        return;
+      }
+
+      const scaleY = collapsedHeight / content.clientHeight;
+      const invScalY = scaleY === 0 ? 60 : 1 / scaleY;
+
+      node.style.transform = `scale(1,${scaleY})`;
+      content.style.transform = `scale(1,${invScalY})`;
+    }
+  }, [collapsedHeight]);
+
   return (
     <Transition
       appear
@@ -169,9 +196,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
       {(status: TransitionStatus, childProps: any) => (
         <CollapseWrapper
           className="sinoui-collapse-container"
-          $unmounted={status === 'unmounted'}
           $hidden={status === 'exited' && !inProp && collapsedHeight === 0}
-          $minHeight={collapsedHeight}
           ref={handleContentRef}
           {...childProps}
         >
