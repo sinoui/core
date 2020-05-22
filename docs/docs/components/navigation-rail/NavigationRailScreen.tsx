@@ -4,33 +4,51 @@ import { defaultTheme } from '@sinoui/theme';
 import { MdRestore, MdFavorite, MdLocationOn, MdFolder } from 'react-icons/md';
 import NavigationRail from '@sinoui/core/NavigationRail';
 import NavigationRailAction from '@sinoui/core/NavigationRailAction';
-import Fab from '@sinoui/core/Fab';
-import Add from '@sinoui/icons/Add';
+import { opacify } from 'polished';
+import Paper from '@sinoui/core/Paper';
 
-const Div = styled.div`
+const Wrapper = styled.div`
+  background: ${(props) => props.theme.palette.primary.main};
+  padding: 40px 10px 40px 72px;
+  height: 100vh;
   position: relative;
-  height: 660px;
 `;
 
-function NavigationRailDemo(props: any) {
+const NavigationRailWrapper = styled(NavigationRail)`
+  position: absolute;
+  left: 0px;
+  top: 40px;
+  background: ${(props) => props.theme.palette.primary.main};
+  border: 0;
+  height: auto;
+
+  > .sinoui-navigation-rail {
+    color: ${(props) => opacify(-0.24, props.theme.palette.common.white)};
+  }
+
+  > .sinoui-navigation-rail--selected {
+    color: ${(props) => props.theme.palette.common.white};
+  }
+`;
+
+const PaperWrapper = styled(Paper)`
+  border-radius: 10px;
+  height: 100%;
+  padding: 0px 10px;
+`;
+
+function NavigationRailScreen() {
   const [val, setVal] = useState('');
 
-  const { showLabels, align } = props;
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Div>
-        <NavigationRail
+      <Wrapper>
+        <NavigationRailWrapper
           onChange={(_e: React.FormEvent<HTMLDivElement>, value: string) =>
             setVal(value)
           }
           value={val}
-          showLabels={showLabels}
-          align={align}
-          fab={
-            <Fab>
-              <Add />
-            </Fab>
-          }
+          showLabels={false}
         >
           <NavigationRailAction
             label="Recents"
@@ -52,10 +70,11 @@ function NavigationRailDemo(props: any) {
             value="folder"
             icon={<MdFolder />}
           />
-        </NavigationRail>
-      </Div>
+        </NavigationRailWrapper>
+        <PaperWrapper elevation={4}>沉浸式示例</PaperWrapper>
+      </Wrapper>
     </ThemeProvider>
   );
 }
 
-export default NavigationRailDemo;
+export default NavigationRailScreen;

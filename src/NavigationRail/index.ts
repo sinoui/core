@@ -1,5 +1,5 @@
 import NavigationRail from './NavigationRail';
-import MyContext from './MyContext';
+import NavigationRailContext from './MyContext';
 
 export default NavigationRail;
-export { MyContext };
+export { NavigationRailContext };

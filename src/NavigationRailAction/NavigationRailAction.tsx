@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import classNames from 'classnames';
 import BaseButton from '@sinoui/core/BaseButton';
 import Body2 from '@sinoui/core/Body2';
-import { opacify } from 'polished';
 import { Theme } from '@sinoui/theme';
-import { MyContext } from '@sinoui/core/NavigationRail';
+import { NavigationRailContext } from '@sinoui/core/NavigationRail';
 
 const IconWrapper = styled.span`
   width: 24px;
@@ -14,14 +13,10 @@ const IconWrapper = styled.span`
   margin: 0 auto;
 `;
 
-const colorWrapper = (theme: Theme, color?: string, selected?: boolean) => {
+const colorWrapper = (theme: Theme, selected?: boolean) => {
   let newColor;
-  if (selected && color) {
-    newColor = theme.palette.common.white;
-  } else if (selected) {
+  if (selected) {
     newColor = theme.palette.primary.main;
-  } else if (!selected && color) {
-    newColor = opacify(-0.24, theme.palette.common.white);
   } else {
     newColor = theme.palette.text.secondary;
   }
@@ -36,8 +31,7 @@ const BaseButtonWrapper = styled(BaseButton)<{
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${({ theme, color, selected }) =>
-    colorWrapper(theme, color, selected)};
+  color: ${({ theme, selected }) => colorWrapper(theme, selected)};
   padding: ${({ showLabel }) => (showLabel ? '14px 0px 16px' : '24px 0px')};
   width: 100%;
   min-height: 72px;
@@ -75,10 +69,6 @@ export interface NavigationRailActionProps {
    */
   icon: React.ReactNode;
   /**
-   * 指定颜色
-   */
-  color?: string;
-  /**
    * value值
    */
   value?: string;
@@ -95,9 +85,11 @@ export interface NavigationRailActionProps {
  * @returns
  */
 function NavigationRailAction(props: NavigationRailActionProps) {
-  const { label, icon, value, color, ...rest } = props;
+  const { label, icon, value, ...rest } = props;
 
-  const { showLabels, selectedValue, onChange } = useContext(MyContext);
+  const { showLabels, selectedValue, onChange } = useContext(
+    NavigationRailContext,
+  );
 
   const onClick = (e: any) => {
     if (onChange && value) {
@@ -115,8 +107,7 @@ function NavigationRailAction(props: NavigationRailActionProps) {
       className={classNames('sinoui-navigation-rail', {
         'sinoui-navigation-rail--selected': value === selectedValue,
       })}
-      onClick={(e) => onClick(e)}
-      color={color}
+      onClick={onClick}
       value={value}
       showLabel={showLabel}
     >

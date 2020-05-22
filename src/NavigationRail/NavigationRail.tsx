@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import colorCss from '@sinoui/core/utils/colorCss';
-import MyContext from './MyContext';
+import NavigationRailContext from './MyContext';
 
 const alignFun = (align: string) => {
   if (align === 'start') {
@@ -16,6 +16,7 @@ const alignFun = (align: string) => {
 
 const NavigationRailWrapper = styled.div<{
   align?: 'start' | 'center' | 'end';
+  $fab?: boolean;
 }>`
   display: flex;
   flex-direction: column;
@@ -27,12 +28,13 @@ const NavigationRailWrapper = styled.div<{
     colorCss('background-color', theme.palette.background.paper)};
   box-shadow: ${({ theme }) => theme.shadows[0]};
   border-right: 1px solid ${(props) => props.theme.palette.divider};
+  padding-top: ${({ $fab }) => ($fab ? 88 : 0)}px;
+  position: relative;
 
   .sinoui-fab {
     position: absolute;
     top: 16px;
     left: 8px;
-    margin-bottom: 8px;
   }
 `;
 
@@ -61,6 +63,10 @@ export interface Props {
    * 布局显示
    */
   align?: 'start' | 'center' | 'end';
+  /**
+   * fab是否显示
+   */
+  fab?: React.ReactNode;
 }
 
 /**
@@ -78,11 +84,12 @@ const NavigationRail = React.forwardRef(
       onChange,
       value,
       align,
+      fab,
       ...rest
     } = props;
 
     return (
-      <MyContext.Provider
+      <NavigationRailContext.Provider
         value={{
           showLabels,
           onChange,
@@ -94,10 +101,12 @@ const NavigationRail = React.forwardRef(
           {...rest}
           ref={ref}
           align={align}
+          $fab={!!fab}
         >
+          {fab}
           {children}
         </NavigationRailWrapper>
-      </MyContext.Provider>
+      </NavigationRailContext.Provider>
     );
   },
 );
