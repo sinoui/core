@@ -38,7 +38,7 @@ it('单选时，点击选项，onClose被调用', () => {
 it('复选时，点击选中', () => {
   const onChange = jest.fn();
   const onClose = jest.fn();
-  const { getAllByRole, getByTestId } = render(
+  const { getAllByRole } = render(
     <ThemeProvider theme={defaultTheme}>
       <SelectInput
         value={['1']}
@@ -61,12 +61,6 @@ it('复选时，点击选中', () => {
 
   expect(onChange).toHaveBeenCalledTimes(2);
   expect(onClose).not.toHaveBeenCalled();
-
-  act(() => {
-    fireEvent.click(getByTestId('sinoui-modal-backdrop'));
-  });
-
-  expect(onClose).toHaveBeenCalled();
 });
 
 it('单选时，打开弹窗，直接按enter键，弹窗关闭，onChange被调用', () => {
@@ -93,7 +87,7 @@ it('复选时，使用方向键和Enter键切换选中项', () => {
   const onChange = jest.fn();
   const onClose = jest.fn();
 
-  const { getAllByRole, getByTestId } = render(
+  const { getAllByRole } = render(
     <ThemeProvider theme={defaultTheme}>
       <SelectInput
         value={['1']}
@@ -117,12 +111,6 @@ it('复选时，使用方向键和Enter键切换选中项', () => {
 
   expect(onChange).toHaveBeenCalledTimes(2);
   expect(onClose).not.toHaveBeenCalled();
-
-  act(() => {
-    fireEvent.click(getByTestId('sinoui-modal-backdrop'));
-  });
-
-  expect(onClose).toHaveBeenCalled();
 });
 
 it('关闭弹窗后,失去焦点时，onBlur被调用', () => {
