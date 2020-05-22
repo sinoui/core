@@ -7,6 +7,7 @@ import Grow from '@sinoui/core/Grow';
 import type { VirtualElement } from '@popperjs/core';
 import { Modifier } from '@popperjs/core';
 import styled from 'styled-components';
+import contains from 'dom-helpers/contains';
 import type { ContainerElement } from '../utils/getContainerElement';
 import MenuList, { MenuListProps } from './MenuList';
 
@@ -39,7 +40,7 @@ const MenuLayout = styled(Popper)`
 `;
 
 const StylePaper = styled(Paper)`
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 export function syncWidth(anchorElement: HTMLElement, target?: HTMLElement) {
@@ -102,11 +103,34 @@ function Menu(props: MenuProps) {
     }
   }, [preventAutoFocus]);
 
+  const onMenuoutClick = useCallback(
+    (event) => {
+      const { target } = event;
+      if (
+        target !== menuListRef.current &&
+        !contains(menuListRef.current, target)
+      ) {
+        if (onRequestClose) {
+          onRequestClose();
+        }
+      }
+    },
+    [onRequestClose],
+  );
+
   useEffect(() => {
     if (open) {
       focus();
     }
   }, [focus, open]);
+
+  useEffect(() => {
+    if (open) {
+      document.addEventListener('click', onMenuoutClick);
+    }
+
+    return () => document.removeEventListener('click', onMenuoutClick);
+  }, [onMenuoutClick, open]);
 
   const handleEnter = useCallback(
     (element: HTMLElement) => {
