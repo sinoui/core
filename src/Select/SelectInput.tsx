@@ -4,6 +4,7 @@ import { MenuListItem, MenuNew } from '@sinoui/core/Menu';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import { ModifierArguments, Options } from '@popperjs/core';
+import maxSize from 'popper-max-size-modifier';
 import useMultiRefs from '../utils/useMultiRefs';
 import singleLineTextCss from '../utils/singleLineTextCss';
 import type SelectItem from './SelectItem';
@@ -122,6 +123,18 @@ const sameWidth = {
   },
 };
 
+const applyMaxSize = {
+  name: 'applyMaxSize',
+  enabled: true,
+  phase: 'beforeWrite',
+  requires: ['maxSize'],
+  fn: ({ state }: ModifierArguments<Options>) => {
+    const { height } = state.modifiersData.maxSize;
+    const paper = document.body.querySelector('.sinoui-paper') as HTMLElement;
+    paper.style.maxHeight = `${height}px`;
+  },
+};
+
 /**
  * 处理复选框内部逻辑的组件
  */
@@ -237,7 +250,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
       <MenuNew
         minWidth={menuMinWidth}
         referenceElement={selectRef}
-        modifiers={[sameWidth]}
+        modifiers={[sameWidth as any, maxSize, applyMaxSize as any]}
         open={open}
         onRequestClose={onClose}
         MenuListProps={{

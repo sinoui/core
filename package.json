@@ -66,6 +66,7 @@
     "lodash": "^4.17.15",
     "lodash-es": "^4.17.15",
     "polished": "^3.4.4",
+    "popper-max-size-modifier": "^0.2.0",
     "react-dom": "^16.12.0",
     "react-event-listener": "^0.6.6",
     "react-icons": "^3.9.0",

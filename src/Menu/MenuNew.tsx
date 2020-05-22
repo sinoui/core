@@ -38,6 +38,10 @@ const MenuLayout = styled(Popper)`
   z-index: 2;
 `;
 
+const StylePaper = styled(Paper)`
+  overflow-y: scroll;
+`;
+
 export function syncWidth(anchorElement: HTMLElement, target?: HTMLElement) {
   if (
     target &&
@@ -140,7 +144,7 @@ function Menu(props: MenuProps) {
       portal
     >
       <Grow in={open} onEnter={handleEnter}>
-        <Paper elevation={8}>
+        <StylePaper elevation={8}>
           <MenuList
             onKeyDown={handleListKeyDown}
             {...menuListProps}
@@ -148,7 +152,7 @@ function Menu(props: MenuProps) {
           >
             {children}
           </MenuList>
-        </Paper>
+        </StylePaper>
       </Grow>
     </MenuLayout>
   );
