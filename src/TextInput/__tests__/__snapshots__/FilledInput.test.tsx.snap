@@ -101,7 +101,6 @@ Array [
 
 .c1 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -325,7 +324,6 @@ Array [
 
 .c1 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -553,7 +551,6 @@ exports[`无标签 1`] = `
 
 .c1 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -784,7 +781,6 @@ exports[`聚焦状态 1`] = `
 
 .c1 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;

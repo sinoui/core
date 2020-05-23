@@ -5,7 +5,7 @@ exports[`DialogActions组件 快照测试 基本使用 1`] = `
   className="sc-AxjAm RpNHO sinoui-dialog-actions"
 >
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw fdnOjC sinoui-button"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw gCGYpH sinoui-button"
     color="primary"
     role="button"
     type="button"
@@ -13,7 +13,7 @@ exports[`DialogActions组件 快照测试 基本使用 1`] = `
     Disagree
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw fdnOjC sinoui-button"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw gCGYpH sinoui-button"
     color="primary"
     role="button"
     type="button"
@@ -28,7 +28,7 @@ exports[`DialogActions组件 快照测试 按钮垂直显示 1`] = `
   className="sc-AxjAm lcfxyb sinoui-dialog-actions"
 >
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw fdnOjC sinoui-button"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw gCGYpH sinoui-button"
     color="primary"
     role="button"
     type="button"
@@ -36,7 +36,7 @@ exports[`DialogActions组件 快照测试 按钮垂直显示 1`] = `
     Disagree
   </button>
   <button
-    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw fdnOjC sinoui-button"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw gCGYpH sinoui-button"
     color="primary"
     role="button"
     type="button"

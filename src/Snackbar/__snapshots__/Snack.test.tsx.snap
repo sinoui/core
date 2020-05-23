@@ -65,7 +65,7 @@ exports[`Snackbar快照测试 含有操作区域 1`] = `
         className="sinoui-snackbar__action"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ iNLSgG sinoui-button sinoui-button--raised"
+          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ iQUjnX sinoui-button sinoui-button--raised"
           color="error"
           role="button"
           type="button"
@@ -167,7 +167,7 @@ exports[`Snackbar快照测试 操作区域换行显示 1`] = `
         className="sinoui-snackbar__action"
       >
         <button
-          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ iNLSgG sinoui-button sinoui-button--raised"
+          className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ iQUjnX sinoui-button sinoui-button--raised"
           color="error"
           role="button"
           type="button"

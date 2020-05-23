@@ -47,9 +47,6 @@ const CardMediaWrapper = styled.div.attrs(({ wide, square }: Props) => ({
   background-position: 50%;
   background-size: cover;
 
-  position: relative;
-  overflow: hidden;
-
   &::before {
     content: '';
     display: block;
