@@ -76,7 +76,7 @@ const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
   const selectRef = useRef<HTMLDivElement>(null);
   const handleRef = useMultiRefs(selectRef, ref);
   const [open, setOpen] = useState(false);
-  const [width, setWidth] = useState(0);
+
   const {
     children,
     inputProps,
@@ -105,7 +105,6 @@ const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
       return;
     }
     setOpen(true);
-    setWidth(selectRef.current ? selectRef.current.clientWidth : 0);
   }, [props.disabled, props.readOnly]);
 
   const onClose = useCallback(() => {
@@ -119,7 +118,7 @@ const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
     open,
     onOpen,
     onClose,
-    menuMinWidth: width,
+    selectRef,
     ...inputProps,
   };
 

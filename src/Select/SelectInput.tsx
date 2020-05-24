@@ -1,7 +1,10 @@
+/* eslint-disable no-param-reassign */
 import React, { useRef, useEffect } from 'react';
-import Menu, { MenuListItem } from '@sinoui/core/Menu';
+import { MenuListItem, MenuNew } from '@sinoui/core/Menu';
 import classNames from 'classnames';
 import styled from 'styled-components';
+import { ModifierArguments, Options } from '@popperjs/core';
+import maxSize from 'popper-max-size-modifier';
 import useMultiRefs from '../utils/useMultiRefs';
 import singleLineTextCss from '../utils/singleLineTextCss';
 import type SelectItem from './SelectItem';
@@ -75,6 +78,7 @@ export interface Props {
    * 菜单的最小宽度
    */
   menuMinWidth?: number;
+  selectRef?: HTMLDivElement;
 }
 
 const SelectInputLayout = styled.div`
@@ -104,6 +108,33 @@ function parseItemsFromChildren(children: React.ReactNode): SelectItem[] {
   );
 }
 
+const sameWidth = {
+  name: 'sameWidth',
+  enabled: true,
+  phase: 'beforeWrite',
+  requires: ['computeStyles'],
+  fn: ({ state }: ModifierArguments<Options>) => {
+    state.styles.popper.width = `${(state.elements.reference as any).width}px`;
+  },
+  effect: ({ state }: ModifierArguments<Options>) => {
+    state.elements.popper.style.width = `${
+      (state.elements.reference as any).offsetWidth
+    }px`;
+  },
+};
+
+const applyMaxSize = {
+  name: 'applyMaxSize',
+  enabled: true,
+  phase: 'beforeWrite',
+  requires: ['maxSize'],
+  fn: ({ state }: ModifierArguments<Options>) => {
+    const { height } = state.modifiersData.maxSize;
+    const paper = document.body.querySelector('.sinoui-paper') as HTMLElement;
+    paper.style.maxHeight = `${height}px`;
+  },
+};
+
 /**
  * 处理复选框内部逻辑的组件
  */
@@ -130,6 +161,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     tabIndex = 0,
     value,
     menuMinWidth,
+    selectRef,
     ...other
   } = props;
 
@@ -215,12 +247,12 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
       >
         {renderValue(value, items)}
       </SelectInputLayout>
-      <Menu
+      <MenuNew
         minWidth={menuMinWidth}
-        anchorEl={selectInputRef.current}
+        referenceElement={selectRef}
+        modifiers={[sameWidth as any, maxSize, applyMaxSize as any]}
         open={open}
         onRequestClose={onClose}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         MenuListProps={{
           role: 'listbox',
         }}
@@ -234,7 +266,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
             onClick={handleItemClick(item.value)}
           />
         ))}
-      </Menu>
+      </MenuNew>
     </>
   );
 });
