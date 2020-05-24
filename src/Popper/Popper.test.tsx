@@ -19,7 +19,9 @@ it('展现弹出提示', () => {
     </div>,
   );
 
-  expect(getByTestId('tooltip')).toHaveStyle('position: absolute;');
+  expect(getByTestId('tooltip')).toHaveStyle(
+    'position: absolute;top: 0px; left: 0px',
+  );
   expect(getByTestId('tooltip-content')).toBeTruthy();
   expect(getByTestId('tooltip').previousElementSibling).toBe(
     referenceElementRef.current,

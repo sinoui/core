@@ -1,9 +1,11 @@
+/* eslint-disable no-nested-ternary */
 import React, {
   useRef,
   useLayoutEffect,
   useState,
   useCallback,
   useEffect,
+  useMemo,
 } from 'react';
 import { createPopper, Modifier, OptionsGeneric } from '@popperjs/core';
 import type { Instance, Placement, VirtualElement } from '@popperjs/core';
@@ -12,8 +14,15 @@ import type { ContainerElement } from '../utils/getContainerElement';
 import getContainerElement from '../utils/getContainerElement';
 import useMultiRefs from '../utils/useMultiRefs';
 
+interface TransitionProps {
+  in: boolean;
+  onEnter?: () => void;
+  onEntered?: () => void;
+  onExit?: () => void;
+}
+
 // 注意：这里不要用React.ComponentPropsWithRef代替React.HTMLAttributes，因为前者目前有ts性能问题
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+interface Props extends Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {
   /**
    * 设置为`true`，则打开弹出内容。否则关闭弹出内容。
    */
@@ -21,7 +30,9 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * 弹出窗内容
    */
-  children: React.ReactNode;
+  children:
+    | Omit<React.ReactNode, 'function'>
+    | ((transitionProps: TransitionProps) => React.ReactNode);
   /**
    * 参考元素。弹出提示内容会基于参考内容进行定位
    */
@@ -52,6 +63,12 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   popperOptions?: Partial<OptionsGeneric<Partial<Modifier<any, any>>>>;
 }
 
+const DEFAULT_STYLE: React.CSSProperties = {
+  position: 'fixed',
+  left: '0px',
+  top: '0px',
+};
+
 /**
  * 弹出提示组件
  *
@@ -68,6 +85,7 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
     popperRef: popperRefProp,
     modifiers,
     popperOptions,
+    style,
     ...rest
   },
   ref,
@@ -80,6 +98,9 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
   const transition =
     React.isValidElement(children) && children.props.in != null;
   const isShow = open || (transition && !exited);
+  const computedStyle = useMemo(() => ({ ...DEFAULT_STYLE, ...style }), [
+    style,
+  ]);
 
   useLayoutEffect(() => {
     const tooltip = tooltipRef.current;
@@ -129,7 +150,9 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
     return null;
   }
 
-  const childProps: Record<string, any> = {};
+  const childProps: any = {
+    in: open,
+  };
 
   if (transition) {
     childProps.onEnter = handleEnter;
@@ -138,8 +161,10 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
   }
 
   const content = (
-    <div ref={handleTooltipRef} role="tooltip" {...rest}>
-      {React.isValidElement(children)
+    <div ref={handleTooltipRef} role="tooltip" style={computedStyle} {...rest}>
+      {typeof children === 'function'
+        ? children(childProps)
+        : React.isValidElement(children)
         ? React.cloneElement(children, childProps)
         : children}
     </div>
