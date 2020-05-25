@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import classNames from 'classnames';
 import BaseButton from '@sinoui/core/BaseButton';
 import Body2 from '@sinoui/core/Body2';
-import { Theme } from '@sinoui/theme';
 import { NavigationRailContext } from '@sinoui/core/NavigationRail';
 
 const IconWrapper = styled.span`
@@ -13,16 +12,6 @@ const IconWrapper = styled.span`
   margin: 0 auto;
 `;
 
-const colorWrapper = (theme: Theme, selected?: boolean) => {
-  let newColor;
-  if (selected) {
-    newColor = theme.palette.primary.main;
-  } else {
-    newColor = theme.palette.text.secondary;
-  }
-  return newColor;
-};
-
 const BaseButtonWrapper = styled(BaseButton)<{
   color?: string;
   selected?: boolean;
@@ -31,7 +20,8 @@ const BaseButtonWrapper = styled(BaseButton)<{
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${({ theme, selected }) => colorWrapper(theme, selected)};
+  color: ${({ theme, selected }) =>
+    selected ? theme.palette.primary.main : theme.palette.text.secondary};
   padding: ${({ showLabel }) => (showLabel ? '14px 0px 16px' : '24px 0px')};
   width: 100%;
   min-height: 72px;
