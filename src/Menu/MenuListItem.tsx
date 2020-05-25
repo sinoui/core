@@ -60,7 +60,8 @@ const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
   &:focus {
     ${(props) => getFocusStyle(props)};
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: ${(props) =>
+      props.theme.breakpoints.md}px) {
     &:focus {
       ${(props) => getFocusPhoneStyle(props)};
     }
