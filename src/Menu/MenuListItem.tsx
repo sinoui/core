@@ -29,7 +29,7 @@ const getFocusPhoneStyle = (props: ListItemProps & { theme: Theme }) => {
 
     return `background-color: ${props.theme.palette.action.selected}`;
   }
-  return 'background-color:#fff';
+  return 'background-color:transparent';
 };
 
 const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
