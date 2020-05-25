@@ -1,6 +1,6 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { render, cleanup } from '@testing-library/react';
+import renderer, { act } from 'react-test-renderer';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import '@testing-library/jest-dom/extend-expect';
@@ -79,6 +79,72 @@ describe('NavigationRail组件 单元测试', () => {
 
     const text = container.querySelector('.sinoui-navigation-rail--selected');
     expect(text && text.lastChild).toHaveTextContent('Favorites');
+  });
+
+  it('点击元素时，onChange被调用', () => {
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <NavigationRail
+          onChange={onChange}
+          value="favorites"
+          data-testid="NavigationRail"
+        >
+          <NavigationRailAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+            data-testid="NavigationRailAction"
+          />
+          <NavigationRailAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+        </NavigationRail>
+      </ThemeProvider>,
+    );
+
+    const test = getByTestId('NavigationRailAction');
+
+    act(() => {
+      fireEvent.click(test);
+    });
+    expect(onChange).toHaveBeenCalledTimes(1);
+  });
+
+  it('点击元素,元素被选中', () => {
+    const onChange = jest.fn();
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <NavigationRail
+          onChange={onChange}
+          value="favorites"
+          data-testid="NavigationRail"
+        >
+          <NavigationRailAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+          />
+          <NavigationRailAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+            data-testid="NavigationRailAction"
+          />
+        </NavigationRail>
+      </ThemeProvider>,
+    );
+
+    const test = getByTestId('NavigationRailAction');
+
+    act(() => {
+      fireEvent.click(test);
+    });
+
+    const text = container.querySelector('.sinoui-navigation-rail--selected');
+    expect(text).toHaveTextContent('Favorites');
   });
 });
 
