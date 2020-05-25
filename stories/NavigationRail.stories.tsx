@@ -9,13 +9,13 @@ import Fab from '@sinoui/core/Fab';
 import Add from '@sinoui/icons/Add';
 import Paper from '@sinoui/core/Paper';
 import { opacify } from 'polished';
+import './index.css';
 
 export default {
   title: 'NavigationRail',
 };
 
 const Div = styled.div`
-  position: relative;
   height: 100vh;
 `;
 
@@ -122,19 +122,9 @@ export const 设置隐藏所有标签 = () => <NavigationRailDemo showLabels={fa
 
 export const 结合Badge组件使用 = () => <NavigationRailBadge />;
 
-export const 布局居中显示 = () => (
-  <>
-    <p style={{ margin: '10px 0px' }}>居中显示：</p>
-    <NavigationRailDemo align="center" />
-  </>
-);
+export const 布局居中显示 = () => <NavigationRailDemo align="center" />;
 
-export const 底部对齐显示 = () => (
-  <>
-    <p style={{ margin: '10px 0px' }}>底部对齐显示：</p>
-    <NavigationRailDemo align="end" />
-  </>
-);
+export const 底部对齐显示 = () => <NavigationRailDemo align="end" />;
 
 function NavigationRailScreen() {
   const [val, setVal] = useState('');
@@ -144,6 +134,7 @@ function NavigationRailScreen() {
     padding: 40px 10px 40px 72px;
     height: 100vh;
     position: relative;
+    box-sizing: border-box;
   `;
 
   const NavigationRailWrapper = styled(NavigationRail)`

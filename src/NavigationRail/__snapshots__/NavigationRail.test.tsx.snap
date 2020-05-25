@@ -2,10 +2,10 @@
 
 exports[`NavigationRail组件 快照测试 基本使用 1`] = `
 <div
-  className="sc-AxjAm kDaNEv sinoui-navigation-rail"
+  className="sc-AxjAm hQDtRo sinoui-navigation-rail"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -13,7 +13,7 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
     value="recents"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <svg
         fill="currentColor"
@@ -35,13 +35,13 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxhCb KcePp"
+      className="sc-AxgMl eJirLy"
     >
       Recents
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw fQoMgD sinoui-navigation-rail sinoui-navigation-rail--selected"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -49,7 +49,7 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
     value="favorites"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <svg
         fill="currentColor"
@@ -71,13 +71,13 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxhCb KcePp"
+      className="sc-AxgMl eJirLy"
     >
       Favorites
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -85,7 +85,7 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
     value="nearby"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <svg
         fill="currentColor"
@@ -107,13 +107,13 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxhCb KcePp"
+      className="sc-AxgMl eJirLy"
     >
       Nearby
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -121,7 +121,7 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
     value="folder"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <svg
         fill="currentColor"
@@ -143,7 +143,7 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxhCb KcePp"
+      className="sc-AxgMl eJirLy"
     >
       Folder
     </span>
@@ -154,10 +154,10 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
 exports[`NavigationRail组件 快照测试 布局显示 1`] = `
 Array [
   <div
-    className="sc-AxjAm ldUpNq sinoui-navigation-rail"
+    className="sc-AxjAm gwqiGl sinoui-navigation-rail"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -165,7 +165,7 @@ Array [
       value="recents"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="sc-AxhCb jluEfB"
       >
         <svg
           fill="currentColor"
@@ -187,13 +187,13 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxhCb KcePp"
+        className="sc-AxgMl eJirLy"
       >
         Recents
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw fQoMgD sinoui-navigation-rail sinoui-navigation-rail--selected"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
       onClick={[Function]}
       role="button"
       selected={true}
@@ -201,7 +201,7 @@ Array [
       value="favorites"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="sc-AxhCb jluEfB"
       >
         <svg
           fill="currentColor"
@@ -223,13 +223,13 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxhCb KcePp"
+        className="sc-AxgMl eJirLy"
       >
         Favorites
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -237,7 +237,7 @@ Array [
       value="nearby"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="sc-AxhCb jluEfB"
       >
         <svg
           fill="currentColor"
@@ -259,13 +259,13 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxhCb KcePp"
+        className="sc-AxgMl eJirLy"
       >
         Nearby
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -273,7 +273,7 @@ Array [
       value="folder"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="sc-AxhCb jluEfB"
       >
         <svg
           fill="currentColor"
@@ -295,17 +295,17 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxhCb KcePp"
+        className="sc-AxgMl eJirLy"
       >
         Folder
       </span>
     </button>
   </div>,
   <div
-    className="sc-AxjAm gaUNCs sinoui-navigation-rail"
+    className="sc-AxjAm cHdHXr sinoui-navigation-rail"
   >
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -313,7 +313,7 @@ Array [
       value="recents"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="sc-AxhCb jluEfB"
       >
         <svg
           fill="currentColor"
@@ -335,13 +335,13 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxhCb KcePp"
+        className="sc-AxgMl eJirLy"
       >
         Recents
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw fQoMgD sinoui-navigation-rail sinoui-navigation-rail--selected"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
       onClick={[Function]}
       role="button"
       selected={true}
@@ -349,7 +349,7 @@ Array [
       value="favorites"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="sc-AxhCb jluEfB"
       >
         <svg
           fill="currentColor"
@@ -371,13 +371,13 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxhCb KcePp"
+        className="sc-AxgMl eJirLy"
       >
         Favorites
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -385,7 +385,7 @@ Array [
       value="nearby"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="sc-AxhCb jluEfB"
       >
         <svg
           fill="currentColor"
@@ -407,13 +407,13 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxhCb KcePp"
+        className="sc-AxgMl eJirLy"
       >
         Nearby
       </span>
     </button>
     <button
-      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
       onClick={[Function]}
       role="button"
       selected={false}
@@ -421,7 +421,7 @@ Array [
       value="folder"
     >
       <span
-        className="sc-AxirZ enDZtl"
+        className="sc-AxhCb jluEfB"
       >
         <svg
           fill="currentColor"
@@ -443,7 +443,7 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxhCb KcePp"
+        className="sc-AxgMl eJirLy"
       >
         Folder
       </span>
@@ -454,10 +454,10 @@ Array [
 
 exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
 <div
-  className="sc-AxjAm kDaNEv sinoui-navigation-rail"
+  className="sc-AxjAm hQDtRo sinoui-navigation-rail"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -465,13 +465,13 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
     value="recents"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <span
-        className="Badge__BadgeWrapper-sc-1mox8ry-0 ljnePt sinoui-badge sinoui-badge--dot"
+        className="sc-AxheI igOWIJ sinoui-badge sinoui-badge--dot"
       >
         <span
-          className="Badge__BadgeCircle-sc-1mox8ry-1 irelgB"
+          className="sc-Axmtr hYHkKq"
           color="error"
         />
         <svg
@@ -495,13 +495,13 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       </span>
     </span>
     <span
-      className="sc-AxhCb KcePp"
+      className="sc-AxgMl eJirLy"
     >
       Recents
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw fQoMgD sinoui-navigation-rail sinoui-navigation-rail--selected"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -509,7 +509,7 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
     value="favorites"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <svg
         fill="currentColor"
@@ -531,13 +531,13 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxhCb KcePp"
+      className="sc-AxgMl eJirLy"
     >
       Favorites
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -545,13 +545,13 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
     value="nearby"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <span
-        className="Badge__BadgeWrapper-sc-1mox8ry-0 ljnePt sinoui-badge"
+        className="sc-AxheI igOWIJ sinoui-badge"
       >
         <span
-          className="Badge__BadgeCircle-sc-1mox8ry-1 iUpzoi"
+          className="sc-Axmtr fDIRTf"
           color="error"
         >
           88
@@ -577,13 +577,13 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       </span>
     </span>
     <span
-      className="sc-AxhCb KcePp"
+      className="sc-AxgMl eJirLy"
     >
       Nearby
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw hIBkQl sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy czoUxw sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -591,13 +591,13 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
     value="folder"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <span
-        className="Badge__BadgeWrapper-sc-1mox8ry-0 ljnePt sinoui-badge"
+        className="sc-AxheI igOWIJ sinoui-badge"
       >
         <span
-          className="Badge__BadgeCircle-sc-1mox8ry-1 fgEXpB"
+          className="sc-Axmtr CwMC"
           color="error"
         >
           99+
@@ -623,7 +623,7 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       </span>
     </span>
     <span
-      className="sc-AxhCb KcePp"
+      className="sc-AxgMl eJirLy"
     >
       Folder
     </span>
@@ -633,10 +633,10 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
 
 exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = `
 <div
-  className="sc-AxjAm kDaNEv sinoui-navigation-rail"
+  className="sc-AxjAm hQDtRo sinoui-navigation-rail"
 >
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw keofQN sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy iFocuE sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -644,7 +644,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
     value="recents"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <svg
         fill="currentColor"
@@ -667,7 +667,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw fQoMgD sinoui-navigation-rail sinoui-navigation-rail--selected"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy PatSK sinoui-navigation-rail sinoui-navigation-rail--selected"
     onClick={[Function]}
     role="button"
     selected={true}
@@ -675,7 +675,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
     value="favorites"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <svg
         fill="currentColor"
@@ -697,13 +697,13 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
       </svg>
     </span>
     <span
-      className="sc-AxhCb KcePp"
+      className="sc-AxgMl eJirLy"
     >
       Favorites
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw keofQN sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy iFocuE sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -711,7 +711,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
     value="nearby"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <svg
         fill="currentColor"
@@ -734,7 +734,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
     </span>
   </button>
   <button
-    className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-AxiKw keofQN sinoui-navigation-rail"
+    className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy iFocuE sinoui-navigation-rail"
     onClick={[Function]}
     role="button"
     selected={false}
@@ -742,7 +742,7 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
     value="folder"
   >
     <span
-      className="sc-AxirZ enDZtl"
+      className="sc-AxhCb jluEfB"
     >
       <svg
         fill="currentColor"

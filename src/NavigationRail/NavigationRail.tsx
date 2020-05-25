@@ -30,6 +30,7 @@ const NavigationRailWrapper = styled.div<{
   border-right: 1px solid ${(props) => props.theme.palette.divider};
   padding-top: ${({ $fab }) => ($fab ? 88 : 0)}px;
   position: relative;
+  box-sizing: border-box;
 
   .sinoui-fab {
     position: absolute;
