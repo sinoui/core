@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import colorCss from '@sinoui/core/utils/colorCss';
-import NavigationRailContext from './MyContext';
+import NavigationRailContext from './NavigationRailContext';
 
 const alignFun = (align: string) => {
   if (align === 'start') {

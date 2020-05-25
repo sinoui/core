@@ -35,7 +35,9 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxgMl eJirLy"
+      className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
     >
       Recents
     </span>
@@ -71,7 +73,9 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxgMl eJirLy"
+      className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
     >
       Favorites
     </span>
@@ -107,7 +111,9 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxgMl eJirLy"
+      className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
     >
       Nearby
     </span>
@@ -143,7 +149,9 @@ exports[`NavigationRail组件 快照测试 基本使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxgMl eJirLy"
+      className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
     >
       Folder
     </span>
@@ -187,7 +195,9 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxgMl eJirLy"
+        className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+        color="textPrimary"
+        type="body2"
       >
         Recents
       </span>
@@ -223,7 +233,9 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxgMl eJirLy"
+        className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+        color="textPrimary"
+        type="body2"
       >
         Favorites
       </span>
@@ -259,7 +271,9 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxgMl eJirLy"
+        className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+        color="textPrimary"
+        type="body2"
       >
         Nearby
       </span>
@@ -295,7 +309,9 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxgMl eJirLy"
+        className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+        color="textPrimary"
+        type="body2"
       >
         Folder
       </span>
@@ -335,7 +351,9 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxgMl eJirLy"
+        className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+        color="textPrimary"
+        type="body2"
       >
         Recents
       </span>
@@ -371,7 +389,9 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxgMl eJirLy"
+        className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+        color="textPrimary"
+        type="body2"
       >
         Favorites
       </span>
@@ -407,7 +427,9 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxgMl eJirLy"
+        className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+        color="textPrimary"
+        type="body2"
       >
         Nearby
       </span>
@@ -443,7 +465,9 @@ Array [
         </svg>
       </span>
       <span
-        className="sc-AxgMl eJirLy"
+        className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+        color="textPrimary"
+        type="body2"
       >
         Folder
       </span>
@@ -468,10 +492,10 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       className="sc-AxhCb jluEfB"
     >
       <span
-        className="sc-AxheI igOWIJ sinoui-badge sinoui-badge--dot"
+        className="sc-AxgMl eTKQnf sinoui-badge sinoui-badge--dot"
       >
         <span
-          className="sc-Axmtr hYHkKq"
+          className="sc-AxheI inDDYx"
           color="error"
         />
         <svg
@@ -495,7 +519,9 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       </span>
     </span>
     <span
-      className="sc-AxgMl eJirLy"
+      className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
     >
       Recents
     </span>
@@ -531,7 +557,9 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxgMl eJirLy"
+      className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
     >
       Favorites
     </span>
@@ -548,10 +576,10 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       className="sc-AxhCb jluEfB"
     >
       <span
-        className="sc-AxheI igOWIJ sinoui-badge"
+        className="sc-AxgMl eTKQnf sinoui-badge"
       >
         <span
-          className="sc-Axmtr fDIRTf"
+          className="sc-AxheI cwdenY"
           color="error"
         >
           88
@@ -577,7 +605,9 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       </span>
     </span>
     <span
-      className="sc-AxgMl eJirLy"
+      className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
     >
       Nearby
     </span>
@@ -594,10 +624,10 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       className="sc-AxhCb jluEfB"
     >
       <span
-        className="sc-AxheI igOWIJ sinoui-badge"
+        className="sc-AxgMl eTKQnf sinoui-badge"
       >
         <span
-          className="sc-Axmtr CwMC"
+          className="sc-AxheI gbbvpF"
           color="error"
         >
           99+
@@ -623,7 +653,9 @@ exports[`NavigationRail组件 快照测试 结合Badge组件使用 1`] = `
       </span>
     </span>
     <span
-      className="sc-AxgMl eJirLy"
+      className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
     >
       Folder
     </span>
@@ -697,7 +729,9 @@ exports[`NavigationRail组件 快照测试 设置隐藏所有标签名称 1`] = 
       </svg>
     </span>
     <span
-      className="sc-AxgMl eJirLy"
+      className="sc-AxiKw iQSAwK sinoui-typography sinoui-typography--body2"
+      color="textPrimary"
+      type="body2"
     >
       Favorites
     </span>

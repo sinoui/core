@@ -45,10 +45,6 @@ const BaseButtonWrapper = styled(BaseButton)<{
   }
 `;
 
-const BodyWrapper = styled(Body2)`
-  transition: opacity 200ms;
-`;
-
 export interface NavigationRailActionProps {
   /**
    * 标签名称
@@ -102,7 +98,7 @@ function NavigationRailAction(props: NavigationRailActionProps) {
       showLabel={showLabel}
     >
       <IconWrapper>{icon}</IconWrapper>
-      {showLabel && <BodyWrapper as="span">{label}</BodyWrapper>}
+      {showLabel && <Body2 as="span">{label}</Body2>}
     </BaseButtonWrapper>
   );
 }
