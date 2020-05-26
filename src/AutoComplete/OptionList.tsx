@@ -42,38 +42,40 @@ export default function OptionList(props: Props) {
     getOptionLabel,
     renderOption: renderOptionProp,
     renderGroup: renderGroupProp,
+    ListboxComponent = MaxHeightList,
   } = props;
 
   const renderOption = renderOptionProp || getOptionLabel;
 
   const renderListOption = (option: RenderOption) => {
     const { options = [] } = option;
-    return options.map((item: Option) => (
-      <ListItem key={renderOption(item)}>
+    return options.map((item: Option, index) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <ListItem key={index}>
         <ListItemText>{renderOption(item)}</ListItemText>
       </ListItem>
     ));
   };
 
-  const defaultRenderGroup = (option: RenderOption) => {
+  const defaultRenderGroup = (option: any) => {
     return (
       <GroupContent key={option.key} disabledRipple>
         <GroupTitle>{option.groupTitle}</GroupTitle>
-        <GroupList>{renderListOption(option)}</GroupList>
+        <GroupList>{option.children}</GroupList>
       </GroupContent>
     );
   };
 
   const renderGroup = renderGroupProp || defaultRenderGroup;
   return (
-    <MaxHeightList>
+    <ListboxComponent>
       {OptionsProp.map((option) => {
         if (groupBy) {
-          return renderGroup(option);
+          return renderGroup({ ...option, children: renderListOption(option) });
         }
 
         return renderListOption(option);
       })}
-    </MaxHeightList>
+    </ListboxComponent>
   );
 }

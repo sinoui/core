@@ -1,7 +1,7 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
 import { OptionList } from '@sinoui/core/AutoComplete';
 import StoryLayout from './StoryLayout';
+import OptionListWithReactWindow from './AutoCompleteDemo/OptionListWithReactWindow';
 
 export default {
   title: 'AutoComplete',
@@ -188,6 +188,14 @@ export const 列表分组 = () => {
         getOptionLabel={(option) => option.title}
         groupBy={(option) => option.groupTitle}
       />
+    </StoryLayout>
+  );
+};
+
+export const 结合reactwindow使用 = () => {
+  return (
+    <StoryLayout>
+      <OptionListWithReactWindow />
     </StoryLayout>
   );
 };

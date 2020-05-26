@@ -12,6 +12,7 @@ export interface Props {
   options: RenderOption[];
   getOptionLabel: (option: Option) => string;
   groupBy?: (option: Option) => string;
-  renderOption?: (option: Option) => string;
-  renderGroup?: (option: Option) => string;
+  renderOption?: (option: Option) => React.ReactNode;
+  renderGroup?: (option: Option) => React.ReactNode;
+  ListboxComponent?: React.ReactType;
 }
