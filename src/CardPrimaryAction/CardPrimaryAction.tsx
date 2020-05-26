@@ -13,12 +13,13 @@ export interface Props {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const StyledCardPrimaryAction = styled.div.attrs(() => ({ tabIndex: '0' }))`
+const StyledCardPrimaryAction = styled.div.attrs(() => ({
+  className: 'sinoui-card__primary-action',
+  tabIndex: '0',
+}))`
   overflow: hidden;
   cursor: pointer;
   outline: none;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
 
   &::before {
     content: '';
