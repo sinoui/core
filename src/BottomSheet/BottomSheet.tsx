@@ -86,6 +86,10 @@ export interface BottomSheetProps {
    * 过渡结束监听器
    */
   addEndListener?: any;
+  /**
+   * 添加自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
 /**
