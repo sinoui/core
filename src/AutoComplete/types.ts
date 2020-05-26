@@ -33,4 +33,12 @@ export interface Props {
    * 指定渲染选项列表的容器组件
    */
   ListboxComponent?: React.ReactType;
+  /**
+   * 选中项
+   */
+  selectedOptions?: string[];
+  /**
+   * 点击选项时的回调函数
+   */
+  onOptionClick?: (label: string) => void;
 }

@@ -46,16 +46,31 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
     renderOption: renderOptionProp,
     renderGroup: renderGroupProp,
     ListboxComponent = MaxHeightList,
+    selectedOptions,
+    onOptionClick,
     ...rest
   } = props;
 
   const renderOption = renderOptionProp || getOptionLabel;
 
+  const handleOptionClick = (label: string) => {
+    if (onOptionClick) {
+      onOptionClick(label);
+    }
+  };
+
   const renderListOption = (option: RenderOption) => {
     const { options = [] } = option;
     return options.map((item: Option, index) => (
-      // eslint-disable-next-line react/no-array-index-key
-      <ListItem key={index}>
+      <ListItem
+        // eslint-disable-next-line react/no-array-index-key
+        key={index}
+        selected={
+          selectedOptions &&
+          selectedOptions.indexOf(getOptionLabel(item)) !== -1
+        }
+        onClick={() => handleOptionClick(getOptionLabel(item))}
+      >
         <ListItemText>{renderOption(item)}</ListItemText>
       </ListItem>
     ));

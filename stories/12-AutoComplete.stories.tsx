@@ -175,8 +175,10 @@ export const 基本使用 = () => {
   return (
     <StoryLayout>
       <OptionList
+        selectedOptions={['The Godfather', 'The Dark Knight']}
         options={simpleOptions}
         getOptionLabel={(option) => option.title}
+        onOptionClick={(label) => alert(label)}
       />
     </StoryLayout>
   );
