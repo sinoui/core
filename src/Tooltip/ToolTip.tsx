@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import type { Placement } from '@popperjs/core';
+import classNames from 'classnames';
 import Popper from '@sinoui/core/Popper';
 import TooltipContent from './TooltipContent';
 import Arrow from './Arrow';
@@ -26,6 +27,8 @@ interface ToolTipProps {
    */
   children: React.ReactElement;
   isMobile?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 const modifiers = [
@@ -54,6 +57,8 @@ export default function Tooltip({
   trigger = 'click',
   arrow,
   isMobile,
+  className,
+  style,
   ...rest
 }: ToolTipProps) {
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -129,7 +134,10 @@ export default function Tooltip({
         modifiers={modifiers}
         {...rest}
       >
-        <TooltipContent className="sinoui-tooltip">
+        <TooltipContent
+          className={classNames('sinoui-tooltip', className)}
+          style={style}
+        >
           {isShowArrow && <Arrow data-popper-arrow />}
           {title}
         </TooltipContent>
