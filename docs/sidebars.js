@@ -36,6 +36,7 @@ module.exports = {
           'components/bottomSheet',
           'components/paper',
           'components/bottomNavigation',
+          'components/navigationRail',
         ],
       },
     ],
@@ -73,6 +74,7 @@ module.exports = {
       'components-apis/paper',
       'components-apis/select',
       'components-apis/bottomNavigation',
+      'components-apis/navigationRail',
     ],
   },
 };
