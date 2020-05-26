@@ -6,7 +6,7 @@ import Typography from '@sinoui/core/Typography';
 
 const LinkWrapper = styled(Typography).attrs(({ component }: Props) => ({
   as: component,
-}))`
+}))<Props>`
   text-decoration: none;
   color: ${(props) =>
     props.color

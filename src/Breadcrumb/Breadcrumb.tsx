@@ -13,7 +13,7 @@ const BreadCrumbWrapper = styled.div.attrs(({ component }: Props) => ({
   height: 24px;
   display: flex;
   align-items: center;
-  font-size: ${(props) => props.theme.typography.body1.fontSize}rem;
+  font-size: ${(props) => props.theme.typography.body1.fontSize};
   background-color: ${(props) =>
     getColorFromTheme(props.theme, props.color) ||
     props.theme.palette.background.paper};
@@ -39,6 +39,14 @@ const BreadCrumbWrapper = styled.div.attrs(({ component }: Props) => ({
   > ol li.sinoui-breadcrumb-separator {
     margin: 0px 8px;
     user-select: none;
+  }
+
+  > ol li a {
+    color: inherit;
+  }
+
+  > ol li p {
+    color: inherit;
   }
 `;
 export interface Props {
