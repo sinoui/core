@@ -1,0 +1,176 @@
+---
+id: breadcrumb
+title: Breadcrumb 面包屑导航组件
+---
+
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Breadcrumb from '@sinoui/core/Breadcrumb';
+
+## 基本使用
+
+```tsx
+import Breadcrumb from '@sinoui/core/Breadcrumb';
+
+function BreadcrumbDemo() {
+  return (
+    <Breadcrumb>
+      <Link color="inherit" to="/">
+        Material-UI
+      </Link>
+      <Link color="inherit" to="/getting-started/installation/">
+        Core
+      </Link>
+      <Link color="textPrimary" to="/components/Breadcrumbs/">
+        Breadcrumb
+      </Link>
+      <Typography color="textPrimary">Breadcrumb</Typography>
+      <Typography color="textPrimary">Breadcrumb</Typography>
+    </Breadcrumb>
+  );
+}
+```
+
+## 效果展示
+
+<ThemeProvider theme={defaultTheme}>
+  <Breadcrumb>
+    <Link color="inherit" to="/">
+      Material-UI
+    </Link>
+    <Link color="inherit" to="/getting-started/installation/">
+      Core
+    </Link>
+    <Link color="textPrimary" to="/components/Breadcrumbs/">
+      Breadcrumb
+    </Link>
+    <Typography color="textPrimary">Breadcrumb</Typography>
+    <Typography color="textPrimary">Breadcrumb</Typography>
+  </Breadcrumb>
+</ThemeProvider>
+
+## 指定分隔符
+
+```tsx
+import Breadcrumb from '@sinoui/core/Breadcrumb';
+
+function BreadcrumbDemo() {
+  return (
+    <Breadcrumb separator=">">
+      <Link color="inherit" to="/">
+        Material-UI
+      </Link>
+      <Link color="inherit" to="/getting-started/installation/">
+        Core
+      </Link>
+      <Link color="textPrimary" to="/components/Breadcrumbs/">
+        Breadcrumb
+      </Link>
+      <Typography color="textPrimary">Breadcrumb</Typography>
+      <Typography color="textPrimary">Breadcrumb</Typography>
+    </Breadcrumb>
+  );
+}
+```
+
+## 效果展示
+
+<ThemeProvider theme={defaultTheme}>
+  <Breadcrumb separator=">">
+    <Link color="inherit" to="/">
+      Material-UI
+    </Link>
+    <Link color="inherit" to="/getting-started/installation/">
+      Core
+    </Link>
+    <Link color="textPrimary" to="/components/Breadcrumbs/">
+      Breadcrumb
+    </Link>
+    <Typography color="textPrimary">Breadcrumb</Typography>
+    <Typography color="textPrimary">Breadcrumb</Typography>
+  </Breadcrumb>
+</ThemeProvider>
+
+## 指定元素属性
+
+```tsx
+import Breadcrumb from '@sinoui/core/Breadcrumb';
+
+function BreadcrumbDemo() {
+  return (
+    <Breadcrumb component="div">
+      <Link color="inherit" to="/">
+        Material-UI
+      </Link>
+      <Link color="inherit" to="/getting-started/installation/">
+        Core
+      </Link>
+      <Link color="textPrimary" to="/components/Breadcrumbs/">
+        Breadcrumb
+      </Link>
+      <Typography color="textPrimary">Breadcrumb</Typography>
+      <Typography color="textPrimary">Breadcrumb</Typography>
+    </Breadcrumb>
+  );
+}
+```
+
+## 效果展示
+
+<ThemeProvider theme={defaultTheme}>
+  <Breadcrumb component="div">
+    <Link color="inherit" to="/">
+      Material-UI
+    </Link>
+    <Link color="inherit" to="/getting-started/installation/">
+      Core
+    </Link>
+    <Link color="textPrimary" to="/components/Breadcrumbs/">
+      Breadcrumb
+    </Link>
+    <Typography color="textPrimary">Breadcrumb</Typography>
+    <Typography color="textPrimary">Breadcrumb</Typography>
+  </Breadcrumb>
+</ThemeProvider>
+
+## 指定背景颜色
+
+```tsx
+import Breadcrumb from '@sinoui/core/Breadcrumb';
+
+function BreadcrumbDemo() {
+  return (
+    <Breadcrumb color="primary">
+      <Link color="inherit" to="/">
+        Material-UI
+      </Link>
+      <Link color="inherit" to="/getting-started/installation/">
+        Core
+      </Link>
+      <Link color="textPrimary" to="/components/Breadcrumbs/">
+        Breadcrumb
+      </Link>
+      <Typography color="textPrimary">Breadcrumb</Typography>
+      <Typography color="textPrimary">Breadcrumb</Typography>
+    </Breadcrumb>
+  );
+}
+```
+
+## 效果展示
+
+<ThemeProvider theme={defaultTheme}>
+  <Breadcrumb color="primary">
+    <Link color="inherit" to="/">
+      Material-UI
+    </Link>
+    <Link color="inherit" to="/getting-started/installation/">
+      Core
+    </Link>
+    <Link color="textPrimary" to="/components/Breadcrumbs/">
+      Breadcrumb
+    </Link>
+    <Typography color="textPrimary">Breadcrumb</Typography>
+    <Typography color="textPrimary">Breadcrumb</Typography>
+  </Breadcrumb>
+</ThemeProvider>
