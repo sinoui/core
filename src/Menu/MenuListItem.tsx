@@ -18,6 +18,20 @@ const getFocusStyle = (props: ListItemProps & { theme: Theme }) => {
   return `background-color: ${props.theme.palette.action.selected}`;
 };
 
+const getFocusPhoneStyle = (props: ListItemProps & { theme: Theme }) => {
+  if (props.selected) {
+    if (props.role === 'option') {
+      return `background-color: ${adjustOpacity(
+        0.2,
+        props.theme.palette.primary.main,
+      )}`;
+    }
+
+    return `background-color: ${props.theme.palette.action.selected}`;
+  }
+  return 'background-color:transparent';
+};
+
 const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
   button: button || true,
   tabIndex: tabIndex || -1,
@@ -45,6 +59,12 @@ const MenuListItem = styled(Item).attrs(({ button, tabIndex }) => ({
   }
   &:focus {
     ${(props) => getFocusStyle(props)};
+  }
+  @media only screen and (max-width: ${(props) =>
+      props.theme.breakpoints.md}px) {
+    &:focus {
+      ${(props) => getFocusPhoneStyle(props)};
+    }
   }
 `;
 
