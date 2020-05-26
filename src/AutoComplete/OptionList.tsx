@@ -35,7 +35,10 @@ const GroupTitle = styled.div`
   top: -8px;
 `;
 
-export default function OptionList(props: Props) {
+const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
+  props,
+  ref,
+) {
   const {
     options: OptionsProp = [],
     groupBy,
@@ -43,6 +46,7 @@ export default function OptionList(props: Props) {
     renderOption: renderOptionProp,
     renderGroup: renderGroupProp,
     ListboxComponent = MaxHeightList,
+    ...rest
   } = props;
 
   const renderOption = renderOptionProp || getOptionLabel;
@@ -68,7 +72,11 @@ export default function OptionList(props: Props) {
 
   const renderGroup = renderGroupProp || defaultRenderGroup;
   return (
-    <ListboxComponent>
+    <ListboxComponent
+      ref={ref}
+      {...rest}
+      className="sinoui-auto-complete__option-list"
+    >
       {OptionsProp.map((option) => {
         if (groupBy) {
           return renderGroup({ ...option, children: renderListOption(option) });
@@ -78,4 +86,6 @@ export default function OptionList(props: Props) {
       })}
     </ListboxComponent>
   );
-}
+});
+
+export default OptionList;

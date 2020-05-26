@@ -1,5 +1,7 @@
 import React from 'react';
 import { OptionList } from '@sinoui/core/AutoComplete';
+import AutoComplete from '@sinoui/core/AutoComplete/AutoComplete';
+import TextInput from '@sinoui/core/TextInput';
 import StoryLayout from './StoryLayout';
 import OptionListWithReactWindow from './AutoCompleteDemo/OptionListWithReactWindow';
 
@@ -7,7 +9,7 @@ export default {
   title: 'AutoComplete',
 };
 
-const simepleOptions = [
+const simpleOptions = [
   {
     key: '1',
     groupTitle: '',
@@ -173,7 +175,7 @@ export const 基本使用 = () => {
   return (
     <StoryLayout>
       <OptionList
-        options={simepleOptions}
+        options={simpleOptions}
         getOptionLabel={(option) => option.title}
       />
     </StoryLayout>
@@ -199,3 +201,14 @@ export const 结合reactwindow使用 = () => {
     </StoryLayout>
   );
 };
+
+export const AutoComplete基本使用 = () => (
+  <StoryLayout>
+    <AutoComplete
+      value="godfather"
+      renderInput={(props) => <TextInput {...props} variant="outlined" />}
+      options={simpleOptions[0].options}
+      getOptionLabel={(option) => option.title}
+    />
+  </StoryLayout>
+);
