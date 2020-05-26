@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import renderer, { act } from 'react-test-renderer';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
@@ -114,28 +114,35 @@ describe('NavigationRail组件 单元测试', () => {
   });
 
   it('点击元素,元素被选中', () => {
-    const onChange = jest.fn();
-    const { getByTestId, container } = render(
-      <ThemeProvider theme={defaultTheme}>
-        <NavigationRail
-          onChange={onChange}
-          value="favorites"
-          data-testid="NavigationRail"
-        >
-          <NavigationRailAction
-            label="Recents"
-            value="recents"
-            icon={<MdRestore />}
-          />
-          <NavigationRailAction
-            label="Favorites"
-            value="favorites"
-            icon={<MdFavorite />}
-            data-testid="NavigationRailAction"
-          />
-        </NavigationRail>
-      </ThemeProvider>,
-    );
+    function Demo() {
+      const [val, setVal] = useState('');
+
+      return (
+        <ThemeProvider theme={defaultTheme}>
+          <NavigationRail
+            onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
+              setVal(value)
+            }
+            value={val}
+            data-testid="NavigationRail"
+          >
+            <NavigationRailAction
+              label="Recents"
+              value="recents"
+              icon={<MdRestore />}
+            />
+            <NavigationRailAction
+              label="Favorites"
+              value="favorites"
+              icon={<MdFavorite />}
+              data-testid="NavigationRailAction"
+            />
+          </NavigationRail>
+        </ThemeProvider>
+      );
+    }
+
+    const { getByTestId, container } = render(<Demo />);
 
     const test = getByTestId('NavigationRailAction');
 
