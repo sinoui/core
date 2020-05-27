@@ -2,6 +2,7 @@ import React from 'react';
 import Tooltip from '@sinoui/core/Tooltip';
 import Button from '@sinoui/core/Button';
 import { Row, Column } from '@sinoui/core/Grid';
+import Fade from '@sinoui/core/Fade';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -61,6 +62,18 @@ export const 移动端触发 = () => (
   <StoryLayout>
     <Tooltip title="这是一段提示文字" trigger="click" isMobile>
       <Button raised>click</Button>
+    </Tooltip>
+  </StoryLayout>
+);
+
+export const 动画 = () => (
+  <StoryLayout>
+    <Tooltip title="fade" trigger="click" transitionComponent={Fade}>
+      <Button raised>fade</Button>
+    </Tooltip>
+
+    <Tooltip title="Grow" trigger="click">
+      <Button raised>默认Grow</Button>
     </Tooltip>
   </StoryLayout>
 );

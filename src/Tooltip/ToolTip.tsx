@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect, useMemo } from 'react';
 import type { Placement } from '@popperjs/core';
 import classNames from 'classnames';
 import Popper from '@sinoui/core/Popper';
+import Grow from '@sinoui/core/Grow';
 import TooltipContent from './TooltipContent';
 import Arrow from './Arrow';
 
@@ -26,6 +27,13 @@ interface ToolTipProps {
    * 子元素
    */
   children: React.ReactElement;
+  /**
+   * 过渡动画
+   */
+  transitionComponent?: ReactType;
+  /**
+   * 是否是移动端
+   */
   isMobile?: boolean;
   className?: string;
   style?: React.CSSProperties;
@@ -57,6 +65,7 @@ export default function Tooltip({
   trigger = 'click',
   arrow,
   isMobile,
+  transitionComponent = Grow,
   className,
   style,
   ...rest
@@ -122,6 +131,8 @@ export default function Tooltip({
     () => arrow === true || (arrow === undefined && !isMobile),
     [arrow, isMobile],
   );
+
+  const TransitionComp = transitionComponent;
   return (
     <>
       {React.cloneElement(React.Children.only(children), {
@@ -134,13 +145,15 @@ export default function Tooltip({
         modifiers={modifiers}
         {...rest}
       >
-        <TooltipContent
-          className={classNames('sinoui-tooltip', className)}
-          style={style}
-        >
-          {isShowArrow && <Arrow data-popper-arrow />}
-          {title}
-        </TooltipContent>
+        <TransitionComp in={open}>
+          <TooltipContent
+            className={classNames('sinoui-tooltip', className)}
+            style={style}
+          >
+            {isShowArrow && <Arrow data-popper-arrow />}
+            {title}
+          </TooltipContent>
+        </TransitionComp>
       </Popper>
     </>
   );
