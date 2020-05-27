@@ -403,3 +403,52 @@ it('点击选项时，阻止mousedown的默认行为', () => {
 
   expect(preventDefault).toBeCalled();
 });
+
+it('定制弹窗图标', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value=""
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        popupIcon={<div data-testid="custom-popup-icon" />}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('custom-popup-icon')).toBeTruthy();
+});
+
+it('forcePopupIcon = false，不显示弹窗图标', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value=""
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        popupIcon={<div data-testid="custom-popup-icon" />}
+        forcePopupIcon={false}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-popup-icon')).toBeFalsy();
+});

@@ -73,6 +73,14 @@ interface Props {
    * 用于定位弹窗的组件。默认为`Popper`。
    */
   PopperComponent?: React.ReactType;
+  /**
+   * 弹窗图标
+   */
+  popupIcon?: React.ReactNode;
+  /**
+   * 设置为`true`，则会强制显示弹窗图标。默认为`auto`。
+   */
+  forcePopupIcon?: 'auto' | boolean;
 }
 
 const PopupIndicatorWrapper = styled(IconButton)<{ $open: boolean }>`
@@ -106,6 +114,8 @@ export default function AutoComplete(props: Props) {
     getOptionLabel,
     closeOnEscape = true,
     PopperComponent = Popper,
+    popupIcon = <ArrowDropDownIcon />,
+    forcePopupIcon = 'auto',
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -187,7 +197,7 @@ export default function AutoComplete(props: Props) {
       color={open ? 'primary' : 'textSecondary'}
       onClick={handlePopupIndicatorClick}
     >
-      <ArrowDropDownIcon />
+      {popupIcon}
     </PopupIndicatorWrapper>
   );
 
@@ -203,7 +213,9 @@ export default function AutoComplete(props: Props) {
       onKeyDown: handleInputKeydown,
     },
     endAdornment: (
-      <InputAdornment position="end">{renderPopupIndicator()}</InputAdornment>
+      <InputAdornment position="end">
+        {forcePopupIcon !== false && renderPopupIndicator()}
+      </InputAdornment>
     ),
   });
 
