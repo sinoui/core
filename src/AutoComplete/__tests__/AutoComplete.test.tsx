@@ -640,3 +640,35 @@ it('输入框的值等于value，则不过滤选项列表', () => {
 
   expect(container.querySelectorAll('.sinoui-list-item').length).toBe(3);
 });
+
+it('输入框为空时，则清空value', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const onChange = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value="item 1"
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+
+  act(() => {
+    fireEvent.change(getByTestId('text-input').querySelector('input')!, {
+      target: {
+        value: '',
+      },
+    });
+  });
+
+  expect(onChange).toBeCalledWith('', AutoCompleteChangeReason.clear);
+});

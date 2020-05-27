@@ -174,7 +174,12 @@ export default function AutoComplete(props: Props) {
    * @param event 值变更事件
    */
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
+    const newInputValue = event.target.value;
+    setInputValue(newInputValue);
+
+    if (newInputValue === '' && onChange) {
+      onChange('', AutoCompleteChangeReason.clear);
+    }
   };
 
   /**
