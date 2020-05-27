@@ -182,6 +182,8 @@ export default function AutoComplete(props: Props) {
    */
   const handleInputClick = () => {
     setOpen(true);
+    // eslint-disable-next-line no-unused-expressions
+    inputRef.current?.select();
   };
 
   /**

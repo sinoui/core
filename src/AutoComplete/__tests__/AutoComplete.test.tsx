@@ -540,3 +540,36 @@ it('无值时，不显示清除按钮', () => {
 
   expect(queryByTestId('custom-close-icon')).toBeFalsy();
 });
+
+it('在非freeSolo模式下，输入框聚焦时，选中文本', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value="item 1"
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+      />
+    </ThemeProvider>,
+  );
+  const input = getByTestId('text-input').querySelector('input')!;
+  const mock = jest.spyOn(input, 'select');
+
+  act(() => {
+    fireEvent.click(input);
+  });
+
+  expect(mock).toBeCalled();
+});
