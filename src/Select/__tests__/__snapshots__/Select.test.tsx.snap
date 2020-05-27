@@ -508,6 +508,14 @@ label ~ .c4 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c5 {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -537,6 +545,12 @@ label ~ .c4 {
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -950,6 +964,14 @@ label ~ .c4 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c5 {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -979,6 +1001,12 @@ label ~ .c4 {
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div

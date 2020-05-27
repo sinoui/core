@@ -508,6 +508,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -539,6 +547,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -1252,6 +1266,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -1283,6 +1305,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: default;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -1942,6 +1970,14 @@ label ~ .c2 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c3.c3 {
   min-width: 120px;
   width: 100%;
@@ -1973,6 +2009,12 @@ label ~ .c2 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -2645,6 +2687,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -2676,6 +2726,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -3373,6 +3429,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -3404,6 +3468,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -4175,6 +4245,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -4206,6 +4284,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
