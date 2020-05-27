@@ -1,11 +1,12 @@
 import React, { useRef, useState, useMemo } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import OptionList from './OptionList';
 import Popper from '../Popper';
 import Grow from '../Grow';
 import ArrowDropDownIcon from '../svg-icons/ArrowDropDownIcon';
 import InputAdornment from '../InputAdornment';
 import IconButton from '../IconButton';
+import Close from '../svg-icons/Close';
 
 /**
  * 自动完成组件变更原因
@@ -74,33 +75,54 @@ interface Props {
    */
   PopperComponent?: React.ReactType;
   /**
-   * 弹窗图标
+   * 弹窗图标。默认为`<ArrowDropDownIcon />`。
    */
   popupIcon?: React.ReactNode;
   /**
    * 设置为`true`，则会强制显示弹窗图标。默认为`auto`。
    */
   forcePopupIcon?: 'auto' | boolean;
+  /**
+   * 设置清除图标。默认为`<Close size={20} />`。
+   */
+  clearIcon?: React.ReactNode;
 }
 
-const PopupIndicatorWrapper = styled(IconButton)<{ $open: boolean }>`
-  padding: 2px;
-  width: auto;
-  height: auto;
-  transition: ${({ theme }) => theme.transitions.create('transform')};
-  transform: rotate(${({ $open }) => ($open ? 180 : 0)}deg);
-
+const rippleStyle = css<{ size?: number }>`
   > .sinoui-icon-button__ripple-layout {
     left: 0px;
     top: 0px;
-    width: 28px;
-    height: 28px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
   }
 
   > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
-    width: 28px;
-    height: 28px;
+    width: 100%;
+    height: 100%;
   }
+`;
+
+const iconButtonStyle = css<{ size?: number }>`
+  padding: 2px;
+  width: auto;
+  height: auto;
+  ${rippleStyle}
+`;
+
+const ClearButtonWrapper = styled(IconButton)`
+  ${iconButtonStyle}
+  width: 28px;
+  height: 28px;
+`;
+
+const PopupIndicatorWrapper = styled(IconButton)<{
+  $open: boolean;
+}>`
+  ${iconButtonStyle}
+  transition: ${({ theme }) => theme.transitions.create('transform')};
+  transform: rotate(${({ $open }) => ($open ? 180 : 0)}deg);
 `;
 
 /**
@@ -115,7 +137,9 @@ export default function AutoComplete(props: Props) {
     closeOnEscape = true,
     PopperComponent = Popper,
     popupIcon = <ArrowDropDownIcon />,
+    clearIcon = <Close size={20} />,
     forcePopupIcon = 'auto',
+    onChange,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -167,6 +191,11 @@ export default function AutoComplete(props: Props) {
     setOpen(false);
   };
 
+  /**
+   * 处理输入框键盘事件
+   *
+   * @param event 键盘事件
+   */
   const handleInputKeydown = (event: React.KeyboardEvent) => {
     const { key } = event;
     if (closeOnEscape && key === 'Escape') {
@@ -184,6 +213,16 @@ export default function AutoComplete(props: Props) {
       setOpen(true);
       // eslint-disable-next-line no-unused-expressions
       inputRef.current?.focus();
+    }
+  };
+
+  /**
+   * 处理清除值事件
+   */
+  const handleClear = () => {
+    setInputValue('');
+    if (onChange) {
+      onChange(null, AutoCompleteChangeReason.clear);
     }
   };
 
@@ -214,6 +253,14 @@ export default function AutoComplete(props: Props) {
     },
     endAdornment: (
       <InputAdornment position="end">
+        {!!value && (
+          <ClearButtonWrapper
+            onClick={handleClear}
+            className="sinoui-focused-visible"
+          >
+            {clearIcon}
+          </ClearButtonWrapper>
+        )}
         {forcePopupIcon !== false && renderPopupIndicator()}
       </InputAdornment>
     ),

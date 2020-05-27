@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { OptionList } from '@sinoui/core/AutoComplete';
 import AutoComplete from '@sinoui/core/AutoComplete/AutoComplete';
 import TextInput from '@sinoui/core/TextInput';
@@ -204,13 +204,20 @@ export const 结合reactwindow使用 = () => {
   );
 };
 
-export const AutoComplete基本使用 = () => (
-  <StoryLayout>
-    <AutoComplete
-      value="godfather"
-      renderInput={(props) => <TextInput {...props} variant="outlined" />}
-      options={simpleOptions[0].options}
-      getOptionLabel={(option) => option.title}
-    />
-  </StoryLayout>
-);
+const AutoCompleteDemo = () => {
+  const [value, setValue] = useState('godfather');
+
+  return (
+    <StoryLayout>
+      <AutoComplete
+        value={value}
+        renderInput={(props) => <TextInput {...props} variant="outlined" />}
+        options={simpleOptions[0].options}
+        getOptionLabel={(option) => option.title}
+        onChange={(_value) => setValue(_value)}
+      />
+    </StoryLayout>
+  );
+};
+
+export const AutoComplete基本使用 = () => <AutoCompleteDemo />;

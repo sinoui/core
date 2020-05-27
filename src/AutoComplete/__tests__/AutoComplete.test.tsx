@@ -452,3 +452,91 @@ it('forcePopupIcon = false，不显示弹窗图标', () => {
 
   expect(queryByTestId('custom-popup-icon')).toBeFalsy();
 });
+
+it('有值显示清除图标', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value="item 1"
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeTruthy();
+});
+
+it('点击清除图标，清除值', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const onChange = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value="item 1"
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+
+  act(() => {
+    fireEvent.click(getByTestId('custom-close-icon'));
+  });
+
+  expect(onChange).toBeCalledWith(null, 'clear');
+  expect(getByTestId('text-input').querySelector('input')).toHaveValue('');
+});
+
+it('无值时，不显示清除按钮', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value=""
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeFalsy();
+});
