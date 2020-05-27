@@ -5,6 +5,7 @@ import { defaultTheme } from '@sinoui/theme';
 import { ThemeProvider } from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
 import 'jest-styled-components';
+import Popper from '@sinoui/core/Popper';
 import AutoComplete from '../AutoComplete';
 
 afterEach(cleanup);
@@ -323,4 +324,82 @@ it('closeOnEscape = false', () => {
   expect(
     container.querySelector('.sinoui-auto-complete__option-list'),
   ).toBeTruthy();
+});
+
+it('自定义Popper组件', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const CustomPopperComponent = (props: any) => (
+    <Popper {...props} data-testid="custom-popper" />
+  );
+
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value=""
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        PopperComponent={CustomPopperComponent}
+      />
+    </ThemeProvider>,
+  );
+
+  act(() => {
+    fireEvent.click(getByTestId('text-input').querySelector('input')!);
+  });
+
+  expect(getByTestId('custom-popper')).toBeTruthy();
+});
+
+it('点击选项时，阻止mousedown的默认行为', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const preventDefault = jest.fn();
+  const FakePopper = (props: any) => {
+    const handleMouseDown = (event: React.MouseEvent) => {
+      event.persist();
+      props.onMouseDown({
+        ...event,
+        preventDefault,
+      });
+    };
+
+    return (
+      <Popper {...props} onMouseDown={handleMouseDown} data-testid="popper" />
+    );
+  };
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value=""
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        PopperComponent={FakePopper}
+      />
+    </ThemeProvider>,
+  );
+
+  act(() => {
+    fireEvent.click(getByTestId('text-input').querySelector('input')!);
+  });
+
+  act(() => {
+    fireEvent.mouseDown(getByTestId('popper'));
+  });
+
+  expect(preventDefault).toBeCalled();
 });

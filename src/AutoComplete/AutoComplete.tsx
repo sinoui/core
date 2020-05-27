@@ -65,11 +65,14 @@ interface Props {
    * 指定分组依据
    */
   groupBy?: (option: any) => string;
-
   /**
    * 设置为`true`时，按下Escape键，关闭选项弹窗。默认为`true`。
    */
   closeOnEscape?: boolean;
+  /**
+   * 用于定位弹窗的组件。默认为`Popper`。
+   */
+  PopperComponent?: React.ReactType;
 }
 
 const PopupIndicatorWrapper = styled(IconButton)<{ $open: boolean }>`
@@ -102,6 +105,7 @@ export default function AutoComplete(props: Props) {
     options,
     getOptionLabel,
     closeOnEscape = true,
+    PopperComponent = Popper,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -124,9 +128,7 @@ export default function AutoComplete(props: Props) {
    *
    * @param event 鼠标按下事件
    */
-  const handleTextInputMouseDown = (
-    event: React.MouseEvent<HTMLDivElement>,
-  ) => {
+  const preventEventDefault = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target !== inputRef.current) {
       event.preventDefault();
     }
@@ -193,7 +195,7 @@ export default function AutoComplete(props: Props) {
     ref: textInputRef,
     value: inputValue,
     onChange: handleInputChange,
-    onMouseDown: handleTextInputMouseDown,
+    onMouseDown: preventEventDefault,
     inputProps: {
       ref: inputRef,
       onClick: handleInputClick,
@@ -215,9 +217,13 @@ export default function AutoComplete(props: Props) {
   return (
     <>
       {input}
-      <Popper open={open} referenceElement={textInputRef}>
+      <PopperComponent
+        open={open}
+        referenceElement={textInputRef}
+        onMouseDown={preventEventDefault}
+      >
         <Grow in={open}>{renderOptions()}</Grow>
-      </Popper>
+      </PopperComponent>
     </>
   );
 }
