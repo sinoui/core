@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`面包屑组件 快照测试 基本使用 1`] = `
+<nav
+  aria-label="breadcrumb"
+  className="sc-AxiKw dkqtTN sinoui-bread-crumb"
+>
+  <ol
+    className="sinoui-breadcrumb-ol"
+  >
+    <li
+      className="sinoui-breadcrumb-li"
+    >
+      <a
+        className="sc-AxirZ jJXAoU sinoui-link"
+        href="/?path=/story/typography--基本组件使用"
+      >
+        Material-UI
+      </a>
+    </li>
+    <li
+      aria-hidden={true}
+      className="sinoui-breadcrumb-separator"
+    >
+      /
+    </li>
+    <li
+      className="sinoui-breadcrumb-li"
+    >
+      <a
+        className="sc-AxirZ jJXAoU sinoui-link"
+        href="/?path=/story/typography--设置属性"
+      >
+        Core
+      </a>
+    </li>
+    <li
+      aria-hidden={true}
+      className="sinoui-breadcrumb-separator"
+    >
+      /
+    </li>
+    <li
+      className="sinoui-breadcrumb-li"
+    >
+      <a
+        className="sc-AxirZ jJXAoU sinoui-link"
+        href="/?path=/story/typography--设置颜色"
+      >
+        UI
+      </a>
+    </li>
+    <li
+      aria-hidden={true}
+      className="sinoui-breadcrumb-separator"
+    >
+      /
+    </li>
+    <li
+      className="sinoui-breadcrumb-li"
+    >
+      <p
+        className="sc-AxjAm igJlAv sinoui-typography sinoui-typography--body1"
+        color="textPrimary"
+        type="body1"
+      >
+        Breadcrumb
+      </p>
+    </li>
+  </ol>
+</nav>
+`;
+
+exports[`面包屑组件 快照测试 指定背景颜色 1`] = `
+<nav
+  aria-label="breadcrumb"
+  className="sc-AxiKw iGtNIS sinoui-bread-crumb"
+  color="primary"
+>
+  <ol
+    className="sinoui-breadcrumb-ol"
+  >
+    <li
+      className="sinoui-breadcrumb-li"
+    >
+      <a
+        className="sc-AxirZ jJXAoU sinoui-link"
+        href="/?path=/story/typography--基本组件使用"
+      >
+        Material-UI
+      </a>
+    </li>
+    <li
+      aria-hidden={true}
+      className="sinoui-breadcrumb-separator"
+    >
+      /
+    </li>
+    <li
+      className="sinoui-breadcrumb-li"
+    >
+      <a
+        className="sc-AxirZ jJXAoU sinoui-link"
+        href="/?path=/story/typography--设置属性"
+      >
+        Core
+      </a>
+    </li>
+    <li
+      aria-hidden={true}
+      className="sinoui-breadcrumb-separator"
+    >
+      /
+    </li>
+    <li
+      className="sinoui-breadcrumb-li"
+    >
+      <a
+        className="sc-AxirZ jJXAoU sinoui-link"
+        href="/?path=/story/typography--设置颜色"
+      >
+        UI
+      </a>
+    </li>
+    <li
+      aria-hidden={true}
+      className="sinoui-breadcrumb-separator"
+    >
+      /
+    </li>
+    <li
+      className="sinoui-breadcrumb-li"
+    >
+      <p
+        className="sc-AxjAm igJlAv sinoui-typography sinoui-typography--body1"
+        color="textPrimary"
+        type="body1"
+      >
+        Breadcrumb
+      </p>
+    </li>
+  </ol>
+</nav>
+`;

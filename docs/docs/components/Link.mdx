@@ -1,0 +1,95 @@
+---
+id: link
+title: Link 链接组件
+---
+
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Link from '@sinoui/core/Link';
+
+## 基本使用
+
+```tsx
+import Link from '@sinoui/core/Link';
+
+function BreadcrumbDemo() {
+  return (
+    <Typography>
+      <Link href="/docs/components/bottomSheet">BottomSheet</Link>
+      <Link href="/docs/components/paper">Paper</Link>
+      <Link href="/docs/components/bottomNavigation">bottomNavigation</Link>
+    </Typography>
+  );
+}
+```
+
+## 效果展示
+
+<ThemeProvider theme={defaultTheme}>
+  <Typography>
+    <Link href="/docs/components/bottomSheet">BottomSheet</Link>
+    <Link href="/docs/components/paper">Paper</Link>
+    <Link href="/docs/components/bottomNavigation">bottomNavigation</Link>
+  </Typography>
+</ThemeProvider>
+
+## 指定根元素
+
+```tsx
+import Link from '@sinoui/core/Link';
+
+function BreadcrumbDemo() {
+  return (
+    <Typography>
+      <Link href="/?path=/story/typography--基本组件使用" component="button">
+        Link
+      </Link>
+    </Typography>
+  );
+}
+```
+
+## 效果展示
+
+<ThemeProvider theme={defaultTheme}>
+  <Typography>
+    <Link href="/?path=/story/typography--基本组件使用" component="button">
+      Link
+    </Link>
+  </Typography>
+</ThemeProvider>
+
+## 指定颜色
+
+```tsx
+import Link from '@sinoui/core/Link';
+
+function BreadcrumbDemo() {
+  return (
+    <Typography>
+      <Link href="/docs/components/paper" color="primary">
+        Paper
+      </Link>
+      <Link href="/docs/components/bottomNavigation" color="warning">
+        bottomNavigation
+      </Link>
+    </Typography>
+  );
+}
+```
+
+## 效果展示
+
+- color = primary
+- color = warning
+
+<ThemeProvider theme={defaultTheme}>
+  <Typography>
+    <Link href="/docs/components/paper" color="primary">
+      Paper
+    </Link>
+    <Link href="/docs/components/bottomNavigation" color="warning">
+      bottomNavigation
+    </Link>
+  </Typography>
+</ThemeProvider>

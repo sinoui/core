@@ -36,6 +36,7 @@ module.exports = {
         'components/paper',
         'components/bottomNavigation',
         'components/breadcrumb',
+        'components/link',
       ],
     }, ],
     组件API: [
@@ -73,6 +74,7 @@ module.exports = {
       'components-apis/select',
       'components-apis/bottomNavigation',
       'components-apis/breadcrumb',
+      'components-apis/link',
     ],
   },
 };

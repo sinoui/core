@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import Typography from '@sinoui/core/Typography';
-import Link from 'react-router-dom';
+import Link from '@sinoui/core/Link';
 import Breadcrumb from './Breadcrumb';
 
 /**
@@ -18,10 +18,10 @@ describe('面包屑组件 单元测试', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
         <Breadcrumb>
-          <Typography color="textPrimary">Breadcrumb</Typography>
-          <Typography color="textPrimary">BreadcrumbTwo</Typography>
-          <Typography color="textPrimary">BreadcrumbThree</Typography>
-          <Typography color="textPrimary">BreadcrumbFour</Typography>
+          <Link href="/?path=/story/typography--基本组件使用">Material-UI</Link>
+          <Link href="/?path=/story/typography--设置属性">Core</Link>
+          <Link href="/?path=/story/typography--设置颜色">UI</Link>
+          <Typography type="body1">Breadcrumb</Typography>
         </Breadcrumb>
       </ThemeProvider>,
     );
@@ -34,10 +34,10 @@ describe('面包屑组件 单元测试', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
         <Breadcrumb>
-          <Typography color="textPrimary">Breadcrumb</Typography>
-          <Typography color="textPrimary">BreadcrumbTwo</Typography>
-          <Typography color="textPrimary">BreadcrumbThree</Typography>
-          <Typography color="textPrimary">BreadcrumbFour</Typography>
+          <Link href="/?path=/story/typography--基本组件使用">Material-UI</Link>
+          <Link href="/?path=/story/typography--设置属性">Core</Link>
+          <Link href="/?path=/story/typography--设置颜色">UI</Link>
+          <Typography type="body1">Breadcrumb</Typography>
         </Breadcrumb>
       </ThemeProvider>,
     );
@@ -53,17 +53,12 @@ describe('面包屑组件 快照测试', () => {
       .create(
         <ThemeProvider theme={defaultTheme}>
           <Breadcrumb>
-            <Link color="inherit" to="/">
+            <Link href="/?path=/story/typography--基本组件使用">
               Material-UI
             </Link>
-            <Link color="inherit" to="/getting-started/installation/">
-              Core
-            </Link>
-            <Link color="textPrimary" to="/components/Breadcrumbs/">
-              Breadcrumb
-            </Link>
-            <Typography color="textPrimary">Breadcrumb</Typography>
-            <Typography color="textPrimary">Breadcrumb</Typography>
+            <Link href="/?path=/story/typography--设置属性">Core</Link>
+            <Link href="/?path=/story/typography--设置颜色">UI</Link>
+            <Typography type="body1">Breadcrumb</Typography>
           </Breadcrumb>
         </ThemeProvider>,
       )
@@ -77,17 +72,12 @@ describe('面包屑组件 快照测试', () => {
       .create(
         <ThemeProvider theme={defaultTheme}>
           <Breadcrumb color="primary">
-            <Link color="inherit" to="/">
+            <Link href="/?path=/story/typography--基本组件使用">
               Material-UI
             </Link>
-            <Link color="inherit" to="/getting-started/installation/">
-              Core
-            </Link>
-            <Link color="textPrimary" to="/components/Breadcrumbs/">
-              Breadcrumb
-            </Link>
-            <Typography color="textPrimary">Breadcrumb</Typography>
-            <Typography color="textPrimary">Breadcrumb</Typography>
+            <Link href="/?path=/story/typography--设置属性">Core</Link>
+            <Link href="/?path=/story/typography--设置颜色">UI</Link>
+            <Typography type="body1">Breadcrumb</Typography>
           </Breadcrumb>
         </ThemeProvider>,
       )

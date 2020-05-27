@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`链接组件 快照测试 基本使用 1`] = `
+<p
+  className="sc-AxjAm hmEnYx sinoui-typography sinoui-typography--body2"
+  color="textPrimary"
+  type="body2"
+>
+  <a
+    className="sc-AxirZ jJXAoU sinoui-link"
+    href="/?path=/story/typography--基本组件使用"
+  >
+    Link
+  </a>
+  <a
+    className="sc-AxirZ jJXAoU sinoui-link"
+    href="/?path=/story/typography--设置属性"
+  >
+    Link-1
+  </a>
+  <a
+    className="sc-AxirZ fOfwuj sinoui-link"
+    color="primary"
+    href="/?path=/story/typography--设置颜色"
+  >
+    Link-2
+  </a>
+</p>
+`;
+
+exports[`链接组件 快照测试 指定根元素 1`] = `
+<p
+  className="sc-AxjAm hmEnYx sinoui-typography sinoui-typography--body2"
+  color="textPrimary"
+  type="body2"
+>
+  <a
+    className="sc-AxirZ jJXAoU sinoui-link"
+    href="/?path=/story/typography--基本组件使用"
+  >
+    Link
+  </a>
+  <div
+    className="sc-AxirZ jJXAoU sinoui-link"
+    href="/?path=/story/typography--设置属性"
+  >
+    Link-1
+  </div>
+  <p
+    className="sc-AxirZ fOfwuj sinoui-link"
+    color="primary"
+    href="/?path=/story/typography--设置颜色"
+  >
+    Link-2
+  </p>
+</p>
+`;
+
+exports[`链接组件 快照测试 指定颜色 1`] = `
+<p
+  className="sc-AxjAm hmEnYx sinoui-typography sinoui-typography--body2"
+  color="textPrimary"
+  type="body2"
+>
+  <a
+    className="sc-AxirZ fOfwuj sinoui-link"
+    color="primary"
+    href="/?path=/story/typography--设置颜色"
+  >
+    color=primary
+  </a>
+  <a
+    className="sc-AxirZ liEUKo sinoui-link"
+    color="warning"
+    href="/?path=/story/typography--设置颜色"
+  >
+    color=warning
+  </a>
+  <a
+    className="sc-AxirZ ldIpLw sinoui-link"
+    color="success"
+    href="/?path=/story/typography--设置颜色"
+  >
+    color=success
+  </a>
+</p>
+`;

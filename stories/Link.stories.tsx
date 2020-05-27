@@ -23,18 +23,8 @@ export const 基本使用 = () => (
 export const 指定根元素 = () => (
   <ThemeProvider theme={defaultTheme}>
     <Typography>
-      <Link href="/?path=/story/typography--基本组件使用" component="a">
+      <Link href="/?path=/story/typography--基本组件使用" component="button">
         Link
-      </Link>
-      <Link href="/?path=/story/typography--设置属性" component="div">
-        Link-1
-      </Link>
-      <Link
-        href="/?path=/story/typography--设置颜色"
-        color="primary"
-        component="p"
-      >
-        Link-2
       </Link>
     </Typography>
   </ThemeProvider>
