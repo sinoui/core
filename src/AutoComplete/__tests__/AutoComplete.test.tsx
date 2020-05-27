@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
 import 'jest-styled-components';
 import Popper from '@sinoui/core/Popper';
-import AutoComplete from '../AutoComplete';
+import AutoComplete, { AutoCompleteChangeReason } from '../AutoComplete';
 
 afterEach(cleanup);
 
@@ -572,4 +572,71 @@ it('在非freeSolo模式下，输入框聚焦时，选中文本', () => {
   });
 
   expect(mock).toBeCalled();
+});
+
+it('点击选项，选中选项并关闭选项弹窗', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const onChange = jest.fn();
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value=""
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+  const input = getByTestId('text-input').querySelector('input')!;
+  act(() => {
+    fireEvent.click(input);
+  });
+
+  act(() => {
+    const firstItem = container.querySelector('.sinoui-list-item')!;
+    fireEvent.click(firstItem);
+  });
+
+  expect(input).toHaveValue('item 1');
+  expect(onChange).toHaveBeenCalledWith(
+    'item 1',
+    AutoCompleteChangeReason.selectOption,
+  );
+
+  jest.runAllTimers();
+  expect(container.querySelector('.sinoui-list-item')).toBeFalsy();
+});
+
+it('输入框的值等于value，则不过滤选项列表', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value="item 1"
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+
+  act(() => {
+    fireEvent.click(getByTestId('text-input').querySelector('input')!);
+  });
+
+  expect(container.querySelectorAll('.sinoui-list-item').length).toBe(3);
 });

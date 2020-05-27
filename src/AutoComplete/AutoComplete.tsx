@@ -11,7 +11,7 @@ import Close from '../svg-icons/Close';
 /**
  * 自动完成组件变更原因
  */
-enum AutoCompleteChangeReason {
+export enum AutoCompleteChangeReason {
   /**
    * 选中选项
    */
@@ -147,14 +147,14 @@ export default function AutoComplete(props: Props) {
   const [open, setOpen] = useState(false);
   const filteredOptions = useMemo(
     () =>
-      inputValue
+      inputValue && inputValue !== value
         ? options.filter((option) =>
             getOptionLabel(option)
               ?.toLowerCase()
               .includes(inputValue.toLowerCase()),
           )
         : options,
-    [getOptionLabel, inputValue, options],
+    [getOptionLabel, inputValue, value, options],
   );
 
   /**
@@ -229,6 +229,19 @@ export default function AutoComplete(props: Props) {
   };
 
   /**
+   * 处理选项点击事件
+   *
+   * @param label 选项的标签
+   */
+  const handleOptionClick = (label: string) => {
+    setInputValue(label);
+    if (onChange) {
+      onChange(label, AutoCompleteChangeReason.selectOption);
+    }
+    setOpen(false);
+  };
+
+  /**
    * 渲染弹出指示器
    */
   const renderPopupIndicator = () => (
@@ -272,6 +285,7 @@ export default function AutoComplete(props: Props) {
     <OptionList
       options={[{ key: '1', groupTitle: '', options: filteredOptions }]}
       getOptionLabel={getOptionLabel}
+      onOptionClick={handleOptionClick}
     />
   );
 
