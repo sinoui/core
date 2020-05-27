@@ -8,6 +8,7 @@ import { Props, RenderOption, Option } from './types';
 const MaxHeightList = styled(List)`
   max-height: 40vh;
   overflow: auto;
+  padding: 0;
 `;
 
 const GroupContent = styled(ListItem)`

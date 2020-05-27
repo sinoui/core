@@ -46,7 +46,7 @@ const outlinedStyle = css`
   background-color: transparent;
 `;
 
-const ChipLayout = styled.div<ChipLayoutProps>`
+const chipStyle = css<ChipLayoutProps>`
   display: inline-flex;
   align-items: center;
   height: 32px;
@@ -56,9 +56,24 @@ const ChipLayout = styled.div<ChipLayoutProps>`
   background-color: #e0e0e0;
   ${({ theme }) => theme.typography.body2};
   color: ${({ theme, disabled }) =>
-    disabled ? theme.palette.text.disabled : theme.palette.text.secondary};
+    disabled ? theme.palette.text.disabled : theme.palette.text.primary};
   ${({ $variant }) => $variant === 'outlined' && outlinedStyle};
   ${({ disabled }) => disabled && `opacity:0.5`};
+`;
+
+const hoverStyle = css`
+  background-color: rgba(0, 0, 0, 0.26);
+`;
+
+const ChipLayout = styled.div<ChipLayoutProps>`
+  ${chipStyle}
+`;
+
+const ClickableChipLayout = styled(BaseButton)<ChipLayoutProps>`
+  ${chipStyle};
+  &:hover {
+    ${({ $variant }) => $variant !== 'outlined' && hoverStyle};
+  }
 `;
 
 const ChipContent = styled.span``;
@@ -67,6 +82,8 @@ const CancelButton = styled(CancelIcon)`
   margin-left: 8px;
   margin-right: -4px;
   cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
+  color: ${({ theme, disabled }) =>
+    disabled ? theme.palette.text.disabled : theme.palette.text.secondary};
 
   &:hover {
     fill: ${({ theme, disabled }) =>
@@ -92,7 +109,8 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
     variant = 'standard',
     disabled,
   } = props;
-  const Comp: React.ReactType = AsComp || clickable ? BaseButton : ChipLayout;
+  const Comp: React.ReactType =
+    AsComp || clickable ? ClickableChipLayout : ChipLayout;
 
   const onClick = (event: React.MouseEvent) => {
     if (disabled) {

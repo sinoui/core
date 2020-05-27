@@ -59,6 +59,29 @@ describe('镜像测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('可点击的标签', () => {
+    const onDelete = jest.fn();
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <>
+            <Chip label="文本" clickable />
+            <Chip label="文本" clickable variant="outlined" />
+            <Chip label="文本" onDelete={onDelete} clickable />
+            <Chip
+              label="文本"
+              variant="outlined"
+              onDelete={onDelete}
+              clickable
+            />
+          </>
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('验收测试', () => {
