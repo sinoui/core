@@ -196,6 +196,7 @@ export default function AutoComplete(props: Props) {
    */
   const handleInputBlur = () => {
     setOpen(false);
+    setInputValue(value);
   };
 
   /**

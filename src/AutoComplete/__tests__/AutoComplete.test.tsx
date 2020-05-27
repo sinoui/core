@@ -672,3 +672,40 @@ it('输入框为空时，则清空value', () => {
 
   expect(onChange).toBeCalledWith('', AutoCompleteChangeReason.clear);
 });
+
+it('输入框失去焦点，输入框文本重置为value', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const onChange = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value="item 1"
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+
+  const input = getByTestId('text-input').querySelector('input')!;
+  act(() => {
+    fireEvent.change(input, {
+      target: {
+        value: 'item 123',
+      },
+    });
+  });
+
+  act(() => {
+    fireEvent.blur(input);
+  });
+
+  expect(input).toHaveValue('item 1');
+});
