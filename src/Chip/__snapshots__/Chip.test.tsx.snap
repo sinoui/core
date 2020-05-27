@@ -48,6 +48,7 @@ Array [
   margin-left: 8px;
   margin-right: -4px;
   cursor: default;
+  color: rgba(0,0,0,0.38);
 }
 
 .c2:hover {
@@ -71,7 +72,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c1 c2 sinoui-chip__delete sinoui-svg-icon sc-AxhUy c2 sinoui-chip__delete"
+      className="c1 c2 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c2 sinoui-chip__delete"
       disabled={true}
       focusable="false"
       onClick={[Function]}
@@ -132,6 +133,7 @@ Array [
   margin-left: 8px;
   margin-right: -4px;
   cursor: default;
+  color: rgba(0,0,0,0.38);
 }
 
 .c2:hover {
@@ -155,7 +157,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c1 c2 sinoui-chip__delete sinoui-svg-icon sc-AxhUy c2 sinoui-chip__delete"
+      className="c1 c2 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c2 sinoui-chip__delete"
       disabled={true}
       focusable="false"
       onClick={[Function]}
@@ -168,6 +170,473 @@ Array [
       />
     </svg>
   </div>,
+]
+`;
+
+exports[`镜像测试 可点击的标签 1`] = `
+Array [
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.26);
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+<button
+    className="c0 sinoui-base-button c1 sinoui-chip"
+    role="button"
+    type="button"
+  >
+    <span
+      className="sinoui-chip__content"
+    >
+      文本
+    </span>
+  </button>,
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  border: 1px solid rgba(0,0,0,0.23);
+  background-color: transparent;
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+<button
+    className="c0 sinoui-base-button c1 sinoui-chip"
+    role="button"
+    type="button"
+  >
+    <span
+      className="sinoui-chip__content"
+    >
+      文本
+    </span>
+  </button>,
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.26);
+}
+
+.c3 {
+  margin-left: 8px;
+  margin-right: -4px;
+  cursor: pointer;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3:hover {
+  fill: rgba(0,0,0,0.87);
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    fill: rgba(0,0,0,0.6);
+  }
+}
+
+<button
+    className="c0 sinoui-base-button c1 sinoui-chip"
+    role="button"
+    type="button"
+  >
+    <span
+      className="sinoui-chip__content"
+    >
+      文本
+    </span>
+    <svg
+      aria-hidden="true"
+      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c3 sinoui-chip__delete"
+      focusable="false"
+      onClick={[Function]}
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+  </button>,
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  border: 1px solid rgba(0,0,0,0.23);
+  background-color: transparent;
+}
+
+.c3 {
+  margin-left: 8px;
+  margin-right: -4px;
+  cursor: pointer;
+  color: rgba(0,0,0,0.6);
+}
+
+.c3:hover {
+  fill: rgba(0,0,0,0.87);
+}
+
+@media (hover:none) {
+  .c0:hover {
+    background-color: transparent;
+  }
+}
+
+@media (hover:none) {
+  .c3:hover {
+    fill: rgba(0,0,0,0.6);
+  }
+}
+
+<button
+    className="c0 sinoui-base-button c1 sinoui-chip"
+    role="button"
+    type="button"
+  >
+    <span
+      className="sinoui-chip__content"
+    >
+      文本
+    </span>
+    <svg
+      aria-hidden="true"
+      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c3 sinoui-chip__delete"
+      focusable="false"
+      onClick={[Function]}
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+  </button>,
 ]
 `;
 
@@ -194,7 +663,7 @@ Array [
   -moz-letter-spacing: 0.01071em;
   -ms-letter-spacing: 0.01071em;
   letter-spacing: 0.01071em;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.87);
 }
 
 <div
@@ -227,7 +696,7 @@ Array [
   -moz-letter-spacing: 0.01071em;
   -ms-letter-spacing: 0.01071em;
   letter-spacing: 0.01071em;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
 }
@@ -284,13 +753,14 @@ Array [
   -moz-letter-spacing: 0.01071em;
   -ms-letter-spacing: 0.01071em;
   letter-spacing: 0.01071em;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.87);
 }
 
 .c2 {
   margin-left: 8px;
   margin-right: -4px;
   cursor: pointer;
+  color: rgba(0,0,0,0.6);
 }
 
 .c2:hover {
@@ -313,7 +783,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c1 c2 sinoui-chip__delete sinoui-svg-icon sc-AxhUy c2 sinoui-chip__delete"
+      className="c1 c2 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c2 sinoui-chip__delete"
       focusable="false"
       onClick={[Function]}
       role="presentation"
@@ -363,7 +833,7 @@ Array [
   -moz-letter-spacing: 0.01071em;
   -ms-letter-spacing: 0.01071em;
   letter-spacing: 0.01071em;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
 }
@@ -372,6 +842,7 @@ Array [
   margin-left: 8px;
   margin-right: -4px;
   cursor: pointer;
+  color: rgba(0,0,0,0.6);
 }
 
 .c2:hover {
@@ -394,7 +865,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c1 c2 sinoui-chip__delete sinoui-svg-icon sc-AxhUy c2 sinoui-chip__delete"
+      className="c1 c2 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c2 sinoui-chip__delete"
       focusable="false"
       onClick={[Function]}
       role="presentation"
