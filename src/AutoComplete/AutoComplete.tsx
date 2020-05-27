@@ -144,6 +144,13 @@ export default function AutoComplete(props: Props) {
     setOpen(false);
   };
 
+  const handleInputKeydown = (event: React.KeyboardEvent) => {
+    const { key } = event;
+    if (key === 'Escape') {
+      setOpen(false);
+    }
+  };
+
   /**
    * 处理弹出提示器的点击事件
    */
@@ -180,6 +187,7 @@ export default function AutoComplete(props: Props) {
       ref: inputRef,
       onClick: handleInputClick,
       onBlur: handleInputBlur,
+      onKeyDown: handleInputKeydown,
     },
     endAdornment: (
       <InputAdornment position="end">{renderPopupIndicator()}</InputAdornment>
