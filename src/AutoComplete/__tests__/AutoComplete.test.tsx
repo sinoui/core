@@ -284,3 +284,43 @@ it('选项打开时，按下esc键，退出选项', () => {
     container.querySelector('.sinoui-auto-complete__option-list'),
   ).toBeFalsy();
 });
+
+it('closeOnEscape = false', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        value=""
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+
+  const input = getByTestId('text-input').querySelector('input')!;
+
+  act(() => {
+    // 打开选项弹窗
+    fireEvent.click(input);
+  });
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Escape',
+      code: 'Escape',
+    });
+  });
+
+  jest.runAllTimers();
+  expect(
+    container.querySelector('.sinoui-auto-complete__option-list'),
+  ).toBeTruthy();
+});

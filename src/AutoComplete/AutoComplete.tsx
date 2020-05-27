@@ -65,6 +65,11 @@ interface Props {
    * 指定分组依据
    */
   groupBy?: (option: any) => string;
+
+  /**
+   * 设置为`true`时，按下Escape键，关闭选项弹窗。默认为`true`。
+   */
+  closeOnEscape?: boolean;
 }
 
 const PopupIndicatorWrapper = styled(IconButton)<{ $open: boolean }>`
@@ -91,7 +96,13 @@ const PopupIndicatorWrapper = styled(IconButton)<{ $open: boolean }>`
  * 自动完成组件。
  */
 export default function AutoComplete(props: Props) {
-  const { renderInput, value, options, getOptionLabel } = props;
+  const {
+    renderInput,
+    value,
+    options,
+    getOptionLabel,
+    closeOnEscape = true,
+  } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [inputValue, setInputValue] = useState(value);
@@ -146,7 +157,7 @@ export default function AutoComplete(props: Props) {
 
   const handleInputKeydown = (event: React.KeyboardEvent) => {
     const { key } = event;
-    if (key === 'Escape') {
+    if (closeOnEscape && key === 'Escape') {
       setOpen(false);
     }
   };
