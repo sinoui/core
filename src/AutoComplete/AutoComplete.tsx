@@ -98,6 +98,10 @@ interface Props {
    * 如果为`true`，则支持多选
    */
   multiple?: boolean;
+  /**
+   * 选中选项时，是否关闭弹窗，默认为`true`
+   */
+  closeOnSelect?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -155,6 +159,7 @@ export default function AutoComplete(props: Props) {
     openOnFocus = false,
     TransitionComponent = Grow,
     multiple,
+    closeOnSelect = true,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -274,7 +279,7 @@ export default function AutoComplete(props: Props) {
     if (onChange) {
       onChange(label, AutoCompleteChangeReason.selectOption);
     }
-    if (!multiple) {
+    if (!multiple && closeOnSelect) {
       setOpen(false);
     }
   };

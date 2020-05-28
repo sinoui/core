@@ -900,3 +900,45 @@ it('选项列表关闭状态下，在输入框中输入值，弹出选项列表'
       ?.querySelectorAll('.sinoui-list-item').length,
   ).toBe(1);
 });
+
+it('closeOnSelect=false时， 点击选项，不关闭弹窗', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const onChange = jest.fn();
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnSelect={false}
+        value=""
+        closeOnEscape={false}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+  const input = getByTestId('text-input').querySelector('input')!;
+  act(() => {
+    fireEvent.click(input);
+  });
+
+  act(() => {
+    const firstItem = container.querySelector('.sinoui-list-item')!;
+    fireEvent.click(firstItem);
+  });
+
+  expect(input).toHaveValue('item 1');
+  expect(onChange).toHaveBeenCalledWith(
+    'item 1',
+    AutoCompleteChangeReason.selectOption,
+  );
+
+  jest.runAllTimers();
+  expect(container.querySelector('.sinoui-list-item')).toBeInTheDocument();
+});
