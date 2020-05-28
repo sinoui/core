@@ -41,4 +41,8 @@ export interface Props {
    * 点击选项时的回调函数
    */
   onOptionClick?: (label: string) => void;
+  /**
+   * 如果设置为`true`，则显示加载中图标
+   */
+  loading?: boolean;
 }

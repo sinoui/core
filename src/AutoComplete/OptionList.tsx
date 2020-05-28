@@ -3,6 +3,7 @@ import List from '@sinoui/core/List';
 import ListItem from '@sinoui/core/ListItem';
 import ListItemText from '@sinoui/core/ListItemText';
 import styled from 'styled-components';
+import Progress from '@sinoui/core/Progress';
 import { Props, RenderOption, Option } from './types';
 
 const MaxHeightList = styled(List)`
@@ -44,6 +45,15 @@ const NoDataContent = styled.div`
   padding: 0 16px;
 `;
 
+const LoadingLayout = styled.div`
+  background-color: ${({ theme }) => theme.palette.background.paper};
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 /**
  * 选项列表
  */
@@ -60,6 +70,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
     ListboxComponent = MaxHeightList,
     selectedOptions,
     onOptionClick,
+    loading,
     ...rest
   } = props;
 
@@ -108,13 +119,22 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
       {...rest}
       className="sinoui-auto-complete__option-list"
     >
-      {optionsProp.map((option) => {
-        if (groupBy) {
-          return renderGroup({ ...option, children: renderListOption(option) });
-        }
+      {loading ? (
+        <LoadingLayout>
+          <Progress />
+        </LoadingLayout>
+      ) : (
+        optionsProp.map((option) => {
+          if (groupBy) {
+            return renderGroup({
+              ...option,
+              children: renderListOption(option),
+            });
+          }
 
-        return renderListOption(option);
-      })}
+          return renderListOption(option);
+        })
+      )}
     </ListboxComponent>
   );
 });

@@ -87,3 +87,18 @@ it('无数据时显示，没有选项可供选择', () => {
 
   expect(getByText('没有选项可供选择')).toBeInTheDocument();
 });
+
+it('loading属性为true时，显示加载中图标', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <OptionList
+        loading
+        options={[{ key: '1', groupTitle: '', options: [] }]}
+        getOptionLabel={(option) => option.title}
+        groupBy={(option) => option.groupTitle}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(container.querySelector('.sinoui-progress')).toBeInTheDocument();
+});
