@@ -1,5 +1,7 @@
+/* eslint-disable no-param-reassign */
 import React, { useRef, useState, useMemo } from 'react';
 import styled, { css } from 'styled-components';
+import { ModifierArguments, Options } from '@popperjs/core';
 import OptionList from './OptionList';
 import Popper from '../Popper';
 import Grow from '../Grow';
@@ -140,6 +142,21 @@ const PopupIndicatorWrapper = styled(IconButton)<{
   transition: ${({ theme }) => theme.transitions.create('transform')};
   transform: rotate(${({ $open }) => ($open ? 180 : 0)}deg);
 `;
+
+const sameWidth = {
+  name: 'sameWidth',
+  enabled: true,
+  phase: 'beforeWrite',
+  requires: ['computeStyles'],
+  fn: ({ state }: ModifierArguments<Options>) => {
+    state.styles.popper.width = `${(state.elements.reference as any).width}px`;
+  },
+  effect: ({ state }: ModifierArguments<Options>) => {
+    state.elements.popper.style.width = `${
+      (state.elements.reference as any).offsetWidth
+    }px`;
+  },
+};
 
 /**
  * 自动完成组件。
@@ -340,6 +357,7 @@ export default function AutoComplete(props: Props) {
         open={open}
         referenceElement={textInputRef}
         onMouseDown={preventEventDefault}
+        modifiers={[sameWidth]}
       >
         <TransitionComponent in={open}>{renderOptions()}</TransitionComponent>
       </PopperComponent>
