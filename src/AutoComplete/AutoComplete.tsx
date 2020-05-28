@@ -94,6 +94,10 @@ interface Props {
    * 指定弹窗出现时的效果组件
    */
   TransitionComponent?: React.ReactType;
+  /**
+   * 如果为`true`，则支持多选
+   */
+  multiple?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -150,6 +154,7 @@ export default function AutoComplete(props: Props) {
     onChange,
     openOnFocus = false,
     TransitionComponent = Grow,
+    multiple,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -269,7 +274,9 @@ export default function AutoComplete(props: Props) {
     if (onChange) {
       onChange(label, AutoCompleteChangeReason.selectOption);
     }
-    setOpen(false);
+    if (!multiple) {
+      setOpen(false);
+    }
   };
 
   /**

@@ -575,7 +575,7 @@ it('在非freeSolo模式下，输入框聚焦时，选中文本', () => {
   expect(mock).toBeCalled();
 });
 
-it('点击选项，选中选项并关闭选项弹窗', () => {
+it('单选状态下，点击选项，选中选项并关闭选项弹窗', () => {
   const renderInput = (props: any) => (
     <TextInput {...props} data-testid="text-input" />
   );
