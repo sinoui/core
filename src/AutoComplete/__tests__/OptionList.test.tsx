@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
 import OptionList from '../OptionList';
 
 it('不分组数据渲染', () => {
@@ -71,4 +72,18 @@ it('分组渲染', () => {
     .toJSON();
 
   expect(tree).toMatchSnapshot();
+});
+
+it('无数据时显示，没有选项可供选择', () => {
+  const { getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <OptionList
+        options={[{ key: '1', groupTitle: '', options: [] }]}
+        getOptionLabel={(option) => option.title}
+        groupBy={(option) => option.groupTitle}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByText('没有选项可供选择')).toBeInTheDocument();
 });

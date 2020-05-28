@@ -37,12 +37,22 @@ const GroupTitle = styled.div`
   top: -8px;
 `;
 
+const NoDataContent = styled.div`
+  color: ${({ theme }) => theme.palette.text.secondary};
+  background-color: ${({ theme }) => theme.palette.background.paper};
+  line-height: 48px;
+  padding: 0 16px;
+`;
+
+/**
+ * 选项列表
+ */
 const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
   props,
   ref,
 ) {
   const {
-    options: OptionsProp = [],
+    options: optionsProp = [],
     groupBy,
     getOptionLabel,
     renderOption: renderOptionProp,
@@ -63,19 +73,23 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
 
   const renderListOption = (option: RenderOption) => {
     const { options = [] } = option;
-    return options.map((item: Option, index) => (
-      <ListItem
-        // eslint-disable-next-line react/no-array-index-key
-        key={index}
-        selected={
-          selectedOptions &&
-          selectedOptions.indexOf(getOptionLabel(item)) !== -1
-        }
-        onClick={() => handleOptionClick(getOptionLabel(item))}
-      >
-        <ListItemText>{renderOption(item)}</ListItemText>
-      </ListItem>
-    ));
+    return options.length > 0 ? (
+      options.map((item: Option, index) => (
+        <ListItem
+          // eslint-disable-next-line react/no-array-index-key
+          key={index}
+          selected={
+            selectedOptions &&
+            selectedOptions.indexOf(getOptionLabel(item)) !== -1
+          }
+          onClick={() => handleOptionClick(getOptionLabel(item))}
+        >
+          <ListItemText>{renderOption(item)}</ListItemText>
+        </ListItem>
+      ))
+    ) : (
+      <NoDataContent>没有选项可供选择</NoDataContent>
+    );
   };
 
   const defaultRenderGroup = (option: any) => {
@@ -94,7 +108,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
       {...rest}
       className="sinoui-auto-complete__option-list"
     >
-      {OptionsProp.map((option) => {
+      {optionsProp.map((option) => {
         if (groupBy) {
           return renderGroup({ ...option, children: renderListOption(option) });
         }
