@@ -90,6 +90,10 @@ interface Props {
    * 设置为`true`，则在获取焦点时出现弹窗
    */
   openOnFocus?: boolean;
+  /**
+   * 指定弹窗出现时的效果组件
+   */
+  TransitionComponent?: React.ReactType;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -145,6 +149,7 @@ export default function AutoComplete(props: Props) {
     forcePopupIcon = 'auto',
     onChange,
     openOnFocus = false,
+    TransitionComponent = Grow,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -320,7 +325,7 @@ export default function AutoComplete(props: Props) {
         referenceElement={textInputRef}
         onMouseDown={preventEventDefault}
       >
-        <Grow in={open}>{renderOptions()}</Grow>
+        <TransitionComponent in={open}>{renderOptions()}</TransitionComponent>
       </PopperComponent>
     </>
   );

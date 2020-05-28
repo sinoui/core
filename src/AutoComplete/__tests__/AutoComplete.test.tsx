@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
 import 'jest-styled-components';
 import Popper from '@sinoui/core/Popper';
+import Collapse from '@sinoui/core/CollapseNew';
 import AutoComplete, { AutoCompleteChangeReason } from '../AutoComplete';
 
 afterEach(cleanup);
@@ -816,4 +817,36 @@ it('输入框获取焦点时，按下向上或向下方向键，弹出选项列�
       .querySelector('.sinoui-auto-complete__option-list')
       ?.querySelectorAll('.sinoui-list-item').length,
   ).toBe(3);
+});
+
+it('自定义弹窗出现时的动效', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const CustomTranstionComp = (props: any) => (
+    <Collapse {...props} data-testid="collapse" />
+  );
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        openOnFocus
+        renderInput={renderInput}
+        TransitionComponent={CustomTranstionComp}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  expect(getByTestId('collapse')).toBeInTheDocument();
 });
