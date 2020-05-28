@@ -850,3 +850,53 @@ it('自定义弹窗出现时的动效', () => {
 
   expect(getByTestId('collapse')).toBeInTheDocument();
 });
+
+it('选项列表关闭状态下，在输入框中输入值，弹出选项列表', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        openOnFocus
+        renderInput={renderInput}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  // 弹出弹窗
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  // 关闭弹窗
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Escape',
+      code: 'Escape',
+    });
+  });
+
+  act(() => {
+    fireEvent.change(input, {
+      target: {
+        value: 'item 1',
+      },
+    });
+  });
+
+  jest.runAllTimers();
+  expect(
+    container
+      .querySelector('.sinoui-auto-complete__option-list')
+      ?.querySelectorAll('.sinoui-list-item').length,
+  ).toBe(1);
+});

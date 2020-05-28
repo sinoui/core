@@ -187,6 +187,10 @@ export default function AutoComplete(props: Props) {
     const newInputValue = event.target.value;
     setInputValue(newInputValue);
 
+    if (!open) {
+      setOpen(true);
+    }
+
     if (newInputValue === '' && onChange) {
       onChange('', AutoCompleteChangeReason.clear);
     }
