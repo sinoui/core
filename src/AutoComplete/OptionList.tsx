@@ -4,8 +4,9 @@ import ListItem from '@sinoui/core/ListItem';
 import ListItemText from '@sinoui/core/ListItemText';
 import styled from 'styled-components';
 import Progress from '@sinoui/core/Progress';
-import { Props, RenderOption, Option } from './types';
+import { Props, RenderOption } from './types';
 import useMultiRefs from '../utils/useMultiRefs';
+import groupOptions from './utils/groupOptions';
 
 const MaxHeightList = styled(List)`
   max-height: 40vh;
@@ -90,7 +91,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
   const renderListOption = (option: RenderOption) => {
     const { options = [] } = option;
     return options.length > 0 ? (
-      options.map((item: Option, index) => (
+      options.map((item: any, index) => (
         <ListItem
           // eslint-disable-next-line react/no-array-index-key
           key={index}
@@ -122,6 +123,9 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
   };
 
   const renderGroup = renderGroupProp || defaultRenderGroup;
+
+  const groupedOptions: RenderOption[] = groupOptions(optionsProp, groupBy);
+  console.log(groupedOptions);
   return (
     <ListboxComponent
       ref={handleRef}
@@ -133,7 +137,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
           <Progress />
         </LoadingLayout>
       ) : (
-        optionsProp.map((option) => {
+        groupedOptions.map((option) => {
           if (groupBy) {
             return renderGroup({
               ...option,

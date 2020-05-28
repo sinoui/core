@@ -344,7 +344,7 @@ export default function AutoComplete(props: Props) {
 
   const renderOptions = () => (
     <OptionList
-      options={[{ key: '1', groupTitle: '', options: filteredOptions }]}
+      options={filteredOptions}
       getOptionLabel={getOptionLabel}
       onOptionClick={handleOptionClick}
     />
