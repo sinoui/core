@@ -3,8 +3,10 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import OptionList from '../OptionList';
+
+afterEach(cleanup);
 
 it('不分组数据渲染', () => {
   const simepleOptions = [
@@ -101,4 +103,23 @@ it('loading属性为true时，显示加载中图标', () => {
   );
 
   expect(container.querySelector('.sinoui-progress')).toBeInTheDocument();
+});
+
+it('通过disabledOptions属性指定不可用的选项', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <OptionList
+        disabledOptions={['item2']}
+        options={[
+          { key: '1', groupTitle: '', options: ['item1', 'item2', 'item3'] },
+        ]}
+        getOptionLabel={(option) => option as any}
+        groupBy={(option) => option.groupTitle}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(
+    container.querySelector('.sinoui-list-item--disabled'),
+  ).toHaveTextContent('item2');
 });

@@ -176,6 +176,7 @@ export const 基本使用 = () => {
     <StoryLayout>
       <OptionList
         selectedOptions={['The Godfather', 'The Dark Knight']}
+        disabledOptions={['The Shawshank Redemption', '12 Angry Men']}
         options={simpleOptions}
         getOptionLabel={(option) => option.title}
         onOptionClick={(label) => alert(label)}

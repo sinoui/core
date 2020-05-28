@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import List from '@sinoui/core/List';
 import ListItem from '@sinoui/core/ListItem';
 import ListItemText from '@sinoui/core/ListItemText';
 import styled from 'styled-components';
 import Progress from '@sinoui/core/Progress';
 import { Props, RenderOption, Option } from './types';
+import useMultiRefs from '../utils/useMultiRefs';
 
 const MaxHeightList = styled(List)`
   max-height: 40vh;
@@ -71,8 +72,12 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
     selectedOptions,
     onOptionClick,
     loading,
+    disabledOptions,
     ...rest
   } = props;
+
+  const listRef = useRef<HTMLUListElement>(null);
+  const handleRef = useMultiRefs(listRef, ref);
 
   const renderOption = renderOptionProp || getOptionLabel;
 
@@ -92,6 +97,10 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
           selected={
             selectedOptions &&
             selectedOptions.indexOf(getOptionLabel(item)) !== -1
+          }
+          disabled={
+            disabledOptions &&
+            disabledOptions.indexOf(getOptionLabel(item)) !== -1
           }
           onClick={() => handleOptionClick(getOptionLabel(item))}
         >
@@ -115,7 +124,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
   const renderGroup = renderGroupProp || defaultRenderGroup;
   return (
     <ListboxComponent
-      ref={ref}
+      ref={handleRef}
       {...rest}
       className="sinoui-auto-complete__option-list"
     >
