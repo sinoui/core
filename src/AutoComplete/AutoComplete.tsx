@@ -222,6 +222,8 @@ export default function AutoComplete(props: Props) {
     const { key } = event;
     if (closeOnEscape && key === 'Escape') {
       setOpen(false);
+    } else if (key === 'ArrowUp' || key === 'ArrowDown') {
+      setOpen(true);
     }
   };
 

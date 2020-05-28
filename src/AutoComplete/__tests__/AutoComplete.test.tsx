@@ -746,3 +746,74 @@ it('openOnFocus=true,获取焦点时出现弹窗', () => {
   ).toBe(3);
   expect(popupIndicator).toHaveStyleRule('transform', 'rotate(180deg)');
 });
+
+it('输入框获取焦点时，按下向上或向下方向键，弹出选项列表', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'ArrowUp',
+      code: 'ArrowUp',
+    });
+  });
+
+  jest.runAllTimers();
+
+  const popupIndicator = textInput.querySelector(
+    '.sinoui-auto-complete__popup-indicator',
+  );
+
+  expect(
+    container
+      .querySelector('.sinoui-auto-complete__option-list')
+      ?.querySelectorAll('.sinoui-list-item').length,
+  ).toBe(3);
+  expect(popupIndicator).toHaveStyleRule('transform', 'rotate(180deg)');
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Escape',
+      code: 'Escape',
+    });
+  });
+
+  jest.runAllTimers();
+  expect(
+    container.querySelector('.sinoui-auto-complete__option-list'),
+  ).toBeFalsy();
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
+    });
+  });
+
+  jest.runAllTimers();
+  expect(
+    container
+      .querySelector('.sinoui-auto-complete__option-list')
+      ?.querySelectorAll('.sinoui-list-item').length,
+  ).toBe(3);
+});
