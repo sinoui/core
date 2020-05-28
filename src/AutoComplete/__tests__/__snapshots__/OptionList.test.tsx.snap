@@ -2,7 +2,7 @@
 
 exports[`不分组数据渲染 1`] = `
 <ul
-  className="sc-AxjAm jSMlTn sc-AxgMl cQRbka sinoui-auto-complete__option-list sinoui-list"
+  className="sc-AxjAm jSMlTn sc-AxgMl cXOuEJ sinoui-auto-complete__option-list sinoui-list"
 >
   <li
     className="sc-AxirZ ctYxQP sinoui-list-item"
@@ -53,7 +53,7 @@ exports[`不分组数据渲染 1`] = `
 
 exports[`分组渲染 1`] = `
 <ul
-  className="sc-AxjAm jSMlTn sc-AxgMl cQRbka sinoui-auto-complete__option-list sinoui-list"
+  className="sc-AxjAm jSMlTn sc-AxgMl cXOuEJ sinoui-auto-complete__option-list sinoui-list"
 >
   <li
     className="sc-AxirZ ctYxQP sc-AxheI gAXiNl sinoui-list-item sinoui-list-item--disabled-ripple"

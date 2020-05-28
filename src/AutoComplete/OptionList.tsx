@@ -9,6 +9,7 @@ const MaxHeightList = styled(List)`
   max-height: 40vh;
   overflow: auto;
   padding: 0;
+  margin-top: 8px;
 `;
 
 const GroupContent = styled(ListItem)`
