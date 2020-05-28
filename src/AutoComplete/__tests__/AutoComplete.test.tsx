@@ -709,3 +709,40 @@ it('输入框失去焦点，输入框文本重置为value', () => {
 
   expect(input).toHaveValue('item 1');
 });
+
+it('openOnFocus=true,获取焦点时出现弹窗', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        openOnFocus
+        renderInput={renderInput}
+        options={[
+          { title: 'item 1' },
+          { title: 'item 2' },
+          { title: 'item 3' },
+        ]}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  const popupIndicator = textInput.querySelector(
+    '.sinoui-auto-complete__popup-indicator',
+  );
+
+  expect(
+    container
+      .querySelector('.sinoui-auto-complete__option-list')
+      ?.querySelectorAll('.sinoui-list-item').length,
+  ).toBe(3);
+  expect(popupIndicator).toHaveStyleRule('transform', 'rotate(180deg)');
+});

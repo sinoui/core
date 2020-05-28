@@ -86,6 +86,10 @@ interface Props {
    * 设置清除图标。默认为`<Close size={20} />`。
    */
   clearIcon?: React.ReactNode;
+  /**
+   * 设置为`true`，则在获取焦点时出现弹窗
+   */
+  openOnFocus?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -140,6 +144,7 @@ export default function AutoComplete(props: Props) {
     clearIcon = <Close size={20} />,
     forcePopupIcon = 'auto',
     onChange,
+    openOnFocus = false,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -189,6 +194,15 @@ export default function AutoComplete(props: Props) {
     setOpen(true);
     // eslint-disable-next-line no-unused-expressions
     inputRef.current?.select();
+  };
+
+  /**
+   * 处理输入框获取焦点事件
+   */
+  const handleInputFocus = () => {
+    if (openOnFocus) {
+      setOpen(true);
+    }
   };
 
   /**
@@ -270,6 +284,7 @@ export default function AutoComplete(props: Props) {
       ref: inputRef,
       onClick: handleInputClick,
       onBlur: handleInputBlur,
+      onFocus: handleInputFocus,
       onKeyDown: handleInputKeydown,
     },
     endAdornment: (
