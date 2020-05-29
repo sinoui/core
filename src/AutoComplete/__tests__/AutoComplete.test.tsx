@@ -13,6 +13,8 @@ afterEach(cleanup);
 
 jest.useFakeTimers();
 
+const options = [{ title: 'item 1' }, { title: 'item 2' }, { title: 'item 3' }];
+
 it('渲染带有弹出指示器的输入框', () => {
   const renderInput = jest
     .fn()
@@ -45,11 +47,7 @@ it('点击输入框，弹出选项', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -81,11 +79,7 @@ it('输入框失去焦点，关闭选项弹窗', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -116,11 +110,7 @@ it('点击弹出图标，输入框获取到焦点', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -147,11 +137,7 @@ it('点击弹出图标，显示选项弹窗', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -180,11 +166,7 @@ it('点击弹出图标，关闭已显示的选项弹窗', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -216,12 +198,7 @@ it('输入框值变化，过滤选项', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value=""
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -256,12 +233,7 @@ it('选项打开时，按下esc键，退出选项', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value=""
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -295,13 +267,8 @@ it('closeOnEscape = false', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value=""
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -339,13 +306,8 @@ it('自定义Popper组件', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value=""
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         PopperComponent={CustomPopperComponent}
       />
@@ -381,13 +343,8 @@ it('点击选项时，阻止mousedown的默认行为', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value=""
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         PopperComponent={FakePopper}
       />
@@ -413,13 +370,8 @@ it('定制弹窗图标', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value=""
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         popupIcon={<div data-testid="custom-popup-icon" />}
       />
@@ -437,13 +389,8 @@ it('forcePopupIcon = false，不显示弹窗图标', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value=""
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         popupIcon={<div data-testid="custom-popup-icon" />}
         forcePopupIcon={false}
@@ -465,13 +412,9 @@ it('有值显示清除图标', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value="item 1"
+        value={options[0]}
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         clearIcon={clearIcon}
       />
@@ -493,13 +436,9 @@ it('点击清除图标，清除值', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value="item 1"
+        value={options[0]}
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         clearIcon={clearIcon}
         onChange={onChange}
@@ -526,13 +465,8 @@ it('无值时，不显示清除按钮', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value=""
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         clearIcon={clearIcon}
       />
@@ -553,13 +487,9 @@ it('在非freeSolo模式下，输入框聚焦时，选中文本', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value="item 1"
+        value={options[0]}
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         clearIcon={clearIcon}
       />
@@ -584,13 +514,8 @@ it('单选状态下，点击选项，选中选项并关闭选项弹窗', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value=""
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         onChange={onChange}
       />
@@ -608,7 +533,7 @@ it('单选状态下，点击选项，选中选项并关闭选项弹窗', () => {
 
   expect(input).toHaveValue('item 1');
   expect(onChange).toHaveBeenCalledWith(
-    'item 1',
+    options[0],
     AutoCompleteChangeReason.selectOption,
   );
 
@@ -624,12 +549,8 @@ it('输入框的值等于value，则不过滤选项列表', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value="item 1"
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        value={options[0]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -651,12 +572,8 @@ it('输入框为空时，则清空value', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value="item 1"
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        value={options[0]}
+        options={options}
         getOptionLabel={(_) => _.title}
         onChange={onChange}
       />
@@ -671,7 +588,7 @@ it('输入框为空时，则清空value', () => {
     });
   });
 
-  expect(onChange).toBeCalledWith('', AutoCompleteChangeReason.clear);
+  expect(onChange).toBeCalledWith(null, AutoCompleteChangeReason.clear);
 });
 
 it('输入框失去焦点，输入框文本重置为value', () => {
@@ -683,12 +600,8 @@ it('输入框失去焦点，输入框文本重置为value', () => {
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        value="item 1"
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        value={options[0]}
+        options={options}
         getOptionLabel={(_) => _.title}
         onChange={onChange}
       />
@@ -720,11 +633,7 @@ it('openOnFocus=true,获取焦点时出现弹窗', () => {
       <AutoComplete
         openOnFocus
         renderInput={renderInput}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -756,11 +665,7 @@ it('输入框获取焦点时，按下向上或向下方向键，弹出选项列�
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
         renderInput={renderInput}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -832,11 +737,7 @@ it('自定义弹窗出现时的动效', () => {
         openOnFocus
         renderInput={renderInput}
         TransitionComponent={CustomTranstionComp}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -860,11 +761,7 @@ it('选项列表关闭状态下，在输入框中输入值，弹出选项列表'
       <AutoComplete
         openOnFocus
         renderInput={renderInput}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
       />
     </ThemeProvider>,
@@ -911,13 +808,8 @@ it('closeOnSelect=false时， 点击选项，不关闭弹窗', () => {
       <AutoComplete
         renderInput={renderInput}
         closeOnSelect={false}
-        value=""
         closeOnEscape={false}
-        options={[
-          { title: 'item 1' },
-          { title: 'item 2' },
-          { title: 'item 3' },
-        ]}
+        options={options}
         getOptionLabel={(_) => _.title}
         onChange={onChange}
       />
@@ -935,7 +827,7 @@ it('closeOnSelect=false时， 点击选项，不关闭弹窗', () => {
 
   expect(input).toHaveValue('item 1');
   expect(onChange).toHaveBeenCalledWith(
-    'item 1',
+    options[0],
     AutoCompleteChangeReason.selectOption,
   );
 

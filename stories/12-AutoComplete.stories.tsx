@@ -165,7 +165,7 @@ export const 结合reactwindow使用 = () => {
 };
 
 const AutoCompleteDemo = () => {
-  const [value, setValue] = useState('godfather');
+  const [value, setValue] = useState(simpleOptions[0]);
 
   return (
     <StoryLayout>

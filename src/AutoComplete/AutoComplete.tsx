@@ -183,13 +183,15 @@ export default function AutoComplete(props: Props) {
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
-  const [inputValue, setInputValue] = useState(value);
+  const [inputValue, setInputValue] = useState(
+    value ? getOptionLabel(value) : '',
+  );
   const [open, setOpen] = useState(false);
   const [focusedOption, setFocusedOption] = useState<string | undefined>('');
 
   const filteredOptions = useMemo(
     () =>
-      inputValue && inputValue !== value
+      inputValue && (!value || inputValue !== getOptionLabel(value))
         ? options.filter((option) =>
             getOptionLabel(option)
               ?.toLowerCase()
@@ -224,7 +226,7 @@ export default function AutoComplete(props: Props) {
     }
 
     if (newInputValue === '' && onChange) {
-      onChange('', AutoCompleteChangeReason.clear);
+      onChange(null, AutoCompleteChangeReason.clear);
     }
   };
 
@@ -251,7 +253,7 @@ export default function AutoComplete(props: Props) {
    */
   const handleInputBlur = () => {
     setOpen(false);
-    setInputValue(value);
+    setInputValue(value ? getOptionLabel(value) : '');
   };
 
   /**
@@ -301,10 +303,10 @@ export default function AutoComplete(props: Props) {
    *
    * @param label 选项的标签
    */
-  const handleOptionClick = (label: string) => {
-    setInputValue(label);
+  const handleOptionClick = (item: any) => {
+    setInputValue(getOptionLabel(item));
     if (onChange) {
-      onChange(label, AutoCompleteChangeReason.selectOption);
+      onChange(item, AutoCompleteChangeReason.selectOption);
     }
     if (!multiple && closeOnSelect) {
       setOpen(false);
