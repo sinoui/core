@@ -16,11 +16,6 @@ exports[`水平布局 1`] = `
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 0.75rem;
   line-height: 1.66;
-  margin-bottom: 8px;
-}
-
-.c2:empty {
-  margin-bottom: 0;
 }
 
 .c0 {
@@ -46,6 +41,14 @@ exports[`水平布局 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c0 .sinoui-helper-line {
+  margin-bottom: 8px;
+}
+
+.c0 .sinoui-helper-line:empty {
+  margin-bottom: 0;
 }
 
 .c1 {
@@ -152,11 +155,6 @@ exports[`水平布局FormLabel显示冒号 1`] = `
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 0.75rem;
   line-height: 1.66;
-  margin-bottom: 8px;
-}
-
-.c2:empty {
-  margin-bottom: 0;
 }
 
 .c0 {
@@ -182,6 +180,14 @@ exports[`水平布局FormLabel显示冒号 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c0 .sinoui-helper-line {
+  margin-bottom: 8px;
+}
+
+.c0 .sinoui-helper-line:empty {
+  margin-bottom: 0;
 }
 
 .c1 {
