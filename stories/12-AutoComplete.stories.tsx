@@ -165,7 +165,7 @@ export const 结合reactwindow使用 = () => {
 };
 
 const AutoCompleteDemo = () => {
-  const [value, setValue] = useState(simpleOptions[0]);
+  const [value, setValue] = useState(simpleOptions[3]);
 
   return (
     <StoryLayout>

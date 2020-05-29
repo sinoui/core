@@ -160,6 +160,26 @@ const sameWidth = {
   },
 };
 
+const getFocusedIndex = (
+  items: Element[],
+  key: string,
+  focusedOption?: string,
+) => {
+  const currentIdx = items.findIndex(
+    (item) => item.textContent === focusedOption,
+  );
+
+  let focusedIdx = currentIdx;
+
+  if (key === 'ArrowUp') {
+    focusedIdx = focusedIdx > 0 ? focusedIdx - 1 : items.length - 1;
+  } else {
+    focusedIdx = focusedIdx < items.length - 1 ? focusedIdx + 1 : 0;
+  }
+
+  return focusedIdx;
+};
+
 /**
  * 自动完成组件。
  */
@@ -187,7 +207,9 @@ export default function AutoComplete(props: Props) {
     value ? getOptionLabel(value) : '',
   );
   const [open, setOpen] = useState(false);
-  const [focusedOption, setFocusedOption] = useState<string | undefined>('');
+  const [focusedOption, setFocusedOption] = useState<string | undefined>(
+    value ? getOptionLabel(value) : '',
+  );
 
   const filteredOptions = useMemo(
     () =>
@@ -268,7 +290,8 @@ export default function AutoComplete(props: Props) {
     } else if (key === 'ArrowUp' || key === 'ArrowDown') {
       if (open && listRef.current) {
         const items = getAvailableItems(listRef.current);
-        setFocusedOption(items[0]?.textContent!);
+        const focusedIndex = getFocusedIndex(items, key, focusedOption);
+        setFocusedOption(items[focusedIndex]?.textContent!);
       } else {
         setOpen(true);
       }
@@ -359,6 +382,7 @@ export default function AutoComplete(props: Props) {
       ref={listRef}
       options={filteredOptions}
       focusedOption={focusedOption}
+      selectedOptions={value ? [getOptionLabel(value)] : ['']}
       getOptionLabel={getOptionLabel}
       onOptionClick={handleOptionClick}
     />

@@ -834,3 +834,51 @@ it('closeOnSelect=false时， 点击选项，不关闭弹窗', () => {
   jest.runAllTimers();
   expect(container.querySelector('.sinoui-list-item')).toBeInTheDocument();
 });
+
+it('使用方向键切换聚焦选项', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        openOnFocus
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  // openOnFocus状态下获取焦点时弹出弹窗
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'ArrowUp',
+      code: 'ArrowUp',
+    });
+  });
+
+  jest.runAllTimers();
+
+  expect(
+    container.querySelector('.sinoui-list-item--focused'),
+  ).toHaveTextContent('item 3');
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
+    });
+  });
+
+  jest.runAllTimers();
+  expect(
+    container.querySelector('.sinoui-list-item--focused'),
+  ).toHaveTextContent('item 1');
+});
