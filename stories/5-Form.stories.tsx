@@ -32,7 +32,7 @@ export const 水平布局 = () => (
             <TextInput placeholder="请输入用户名" variant="filled" />
           </FormControl>
 
-          <FormControl layout="horizontal" label="爱好">
+          <FormControl layout="horizontal" label="爱好" error="必填">
             <CheckboxGroup>
               <Checkbox value="1">复选框1</Checkbox>
               <Checkbox value="2">复选框2</Checkbox>
