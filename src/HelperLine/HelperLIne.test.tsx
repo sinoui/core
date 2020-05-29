@@ -19,6 +19,7 @@ it('渲染帮助区域', () => {
 
   expect(helperLine).not.toHaveStyleRule('padding-left');
   expect(helperLine).not.toHaveStyleRule('padding-right');
+  expect(helperLine).toHaveStyle('margin-bottom: 0');
 });
 
 it('帮助区域有下边距', () => {

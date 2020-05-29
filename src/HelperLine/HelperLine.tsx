@@ -16,9 +16,9 @@ const HelperLine = styled.div.attrs({
   font-size: ${(props) => props.theme.typography.caption.fontSize};
   line-height: ${(props) => props.theme.typography.caption.lineHeight};
   ${(props) => props.hasMarginBottom && `margin-bottom: 8px`}
-
-  &:not(:empty) {
-    margin-bottom: 8px;
+  margin-bottom:8px;
+  &:empty {
+    margin-bottom: 0;
   }
 `;
 
