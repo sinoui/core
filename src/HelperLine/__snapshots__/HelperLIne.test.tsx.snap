@@ -18,6 +18,10 @@ exports[`快照测试 1`] = `
   line-height: 1.66;
 }
 
+.c0:not(:empty) {
+  margin-bottom: 8px;
+}
+
 <div
   className="c0 sinoui-helper-line"
 />

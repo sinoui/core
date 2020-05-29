@@ -21,6 +21,18 @@ it('渲染帮助区域', () => {
   expect(helperLine).not.toHaveStyleRule('padding-right');
 });
 
+it('帮助区域有下边距', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <HelperLine data-testid="helperline">帮助文本</HelperLine>
+    </ThemeProvider>,
+  );
+
+  const helperLine = getByTestId('helperline');
+
+  expect(helperLine).toHaveStyle('margin-bottom: 8px');
+});
+
 it('快照测试', () => {
   const tree = renderer
     .create(
