@@ -911,6 +911,40 @@ it('clearOnEscape', () => {
   });
 
   expect(onChange).toBeCalledWith(null, AutoCompleteChangeReason.clear);
+  expect(input).toHaveValue('');
+});
+
+it('clearOnEscape，无值时不调用onChange', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const onChange = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+        clearOnEscape
+      />
+    </ThemeProvider>,
+  );
+
+  const input = getByTestId('text-input').querySelector('input')!;
+
+  act(() => {
+    fireEvent.change(input, { target: { value: 'item 1' } });
+  });
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Escape',
+      code: 'Escape',
+    });
+  });
+
+  expect(onChange).not.toBeCalled();
 });
 
 it('禁止输入框文本为空时清空值', () => {

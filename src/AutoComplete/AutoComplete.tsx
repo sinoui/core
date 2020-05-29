@@ -297,7 +297,7 @@ export default function AutoComplete(props: Props) {
   const handleInputKeydown = (event: React.KeyboardEvent) => {
     const { key } = event;
     if (!open && clearOnEscape && key === 'Escape') {
-      if (onChange) {
+      if (onChange && value != null) {
         onChange(null, AutoCompleteChangeReason.clear);
       }
       setInputValue('');
