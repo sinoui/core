@@ -87,6 +87,10 @@ interface Props {
    */
   forcePopupIcon?: 'auto' | boolean;
   /**
+   * 设置为`true`，则会在输入框文本为空时，清空`value`。默认为`true`。
+   */
+  clearable?: boolean;
+  /**
    * 设置清除图标。默认为`<Close size={20} />`。
    */
   clearIcon?: React.ReactNode;
@@ -204,6 +208,7 @@ export default function AutoComplete(props: Props) {
     TransitionComponent = Grow,
     multiple,
     closeOnSelect = true,
+    clearable = true,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -252,7 +257,7 @@ export default function AutoComplete(props: Props) {
       setOpen(true);
     }
 
-    if (newInputValue === '' && onChange) {
+    if (clearable && newInputValue === '' && onChange) {
       onChange(null, AutoCompleteChangeReason.clear);
     }
   };
