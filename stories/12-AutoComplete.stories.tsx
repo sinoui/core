@@ -164,20 +164,27 @@ export const 结合reactwindow使用 = () => {
   );
 };
 
-const AutoCompleteDemo = () => {
+const AutoCompleteDemo = ({ placeholder, ...rest }: any) => {
   const [value, setValue] = useState(simpleOptions[3]);
 
   return (
     <StoryLayout>
       <AutoComplete
         value={value}
-        renderInput={(props) => <TextInput {...props} variant="outlined" />}
+        renderInput={(props) => (
+          <TextInput {...props} variant="outlined" placeholder={placeholder} />
+        )}
         options={simpleOptions}
         getOptionLabel={(option) => option.title}
         onChange={(_value) => setValue(_value)}
+        {...rest}
       />
     </StoryLayout>
   );
 };
 
 export const AutoComplete基本使用 = () => <AutoCompleteDemo />;
+
+export const clearOnEscape = () => (
+  <AutoCompleteDemo clearOnEscape placeholder="clearOnEscape" />
+);

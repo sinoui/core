@@ -91,6 +91,10 @@ interface Props {
    */
   clearIcon?: React.ReactNode;
   /**
+   * 设置为`true`，则按下Escape键时，清空`value`。默认为`false`。
+   */
+  clearOnEscape?: boolean;
+  /**
    * 设置为`true`，则在获取焦点时出现弹窗
    */
   openOnFocus?: boolean;
@@ -193,6 +197,7 @@ export default function AutoComplete(props: Props) {
     PopperComponent = Popper,
     popupIcon = <ArrowDropDownIcon />,
     clearIcon = <Close size={20} />,
+    clearOnEscape,
     forcePopupIcon = 'auto',
     onChange,
     openOnFocus = false,
@@ -285,7 +290,12 @@ export default function AutoComplete(props: Props) {
    */
   const handleInputKeydown = (event: React.KeyboardEvent) => {
     const { key } = event;
-    if (closeOnEscape && key === 'Escape') {
+    if (!open && clearOnEscape && key === 'Escape') {
+      if (onChange) {
+        onChange(null, AutoCompleteChangeReason.clear);
+      }
+      setInputValue('');
+    } else if (closeOnEscape && key === 'Escape') {
       setOpen(false);
     } else if (key === 'ArrowUp' || key === 'ArrowDown') {
       if (open && listRef.current) {

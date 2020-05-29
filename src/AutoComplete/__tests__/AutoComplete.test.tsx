@@ -882,3 +882,33 @@ it('使用方向键切换聚焦选项', () => {
     container.querySelector('.sinoui-list-item--focused'),
   ).toHaveTextContent('item 1');
 });
+
+it('clearOnEscape', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const onChange = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        value={options[0]}
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+        clearOnEscape
+      />
+    </ThemeProvider>,
+  );
+
+  const input = getByTestId('text-input').querySelector('input')!;
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Escape',
+      code: 'Escape',
+    });
+  });
+
+  expect(onChange).toBeCalledWith(null, AutoCompleteChangeReason.clear);
+});
