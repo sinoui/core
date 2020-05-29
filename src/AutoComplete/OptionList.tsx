@@ -82,9 +82,9 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
 
   const renderOption = renderOptionProp || getOptionLabel;
 
-  const handleOptionClick = (label: string) => {
+  const handleOptionClick = (item: any) => {
     if (onOptionClick) {
-      onOptionClick(label);
+      onOptionClick(item);
     }
   };
 
@@ -103,7 +103,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
             disabledOptions &&
             disabledOptions.indexOf(getOptionLabel(item)) !== -1
           }
-          onClick={() => handleOptionClick(getOptionLabel(item))}
+          onClick={() => handleOptionClick(item)}
         >
           <ListItemText>{renderOption(item)}</ListItemText>
         </ListItem>
@@ -125,7 +125,6 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
   const renderGroup = renderGroupProp || defaultRenderGroup;
 
   const groupedOptions: RenderOption[] = groupOptions(optionsProp, groupBy);
-  console.log(groupedOptions);
   return (
     <ListboxComponent
       ref={handleRef}
