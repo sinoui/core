@@ -251,6 +251,21 @@ export default function AutoComplete(props: Props) {
   };
 
   /**
+   * 处理选项点击事件
+   *
+   * @param label 选项的标签
+   */
+  const handleOptionClick = (item: any) => {
+    setInputValue(getOptionLabel(item));
+    if (onChange) {
+      onChange(item, AutoCompleteChangeReason.selectOption);
+    }
+    if (!multiple && closeOnSelect) {
+      setOpen(false);
+    }
+  };
+
+  /**
    * 处理输入框值变更事件
    *
    * @param event 值变更事件
@@ -322,6 +337,11 @@ export default function AutoComplete(props: Props) {
     } else if (key === 'End' && handleHomeEndKeys && open && listRef.current) {
       const items = getAvailableItems(listRef.current);
       setFocusedOption(items[items.length - 1]?.textContent!);
+    } else if (key === 'Enter' && focusedOption) {
+      const focusedItem = options.find(
+        (option) => getOptionLabel(option) === focusedOption,
+      );
+      handleOptionClick(focusedItem);
     }
   };
 
@@ -345,21 +365,6 @@ export default function AutoComplete(props: Props) {
     setInputValue('');
     if (onChange) {
       onChange(null, AutoCompleteChangeReason.clear);
-    }
-  };
-
-  /**
-   * 处理选项点击事件
-   *
-   * @param label 选项的标签
-   */
-  const handleOptionClick = (item: any) => {
-    setInputValue(getOptionLabel(item));
-    if (onChange) {
-      onChange(item, AutoCompleteChangeReason.selectOption);
-    }
-    if (!multiple && closeOnSelect) {
-      setOpen(false);
     }
   };
 

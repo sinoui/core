@@ -1128,3 +1128,83 @@ it('handleHomeEndKeys=false，按下Home键或者End键，不会引起焦点变�
     0,
   );
 });
+
+it('有聚焦选项时，按下Enter键，该选项被选中', () => {
+  const onChange = jest.fn();
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        openOnFocus
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  // openOnFocus状态下获取焦点时弹出弹窗
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  // 聚焦第一项
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Home',
+      code: 'Home',
+    });
+  });
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Enter',
+      code: 'Enter',
+    });
+  });
+
+  jest.runAllTimers();
+
+  expect(onChange).toHaveBeenCalledWith({ title: 'item 1' }, 'select-option');
+});
+
+it('没有聚焦选项时，按下Enter键，无副作用', () => {
+  const onChange = jest.fn();
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        openOnFocus
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  // openOnFocus状态下获取焦点时弹出弹窗
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Enter',
+      code: 'Enter',
+    });
+  });
+
+  jest.runAllTimers();
+
+  expect(onChange).not.toHaveBeenCalled();
+});
