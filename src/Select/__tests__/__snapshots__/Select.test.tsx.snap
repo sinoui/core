@@ -516,6 +516,7 @@ label ~ .c4 {
   user-select: none;
   box-sizing: content-box;
   cursor: inherit;
+  width: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -958,6 +959,7 @@ label ~ .c4 {
   user-select: none;
   box-sizing: content-box;
   cursor: inherit;
+  width: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

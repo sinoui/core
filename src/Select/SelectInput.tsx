@@ -83,6 +83,7 @@ const SelectInputLayout = styled.div<SelectInputLayoutProps>`
   user-select: none;
   box-sizing: content-box;
   cursor: inherit;
+  width: 0;
   ${singleLineTextCss}
 `;
 
