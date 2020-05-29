@@ -15,6 +15,8 @@ const MaxHeightList = styled(List)`
   overflow: auto;
   padding: 0;
   margin-top: 8px;
+  box-shadow: ${({ theme }) => theme.shadows[2]};
+  border-radius: 4px;
 `;
 
 const GroupContent = styled(ListItem)`
