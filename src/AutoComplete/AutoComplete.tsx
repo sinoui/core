@@ -115,6 +115,10 @@ interface Props {
    * 选中选项时，是否关闭弹窗，默认为`true`
    */
   closeOnSelect?: boolean;
+  /**
+   * 按`Home`键和`End`键是否高亮选项，默认为`true`
+   */
+  handleHomeEndKeys?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -210,6 +214,7 @@ export default function AutoComplete(props: Props) {
     multiple,
     closeOnSelect = true,
     clearable = true,
+    handleHomeEndKeys = true,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -311,6 +316,12 @@ export default function AutoComplete(props: Props) {
       } else {
         setOpen(true);
       }
+    } else if (handleHomeEndKeys && key === 'Home' && open && listRef.current) {
+      const items = getAvailableItems(listRef.current);
+      setFocusedOption(items[0]?.textContent!);
+    } else if (key === 'End' && handleHomeEndKeys && open && listRef.current) {
+      const items = getAvailableItems(listRef.current);
+      setFocusedOption(items[items.length - 1]?.textContent!);
     }
   };
 

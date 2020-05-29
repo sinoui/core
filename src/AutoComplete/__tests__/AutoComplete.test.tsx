@@ -1007,3 +1007,124 @@ it('value发生变化，同步到输入框', () => {
   );
   expect(input).toHaveValue('item 2');
 });
+
+it('选项列表展现时，按下home键，第一个选项高亮', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        openOnFocus
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  // openOnFocus状态下获取焦点时弹出弹窗
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Home',
+      code: 'Home',
+    });
+  });
+
+  jest.runAllTimers();
+
+  expect(
+    container.querySelector('.sinoui-list-item--focused'),
+  ).toHaveTextContent('item 1');
+});
+
+it('选项列表为打开状态，按下End键，最后一个选项被选中', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        openOnFocus
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  // openOnFocus状态下获取焦点时弹出弹窗
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'End',
+      code: 'End',
+    });
+  });
+
+  jest.runAllTimers();
+
+  expect(
+    container.querySelector('.sinoui-list-item--focused'),
+  ).toHaveTextContent('item 3');
+});
+
+it('handleHomeEndKeys=false，按下Home键或者End键，不会引起焦点变化', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        openOnFocus
+        handleHomeEndKeys={false}
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  // openOnFocus状态下获取焦点时弹出弹窗
+  act(() => {
+    fireEvent.focus(input);
+  });
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'End',
+      code: 'End',
+    });
+  });
+
+  jest.runAllTimers();
+
+  expect(container.querySelectorAll('.sinoui-list-item--focused')).toHaveLength(
+    0,
+  );
+
+  act(() => {
+    fireEvent.keyDown(input, {
+      key: 'Home',
+      code: 'Home',
+    });
+  });
+
+  jest.runAllTimers();
+  expect(container.querySelectorAll('.sinoui-list-item--focused')).toHaveLength(
+    0,
+  );
+});
