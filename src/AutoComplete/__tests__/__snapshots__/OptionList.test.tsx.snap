@@ -3,9 +3,10 @@
 exports[`不分组数据渲染 1`] = `
 <ul
   className="sc-AxjAm jSMlTn sc-Axmtr QkxtQ sinoui-auto-complete__option-list sinoui-list"
+  onKeyDown={[Function]}
 >
   <li
-    className="sc-AxirZ ctYxQP sinoui-list-item"
+    className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
     onClick={[Function]}
     tabIndex="0"
   >
@@ -16,7 +17,7 @@ exports[`不分组数据渲染 1`] = `
     </div>
   </li>
   <li
-    className="sc-AxirZ ctYxQP sinoui-list-item"
+    className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
     onClick={[Function]}
     tabIndex="0"
   >
@@ -27,7 +28,7 @@ exports[`不分组数据渲染 1`] = `
     </div>
   </li>
   <li
-    className="sc-AxirZ ctYxQP sinoui-list-item"
+    className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
     onClick={[Function]}
     tabIndex="0"
   >
@@ -38,7 +39,7 @@ exports[`不分组数据渲染 1`] = `
     </div>
   </li>
   <li
-    className="sc-AxirZ ctYxQP sinoui-list-item"
+    className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
     onClick={[Function]}
     tabIndex="0"
   >
@@ -54,6 +55,7 @@ exports[`不分组数据渲染 1`] = `
 exports[`分组渲染 1`] = `
 <ul
   className="sc-AxjAm jSMlTn sc-Axmtr QkxtQ sinoui-auto-complete__option-list sinoui-list"
+  onKeyDown={[Function]}
 >
   <li
     className="sc-AxirZ ctYxQP sc-AxmLO fDBPqT sinoui-list-item sinoui-list-item--disabled-ripple"
@@ -66,9 +68,10 @@ exports[`分组渲染 1`] = `
     </div>
     <ul
       className="sc-AxjAm jSMlTn sc-fzozJi cvuzEI sinoui-list"
+      onKeyDown={[Function]}
     >
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -79,7 +82,7 @@ exports[`分组渲染 1`] = `
         </div>
       </li>
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -90,7 +93,7 @@ exports[`分组渲染 1`] = `
         </div>
       </li>
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -113,9 +116,10 @@ exports[`分组渲染 1`] = `
     </div>
     <ul
       className="sc-AxjAm jSMlTn sc-fzozJi cvuzEI sinoui-list"
+      onKeyDown={[Function]}
     >
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -126,7 +130,7 @@ exports[`分组渲染 1`] = `
         </div>
       </li>
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -137,7 +141,7 @@ exports[`分组渲染 1`] = `
         </div>
       </li>
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -148,7 +152,7 @@ exports[`分组渲染 1`] = `
         </div>
       </li>
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -159,7 +163,7 @@ exports[`分组渲染 1`] = `
         </div>
       </li>
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -170,7 +174,7 @@ exports[`分组渲染 1`] = `
         </div>
       </li>
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -181,7 +185,7 @@ exports[`分组渲染 1`] = `
         </div>
       </li>
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >
@@ -192,7 +196,7 @@ exports[`分组渲染 1`] = `
         </div>
       </li>
       <li
-        className="sc-AxirZ ctYxQP sinoui-list-item"
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
         onClick={[Function]}
         tabIndex="0"
       >

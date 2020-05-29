@@ -3,6 +3,7 @@
 exports[`快照测试 设置属性 1`] = `
 <ul
   className="sc-AxjAm jSMlTn sinoui-list"
+  onKeyDown={[Function]}
 >
   <li
     className="sc-AxirZ cJHOzn sinoui-list-item sinoui-list-item--insert sinoui-list-item--disabled sinoui-list-item--disabled-ripple"
@@ -17,6 +18,7 @@ exports[`快照测试 设置属性 1`] = `
 exports[`快照测试 默认 1`] = `
 <ul
   className="sc-AxjAm jSMlTn sinoui-list"
+  onKeyDown={[Function]}
 >
   <li
     className="sc-AxirZ ctYxQP sinoui-list-item"

@@ -133,6 +133,7 @@ export const 基本使用 = () => {
   return (
     <StoryLayout>
       <OptionList
+        focusedOption="Schindler's List"
         selectedOptions={['The Godfather', 'The Dark Knight']}
         disabledOptions={['The Shawshank Redemption', '12 Angry Men']}
         options={simpleOptions}

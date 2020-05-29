@@ -2,8 +2,10 @@ import React, { useRef } from 'react';
 import List from '@sinoui/core/List';
 import ListItem from '@sinoui/core/ListItem';
 import ListItemText from '@sinoui/core/ListItemText';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Progress from '@sinoui/core/Progress';
+import classNames from 'classnames';
+import { opacify } from 'polished';
 import { Props, RenderOption } from './types';
 import useMultiRefs from '../utils/useMultiRefs';
 import groupOptions from './utils/groupOptions';
@@ -56,6 +58,28 @@ const LoadingLayout = styled.div`
   align-items: center;
 `;
 
+const focusedStyle = css<{ selected?: boolean; $focused?: boolean }>`
+  ::before {
+    background-color: ${({ theme, selected }) =>
+      !selected
+        ? opacify(-0.88, theme.palette.type === 'light' ? '#000' : '#fff')
+        : opacify(-0.8, theme.palette.primary.main)};
+  }
+
+  &:hover::before {
+    ${({ theme, $focused }) =>
+      $focused &&
+      `background-color: ${opacify(
+        -0.88,
+        theme.palette.type === 'light' ? '#000' : '#fff',
+      )}`}
+  }
+`;
+
+const StyledListItem = styled(ListItem)<{ $focused?: boolean }>`
+  ${({ $focused }) => $focused && focusedStyle};
+`;
+
 /**
  * 选项列表
  */
@@ -74,6 +98,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
     onOptionClick,
     loading,
     disabledOptions,
+    focusedOption,
     ...rest
   } = props;
 
@@ -92,9 +117,12 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
     const { options = [] } = option;
     return options.length > 0 ? (
       options.map((item: any, index) => (
-        <ListItem
+        <StyledListItem
           // eslint-disable-next-line react/no-array-index-key
           key={index}
+          className={classNames({
+            'sinoui-list-item--focused': focusedOption === getOptionLabel(item),
+          })}
           selected={
             selectedOptions &&
             selectedOptions.indexOf(getOptionLabel(item)) !== -1
@@ -104,12 +132,13 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
             disabledOptions.indexOf(getOptionLabel(item)) !== -1
           }
           onClick={() => handleOptionClick(getOptionLabel(item))}
+          $focused={focusedOption === getOptionLabel(item)}
         >
           <ListItemText>{renderOption(item)}</ListItemText>
-        </ListItem>
+        </StyledListItem>
       ))
     ) : (
-      <NoDataContent>没有选项可供选择</NoDataContent>
+      <NoDataContent key={option.key}>没有选项可供选择</NoDataContent>
     );
   };
 
@@ -125,7 +154,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
   const renderGroup = renderGroupProp || defaultRenderGroup;
 
   const groupedOptions: RenderOption[] = groupOptions(optionsProp, groupBy);
-  console.log(groupedOptions);
+
   return (
     <ListboxComponent
       ref={handleRef}

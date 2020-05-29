@@ -103,3 +103,20 @@ it('通过disabledOptions属性指定不可用的选项', () => {
     container.querySelector('.sinoui-list-item--disabled'),
   ).toHaveTextContent('item2');
 });
+
+it('通过focusedOption属性指定高亮选项', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <OptionList
+        focusedOption="item2"
+        options={['item1', 'item2', 'item3']}
+        getOptionLabel={(option) => option as any}
+        groupBy={(option) => option[0].toUpperCase()}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(
+    container.querySelector('.sinoui-list-item--focused'),
+  ).toHaveTextContent('item2');
+});

@@ -46,4 +46,8 @@ export interface Props {
    * 不可用的选项
    */
   disabledOptions?: string[];
+  /**
+   * 当前聚焦选项
+   */
+  focusedOption?: string;
 }

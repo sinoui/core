@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-param-reassign */
 import React, { useRef, useState, useMemo } from 'react';
 import styled, { css } from 'styled-components';
@@ -9,6 +10,7 @@ import ArrowDropDownIcon from '../svg-icons/ArrowDropDownIcon';
 import InputAdornment from '../InputAdornment';
 import IconButton from '../IconButton';
 import Close from '../svg-icons/Close';
+import { getAvailableItems } from './utils/handleItems';
 
 /**
  * 自动完成组件变更原因
@@ -180,8 +182,11 @@ export default function AutoComplete(props: Props) {
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const listRef = useRef<HTMLUListElement | null>(null);
   const [inputValue, setInputValue] = useState(value);
   const [open, setOpen] = useState(false);
+  const [focusedOption, setFocusedOption] = useState<string | undefined>('');
+
   const filteredOptions = useMemo(
     () =>
       inputValue && inputValue !== value
@@ -259,7 +264,12 @@ export default function AutoComplete(props: Props) {
     if (closeOnEscape && key === 'Escape') {
       setOpen(false);
     } else if (key === 'ArrowUp' || key === 'ArrowDown') {
-      setOpen(true);
+      if (open && listRef.current) {
+        const items = getAvailableItems(listRef.current);
+        setFocusedOption(items[0]?.textContent!);
+      } else {
+        setOpen(true);
+      }
     }
   };
 
@@ -344,7 +354,9 @@ export default function AutoComplete(props: Props) {
 
   const renderOptions = () => (
     <OptionList
+      ref={listRef}
       options={filteredOptions}
+      focusedOption={focusedOption}
       getOptionLabel={getOptionLabel}
       onOptionClick={handleOptionClick}
     />
