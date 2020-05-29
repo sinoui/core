@@ -11,53 +11,8 @@ const ListSubheader = styled.div`
   line-height: 48px;
   padding: 0 16px;
   z-index: 1;
+  box-sizing: border-box;
 `;
-
-const handleOptions = (options: string[], groupBy: any) => {
-  const input = '';
-  const filteredOptions = options.filter((option) => {
-    const candidate = option;
-
-    return candidate.indexOf(input) > -1;
-  });
-
-  let groupedOptions = filteredOptions;
-  if (groupBy) {
-    // used to keep track of key and indexes in the result array
-    const indexBy = new Map();
-    let warn = false;
-
-    groupedOptions = filteredOptions.reduce((acc, option, index) => {
-      const group = groupBy(option);
-
-      if (acc.length > 0 && acc[acc.length - 1].groupTitle === group) {
-        acc[acc.length - 1].options.push(option);
-      } else {
-        if (process.env.NODE_ENV !== 'production') {
-          if (indexBy.get(group) && !warn) {
-            console.warn(
-              `Material-UI: The options provided combined with the \`groupBy\` method of ${componentName} returns duplicated headers.`,
-              'You can solve the issue by sorting the options with the output of `groupBy`.',
-            );
-            warn = true;
-          }
-          indexBy.set(group, true);
-        }
-
-        acc.push({
-          key: index,
-          index,
-          groupTitle: group,
-          options: [option],
-        });
-      }
-
-      return acc;
-    }, []);
-  }
-
-  return groupedOptions;
-};
 
 const LISTBOX_PADDING = 8; // px
 
@@ -159,23 +114,17 @@ const renderGroup = (params) => [
 ];
 
 export default function OptionListWithReactWindow() {
-  const groupedOptions = handleOptions(OPTIONS, (option) =>
-    option[0].toUpperCase(),
-  );
-
   return (
     <OptionList
-      id="virtualize-demo"
-      style={{ width: 300 }}
-      disableListWrap
       ListboxComponent={
         ListboxComponent as React.ComponentType<
           React.HTMLAttributes<HTMLElement>
         >
       }
       renderGroup={renderGroup}
-      options={groupedOptions}
-      groupBy={(option) => option.groupTitle}
+      options={OPTIONS}
+      getOptionLabel={(option) => option}
+      groupBy={(option) => option[0].toUpperCase()}
       renderOption={(option) => <Body1>{option}</Body1>}
     />
   );
