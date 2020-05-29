@@ -11,6 +11,7 @@ import InputAdornment from '../InputAdornment';
 import IconButton from '../IconButton';
 import Close from '../svg-icons/Close';
 import { getAvailableItems } from './utils/handleItems';
+import useInputValue from './useInputValue';
 
 /**
  * 自动完成组件变更原因
@@ -213,7 +214,7 @@ export default function AutoComplete(props: Props) {
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
-  const [inputValue, setInputValue] = useState(
+  const [inputValue, setInputValue] = useInputValue(
     value ? getOptionLabel(value) : '',
   );
   const [open, setOpen] = useState(false);

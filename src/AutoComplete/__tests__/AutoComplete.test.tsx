@@ -940,3 +940,36 @@ it('禁止输入框文本为空时清空值', () => {
 
   expect(onChange).not.toBeCalled();
 });
+
+it('value发生变化，同步到输入框', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const onChange = jest.fn();
+  const { getByTestId, rerender } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        value={options[0]}
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+  const input = getByTestId('text-input').querySelector('input')!;
+  expect(input).toHaveValue('item 1');
+
+  rerender(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        value={options[1]}
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+  expect(input).toHaveValue('item 2');
+});
