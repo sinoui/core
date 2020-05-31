@@ -164,7 +164,7 @@ export const 结合reactwindow使用 = () => {
   );
 };
 
-const AutoCompleteDemo = ({ placeholder, ...rest }: any) => {
+const AutoCompleteDemo = ({ placeholder, label, ...rest }: any) => {
   const [value, setValue] = useState(simpleOptions[3]);
 
   return (
@@ -172,7 +172,12 @@ const AutoCompleteDemo = ({ placeholder, ...rest }: any) => {
       <AutoComplete
         value={value}
         renderInput={(props) => (
-          <TextInput {...props} variant="outlined" placeholder={placeholder} />
+          <TextInput
+            {...props}
+            variant="outlined"
+            label={label}
+            placeholder={placeholder}
+          />
         )}
         options={simpleOptions}
         getOptionLabel={(option) => option.title}
@@ -183,8 +188,74 @@ const AutoCompleteDemo = ({ placeholder, ...rest }: any) => {
   );
 };
 
-export const AutoComplete基本使用 = () => <AutoCompleteDemo />;
+export const AutoComplete基本使用 = () => <AutoCompleteDemo label="单选" />;
 
 export const clearOnEscape = () => (
-  <AutoCompleteDemo clearOnEscape placeholder="clearOnEscape" />
+  <AutoCompleteDemo
+    clearOnEscape
+    placeholder="clearOnEscape"
+    label="clearOnEscape"
+  />
+);
+
+const MultipleAutoCompleteDemo = ({
+  placeholder,
+  label,
+  variant,
+  ...rest
+}: any) => {
+  const [value, setValue] = useState([simpleOptions[3], simpleOptions[2]]);
+
+  return (
+    <AutoComplete
+      value={value}
+      renderInput={(props) => (
+        <TextInput
+          {...props}
+          label={label}
+          placeholder={placeholder}
+          variant={variant}
+          style={{ width: 500, margin: 8 }}
+        />
+      )}
+      options={simpleOptions}
+      getOptionLabel={(option) => option.title}
+      onChange={(_value) => setValue(_value)}
+      multiple
+      tagVariant={variant === 'filled' ? 'outlined' : 'standard'}
+      {...rest}
+    />
+  );
+};
+
+export const multiple = () => (
+  <StoryLayout>
+    <MultipleAutoCompleteDemo
+      placeholder="选择选项"
+      label="multipe"
+      variant="standard"
+    />
+    <MultipleAutoCompleteDemo
+      placeholder="选择选项"
+      label="multipe"
+      variant="filled"
+    />
+
+    <MultipleAutoCompleteDemo
+      placeholder="选择选项"
+      label="multipe"
+      variant="outlined"
+    />
+  </StoryLayout>
+);
+
+export const openOnFocus = () => (
+  <StoryLayout>
+    <MultipleAutoCompleteDemo
+      placeholder="选择选项"
+      label="multipe"
+      variant="standard"
+      openOnFocus
+    />
+  </StoryLayout>
 );

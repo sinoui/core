@@ -12,6 +12,10 @@ import IconButton from '../IconButton';
 import Close from '../svg-icons/Close';
 import { getAvailableItems } from './utils/handleItems';
 import useInputValue from './useInputValue';
+import bemClassNames from '../utils/bemClassNames';
+import AutoCompleteStyle from './AutoCompleteStyle';
+import AutoCompleteTags from './AutoCompleteTags';
+import type { RenderTagsProps } from './types';
 
 /**
  * 自动完成组件变更原因
@@ -119,6 +123,18 @@ interface Props {
    * 按`Home`键和`End`键是否高亮选项，默认为`true`
    */
   handleHomeEndKeys?: boolean;
+  /**
+   * 指定标签形态
+   */
+  tagVariant?: 'outlined' | 'standard';
+  /**
+   * 设置为`true`，则点击选项标签时打开选项弹窗。在多选模式下，默认为`true`。
+   */
+  openOnClickTags?: boolean;
+  /**
+   * 渲染选项标签。
+   */
+  renderTags?: (props: RenderTagsProps) => React.ReactNode;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -215,17 +231,21 @@ export default function AutoComplete(props: Props) {
     closeOnSelect = true,
     clearable = true,
     handleHomeEndKeys = true,
+    tagVariant,
+    openOnClickTags = true,
+    renderTags,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
   const [inputValue, setInputValue] = useInputValue(
-    value ? getOptionLabel(value) : '',
+    value && !multiple ? getOptionLabel(value) : '',
   );
   const [open, setOpen] = useState(false);
   const [focusedOption, setFocusedOption] = useState<string | undefined>(
     value ? getOptionLabel(value) : '',
   );
+  const [focused, setFocused] = useState(false);
 
   const filteredOptions = useMemo(
     () =>
@@ -247,6 +267,8 @@ export default function AutoComplete(props: Props) {
   const preventEventDefault = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target !== inputRef.current) {
       event.preventDefault();
+      // eslint-disable-next-line no-unused-expressions
+      inputRef.current?.focus();
     }
   };
 
@@ -256,10 +278,26 @@ export default function AutoComplete(props: Props) {
    * @param label 选项的标签
    */
   const handleOptionClick = (item: any) => {
-    setInputValue(getOptionLabel(item));
-    if (onChange) {
-      onChange(item, AutoCompleteChangeReason.selectOption);
+    if (multiple) {
+      setInputValue('');
+      if (onChange) {
+        const idx = (value ?? []).indexOf(item);
+        onChange(
+          idx === -1
+            ? [...(value ?? []), item]
+            : value.filter((option: any) => option !== item),
+          idx === -1
+            ? AutoCompleteChangeReason.createOption
+            : AutoCompleteChangeReason.removeOption,
+        );
+      }
+    } else {
+      setInputValue(getOptionLabel(item));
+      if (onChange) {
+        onChange(item, AutoCompleteChangeReason.selectOption);
+      }
     }
+
     if (!multiple && closeOnSelect) {
       setOpen(false);
     }
@@ -278,7 +316,7 @@ export default function AutoComplete(props: Props) {
       setOpen(true);
     }
 
-    if (clearable && newInputValue === '' && onChange) {
+    if (!multiple && clearable && newInputValue === '' && onChange) {
       onChange(null, AutoCompleteChangeReason.clear);
     }
   };
@@ -299,6 +337,7 @@ export default function AutoComplete(props: Props) {
     if (openOnFocus) {
       setOpen(true);
     }
+    setFocused(true);
   };
 
   /**
@@ -307,6 +346,7 @@ export default function AutoComplete(props: Props) {
   const handleInputBlur = () => {
     setOpen(false);
     setInputValue(value ? getOptionLabel(value) : '');
+    setFocused(false);
   };
 
   /**
@@ -342,6 +382,16 @@ export default function AutoComplete(props: Props) {
         (option) => getOptionLabel(option) === focusedOption,
       );
       handleOptionClick(focusedItem);
+    } else if (
+      multiple &&
+      key === 'Backspace' &&
+      inputValue.length === 0 &&
+      onChange
+    ) {
+      onChange(
+        value.slice(0, value.length - 1),
+        AutoCompleteChangeReason.removeOption,
+      );
     }
   };
 
@@ -369,6 +419,31 @@ export default function AutoComplete(props: Props) {
   };
 
   /**
+   * 处理标签删除
+   *
+   * @param tagIndex 标签索引
+   */
+  const handleRemoveTag = (tagIndex: number) => {
+    if (onChange) {
+      const newValue = [
+        ...value.slice(0, tagIndex),
+        ...value.slice(tagIndex + 1),
+      ];
+      onChange(newValue, AutoCompleteChangeReason.removeOption);
+    }
+  };
+
+  /**
+   * 处理点击标签
+   */
+  const handleClickTag = () => {
+    const input = inputRef.current;
+    if (openOnClickTags && input) {
+      input.focus();
+    }
+  };
+
+  /**
    * 渲染弹出指示器
    */
   const renderPopupIndicator = () => (
@@ -385,8 +460,12 @@ export default function AutoComplete(props: Props) {
   const input = renderInput({
     ref: textInputRef,
     value: inputValue,
+    shrink: focused || inputValue || (multiple && value && value.length > 0),
     onChange: handleInputChange,
     onMouseDown: preventEventDefault,
+    className: bemClassNames('sinoui-auto-complete', {
+      multiple,
+    }),
     inputProps: {
       ref: inputRef,
       onClick: handleInputClick,
@@ -407,6 +486,16 @@ export default function AutoComplete(props: Props) {
         {forcePopupIcon !== false && renderPopupIndicator()}
       </InputAdornment>
     ),
+    startAdornment:
+      multiple && value ? (
+        <AutoCompleteTags
+          tags={value.map(getOptionLabel)}
+          onRemoveTag={handleRemoveTag}
+          onClickTag={handleClickTag}
+          variant={tagVariant}
+          renderTags={renderTags}
+        />
+      ) : null,
   });
 
   const renderOptions = () => (
@@ -431,6 +520,7 @@ export default function AutoComplete(props: Props) {
       >
         <TransitionComponent in={open}>{renderOptions()}</TransitionComponent>
       </PopperComponent>
+      <AutoCompleteStyle />
     </>
   );
 }

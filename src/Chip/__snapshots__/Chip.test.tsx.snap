@@ -147,7 +147,7 @@ Array [
 }
 
 <div
-    className="c0 sinoui-chip sinoui-chip--disabled"
+    className="c0 sinoui-chip sinoui-chip--disabled sinoui-chip--outlined"
     disabled={true}
   >
     <span
@@ -353,7 +353,7 @@ Array [
 }
 
 <button
-    className="c0 sinoui-base-button c1 sinoui-chip"
+    className="c0 sinoui-base-button c1 sinoui-chip sinoui-chip--outlined"
     role="button"
     type="button"
   >
@@ -614,7 +614,7 @@ Array [
 }
 
 <button
-    className="c0 sinoui-base-button c1 sinoui-chip"
+    className="c0 sinoui-base-button c1 sinoui-chip sinoui-chip--outlined"
     role="button"
     type="button"
   >
@@ -702,7 +702,7 @@ Array [
 }
 
 <div
-    className="c0 sinoui-chip"
+    className="c0 sinoui-chip sinoui-chip--outlined"
   >
     <span
       className="sinoui-chip__content"
@@ -856,7 +856,7 @@ Array [
 }
 
 <div
-    className="c0 sinoui-chip"
+    className="c0 sinoui-chip sinoui-chip--outlined"
   >
     <span
       className="sinoui-chip__content"

@@ -126,12 +126,12 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
     const innerLabelRef = useRef<HTMLLabelElement>(null);
     const [focused, setFocused] = useState(false);
     const shrink =
-      shrinkProp ||
-      focused ||
-      !isEmptyValue(value) ||
-      !!defaultValue ||
-      !!placeholder ||
-      !!startAdornment;
+      shrinkProp ??
+      (focused ||
+        !isEmptyValue(value) ||
+        !!defaultValue ||
+        !!placeholder ||
+        !!startAdornment);
     const formControlContext = useFormControlContext();
     const noLabel =
       !label &&

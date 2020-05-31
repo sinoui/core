@@ -103,4 +103,59 @@ describe('验收测试', () => {
 
     expect(onDelete).toHaveBeenCalled();
   });
+
+  it('禁用时，点击清除按钮没有作用', () => {
+    const onDelete = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Chip label="文本" onDelete={onDelete} disabled />
+      </ThemeProvider>,
+    );
+
+    const clearButton = container.querySelector(
+      '.sinoui-chip__delete',
+    ) as HTMLElement;
+
+    fireEvent.click(clearButton);
+
+    expect(onDelete).not.toHaveBeenCalled();
+  });
+
+  it('variant=outlined', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Chip label="文本" variant="outlined" data-testid="chip" />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('chip')).toHaveClass('sinoui-chip--outlined');
+  });
+
+  it('指向根元素的属性', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Chip
+          label="文本"
+          variant="outlined"
+          data-testid="chip"
+          id="chip"
+          className="custom-chip"
+        />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('chip')).toHaveClass('custom-chip');
+    expect(getByTestId('chip')).toHaveAttribute('id', 'chip');
+  });
+
+  it('ref 指向根元素', () => {
+    const ref = React.createRef<HTMLDivElement>();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Chip label="文本" data-testid="chip" ref={ref} />
+      </ThemeProvider>,
+    );
+
+    expect(ref.current).toBe(getByTestId('chip'));
+  });
 });

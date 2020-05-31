@@ -51,3 +51,15 @@ export interface Props {
    */
   focusedOption?: string;
 }
+
+export interface TagProps {
+  onDelete: (event: React.MouseEvent) => void;
+  onClick: (event: React.MouseEvent) => void;
+  label: string;
+  variant?: 'outlined' | 'standard';
+}
+
+export interface RenderTagsProps {
+  tags: string[];
+  getTagProps: (index: number) => TagProps;
+}

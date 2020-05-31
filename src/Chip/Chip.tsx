@@ -108,6 +108,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
     onDelete,
     variant = 'standard',
     disabled,
+    ...rest
   } = props;
   const Comp: React.ReactType =
     AsComp || clickable ? ClickableChipLayout : ChipLayout;
@@ -125,9 +126,14 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
   return (
     <Comp
       ref={ref}
-      className={bemClassNames('sinoui-chip', { disabled }, className)}
+      className={bemClassNames(
+        'sinoui-chip',
+        { disabled, outlined: variant === 'outlined' },
+        className,
+      )}
       $variant={variant}
       disabled={disabled}
+      {...rest}
     >
       <ChipContent className="sinoui-chip__content">{label}</ChipContent>
       {onDelete && (
