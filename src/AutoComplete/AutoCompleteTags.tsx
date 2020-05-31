@@ -57,7 +57,7 @@ export default function AutoCompleteTags(props: Props) {
     onDelete: handleDeleteTag(index),
     label: tags[index],
     'data-tag-index': index,
-    tagindex: '-1',
+    tabIndex: '-1',
     role: 'button',
     ...rest,
   });

@@ -16,6 +16,7 @@ import bemClassNames from '../utils/bemClassNames';
 import AutoCompleteStyle from './AutoCompleteStyle';
 import AutoCompleteTags from './AutoCompleteTags';
 import type { RenderTagsProps } from './types';
+import moveFocused from './moveFocused';
 
 /**
  * 自动完成组件变更原因
@@ -392,6 +393,14 @@ export default function AutoComplete(props: Props) {
         value.slice(0, value.length - 1),
         AutoCompleteChangeReason.removeOption,
       );
+    } else if (
+      multiple &&
+      ['ArrowLeft', 'ArrowRight'].includes(key) &&
+      inputValue.length === 0 &&
+      value &&
+      value.length > 0
+    ) {
+      moveFocused(textInputRef.current, key === 'ArrowLeft' ? -1 : 1);
     }
   };
 
@@ -466,12 +475,12 @@ export default function AutoComplete(props: Props) {
     className: bemClassNames('sinoui-auto-complete', {
       multiple,
     }),
+    onKeyDown: handleInputKeydown,
     inputProps: {
       ref: inputRef,
       onClick: handleInputClick,
       onBlur: handleInputBlur,
       onFocus: handleInputFocus,
-      onKeyDown: handleInputKeydown,
     },
     endAdornment: (
       <InputAdornment position="end">

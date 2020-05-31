@@ -15,5 +15,5 @@ export default function useInputValue(
     setSyncValue(valueStr);
     setValue(valueStr ?? '');
   }
-  return [value, setValue];
+  return [value ?? '', setValue];
 }
