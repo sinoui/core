@@ -249,7 +249,7 @@ export default function AutoComplete(props: Props) {
     return '';
   }, [freeSolo, getOptionLabel, multiple, value]);
 
-  const defaultSelectedOption = useMemo(() => {
+  const defaultFocusedOption = useMemo(() => {
     if (value) {
       return freeSolo ? value : getOptionLabel(value);
     }
@@ -262,7 +262,7 @@ export default function AutoComplete(props: Props) {
   const [inputValue, setInputValue] = useInputValue(defaultInputValue);
   const [open, setOpen] = useState(false);
   const [focusedOption, setFocusedOption] = useState<string | undefined>(
-    defaultSelectedOption,
+    defaultFocusedOption,
   );
   const [focused, setFocused] = useState(false);
 
@@ -313,6 +313,7 @@ export default function AutoComplete(props: Props) {
       }
     } else {
       setInputValue(getOptionLabel(item));
+      setFocusedOption(getOptionLabel(item));
       if (onChange) {
         const newValue = freeSolo ? getOptionLabel(item) : item;
         onChange(newValue, AutoCompleteChangeReason.selectOption);
@@ -339,6 +340,7 @@ export default function AutoComplete(props: Props) {
 
     if (!multiple && clearable && newInputValue === '' && onChange) {
       onChange(null, AutoCompleteChangeReason.clear);
+      setFocusedOption('');
     }
   };
 
@@ -370,11 +372,13 @@ export default function AutoComplete(props: Props) {
     setOpen(false);
     if (!freeSolo) {
       setInputValue(value ? getOptionLabel(value) : '');
+      setFocusedOption(value ? getOptionLabel(value) : '');
     }
     setFocused(false);
 
     if (freeSolo && onChange) {
       onChange(inputValue, AutoCompleteChangeReason.blur);
+      setFocusedOption(inputValue);
     }
   };
 
@@ -390,6 +394,7 @@ export default function AutoComplete(props: Props) {
         onChange(null, AutoCompleteChangeReason.clear);
       }
       setInputValue('');
+      setFocusedOption('');
     } else if (closeOnEscape && key === 'Escape') {
       setOpen(false);
     } else if (key === 'ArrowUp' || key === 'ArrowDown') {
@@ -452,6 +457,7 @@ export default function AutoComplete(props: Props) {
    */
   const handleClear = () => {
     setInputValue('');
+    setFocusedOption('');
     if (onChange) {
       onChange(null, AutoCompleteChangeReason.clear);
     }
