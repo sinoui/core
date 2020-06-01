@@ -501,7 +501,9 @@ export default function AutoComplete(props: Props) {
             {clearIcon}
           </ClearButtonWrapper>
         )}
-        {forcePopupIcon !== false && renderPopupIndicator()}
+        {freeSolo
+          ? forcePopupIcon === true && renderPopupIndicator()
+          : forcePopupIcon !== false && renderPopupIndicator()}
       </InputAdornment>
     ),
     startAdornment:

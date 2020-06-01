@@ -1598,32 +1598,75 @@ describe('multiple', () => {
   });
 });
 
-it('在freeSolo模式下，输入框聚焦时，不选中文本', () => {
-  const renderInput = (props: any) => (
-    <TextInput {...props} data-testid="text-input" />
-  );
-  const clearIcon = (
-    <div data-testid="custom-close-icon">custom-close-icon</div>
-  );
-  const { getByTestId } = render(
-    <ThemeProvider theme={defaultTheme}>
-      <AutoComplete
-        freeSolo
-        renderInput={renderInput}
-        value={options[0]}
-        closeOnEscape={false}
-        options={options}
-        getOptionLabel={(_) => _.title}
-        clearIcon={clearIcon}
-      />
-    </ThemeProvider>,
-  );
-  const input = getByTestId('text-input').querySelector('input')!;
-  const mock = jest.spyOn(input, 'select');
+describe('freeSolo模式', () => {
+  it('输入框聚焦时，不选中文本', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const clearIcon = (
+      <div data-testid="custom-close-icon">custom-close-icon</div>
+    );
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          freeSolo
+          renderInput={renderInput}
+          value={options[0]}
+          closeOnEscape={false}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          clearIcon={clearIcon}
+        />
+      </ThemeProvider>,
+    );
+    const input = getByTestId('text-input').querySelector('input')!;
+    const mock = jest.spyOn(input, 'select');
 
-  act(() => {
-    fireEvent.click(input);
+    act(() => {
+      fireEvent.click(input);
+    });
+
+    expect(mock).not.toBeCalled();
   });
 
-  expect(mock).not.toBeCalled();
+  it('默认情况下，不显示弹窗图标', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { queryByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          freeSolo
+          renderInput={renderInput}
+          closeOnEscape={false}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          popupIcon={<div data-testid="custom-popup-icon" />}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(queryByTestId('custom-popup-icon')).toBeFalsy();
+  });
+
+  it('forcePopupIcon=true，显示弹窗图标', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { queryByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          freeSolo
+          renderInput={renderInput}
+          closeOnEscape={false}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          popupIcon={<div data-testid="custom-popup-icon" />}
+          forcePopupIcon
+        />
+      </ThemeProvider>,
+    );
+
+    expect(queryByTestId('custom-popup-icon')).toBeInTheDocument();
+  });
 });
