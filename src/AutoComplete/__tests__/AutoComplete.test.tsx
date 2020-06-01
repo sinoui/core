@@ -840,6 +840,8 @@ it('使用方向键切换聚焦选项', () => {
   const renderInput = (props: any) => (
     <TextInput {...props} data-testid="text-input" />
   );
+  const scrollIntoViewMock = jest.fn();
+  window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
   const { getByTestId, container } = render(
     <ThemeProvider theme={defaultTheme}>
       <AutoComplete
