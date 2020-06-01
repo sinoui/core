@@ -248,26 +248,35 @@ export default function AutoComplete(props: Props) {
     }
     return '';
   }, [freeSolo, getOptionLabel, multiple, value]);
+
+  const defaultSelectedOption = useMemo(() => {
+    if (value) {
+      return freeSolo ? value : getOptionLabel(value);
+    }
+    return '';
+  }, [freeSolo, getOptionLabel, value]);
+
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
   const [inputValue, setInputValue] = useInputValue(defaultInputValue);
   const [open, setOpen] = useState(false);
   const [focusedOption, setFocusedOption] = useState<string | undefined>(
-    value ? getOptionLabel(value) : '',
+    defaultSelectedOption,
   );
   const [focused, setFocused] = useState(false);
 
   const filteredOptions = useMemo(
     () =>
-      inputValue && (!value || inputValue !== getOptionLabel(value))
+      inputValue &&
+      (!value || inputValue !== (freeSolo ? value : getOptionLabel(value)))
         ? options.filter((option) =>
             getOptionLabel(option)
               ?.toLowerCase()
               .includes(inputValue.toLowerCase()),
           )
         : options,
-    [getOptionLabel, inputValue, value, options],
+    [inputValue, value, freeSolo, getOptionLabel, options],
   );
 
   /**
@@ -305,7 +314,8 @@ export default function AutoComplete(props: Props) {
     } else {
       setInputValue(getOptionLabel(item));
       if (onChange) {
-        onChange(item, AutoCompleteChangeReason.selectOption);
+        const newValue = freeSolo ? getOptionLabel(item) : item;
+        onChange(newValue, AutoCompleteChangeReason.selectOption);
       }
     }
 
@@ -358,8 +368,14 @@ export default function AutoComplete(props: Props) {
    */
   const handleInputBlur = () => {
     setOpen(false);
-    setInputValue(value ? getOptionLabel(value) : '');
+    if (!freeSolo) {
+      setInputValue(value ? getOptionLabel(value) : '');
+    }
     setFocused(false);
+
+    if (freeSolo && onChange) {
+      onChange(inputValue, AutoCompleteChangeReason.blur);
+    }
   };
 
   /**
@@ -480,6 +496,13 @@ export default function AutoComplete(props: Props) {
     </PopupIndicatorWrapper>
   );
 
+  const selectedOptions = useMemo(() => {
+    if (value) {
+      return freeSolo ? [value] : [getOptionLabel(value)];
+    }
+    return [];
+  }, [freeSolo, getOptionLabel, value]);
+
   const input = renderInput({
     ref: textInputRef,
     value: inputValue,
@@ -528,7 +551,7 @@ export default function AutoComplete(props: Props) {
       ref={listRef}
       options={filteredOptions}
       focusedOption={focusedOption}
-      selectedOptions={value ? [getOptionLabel(value)] : ['']}
+      selectedOptions={selectedOptions}
       getOptionLabel={getOptionLabel}
       onOptionClick={handleOptionClick}
       freeSolo={freeSolo}

@@ -1816,4 +1816,73 @@ describe('freeSolo模式', () => {
 
     expect(onChange).toBeCalledWith(null, AutoCompleteChangeReason.clear);
   });
+
+  it('输入框值与value值同步', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onChange = jest.fn();
+    const { getByTestId, rerender } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          freeSolo
+          value={options[0].title}
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+    const input = getByTestId('text-input').querySelector('input')!;
+    expect(input).toHaveValue('item 1');
+
+    rerender(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          freeSolo
+          value={options[1].title}
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+    expect(input).toHaveValue('item 2');
+  });
+
+  it('输入框失去焦点时，调用onChange,更新value', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          freeSolo
+          renderInput={renderInput}
+          value={options[0].title}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    const input = getByTestId('text-input').querySelector('input')!;
+    act(() => {
+      fireEvent.change(input, {
+        target: {
+          value: 'item 123',
+        },
+      });
+    });
+
+    act(() => {
+      fireEvent.blur(input);
+    });
+
+    expect(input).toHaveValue('item 123');
+  });
 });
