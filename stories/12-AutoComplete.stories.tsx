@@ -259,3 +259,5 @@ export const openOnFocus = () => (
     />
   </StoryLayout>
 );
+
+export const FreeSolo = () => <AutoCompleteDemo freeSolo label="单选" />;

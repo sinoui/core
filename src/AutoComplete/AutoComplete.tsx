@@ -136,6 +136,10 @@ interface Props {
    * 渲染选项标签。
    */
   renderTags?: (props: RenderTagsProps) => React.ReactNode;
+  /**
+   * 如果设置为`true`，则为freeSolo模式。默认为`false`
+   */
+  freeSolo?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -235,6 +239,7 @@ export default function AutoComplete(props: Props) {
     tagVariant,
     openOnClickTags = true,
     renderTags,
+    freeSolo = false,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -327,8 +332,10 @@ export default function AutoComplete(props: Props) {
    */
   const handleInputClick = () => {
     setOpen(true);
-    // eslint-disable-next-line no-unused-expressions
-    inputRef.current?.select();
+    if (!freeSolo) {
+      // eslint-disable-next-line no-unused-expressions
+      inputRef.current?.select();
+    }
   };
 
   /**
