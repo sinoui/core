@@ -101,6 +101,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
     loading,
     disabledOptions,
     focusedOption,
+    freeSolo,
     ...rest
   } = props;
 
@@ -117,31 +118,37 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
 
   const renderListOption = (option: RenderOption) => {
     const { options = [] } = option;
-    return options.length > 0 ? (
-      options.map((item: any, index) => (
-        <StyledListItem
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          className={classNames({
-            'sinoui-list-item--focused': focusedOption === getOptionLabel(item),
-          })}
-          selected={
-            selectedOptions &&
-            selectedOptions.indexOf(getOptionLabel(item)) !== -1
-          }
-          disabled={
-            disabledOptions &&
-            disabledOptions.indexOf(getOptionLabel(item)) !== -1
-          }
-          onClick={() => handleOptionClick(item)}
-          $focused={focusedOption === getOptionLabel(item)}
-        >
-          <ListItemText>{renderOption(item)}</ListItemText>
-        </StyledListItem>
-      ))
-    ) : (
-      <NoDataContent key={option.key}>没有选项可供选择</NoDataContent>
-    );
+    return options.length > 0
+      ? options.map((item: any, index) => (
+          <StyledListItem
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            className={classNames({
+              'sinoui-list-item--focused':
+                focusedOption === getOptionLabel(item),
+            })}
+            selected={
+              selectedOptions &&
+              selectedOptions.indexOf(getOptionLabel(item)) !== -1
+            }
+            disabled={
+              disabledOptions &&
+              disabledOptions.indexOf(getOptionLabel(item)) !== -1
+            }
+            onClick={() => handleOptionClick(item)}
+            $focused={focusedOption === getOptionLabel(item)}
+          >
+            <ListItemText>{renderOption(item)}</ListItemText>
+          </StyledListItem>
+        ))
+      : !freeSolo && (
+          <NoDataContent
+            className="sinoui-option-list__nodata-content"
+            key={option.key}
+          >
+            没有选项可供选择
+          </NoDataContent>
+        );
   };
 
   const defaultRenderGroup = (option: any) => {

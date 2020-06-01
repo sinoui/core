@@ -1719,4 +1719,42 @@ describe('freeSolo模式', () => {
       container.querySelectorAll('.sinoui-list-item--focused'),
     ).toHaveLength(0);
   });
+
+  it('不显示无可选选项的提示', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          freeSolo
+          handleHomeEndKeys={false}
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+        />
+      </ThemeProvider>,
+    );
+    const textInput = getByTestId('text-input');
+    const input = textInput.querySelector('input')!;
+
+    // openOnFocus状态下获取焦点时弹出弹窗
+    act(() => {
+      fireEvent.focus(input);
+    });
+
+    act(() => {
+      fireEvent.change(input, {
+        target: {
+          value: '张三',
+        },
+      });
+    });
+    jest.runAllTimers();
+
+    expect(
+      container.querySelector('.sinoui-option-list__nodata-content'),
+    ).toBeFalsy();
+  });
 });

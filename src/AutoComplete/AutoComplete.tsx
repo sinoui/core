@@ -526,6 +526,7 @@ export default function AutoComplete(props: Props) {
       selectedOptions={value ? [getOptionLabel(value)] : ['']}
       getOptionLabel={getOptionLabel}
       onOptionClick={handleOptionClick}
+      freeSolo={freeSolo}
     />
   );
 

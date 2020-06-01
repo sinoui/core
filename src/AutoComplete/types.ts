@@ -50,6 +50,10 @@ export interface Props {
    * 当前聚焦选项
    */
   focusedOption?: string;
+  /**
+   * 如果设置为`true`，则为freeSolo模式。默认为`false`
+   */
+  freeSolo?: boolean;
 }
 
 export interface TagProps {
