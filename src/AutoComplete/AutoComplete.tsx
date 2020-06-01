@@ -228,6 +228,7 @@ export default function AutoComplete(props: Props) {
     popupIcon = <ArrowDropDownIcon />,
     clearIcon = <Close size={20} />,
     clearOnEscape,
+    freeSolo = false,
     forcePopupIcon = 'auto',
     onChange,
     openOnFocus = false,
@@ -235,11 +236,10 @@ export default function AutoComplete(props: Props) {
     multiple,
     closeOnSelect = true,
     clearable = true,
-    handleHomeEndKeys = true,
+    handleHomeEndKeys = !freeSolo,
     tagVariant,
     openOnClickTags = true,
     renderTags,
-    freeSolo = false,
   } = props;
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
