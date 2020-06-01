@@ -1611,7 +1611,7 @@ describe('freeSolo模式', () => {
         <AutoComplete
           freeSolo
           renderInput={renderInput}
-          value={options[0]}
+          value={options[0].title}
           closeOnEscape={false}
           options={options}
           getOptionLabel={(_) => _.title}
@@ -1756,5 +1756,64 @@ describe('freeSolo模式', () => {
     expect(
       container.querySelector('.sinoui-option-list__nodata-content'),
     ).toBeFalsy();
+  });
+
+  it('默认情况下，输入框文本清空时，不调用onChange', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          freeSolo
+          renderInput={renderInput}
+          value={options[0].title}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    act(() => {
+      fireEvent.change(getByTestId('text-input').querySelector('input')!, {
+        target: {
+          value: '',
+        },
+      });
+    });
+
+    expect(onChange).not.toBeCalled();
+  });
+
+  it('clearable=true，输入框文本清空，调用onChange', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          freeSolo
+          clearable
+          renderInput={renderInput}
+          value={options[0].title}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    act(() => {
+      fireEvent.change(getByTestId('text-input').querySelector('input')!, {
+        target: {
+          value: '',
+        },
+      });
+    });
+
+    expect(onChange).toBeCalledWith(null, AutoCompleteChangeReason.clear);
   });
 });

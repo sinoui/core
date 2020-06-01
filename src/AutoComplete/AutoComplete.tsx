@@ -235,18 +235,23 @@ export default function AutoComplete(props: Props) {
     TransitionComponent = Grow,
     multiple,
     closeOnSelect = true,
-    clearable = true,
+    clearable = !freeSolo,
     handleHomeEndKeys = !freeSolo,
     tagVariant,
     openOnClickTags = true,
     renderTags,
   } = props;
+
+  const defaultInputValue = useMemo(() => {
+    if (value && !multiple) {
+      return freeSolo ? value : getOptionLabel(value);
+    }
+    return '';
+  }, [freeSolo, getOptionLabel, multiple, value]);
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
-  const [inputValue, setInputValue] = useInputValue(
-    value && !multiple ? getOptionLabel(value) : '',
-  );
+  const [inputValue, setInputValue] = useInputValue(defaultInputValue);
   const [open, setOpen] = useState(false);
   const [focusedOption, setFocusedOption] = useState<string | undefined>(
     value ? getOptionLabel(value) : '',

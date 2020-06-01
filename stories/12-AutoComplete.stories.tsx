@@ -164,8 +164,10 @@ export const 结合reactwindow使用 = () => {
   );
 };
 
-const AutoCompleteDemo = ({ placeholder, label, ...rest }: any) => {
-  const [value, setValue] = useState(simpleOptions[3]);
+const AutoCompleteDemo = ({ placeholder, label, freeSolo, ...rest }: any) => {
+  const [value, setValue] = useState(
+    freeSolo ? simpleOptions[3].title : simpleOptions[3],
+  );
 
   return (
     <StoryLayout>
@@ -182,6 +184,7 @@ const AutoCompleteDemo = ({ placeholder, label, ...rest }: any) => {
         options={simpleOptions}
         getOptionLabel={(option) => option.title}
         onChange={(_value) => setValue(_value)}
+        freeSolo={freeSolo}
         {...rest}
       />
     </StoryLayout>
