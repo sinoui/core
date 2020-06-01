@@ -1,0 +1,37 @@
+---
+id: tooltip
+title: Tooltip
+---
+
+当用户鼠标悬浮，聚焦或者轻触一个元素时，文字提示会显示有意义的文本。
+
+## 属性
+
+##
+
+| 属性名              | 类型                          | 描述                                                            |
+| ------------------- | ----------------------------- | --------------------------------------------------------------- |
+| title               | string                        | 提示文字。                                                      |
+| arrow               | boolean                       | 设置为 `true`，显示箭头。不传入 arrow 属性，pc 端默认显示箭头。 |
+| trigger             | 'hover' \| 'focus' \| 'click' | 指定触发事件                                                    |
+| children            | React.ReactNode               | 子元素                                                          |
+| transitionComponent | React.ReactType               | 动画组件，默认为 Grow                                           |
+| className           | string                        | 自定义 className                                                |
+| style               | React.CSSProperties           | 自定义样式                                                      |
+
+## 简单使用
+
+```tsx
+import Button from '@sinoui/core/Button';
+import Tooltip from '@sinoui/core/Tooltip';
+
+function Demo() {
+  return (
+    <Tooltip title="提示文字" trigger="hover">
+      <Button>提示</Button>
+    </Tooltip>
+  );
+}
+```
+
+更多关于 Tooltip 的使用，请参考 [Tooltip](../components/tooltip)。

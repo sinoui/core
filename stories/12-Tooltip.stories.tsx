@@ -1,5 +1,7 @@
 import React from 'react';
 import Tooltip from '@sinoui/core/Tooltip';
+import IconButton from '@sinoui/core/IconButton';
+import Add from '@sinoui/icons/Add';
 import Button from '@sinoui/core/Button';
 import { Row, Column } from '@sinoui/core/Grid';
 import Fade from '@sinoui/core/Fade';
@@ -15,7 +17,9 @@ const Demo = ({ arrow }: { arrow?: boolean }) => {
       <Row>
         <Column xs={6}>
           <Tooltip title="这是一段提示文字" placement="right" arrow={arrow}>
-            <Button raised>右弹出</Button>
+            <IconButton>
+              <Add />
+            </IconButton>
           </Tooltip>
         </Column>
         <Column xs={6}>

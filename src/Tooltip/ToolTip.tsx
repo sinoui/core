@@ -30,7 +30,7 @@ interface ToolTipProps {
   /**
    * 过渡动画
    */
-  transitionComponent?: ReactType;
+  transitionComponent?: React.ReactType;
   /**
    * 是否是移动端
    */
