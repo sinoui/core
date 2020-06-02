@@ -1726,6 +1726,54 @@ describe('multiple', () => {
 
     expect(document.activeElement).toBe(input);
   });
+
+  it('限定标签个数，当选中项个数大于标签个数且不获取焦点的状态下，显示隐藏标签个数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          dense
+          value={[options[0], options[2]]}
+          limitTags={1}
+          renderInput={renderInput}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('text-input')).toHaveTextContent('+1');
+  });
+
+  it('限定标签个数，当选中项个数大于标签个数且获取焦点状态下，不显示隐藏标签个数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          dense
+          value={[options[0], options[2]]}
+          limitTags={1}
+          renderInput={renderInput}
+        />
+      </ThemeProvider>,
+    );
+    const input = getByTestId('text-input').querySelector('input')!;
+    act(() => {
+      fireEvent.focus(input);
+    });
+    expect(getByTestId('text-input')).not.toHaveTextContent('+1');
+    expect(getByTestId('text-input')).toHaveTextContent('item 1item 3');
+  });
 });
 
 describe('freeSolo模式', () => {

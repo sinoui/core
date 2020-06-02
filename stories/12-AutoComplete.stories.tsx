@@ -352,3 +352,14 @@ export const 固定选项 = () => (
     <FixOptionsAutoCompleteDemo />
   </StoryLayout>
 );
+
+export const 限定标签个数 = () => (
+  <StoryLayout>
+    <MultipleAutoCompleteDemo
+      placeholder="选择选项"
+      label="multipe"
+      variant="outlined"
+      limitTags={2}
+    />
+  </StoryLayout>
+);
