@@ -82,7 +82,7 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
         listRef.current &&
         listRef.current
           .querySelectorAll('.sinoui-list-item')
-          [focusIndex].classList.value.includes('sinoui-list-item--disabled');
+          [focusIndex].classList.contains('sinoui-list-item--disabled');
       if (isItemDisabled) {
         // 如果聚焦的元素是列表的最后一个非禁用项，点击下键，则focusIndex = focusIndex - 1
         return getFoucsIndex(

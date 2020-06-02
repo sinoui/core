@@ -3,6 +3,7 @@
 import React, { useRef, useState, useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import { ModifierArguments, Options } from '@popperjs/core';
+import scrollIntoView from 'scroll-into-view-if-needed';
 import OptionList from './OptionList';
 import Popper from '../Popper';
 import Grow from '../Grow';
@@ -439,7 +440,11 @@ export default function AutoComplete(props: Props) {
       if (open && listRef.current) {
         const items = getAvailableItems(listRef.current);
         const focusedIndex = getFocusedIndex(items, key, focusedOption);
-        items[focusedIndex].scrollIntoView(false);
+        scrollIntoView(items[focusedIndex], {
+          scrollMode: 'if-needed',
+          block: 'nearest',
+          inline: 'nearest',
+        });
         setFocusedOption(items[focusedIndex]?.textContent!);
       } else {
         setOpen(true);
@@ -449,7 +454,11 @@ export default function AutoComplete(props: Props) {
       setFocusedOption(items[0]?.textContent!);
     } else if (key === 'End' && handleHomeEndKeys && open && listRef.current) {
       const items = getAvailableItems(listRef.current);
-      items[items.length - 1].scrollIntoView();
+      scrollIntoView(items[items.length - 1], {
+        scrollMode: 'if-needed',
+        block: 'nearest',
+        inline: 'nearest',
+      });
       setFocusedOption(items[items.length - 1]?.textContent!);
     } else if (key === 'Enter' && focusedOption) {
       const focusedItem = options.find(

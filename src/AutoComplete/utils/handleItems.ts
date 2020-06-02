@@ -13,6 +13,6 @@ export function getAvailableItems(list: HTMLUListElement) {
   const itemsArr = formatListItems(items);
 
   return itemsArr.filter(
-    (item) => !item.classList.value.includes('.sinoui-list-item--disabled'),
+    (item) => !item.classList.contains('sinoui-list-item--disabled'),
   );
 }
