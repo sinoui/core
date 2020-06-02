@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import CancelIcon from '@sinoui/core/svg-icons/Cancel';
 import OverridableComponent from '../OverridableComponent';
 import bemClassNames from '../utils/bemClassNames';
+import singleLineTextCss from '../utils/singleLineTextCss';
 
 export interface Props {
   /**
@@ -59,6 +60,8 @@ const chipStyle = css<ChipLayoutProps>`
   padding: 0 12px;
   overflow: hidden;
   background-color: #e0e0e0;
+  max-width: 100%;
+  box-sizing: border-box;
   ${({ theme }) => theme.typography.body2};
   color: ${({ theme, disabled }) =>
     disabled ? theme.palette.text.disabled : theme.palette.text.primary};
@@ -68,12 +71,6 @@ const chipStyle = css<ChipLayoutProps>`
 
 const denseChipStyle = css`
   height: 24px;
-
-  > .sinoui-chip__delete {
-    width: 20px;
-    height: 20px;
-    margin-right: -8px;
-  }
 `;
 
 const hoverStyle = css`
@@ -92,11 +89,15 @@ const ClickableChipLayout = styled(BaseButton)<ChipLayoutProps>`
   }
 `;
 
-const ChipContent = styled.span``;
+const ChipContent = styled.span`
+  ${singleLineTextCss}
+`;
 
 const CancelButton = styled(CancelIcon)`
-  margin-left: 8px;
-  margin-right: -4px;
+  margin-left: 4px;
+  margin-right: -6px;
+  height: 20px;
+  width: 20px;
   cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   color: ${({ theme, disabled }) =>
     disabled ? theme.palette.text.disabled : theme.palette.text.secondary};

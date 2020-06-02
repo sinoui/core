@@ -190,3 +190,18 @@ it('密集模式', () => {
   );
   expect(getByTestId('chip')).toHaveStyleRule('height', '24px');
 });
+
+it('文本不换行显示', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Chip
+        label="文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本"
+        style={{ width: 40 }}
+        data-testid="chip"
+      />
+    </ThemeProvider>,
+  );
+  expect(
+    getByTestId('chip').querySelector('.sinoui-chip__content')!,
+  ).toHaveStyleRule('white-space', 'nowrap');
+});
