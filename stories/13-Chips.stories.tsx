@@ -92,3 +92,27 @@ export const 可点击的Chip = () => (
     </>
   </StoryLayout>
 );
+
+export const DenseChip = () => (
+  <StoryLayout>
+    <>
+      <Chip label="dense" dense />
+      <Chip label="dense" variant="outlined" dense />
+      <Chip
+        label="Dense"
+        onDelete={() => {
+          console.log('删除图标被点击');
+        }}
+        dense
+      />
+      <Chip
+        label="Dense"
+        variant="outlined"
+        onDelete={() => {
+          console.log('删除图标被点击');
+        }}
+        dense
+      />
+    </>
+  </StoryLayout>
+);
