@@ -270,6 +270,7 @@ export default function AutoComplete(props: Props) {
     defaultFocusedOption,
   );
   const [focused, setFocused] = useState(false);
+  const preventBlur = useRef(false);
 
   const filteredOptions = useMemo(
     () =>
@@ -292,8 +293,15 @@ export default function AutoComplete(props: Props) {
   const preventEventDefault = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target !== inputRef.current) {
       event.preventDefault();
-      // eslint-disable-next-line no-unused-expressions
-      inputRef.current?.focus();
+      const input = inputRef.current;
+      if (input) {
+        input.focus();
+        preventBlur.current = true;
+        setTimeout(() => {
+          input.focus();
+          preventBlur.current = false;
+        });
+      }
     }
   };
 
@@ -386,6 +394,10 @@ export default function AutoComplete(props: Props) {
    * 处理输入框失去焦点事件
    */
   const handleInputBlur = () => {
+    if (preventBlur.current) {
+      preventBlur.current = true;
+      return;
+    }
     setOpen(false);
     if (!freeSolo) {
       setInputValue(value ? getOptionLabel(value) : '');
