@@ -50,6 +50,10 @@ export interface ChipLayoutProps {
 const outlinedStyle = css`
   border: 1px solid rgba(0, 0, 0, 0.23);
   background-color: transparent;
+
+  > .sinoui-chip__delete {
+    color: rgba(0, 0, 0, 0.42);
+  }
 `;
 
 const chipStyle = css<ChipLayoutProps>`

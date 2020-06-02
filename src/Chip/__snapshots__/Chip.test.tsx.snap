@@ -142,6 +142,10 @@ Array [
   opacity: 0.5;
 }
 
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.42);
+}
+
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -374,6 +378,10 @@ Array [
   background-color: transparent;
 }
 
+.c1 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.42);
+}
+
 .c2 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -640,6 +648,10 @@ Array [
   background-color: transparent;
 }
 
+.c1 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.42);
+}
+
 .c2 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -769,6 +781,10 @@ Array [
   background-color: transparent;
 }
 
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.42);
+}
+
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -862,6 +878,10 @@ Array [
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
   height: 24px;
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.42);
 }
 
 .c1 {
@@ -1112,6 +1132,10 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.42);
 }
 
 .c1 {
