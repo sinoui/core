@@ -596,10 +596,13 @@ export default function AutoComplete(props: Props) {
 
   const selectedOptions = useMemo(() => {
     if (value) {
+      if (multiple) {
+        return freeSolo ? value : value.map(getOptionLabel);
+      }
       return freeSolo ? [value] : [getOptionLabel(value)];
     }
     return [];
-  }, [freeSolo, getOptionLabel, value]);
+  }, [freeSolo, getOptionLabel, multiple, value]);
 
   const input = renderInput({
     ref: textInputRef,
