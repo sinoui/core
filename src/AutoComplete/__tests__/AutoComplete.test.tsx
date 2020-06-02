@@ -1584,6 +1584,29 @@ describe('multiple', () => {
     );
   });
 
+  it('多选密集模式', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          dense
+          value={[options[0], options[2]]}
+          renderInput={renderInput}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(
+      container.querySelector('.sinoui-auto-complete--dense'),
+    ).toBeInTheDocument();
+  });
+
   it('输入框有点时，按下向左键，焦点转移到最后一个选项标签中', () => {
     const renderInput = (props: any) => (
       <TextInput {...props} data-testid="text-input" />

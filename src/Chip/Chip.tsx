@@ -34,11 +34,16 @@ export interface Props {
    * 展现形式
    */
   variant?: 'standard' | 'outlined';
+  /**
+   * 密集模式
+   */
+  dense?: boolean;
 }
 
 export interface ChipLayoutProps {
   $variant?: 'standard' | 'outlined';
   disabled?: boolean;
+  dense?: boolean;
 }
 
 const outlinedStyle = css`
@@ -61,12 +66,23 @@ const chipStyle = css<ChipLayoutProps>`
   ${({ disabled }) => disabled && `opacity:0.5`};
 `;
 
+const denseChipStyle = css`
+  height: 24px;
+
+  > .sinoui-chip__delete {
+    width: 20px;
+    height: 20px;
+    margin-right: -8px;
+  }
+`;
+
 const hoverStyle = css`
   background-color: rgba(0, 0, 0, 0.26);
 `;
 
 const ChipLayout = styled.div<ChipLayoutProps>`
-  ${chipStyle}
+  ${chipStyle};
+  ${({ dense }) => dense && denseChipStyle}
 `;
 
 const ClickableChipLayout = styled(BaseButton)<ChipLayoutProps>`
@@ -108,6 +124,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
     onDelete,
     variant = 'standard',
     disabled,
+    dense,
     ...rest
   } = props;
   const Comp: React.ReactType =
@@ -133,6 +150,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
       )}
       $variant={variant}
       disabled={disabled}
+      dense={dense}
       {...rest}
     >
       <ChipContent className="sinoui-chip__content">{label}</ChipContent>

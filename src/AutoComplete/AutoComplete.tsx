@@ -140,6 +140,10 @@ interface Props {
    * 如果设置为`true`，则为freeSolo模式。默认为`false`
    */
   freeSolo?: boolean;
+  /**
+   * 如果设置为`true`,则为密集模式
+   */
+  dense?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -240,6 +244,7 @@ export default function AutoComplete(props: Props) {
     tagVariant,
     openOnClickTags = true,
     renderTags,
+    dense,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -513,10 +518,12 @@ export default function AutoComplete(props: Props) {
     ref: textInputRef,
     value: inputValue,
     shrink: focused || inputValue || (multiple && value && value.length > 0),
+    dense,
     onChange: handleInputChange,
     onMouseDown: preventEventDefault,
     className: bemClassNames('sinoui-auto-complete', {
       multiple,
+      dense: dense && multiple,
     }),
     onKeyDown: handleInputKeydown,
     inputProps: {
@@ -548,6 +555,7 @@ export default function AutoComplete(props: Props) {
           onClickTag={handleClickTag}
           variant={tagVariant}
           renderTags={renderTags}
+          dense={dense}
         />
       ) : null,
   });

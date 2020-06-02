@@ -82,6 +82,23 @@ describe('镜像测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('密集模式', () => {
+    const onDelete = jest.fn();
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <>
+            <Chip label="文本" dense />
+            <Chip label="文本" dense variant="outlined" />
+            <Chip label="文本" onDelete={onDelete} dense />
+          </>
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('验收测试', () => {
@@ -158,4 +175,18 @@ describe('验收测试', () => {
 
     expect(ref.current).toBe(getByTestId('chip'));
   });
+});
+
+it('密集模式', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Chip
+        label="文本"
+        dense
+        data-testid="chip"
+        onDelete={() => console.log('123')}
+      />
+    </ThemeProvider>,
+  );
+  expect(getByTestId('chip')).toHaveStyleRule('height', '24px');
 });

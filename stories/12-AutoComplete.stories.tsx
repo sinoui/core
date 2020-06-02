@@ -263,4 +263,26 @@ export const openOnFocus = () => (
   </StoryLayout>
 );
 
+export const DenseMultiple = () => (
+  <StoryLayout>
+    <MultipleAutoCompleteDemo
+      placeholder="选择选项"
+      label="Dense Multiple"
+      variant="outlined"
+      dense
+    />
+    <MultipleAutoCompleteDemo
+      placeholder="选择选项"
+      label="Dense Multiple"
+      dense
+    />
+    <MultipleAutoCompleteDemo
+      placeholder="选择选项"
+      label="Dense Multiple"
+      variant="filled"
+      dense
+    />
+  </StoryLayout>
+);
+
 export const FreeSolo = () => <AutoCompleteDemo freeSolo label="单选" />;

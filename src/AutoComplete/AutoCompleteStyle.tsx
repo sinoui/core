@@ -41,6 +41,39 @@ const AutoCompleteStyle = createGlobalStyle`
       padding: 7px 4px;
     }
   }
+
+  .sinoui-auto-complete--dense .sinoui-chip {
+    margin: 2px;
+    max-width: calc(100% - 4px);
+  }
+
+  .sinoui-auto-complete--dense.sinoui-text-input--outlined > .sinoui-base-input {
+    padding: 6px 9px;
+    padding-right: 56px;
+    
+
+    > .sinoui-base-input__input {
+      padding: 4px 4px 5px;
+      height: 19px;
+      min-height: 19px;
+    }
+  }
+
+  .sinoui-auto-complete--dense .sinoui-base-input > .sinoui-base-input__input{
+    padding: 4px 4px 5px;
+    height: 19px;
+    min-height: 19px;
+  }
+
+  .sinoui-auto-complete--dense.sinoui-text-input--filled > .sinoui-base-input {
+    padding: 19px 56px 1px 8px;
+
+    > .sinoui-base-input__input {
+      padding: 4px 4px 5px;
+      height: 19px;
+      min-height: 19px;
+    }
+  }
 `;
 
 export default AutoCompleteStyle;
