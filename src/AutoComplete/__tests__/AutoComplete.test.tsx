@@ -1213,6 +1213,19 @@ it('没有聚焦选项时，按下Enter键，无副作用', () => {
 });
 
 describe('multiple', () => {
+  const renderTags = ({ tags, getTagProps }: RenderTagsProps) =>
+    tags.map((tag, index) => {
+      const { onDelete, ...rest } = getTagProps(index);
+      return (
+        <div key={tag} {...rest} data-testid="tag" className="sinoui-chip">
+          {tag}
+          <button type="button" data-testid="remove-tag" onClick={onDelete}>
+            删除
+          </button>
+        </div>
+      );
+    });
+
   it('展现多个选项', () => {
     const renderInput = (props: any) => (
       <TextInput {...props} data-testid="text-input" />
@@ -1260,8 +1273,6 @@ describe('multiple', () => {
     const renderInput = (props: any) => (
       <TextInput {...props} data-testid="text-input" />
     );
-    const renderTags = ({ tags }: RenderTagsProps) =>
-      tags.map((tag) => <div data-testid="tag" key={tag} />);
     const { getAllByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
         <AutoComplete
@@ -1461,18 +1472,6 @@ describe('multiple', () => {
     const renderInput = (props: any) => (
       <TextInput {...props} data-testid="text-input" />
     );
-    const renderTags = ({ tags, getTagProps }: RenderTagsProps) =>
-      tags.map((tag, index) => {
-        const { onDelete } = getTagProps(index);
-        return (
-          <div key={tag}>
-            {tag}
-            <button type="button" data-testid="remove-tag" onClick={onDelete}>
-              删除
-            </button>
-          </div>
-        );
-      });
     const onChange = jest.fn();
     const { getAllByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
@@ -1501,18 +1500,6 @@ describe('multiple', () => {
     const renderInput = (props: any) => (
       <TextInput {...props} data-testid="text-input" />
     );
-    const renderTags = ({ tags, getTagProps }: RenderTagsProps) =>
-      tags.map((tag, index) => {
-        const { onDelete, variant, ...rest } = getTagProps(index);
-        return (
-          <div key={tag} {...rest}>
-            {tag}
-            <button type="button" data-testid="remove-tag" onClick={onDelete}>
-              删除
-            </button>
-          </div>
-        );
-      });
     const onChange = jest.fn();
     const { getAllByTestId, getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
@@ -1594,6 +1581,43 @@ describe('multiple', () => {
     expect(onChange).toBeCalledWith(
       [options[0]],
       AutoCompleteChangeReason.removeOption,
+    );
+  });
+
+  it('输入框有点时，按下向左键，焦点转移到最后一个选项标签中', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          value={[options[0], options[2]]}
+          renderInput={renderInput}
+          onChange={onChange}
+          renderTags={renderTags}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = getByTestId('text-input');
+    const input = textInput.querySelector('input')!;
+    act(() => {
+      // 聚焦输入框
+      fireEvent.click(input);
+      fireEvent.focus(input);
+    });
+
+    act(() => {
+      fireEvent.keyDown(textInput, { key: 'ArrowLeft' });
+    });
+
+    expect(document.activeElement).toBe(
+      textInput.querySelector('[data-tag-index="1"]'),
     );
   });
 });
