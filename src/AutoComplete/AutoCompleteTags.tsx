@@ -56,9 +56,19 @@ export default function AutoCompleteTags(props: Props) {
 
   const handleClickTag = (index: number) => () => onClickTag(index);
 
+  const handleKeyDown = (index: number) => (
+    event: React.KeyboardEvent<HTMLDivElement>,
+  ) => {
+    const { key, target } = event;
+    if (key === 'Backspace' && document.activeElement === target) {
+      onRemoveTag(index);
+    }
+  };
+
   const getTagProps = (index: number) => ({
     onClick: handleClickTag(index),
     onDelete: handleDeleteTag(index),
+    onKeyDown: handleKeyDown(index),
     label: tags[index],
     'data-tag-index': index,
     tabIndex: '-1',

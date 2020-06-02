@@ -1643,6 +1643,50 @@ describe('multiple', () => {
       textInput.querySelector('[data-tag-index="1"]'),
     );
   });
+
+  it('在聚焦的选项标签上按下退格键，删除此选项', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          value={[options[0], options[2]]}
+          renderInput={renderInput}
+          onChange={onChange}
+          renderTags={renderTags}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = getByTestId('text-input');
+    const input = textInput.querySelector('input')!;
+    act(() => {
+      // 聚焦输入框
+      fireEvent.click(input);
+      fireEvent.focus(input);
+    });
+
+    act(() => {
+      fireEvent.keyDown(textInput, { key: 'ArrowLeft' });
+    });
+
+    act(() => {
+      fireEvent.keyDown(textInput.querySelector('[data-tag-index="1"]')!, {
+        key: 'Backspace',
+      });
+    });
+
+    expect(onChange).toBeCalledWith(
+      [options[0]],
+      AutoCompleteChangeReason.removeOption,
+    );
+  });
 });
 
 describe('freeSolo模式', () => {
