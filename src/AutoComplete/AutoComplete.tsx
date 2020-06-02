@@ -144,6 +144,10 @@ interface Props {
    * 如果设置为`true`,则为密集模式
    */
   dense?: boolean;
+  /**
+   * 设置多选时显示的标签数
+   */
+  limitTags?: number;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -245,6 +249,7 @@ export default function AutoComplete(props: Props) {
     openOnClickTags = true,
     renderTags,
     dense,
+    limitTags,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -538,6 +543,36 @@ export default function AutoComplete(props: Props) {
     </PopupIndicatorWrapper>
   );
 
+  const renderStartAdornment = () => {
+    const tags = freeSolo ? value : value.map(getOptionLabel);
+    if (limitTags && tags.length > limitTags && !focused) {
+      return (
+        <>
+          <AutoCompleteTags
+            tags={tags.slice(0, limitTags)}
+            onRemoveTag={handleRemoveTag}
+            onClickTag={handleClickTag}
+            variant={tagVariant}
+            renderTags={renderTags}
+            dense={dense}
+          />
+          <span>+{tags.length - limitTags}</span>
+        </>
+      );
+    }
+
+    return (
+      <AutoCompleteTags
+        tags={freeSolo ? value : value.map(getOptionLabel)}
+        onRemoveTag={handleRemoveTag}
+        onClickTag={handleClickTag}
+        variant={tagVariant}
+        renderTags={renderTags}
+        dense={dense}
+      />
+    );
+  };
+
   const selectedOptions = useMemo(() => {
     if (value) {
       return freeSolo ? [value] : [getOptionLabel(value)];
@@ -578,17 +613,7 @@ export default function AutoComplete(props: Props) {
           : forcePopupIcon !== false && renderPopupIndicator()}
       </InputAdornment>
     ),
-    startAdornment:
-      multiple && value ? (
-        <AutoCompleteTags
-          tags={freeSolo ? value : value.map(getOptionLabel)}
-          onRemoveTag={handleRemoveTag}
-          onClickTag={handleClickTag}
-          variant={tagVariant}
-          renderTags={renderTags}
-          dense={dense}
-        />
-      ) : null,
+    startAdornment: multiple && value ? renderStartAdornment() : null,
   });
 
   const renderOptions = () => (
