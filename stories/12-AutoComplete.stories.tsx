@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { OptionList } from '@sinoui/core/AutoComplete';
 import AutoComplete from '@sinoui/core/AutoComplete/AutoComplete';
 import TextInput from '@sinoui/core/TextInput';
+import Chip from '@sinoui/core/Chip';
 import StoryLayout from './StoryLayout';
 import OptionListWithReactWindow from './AutoCompleteDemo/OptionListWithReactWindow';
 
@@ -301,5 +302,53 @@ export const FreeSoloMultiple = () => (
       variant="outlined"
       freeSolo
     />
+  </StoryLayout>
+);
+
+function FixOptionsAutoCompleteDemo() {
+  const fixOptions = [simpleOptions[6]];
+  const [value, setValue] = useState([...fixOptions, simpleOptions[13]]);
+  return (
+    <AutoComplete
+      value={value}
+      renderInput={(props) => (
+        <TextInput
+          {...props}
+          label="Fixed tags"
+          placeholder="请输入选项"
+          variant="outlined"
+          style={{ width: 500, margin: 8 }}
+        />
+      )}
+      options={simpleOptions}
+      getOptionLabel={(option) => option.title}
+      onChange={(_value) =>
+        setValue([
+          ...fixOptions,
+          ..._value.filter(
+            (valueData: any) => fixOptions.indexOf(valueData) === -1,
+          ),
+        ])
+      }
+      multiple
+      renderTags={(tagsProps) => {
+        const { tags, getTagProps } = tagsProps;
+        return tags.map((tag, index) => (
+          <Chip
+            key={tag}
+            {...getTagProps(index)}
+            disabled={
+              fixOptions.findIndex((option) => option.title === tag) !== -1
+            }
+          />
+        ));
+      }}
+    />
+  );
+}
+
+export const 固定选项 = () => (
+  <StoryLayout>
+    <FixOptionsAutoCompleteDemo />
   </StoryLayout>
 );
