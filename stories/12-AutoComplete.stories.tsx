@@ -205,9 +205,14 @@ const MultipleAutoCompleteDemo = ({
   placeholder,
   label,
   variant,
+  freeSolo,
   ...rest
 }: any) => {
-  const [value, setValue] = useState([simpleOptions[3], simpleOptions[2]]);
+  const [value, setValue] = useState(
+    freeSolo
+      ? [simpleOptions[3].title, simpleOptions[2].title]
+      : [simpleOptions[3], simpleOptions[2]],
+  );
 
   return (
     <AutoComplete
@@ -226,6 +231,7 @@ const MultipleAutoCompleteDemo = ({
       onChange={(_value) => setValue(_value)}
       multiple
       tagVariant={variant === 'filled' ? 'outlined' : 'standard'}
+      freeSolo={freeSolo}
       {...rest}
     />
   );
@@ -286,3 +292,14 @@ export const DenseMultiple = () => (
 );
 
 export const FreeSolo = () => <AutoCompleteDemo freeSolo label="单选" />;
+
+export const FreeSoloMultiple = () => (
+  <StoryLayout>
+    <MultipleAutoCompleteDemo
+      placeholder="选择选项"
+      label="FreeSolo Multiple"
+      variant="outlined"
+      freeSolo
+    />
+  </StoryLayout>
+);

@@ -1976,4 +1976,70 @@ describe('freeSolo模式', () => {
 
     expect(input).toHaveValue('item 123');
   });
+
+  it('freeSolo的多选模式', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          freeSolo
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          value={[options[0].title, options[2].title]}
+          renderInput={renderInput}
+        />
+      </ThemeProvider>,
+    );
+
+    const tags = getByTestId('text-input').querySelectorAll('.sinoui-chip');
+    expect(tags.length).toBe(2);
+    expect(tags[0]).toHaveTextContent('item 1');
+    expect(tags[1]).toHaveTextContent('item 3');
+  });
+
+  it('freeSolo的多选模式下，失去焦点时，onChange被调用', () => {
+    const onChange = jest.fn();
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          freeSolo
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          value={[options[0].title, options[2].title]}
+          renderInput={renderInput}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    const input = getByTestId('text-input').querySelector('input')!;
+
+    act(() => {
+      fireEvent.change(input, {
+        target: {
+          value: 'item 123',
+        },
+      });
+    });
+
+    act(() => {
+      fireEvent.blur(input);
+    });
+
+    jest.runAllTimers();
+    expect(onChange).toBeCalledWith(
+      ['item 1', 'item 3', 'item 123'],
+      AutoCompleteChangeReason.blur,
+    );
+    expect(input).toHaveValue('');
+  });
 });

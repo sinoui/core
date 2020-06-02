@@ -306,15 +306,27 @@ export default function AutoComplete(props: Props) {
     if (multiple) {
       setInputValue('');
       if (onChange) {
-        const idx = (value ?? []).indexOf(item);
-        onChange(
-          idx === -1
-            ? [...(value ?? []), item]
-            : value.filter((option: any) => option !== item),
-          idx === -1
-            ? AutoCompleteChangeReason.createOption
-            : AutoCompleteChangeReason.removeOption,
-        );
+        if (freeSolo) {
+          const idx = (value ?? []).indexOf(getOptionLabel(item));
+          onChange(
+            idx === -1
+              ? [...(value ?? []), getOptionLabel(item)]
+              : value.filter((option: any) => option !== getOptionLabel(item)),
+            idx === -1
+              ? AutoCompleteChangeReason.createOption
+              : AutoCompleteChangeReason.removeOption,
+          );
+        } else {
+          const idx = (value ?? []).indexOf(item);
+          onChange(
+            idx === -1
+              ? [...(value ?? []), item]
+              : value.filter((option: any) => option !== item),
+            idx === -1
+              ? AutoCompleteChangeReason.createOption
+              : AutoCompleteChangeReason.removeOption,
+          );
+        }
       }
     } else {
       setInputValue(getOptionLabel(item));
@@ -382,8 +394,17 @@ export default function AutoComplete(props: Props) {
     setFocused(false);
 
     if (freeSolo && onChange) {
-      onChange(inputValue, AutoCompleteChangeReason.blur);
-      setFocusedOption(inputValue);
+      if (multiple) {
+        onChange(
+          [...value, inputValue].filter(Boolean),
+          AutoCompleteChangeReason.blur,
+        );
+        setInputValue('');
+        setFocusedOption(value[value.length - 1]);
+      } else {
+        onChange(inputValue, AutoCompleteChangeReason.blur);
+        setFocusedOption(inputValue);
+      }
     }
   };
 
@@ -550,7 +571,7 @@ export default function AutoComplete(props: Props) {
     startAdornment:
       multiple && value ? (
         <AutoCompleteTags
-          tags={value.map(getOptionLabel)}
+          tags={freeSolo ? value : value.map(getOptionLabel)}
           onRemoveTag={handleRemoveTag}
           onClickTag={handleClickTag}
           variant={tagVariant}
