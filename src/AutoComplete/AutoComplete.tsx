@@ -262,10 +262,15 @@ export default function AutoComplete(props: Props) {
 
   const defaultFocusedOption = useMemo(() => {
     if (value) {
+      if (multiple) {
+        return freeSolo
+          ? value[value.length - 1]
+          : getOptionLabel(value[value.length - 1]);
+      }
       return freeSolo ? value : getOptionLabel(value);
     }
     return '';
-  }, [freeSolo, getOptionLabel, value]);
+  }, [freeSolo, getOptionLabel, multiple, value]);
 
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -322,6 +327,7 @@ export default function AutoComplete(props: Props) {
       if (onChange) {
         if (freeSolo) {
           const idx = (value ?? []).indexOf(getOptionLabel(item));
+          setFocusedOption(getOptionLabel(item));
           onChange(
             idx === -1
               ? [...(value ?? []), getOptionLabel(item)]
@@ -332,6 +338,7 @@ export default function AutoComplete(props: Props) {
           );
         } else {
           const idx = (value ?? []).indexOf(item);
+          setFocusedOption(getOptionLabel(item));
           onChange(
             idx === -1
               ? [...(value ?? []), item]
@@ -407,7 +414,14 @@ export default function AutoComplete(props: Props) {
     setOpen(false);
     if (!freeSolo) {
       setInputValue(value ? getOptionLabel(value) : '');
-      setFocusedOption(value ? getOptionLabel(value) : '');
+      setFocusedOption(
+        // eslint-disable-next-line no-nested-ternary
+        value
+          ? multiple
+            ? getOptionLabel(value[value.length - 1])
+            : getOptionLabel(value)
+          : '',
+      );
     }
     setFocused(false);
 
