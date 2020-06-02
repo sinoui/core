@@ -51,6 +51,10 @@ const outlinedStyle = css`
   border: 1px solid rgba(0, 0, 0, 0.23);
   background-color: transparent;
 
+  :focus {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
   > .sinoui-chip__delete {
     color: rgba(0, 0, 0, 0.42);
   }
@@ -69,8 +73,14 @@ const chipStyle = css<ChipLayoutProps>`
   ${({ theme }) => theme.typography.body2};
   color: ${({ theme, disabled }) =>
     disabled ? theme.palette.text.disabled : theme.palette.text.primary};
-  ${({ $variant }) => $variant === 'outlined' && outlinedStyle};
   ${({ disabled }) => disabled && `opacity:0.5`};
+
+  :focus {
+    outline: none;
+    background-color: rgb(206, 206, 206);
+  }
+
+  ${({ $variant }) => $variant === 'outlined' && outlinedStyle};
 `;
 
 const denseChipStyle = css`
@@ -83,7 +93,7 @@ const hoverStyle = css`
 
 const ChipLayout = styled.div<ChipLayoutProps>`
   ${chipStyle};
-  ${({ dense }) => dense && denseChipStyle}
+  ${({ dense }) => dense && denseChipStyle};
 `;
 
 const ClickableChipLayout = styled(BaseButton)<ChipLayoutProps>`

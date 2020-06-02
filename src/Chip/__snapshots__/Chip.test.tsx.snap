@@ -46,6 +46,11 @@ Array [
   opacity: 0.5;
 }
 
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -137,9 +142,18 @@ Array [
   -ms-letter-spacing: 0.01071em;
   letter-spacing: 0.01071em;
   color: rgba(0,0,0,0.38);
+  opacity: 0.5;
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
-  opacity: 0.5;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
 }
 
 .c0 > .sinoui-chip__delete {
@@ -273,6 +287,11 @@ Array [
   color: rgba(0,0,0,0.87);
 }
 
+.c1:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
 .c1:hover {
   background-color: rgba(0,0,0,0.26);
 }
@@ -376,6 +395,15 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+}
+
+.c1:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c1:focus {
+  background-color: rgba(0,0,0,0.04);
 }
 
 .c1 > .sinoui-chip__delete {
@@ -496,6 +524,11 @@ Array [
   -ms-letter-spacing: 0.01071em;
   letter-spacing: 0.01071em;
   color: rgba(0,0,0,0.87);
+}
+
+.c1:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
 }
 
 .c1:hover {
@@ -646,6 +679,15 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+}
+
+.c1:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c1:focus {
+  background-color: rgba(0,0,0,0.04);
 }
 
 .c1 > .sinoui-chip__delete {
@@ -738,6 +780,11 @@ Array [
   color: rgba(0,0,0,0.87);
 }
 
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -779,6 +826,15 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
 }
 
 .c0 > .sinoui-chip__delete {
@@ -832,6 +888,11 @@ Array [
   height: 24px;
 }
 
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -878,6 +939,15 @@ Array [
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
   height: 24px;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
 }
 
 .c0 > .sinoui-chip__delete {
@@ -945,6 +1015,11 @@ Array [
   letter-spacing: 0.01071em;
   color: rgba(0,0,0,0.87);
   height: 24px;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
 }
 
 .c1 {
@@ -1042,6 +1117,11 @@ Array [
   color: rgba(0,0,0,0.87);
 }
 
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1132,6 +1212,15 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
 }
 
 .c0 > .sinoui-chip__delete {
