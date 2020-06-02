@@ -62,6 +62,7 @@ Array [
 }
 
 <div
+    aria-disabled="true"
     className="c0 sinoui-chip sinoui-chip--disabled"
     disabled={true}
   >
@@ -147,6 +148,7 @@ Array [
 }
 
 <div
+    aria-disabled="true"
     className="c0 sinoui-chip sinoui-chip--disabled sinoui-chip--outlined"
     disabled={true}
   >

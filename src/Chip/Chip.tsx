@@ -151,6 +151,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
       $variant={variant}
       disabled={disabled}
       dense={dense}
+      aria-disabled={disabled ? 'true' : undefined}
       {...rest}
     >
       <ChipContent className="sinoui-chip__content">{label}</ChipContent>
