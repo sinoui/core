@@ -463,6 +463,16 @@ export default function AutoComplete(props: Props) {
     ) {
       moveFocused(textInputRef.current, key === 'ArrowLeft' ? -1 : 1);
     }
+
+    const input = inputRef.current;
+    if (
+      multiple &&
+      !['ArrowLeft', 'ArrowRight'].includes(key) &&
+      input &&
+      document.activeElement !== input
+    ) {
+      input.focus();
+    }
   };
 
   /**

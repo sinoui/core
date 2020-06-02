@@ -1687,6 +1687,45 @@ describe('multiple', () => {
       AutoCompleteChangeReason.removeOption,
     );
   });
+
+  it('焦点在选项标签上时，按下任意键，输入框获取焦点', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          value={[options[0], options[2]]}
+          renderInput={renderInput}
+          onChange={onChange}
+          renderTags={renderTags}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = getByTestId('text-input');
+    const input = textInput.querySelector('input')!;
+    act(() => {
+      // 聚焦输入框
+      fireEvent.click(input);
+      fireEvent.focus(input);
+    });
+
+    act(() => {
+      fireEvent.keyDown(textInput, { key: 'ArrowLeft' });
+    });
+
+    act(() => {
+      fireEvent.keyDown(textInput, { key: 'A' });
+    });
+
+    expect(document.activeElement).toBe(input);
+  });
 });
 
 describe('freeSolo模式', () => {
