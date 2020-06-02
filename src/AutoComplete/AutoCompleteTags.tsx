@@ -24,6 +24,10 @@ interface Props {
    */
   variant?: 'standard' | 'outlined';
   renderTags?: (props: RenderTagsProps) => React.ReactNode;
+  /**
+   * 如果设置为`true`，则为密集模式
+   */
+  dense?: boolean;
 }
 
 const defaultRenderTags = (props: RenderTagsProps) => {

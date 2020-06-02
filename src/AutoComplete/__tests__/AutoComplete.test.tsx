@@ -1596,6 +1596,29 @@ describe('multiple', () => {
       AutoCompleteChangeReason.removeOption,
     );
   });
+
+  it('多选密集模式', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          dense
+          value={[options[0], options[2]]}
+          renderInput={renderInput}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(
+      container.querySelector('.sinoui-auto-complete--dense'),
+    ).toBeInTheDocument();
+  });
 });
 
 describe('freeSolo模式', () => {
