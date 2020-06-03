@@ -20,6 +20,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -74,6 +75,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c1 {
@@ -147,6 +152,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -206,6 +212,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c0:focus {
@@ -298,6 +308,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -351,6 +362,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c2 {
@@ -424,6 +439,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -482,6 +498,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c0:focus {
@@ -569,6 +589,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -621,7 +642,11 @@ Array [
 
 .c0:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #3f51b5;
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c2 {
@@ -696,6 +721,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -753,7 +779,11 @@ Array [
 
 .c0:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #3f51b5;
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c0:focus {
@@ -830,6 +860,7 @@ Array [
 exports[`镜像测试 前缀头像 1`] = `
 Array [
   .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -883,6 +914,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c2 {
@@ -974,6 +1009,7 @@ Array [
     </span>
   </div>,
   .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1032,6 +1068,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c0:focus {
@@ -1137,6 +1177,7 @@ Array [
     </span>
   </div>,
   .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1189,7 +1230,11 @@ Array [
 
 .c0:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #3f51b5;
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c2 {
@@ -1282,6 +1327,7 @@ Array [
     </span>
   </div>,
   .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1339,7 +1385,11 @@ Array [
 
 .c0:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #3f51b5;
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c0:focus {
@@ -1497,6 +1547,7 @@ Array [
 }
 
 .c1 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1552,8 +1603,12 @@ Array [
   background-color: rgb(206,206,206);
 }
 
+.c1:active {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
 .c1:hover {
-  background-color: rgba(0,0,0,0.26);
+  background-color: rgb(206,206,206);
 }
 
 .c2 {
@@ -1640,6 +1695,7 @@ Array [
 }
 
 .c1 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1698,6 +1754,10 @@ Array [
 .c1:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c1:active {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
 }
 
 .c1:focus {
@@ -1815,6 +1875,7 @@ Array [
 }
 
 .c1 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1870,8 +1931,12 @@ Array [
   background-color: rgb(206,206,206);
 }
 
+.c1:active {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
 .c1:hover {
-  background-color: rgba(0,0,0,0.26);
+  background-color: rgb(206,206,206);
 }
 
 .c2 {
@@ -1996,6 +2061,7 @@ Array [
 }
 
 .c1 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2054,6 +2120,10 @@ Array [
 .c1:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c1:active {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
 }
 
 .c1:focus {
@@ -2134,6 +2204,7 @@ Array [
 exports[`镜像测试 基本渲染 1`] = `
 Array [
   .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2189,6 +2260,10 @@ Array [
   background-color: rgb(206,206,206);
 }
 
+.c0:active {
+  box-shadow: none;
+}
+
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -2219,6 +2294,7 @@ Array [
     </span>
   </div>,
   .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2277,6 +2353,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c0:focus {
@@ -2328,6 +2408,7 @@ Array [
 exports[`镜像测试 密集模式 1`] = `
 Array [
   .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2384,6 +2465,10 @@ Array [
   background-color: rgb(206,206,206);
 }
 
+.c0:active {
+  box-shadow: none;
+}
+
 .c0 > .sinoui-svg-icon,
 .c0 > .sinoui-avatar {
   width: 18px;
@@ -2425,6 +2510,7 @@ Array [
     </span>
   </div>,
   .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2484,6 +2570,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c0:focus {
@@ -2558,6 +2648,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2612,6 +2703,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c0 > .sinoui-svg-icon,
@@ -2698,6 +2793,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2751,6 +2847,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c1 {
@@ -2821,6 +2921,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2879,6 +2980,10 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
 }
 
 .c0:focus {
@@ -2968,6 +3073,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3023,7 +3129,12 @@ Array [
   background-color: rgb(206,206,206);
 }
 
+.c0:active {
+  box-shadow: none;
+}
+
 .c2 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3076,10 +3187,15 @@ Array [
 
 .c2:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #3f51b5;
+}
+
+.c2:active {
+  box-shadow: none;
 }
 
 .c3 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3132,10 +3248,15 @@ Array [
 
 .c3:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #f50057;
+}
+
+.c3:active {
+  box-shadow: none;
 }
 
 .c4 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3188,10 +3309,15 @@ Array [
 
 .c4:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #4caf50;
+}
+
+.c4:active {
+  box-shadow: none;
 }
 
 .c5 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3244,10 +3370,15 @@ Array [
 
 .c5:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #ff9800;
+}
+
+.c5:active {
+  box-shadow: none;
 }
 
 .c6 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3300,10 +3431,15 @@ Array [
 
 .c6:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #2196f3;
+}
+
+.c6:active {
+  box-shadow: none;
 }
 
 .c7 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3356,10 +3492,15 @@ Array [
 
 .c7:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #f44336;
+}
+
+.c7:active {
+  box-shadow: none;
 }
 
 .c8 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3416,6 +3557,72 @@ Array [
   background-color: rgb(206,206,206);
 }
 
+.c8:active {
+  box-shadow: none;
+}
+
+.c11 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.12);
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  opacity: 0.5;
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c11 > .sinoui-avatar {
+  width: 24px;
+  height: 24px;
+  margin-left: -8px;
+  margin-right: 8px;
+}
+
+.c11 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
+.c11 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: currentColor;
+}
+
+.c11 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c11:focus {
+  outline: none;
+  background-color: #3f51b5;
+}
+
+.c11:active {
+  box-shadow: none;
+}
+
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -3430,7 +3637,7 @@ Array [
   transition: color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
-.c11 {
+.c12 {
   height: 20px;
   width: 20px;
   cursor: default;
@@ -3484,6 +3691,20 @@ Array [
   .c8 > .sinoui-chip__delete:hover {
     color: currentColor;
   }
+}
+
+@media (hover:none) {
+  .c11 > .sinoui-chip__delete:hover {
+    color: currentColor;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
 }
 
 @media (hover:none) {
@@ -3656,7 +3877,7 @@ Array [
     </div>
     <div
       aria-disabled="true"
-      className="c8 sinoui-chip sinoui-chip--disabled"
+      className="c11 sinoui-chip sinoui-chip--disabled"
       color="primary"
       disabled={true}
     >
@@ -3667,7 +3888,7 @@ Array [
       </span>
       <svg
         aria-hidden="true"
-        className="c9 c11 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c11 sinoui-chip__delete"
+        className="c9 c12 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c12 sinoui-chip__delete"
         disabled={true}
         focusable="false"
         onClick={[Function]}
@@ -3699,6 +3920,7 @@ Array [
 }
 
 .c0 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3759,6 +3981,10 @@ Array [
   background-color: rgb(206,206,206);
 }
 
+.c0:active {
+  box-shadow: none;
+}
+
 .c0:focus {
   background-color: rgba(0,0,0,0.04);
 }
@@ -3772,6 +3998,7 @@ Array [
 }
 
 .c2 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3829,7 +4056,11 @@ Array [
 
 .c2:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #3f51b5;
+}
+
+.c2:active {
+  box-shadow: none;
 }
 
 .c2:focus {
@@ -3845,6 +4076,7 @@ Array [
 }
 
 .c3 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3902,7 +4134,11 @@ Array [
 
 .c3:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #f50057;
+}
+
+.c3:active {
+  box-shadow: none;
 }
 
 .c3:focus {
@@ -3918,6 +4154,7 @@ Array [
 }
 
 .c4 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -3975,7 +4212,11 @@ Array [
 
 .c4:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #4caf50;
+}
+
+.c4:active {
+  box-shadow: none;
 }
 
 .c4:focus {
@@ -3991,6 +4232,7 @@ Array [
 }
 
 .c5 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -4048,7 +4290,11 @@ Array [
 
 .c5:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #ff9800;
+}
+
+.c5:active {
+  box-shadow: none;
 }
 
 .c5:focus {
@@ -4064,6 +4310,7 @@ Array [
 }
 
 .c6 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -4121,7 +4368,11 @@ Array [
 
 .c6:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #2196f3;
+}
+
+.c6:active {
+  box-shadow: none;
 }
 
 .c6:focus {
@@ -4137,6 +4388,7 @@ Array [
 }
 
 .c7 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -4194,7 +4446,11 @@ Array [
 
 .c7:focus {
   outline: none;
-  background-color: rgb(206,206,206);
+  background-color: #f44336;
+}
+
+.c7:active {
+  box-shadow: none;
 }
 
 .c7:focus {
@@ -4210,6 +4466,7 @@ Array [
 }
 
 .c8 {
+  position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -4271,6 +4528,10 @@ Array [
   background-color: rgb(206,206,206);
 }
 
+.c8:active {
+  box-shadow: none;
+}
+
 .c8:focus {
   background-color: rgba(0,0,0,0.04);
 }
@@ -4280,6 +4541,85 @@ Array [
 }
 
 .c8 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c11 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.12);
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  opacity: 0.5;
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  border: 1px solid rgba(0,0,0,0.38);
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c11 > .sinoui-avatar {
+  width: 24px;
+  height: 24px;
+  margin-left: -8px;
+  margin-right: 8px;
+}
+
+.c11 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
+.c11 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: currentColor;
+}
+
+.c11 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c11:focus {
+  outline: none;
+  background-color: #3f51b5;
+}
+
+.c11:active {
+  box-shadow: none;
+}
+
+.c11:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c11 > .sinoui-chip__delete {
+  color: currentColor;
+}
+
+.c11 > .sinoui-chip__delete:hover {
   color: currentColor;
 }
 
@@ -4297,12 +4637,16 @@ Array [
   transition: color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
-.c11 {
+.c12 {
   height: 20px;
   width: 20px;
   cursor: default;
   -webkit-transition: color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
   transition: color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+@media (hover:none) {
+
 }
 
 @media (hover:none) {
@@ -4433,6 +4777,18 @@ Array [
   }
 }
 
+@media (hover:none) {
+  .c11 > .sinoui-chip__delete:hover {
+    color: currentColor;
+  }
+}
+
+@media (hover:none) {
+  .c11 > .sinoui-chip__delete:hover {
+    color: currentColor;
+  }
+}
+
 <div>
     <div
       className="c0 sinoui-chip sinoui-chip--outlined"
@@ -4539,7 +4895,7 @@ Array [
     </div>
     <div
       aria-disabled="true"
-      className="c8 sinoui-chip sinoui-chip--disabled sinoui-chip--outlined"
+      className="c11 sinoui-chip sinoui-chip--disabled sinoui-chip--outlined"
       color="primary"
       disabled={true}
     >
@@ -4550,7 +4906,7 @@ Array [
       </span>
       <svg
         aria-hidden="true"
-        className="c9 c11 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c11 sinoui-chip__delete"
+        className="c9 c12 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c12 sinoui-chip__delete"
         disabled={true}
         focusable="false"
         onClick={[Function]}
@@ -4563,6 +4919,1000 @@ Array [
         />
       </svg>
     </div>
+  </div>,
+]
+`;
+
+exports[`镜像测试 选中状态 1`] = `
+Array [
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-avatar {
+  width: 24px;
+  height: 24px;
+  margin-left: -8px;
+  margin-right: 8px;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
+}
+
+.c0 .sinoui-svg-icon:first-child {
+  opacity: 0.2;
+}
+
+.c0 > .sinoui-chip--selected__icon {
+  position: absolute;
+  left: 12px;
+  opacity: 1;
+  color: rgba(0,0,0,0.4);
+}
+
+.c0.c0 > .sinoui-chip--selected__done {
+  opacity: 1;
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<div
+    className="c0 sinoui-chip"
+    selected={true}
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-chip--selected__icon sinoui-svg-icon sinoui-chip--selected__icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
+  </div>,
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-avatar {
+  width: 24px;
+  height: 24px;
+  margin-left: -8px;
+  margin-right: 8px;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
+}
+
+.c0 .sinoui-svg-icon:first-child {
+  opacity: 0.2;
+}
+
+.c0 > .sinoui-chip--selected__icon {
+  position: absolute;
+  left: 12px;
+  opacity: 1;
+  color: rgba(0,0,0,0.4);
+}
+
+.c0.c0 > .sinoui-chip--selected__done {
+  opacity: 1;
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<div
+    className="c0 sinoui-chip"
+    selected={true}
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-chip--selected__done sinoui-svg-icon sinoui-chip--selected__done"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
+  </div>,
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  border: 1px solid rgba(0,0,0,0.23);
+  background-color: transparent;
+  color: rgba(0,0,0,0.87);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-avatar {
+  width: 24px;
+  height: 24px;
+  margin-left: -8px;
+  margin-right: 8px;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0 .sinoui-svg-icon:first-child {
+  opacity: 0.2;
+}
+
+.c0 > .sinoui-chip--selected__icon {
+  position: absolute;
+  left: 12px;
+  opacity: 1;
+  color: rgba(0,0,0,0.4);
+}
+
+.c0.c0 > .sinoui-chip--selected__done {
+  opacity: 1;
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<div
+    className="c0 sinoui-chip sinoui-chip--outlined"
+    selected={true}
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-chip--selected__icon sinoui-svg-icon sinoui-chip--selected__icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
+  </div>,
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  border: 1px solid rgba(0,0,0,0.23);
+  background-color: transparent;
+  color: rgba(0,0,0,0.87);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-avatar {
+  width: 24px;
+  height: 24px;
+  margin-left: -8px;
+  margin-right: 8px;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:active {
+  box-shadow: none;
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0 .sinoui-svg-icon:first-child {
+  opacity: 0.2;
+}
+
+.c0 > .sinoui-chip--selected__icon {
+  position: absolute;
+  left: 12px;
+  opacity: 1;
+  color: rgba(0,0,0,0.4);
+}
+
+.c0.c0 > .sinoui-chip--selected__done {
+  opacity: 1;
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<div
+    className="c0 sinoui-chip sinoui-chip--outlined"
+    selected={true}
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-chip--selected__done sinoui-svg-icon sinoui-chip--selected__done"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
+  </div>,
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #3f51b5;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-avatar {
+  width: 24px;
+  height: 24px;
+  margin-left: -8px;
+  margin-right: 8px;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(255,255,255,0.7);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: #3f51b5;
+}
+
+.c0:active {
+  box-shadow: none;
+}
+
+.c0 .sinoui-svg-icon:first-child {
+  opacity: 0.2;
+}
+
+.c0 > .sinoui-chip--selected__icon {
+  position: absolute;
+  left: 12px;
+  opacity: 1;
+  color: currentColor;
+}
+
+.c0.c0 > .sinoui-chip--selected__done {
+  opacity: 1;
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<div
+    className="c0 sinoui-chip"
+    color="primary"
+    selected={true}
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-chip--selected__icon sinoui-svg-icon sinoui-chip--selected__icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
+  </div>,
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #3f51b5;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  border: 1px solid #3f51b5;
+  background-color: transparent;
+  color: #3f51b5;
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-avatar {
+  width: 24px;
+  height: 24px;
+  margin-left: -8px;
+  margin-right: 8px;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(255,255,255,0.7);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: #3f51b5;
+}
+
+.c0:active {
+  box-shadow: none;
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(63,81,181,0.7);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c0 .sinoui-svg-icon:first-child {
+  opacity: 0.2;
+}
+
+.c0 > .sinoui-chip--selected__icon {
+  position: absolute;
+  left: 12px;
+  opacity: 1;
+  color: currentColor;
+}
+
+.c0.c0 > .sinoui-chip--selected__done {
+  opacity: 1;
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(63,81,181,0.7);
+  }
+}
+
+<div
+    className="c0 sinoui-chip sinoui-chip--outlined"
+    color="primary"
+    selected={true}
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-chip--selected__icon sinoui-svg-icon sinoui-chip--selected__icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
   </div>,
 ]
 `;

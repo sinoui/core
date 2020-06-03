@@ -227,6 +227,31 @@ describe('镜像测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('选中状态', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <>
+            <Chip label="文本" icon={<Cancel />} selected />
+            <Chip label="文本" selected />
+            <Chip label="文本" variant="outlined" icon={<Cancel />} selected />
+            <Chip label="文本" variant="outlined" selected />
+            <Chip label="文本" icon={<Cancel />} color="primary" selected />
+            <Chip
+              label="文本"
+              variant="outlined"
+              icon={<Cancel />}
+              color="primary"
+              selected
+            />
+          </>
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('验收测试', () => {
@@ -350,4 +375,24 @@ it('avatar和icon同时存在时，渲染avatar', () => {
   const icons = getByTestId('chip').querySelectorAll('.sinoui-svg-icon');
   expect(avatar).toBeInTheDocument();
   expect(icons).toHaveLength(0);
+});
+
+it('选中状态', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Chip
+        label="文本"
+        data-testid="chip"
+        selected
+        icon={<SvgIcon>M</SvgIcon>}
+        avatar={<Avatar>M</Avatar>}
+      />
+    </ThemeProvider>,
+  );
+
+  const selectedIcon = getByTestId('chip').querySelector(
+    '.sinoui-chip--selected__icon',
+  );
+
+  expect(selectedIcon).toBeInTheDocument();
 });

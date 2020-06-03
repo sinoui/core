@@ -8,12 +8,15 @@ import OverridableComponent from '../OverridableComponent';
 import bemClassNames from '../utils/bemClassNames';
 import singleLineTextCss from '../utils/singleLineTextCss';
 import getColorFromTheme from '../utils/getColorFromTheme';
+import CheckCircle from '../svg-icons/CheckCircle';
+import Done from '../svg-icons/Done';
 import {
   BASIC_CHIP_BG,
   BORDER_COLOR,
   DELETE_ICON_HOVER_COLOR,
   DELETE_ICON_COLOR,
   LEADING_ICON_COLOR,
+  BASIC_CHIP_HOVER_BG,
 } from './contains';
 
 export interface Props {
@@ -61,6 +64,10 @@ export interface Props {
    * 前缀头像
    */
   avatar?: React.ReactNode;
+  /**
+   * 选中状态，如果为`true`，则为选中
+   */
+  selected?: boolean;
 }
 
 export interface ChipLayoutProps {
@@ -68,6 +75,8 @@ export interface ChipLayoutProps {
   disabled?: boolean;
   dense?: boolean;
   color?: string;
+  selected?: boolean;
+  clickable?: boolean;
 }
 
 /**
@@ -166,6 +175,7 @@ const outlinedStyle = css<ChipLayoutProps>`
 `;
 
 const chipStyle = css<ChipLayoutProps>`
+  position: relative;
   display: inline-flex;
   align-items: center;
   height: 32px;
@@ -226,7 +236,14 @@ const chipStyle = css<ChipLayoutProps>`
 
   :focus {
     outline: none;
-    background-color: rgb(206, 206, 206);
+    background-color: ${({ theme, color }) =>
+      color
+        ? getColorFromTheme(theme, color)
+        : BASIC_CHIP_HOVER_BG[theme.palette.type]};
+  }
+
+  :active {
+    box-shadow: ${({ theme, clickable }) => theme.shadows[clickable ? 1 : 0]};
   }
 
   ${({ $variant }) => $variant === 'outlined' && outlinedStyle};
@@ -247,17 +264,43 @@ const denseChipStyle = css`
   }
 `;
 
-const hoverStyle = css`
-  background-color: rgba(0, 0, 0, 0.26);
+const hoverStyle = css<ChipLayoutProps>`
+  background-color: ${({ theme, color }) =>
+    color
+      ? opacify(-0.2, getColorFromTheme(theme, color))
+      : BASIC_CHIP_HOVER_BG[theme.palette.type]};
+`;
+
+const selectedStyle = css<ChipLayoutProps>`
+  .sinoui-svg-icon:first-child {
+    opacity: 0.2;
+  }
+
+  > .sinoui-chip--selected__icon {
+    position: absolute;
+    left: 12px;
+    opacity: 1;
+    color: ${({ theme, disabled, color }) =>
+      getDeleteIconHoverColor(theme, disabled, color)};
+  }
+
+  && {
+    > .sinoui-chip--selected__done {
+      opacity: 1;
+    }
+  }
 `;
 
 const ChipLayout = styled.div<ChipLayoutProps>`
   ${chipStyle};
   ${({ dense }) => dense && denseChipStyle};
+  ${({ selected }) => selected && selectedStyle};
 `;
 
 const ClickableChipLayout = styled(BaseButton)<ChipLayoutProps>`
   ${chipStyle};
+  ${({ selected }) => selected && selectedStyle};
+
   &:hover {
     ${({ $variant }) => $variant !== 'outlined' && hoverStyle};
   }
@@ -294,6 +337,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
     dense,
     icon,
     avatar,
+    selected,
     ...rest
   } = props;
 
@@ -310,6 +354,16 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
     }
   };
 
+  const renderSelectedIcon = () => {
+    if (selected) {
+      if (avatar || icon) {
+        return <CheckCircle className="sinoui-chip--selected__icon" />;
+      }
+      return <Done className="sinoui-chip--selected__done" />;
+    }
+    return null;
+  };
+
   return (
     <Comp
       ref={ref}
@@ -322,9 +376,12 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
       disabled={disabled}
       dense={dense}
       aria-disabled={disabled ? 'true' : undefined}
+      selected={selected}
+      clickable={clickable}
       {...rest}
     >
       {avatar || icon}
+      {renderSelectedIcon()}
       <ChipContent className="sinoui-chip__content">{label}</ChipContent>
       {onDelete && (
         <CancelButton

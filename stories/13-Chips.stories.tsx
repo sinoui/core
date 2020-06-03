@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Chip from '@sinoui/core/Chip';
 import styled from 'styled-components';
 import FaceIcon from '@sinoui/icons/Face';
@@ -233,3 +233,87 @@ export const 自定义颜色 = () => {
     </StoryLayout>
   );
 };
+
+function SelectedDemo() {
+  const [selected, setSelected] = useState(false);
+  return (
+    <StoryLayout>
+      <StyledChip
+        label="toggle selected"
+        selected={selected}
+        clickable
+        onClick={() => setSelected(!selected)}
+      />
+      <StyledChip
+        label="toggle selected"
+        selected={selected}
+        icon={<FaceIcon />}
+        clickable
+        onClick={() => setSelected(!selected)}
+      />
+      <StyledChip
+        label="toggle selected"
+        color="primary"
+        selected={selected}
+        icon={<FaceIcon />}
+        clickable
+        onClick={() => setSelected(!selected)}
+      />
+      <StyledChip
+        label="toggle selected"
+        selected={selected}
+        clickable
+        onClick={() => setSelected(!selected)}
+        variant="outlined"
+      />
+      <StyledChip
+        label="toggle selected"
+        selected={selected}
+        icon={<FaceIcon />}
+        clickable
+        onClick={() => setSelected(!selected)}
+        variant="outlined"
+      />
+      <StyledChip
+        label="toggle selected"
+        color="primary"
+        selected={selected}
+        icon={<FaceIcon />}
+        clickable
+        onClick={() => setSelected(!selected)}
+        variant="outlined"
+      />
+    </StoryLayout>
+  );
+}
+
+export const SelectedChips = () => <SelectedDemo />;
+
+export const BasicSelectedChips = () => (
+  <StoryLayout>
+    <div style={{ display: 'flex' }}>
+      <StyledChip label="toggle selected" selected />
+      <StyledChip label="toggle selected" selected icon={<FaceIcon />} />
+      <StyledChip
+        label="toggle selected"
+        color="primary"
+        selected
+        icon={<FaceIcon />}
+      />
+      <StyledChip label="toggle selected" selected variant="outlined" />
+      <StyledChip
+        label="toggle selected"
+        selected
+        icon={<FaceIcon />}
+        variant="outlined"
+      />
+      <StyledChip
+        label="toggle selected"
+        color="primary"
+        selected
+        icon={<FaceIcon />}
+        variant="outlined"
+      />
+    </div>
+  </StoryLayout>
+);
