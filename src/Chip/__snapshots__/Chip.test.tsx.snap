@@ -32,7 +32,7 @@ Array [
   border-radius: 16px;
   padding: 0 12px;
   overflow: hidden;
-  background-color: #e0e0e0;
+  background-color: rgba(0,0,0,0.12);
   max-width: 100%;
   box-sizing: border-box;
   font-weight: 400;
@@ -42,8 +42,16 @@ Array [
   -moz-letter-spacing: 0.01071em;
   -ms-letter-spacing: 0.01071em;
   letter-spacing: 0.01071em;
-  color: rgba(0,0,0,0.38);
+  color: rgba(0,0,0,0.87);
   opacity: 0.5;
+}
+
+.c0 > .sinoui-chip__delete {
+  color: currentColor;
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: currentColor;
 }
 
 .c0:focus {
@@ -63,17 +71,20 @@ Array [
   height: 20px;
   width: 20px;
   cursor: default;
-  color: rgba(0,0,0,0.38);
-}
-
-.c3:hover {
-  fill: rgba(0,0,0,0.38);
 }
 
 @media (hover:none) {
-  .c3:hover {
-    fill: rgba(0,0,0,0.38);
+  .c0 > .sinoui-chip__delete:hover {
+    color: currentColor;
   }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
 }
 
 <div
@@ -131,7 +142,7 @@ Array [
   border-radius: 16px;
   padding: 0 12px;
   overflow: hidden;
-  background-color: #e0e0e0;
+  background-color: rgba(0,0,0,0.12);
   max-width: 100%;
   box-sizing: border-box;
   font-weight: 400;
@@ -141,10 +152,19 @@ Array [
   -moz-letter-spacing: 0.01071em;
   -ms-letter-spacing: 0.01071em;
   letter-spacing: 0.01071em;
-  color: rgba(0,0,0,0.38);
+  color: rgba(0,0,0,0.87);
   opacity: 0.5;
-  border: 1px solid rgba(0,0,0,0.23);
+  border: 1px solid rgba(0,0,0,0.38);
   background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: currentColor;
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: currentColor;
 }
 
 .c0:focus {
@@ -157,7 +177,11 @@ Array [
 }
 
 .c0 > .sinoui-chip__delete {
-  color: rgba(0,0,0,0.42);
+  color: currentColor;
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: currentColor;
 }
 
 .c1 {
@@ -172,16 +196,21 @@ Array [
   height: 20px;
   width: 20px;
   cursor: default;
-  color: rgba(0,0,0,0.38);
-}
-
-.c3:hover {
-  fill: rgba(0,0,0,0.38);
 }
 
 @media (hover:none) {
-  .c3:hover {
-    fill: rgba(0,0,0,0.38);
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: currentColor;
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: currentColor;
   }
 }
 
@@ -287,6 +316,14 @@ Array [
   color: rgba(0,0,0,0.87);
 }
 
+.c1 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c1 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
 .c1:focus {
   outline: none;
   background-color: rgb(206,206,206);
@@ -306,6 +343,16 @@ Array [
   .c0:hover {
     background-color: transparent;
   }
+}
+
+@media (hover:none) {
+  .c1 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+
 }
 
 @media (hover:none) {
@@ -395,6 +442,15 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+  color: rgba(0,0,0,0.87);
+}
+
+.c1 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c1 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c1:focus {
@@ -407,7 +463,11 @@ Array [
 }
 
 .c1 > .sinoui-chip__delete {
-  color: rgba(0,0,0,0.42);
+  color: rgba(0,0,0,0.26);
+}
+
+.c1 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c2 {
@@ -424,6 +484,18 @@ Array [
 
 @media (hover:none) {
 
+}
+
+@media (hover:none) {
+  .c1 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c1 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
 }
 
 <button
@@ -526,6 +598,14 @@ Array [
   color: rgba(0,0,0,0.87);
 }
 
+.c1 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c1 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
 .c1:focus {
   outline: none;
   background-color: rgb(206,206,206);
@@ -547,11 +627,6 @@ Array [
   height: 20px;
   width: 20px;
   cursor: pointer;
-  color: rgba(0,0,0,0.6);
-}
-
-.c4:hover {
-  fill: rgba(0,0,0,0.87);
 }
 
 @media (hover:none) {
@@ -561,9 +636,17 @@ Array [
 }
 
 @media (hover:none) {
-  .c4:hover {
-    fill: rgba(0,0,0,0.6);
+  .c1 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
   }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
 }
 
 <button
@@ -679,6 +762,15 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+  color: rgba(0,0,0,0.87);
+}
+
+.c1 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c1 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c1:focus {
@@ -691,7 +783,11 @@ Array [
 }
 
 .c1 > .sinoui-chip__delete {
-  color: rgba(0,0,0,0.42);
+  color: rgba(0,0,0,0.26);
+}
+
+.c1 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c2 {
@@ -706,11 +802,6 @@ Array [
   height: 20px;
   width: 20px;
   cursor: pointer;
-  color: rgba(0,0,0,0.6);
-}
-
-.c4:hover {
-  fill: rgba(0,0,0,0.87);
 }
 
 @media (hover:none) {
@@ -720,8 +811,18 @@ Array [
 }
 
 @media (hover:none) {
-  .c4:hover {
-    fill: rgba(0,0,0,0.6);
+
+}
+
+@media (hover:none) {
+  .c1 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c1 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
   }
 }
 
@@ -780,6 +881,14 @@ Array [
   color: rgba(0,0,0,0.87);
 }
 
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
@@ -789,6 +898,20 @@ Array [
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
 }
 
 <div
@@ -826,6 +949,15 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+  color: rgba(0,0,0,0.87);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c0:focus {
@@ -838,13 +970,33 @@ Array [
 }
 
 .c0 > .sinoui-chip__delete {
-  color: rgba(0,0,0,0.42);
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
 }
 
 <div
@@ -888,6 +1040,14 @@ Array [
   height: 24px;
 }
 
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
@@ -897,6 +1057,16 @@ Array [
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+
 }
 
 @media (hover:none) {
@@ -938,7 +1108,16 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+  color: rgba(0,0,0,0.87);
   height: 24px;
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c0:focus {
@@ -951,7 +1130,11 @@ Array [
 }
 
 .c0 > .sinoui-chip__delete {
-  color: rgba(0,0,0,0.42);
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c1 {
@@ -962,6 +1145,18 @@ Array [
 
 @media (hover:none) {
 
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
 }
 
 <div
@@ -1017,6 +1212,14 @@ Array [
   height: 24px;
 }
 
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
@@ -1034,17 +1237,20 @@ Array [
   height: 20px;
   width: 20px;
   cursor: pointer;
-  color: rgba(0,0,0,0.6);
-}
-
-.c3:hover {
-  fill: rgba(0,0,0,0.87);
 }
 
 @media (hover:none) {
-  .c3:hover {
-    fill: rgba(0,0,0,0.6);
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
   }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
 }
 
 <div
@@ -1117,6 +1323,14 @@ Array [
   color: rgba(0,0,0,0.87);
 }
 
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
@@ -1134,17 +1348,20 @@ Array [
   height: 20px;
   width: 20px;
   cursor: pointer;
-  color: rgba(0,0,0,0.6);
-}
-
-.c3:hover {
-  fill: rgba(0,0,0,0.87);
 }
 
 @media (hover:none) {
-  .c3:hover {
-    fill: rgba(0,0,0,0.6);
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
   }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
 }
 
 <div
@@ -1212,6 +1429,15 @@ Array [
   color: rgba(0,0,0,0.87);
   border: 1px solid rgba(0,0,0,0.23);
   background-color: transparent;
+  color: rgba(0,0,0,0.87);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c0:focus {
@@ -1224,7 +1450,11 @@ Array [
 }
 
 .c0 > .sinoui-chip__delete {
-  color: rgba(0,0,0,0.42);
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
 }
 
 .c1 {
@@ -1239,16 +1469,21 @@ Array [
   height: 20px;
   width: 20px;
   cursor: pointer;
-  color: rgba(0,0,0,0.6);
-}
-
-.c3:hover {
-  fill: rgba(0,0,0,0.87);
 }
 
 @media (hover:none) {
-  .c3:hover {
-    fill: rgba(0,0,0,0.6);
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
   }
 }
 
@@ -1273,6 +1508,1337 @@ Array [
         d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
       />
     </svg>
+  </div>,
+]
+`;
+
+exports[`镜像测试 自定义颜色 1`] = `
+Array [
+  .c9 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #3f51b5;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+}
+
+.c2 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c2 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c2:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #f50057;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+}
+
+.c3 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c3 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c3:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #4caf50;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+}
+
+.c4 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c4 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c4:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #ff9800;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+}
+
+.c5 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c5 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c5:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #2196f3;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+}
+
+.c6 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c6 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c6:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #f44336;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+}
+
+.c7 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c7 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c7:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.12);
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  opacity: 0.5;
+}
+
+.c8 > .sinoui-chip__delete {
+  color: currentColor;
+}
+
+.c8 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c8:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c1 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.c10 {
+  margin-left: 4px;
+  margin-right: -6px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.c11 {
+  margin-left: 4px;
+  margin-right: -6px;
+  height: 20px;
+  width: 20px;
+  cursor: default;
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c2 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c3 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c4 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c5 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c6 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c7 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c8 > .sinoui-chip__delete:hover {
+    color: currentColor;
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<div>
+    <div
+      className="c0 sinoui-chip"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Default
+      </span>
+    </div>
+    <div
+      className="c2 sinoui-chip"
+      color="primary"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Primary
+      </span>
+    </div>
+    <div
+      className="c3 sinoui-chip"
+      color="secondary"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Secondary
+      </span>
+    </div>
+    <div
+      className="c4 sinoui-chip"
+      color="success"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Success
+      </span>
+    </div>
+    <div
+      className="c5 sinoui-chip"
+      color="warning"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Warning
+      </span>
+    </div>
+    <div
+      className="c6 sinoui-chip"
+      color="info"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Info
+      </span>
+    </div>
+    <div
+      className="c7 sinoui-chip"
+      color="error"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Error
+      </span>
+    </div>
+    <div
+      aria-disabled="true"
+      className="c8 sinoui-chip sinoui-chip--disabled"
+      disabled={true}
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Disabled
+      </span>
+    </div>
+    <div
+      className="c2 sinoui-chip"
+      color="primary"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Primary
+      </span>
+      <svg
+        aria-hidden="true"
+        className="c9 c10 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c10 sinoui-chip__delete"
+        focusable="false"
+        onClick={[Function]}
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+        />
+      </svg>
+    </div>
+    <div
+      aria-disabled="true"
+      className="c8 sinoui-chip sinoui-chip--disabled"
+      color="primary"
+      disabled={true}
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Disabled
+      </span>
+      <svg
+        aria-hidden="true"
+        className="c9 c11 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c11 sinoui-chip__delete"
+        disabled={true}
+        focusable="false"
+        onClick={[Function]}
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+        />
+      </svg>
+    </div>
+  </div>,
+  .c9 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  border: 1px solid rgba(0,0,0,0.23);
+  background-color: transparent;
+  color: rgba(0,0,0,0.87);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #3f51b5;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  border: 1px solid #3f51b5;
+  background-color: transparent;
+  color: #3f51b5;
+}
+
+.c2 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c2 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c2:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c2:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c2 > .sinoui-chip__delete {
+  color: rgba(63,81,181,0.7);
+}
+
+.c2 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #f50057;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  border: 1px solid #f50057;
+  background-color: transparent;
+  color: #f50057;
+}
+
+.c3 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c3 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c3:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c3:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3 > .sinoui-chip__delete {
+  color: rgba(245,0,87,0.7);
+}
+
+.c3 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #4caf50;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  border: 1px solid #4caf50;
+  background-color: transparent;
+  color: #4caf50;
+}
+
+.c4 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c4 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c4:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c4:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c4 > .sinoui-chip__delete {
+  color: rgba(76,175,80,0.7);
+}
+
+.c4 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #ff9800;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  border: 1px solid #ff9800;
+  background-color: transparent;
+  color: #ff9800;
+}
+
+.c5 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c5 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c5:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c5:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c5 > .sinoui-chip__delete {
+  color: rgba(255,152,0,0.7);
+}
+
+.c5 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #2196f3;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  border: 1px solid #2196f3;
+  background-color: transparent;
+  color: #2196f3;
+}
+
+.c6 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c6 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c6:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c6:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c6 > .sinoui-chip__delete {
+  color: rgba(33,150,243,0.7);
+}
+
+.c6 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #f44336;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  border: 1px solid #f44336;
+  background-color: transparent;
+  color: #f44336;
+}
+
+.c7 > .sinoui-chip__delete {
+  color: rgba(255,255,255,0.7);
+}
+
+.c7 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c7:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c7:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c7 > .sinoui-chip__delete {
+  color: rgba(244,67,54,0.7);
+}
+
+.c7 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.12);
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  opacity: 0.5;
+  border: 1px solid rgba(0,0,0,0.38);
+  background-color: transparent;
+  color: rgba(0,0,0,0.38);
+}
+
+.c8 > .sinoui-chip__delete {
+  color: currentColor;
+}
+
+.c8 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c8:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c8:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c8 > .sinoui-chip__delete {
+  color: currentColor;
+}
+
+.c8 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c1 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.c10 {
+  margin-left: 4px;
+  margin-right: -6px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.c11 {
+  margin-left: 4px;
+  margin-right: -6px;
+  height: 20px;
+  width: 20px;
+  cursor: default;
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c2 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c2 > .sinoui-chip__delete:hover {
+    color: rgba(63,81,181,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c3 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c3 > .sinoui-chip__delete:hover {
+    color: rgba(245,0,87,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c4 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c4 > .sinoui-chip__delete:hover {
+    color: rgba(76,175,80,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c5 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c5 > .sinoui-chip__delete:hover {
+    color: rgba(255,152,0,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c6 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c6 > .sinoui-chip__delete:hover {
+    color: rgba(33,150,243,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c7 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c7 > .sinoui-chip__delete:hover {
+    color: rgba(244,67,54,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c8 > .sinoui-chip__delete:hover {
+    color: currentColor;
+  }
+}
+
+@media (hover:none) {
+  .c8 > .sinoui-chip__delete:hover {
+    color: currentColor;
+  }
+}
+
+<div>
+    <div
+      className="c0 sinoui-chip sinoui-chip--outlined"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Default
+      </span>
+    </div>
+    <div
+      className="c2 sinoui-chip sinoui-chip--outlined"
+      color="primary"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Primary
+      </span>
+    </div>
+    <div
+      className="c3 sinoui-chip sinoui-chip--outlined"
+      color="secondary"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Secondary
+      </span>
+    </div>
+    <div
+      className="c4 sinoui-chip sinoui-chip--outlined"
+      color="success"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Success
+      </span>
+    </div>
+    <div
+      className="c5 sinoui-chip sinoui-chip--outlined"
+      color="warning"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Warning
+      </span>
+    </div>
+    <div
+      className="c6 sinoui-chip sinoui-chip--outlined"
+      color="info"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Info
+      </span>
+    </div>
+    <div
+      className="c7 sinoui-chip sinoui-chip--outlined"
+      color="error"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Error
+      </span>
+    </div>
+    <div
+      aria-disabled="true"
+      className="c8 sinoui-chip sinoui-chip--disabled sinoui-chip--outlined"
+      disabled={true}
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Disabled
+      </span>
+    </div>
+    <div
+      className="c2 sinoui-chip sinoui-chip--outlined"
+      color="primary"
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Primary
+      </span>
+      <svg
+        aria-hidden="true"
+        className="c9 c10 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c10 sinoui-chip__delete"
+        focusable="false"
+        onClick={[Function]}
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+        />
+      </svg>
+    </div>
+    <div
+      aria-disabled="true"
+      className="c8 sinoui-chip sinoui-chip--disabled sinoui-chip--outlined"
+      color="primary"
+      disabled={true}
+    >
+      <span
+        className="c1 sinoui-chip__content"
+      >
+        Disabled
+      </span>
+      <svg
+        aria-hidden="true"
+        className="c9 c11 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c11 sinoui-chip__delete"
+        disabled={true}
+        focusable="false"
+        onClick={[Function]}
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+        />
+      </svg>
+    </div>
   </div>,
 ]
 `;

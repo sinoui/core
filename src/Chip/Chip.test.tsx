@@ -99,6 +99,60 @@ describe('镜像测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('自定义颜色', () => {
+    const onDelete = jest.fn();
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <>
+            <div>
+              <Chip label="Default" />
+              <Chip color="primary" label="Primary" />
+              <Chip color="secondary" label="Secondary" />
+              <Chip color="success" label="Success" />
+              <Chip color="warning" label="Warning" />
+              <Chip color="info" label="Info" />
+              <Chip color="error" label="Error" />
+              <Chip disabled label="Disabled" />
+              <Chip color="primary" label="Primary" onDelete={onDelete} />
+              <Chip
+                disabled
+                label="Disabled"
+                color="primary"
+                onDelete={onDelete}
+              />
+            </div>
+            <div>
+              <Chip label="Default" variant="outlined" />
+              <Chip color="primary" label="Primary" variant="outlined" />
+              <Chip color="secondary" label="Secondary" variant="outlined" />
+              <Chip color="success" label="Success" variant="outlined" />
+              <Chip color="warning" label="Warning" variant="outlined" />
+              <Chip color="info" label="Info" variant="outlined" />
+              <Chip color="error" label="Error" variant="outlined" />
+              <Chip disabled label="Disabled" variant="outlined" />
+              <Chip
+                color="primary"
+                label="Primary"
+                variant="outlined"
+                onDelete={onDelete}
+              />
+              <Chip
+                disabled
+                label="Disabled"
+                color="primary"
+                variant="outlined"
+                onDelete={onDelete}
+              />
+            </div>
+          </>
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('验收测试', () => {
