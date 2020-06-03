@@ -2,7 +2,9 @@ import React from 'react';
 import Chip from '@sinoui/core/Chip';
 import styled from 'styled-components';
 import FaceIcon from '@sinoui/icons/Face';
+import Avatar from '@sinoui/core/Avatar';
 import StoryLayout from './StoryLayout';
+import avatarf from './img/avatarf.jpg';
 
 export default {
   title: 'Chip',
@@ -33,6 +35,14 @@ export const 基本使用 = () => (
         onDelete={() => {
           console.log('删除图标被点击');
         }}
+      />
+      <Chip
+        label="Avatar"
+        icon={
+          <Avatar>
+            <img src={avatarf} alt="" />
+          </Avatar>
+        }
       />
     </div>
   </StoryLayout>
@@ -65,6 +75,15 @@ export const 边框模式 = () => (
         onDelete={() => {
           console.log('删除图标被点击');
         }}
+        variant="outlined"
+      />
+      <Chip
+        label="Avatar"
+        icon={
+          <Avatar>
+            <img src={avatarf} alt="" />
+          </Avatar>
+        }
         variant="outlined"
       />
     </div>

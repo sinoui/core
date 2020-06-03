@@ -7,6 +7,8 @@ import { defaultTheme } from '@sinoui/theme';
 import 'jest-styled-components';
 import Chip from './Chip';
 import Cancel from '../svg-icons/Cancel';
+import Avatar from '../Avatar';
+import SvgIcon from '../SvgIcon';
 
 describe('镜像测试', () => {
   it('基本渲染', () => {
@@ -176,6 +178,55 @@ describe('镜像测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('前缀头像', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <>
+            <Chip
+              label="文本"
+              avatar={
+                <Avatar>
+                  <div>123</div>
+                </Avatar>
+              }
+            />
+            <Chip
+              label="文本"
+              variant="outlined"
+              avatar={
+                <Avatar>
+                  <div>123</div>
+                </Avatar>
+              }
+            />
+            <Chip
+              label="文本"
+              avatar={
+                <Avatar>
+                  <div>123</div>
+                </Avatar>
+              }
+              color="primary"
+            />
+            <Chip
+              label="文本"
+              variant="outlined"
+              avatar={
+                <Avatar>
+                  <div>123</div>
+                </Avatar>
+              }
+              color="primary"
+            />
+          </>
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('验收测试', () => {
@@ -281,4 +332,22 @@ it('文本不换行显示', () => {
   expect(
     getByTestId('chip').querySelector('.sinoui-chip__content')!,
   ).toHaveStyleRule('white-space', 'nowrap');
+});
+
+it('avatar和icon同时存在时，渲染avatar', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Chip
+        label="文本"
+        data-testid="chip"
+        icon={<SvgIcon>M</SvgIcon>}
+        avatar={<Avatar>M</Avatar>}
+      />
+    </ThemeProvider>,
+  );
+
+  const avatar = getByTestId('chip').querySelector('.sinoui-avatar');
+  const icons = getByTestId('chip').querySelectorAll('.sinoui-svg-icon');
+  expect(avatar).toBeInTheDocument();
+  expect(icons).toHaveLength(0);
 });

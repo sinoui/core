@@ -57,6 +57,10 @@ export interface Props {
    * 前缀图标
    */
   icon?: React.ReactNode;
+  /**
+   * 前缀头像
+   */
+  avatar?: React.ReactNode;
 }
 
 export interface ChipLayoutProps {
@@ -187,6 +191,13 @@ const chipStyle = css<ChipLayoutProps>`
       easing: transitions.easing.easeIn,
     })};
 
+  > .sinoui-avatar {
+    width: 24px;
+    height: 24px;
+    margin-left: -8px;
+    margin-right: 8px;
+  }
+
   > .sinoui-svg-icon {
     margin-left: -8px;
     margin-right: 8px;
@@ -271,6 +282,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
     disabled,
     dense,
     icon,
+    avatar,
     ...rest
   } = props;
 
@@ -301,7 +313,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
       aria-disabled={disabled ? 'true' : undefined}
       {...rest}
     >
-      {icon}
+      {avatar || icon}
       <ChipContent className="sinoui-chip__content">{label}</ChipContent>
       {onDelete && (
         <CancelButton
