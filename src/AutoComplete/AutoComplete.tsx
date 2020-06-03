@@ -188,6 +188,14 @@ const PopupIndicatorWrapper = styled(IconButton)<{
   transform: rotate(${({ $open }) => ($open ? 180 : 0)}deg);
 `;
 
+const StyledPopper = styled(Popper)`
+  z-index: 2;
+
+  > .sinoui-auto-complete__option-list {
+    background-color: ${({ theme }) => theme.palette.background.paper};
+  }
+`;
+
 const sameWidth = {
   name: 'sameWidth',
   enabled: true,
@@ -233,7 +241,7 @@ export default function AutoComplete(props: Props) {
     options,
     getOptionLabel,
     closeOnEscape = true,
-    PopperComponent = Popper,
+    PopperComponent = StyledPopper,
     popupIcon = <ArrowDropDownIcon />,
     clearIcon = <Close size={20} />,
     clearOnEscape,
