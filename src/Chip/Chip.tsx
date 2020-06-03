@@ -130,6 +130,11 @@ const outlinedStyle = css<ChipLayoutProps>`
   background-color: transparent;
   color: ${({ theme, color = 'textPrimary', disabled }) =>
     disabled ? theme.palette.text.disabled : getColorFromTheme(theme, color)};
+  transition: ${({ theme: { transitions } }) =>
+    transitions.create(['width', 'background-color', 'color', 'border-color'], {
+      duration: transitions.duration.short,
+      easing: transitions.easing.easeIn,
+    })};
 
   :focus {
     background-color: rgba(0, 0, 0, 0.04);
@@ -171,6 +176,11 @@ const chipStyle = css<ChipLayoutProps>`
   ${({ theme }) => theme.typography.body2};
   color: ${({ theme, disabled, color }) => getColor(theme, disabled, color)};
   ${({ disabled }) => disabled && `opacity:0.5`};
+  transition: ${({ theme: { transitions } }) =>
+    transitions.create(['width', 'background-color', 'color'], {
+      duration: transitions.duration.short,
+      easing: transitions.easing.easeIn,
+    })};
 
   > .sinoui-chip__delete {
     color: ${({ theme, color, disabled }) =>
@@ -225,6 +235,12 @@ const CancelButton = styled(CancelIcon)`
   height: 20px;
   width: 20px;
   cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
+
+  transition: ${({ theme: { transitions } }) =>
+    transitions.create(['color'], {
+      duration: transitions.duration.short,
+      easing: transitions.easing.easeIn,
+    })};
 `;
 
 const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
