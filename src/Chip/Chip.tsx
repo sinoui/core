@@ -13,6 +13,7 @@ import {
   BORDER_COLOR,
   DELETE_ICON_HOVER_COLOR,
   DELETE_ICON_COLOR,
+  LEADING_ICON_COLOR,
 } from './contains';
 
 export interface Props {
@@ -52,6 +53,10 @@ export interface Props {
    * 自定义背景色
    */
   color?: string;
+  /**
+   * 前缀图标
+   */
+  icon?: React.ReactNode;
 }
 
 export interface ChipLayoutProps {
@@ -182,7 +187,18 @@ const chipStyle = css<ChipLayoutProps>`
       easing: transitions.easing.easeIn,
     })};
 
+  > .sinoui-svg-icon {
+    margin-left: -8px;
+    margin-right: 8px;
+    color: ${({ color, disabled, theme }) =>
+      color || disabled
+        ? 'currentColor'
+        : LEADING_ICON_COLOR[theme.palette.type]};
+  }
+
   > .sinoui-chip__delete {
+    margin-left: 4px;
+    margin-right: -6px;
     color: ${({ theme, color, disabled }) =>
       getDeleteIconColor(theme, 'standard', disabled, color)};
 
@@ -230,8 +246,6 @@ const ChipContent = styled.span`
 `;
 
 const CancelButton = styled(CancelIcon)`
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
@@ -256,6 +270,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
     variant = 'standard',
     disabled,
     dense,
+    icon,
     ...rest
   } = props;
 
@@ -286,6 +301,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
       aria-disabled={disabled ? 'true' : undefined}
       {...rest}
     >
+      {icon}
       <ChipContent className="sinoui-chip__content">{label}</ChipContent>
       {onDelete && (
         <CancelButton

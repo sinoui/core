@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import 'jest-styled-components';
 import Chip from './Chip';
+import Cancel from '../svg-icons/Cancel';
 
 describe('镜像测试', () => {
   it('基本渲染', () => {
@@ -146,6 +147,28 @@ describe('镜像测试', () => {
                 onDelete={onDelete}
               />
             </div>
+          </>
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('前缀图标', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <>
+            <Chip label="文本" icon={<Cancel />} />
+            <Chip label="文本" variant="outlined" icon={<Cancel />} />
+            <Chip label="文本" icon={<Cancel />} color="primary" />
+            <Chip
+              label="文本"
+              variant="outlined"
+              icon={<Cancel />}
+              color="primary"
+            />
           </>
         </ThemeProvider>,
       )

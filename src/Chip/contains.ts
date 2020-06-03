@@ -29,3 +29,11 @@ export const DELETE_ICON_HOVER_COLOR = {
   light: 'rgba(0,0,0,0.4)',
   dark: 'rgba(255,255,255,0.4)',
 };
+
+/**
+ * 前缀图标颜色
+ */
+export const LEADING_ICON_COLOR = {
+  light: '#616161',
+  dark: '#e0e0e0',
+};

@@ -48,7 +48,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: currentColor;
 }
 
@@ -68,8 +76,6 @@ Array [
 }
 
 .c3 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: default;
@@ -167,7 +173,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: currentColor;
 }
 
@@ -199,8 +213,6 @@ Array [
 }
 
 .c3 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: default;
@@ -248,6 +260,527 @@ Array [
         d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
       />
     </svg>
+  </div>,
+]
+`;
+
+exports[`镜像测试 前缀图标 1`] = `
+Array [
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<div
+    className="c0 sinoui-chip"
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
+  </div>,
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  border: 1px solid rgba(0,0,0,0.23);
+  background-color: transparent;
+  color: rgba(0,0,0,0.87);
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(0,0,0,0.26);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(0,0,0,0.26);
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<div
+    className="c0 sinoui-chip sinoui-chip--outlined"
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
+  </div>,
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #3f51b5;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(255,255,255,0.7);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+<div
+    className="c0 sinoui-chip"
+    color="primary"
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
+  </div>,
+  .c1 {
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  border-radius: 16px;
+  padding: 0 12px;
+  overflow: hidden;
+  background-color: #3f51b5;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: #fff;
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  border: 1px solid #3f51b5;
+  background-color: transparent;
+  color: #3f51b5;
+  -webkit-transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+  transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
+}
+
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
+.c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
+  color: rgba(255,255,255,0.7);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c0:focus {
+  outline: none;
+  background-color: rgb(206,206,206);
+}
+
+.c0:focus {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0 > .sinoui-chip__delete {
+  color: rgba(63,81,181,0.7);
+}
+
+.c0 > .sinoui-chip__delete:hover {
+  color: currentColor;
+}
+
+.c2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (hover:none) {
+  .c0 > .sinoui-chip__delete:hover {
+    color: rgba(63,81,181,0.7);
+  }
+}
+
+<div
+    className="c0 sinoui-chip sinoui-chip--outlined"
+    color="primary"
+  >
+    <svg
+      aria-hidden="true"
+      className="c1 sinoui-svg-icon"
+      focusable="false"
+      role="presentation"
+      size={24}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+    <span
+      className="c2 sinoui-chip__content"
+    >
+      文本
+    </span>
   </div>,
 ]
 `;
@@ -328,7 +861,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c1 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c1 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -461,7 +1002,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c1 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c1 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -616,7 +1165,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c1 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c1 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -640,8 +1197,6 @@ Array [
 }
 
 .c4 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: pointer;
@@ -789,7 +1344,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c1 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c1 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -821,8 +1384,6 @@ Array [
 }
 
 .c4 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: pointer;
@@ -909,7 +1470,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -984,7 +1553,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -1074,7 +1651,15 @@ Array [
   height: 24px;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -1150,7 +1735,15 @@ Array [
   height: 24px;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -1252,7 +1845,15 @@ Array [
   height: 24px;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -1272,8 +1873,6 @@ Array [
 }
 
 .c3 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: pointer;
@@ -1367,7 +1966,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -1387,8 +1994,6 @@ Array [
 }
 
 .c3 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: pointer;
@@ -1482,7 +2087,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -1514,8 +2127,6 @@ Array [
 }
 
 .c3 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: pointer;
@@ -1611,7 +2222,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -1652,7 +2271,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c2 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c2 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -1693,7 +2320,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c3 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c3 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -1734,7 +2369,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c4 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c4 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -1775,7 +2418,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c5 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c5 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -1816,7 +2467,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c6 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c6 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -1857,7 +2516,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c7 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c7 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -1899,7 +2566,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c8 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c8 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: currentColor;
 }
 
@@ -1919,8 +2594,6 @@ Array [
 }
 
 .c10 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: pointer;
@@ -1929,8 +2602,6 @@ Array [
 }
 
 .c11 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: default;
@@ -2231,7 +2902,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c0 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: #616161;
+}
+
 .c0 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(0,0,0,0.26);
 }
 
@@ -2289,7 +2968,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c2 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c2 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -2347,7 +3034,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c3 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c3 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -2405,7 +3100,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c4 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c4 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -2463,7 +3166,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c5 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c5 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -2521,7 +3232,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c6 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c6 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -2579,7 +3298,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c7 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c7 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: rgba(255,255,255,0.7);
 }
 
@@ -2638,7 +3365,15 @@ Array [
   transition: width 250ms cubic-bezier(0.4,0.0,1,1) 0ms,background-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,color 250ms cubic-bezier(0.4,0.0,1,1) 0ms,border-color 250ms cubic-bezier(0.4,0.0,1,1) 0ms;
 }
 
+.c8 > .sinoui-svg-icon {
+  margin-left: -8px;
+  margin-right: 8px;
+  color: currentColor;
+}
+
 .c8 > .sinoui-chip__delete {
+  margin-left: 4px;
+  margin-right: -6px;
   color: currentColor;
 }
 
@@ -2670,8 +3405,6 @@ Array [
 }
 
 .c10 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: pointer;
@@ -2680,8 +3413,6 @@ Array [
 }
 
 .c11 {
-  margin-left: 4px;
-  margin-right: -6px;
   height: 20px;
   width: 20px;
   cursor: default;
