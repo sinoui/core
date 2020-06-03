@@ -234,6 +234,17 @@ const chipStyle = css<ChipLayoutProps>`
 
 const denseChipStyle = css`
   height: 24px;
+
+  > .sinoui-svg-icon,
+  > .sinoui-avatar {
+    width: 18px;
+    height: 18px;
+  }
+
+  > .sinoui-chip__delete {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 const hoverStyle = css`

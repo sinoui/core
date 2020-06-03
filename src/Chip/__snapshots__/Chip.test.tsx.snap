@@ -2384,6 +2384,17 @@ Array [
   background-color: rgb(206,206,206);
 }
 
+.c0 > .sinoui-svg-icon,
+.c0 > .sinoui-avatar {
+  width: 18px;
+  height: 18px;
+}
+
+.c0 > .sinoui-chip__delete {
+  width: 16px;
+  height: 16px;
+}
+
 .c1 {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -2485,6 +2496,17 @@ Array [
 
 .c0 > .sinoui-chip__delete:hover {
   color: rgba(0,0,0,0.4);
+}
+
+.c0 > .sinoui-svg-icon,
+.c0 > .sinoui-avatar {
+  width: 18px;
+  height: 18px;
+}
+
+.c0 > .sinoui-chip__delete {
+  width: 16px;
+  height: 16px;
 }
 
 .c1 {
@@ -2590,6 +2612,17 @@ Array [
 .c0:focus {
   outline: none;
   background-color: rgb(206,206,206);
+}
+
+.c0 > .sinoui-svg-icon,
+.c0 > .sinoui-avatar {
+  width: 18px;
+  height: 18px;
+}
+
+.c0 > .sinoui-chip__delete {
+  width: 16px;
+  height: 16px;
 }
 
 .c1 {

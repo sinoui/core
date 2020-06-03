@@ -133,7 +133,7 @@ export const 可点击的Chip = () => (
 
 export const DenseChip = () => (
   <StoryLayout>
-    <>
+    <div style={{ display: 'flex' }}>
       <Chip label="dense" dense />
       <Chip label="dense" variant="outlined" dense />
       <Chip
@@ -151,7 +151,18 @@ export const DenseChip = () => (
         }}
         dense
       />
-    </>
+      <Chip label="dense" dense icon={<FaceIcon />} />
+      <Chip
+        label="dense"
+        variant="outlined"
+        dense
+        avatar={
+          <Avatar>
+            <img src={avatarf} alt="" />
+          </Avatar>
+        }
+      />
+    </div>
   </StoryLayout>
 );
 
