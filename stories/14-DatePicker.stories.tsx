@@ -5,6 +5,9 @@ import H5 from '@sinoui/core/H5';
 import Divider from '@sinoui/core/Divider';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import CalendarView from '@sinoui/core/DatePicker/CalendarView';
+import YearSelectView from '@sinoui/core/DatePicker/YearSelectView/YearSelectView';
+import Paper from '@sinoui/core/Paper';
+import MonthSelectView from '@sinoui/core/DatePicker/MonthSelectView/MonthSelectView';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -75,5 +78,21 @@ export const 周标题栏 = () => (
 export const 日历视图 = () => (
   <StoryLayout>
     <CalendarView />
+  </StoryLayout>
+);
+
+export const 年视图 = () => (
+  <StoryLayout>
+    <Paper style={{ display: 'inline-block' }}>
+      <YearSelectView selectedYear={2020} maxYear={2022} />
+    </Paper>
+  </StoryLayout>
+);
+
+export const 月视图 = () => (
+  <StoryLayout>
+    <Paper style={{ display: 'inline-block' }}>
+      <MonthSelectView />
+    </Paper>
   </StoryLayout>
 );

@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import defaultTheme from '@sinoui/theme/defaultTheme';
 import '@testing-library/jest-dom';
 import CalendarViewHeader from '../CalendarViewHeader';
+import ViewModel from '../../ViewModel';
 
 afterEach(cleanup);
 
@@ -35,6 +36,7 @@ it('上个月', () => {
         month={5}
         data-testid="calendar-view-header"
         onChange={onChange}
+        viewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -58,6 +60,7 @@ it('下个月', () => {
         month={5}
         data-testid="calendar-view-header"
         onChange={onChange}
+        viewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );

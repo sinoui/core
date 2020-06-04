@@ -1,6 +1,11 @@
 import styled from 'styled-components';
+import ViewModel from '../ViewModel';
 
-const CalendarViewHeaderWrapper = styled.div`
+interface Props {
+  $viewModel?: ViewModel;
+}
+
+const CalendarViewHeaderWrapper = styled.div<Props>`
   padding: 16px 24px;
   display: flex;
   align-items: center;
@@ -20,6 +25,13 @@ const CalendarViewHeaderWrapper = styled.div`
 
   .sinoui-calendar-view-header__next-month-icon > svg {
     transform: rotate(180deg);
+  }
+
+  .sinoui-calendar-view-header__year-dropdown-icon {
+    transition: ${({ theme }) => theme.transitions.create('transform')};
+    transform: rotate(
+      ${({ $viewModel }) => ($viewModel !== ViewModel.dates ? 180 : 0)}deg
+    );
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
