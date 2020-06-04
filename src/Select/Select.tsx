@@ -105,6 +105,8 @@ function Select(props: Props) {
     autoCompleteProps,
     portal,
     error,
+    disabled,
+    readOnly,
     ...other
   } = props;
 
@@ -123,9 +125,12 @@ function Select(props: Props) {
 
   const handleChange = (item: any) => {
     if (onChange) {
-      const selectedValue = Array.isArray(item)
-        ? item.map((data) => data.value)
-        : item.value;
+      let selectedValue = item;
+      if (Array.isArray(item)) {
+        selectedValue = item.map((data) => data.value);
+      } else if (item != null) {
+        selectedValue = item.value;
+      }
 
       onChange(selectedValue);
     }
@@ -139,6 +144,8 @@ function Select(props: Props) {
       onChange={handleChange}
       multiple={multiple}
       error={error}
+      disabled={disabled}
+      readOnly={readOnly}
       renderInput={(textInputProps: TextInputProps) => (
         <TextInput
           {...textInputProps}
@@ -148,6 +155,8 @@ function Select(props: Props) {
           inputComponent={SelectInput}
           inputProps={{ ...textInputProps.inputProps, ...inputComprops }}
           error={error}
+          disabled={disabled}
+          readOnly={readOnly}
           value={value as any}
           {...other}
         />

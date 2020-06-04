@@ -157,6 +157,14 @@ export interface Props {
    * 错误状态
    */
   error?: boolean;
+  /**
+   * 不可用状态
+   */
+  disabled?: boolean;
+  /**
+   * 只读状态
+   */
+  readOnly?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -269,6 +277,8 @@ export default function AutoComplete(props: Props) {
     limitTags,
     portal,
     error,
+    disabled,
+    readOnly,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -404,6 +414,9 @@ export default function AutoComplete(props: Props) {
    * 处理输入框点击事件
    */
   const handleInputClick = () => {
+    if (disabled || readOnly) {
+      return;
+    }
     setOpen(true);
     if (!freeSolo && inputRef.current?.select) {
       // eslint-disable-next-line no-unused-expressions
@@ -588,6 +601,10 @@ export default function AutoComplete(props: Props) {
   const getPopupIndicatorColor = () => {
     if (error) {
       return 'error';
+    }
+
+    if (disabled) {
+      return 'actionDisabled';
     }
 
     if (open) {

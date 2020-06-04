@@ -1210,7 +1210,7 @@ label ~ .c3 {
   height: 48px;
   border-radius: 50%;
   box-sizing: border-box;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.26);
 }
 
 .c7:hover {
@@ -1333,7 +1333,7 @@ label ~ .c3 {
     >
       <button
         className="c6 sinoui-base-button c7 sinoui-icon-button c8 sinoui-auto-complete__popup-indicator"
-        color="textSecondary"
+        color="actionDisabled"
         onClick={[Function]}
         role="button"
         type="button"
