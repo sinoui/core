@@ -3,11 +3,16 @@ import React from 'react';
 import { act } from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import SelectInput from '../SelectInput';
 import Option from '../Option';
+
+jest.useFakeTimers();
+
+afterEach(cleanup);
+afterEach(jest.clearAllTimers);
 
 it('单选时，点击选项，onClose被调用', () => {
   const onClose = jest.fn();
@@ -58,7 +63,7 @@ it('复选时，点击选中', () => {
   expect(onClose).not.toHaveBeenCalled();
 
   act(() => {
-    fireEvent.click(getByTestId('Backdrop'));
+    fireEvent.click(getByTestId('sinoui-modal-backdrop'));
   });
 
   expect(onClose).toHaveBeenCalled();
@@ -114,7 +119,7 @@ it('复选时，使用方向键和Enter键切换选中项', () => {
   expect(onClose).not.toHaveBeenCalled();
 
   act(() => {
-    fireEvent.click(getByTestId('Backdrop'));
+    fireEvent.click(getByTestId('sinoui-modal-backdrop'));
   });
 
   expect(onClose).toHaveBeenCalled();
@@ -125,6 +130,7 @@ it('关闭弹窗后,失去焦点时，onBlur被调用', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <SelectInput
+        open={false}
         value="1"
         onBlur={onBlur}
         autoFocus
@@ -144,7 +150,12 @@ it('选择框聚焦状态下，按下enter键，onOpen被调用', () => {
   const onOpen = jest.fn();
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <SelectInput value="1" onOpen={onOpen} data-testid="selectInput">
+      <SelectInput
+        open={false}
+        value="1"
+        onOpen={onOpen}
+        data-testid="selectInput"
+      >
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
       </SelectInput>
@@ -161,7 +172,7 @@ describe('tabindex', () => {
   it('可用时有tabindex', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <SelectInput data-testid="selectInput" />
+        <SelectInput open={false} data-testid="selectInput" />
       </ThemeProvider>,
     );
 
@@ -171,7 +182,7 @@ describe('tabindex', () => {
   it('只读时有tabindex', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <SelectInput readOnly data-testid="selectInput" />
+        <SelectInput open={false} readOnly data-testid="selectInput" />
       </ThemeProvider>,
     );
 
@@ -181,7 +192,7 @@ describe('tabindex', () => {
   it('tabIndex属性', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <SelectInput data-testid="selectInput" tabIndex={2} />
+        <SelectInput open={false} data-testid="selectInput" tabIndex={2} />
       </ThemeProvider>,
     );
 
@@ -191,7 +202,7 @@ describe('tabindex', () => {
   it('不可用时无tabindex', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <SelectInput disabled data-testid="selectInput" />
+        <SelectInput open={false} disabled data-testid="selectInput" />
       </ThemeProvider>,
     );
 

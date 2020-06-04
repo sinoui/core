@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import AppBarTitle from '@sinoui/core/AppBarTitle';
 import AppBarActions from '@sinoui/core/AppBarActions';
 import NavigationIcon from '@sinoui/core/NavigationIcon';
+import classNames from 'classnames';
 import createFoundation from './utils/createFoundation';
 import useMultiRefs from '../utils/useMultiRefs';
 import isRefObject from '../utils/isRefObject';
@@ -123,9 +124,7 @@ const shortCollapsedCss = css`
   }
 `;
 
-const StyledAppBar = styled.div.attrs(() => ({
-  className: 'sinoui-app-bar',
-}))<AppBarStatusTypes>`
+const StyledAppBar = styled.div<AppBarStatusTypes>`
   display: flex;
   position: fixed;
   top:0;
@@ -187,7 +186,11 @@ const AppBar = React.forwardRef<HTMLDivElement, AppBarProps>((props, ref) => {
   }, [fixed, short, prominent, targetScroll, shortCollapsed]);
 
   return (
-    <StyledAppBar ref={containerRef} {...rest}>
+    <StyledAppBar
+      ref={containerRef}
+      className={classNames('sinoui-app-bar', 'sinoui-fixed')}
+      {...rest}
+    >
       <NavigationIcon>{navigationIcon}</NavigationIcon>
       <AppBarTitle> {title}</AppBarTitle>
       <AppBarActions>{actionItems}</AppBarActions>

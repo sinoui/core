@@ -1,13 +1,13 @@
 /* eslint-disable no-param-reassign */
 import React, { useRef, useCallback, useEffect } from 'react';
-import contains from 'dom-helpers/query/contains';
+import contains from 'dom-helpers/contains';
 import debounce from 'lodash/debounce';
 import EventListener from 'react-event-listener';
 import { zIndex } from '@sinoui/theme';
 import Modal from '@sinoui/core/Modal';
 import Iframe from './Iframe';
 import { getScrollTop } from '../utils/domHelpers';
-import Grow from '../transitions/Grow';
+import Grow from '../Grow';
 import PopoverPosition from './PopoverPosition';
 import PopoverLayout from './PopoverLayout';
 import PopoverContent from './PopoverContent';
@@ -81,7 +81,7 @@ export interface PopoverProps {
    *
    * @type {boolean}
    */
-  open?: boolean;
+  open: boolean;
   role?: string;
   /**
    * 指定CSS3 transform的变换原点。
@@ -379,12 +379,7 @@ function Popover(props: PopoverProps) {
   }
 
   return (
-    <Modal
-      open={open}
-      BackdropProps={{ visible: false }}
-      {...other}
-      zIndex={zIndex.popover}
-    >
+    <Modal open={open} backdropOpacity={0} {...other} zIndex={zIndex.popover}>
       <TransitionProp
         appear
         in={open}
@@ -394,7 +389,6 @@ function Popover(props: PopoverProps) {
         onExit={onExit}
         onExited={onExited}
         onExiting={onExiting}
-        role={role}
         ref={transitionElRef}
         {...transitionProps}
       >

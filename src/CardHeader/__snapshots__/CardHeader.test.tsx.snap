@@ -2,7 +2,7 @@
 
 exports[`快照测试 只有主标题的CardHeader 1`] = `
 <div
-  className="sc-AxjAm eSyBnn"
+  className="sc-AxjAm djMlAs"
 >
   <div
     className="card-header-content"
@@ -18,11 +18,22 @@ exports[`快照测试 只有主标题的CardHeader 1`] = `
 
 exports[`快照测试 头像+主标题+副标题+操作的CardHeader 1`] = `
 <div
-  className="sc-AxjAm eSyBnn"
+  className="sc-AxjAm djMlAs"
 >
   <div
     className="card-header-avatar"
-  />
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "#f44336",
+          "borderRadius": "4px",
+          "height": "40px",
+          "width": "40px",
+        }
+      }
+    />
+  </div>
   <div
     className="card-header-content"
   >

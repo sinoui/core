@@ -49,6 +49,8 @@ const CardHeaderWrapper = styled.div`
 
   & .card-header-action {
     flex: 0 0 auto;
+    margin-top: -8px;
+    margin-right: -8px;
   }
 `;
 

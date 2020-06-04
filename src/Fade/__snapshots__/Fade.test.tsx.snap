@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 展现 1`] = `
+<div
+  style={
+    Object {
+      "opacity": 1,
+      "visibility": undefined,
+    }
+  }
+>
+  测试
+</div>
+`;

@@ -2,7 +2,7 @@
 
 exports[`快照测试 固定模式 1`] = `
 <div
-  className="sc-AxhCb eOqWTh sinoui-app-bar"
+  className="sc-AxhCb jyRqMs sinoui-app-bar sinoui-fixed"
 >
   <div
     className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
@@ -20,7 +20,7 @@ exports[`快照测试 固定模式 1`] = `
 
 exports[`快照测试 密集模式 1`] = `
 <div
-  className="sc-AxhCb iOCvJU sinoui-app-bar"
+  className="sc-AxhCb lnDoSl sinoui-app-bar sinoui-fixed"
 >
   <div
     className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
@@ -38,7 +38,7 @@ exports[`快照测试 密集模式 1`] = `
 
 exports[`快照测试 收缩模式 1`] = `
 <div
-  className="sc-AxhCb iOCvJU sinoui-app-bar"
+  className="sc-AxhCb lnDoSl sinoui-app-bar sinoui-fixed"
 >
   <div
     className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
@@ -56,7 +56,7 @@ exports[`快照测试 收缩模式 1`] = `
 
 exports[`快照测试 标准模式 1`] = `
 <div
-  className="sc-AxhCb eOqWTh sinoui-app-bar"
+  className="sc-AxhCb jyRqMs sinoui-app-bar sinoui-fixed"
 >
   <div
     className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
@@ -74,7 +74,7 @@ exports[`快照测试 标准模式 1`] = `
 
 exports[`快照测试 突出模式 1`] = `
 <div
-  className="sc-AxhCb iITCIT sinoui-app-bar"
+  className="sc-AxhCb bZzVbW sinoui-app-bar sinoui-fixed"
 >
   <div
     className="sc-AxiKw hQHhPG sinoui-app-bar--navigation"
