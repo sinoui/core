@@ -145,33 +145,37 @@ const getDefaultModalManager = () => {
 /**
  * 模态框。
  */
-export default function Modal({
-  open,
-  onClose,
-  onRequestClose,
-  children,
-  container,
-  center,
-  backdrop = true,
-  backdropClick = true,
-  backdropOpacity,
-  onBackdropClick,
-  BackdropProps,
-  renderBackdrop = defaultRenderBackdrop,
-  keyboard = true,
-  onEscapeKeydown,
-  autoFocus = true,
-  enforceFocus = true,
-  scrollLock = true,
-  modalManager = getDefaultModalManager(),
-  ...rest
-}: Props) {
+export default React.forwardRef<HTMLDivElement, Props>(function Modal(
+  {
+    open,
+    onClose,
+    onRequestClose,
+    children,
+    container,
+    center,
+    backdrop = true,
+    backdropClick = true,
+    backdropOpacity,
+    onBackdropClick,
+    BackdropProps,
+    renderBackdrop = defaultRenderBackdrop,
+    keyboard = true,
+    onEscapeKeydown,
+    autoFocus = true,
+    enforceFocus = true,
+    scrollLock = true,
+    modalManager = getDefaultModalManager(),
+    ...rest
+  },
+  ref,
+) {
   const containerElement = getContainerElement(container);
   const hasTransition = 'in' in children.props;
   const [exited, setExited] = useState(!open);
 
   const modalNodeRef = useRef<HTMLDivElement>(null);
   const modalContentRef = useRef<HTMLDivElement>(null);
+  const handleModalNodeRef = useMultiRefs(modalNodeRef, ref);
   const handleModalContentRef = useMultiRefs(
     modalContentRef,
     (children as any).ref,
@@ -306,7 +310,7 @@ export default function Modal({
       data-sinoui-id="modal"
       $center={center}
       onKeyDown={handleKeydown}
-      ref={modalNodeRef}
+      ref={handleModalNodeRef}
       {...rest}
     >
       {backdrop
@@ -324,4 +328,4 @@ export default function Modal({
     </ModalWrapper>,
     containerElement,
   );
-}
+});

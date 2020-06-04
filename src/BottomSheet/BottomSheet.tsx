@@ -69,7 +69,7 @@ export interface BottomSheetProps {
   /**
    * 点击遮罩层触发的回调函数
    */
-  onBackdropClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onBackdropClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /**
    * 添加自定义类名
    */
@@ -110,7 +110,7 @@ const BottomSheet = React.forwardRef(
     return (
       <ModalWrapper
         {...rest}
-        open={open}
+        open={!!open}
         backdropClick={backdropClick}
         onBackdropClick={onBackdropClick}
         ref={ref}
