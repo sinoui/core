@@ -45,7 +45,7 @@ export enum AutoCompleteChangeReason {
   blur = 'blur',
 }
 
-interface Props {
+export interface Props {
   /**
    * 渲染输入框。
    *
@@ -149,6 +149,10 @@ interface Props {
    * 设置多选时显示的标签数
    */
   limitTags?: number;
+  /**
+   * 是否将弹出内容以传送门的方式渲染。默认为`false`。
+   */
+  portal?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -259,6 +263,7 @@ export default function AutoComplete(props: Props) {
     renderTags,
     dense,
     limitTags,
+    portal,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -395,7 +400,7 @@ export default function AutoComplete(props: Props) {
    */
   const handleInputClick = () => {
     setOpen(true);
-    if (!freeSolo) {
+    if (!freeSolo && inputRef.current?.select) {
       // eslint-disable-next-line no-unused-expressions
       inputRef.current?.select();
     }
@@ -682,6 +687,7 @@ export default function AutoComplete(props: Props) {
         referenceElement={textInputRef}
         onMouseDown={preventEventDefault}
         modifiers={[sameWidth]}
+        portal={portal}
       >
         <TransitionComponent in={open}>{renderOptions()}</TransitionComponent>
       </PopperComponent>

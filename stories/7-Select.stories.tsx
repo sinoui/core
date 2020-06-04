@@ -45,7 +45,6 @@ function SimpleDemo() {
           onChange={onChange}
           label="Required"
           required
-          allowClear
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
@@ -78,7 +77,8 @@ function SimpleDemo() {
           value={value}
           onChange={onChange}
           label="Error"
-          error="Error Message"
+          error
+          errorText="Error Message"
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
@@ -158,7 +158,8 @@ function SimpleDemo() {
           onChange={onChange}
           variant="filled"
           label="Error"
-          error="Error Message"
+          errorText="Error Message"
+          error
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
@@ -240,7 +241,8 @@ function SimpleDemo() {
           onChange={onChange}
           variant="outlined"
           label="Error"
-          error="Error Message"
+          errorText="Error Message"
+          error
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
@@ -286,13 +288,7 @@ function MultipleSelectDemo() {
 
   return (
     <div style={{ marginLeft: 16, display: 'flex', alignItems: 'flex-start' }}>
-      <SelectField
-        value={value}
-        onChange={onChange}
-        multiple
-        label="Multiple"
-        allowClear
-      >
+      <SelectField value={value} onChange={onChange} multiple label="Multiple">
         <Option value="选项一">选项一</Option>
         <Option value="选项二">选项二</Option>
         <Option value="选项三">选项三</Option>
