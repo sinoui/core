@@ -13,6 +13,7 @@ const WeekTitle = styled(Body2)<{ $column: number }>`
   -ms-grid-row: 1;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    font-size: 13px;
     width: 32px;
     height: 18px;
   }

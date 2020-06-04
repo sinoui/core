@@ -32,7 +32,7 @@ export default function WeekTitleBar({ startOfWeek = 1, ...rest }: Props) {
   const titles =
     startOfWeek === 1 ? weekTitles : [weekTitles[6], ...weekTitles.slice(0, 6)];
   return (
-    <WeekTitleBarWrapper {...rest}>
+    <WeekTitleBarWrapper {...rest} className="sinoui-week-title-bar">
       {titles.map((title, index) => (
         <WeekTitle key={title} $column={index + 1}>
           {title}

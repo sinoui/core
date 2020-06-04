@@ -49,6 +49,7 @@ const DatesViewWrapper = styled.div`
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   -ms-grid-rows: auto auto auto auto auto auto;
   grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, auto);
   -ms-grid-column-span: 4px;
   grid-column-gap: 4px;
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {

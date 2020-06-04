@@ -29,6 +29,7 @@ const pcStyle = css`
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     height: 28px;
     width: 28px;
+    font-size: 12px;
     .sinoui-date-cell-ripple-layout,
     .sinoui-date-cell-ripple {
       height: 28px;

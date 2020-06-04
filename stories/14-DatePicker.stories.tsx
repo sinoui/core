@@ -4,6 +4,7 @@ import H6 from '@sinoui/core/H6';
 import H5 from '@sinoui/core/H5';
 import Divider from '@sinoui/core/Divider';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
+import CalendarView from '@sinoui/core/DatePicker/CalendarView';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -68,5 +69,11 @@ export const 周标题栏 = () => (
   <StoryLayout>
     <WeekTitleBar />
     <WeekTitleBar startOfWeek={0} />
+  </StoryLayout>
+);
+
+export const 日历视图 = () => (
+  <StoryLayout>
+    <CalendarView />
   </StoryLayout>
 );
