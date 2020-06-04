@@ -1774,6 +1774,33 @@ describe('multiple', () => {
     expect(getByTestId('text-input')).not.toHaveTextContent('+1');
     expect(getByTestId('text-input')).toHaveTextContent('item 1item 3');
   });
+
+  it('值为空数组时，没有默认选中项', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const { container, getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          openOnFocus
+          options={options}
+          getOptionLabel={(_) => _.title}
+          multiple
+          value={[]}
+          renderInput={renderInput}
+        />
+      </ThemeProvider>,
+    );
+
+    const input = getByTestId('text-input').querySelector('input')!;
+    act(() => {
+      fireEvent.focus(input);
+    });
+
+    expect(
+      container.querySelectorAll('.sinoui-list-item--focused'),
+    ).toHaveLength(0);
+  });
 });
 
 describe('freeSolo模式', () => {

@@ -153,6 +153,10 @@ export interface Props {
    * 是否将弹出内容以传送门的方式渲染。默认为`false`。
    */
   portal?: boolean;
+  /**
+   * 错误状态
+   */
+  error?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -264,6 +268,7 @@ export default function AutoComplete(props: Props) {
     dense,
     limitTags,
     portal,
+    error,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -274,7 +279,7 @@ export default function AutoComplete(props: Props) {
   }, [freeSolo, getOptionLabel, multiple, value]);
 
   const defaultFocusedOption = useMemo(() => {
-    if (value) {
+    if (value && value.length > 0) {
       if (multiple) {
         return freeSolo
           ? value[value.length - 1]
@@ -578,13 +583,28 @@ export default function AutoComplete(props: Props) {
   };
 
   /**
+   * 获取弹出指示器的颜色
+   */
+  const getPopupIndicatorColor = () => {
+    if (error) {
+      return 'error';
+    }
+
+    if (open) {
+      return 'primary';
+    }
+
+    return 'textSecondary';
+  };
+
+  /**
    * 渲染弹出指示器
    */
   const renderPopupIndicator = () => (
     <PopupIndicatorWrapper
       $open={open}
       className="sinoui-auto-complete__popup-indicator"
-      color={open ? 'primary' : 'textSecondary'}
+      color={getPopupIndicatorColor()}
       onClick={handlePopupIndicatorClick}
     >
       {popupIcon}

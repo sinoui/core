@@ -104,12 +104,12 @@ function Select(props: Props) {
     placeholder,
     autoCompleteProps,
     portal,
+    error,
     ...other
   } = props;
 
   const inputComprops = {
     children,
-    multiple,
     renderValue,
     selectRef,
     ...nativeInputProps,
@@ -137,16 +137,22 @@ function Select(props: Props) {
       getOptionLabel={(option) => option.children}
       value={autoCompleteValue}
       onChange={handleChange}
+      multiple={multiple}
+      error={error}
       renderInput={(textInputProps: TextInputProps) => (
         <TextInput
           {...textInputProps}
+          baseClassName="sinoui-select"
           label={label}
           placeholder={placeholder}
           inputComponent={SelectInput}
-          inputProps={{ ...inputComprops, ...textInputProps.inputProps }}
+          inputProps={{ ...textInputProps.inputProps, ...inputComprops }}
+          error={error}
+          value={value as any}
           {...other}
         />
       )}
+      renderTags={() => null}
       portal={portal}
       {...autoCompleteProps}
     />

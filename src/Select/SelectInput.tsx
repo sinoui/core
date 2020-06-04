@@ -25,10 +25,6 @@ export interface Props {
    */
   disabled?: boolean;
   /**
-   * 是否多选
-   */
-  multiple?: boolean;
-  /**
    * 失去焦点时的回调函数
    */
   onBlur?: () => void;
@@ -41,17 +37,9 @@ export interface Props {
    */
   onChange?: (value?: string | string[]) => void;
   /**
-   * 弹窗出现时的回调函数
-   */
-  onOpen?: () => void;
-  /**
    * 弹窗关闭时的回调函数
    */
   onClose?: () => void;
-  /**
-   * 是否显示弹窗
-   */
-  open: boolean;
   /**
    * 是否只读
    */
@@ -117,13 +105,10 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     children,
     className,
     disabled,
-    multiple,
     onBlur,
     onChange,
     onClose,
     onFocus,
-    onOpen,
-    open,
     readOnly,
     renderValue = (value, items) => (
       <SelectValueDisplay value={value} items={items} />
@@ -146,22 +131,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     }
   }, [autoFocus]);
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
-    if (onOpen && !readOnly) {
-      const validKeys = [' ', 'ArrowUp', 'ArrowDown', 'Enter'];
-
-      if (validKeys.indexOf(event.key) !== -1) {
-        event.preventDefault();
-        onOpen();
-      }
-    }
-  };
-
   const handleBlur = () => {
-    if (open) {
-      return;
-    }
-
     if (onBlur) {
       onBlur();
     }
@@ -173,10 +143,8 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
       ref={handleRef}
       tabIndex={disabled ? undefined : tabIndex}
       role="button"
-      aria-expanded={open ? 'true' : 'false'}
       aria-haspopup="listbox"
       aria-disabled={disabled ? 'true' : 'false'}
-      onKeyDown={handleKeyDown}
       onBlur={handleBlur}
       onFocus={onFocus}
       {...other}

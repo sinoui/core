@@ -74,6 +74,10 @@ const AutoCompleteStyle = createGlobalStyle`
       min-height: 19px;
     }
   }
+
+  .sinoui-select--error .sinoui-auto-complete__popup-indicator > .sinoui-svg-icon {
+  
+  }
 `;
 
 export default AutoCompleteStyle;

@@ -49,7 +49,7 @@ it('渲染不可用的下拉框', () => {
 });
 
 it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
-  const { getByTestId, getByRole, getAllByRole, container } = render(
+  const { getByTestId, container } = render(
     <ThemeProvider theme={defaultTheme}>
       <Select
         inputProps={{
@@ -67,10 +67,12 @@ it('点击出现弹窗,点击弹窗中某一项,弹窗关闭', () => {
     fireEvent.click(getByTestId('selectInput'));
   });
 
-  expect(getByRole('listbox')).toBeInTheDocument();
+  expect(
+    container.querySelector('.sinoui-auto-complete__option-list'),
+  ).toBeInTheDocument();
 
   act(() => {
-    fireEvent.click(getAllByRole('option')[0]);
+    fireEvent.click(container.querySelectorAll('li')[0]);
   });
 
   expect(container.querySelector('ul')).toBeDefined();
