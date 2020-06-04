@@ -285,6 +285,13 @@ export default React.forwardRef<HTMLDivElement, Props>(function Modal(
     return null;
   }
 
+  /**
+   * 点击Modal整体
+   */
+  const onContainerClick = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+  };
+
   const childProps: Record<string, any> = {
     ref: handleModalContentRef,
     'aria-modal': 'true',
@@ -311,6 +318,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function Modal(
       $center={center}
       onKeyDown={handleKeydown}
       ref={handleModalNodeRef}
+      onClick={onContainerClick}
       {...rest}
     >
       {backdrop
