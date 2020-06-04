@@ -117,10 +117,7 @@ export interface Props {
   /**
    * 值发生变化的回调函数
    */
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean | any,
-  ) => void;
+  onChange?: (checked: boolean | any) => void;
   /**
    * 键盘事件
    */
@@ -175,7 +172,7 @@ function RadioButton(props: Props) {
     }
 
     if (props.onChange) {
-      props.onChange(event, event.target.checked);
+      props.onChange(event.target.checked);
     }
   };
 
