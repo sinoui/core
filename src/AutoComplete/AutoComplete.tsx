@@ -74,6 +74,10 @@ export interface Props {
    */
   getOptionLabel: (option: any) => string;
   /**
+   * 选项渲染方式
+   */
+  renderOption?: (option: any) => React.ReactNode;
+  /**
    * 指定分组依据
    */
   groupBy?: (option: any) => string;
@@ -279,6 +283,7 @@ export default function AutoComplete(props: Props) {
     error,
     disabled,
     readOnly,
+    renderOption,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -711,6 +716,7 @@ export default function AutoComplete(props: Props) {
       focusedOption={focusedOption}
       selectedOptions={selectedOptions}
       getOptionLabel={getOptionLabel}
+      renderOption={renderOption}
       onOptionClick={handleOptionClick}
       freeSolo={freeSolo}
     />

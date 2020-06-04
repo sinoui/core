@@ -62,6 +62,7 @@ function parseItemsFromChildren(children: React.ReactNode): SelectItem[] {
       return {
         id: `${index}`,
         value: child.props.value,
+        title: child.props.title ?? child.props.children,
         children: child.props.children as React.ReactNode,
       };
     })?.filter(Boolean) || []
@@ -139,7 +140,8 @@ function Select(props: Props) {
   return (
     <AutoComplete
       options={options}
-      getOptionLabel={(option) => option.children}
+      getOptionLabel={(option) => option.title}
+      renderOption={(option) => option.children}
       value={autoCompleteValue}
       onChange={handleChange}
       multiple={multiple}

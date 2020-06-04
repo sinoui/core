@@ -33,11 +33,12 @@ function SelectValueDisplay({
     if (!item) {
       return null;
     }
-    const { children } = item;
-    if (typeof children === 'string') {
-      return `${children}${index === values.length - 1 ? '' : ', '}`;
+    const { title, children } = item;
+    const selectValue = title ?? children;
+    if (typeof selectValue === 'string') {
+      return `${selectValue}${index === values.length - 1 ? '' : ', '}`;
     }
-    return children;
+    return selectValue;
   });
 
   return <>{result}</>;

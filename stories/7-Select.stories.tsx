@@ -7,6 +7,7 @@ import {
   createTheme,
   colors,
 } from '@sinoui/theme';
+import Checkbox from '@sinoui/core/Checkbox';
 
 export default {
   title: 'Select',
@@ -342,5 +343,36 @@ export const autoFocus = () => (
       <Option value="选项三">选项三</Option>
       <Option value="选项四">选项四</Option>
     </SelectField>
+  </ThemeProvider>
+);
+
+const options = [
+  { id: '1', title: '选项一' },
+  { id: '2', title: '选项二' },
+  { id: '3', title: '选项三' },
+  { id: '4', title: '选项四' },
+];
+
+function CustomDemo() {
+  const [value, setValue] = useState<string[]>([]);
+  return (
+    <SelectField
+      multiple
+      value={value}
+      onChange={(newValue) => setValue(newValue as string[])}
+    >
+      {options.map((option) => (
+        <Option key={option.id} value={option.id} title={option.title}>
+          <Checkbox checked={value && value.indexOf(option.id) !== -1} />
+          {option.title}
+        </Option>
+      ))}
+    </SelectField>
+  );
+}
+
+export const 自定义选择框 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <CustomDemo />
   </ThemeProvider>
 );
