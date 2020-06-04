@@ -48,6 +48,23 @@ it('渲染校验错误信息', () => {
   expect(formcontrol.querySelector('.sinoui-helper-text')).toHaveTextContent(
     '必填',
   );
+  expect(formcontrol.querySelector('.sinoui-helper-line')).toHaveStyle(
+    'margin-bottom: 8px',
+  );
+});
+
+it('无错误和帮助信息时FormControl下边距为0', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl label="姓名" data-testid="formcontrol">
+        <input />
+      </FormControl>
+    </ThemeProvider>,
+  );
+
+  expect(
+    getByTestId('formcontrol').querySelector('.sinoui-helper-line'),
+  ).toHaveStyle('margin-bottom: 0');
 });
 
 it('水平布局FormLabel显示冒号', () => {

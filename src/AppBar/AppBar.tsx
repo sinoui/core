@@ -128,6 +128,7 @@ const StyledAppBar = styled.div<AppBarStatusTypes>`
   display: flex;
   position: fixed;
   top:0;
+  z-index: ${({ theme }) => theme.zIndex.appBar};
   width: 100%;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[4]};
