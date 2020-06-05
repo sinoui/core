@@ -1,5 +1,5 @@
 import React, { useState, useRef, useMemo } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
 import HelperText from '@sinoui/core/HelperText';
 import FormLabel from '@sinoui/core/FormLabel';
@@ -66,11 +66,32 @@ const variantComponent = {
   outlined: OutlinedInput,
 };
 
-const TextInputWrapper = styled.div<{ disabled?: boolean; field?: boolean }>`
+const focusedVisibleCss = css<{ $focused?: boolean }>`
+  & .sinoui-focused-visible {
+    visibility: ${({ $focused }) => ($focused ? 'visible' : 'hidden')};
+  }
+
+  &:hover .sinoui-focused-visible {
+    visibility: visible;
+  }
+
+  @media (hover: none) {
+    &:hover .sinoui-focused-visible {
+      visibility: ${({ $focused }) => ($focused ? 'visible' : 'hidden')};
+    }
+  }
+`;
+
+const TextInputWrapper = styled.div<{
+  disabled?: boolean;
+  field?: boolean;
+  $focused?: boolean;
+}>`
   display: ${({ field }) => (field ? 'flex' : 'inline-flex')};
   flex-direction: column;
   align-items: stretch;
   position: relative;
+  ${focusedVisibleCss}
 `;
 
 /**
@@ -105,12 +126,12 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
     const innerLabelRef = useRef<HTMLLabelElement>(null);
     const [focused, setFocused] = useState(false);
     const shrink =
-      shrinkProp ||
-      focused ||
-      !isEmptyValue(value) ||
-      !!defaultValue ||
-      !!placeholder ||
-      !!startAdornment;
+      shrinkProp ??
+      (focused ||
+        !isEmptyValue(value) ||
+        !!defaultValue ||
+        !!placeholder ||
+        !!startAdornment);
     const formControlContext = useFormControlContext();
     const noLabel =
       !label &&
@@ -184,6 +205,7 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
         style={style}
         ref={ref}
         field={field}
+        $focused={focused}
       >
         {label && (
           <FormLabel

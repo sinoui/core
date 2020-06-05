@@ -58,7 +58,6 @@ const overlayStyle = css<{ focused?: boolean }>`
 
 const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
   position: relative;
-  overflow: hidden;
   background-color: ${({ theme }) => FILLED_INPUT_BGCOLOR[theme.palette.type]};
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;

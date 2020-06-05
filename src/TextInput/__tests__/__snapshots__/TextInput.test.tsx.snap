@@ -187,7 +187,6 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 
 .c5 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -469,6 +468,20 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
+}
+
 <div>
   <div
     className="c0 sinoui-text-input"
@@ -727,7 +740,6 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 
 .c6 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -895,6 +907,20 @@ label ~ .c3 {
   -ms-flex-align: stretch;
   align-items: stretch;
   position: relative;
+}
+
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -1194,7 +1220,6 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 
 .c7 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -1474,6 +1499,20 @@ label ~ .c3 {
   -ms-flex-align: stretch;
   align-items: stretch;
   position: relative;
+}
+
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -1825,7 +1864,6 @@ exports[`渲染带后缀元素的输入框 1`] = `
 
 .c7 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -2105,6 +2143,20 @@ label ~ .c3 {
   -ms-flex-align: stretch;
   align-items: stretch;
   position: relative;
+}
+
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -2398,7 +2450,6 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 
 .c6 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -2586,6 +2637,20 @@ label ~ .c3 {
   -ms-flex-align: stretch;
   align-items: stretch;
   position: relative;
+}
+
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -2827,7 +2892,6 @@ exports[`渲染有错误提示的输入框 1`] = `
 
 .c6 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -3011,6 +3075,20 @@ label ~ .c3 {
   -ms-flex-align: stretch;
   align-items: stretch;
   position: relative;
+}
+
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>

@@ -1,5 +1,5 @@
+/* eslint-disable no-param-reassign */
 import React, { useRef, useEffect } from 'react';
-import Menu, { MenuListItem } from '@sinoui/core/Menu';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import useMultiRefs from '../utils/useMultiRefs';
@@ -25,10 +25,6 @@ export interface Props {
    */
   disabled?: boolean;
   /**
-   * 是否多选
-   */
-  multiple?: boolean;
-  /**
    * 失去焦点时的回调函数
    */
   onBlur?: () => void;
@@ -41,17 +37,9 @@ export interface Props {
    */
   onChange?: (value?: string | string[]) => void;
   /**
-   * 弹窗出现时的回调函数
-   */
-  onOpen?: () => void;
-  /**
    * 弹窗关闭时的回调函数
    */
   onClose?: () => void;
-  /**
-   * 是否显示弹窗
-   */
-  open: boolean;
   /**
    * 是否只读
    */
@@ -75,12 +63,14 @@ export interface Props {
    * 菜单的最小宽度
    */
   menuMinWidth?: number;
+  selectRef?: HTMLDivElement;
 }
 
 const SelectInputLayout = styled.div`
   user-select: none;
   box-sizing: content-box;
   cursor: inherit;
+  width: 0;
   ${singleLineTextCss}
 `;
 
@@ -98,6 +88,7 @@ function parseItemsFromChildren(children: React.ReactNode): SelectItem[] {
       return {
         id: `${index}`,
         value: child.props.value,
+        title: child.props.title ?? child.props.children,
         children: child.props.children as React.ReactNode,
       };
     })?.filter(Boolean) || []
@@ -116,13 +107,10 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     children,
     className,
     disabled,
-    multiple,
     onBlur,
     onChange,
     onClose,
     onFocus,
-    onOpen,
-    open,
     readOnly,
     renderValue = (value, items) => (
       <SelectValueDisplay value={value} items={items} />
@@ -130,13 +118,12 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     tabIndex = 0,
     value,
     menuMinWidth,
+    selectRef,
     ...other
   } = props;
 
   const items = parseItemsFromChildren(children);
-  const selectedItems = typeof value === 'string' ? [value] : value ?? [];
-  const isItemSelected = (itemValue: string) =>
-    selectedItems.includes(itemValue);
+
   const selectInputRef = useRef<HTMLDivElement>(null);
   const handleRef = useMultiRefs(ref, selectInputRef);
 
@@ -146,95 +133,25 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     }
   }, [autoFocus]);
 
-  /**
-   * 点击选项时的回调函数
-   */
-  const handleItemClick = (itemValue: string) => (
-    event: React.MouseEvent<HTMLElement>,
-  ) => {
-    event.stopPropagation();
-    if (!multiple && onClose) {
-      onClose();
-    }
-
-    if (!onChange) {
-      return;
-    }
-
-    let newValue;
-    if (multiple) {
-      newValue = [...selectedItems];
-      const selectedIdx = newValue.indexOf(itemValue);
-      if (selectedIdx === -1) {
-        newValue.push(itemValue);
-      } else {
-        newValue.splice(selectedIdx, 1);
-      }
-    } else {
-      newValue = itemValue;
-    }
-
-    onChange(newValue);
-  };
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
-    if (onOpen && !readOnly) {
-      const validKeys = [' ', 'ArrowUp', 'ArrowDown', 'Enter'];
-
-      if (validKeys.indexOf(event.key) !== -1) {
-        event.preventDefault();
-        onOpen();
-      }
-    }
-  };
-
   const handleBlur = () => {
-    if (open) {
-      return;
-    }
-
     if (onBlur) {
       onBlur();
     }
   };
 
   return (
-    <>
-      <SelectInputLayout
-        className={classNames('sinoui-select-input', className)}
-        ref={handleRef}
-        tabIndex={disabled ? undefined : tabIndex}
-        role="button"
-        aria-expanded={open ? 'true' : 'false'}
-        aria-haspopup="listbox"
-        aria-disabled={disabled ? 'true' : 'false'}
-        onKeyDown={handleKeyDown}
-        onBlur={handleBlur}
-        onFocus={onFocus}
-        {...other}
-      >
-        {renderValue(value, items)}
-      </SelectInputLayout>
-      <Menu
-        minWidth={menuMinWidth}
-        anchorEl={selectInputRef.current}
-        open={open}
-        onRequestClose={onClose}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        MenuListProps={{
-          role: 'listbox',
-        }}
-      >
-        {items.map((item) => (
-          <MenuListItem
-            role="option"
-            key={item.id}
-            {...item}
-            selected={isItemSelected(item.value)}
-            onClick={handleItemClick(item.value)}
-          />
-        ))}
-      </Menu>
-    </>
+    <SelectInputLayout
+      className={classNames('sinoui-select-input', className)}
+      ref={handleRef}
+      tabIndex={disabled ? undefined : tabIndex}
+      role="button"
+      aria-haspopup="listbox"
+      aria-disabled={disabled ? 'true' : 'false'}
+      onBlur={handleBlur}
+      onFocus={onFocus}
+      {...other}
+    >
+      {renderValue(value, items)}
+    </SelectInputLayout>
   );
 });
