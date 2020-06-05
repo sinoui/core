@@ -4,6 +4,7 @@ import React, { useRef, useState, useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import { ModifierArguments, Options } from '@popperjs/core';
 import scrollIntoView from 'scroll-into-view-if-needed';
+import { zIndex } from '@sinoui/theme';
 import OptionList from './OptionList';
 import Popper from '../Popper';
 import Grow from '../Grow';
@@ -208,8 +209,8 @@ const PopupIndicatorWrapper = styled(IconButton)<{
   transform: rotate(${({ $open }) => ($open ? 180 : 0)}deg);
 `;
 
-const StyledPopper = styled(Popper)`
-  z-index: 2;
+const StyledPopper = styled(Popper)<{ portal?: boolean }>`
+  z-index: ${({ portal }) => (portal ? zIndex.popover : 2)};
 
   > .sinoui-auto-complete__option-list {
     background-color: ${({ theme }) => theme.palette.background.paper};
