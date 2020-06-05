@@ -8,6 +8,7 @@ import ViewModel from '../ViewModel';
 import useIsPc from '../useIsPc';
 import MonthSelectView from '../MonthSelectView';
 import getDatesOfMonth from '../DatesView/getDatesOfMonth';
+import CalendarViewAction from './CalendarViewAction';
 import CalendarViewToolbar from './CalendarViewToolbar';
 
 interface Props {
@@ -52,6 +53,18 @@ interface Props {
    */
   startOfWeek?: 0 | 1;
   /**
+   * 是否展示按钮组，PC端默认不显示，移动端默认显示
+   */
+  showButtons?: boolean;
+  /**
+   * 点击取消按钮的回调函数
+   */
+  onCancel?: (event: React.MouseEvent) => void;
+  /**
+   * 点击确定按钮的回调函数
+   */
+  onOk?: (event: React.MouseEvent) => void;
+  /*
    * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
    */
   skipMonthsView?: boolean;
@@ -115,6 +128,9 @@ export default function CalendarView({
   minDate,
   maxDate,
   startOfWeek,
+  showButtons,
+  onCancel,
+  onOk,
   skipMonthsView: skipMonthsViewProp,
   title,
   ...rest
@@ -204,6 +220,11 @@ export default function CalendarView({
     />
   );
 
+  const isShowButtons = useMemo(() => showButtons ?? !isPc, [
+    isPc,
+    showButtons,
+  ]);
+
   return (
     <CalendarViewWrapper {...rest}>
       {!isPc && (
@@ -222,6 +243,7 @@ export default function CalendarView({
       {viewModel === ViewModel.years && renderYears()}
       {viewModel === ViewModel.dates && renderDates()}
       {viewModel === ViewModel.months && renderMonths()}
+      {isShowButtons && <CalendarViewAction onOk={onOk} onCancel={onCancel} />}
     </CalendarViewWrapper>
   );
 }

@@ -8,7 +8,9 @@ import CalendarView from '@sinoui/core/DatePicker/CalendarView';
 import YearSelectView from '@sinoui/core/DatePicker/YearSelectView/YearSelectView';
 import Paper from '@sinoui/core/Paper';
 import MonthSelectView from '@sinoui/core/DatePicker/MonthSelectView/MonthSelectView';
+import DatePicker from '@sinoui/core/DatePicker';
 import Body1 from '@sinoui/core/Body1';
+import styled from 'styled-components';
 import formatDate from '@sinoui/core/DatePicker/formatDate';
 import StoryLayout from './StoryLayout';
 
@@ -113,5 +115,35 @@ export const 月视图 = () => (
     <Paper style={{ display: 'inline-block' }}>
       <MonthSelectView />
     </Paper>
+  </StoryLayout>
+);
+
+const StyledDatepicker = styled(DatePicker)`
+  width: 200px;
+  margin: 8px;
+`;
+
+function DatePickerDemo(props: any) {
+  const [value, setValue] = useState('2020-06-05');
+  return (
+    <StyledDatepicker
+      value={value}
+      onChange={(_value) => setValue(_value)}
+      {...props}
+    />
+  );
+}
+
+export const 日期选择 = () => (
+  <StoryLayout>
+    <DatePickerDemo label="日期选择" />
+    <DatePickerDemo label="日期选择" variant="filled" />
+    <DatePickerDemo label="日期选择" variant="outlined" />
+    <DatePickerDemo label="Disabled" disabled />
+    <DatePickerDemo label="Disabled" variant="filled" disabled />
+    <DatePickerDemo label="Disabled" variant="outlined" disabled />
+    <DatePickerDemo label="ReadOnly" readOnly />
+    <DatePickerDemo label="ReadOnly" variant="filled" readOnly />
+    <DatePickerDemo label="ReadOnly" variant="outlined" readOnly />
   </StoryLayout>
 );
