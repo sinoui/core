@@ -2181,3 +2181,38 @@ it('autoWidth', () => {
 
   expect(getByRole('tooltip')).toHaveStyle('min-width: 0px');
 });
+
+it('closeOnBlur===false，失去焦点，不关闭弹窗', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        autoWidth
+        closeOnBlur={false}
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  act(() => {
+    fireEvent.click(input);
+  });
+
+  expect(
+    container.querySelector('.sinoui-auto-complete__option-list'),
+  ).toBeInTheDocument();
+
+  act(() => {
+    fireEvent.blur(input);
+  });
+
+  expect(
+    container.querySelector('.sinoui-auto-complete__option-list'),
+  ).toBeInTheDocument();
+});

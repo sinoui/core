@@ -174,6 +174,10 @@ export interface Props {
    * 宽度自适应
    */
   autoWidth?: boolean;
+  /**
+   * 失去焦点时关闭弹窗，默认为`true`
+   */
+  closeOnBlur?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -292,6 +296,7 @@ export default function AutoComplete(props: Props) {
     readOnly,
     renderOption,
     autoWidth,
+    closeOnBlur = true,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -456,7 +461,10 @@ export default function AutoComplete(props: Props) {
       preventBlur.current = true;
       return;
     }
-    setOpen(false);
+    if (closeOnBlur) {
+      setOpen(false);
+    }
+
     if (!freeSolo) {
       setInputValue(value ? getOptionLabel(value) : '');
       setFocusedOption(
