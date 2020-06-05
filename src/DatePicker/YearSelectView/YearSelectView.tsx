@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import YearItem from './YearItem';
 import {
   COLUMNS_OF_YEAR_PC,
@@ -33,6 +34,14 @@ interface Props {
    * 选中年份的回调函数
    */
   onYearSelect?: (year: number) => void;
+  /**
+   * 指定自定义类名。
+   */
+  className?: string;
+  /**
+   * 指定自定义样式。
+   */
+  style?: React.CSSProperties;
 }
 
 /**
@@ -67,14 +76,17 @@ const caclcStartYear = (currentYear: number, columns: number) => {
 export default function YearSelectView(props: Props) {
   const isPc = useIsPc();
   const columns = isPc ? COLUMNS_OF_YEAR_PC : COLUMNS_OF_YEAR_MOBILE;
-  const { selectedYear } = props;
-  const currentYear = selectedYear ?? new Date().getFullYear();
+  // eslint-disable-next-line react/destructuring-assignment
+  const currentYear = props.selectedYear ?? new Date().getFullYear();
   const {
+    selectedYear,
     startYear = caclcStartYear(currentYear, columns),
     showYearsCount = COUNTS_OF_YEAR,
     onYearSelect,
     minYear = -1,
     maxYear = Infinity,
+    className,
+    ...rest
   } = props;
   const years = genYears(startYear, showYearsCount);
 
@@ -85,7 +97,11 @@ export default function YearSelectView(props: Props) {
   };
 
   return (
-    <YearSelectViewWrapper $columns={columns}>
+    <YearSelectViewWrapper
+      $columns={columns}
+      className={classNames('sinoui-year-select-view', className)}
+      {...rest}
+    >
       {years.map((year, index) => (
         <YearItem
           key={year}

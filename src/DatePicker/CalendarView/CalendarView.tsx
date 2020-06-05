@@ -164,7 +164,11 @@ export default function CalendarView({
   };
 
   const renderYears = () => (
-    <YearSelectView selectedYear={year} onYearSelect={handleYearSelect} />
+    <YearSelectView
+      selectedYear={year}
+      onYearSelect={handleYearSelect}
+      className="sinoui-calendar-view__yearsview"
+    />
   );
 
   const handleMonthSelect = (newMonth: number) => {
@@ -175,7 +179,11 @@ export default function CalendarView({
   };
 
   const renderMonths = () => (
-    <MonthSelectView selectedMonth={month} onMonthSelect={handleMonthSelect} />
+    <MonthSelectView
+      selectedMonth={month}
+      onMonthSelect={handleMonthSelect}
+      className="sinoui-calendar-view__monthsview"
+    />
   );
 
   return (
