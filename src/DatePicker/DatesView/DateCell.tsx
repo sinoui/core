@@ -3,6 +3,8 @@ import bemClassNames from '@sinoui/core/utils/bemClassNames';
 import { useRipple } from '@sinoui/ripple';
 import styled from 'styled-components';
 import DateCellContent from './DateCellContent';
+import gridCellCss from '../gridCellCss';
+import type { GridCellProps } from '../gridCellCss';
 
 interface Props {
   /**
@@ -39,9 +41,8 @@ interface Props {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const DateCellWrapper = styled.div<{ row: number; column: number }>`
-  -ms-grid-column: ${({ column }) => column};
-  -ms-grid-row: ${({ row }) => row};
+const DateCellWrapper = styled.div<GridCellProps>`
+  ${gridCellCss}
 `;
 
 /**

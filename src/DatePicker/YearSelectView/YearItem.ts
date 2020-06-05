@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import BaseButton from '@sinoui/core/BaseButton';
+import type { GridCellProps } from '../gridCellCss';
+import gridCellCss from '../gridCellCss';
 
-interface Props {
+interface Props extends GridCellProps {
   $selected?: boolean;
-  row: number;
-  column: number;
 }
 
 const YearItem = styled(BaseButton)<Props>`
@@ -14,9 +14,7 @@ const YearItem = styled(BaseButton)<Props>`
   margin: 8px;
   box-sizing: border-box;
   overflow: hidden;
-
-  -ms-grid-column: ${({ column }) => column};
-  -ms-grid-row: ${({ row }) => row};
+  ${gridCellCss}
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     width: 52px;
