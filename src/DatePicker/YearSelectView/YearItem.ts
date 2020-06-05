@@ -7,14 +7,15 @@ interface Props extends GridCellProps {
   $selected?: boolean;
 }
 
-const YearItem = styled(BaseButton)<Props>`
+const YearItem = styled(BaseButton).attrs((props: Props) => ({
+  style: gridCellCss(props),
+}))<Props>`
   width: 72px;
   height: 36px;
   border-radius: 18px;
   margin: 8px;
   box-sizing: border-box;
   overflow: hidden;
-  ${gridCellCss}
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     width: 52px;

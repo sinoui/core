@@ -9,6 +9,7 @@ import {
 } from '../constants';
 import YearSelectViewWrapper from './YearSelectViewWrapper';
 import useIsPc from '../useIsPc';
+import bemClassNames from '../../utils/bemClassNames';
 
 interface Props {
   /**
@@ -51,7 +52,7 @@ interface Props {
  * @param startYear 开始年份
  * @param showYearsCount 年份个数
  */
-const genYears = (startYear: number, showYearsCount: number) => {
+export const genYears = (startYear: number, showYearsCount: number) => {
   const years: number[] = [];
 
   for (let i = 0; i < showYearsCount; i += 1) {
@@ -67,8 +68,12 @@ const genYears = (startYear: number, showYearsCount: number) => {
  * @param currentYear 当前年份
  * @param columns 列数
  */
-const caclcStartYear = (currentYear: number, columns: number) => {
-  return currentYear - (currentYear % columns) - (100 - (100 % columns));
+export const calcStartYear = (
+  currentYear: number,
+  columns: number,
+  size = 100,
+) => {
+  return currentYear - (currentYear % columns) - (size - (size % columns));
 };
 
 /**
@@ -81,8 +86,13 @@ export default function YearSelectView(props: Props) {
   const currentYear = props.selectedYear ?? new Date().getFullYear();
   const {
     selectedYear,
-    startYear = caclcStartYear(currentYear, columns),
     showYearsCount = COUNTS_OF_YEAR,
+    startYear = calcStartYear(
+      currentYear,
+      columns,
+      Math.floor(showYearsCount / 2),
+    ),
+
     onYearSelect,
     minYear = -1,
     maxYear = Infinity,
@@ -93,7 +103,7 @@ export default function YearSelectView(props: Props) {
   const selectedYearNodeRef = useRef<HTMLButtonElement>(null);
 
   const handleYearItemClick = (year: number) => () => {
-    if (onYearSelect) {
+    if (onYearSelect && year !== selectedYear) {
       onYearSelect(year);
     }
   };
@@ -117,12 +127,17 @@ export default function YearSelectView(props: Props) {
       {years.map((year, index) => (
         <YearItem
           key={year}
+          className={bemClassNames('sinoui-year-select-view__year-item', {
+            selected: selectedYear === year,
+            disabled: year < minYear || year > maxYear,
+          })}
           row={Math.ceil((index + 1) / columns)}
           column={(index % columns) + 1}
           $selected={selectedYear === year}
           onClick={handleYearItemClick(year)}
           disabled={year < minYear || year > maxYear}
           ref={selectedYear === year ? selectedYearNodeRef : null}
+          data-year={year}
         >
           {year}
         </YearItem>
