@@ -1,0 +1,408 @@
+---
+id: navigationRail
+title: NavigationRail 垂直导航栏
+---
+
+使用垂直导航栏，您可以在应用程序的主要导航项之间跳转。
+
+垂直导航栏在屏幕下方显示三到五个导航项。 每一个导航项都由一个图标和一个可选文本标签表示。 当点击垂直导航栏图标时，用户被切换到该图标关联的目标页面顶部。
+
+import NavigationRail from '@sinoui/core/NavigationRail';
+import NavigationRailAction from '@sinoui/core/NavigationRailAction';
+import { MdRestore, MdFavorite, MdLocationOn, MdFolder } from 'react-icons/md';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import NavigationRailDemo from './navigation-rail/NavigationRailDemo';
+import NavigationRailBadge from './navigation-rail/NavigationRailBadge';
+import NavigationRailScreen from './navigation-rail/NavigationRailScreen';
+
+## NavigationRail
+
+## 基本使用
+
+```tsx
+import NavigationRail from '@sinoui/core/NavigationRail';
+import NavigationRailAction from '@sinoui/core/NavigationRailAction';
+import Fab from '@sinoui/core/Fab';
+import Add from '@sinoui/icons/Add';
+
+function NavigationRailDemo() {
+  const [val, setVal] = useState('');
+
+  const Div = styled.div`
+    height: 100vh;
+  `;
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Div>
+        <NavigationRail
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value: string) =>
+            setVal(value)
+          }
+          value={val}
+          fab={
+            <Fab>
+              <Add />
+            </Fab>
+          }
+        >
+          <NavigationRailAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+          />
+          <NavigationRailAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <NavigationRailAction
+            label="Nearby"
+            value="nearby"
+            icon={<MdLocationOn />}
+          />
+          <NavigationRailAction
+            label="Folder"
+            value="folder"
+            icon={<MdFolder />}
+          />
+        </NavigationRail>
+      </Div>
+    </ThemeProvider>
+  );
+}
+```
+
+效果如下：
+
+<NavigationRailDemo />
+
+## 设置隐藏所有标签
+
+```tsx
+import NavigationRail from '@sinoui/core/NavigationRail';
+import NavigationRailAction from '@sinoui/core/NavigationRailAction';
+
+function NavigationRailDemo() {
+  const [val, setVal] = useState('');
+
+  const Div = styled.div`
+    height: 100vh;
+  `;
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Div>
+        <NavigationRail
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value: string) =>
+            setVal(value)
+          }
+          value={val}
+          showLabels={false}
+        >
+          <NavigationRailAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+          />
+          <NavigationRailAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <NavigationRailAction
+            label="Nearby"
+            value="nearby"
+            icon={<MdLocationOn />}
+          />
+          <NavigationRailAction
+            label="Folder"
+            value="folder"
+            icon={<MdFolder />}
+          />
+        </NavigationRail>
+      </Div>
+    </ThemeProvider>
+  );
+}
+```
+
+效果如下：
+
+<NavigationRailDemo showLabels={false} />
+
+## 与 Badge 结合使用
+
+```tsx
+import NavigationRail from '@sinoui/core/NavigationRail';
+import NavigationRailAction from '@sinoui/core/NavigationRailAction';
+
+function NavigationRailDemo() {
+  const [val, setVal] = useState('');
+
+  const Div = styled.div`
+    height: 100vh;
+  `;
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Div>
+        <NavigationRail
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value: string) =>
+            setVal(value)
+          }
+          value={val}
+        >
+          <NavigationRailAction
+            label="Recents"
+            value="recents"
+            icon={
+              <Badge count={8} dot>
+                <MdRestore />
+              </Badge>
+            }
+          />
+          <NavigationRailAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <NavigationRailAction
+            label="Nearby"
+            value="nearby"
+            icon={
+              <Badge count={88}>
+                <MdLocationOn />
+              </Badge>
+            }
+          />
+          <NavigationRailAction
+            label="Folder"
+            value="folder"
+            icon={
+              <Badge count={888}>
+                <MdFolder />
+              </Badge>
+            }
+          />
+        </NavigationRail>
+      </Div>
+    </ThemeProvider>
+  );
+}
+```
+
+效果如下：
+
+<NavigationRailBadge />
+
+## 设置布局显示
+
+### 居中显示
+
+```tsx
+import NavigationRail from '@sinoui/core/NavigationRail';
+import NavigationRailAction from '@sinoui/core/NavigationRailAction';
+import Fab from '@sinoui/core/Fab';
+import Add from '@sinoui/icons/Add';
+
+function NavigationRailDemo() {
+  const [val, setVal] = useState('');
+
+  const Div = styled.div`
+    height: 100vh;
+  `;
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Div>
+        <NavigationRail
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value: string) =>
+            setVal(value)
+          }
+          value={val}
+          align="center"
+          fab={
+            <Fab>
+              <Add />
+            </Fab>
+          }
+        >
+          <NavigationRailAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+          />
+          <NavigationRailAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <NavigationRailAction
+            label="Nearby"
+            value="nearby"
+            icon={<MdLocationOn />}
+          />
+          <NavigationRailAction
+            label="Folder"
+            value="folder"
+            icon={<MdFolder />}
+          />
+        </NavigationRail>
+      </Div>
+    </ThemeProvider>
+  );
+}
+```
+
+效果如下：
+
+<NavigationRailDemo align="center" />
+
+### 底部对齐显示
+
+```tsx
+import NavigationRail from '@sinoui/core/NavigationRail';
+import NavigationRailAction from '@sinoui/core/NavigationRailAction';
+import Fab from '@sinoui/core/Fab';
+import Add from '@sinoui/icons/Add';
+
+function NavigationRailDemo() {
+  const [val, setVal] = useState('');
+
+  const Div = styled.div`
+    height: 100vh;
+  `;
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Div>
+        <NavigationRail
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value: string) =>
+            setVal(value)
+          }
+          value={val}
+          align="end"
+          fab={
+            <Fab>
+              <Add />
+            </Fab>
+          }
+        >
+          <NavigationRailAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+          />
+          <NavigationRailAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <NavigationRailAction
+            label="Nearby"
+            value="nearby"
+            icon={<MdLocationOn />}
+          />
+          <NavigationRailAction
+            label="Folder"
+            value="folder"
+            icon={<MdFolder />}
+          />
+        </NavigationRail>
+      </Div>
+    </ThemeProvider>
+  );
+}
+```
+
+效果如下：
+
+<NavigationRailDemo align="end" />
+
+## 沉浸式示例
+
+```tsx
+import NavigationRail from '@sinoui/core/NavigationRail';
+import NavigationRailAction from '@sinoui/core/NavigationRailAction';
+import Fab from '@sinoui/core/Fab';
+import Add from '@sinoui/icons/Add';
+
+function NavigationRailScreen() {
+  const [val, setVal] = useState('');
+
+  const Wrapper = styled.div`
+    background: ${(props) => props.theme.palette.primary.main};
+    padding: 40px 10px 40px 72px;
+    height: 100vh;
+  `;
+
+  const NavigationRailWrapper = styled(NavigationRail)`
+    position: fixed;
+    left: 8px;
+    top: 48px;
+    background: ${(props) => props.theme.palette.primary.main};
+    border: 0;
+    height: auto;
+
+    > .sinoui-navigation-rail {
+      color: ${(props) => opacify(-0.24, props.theme.palette.common.white)};
+    }
+
+    > .sinoui-navigation-rail--selected {
+      color: ${(props) => props.theme.palette.common.white};
+    }
+  `;
+
+  const PaperWrapper = styled(Paper)`
+    border-radius: 10px;
+    height: 100%;
+    padding: 0px 10px;
+  `;
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Wrapper>
+        <NavigationRailWrapper
+          onChange={(_e: React.FormEvent<HTMLDivElement>, value: string) =>
+            setVal(value)
+          }
+          value={val}
+          showLabels={false}
+        >
+          <NavigationRailAction
+            label="Recents"
+            value="recents"
+            icon={<MdRestore />}
+          />
+          <NavigationRailAction
+            label="Favorites"
+            value="favorites"
+            icon={<MdFavorite />}
+          />
+          <NavigationRailAction
+            label="Nearby"
+            value="nearby"
+            icon={<MdLocationOn />}
+          />
+          <NavigationRailAction
+            label="Folder"
+            value="folder"
+            icon={<MdFolder />}
+          />
+        </NavigationRailWrapper>
+        <PaperWrapper elevation={4}>沉浸式示例</PaperWrapper>
+      </Wrapper>
+    </ThemeProvider>
+  );
+}
+```
+
+效果如下：
+
+<NavigationRailScreen />
+
+## API
+
+查看[NavigationRail 组件 API](/docs/components-apis/NavigationRail)

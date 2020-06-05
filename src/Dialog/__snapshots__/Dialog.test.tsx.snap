@@ -4,6 +4,7 @@ exports[`Dialog组件 快照测试 不显示遮罩层 1`] = `
 <div
   className="sc-AxjAm eAeOPT"
   data-sinoui-id="modal"
+  onClick={[Function]}
   onKeyDown={[Function]}
 >
   <div
@@ -64,6 +65,7 @@ exports[`Dialog组件 快照测试 基本使用 1`] = `
 <div
   className="sc-AxjAm eAeOPT"
   data-sinoui-id="modal"
+  onClick={[Function]}
   onKeyDown={[Function]}
 >
   <div
@@ -136,6 +138,7 @@ exports[`Dialog组件 快照测试 宽度自适应 1`] = `
 <div
   className="sc-AxjAm eAeOPT"
   data-sinoui-id="modal"
+  onClick={[Function]}
   onKeyDown={[Function]}
 >
   <div
@@ -208,6 +211,7 @@ exports[`Dialog组件 快照测试 对话框将根据maxWidth的值进行自我�
 <div
   className="sc-AxjAm eAeOPT"
   data-sinoui-id="modal"
+  onClick={[Function]}
   onKeyDown={[Function]}
 >
   <div
@@ -280,6 +284,7 @@ exports[`Dialog组件 快照测试 显示关闭图标 1`] = `
 <div
   className="sc-AxjAm eAeOPT"
   data-sinoui-id="modal"
+  onClick={[Function]}
   onKeyDown={[Function]}
 >
   <div
@@ -372,6 +377,7 @@ exports[`Dialog组件 快照测试 设置全屏显示 1`] = `
 <div
   className="sc-AxjAm eAeOPT"
   data-sinoui-id="modal"
+  onClick={[Function]}
   onKeyDown={[Function]}
 >
   <div
@@ -444,6 +450,7 @@ exports[`Dialog组件 快照测试 设置弹窗不可以拖拽 1`] = `
 <div
   className="sc-AxjAm eAeOPT"
   data-sinoui-id="modal"
+  onClick={[Function]}
   onKeyDown={[Function]}
 >
   <div

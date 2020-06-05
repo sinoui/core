@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import Button from '@sinoui/core/Button';
 import BottomSheet from '@sinoui/core/BottomSheet';

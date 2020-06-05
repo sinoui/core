@@ -38,9 +38,9 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
 
     const getFocusItem = () => {
       const list = listRef.current;
-      const currentFocus = activeElement(ownerDocument(list));
+      const currentFocus = activeElement(ownerDocument(list as any));
 
-      if (list && contains(list, currentFocus)) {
+      if (list && contains(list, currentFocus as Element)) {
         return currentFocus;
       }
       return null;

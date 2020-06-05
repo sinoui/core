@@ -221,8 +221,8 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 }
 
 .c5 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c5::before {
@@ -774,8 +774,8 @@ exports[`渲染不可用状态下三种形态输入框 1`] = `
 }
 
 .c6 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c6::before {
@@ -1254,8 +1254,8 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 }
 
 .c7 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c7::before {
@@ -1898,8 +1898,8 @@ exports[`渲染带后缀元素的输入框 1`] = `
 }
 
 .c7 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c7::before {
@@ -2484,8 +2484,8 @@ exports[`渲染有辅助性文字的输入框 1`] = `
 }
 
 .c6 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c6::before {
@@ -2926,8 +2926,8 @@ exports[`渲染有错误提示的输入框 1`] = `
 }
 
 .c6 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c6::before {
