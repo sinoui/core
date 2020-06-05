@@ -1,10 +1,8 @@
 import React from 'react';
 import bemClassNames from '@sinoui/core/utils/bemClassNames';
 import { useRipple } from '@sinoui/ripple';
-import styled from 'styled-components';
 import DateCellContent from './DateCellContent';
 import gridCellCss from '../gridCellCss';
-import type { GridCellProps } from '../gridCellCss';
 
 interface Props {
   /**
@@ -41,10 +39,6 @@ interface Props {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const DateCellWrapper = styled.div<GridCellProps>`
-  ${gridCellCss}
-`;
-
 /**
  * 日期单元格
  */
@@ -56,6 +50,8 @@ export default function DateCell(props: Props) {
     selected,
     outlined,
     onClick,
+    row,
+    column,
     ...rest
   } = props;
   const ref = useRipple({
@@ -66,10 +62,11 @@ export default function DateCell(props: Props) {
     disabled: !clickable || disabled,
   });
   return (
-    <DateCellWrapper
+    <div
+      style={gridCellCss({ row, column })}
       {...rest}
-      data-column={rest.column}
-      data-row={rest.row}
+      data-column={column}
+      data-row={row}
       className={bemClassNames('sinoui-date-cell', {
         empty: date == null,
         selected,
@@ -94,6 +91,6 @@ export default function DateCell(props: Props) {
           {date}
         </DateCellContent>
       )}
-    </DateCellWrapper>
+    </div>
   );
 }

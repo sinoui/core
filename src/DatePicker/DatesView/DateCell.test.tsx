@@ -18,8 +18,8 @@ it('展示空日期', () => {
   const dateCell = getByTestId('date-cell');
   expect(dateCell).toBeEmpty();
   expect(dateCell).toHaveClass('sinoui-date-cell--empty');
-  expect(dateCell).toHaveStyleRule('-ms-grid-column', '2');
-  expect(dateCell).toHaveStyleRule('-ms-grid-row', '1');
+  expect(dateCell).toHaveAttribute('data-row', '1');
+  expect(dateCell).toHaveAttribute('data-column', '2');
 });
 
 it('展示日期', () => {
