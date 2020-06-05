@@ -4,13 +4,14 @@ import Paper from '@sinoui/core/Paper';
 const CalendarViewWrapper = styled(Paper)`
   width: 328px;
   overflow: hidden;
+  outline: none;
 
   .sinoui-week-title-bar {
     padding: 0 12px;
   }
 
   .sinoui-calendar-view__datesview {
-    padding: 0 12px 8px;
+    padding: 0 12px;
     height: 240px;
   }
 

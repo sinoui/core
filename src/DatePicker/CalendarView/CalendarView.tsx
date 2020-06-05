@@ -61,6 +61,10 @@ interface Props {
    */
   onCancel?: (event: React.MouseEvent) => void;
   /**
+   * 点击清除按钮的回调函数
+   */
+  onClear?: (event: React.MouseEvent) => void;
+  /**
    * 点击确定按钮的回调函数
    */
   onOk?: (event: React.MouseEvent) => void;
@@ -131,6 +135,7 @@ export default function CalendarView({
   showButtons,
   onCancel,
   onOk,
+  onClear,
   skipMonthsView: skipMonthsViewProp,
   title,
   ...rest
@@ -243,7 +248,9 @@ export default function CalendarView({
       {viewModel === ViewModel.years && renderYears()}
       {viewModel === ViewModel.dates && renderDates()}
       {viewModel === ViewModel.months && renderMonths()}
-      {isShowButtons && <CalendarViewAction onOk={onOk} onCancel={onCancel} />}
+      {isShowButtons && (
+        <CalendarViewAction onOk={onOk} onCancel={onCancel} onClear={onClear} />
+      )}
     </CalendarViewWrapper>
   );
 }

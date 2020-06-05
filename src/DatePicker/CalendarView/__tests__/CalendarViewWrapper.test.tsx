@@ -22,7 +22,7 @@ it('展现日历视图容器', () => {
   expect(calendarView).toHaveStyleRule('padding', '0 12px', {
     modifier: '.sinoui-week-title-bar',
   });
-  expect(calendarView).toHaveStyleRule('padding', '0 12px 8px', {
+  expect(calendarView).toHaveStyleRule('padding', '0 12px', {
     modifier: '.sinoui-calendar-view__datesview',
   });
   expect(calendarView).toHaveStyleRule('height', '240px', {
