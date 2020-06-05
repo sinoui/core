@@ -231,7 +231,7 @@ export default function CalendarView({
   ]);
 
   return (
-    <CalendarViewWrapper {...rest}>
+    <CalendarViewWrapper {...rest} className="sinoui-calendar-view">
       {!isPc && (
         <CalendarViewToolbar
           title={title || '设置日期'}

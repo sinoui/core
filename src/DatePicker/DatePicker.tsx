@@ -24,6 +24,10 @@ interface Props
    * 值变化时的回调函数
    */
   onChange?: (date?: string) => void;
+  /**
+   * 是否是pc端设备
+   */
+  isPc?: boolean;
 }
 
 const StyledPopper = styled(Popper)`
@@ -35,13 +39,21 @@ const StyledPopper = styled(Popper)`
  * @param props
  */
 export default function DatePicker(props: Props) {
-  const { value, onChange, readOnly, disabled, ...other } = props;
+  const {
+    value,
+    onChange,
+    readOnly,
+    disabled,
+    isPc: isPcProps,
+    ...other
+  } = props;
   const textInputRef = useRef(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const preventBlur = useRef(false);
   const [open, setOpen] = useState(false);
   const [dateValue, setDateValue] = useState(value);
-  const isPc = useIsPc();
+  const isNativePc = useIsPc();
+  const isPc = isPcProps ?? isNativePc;
 
   const date = useMemo(
     () => (dateValue ? new Date(Date.parse(dateValue)) : undefined),
@@ -90,9 +102,16 @@ export default function DatePicker(props: Props) {
   const handleCalendarChange = (selectedDate: Date) => {
     const newDate = formatDate(selectedDate);
     setDateValue(newDate);
-    if (isPc && onChange) {
-      onChange(newDate);
+    if (isPc) {
+      if (onChange) {
+        onChange(newDate);
+      }
+      setOpen(false);
     }
+  };
+
+  const onRequestClose = () => {
+    setOpen(false);
   };
 
   /**
@@ -100,7 +119,7 @@ export default function DatePicker(props: Props) {
    */
   const handleCancel = () => {
     setDateValue(value);
-    setOpen(false);
+    onRequestClose();
   };
 
   /**
@@ -110,7 +129,7 @@ export default function DatePicker(props: Props) {
     if (onChange) {
       onChange(dateValue);
     }
-    setOpen(false);
+    onRequestClose();
   };
 
   const handleClear = () => {
@@ -123,7 +142,6 @@ export default function DatePicker(props: Props) {
 
   const inputCompProps = {
     ref: inputRef,
-    onClick: handleInputClick,
     onBlur: handleInputBlur,
   };
   return (
@@ -133,11 +151,13 @@ export default function DatePicker(props: Props) {
         ref={textInputRef}
         inputComponent={DatePickerInput}
         inputProps={inputCompProps}
+        baseClassName="sinoui-date-picker"
         value={value}
         readOnly={readOnly}
         disabled={disabled}
+        onClick={handleInputClick}
         endAdornment={
-          <InputAdornment position="end">
+          <InputAdornment position="end" disablePointerEvents>
             <DatePickerIcon />
           </InputAdornment>
         }
@@ -151,7 +171,7 @@ export default function DatePicker(props: Props) {
           <CalendarView value={date} onChange={handleCalendarChange} />
         </StyledPopper>
       ) : (
-        <Modal open={open} center>
+        <Modal open={open} center onBackdropClick={onRequestClose}>
           <CalendarView
             value={date}
             onChange={handleCalendarChange}
