@@ -9,6 +9,7 @@ import YearSelectView from '@sinoui/core/DatePicker/YearSelectView/YearSelectVie
 import Paper from '@sinoui/core/Paper';
 import MonthSelectView from '@sinoui/core/DatePicker/MonthSelectView/MonthSelectView';
 import Body1 from '@sinoui/core/Body1';
+import formatDate from '@sinoui/core/DatePicker/formatDate';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -88,7 +89,7 @@ const CalendarViewDemo = () => {
         maxDate={new Date(2020, 7, 20)}
         startOfWeek={1}
       />
-      <Body1>当前选中日期:{selectedDate.toISOString()}</Body1>
+      <Body1>当前选中日期:{formatDate(selectedDate)}</Body1>
     </>
   );
 };
