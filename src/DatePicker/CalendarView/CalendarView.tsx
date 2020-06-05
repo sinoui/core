@@ -50,6 +50,10 @@ interface Props {
    * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
    */
   startOfWeek?: 0 | 1;
+  /**
+   * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
+   */
+  skipMonthsView?: boolean;
 }
 
 function isSameMonth(
@@ -62,8 +66,14 @@ function isSameMonth(
 
 function isGreaterThen(value: Date, year: number, month: number, date: number) {
   return (
-    new Date(value.getFullYear(), value.getMonth(), value.getDate()).getTime() >
-    new Date(year, month, date).getTime()
+    new Date(
+      value.getFullYear(),
+      value.getMonth(),
+      value.getDate(),
+      0,
+      0,
+      0,
+    ).getTime() > new Date(year, month, date, 0, 0, 0).getTime()
   );
 }
 
@@ -100,6 +110,7 @@ export default function CalendarView({
   minDate,
   maxDate,
   startOfWeek,
+  skipMonthsView: skipMonthsViewProp,
   ...rest
 }: Props) {
   const isPc = useIsPc();
@@ -120,6 +131,7 @@ export default function CalendarView({
     showToday && isSameMonth(new Date(), year, month)
       ? new Date().getDate()
       : undefined;
+  const skipMonthsView = skipMonthsViewProp ?? !isPc;
 
   if (
     value !== valueState &&
@@ -160,7 +172,7 @@ export default function CalendarView({
     if (newYear !== year) {
       setYearMonth([newYear, month]);
     }
-    setViewModel(isPc ? ViewModel.months : ViewModel.dates);
+    setViewModel(skipMonthsView ? ViewModel.dates : ViewModel.months);
   };
 
   const renderYears = () => (

@@ -104,9 +104,11 @@ export default function DatesView(props: Props) {
         row={getRow(dateCells.length + 1)}
         onClick={
           onDateClick
-            ? (event) => onDateClick(event, new Date(year, month, i + 1))
+            ? (event) =>
+                onDateClick(event, new Date(year, month, i + 1, 0, 0, 0))
             : undefined
         }
+        data-date={`${year}/${month + 1}/${i + 1}`}
       />,
     );
   }

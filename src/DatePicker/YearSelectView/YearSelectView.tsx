@@ -103,7 +103,7 @@ export default function YearSelectView(props: Props) {
   const selectedYearNodeRef = useRef<HTMLButtonElement>(null);
 
   const handleYearItemClick = (year: number) => () => {
-    if (onYearSelect && year !== selectedYear) {
+    if (onYearSelect) {
       onYearSelect(year);
     }
   };

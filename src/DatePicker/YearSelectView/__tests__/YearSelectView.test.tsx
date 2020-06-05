@@ -116,25 +116,3 @@ it('监听年份选择', () => {
 
   expect(onYearSelect).toBeCalledWith(2019);
 });
-
-it('点击选中年份，不回调onYearSelect', () => {
-  const onYearSelect = jest.fn();
-  const { getByTestId } = render(
-    <ThemeProvider theme={defaultTheme}>
-      <YearSelectView
-        selectedYear={2020}
-        data-testid="year-select-view"
-        onYearSelect={onYearSelect}
-      />
-    </ThemeProvider>,
-  );
-
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const yearItem = getByTestId('year-select-view').querySelector(
-    '[data-year="2020"]',
-  )!;
-
-  fireEvent.click(yearItem);
-
-  expect(onYearSelect).not.toBeCalled();
-});
