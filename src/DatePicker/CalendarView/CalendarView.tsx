@@ -229,7 +229,7 @@ export default function CalendarView({
     <CalendarViewWrapper {...rest}>
       {!isPc && (
         <CalendarViewToolbar
-          title={title || '选择日期'}
+          title={title || '设置日期'}
           value={value ?? new Date()}
         />
       )}
