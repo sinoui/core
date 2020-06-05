@@ -9,6 +9,7 @@ import useIsPc from '../useIsPc';
 import MonthSelectView from '../MonthSelectView';
 import getDatesOfMonth from '../DatesView/getDatesOfMonth';
 import CalendarViewAction from './CalendarViewAction';
+import CalendarViewToolbar from './CalendarViewToolbar';
 
 interface Props {
   className?: string;
@@ -67,6 +68,10 @@ interface Props {
    * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
    */
   skipMonthsView?: boolean;
+  /**
+   * 日历选择标题
+   */
+  title?: string;
 }
 
 function isSameMonth(
@@ -127,6 +132,7 @@ export default function CalendarView({
   onCancel,
   onOk,
   skipMonthsView: skipMonthsViewProp,
+  title,
   ...rest
 }: Props) {
   const isPc = useIsPc();
@@ -221,6 +227,12 @@ export default function CalendarView({
 
   return (
     <CalendarViewWrapper {...rest}>
+      {!isPc && (
+        <CalendarViewToolbar
+          title={title || '选择日期'}
+          value={value ?? new Date()}
+        />
+      )}
       <CalendarViewHeader
         year={year}
         month={month}

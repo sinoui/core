@@ -3,6 +3,7 @@ import Paper from '@sinoui/core/Paper';
 
 const CalendarViewWrapper = styled(Paper)`
   width: 328px;
+  overflow: hidden;
 
   .sinoui-week-title-bar {
     padding: 0 12px;
