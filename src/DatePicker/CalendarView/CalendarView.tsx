@@ -8,6 +8,7 @@ import ViewModel from '../ViewModel';
 import useIsPc from '../useIsPc';
 import MonthSelectView from '../MonthSelectView';
 import getDatesOfMonth from '../DatesView/getDatesOfMonth';
+import CalendarViewAction from './CalendarViewAction';
 
 interface Props {
   className?: string;
@@ -50,6 +51,18 @@ interface Props {
    * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
    */
   startOfWeek?: 0 | 1;
+  /**
+   * 是否展示按钮组，PC端默认不显示，移动端默认显示
+   */
+  showButtons?: boolean;
+  /**
+   * 点击取消按钮的回调函数
+   */
+  onCancel?: (event: React.MouseEvent) => void;
+  /**
+   * 点击确定按钮的回调函数
+   */
+  onOk?: (event: React.MouseEvent) => void;
 }
 
 function isSameMonth(
@@ -100,6 +113,9 @@ export default function CalendarView({
   minDate,
   maxDate,
   startOfWeek,
+  showButtons,
+  onCancel,
+  onOk,
   ...rest
 }: Props) {
   const isPc = useIsPc();
@@ -186,6 +202,11 @@ export default function CalendarView({
     />
   );
 
+  const isShowButtons = useMemo(() => showButtons ?? !isPc, [
+    isPc,
+    showButtons,
+  ]);
+
   return (
     <CalendarViewWrapper {...rest}>
       <CalendarViewHeader
@@ -198,6 +219,7 @@ export default function CalendarView({
       {viewModel === ViewModel.years && renderYears()}
       {viewModel === ViewModel.dates && renderDates()}
       {viewModel === ViewModel.months && renderMonths()}
+      {isShowButtons && <CalendarViewAction onOk={onOk} onCancel={onCancel} />}
     </CalendarViewWrapper>
   );
 }
