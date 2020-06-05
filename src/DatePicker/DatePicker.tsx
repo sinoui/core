@@ -132,6 +132,14 @@ export default function DatePicker(props: Props) {
     onRequestClose();
   };
 
+  const handleClear = () => {
+    if (onChange) {
+      onChange(undefined);
+      setDateValue(undefined);
+    }
+    setOpen(false);
+  };
+
   const inputCompProps = {
     ref: inputRef,
     onBlur: handleInputBlur,
@@ -169,6 +177,7 @@ export default function DatePicker(props: Props) {
             onChange={handleCalendarChange}
             onCancel={handleCancel}
             onOk={handleOk}
+            onClear={handleClear}
           />
         </Modal>
       )}
