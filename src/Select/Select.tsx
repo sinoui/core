@@ -46,6 +46,10 @@ export interface Props
    * 自定义自动完成组件的属性
    */
   autoCompleteProps?: AutoCompleteProps;
+  /**
+   * 宽度自适应
+   */
+  autoWidth?: boolean;
 }
 
 /**
@@ -108,6 +112,7 @@ function Select(props: Props) {
     error,
     disabled,
     readOnly,
+    autoWidth,
     ...other
   } = props;
 
@@ -165,6 +170,7 @@ function Select(props: Props) {
       )}
       renderTags={() => null}
       portal={portal}
+      autoWidth={autoWidth}
       {...autoCompleteProps}
     />
   );

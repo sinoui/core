@@ -2157,3 +2157,27 @@ describe('freeSolo模式', () => {
     expect(input).toHaveValue('');
   });
 });
+
+it('autoWidth', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const { getByTestId, getByRole } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        autoWidth
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+      />
+    </ThemeProvider>,
+  );
+  const textInput = getByTestId('text-input');
+  const input = textInput.querySelector('input')!;
+
+  act(() => {
+    fireEvent.click(input);
+  });
+
+  expect(getByRole('tooltip')).toHaveStyle('min-width: 0px');
+});

@@ -170,6 +170,10 @@ export interface Props {
    * 只读状态
    */
   readOnly?: boolean;
+  /**
+   * 宽度自适应
+   */
+  autoWidth?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -217,20 +221,22 @@ const StyledPopper = styled(Popper)<{ portal?: boolean }>`
   }
 `;
 
-const sameWidth = {
+const sameWidth = (autoWidth?: boolean) => ({
   name: 'sameWidth',
   enabled: true,
   phase: 'beforeWrite',
   requires: ['computeStyles'],
   fn: ({ state }: ModifierArguments<Options>) => {
-    state.styles.popper.width = `${(state.elements.reference as any).width}px`;
+    state.styles.popper[autoWidth ? 'minWidth' : 'width'] = `${
+      (state.elements.reference as any).width
+    }px`;
   },
   effect: ({ state }: ModifierArguments<Options>) => {
-    state.elements.popper.style.width = `${
+    state.elements.popper.style[autoWidth ? 'minWidth' : 'width'] = `${
       (state.elements.reference as any).offsetWidth
     }px`;
   },
-};
+});
 
 const getFocusedIndex = (
   items: Element[],
@@ -285,6 +291,7 @@ export default function AutoComplete(props: Props) {
     disabled,
     readOnly,
     renderOption,
+    autoWidth,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -316,6 +323,7 @@ export default function AutoComplete(props: Props) {
   );
   const [focused, setFocused] = useState(false);
   const preventBlur = useRef(false);
+  const modifiers = useMemo(() => [sameWidth(autoWidth)], [autoWidth]);
 
   const filteredOptions = useMemo(
     () =>
@@ -730,7 +738,7 @@ export default function AutoComplete(props: Props) {
         open={open}
         referenceElement={textInputRef}
         onMouseDown={preventEventDefault}
-        modifiers={[sameWidth]}
+        modifiers={modifiers}
         portal={portal}
       >
         <TransitionComponent in={open}>{renderOptions()}</TransitionComponent>
