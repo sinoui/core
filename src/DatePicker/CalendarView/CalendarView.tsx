@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import CalendarViewHeader from './CalendarViewHeader';
 import WeekTitleBar from '../WeekTitleBar';
 import DatesView from '../DatesView';
@@ -7,10 +7,25 @@ import YearSelectView from '../YearSelectView';
 import ViewModel from '../ViewModel';
 import useIsPc from '../useIsPc';
 import MonthSelectView from '../MonthSelectView';
+import getDatesOfMonth from '../DatesView/getDatesOfMonth';
 
 interface Props {
   className?: string;
   style?: React.CSSProperties;
+  /**
+   * 指定选中日期。需要是`Date`类型的。如果需要从字符串转换成`Date`，则建议使用`useMemo`:
+   * 
+   * ```tsx
+     const date = useMemo(() => new Date(Date.parse(dateStr)), [dateStr]);
+    
+     return <DatePicker value={date} />;
+   * ```
+   */
+  value?: Date;
+  /**
+   * 选中日期发生变化的回调函数
+   */
+  onChange?: (value: Date) => void;
   /**
    * 默认的年份
    */
@@ -19,6 +34,58 @@ interface Props {
    * 默认的月份
    */
   defaultMonth?: number;
+  /**
+   * 设置为`true`，则显示今日状态。默认为`true`。
+   */
+  showToday?: boolean;
+  /**
+   * 指定最小日期。
+   */
+  minDate?: Date;
+  /**
+   * 指定最大日期。
+   */
+  maxDate?: Date;
+  /**
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
+}
+
+function isSameMonth(
+  date: Date | undefined,
+  year: number,
+  month: number,
+): date is Date {
+  return !!date && date.getFullYear() === year && date.getMonth() === month;
+}
+
+function isGreaterThen(value: Date, year: number, month: number, date: number) {
+  return (
+    new Date(value.getFullYear(), value.getMonth(), value.getDate()).getTime() >
+    new Date(year, month, date).getTime()
+  );
+}
+
+function getDisabledDates(
+  year: number,
+  month: number,
+  minDate?: Date,
+  maxDate?: Date,
+) {
+  const dates = getDatesOfMonth(year, month);
+  const disabledDates: number[] = [];
+
+  for (let i = 0; i < dates; i += 1) {
+    if (
+      (minDate && isGreaterThen(minDate, year, month, i + 1)) ||
+      (maxDate && !isGreaterThen(maxDate, year, month, i + 1))
+    ) {
+      disabledDates.push(i + 1);
+    }
+  }
+
+  return disabledDates.length !== 0 ? disabledDates : undefined;
 }
 
 /**
@@ -27,20 +94,64 @@ interface Props {
 export default function CalendarView({
   defaultYear,
   defaultMonth,
+  value,
+  onChange,
+  showToday = true,
+  minDate,
+  maxDate,
+  startOfWeek,
   ...rest
 }: Props) {
   const isPc = useIsPc();
-  const [[year, month], setYearMonth] = useState(() => [
-    defaultYear ?? new Date().getFullYear(),
-    defaultMonth ?? new Date().getMonth(),
-  ]);
+  const [valueState, setValueState] = useState(value);
+  const [[year, month], setYearMonth] = useState(() => {
+    return value
+      ? [value.getFullYear(), value.getMonth()]
+      : [
+          defaultYear ?? new Date().getFullYear(),
+          defaultMonth ?? new Date().getMonth(),
+        ];
+  });
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
+  const selectedDates = useMemo(() => {
+    return isSameMonth(value, year, month) ? [value.getDate()] : undefined;
+  }, [month, value, year]);
+  const outlinedDate =
+    showToday && isSameMonth(new Date(), year, month)
+      ? new Date().getDate()
+      : undefined;
+
+  if (
+    value !== valueState &&
+    value &&
+    (!valueState ||
+      value.getFullYear() !== valueState.getFullYear() ||
+      value.getMonth() !== valueState.getMonth())
+  ) {
+    setYearMonth([value.getFullYear(), value.getMonth()]);
+    setValueState(value);
+  }
+
+  const handleDateClick = (_: React.MouseEvent<HTMLElement>, newDate: Date) => {
+    if (onChange) {
+      onChange(newDate);
+    }
+  };
 
   const renderDates = () => (
     <>
-      <WeekTitleBar />
+      <WeekTitleBar startOfWeek={startOfWeek} />
       <div className="sinoui-calendar-view__datesview">
-        <DatesView year={year} month={month} showNextMonthDates={isPc} />
+        <DatesView
+          year={year}
+          month={month}
+          showNextMonthDates={isPc}
+          selectedDates={selectedDates}
+          onDateClick={handleDateClick}
+          outlinedDate={outlinedDate}
+          disabledDates={getDisabledDates(year, month, minDate, maxDate)}
+          startOfWeek={startOfWeek}
+        />
       </div>
     </>
   );

@@ -8,6 +8,7 @@ import CalendarView from '@sinoui/core/DatePicker/CalendarView';
 import YearSelectView from '@sinoui/core/DatePicker/YearSelectView/YearSelectView';
 import Paper from '@sinoui/core/Paper';
 import MonthSelectView from '@sinoui/core/DatePicker/MonthSelectView/MonthSelectView';
+import Body1 from '@sinoui/core/Body1';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -75,9 +76,26 @@ export const 周标题栏 = () => (
   </StoryLayout>
 );
 
+const CalendarViewDemo = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  return (
+    <>
+      <CalendarView
+        value={selectedDate}
+        onChange={setSelectedDate}
+        minDate={new Date(2020, 4, 1)}
+        maxDate={new Date(2020, 7, 20)}
+        startOfWeek={1}
+      />
+      <Body1>当前选中日期:{selectedDate.toISOString()}</Body1>
+    </>
+  );
+};
+
 export const 日历视图 = () => (
   <StoryLayout>
-    <CalendarView />
+    <CalendarViewDemo />
   </StoryLayout>
 );
 
