@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
+import scrollIntoView from 'scroll-into-view-if-needed';
 import classNames from 'classnames';
 import YearItem from './YearItem';
 import {
@@ -89,12 +90,23 @@ export default function YearSelectView(props: Props) {
     ...rest
   } = props;
   const years = genYears(startYear, showYearsCount);
+  const selectedYearNodeRef = useRef<HTMLButtonElement>(null);
 
   const handleYearItemClick = (year: number) => () => {
     if (onYearSelect) {
       onYearSelect(year);
     }
   };
+
+  useLayoutEffect(() => {
+    const selectedYearNode = selectedYearNodeRef.current;
+    if (selectedYearNode) {
+      scrollIntoView(selectedYearNode, {
+        block: 'center',
+        inline: 'center',
+      });
+    }
+  }, []);
 
   return (
     <YearSelectViewWrapper
@@ -108,9 +120,9 @@ export default function YearSelectView(props: Props) {
           row={Math.ceil((index + 1) / columns)}
           column={(index % columns) + 1}
           $selected={selectedYear === year}
-          autoFocus={currentYear === year}
           onClick={handleYearItemClick(year)}
           disabled={year < minYear || year > maxYear}
+          ref={selectedYear === year ? selectedYearNodeRef : null}
         >
           {year}
         </YearItem>
