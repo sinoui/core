@@ -37,6 +37,7 @@ const MonthSelectView = ({
           column={(index % 3) + 1}
           onClick={handleItemClick(index)}
           $selected={selectedMonth === index}
+          data-month={index}
         >
           {title}
         </YearItem>
