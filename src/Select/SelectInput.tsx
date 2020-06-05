@@ -70,6 +70,7 @@ const SelectInputLayout = styled.div`
   user-select: none;
   box-sizing: content-box;
   cursor: inherit;
+  width: 0;
   ${singleLineTextCss}
 `;
 

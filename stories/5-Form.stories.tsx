@@ -8,6 +8,7 @@ import Radio from '@sinoui/core/Radio';
 import { Row, Column } from '@sinoui/core/Grid';
 import CheckboxGroup from '@sinoui/core/CheckboxGroup';
 import Checkbox from '@sinoui/core/Checkbox';
+import Select, { Option } from '@sinoui/core/Select';
 import H4 from '@sinoui/core/H4';
 import PersonRounded from '@sinoui/icons/PersonRounded';
 import EmailRounded from '@sinoui/icons/EmailRounded';
@@ -46,6 +47,16 @@ export const 水平布局 = () => (
               <Radio value="1">男</Radio>
               <Radio value="2">女</Radio>
             </RadioGroup>
+          </FormControl>
+          <FormControl layout="horizontal" label="爱好">
+            <Select value="选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一">
+              <Option value="选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一">
+                选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一选项一
+              </Option>
+              <Option value="选项二">选项二</Option>
+              <Option value="选项三">选项三</Option>
+              <Option value="选项四">选项四</Option>
+            </Select>
           </FormControl>
           <FormControl
             layout="horizontal"
