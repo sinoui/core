@@ -3,20 +3,32 @@ import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import Popper from '@sinoui/core/Popper';
 import DatePickerIcon from '@sinoui/core/svg-icons/DatePickerIcon';
+import styled from 'styled-components';
 import CalendarView from './CalendarView';
 import DatePickerInput from './DatePickerInput';
 import InputAdornment from '../InputAdornment';
 import useIsPc from './useIsPc';
 import Modal from '../Modal';
+import formatDate from './formatDate';
 
 interface Props
   extends Omit<
     TextInputProps,
     'value' | 'multiline' | 'minRows' | 'maxRows' | 'onChange' | 'multiple'
   > {
+  /**
+   * 值
+   */
   value?: string;
+  /**
+   * 值变化时的回调函数
+   */
   onChange?: (date?: string) => void;
 }
+
+const StyledPopper = styled(Popper)`
+  z-index: 2;
+`;
 
 /**
  * 日期选择组件
@@ -32,8 +44,8 @@ export default function DatePicker(props: Props) {
   const isPc = useIsPc();
 
   const date = useMemo(
-    () => (value ? new Date(Date.parse(value)) : undefined),
-    [value],
+    () => (dateValue ? new Date(Date.parse(dateValue)) : undefined),
+    [dateValue],
   );
 
   const preventEventDefault = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -76,7 +88,7 @@ export default function DatePicker(props: Props) {
    * @param selectedDate
    */
   const handleCalendarChange = (selectedDate: Date) => {
-    const newDate = selectedDate.toISOString().substr(0, 10);
+    const newDate = formatDate(selectedDate);
     setDateValue(newDate);
     if (isPc && onChange) {
       onChange(newDate);
@@ -123,13 +135,13 @@ export default function DatePicker(props: Props) {
         }
       />
       {isPc ? (
-        <Popper
+        <StyledPopper
           open={open}
           referenceElement={textInputRef}
           onMouseDown={preventEventDefault}
         >
           <CalendarView value={date} onChange={handleCalendarChange} />
-        </Popper>
+        </StyledPopper>
       ) : (
         <Modal open={open} center>
           <CalendarView
