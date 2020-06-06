@@ -34,6 +34,33 @@ const StyledPopper = styled(Popper)`
   z-index: 2;
 `;
 
+function CalendarModalContent({
+  value,
+  onChange,
+  onClose,
+}: {
+  value?: Date;
+  onChange: (value?: Date) => void;
+  onClose: () => void;
+}) {
+  const [selectedDate, setSelectedDate] = useState(value);
+  return (
+    <CalendarView
+      value={selectedDate}
+      onChange={setSelectedDate}
+      onCancel={onClose}
+      onOk={() => {
+        onChange(selectedDate);
+        onClose();
+      }}
+      onClear={() => {
+        onChange(undefined);
+        onClose();
+      }}
+    />
+  );
+}
+
 /**
  * 日期选择组件
  * @param props
@@ -51,13 +78,12 @@ export default function DatePicker(props: Props) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const preventBlur = useRef(false);
   const [open, setOpen] = useState(false);
-  const [dateValue, setDateValue] = useState(value);
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
 
   const date = useMemo(
-    () => (dateValue ? new Date(Date.parse(dateValue)) : undefined),
-    [dateValue],
+    () => (value ? new Date(Date.parse(value)) : undefined),
+    [value],
   );
 
   const preventEventDefault = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -99,44 +125,15 @@ export default function DatePicker(props: Props) {
    * 日期选择变化时的回调函数
    * @param selectedDate
    */
-  const handleCalendarChange = (selectedDate: Date) => {
-    const newDate = formatDate(selectedDate);
-    setDateValue(newDate);
-    if (isPc) {
-      if (onChange) {
-        onChange(newDate);
-      }
-      setOpen(false);
+  const handleCalendarChange = (selectedDate?: Date) => {
+    const newDate = selectedDate ? formatDate(selectedDate) : '';
+    if (onChange) {
+      onChange(newDate);
     }
-  };
-
-  const onRequestClose = () => {
     setOpen(false);
   };
 
-  /**
-   * 点击取消按钮，关闭弹窗
-   */
-  const handleCancel = () => {
-    setDateValue(value);
-    onRequestClose();
-  };
-
-  /**
-   * 点击确定按钮时的回调函数
-   */
-  const handleOk = () => {
-    if (onChange) {
-      onChange(dateValue);
-    }
-    onRequestClose();
-  };
-
-  const handleClear = () => {
-    if (onChange) {
-      onChange(undefined);
-      setDateValue(undefined);
-    }
+  const onRequestClose = () => {
     setOpen(false);
   };
 
@@ -172,12 +169,10 @@ export default function DatePicker(props: Props) {
         </StyledPopper>
       ) : (
         <Modal open={open} center onBackdropClick={onRequestClose}>
-          <CalendarView
+          <CalendarModalContent
             value={date}
             onChange={handleCalendarChange}
-            onCancel={handleCancel}
-            onOk={handleOk}
-            onClear={handleClear}
+            onClose={onRequestClose}
           />
         </Modal>
       )}
