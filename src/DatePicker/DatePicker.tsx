@@ -159,7 +159,7 @@ export default function DatePicker(props: Props) {
 
   const handleClear = () => {
     if (onChange) {
-      onChange(undefined);
+      onChange('');
     }
   };
 
@@ -177,11 +177,12 @@ export default function DatePicker(props: Props) {
         inputComponent={DatePickerInput}
         inputProps={inputCompProps}
         baseClassName="sinoui-date-picker"
-        value={value}
+        value={value ?? ''}
         readOnly={readOnly}
         disabled={disabled}
         onClick={handleInputClick}
         onClear={handleClear}
+        shrink={open}
         endAdornment={
           <InputAdornment position="end" disablePointerEvents>
             <DatePickerIcon />

@@ -252,6 +252,27 @@ describe('移动端', () => {
       document.querySelector('.sinoui-date-cell--selected'),
     ).toHaveTextContent(`${new Date().getDate()}`);
   });
+
+  it('清除', () => {
+    const onChange = jest.fn();
+    const { container, getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DatePicker label="日期选择" isPc={false} onChange={onChange} />
+      </ThemeProvider>,
+    );
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    act(() => {
+      fireEvent.click(getByText('清除'));
+    });
+
+    expect(onChange).toBeCalledWith('');
+  });
 });
 
 it('min', () => {
@@ -353,4 +374,29 @@ it('modalTitle', () => {
   expect(document.querySelector('.sinoui-calendar-view')).toHaveTextContent(
     '设置日期',
   );
+});
+
+it('清除功能', () => {
+  const onChange = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DatePicker
+        label="出生日期"
+        modalTitle="设置日期"
+        value="2020-06-05"
+        onChange={onChange}
+        allowClear
+      />
+    </ThemeProvider>,
+  );
+
+  const clearButton = container.querySelector(
+    '.sinoui-base-input__clear svg',
+  )! as HTMLElement;
+
+  act(() => {
+    fireEvent.click(clearButton);
+  });
+
+  expect(onChange).toBeCalledWith('');
 });
