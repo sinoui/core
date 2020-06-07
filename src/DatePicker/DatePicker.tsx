@@ -34,18 +34,18 @@ const StyledPopper = styled(Popper)`
   z-index: 2;
 `;
 
-function CalendarModalContent({
-  value,
-  onChange,
-  onClose,
-}: {
-  value?: Date;
-  onChange: (value?: Date) => void;
-  onClose: () => void;
-}) {
+const CalendarModalContent = React.forwardRef<
+  HTMLDivElement,
+  {
+    value?: Date;
+    onChange: (value?: Date) => void;
+    onClose: () => void;
+  }
+>(function CalendarModalContent({ value, onChange, onClose }, ref) {
   const [selectedDate, setSelectedDate] = useState(value);
   return (
     <CalendarView
+      ref={ref}
       value={selectedDate}
       onChange={setSelectedDate}
       onCancel={onClose}
@@ -59,7 +59,7 @@ function CalendarModalContent({
       }}
     />
   );
-}
+});
 
 /**
  * 日期选择组件

@@ -9,6 +9,57 @@ import DatePicker from '../DatePicker';
 
 afterEach(cleanup);
 
+describe('value', () => {
+  it('显示指定的日期', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DatePicker
+          label="日期选择"
+          value="2020-12-12"
+          data-testid="datepicker"
+        />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('datepicker')).toHaveTextContent('2020-12-12');
+  });
+
+  it('显示不同的日期', () => {
+    const { rerender, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DatePicker
+          label="日期选择"
+          value="2020-12-12"
+          data-testid="datepicker"
+          isPc
+        />
+      </ThemeProvider>,
+    );
+
+    rerender(
+      <ThemeProvider theme={defaultTheme}>
+        <DatePicker
+          label="日期选择"
+          value="2020-01-15"
+          data-testid="datepicker"
+          isPc
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+    expect(textInput).toHaveTextContent('2020-01-15');
+
+    act(() => {
+      fireEvent.click(textInput);
+    });
+    // 最新value值代表的日期被选中
+    expect(container.querySelector('[data-date="2020/1/15"]')).toHaveClass(
+      'sinoui-date-cell--selected',
+    );
+  });
+});
+
 describe('pc端', () => {
   it('点击出现日期选择弹窗', () => {
     const { container } = render(
