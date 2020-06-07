@@ -123,23 +123,26 @@ function getDisabledDates(
 /**
  * 日历视图
  */
-export default function CalendarView({
-  defaultYear,
-  defaultMonth,
-  value,
-  onChange,
-  showToday = true,
-  minDate,
-  maxDate,
-  startOfWeek,
-  showButtons,
-  onCancel,
-  onOk,
-  onClear,
-  skipMonthsView: skipMonthsViewProp,
-  title,
-  ...rest
-}: Props) {
+export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
+  {
+    defaultYear,
+    defaultMonth,
+    value,
+    onChange,
+    showToday = true,
+    minDate,
+    maxDate,
+    startOfWeek,
+    showButtons,
+    onCancel,
+    onOk,
+    onClear,
+    skipMonthsView: skipMonthsViewProp,
+    title,
+    ...rest
+  },
+  ref,
+) {
   const isPc = useIsPc();
   const [valueState, setValueState] = useState(value);
   const [[year, month], setYearMonth] = useState(() => {
@@ -231,7 +234,7 @@ export default function CalendarView({
   ]);
 
   return (
-    <CalendarViewWrapper {...rest} className="sinoui-calendar-view">
+    <CalendarViewWrapper {...rest} className="sinoui-calendar-view" ref={ref}>
       {!isPc && (
         <CalendarViewToolbar
           title={title || '设置日期'}
@@ -253,4 +256,4 @@ export default function CalendarView({
       )}
     </CalendarViewWrapper>
   );
-}
+});

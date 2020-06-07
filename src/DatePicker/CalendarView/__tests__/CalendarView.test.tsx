@@ -343,3 +343,14 @@ it('startOfWeek', () => {
       .length,
   ).toBe(5);
 });
+
+it('ref', () => {
+  const ref = React.createRef<HTMLDivElement>();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <CalendarView data-testid="calendar-view" ref={ref} />
+    </ThemeProvider>,
+  );
+
+  expect(ref.current).toBe(getByTestId('calendar-view'));
+});

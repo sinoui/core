@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import Paper from '@sinoui/core/Paper';
 
-const CalendarViewWrapper = styled(Paper)`
+const disabledProps = ['in'];
+const CalendarViewWrapper = styled(Paper).withConfig({
+  shouldForwardProp: (prop) => !disabledProps.includes(prop),
+})`
   width: 328px;
   overflow: hidden;
   outline: none;

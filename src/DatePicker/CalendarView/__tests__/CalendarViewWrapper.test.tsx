@@ -45,3 +45,16 @@ it('展现日历视图容器', () => {
     media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
   });
 });
+
+it('阻止in属性', () => {
+  const Comp = CalendarViewWrapper as any;
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Comp data-testid="calendar-view" in />
+    </ThemeProvider>,
+  );
+
+  const calendarView = getByTestId('calendar-view');
+
+  expect(calendarView).not.toHaveAttribute('in');
+});
