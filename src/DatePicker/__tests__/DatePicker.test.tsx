@@ -234,6 +234,24 @@ describe('移动端', () => {
     expect(onChange).not.toBeCalled();
     expect(document.querySelector('.sinoui-calendar-view')).toBeFalsy();
   });
+
+  it('默认今日选中', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DatePicker label="日期选择" isPc={false} />
+      </ThemeProvider>,
+    );
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    expect(
+      document.querySelector('.sinoui-date-cell--selected'),
+    ).toHaveTextContent(`${new Date().getDate()}`);
+  });
 });
 
 it('min', () => {

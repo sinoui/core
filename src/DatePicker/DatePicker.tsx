@@ -55,7 +55,7 @@ const CalendarModalContent = React.forwardRef<
     onChange: (value?: Date) => void;
   }
 >(function CalendarModalContent({ value, onChange, onClose, ...rest }, ref) {
-  const [selectedDate, setSelectedDate] = useState(value);
+  const [selectedDate, setSelectedDate] = useState(value ?? new Date());
   return (
     <CalendarView
       {...rest}
