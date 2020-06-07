@@ -4,7 +4,7 @@ import type { TextInputProps } from '@sinoui/core/TextInput';
 import Popper from '@sinoui/core/Popper';
 import DatePickerIcon from '@sinoui/core/svg-icons/DatePickerIcon';
 import styled from 'styled-components';
-import mem from 'mem';
+import mem from '@sinoui/core/utils/mem';
 import CalendarView from './CalendarView';
 import DatePickerInput from './DatePickerInput';
 import InputAdornment from '../InputAdornment';
@@ -55,7 +55,9 @@ const CalendarModalContent = React.forwardRef<
     onChange: (value?: Date) => void;
   }
 >(function CalendarModalContent({ value, onChange, onClose, ...rest }, ref) {
-  const [selectedDate, setSelectedDate] = useState(value ?? new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    value ?? new Date(),
+  );
   return (
     <CalendarView
       {...rest}
@@ -155,11 +157,18 @@ export default function DatePicker(props: Props) {
     setOpen(false);
   };
 
+  const handleClear = () => {
+    if (onChange) {
+      onChange(undefined);
+    }
+  };
+
   const inputCompProps = {
     ref: inputRef,
     onBlur: handleInputBlur,
     disabled,
   };
+
   return (
     <>
       <TextInput
@@ -172,6 +181,7 @@ export default function DatePicker(props: Props) {
         readOnly={readOnly}
         disabled={disabled}
         onClick={handleInputClick}
+        onClear={handleClear}
         endAdornment={
           <InputAdornment position="end" disablePointerEvents>
             <DatePickerIcon />

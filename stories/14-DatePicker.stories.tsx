@@ -192,3 +192,14 @@ export const 日期范围 = () => (
     />
   </StoryLayout>
 );
+
+export const 清除功能 = () => (
+  <StoryLayout>
+    <DatePickerDemo
+      label="日期选择"
+      min="2020-06-04"
+      placeholder="最小日期为2020-06-04"
+      allowClear
+    />
+  </StoryLayout>
+);
