@@ -160,11 +160,9 @@ it('子元素属性', () => {
 describe('快照测试', () => {
   it('展现', () => {
     const tree = create(
-      <React.StrictMode>
-        <Grow in>
-          <div>测试</div>
-        </Grow>
-      </React.StrictMode>,
+      <Grow in>
+        <div>测试</div>
+      </Grow>,
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
