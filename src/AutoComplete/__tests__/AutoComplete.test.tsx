@@ -29,6 +29,7 @@ it('渲染带有弹出指示器的输入框', () => {
         renderInput={renderInput}
         options={[]}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -50,6 +51,7 @@ it('点击输入框，弹出选项', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -82,6 +84,7 @@ it('输入框失去焦点，关闭选项弹窗', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -113,6 +116,7 @@ it('点击弹出图标，输入框获取到焦点', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -140,6 +144,7 @@ it('点击弹出图标，显示选项弹窗', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -169,6 +174,7 @@ it('点击弹出图标，关闭已显示的选项弹窗', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -201,6 +207,7 @@ it('输入框值变化，过滤选项', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -236,6 +243,7 @@ it('选项打开时，按下esc键，退出选项', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -271,6 +279,7 @@ it('closeOnEscape = false', () => {
         closeOnEscape={false}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -311,6 +320,7 @@ it('自定义Popper组件', () => {
         options={options}
         getOptionLabel={(_) => _.title}
         PopperComponent={CustomPopperComponent}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -348,6 +358,7 @@ it('点击选项时，阻止mousedown的默认行为', () => {
         options={options}
         getOptionLabel={(_) => _.title}
         PopperComponent={FakePopper}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -375,6 +386,7 @@ it('定制弹窗图标', () => {
         options={options}
         getOptionLabel={(_) => _.title}
         popupIcon={<div data-testid="custom-popup-icon" />}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -395,6 +407,7 @@ it('forcePopupIcon = false，不显示弹窗图标', () => {
         getOptionLabel={(_) => _.title}
         popupIcon={<div data-testid="custom-popup-icon" />}
         forcePopupIcon={false}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -418,6 +431,7 @@ it('有值显示清除图标', () => {
         options={options}
         getOptionLabel={(_) => _.title}
         clearIcon={clearIcon}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -443,6 +457,7 @@ it('点击清除图标，清除值', () => {
         getOptionLabel={(_) => _.title}
         clearIcon={clearIcon}
         onChange={onChange}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -470,6 +485,7 @@ it('无值时，不显示清除按钮', () => {
         options={options}
         getOptionLabel={(_) => _.title}
         clearIcon={clearIcon}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -493,6 +509,7 @@ it('在非freeSolo模式下，输入框聚焦时，选中文本', () => {
         options={options}
         getOptionLabel={(_) => _.title}
         clearIcon={clearIcon}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -519,6 +536,7 @@ it('单选状态下，点击选项，选中选项并关闭选项弹窗', () => {
         options={options}
         getOptionLabel={(_) => _.title}
         onChange={onChange}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -553,6 +571,7 @@ it('输入框的值等于value，则不过滤选项列表', () => {
         value={options[0]}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -636,6 +655,7 @@ it('openOnFocus=true,获取焦点时出现弹窗', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -668,6 +688,7 @@ it('输入框获取焦点时，按下向上或向下方向键，弹出选项列�
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -764,6 +785,7 @@ it('选项列表关闭状态下，在输入框中输入值，弹出选项列表'
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -813,6 +835,7 @@ it('closeOnSelect=false时， 点击选项，不关闭弹窗', () => {
         options={options}
         getOptionLabel={(_) => _.title}
         onChange={onChange}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -849,6 +872,7 @@ it('使用方向键切换聚焦选项', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -1022,6 +1046,7 @@ it('选项列表展现时，按下home键，第一个选项高亮', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -1058,6 +1083,7 @@ it('选项列表为打开状态，按下End键，最后一个选项被选中', (
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );
@@ -1303,6 +1329,7 @@ describe('multiple', () => {
           multiple
           renderInput={renderInput}
           onChange={onChange}
+          portal={false}
         />
       </ThemeProvider>,
     );
@@ -1337,6 +1364,7 @@ describe('multiple', () => {
           renderInput={renderInput}
           onChange={onChange}
           value={[options[0]]}
+          portal={false}
         />
       </ThemeProvider>,
     );
@@ -1368,6 +1396,7 @@ describe('multiple', () => {
           renderInput={renderInput}
           onChange={onChange}
           value={[options[0]]}
+          portal={false}
         />
       </ThemeProvider>,
     );
@@ -2194,6 +2223,7 @@ it('closeOnBlur===false，失去焦点，不关闭弹窗', () => {
         renderInput={renderInput}
         options={options}
         getOptionLabel={(_) => _.title}
+        portal={false}
       />
     </ThemeProvider>,
   );

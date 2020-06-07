@@ -46,6 +46,10 @@ interface Props
    * 指定自定义的值渲染函数。默认情况下，直接显示`value`属性值。
    */
   renderValue?: (value?: Date) => string;
+  /**
+   * 是否将弹出内容以传送门的方式渲染。默认为`true`。
+   */
+  portal?: boolean;
 }
 
 const StyledPopper = styled(Popper)`
@@ -101,6 +105,7 @@ export default function DatePicker(props: Props) {
     max,
     modalTitle = `设置${label}`,
     renderValue,
+    portal,
     ...other
   } = props;
   const textInputRef = useRef(null);
@@ -200,6 +205,7 @@ export default function DatePicker(props: Props) {
           open={open}
           referenceElement={textInputRef}
           onMouseDown={preventEventDefault}
+          portal={portal}
         >
           <CalendarView
             value={date}

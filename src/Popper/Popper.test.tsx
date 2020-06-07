@@ -13,7 +13,12 @@ it('展现弹出提示', () => {
   const { getByTestId } = render(
     <div>
       <div ref={referenceElementRef}>参考元素</div>
-      <Popper open referenceElement={referenceElementRef} data-testid="tooltip">
+      <Popper
+        open
+        referenceElement={referenceElementRef}
+        data-testid="tooltip"
+        portal={false}
+      >
         <div data-testid="tooltip-content">这是弹出内容</div>
       </Popper>
     </div>,

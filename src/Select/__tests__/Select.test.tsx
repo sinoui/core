@@ -16,15 +16,15 @@ it('正确渲染三种模式下的下拉选择框', () => {
     .create(
       <ThemeProvider theme={defaultTheme}>
         <div>
-          <Select label="Required" value={[]} multiple>
+          <Select portal={false} label="Required" value={[]} multiple>
             <Option value="1">选项一</Option>
             <Option value="2">选项二</Option>
           </Select>
-          <Select label="Required" variant="filled">
+          <Select portal={false} label="Required" variant="filled">
             <Option value="1">选项一</Option>
             <Option value="2">选项二</Option>
           </Select>
-          <Select label="Required" variant="outlined">
+          <Select portal={false} label="Required" variant="outlined">
             <Option value="1">选项一</Option>
             <Option value="2">选项二</Option>
           </Select>
@@ -40,7 +40,7 @@ it('渲染不可用的下拉框', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={defaultTheme}>
-        <Select label="Required" disabled>
+        <Select portal={false} label="Required" disabled>
           <Option value="1">选项一</Option>
           <Option value="2">选项二</Option>
         </Select>
@@ -54,7 +54,7 @@ it('渲染不可用的下拉框', () => {
 it('点击选择框，出现选项弹窗', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <Select>
+      <Select portal={false}>
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
         <Option value="3">选项三</Option>
@@ -78,7 +78,7 @@ it('点击某一项，选中此选项', () => {
   const onChange = jest.fn();
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <Select onChange={onChange}>
+      <Select portal={false} onChange={onChange}>
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
         <Option value="3">选项三</Option>
@@ -106,7 +106,7 @@ it('点击清除按钮，清空值', () => {
   const onChange = jest.fn();
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <Select onChange={onChange} value="2">
+      <Select portal={false} onChange={onChange} value="2">
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
         <Option value="3">选项三</Option>
@@ -126,7 +126,7 @@ it('点击清除按钮，清空值', () => {
 it('不可用时点击不弹框', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <Select disabled>
+      <Select portal={false} disabled>
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
         <Option value="3">选项三</Option>
@@ -150,7 +150,7 @@ it('不可用时点击不弹框', () => {
 it('只读时点击不弹窗', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <Select readOnly>
+      <Select portal={false} readOnly>
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
         <Option value="3">选项三</Option>

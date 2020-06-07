@@ -46,7 +46,7 @@ interface Props extends Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {
    */
   container?: ContainerElement;
   /**
-   * 是否将弹出内容以传送门的方式渲染。默认为`false`。
+   * 是否将弹出内容以传送门的方式渲染。默认为`true`。
    */
   portal?: boolean;
   /**
@@ -81,7 +81,7 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
     referenceElement,
     placement = 'bottom',
     container,
-    portal = false,
+    portal = true,
     popperRef: popperRefProp,
     modifiers,
     popperOptions,

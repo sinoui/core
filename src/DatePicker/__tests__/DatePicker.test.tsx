@@ -14,6 +14,7 @@ describe('value', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
         <DatePicker
+          portal={false}
           label="日期选择"
           value="2020-12-12"
           data-testid="datepicker"
@@ -28,6 +29,7 @@ describe('value', () => {
     const { rerender, container } = render(
       <ThemeProvider theme={defaultTheme}>
         <DatePicker
+          portal={false}
           label="日期选择"
           value="2020-12-12"
           data-testid="datepicker"
@@ -39,6 +41,7 @@ describe('value', () => {
     rerender(
       <ThemeProvider theme={defaultTheme}>
         <DatePicker
+          portal={false}
           label="日期选择"
           value="2020-01-15"
           data-testid="datepicker"
@@ -64,7 +67,7 @@ describe('pc端', () => {
   it('点击出现日期选择弹窗', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <DatePicker label="日期选择" isPc />
+        <DatePicker portal={false} label="日期选择" isPc />
       </ThemeProvider>,
     );
 
@@ -82,7 +85,7 @@ describe('pc端', () => {
   it('失去焦点，关闭弹窗', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <DatePicker label="日期选择" isPc />
+        <DatePicker portal={false} label="日期选择" isPc />
       </ThemeProvider>,
     );
 
@@ -106,6 +109,7 @@ describe('pc端', () => {
     const { container, getByText } = render(
       <ThemeProvider theme={defaultTheme}>
         <DatePicker
+          portal={false}
           label="日期选择"
           isPc
           value="2020-06-05"
@@ -133,7 +137,7 @@ describe('移动端', () => {
   it('点击出现日期选择弹窗', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <DatePicker label="日期选择" isPc={false} />
+        <DatePicker portal={false} label="日期选择" isPc={false} />
       </ThemeProvider>,
     );
 
@@ -149,7 +153,7 @@ describe('移动端', () => {
   it('失去焦点，不关闭弹窗', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <DatePicker label="日期选择" isPc={false} />
+        <DatePicker portal={false} label="日期选择" isPc={false} />
       </ThemeProvider>,
     );
 
@@ -173,6 +177,7 @@ describe('移动端', () => {
     const { container, getByText } = render(
       <ThemeProvider theme={defaultTheme}>
         <DatePicker
+          portal={false}
           label="日期选择"
           isPc={false}
           value="2020-06-05"
@@ -209,6 +214,7 @@ describe('移动端', () => {
     const { container, getByText } = render(
       <ThemeProvider theme={defaultTheme}>
         <DatePicker
+          portal={false}
           label="日期选择"
           isPc={false}
           value="2020-06-05"
@@ -238,7 +244,7 @@ describe('移动端', () => {
   it('默认今日选中', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <DatePicker label="日期选择" isPc={false} />
+        <DatePicker portal={false} label="日期选择" isPc={false} />
       </ThemeProvider>,
     );
 
@@ -257,7 +263,12 @@ describe('移动端', () => {
     const onChange = jest.fn();
     const { container, getByText } = render(
       <ThemeProvider theme={defaultTheme}>
-        <DatePicker label="日期选择" isPc={false} onChange={onChange} />
+        <DatePicker
+          portal={false}
+          label="日期选择"
+          isPc={false}
+          onChange={onChange}
+        />
       </ThemeProvider>,
     );
 
@@ -280,6 +291,7 @@ it('min', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
       <DatePicker
+        portal={false}
         label="日期选择"
         isPc
         value="2020-06-05"
@@ -305,6 +317,7 @@ it('max', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
       <DatePicker
+        portal={false}
         label="日期选择"
         isPc
         value="2020-06-05"
@@ -330,6 +343,7 @@ it('弹窗标题', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
       <DatePicker
+        portal={false}
         label="出生日期"
         isPc={false}
         value="2020-06-05"
@@ -355,6 +369,7 @@ it('modalTitle', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
       <DatePicker
+        portal={false}
         label="出生日期"
         modalTitle="设置日期"
         isPc={false}
@@ -381,6 +396,7 @@ it('清除功能', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
       <DatePicker
+        portal={false}
         label="出生日期"
         modalTitle="设置日期"
         value="2020-06-05"
@@ -412,6 +428,7 @@ it('renderValue', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
       <DatePicker
+        portal={false}
         label="出生日期"
         modalTitle="设置日期"
         value="2020-06-05"
