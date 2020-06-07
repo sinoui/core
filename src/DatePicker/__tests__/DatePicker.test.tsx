@@ -191,6 +191,11 @@ describe('移动端', () => {
       fireEvent.click(getByText('11'));
     });
 
+    expect(onChange).not.toBeCalled();
+    expect(
+      document.querySelector('.sinoui-date-cell--selected'),
+    ).toHaveTextContent('11');
+
     act(() => {
       fireEvent.click(getByText('确定'));
     });
