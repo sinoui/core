@@ -12,6 +12,7 @@ import DatePicker from '@sinoui/core/DatePicker';
 import Body1 from '@sinoui/core/Body1';
 import styled from 'styled-components';
 import formatDate from '@sinoui/core/DatePicker/formatDate';
+import Button from '@sinoui/core/Button';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -124,7 +125,7 @@ const StyledDatepicker = styled(DatePicker)`
 `;
 
 function DatePickerDemo(props: any) {
-  const [value, setValue] = useState('2020-06-05');
+  const [value, setValue] = useState<string | undefined>('2020-06-05');
   return (
     <StyledDatepicker
       value={value}
@@ -145,5 +146,26 @@ export const 日期选择 = () => (
     <DatePickerDemo label="ReadOnly" readOnly />
     <DatePickerDemo label="ReadOnly" variant="filled" readOnly />
     <DatePickerDemo label="ReadOnly" variant="outlined" readOnly />
+  </StoryLayout>
+);
+
+const DatePickerDemo2 = () => {
+  const [value, setValue] = useState<string | undefined>(undefined);
+
+  return (
+    <>
+      <StyledDatepicker value={value} onChange={setValue} />
+      <div>
+        <Button onClick={() => setValue('2020-06-09')} raised>
+          设置为2020-06-09
+        </Button>
+      </div>
+    </>
+  );
+};
+
+export const 日期选择同步 = () => (
+  <StoryLayout>
+    <DatePickerDemo2 />
   </StoryLayout>
 );
