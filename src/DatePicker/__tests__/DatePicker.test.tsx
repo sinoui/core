@@ -285,3 +285,54 @@ it('max', () => {
     'sinoui-date-cell--disabled',
   );
 });
+
+it('弹窗标题', () => {
+  const onChange = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DatePicker
+        label="出生日期"
+        isPc={false}
+        value="2020-06-05"
+        max="2020-06-24"
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+
+  const textInput = container.querySelector('.sinoui-base-input')!;
+
+  act(() => {
+    fireEvent.click(textInput);
+  });
+
+  expect(document.querySelector('.sinoui-calendar-view')).toHaveTextContent(
+    '设置出生日期',
+  );
+});
+
+it('modalTitle', () => {
+  const onChange = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DatePicker
+        label="出生日期"
+        modalTitle="设置日期"
+        isPc={false}
+        value="2020-06-05"
+        max="2020-06-24"
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+
+  const textInput = container.querySelector('.sinoui-base-input')!;
+
+  act(() => {
+    fireEvent.click(textInput);
+  });
+
+  expect(document.querySelector('.sinoui-calendar-view')).toHaveTextContent(
+    '设置日期',
+  );
+});

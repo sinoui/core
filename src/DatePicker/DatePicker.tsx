@@ -38,6 +38,10 @@ interface Props
    * 最大值
    */
   max?: string;
+  /**
+   * 弹窗标题。默认为`设置${label}`。在移动端弹窗时使用。
+   */
+  modalTitle?: string;
 }
 
 const StyledPopper = styled(Popper)`
@@ -80,6 +84,7 @@ const parseDate = mem((dateStr?: string) =>
  * @param props
  */
 export default function DatePicker(props: Props) {
+  const { label } = props;
   const {
     value,
     onChange,
@@ -88,6 +93,7 @@ export default function DatePicker(props: Props) {
     isPc: isPcProps,
     min,
     max,
+    modalTitle = `设置${label}`,
     ...other
   } = props;
   const textInputRef = useRef(null);
@@ -192,6 +198,7 @@ export default function DatePicker(props: Props) {
             onClose={onRequestClose}
             minDate={parseDate(min)}
             maxDate={parseDate(max)}
+            title={modalTitle}
           />
         </Modal>
       )}
