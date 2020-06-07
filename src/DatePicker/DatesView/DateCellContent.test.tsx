@@ -85,4 +85,21 @@ it('禁用状态', () => {
     'color',
     defaultTheme.palette.text.disabled.replace(/ +/g, ''),
   );
+  expect(dateCellContent).toHaveStyleRule('pointer-events', 'none');
+});
+
+it('禁用且选中状态', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateCellContent data-testid="date-cell-content" disabled $selected>
+        10
+      </DateCellContent>
+    </ThemeProvider>,
+  );
+
+  const dateCellContent = getByTestId('date-cell-content');
+  expect(dateCellContent).toHaveStyleRule(
+    'color',
+    defaultTheme.palette.primary.contrastText.replace(/ +/g, ''),
+  );
 });

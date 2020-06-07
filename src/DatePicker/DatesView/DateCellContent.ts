@@ -17,7 +17,7 @@ const getBackgroundColor = (props: DateCellContentProps & { theme: Theme }) => {
 };
 
 const getTextColor = (props: DateCellContentProps & { theme: Theme }) => {
-  if (props.disabled) {
+  if (props.disabled && !props.$selected) {
     return props.theme.palette.text.disabled;
   }
   const bgColor = getBackgroundColor(props);
@@ -76,6 +76,7 @@ const DateCellContent = styled(Body2)<DateCellContentProps>`
   background-color: ${getBackgroundColor};
   color: ${getTextColor};
 
+  pointer-events: ${({ disabled }) => (disabled ? 'none' : 'auto')};
 
   &:hover {
     background-color: ${(props) =>
