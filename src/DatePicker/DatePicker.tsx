@@ -1,15 +1,17 @@
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useRef, useState } from 'react';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import Popper from '@sinoui/core/Popper';
 import DatePickerIcon from '@sinoui/core/svg-icons/DatePickerIcon';
 import styled from 'styled-components';
+import mem from 'mem';
 import CalendarView from './CalendarView';
 import DatePickerInput from './DatePickerInput';
 import InputAdornment from '../InputAdornment';
 import useIsPc from './useIsPc';
 import Modal from '../Modal';
 import formatDate from './formatDate';
+import type { CalendarViewProps } from './CalendarView';
 
 interface Props
   extends Omit<
@@ -28,6 +30,14 @@ interface Props
    * 是否是pc端设备
    */
   isPc?: boolean;
+  /**
+   * 最小值
+   */
+  min?: string;
+  /**
+   * 最大值
+   */
+  max?: string;
 }
 
 const StyledPopper = styled(Popper)`
@@ -36,15 +46,15 @@ const StyledPopper = styled(Popper)`
 
 const CalendarModalContent = React.forwardRef<
   HTMLDivElement,
-  {
-    value?: Date;
-    onChange: (value?: Date) => void;
+  Omit<CalendarViewProps, 'onChange'> & {
     onClose: () => void;
+    onChange: (value?: Date) => void;
   }
->(function CalendarModalContent({ value, onChange, onClose }, ref) {
+>(function CalendarModalContent({ value, onChange, onClose, ...rest }, ref) {
   const [selectedDate, setSelectedDate] = useState(value);
   return (
     <CalendarView
+      {...rest}
       ref={ref}
       value={selectedDate}
       onChange={setSelectedDate}
@@ -61,6 +71,10 @@ const CalendarModalContent = React.forwardRef<
   );
 });
 
+const parseDate = mem((dateStr?: string) =>
+  dateStr ? new Date(Date.parse(dateStr)) : undefined,
+);
+
 /**
  * 日期选择组件
  * @param props
@@ -72,6 +86,8 @@ export default function DatePicker(props: Props) {
     readOnly,
     disabled,
     isPc: isPcProps,
+    min,
+    max,
     ...other
   } = props;
   const textInputRef = useRef(null);
@@ -80,11 +96,7 @@ export default function DatePicker(props: Props) {
   const [open, setOpen] = useState(false);
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
-
-  const date = useMemo(
-    () => (value ? new Date(Date.parse(value)) : undefined),
-    [value],
-  );
+  const date = parseDate(value);
 
   const preventEventDefault = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target !== inputRef.current) {
@@ -165,7 +177,12 @@ export default function DatePicker(props: Props) {
           referenceElement={textInputRef}
           onMouseDown={preventEventDefault}
         >
-          <CalendarView value={date} onChange={handleCalendarChange} />
+          <CalendarView
+            value={date}
+            onChange={handleCalendarChange}
+            minDate={parseDate(min)}
+            maxDate={parseDate(max)}
+          />
         </StyledPopper>
       ) : (
         <Modal open={open} center onBackdropClick={onRequestClose}>
@@ -173,6 +190,8 @@ export default function DatePicker(props: Props) {
             value={date}
             onChange={handleCalendarChange}
             onClose={onRequestClose}
+            minDate={parseDate(min)}
+            maxDate={parseDate(max)}
           />
         </Modal>
       )}

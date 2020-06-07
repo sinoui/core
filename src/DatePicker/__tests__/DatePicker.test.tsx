@@ -235,3 +235,53 @@ describe('移动端', () => {
     expect(document.querySelector('.sinoui-calendar-view')).toBeFalsy();
   });
 });
+
+it('min', () => {
+  const onChange = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DatePicker
+        label="日期选择"
+        isPc
+        value="2020-06-05"
+        min="2020-06-04"
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+
+  const textInput = container.querySelector('.sinoui-base-input')!;
+
+  act(() => {
+    fireEvent.click(textInput);
+  });
+
+  expect(container.querySelector('[data-date="2020/6/3"]')).toHaveClass(
+    'sinoui-date-cell--disabled',
+  );
+});
+
+it('max', () => {
+  const onChange = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DatePicker
+        label="日期选择"
+        isPc
+        value="2020-06-05"
+        max="2020-06-24"
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+
+  const textInput = container.querySelector('.sinoui-base-input')!;
+
+  act(() => {
+    fireEvent.click(textInput);
+  });
+
+  expect(container.querySelector('[data-date="2020/6/24"]')).toHaveClass(
+    'sinoui-date-cell--disabled',
+  );
+});

@@ -81,7 +81,9 @@ export const 周标题栏 = () => (
 );
 
 const CalendarViewDemo = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
+    new Date(),
+  );
 
   return (
     <>
@@ -167,5 +169,26 @@ const DatePickerDemo2 = () => {
 export const 日期选择同步 = () => (
   <StoryLayout>
     <DatePickerDemo2 />
+  </StoryLayout>
+);
+
+export const 日期范围 = () => (
+  <StoryLayout>
+    <DatePickerDemo
+      label="日期选择"
+      min="2020-06-04"
+      placeholder="最小日期为2020-06-04"
+    />
+    <DatePickerDemo
+      label="日期选择"
+      max="2020-06-20"
+      placeholder="最大日期为2020-06-20"
+    />
+    <DatePickerDemo
+      label="日期选择"
+      min="2020-06-04"
+      max="2020-06-20"
+      placeholder="日期区间：2020-06-04 ~ 2020-06-20"
+    />
   </StoryLayout>
 );

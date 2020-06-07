@@ -11,7 +11,7 @@ import getDatesOfMonth from '../DatesView/getDatesOfMonth';
 import CalendarViewAction from './CalendarViewAction';
 import CalendarViewToolbar from './CalendarViewToolbar';
 
-interface Props {
+export interface Props {
   className?: string;
   style?: React.CSSProperties;
   /**
@@ -27,7 +27,7 @@ interface Props {
   /**
    * 选中日期发生变化的回调函数
    */
-  onChange?: (value: Date) => void;
+  onChange?: (value?: Date) => void;
   /**
    * 默认的年份
    */
