@@ -40,10 +40,14 @@ export interface Props {
   value?: string;
 }
 
-const DatePickerInputLayout = styled.div`
+const DatePickerInputLayout = styled.div<{
+  disabled?: boolean;
+  readOnly?: boolean;
+}>`
   user-select: none;
   box-sizing: content-box;
-  cursor: inherit;
+  cursor: ${({ disabled, readOnly }) =>
+    disabled || readOnly ? 'inherit' : 'pointer'};
   width: 0;
   ${singleLineTextCss}
 `;
@@ -91,6 +95,8 @@ export default React.forwardRef<HTMLDivElement, Props>(function DatePickerInput(
       aria-disabled={disabled ? 'true' : 'false'}
       onBlur={handleBlur}
       onFocus={onFocus}
+      readOnly={readOnly}
+      disabled={disabled}
       {...other}
     >
       {value}

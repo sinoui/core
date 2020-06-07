@@ -158,6 +158,7 @@ export default function DatePicker(props: Props) {
   const inputCompProps = {
     ref: inputRef,
     onBlur: handleInputBlur,
+    disabled,
   };
   return (
     <>
