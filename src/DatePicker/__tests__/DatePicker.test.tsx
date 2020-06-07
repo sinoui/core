@@ -197,7 +197,7 @@ describe('移动端', () => {
     ).toHaveTextContent('11');
 
     act(() => {
-      fireEvent.click(getByText('确定'));
+      fireEvent.click(getByText('设置'));
     });
 
     expect(onChange).toBeCalledWith('2020-06-11');

@@ -14,7 +14,7 @@ it('渲染日历底部操作区域视图', () => {
     </ThemeProvider>,
   );
 
-  expect(getByText('确定')).toBeInTheDocument();
+  expect(getByText('设置')).toBeInTheDocument();
   expect(getByText('取消')).toBeInTheDocument();
 });
 
@@ -27,7 +27,7 @@ it('点击确定，调用onOk方法', () => {
   );
 
   act(() => {
-    fireEvent.click(getByText('确定'));
+    fireEvent.click(getByText('设置'));
   });
 
   expect(onOk).toBeCalled();

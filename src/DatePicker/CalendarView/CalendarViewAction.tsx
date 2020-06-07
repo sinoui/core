@@ -35,7 +35,7 @@ export default function CalendarViewAction({ onClear, onCancel, onOk }: Props) {
       <Button onClick={onClear}>清除</Button>
       <div style={{ flex: 1 }} />
       <Button onClick={onCancel}>取消</Button>
-      <Button onClick={onOk}>确定</Button>
+      <Button onClick={onOk}>设置</Button>
     </CalendarViewActionLayout>
   );
 }
