@@ -42,6 +42,10 @@ interface Props
    * 弹窗标题。默认为`设置${label}`。在移动端弹窗时使用。
    */
   modalTitle?: string;
+  /**
+   * 指定自定义的值渲染函数。默认情况下，直接显示`value`属性值。
+   */
+  renderValue?: (value?: Date) => string;
 }
 
 const StyledPopper = styled(Popper)`
@@ -96,6 +100,7 @@ export default function DatePicker(props: Props) {
     min,
     max,
     modalTitle = `设置${label}`,
+    renderValue,
     ...other
   } = props;
   const textInputRef = useRef(null);
@@ -105,6 +110,7 @@ export default function DatePicker(props: Props) {
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
   const date = parseDate(value);
+  const inputValue = renderValue ? renderValue(date) : value;
 
   const preventEventDefault = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target !== inputRef.current) {
@@ -177,7 +183,7 @@ export default function DatePicker(props: Props) {
         inputComponent={DatePickerInput}
         inputProps={inputCompProps}
         baseClassName="sinoui-date-picker"
-        value={value ?? ''}
+        value={inputValue ?? ''}
         readOnly={readOnly}
         disabled={disabled}
         onClick={handleInputClick}

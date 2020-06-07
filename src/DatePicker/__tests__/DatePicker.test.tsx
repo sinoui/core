@@ -400,3 +400,26 @@ it('清除功能', () => {
 
   expect(onChange).toBeCalledWith('');
 });
+
+it('renderValue', () => {
+  const renderValue = (date?: Date) => {
+    if (!date) {
+      return '';
+    }
+    return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+  };
+
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DatePicker
+        label="出生日期"
+        modalTitle="设置日期"
+        value="2020-06-05"
+        allowClear
+        renderValue={renderValue}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(container).toHaveTextContent('2020年6月5日');
+});
