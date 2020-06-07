@@ -6,7 +6,10 @@ const leadingZero = (num: number) => (num < 10 ? `0${num}` : num);
  * @param date 日期
  * @param withTime 是否带上时间
  */
-function formatDate(date: Date, withTime = false) {
+function formatDate(date?: Date, withTime = false) {
+  if (!date) {
+    return undefined;
+  }
   const dateStr = `${date.getFullYear()}-${leadingZero(
     date.getMonth() + 1,
   )}-${leadingZero(date.getDate())}`;
