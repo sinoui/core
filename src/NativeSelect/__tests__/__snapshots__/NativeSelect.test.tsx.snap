@@ -261,8 +261,8 @@ exports[`渲染三种模式下的选择框 1`] = `
 }
 
 .c9 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c9::before {
@@ -508,6 +508,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -539,6 +547,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -1025,8 +1039,8 @@ exports[`渲染不可用的选择框 1`] = `
 }
 
 .c9 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c9::before {
@@ -1252,6 +1266,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -1283,6 +1305,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: default;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -1694,7 +1722,7 @@ exports[`渲染不带标签的选择框 1`] = `
 }
 
 .c7 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
+  padding: 25.5px 12px 6.5px;
   padding-top: 7.5px;
 }
 
@@ -1942,6 +1970,14 @@ label ~ .c2 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c3.c3 {
   min-width: 120px;
   width: 100%;
@@ -1973,6 +2009,12 @@ label ~ .c2 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -2398,8 +2440,8 @@ exports[`渲染多选选择框 1`] = `
 }
 
 .c7 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c7::before {
@@ -2645,6 +2687,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -2676,6 +2726,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -3126,8 +3182,8 @@ exports[`渲染有辅助性文字的选择框 1`] = `
 }
 
 .c10 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c10::before {
@@ -3373,6 +3429,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -3404,6 +3468,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>
@@ -3932,8 +4002,8 @@ exports[`渲染有错误提示的选择框 1`] = `
 }
 
 .c10 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
 .c10::before {
@@ -4175,6 +4245,14 @@ label ~ .c3 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
 .c4.c4 {
   min-width: 120px;
   width: 100%;
@@ -4206,6 +4284,12 @@ label ~ .c3 {
   top: 0;
   left: 0;
   cursor: pointer;
+}
+
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
 <div>

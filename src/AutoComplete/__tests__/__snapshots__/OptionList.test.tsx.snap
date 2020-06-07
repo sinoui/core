@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`不分组数据渲染 1`] = `
+<ul
+  className="sc-AxjAm jSMlTn sc-Axmtr gSZNFk sinoui-auto-complete__option-list sinoui-list"
+  onKeyDown={[Function]}
+>
+  <li
+    className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+    onClick={[Function]}
+    tabIndex="0"
+  >
+    <div
+      className="sc-AxiKw cWiOfK sinoui-list-item-text"
+    >
+      The Shawshank Redemption
+    </div>
+  </li>
+  <li
+    className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+    onClick={[Function]}
+    tabIndex="0"
+  >
+    <div
+      className="sc-AxiKw cWiOfK sinoui-list-item-text"
+    >
+      The Godfather
+    </div>
+  </li>
+  <li
+    className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+    onClick={[Function]}
+    tabIndex="0"
+  >
+    <div
+      className="sc-AxiKw cWiOfK sinoui-list-item-text"
+    >
+      The Godfather: Part II
+    </div>
+  </li>
+  <li
+    className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+    onClick={[Function]}
+    tabIndex="0"
+  >
+    <div
+      className="sc-AxiKw cWiOfK sinoui-list-item-text"
+    >
+      The Dark Knight
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`分组渲染 1`] = `
+<ul
+  className="sc-AxjAm jSMlTn sc-Axmtr gSZNFk sinoui-auto-complete__option-list sinoui-list"
+  onKeyDown={[Function]}
+>
+  <li
+    className="sc-AxirZ ctYxQP sc-AxmLO fDBPqT sinoui-list-item sinoui-list-item--disabled-ripple"
+    tabIndex="0"
+  >
+    <div
+      className="sc-fzoLsD bCtkMg"
+    >
+      0-9
+    </div>
+    <ul
+      className="sc-AxjAm jSMlTn sc-fzozJi cvuzEI sinoui-list"
+      onKeyDown={[Function]}
+    >
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          12 Angry Men
+        </div>
+      </li>
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          2001: A Space Odyssey
+        </div>
+      </li>
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          3 Idiots
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li
+    className="sc-AxirZ ctYxQP sc-AxmLO fDBPqT sinoui-list-item sinoui-list-item--disabled-ripple"
+    tabIndex="0"
+  >
+    <div
+      className="sc-fzoLsD bCtkMg"
+    >
+      A
+    </div>
+    <ul
+      className="sc-AxjAm jSMlTn sc-fzozJi cvuzEI sinoui-list"
+      onKeyDown={[Function]}
+    >
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          American History X
+        </div>
+      </li>
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          Apocalypse Now
+        </div>
+      </li>
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          Alien
+        </div>
+      </li>
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          American Beauty
+        </div>
+      </li>
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          Aliens
+        </div>
+      </li>
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          Amélie
+        </div>
+      </li>
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          A Clockwork Orange
+        </div>
+      </li>
+      <li
+        className="sc-AxirZ ctYxQP sc-fznyAO ecoJvb sinoui-list-item"
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="sc-AxiKw cWiOfK sinoui-list-item-text"
+        >
+          Amadeus
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+`;

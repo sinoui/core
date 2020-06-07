@@ -4,12 +4,13 @@
 import React from 'react';
 import { render, cleanup, act, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import defaultTheme from '@sinoui/theme/defaultTheme';
 import Grow from '@sinoui/core/Grow';
 import getScrollSize from 'dom-helpers/scrollbarSize';
 import Modal from '../Modal';
 
+const ModalWrapper = styled.div``;
 jest.mock('dom-helpers/scrollbarSize');
 
 afterEach(cleanup);
@@ -54,6 +55,25 @@ describe('在指定容器中显示模态框', () => {
     );
 
     expect(container).toContainElement(getByTestId('content'));
+  });
+
+  it('Modal阻止冒泡', () => {
+    const onWrapperClick = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <ModalWrapper data-testid="test-modal-wrapper" onClick={onWrapperClick}>
+          <Modal open data-testid="sinoui-modal">
+            <div />
+          </Modal>
+        </ModalWrapper>
+      </ThemeProvider>,
+    );
+
+    act(() => {
+      fireEvent.click(getByTestId('sinoui-modal'));
+    });
+
+    expect(onWrapperClick).not.toBeCalled();
   });
 
   it('ref', () => {

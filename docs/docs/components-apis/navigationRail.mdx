@@ -1,0 +1,39 @@
+---
+id: navigationRail
+title: NavigationRail
+---
+
+使用垂直导航栏，您可以在应用程序的主要导航项之间跳转。
+
+垂直导航栏在屏幕下方显示三到五个导航项。 每一个导航项都由一个图标和一个可选文本标签表示。 当点击垂直导航栏图标时，用户被切换到该图标关联的目标页面顶部。
+
+## 引用方式
+
+```tsx
+import NavigationRail from '@sinoui/core/NavigationRail';
+import NavigationRailAction from '@sinoui/core/NavigationRailAction';
+```
+
+## API
+
+NavigationRail 组件属性：
+
+| 参数名称   | 属性类型                                                      | 默认值 | 说明               |
+| ---------- | ------------------------------------------------------------- | ------ | ------------------ |
+| children   | React.ReactNode                                               |        | 子元素             |
+| showLabels | boolean                                                       | true   | 是否显示所有标签   |
+| onChange   | `(e: React.FormEvent<HTMLDivElement>, value: string) => void` |        | 值变化时的回调函数 |
+| value      | string                                                        |        | value 值           |
+| className  | string                                                        |        | 自定义样式类名称   |
+| align      | 'start' \| 'center' \| 'end'                                  |        | 布局显示           |
+| fab        | React.ReactNode                                               |        | fab 是否显示       |
+
+NavigationRailAction 组件属性：
+
+| 参数名称 | 属性类型        | 默认值 | 说明     |
+| -------- | --------------- | ------ | -------- |
+| label    | string          |        | 标签名称 |
+| icon     | React.ReactNode |        | 图标     |
+| value    | string          |        | value 值 |
+
+更多使用示例，请参考[NavigationRail Demos](/docs/components/NavigationRail)

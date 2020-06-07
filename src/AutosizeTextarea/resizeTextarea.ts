@@ -2,7 +2,7 @@
 function getSizeData(element: HTMLElement) {
   const computedStyle = getComputedStyle(element);
   const getSizeValue = (key: keyof CSSStyleDeclaration) =>
-    parseInt(computedStyle[key], 10) || 0;
+    parseInt(computedStyle[key] as any, 10) || 0;
   const { boxSizing, width } = computedStyle;
   const padding = getSizeValue('paddingTop') + getSizeValue('paddingBottom');
   const border = getSizeValue('borderTop') + getSizeValue('borderBottom');

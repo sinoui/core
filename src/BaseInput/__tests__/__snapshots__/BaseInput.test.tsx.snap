@@ -1016,6 +1016,16 @@ exports[`渲染带后缀的支持清除功能的输入框 1`] = `
   display: inline-block;
 }
 
+@media (hover:none) {
+  .c0:hover > .sinoui-base-input__clear {
+    display: none;
+  }
+
+  .c0:hover > .sinoui-input-adornment--end {
+    opacity: 1;
+  }
+}
+
 <div
   className="c0 sinoui-base-input"
   data-testid="input"

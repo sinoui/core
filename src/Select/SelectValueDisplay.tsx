@@ -34,16 +34,17 @@ function SelectValueDisplay({
     if (!item) {
       return null;
     }
-    const { children } = item;
-    if (typeof children === 'string') {
+    const { title, children } = item;
+    const selectValue = title ?? children;
+    if (typeof selectValue === 'string') {
       return (
         <React.Fragment key={index}>
-          {children}
+          {selectValue}
           {index === values.length - 1 ? '' : ', '}
         </React.Fragment>
       );
     }
-    return <React.Fragment key={index}>{children}</React.Fragment>;
+    return <React.Fragment key={index}>{selectValue}</React.Fragment>;
   });
 
   return <>{result}</>;
