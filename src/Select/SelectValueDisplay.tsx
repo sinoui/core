@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import SelectItem from './SelectItem';
 /**
@@ -35,9 +36,14 @@ function SelectValueDisplay({
     }
     const { children } = item;
     if (typeof children === 'string') {
-      return `${children}${index === values.length - 1 ? '' : ', '}`;
+      return (
+        <React.Fragment key={index}>
+          {children}
+          {index === values.length - 1 ? '' : ', '}
+        </React.Fragment>
+      );
     }
-    return children;
+    return <React.Fragment key={index}>{children}</React.Fragment>;
   });
 
   return <>{result}</>;

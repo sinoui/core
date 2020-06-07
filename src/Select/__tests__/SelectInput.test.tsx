@@ -26,7 +26,7 @@ it('单选时，点击选项，onClose被调用', () => {
     </ThemeProvider>,
   );
 
-  expect(getByRole('listbox')).toBeInTheDOM();
+  expect(getByRole('listbox')).toBeTruthy();
 
   act(() => {
     fireEvent.click(getAllByRole('option')[0]);
