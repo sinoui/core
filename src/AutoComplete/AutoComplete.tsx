@@ -693,7 +693,8 @@ export default function AutoComplete(props: Props) {
   const input = renderInput({
     ref: textInputRef,
     value: inputValue,
-    shrink: focused || inputValue || (multiple && value && value.length > 0),
+    forceShrink:
+      focused || inputValue || (multiple && value && value.length > 0),
     dense,
     onChange: handleInputChange,
     onMouseDown: preventEventDefault,

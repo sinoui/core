@@ -47,6 +47,10 @@ export interface TextInputProps extends BaseInputProps {
    */
   shrink?: boolean;
   /**
+   * 直接控制输入框的标签悬浮状态。
+   */
+  forceShrink?: boolean;
+  /**
    * 给根元素指定css样式
    */
   style?: React.CSSProperties;
@@ -109,6 +113,7 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
       disabled,
       required,
       shrink: shrinkProp,
+      forceShrink,
       error,
       errorText,
       placeholder,
@@ -126,12 +131,13 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
     const innerLabelRef = useRef<HTMLLabelElement>(null);
     const [focused, setFocused] = useState(false);
     const shrink =
-      shrinkProp ??
-      (focused ||
-        !isEmptyValue(value) ||
-        !!defaultValue ||
-        !!placeholder ||
-        !!startAdornment);
+      !!placeholder ||
+      (forceShrink ??
+        (shrinkProp ||
+          focused ||
+          !isEmptyValue(value) ||
+          !!defaultValue ||
+          !!startAdornment));
     const formControlContext = useFormControlContext();
     const noLabel =
       !label &&
