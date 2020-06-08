@@ -22,7 +22,8 @@ interface TransitionProps {
 }
 
 // 注意：这里不要用React.ComponentPropsWithRef代替React.HTMLAttributes，因为前者目前有ts性能问题
-interface Props extends Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {
+export interface Props
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {
   /**
    * 设置为`true`，则打开弹出内容。否则关闭弹出内容。
    */
