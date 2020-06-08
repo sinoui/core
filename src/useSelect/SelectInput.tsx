@@ -38,11 +38,20 @@ export interface Props {
    * 值
    */
   value?: string;
+  /**
+   * 是否是获取焦点状态
+   */
+  focused?: boolean;
+  /**
+   * 渲染方式
+   */
+  renderValue?: React.ReactNode;
 }
 
-const DatePickerInputLayout = styled.div<{
+const SelectInputLayout = styled.div<{
   disabled?: boolean;
   readOnly?: boolean;
+  focused?: boolean;
 }>`
   user-select: none;
   box-sizing: content-box;
@@ -50,12 +59,19 @@ const DatePickerInputLayout = styled.div<{
     disabled || readOnly ? 'inherit' : 'pointer'};
   width: 0;
   ${singleLineTextCss}
+
+  & + .sinoui-input-adornment--end > .sinoui-svg-icon {
+    cursor: ${({ disabled, readOnly }) =>
+      disabled || readOnly ? 'inherit' : 'pointer'};
+    color: ${({ focused, theme }) =>
+      focused ? theme.palette.primary.main : 'currentColor'};
+  }
 `;
 
 /**
- * 处理DatePicker的渲染
+ * 处理弹窗选择相关组件input内部渲染元素
  */
-export default React.forwardRef<HTMLDivElement, Props>(function DatePickerInput(
+export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
   props,
   ref,
 ) {
@@ -68,6 +84,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function DatePickerInput(
     onFocus,
     readOnly,
     value,
+    renderValue,
     ...other
   } = props;
 
@@ -80,26 +97,20 @@ export default React.forwardRef<HTMLDivElement, Props>(function DatePickerInput(
     }
   }, [autoFocus]);
 
-  const handleBlur = () => {
-    if (onBlur) {
-      onBlur();
-    }
-  };
-
   return (
-    <DatePickerInputLayout
-      className={classNames('sinoui-date-picker-input', className)}
+    <SelectInputLayout
+      className={classNames('sinoui-select-input', className)}
       ref={handleRef}
       tabIndex={disabled ? undefined : 0}
       role="button"
       aria-disabled={disabled ? 'true' : 'false'}
-      onBlur={handleBlur}
+      onBlur={onBlur}
       onFocus={onFocus}
       readOnly={readOnly}
       disabled={disabled}
       {...other}
     >
-      {value}
-    </DatePickerInputLayout>
+      {renderValue ?? value}
+    </SelectInputLayout>
   );
 });
