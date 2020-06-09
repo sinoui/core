@@ -254,6 +254,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function Modal(
     }
 
     if (keyboard && onRequestClose) {
+      event.stopPropagation();
       onRequestClose(event as any, 'escapeKeydown');
     }
   };
