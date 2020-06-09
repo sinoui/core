@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Popper from '@sinoui/core/Popper';
 import Modal from '@sinoui/core/Modal';
 import useSelect from '@sinoui/core/useSelect';
+import type { PopperProps } from '@sinoui/core/Popper';
 import CalendarView from './CalendarView';
 import InputAdornment from '../InputAdornment';
 import useIsPc from './useIsPc';
@@ -50,6 +51,10 @@ interface Props
    * 是否将弹出内容以传送门的方式渲染。默认为`true`。
    */
   portal?: boolean;
+  /**
+   * 给弹窗设置属性。
+   */
+  popperProps?: PopperProps;
 }
 
 const StyledPopper = styled(Popper)`
@@ -104,6 +109,7 @@ export default function DatePicker(props: Props) {
     modalTitle = `设置${label}`,
     renderValue,
     portal,
+    popperProps,
   } = props;
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
@@ -152,7 +158,7 @@ export default function DatePicker(props: Props) {
         }
       />
       {isPc ? (
-        <StyledPopper {...getPopperProps()} portal={portal}>
+        <StyledPopper {...getPopperProps()} portal={portal} {...popperProps}>
           <CalendarView
             value={date}
             onChange={handleCalendarChange}
