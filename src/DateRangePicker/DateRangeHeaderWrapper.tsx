@@ -5,6 +5,10 @@ const DateRangeHeaderWrapper = styled.div`
     transition: ${({ theme }) => theme.transitions.create('transform')};
     transform: rotate(180deg);
   }
+
+  .sinoui-date-range-picker-header__space {
+    width: 32px;
+  }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     display: flex;
     padding: 16px 16px 8px;

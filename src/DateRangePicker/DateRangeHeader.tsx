@@ -80,6 +80,7 @@ export default function DateRangeHeader(props: Props) {
       <Title className="sinoui-date-range-picker-header__title">
         {startYear}年{monthTitles[startMonth]}月
       </Title>
+      <div className="sinoui-date-range-picker-header__space" />
       <Title className="sinoui-date-range-picker-header__title">
         {endYear}年{monthTitles[endMonth]}月
       </Title>
