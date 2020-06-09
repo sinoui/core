@@ -43,7 +43,7 @@ const StyledPopper = styled(Popper)`
  */
 export default function TimePicker(props: Props) {
   const {
-    value,
+    value = '',
     onChange,
     disabled,
     readOnly,
@@ -92,13 +92,14 @@ export default function TimePicker(props: Props) {
     if (onBlur) {
       onBlur(event);
     }
-    if (!onChange || inputValue === value) {
+    if (inputValue === value) {
       return;
     }
     if (inputValue && isTime(inputValue)) {
-      onChange(formatTime(...(parseTime(inputValue) as [number, number])));
+      if (onChange)
+        onChange(formatTime(...(parseTime(inputValue) as [number, number])));
     } else if (!inputValue) {
-      onChange('');
+      if (onChange) onChange('');
     } else {
       setInputValue(value);
     }

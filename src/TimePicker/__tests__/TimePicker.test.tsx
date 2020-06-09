@@ -174,6 +174,26 @@ describe('输入框', () => {
     expect(onChange).not.toBeCalled();
     expect(input).toHaveValue('12:12');
   });
+
+  it('空值时，输入框文本变更为任意字符串，失去焦点时，输入框应清空', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker
+          wrapperProps={{
+            'data-testid': 'time-picker',
+          }}
+        />
+      </ThemeProvider>,
+    );
+
+    const timePicker = getByTestId('time-picker');
+    const input = timePicker.querySelector('input')!;
+
+    fireEvent.change(input, { target: { value: '不合格文本' } });
+    fireEvent.blur(input);
+
+    expect(input).toHaveValue('');
+  });
 });
 
 it('点击图标打开弹窗时，选中的小时选项获取焦点', () => {
