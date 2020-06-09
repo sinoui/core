@@ -53,7 +53,7 @@ interface Props
 }
 
 const StyledPopper = styled(Popper)`
-  z-index: 2;
+  z-index: ${({ theme }) => theme.zIndex.popover};
 `;
 
 const CalendarModalContent = React.forwardRef<

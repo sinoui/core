@@ -34,6 +34,10 @@ const PaperWrapper = styled(Paper)`
   display: inline-block;
 `;
 
+const StyledPopper = styled(Popper)`
+  z-index: ${({ theme }) => theme.zIndex.popover};
+`;
+
 /**
  * 时间选择组件
  */
@@ -121,7 +125,7 @@ export default function TimePicker(props: Props) {
         onBlur={handleInputBlur}
         {...rest}
       />
-      <Popper
+      <StyledPopper
         referenceElement={inputRef}
         open={open}
         placement="bottom-start"
@@ -139,7 +143,7 @@ export default function TimePicker(props: Props) {
             />
           </PaperWrapper>
         </Fade>
-      </Popper>
+      </StyledPopper>
     </>
   );
 }
