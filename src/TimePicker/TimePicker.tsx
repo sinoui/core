@@ -135,7 +135,7 @@ export default function TimePicker(props: Props) {
         value={inputValue}
         onChange={handleInputChange}
         onBlur={handleInputBlur}
-        autoComplete="false"
+        autoComplete="off"
         {...rest}
       />
       <StyledPopper

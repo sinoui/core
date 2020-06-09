@@ -297,3 +297,15 @@ it('监听onblur事件', () => {
 
   expect(onBlur).toBeCalled();
 });
+
+it('autoComplete=off', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TimePicker />
+    </ThemeProvider>,
+  );
+
+  const input = container.querySelector('input')!;
+
+  expect(input).toHaveAttribute('autocomplete', 'off');
+});
