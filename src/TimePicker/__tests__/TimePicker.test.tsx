@@ -102,6 +102,7 @@ describe('输入框', () => {
 
   it('输入框失去焦点，且输入框文本为正确格式的时间，则输入框文本作为新的值回调onChange', () => {
     const onChange = jest.fn();
+    const onBlur = jest.fn();
 
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
@@ -111,6 +112,7 @@ describe('输入框', () => {
           }}
           value="12:12"
           onChange={onChange}
+          onBlur={onBlur}
         />
       </ThemeProvider>,
     );
@@ -279,4 +281,19 @@ it('阻止输入框的onChange事件上浮', () => {
   fireEvent.change(input, { target: { value: '123' } });
 
   expect(onChange).not.toBeCalled();
+});
+
+it('监听onblur事件', () => {
+  const onBlur = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TimePicker value="12:12" onBlur={onBlur} />
+    </ThemeProvider>,
+  );
+
+  const input = container.querySelector('input')!;
+
+  fireEvent.blur(input);
+
+  expect(onBlur).toBeCalled();
 });

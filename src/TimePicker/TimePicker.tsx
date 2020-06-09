@@ -42,7 +42,15 @@ const StyledPopper = styled(Popper)`
  * 时间选择组件
  */
 export default function TimePicker(props: Props) {
-  const { value, onChange, disabled, readOnly, popperProps, ...rest } = props;
+  const {
+    value,
+    onChange,
+    disabled,
+    readOnly,
+    popperProps,
+    onBlur,
+    ...rest
+  } = props;
   const [open, setOpen] = useState(false);
   const inputRef = useRef<HTMLDivElement>(null);
   const [inputValue, setInputValue] = useState(value);
@@ -80,7 +88,10 @@ export default function TimePicker(props: Props) {
   /**
    * 处理输入框失去焦点事件
    */
-  const handleInputBlur = () => {
+  const handleInputBlur = (event: React.FocusEvent) => {
+    if (onBlur) {
+      onBlur(event);
+    }
     if (!onChange || inputValue === value) {
       return;
     }
@@ -124,6 +135,7 @@ export default function TimePicker(props: Props) {
         value={inputValue}
         onChange={handleInputChange}
         onBlur={handleInputBlur}
+        autoComplete="false"
         {...rest}
       />
       <StyledPopper
