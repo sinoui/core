@@ -5,7 +5,7 @@ import SelectInput from './SelectInput';
 export interface Props
   extends Omit<
     TextInputProps,
-    'onChange' | 'multiline' | 'minRows' | 'maxRows' | 'multiple'
+    'onChange' | 'multiline' | 'minRows' | 'maxRows' | 'multiple' | 'value'
   > {
   /**
    * 是否使用Popper渲染

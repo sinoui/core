@@ -110,7 +110,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
       disabled={disabled}
       {...other}
     >
-      {renderValue ?? value}
+      {renderValue || <span>&#8203;</span>}
     </SelectInputLayout>
   );
 });
