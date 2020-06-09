@@ -73,6 +73,7 @@ export default function TimePicker(props: Props) {
    * @param event 值变更事件
    */
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.stopPropagation();
     setInputValue(event.target.value);
   };
 

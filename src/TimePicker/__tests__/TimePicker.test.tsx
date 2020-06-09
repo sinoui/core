@@ -263,3 +263,20 @@ it('readOnly', () => {
 
   expect(document.querySelector('.sinoui-time-select-view')).not.toBeTruthy();
 });
+
+it('阻止输入框的onChange事件上浮', () => {
+  const onChange = jest.fn();
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <div onChange={onChange}>
+        <TimePicker value="12:12" />
+      </div>
+    </ThemeProvider>,
+  );
+
+  const input = container.querySelector('input')!;
+
+  fireEvent.change(input, { target: { value: '123' } });
+
+  expect(onChange).not.toBeCalled();
+});
