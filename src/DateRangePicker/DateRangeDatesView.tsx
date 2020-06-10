@@ -165,7 +165,7 @@ export default function DateRangeDatesView(props: Props) {
         outlinedDate={outlinedDate}
         selectedDates={selectedDates as number[]}
         disabledDates={getDisabledDates(year, month, minDate, maxDate)}
-        inRangeDates={getInRangeDates(year, month, startDate, endDate)}
+        selectedRangeDates={getInRangeDates(year, month, startDate, endDate)}
       />
     </div>
   );

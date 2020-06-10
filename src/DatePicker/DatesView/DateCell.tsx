@@ -23,6 +23,18 @@ interface Props {
    */
   disabled?: boolean;
   /**
+   * 是否在选中范围
+   */
+  isSelectedRange?: boolean;
+  /**
+   * 是否是日期区间的开始
+   */
+  isRangeStart?: boolean;
+  /**
+   * 是否是日期区间的结束
+   */
+  isRangeEnd?: boolean;
+  /**
    * 显示轮廓
    */
   outlined?: boolean;
@@ -53,6 +65,9 @@ export default function DateCell(props: Props) {
     onClick,
     row,
     column,
+    isSelectedRange,
+    isRangeStart,
+    isRangeEnd,
     ...rest
   } = props;
   const ref = useRipple({
@@ -74,6 +89,9 @@ export default function DateCell(props: Props) {
         outlined,
         disabled,
       })}
+      $isSelectedRange={isSelectedRange}
+      $isRangeStart={isRangeStart || column === 1}
+      $isRangeEnd={isRangeEnd || column === 7}
     >
       {date == null ? null : (
         <DateCellContent

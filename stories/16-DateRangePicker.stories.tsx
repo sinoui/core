@@ -32,7 +32,7 @@ const StyledDateRangePicker = styled(DateRangePicker)`
 `;
 
 function DateRangePickerDemo(props: any) {
-  const [value, setValue] = useState(['2020-06-16', '2020-07-08']);
+  const [value, setValue] = useState(['2020-06-16', '2020-08-08']);
   return (
     <StyledDateRangePicker
       {...props}

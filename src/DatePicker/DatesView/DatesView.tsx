@@ -30,6 +30,10 @@ interface Props {
    */
   disabledDates?: number[];
   /**
+   * 日期区间选中的日期
+   */
+  selectedRangeDates?: number[];
+  /**
    * 设置为`true`，则显示下个月的部分日期。默认为`false`。
    */
   showNextMonthDates?: boolean;
@@ -75,6 +79,7 @@ export default function DatesView(props: Props) {
     startOfWeek = 1,
     selectedDates = [],
     disabledDates = [],
+    selectedRangeDates = [],
     outlinedDate,
     showNextMonthDates,
     onDateClick,
@@ -99,6 +104,9 @@ export default function DatesView(props: Props) {
         key={`${year}_${month}_${i + 1}`}
         selected={selectedDates.includes(i + 1)}
         disabled={disabledDates.includes(i + 1)}
+        isSelectedRange={selectedRangeDates.includes(i + 1)}
+        isRangeStart={selectedRangeDates[0] === i + 1}
+        isRangeEnd={selectedRangeDates[selectedRangeDates.length - 1] === i + 1}
         outlined={outlinedDate === i + 1}
         column={getColumn(dateCells.length + 1)}
         row={getRow(dateCells.length + 1)}
