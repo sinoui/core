@@ -440,3 +440,21 @@ it('renderValue', () => {
 
   expect(container).toHaveTextContent('2020年6月5日');
 });
+
+it('时间选择组件的弹窗默认标题', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DatePicker portal={false} label="日期选择" isPc={false} />
+    </ThemeProvider>,
+  );
+
+  const textInput = container.querySelector('.sinoui-base-input')!;
+
+  act(() => {
+    fireEvent.click(textInput);
+  });
+
+  expect(document.querySelector('.sinoui-calendar-view')).toHaveTextContent(
+    '设置日期',
+  );
+});

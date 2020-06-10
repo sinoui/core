@@ -106,7 +106,7 @@ export default function DatePicker(props: Props) {
     isPc: isPcProps,
     min,
     max,
-    modalTitle = `设置${label}`,
+    modalTitle = `设置${label || '日期'}`,
     renderValue,
     portal,
     popperProps,
