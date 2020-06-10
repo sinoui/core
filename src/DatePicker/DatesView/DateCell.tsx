@@ -3,6 +3,7 @@ import bemClassNames from '@sinoui/core/utils/bemClassNames';
 import { useRipple } from '@sinoui/ripple';
 import DateCellContent from './DateCellContent';
 import gridCellCss from '../gridCellCss';
+import DateCellWrapper from './DateCellWrapper';
 
 interface Props {
   /**
@@ -62,7 +63,7 @@ export default function DateCell(props: Props) {
     disabled: !clickable || disabled,
   });
   return (
-    <div
+    <DateCellWrapper
       style={gridCellCss({ row, column })}
       {...rest}
       data-column={column}
@@ -91,6 +92,6 @@ export default function DateCell(props: Props) {
           {date}
         </DateCellContent>
       )}
-    </div>
+    </DateCellWrapper>
   );
 }

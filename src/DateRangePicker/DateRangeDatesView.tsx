@@ -47,6 +47,13 @@ function isSameMonth(
   return !!date && date.getFullYear() === year && date.getMonth() === month;
 }
 
+/**
+ * 是否大于指定日期
+ * @param value
+ * @param year
+ * @param month
+ * @param date
+ */
 function isGreaterThen(value: Date, year: number, month: number, date: number) {
   return (
     new Date(
@@ -60,6 +67,13 @@ function isGreaterThen(value: Date, year: number, month: number, date: number) {
   );
 }
 
+/**
+ * 获取不可用的日期
+ * @param year
+ * @param month
+ * @param minDate
+ * @param maxDate
+ */
 function getDisabledDates(
   year: number,
   month: number,
@@ -79,6 +93,44 @@ function getDisabledDates(
   }
 
   return disabledDates.length !== 0 ? disabledDates : undefined;
+}
+
+/**
+ * 获取日期区间段
+ * @param year
+ * @param month
+ * @param startDate
+ * @param endDate
+ */
+function getInRangeDates(
+  year: number,
+  month: number,
+  startDate?: Date,
+  endDate?: Date,
+) {
+  const dates = getDatesOfMonth(year, month);
+  const inRangeDates: number[] = [];
+
+  for (let i = 0; i < dates; i += 1) {
+    if (
+      startDate &&
+      !isGreaterThen(startDate, year, month, i + 1) &&
+      endDate &&
+      (isGreaterThen(endDate, year, month, i + 1) ||
+        new Date(
+          endDate.getFullYear(),
+          endDate.getMonth(),
+          endDate.getDate(),
+          0,
+          0,
+          0,
+        ).getTime() === new Date(year, month, i + 1, 0, 0, 0).getTime())
+    ) {
+      inRangeDates.push(i + 1);
+    }
+  }
+
+  return inRangeDates.length !== 0 ? inRangeDates : undefined;
 }
 
 export default function DateRangeDatesView(props: Props) {
@@ -113,6 +165,7 @@ export default function DateRangeDatesView(props: Props) {
         outlinedDate={outlinedDate}
         selectedDates={selectedDates as number[]}
         disabledDates={getDisabledDates(year, month, minDate, maxDate)}
+        inRangeDates={getInRangeDates(year, month, startDate, endDate)}
       />
     </div>
   );

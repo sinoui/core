@@ -84,7 +84,7 @@ export default function DateRangeView(props: Props) {
           year={endYear}
           month={endMonth}
           showToday={showToday}
-          minDate={minDate}
+          minDate={startDate}
           maxDate={maxDate}
         />
       </div>
