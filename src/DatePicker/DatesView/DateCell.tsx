@@ -70,6 +70,10 @@ interface Props {
    * 是否是hover区间的结束
    */
   isInHoverRangeEnd?: boolean;
+  /**
+   * 是否是开始时间的前一天
+   */
+  isPrevRangeStart?: boolean;
 }
 
 /**
@@ -93,6 +97,7 @@ export default function DateCell(props: Props) {
     onMouseLeave,
     isInHoverRangeStart,
     isInHoverRangeEnd,
+    isPrevRangeStart,
     ...rest
   } = props;
   const ref = useRipple({
@@ -120,6 +125,8 @@ export default function DateCell(props: Props) {
       $isInHoverRange={isInHoverRange}
       $isInHoverRangeStart={isInHoverRangeStart}
       $isInHoverRangeEnd={isInHoverRangeEnd}
+      $selected={selected}
+      $isPrevRangeStart={isPrevRangeStart}
     >
       {date == null ? null : (
         <DateCellContent

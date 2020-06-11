@@ -12,6 +12,7 @@ interface DateCellWrapperProps {
   $isInHoverRange?: boolean;
   $isInHoverRangeStart?: boolean;
   $isInHoverRangeEnd?: boolean;
+  $isPrevRangeStart?: boolean;
 }
 
 const selectedRangeCss = css`
@@ -33,6 +34,25 @@ const inHoverRangeCss = css`
   border-bottom: 1px dashed ${({ theme }) => theme.palette.text.secondary};
 `;
 
+const endRangeAndInHoverRangeCss = css`
+  ::after {
+    content: ' ';
+    width: 32px;
+    height: 28px;
+    position: absolute;
+    top: 2px;
+    left: 16px;
+    box-sizing: border-box;
+
+    ${inHoverRangeCss}
+  }
+`;
+
+const circleCss = css`
+  width: 28px;
+  left: 2px;
+`;
+
 const DateCellWrapper = styled.div<DateCellWrapperProps>`
   position: relative;
 
@@ -50,8 +70,33 @@ const DateCellWrapper = styled.div<DateCellWrapperProps>`
         ($isRangeStart || $isInHoverRangeStart) && startRangeCss}
       ${({ $isRangeEnd, $isInHoverRangeEnd }) =>
         ($isRangeEnd || $isInHoverRangeEnd) && endRangeCss}
-      ${({ $isInHoverRange }) => $isInHoverRange && inHoverRangeCss};
+      ${({ $isInHoverRange, $selected }) =>
+        $isInHoverRange && !$selected && inHoverRangeCss};
+        ${({
+          $isRangeEnd,
+          $isRangeStart,
+          $isInHoverRangeStart,
+          $isInHoverRangeEnd,
+        }) =>
+          (($isRangeStart && $isInHoverRangeEnd) ||
+            ($isInHoverRangeStart && $isInHoverRangeEnd) ||
+            ($isRangeStart && $isRangeEnd) ||
+            ($isInHoverRangeStart && $isRangeEnd)) &&
+          circleCss}
     }
+
+    ${({ $selected, $isInHoverRangeEnd, $isInHoverRange }) =>
+      $isInHoverRange &&
+      !$isInHoverRangeEnd &&
+      $selected &&
+      endRangeAndInHoverRangeCss};
+
+${({ $isPrevRangeStart, $isInHoverRange, $isRangeEnd }) =>
+  $isPrevRangeStart &&
+  $isInHoverRange &&
+  !$isRangeEnd &&
+  endRangeAndInHoverRangeCss}
+   
   }
 `;
 

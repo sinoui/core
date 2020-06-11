@@ -149,6 +149,7 @@ export default function DatesView(props: Props) {
               i + 1 === dates
             : false
         }
+        isPrevRangeStart={i + 1 === selectedDates[0] - 1}
         outlined={outlinedDate === i + 1}
         column={getColumn(dateCells.length + 1)}
         row={getRow(dateCells.length + 1)}

@@ -59,7 +59,7 @@ function isInHoverRange(
   if (startDate) {
     if (endDate) {
       return (
-        (date > endDate && date <= hoverDate) ||
+        (date >= endDate && date <= hoverDate) ||
         (date >= hoverDate && date < startDate)
       );
     }
@@ -123,14 +123,14 @@ function isHoverRangeEnd(
     if (endDate) {
       return (
         hoverDate.getTime() === date.getTime() &&
-        date.getTime() > endDate.getTime()
+        date.getTime() >= endDate.getTime()
       );
     }
 
     if (startDate) {
       return (
         hoverDate.getTime() === date.getTime() &&
-        date.getTime() > startDate.getTime()
+        date.getTime() >= startDate.getTime()
       );
     }
 
