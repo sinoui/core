@@ -35,6 +35,10 @@ interface Props {
    */
   isRangeEnd?: boolean;
   /**
+   * 是否在鼠标悬浮区域
+   */
+  isInHoverRange?: boolean;
+  /**
    * 显示轮廓
    */
   outlined?: boolean;
@@ -50,6 +54,22 @@ interface Props {
    * 点击事件回调函数
    */
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  /**
+   * 鼠标移入时的回调函数
+   */
+  onMouseEnter?: (event: React.MouseEvent<HTMLElement>) => void;
+  /**
+   * 鼠标移出时的回调函数
+   */
+  onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void;
+  /**
+   * 是否是hover区间的开始
+   */
+  isInHoverRangeStart?: boolean;
+  /**
+   * 是否是hover区间的结束
+   */
+  isInHoverRangeEnd?: boolean;
 }
 
 /**
@@ -68,6 +88,11 @@ export default function DateCell(props: Props) {
     isSelectedRange,
     isRangeStart,
     isRangeEnd,
+    isInHoverRange,
+    onMouseEnter,
+    onMouseLeave,
+    isInHoverRangeStart,
+    isInHoverRangeEnd,
     ...rest
   } = props;
   const ref = useRipple({
@@ -92,6 +117,9 @@ export default function DateCell(props: Props) {
       $isSelectedRange={isSelectedRange}
       $isRangeStart={isRangeStart || column === 1}
       $isRangeEnd={isRangeEnd || column === 7}
+      $isInHoverRange={isInHoverRange}
+      $isInHoverRangeStart={isInHoverRangeStart}
+      $isInHoverRangeEnd={isInHoverRangeEnd}
     >
       {date == null ? null : (
         <DateCellContent
@@ -103,9 +131,12 @@ export default function DateCell(props: Props) {
           $clickable={clickable && !disabled}
           $selected={selected}
           $outlined={outlined}
+          $isInHoverRange={isInHoverRange}
           aria-disabled={disabled ? 'true' : undefined}
           disabled={disabled}
           onClick={onClick}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
         >
           {date}
         </DateCellContent>

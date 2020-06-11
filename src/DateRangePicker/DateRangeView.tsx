@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import DateRangeHeader from './DateRangeHeader';
 import DateRangeViewWrapper from './DateRangeViewWrapper';
@@ -35,6 +35,111 @@ export interface Props {
   maxDate?: Date;
 }
 
+/**
+ * 判断是否处在hover区间的方法
+ * @param date 当前日期
+ * @param startDate 开始日期
+ * @param endDate 结束日期
+ * @param hoverDate hover日期
+ */
+function isInHoverRange(
+  date: Date,
+  startDate?: Date,
+  endDate?: Date,
+  hoverDate?: Date,
+) {
+  if (!hoverDate) {
+    return false;
+  }
+
+  if (startDate) {
+    if (endDate) {
+      return (
+        (date > endDate && date <= hoverDate) ||
+        (date >= hoverDate && date < startDate)
+      );
+    }
+    return (
+      (date > startDate && date <= hoverDate) ||
+      (date >= hoverDate && date < startDate)
+    );
+  }
+
+  return false;
+}
+
+/**
+ * 判断是否是hover区间的开始的方法
+ * @param date
+ * @param startDate
+ * @param endDate
+ * @param hoverDate
+ */
+function isHoverRangeStart(
+  date: Date,
+  startDate?: Date,
+  endDate?: Date,
+  hoverDate?: Date,
+) {
+  if (hoverDate) {
+    if (startDate) {
+      return (
+        hoverDate.getTime() === date.getTime() &&
+        date.getTime() < startDate.getTime()
+      );
+    }
+
+    if (endDate) {
+      return (
+        hoverDate.getTime() === date.getTime() &&
+        date.getTime() < endDate.getTime()
+      );
+    }
+
+    return false;
+  }
+
+  return false;
+}
+
+/**
+ * 判断是否是hover区间结束的方法
+ * @param date
+ * @param startDate
+ * @param endDate
+ * @param hoverDate
+ */
+function isHoverRangeEnd(
+  date: Date,
+  startDate?: Date,
+  endDate?: Date,
+  hoverDate?: Date,
+) {
+  if (hoverDate) {
+    if (endDate) {
+      return (
+        hoverDate.getTime() === date.getTime() &&
+        date.getTime() > endDate.getTime()
+      );
+    }
+
+    if (startDate) {
+      return (
+        hoverDate.getTime() === date.getTime() &&
+        date.getTime() > startDate.getTime()
+      );
+    }
+
+    return false;
+  }
+
+  return false;
+}
+
+/**
+ * 日期区间选择的展示
+ * @param props
+ */
 export default function DateRangeView(props: Props) {
   const {
     startDate,
@@ -55,12 +160,46 @@ export default function DateRangeView(props: Props) {
         ];
   });
 
+  const [hoverDate, setHoverDate] = useState<Date>();
+
   const endMonth = useMemo(() => (month === 11 ? 0 : month + 1), [month]);
 
   const endYear = useMemo(() => (month === 11 ? year + 1 : year), [
     month,
     year,
   ]);
+
+  const handleDateMouseEnter = (
+    _event: React.MouseEvent<HTMLElement>,
+    date: Date,
+  ) => {
+    setHoverDate(date);
+  };
+
+  const handleDateMouseLeave = () => {
+    setHoverDate(undefined);
+  };
+
+  const getIsInHoverRange = useCallback(
+    (date: Date) => {
+      return isInHoverRange(date, startDate, endDate, hoverDate);
+    },
+    [endDate, hoverDate, startDate],
+  );
+
+  const getIsHoverRangeStart = useCallback(
+    (date: Date) => {
+      return isHoverRangeStart(date, startDate, endDate, hoverDate);
+    },
+    [endDate, hoverDate, startDate],
+  );
+
+  const getIsHoverRangeEnd = useCallback(
+    (date: Date) => {
+      return isHoverRangeEnd(date, startDate, endDate, hoverDate);
+    },
+    [endDate, hoverDate, startDate],
+  );
 
   const renderDates = () => (
     <>
@@ -77,6 +216,11 @@ export default function DateRangeView(props: Props) {
           showToday={showToday}
           minDate={minDate}
           maxDate={maxDate}
+          onDateMouseEnter={handleDateMouseEnter}
+          onDateMouseLeave={handleDateMouseLeave}
+          isInHoverRange={getIsInHoverRange}
+          isHoverRangeStart={getIsHoverRangeStart}
+          isHoverRangeEnd={getIsHoverRangeEnd}
         />
         <DateRangeDatesView
           startDate={startDate}
@@ -86,6 +230,11 @@ export default function DateRangeView(props: Props) {
           showToday={showToday}
           minDate={startDate}
           maxDate={maxDate}
+          onDateMouseEnter={handleDateMouseEnter}
+          onDateMouseLeave={handleDateMouseLeave}
+          isInHoverRange={getIsInHoverRange}
+          isHoverRangeStart={getIsHoverRangeStart}
+          isHoverRangeEnd={getIsHoverRangeEnd}
         />
       </div>
     </>

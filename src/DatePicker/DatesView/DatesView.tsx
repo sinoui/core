@@ -42,6 +42,26 @@ interface Props {
    * 日期单元格点击事件的回调函数。
    */
   onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
+  /**
+   * 鼠标移入日期单元格时的回调函数
+   */
+  onDateMouseEnter?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
+  /**
+   * 鼠标移出时的回调函数
+   */
+  onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void;
+  /**
+   * 是否在hover区间
+   */
+  isInHoverRange?: (date: Date) => boolean;
+  /**
+   * 是否是hover区间的开始
+   */
+  isHoverRangeStart?: (date: Date) => boolean;
+  /**
+   * 是否是hover区间的结束
+   */
+  isHoverRangeEnd?: (date: Date) => boolean;
 }
 
 /**
@@ -83,6 +103,11 @@ export default function DatesView(props: Props) {
     outlinedDate,
     showNextMonthDates,
     onDateClick,
+    onDateMouseEnter,
+    onMouseLeave,
+    isInHoverRange,
+    isHoverRangeStart,
+    isHoverRangeEnd,
     ...rest
   } = props;
   const dates = getDatesOfMonth(year, month);
@@ -107,6 +132,23 @@ export default function DatesView(props: Props) {
         isSelectedRange={selectedRangeDates.includes(i + 1)}
         isRangeStart={selectedRangeDates[0] === i + 1}
         isRangeEnd={selectedRangeDates[selectedRangeDates.length - 1] === i + 1}
+        isInHoverRange={
+          isInHoverRange
+            ? isInHoverRange(new Date(year, month, i + 1, 0, 0, 0))
+            : false
+        }
+        isInHoverRangeStart={
+          isHoverRangeStart
+            ? isHoverRangeStart(new Date(year, month, i + 1, 0, 0, 0)) ||
+              i + 1 === 1
+            : false
+        }
+        isInHoverRangeEnd={
+          isHoverRangeEnd
+            ? isHoverRangeEnd(new Date(year, month, i + 1, 0, 0, 0)) ||
+              i + 1 === dates
+            : false
+        }
         outlined={outlinedDate === i + 1}
         column={getColumn(dateCells.length + 1)}
         row={getRow(dateCells.length + 1)}
@@ -116,6 +158,13 @@ export default function DatesView(props: Props) {
                 onDateClick(event, new Date(year, month, i + 1, 0, 0, 0))
             : undefined
         }
+        onMouseEnter={
+          onDateMouseEnter
+            ? (event) =>
+                onDateMouseEnter(event, new Date(year, month, i + 1, 0, 0, 0))
+            : undefined
+        }
+        onMouseLeave={onMouseLeave}
         data-date={`${year}/${month + 1}/${i + 1}`}
       />,
     );

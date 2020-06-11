@@ -40,7 +40,7 @@ export interface Props
 }
 
 const parseDate = mem((dateStr?: string) =>
-  dateStr ? new Date(Date.parse(dateStr)) : undefined,
+  dateStr ? new Date(Date.parse(`${dateStr}T00:00:00`)) : undefined,
 );
 
 export default function DateRangePicker(props: Props) {
