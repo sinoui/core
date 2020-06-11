@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useCallback, useState } from 'react';
 import TextInput, { TextInputProps } from '@sinoui/core/TextInput';
 import useSelect from '@sinoui/core/useSelect';
 import useIsPc from '@sinoui/core/DatePicker/useIsPc';
@@ -7,6 +7,7 @@ import Popper from '../Popper';
 import DateRangeView from './DateRangeView';
 import InputAdornment from '../InputAdornment';
 import DatePickerIcon from '../svg-icons/DatePickerIcon';
+import formatDate from '../DatePicker/formatDate';
 
 export interface Props
   extends Omit<
@@ -53,8 +54,12 @@ export default function DateRangePicker(props: Props) {
   const endDate = parseDate(endValue);
   const startInputValue = renderValue ? renderValue(startDate) : startValue;
   const endInputValue = renderValue ? renderValue(endDate) : endValue;
+  const startInputRef = useRef<HTMLInputElement | null>(null);
+  const endInputRef = useRef<HTMLInputElement | null>(null);
+  const [focusedInput, setFocusedInput] = useState('');
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const { getTextInputProps, getPopperProps } = useSelect({
+  const { getTextInputProps, getPopperProps, onRequestClose } = useSelect({
     ...props,
     isRenderWithPopper: isPc,
   });
@@ -71,9 +76,48 @@ export default function DateRangePicker(props: Props) {
     }
   };
 
+  const handleInputFocused = (inputType: string) => {
+    setFocusedInput(inputType);
+  };
+
+  const handleInputBlur = () => {
+    setTimeout(() => {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(document.activeElement)
+      ) {
+        onRequestClose();
+        setFocusedInput('');
+      }
+    });
+  };
+
+  const handleDateClick = useCallback(
+    (_event: React.MouseEvent<HTMLElement>, date: Date) => {
+      if (onChange) {
+        if (focusedInput === 'start') {
+          onChange([formatDate(date) ?? startValue, endValue]);
+          if (endInputRef.current) {
+            endInputRef.current.focus();
+          }
+        } else {
+          onChange([startValue, formatDate(date) ?? endValue]);
+          if (!startValue && startInputRef.current) {
+            startInputRef.current.focus();
+          }
+        }
+      }
+    },
+    [endValue, focusedInput, onChange, startValue],
+  );
+
   return (
     <>
-      <div className="sinoui-date-range-picker">
+      <div
+        className="sinoui-date-range-picker"
+        onBlur={handleInputBlur}
+        ref={wrapperRef}
+      >
         <TextInput
           {...getTextInputProps()}
           baseClassName="sinoui-date-range-picker__start"
@@ -81,6 +125,9 @@ export default function DateRangePicker(props: Props) {
           inputProps={{
             ...getTextInputProps().inputProps,
             renderValue: startInputValue,
+            ref: startInputRef,
+            onFocus: () => handleInputFocused('start'),
+            onBlur: null,
           }}
           placeholder="开始时间"
           endAdornment={
@@ -100,6 +147,9 @@ export default function DateRangePicker(props: Props) {
           inputProps={{
             ...getTextInputProps().inputProps,
             renderValue: endInputValue,
+            ref: endInputRef,
+            onFocus: () => handleInputFocused('end'),
+            onBlur: null,
           }}
           placeholder="结束时间"
           endAdornment={
@@ -116,8 +166,9 @@ export default function DateRangePicker(props: Props) {
           <DateRangeView
             startDate={startDate}
             endDate={endDate}
-            minDate={parseDate(min)}
+            minDate={focusedInput === 'end' ? startDate : parseDate(min)}
             maxDate={parseDate(max)}
+            onDateClick={handleDateClick}
           />
         </Popper>
       )}

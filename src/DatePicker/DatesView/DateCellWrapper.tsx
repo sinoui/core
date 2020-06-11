@@ -40,9 +40,9 @@ const DateCellWrapper = styled.div<DateCellWrapperProps>`
     ::before {
       content: ' ';
       width: 32px;
-      height: 30px;
+      height: 28px;
       position: absolute;
-      top: 1px;
+      top: 2px;
       box-sizing: border-box;
 
       ${({ $isSelectedRange }) => $isSelectedRange && selectedRangeCss}

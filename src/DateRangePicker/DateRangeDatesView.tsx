@@ -51,6 +51,10 @@ export interface Props {
    * 是否是hover区间的结束
    */
   isHoverRangeEnd?: (date: Date) => boolean;
+  /**
+   * 日期单元格点击事件的回调函数。
+   */
+  onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
 }
 
 /**
@@ -167,6 +171,7 @@ export default function DateRangeDatesView(props: Props) {
     isInHoverRange,
     isHoverRangeStart,
     isHoverRangeEnd,
+    onDateClick,
   } = props;
 
   const outlinedDate =
@@ -191,6 +196,7 @@ export default function DateRangeDatesView(props: Props) {
         selectedDates={selectedDates as number[]}
         disabledDates={getDisabledDates(year, month, minDate, maxDate)}
         selectedRangeDates={getInRangeDates(year, month, startDate, endDate)}
+        onDateClick={onDateClick}
         onDateMouseEnter={onDateMouseEnter}
         onMouseLeave={onDateMouseLeave}
         isInHoverRange={isInHoverRange}

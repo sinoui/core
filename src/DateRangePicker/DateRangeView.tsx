@@ -33,6 +33,10 @@ export interface Props {
    * 指定最大日期。
    */
   maxDate?: Date;
+  /**
+   * 日期单元格点击事件的回调函数。
+   */
+  onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
 }
 
 /**
@@ -149,6 +153,7 @@ export default function DateRangeView(props: Props) {
     showToday = true,
     minDate,
     maxDate,
+    onDateClick,
   } = props;
 
   const [[year, month], setYearMonth] = useState(() => {
@@ -221,6 +226,7 @@ export default function DateRangeView(props: Props) {
           isInHoverRange={getIsInHoverRange}
           isHoverRangeStart={getIsHoverRangeStart}
           isHoverRangeEnd={getIsHoverRangeEnd}
+          onDateClick={onDateClick}
         />
         <DateRangeDatesView
           startDate={startDate}
@@ -235,6 +241,7 @@ export default function DateRangeView(props: Props) {
           isInHoverRange={getIsInHoverRange}
           isHoverRangeStart={getIsHoverRangeStart}
           isHoverRangeEnd={getIsHoverRangeEnd}
+          onDateClick={onDateClick}
         />
       </div>
     </>
