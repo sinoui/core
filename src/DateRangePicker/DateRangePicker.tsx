@@ -38,6 +38,10 @@ export interface Props
    * 最大值
    */
   max?: string;
+  /**
+   * 是否使用potal模式
+   */
+  portal?: boolean;
 }
 
 const parseDate = mem((dateStr?: string) =>
@@ -45,7 +49,15 @@ const parseDate = mem((dateStr?: string) =>
 );
 
 export default function DateRangePicker(props: Props) {
-  const { isPc: isPcProps, value, renderValue, onChange, min, max } = props;
+  const {
+    isPc: isPcProps,
+    value,
+    renderValue,
+    onChange,
+    min,
+    max,
+    portal,
+  } = props;
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
   const startValue = value ? value[0] : '';
@@ -162,7 +174,7 @@ export default function DateRangePicker(props: Props) {
         />
       </div>
       {isPc && (
-        <Popper {...getPopperProps()} placement="bottom-start">
+        <Popper {...getPopperProps()} placement="bottom-start" portal={portal}>
           <DateRangeView
             startDate={startDate}
             endDate={endDate}

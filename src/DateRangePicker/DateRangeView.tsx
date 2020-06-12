@@ -256,7 +256,7 @@ export default function DateRangeView(props: Props) {
     </>
   );
   return (
-    <DateRangeViewWrapper>
+    <DateRangeViewWrapper className="sinoui-date-range-view">
       <DateRangeHeader
         startYear={year}
         startMonth={month}
