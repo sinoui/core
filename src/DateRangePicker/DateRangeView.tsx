@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
+import styled from 'styled-components';
 import DateRangeHeader from './DateRangeHeader';
 import DateRangeViewWrapper from './DateRangeViewWrapper';
 import DateRangeDatesView from './DateRangeDatesView';
@@ -64,9 +65,13 @@ function isInHoverRange(
       );
     }
     return (
-      (date > startDate && date <= hoverDate) ||
+      (date >= startDate && date <= hoverDate) ||
       (date >= hoverDate && date < startDate)
     );
+  }
+
+  if (endDate) {
+    return date < endDate && date >= hoverDate;
   }
 
   return false;
@@ -140,6 +145,10 @@ function isHoverRangeEnd(
   return false;
 }
 
+const ContentWrapper = styled.div`
+  display: flex;
+`;
+
 /**
  * 日期区间选择的展示
  * @param props
@@ -208,11 +217,11 @@ export default function DateRangeView(props: Props) {
 
   const renderDates = () => (
     <>
-      <div style={{ display: 'flex' }}>
+      <ContentWrapper className="sinoui-date-range-view__week-title">
         <WeekTitleBar />
         <WeekTitleBar />
-      </div>
-      <div style={{ display: 'flex' }}>
+      </ContentWrapper>
+      <ContentWrapper className="sinoui-date-range-view__datesview-wrapper">
         <DateRangeDatesView
           startDate={startDate}
           endDate={endDate}
@@ -243,7 +252,7 @@ export default function DateRangeView(props: Props) {
           isHoverRangeEnd={getIsHoverRangeEnd}
           onDateClick={onDateClick}
         />
-      </div>
+      </ContentWrapper>
     </>
   );
   return (

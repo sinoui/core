@@ -127,6 +127,7 @@ export default function DateCell(props: Props) {
       $isInHoverRangeEnd={isInHoverRangeEnd}
       $selected={selected}
       $isPrevRangeStart={isPrevRangeStart}
+      $isColumnEnd={column === 7}
     >
       {date == null ? null : (
         <DateCellContent

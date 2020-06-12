@@ -13,6 +13,7 @@ interface DateCellWrapperProps {
   $isInHoverRangeStart?: boolean;
   $isInHoverRangeEnd?: boolean;
   $isPrevRangeStart?: boolean;
+  $isColumnEnd?: boolean;
 }
 
 const selectedRangeCss = css`
@@ -85,10 +86,11 @@ const DateCellWrapper = styled.div<DateCellWrapperProps>`
           circleCss}
     }
 
-    ${({ $selected, $isInHoverRangeEnd, $isInHoverRange }) =>
+    ${({ $selected, $isInHoverRangeEnd, $isInHoverRange, $isColumnEnd }) =>
       $isInHoverRange &&
       !$isInHoverRangeEnd &&
       $selected &&
+      !$isColumnEnd &&
       endRangeAndInHoverRangeCss};
 
 ${({ $isPrevRangeStart, $isInHoverRange, $isRangeEnd }) =>
