@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react';
+import React, { createRef } from 'react';
 import { render, act, fireEvent, cleanup } from '@testing-library/react';
 import { defaultTheme } from '@sinoui/theme';
 import { ThemeProvider } from 'styled-components';
@@ -2376,4 +2376,112 @@ describe('open状态受控', () => {
       container.querySelector('.sinoui-auto-complete__option-list'),
     ).toBeInTheDocument();
   });
+});
+
+it('textInputRef & popperRef', () => {
+  const renderInput = (props: any) => (
+    <TextInput
+      {...props}
+      wrapperProps={
+        {
+          'data-testid': 'text-input',
+        } as any
+      }
+    />
+  );
+  const textInputRef = createRef<HTMLInputElement>();
+  const popperRef = createRef<HTMLDivElement>();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        open
+        portal={false}
+        textInputRef={textInputRef}
+        popperRef={popperRef}
+        popperComponentProps={
+          {
+            'data-testid': 'popper',
+          } as any
+        }
+      />
+    </ThemeProvider>,
+  );
+
+  expect(textInputRef.current).toBe(getByTestId('text-input'));
+  expect(popperRef.current).toBe(getByTestId('popper'));
+});
+
+it('placement', () => {
+  let popperProps: any;
+  const PopperComponent = (props: any) => {
+    popperProps = props;
+    return <div />;
+  };
+
+  const renderInput = (props: any) => (
+    <TextInput
+      {...props}
+      wrapperProps={
+        {
+          'data-testid': 'text-input',
+        } as any
+      }
+    />
+  );
+
+  render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        open
+        portal={false}
+        PopperComponent={PopperComponent}
+        placement="bottom-start"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(popperProps.placement).toBe('bottom-start');
+});
+
+it('popperComponentProps', () => {
+  let popperProps: any;
+  const PopperComponent = (props: any) => {
+    popperProps = props;
+    return <div />;
+  };
+
+  const renderInput = (props: any) => (
+    <TextInput
+      {...props}
+      wrapperProps={
+        {
+          'data-testid': 'text-input',
+        } as any
+      }
+    />
+  );
+
+  render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        open
+        portal={false}
+        PopperComponent={PopperComponent}
+        popperComponentProps={{
+          placement: 'bottom-start',
+        }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(popperProps.placement).toBe('bottom-start');
 });

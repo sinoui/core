@@ -2,10 +2,11 @@
 /* eslint-disable no-param-reassign */
 import React, { useRef, useState, useMemo } from 'react';
 import styled, { css } from 'styled-components';
-import { ModifierArguments, Options } from '@popperjs/core';
+import type { ModifierArguments, Options, Placement } from '@popperjs/core';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import OptionList from './OptionList';
 import Popper from '../Popper';
+import type { PopperProps } from '../Popper';
 import Grow from '../Grow';
 import ArrowDropDownIcon from '../svg-icons/ArrowDropDownIcon';
 import InputAdornment from '../InputAdornment';
@@ -20,6 +21,7 @@ import type { RenderTagsProps } from './types';
 import { AutoCompleteCloseReason } from './types';
 import moveFocused from './moveFocused';
 import useAutoCompleteOpen from './useAutoCompleteOpen';
+import useMultiRefs from '../utils/useMultiRefs';
 
 /**
  * 自动完成组件变更原因
@@ -192,6 +194,22 @@ export interface Props {
    * 关闭选项的回调函数
    */
   onClose?: (reason: AutoCompleteCloseReason) => void;
+  /**
+   * 输入框引用
+   */
+  textInputRef?: React.Ref<HTMLInputElement>;
+  /**
+   * 弹出层元素引用
+   */
+  popperRef?: React.Ref<HTMLDivElement>;
+  /**
+   * 指定弹出层位置
+   */
+  placement?: Placement;
+  /**
+   * 弹出元素属性
+   */
+  popperComponentProps?: Partial<PopperProps>;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -314,6 +332,10 @@ export default function AutoComplete(props: Props) {
     open: openProp,
     onOpen,
     onClose,
+    textInputRef: textInputRefProp,
+    popperRef,
+    placement,
+    popperComponentProps,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -336,6 +358,7 @@ export default function AutoComplete(props: Props) {
   }, [freeSolo, getOptionLabel, multiple, value]);
 
   const textInputRef = useRef<HTMLInputElement | null>(null);
+  const handleTextInputRef = useMultiRefs(textInputRefProp, textInputRef);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
   const [inputValue, setInputValue] = useInputValue(defaultInputValue);
@@ -722,7 +745,7 @@ export default function AutoComplete(props: Props) {
   }, [freeSolo, getOptionLabel, multiple, value]);
 
   const input = renderInput({
-    ref: textInputRef,
+    ref: handleTextInputRef,
     value: inputValue,
     forceShrink:
       focused || inputValue || (multiple && value && value.length > 0),
@@ -780,6 +803,9 @@ export default function AutoComplete(props: Props) {
         onMouseDown={preventEventDefault}
         modifiers={modifiers}
         portal={portal}
+        placement={placement}
+        ref={popperRef}
+        {...popperComponentProps}
       >
         <TransitionComponent in={isOpen}>{renderOptions()}</TransitionComponent>
       </PopperComponent>
