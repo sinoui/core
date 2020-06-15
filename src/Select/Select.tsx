@@ -1,15 +1,18 @@
 import React, { useRef } from 'react';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
-import AutoComplete from '@sinoui/core/AutoComplete';
+import AutoComplete, {
+  AutoCompleteCloseReason,
+} from '@sinoui/core/AutoComplete';
 import type { AutoCompleteProps } from '@sinoui/core/AutoComplete';
+import type { Placement } from '@popperjs/core';
 import SelectInput from './SelectInput';
 import type SelectItem from './SelectItem';
 
 export interface Props
   extends Omit<
     TextInputProps,
-    'value' | 'multiline' | 'minRows' | 'maxRows' | 'onChange' | 'allowClear'
+    'value' | 'multiline' | 'minRows' | 'maxRows' | 'onChange'
   > {
   /**
    * 子元素
@@ -45,11 +48,35 @@ export interface Props
   /**
    * 自定义自动完成组件的属性
    */
-  autoCompleteProps?: AutoCompleteProps;
+  autoCompleteProps?: Partial<AutoCompleteProps>;
   /**
    * 宽度自适应
    */
   autoWidth?: boolean;
+  /**
+   * 控制选项打开状态
+   */
+  open?: boolean;
+  /**
+   * 打开选项的回调函数
+   */
+  onOpen?: (state: boolean) => void;
+  /**
+   * 关闭选项的回调函数
+   */
+  onClose?: (reason: AutoCompleteCloseReason) => void;
+  /**
+   * 输入框引用
+   */
+  textInputRef?: React.Ref<HTMLInputElement>;
+  /**
+   * 弹出层元素引用
+   */
+  popperRef?: React.Ref<HTMLDivElement>;
+  /**
+   * 指定弹出层位置
+   */
+  placement?: Placement;
 }
 
 /**
@@ -113,6 +140,13 @@ function Select(props: Props) {
     disabled,
     readOnly,
     autoWidth,
+    open,
+    onClose,
+    onOpen,
+    textInputRef,
+    popperRef,
+    placement,
+    allowClear = true,
     ...other
   } = props;
 
@@ -171,6 +205,13 @@ function Select(props: Props) {
       renderTags={() => null}
       portal={portal}
       autoWidth={autoWidth}
+      open={open}
+      onOpen={onOpen}
+      onClose={onClose}
+      textInputRef={textInputRef}
+      popperRef={popperRef}
+      placement={placement}
+      clearable={allowClear}
       {...autoCompleteProps}
     />
   );
