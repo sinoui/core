@@ -198,3 +198,15 @@ export const 清除功能 = () => (
     <DatePickerDemo label="日期选择" min="2020-06-04" allowClear />
   </StoryLayout>
 );
+
+export const pc形态 = () => (
+  <StoryLayout>
+    <DatePickerDemo isPc />
+  </StoryLayout>
+);
+
+export const mobile形态 = () => (
+  <StoryLayout>
+    <DatePickerDemo isPc={false} />
+  </StoryLayout>
+);

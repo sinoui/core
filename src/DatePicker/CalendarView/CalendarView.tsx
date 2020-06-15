@@ -76,6 +76,10 @@ export interface Props {
    * 日历选择标题
    */
   title?: string;
+  /**
+   * 是否是pc形态
+   */
+  isPc?: boolean;
 }
 
 function isSameMonth(
@@ -139,11 +143,13 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     onClear,
     skipMonthsView: skipMonthsViewProp,
     title,
+    isPc: isPcProp,
     ...rest
   },
   ref,
 ) {
-  const isPc = useIsPc();
+  const nativePc = useIsPc();
+  const isPc = isPcProp ?? nativePc;
   const [valueState, setValueState] = useState(value);
   const [[year, month], setYearMonth] = useState(() => {
     return value

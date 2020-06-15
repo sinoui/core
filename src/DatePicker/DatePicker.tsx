@@ -164,6 +164,7 @@ export default function DatePicker(props: Props) {
             onChange={handleCalendarChange}
             minDate={parseDate(min)}
             maxDate={parseDate(max)}
+            isPc={isPc}
           />
         </StyledPopper>
       ) : (
@@ -175,6 +176,7 @@ export default function DatePicker(props: Props) {
             minDate={parseDate(min)}
             maxDate={parseDate(max)}
             title={modalTitle}
+            isPc={isPc}
           />
         </Modal>
       )}
