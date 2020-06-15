@@ -61,6 +61,50 @@ describe('value', () => {
       'sinoui-date-cell--selected',
     );
   });
+
+  it('值无效时，页面显示为空，弹窗默认为当前月份', () => {
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DatePicker
+          portal={false}
+          label="日期选择"
+          value="afd"
+          data-testid="datepicker"
+          isPc
+        />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('datepicker').textContent).toBeFalsy();
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    const date = new Date();
+    const monthTitles = [
+      '一',
+      '二',
+      '三',
+      '四',
+      '五',
+      '六',
+      '七',
+      '八',
+      '九',
+      '十',
+      '十一',
+      '十二',
+    ];
+
+    expect(
+      container.querySelector('.sinoui-calendar-view-header'),
+    ).toHaveTextContent(
+      `${date.getFullYear()}年${monthTitles[date.getMonth()]}月`,
+    );
+  });
 });
 
 describe('pc端', () => {

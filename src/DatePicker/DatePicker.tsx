@@ -91,8 +91,26 @@ const CalendarModalContent = React.forwardRef<
 });
 
 const parseDate = mem((dateStr?: string) =>
-  dateStr ? new Date(Date.parse(dateStr)) : undefined,
+  dateStr && !Number.isNaN(Date.parse(dateStr))
+    ? new Date(Date.parse(dateStr))
+    : undefined,
 );
+
+const renderInputValue = (
+  renderValue?: (value?: Date) => React.ReactNode,
+  date?: Date,
+  value?: string,
+) => {
+  if (renderValue) {
+    return renderValue(date);
+  }
+
+  if (value && Number.isNaN(Date.parse(value))) {
+    return '';
+  }
+
+  return value;
+};
 
 /**
  * 日期选择组件
@@ -114,7 +132,8 @@ export default function DatePicker(props: Props) {
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
   const date = parseDate(value);
-  const inputValue = renderValue ? renderValue(date) : value;
+  const inputRenderValue = renderInputValue(renderValue, date, value);
+  const inputValue = value && Number.isNaN(Date.parse(value)) ? '' : value;
   const {
     getModalProps,
     getPopperProps,
@@ -123,7 +142,7 @@ export default function DatePicker(props: Props) {
   } = useSelect({
     ...props,
     isRenderWithPopper: isPc,
-    renderValue: inputValue,
+    renderValue: inputRenderValue,
   });
 
   /**
@@ -149,7 +168,7 @@ export default function DatePicker(props: Props) {
       <TextInput
         {...getTextInputProps()}
         baseClassName="sinoui-date-picker"
-        value={value}
+        value={inputValue}
         onClear={handleClear}
         endAdornment={
           <InputAdornment position="end" disablePointerEvents>

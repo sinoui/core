@@ -127,7 +127,7 @@ const StyledDatepicker = styled(DatePicker)`
 `;
 
 function DatePickerDemo(props: any) {
-  const [value, setValue] = useState<string | undefined>('2020-06-05');
+  const [value, setValue] = useState<string | undefined>('sdf');
   return (
     <StyledDatepicker
       value={value}
