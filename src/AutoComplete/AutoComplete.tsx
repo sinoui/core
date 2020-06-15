@@ -699,6 +699,7 @@ export default function AutoComplete(props: Props) {
       className="sinoui-auto-complete__popup-indicator"
       color={getPopupIndicatorColor()}
       onClick={handlePopupIndicatorClick}
+      disabled={disabled || readOnly}
     >
       {popupIcon}
     </PopupIndicatorWrapper>
@@ -765,7 +766,7 @@ export default function AutoComplete(props: Props) {
     },
     endAdornment: (
       <InputAdornment position="end">
-        {!!value && (
+        {!!value && !disabled && !readOnly && (
           <ClearButtonWrapper
             onClick={handleClear}
             className="sinoui-focused-visible"
