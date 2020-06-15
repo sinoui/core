@@ -8,7 +8,7 @@ import 'jest-styled-components';
 import Popper from '@sinoui/core/Popper';
 import Collapse from '@sinoui/core/CollapseNew';
 import AutoComplete, { AutoCompleteChangeReason } from '../AutoComplete';
-import type { RenderTagsProps } from '../types';
+import { RenderTagsProps, AutoCompleteCloseReason } from '../types';
 
 afterEach(cleanup);
 
@@ -2245,4 +2245,135 @@ it('closeOnBlur===false，失去焦点，不关闭弹窗', () => {
   expect(
     container.querySelector('.sinoui-auto-complete__option-list'),
   ).toBeInTheDocument();
+});
+
+describe('open状态受控', () => {
+  it('失去焦点，调用关闭回调函数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onClose = jest.fn();
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          open
+          onClose={onClose}
+          portal={false}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+
+    const textInput = getByTestId('text-input');
+    const input = textInput.querySelector('input')!;
+
+    act(() => {
+      fireEvent.blur(input);
+    });
+
+    expect(onClose).toBeCalledWith(AutoCompleteCloseReason.blur);
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+  });
+
+  it('按下esc，调用关闭回调函数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onClose = jest.fn();
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          open
+          onClose={onClose}
+          portal={false}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = getByTestId('text-input');
+    const input = textInput.querySelector('input')!;
+
+    act(() => {
+      fireEvent.keyDown(input, { key: 'Escape' });
+    });
+
+    expect(onClose).toBeCalledWith(AutoCompleteCloseReason.escape);
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+  });
+
+  it('选中选项，调用关闭回调函数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onClose = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          open
+          onClose={onClose}
+          portal={false}
+        />
+      </ThemeProvider>,
+    );
+
+    act(() => {
+      const firstItem = container.querySelector('.sinoui-list-item')!;
+      fireEvent.click(firstItem);
+    });
+
+    expect(onClose).toBeCalledWith(AutoCompleteCloseReason.selectOption);
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+  });
+
+  it('点击指示图标，调用关闭回调函数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onClose = jest.fn();
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          open
+          onClose={onClose}
+          portal={false}
+        />
+      </ThemeProvider>,
+    );
+
+    const popupIndicator = getByTestId('text-input').querySelector(
+      '.sinoui-auto-complete__popup-indicator',
+    )!;
+
+    act(() => {
+      fireEvent.click(popupIndicator);
+    });
+
+    expect(onClose).toBeCalledWith(
+      AutoCompleteCloseReason.popperIndicatorClick,
+    );
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+  });
 });

@@ -17,7 +17,9 @@ import bemClassNames from '../utils/bemClassNames';
 import AutoCompleteStyle from './AutoCompleteStyle';
 import AutoCompleteTags from './AutoCompleteTags';
 import type { RenderTagsProps } from './types';
+import { AutoCompleteCloseReason } from './types';
 import moveFocused from './moveFocused';
+import useAutoCompleteOpen from './useAutoCompleteOpen';
 
 /**
  * 自动完成组件变更原因
@@ -177,6 +179,19 @@ export interface Props {
    * 失去焦点时关闭弹窗，默认为`true`
    */
   closeOnBlur?: boolean;
+
+  /**
+   * 控制选项打开状态
+   */
+  open?: boolean;
+  /**
+   * 打开选项的回调函数
+   */
+  onOpen?: (state: boolean) => void;
+  /**
+   * 关闭选项的回调函数
+   */
+  onClose?: (reason: AutoCompleteCloseReason) => void;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -296,6 +311,9 @@ export default function AutoComplete(props: Props) {
     renderOption,
     autoWidth,
     closeOnBlur = true,
+    open: openProp,
+    onOpen,
+    onClose,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -321,7 +339,11 @@ export default function AutoComplete(props: Props) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
   const [inputValue, setInputValue] = useInputValue(defaultInputValue);
-  const [open, setOpen] = useState(false);
+  const { isOpen, open, close } = useAutoCompleteOpen(
+    openProp,
+    onOpen,
+    onClose,
+  );
   const [focusedOption, setFocusedOption] = useState<string | undefined>(
     defaultFocusedOption,
   );
@@ -405,7 +427,7 @@ export default function AutoComplete(props: Props) {
     }
 
     if (!multiple && closeOnSelect) {
-      setOpen(false);
+      close(AutoCompleteCloseReason.selectOption);
     }
   };
 
@@ -418,8 +440,8 @@ export default function AutoComplete(props: Props) {
     const newInputValue = event.target.value;
     setInputValue(newInputValue);
 
-    if (!open) {
-      setOpen(true);
+    if (!isOpen) {
+      open();
     }
 
     if (!multiple && clearable && newInputValue === '' && onChange) {
@@ -435,7 +457,7 @@ export default function AutoComplete(props: Props) {
     if (disabled || readOnly) {
       return;
     }
-    setOpen(true);
+    open();
     if (!freeSolo && inputRef.current?.select) {
       // eslint-disable-next-line no-unused-expressions
       inputRef.current?.select();
@@ -447,7 +469,7 @@ export default function AutoComplete(props: Props) {
    */
   const handleInputFocus = () => {
     if (openOnFocus) {
-      setOpen(true);
+      open();
     }
     setFocused(true);
   };
@@ -461,7 +483,7 @@ export default function AutoComplete(props: Props) {
       return;
     }
     if (closeOnBlur) {
-      setOpen(false);
+      close(AutoCompleteCloseReason.blur);
     }
 
     if (!freeSolo) {
@@ -499,16 +521,16 @@ export default function AutoComplete(props: Props) {
    */
   const handleInputKeydown = (event: React.KeyboardEvent) => {
     const { key } = event;
-    if (!open && clearOnEscape && key === 'Escape') {
+    if (!isOpen && clearOnEscape && key === 'Escape') {
       if (onChange && value != null) {
         onChange(null, AutoCompleteChangeReason.clear);
       }
       setInputValue('');
       setFocusedOption('');
     } else if (closeOnEscape && key === 'Escape') {
-      setOpen(false);
+      close(AutoCompleteCloseReason.escape);
     } else if (key === 'ArrowUp' || key === 'ArrowDown') {
-      if (open && listRef.current) {
+      if (isOpen && listRef.current) {
         const items = getAvailableItems(listRef.current);
         const focusedIndex = getFocusedIndex(items, key, focusedOption);
         scrollIntoView(items[focusedIndex], {
@@ -518,12 +540,22 @@ export default function AutoComplete(props: Props) {
         });
         setFocusedOption(items[focusedIndex]?.textContent!);
       } else {
-        setOpen(true);
+        open();
       }
-    } else if (handleHomeEndKeys && key === 'Home' && open && listRef.current) {
+    } else if (
+      handleHomeEndKeys &&
+      key === 'Home' &&
+      isOpen &&
+      listRef.current
+    ) {
       const items = getAvailableItems(listRef.current);
       setFocusedOption(items[0]?.textContent!);
-    } else if (key === 'End' && handleHomeEndKeys && open && listRef.current) {
+    } else if (
+      key === 'End' &&
+      handleHomeEndKeys &&
+      isOpen &&
+      listRef.current
+    ) {
       const items = getAvailableItems(listRef.current);
       scrollIntoView(items[items.length - 1], {
         scrollMode: 'if-needed',
@@ -571,10 +603,10 @@ export default function AutoComplete(props: Props) {
    * 处理弹出提示器的点击事件
    */
   const handlePopupIndicatorClick = () => {
-    if (open) {
-      setOpen(false);
+    if (isOpen) {
+      close(AutoCompleteCloseReason.popperIndicatorClick);
     } else {
-      setOpen(true);
+      open();
       // eslint-disable-next-line no-unused-expressions
       inputRef.current?.focus();
     }
@@ -628,7 +660,7 @@ export default function AutoComplete(props: Props) {
       return 'actionDisabled';
     }
 
-    if (open) {
+    if (isOpen) {
       return 'primary';
     }
 
@@ -640,7 +672,7 @@ export default function AutoComplete(props: Props) {
    */
   const renderPopupIndicator = () => (
     <PopupIndicatorWrapper
-      $open={open}
+      $open={isOpen}
       className="sinoui-auto-complete__popup-indicator"
       color={getPopupIndicatorColor()}
       onClick={handlePopupIndicatorClick}
@@ -743,13 +775,13 @@ export default function AutoComplete(props: Props) {
     <>
       {input}
       <PopperComponent
-        open={open}
+        open={isOpen}
         referenceElement={textInputRef}
         onMouseDown={preventEventDefault}
         modifiers={modifiers}
         portal={portal}
       >
-        <TransitionComponent in={open}>{renderOptions()}</TransitionComponent>
+        <TransitionComponent in={isOpen}>{renderOptions()}</TransitionComponent>
       </PopperComponent>
       <AutoCompleteStyle />
     </>
