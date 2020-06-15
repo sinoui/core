@@ -493,6 +493,56 @@ it('无值时，不显示清除按钮', () => {
   expect(queryByTestId('custom-close-icon')).toBeFalsy();
 });
 
+it('disabled状态下，不显示清除按钮', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnEscape={false}
+        value={options[0]}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+        portal={false}
+        disabled
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeFalsy();
+});
+
+it('readOnly状态下，不显示清除按钮', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnEscape={false}
+        value={options[0]}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+        portal={false}
+        readOnly
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeFalsy();
+});
+
 it('在非freeSolo模式下，输入框聚焦时，选中文本', () => {
   const renderInput = (props: any) => (
     <TextInput {...props} data-testid="text-input" />

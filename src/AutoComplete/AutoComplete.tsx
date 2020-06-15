@@ -710,7 +710,7 @@ export default function AutoComplete(props: Props) {
     },
     endAdornment: (
       <InputAdornment position="end">
-        {!!value && (
+        {!!value && !disabled && !readOnly && (
           <ClearButtonWrapper
             onClick={handleClear}
             className="sinoui-focused-visible"
