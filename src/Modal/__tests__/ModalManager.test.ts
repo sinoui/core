@@ -251,3 +251,9 @@ describe('findParentModal', () => {
     expect(findParentModal(document.body)).toBe(null);
   });
 });
+
+it('defaultModalManager', () => {
+  expect(ModalManager.defaultModalManager()).toBe(
+    ModalManager.defaultModalManager(),
+  );
+});

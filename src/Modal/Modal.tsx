@@ -111,14 +111,6 @@ const defaultRenderBackdrop = (props: RenderModalBackdropProps) => {
   return <Backdrop {...props} />;
 };
 
-let defaultModalManager: ModalManager | undefined;
-const getDefaultModalManager = () => {
-  if (!defaultModalManager) {
-    defaultModalManager = new ModalManager();
-  }
-  return defaultModalManager;
-};
-
 /**
  * 模态框。
  */
@@ -141,7 +133,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function Modal(
     autoFocus = true,
     enforceFocus = true,
     scrollLock = true,
-    modalManager = getDefaultModalManager(),
+    modalManager = ModalManager.defaultModalManager(),
     ...rest
   },
   ref,
