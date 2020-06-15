@@ -1190,8 +1190,8 @@ label ~ .c3 {
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  pointer-events: default;
-  cursor: pointer;
+  pointer-events: none;
+  cursor: default;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1211,7 +1211,7 @@ label ~ .c3 {
   height: 48px;
   border-radius: 50%;
   box-sizing: border-box;
-  color: rgba(0,0,0,0.26);
+  color: rgba(0,0,0,0.38);
 }
 
 .c7:hover {
@@ -1334,8 +1334,10 @@ label ~ .c3 {
       className="c5 sinoui-input-adornment sinoui-input-adornment--end"
     >
       <button
-        className="c6 sinoui-base-button c7 sinoui-icon-button c8 sinoui-auto-complete__popup-indicator"
+        aria-disabled={true}
+        className="c6 sinoui-base-button c7 sinoui-icon-button sinoui-icon-button--disabled c8 sinoui-auto-complete__popup-indicator"
         color="actionDisabled"
+        disabled={true}
         onClick={[Function]}
         role="button"
         type="button"

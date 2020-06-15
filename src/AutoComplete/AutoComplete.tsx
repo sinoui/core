@@ -644,6 +644,7 @@ export default function AutoComplete(props: Props) {
       className="sinoui-auto-complete__popup-indicator"
       color={getPopupIndicatorColor()}
       onClick={handlePopupIndicatorClick}
+      disabled={disabled || readOnly}
     >
       {popupIcon}
     </PopupIndicatorWrapper>
