@@ -374,6 +374,51 @@ it('点击选项时，阻止mousedown的默认行为', () => {
   expect(preventDefault).toBeCalled();
 });
 
+it('popperFocuable = true，时，不阻止mousedown', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const preventDefault = jest.fn();
+  const FakePopper = (props: any) => {
+    const handleMouseDown = (event: React.MouseEvent) => {
+      event.persist();
+      if (props.onMouseDown) {
+        props.onMouseDown({
+          ...event,
+          preventDefault,
+        });
+      }
+    };
+
+    return (
+      <Popper {...props} onMouseDown={handleMouseDown} data-testid="popper" />
+    );
+  };
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnEscape={false}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        PopperComponent={FakePopper}
+        portal={false}
+        popperFocuable
+      />
+    </ThemeProvider>,
+  );
+
+  act(() => {
+    fireEvent.click(getByTestId('text-input').querySelector('input')!);
+  });
+
+  act(() => {
+    fireEvent.mouseDown(getByTestId('popper'));
+  });
+
+  expect(preventDefault).not.toBeCalled();
+});
+
 it('定制弹窗图标', () => {
   const renderInput = (props: any) => (
     <TextInput {...props} data-testid="text-input" />

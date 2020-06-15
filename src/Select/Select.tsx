@@ -74,6 +74,10 @@ export interface Props
    */
   popperRef?: React.Ref<HTMLDivElement>;
   /**
+   * 是否允许弹层获取焦点。默认为`false`。
+   */
+  popperFocuable?: boolean;
+  /**
    * 指定弹出层位置
    */
   placement?: Placement;
@@ -147,6 +151,7 @@ function Select(props: Props) {
     popperRef,
     placement,
     allowClear = true,
+    popperFocuable,
     ...other
   } = props;
 
@@ -212,6 +217,7 @@ function Select(props: Props) {
       popperRef={popperRef}
       placement={placement}
       clearable={allowClear}
+      popperFocuable={popperFocuable}
       {...autoCompleteProps}
     />
   );
