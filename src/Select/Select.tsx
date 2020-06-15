@@ -76,7 +76,7 @@ export interface Props
   /**
    * 是否允许弹层获取焦点。默认为`false`。
    */
-  popperFocuable?: boolean;
+  popperFocusable?: boolean;
   /**
    * 指定弹出层位置
    */
@@ -151,7 +151,7 @@ function Select(props: Props) {
     popperRef,
     placement,
     allowClear = true,
-    popperFocuable,
+    popperFocusable,
     ...other
   } = props;
 
@@ -217,7 +217,7 @@ function Select(props: Props) {
       popperRef={popperRef}
       placement={placement}
       clearable={allowClear}
-      popperFocuable={popperFocuable}
+      popperFocusable={popperFocusable}
       {...autoCompleteProps}
     />
   );

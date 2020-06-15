@@ -213,7 +213,7 @@ export interface Props {
   /**
    * 是否允许弹层获取焦点。默认为`false`。
    */
-  popperFocuable?: boolean;
+  popperFocusable?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -340,7 +340,7 @@ export default function AutoComplete(props: Props) {
     popperRef,
     placement,
     popperComponentProps,
-    popperFocuable,
+    popperFocusable,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -806,7 +806,7 @@ export default function AutoComplete(props: Props) {
       <PopperComponent
         open={isOpen}
         referenceElement={textInputRef}
-        onMouseDown={popperFocuable ? undefined : preventEventDefault}
+        onMouseDown={popperFocusable ? undefined : preventEventDefault}
         modifiers={modifiers}
         portal={portal}
         placement={placement}

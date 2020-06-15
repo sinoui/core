@@ -374,7 +374,7 @@ it('点击选项时，阻止mousedown的默认行为', () => {
   expect(preventDefault).toBeCalled();
 });
 
-it('popperFocuable = true，时，不阻止mousedown', () => {
+it('popperFocusable = true，时，不阻止mousedown', () => {
   const renderInput = (props: any) => (
     <TextInput {...props} data-testid="text-input" />
   );
@@ -403,7 +403,7 @@ it('popperFocuable = true，时，不阻止mousedown', () => {
         getOptionLabel={(_) => _.title}
         PopperComponent={FakePopper}
         portal={false}
-        popperFocuable
+        popperFocusable
       />
     </ThemeProvider>,
   );
