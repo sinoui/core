@@ -243,7 +243,7 @@ export default function DateRangeView(props: Props) {
           year={endYear}
           month={endMonth}
           showToday={showToday}
-          minDate={startDate}
+          minDate={minDate}
           maxDate={maxDate}
           onDateMouseEnter={handleDateMouseEnter}
           onDateMouseLeave={handleDateMouseLeave}
