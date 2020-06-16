@@ -216,4 +216,37 @@ describe('pc端', () => {
 
     expect(onChange).toBeCalledWith(['2020-06-12', '']);
   });
+
+  it('选择的开始日期大于结束日期时，清空结束日期', () => {
+    const onChange = jest.fn();
+    const { container, getByPlaceholderText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateRangePicker
+          portal={false}
+          min="2020-06-07"
+          value={['', '2020-07-20']}
+          isPc
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    const input = container.querySelectorAll('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(input[0]);
+    });
+
+    act(() => {
+      fireEvent.click(
+        container
+          .querySelector('[data-date="2020/7/22"]')
+          ?.querySelector('.sinoui-date-cell-content')!,
+      );
+    });
+
+    expect(onChange).toBeCalledWith(['2020-07-22', '']);
+
+    expect(document.activeElement).toBe(getByPlaceholderText('结束时间'));
+  });
 });

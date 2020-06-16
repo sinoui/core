@@ -108,7 +108,12 @@ export default function DateRangePicker(props: Props) {
     (_event: React.MouseEvent<HTMLElement>, date: Date) => {
       if (onChange) {
         if (focusedInput === 'start') {
-          onChange([formatDate(date) ?? startValue, endValue]);
+          if (endDate && date.getTime() > endDate.getTime()) {
+            onChange([formatDate(date) ?? startValue, '']);
+          } else {
+            onChange([formatDate(date) ?? startValue, endValue]);
+          }
+
           if (endInputRef.current) {
             endInputRef.current.focus();
           }
@@ -120,7 +125,7 @@ export default function DateRangePicker(props: Props) {
         }
       }
     },
-    [endValue, focusedInput, onChange, startValue],
+    [endDate, endValue, focusedInput, onChange, startValue],
   );
 
   return (
