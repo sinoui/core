@@ -31,8 +31,8 @@ const endRangeCss = css`
 `;
 
 const inHoverRangeCss = css`
-  border-top: 1px dashed ${({ theme }) => theme.palette.text.secondary};
-  border-bottom: 1px dashed ${({ theme }) => theme.palette.text.secondary};
+  border-top: 1px dashed ${({ theme }) => theme.palette.text.disabled};
+  border-bottom: 1px dashed ${({ theme }) => theme.palette.text.disabled};
 `;
 
 const endRangeAndInHoverRangeCss = css`

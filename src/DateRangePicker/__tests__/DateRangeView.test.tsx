@@ -164,7 +164,7 @@ describe('开始日期和结束日期都存在，鼠标悬浮进入晚于结束�
 
     expect(container.querySelector('[data-date="2020/7/14"]')!).toHaveStyleRule(
       'border-top',
-      '1px dashed rgba(0,0,0,0.6)',
+      '1px dashed rgba(0,0,0,0.38)',
       {
         media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
         modifier: '::after',
@@ -235,7 +235,7 @@ it('只有开始日期时，鼠标移入开始日期之后的任意日期，开�
 
   expect(container.querySelector('[data-date="2020/6/20"]')!).toHaveStyleRule(
     'border-top',
-    '1px dashed rgba(0,0,0,0.6)',
+    '1px dashed rgba(0,0,0,0.38)',
     {
       media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
       modifier: '::before',
@@ -243,7 +243,7 @@ it('只有开始日期时，鼠标移入开始日期之后的任意日期，开�
   );
   expect(container.querySelector('[data-date="2020/6/20"]')!).toHaveStyleRule(
     'border-top',
-    '1px dashed rgba(0,0,0,0.6)',
+    '1px dashed rgba(0,0,0,0.38)',
     {
       media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
       modifier: '::before',
@@ -269,7 +269,7 @@ it('只有开始日期时，鼠标悬浮进入晚于开始时间的日期，开�
 
   expect(container.querySelector('[data-date="2020/6/16"]')!).toHaveStyleRule(
     'border-top',
-    '1px dashed rgba(0,0,0,0.6)',
+    '1px dashed rgba(0,0,0,0.38)',
     {
       media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
       modifier: '::after',
@@ -295,7 +295,7 @@ it('只有结束日期时，鼠标移动到早于结束时间的日期上时，�
 
   expect(container.querySelector('[data-date="2020/6/26"]')!).toHaveStyleRule(
     'border-top',
-    '1px dashed rgba(0,0,0,0.6)',
+    '1px dashed rgba(0,0,0,0.38)',
     {
       media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
       modifier: '::before',
@@ -324,7 +324,7 @@ it('指定开始时间和结束时间,鼠标悬浮在开始时间之前的任一
 
   expect(prevStartDay).toHaveStyleRule(
     'border-top',
-    '1px dashed rgba(0,0,0,0.6)',
+    '1px dashed rgba(0,0,0,0.38)',
     {
       media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
       modifier: '::after',
@@ -352,7 +352,7 @@ it('只有结束时间，鼠标悬浮进入早于结束时间之前的日期，�
 
   expect(prevStartDay).toHaveStyleRule(
     'border-top',
-    '1px dashed rgba(0,0,0,0.6)',
+    '1px dashed rgba(0,0,0,0.38)',
     {
       media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
       modifier: '::after',
