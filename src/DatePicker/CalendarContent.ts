@@ -1,14 +1,9 @@
 import styled, { css } from 'styled-components';
-import {
-  CALENDAR_WIDTH_MOBILE,
-  CALENDAR_CONTENT_HEIGHT_MOBILE,
-  CALENDAR_WIDTH_PC,
-  CALENDAR_CONTENT_HEIGHT_PC,
-} from './constants';
+import { CALENDAR_WIDTH_PC, CALENDAR_CONTENT_HEIGHT_PC } from './constants';
 
 const mobileStyle = css`
-  height: ${CALENDAR_CONTENT_HEIGHT_MOBILE}px;
-  width: ${CALENDAR_WIDTH_MOBILE}px;
+  height: 280px;
+  width: 320px;
   padding: 0px 24px 8px;
 `;
 
@@ -27,14 +22,13 @@ ${mobileStyle}
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     ${pcStyle}
   }
-  
+
   ${({ $isPc }) =>
-    !$isPc
-      ? `
+    !$isPc &&
+    `
   && {
     ${mobileStyle}
-  }`
-      : pcStyle}
+  }`}
 `;
 
 export default CalendarContent;
