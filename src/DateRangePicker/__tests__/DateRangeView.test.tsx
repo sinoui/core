@@ -103,7 +103,7 @@ describe('开始日期和结束日期都存在，鼠标悬浮进入晚于结束�
 
     fireEvent.mouseEnter(hoverDate);
 
-    expect(hoverDate).toHaveStyleRule('border', '1px solid currentColor', {
+    expect(hoverDate).toHaveStyleRule('border', '1px solid rgba(0,0,0,0.38)', {
       modifier: ':hover',
     });
 
@@ -190,7 +190,7 @@ it('鼠标悬浮某个早于开始日期的日期，该日期会有实线圆框'
 
   fireEvent.mouseEnter(hoverDate);
 
-  expect(hoverDate).toHaveStyleRule('border', '1px solid currentColor', {
+  expect(hoverDate).toHaveStyleRule('border', '1px solid rgba(0,0,0,0.38)', {
     modifier: ':hover',
   });
 });

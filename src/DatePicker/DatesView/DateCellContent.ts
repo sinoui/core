@@ -85,7 +85,9 @@ const DateCellContent = styled(Body2)<DateCellContentProps>`
         ? adjustOpacity(0.04, props.theme.palette.text.primary)
         : null};
 
-        ${({ $isInHoverRange }) => $isInHoverRange && outlinedCss}
+        ${({ $isInHoverRange, theme }) =>
+          $isInHoverRange &&
+          `border: 1px solid ${theme.palette.text.disabled};`}
   }
 `;
 
