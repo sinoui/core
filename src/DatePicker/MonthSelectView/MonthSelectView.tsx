@@ -9,6 +9,7 @@ interface Props {
   className?: string;
   selectedMonth?: number;
   onMonthSelect?: (month: number) => void;
+  isPc?: boolean;
 }
 
 /**
@@ -18,6 +19,7 @@ const MonthSelectView = ({
   selectedMonth,
   onMonthSelect,
   className,
+  isPc,
   ...rest
 }: Props) => {
   const handleItemClick = (month: number) => () => {
@@ -30,6 +32,7 @@ const MonthSelectView = ({
     <MonthSelectViewWrapper
       className={classNames('sinoui-month-select-view', className)}
       {...rest}
+      $isPc={isPc}
     >
       {MONTH_FULL_TITLES.map((title, index) => (
         <YearItem
@@ -39,6 +42,7 @@ const MonthSelectView = ({
           onClick={handleItemClick(index)}
           $selected={selectedMonth === index}
           data-month={index}
+          isPc={isPc}
         >
           {title}
         </YearItem>

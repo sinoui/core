@@ -188,11 +188,12 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
 
   const renderDates = () => (
     <>
-      <WeekTitleBar startOfWeek={startOfWeek} />
+      <WeekTitleBar startOfWeek={startOfWeek} isPc={isPc} />
       <div className="sinoui-calendar-view__datesview">
         <DatesView
           year={year}
           month={month}
+          isPc={isPc}
           showNextMonthDates={isPc}
           selectedDates={selectedDates}
           onDateClick={handleDateClick}
@@ -216,6 +217,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
       selectedYear={year}
       onYearSelect={handleYearSelect}
       className="sinoui-calendar-view__yearsview"
+      isPc={isPc}
     />
   );
 
@@ -231,6 +233,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
       selectedMonth={month}
       onMonthSelect={handleMonthSelect}
       className="sinoui-calendar-view__monthsview"
+      isPc={isPc}
     />
   );
 
@@ -240,7 +243,12 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
   ]);
 
   return (
-    <CalendarViewWrapper {...rest} className="sinoui-calendar-view" ref={ref}>
+    <CalendarViewWrapper
+      {...rest}
+      className="sinoui-calendar-view"
+      ref={ref}
+      $isPc={isPc}
+    >
       {!isPc && (
         <CalendarViewToolbar
           title={title || '设置日期'}

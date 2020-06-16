@@ -1,13 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Paper from '@sinoui/core/Paper';
 
-const disabledProps = ['in'];
-const CalendarViewWrapper = styled(Paper).withConfig({
-  shouldForwardProp: (prop) => !disabledProps.includes(prop),
-})`
+const mobileStyle = css`
   width: 328px;
-  overflow: hidden;
-  outline: none;
 
   .sinoui-week-title-bar {
     padding: 0 12px;
@@ -17,18 +12,38 @@ const CalendarViewWrapper = styled(Paper).withConfig({
     padding: 0 12px;
     height: 240px;
   }
+`;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    width: 256px;
+const pcStyle = css`
+  width: 256px;
 
-    .sinoui-week-title-bar {
-      padding: 0 16px 12px;
-    }
-    .sinoui-calendar-view__datesview {
-      padding: 0 16px 8px;
-      height: 192px;
-    }
+  .sinoui-week-title-bar {
+    padding: 0 16px 12px;
   }
+  .sinoui-calendar-view__datesview {
+    padding: 0 16px 8px;
+    height: 192px;
+  }
+`;
+
+const disabledProps = ['in'];
+const CalendarViewWrapper = styled(Paper).withConfig({
+  shouldForwardProp: (prop) => !disabledProps.includes(prop),
+})<any>`
+  ${mobileStyle}
+  overflow: hidden;
+  outline: none;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${pcStyle}
+  }
+  ${({ $isPc }) =>
+    !$isPc
+      ? `
+  && {
+    ${mobileStyle}
+  }
+  `
+      : pcStyle}
 `;
 
 export default CalendarViewWrapper;

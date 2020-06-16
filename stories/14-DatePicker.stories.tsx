@@ -93,6 +93,7 @@ const CalendarViewDemo = () => {
         minDate={new Date(2020, 4, 1)}
         maxDate={new Date(2020, 7, 20)}
         startOfWeek={1}
+        isPc
       />
       <Body1>当前选中日期:{formatDate(selectedDate)}</Body1>
     </>

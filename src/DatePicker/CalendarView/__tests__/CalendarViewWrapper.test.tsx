@@ -12,7 +12,7 @@ afterEach(cleanup);
 it('展现日历视图容器', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <CalendarViewWrapper data-testid="calendar-view" />
+      <CalendarViewWrapper data-testid="calendar-view" $isPc={false} />
     </ThemeProvider>,
   );
 
@@ -57,4 +57,25 @@ it('阻止in属性', () => {
   const calendarView = getByTestId('calendar-view');
 
   expect(calendarView).not.toHaveAttribute('in');
+});
+
+it('移动端日历视图容器', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <CalendarViewWrapper data-testid="calendar-view" $isPc={false} />
+    </ThemeProvider>,
+  );
+
+  const calendarView = getByTestId('calendar-view');
+
+  expect(calendarView).toHaveStyleRule('width', '328px');
+  expect(calendarView).toHaveStyleRule('padding', '0 12px', {
+    modifier: '.sinoui-week-title-bar',
+  });
+  expect(calendarView).toHaveStyleRule('padding', '0 12px', {
+    modifier: '.sinoui-calendar-view__datesview',
+  });
+  expect(calendarView).toHaveStyleRule('height', '240px', {
+    modifier: '.sinoui-calendar-view__datesview',
+  });
 });
