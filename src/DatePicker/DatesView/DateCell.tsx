@@ -128,6 +128,8 @@ export default function DateCell(props: Props) {
       $selected={selected}
       $isPrevRangeStart={isPrevRangeStart}
       $isColumnEnd={column === 7}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {date == null ? null : (
         <DateCellContent
@@ -143,8 +145,6 @@ export default function DateCell(props: Props) {
           aria-disabled={disabled ? 'true' : undefined}
           disabled={disabled}
           onClick={onClick}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
         >
           {date}
         </DateCellContent>
