@@ -17,12 +17,20 @@ it('显示日期', () => {
   const dateCellContent = getByTestId('date-cell-content');
   expect(dateCellContent).toHaveStyleRule('width', '36px');
   expect(dateCellContent).toHaveStyleRule('height', '36px');
-  expect(dateCellContent).toHaveStyleRule('width', '28px', {
-    media: 'screen and (min-width: 960px)',
-  });
-  expect(dateCellContent).toHaveStyleRule('height', '28px', {
-    media: 'screen and (min-width: 960px)',
-  });
+});
+
+it('pc显示日期', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateCellContent data-testid="date-cell-content" isPc>
+        10
+      </DateCellContent>
+    </ThemeProvider>,
+  );
+
+  const dateCellContent = getByTestId('date-cell-content');
+  expect(dateCellContent).toHaveStyleRule('width', '28px');
+  expect(dateCellContent).toHaveStyleRule('height', '28px');
 });
 
 it('选中状态', () => {

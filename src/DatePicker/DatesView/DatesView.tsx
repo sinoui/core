@@ -65,17 +65,8 @@ const DatesViewWrapper = styled.div<{ $isPc?: boolean }>`
   -ms-grid-rows: auto auto auto auto auto auto;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, auto);
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    ${pcStyle}
-  }
 
-  ${({ $isPc }) =>
-    !$isPc
-      ? `
-  && {
-    ${mobileStyle}
-  }`
-      : pcStyle}
+  ${({ $isPc }) => $isPc && pcStyle}
 `;
 
 export const getColumn = (index: number) => {

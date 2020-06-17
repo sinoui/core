@@ -21,17 +21,8 @@ const WeekTitle = styled(Body2)<{ $column: number; $isPc?: boolean }>`
   line-height: 18px;
   -ms-grid-column: ${({ $column }) => $column};
   -ms-grid-row: 1;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    ${pcStyle}
-  }
 
-  ${({ $isPc }) =>
-    !$isPc
-      ? `
-  && {
-    ${mobileStyle}
-  }`
-      : pcStyle}
+  ${({ $isPc }) => $isPc && pcStyle}
 `;
 
 export default WeekTitle;

@@ -26,7 +26,7 @@ const getTextColor = (props: DateCellContentProps & { theme: Theme }) => {
   return bgColor ? props.theme.palette.getContrastText(bgColor) : null;
 };
 
-const pcCss = css`
+const pcStyle = css`
   height: 28px;
   width: 28px;
   font-size: 12px;
@@ -34,12 +34,6 @@ const pcCss = css`
   .sinoui-date-cell-ripple {
     height: 28px;
     width: 28px;
-  }
-`;
-
-const pcStyle = css`
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    ${pcCss}
   }
 `;
 
@@ -74,14 +68,7 @@ const DateCellContent = styled(Body2)<DateCellContentProps>`
     theme.transitions.create(['background-color', 'color', 'border-color'])};
   
   ${mobileStyle}
-  ${pcStyle}
-  ${({ isPc }) =>
-    !isPc
-      ? `
-  && {
-    ${mobileStyle}
-  }`
-      : pcCss}
+  ${({ isPc }) => isPc && pcStyle}
   ${({ $outlined }) => $outlined && outlinedCss}
 
   cursor: ${({ $clickable }) => ($clickable ? 'pointer' : 'default')};

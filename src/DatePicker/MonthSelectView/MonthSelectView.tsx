@@ -42,7 +42,7 @@ const MonthSelectView = ({
           onClick={handleItemClick(index)}
           $selected={selectedMonth === index}
           data-month={index}
-          isPc={isPc}
+          $isPc={isPc}
         >
           {title}
         </YearItem>

@@ -32,17 +32,8 @@ const WeekTitleBarWrapper = styled.div<{ $isPc?: boolean }>`
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   -ms-grid-row: auto;
   grid-template-columns: repeat(7, 1fr);
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    ${pcStyle}
-  }
 
-  ${({ $isPc }) =>
-    !$isPc
-      ? `
-  && {
-    ${mobileStyle}
-  }`
-      : pcStyle}
+  ${({ $isPc }) => $isPc && pcStyle}
 `;
 
 /**

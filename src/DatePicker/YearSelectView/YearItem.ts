@@ -27,17 +27,9 @@ const YearItem = styled(BaseButton).attrs((props: Props) => ({
   box-sizing: border-box;
   overflow: hidden;
 ${mobileStyle}
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-   ${pcStyle}
-  }
+ 
 
-  ${({ $isPc }) =>
-    !$isPc
-      ? `
-  && {
-    ${mobileStyle}
-  }`
-      : pcStyle}
+  ${({ $isPc }) => $isPc && pcStyle}
 
   ${({ disabled, theme }) =>
     disabled &&

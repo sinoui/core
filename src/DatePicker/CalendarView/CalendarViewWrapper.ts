@@ -33,17 +33,8 @@ const CalendarViewWrapper = styled(Paper).withConfig({
   ${mobileStyle}
   overflow: hidden;
   outline: none;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    ${pcStyle}
-  }
-  ${({ $isPc }) =>
-    !$isPc
-      ? `
-  && {
-    ${mobileStyle}
-  }
-  `
-      : pcStyle}
+
+  ${({ $isPc }) => $isPc && pcStyle}
 `;
 
 export default CalendarViewWrapper;
