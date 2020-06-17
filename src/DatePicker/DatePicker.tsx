@@ -13,6 +13,7 @@ import InputAdornment from '../InputAdornment';
 import useIsPc from './useIsPc';
 import formatDate from './formatDate';
 import type { CalendarViewProps } from './CalendarView';
+import isNaN from '../utils/isNaN';
 
 interface Props
   extends Omit<
@@ -91,26 +92,12 @@ const CalendarModalContent = React.forwardRef<
 });
 
 const parseDate = mem((dateStr?: string) =>
-  dateStr && !Number.isNaN(Date.parse(dateStr))
+  dateStr && !isNaN(Date.parse(dateStr))
     ? new Date(Date.parse(dateStr))
     : undefined,
 );
 
-const renderInputValue = (
-  renderValue?: (value?: Date) => React.ReactNode,
-  date?: Date,
-  value?: string,
-) => {
-  if (renderValue) {
-    return renderValue(date);
-  }
-
-  if (value && Number.isNaN(Date.parse(value))) {
-    return '';
-  }
-
-  return value;
-};
+const isValidateDate = (value?: string) => value && !isNaN(Date.parse(value));
 
 /**
  * 日期选择组件
@@ -132,8 +119,8 @@ export default function DatePicker(props: Props) {
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
   const date = parseDate(value);
-  const inputRenderValue = renderInputValue(renderValue, date, value);
-  const inputValue = value && Number.isNaN(Date.parse(value)) ? '' : value;
+  const inputValue = isValidateDate(value) ? value : '';
+  const inputRenderValue = renderValue ? renderValue(date) : inputValue;
   const {
     getModalProps,
     getPopperProps,

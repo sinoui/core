@@ -6,6 +6,7 @@ import 'jest-styled-components';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import DatePicker from '../DatePicker';
+import { MONTH_FULL_TITLES } from '../constants';
 
 afterEach(cleanup);
 
@@ -84,25 +85,11 @@ describe('value', () => {
     });
 
     const date = new Date();
-    const monthTitles = [
-      '一',
-      '二',
-      '三',
-      '四',
-      '五',
-      '六',
-      '七',
-      '八',
-      '九',
-      '十',
-      '十一',
-      '十二',
-    ];
 
     expect(
       container.querySelector('.sinoui-calendar-view-header'),
     ).toHaveTextContent(
-      `${date.getFullYear()}年${monthTitles[date.getMonth()]}月`,
+      `${date.getFullYear()}年${MONTH_FULL_TITLES[date.getMonth()]}`,
     );
   });
 });
