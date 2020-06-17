@@ -588,6 +588,31 @@ it('readOnly状态下，不显示清除按钮', () => {
   expect(queryByTestId('custom-close-icon')).toBeFalsy();
 });
 
+it('值为空数组的情况下下，不显示清除按钮', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnEscape={false}
+        value={[]}
+        multiple
+        options={options}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+        portal={false}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeFalsy();
+});
+
 it('在非freeSolo模式下，输入框聚焦时，选中文本', () => {
   const renderInput = (props: any) => (
     <TextInput {...props} data-testid="text-input" />
