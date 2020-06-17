@@ -750,6 +750,11 @@ export default function AutoComplete(props: Props) {
     return [];
   }, [freeSolo, getOptionLabel, multiple, value]);
 
+  const isShowClear =
+    (Array.isArray(value) ? value.length > 0 : !!value) &&
+    !disabled &&
+    !readOnly;
+
   const input = renderInput({
     ref: handleTextInputRef,
     value: inputValue,
@@ -771,7 +776,7 @@ export default function AutoComplete(props: Props) {
     },
     endAdornment: (
       <InputAdornment position="end">
-        {!!value && !disabled && !readOnly && (
+        {isShowClear && (
           <ClearButtonWrapper
             onClick={handleClear}
             className="sinoui-focused-visible"
