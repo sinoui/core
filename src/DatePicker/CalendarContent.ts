@@ -18,9 +18,8 @@ const pcStyle = css`
  */
 const CalendarContent = styled.div<{ $isPc?: boolean }>`
   box-sizing: border-box;
-  ${mobileStyle}
 
-  ${({ $isPc }) => $isPc && pcStyle}
+  ${({ $isPc }) => ($isPc ? pcStyle : mobileStyle)}
 `;
 
 export default CalendarContent;

@@ -30,11 +30,10 @@ const disabledProps = ['in'];
 const CalendarViewWrapper = styled(Paper).withConfig({
   shouldForwardProp: (prop) => !disabledProps.includes(prop),
 })<any>`
-  ${mobileStyle}
   overflow: hidden;
   outline: none;
 
-  ${({ $isPc }) => $isPc && pcStyle}
+  ${({ $isPc }) => ($isPc ? pcStyle : mobileStyle)}
 `;
 
 export default CalendarViewWrapper;
