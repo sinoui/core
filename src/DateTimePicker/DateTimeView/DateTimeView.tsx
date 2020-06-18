@@ -10,6 +10,7 @@ import TimeList from '@sinoui/core/TimePicker/TimeList';
 import { TimeListRef } from '@sinoui/core/TimePicker/TimeList/TimeList';
 import Divider from '@sinoui/core/Divider';
 import styled from 'styled-components';
+import formatDate from '@sinoui/core/DatePicker/formatDate';
 import DateTimeViewWrapper from './DateTimeViewWrapper';
 
 export interface Props {
@@ -17,6 +18,10 @@ export interface Props {
    * 值
    */
   value?: Date;
+  /**
+   * 值变更时的回调函数
+   */
+  onChange?: (value: string) => void;
   /**
    * 默认年份
    */
@@ -143,6 +148,7 @@ export default function DateTimeView(props: Props) {
     maxMinute = 59,
     hourStep = 1,
     minuteStep = 1,
+    onChange,
   } = props;
 
   const [[year, month], setYearMonth] = useState(() => {
@@ -209,6 +215,16 @@ export default function DateTimeView(props: Props) {
     />
   );
 
+  const handleDateClick = (
+    _event: React.MouseEvent<HTMLElement>,
+    date: Date,
+  ) => {
+    const newDate = date ? formatDate(date) : '';
+    if (onChange) {
+      onChange(`${newDate} ${hour}:${minute}`);
+    }
+  };
+
   const renderDates = () => (
     <>
       <WeekTitleBar startOfWeek={startOfWeek} isPc={isPc} />
@@ -222,6 +238,7 @@ export default function DateTimeView(props: Props) {
           outlinedDate={outlinedDate}
           disabledDates={getDisabledDates(year, month, minDate, maxDate)}
           startOfWeek={startOfWeek}
+          onDateClick={handleDateClick}
         />
       </div>
     </>
@@ -250,6 +267,7 @@ export default function DateTimeView(props: Props) {
           selected={hour}
           step={hourStep}
           ref={hourRef}
+          onChange={setHour}
         />
         <TimeList
           className="sinoui-date-time-select-view__minute-list"
@@ -258,6 +276,7 @@ export default function DateTimeView(props: Props) {
           selected={minute}
           step={minuteStep}
           ref={minuteRef}
+          onChange={setMinute}
         />
       </div>
     </DateTimeViewWrapper>

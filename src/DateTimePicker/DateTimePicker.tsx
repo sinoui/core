@@ -24,7 +24,7 @@ export interface Props
   /**
    * 值变更时的回调函数
    */
-  onChange?: (value?: string) => void;
+  onChange?: (value: string) => void;
   /**
    * 是否采用portal形式
    */
@@ -94,7 +94,7 @@ export default function DateTimePicker(props: Props) {
         }
       />
       <StyledPopper {...getPopperProps()} portal={portal}>
-        <DateTimeView isPc={isPc} value={date} />
+        <DateTimeView isPc={isPc} value={date} onChange={onChange} />
       </StyledPopper>
     </>
   );
