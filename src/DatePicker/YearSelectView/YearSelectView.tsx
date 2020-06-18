@@ -44,6 +44,10 @@ interface Props {
    * 指定自定义样式。
    */
   style?: React.CSSProperties;
+  /**
+   * 是否是PC设备
+   */
+  isPc?: boolean;
 }
 
 /**
@@ -80,7 +84,9 @@ export const calcStartYear = (
  * 选择年的视图
  */
 export default function YearSelectView(props: Props) {
-  const isPc = useIsPc();
+  const { isPc: isPcProp } = props;
+  const navtiveIsPc = useIsPc();
+  const isPc = isPcProp ?? navtiveIsPc;
   const columns = isPc ? COLUMNS_OF_YEAR_PC : COLUMNS_OF_YEAR_MOBILE;
   // eslint-disable-next-line react/destructuring-assignment
   const currentYear = props.selectedYear ?? new Date().getFullYear();
@@ -123,6 +129,7 @@ export default function YearSelectView(props: Props) {
       $columns={columns}
       className={classNames('sinoui-year-select-view', className)}
       {...rest}
+      $isPc={isPc}
     >
       {years.map((year, index) => (
         <YearItem
@@ -138,6 +145,7 @@ export default function YearSelectView(props: Props) {
           disabled={year < minYear || year > maxYear}
           ref={selectedYear === year ? selectedYearNodeRef : null}
           data-year={year}
+          $isPc={isPc}
         >
           {year}
         </YearItem>

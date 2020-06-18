@@ -8,6 +8,7 @@ interface DateCellContentProps {
   $selected?: boolean;
   $outlined?: boolean;
   disabled?: boolean;
+  isPc?: boolean;
 }
 
 const getBackgroundColor = (props: DateCellContentProps & { theme: Theme }) => {
@@ -26,15 +27,13 @@ const getTextColor = (props: DateCellContentProps & { theme: Theme }) => {
 };
 
 const pcStyle = css`
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+  height: 28px;
+  width: 28px;
+  font-size: 12px;
+  .sinoui-date-cell-ripple-layout,
+  .sinoui-date-cell-ripple {
     height: 28px;
     width: 28px;
-    font-size: 12px;
-    .sinoui-date-cell-ripple-layout,
-    .sinoui-date-cell-ripple {
-      height: 28px;
-      width: 28px;
-    }
   }
 `;
 
@@ -59,7 +58,7 @@ const outlinedCss = css`
 const DateCellContent = styled(Body2)<DateCellContentProps>`
   box-sizing: border-box;
   display: inline-flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
   border-radius: 50%;
   user-select: none;
@@ -69,7 +68,7 @@ const DateCellContent = styled(Body2)<DateCellContentProps>`
     theme.transitions.create(['background-color', 'color', 'border-color'])};
   
   ${mobileStyle}
-  ${pcStyle}
+  ${({ isPc }) => isPc && pcStyle}
   ${({ $outlined }) => $outlined && outlinedCss}
 
   cursor: ${({ $clickable }) => ($clickable ? 'pointer' : 'default')};

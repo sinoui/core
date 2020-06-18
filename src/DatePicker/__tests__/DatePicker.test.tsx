@@ -6,6 +6,7 @@ import 'jest-styled-components';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import DatePicker from '../DatePicker';
+import { MONTH_FULL_TITLES } from '../constants';
 
 afterEach(cleanup);
 
@@ -59,6 +60,36 @@ describe('value', () => {
     // 最新value值代表的日期被选中
     expect(container.querySelector('[data-date="2020/1/15"]')).toHaveClass(
       'sinoui-date-cell--selected',
+    );
+  });
+
+  it('值无效时，页面显示为空，弹窗默认为当前月份', () => {
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DatePicker
+          portal={false}
+          label="日期选择"
+          value="afd"
+          data-testid="datepicker"
+          isPc
+        />
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('datepicker').textContent).toBeFalsy();
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    const date = new Date();
+
+    expect(
+      container.querySelector('.sinoui-calendar-view-header'),
+    ).toHaveTextContent(
+      `${date.getFullYear()}年${MONTH_FULL_TITLES[date.getMonth()]}`,
     );
   });
 });

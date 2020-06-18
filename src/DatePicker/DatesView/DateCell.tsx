@@ -37,6 +37,10 @@ interface Props {
    * 点击事件回调函数
    */
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  /**
+   * 是否是PC设备
+   */
+  isPc?: boolean;
 }
 
 /**
@@ -52,6 +56,7 @@ export default function DateCell(props: Props) {
     onClick,
     row,
     column,
+    isPc,
     ...rest
   } = props;
   const ref = useRipple({
@@ -87,6 +92,7 @@ export default function DateCell(props: Props) {
           aria-disabled={disabled ? 'true' : undefined}
           disabled={disabled}
           onClick={onClick}
+          isPc={isPc}
         >
           {date}
         </DateCellContent>

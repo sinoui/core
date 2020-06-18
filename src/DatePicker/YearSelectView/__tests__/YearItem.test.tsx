@@ -19,17 +19,20 @@ it('渲染年份选项', () => {
   expect(yearItem).toHaveStyleRule('width', '72px');
   expect(yearItem).toHaveStyleRule('height', '36px');
   expect(yearItem).toHaveStyleRule('margin', '8px');
+});
 
-  const pcMedia = `screen and (min-width: ${defaultTheme.breakpoints.md}px)`;
-  expect(yearItem).toHaveStyleRule('width', '52px', {
-    media: pcMedia,
-  });
-  expect(yearItem).toHaveStyleRule('height', '28px', {
-    media: pcMedia,
-  });
-  expect(yearItem).toHaveStyleRule('margin', '2px', {
-    media: pcMedia,
-  });
+it('渲染pc端年份选项', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <YearItem row={10} column={5} data-testid="yearitem" $isPc />
+    </ThemeProvider>,
+  );
+
+  const yearItem = getByTestId('yearitem');
+
+  expect(yearItem).toHaveStyleRule('width', '52px');
+  expect(yearItem).toHaveStyleRule('height', '28px');
+  expect(yearItem).toHaveStyleRule('margin', '2px');
 });
 
 it('禁用', () => {

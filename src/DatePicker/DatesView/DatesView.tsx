@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import getDatesOfMonth from './getDatesOfMonth';
 import getEmptyDatesOfMonth from './getEmptyDatesOfMonth';
 import DateCell from './DateCell';
@@ -38,24 +38,35 @@ interface Props {
    * 日期单元格点击事件的回调函数。
    */
   onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
+  /**
+   * 是否是PC设备
+   */
+  isPc?: boolean;
 }
+
+const mobileStyle = css`
+  -ms-grid-column-span: 4px;
+  grid-column-gap: 4px;
+`;
+
+const pcStyle = css`
+  -ms-grid-column-span: 0px;
+  grid-column-gap: 0px;
+`;
 
 /**
  * 日期视图容器
  */
-const DatesViewWrapper = styled.div`
+const DatesViewWrapper = styled.div<{ $isPc?: boolean }>`
+  ${mobileStyle}
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   -ms-grid-rows: auto auto auto auto auto auto;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, auto);
-  -ms-grid-column-span: 4px;
-  grid-column-gap: 4px;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    -ms-grid-column-span: 0px;
-    grid-column-gap: 0px;
-  }
+
+  ${({ $isPc }) => $isPc && pcStyle}
 `;
 
 export const getColumn = (index: number) => {
@@ -78,6 +89,7 @@ export default function DatesView(props: Props) {
     outlinedDate,
     showNextMonthDates,
     onDateClick,
+    isPc,
     ...rest
   } = props;
   const dates = getDatesOfMonth(year, month);
@@ -89,7 +101,7 @@ export default function DatesView(props: Props) {
       : 0;
 
   for (let i = 0; i < emptyDates; i += 1) {
-    dateCells.push(<DateCell key={i} row={1} column={i + 1} />);
+    dateCells.push(<DateCell key={i} row={1} column={i + 1} isPc={isPc} />);
   }
 
   for (let i = 0; i < dates; i += 1) {
@@ -97,6 +109,7 @@ export default function DatesView(props: Props) {
       <DateCell
         date={i + 1}
         key={`${year}_${month}_${i + 1}`}
+        isPc={isPc}
         selected={selectedDates.includes(i + 1)}
         disabled={disabledDates.includes(i + 1)}
         outlined={outlinedDate === i + 1}
@@ -117,6 +130,7 @@ export default function DatesView(props: Props) {
     dateCells.push(
       <DateCell
         date={i + 1}
+        isPc={isPc}
         key={`${year}_${month + 1}_${i + 1}`}
         disabled
         column={getColumn(dateCells.length + 1)}
@@ -126,7 +140,7 @@ export default function DatesView(props: Props) {
   }
 
   return (
-    <DatesViewWrapper className="sinoui-dates-view" {...rest}>
+    <DatesViewWrapper className="sinoui-dates-view" {...rest} $isPc={isPc}>
       {dateCells}
     </DatesViewWrapper>
   );
