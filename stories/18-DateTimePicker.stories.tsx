@@ -40,11 +40,14 @@ export const 日期时间选择 = () => (
 export const 自定义渲染方式 = () => (
   <StoryLayout>
     <DateTimePickerDemo
+      min="2020-06-10 15:30"
+      max="2020-06-20 15:30"
       renderValue={(value: Date) =>
         `${value.getFullYear()}-${
           value.getMonth() + 1
         }-${value.getDate()} ${value.getHours()}-${value.getMinutes()}`
       }
+      allowClear
     />
   </StoryLayout>
 );
