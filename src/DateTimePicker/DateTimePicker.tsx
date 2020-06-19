@@ -68,7 +68,7 @@ export default function DateTimePicker(props: Props) {
   const inputValue = isValidateDate(value) ? value : '';
   const inputRenderValue = renderValue ? renderValue(date) : inputValue;
 
-  const { getPopperProps, getTextInputProps } = useSelect({
+  const { getPopperProps, getTextInputProps, onRequestClose } = useSelect({
     ...props,
     isRenderWithPopper: isPc,
     renderValue: inputRenderValue,
@@ -92,9 +92,18 @@ export default function DateTimePicker(props: Props) {
             <DatePickerIcon />
           </InputAdornment>
         }
+        inputProps={{
+          ...getTextInputProps().inputProps,
+          onBlur: null,
+        }}
       />
       <StyledPopper {...getPopperProps()} portal={portal}>
-        <DateTimeView isPc={isPc} value={date} onChange={onChange} />
+        <DateTimeView
+          isPc={isPc}
+          value={date}
+          onChange={onChange}
+          onBlur={onRequestClose}
+        />
       </StyledPopper>
     </>
   );

@@ -7,7 +7,6 @@ import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import getDatesOfMonth from '@sinoui/core/DatePicker/DatesView/getDatesOfMonth';
 import DatesView from '@sinoui/core/DatePicker/DatesView';
 import TimeList from '@sinoui/core/TimePicker/TimeList';
-import { TimeListRef } from '@sinoui/core/TimePicker/TimeList/TimeList';
 import Divider from '@sinoui/core/Divider';
 import styled from 'styled-components';
 import formatDate from '@sinoui/core/DatePicker/formatDate';
@@ -78,6 +77,10 @@ export interface Props {
    * 分钟间隔
    */
   minuteStep?: number;
+  /**
+   * 时间列表失去焦点时的回调函数
+   */
+  onBlur?: () => void;
 }
 
 function isSameMonth(
@@ -172,8 +175,7 @@ export default function DateTimeView(props: Props) {
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
   const skipMonthsView = skipMonthsViewProp ?? !isPc;
 
-  const hourRef = useRef<TimeListRef>(null);
-  const minuteRef = useRef<TimeListRef>(null);
+  const timeListWrapperRef = useRef<HTMLDivElement>(null);
 
   const selectedDates = useMemo(() => {
     return isSameMonth(value, year, month) ? [value.getDate()] : undefined;
@@ -225,6 +227,22 @@ export default function DateTimeView(props: Props) {
     }
   };
 
+  const handleHourChange = (hourDate: number) => {
+    const newDate = value ? formatDate(value) : '';
+    setHour(hourDate);
+    if (onChange) {
+      onChange(`${newDate} ${hourDate}:${minute}`);
+    }
+  };
+
+  const handleMinuteChange = (minuteDate: number) => {
+    const newDate = value ? formatDate(value) : '';
+    setMinute(minuteDate);
+    if (onChange) {
+      onChange(`${newDate} ${hour}:${minuteDate}`);
+    }
+  };
+
   const renderDates = () => (
     <>
       <WeekTitleBar startOfWeek={startOfWeek} isPc={isPc} />
@@ -244,6 +262,19 @@ export default function DateTimeView(props: Props) {
     </>
   );
 
+  // const handleBlur = (event: FocusEvent) => {
+  //   event.stopPropagation();
+
+  //   setTimeout(() => {
+  //     const wrapper = timeListWrapperRef.current;
+  //     if (wrapper && !wrapper.contains(document.activeElement)) {
+  //       if (onBlur) {
+  //         onBlur();
+  //       }
+  //     }
+  //   });
+  // };
+
   return (
     <DateTimeViewWrapper $isPc={isPc} className="sinoui-date-time-view">
       <div className="sinoui-date-time-view__calendar">
@@ -259,15 +290,17 @@ export default function DateTimeView(props: Props) {
         {viewModel === ViewModel.months && renderMonths()}
       </div>
       <StyledDivider vertical />
-      <div className="sinoui-date-time-select__time-list">
+      <div
+        className="sinoui-date-time-select__time-list"
+        ref={timeListWrapperRef}
+      >
         <TimeList
           className="sinoui-date-time-select-view__hour-list"
           start={minHour}
           end={maxHour}
           selected={hour}
           step={hourStep}
-          ref={hourRef}
-          onChange={setHour}
+          onChange={handleHourChange}
         />
         <TimeList
           className="sinoui-date-time-select-view__minute-list"
@@ -275,8 +308,7 @@ export default function DateTimeView(props: Props) {
           end={maxMinute}
           selected={minute}
           step={minuteStep}
-          ref={minuteRef}
-          onChange={setMinute}
+          onChange={handleMinuteChange}
         />
       </div>
     </DateTimeViewWrapper>
