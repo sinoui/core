@@ -26,6 +26,14 @@ export interface Props
    */
   onChange?: (value: string) => void;
   /**
+   * 最小值
+   */
+  min?: string;
+  /**
+   * 最大值
+   */
+  max?: string;
+  /**
    * 是否采用portal形式
    */
   portal?: boolean;
@@ -49,6 +57,30 @@ export interface Props
    * 分钟间隔
    */
   minuteStep?: number;
+  /*
+   * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
+   */
+  skipMonthsView?: boolean;
+  /**
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
+  /**
+   * 最小小时数。默认为`0`。
+   */
+  minHour?: number;
+  /**
+   * 最大小时数。默认为`23`。
+   */
+  maxHour?: number;
+  /**
+   * 最小分钟数。默认为`0`。
+   */
+  minMinute?: number;
+  /**
+   * 最大分钟数。默认为`59`。
+   */
+  maxMinute?: number;
 }
 
 const StyledPopper = styled(Popper)`
@@ -76,6 +108,15 @@ export default function DateTimePicker(props: Props) {
     onChange,
     hourStep = 1,
     minuteStep = 1,
+    popperProps,
+    min,
+    max,
+    skipMonthsView,
+    startOfWeek,
+    minHour,
+    minMinute,
+    maxHour,
+    maxMinute,
   } = props;
 
   const isNativePc = useIsPc();
@@ -112,7 +153,7 @@ export default function DateTimePicker(props: Props) {
           ...getTextInputProps().inputProps,
         }}
       />
-      <StyledPopper {...getPopperProps()} portal={portal}>
+      <StyledPopper {...getPopperProps()} portal={portal} {...popperProps}>
         <DateTimeView
           isPc={isPc}
           date={date}
@@ -128,6 +169,14 @@ export default function DateTimePicker(props: Props) {
           }
           onChange={onChange}
           onBlur={onRequestClose}
+          minDate={parseDate(min)}
+          maxDate={parseDate(max)}
+          minHour={minHour}
+          minMinute={minMinute}
+          maxHour={maxHour}
+          maxMinute={maxMinute}
+          startOfWeek={startOfWeek}
+          skipMonthsView={skipMonthsView}
         />
       </StyledPopper>
     </>

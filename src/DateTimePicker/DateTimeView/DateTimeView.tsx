@@ -263,19 +263,6 @@ export default function DateTimeView(props: Props) {
     </>
   );
 
-  // const handleBlur = (event: FocusEvent) => {
-  //   event.stopPropagation();
-
-  //   setTimeout(() => {
-  //     const wrapper = timeListWrapperRef.current;
-  //     if (wrapper && !wrapper.contains(document.activeElement)) {
-  //       if (onBlur) {
-  //         onBlur();
-  //       }
-  //     }
-  //   });
-  // };
-
   return (
     <DateTimeViewWrapper $isPc={isPc} className="sinoui-date-time-view">
       <div className="sinoui-date-time-view__calendar">
@@ -302,6 +289,7 @@ export default function DateTimeView(props: Props) {
           selected={hour}
           step={hourStep}
           onChange={handleHourChange}
+          disabledFocused
         />
         <TimeList
           className="sinoui-date-time-select-view__minute-list"
@@ -310,6 +298,7 @@ export default function DateTimeView(props: Props) {
           selected={minute}
           step={minuteStep}
           onChange={handleMinuteChange}
+          disabledFocused
         />
       </div>
     </DateTimeViewWrapper>

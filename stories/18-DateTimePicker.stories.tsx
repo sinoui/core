@@ -33,6 +33,18 @@ function DateTimePickerDemo(props: any) {
 
 export const 日期时间选择 = () => (
   <StoryLayout>
-    <DateTimePickerDemo />
+    <DateTimePickerDemo label="日期时间选择" />
+  </StoryLayout>
+);
+
+export const 自定义渲染方式 = () => (
+  <StoryLayout>
+    <DateTimePickerDemo
+      renderValue={(value: Date) =>
+        `${value.getFullYear()}-${
+          value.getMonth() + 1
+        }-${value.getDate()} ${value.getHours()}-${value.getMinutes()}`
+      }
+    />
   </StoryLayout>
 );

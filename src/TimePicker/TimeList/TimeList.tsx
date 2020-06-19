@@ -40,6 +40,10 @@ export interface Props {
    * 设置自定义的css样式
    */
   style?: React.CSSProperties;
+  /**
+   * 禁用focus
+   */
+  disabledFocused?: boolean;
 }
 
 export interface TimeListRef {
@@ -53,7 +57,15 @@ export default React.forwardRef<TimeListRef, Props>(function TimeList(
   props,
   ref,
 ) {
-  const { start, end, selected, step = 1, onChange, ...rest } = props;
+  const {
+    start,
+    end,
+    selected,
+    step = 1,
+    onChange,
+    disabledFocused,
+    ...rest
+  } = props;
   const listRef = useRef<List>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const count = (end + 1 - start) / step;
@@ -105,7 +117,9 @@ export default React.forwardRef<TimeListRef, Props>(function TimeList(
     }
     list.scrollToItem(newIndex, 'auto');
 
-    focusTimeItem(newIndex);
+    if (!disabledFocused) {
+      focusTimeItem(newIndex);
+    }
   });
 
   /**
