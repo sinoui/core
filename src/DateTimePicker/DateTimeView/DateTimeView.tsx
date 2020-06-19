@@ -14,9 +14,9 @@ import DateTimeViewWrapper from './DateTimeViewWrapper';
 
 export interface Props {
   /**
-   * 值
+   * 日期
    */
-  value?: Date;
+  date?: Date;
   /**
    * 值变更时的回调函数
    */
@@ -78,6 +78,14 @@ export interface Props {
    */
   minuteStep?: number;
   /**
+   * 小时
+   */
+  hour?: number;
+  /**
+   * 分钟
+   */
+  minute?: number;
+  /**
    * 时间列表失去焦点时的回调函数
    */
   onBlur?: () => void;
@@ -136,7 +144,7 @@ const StyledDivider = styled(Divider)`
 export default function DateTimeView(props: Props) {
   const now = new Date();
   const {
-    value,
+    date,
     defaultYear,
     defaultMonth,
     isPc,
@@ -151,35 +159,28 @@ export default function DateTimeView(props: Props) {
     maxMinute = 59,
     hourStep = 1,
     minuteStep = 1,
+    hour = now.getMinutes() - (now.getMinutes() % minuteStep),
+    minute = now.getMinutes() - (now.getMinutes() % minuteStep),
     onChange,
   } = props;
 
   const [[year, month], setYearMonth] = useState(() => {
-    return value
-      ? [value.getFullYear(), value.getMonth()]
+    return date
+      ? [date.getFullYear(), date.getMonth()]
       : [
           defaultYear ?? new Date().getFullYear(),
           defaultMonth ?? new Date().getMonth(),
         ];
   });
-  const [hour, setHour] = useState(() => {
-    return value
-      ? value.getHours() - (value.getHours() % hourStep)
-      : now.getHours() - (now.getHours() % hourStep);
-  });
-  const [minute, setMinute] = useState(() => {
-    return value
-      ? value.getMinutes() - (value.getMinutes() % minuteStep)
-      : now.getMinutes() - (now.getMinutes() % minuteStep);
-  });
+
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
   const skipMonthsView = skipMonthsViewProp ?? !isPc;
 
   const timeListWrapperRef = useRef<HTMLDivElement>(null);
 
   const selectedDates = useMemo(() => {
-    return isSameMonth(value, year, month) ? [value.getDate()] : undefined;
-  }, [month, value, year]);
+    return isSameMonth(date, year, month) ? [date.getDate()] : undefined;
+  }, [date, month, year]);
   const outlinedDate =
     showToday && isSameMonth(new Date(), year, month)
       ? new Date().getDate()
@@ -219,25 +220,25 @@ export default function DateTimeView(props: Props) {
 
   const handleDateClick = (
     _event: React.MouseEvent<HTMLElement>,
-    date: Date,
+    clickDate: Date,
   ) => {
-    const newDate = date ? formatDate(date) : '';
+    const newDate = clickDate ? formatDate(clickDate) : '';
     if (onChange) {
       onChange(`${newDate} ${hour}:${minute}`);
     }
   };
 
   const handleHourChange = (hourDate: number) => {
-    const newDate = value ? formatDate(value) : '';
-    setHour(hourDate);
+    const newDate = date ? formatDate(date) : '';
+
     if (onChange) {
       onChange(`${newDate} ${hourDate}:${minute}`);
     }
   };
 
   const handleMinuteChange = (minuteDate: number) => {
-    const newDate = value ? formatDate(value) : '';
-    setMinute(minuteDate);
+    const newDate = date ? formatDate(date) : '';
+
     if (onChange) {
       onChange(`${newDate} ${hour}:${minuteDate}`);
     }

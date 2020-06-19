@@ -41,6 +41,14 @@ export interface Props
    * 指定自定义的值渲染函数。默认情况下，直接显示`value`属性值。
    */
   renderValue?: (value?: Date) => React.ReactNode;
+  /**
+   * 小时间隔
+   */
+  hourStep?: number;
+  /**
+   * 分钟间隔
+   */
+  minuteStep?: number;
 }
 
 const StyledPopper = styled(Popper)`
@@ -60,7 +68,15 @@ const isValidateDate = (value?: string) => value && !isNaN(Date.parse(value));
  * @param props
  */
 export default function DateTimePicker(props: Props) {
-  const { isPc: isPcProp, portal, value, renderValue, onChange } = props;
+  const {
+    isPc: isPcProp,
+    portal,
+    value,
+    renderValue,
+    onChange,
+    hourStep = 1,
+    minuteStep = 1,
+  } = props;
 
   const isNativePc = useIsPc();
   const isPc = isPcProp ?? isNativePc;
@@ -94,13 +110,22 @@ export default function DateTimePicker(props: Props) {
         }
         inputProps={{
           ...getTextInputProps().inputProps,
-          onBlur: null,
         }}
       />
       <StyledPopper {...getPopperProps()} portal={portal}>
         <DateTimeView
           isPc={isPc}
-          value={date}
+          date={date}
+          hourStep={hourStep}
+          minuteStep={minuteStep}
+          minute={
+            date
+              ? date.getMinutes() - (date.getMinutes() % minuteStep)
+              : undefined
+          }
+          hour={
+            date ? date.getHours() - (date.getHours() % hourStep) : undefined
+          }
           onChange={onChange}
           onBlur={onRequestClose}
         />
