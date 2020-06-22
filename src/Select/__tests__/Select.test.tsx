@@ -177,10 +177,11 @@ it('allowClear = false', () => {
     <ThemeProvider theme={defaultTheme}>
       <Select
         portal={false}
-        allowClear={false}
         autoCompleteProps={{
           clearIcon,
         }}
+        value="1"
+        allowClear={false}
       >
         <Option value="1">选项一</Option>
         <Option value="2">选项二</Option>
