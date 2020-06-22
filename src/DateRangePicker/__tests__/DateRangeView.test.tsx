@@ -242,7 +242,7 @@ it('只有开始日期时，鼠标移入开始日期之后的任意日期，开�
     },
   );
   expect(container.querySelector('[data-date="2020/6/20"]')!).toHaveStyleRule(
-    'border-top',
+    'border-bottom',
     '1px dashed rgba(0,0,0,0.38)',
     {
       media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
@@ -358,4 +358,35 @@ it('只有结束时间，鼠标悬浮进入早于结束时间之前的日期，�
       modifier: '::after',
     },
   );
+});
+
+it('鼠标悬浮进入不可用日期区域，此日期没有上下边框', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangeView
+        minDate={parseDate('2020-06-10')}
+        startDate={parseDate('2020-06-14')}
+        endDate={parseDate('2020-07-12')}
+      />
+    </ThemeProvider>,
+  );
+
+  const hoverDate = container
+    .querySelector('[data-date="2020/6/8"]')!
+    .querySelector('.sinoui-date-cell-content')!;
+
+  fireEvent.mouseEnter(hoverDate);
+
+  expect(
+    container.querySelector('[data-date="2020/6/9"]')!,
+  ).not.toHaveStyleRule('border-top', '1px dashed rgba(0,0,0,0.38)', {
+    media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
+    modifier: '::before',
+  });
+  expect(
+    container.querySelector('[data-date="2020/6/9"]')!,
+  ).not.toHaveStyleRule('border-bottom', '1px dashed rgba(0,0,0,0.38)', {
+    media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
+    modifier: '::before',
+  });
 });

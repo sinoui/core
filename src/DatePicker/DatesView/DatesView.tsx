@@ -133,9 +133,10 @@ export default function DatesView(props: Props) {
         isRangeStart={selectedRangeDates[0] === i + 1}
         isRangeEnd={selectedRangeDates[selectedRangeDates.length - 1] === i + 1}
         isInHoverRange={
-          isInHoverRange
+          !disabledDates.includes(i + 1) &&
+          (isInHoverRange
             ? isInHoverRange(new Date(year, month, i + 1, 0, 0, 0))
-            : false
+            : false)
         }
         isInHoverRangeStart={
           isHoverRangeStart
