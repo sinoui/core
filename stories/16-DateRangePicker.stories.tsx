@@ -47,3 +47,9 @@ export const 日期区间选择 = () => (
     <DateRangePickerDemo />
   </StoryLayout>
 );
+
+export const 移动端日期区间选择 = () => (
+  <StoryLayout>
+    <DateRangePickerDemo isPc={false} />
+  </StoryLayout>
+);

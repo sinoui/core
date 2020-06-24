@@ -8,6 +8,8 @@ import DateRangeView from './DateRangeView';
 import InputAdornment from '../InputAdornment';
 import DatePickerIcon from '../svg-icons/DatePickerIcon';
 import formatDate from '../DatePicker/formatDate';
+import Modal from '../Modal';
+import MobileDateRangeView from './MobileDateRangeView/MobileDateRangeView';
 
 export interface Props
   extends Omit<
@@ -71,7 +73,12 @@ export default function DateRangePicker(props: Props) {
   const [focusedInput, setFocusedInput] = useState('');
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const { getTextInputProps, getPopperProps, onRequestClose } = useSelect({
+  const {
+    getTextInputProps,
+    getPopperProps,
+    onRequestClose,
+    getModalProps,
+  } = useSelect({
     ...props,
     isRenderWithPopper: isPc,
   });
@@ -178,7 +185,7 @@ export default function DateRangePicker(props: Props) {
           onClear={handleEndClear}
         />
       </div>
-      {isPc && (
+      {isPc ? (
         <Popper {...getPopperProps()} placement="bottom-start" portal={portal}>
           <DateRangeView
             startDate={startDate}
@@ -188,6 +195,10 @@ export default function DateRangePicker(props: Props) {
             onDateClick={handleDateClick}
           />
         </Popper>
+      ) : (
+        <Modal {...getModalProps()}>
+          <MobileDateRangeView startDate={startDate} endDate={endDate} />
+        </Modal>
       )}
     </>
   );
