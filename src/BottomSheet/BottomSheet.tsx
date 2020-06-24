@@ -9,6 +9,12 @@ const ModalWrapper = styled(Modal)`
   align-items: center;
 `;
 
+const ModalBody = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+`;
+
 const BottomSheetWrapper = styled.div`
   box-shadow: ${(props) => props.theme.shadows[16]};
   background: ${({ theme }) => theme.palette.background.paper};
@@ -115,23 +121,25 @@ const BottomSheet = React.forwardRef(
         onBackdropClick={onBackdropClick}
         ref={ref}
       >
-        <CSSTransition
-          classNames="sinoui-bottom-sheet__translate"
-          timeout={transitionDuration}
-          in={open}
-          appear
-          unmountOnExit
-          addEndListener={addEndListener}
-        >
-          <>
-            <BottomSheetWrapper
-              className={classNames('sinoui-bottom-sheet', className)}
-            >
-              {children}
-            </BottomSheetWrapper>
-            <GlobalStyle />
-          </>
-        </CSSTransition>
+        <ModalBody ref={ref}>
+          <CSSTransition
+            classNames="sinoui-bottom-sheet__translate"
+            timeout={transitionDuration}
+            in={open}
+            appear
+            unmountOnExit
+            addEndListener={addEndListener}
+          >
+            <>
+              <BottomSheetWrapper
+                className={classNames('sinoui-bottom-sheet', className)}
+              >
+                {children}
+              </BottomSheetWrapper>
+              <GlobalStyle />
+            </>
+          </CSSTransition>
+        </ModalBody>
       </ModalWrapper>
     );
   },
