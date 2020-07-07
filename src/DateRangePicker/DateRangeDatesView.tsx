@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import DatesView from '@sinoui/core/DatePicker/DatesView';
 import getDatesOfMonth from '@sinoui/core/DatePicker/DatesView/getDatesOfMonth';
+import isSameMonth from './utils/isSameMonth';
 
 export interface Props {
   /**
@@ -55,20 +56,6 @@ export interface Props {
    * 日期单元格点击事件的回调函数。
    */
   onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
-}
-
-/**
- * 是否是同一个月份
- * @param date
- * @param year
- * @param month
- */
-function isSameMonth(
-  date: Date | undefined,
-  year: number,
-  month: number,
-): date is Date {
-  return !!date && date.getFullYear() === year && date.getMonth() === month;
 }
 
 /**

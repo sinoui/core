@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useMemo } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import DatesView from '@sinoui/core/DatePicker/DatesView';
 import { FixedSizeList } from 'react-window';
@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import MobileDateRangeViewWrapper from './MobileDateRangeViewWrapper';
 import MobileDateRangeViewToolBar from './MobileDateRangeViewToolBar';
 import MobileDateRangeViewContent from './MobileDateRangeViewContent';
+import isSameMonth from '../utils/isSameMonth';
 
 export interface Props {
   /**
@@ -61,15 +62,28 @@ const YearItem = styled.div`
 `;
 
 function MonthItem({ index, style, data }: any) {
-  const { years } = data;
+  const { years, startDate, endDate } = data;
   const month = MONTH_FULL_TITLES[index % 12];
   const year = years[Math.floor(index / 12)];
+
+  const selectedDates = useMemo(() => {
+    return [startDate, endDate]
+      .map((date) =>
+        isSameMonth(date, year, index % 12) ? date.getDate() : undefined,
+      )
+      .filter(Boolean);
+  }, [endDate, index, startDate, year]);
+
   return (
     <div key={`${year}_${month}`} style={style}>
       <YearItem>
         {year}年{month}
       </YearItem>
-      <DatesView year={year} month={index % 12} />
+      <DatesView
+        year={year}
+        month={index % 12}
+        selectedDates={selectedDates as number[]}
+      />
     </div>
   );
 }
@@ -111,7 +125,7 @@ export default function MobileDateRangeView(props: Props) {
           height={window.innerHeight - 176}
           itemCount={2400}
           itemSize={336}
-          itemData={{ years }}
+          itemData={{ years, startDate, endDate }}
           width="100%"
         >
           {MonthItem}
