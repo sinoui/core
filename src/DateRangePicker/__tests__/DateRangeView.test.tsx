@@ -36,6 +36,8 @@ describe('值与最大最小值', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
         <DateRangeView
+          defaultYear={2020}
+          defaultMonth={5}
           minDate={parseDate('2020-06-14')}
           maxDate={parseDate('2020-07-12')}
         />
@@ -51,15 +53,20 @@ describe('值与最大最小值', () => {
   });
 
   it('不指定最大最小值的情况下，默认今天之前的日期不可选', () => {
+    const date = new Date();
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
         <DateRangeView />
       </ThemeProvider>,
     );
 
-    expect(container.querySelector('[data-date="2020/6/10"]')).toHaveClass(
-      'sinoui-date-cell--disabled',
-    );
+    expect(
+      container.querySelector(
+        `[data-date="${date.getFullYear()}/${date.getMonth() + 1}/${
+          date.getDate() - 1
+        }"]`,
+      ),
+    ).toHaveClass('sinoui-date-cell--disabled');
   });
 
   it('点击某个日期,onDateClick被调用', () => {
@@ -281,6 +288,8 @@ it('只有结束日期时，鼠标移动到早于结束时间的日期上时，�
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
       <DateRangeView
+        defaultYear={2020}
+        defaultMonth={5}
         minDate={parseDate('2020-06-10')}
         endDate={parseDate('2020-07-14')}
       />
@@ -336,6 +345,8 @@ it('只有结束时间，鼠标悬浮进入早于结束时间之前的日期，�
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
       <DateRangeView
+        defaultYear={2020}
+        defaultMonth={5}
         minDate={parseDate('2020-06-10')}
         endDate={parseDate('2020-07-10')}
       />

@@ -44,6 +44,14 @@ export interface Props
    * 是否使用potal模式
    */
   portal?: boolean;
+  /**
+   * 默认年份
+   */
+  defaultYear?: number;
+  /**
+   * 默认月份
+   */
+  defaultMonth?: number;
 }
 
 const parseDate = mem((dateStr?: string) =>
@@ -59,6 +67,8 @@ export default function DateRangePicker(props: Props) {
     min,
     max,
     portal,
+    defaultMonth,
+    defaultYear,
   } = props;
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
@@ -193,6 +203,8 @@ export default function DateRangePicker(props: Props) {
             minDate={focusedInput === 'end' ? startDate : parseDate(min)}
             maxDate={parseDate(max)}
             onDateClick={handleDateClick}
+            defaultYear={defaultYear}
+            defaultMonth={defaultMonth}
           />
         </Popper>
       ) : (

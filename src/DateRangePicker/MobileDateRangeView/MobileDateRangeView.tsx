@@ -1,12 +1,12 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import CalendarViewAction from '@sinoui/core/DatePicker/CalendarView/CalendarViewAction';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import DatesView from '@sinoui/core/DatePicker/DatesView';
-import scrollIntoView from 'scroll-into-view-if-needed';
+import { FixedSizeList } from 'react-window';
 import {
   COUNTS_OF_YEAR,
   MONTH_FULL_TITLES,
 } from '@sinoui/core/DatePicker/constants';
+import styled from 'styled-components';
 import MobileDateRangeViewWrapper from './MobileDateRangeViewWrapper';
 import MobileDateRangeViewToolBar from './MobileDateRangeViewToolBar';
 import MobileDateRangeViewContent from './MobileDateRangeViewContent';
@@ -53,14 +53,35 @@ export const genYears = (
   return years;
 };
 
+const YearItem = styled.div`
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding-left: 12px;
+`;
+
+function MonthItem({ index, style, data }: any) {
+  const { years } = data;
+  const month = MONTH_FULL_TITLES[index % 12];
+  const year = years[Math.floor(index / 12)];
+  return (
+    <div key={`${year}_${month}`} style={style}>
+      <YearItem>
+        {year}年{month}
+      </YearItem>
+      <DatesView year={year} month={index % 12} />
+    </div>
+  );
+}
+
 /**
  * 移动端日期区间选择视图
  * @param props
  */
 export default function MobileDateRangeView(props: Props) {
   const { title, startDate, endDate, defaultYear, defaultMonth } = props;
-  const selectedNodeRef = useRef<HTMLDivElement>(null);
-  // const years = genYears();
+  const selectedNodeRef = useRef<FixedSizeList>(null);
+  const years = genYears();
 
   const currentYear = startDate
     ? startDate.getFullYear()
@@ -70,36 +91,31 @@ export default function MobileDateRangeView(props: Props) {
     : defaultMonth ?? new Date().getMonth();
 
   useLayoutEffect(() => {
-    const selectedYearNode = selectedNodeRef.current;
-    if (selectedYearNode) {
-      scrollIntoView(selectedYearNode, {
-        block: 'center',
-        inline: 'center',
-      });
+    const yearIndex = years.findIndex((year) => year === currentYear);
+    const monthIndex = MONTH_FULL_TITLES.findIndex(
+      (month) => month === MONTH_FULL_TITLES[currentMonth],
+    );
+    const index = yearIndex * 12 + monthIndex;
+    if (selectedNodeRef.current) {
+      selectedNodeRef.current.scrollToItem(index, 'start');
     }
-  }, []);
+  }, [currentMonth, currentYear, years]);
 
   const renderDates = () => (
     <>
       <WeekTitleBar />
       <MobileDateRangeViewContent>
-        {[2020].map((year) => {
-          return MONTH_FULL_TITLES.map((month, index) => (
-            <div
-              key={`${year}_${month}`}
-              ref={
-                currentYear === year && currentMonth === index
-                  ? selectedNodeRef
-                  : null
-              }
-            >
-              <div>
-                {year}年{month}
-              </div>
-              <DatesView year={year} month={index} />
-            </div>
-          ));
-        })}
+        <FixedSizeList
+          className="sinoui-date-range-mobile-year"
+          ref={selectedNodeRef}
+          height={window.innerHeight - 176}
+          itemCount={2400}
+          itemSize={336}
+          itemData={{ years }}
+          width="100%"
+        >
+          {MonthItem}
+        </FixedSizeList>
       </MobileDateRangeViewContent>
     </>
   );
@@ -112,7 +128,6 @@ export default function MobileDateRangeView(props: Props) {
         endDate={endDate}
       />
       {renderDates()}
-      <CalendarViewAction />
     </MobileDateRangeViewWrapper>
   );
 }
