@@ -8,7 +8,6 @@ interface DateCellContentProps {
   $selected?: boolean;
   $outlined?: boolean;
   disabled?: boolean;
-  $isInHoverRange?: boolean;
 }
 
 const getBackgroundColor = (props: DateCellContentProps & { theme: Theme }) => {
@@ -84,10 +83,6 @@ const DateCellContent = styled(Body2)<DateCellContentProps>`
       !props.disabled && !getBackgroundColor(props)
         ? adjustOpacity(0.04, props.theme.palette.text.primary)
         : null};
-
-        ${({ $isInHoverRange, theme }) =>
-          $isInHoverRange &&
-          `border: 1px solid ${theme.palette.text.disabled};`}
   }
 `;
 

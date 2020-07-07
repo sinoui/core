@@ -31,10 +31,6 @@ interface Props {
    */
   disabledDates?: number[];
   /**
-   * 日期区间选中的日期
-   */
-  selectedRangeDates?: number[];
-  /**
    * 设置为`true`，则显示下个月的部分日期。默认为`false`。
    */
   showNextMonthDates?: boolean;
@@ -43,18 +39,6 @@ interface Props {
    * 日期单元格点击事件的回调函数。
    */
   onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
-  /**
-   * 是否在hover区间
-   */
-  isInHoverRange?: (date: Date) => boolean;
-  /**
-   * 是否是hover区间的开始
-   */
-  isHoverRangeStart?: (date: Date) => boolean;
-  /**
-   * 是否是hover区间的结束
-   */
-  isHoverRangeEnd?: (date: Date) => boolean;
 }
 
 /**
@@ -92,13 +76,9 @@ export default function DatesView(props: Props) {
     startOfWeek = 1,
     selectedDates = [],
     disabledDates = [],
-    selectedRangeDates = [],
     outlinedDate,
     showNextMonthDates,
     onDateClick,
-    isInHoverRange,
-    isHoverRangeStart,
-    isHoverRangeEnd,
     ...rest
   } = props;
   const dates = getDatesOfMonth(year, month);
@@ -114,34 +94,13 @@ export default function DatesView(props: Props) {
   }
 
   for (let i = 0; i < dates; i += 1) {
+    const dateStr = `${year}-${leadingZero(month + 1)}-${leadingZero(i + 1)}`;
     dateCells.push(
       <DateCell
         date={i + 1}
-        key={`${year}_${month}_${i + 1}`}
+        key={dateStr}
         selected={selectedDates.includes(i + 1)}
         disabled={disabledDates.includes(i + 1)}
-        isSelectedRange={selectedRangeDates.includes(i + 1)}
-        isRangeStart={selectedRangeDates[0] === i + 1}
-        isRangeEnd={selectedRangeDates[selectedRangeDates.length - 1] === i + 1}
-        isInHoverRange={
-          !disabledDates.includes(i + 1) &&
-          (isInHoverRange
-            ? isInHoverRange(new Date(year, month, i + 1, 0, 0, 0))
-            : false)
-        }
-        isInHoverRangeStart={
-          isHoverRangeStart
-            ? isHoverRangeStart(new Date(year, month, i + 1, 0, 0, 0)) ||
-              i + 1 === 1
-            : false
-        }
-        isInHoverRangeEnd={
-          isHoverRangeEnd
-            ? isHoverRangeEnd(new Date(year, month, i + 1, 0, 0, 0)) ||
-              i + 1 === dates
-            : false
-        }
-        isPrevRangeStart={i + 1 === selectedDates[0] - 1}
         outlined={outlinedDate === i + 1}
         column={getColumn(dateCells.length + 1)}
         row={getRow(dateCells.length + 1)}
@@ -151,19 +110,21 @@ export default function DatesView(props: Props) {
                 onDateClick(event, new Date(year, month, i + 1, 0, 0, 0))
             : undefined
         }
-        data-date={`${year}-${leadingZero(month + 1)}-${leadingZero(i + 1)}`}
+        data-date={dateStr}
       />,
     );
   }
 
   for (let i = 0; i < nextMonthDates; i += 1) {
+    const dateStr = `${year}-${leadingZero(month + 1)}-${leadingZero(i + 1)}`;
     dateCells.push(
       <DateCell
         date={i + 1}
-        key={`${year}_${month + 1}_${i + 1}`}
+        key={dateStr}
         disabled
         column={getColumn(dateCells.length + 1)}
         row={getRow(dateCells.length + 1)}
+        data-date={dateStr}
       />,
     );
   }

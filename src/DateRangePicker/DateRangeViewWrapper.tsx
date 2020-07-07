@@ -12,8 +12,9 @@ const DateRangeViewWrapper = styled(Paper).withConfig({
       padding: 0 16px 12px;
     }
     .sinoui-date-range-view__datesview {
-      padding: 0 16px 8px;
+      margin: 0 16px 8px;
       height: 192px;
+      position: relative;
     }
   }
 `;
