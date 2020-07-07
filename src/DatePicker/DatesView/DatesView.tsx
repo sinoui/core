@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import getDatesOfMonth from './getDatesOfMonth';
 import getEmptyDatesOfMonth from './getEmptyDatesOfMonth';
 import DateCell from './DateCell';
+import leadingZero from '../leadingZero';
 
 interface Props {
   /**
@@ -167,7 +168,7 @@ export default function DatesView(props: Props) {
             : undefined
         }
         onMouseLeave={onMouseLeave}
-        data-date={`${year}/${month + 1}/${i + 1}`}
+        data-date={`${year}-${leadingZero(month + 1)}-${leadingZero(i + 1)}`}
       />,
     );
   }

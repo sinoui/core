@@ -4,6 +4,7 @@ import { useRipple } from '@sinoui/ripple';
 import DateCellContent from './DateCellContent';
 import gridCellCss from '../gridCellCss';
 import DateCellWrapper from './DateCellWrapper';
+import { CLASSES } from '../constants';
 
 interface Props {
   /**
@@ -113,7 +114,7 @@ export default function DateCell(props: Props) {
       {...rest}
       data-column={column}
       data-row={row}
-      className={bemClassNames('sinoui-date-cell', {
+      className={bemClassNames(CLASSES.dateCell, {
         empty: date == null,
         selected,
         outlined,
@@ -133,7 +134,7 @@ export default function DateCell(props: Props) {
     >
       {date == null ? null : (
         <DateCellContent
-          className="sinoui-date-cell-content"
+          className={CLASSES.dateCellContent}
           forwardedAs="span"
           tabIndex={0}
           role="button"
