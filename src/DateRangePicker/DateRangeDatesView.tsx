@@ -32,14 +32,6 @@ export interface Props {
    */
   maxDate?: Date;
   /**
-   * 鼠标移入日期单元格时的回调函数
-   */
-  onDateMouseEnter?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
-  /**
-   * 鼠标移出时的回调函数
-   */
-  onDateMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void;
-  /**
    * 是否在hover区间
    */
   isInHoverRange?: (date: Date) => boolean;
@@ -166,8 +158,6 @@ export default function DateRangeDatesView(props: Props) {
     showToday,
     minDate = new Date(),
     maxDate,
-    onDateMouseEnter,
-    onDateMouseLeave,
     isInHoverRange,
     isHoverRangeStart,
     isHoverRangeEnd,
@@ -197,8 +187,6 @@ export default function DateRangeDatesView(props: Props) {
         disabledDates={getDisabledDates(year, month, minDate, maxDate)}
         selectedRangeDates={getInRangeDates(year, month, startDate, endDate)}
         onDateClick={onDateClick}
-        onDateMouseEnter={onDateMouseEnter}
-        onMouseLeave={onDateMouseLeave}
         isInHoverRange={isInHoverRange}
         isHoverRangeStart={isHoverRangeStart}
         isHoverRangeEnd={isHoverRangeEnd}

@@ -44,14 +44,6 @@ interface Props {
    */
   onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
   /**
-   * 鼠标移入日期单元格时的回调函数
-   */
-  onDateMouseEnter?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
-  /**
-   * 鼠标移出时的回调函数
-   */
-  onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void;
-  /**
    * 是否在hover区间
    */
   isInHoverRange?: (date: Date) => boolean;
@@ -104,8 +96,6 @@ export default function DatesView(props: Props) {
     outlinedDate,
     showNextMonthDates,
     onDateClick,
-    onDateMouseEnter,
-    onMouseLeave,
     isInHoverRange,
     isHoverRangeStart,
     isHoverRangeEnd,
@@ -161,13 +151,6 @@ export default function DatesView(props: Props) {
                 onDateClick(event, new Date(year, month, i + 1, 0, 0, 0))
             : undefined
         }
-        onMouseEnter={
-          onDateMouseEnter
-            ? (event) =>
-                onDateMouseEnter(event, new Date(year, month, i + 1, 0, 0, 0))
-            : undefined
-        }
-        onMouseLeave={onMouseLeave}
         data-date={`${year}-${leadingZero(month + 1)}-${leadingZero(i + 1)}`}
       />,
     );
