@@ -26,17 +26,11 @@ it('选中的日期区间在第二周和第三周', () => {
   expect(weekStatusBars.length).toBe(2);
 
   // 第二周的状态条
-  expect(weekStatusBars[0]).toHaveClass(
-    'sinoui-date-range-picker__week-status-bar--raised',
-  );
   expect(weekStatusBars[0]).toHaveAttribute('data-week-no', '1');
   expect(weekStatusBars[0]).toHaveAttribute('data-start-date', '2020-07-08');
   expect(weekStatusBars[0]).toHaveAttribute('data-end-date', '2020-07-12');
 
   // 第三周的状态条
-  expect(weekStatusBars[1]).toHaveClass(
-    'sinoui-date-range-picker__week-status-bar--raised',
-  );
   expect(weekStatusBars[1]).toHaveAttribute('data-week-no', '2');
   expect(weekStatusBars[1]).toHaveAttribute('data-start-date', '2020-07-13');
   expect(weekStatusBars[1]).toHaveAttribute('data-end-date', '2020-07-16');
