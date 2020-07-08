@@ -49,7 +49,6 @@ export default function DatesViewStatus({
   endDate,
   year,
   month,
-  outlined,
   ...rest
 }: Props) {
   const weekBars = useMemo(
@@ -65,9 +64,10 @@ export default function DatesViewStatus({
       {weekBars.map((weekbar, index) =>
         weekbar ? (
           <MemoWeekStatusBar
+            key={weekbar[0].toString()}
             weekNo={index}
-            range={weekbar}
-            outlined={outlined}
+            startDate={weekbar[0]}
+            endDate={weekbar[1]}
             {...rest}
           />
         ) : null,

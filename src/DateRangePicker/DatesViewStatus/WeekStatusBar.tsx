@@ -17,9 +17,13 @@ interface Props {
    */
   weekNo: number;
   /**
-   * 有效状态的日期区间
+   * 有效状态区间的开始日期
    */
-  range: [Date, Date];
+  startDate: Date;
+  /**
+   * 有效状态区间的结束日期
+   */
+  endDate: Date;
   /**
    * 指定自定义样式
    */
@@ -39,11 +43,12 @@ export default function WeekStatusBar({
   outlined,
   dateCellRect = defaultDateCellRect,
   weekNo,
-  range,
+  startDate,
+  endDate,
 }: Props) {
   const weekBarStyle = useMemo(
-    () => getWeekStatusBarStyle(range, dateCellRect, weekNo),
-    [dateCellRect, range, weekNo],
+    () => getWeekStatusBarStyle([startDate, endDate], dateCellRect, weekNo),
+    [dateCellRect, endDate, startDate, weekNo],
   );
 
   return <WeekStatusBarWrapper outlined={outlined} style={weekBarStyle} />;
