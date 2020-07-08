@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import getMonthWeeks from '../helpers/getMonthWeeks';
 import getCrossDateRange from '../helpers/getCrossDateRange';
-import DateCellRect from '../DateCellRect';
 import WeekStatusBar from './WeekStatusBar';
 
 interface Props {
@@ -25,10 +24,6 @@ interface Props {
    * 设置为`true`，则表示空心。
    */
   outlined?: boolean;
-  /**
-   * 日期单元格尺寸
-   */
-  dateCellRect?: DateCellRect;
 }
 
 const MemoWeekStatusBar = React.memo(WeekStatusBar);

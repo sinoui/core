@@ -1,4 +1,6 @@
 import React, { useMemo } from 'react';
+import bemClassNames from '@sinoui/core/utils/bemClassNames';
+import formatDate from '@sinoui/core/DatePicker/formatDate';
 import DateCellRect from '../DateCellRect';
 import getWeekStatusBarStyle from './getWeekStatusBarStyle';
 import WeekStatusBarWrapper from './WeekStatusBarWrapper';
@@ -24,10 +26,6 @@ interface Props {
    * 有效状态区间的结束日期
    */
   endDate: Date;
-  /**
-   * 指定自定义样式
-   */
-  style?: React.CSSProperties;
 }
 
 const defaultDateCellRect: DateCellRect = {
@@ -45,11 +43,25 @@ export default function WeekStatusBar({
   weekNo,
   startDate,
   endDate,
+  ...rest
 }: Props) {
   const weekBarStyle = useMemo(
     () => getWeekStatusBarStyle([startDate, endDate], dateCellRect, weekNo),
     [dateCellRect, endDate, startDate, weekNo],
   );
 
-  return <WeekStatusBarWrapper outlined={outlined} style={weekBarStyle} />;
+  return (
+    <WeekStatusBarWrapper
+      outlined={outlined}
+      className={bemClassNames('sinoui-date-range-picker__week-status-bar', {
+        outlined,
+        raised: !outlined,
+      })}
+      data-week-no={weekNo}
+      data-start-date={formatDate(startDate)}
+      data-end-date={formatDate(endDate)}
+      style={weekBarStyle}
+      {...rest}
+    />
+  );
 }
