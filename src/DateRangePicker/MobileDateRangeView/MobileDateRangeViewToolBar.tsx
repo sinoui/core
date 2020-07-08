@@ -44,10 +44,6 @@ const MobileDateRangeViewToolBarWrapper = styled.div`
   .sinoui-typography--h5 {
     padding-left: 48px;
   }
-
-  .sinoui-typography--h5 {
-    font-size: 1.2rem;
-  }
 `;
 
 const MobileDateRangeViewToolBarAction = styled.div`
@@ -79,13 +75,11 @@ const MobileDateRangeViewToolBar = ({
       <Caption>{title}</Caption>
       <H5>
         {startDate
-          ? `${startDate.getFullYear()}年${
-              startDate.getMonth() + 1
-            }月${startDate.getDate()}日`
+          ? `${startDate.getMonth() + 1}月${startDate.getDate()}日`
           : '开始时间'}
         --
         {endDate
-          ? `${endDate.getFullYear()}年
+          ? `
         ${endDate.getMonth() + 1}月${endDate.getDate()}日`
           : '结束时间'}
       </H5>

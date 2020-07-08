@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import MobileDateRangeViewWrapper from './MobileDateRangeViewWrapper';
 import MobileDateRangeViewToolBar from './MobileDateRangeViewToolBar';
 import MobileDateRangeViewContent from './MobileDateRangeViewContent';
-import isSameMonth from '../utils/isSameMonth';
+import isSameMonth from '../helpers/isSameMonth';
 
 export interface Props {
   /**
