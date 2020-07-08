@@ -12,6 +12,8 @@ export default function getWeekStatusBarStyle(
   dateCellRect: DateCellRect,
   weekNo: number,
   isPc: boolean,
+  isStart: boolean,
+  isEnd: boolean,
 ): React.CSSProperties {
   const [start, end] = range;
   const firstDay = start.getDay() === 0 ? 7 : start.getDay();
@@ -32,11 +34,22 @@ export default function getWeekStatusBarStyle(
   }px)`;
   const top = cellHeight * (isPc ? weekNo : weekNo + 1) + cellPadding;
 
-  return {
-    width,
-    height: dateCellContentHeight,
-    borderRadius: dateCellContentHeight / 2,
-    left,
-    top,
-  };
+  return isPc
+    ? {
+        width,
+        height: dateCellContentHeight,
+        borderRadius: dateCellContentHeight / 2,
+        left,
+        top,
+      }
+    : {
+        width,
+        height: dateCellContentHeight,
+        borderTopLeftRadius: isStart ? dateCellContentHeight / 2 : 0,
+        borderBottomLeftRadius: isStart ? dateCellContentHeight / 2 : 0,
+        borderTopRightRadius: isEnd ? dateCellContentHeight / 2 : 0,
+        borderBottomRightRadius: isEnd ? dateCellContentHeight / 2 : 0,
+        left,
+        top,
+      };
 }

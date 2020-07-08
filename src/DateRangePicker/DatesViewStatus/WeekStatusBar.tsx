@@ -28,6 +28,14 @@ interface Props {
    * 是否是pc设备，默认为true
    */
   isPc?: boolean;
+  /**
+   * 是否是开始时间
+   */
+  isStart?: boolean;
+  /**
+   * 是否是结束时间
+   */
+  isEnd?: boolean;
 }
 
 const defaultDateCellRect: DateCellRect = {
@@ -45,10 +53,13 @@ export default function WeekStatusBar({
   weekNo,
   range,
   isPc = true,
+  isStart = false,
+  isEnd = false,
 }: Props) {
   const weekBarStyle = useMemo(
-    () => getWeekStatusBarStyle(range, dateCellRect, weekNo, isPc),
-    [dateCellRect, isPc, range, weekNo],
+    () =>
+      getWeekStatusBarStyle(range, dateCellRect, weekNo, isPc, isStart, isEnd),
+    [dateCellRect, isEnd, isPc, isStart, range, weekNo],
   );
 
   return (

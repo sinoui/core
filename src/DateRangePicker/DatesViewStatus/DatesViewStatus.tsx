@@ -72,6 +72,8 @@ export default function DatesViewStatus({
             weekNo={index}
             range={weekbar}
             outlined={outlined}
+            isStart={startDate.getTime() === weekbar[0].getTime()}
+            isEnd={endDate.getTime() === weekbar[1].getTime()}
             {...rest}
           />
         ) : null,
