@@ -110,6 +110,7 @@ export default function DateRangePicker(props: Props) {
   const handleInputBlur = () => {
     setTimeout(() => {
       if (
+        isPc &&
         wrapperRef.current &&
         !wrapperRef.current.contains(document.activeElement)
       ) {
@@ -207,8 +208,23 @@ export default function DateRangePicker(props: Props) {
           />
         </Popper>
       ) : (
-        <Modal {...getModalProps()}>
-          <MobileDateRangeView startDate={startDate} endDate={endDate} />
+        <Modal
+          {...getModalProps()}
+          backdrop={false}
+          autoFocus={false}
+          enforceFocus={false}
+        >
+          <MobileDateRangeView
+            startDate={startDate}
+            endDate={endDate}
+            minDate={parseDate(min)}
+            maxDate={parseDate(max)}
+            defaultYear={defaultYear}
+            defaultMonth={defaultMonth}
+            focusedInput={focusedInput}
+            onRequestClose={onRequestClose}
+            onChange={onChange}
+          />
         </Modal>
       )}
     </>

@@ -19,6 +19,11 @@ interface Props {
    * 结束时间
    */
   endDate?: Date;
+  /**
+   * 弹窗关闭时的回调函数
+   */
+  onClose?: () => void;
+  onOk?: () => void;
 }
 
 const MobileDateRangeViewToolBarWrapper = styled.div`
@@ -59,6 +64,8 @@ const MobileDateRangeViewToolBar = ({
   title,
   startDate,
   endDate,
+  onClose,
+  onOk,
   ...rest
 }: Props) => {
   return (
@@ -67,10 +74,10 @@ const MobileDateRangeViewToolBar = ({
       {...rest}
     >
       <MobileDateRangeViewToolBarAction>
-        <IconButton dense>
+        <IconButton dense onClick={onClose}>
           <Close />
         </IconButton>
-        <Button>保存</Button>
+        <Button onClick={onOk}>保存</Button>
       </MobileDateRangeViewToolBarAction>
       <Caption>{title}</Caption>
       <H5>

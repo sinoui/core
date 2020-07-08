@@ -46,7 +46,6 @@ export default function WeekStatusBar({
   range,
   isPc = true,
 }: Props) {
-  console.log(range, dateCellRect, weekNo);
   const weekBarStyle = useMemo(
     () => getWeekStatusBarStyle(range, dateCellRect, weekNo, isPc),
     [dateCellRect, isPc, range, weekNo],

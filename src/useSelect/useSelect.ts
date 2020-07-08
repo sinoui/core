@@ -67,6 +67,7 @@ export default function useSelect(props: Props) {
         preventBlur.current = true;
         return;
       }
+
       setOpen(false);
     }
   };

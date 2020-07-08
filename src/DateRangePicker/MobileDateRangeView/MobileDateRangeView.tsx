@@ -1,18 +1,16 @@
-import React, { useLayoutEffect, useRef, useMemo } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
-import DatesView from '@sinoui/core/DatePicker/DatesView';
 import { FixedSizeList } from 'react-window';
 import memoize from 'memoize-one';
 import {
   COUNTS_OF_YEAR,
   MONTH_FULL_TITLES,
 } from '@sinoui/core/DatePicker/constants';
-import styled from 'styled-components';
+import formatDate from '@sinoui/core/DatePicker/formatDate';
 import MobileDateRangeViewWrapper from './MobileDateRangeViewWrapper';
 import MobileDateRangeViewToolBar from './MobileDateRangeViewToolBar';
 import MobileDateRangeViewContent from './MobileDateRangeViewContent';
-import isSameMonth from '../helpers/isSameMonth';
-import DatesViewStatus from '../DatesViewStatus';
+import MemoMonthItem from './MonthItem';
 
 export interface Props {
   /**
@@ -35,6 +33,30 @@ export interface Props {
    * 默认月份
    */
   defaultMonth?: number;
+  /**
+   * 是否展示今天
+   */
+  showToday?: boolean;
+  /**
+   * 指定最小日期。
+   */
+  minDate?: Date;
+  /**
+   * 指定最大日期。
+   */
+  maxDate?: Date;
+  /**
+   * 聚焦的输入框
+   */
+  focusedInput?: 'start' | 'end';
+  /**
+   * 弹窗关闭时的回调函数
+   */
+  onRequestClose: () => void;
+  /**
+   * 值变更时的回调函数
+   */
+  onChange?: (value: string[]) => void;
 }
 
 /**
@@ -56,73 +78,48 @@ export const genYears = (
   return years;
 };
 
-const YearItem = styled.div`
-  display: inline-flex;
-  align-items: center;
-  height: 48px;
-  padding-left: 12px;
-`;
-
-const createItemData = memoize((years, startDate, endDate) => ({
-  years,
-  startDate,
-  endDate,
-}));
-
-const dateCellRect = {
-  width: 48,
-  height: 48,
-  padding: 4,
-};
-
-const MemoDatesViewStatus = React.memo(DatesViewStatus);
-
-function MonthItem({ index, style, data }: any) {
-  const monthIdx = index % 12;
-  const { years, startDate, endDate } = data;
-  const month = MONTH_FULL_TITLES[monthIdx];
-  const year = years[Math.floor(index / 12)];
-
-  const selectedDates = useMemo(() => {
-    return [startDate, endDate]
-      .map((date) =>
-        isSameMonth(date, year, monthIdx) ? date.getDate() : undefined,
-      )
-      .filter(Boolean);
-  }, [endDate, monthIdx, startDate, year]);
-
-  return (
-    <div key={`${year}_${month}`} style={style}>
-      {startDate && endDate && (
-        <MemoDatesViewStatus
-          year={year}
-          month={monthIdx}
-          startDate={startDate}
-          endDate={endDate}
-          dateCellRect={dateCellRect}
-          isPc={false}
-        />
-      )}
-      <YearItem>
-        {year}年{month}
-      </YearItem>
-      <DatesView
-        year={year}
-        month={index % 12}
-        selectedDates={selectedDates as number[]}
-      />
-    </div>
-  );
-}
-
-const MemoMonthItem = React.memo(MonthItem);
+const createItemData = memoize(
+  ({
+    years,
+    startDate,
+    endDate,
+    showToday,
+    minDate,
+    maxDate,
+    onDateClick,
+  }) => ({
+    years,
+    startDate,
+    endDate,
+    showToday,
+    minDate,
+    maxDate,
+    onDateClick,
+  }),
+);
 
 /**
  * 移动端日期区间选择视图
  * @param props
  */
 export default function MobileDateRangeView(props: Props) {
-  const { title, startDate, endDate, defaultYear, defaultMonth } = props;
+  const {
+    title,
+    startDate,
+    endDate,
+    defaultYear,
+    defaultMonth,
+    showToday = true,
+    minDate,
+    maxDate,
+    focusedInput,
+    onRequestClose,
+    onChange,
+  } = props;
+
+  const [selectedStart, setSelectedStart] = useState(startDate);
+  const [selectedEnd, setSelectedEnd] = useState(endDate);
+
   const selectedNodeRef = useRef<FixedSizeList>(null);
   const years = genYears();
 
@@ -144,7 +141,33 @@ export default function MobileDateRangeView(props: Props) {
     }
   }, [currentMonth, currentYear, years]);
 
-  const itemData = createItemData(years, startDate, endDate);
+  const handleDateClick = (_: React.MouseEvent<HTMLElement>, date: Date) => {
+    if (focusedInput === 'start') {
+      setSelectedStart(date);
+    } else {
+      setSelectedEnd(date);
+    }
+  };
+
+  const onOk = () => {
+    if (onChange) {
+      onChange([
+        formatDate(selectedStart) ?? '',
+        formatDate(selectedEnd) ?? '',
+      ]);
+    }
+    onRequestClose();
+  };
+
+  const itemData = createItemData({
+    years,
+    startDate: selectedStart,
+    endDate: selectedEnd,
+    showToday,
+    minDate,
+    maxDate,
+    onDateClick: handleDateClick,
+  });
 
   const renderDates = () => (
     <>
@@ -169,8 +192,10 @@ export default function MobileDateRangeView(props: Props) {
     <MobileDateRangeViewWrapper>
       <MobileDateRangeViewToolBar
         title={title ?? '设置日期'}
-        startDate={startDate}
-        endDate={endDate}
+        startDate={selectedStart}
+        endDate={selectedEnd}
+        onClose={onRequestClose}
+        onOk={onOk}
       />
       {renderDates()}
     </MobileDateRangeViewWrapper>
