@@ -59,7 +59,7 @@ export default function DatesViewStatus({
       {weekBars.map((weekbar, index) =>
         weekbar ? (
           <MemoWeekStatusBar
-            key={weekbar[0].toString()}
+            key={`${weekbar[0]}-${weekbar[1]}`}
             weekNo={index}
             startDate={weekbar[0]}
             endDate={weekbar[1]}
