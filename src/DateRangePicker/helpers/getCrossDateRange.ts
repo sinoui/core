@@ -1,5 +1,6 @@
 /**
- * 找出range2在range1区域的
+ * 找出range2在range1区域的重叠部分
+ *
  * @param range1 参考区域
  * @param range2 实际区域
  */
