@@ -3,7 +3,8 @@ import mem from '../../utils/mem';
 const ONE_DAY = 1 * 24 * 3600 * 1000;
 
 const newDate = mem((time: number) => new Date(time));
-const cacheDate = (date: Date) => newDate(date.getTime());
+export const cacheDate = (date: Date) => newDate(date.getTime());
+
 /**
  * 获取指定月份所有周的开始时间和结束时间
  *
