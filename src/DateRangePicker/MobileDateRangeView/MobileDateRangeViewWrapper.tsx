@@ -18,6 +18,14 @@ const MobileDateRangeViewWrapper = styled(Paper).withConfig({
     }
   }
 
+  .sinoui-dates-view {
+    padding: 0 12px;
+  }
+
+  .sinoui-date-cell {
+    text-align: center;
+  }
+
   .sinoui-date-cell-content {
     width: 40px;
     height: 40px;

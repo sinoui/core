@@ -1,5 +1,26 @@
 import DateCellRect from '../DateCellRect';
 
+function getMobileWidth(
+  weekNo: number,
+  firstDay: number,
+  lastDay: number,
+  dateContentWidth: number,
+  isStart: boolean,
+) {
+  let width = `calc(${((lastDay - firstDay + 1) / 7) * 100}%)`;
+  if (weekNo === 0) {
+    width = '100%';
+  }
+
+  if (isStart) {
+    width = `calc(${((lastDay - firstDay + 1) / 7) * 100}% - ${
+      dateContentWidth / 2
+    }px)`;
+  }
+
+  return width;
+}
+
 /**
  * 获取周状态条样式
  *
@@ -26,12 +47,14 @@ export default function getWeekStatusBarStyle(
   const dateCellContentWidth = cellWidth - 2 * cellPadding;
   const dateCellContentHeight = cellHeight - 2 * cellPadding;
 
-  const width = `calc(${
-    ((lastDay - firstDay) / 7) * 100
-  }% + ${dateCellContentWidth}px)`;
-  const left = `calc(${((firstDay - 1) / 7) * 100}% + ${
-    dateCellRect.padding
-  }px)`;
+  const width = isPc
+    ? `calc(${((lastDay - firstDay) / 7) * 100}% + ${dateCellContentWidth}px)`
+    : getMobileWidth(weekNo, firstDay, lastDay, dateCellContentWidth, isStart);
+  const left = isPc
+    ? `calc(${((firstDay - 1) / 7) * 100}% + ${dateCellRect.padding}px)`
+    : `calc(${((firstDay - 1 + 1 / 2) / 7) * 100}% - ${
+        dateCellContentWidth / 2
+      }px + ${12}px)`;
   const top = cellHeight * (isPc ? weekNo : weekNo + 1) + cellPadding;
 
   return isPc
@@ -49,7 +72,7 @@ export default function getWeekStatusBarStyle(
         borderBottomLeftRadius: isStart ? dateCellContentHeight / 2 : 0,
         borderTopRightRadius: isEnd ? dateCellContentHeight / 2 : 0,
         borderBottomRightRadius: isEnd ? dateCellContentHeight / 2 : 0,
-        left,
+        left: isStart ? left : 0,
         top,
       };
 }
