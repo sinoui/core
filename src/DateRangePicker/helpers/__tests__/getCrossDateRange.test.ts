@@ -39,3 +39,17 @@ it('区间2包含区间1', () => {
   expect(getCrossDateRange(range1, range2)).toEqual(range1);
   expect(getCrossDateRange(range2, range1)).toEqual(range1);
 });
+
+it('区间2与区间1的左边界重叠', () => {
+  const range2: [Date, Date] = [new Date(2020, 7, 28), new Date(2020, 8, 1)];
+
+  expect(getCrossDateRange(range1, range2)).toEqual([range1[0], range2[1]]);
+  expect(getCrossDateRange(range2, range1)).toEqual([range1[0], range2[1]]);
+});
+
+it('区间2与区间1的右边界重叠', () => {
+  const range2: [Date, Date] = [new Date(2020, 8, 10), new Date(2020, 8, 30)];
+
+  expect(getCrossDateRange(range1, range2)).toEqual([range1[1], range2[0]]);
+  expect(getCrossDateRange(range2, range1)).toEqual([range1[1], range2[0]]);
+});
