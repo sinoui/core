@@ -23,7 +23,19 @@ interface Props {
    * 弹窗关闭时的回调函数
    */
   onClose?: () => void;
+  /**
+   * 点击保存按钮时的回调函数
+   */
   onOk?: () => void;
+  /**
+   * 点击清除按钮时的回调函数
+   */
+  onClear?: () => void;
+  /**
+   * 聚焦的输入框
+   */
+  focused?: 'start' | 'end';
+  onFocusedChange?: (type: 'start' | 'end') => void;
 }
 
 const MobileDateRangeViewToolBarWrapper = styled.div`
@@ -57,6 +69,10 @@ const MobileDateRangeViewToolBarAction = styled.div`
   align-items: center;
 `;
 
+const DateWrapper = styled.span<{ $focused?: boolean }>`
+  opacity: ${({ $focused }) => ($focused ? 1 : 0.7)};
+`;
+
 /**
  * 日历视图的工具栏
  */
@@ -66,8 +82,16 @@ const MobileDateRangeViewToolBar = ({
   endDate,
   onClose,
   onOk,
+  onClear,
+  focused,
+  onFocusedChange,
   ...rest
 }: Props) => {
+  const handleFocusedChange = (type: 'start' | 'end') => {
+    if (onFocusedChange) {
+      onFocusedChange(type);
+    }
+  };
   return (
     <MobileDateRangeViewToolBarWrapper
       className="sinoui-date-range-view-toolbar"
@@ -77,18 +101,31 @@ const MobileDateRangeViewToolBar = ({
         <IconButton dense onClick={onClose}>
           <Close />
         </IconButton>
-        <Button onClick={onOk}>保存</Button>
+        <MobileDateRangeViewToolBarAction>
+          <Button onClick={onClear}>清除</Button>
+          <Button onClick={onOk}>保存</Button>
+        </MobileDateRangeViewToolBarAction>
       </MobileDateRangeViewToolBarAction>
       <Caption>{title}</Caption>
       <H5>
-        {startDate
-          ? `${startDate.getMonth() + 1}月${startDate.getDate()}日`
-          : '开始时间'}
-        --
-        {endDate
-          ? `
+        <DateWrapper
+          $focused={focused === 'start'}
+          onClick={() => handleFocusedChange('start')}
+        >
+          {startDate
+            ? `${startDate.getMonth() + 1}月${startDate.getDate()}日`
+            : '开始时间'}
+        </DateWrapper>
+        -
+        <DateWrapper
+          $focused={focused === 'end'}
+          onClick={() => handleFocusedChange('end')}
+        >
+          {endDate
+            ? `
         ${endDate.getMonth() + 1}月${endDate.getDate()}日`
-          : '结束时间'}
+            : '结束时间'}
+        </DateWrapper>
       </H5>
     </MobileDateRangeViewToolBarWrapper>
   );

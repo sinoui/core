@@ -119,6 +119,7 @@ export default function MobileDateRangeView(props: Props) {
 
   const [selectedStart, setSelectedStart] = useState(startDate);
   const [selectedEnd, setSelectedEnd] = useState(endDate);
+  const [focused, setFocused] = useState(focusedInput);
 
   const selectedNodeRef = useRef<FixedSizeList>(null);
   const years = genYears();
@@ -142,7 +143,7 @@ export default function MobileDateRangeView(props: Props) {
   }, [currentMonth, currentYear, years]);
 
   const handleDateClick = (_: React.MouseEvent<HTMLElement>, date: Date) => {
-    if (focusedInput === 'start') {
+    if (focused === 'start') {
       setSelectedStart(date);
     } else {
       setSelectedEnd(date);
@@ -157,6 +158,11 @@ export default function MobileDateRangeView(props: Props) {
       ]);
     }
     onRequestClose();
+  };
+
+  const onClear = () => {
+    setSelectedStart(undefined);
+    setSelectedEnd(undefined);
   };
 
   const itemData = createItemData({
@@ -196,6 +202,9 @@ export default function MobileDateRangeView(props: Props) {
         endDate={selectedEnd}
         onClose={onRequestClose}
         onOk={onOk}
+        onClear={onClear}
+        focused={focused}
+        onFocusedChange={setFocused}
       />
       {renderDates()}
     </MobileDateRangeViewWrapper>
