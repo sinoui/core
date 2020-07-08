@@ -7,7 +7,9 @@ import parseDate from '../DatePicker/parseDate';
 import DateRangeDatesView from './DateRangeDatesView';
 import HoverOutline from './HoverOutline';
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['in'].includes(prop),
+})`
   display: flex;
   position: relative;
 `;
@@ -61,6 +63,10 @@ export default function DateRangeViewContent({
   endDate,
   year,
   month,
+  showToday,
+  minDate,
+  maxDate,
+  onDateClick,
   ...rest
 }: Props) {
   const [hoverDate, setHoverDate] = useState<Date>();
@@ -74,6 +80,15 @@ export default function DateRangeViewContent({
   );
   const endMonth = month === 11 ? 0 : month + 1;
   const endYear = month === 11 ? year + 1 : year;
+  const datesViewProps = {
+    startDate,
+    endDate,
+    showToday,
+    minDate,
+    maxDate,
+    onDateClick,
+    outlinedDateRange,
+  };
 
   /**
    * 延迟清除悬停日期
@@ -98,7 +113,9 @@ export default function DateRangeViewContent({
     const isDisabled =
       dateCell && dateCell.classList.contains(`${CLASSES.dateCell}--disabled`);
     const newHoverDate = parseDate(dateCell?.dataset?.date);
+
     clearTimeout(mouseLeaveTimeout.current);
+
     if (!isDisabled && newHoverDate) {
       setHoverDate(newHoverDate);
     }
@@ -109,30 +126,17 @@ export default function DateRangeViewContent({
 
   return (
     <ContentWrapper
-      className="sinoui-date-range-view__datesview-wrapper"
+      className="sinoui-date-range-view__content"
       onMouseOver={handleMouseOver}
       onMouseLeave={clearHoverDateDelay}
       onFocus={() => undefined}
+      {...rest}
     >
       {outlinedDateRange && hoverDate && (
         <HoverOutline hoverDate={hoverDate} year={year} month={month} />
       )}
-      <DateRangeDatesView
-        startDate={startDate}
-        endDate={endDate}
-        year={year}
-        month={month}
-        outlinedDateRange={outlinedDateRange}
-        {...rest}
-      />
-      <DateRangeDatesView
-        startDate={startDate}
-        endDate={endDate}
-        year={endYear}
-        month={endMonth}
-        outlinedDateRange={outlinedDateRange}
-        {...rest}
-      />
+      <DateRangeDatesView year={year} month={month} {...datesViewProps} />
+      <DateRangeDatesView year={endYear} month={endMonth} {...datesViewProps} />
     </ContentWrapper>
   );
 }

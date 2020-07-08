@@ -129,7 +129,11 @@ export default function DateRangeDatesView(props: Props) {
   );
 
   return (
-    <div className="sinoui-date-range-view__datesview">
+    <div
+      className="sinoui-date-range-view__datesview"
+      data-year={year}
+      data-month={month + 1}
+    >
       {outlinedDateRange && (
         <MemoDatesViewStatus
           year={year}

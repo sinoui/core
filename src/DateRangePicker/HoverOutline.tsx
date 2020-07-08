@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import getWeekNoOfMonth from './helpers/getWeekNoOfMonth';
 import isSameMonth from './helpers/isSameMonth';
 import getDayOfWeek from './helpers/getDayOfWeek';
+import formatDate from '../DatePicker/formatDate';
 
 const HoverOutlineWrapper = styled.div`
   position: absolute;
@@ -45,6 +46,7 @@ const HoverOutline = ({
       style={{
         transform: `translate(${x}px, ${y}px)`,
       }}
+      data-hover-date={formatDate(hoverDate)}
       {...rest}
     />
   );
