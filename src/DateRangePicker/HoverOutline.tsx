@@ -26,6 +26,7 @@ const HoverOutline = ({
   hoverDate,
   year,
   month,
+  ...rest
 }: {
   hoverDate: Date;
   year: number;
@@ -40,9 +41,11 @@ const HoverOutline = ({
 
   return (
     <HoverOutlineWrapper
+      className="sinoui-date-range-picker__hover-outline"
       style={{
         transform: `translate(${x}px, ${y}px)`,
       }}
+      {...rest}
     />
   );
 };

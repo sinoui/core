@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 1`] = `
+<div
+  className="sc-AxjAm eosOwa sinoui-date-range-picker__hover-outline"
+  data-testid="hover-outline"
+  style={
+    Object {
+      "transform": "translate(82px, 34px)",
+    }
+  }
+/>
+`;
