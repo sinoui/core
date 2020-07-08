@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent, act } from '@testing-library/react';
 import { defaultTheme } from '@sinoui/theme';
 import 'jest-styled-components';
-import { act } from 'react-test-renderer';
 import DateRangePicker from '../DateRangePicker';
 
 afterEach(cleanup);
@@ -55,7 +54,7 @@ describe('value', () => {
       fireEvent.click(input);
     });
 
-    expect(container.querySelector('[data-date="2020/7/12"]')).toHaveClass(
+    expect(container.querySelector('[data-date="2020-07-12"]')).toHaveClass(
       'sinoui-date-cell--selected',
     );
   });
@@ -135,7 +134,7 @@ describe('pc端', () => {
     act(() => {
       fireEvent.click(
         container
-          .querySelector('[data-date="2020/6/18"]')
+          .querySelector('[data-date="2020-06-18"]')
           ?.querySelector('.sinoui-date-cell-content')!,
       );
     });
@@ -169,7 +168,7 @@ describe('pc端', () => {
     act(() => {
       fireEvent.click(
         container
-          .querySelector('[data-date="2020/6/18"]')
+          .querySelector('[data-date="2020-06-18"]')
           ?.querySelector('.sinoui-date-cell-content')!,
       );
     });
@@ -244,7 +243,7 @@ describe('pc端', () => {
     act(() => {
       fireEvent.click(
         container
-          .querySelector('[data-date="2020/7/22"]')
+          .querySelector('[data-date="2020-07-22"]')
           ?.querySelector('.sinoui-date-cell-content')!,
       );
     });

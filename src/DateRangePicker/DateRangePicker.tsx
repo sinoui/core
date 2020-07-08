@@ -2,7 +2,6 @@ import React, { useRef, useCallback, useState } from 'react';
 import TextInput, { TextInputProps } from '@sinoui/core/TextInput';
 import useSelect from '@sinoui/core/useSelect';
 import useIsPc from '@sinoui/core/DatePicker/useIsPc';
-import mem from '@sinoui/core/utils/mem';
 import Popper from '../Popper';
 import DateRangeView from './DateRangeView';
 import InputAdornment from '../InputAdornment';
@@ -10,6 +9,7 @@ import DatePickerIcon from '../svg-icons/DatePickerIcon';
 import formatDate from '../DatePicker/formatDate';
 import Modal from '../Modal';
 import MobileDateRangeView from './MobileDateRangeView/MobileDateRangeView';
+import parseDate from '../DatePicker/parseDate';
 
 export interface Props
   extends Omit<
@@ -54,10 +54,6 @@ export interface Props
   defaultMonth?: number;
 }
 
-const parseDate = mem((dateStr?: string) =>
-  dateStr ? new Date(Date.parse(`${dateStr}T00:00:00`)) : undefined,
-);
-
 export default function DateRangePicker(props: Props) {
   const {
     isPc: isPcProps,
@@ -67,8 +63,8 @@ export default function DateRangePicker(props: Props) {
     min,
     max,
     portal,
-    defaultMonth,
     defaultYear,
+    defaultMonth,
   } = props;
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
@@ -80,7 +76,9 @@ export default function DateRangePicker(props: Props) {
   const endInputValue = renderValue ? renderValue(endDate) : endValue;
   const startInputRef = useRef<HTMLInputElement | null>(null);
   const endInputRef = useRef<HTMLInputElement | null>(null);
-  const [focusedInput, setFocusedInput] = useState('');
+  const [focusedInput, setFocusedInput] = useState<'start' | 'end' | undefined>(
+    undefined,
+  );
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const {
@@ -105,7 +103,7 @@ export default function DateRangePicker(props: Props) {
     }
   };
 
-  const handleInputFocused = (inputType: string) => {
+  const handleInputFocused = (inputType: 'start' | 'end') => {
     setFocusedInput(inputType);
   };
 
@@ -116,7 +114,7 @@ export default function DateRangePicker(props: Props) {
         !wrapperRef.current.contains(document.activeElement)
       ) {
         onRequestClose();
-        setFocusedInput('');
+        setFocusedInput(undefined);
       }
     });
   };
@@ -205,6 +203,7 @@ export default function DateRangePicker(props: Props) {
             onDateClick={handleDateClick}
             defaultYear={defaultYear}
             defaultMonth={defaultMonth}
+            focusedInput={focusedInput}
           />
         </Popper>
       ) : (

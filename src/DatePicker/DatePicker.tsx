@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import DatePickerIcon from '@sinoui/core/svg-icons/DatePickerIcon';
-import mem from '@sinoui/core/utils/mem';
 import styled from 'styled-components';
 import Popper from '@sinoui/core/Popper';
 import Modal from '@sinoui/core/Modal';
@@ -12,6 +11,7 @@ import InputAdornment from '../InputAdornment';
 import useIsPc from './useIsPc';
 import formatDate from './formatDate';
 import type { CalendarViewProps } from './CalendarView';
+import parseDate from './parseDate';
 
 interface Props
   extends Omit<
@@ -84,10 +84,6 @@ const CalendarModalContent = React.forwardRef<
     />
   );
 });
-
-const parseDate = mem((dateStr?: string) =>
-  dateStr ? new Date(Date.parse(dateStr)) : undefined,
-);
 
 /**
  * 日期选择组件

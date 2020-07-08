@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 import DatesView from '@sinoui/core/DatePicker/DatesView';
 import getDatesOfMonth from '@sinoui/core/DatePicker/DatesView/getDatesOfMonth';
-import isSameMonth from './utils/isSameMonth';
+import DatesViewStatus from './DatesViewStatus';
+import isSameMonth from './helpers/isSameMonth';
 
 export interface Props {
   /**
@@ -33,29 +34,13 @@ export interface Props {
    */
   maxDate?: Date;
   /**
-   * 鼠标移入日期单元格时的回调函数
-   */
-  onDateMouseEnter?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
-  /**
-   * 鼠标移出时的回调函数
-   */
-  onDateMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void;
-  /**
-   * 是否在hover区间
-   */
-  isInHoverRange?: (date: Date) => boolean;
-  /**
-   * 是否是hover区间的开始
-   */
-  isHoverRangeStart?: (date: Date) => boolean;
-  /**
-   * 是否是hover区间的结束
-   */
-  isHoverRangeEnd?: (date: Date) => boolean;
-  /**
    * 日期单元格点击事件的回调函数。
    */
   onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
+  /**
+   * 空心日期区间
+   */
+  outlinedDateRange?: [Date, Date];
 }
 
 /**
@@ -106,44 +91,12 @@ function getDisabledDates(
   return disabledDates.length !== 0 ? disabledDates : undefined;
 }
 
+const MemoDatesView = React.memo(DatesView);
+const MemoDatesViewStatus = React.memo(DatesViewStatus);
+
 /**
- * 获取日期区间段
- * @param year
- * @param month
- * @param startDate
- * @param endDate
+ * 日期区间日期视图
  */
-function getInRangeDates(
-  year: number,
-  month: number,
-  startDate?: Date,
-  endDate?: Date,
-) {
-  const dates = getDatesOfMonth(year, month);
-  const inRangeDates: number[] = [];
-
-  for (let i = 0; i < dates; i += 1) {
-    if (
-      startDate &&
-      !isGreaterThen(startDate, year, month, i + 1) &&
-      endDate &&
-      (isGreaterThen(endDate, year, month, i + 1) ||
-        new Date(
-          endDate.getFullYear(),
-          endDate.getMonth(),
-          endDate.getDate(),
-          0,
-          0,
-          0,
-        ).getTime() === new Date(year, month, i + 1, 0, 0, 0).getTime())
-    ) {
-      inRangeDates.push(i + 1);
-    }
-  }
-
-  return inRangeDates.length !== 0 ? inRangeDates : undefined;
-}
-
 export default function DateRangeDatesView(props: Props) {
   const {
     startDate,
@@ -153,12 +106,8 @@ export default function DateRangeDatesView(props: Props) {
     showToday,
     minDate = new Date(),
     maxDate,
-    onDateMouseEnter,
-    onDateMouseLeave,
-    isInHoverRange,
-    isHoverRangeStart,
-    isHoverRangeEnd,
     onDateClick,
+    outlinedDateRange,
   } = props;
 
   const outlinedDate =
@@ -166,29 +115,45 @@ export default function DateRangeDatesView(props: Props) {
       ? new Date().getDate()
       : undefined;
 
-  const selectedDates = useMemo(() => {
-    return [startDate, endDate]
-      .map((date) =>
-        isSameMonth(date, year, month) ? date.getDate() : undefined,
-      )
-      .filter(Boolean);
-  }, [endDate, month, startDate, year]);
+  const selectedDates = useMemo(
+    () =>
+      [startDate, endDate]
+        .filter((date) => date && isSameMonth(date, year, month))
+        .map((date: any) => date.getDate()),
+    [endDate, month, startDate, year],
+  );
+
+  const disabledDates = useMemo(
+    () => getDisabledDates(year, month, minDate, maxDate),
+    [maxDate, minDate, month, year],
+  );
 
   return (
     <div className="sinoui-date-range-view__datesview">
-      <DatesView
+      {outlinedDateRange && (
+        <MemoDatesViewStatus
+          year={year}
+          month={month}
+          startDate={outlinedDateRange[0]}
+          endDate={outlinedDateRange[1]}
+          outlined
+        />
+      )}
+      {startDate && endDate && (
+        <MemoDatesViewStatus
+          year={year}
+          month={month}
+          startDate={startDate}
+          endDate={endDate}
+        />
+      )}
+      <MemoDatesView
         year={year}
         month={month}
         outlinedDate={outlinedDate}
-        selectedDates={selectedDates as number[]}
-        disabledDates={getDisabledDates(year, month, minDate, maxDate)}
-        selectedRangeDates={getInRangeDates(year, month, startDate, endDate)}
+        selectedDates={selectedDates}
+        disabledDates={disabledDates}
         onDateClick={onDateClick}
-        onDateMouseEnter={onDateMouseEnter}
-        onMouseLeave={onDateMouseLeave}
-        isInHoverRange={isInHoverRange}
-        isHoverRangeStart={isHoverRangeStart}
-        isHoverRangeEnd={isHoverRangeEnd}
       />
     </div>
   );

@@ -3,7 +3,7 @@ import bemClassNames from '@sinoui/core/utils/bemClassNames';
 import { useRipple } from '@sinoui/ripple';
 import DateCellContent from './DateCellContent';
 import gridCellCss from '../gridCellCss';
-import DateCellWrapper from './DateCellWrapper';
+import { CLASSES } from '../constants';
 
 interface Props {
   /**
@@ -22,22 +22,6 @@ interface Props {
    * 禁用状态
    */
   disabled?: boolean;
-  /**
-   * 是否在选中范围
-   */
-  isSelectedRange?: boolean;
-  /**
-   * 是否是日期区间的开始
-   */
-  isRangeStart?: boolean;
-  /**
-   * 是否是日期区间的结束
-   */
-  isRangeEnd?: boolean;
-  /**
-   * 是否在鼠标悬浮区域
-   */
-  isInHoverRange?: boolean;
   /**
    * 显示轮廓
    */
@@ -62,18 +46,6 @@ interface Props {
    * 鼠标移出时的回调函数
    */
   onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void;
-  /**
-   * 是否是hover区间的开始
-   */
-  isInHoverRangeStart?: boolean;
-  /**
-   * 是否是hover区间的结束
-   */
-  isInHoverRangeEnd?: boolean;
-  /**
-   * 是否是开始时间的前一天
-   */
-  isPrevRangeStart?: boolean;
 }
 
 /**
@@ -89,15 +61,6 @@ export default function DateCell(props: Props) {
     onClick,
     row,
     column,
-    isSelectedRange,
-    isRangeStart,
-    isRangeEnd,
-    isInHoverRange,
-    onMouseEnter,
-    onMouseLeave,
-    isInHoverRangeStart,
-    isInHoverRangeEnd,
-    isPrevRangeStart,
     ...rest
   } = props;
   const ref = useRipple({
@@ -108,32 +71,21 @@ export default function DateCell(props: Props) {
     disabled: !clickable || disabled,
   });
   return (
-    <DateCellWrapper
+    <div
       style={gridCellCss({ row, column })}
       {...rest}
       data-column={column}
       data-row={row}
-      className={bemClassNames('sinoui-date-cell', {
+      className={bemClassNames(CLASSES.dateCell, {
         empty: date == null,
         selected,
         outlined,
         disabled,
       })}
-      $isSelectedRange={isSelectedRange}
-      $isRangeStart={isRangeStart || column === 1}
-      $isRangeEnd={isRangeEnd || column === 7}
-      $isInHoverRange={isInHoverRange}
-      $isInHoverRangeStart={isInHoverRangeStart}
-      $isInHoverRangeEnd={isInHoverRangeEnd}
-      $selected={selected}
-      $isPrevRangeStart={isPrevRangeStart}
-      $isColumnEnd={column === 7}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
     >
       {date == null ? null : (
         <DateCellContent
-          className="sinoui-date-cell-content"
+          className={CLASSES.dateCellContent}
           forwardedAs="span"
           tabIndex={0}
           role="button"
@@ -141,7 +93,6 @@ export default function DateCell(props: Props) {
           $clickable={clickable && !disabled}
           $selected={selected}
           $outlined={outlined}
-          $isInHoverRange={isInHoverRange}
           aria-disabled={disabled ? 'true' : undefined}
           disabled={disabled}
           onClick={onClick}
@@ -149,6 +100,6 @@ export default function DateCell(props: Props) {
           {date}
         </DateCellContent>
       )}
-    </DateCellWrapper>
+    </div>
   );
 }
