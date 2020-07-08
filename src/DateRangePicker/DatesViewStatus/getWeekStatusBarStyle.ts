@@ -11,6 +11,7 @@ export default function getWeekStatusBarStyle(
   range: [Date, Date],
   dateCellRect: DateCellRect,
   weekNo: number,
+  isPc: boolean,
 ): React.CSSProperties {
   const [start, end] = range;
   const firstDay = start.getDay() === 0 ? 7 : start.getDay();
@@ -29,7 +30,7 @@ export default function getWeekStatusBarStyle(
   const left = `calc(${((firstDay - 1) / 7) * 100}% + ${
     dateCellRect.padding
   }px)`;
-  const top = cellHeight * weekNo + cellPadding;
+  const top = cellHeight * (isPc ? weekNo : weekNo + 1) + cellPadding;
 
   return {
     width,

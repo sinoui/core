@@ -29,6 +29,10 @@ interface Props {
    * 日期单元格尺寸
    */
   dateCellRect?: DateCellRect;
+  /**
+   * 是否是PC设备
+   */
+  isPc?: boolean;
 }
 
 const MemoWeekStatusBar = React.memo(WeekStatusBar);

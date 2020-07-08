@@ -24,6 +24,10 @@ interface Props {
    * 指定自定义样式
    */
   style?: React.CSSProperties;
+  /**
+   * 是否是pc设备，默认为true
+   */
+  isPc?: boolean;
 }
 
 const defaultDateCellRect: DateCellRect = {
@@ -40,11 +44,19 @@ export default function WeekStatusBar({
   dateCellRect = defaultDateCellRect,
   weekNo,
   range,
+  isPc = true,
 }: Props) {
+  console.log(range, dateCellRect, weekNo);
   const weekBarStyle = useMemo(
-    () => getWeekStatusBarStyle(range, dateCellRect, weekNo),
-    [dateCellRect, range, weekNo],
+    () => getWeekStatusBarStyle(range, dateCellRect, weekNo, isPc),
+    [dateCellRect, isPc, range, weekNo],
   );
 
-  return <WeekStatusBarWrapper outlined={outlined} style={weekBarStyle} />;
+  return (
+    <WeekStatusBarWrapper
+      className="sinoui-week-status-bar"
+      outlined={outlined}
+      style={weekBarStyle}
+    />
+  );
 }

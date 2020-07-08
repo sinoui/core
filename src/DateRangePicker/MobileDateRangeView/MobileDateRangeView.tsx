@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef, useMemo } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import DatesView from '@sinoui/core/DatePicker/DatesView';
 import { FixedSizeList } from 'react-window';
+import memoize from 'memoize-one';
 import {
   COUNTS_OF_YEAR,
   MONTH_FULL_TITLES,
@@ -11,6 +12,7 @@ import MobileDateRangeViewWrapper from './MobileDateRangeViewWrapper';
 import MobileDateRangeViewToolBar from './MobileDateRangeViewToolBar';
 import MobileDateRangeViewContent from './MobileDateRangeViewContent';
 import isSameMonth from '../helpers/isSameMonth';
+import DatesViewStatus from '../DatesViewStatus';
 
 export interface Props {
   /**
@@ -61,21 +63,46 @@ const YearItem = styled.div`
   padding-left: 12px;
 `;
 
+const createItemData = memoize((years, startDate, endDate) => ({
+  years,
+  startDate,
+  endDate,
+}));
+
+const dateCellRect = {
+  width: 48,
+  height: 48,
+  padding: 4,
+};
+
+const MemoDatesViewStatus = React.memo(DatesViewStatus);
+
 function MonthItem({ index, style, data }: any) {
+  const monthIdx = index % 12;
   const { years, startDate, endDate } = data;
-  const month = MONTH_FULL_TITLES[index % 12];
+  const month = MONTH_FULL_TITLES[monthIdx];
   const year = years[Math.floor(index / 12)];
 
   const selectedDates = useMemo(() => {
     return [startDate, endDate]
       .map((date) =>
-        isSameMonth(date, year, index % 12) ? date.getDate() : undefined,
+        isSameMonth(date, year, monthIdx) ? date.getDate() : undefined,
       )
       .filter(Boolean);
-  }, [endDate, index, startDate, year]);
+  }, [endDate, monthIdx, startDate, year]);
 
   return (
     <div key={`${year}_${month}`} style={style}>
+      {startDate && endDate && (
+        <MemoDatesViewStatus
+          year={year}
+          month={monthIdx}
+          startDate={startDate}
+          endDate={endDate}
+          dateCellRect={dateCellRect}
+          isPc={false}
+        />
+      )}
       <YearItem>
         {year}年{month}
       </YearItem>
@@ -87,6 +114,8 @@ function MonthItem({ index, style, data }: any) {
     </div>
   );
 }
+
+const MemoMonthItem = React.memo(MonthItem);
 
 /**
  * 移动端日期区间选择视图
@@ -115,6 +144,8 @@ export default function MobileDateRangeView(props: Props) {
     }
   }, [currentMonth, currentYear, years]);
 
+  const itemData = createItemData(years, startDate, endDate);
+
   const renderDates = () => (
     <>
       <WeekTitleBar />
@@ -125,10 +156,10 @@ export default function MobileDateRangeView(props: Props) {
           height={window.innerHeight - 176}
           itemCount={2400}
           itemSize={336}
-          itemData={{ years, startDate, endDate }}
+          itemData={itemData}
           width="100%"
         >
-          {MonthItem}
+          {MemoMonthItem}
         </FixedSizeList>
       </MobileDateRangeViewContent>
     </>
