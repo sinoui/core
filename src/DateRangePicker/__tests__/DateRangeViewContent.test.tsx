@@ -143,3 +143,81 @@ it('显示跨年的两个日历', () => {
   expect(views[1]).toHaveAttribute('data-year', '2021');
   expect(views[1]).toHaveAttribute('data-month', '1');
 });
+
+it('鼠标从日期单元格移出选择框', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangeViewContent
+        startDate={new Date(2020, 6, 20)}
+        endDate={new Date(2020, 6, 23)}
+        minDate={new Date(2020, 6, 8)}
+        year={2020}
+        month={6}
+        focusedInput="start"
+        data-testid="view-content"
+      />
+    </ThemeProvider>,
+  );
+
+  const viewContent = getByTestId('view-content');
+
+  act(() => {
+    fireEvent.mouseOver(
+      viewContent.querySelector('[data-date="2020-07-08"]') as HTMLElement,
+    );
+  });
+
+  act(() => {
+    fireEvent.mouseLeave(viewContent);
+    jest.runAllTimers();
+  });
+
+  expect(
+    viewContent.querySelector('.sinoui-date-range-picker__hover-outline'),
+  ).toBeFalsy();
+});
+
+it('鼠标短暂地从日期单元格移出选择框，然后又移到日期单元格上', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangeViewContent
+        startDate={new Date(2020, 6, 20)}
+        endDate={new Date(2020, 6, 23)}
+        minDate={new Date(2020, 6, 8)}
+        year={2020}
+        month={6}
+        focusedInput="start"
+        data-testid="view-content"
+      />
+    </ThemeProvider>,
+  );
+
+  const viewContent = getByTestId('view-content');
+
+  act(() => {
+    fireEvent.mouseOver(
+      viewContent.querySelector('[data-date="2020-07-08"]') as HTMLElement,
+    );
+  });
+
+  act(() => {
+    fireEvent.mouseLeave(viewContent);
+  });
+
+  act(() => {
+    fireEvent.mouseOver(
+      viewContent.querySelector('[data-date="2020-07-08"]') as HTMLElement,
+    );
+  });
+
+  // TODO: 如果这个单元测试断言报错，可能是因为“区间只有1天的不渲染状态条”这个规则实现了。可以将3调整为2
+  expect(
+    viewContent.querySelectorAll(
+      '.sinoui-date-range-picker__week-status-bar--outlined',
+    ).length,
+  ).toBe(3);
+
+  expect(
+    viewContent.querySelector('.sinoui-date-range-picker__hover-outline'),
+  ).toHaveAttribute('data-hover-date', '2020-07-08');
+});
