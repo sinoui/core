@@ -116,11 +116,11 @@ describe('pc端', () => {
       <ThemeProvider theme={defaultTheme}>
         <DateRangePicker
           portal={false}
+          defaultYear={2020}
+          defaultMonth={5}
           min="2020-06-07"
           isPc
           onChange={onChange}
-          defaultYear={2020}
-          defaultMonth={5}
         />
       </ThemeProvider>,
     );
@@ -149,12 +149,12 @@ describe('pc端', () => {
     const { container, getByPlaceholderText } = render(
       <ThemeProvider theme={defaultTheme}>
         <DateRangePicker
+          defaultYear={2020}
+          defaultMonth={5}
           portal={false}
           min="2020-06-07"
           isPc
           onChange={onChange}
-          defaultYear={2020}
-          defaultMonth={5}
         />
       </ThemeProvider>,
     );

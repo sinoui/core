@@ -26,6 +26,19 @@ interface Props {
    * 有效状态区间的结束日期
    */
   endDate: Date;
+  style?: React.CSSProperties;
+  /**
+   * 是否是pc设备，默认为true
+   */
+  isPc?: boolean;
+  /**
+   * 是否是开始时间
+   */
+  isStart?: boolean;
+  /**
+   * 是否是结束时间
+   */
+  isEnd?: boolean;
 }
 
 const defaultDateCellRect: DateCellRect = {
@@ -43,11 +56,22 @@ export default function WeekStatusBar({
   weekNo,
   startDate,
   endDate,
+  isPc = true,
+  isStart = false,
+  isEnd = false,
   ...rest
 }: Props) {
   const weekBarStyle = useMemo(
-    () => getWeekStatusBarStyle([startDate, endDate], dateCellRect, weekNo),
-    [dateCellRect, endDate, startDate, weekNo],
+    () =>
+      getWeekStatusBarStyle(
+        [startDate, endDate],
+        dateCellRect,
+        weekNo,
+        isPc,
+        isStart,
+        isEnd,
+      ),
+    [dateCellRect, endDate, isEnd, isPc, isStart, startDate, weekNo],
   );
 
   return (

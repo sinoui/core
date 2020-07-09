@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import getMonthWeeks from '../helpers/getMonthWeeks';
 import getCrossDateRange from '../helpers/getCrossDateRange';
 import WeekStatusBar from './WeekStatusBar';
+import DateCellRect from '../DateCellRect';
 
 interface Props {
   /**
@@ -24,6 +25,14 @@ interface Props {
    * 设置为`true`，则表示空心。
    */
   outlined?: boolean;
+  /**
+   * 日期单元格尺寸
+   */
+  dateCellRect?: DateCellRect;
+  /**
+   * 是否是PC设备
+   */
+  isPc?: boolean;
 }
 
 const MemoWeekStatusBar = React.memo(WeekStatusBar);
@@ -63,6 +72,8 @@ export default function DatesViewStatus({
             weekNo={index}
             startDate={weekbar[0]}
             endDate={weekbar[1]}
+            isStart={startDate.getTime() === weekbar[0].getTime()}
+            isEnd={endDate.getTime() === weekbar[1].getTime()}
             {...rest}
           />
         ) : null,

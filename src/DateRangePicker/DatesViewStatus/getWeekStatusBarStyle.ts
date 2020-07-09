@@ -53,13 +53,15 @@ export function getWeekStatusBarLeft(
  *
  * @param weekNo 月份中的第几周
  * @param dateCellRect 日期单元格尺寸
+ * @param isPc 是否是PC设备
  */
 export function getWeekStatusBarTop(
   weekNo: number,
   dateCellRect: DateCellRect,
+  isPc?: boolean,
 ) {
   const { height: cellHeight, padding: cellPadding } = dateCellRect;
-  return cellHeight * weekNo + cellPadding;
+  return cellHeight * (isPc ? weekNo : weekNo + 1) + cellPadding;
 }
 
 /**
@@ -73,6 +75,68 @@ export function getWeekStatusBarBorderRadius(dateCellRect: DateCellRect) {
 }
 
 /**
+ * 获取移动端状态条宽度
+ * @param range 区间
+ * @param dateCellRect 日期单元格尺寸
+ * @param isStart 是否包含开始日期
+ * @param isEnd 是否包含结束日期
+ */
+function getMobileWeekStatusBarWidth(
+  range: [Date, Date],
+  dateCellRect: DateCellRect,
+  isStart?: boolean,
+  isEnd?: boolean,
+) {
+  const [start, end] = range;
+  const { width, padding } = dateCellRect;
+  const dateCellContentWidth = width - 2 * padding;
+  const rangeLength = end.getDate() - start.getDate();
+  let statusBarWidth = `calc((100% - 24px)/${7} * ${rangeLength + 1} + 24px)`;
+
+  if (isStart) {
+    statusBarWidth = `calc((100% - 24px)/${7} * ${rangeLength + 1} + 24px - ${
+      dateCellContentWidth / 2
+    }px + 2px)`;
+  }
+
+  if (isEnd) {
+    statusBarWidth = `calc((100% - 24px)/${7} * ${rangeLength + 1} + 8px)`;
+  }
+
+  return statusBarWidth;
+}
+
+/**
+ * 获取移动端状态条左侧定位
+ * @param range 区间
+ * @param weekNo 周在月份中的序号，从0开始
+ * @param cellPadding 日期单元格内边距
+ * @param isStart 是否包含开始日期
+ */
+function getMobileWeekStatusBarLeft(
+  range: [Date, Date],
+  weekNo: number,
+  cellPadding: number,
+  isStart?: boolean,
+) {
+  const [start] = range;
+  const firstDay = start.getDay() === 0 ? 7 : start.getDay();
+  let left = `calc((100% - 24px)/${7} * ${firstDay - 1 / 2} - ${
+    cellPadding * 2
+  }px)`;
+
+  if (!isStart && weekNo !== 0) {
+    left = '0px';
+  }
+
+  if (weekNo === 0) {
+    left = `calc((100% - 24px)/${7} * ${firstDay - 1 / 2} - 26px)`;
+  }
+
+  return left;
+}
+
+/**
  * 获取周状态条样式
  *
  * @param range 日期区间
@@ -83,13 +147,34 @@ export default function getWeekStatusBarStyle(
   range: [Date, Date],
   dateCellRect: DateCellRect,
   weekNo: number,
+  isPc: boolean,
+  isStart?: boolean,
+  isEnd?: boolean,
 ): React.CSSProperties {
   // TODO: range 直接传递日期属于周几
-  return {
-    width: getWeekStatusBarWidth(range, dateCellRect),
-    height: getWeekStatusBarHeight(dateCellRect),
-    borderRadius: getWeekStatusBarBorderRadius(dateCellRect),
-    left: getWeekStatusBarLeft(range, dateCellRect),
-    top: getWeekStatusBarTop(weekNo, dateCellRect),
-  };
+
+  const borderRadius = getWeekStatusBarBorderRadius(dateCellRect);
+  return isPc
+    ? {
+        width: getWeekStatusBarWidth(range, dateCellRect),
+        height: getWeekStatusBarHeight(dateCellRect),
+        borderRadius,
+        left: getWeekStatusBarLeft(range, dateCellRect),
+        top: getWeekStatusBarTop(weekNo, dateCellRect, true),
+      }
+    : {
+        width: getMobileWeekStatusBarWidth(range, dateCellRect, isStart, isEnd),
+        height: getWeekStatusBarHeight(dateCellRect),
+        borderTopLeftRadius: isStart ? borderRadius : 0,
+        borderBottomLeftRadius: isStart ? borderRadius : 0,
+        borderTopRightRadius: isEnd ? borderRadius : 0,
+        borderBottomRightRadius: isEnd ? borderRadius : 0,
+        left: getMobileWeekStatusBarLeft(
+          range,
+          weekNo,
+          dateCellRect.padding,
+          isStart,
+        ),
+        top: getWeekStatusBarTop(weekNo, dateCellRect, false),
+      };
 }

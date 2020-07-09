@@ -8,6 +8,7 @@ import InputAdornment from '../InputAdornment';
 import DatePickerIcon from '../svg-icons/DatePickerIcon';
 import formatDate from '../DatePicker/formatDate';
 import parseDate from '../DatePicker/parseDate';
+import DateRangeMobileModal from './DateRangeMobileModal';
 
 export interface Props
   extends Omit<
@@ -50,6 +51,10 @@ export interface Props
    * 默认月份
    */
   defaultMonth?: number;
+  /**
+   * 弹窗标题
+   */
+  modalTitle?: string;
 }
 
 export default function DateRangePicker(props: Props) {
@@ -79,7 +84,12 @@ export default function DateRangePicker(props: Props) {
   );
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const { getTextInputProps, getPopperProps, onRequestClose } = useSelect({
+  const {
+    getTextInputProps,
+    getPopperProps,
+    onRequestClose,
+    getModalProps,
+  } = useSelect({
     ...props,
     isRenderWithPopper: isPc,
   });
@@ -103,6 +113,7 @@ export default function DateRangePicker(props: Props) {
   const handleInputBlur = () => {
     setTimeout(() => {
       if (
+        isPc &&
         wrapperRef.current &&
         !wrapperRef.current.contains(document.activeElement)
       ) {
@@ -186,7 +197,7 @@ export default function DateRangePicker(props: Props) {
           onClear={handleEndClear}
         />
       </div>
-      {isPc && (
+      {isPc ? (
         <Popper {...getPopperProps()} placement="bottom-start" portal={portal}>
           <DateRangeView
             startDate={startDate}
@@ -199,6 +210,19 @@ export default function DateRangePicker(props: Props) {
             focusedInput={focusedInput}
           />
         </Popper>
+      ) : (
+        <DateRangeMobileModal
+          startDate={startDate}
+          endDate={endDate}
+          minDate={parseDate(min)}
+          maxDate={parseDate(max)}
+          defaultYear={defaultYear}
+          defaultMonth={defaultMonth}
+          focusedInput={focusedInput}
+          onRequestClose={onRequestClose}
+          onChange={onChange}
+          {...getModalProps()}
+        />
       )}
     </>
   );

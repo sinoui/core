@@ -31,9 +31,9 @@ it('获取周状态的水平位置', () => {
 });
 
 it('获取周状态条的垂直位置', () => {
-  expect(getWeekStatusBarTop(2, { width: 32, height: 32, padding: 2 })).toBe(
-    66,
-  );
+  expect(
+    getWeekStatusBarTop(2, { width: 32, height: 32, padding: 2 }, true),
+  ).toBe(66);
 });
 
 it('获取周状态条的边框半径', () => {
@@ -52,6 +52,7 @@ it('获取周状态条样式', () => {
         padding: 2,
       },
       1,
+      true,
     ),
   ).toEqual({
     width: 'calc(28.5714% + 28px)',
