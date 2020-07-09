@@ -14,7 +14,5 @@ it('渲染日期区间选择头部容器', () => {
 
   const wrapper = getByTestId('wrapper');
 
-  expect(wrapper).toHaveStyleRule('padding', '16px 16px 8px', {
-    media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
-  });
+  expect(wrapper).toHaveStyleRule('padding', '16px 16px 8px');
 });

@@ -112,6 +112,7 @@ export default function DateRangeDatesView(props: Props) {
         selectedDates={selectedDates}
         disabledDates={disabledDates}
         onDateClick={onDateClick}
+        isPc
       />
     </div>
   );

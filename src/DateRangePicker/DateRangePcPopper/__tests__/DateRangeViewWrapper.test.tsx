@@ -14,7 +14,5 @@ it('渲染日期区间选择日期的容器', () => {
 
   const wrapper = getByTestId('wrapper');
 
-  expect(wrapper).toHaveStyleRule('width', '512px', {
-    media: `screen and (min-width: ${defaultTheme.breakpoints.md}px)`,
-  });
+  expect(wrapper).toHaveStyleRule('width', '512px');
 });

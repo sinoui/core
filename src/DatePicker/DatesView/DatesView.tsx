@@ -39,6 +39,10 @@ interface Props {
    * 日期单元格点击事件的回调函数。
    */
   onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
+  /**
+   * 是否是pc设备
+   */
+  isPc?: boolean;
 }
 
 /**
