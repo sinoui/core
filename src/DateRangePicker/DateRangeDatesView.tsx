@@ -104,7 +104,7 @@ export default function DateRangeDatesView(props: Props) {
     year,
     month,
     showToday,
-    minDate = new Date(),
+    minDate,
     maxDate,
     onDateClick,
     outlinedDateRange,

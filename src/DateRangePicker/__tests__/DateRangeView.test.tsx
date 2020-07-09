@@ -52,18 +52,6 @@ describe('值与最大最小值', () => {
     );
   });
 
-  it('不指定最大最小值的情况下，默认今天之前的日期不可选', () => {
-    const { container } = render(
-      <ThemeProvider theme={defaultTheme}>
-        <DateRangeView defaultYear={2020} defaultMonth={5} />
-      </ThemeProvider>,
-    );
-
-    expect(container.querySelector('[data-date="2020-06-10"]')).toHaveClass(
-      'sinoui-date-cell--disabled',
-    );
-  });
-
   it('点击某个日期,onDateClick被调用', () => {
     const onDateClick = jest.fn();
     const { container } = render(
