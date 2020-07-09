@@ -7,9 +7,8 @@ import DateRangeView from './DateRangeView';
 import InputAdornment from '../InputAdornment';
 import DatePickerIcon from '../svg-icons/DatePickerIcon';
 import formatDate from '../DatePicker/formatDate';
-import Modal from '../Modal';
-import MobileDateRangeView from './MobileDateRangeView/MobileDateRangeView';
 import parseDate from '../DatePicker/parseDate';
+import DateRangeMobileModal from './DateRangeMobileModal';
 
 export interface Props
   extends Omit<
@@ -52,6 +51,10 @@ export interface Props
    * 默认月份
    */
   defaultMonth?: number;
+  /**
+   * 弹窗标题
+   */
+  modalTitle?: string;
 }
 
 export default function DateRangePicker(props: Props) {
@@ -208,24 +211,18 @@ export default function DateRangePicker(props: Props) {
           />
         </Popper>
       ) : (
-        <Modal
+        <DateRangeMobileModal
+          startDate={startDate}
+          endDate={endDate}
+          minDate={parseDate(min)}
+          maxDate={parseDate(max)}
+          defaultYear={defaultYear}
+          defaultMonth={defaultMonth}
+          focusedInput={focusedInput}
+          onRequestClose={onRequestClose}
+          onChange={onChange}
           {...getModalProps()}
-          backdrop={false}
-          autoFocus={false}
-          enforceFocus={false}
-        >
-          <MobileDateRangeView
-            startDate={startDate}
-            endDate={endDate}
-            minDate={parseDate(min)}
-            maxDate={parseDate(max)}
-            defaultYear={defaultYear}
-            defaultMonth={defaultMonth}
-            focusedInput={focusedInput}
-            onRequestClose={onRequestClose}
-            onChange={onChange}
-          />
-        </Modal>
+        />
       )}
     </>
   );
