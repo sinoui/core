@@ -2,13 +2,12 @@ import React, { useRef, useCallback, useState } from 'react';
 import TextInput, { TextInputProps } from '@sinoui/core/TextInput';
 import useSelect from '@sinoui/core/useSelect';
 import useIsPc from '@sinoui/core/DatePicker/useIsPc';
-import Popper from '../Popper';
-import DateRangeView from './DateRangeView';
 import InputAdornment from '../InputAdornment';
 import DatePickerIcon from '../svg-icons/DatePickerIcon';
 import formatDate from '../DatePicker/formatDate';
 import parseDate from '../DatePicker/parseDate';
 import DateRangeMobileModal from './DateRangeMobileModal';
+import DateRangePcPopper from './DateRangePcPopper';
 
 export interface Props
   extends Omit<
@@ -198,18 +197,18 @@ export default function DateRangePicker(props: Props) {
         />
       </div>
       {isPc ? (
-        <Popper {...getPopperProps()} placement="bottom-start" portal={portal}>
-          <DateRangeView
-            startDate={startDate}
-            endDate={endDate}
-            minDate={focusedInput === 'end' ? startDate : parseDate(min)}
-            maxDate={parseDate(max)}
-            onDateClick={handleDateClick}
-            defaultYear={defaultYear}
-            defaultMonth={defaultMonth}
-            focusedInput={focusedInput}
-          />
-        </Popper>
+        <DateRangePcPopper
+          startDate={startDate}
+          endDate={endDate}
+          minDate={focusedInput === 'end' ? startDate : parseDate(min)}
+          maxDate={parseDate(max)}
+          onDateClick={handleDateClick}
+          defaultYear={defaultYear}
+          defaultMonth={defaultMonth}
+          focusedInput={focusedInput}
+          {...getPopperProps()}
+          portal={portal}
+        />
       ) : (
         <DateRangeMobileModal
           startDate={startDate}

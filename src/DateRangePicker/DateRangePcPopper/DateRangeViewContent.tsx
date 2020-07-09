@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import closest from 'dom-helpers/closest';
-import getOutlinedDateRange from './helpers/getOutlinedDateRange';
-import { CLASSES } from '../DatePicker/constants';
-import parseDate from '../DatePicker/parseDate';
+import getOutlinedDateRange from '../helpers/getOutlinedDateRange';
+import { CLASSES } from '../../DatePicker/constants';
+import parseDate from '../../DatePicker/parseDate';
 import DateRangeDatesView from './DateRangeDatesView';
 import HoverOutline from './HoverOutline';
 
