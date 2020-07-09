@@ -70,7 +70,7 @@ function isGreaterThen(value: Date, year: number, month: number, date: number) {
  * @param minDate
  * @param maxDate
  */
-function getDisabledDates(
+export function getDisabledDates(
   year: number,
   month: number,
   minDate?: Date,
@@ -108,6 +108,7 @@ export default function DateRangeDatesView(props: Props) {
     maxDate,
     onDateClick,
     outlinedDateRange,
+    ...rest
   } = props;
 
   const outlinedDate =
@@ -133,6 +134,7 @@ export default function DateRangeDatesView(props: Props) {
       className="sinoui-date-range-view__datesview"
       data-year={year}
       data-month={month + 1}
+      {...rest}
     >
       {outlinedDateRange && (
         <MemoDatesViewStatus
