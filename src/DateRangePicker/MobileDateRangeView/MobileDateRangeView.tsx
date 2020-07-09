@@ -127,12 +127,14 @@ export default function MobileDateRangeView(props: Props) {
   const currentYear = startDate
     ? startDate.getFullYear()
     : defaultYear ?? new Date().getFullYear();
+
   const currentMonth = startDate
     ? startDate.getMonth()
     : defaultMonth ?? new Date().getMonth();
 
   useLayoutEffect(() => {
-    const yearIndex = years.findIndex((year) => year === currentYear);
+    const totalYears = genYears();
+    const yearIndex = totalYears.findIndex((year) => year === currentYear);
     const monthIndex = MONTH_FULL_TITLES.findIndex(
       (month) => month === MONTH_FULL_TITLES[currentMonth],
     );
@@ -140,7 +142,7 @@ export default function MobileDateRangeView(props: Props) {
     if (selectedNodeRef.current) {
       selectedNodeRef.current.scrollToItem(index, 'start');
     }
-  }, [currentMonth, currentYear, years]);
+  }, [currentMonth, currentYear]);
 
   const handleDateClick = (_: React.MouseEvent<HTMLElement>, date: Date) => {
     if (focused === 'start') {
