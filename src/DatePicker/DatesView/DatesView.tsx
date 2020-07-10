@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import getDatesOfMonth from './getDatesOfMonth';
 import getEmptyDatesOfMonth from './getEmptyDatesOfMonth';
 import DateCell from './DateCell';
 import leadingZero from '../leadingZero';
+import dateCellStyle from './dateCellStyle';
 
 interface Props {
   /**
@@ -61,6 +62,7 @@ const DatesViewWrapper = styled.div`
     -ms-grid-column-span: 0px;
     grid-column-gap: 0px;
   }
+  ${dateCellStyle}
 `;
 
 export const getColumn = (index: number) => {
@@ -69,6 +71,7 @@ export const getColumn = (index: number) => {
 };
 
 export const getRow = (index: number) => Math.ceil(index / 7);
+const MemoDateCell = React.memo(DateCell);
 
 /**
  * 一个月的日网格视图
@@ -93,6 +96,15 @@ export default function DatesView(props: Props) {
       ? 7 - ((dates + emptyDates) % 7)
       : 0;
 
+  const handleDateCellClick = useCallback(
+    (event: React.MouseEvent<HTMLElement>, date: number) => {
+      if (onDateClick) {
+        onDateClick(event, new Date(year, month, date, 0, 0, 0));
+      }
+    },
+    [month, onDateClick, year],
+  );
+
   for (let i = 0; i < emptyDates; i += 1) {
     dateCells.push(<DateCell key={i} row={1} column={i + 1} />);
   }
@@ -100,7 +112,7 @@ export default function DatesView(props: Props) {
   for (let i = 0; i < dates; i += 1) {
     const dateStr = `${year}-${leadingZero(month + 1)}-${leadingZero(i + 1)}`;
     dateCells.push(
-      <DateCell
+      <MemoDateCell
         date={i + 1}
         key={dateStr}
         selected={selectedDates.includes(i + 1)}
@@ -108,21 +120,16 @@ export default function DatesView(props: Props) {
         outlined={outlinedDate === i + 1}
         column={getColumn(dateCells.length + 1)}
         row={getRow(dateCells.length + 1)}
-        onClick={
-          onDateClick
-            ? (event) =>
-                onDateClick(event, new Date(year, month, i + 1, 0, 0, 0))
-            : undefined
-        }
         data-date={dateStr}
+        onClick={handleDateCellClick}
       />,
     );
   }
 
   for (let i = 0; i < nextMonthDates; i += 1) {
-    const dateStr = `${year}-${leadingZero(month + 1)}-${leadingZero(i + 1)}`;
+    const dateStr = `${year}-${leadingZero(month + 2)}-${leadingZero(i + 1)}`;
     dateCells.push(
-      <DateCell
+      <MemoDateCell
         date={i + 1}
         key={dateStr}
         disabled
