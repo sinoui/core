@@ -52,7 +52,7 @@ export interface Props {
   /**
    * 弹窗关闭时的回调函数
    */
-  onRequestClose: () => void;
+  onRequestClose?: () => void;
   /**
    * 值变更时的回调函数
    */
@@ -159,7 +159,9 @@ export default function MobileDateRangeView(props: Props) {
         formatDate(selectedEnd) ?? '',
       ]);
     }
-    onRequestClose();
+    if (onRequestClose) {
+      onRequestClose();
+    }
   };
 
   const onClear = () => {
