@@ -253,3 +253,158 @@ describe('pc端', () => {
     expect(document.activeElement).toBe(getByPlaceholderText('结束时间'));
   });
 });
+
+describe('移动端', () => {
+  it('点击出现日期选择弹窗', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateRangePicker isPc={false} />
+      </ThemeProvider>,
+    );
+
+    const input = container.querySelector('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(input);
+    });
+
+    expect(
+      document.querySelector('.sinoui-date-range-mobile-view'),
+    ).toBeInTheDocument();
+  });
+
+  it('失去焦点，不关闭弹窗', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateRangePicker isPc={false} />
+      </ThemeProvider>,
+    );
+
+    const input = container.querySelector('.sinoui-base-input__input')!;
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    act(() => {
+      fireEvent.blur(input);
+    });
+
+    expect(
+      document.querySelector('.sinoui-date-range-mobile-view'),
+    ).toBeInTheDocument();
+  });
+
+  it('选择日期后，点击保存按钮,onChange被调用，弹窗关闭', () => {
+    const onChange = jest.fn();
+    const { container, getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateRangePicker
+          isPc={false}
+          defaultMonth={5}
+          defaultYear={2020}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    const input = container.querySelectorAll('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(input[0]);
+    });
+
+    act(() => {
+      fireEvent.click(
+        document
+          .querySelector('[data-date="2020-06-18"]')!
+          .querySelector('.sinoui-date-cell-content')!,
+      );
+    });
+
+    fireEvent.click(getByText('保存'));
+
+    expect(onChange).toBeCalledWith(['2020-06-18', '']);
+    expect(
+      document.querySelector('.sinoui-date-range-mobile-view'),
+    ).toBeFalsy();
+  });
+
+  it('选择日期后，点击关闭按钮,值不更新，弹窗关闭', () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateRangePicker
+          isPc={false}
+          defaultMonth={5}
+          defaultYear={2020}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    const input = container.querySelectorAll('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(input[0]);
+    });
+
+    act(() => {
+      fireEvent.click(
+        document
+          .querySelector('[data-date="2020-06-18"]')!
+          .querySelector('.sinoui-date-cell-content')!,
+      );
+    });
+
+    fireEvent.click(
+      document
+        .querySelector('.sinoui-date-range-view-toolbar')!
+        .querySelector('.sinoui-icon-button')!,
+    );
+
+    expect(onChange).not.toBeCalled();
+    expect(
+      document.querySelector('.sinoui-date-range-mobile-view'),
+    ).toBeFalsy();
+  });
+
+  it('日期选择后，点击清除按钮，清空选中值，不关闭弹窗', () => {
+    const onChange = jest.fn();
+    const { container, getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateRangePicker
+          isPc={false}
+          defaultMonth={5}
+          defaultYear={2020}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    const input = container.querySelectorAll('.sinoui-base-input')!;
+
+    act(() => {
+      fireEvent.click(input[0]);
+    });
+
+    act(() => {
+      fireEvent.click(
+        document
+          .querySelector('[data-date="2020-06-18"]')!
+          .querySelector('.sinoui-date-cell-content')!,
+      );
+    });
+
+    fireEvent.click(getByText('清除'));
+
+    expect(onChange).not.toBeCalled();
+    expect(getByText('开始时间')).toBeInTheDocument();
+    expect(getByText('结束时间')).toBeInTheDocument();
+    expect(
+      document.querySelector('.sinoui-date-range-mobile-view'),
+    ).toBeInTheDocument();
+  });
+});

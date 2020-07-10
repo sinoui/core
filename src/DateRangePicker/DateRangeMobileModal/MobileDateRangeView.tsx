@@ -199,7 +199,7 @@ export default function MobileDateRangeView(props: Props) {
   );
 
   return (
-    <MobileDateRangeViewWrapper>
+    <MobileDateRangeViewWrapper className="sinoui-date-range-mobile-view">
       <MobileDateRangeViewToolBar
         title={title ?? '设置日期'}
         startDate={selectedStart}
