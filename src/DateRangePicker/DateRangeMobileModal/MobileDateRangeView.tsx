@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState, useCallback } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import { FixedSizeList } from 'react-window';
 import memoize from 'memoize-one';
@@ -78,17 +78,12 @@ export const genYears = (
   return years;
 };
 
+/**
+ * 创建项目数据
+ */
 const createItemData = memoize(
-  ({
-    years,
-    startDate,
-    endDate,
-    showToday,
-    minDate,
-    maxDate,
-    onDateClick,
-  }) => ({
-    years,
+  (startDate, endDate, showToday, minDate, maxDate, onDateClick) => ({
+    years: genYears(),
     startDate,
     endDate,
     showToday,
@@ -97,6 +92,8 @@ const createItemData = memoize(
     onDateClick,
   }),
 );
+
+const MemoWeekTitleBar = React.memo(WeekTitleBar);
 
 /**
  * 移动端日期区间选择视图
@@ -122,7 +119,6 @@ export default function MobileDateRangeView(props: Props) {
   const [focused, setFocused] = useState(focusedInput);
 
   const selectedNodeRef = useRef<FixedSizeList>(null);
-  const years = genYears();
 
   const currentYear = startDate
     ? startDate.getFullYear()
@@ -132,25 +128,37 @@ export default function MobileDateRangeView(props: Props) {
     ? startDate.getMonth()
     : defaultMonth ?? new Date().getMonth();
 
-  useLayoutEffect(() => {
-    const totalYears = genYears();
-    const yearIndex = totalYears.findIndex((year) => year === currentYear);
+  /**
+   * 获取当前月索引位置
+   */
+  const getCurrentMonthIndex = () => {
+    const yearIndex = genYears().findIndex((year) => year === currentYear);
     const monthIndex = MONTH_FULL_TITLES.findIndex(
       (month) => month === MONTH_FULL_TITLES[currentMonth],
     );
-    const index = yearIndex * 12 + monthIndex;
-    if (selectedNodeRef.current) {
-      selectedNodeRef.current.scrollToItem(index, 'start');
-    }
-  }, [currentMonth, currentYear]);
-
-  const handleDateClick = (_: React.MouseEvent<HTMLElement>, date: Date) => {
-    if (focused === 'start') {
-      setSelectedStart(date);
-    } else {
-      setSelectedEnd(date);
-    }
+    return yearIndex * 12 + monthIndex;
   };
+  const currentMonthIndex = getCurrentMonthIndex();
+
+  useLayoutEffect(() => {
+    if (selectedNodeRef.current) {
+      selectedNodeRef.current.scrollToItem(currentMonthIndex, 'start');
+    }
+  }, [currentMonthIndex]);
+
+  /**
+   * 处理日期单元格点击事件
+   */
+  const handleDateClick = useCallback(
+    (_: React.MouseEvent<HTMLElement>, date: Date) => {
+      if (focused === 'start') {
+        setSelectedStart(date);
+      } else {
+        setSelectedEnd(date);
+      }
+    },
+    [focused],
+  );
 
   const onOk = () => {
     if (onChange) {
@@ -169,33 +177,13 @@ export default function MobileDateRangeView(props: Props) {
     setSelectedEnd(undefined);
   };
 
-  const itemData = createItemData({
-    years,
-    startDate: selectedStart,
-    endDate: selectedEnd,
+  const itemData = createItemData(
+    selectedStart,
+    selectedEnd,
     showToday,
     minDate,
     maxDate,
-    onDateClick: handleDateClick,
-  });
-
-  const renderDates = () => (
-    <>
-      <WeekTitleBar />
-      <MobileDateRangeViewContent>
-        <FixedSizeList
-          className="sinoui-date-range-mobile-year"
-          ref={selectedNodeRef}
-          height={window.innerHeight - 176}
-          itemCount={2400}
-          itemSize={336}
-          itemData={itemData}
-          width="100%"
-        >
-          {MemoMonthItem}
-        </FixedSizeList>
-      </MobileDateRangeViewContent>
-    </>
+    handleDateClick,
   );
 
   return (
@@ -210,7 +198,22 @@ export default function MobileDateRangeView(props: Props) {
         focused={focused}
         onFocusedChange={setFocused}
       />
-      {renderDates()}
+      <MemoWeekTitleBar />
+      <MobileDateRangeViewContent>
+        <FixedSizeList
+          className="sinoui-date-range-mobile-year"
+          ref={selectedNodeRef}
+          height={window.innerHeight - 176}
+          itemCount={2400}
+          itemSize={336}
+          itemData={itemData}
+          width="100%"
+          overscanCount={0}
+          initialScrollOffset={currentMonthIndex * 336}
+        >
+          {MemoMonthItem}
+        </FixedSizeList>
+      </MobileDateRangeViewContent>
     </MobileDateRangeViewWrapper>
   );
 }
