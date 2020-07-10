@@ -1,0 +1,101 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { render, cleanup, fireEvent } from '@testing-library/react';
+import { defaultTheme } from '@sinoui/theme';
+import 'jest-styled-components';
+import mem from '@sinoui/core/utils/mem';
+import MobileDateRangeView from '../MobileDateRangeView';
+
+const parseDate = mem((dateStr?: string) =>
+  dateStr ? new Date(Date.parse(`${dateStr}T00:00:00`)) : undefined,
+);
+
+afterEach(cleanup);
+
+describe('值与最大最小值', () => {
+  it('指定选中日期', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <MobileDateRangeView
+          startDate={parseDate('2020-06-14')}
+          endDate={parseDate('2020-07-12')}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(container.querySelector('[data-date="2020-06-14"]')).toHaveClass(
+      'sinoui-date-cell--selected',
+    );
+    expect(container.querySelector('[data-date="2020-07-12"]')).toHaveClass(
+      'sinoui-date-cell--selected',
+    );
+  });
+
+  it('设置最大最小值', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <MobileDateRangeView
+          defaultYear={2020}
+          defaultMonth={5}
+          minDate={parseDate('2020-06-14')}
+          maxDate={parseDate('2020-07-12')}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(container.querySelector('[data-date="2020-06-12"]')).toHaveClass(
+      'sinoui-date-cell--disabled',
+    );
+    expect(container.querySelector('[data-date="2020-07-13"]')).toHaveClass(
+      'sinoui-date-cell--disabled',
+    );
+  });
+
+  it('点击某个日期,该日期被选中', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <MobileDateRangeView
+          minDate={parseDate('2020-06-10')}
+          startDate={parseDate('2020-06-14')}
+          endDate={parseDate('2020-07-12')}
+        />
+      </ThemeProvider>,
+    );
+
+    fireEvent.click(
+      container
+        .querySelector('[data-date="2020-06-20"]')!
+        .querySelector('.sinoui-date-cell-content')!,
+    );
+
+    expect(container.querySelector('[data-date="2020-06-20"]')).toHaveClass(
+      'sinoui-date-cell--selected',
+    );
+  });
+});
+
+it('点击保存按钮，onChange被调用', () => {
+  const onChange = jest.fn();
+  const { container, getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeView
+        defaultYear={2020}
+        defaultMonth={5}
+        minDate={parseDate('2020-06-10')}
+        endDate={parseDate('2020-07-12')}
+        focusedInput="start"
+        onChange={onChange}
+      />
+    </ThemeProvider>,
+  );
+
+  fireEvent.click(
+    container
+      .querySelector('[data-date="2020-06-20"]')!
+      .querySelector('.sinoui-date-cell-content')!,
+  );
+  fireEvent.click(getByText('保存'));
+
+  expect(onChange).toBeCalledWith(['2020-06-20', '2020-07-12']);
+});
