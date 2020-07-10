@@ -91,7 +91,9 @@ function getMobileWeekStatusBarWidth(
   const { width, padding } = dateCellRect;
   const dateCellContentWidth = width - 2 * padding;
   const rangeLength = end.getDate() - start.getDate();
-  let statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1} + 24px)`;
+  let statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1} + ${
+    rangeLength < 6 ? 12 : 24
+  }px)`;
 
   if (isStart && isEnd) {
     statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength} + ${dateCellContentWidth}px)`;
