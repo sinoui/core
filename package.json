@@ -65,6 +65,7 @@
     "keycode": "^2.2.0",
     "lodash": "^4.17.15",
     "lodash-es": "^4.17.15",
+    "memoize-one": "^5.1.1",
     "polished": "^3.4.4",
     "popper-max-size-modifier": "^0.2.0",
     "react-dom": "^16.12.0",
@@ -72,6 +73,7 @@
     "react-icons": "^3.9.0",
     "react-textarea-autosize": "^7.1.2",
     "react-transition-group": "^4.4.1",
+    "react-window": "^1.8.5",
     "scroll-into-view-if-needed": "^2.2.25",
     "styled-components": "^5.1.0"
   },
@@ -107,7 +109,6 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "react-hooks-testing-library": "^0.6.0",
     "react-test-renderer": "^16.12.0",
-    "react-window": "^1.8.5",
     "ts-lib-tools": "^0.11.6",
     "typescript": "^3.9.3",
     "yarn-deduplicate": "^2.0.0"
