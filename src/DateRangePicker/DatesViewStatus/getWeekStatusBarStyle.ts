@@ -91,16 +91,19 @@ function getMobileWeekStatusBarWidth(
   const { width, padding } = dateCellRect;
   const dateCellContentWidth = width - 2 * padding;
   const rangeLength = end.getDate() - start.getDate();
-  let statusBarWidth = `calc((100% - 24px)/${7} * ${rangeLength + 1} + 24px)`;
-
+  let statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1} + 24px)`;
   if (isStart) {
-    statusBarWidth = `calc((100% - 24px)/${7} * ${rangeLength + 1} + 24px - ${
+    if (isEnd) {
+      statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength} + ${dateCellContentWidth}px)`;
+    } else {
+      statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1 / 2} +  ${
+        dateCellContentWidth / 2
+      }px + 12px)`;
+    }
+  } else if (isEnd) {
+    statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1 / 2} + 12px + ${
       dateCellContentWidth / 2
-    }px + 2px)`;
-  }
-
-  if (isEnd) {
-    statusBarWidth = `calc((100% - 24px)/${7} * ${rangeLength + 1} + 8px)`;
+    }px)`;
   }
 
   return statusBarWidth;
@@ -121,7 +124,7 @@ function getMobileWeekStatusBarLeft(
 ) {
   const [start] = range;
   const firstDay = start.getDay() === 0 ? 7 : start.getDay();
-  let left = `calc((100% - 24px)/${7} * ${firstDay - 1 / 2} - ${
+  let left = `calc((100% - 24px)/7 * ${firstDay - 1 / 2} - ${
     cellPadding * 2
   }px)`;
 
@@ -130,7 +133,7 @@ function getMobileWeekStatusBarLeft(
   }
 
   if (weekNo === 0) {
-    left = `calc((100% - 24px)/${7} * ${firstDay - 1 / 2} - 26px)`;
+    left = `calc((100% - 24px)/7 * ${firstDay - 1 / 2} - 26px)`;
   }
 
   return left;

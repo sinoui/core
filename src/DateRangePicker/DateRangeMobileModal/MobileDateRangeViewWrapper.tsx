@@ -14,7 +14,7 @@ const MobileDateRangeViewWrapper = styled(Paper).withConfig({
 
     p {
       height: 48px;
-      width: 48px;
+      width: 100%;
     }
   }
 
