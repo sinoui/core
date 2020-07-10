@@ -99,3 +99,27 @@ it('点击保存按钮，onChange被调用', () => {
 
   expect(onChange).toBeCalledWith(['2020-06-20', '2020-07-12']);
 });
+
+it('选择完开始日期，自动跳转到选择结束日期', () => {
+  const { container, getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeView
+        defaultYear={2020}
+        defaultMonth={5}
+        minDate={parseDate('2020-06-10')}
+        focusedInput="start"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByText('开始时间')).toHaveStyle('opacity:1');
+  expect(getByText('结束时间')).toHaveStyle('opacity:0.7');
+  fireEvent.click(
+    container
+      .querySelector('[data-date="2020-06-20"]')!
+      .querySelector('.sinoui-date-cell-content')!,
+  );
+
+  expect(getByText('6月20日')).toHaveStyle('opacity:0.7');
+  expect(getByText('结束时间')).toHaveStyle('opacity:1');
+});

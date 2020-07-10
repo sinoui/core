@@ -153,6 +153,7 @@ export default function MobileDateRangeView(props: Props) {
     (_: React.MouseEvent<HTMLElement>, date: Date) => {
       if (focused === 'start') {
         setSelectedStart(date);
+        setFocused('end');
       } else {
         setSelectedEnd(date);
       }
@@ -175,6 +176,9 @@ export default function MobileDateRangeView(props: Props) {
   const onClear = () => {
     setSelectedStart(undefined);
     setSelectedEnd(undefined);
+    if (focused !== 'start') {
+      setFocused('start');
+    }
   };
 
   const itemData = createItemData(
