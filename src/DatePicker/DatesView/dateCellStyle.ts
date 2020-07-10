@@ -45,6 +45,7 @@ const dateCellStyle = css`
     outline: none;
     margin: 2px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     transition: ${({ theme }) =>
       theme.transitions.create(['background-color', 'color', 'border-color'])};
 
@@ -54,6 +55,11 @@ const dateCellStyle = css`
     :hover {
       background-color: ${({ theme }) =>
         adjustOpacity(0.04, theme.palette.text.primary)};
+
+      
+      @media(hoer:none) {
+        background-color: none;
+      }
     }
   }
 

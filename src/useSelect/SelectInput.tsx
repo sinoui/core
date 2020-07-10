@@ -58,6 +58,7 @@ const SelectInputLayout = styled.div<{
   cursor: ${({ disabled, readOnly }) =>
     disabled || readOnly ? 'inherit' : 'pointer'};
   width: 0;
+  -webkit-tap-highlight-color: transparent;
   ${singleLineTextCss}
 
   & + .sinoui-input-adornment--end > .sinoui-svg-icon {
