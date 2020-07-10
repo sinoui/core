@@ -64,6 +64,7 @@ const dateCellStyle = css`
   .${CLASSES.dateCell}--disabled .${CLASSES.dateCellContent} {
     cursor: default;
     pointer-events: none;
+    color: ${({ theme }) => theme.palette.text.disabled};
     :hover {
       background-color: none;
     }
