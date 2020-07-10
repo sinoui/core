@@ -137,7 +137,9 @@ function getMobileWeekStatusBarLeft(
 
   if (!isStart) {
     if (weekNo === 0) {
-      left = `calc((100% - 24px)/7 * ${firstDay - 1} + 12px)`;
+      left = `calc((100% - 24px)/7 * ${firstDay - 1} + ${
+        firstDay === 1 ? 0 : 12
+      }px)`;
     } else {
       left = '0px';
     }
