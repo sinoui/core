@@ -107,7 +107,7 @@ export default function MobileDateRangeView(props: Props) {
     defaultYear,
     defaultMonth,
     showToday = true,
-    minDate,
+    minDate: min,
     maxDate,
     focusedInput,
     onRequestClose,
@@ -117,6 +117,8 @@ export default function MobileDateRangeView(props: Props) {
   const [selectedStart, setSelectedStart] = useState(startDate);
   const [selectedEnd, setSelectedEnd] = useState(endDate);
   const [focused, setFocused] = useState(focusedInput);
+
+  const minDate = focused === 'end' ? selectedStart : min;
 
   const selectedNodeRef = useRef<FixedSizeList>(null);
 
