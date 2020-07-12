@@ -93,6 +93,7 @@ const CalendarViewDemo = () => {
         minDate={new Date(2020, 4, 1)}
         maxDate={new Date(2020, 7, 20)}
         startOfWeek={1}
+        isPc
       />
       <Body1>当前选中日期:{formatDate(selectedDate)}</Body1>
     </>
@@ -127,7 +128,7 @@ const StyledDatepicker = styled(DatePicker)`
 `;
 
 function DatePickerDemo(props: any) {
-  const [value, setValue] = useState<string | undefined>('2020-06-05');
+  const [value, setValue] = useState<string | undefined>('sdf');
   return (
     <StyledDatepicker
       value={value}
@@ -196,5 +197,17 @@ export const 日期范围 = () => (
 export const 清除功能 = () => (
   <StoryLayout>
     <DatePickerDemo label="日期选择" min="2020-06-04" allowClear />
+  </StoryLayout>
+);
+
+export const pc形态 = () => (
+  <StoryLayout>
+    <DatePickerDemo isPc />
+  </StoryLayout>
+);
+
+export const mobile形态 = () => (
+  <StoryLayout>
+    <DatePickerDemo isPc={false} />
   </StoryLayout>
 );

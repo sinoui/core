@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from '@sinoui/core/Modal';
+import type { ModalProps } from '@sinoui/core/Modal';
 import Fade from '../Fade';
 import DialogContainer, { DialogContainerProps } from './DialogContainer';
 
@@ -51,6 +52,7 @@ export interface DialogProps extends DialogContainerProps {
    * 自定义样式
    */
   style?: React.CSSProperties;
+  modalProps?: ModalProps;
 }
 
 function Dialog(props: DialogProps) {
@@ -64,6 +66,7 @@ function Dialog(props: DialogProps) {
     onBackdropClick,
     onRequestClose,
     onClose,
+    modalProps,
     ...rest
   } = props;
   const handleClose = (
@@ -84,6 +87,7 @@ function Dialog(props: DialogProps) {
       open={open}
       center
       onClose={handleClose}
+      {...modalProps}
     >
       <Transition timeout={transitionDuration} appear in={open}>
         <DialogContainer onRequestClose={handleClose} {...rest} />

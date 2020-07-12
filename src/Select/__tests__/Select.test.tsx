@@ -167,3 +167,44 @@ it('只读时点击不弹窗', () => {
   );
   expect(optionList).toBeFalsy();
 });
+
+it('allowClear = false', () => {
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Select
+        portal={false}
+        autoCompleteProps={{
+          clearIcon,
+        }}
+        value="1"
+        allowClear={false}
+      >
+        <Option value="1">选项一</Option>
+        <Option value="2">选项二</Option>
+        <Option value="3">选项三</Option>
+      </Select>
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeFalsy();
+});
+
+it('open = true', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Select portal={false} open>
+        <Option value="1">选项一</Option>
+        <Option value="2">选项二</Option>
+        <Option value="3">选项三</Option>
+      </Select>
+    </ThemeProvider>,
+  );
+
+  expect(
+    container.querySelector('.sinoui-auto-complete__option-list'),
+  ).toBeTruthy();
+});

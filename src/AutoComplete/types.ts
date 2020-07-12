@@ -5,6 +5,16 @@ export interface RenderOption {
   index: number;
 }
 
+/**
+ * 自动完成组件关闭弹窗原因
+ */
+export enum AutoCompleteCloseReason {
+  selectOption = 'select-option',
+  blur = 'blur',
+  escape = 'escape',
+  popperIndicatorClick = 'popper-indicator-click',
+}
+
 export interface Props {
   /**
    * 可展示的数据

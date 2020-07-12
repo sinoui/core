@@ -1,11 +1,17 @@
+/* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable no-unused-expressions */
 import { render, cleanup, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import React, { useEffect } from 'react';
 import { Instance } from '@popperjs/core';
+import { ThemeProvider } from 'styled-components';
+import defaultTheme from '@sinoui/theme/defaultTheme';
 import Popper from './Popper';
+import Modal from '../Modal';
 
 afterEach(cleanup);
+
+jest.useFakeTimers();
 
 it('展现弹出提示', () => {
   const referenceElementRef = React.createRef<HTMLDivElement>();
@@ -355,4 +361,112 @@ it('重绘组件时，更新popper', () => {
   );
 
   expect(spy).toBeCalledTimes(2);
+});
+
+it('在Modal上弹出Popper，并自动获取焦点', () => {
+  const buttonRef = React.createRef<HTMLButtonElement>();
+  const { getByTestId, rerender } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Modal open>
+        <div>
+          <button type="button" ref={buttonRef}>
+            打开弹层
+          </button>
+          <Popper open={false} referenceElement={buttonRef}>
+            <input autoFocus data-testid="input" />
+          </Popper>
+        </div>
+      </Modal>
+    </ThemeProvider>,
+  );
+
+  jest.runAllTimers();
+
+  rerender(
+    <ThemeProvider theme={defaultTheme}>
+      <Modal open>
+        <div>
+          <button type="button" ref={buttonRef}>
+            打开弹层
+          </button>
+          <Popper open referenceElement={buttonRef}>
+            <input autoFocus data-testid="input" />
+          </Popper>
+        </div>
+      </Modal>
+    </ThemeProvider>,
+  );
+
+  jest.runAllTimers();
+
+  expect(document.activeElement).toBe(getByTestId('input'));
+});
+
+it('传送门情况下的默认z-index', () => {
+  const referenceElement = document.createElement('div');
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Popper open referenceElement={referenceElement} data-testid="popper">
+        <input />
+      </Popper>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('popper')).toHaveStyle('z-index: 1300');
+});
+
+it('指定z-index', () => {
+  const referenceElement = document.createElement('div');
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Popper
+        open
+        referenceElement={referenceElement}
+        data-testid="popper"
+        zIndex={100}
+      >
+        <input />
+      </Popper>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('popper')).toHaveStyle('z-index: 100');
+});
+
+it('非传送门，没有默认的z-index', () => {
+  const referenceElement = document.createElement('div');
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Popper
+        open
+        referenceElement={referenceElement}
+        data-testid="popper"
+        portal={false}
+      >
+        <input />
+      </Popper>
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('popper')).not.toHaveStyle('z-index: 1300');
+});
+
+it('autoFocus', () => {
+  const referenceElement = document.createElement('div');
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Popper
+        open
+        referenceElement={referenceElement}
+        data-testid="popper"
+        zIndex={100}
+        autoFocus
+        tabIndex={0}
+      >
+        <input />
+      </Popper>
+    </ThemeProvider>,
+  );
+
+  expect(document.activeElement).toBe(getByTestId('popper'));
 });

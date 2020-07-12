@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react';
+import React, { createRef } from 'react';
 import { render, act, fireEvent, cleanup } from '@testing-library/react';
 import { defaultTheme } from '@sinoui/theme';
 import { ThemeProvider } from 'styled-components';
@@ -8,7 +8,7 @@ import 'jest-styled-components';
 import Popper from '@sinoui/core/Popper';
 import Collapse from '@sinoui/core/CollapseNew';
 import AutoComplete, { AutoCompleteChangeReason } from '../AutoComplete';
-import type { RenderTagsProps } from '../types';
+import { RenderTagsProps, AutoCompleteCloseReason } from '../types';
 
 afterEach(cleanup);
 
@@ -374,6 +374,51 @@ it('点击选项时，阻止mousedown的默认行为', () => {
   expect(preventDefault).toBeCalled();
 });
 
+it('popperFocusable = true，时，不阻止mousedown', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const preventDefault = jest.fn();
+  const FakePopper = (props: any) => {
+    const handleMouseDown = (event: React.MouseEvent) => {
+      event.persist();
+      if (props.onMouseDown) {
+        props.onMouseDown({
+          ...event,
+          preventDefault,
+        });
+      }
+    };
+
+    return (
+      <Popper {...props} onMouseDown={handleMouseDown} data-testid="popper" />
+    );
+  };
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnEscape={false}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        PopperComponent={FakePopper}
+        portal={false}
+        popperFocusable
+      />
+    </ThemeProvider>,
+  );
+
+  act(() => {
+    fireEvent.click(getByTestId('text-input').querySelector('input')!);
+  });
+
+  act(() => {
+    fireEvent.mouseDown(getByTestId('popper'));
+  });
+
+  expect(preventDefault).not.toBeCalled();
+});
+
 it('定制弹窗图标', () => {
   const renderInput = (props: any) => (
     <TextInput {...props} data-testid="text-input" />
@@ -486,6 +531,106 @@ it('无值时，不显示清除按钮', () => {
         getOptionLabel={(_) => _.title}
         clearIcon={clearIcon}
         portal={false}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeFalsy();
+});
+
+it('disabled状态下，不显示清除按钮', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnEscape={false}
+        value={options[0]}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+        portal={false}
+        disabled
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeFalsy();
+});
+
+it('readOnly状态下，不显示清除按钮', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnEscape={false}
+        value={options[0]}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+        portal={false}
+        readOnly
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeFalsy();
+});
+
+it('值为空数组的情况下下，不显示清除按钮', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnEscape={false}
+        value={[]}
+        multiple
+        options={options}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+        portal={false}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(queryByTestId('custom-close-icon')).toBeFalsy();
+});
+
+it('allowClear===false,不显示清除按钮', () => {
+  const renderInput = (props: any) => (
+    <TextInput {...props} data-testid="text-input" />
+  );
+  const clearIcon = (
+    <div data-testid="custom-close-icon">custom-close-icon</div>
+  );
+  const { queryByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        closeOnEscape={false}
+        value="123"
+        options={options}
+        getOptionLabel={(_) => _.title}
+        clearIcon={clearIcon}
+        portal={false}
+        allowClear={false}
       />
     </ThemeProvider>,
   );
@@ -2245,4 +2390,243 @@ it('closeOnBlur===false，失去焦点，不关闭弹窗', () => {
   expect(
     container.querySelector('.sinoui-auto-complete__option-list'),
   ).toBeInTheDocument();
+});
+
+describe('open状态受控', () => {
+  it('失去焦点，调用关闭回调函数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onClose = jest.fn();
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          open
+          onClose={onClose}
+          portal={false}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+
+    const textInput = getByTestId('text-input');
+    const input = textInput.querySelector('input')!;
+
+    act(() => {
+      fireEvent.blur(input);
+    });
+
+    expect(onClose).toBeCalledWith(AutoCompleteCloseReason.blur);
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+  });
+
+  it('按下esc，调用关闭回调函数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onClose = jest.fn();
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          open
+          onClose={onClose}
+          portal={false}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = getByTestId('text-input');
+    const input = textInput.querySelector('input')!;
+
+    act(() => {
+      fireEvent.keyDown(input, { key: 'Escape' });
+    });
+
+    expect(onClose).toBeCalledWith(AutoCompleteCloseReason.escape);
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+  });
+
+  it('选中选项，调用关闭回调函数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onClose = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          open
+          onClose={onClose}
+          portal={false}
+        />
+      </ThemeProvider>,
+    );
+
+    act(() => {
+      const firstItem = container.querySelector('.sinoui-list-item')!;
+      fireEvent.click(firstItem);
+    });
+
+    expect(onClose).toBeCalledWith(AutoCompleteCloseReason.selectOption);
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+  });
+
+  it('点击指示图标，调用关闭回调函数', () => {
+    const renderInput = (props: any) => (
+      <TextInput {...props} data-testid="text-input" />
+    );
+    const onClose = jest.fn();
+    const { getByTestId, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <AutoComplete
+          renderInput={renderInput}
+          options={options}
+          getOptionLabel={(_) => _.title}
+          open
+          onClose={onClose}
+          portal={false}
+        />
+      </ThemeProvider>,
+    );
+
+    const popupIndicator = getByTestId('text-input').querySelector(
+      '.sinoui-auto-complete__popup-indicator',
+    )!;
+
+    act(() => {
+      fireEvent.click(popupIndicator);
+    });
+
+    expect(onClose).toBeCalledWith(
+      AutoCompleteCloseReason.popperIndicatorClick,
+    );
+    expect(
+      container.querySelector('.sinoui-auto-complete__option-list'),
+    ).toBeInTheDocument();
+  });
+});
+
+it('textInputRef & popperRef', () => {
+  const renderInput = (props: any) => (
+    <TextInput
+      {...props}
+      wrapperProps={
+        {
+          'data-testid': 'text-input',
+        } as any
+      }
+    />
+  );
+  const textInputRef = createRef<HTMLInputElement>();
+  const popperRef = createRef<HTMLDivElement>();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        open
+        portal={false}
+        textInputRef={textInputRef}
+        popperRef={popperRef}
+        popperComponentProps={
+          {
+            'data-testid': 'popper',
+          } as any
+        }
+      />
+    </ThemeProvider>,
+  );
+
+  expect(textInputRef.current).toBe(getByTestId('text-input'));
+  expect(popperRef.current).toBe(getByTestId('popper'));
+});
+
+it('placement', () => {
+  let popperProps: any;
+  const PopperComponent = (props: any) => {
+    popperProps = props;
+    return <div />;
+  };
+
+  const renderInput = (props: any) => (
+    <TextInput
+      {...props}
+      wrapperProps={
+        {
+          'data-testid': 'text-input',
+        } as any
+      }
+    />
+  );
+
+  render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        open
+        portal={false}
+        PopperComponent={PopperComponent}
+        placement="bottom-start"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(popperProps.placement).toBe('bottom-start');
+});
+
+it('popperComponentProps', () => {
+  let popperProps: any;
+  const PopperComponent = (props: any) => {
+    popperProps = props;
+    return <div />;
+  };
+
+  const renderInput = (props: any) => (
+    <TextInput
+      {...props}
+      wrapperProps={
+        {
+          'data-testid': 'text-input',
+        } as any
+      }
+    />
+  );
+
+  render(
+    <ThemeProvider theme={defaultTheme}>
+      <AutoComplete
+        renderInput={renderInput}
+        options={options}
+        getOptionLabel={(_) => _.title}
+        open
+        portal={false}
+        PopperComponent={PopperComponent}
+        popperComponentProps={{
+          placement: 'bottom-start',
+        }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(popperProps.placement).toBe('bottom-start');
 });

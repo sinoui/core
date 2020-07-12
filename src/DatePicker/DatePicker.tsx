@@ -6,12 +6,14 @@ import styled from 'styled-components';
 import Popper from '@sinoui/core/Popper';
 import Modal from '@sinoui/core/Modal';
 import useSelect from '@sinoui/core/useSelect';
+import type { PopperProps } from '@sinoui/core/Popper';
 import CalendarView from './CalendarView';
 import InputAdornment from '../InputAdornment';
 import useIsPc from './useIsPc';
 import formatDate from './formatDate';
 import type { CalendarViewProps } from './CalendarView';
-import parseDate from './parseDate';
+import isNaN from '../utils/isNaN';
+import mem from '../utils/mem';
 
 interface Props
   extends Omit<
@@ -50,10 +52,14 @@ interface Props
    * 是否将弹出内容以传送门的方式渲染。默认为`true`。
    */
   portal?: boolean;
+  /**
+   * 给弹窗设置属性。
+   */
+  popperProps?: PopperProps;
 }
 
 const StyledPopper = styled(Popper)`
-  z-index: 2;
+  z-index: ${({ theme }) => theme.zIndex.popover};
 `;
 
 const CalendarModalContent = React.forwardRef<
@@ -85,6 +91,14 @@ const CalendarModalContent = React.forwardRef<
   );
 });
 
+const parseDate = mem((dateStr?: string) =>
+  dateStr && !isNaN(Date.parse(dateStr))
+    ? new Date(Date.parse(dateStr))
+    : undefined,
+);
+
+const isValidateDate = (value?: string) => value && !isNaN(Date.parse(value));
+
 /**
  * 日期选择组件
  * @param props
@@ -97,14 +111,16 @@ export default function DatePicker(props: Props) {
     isPc: isPcProps,
     min,
     max,
-    modalTitle = `设置${label}`,
+    modalTitle = `设置${label || '日期'}`,
     renderValue,
     portal,
+    popperProps,
   } = props;
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
   const date = parseDate(value);
-  const inputValue = renderValue ? renderValue(date) : value;
+  const inputValue = isValidateDate(value) ? value : '';
+  const inputRenderValue = renderValue ? renderValue(date) : inputValue;
   const {
     getModalProps,
     getPopperProps,
@@ -113,7 +129,7 @@ export default function DatePicker(props: Props) {
   } = useSelect({
     ...props,
     isRenderWithPopper: isPc,
-    renderValue: inputValue,
+    renderValue: inputRenderValue,
   });
 
   /**
@@ -139,7 +155,7 @@ export default function DatePicker(props: Props) {
       <TextInput
         {...getTextInputProps()}
         baseClassName="sinoui-date-picker"
-        value={value}
+        value={inputValue}
         onClear={handleClear}
         endAdornment={
           <InputAdornment position="end" disablePointerEvents>
@@ -148,12 +164,13 @@ export default function DatePicker(props: Props) {
         }
       />
       {isPc ? (
-        <StyledPopper {...getPopperProps()} portal={portal}>
+        <StyledPopper {...getPopperProps()} portal={portal} {...popperProps}>
           <CalendarView
             value={date}
             onChange={handleCalendarChange}
             minDate={parseDate(min)}
             maxDate={parseDate(max)}
+            isPc={isPc}
           />
         </StyledPopper>
       ) : (
@@ -165,6 +182,7 @@ export default function DatePicker(props: Props) {
             minDate={parseDate(min)}
             maxDate={parseDate(max)}
             title={modalTitle}
+            isPc={isPc}
           />
         </Modal>
       )}

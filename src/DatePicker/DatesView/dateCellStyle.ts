@@ -2,30 +2,6 @@ import { css } from 'styled-components';
 import adjustOpacity from '@sinoui/core/utils/adjustOpacity';
 import { CLASSES } from '../constants';
 
-const pcStyle = css`
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    height: 28px;
-    width: 28px;
-    font-size: 12px;
-    .sinoui-date-cell-ripple-layout,
-    .sinoui-date-cell-ripple {
-      height: 28px;
-      width: 28px;
-    }
-  }
-`;
-
-const mobileStyle = css`
-  height: 36px;
-  width: 36px;
-
-  .sinoui-date-cell-ripple-layout,
-  .sinoui-date-cell-ripple {
-    height: 36px;
-    width: 36px;
-  }
-`;
-
 /**
  * 日期单元格样式
  */
@@ -49,8 +25,7 @@ const dateCellStyle = css`
     transition: ${({ theme }) =>
       theme.transitions.create(['background-color', 'color', 'border-color'])};
 
-    ${mobileStyle}
-    ${pcStyle}
+   
 
     :hover {
       background-color: ${({ theme }) =>

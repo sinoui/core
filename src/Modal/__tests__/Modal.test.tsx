@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 /* eslint-disable jsx-a11y/tabindex-no-positive */
@@ -513,6 +514,31 @@ describe('keyboard', () => {
     });
 
     expect(onEscapeKeydown).toBeCalled();
+  });
+
+  it('阻止将escape键按下事件冒泡给上层元素', () => {
+    const onKeydown = jest.fn();
+    const onRequestClose = jest.fn();
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <div onKeyDown={onKeydown}>
+          <Modal open data-testid="modal" onRequestClose={onRequestClose}>
+            <Grow in>
+              <div data-testid="content" />
+            </Grow>
+          </Modal>
+        </div>
+      </ThemeProvider>,
+    );
+
+    act(() => {
+      fireEvent.keyDown(getByTestId('modal'), {
+        key: 'Escape',
+        code: 'Escape',
+      });
+    });
+
+    expect(onKeydown).not.toBeCalled();
   });
 });
 

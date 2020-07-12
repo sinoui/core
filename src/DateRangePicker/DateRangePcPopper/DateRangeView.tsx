@@ -78,8 +78,8 @@ export default function DateRangeView(props: Props) {
         onChange={(newYar, newMonth) => setYearMonth([newYar, newMonth])}
       />
       <ContentWrapper className="sinoui-date-range-view__week-title">
-        <WeekTitleBar />
-        <WeekTitleBar />
+        <WeekTitleBar isPc />
+        <WeekTitleBar isPc />
       </ContentWrapper>
       <DateRangeViewContent
         {...rest}

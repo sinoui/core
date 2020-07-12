@@ -39,13 +39,9 @@ interface Props {
    */
   onClick?: (event: React.MouseEvent<HTMLElement>, date: number) => void;
   /**
-   * 鼠标移入时的回调函数
+   * 是否是PC设备
    */
-  onMouseEnter?: (event: React.MouseEvent<HTMLElement>) => void;
-  /**
-   * 鼠标移出时的回调函数
-   */
-  onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void;
+  isPc?: boolean;
 }
 
 /**
@@ -61,6 +57,7 @@ export default function DateCell(props: Props) {
     onClick,
     row,
     column,
+    isPc,
     ...rest
   } = props;
   const ref = useRipple<HTMLSpanElement>({

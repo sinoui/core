@@ -76,6 +76,10 @@ export interface Props {
    * 日历选择标题
    */
   title?: string;
+  /**
+   * 是否是pc形态
+   */
+  isPc?: boolean;
 }
 
 function isSameMonth(
@@ -139,11 +143,13 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     onClear,
     skipMonthsView: skipMonthsViewProp,
     title,
+    isPc: isPcProp,
     ...rest
   },
   ref,
 ) {
-  const isPc = useIsPc();
+  const nativePc = useIsPc();
+  const isPc = isPcProp ?? nativePc;
   const [valueState, setValueState] = useState(value);
   const [[year, month], setYearMonth] = useState(() => {
     return value
@@ -182,11 +188,12 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
 
   const renderDates = () => (
     <>
-      <WeekTitleBar startOfWeek={startOfWeek} />
+      <WeekTitleBar startOfWeek={startOfWeek} isPc={isPc} />
       <div className="sinoui-calendar-view__datesview">
         <DatesView
           year={year}
           month={month}
+          isPc={isPc}
           showNextMonthDates={isPc}
           selectedDates={selectedDates}
           onDateClick={handleDateClick}
@@ -210,6 +217,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
       selectedYear={year}
       onYearSelect={handleYearSelect}
       className="sinoui-calendar-view__yearsview"
+      isPc={isPc}
     />
   );
 
@@ -225,6 +233,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
       selectedMonth={month}
       onMonthSelect={handleMonthSelect}
       className="sinoui-calendar-view__monthsview"
+      isPc={isPc}
     />
   );
 
@@ -234,7 +243,12 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
   ]);
 
   return (
-    <CalendarViewWrapper {...rest} className="sinoui-calendar-view" ref={ref}>
+    <CalendarViewWrapper
+      {...rest}
+      className="sinoui-calendar-view"
+      ref={ref}
+      $isPc={isPc}
+    >
       {!isPc && (
         <CalendarViewToolbar
           title={title || '设置日期'}

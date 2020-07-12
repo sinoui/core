@@ -10,9 +10,11 @@ import React, {
 import { createPopper, Modifier, OptionsGeneric } from '@popperjs/core';
 import type { Instance, Placement, VirtualElement } from '@popperjs/core';
 import ReactDOM from 'react-dom';
+import { useTheme } from 'styled-components';
 import type { ContainerElement } from '../utils/getContainerElement';
 import getContainerElement from '../utils/getContainerElement';
 import useMultiRefs from '../utils/useMultiRefs';
+import ModalManager from '../Modal/ModalManager';
 
 interface TransitionProps {
   in: boolean;
@@ -62,6 +64,22 @@ export interface Props
    * 传给popper的配置。
    */
   popperOptions?: Partial<OptionsGeneric<Partial<Modifier<any, any>>>>;
+  /**
+   * 模态框管理器
+   */
+  modalManager?: ModalManager;
+  /**
+   * 自动获取焦点
+   */
+  autoFocus?: boolean;
+  /**
+   * 设置焦点不离开模态框
+   */
+  enforceFocus?: boolean;
+  /**
+   * 指定弹层的z-index。如果是以portal的方式弹出的，则z-index默认为1300。
+   */
+  zIndex?: number;
 }
 
 const DEFAULT_STYLE: React.CSSProperties = {
@@ -87,6 +105,10 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
     modifiers,
     popperOptions,
     style,
+    modalManager = ModalManager.defaultModalManager(),
+    autoFocus = false,
+    enforceFocus = false,
+    zIndex: zIndexProp,
     ...rest
   },
   ref,
@@ -99,9 +121,17 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
   const transition =
     React.isValidElement(children) && children.props.in != null;
   const isShow = open || (transition && !exited);
-  const computedStyle = useMemo(() => ({ ...DEFAULT_STYLE, ...style }), [
-    style,
-  ]);
+  const theme = useTheme();
+  const zIndex = portal ? zIndexProp ?? theme?.zIndex?.modal : zIndexProp;
+  const computedStyle = useMemo(
+    () => ({
+      zIndex,
+      ...DEFAULT_STYLE,
+      ...style,
+    }),
+    [zIndex, style],
+  );
+  const containerElement = getContainerElement(container);
 
   useLayoutEffect(() => {
     const tooltip = tooltipRef.current;
@@ -132,6 +162,29 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
     // eslint-disable-next-line no-unused-expressions
     popperRef.current?.update();
   });
+
+  useEffect(() => {
+    const tooltip = tooltipRef.current;
+    if (!isShow || !portal || !tooltip) {
+      return undefined;
+    }
+    modalManager.add({
+      node: tooltip,
+      content: tooltip,
+      container: containerElement,
+      autoFocus,
+      enforceFocus,
+    });
+    return () => modalManager.remove(tooltip);
+  }, [
+    autoFocus,
+    containerElement,
+    enforceFocus,
+    isShow,
+    modalManager,
+    open,
+    portal,
+  ]);
 
   const handleEnter = useCallback(() => {
     setExited(false);
@@ -171,9 +224,7 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
     </div>
   );
 
-  return portal
-    ? ReactDOM.createPortal(content, getContainerElement(container))
-    : content;
+  return portal ? ReactDOM.createPortal(content, containerElement) : content;
 });
 
 export default Popper;
