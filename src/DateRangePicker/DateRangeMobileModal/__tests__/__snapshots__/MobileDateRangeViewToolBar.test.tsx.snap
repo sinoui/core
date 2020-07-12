@@ -58,14 +58,14 @@ exports[`快照测试 渲染 1`] = `
     type="h5"
   >
     <span
-      className="sc-Axmtr kBNaiO"
+      className="sc-Axmtr iyjFes"
       onClick={[Function]}
     >
       开始时间
     </span>
     -
     <span
-      className="sc-Axmtr kBNaiO"
+      className="sc-Axmtr iyjFes"
       onClick={[Function]}
     >
       结束时间

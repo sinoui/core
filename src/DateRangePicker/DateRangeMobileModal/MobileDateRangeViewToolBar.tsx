@@ -71,6 +71,7 @@ const MobileDateRangeViewToolBarAction = styled.div`
 
 const DateWrapper = styled.span<{ $focused?: boolean }>`
   opacity: ${({ $focused }) => ($focused ? 1 : 0.7)};
+  cursor: pointer;
 `;
 
 /**
