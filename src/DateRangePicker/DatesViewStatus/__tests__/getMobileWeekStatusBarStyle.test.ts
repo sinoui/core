@@ -7,21 +7,15 @@ import getMobileWeekStatusBarStyle, {
 } from '../getMobileWeekStatusBarStyle';
 
 it('获取周状态条高度', () => {
-  expect(getWeekStatusBarHeight({ width: 48, height: 48, padding: 4 })).toBe(
-    40,
-  );
+  expect(getWeekStatusBarHeight()).toBe(40);
 });
 
 it('获取周状态条的垂直位置', () => {
-  expect(getWeekStatusBarTop(2, { width: 48, height: 48, padding: 4 })).toBe(
-    148,
-  );
+  expect(getWeekStatusBarTop(2)).toBe(148);
 });
 
 it('获取周状态条的边框半径', () => {
-  expect(
-    getWeekStatusBarBorderRadius({ width: 48, height: 48, padding: 4 }),
-  ).toBe(20);
+  expect(getWeekStatusBarBorderRadius()).toBe(20);
 });
 
 describe('获取周状态条的宽度', () => {
@@ -29,11 +23,6 @@ describe('获取周状态条的宽度', () => {
     expect(
       getMobileWeekStatusBarWidth(
         [new Date(2020, 5, 2), new Date(2020, 5, 6)],
-        {
-          width: 48,
-          height: 48,
-          padding: 4,
-        },
         0,
         true,
         true,
@@ -45,11 +34,6 @@ describe('获取周状态条的宽度', () => {
     expect(
       getMobileWeekStatusBarWidth(
         [new Date(2020, 5, 1), new Date(2020, 5, 6)],
-        {
-          width: 48,
-          height: 48,
-          padding: 4,
-        },
         0,
         false,
         true,
@@ -61,11 +45,6 @@ describe('获取周状态条的宽度', () => {
     expect(
       getMobileWeekStatusBarWidth(
         [new Date(2020, 6, 1), new Date(2020, 6, 3)],
-        {
-          width: 48,
-          height: 48,
-          padding: 4,
-        },
         0,
         false,
         true,
@@ -77,11 +56,6 @@ describe('获取周状态条的宽度', () => {
     expect(
       getMobileWeekStatusBarWidth(
         [new Date(2020, 4, 29), new Date(2020, 4, 31)],
-        {
-          width: 48,
-          height: 48,
-          padding: 4,
-        },
         0,
         true,
         false,
@@ -92,11 +66,6 @@ describe('获取周状态条的宽度', () => {
     expect(
       getMobileWeekStatusBarWidth(
         [new Date(2020, 5, 29), new Date(2020, 5, 30)],
-        {
-          width: 48,
-          height: 48,
-          padding: 4,
-        },
         0,
         true,
         false,
@@ -109,11 +78,6 @@ describe('获取周状态条的宽度', () => {
     expect(
       getMobileWeekStatusBarWidth(
         [new Date(2020, 5, 3), new Date(2020, 5, 7)],
-        {
-          width: 48,
-          height: 48,
-          padding: 4,
-        },
         0,
         true,
         false,
@@ -125,11 +89,6 @@ describe('获取周状态条的宽度', () => {
     expect(
       getMobileWeekStatusBarWidth(
         [new Date(2020, 5, 8), new Date(2020, 5, 14)],
-        {
-          width: 48,
-          height: 48,
-          padding: 4,
-        },
         1,
         false,
         false,
@@ -144,7 +103,6 @@ describe('获取周状态条的水平位置', () => {
       getMobileWeekStatusBarLeft(
         [new Date(2020, 6, 1), new Date(2020, 6, 5)],
         0,
-        { width: 48, height: 48, padding: 4 },
         false,
       ),
     ).toBe('calc((100% - 24px)/7 * 2 + 12px)');
@@ -155,7 +113,6 @@ describe('获取周状态条的水平位置', () => {
       getMobileWeekStatusBarLeft(
         [new Date(2020, 6, 6), new Date(2020, 6, 8)],
         1,
-        { width: 48, height: 48, padding: 4 },
         false,
       ),
     ).toBe('0px');
@@ -166,7 +123,6 @@ describe('获取周状态条的水平位置', () => {
       getMobileWeekStatusBarLeft(
         [new Date(2020, 6, 6), new Date(2020, 6, 10)],
         1,
-        { width: 48, height: 48, padding: 4 },
         true,
       ),
     ).toBe('calc((100% - 24px)/7 * 0.5 - 20px + 12px)');
@@ -177,7 +133,6 @@ it('获取周状态条的样式', () => {
   expect(
     getMobileWeekStatusBarStyle(
       [new Date(2020, 6, 6), new Date(2020, 6, 10)],
-      { width: 48, height: 48, padding: 4 },
       1,
       true,
     ),

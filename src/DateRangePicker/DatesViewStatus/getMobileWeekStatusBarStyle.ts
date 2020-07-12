@@ -1,12 +1,10 @@
-import DateCellRect from '../DateCellRect';
+import { MOBILE_DATE_CELL_RECT } from '../constants';
 
 /**
  * 获取周状态条高度
- *
- * @param dateCellRect 日期单元格尺寸
  */
-export function getWeekStatusBarHeight(dateCellRect: DateCellRect) {
-  const { height, padding } = dateCellRect;
+export function getWeekStatusBarHeight() {
+  const { height, padding } = MOBILE_DATE_CELL_RECT;
 
   return height - 2 * padding;
 }
@@ -15,44 +13,36 @@ export function getWeekStatusBarHeight(dateCellRect: DateCellRect) {
  * 获取周状态条垂直位置
  *
  * @param weekNo 月份中的第几周
- * @param dateCellRect 日期单元格尺寸
  */
-export function getWeekStatusBarTop(
-  weekNo: number,
-  dateCellRect: DateCellRect,
-) {
-  const { height: cellHeight, padding: cellPadding } = dateCellRect;
+export function getWeekStatusBarTop(weekNo: number) {
+  const { height: cellHeight, padding: cellPadding } = MOBILE_DATE_CELL_RECT;
   return cellHeight * (weekNo + 1) + cellPadding;
 }
 
 /**
  * 获取周状态条的边框半径
- *
- * @param dateCellRect 日期单元格尺寸
  */
-export function getWeekStatusBarBorderRadius(dateCellRect: DateCellRect) {
-  const { height: cellHeight, padding: cellPadding } = dateCellRect;
+export function getWeekStatusBarBorderRadius() {
+  const { height: cellHeight, padding: cellPadding } = MOBILE_DATE_CELL_RECT;
   return (cellHeight - 2 * cellPadding) / 2;
 }
 
 /**
  * 获取移动端状态条宽度
  * @param range 区间
- * @param dateCellRect 日期单元格尺寸
  * @param weekNo 周在月份中的序号，从0开始
  * @param isStart 是否包含开始日期
  * @param isEnd 是否包含结束日期
  */
 export function getMobileWeekStatusBarWidth(
   range: [Date, Date],
-  dateCellRect: DateCellRect,
   weekNo: number,
   isStart?: boolean,
   isEnd?: boolean,
   isLastWeek?: boolean,
 ) {
   const [start, end] = range;
-  const { width, padding } = dateCellRect;
+  const { width, padding } = MOBILE_DATE_CELL_RECT;
   const dateCellContentWidth = width - 2 * padding;
   const rangeLength = end.getDate() - start.getDate();
   const firstDay = start.getDay() === 0 ? 7 : start.getDay();
@@ -84,18 +74,16 @@ export function getMobileWeekStatusBarWidth(
  * 获取移动端状态条左侧定位
  * @param range 区间
  * @param weekNo 周在月份中的序号，从0开始
- * @param dateCellRect 日期单元格的尺寸
  * @param isStart 是否包含开始日期
  * @param isEnd 是否包含结束日期
  */
 export function getMobileWeekStatusBarLeft(
   range: [Date, Date],
   weekNo: number,
-  dateCellRect: DateCellRect,
   isStart?: boolean,
 ) {
   const [start] = range;
-  const { width, padding } = dateCellRect;
+  const { width, padding } = MOBILE_DATE_CELL_RECT;
   const firstDay = start.getDay() === 0 ? 7 : start.getDay();
   const dateCellContentWidth = width - 2 * padding;
 
@@ -120,7 +108,6 @@ export function getMobileWeekStatusBarLeft(
  * 获取周状态条样式
  *
  * @param range 日期区间
- * @param dateCellRect 日期单元格尺寸
  * @param weekNo 周在月份中的序号，从0开始
  * @param isPc 是否是pc设备
  * @param isStart 是否是开始日期所在的周
@@ -129,29 +116,27 @@ export function getMobileWeekStatusBarLeft(
  */
 export default function getMobileWeekStatusBarStyle(
   range: [Date, Date],
-  dateCellRect: DateCellRect,
   weekNo: number,
   isStart?: boolean,
   isEnd?: boolean,
   isLastWeek?: boolean,
 ): React.CSSProperties {
-  const borderRadius = getWeekStatusBarBorderRadius(dateCellRect);
+  const borderRadius = getWeekStatusBarBorderRadius();
 
   return {
     width: getMobileWeekStatusBarWidth(
       range,
-      dateCellRect,
       weekNo,
       isStart,
       isEnd,
       isLastWeek,
     ),
-    height: getWeekStatusBarHeight(dateCellRect),
+    height: getWeekStatusBarHeight(),
     borderTopLeftRadius: isStart ? borderRadius : 0,
     borderBottomLeftRadius: isStart ? borderRadius : 0,
     borderTopRightRadius: isEnd ? borderRadius : 0,
     borderBottomRightRadius: isEnd ? borderRadius : 0,
-    left: getMobileWeekStatusBarLeft(range, weekNo, dateCellRect, isStart),
-    top: getWeekStatusBarTop(weekNo, dateCellRect),
+    left: getMobileWeekStatusBarLeft(range, weekNo, isStart),
+    top: getWeekStatusBarTop(weekNo),
   };
 }

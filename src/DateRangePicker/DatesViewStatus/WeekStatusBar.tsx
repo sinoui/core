@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import bemClassNames from '@sinoui/core/utils/bemClassNames';
 import formatDate from '@sinoui/core/DatePicker/formatDate';
-import DateCellRect from '../DateCellRect';
 import getWeekStatusBarStyle from './getWeekStatusBarStyle';
 import WeekStatusBarWrapper from './WeekStatusBarWrapper';
 import getMobileWeekStatusBarStyle from './getMobileWeekStatusBarStyle';
@@ -11,10 +10,6 @@ interface Props {
    * 设置为`true`，则表示空心。
    */
   outlined?: boolean;
-  /**
-   * 日期单元格尺寸
-   */
-  dateCellRect?: DateCellRect;
   /**
    * 周在月份中的序号，从0开始。
    */
@@ -46,18 +41,11 @@ interface Props {
   isLastWeek?: boolean;
 }
 
-const defaultDateCellRect: DateCellRect = {
-  width: 32,
-  height: 32,
-  padding: 2,
-};
-
 /**
  * 周状态条
  */
 export default function WeekStatusBar({
   outlined,
-  dateCellRect = defaultDateCellRect,
   weekNo,
   startDate,
   endDate,
@@ -70,25 +58,15 @@ export default function WeekStatusBar({
   const weekBarStyle = useMemo(
     () =>
       isPc
-        ? getWeekStatusBarStyle([startDate, endDate], dateCellRect, weekNo)
+        ? getWeekStatusBarStyle([startDate, endDate], weekNo)
         : getMobileWeekStatusBarStyle(
             [startDate, endDate],
-            dateCellRect,
             weekNo,
             isStart,
             isEnd,
             isLastWeek,
           ),
-    [
-      dateCellRect,
-      endDate,
-      isEnd,
-      isLastWeek,
-      isPc,
-      isStart,
-      startDate,
-      weekNo,
-    ],
+    [endDate, isEnd, isLastWeek, isPc, isStart, startDate, weekNo],
   );
 
   return (
