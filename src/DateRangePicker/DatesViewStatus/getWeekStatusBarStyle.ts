@@ -88,11 +88,14 @@ function getMobileWeekStatusBarWidth(
   weekNo: number,
   isStart?: boolean,
   isEnd?: boolean,
+  isLastWeek?: boolean,
 ) {
   const [start, end] = range;
   const { width, padding } = dateCellRect;
   const dateCellContentWidth = width - 2 * padding;
   const rangeLength = end.getDate() - start.getDate();
+  const firstDay = start.getDay() === 0 ? 7 : start.getDay();
+  const lastDay = end.getDay() === 0 ? 7 : end.getDay();
   let statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1} + ${
     rangeLength < 6 ? 12 : 24
   }px)`;
@@ -102,7 +105,11 @@ function getMobileWeekStatusBarWidth(
   } else if (isEnd && weekNo === 0) {
     statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1 / 2} + ${
       dateCellContentWidth / 2
-    }px)`;
+    }px + ${firstDay === 1 ? 12 : 0}px)`;
+  } else if (isStart && isLastWeek) {
+    statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1 / 2} + ${
+      dateCellContentWidth / 2
+    }px + ${lastDay === 7 ? 12 : 0}px)`;
   } else if (isStart || isEnd) {
     statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1 / 2} + 12px + ${
       dateCellContentWidth / 2
@@ -154,6 +161,10 @@ function getMobileWeekStatusBarLeft(
  * @param range 日期区间
  * @param dateCellRect 日期单元格尺寸
  * @param weekNo 周在月份中的序号，从0开始
+ * @param isPc 是否是pc设备
+ * @param isStart 是否是开始日期所在的周
+ * @param isEnd 是否是结束日期所在的周
+ * @param isLastWeek 是否是每个月的最后一周
  */
 export default function getWeekStatusBarStyle(
   range: [Date, Date],
@@ -162,6 +173,7 @@ export default function getWeekStatusBarStyle(
   isPc: boolean,
   isStart?: boolean,
   isEnd?: boolean,
+  isLastWeek?: boolean,
 ): React.CSSProperties {
   // TODO: range 直接传递日期属于周几
 
@@ -181,6 +193,7 @@ export default function getWeekStatusBarStyle(
           weekNo,
           isStart,
           isEnd,
+          isLastWeek,
         ),
         height: getWeekStatusBarHeight(dateCellRect),
         borderTopLeftRadius: isStart ? borderRadius : 0,

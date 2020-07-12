@@ -39,6 +39,10 @@ interface Props {
    * 是否是结束时间
    */
   isEnd?: boolean;
+  /**
+   * 是否是最后一周
+   */
+  isLastWeek?: boolean;
 }
 
 const defaultDateCellRect: DateCellRect = {
@@ -59,6 +63,7 @@ export default function WeekStatusBar({
   isPc = true,
   isStart = false,
   isEnd = false,
+  isLastWeek = false,
   ...rest
 }: Props) {
   const weekBarStyle = useMemo(
@@ -70,8 +75,18 @@ export default function WeekStatusBar({
         isPc,
         isStart,
         isEnd,
+        isLastWeek,
       ),
-    [dateCellRect, endDate, isEnd, isPc, isStart, startDate, weekNo],
+    [
+      dateCellRect,
+      endDate,
+      isEnd,
+      isLastWeek,
+      isPc,
+      isStart,
+      startDate,
+      weekNo,
+    ],
   );
 
   return (
