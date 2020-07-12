@@ -4,6 +4,7 @@ import formatDate from '@sinoui/core/DatePicker/formatDate';
 import DateCellRect from '../DateCellRect';
 import getWeekStatusBarStyle from './getWeekStatusBarStyle';
 import WeekStatusBarWrapper from './WeekStatusBarWrapper';
+import getMobileWeekStatusBarStyle from './getMobileWeekStatusBarStyle';
 
 interface Props {
   /**
@@ -68,15 +69,16 @@ export default function WeekStatusBar({
 }: Props) {
   const weekBarStyle = useMemo(
     () =>
-      getWeekStatusBarStyle(
-        [startDate, endDate],
-        dateCellRect,
-        weekNo,
-        isPc,
-        isStart,
-        isEnd,
-        isLastWeek,
-      ),
+      isPc
+        ? getWeekStatusBarStyle([startDate, endDate], dateCellRect, weekNo)
+        : getMobileWeekStatusBarStyle(
+            [startDate, endDate],
+            dateCellRect,
+            weekNo,
+            isStart,
+            isEnd,
+            isLastWeek,
+          ),
     [
       dateCellRect,
       endDate,
