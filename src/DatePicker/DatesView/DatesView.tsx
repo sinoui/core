@@ -1,5 +1,6 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
+import useEventCallback from '@sinoui/core/utils/useEventCallback';
 import getDatesOfMonth from './getDatesOfMonth';
 import getEmptyDatesOfMonth from './getEmptyDatesOfMonth';
 import DateCell from './DateCell';
@@ -132,13 +133,12 @@ export default function DatesView(props: Props) {
       ? 7 - ((dates + emptyDates) % 7)
       : 0;
 
-  const handleDateCellClick = useCallback(
+  const handleDateCellClick = useEventCallback(
     (event: React.MouseEvent<HTMLElement>, date: number) => {
       if (onDateClick) {
         onDateClick(event, new Date(year, month, date, 0, 0, 0));
       }
     },
-    [month, onDateClick, year],
   );
 
   for (let i = 0; i < emptyDates; i += 1) {
