@@ -146,3 +146,25 @@ it('结束日期不能早于开始日期', () => {
     'sinoui-date-cell--disabled',
   );
 });
+
+it('选择的开始时间大于结束时间时，清空结束时间', () => {
+  const { container, getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeView
+        startDate={parseDate('2020-06-10')}
+        endDate={parseDate('2020-06-18')}
+        focusedInput="start"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByText('6月18日')).toBeInTheDocument();
+
+  fireEvent.click(
+    container
+      .querySelector('[data-date="2020-06-20"]')!
+      .querySelector('.sinoui-date-cell-content')!,
+  );
+
+  expect(getByText('结束时间')).toBeInTheDocument();
+});

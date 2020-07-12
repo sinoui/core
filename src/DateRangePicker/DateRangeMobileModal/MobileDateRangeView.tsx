@@ -156,11 +156,14 @@ export default function MobileDateRangeView(props: Props) {
       if (focused === 'start') {
         setSelectedStart(date);
         setFocused('end');
+        if (selectedEnd && date.getTime() > selectedEnd.getTime()) {
+          setSelectedEnd(undefined);
+        }
       } else {
         setSelectedEnd(date);
       }
     },
-    [focused],
+    [focused, selectedEnd],
   );
 
   const onOk = () => {
