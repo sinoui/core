@@ -99,130 +99,135 @@ const MemoWeekTitleBar = React.memo(WeekTitleBar);
  * 移动端日期区间选择视图
  * @param props
  */
-export default function MobileDateRangeView(props: Props) {
-  const {
-    title,
-    startDate,
-    endDate,
-    defaultYear,
-    defaultMonth,
-    showToday = true,
-    minDate: min,
-    maxDate,
-    focusedInput,
-    onRequestClose,
-    onChange,
-  } = props;
+export default React.forwardRef<HTMLDivElement, Props>(
+  function MobileDateRangeView(props, ref) {
+    const {
+      title,
+      startDate,
+      endDate,
+      defaultYear,
+      defaultMonth,
+      showToday = true,
+      minDate: min,
+      maxDate,
+      focusedInput,
+      onRequestClose,
+      onChange,
+    } = props;
 
-  const [selectedStart, setSelectedStart] = useState(startDate);
-  const [selectedEnd, setSelectedEnd] = useState(endDate);
-  const [focused, setFocused] = useState(focusedInput);
+    const [selectedStart, setSelectedStart] = useState(startDate);
+    const [selectedEnd, setSelectedEnd] = useState(endDate);
+    const [focused, setFocused] = useState(focusedInput);
 
-  const minDate = focused === 'end' ? selectedStart : min;
+    const minDate = focused === 'end' ? selectedStart : min;
 
-  const selectedNodeRef = useRef<FixedSizeList>(null);
+    const selectedNodeRef = useRef<FixedSizeList>(null);
 
-  const currentYear = startDate
-    ? startDate.getFullYear()
-    : defaultYear ?? new Date().getFullYear();
+    const currentYear = startDate
+      ? startDate.getFullYear()
+      : defaultYear ?? new Date().getFullYear();
 
-  const currentMonth = startDate
-    ? startDate.getMonth()
-    : defaultMonth ?? new Date().getMonth();
+    const currentMonth = startDate
+      ? startDate.getMonth()
+      : defaultMonth ?? new Date().getMonth();
 
-  /**
-   * 获取当前月索引位置
-   */
-  const getCurrentMonthIndex = () => {
-    const yearIndex = genYears().findIndex((year) => year === currentYear);
-    const monthIndex = MONTH_FULL_TITLES.findIndex(
-      (month) => month === MONTH_FULL_TITLES[currentMonth],
-    );
-    return yearIndex * 12 + monthIndex;
-  };
-  const currentMonthIndex = getCurrentMonthIndex();
+    /**
+     * 获取当前月索引位置
+     */
+    const getCurrentMonthIndex = () => {
+      const yearIndex = genYears().findIndex((year) => year === currentYear);
+      const monthIndex = MONTH_FULL_TITLES.findIndex(
+        (month) => month === MONTH_FULL_TITLES[currentMonth],
+      );
+      return yearIndex * 12 + monthIndex;
+    };
+    const currentMonthIndex = getCurrentMonthIndex();
 
-  useLayoutEffect(() => {
-    if (selectedNodeRef.current) {
-      selectedNodeRef.current.scrollToItem(currentMonthIndex, 'start');
-    }
-  }, [currentMonthIndex]);
-
-  /**
-   * 处理日期单元格点击事件
-   */
-  const handleDateClick = useCallback(
-    (_: React.MouseEvent<HTMLElement>, date: Date) => {
-      if (focused === 'start') {
-        setSelectedStart(date);
-        setFocused('end');
-        if (selectedEnd && date.getTime() > selectedEnd.getTime()) {
-          setSelectedEnd(undefined);
-        }
-      } else {
-        setSelectedEnd(date);
+    useLayoutEffect(() => {
+      if (selectedNodeRef.current) {
+        selectedNodeRef.current.scrollToItem(currentMonthIndex, 'start');
       }
-    },
-    [focused, selectedEnd],
-  );
+    }, [currentMonthIndex]);
 
-  const onOk = () => {
-    if (onChange) {
-      onChange([
-        formatDate(selectedStart) ?? '',
-        formatDate(selectedEnd) ?? '',
-      ]);
-    }
-    if (onRequestClose) {
-      onRequestClose();
-    }
-  };
+    /**
+     * 处理日期单元格点击事件
+     */
+    const handleDateClick = useCallback(
+      (_: React.MouseEvent<HTMLElement>, date: Date) => {
+        if (focused === 'start') {
+          setSelectedStart(date);
+          setFocused('end');
+          if (selectedEnd && date.getTime() > selectedEnd.getTime()) {
+            setSelectedEnd(undefined);
+          }
+        } else {
+          setSelectedEnd(date);
+        }
+      },
+      [focused, selectedEnd],
+    );
 
-  const onClear = () => {
-    setSelectedStart(undefined);
-    setSelectedEnd(undefined);
-    if (focused !== 'start') {
-      setFocused('start');
-    }
-  };
+    const onOk = () => {
+      if (onChange) {
+        onChange([
+          formatDate(selectedStart) ?? '',
+          formatDate(selectedEnd) ?? '',
+        ]);
+      }
+      if (onRequestClose) {
+        onRequestClose();
+      }
+    };
 
-  const itemData = createItemData(
-    selectedStart,
-    selectedEnd,
-    showToday,
-    minDate,
-    maxDate,
-    handleDateClick,
-  );
+    const onClear = () => {
+      setSelectedStart(undefined);
+      setSelectedEnd(undefined);
+      if (focused !== 'start') {
+        setFocused('start');
+      }
+    };
 
-  return (
-    <MobileDateRangeViewWrapper className="sinoui-date-range-mobile-view">
-      <MobileDateRangeViewToolBar
-        title={title ?? '设置日期'}
-        startDate={selectedStart}
-        endDate={selectedEnd}
-        onClose={onRequestClose}
-        onOk={onOk}
-        onClear={onClear}
-        focused={focused}
-        onFocusedChange={setFocused}
-      />
-      <MemoWeekTitleBar />
-      <MobileDateRangeViewContent>
-        <FixedSizeList
-          className="sinoui-date-range-mobile-year"
-          ref={selectedNodeRef}
-          height={window.innerHeight - 176}
-          itemCount={2400}
-          itemSize={336}
-          itemData={itemData}
-          width="100%"
-          overscanCount={0}
-          initialScrollOffset={currentMonthIndex * 336}
-        >
-          {MemoMonthItem}
-        </FixedSizeList>
-      </MobileDateRangeViewContent>
-    </MobileDateRangeViewWrapper>
-  );
-}
+    const itemData = createItemData(
+      selectedStart,
+      selectedEnd,
+      showToday,
+      minDate,
+      maxDate,
+      handleDateClick,
+    );
+
+    return (
+      <MobileDateRangeViewWrapper
+        className="sinoui-date-range-mobile-view"
+        ref={ref}
+      >
+        <MobileDateRangeViewToolBar
+          title={title ?? '设置日期'}
+          startDate={selectedStart}
+          endDate={selectedEnd}
+          onClose={onRequestClose}
+          onOk={onOk}
+          onClear={onClear}
+          focused={focused}
+          onFocusedChange={setFocused}
+        />
+        <MemoWeekTitleBar />
+        <MobileDateRangeViewContent>
+          <FixedSizeList
+            className="sinoui-date-range-mobile-year"
+            ref={selectedNodeRef}
+            height={window.innerHeight - 176}
+            itemCount={2400}
+            itemSize={336}
+            itemData={itemData}
+            width="100%"
+            overscanCount={0}
+            initialScrollOffset={currentMonthIndex * 336}
+          >
+            {MemoMonthItem}
+          </FixedSizeList>
+        </MobileDateRangeViewContent>
+      </MobileDateRangeViewWrapper>
+    );
+  },
+);

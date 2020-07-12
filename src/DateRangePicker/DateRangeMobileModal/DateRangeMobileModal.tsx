@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from '@sinoui/core/Modal';
 import type { ModalProps } from '@sinoui/core/Modal';
+import Fade from '@sinoui/core/Fade';
 import MobileDateRangeView from './MobileDateRangeView';
 
 interface Props extends Omit<ModalProps, 'children'> {
@@ -66,22 +67,31 @@ export default function DateRangeMobileModal(props: Props) {
     onRequestClose,
     onChange,
     title,
+    open,
     ...rest
   } = props;
   return (
-    <Modal {...rest} backdrop={false} autoFocus={false} enforceFocus={false}>
-      <MobileDateRangeView
-        startDate={startDate}
-        endDate={endDate}
-        minDate={minDate}
-        maxDate={maxDate}
-        defaultYear={defaultYear}
-        defaultMonth={defaultMonth}
-        focusedInput={focusedInput}
-        onRequestClose={onRequestClose}
-        onChange={onChange}
-        title={title}
-      />
+    <Modal
+      open={open}
+      {...rest}
+      backdrop={false}
+      autoFocus={false}
+      enforceFocus={false}
+    >
+      <Fade in={open}>
+        <MobileDateRangeView
+          startDate={startDate}
+          endDate={endDate}
+          minDate={minDate}
+          maxDate={maxDate}
+          defaultYear={defaultYear}
+          defaultMonth={defaultMonth}
+          focusedInput={focusedInput}
+          onRequestClose={onRequestClose}
+          onChange={onChange}
+          title={title}
+        />
+      </Fade>
     </Modal>
   );
 }

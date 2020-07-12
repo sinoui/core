@@ -326,6 +326,7 @@ describe('移动端', () => {
 
     fireEvent.click(getByText('保存'));
 
+    jest.runAllTimers();
     expect(onChange).toBeCalledWith(['2020-06-18', '']);
     expect(
       document.querySelector('.sinoui-date-range-mobile-view'),
@@ -357,13 +358,15 @@ describe('移动端', () => {
           .querySelector('[data-date="2020-06-18"]')!
           .querySelector('.sinoui-date-cell-content')!,
       );
+
+      fireEvent.click(
+        document
+          .querySelector('.sinoui-date-range-view-toolbar')!
+          .querySelector('.sinoui-icon-button')!,
+      );
     });
 
-    fireEvent.click(
-      document
-        .querySelector('.sinoui-date-range-view-toolbar')!
-        .querySelector('.sinoui-icon-button')!,
-    );
+    jest.runAllTimers();
 
     expect(onChange).not.toBeCalled();
     expect(
