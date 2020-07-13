@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import { FixedSizeList } from 'react-window';
 import memoize from 'memoize-one';
@@ -57,6 +57,10 @@ export interface Props {
    * 值变更时的回调函数
    */
   onChange?: (value: string[]) => void;
+  /**
+   * 自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
 /**
@@ -113,6 +117,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
       focusedInput,
       onRequestClose,
       onChange,
+      ...rest
     } = props;
 
     const [selectedStart, setSelectedStart] = useState(startDate);
@@ -142,12 +147,6 @@ export default React.forwardRef<HTMLDivElement, Props>(
       return yearIndex * 12 + monthIndex;
     };
     const currentMonthIndex = getCurrentMonthIndex();
-
-    useLayoutEffect(() => {
-      if (selectedNodeRef.current) {
-        selectedNodeRef.current.scrollToItem(currentMonthIndex, 'start');
-      }
-    }, [currentMonthIndex]);
 
     /**
      * 处理日期单元格点击事件
@@ -200,6 +199,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
       <MobileDateRangeViewWrapper
         className="sinoui-date-range-mobile-view"
         ref={ref}
+        {...rest}
       >
         <MobileDateRangeViewToolBar
           title={title ?? '设置日期'}

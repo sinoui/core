@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 import Paper from '@sinoui/core/Paper';
 
-const disabledProps = ['in'];
-const MobileDateRangeViewWrapper = styled(Paper).withConfig({
-  shouldForwardProp: (prop) => !disabledProps.includes(prop),
-})`
+const MobileDateRangeViewWrapper = styled(Paper)`
   width: 100%;
   height: 100%;
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { render, cleanup, fireEvent } from '@testing-library/react';
@@ -79,8 +80,8 @@ it('点击某一日期，onDateClick被调用', () => {
   );
   fireEvent.click(
     container
-      .querySelector('[data-date="2020-06-16"]')
-      .querySelector('.sinoui-date-cell-content'),
+      .querySelector('[data-date="2020-06-16"]')!
+      .querySelector('.sinoui-date-cell-content')!,
   );
   expect(onDateClick).toBeCalled();
 });

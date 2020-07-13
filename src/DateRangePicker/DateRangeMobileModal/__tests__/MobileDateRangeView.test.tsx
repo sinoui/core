@@ -168,3 +168,19 @@ it('选择的开始时间大于结束时间时，清空结束时间', () => {
 
   expect(getByText('结束时间')).toBeInTheDocument();
 });
+
+it('style 属性', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeView
+        data-testid="view"
+        startDate={parseDate('2020-06-10')}
+        endDate={parseDate('2020-06-18')}
+        focusedInput="start"
+        style={{ color: 'red' }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('view')).toHaveStyle('color: red');
+});
