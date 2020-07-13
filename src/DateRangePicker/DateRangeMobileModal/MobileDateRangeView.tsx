@@ -69,13 +69,13 @@ export interface Props {
  * @param showYearsCount 年份个数
  */
 export const genYears = (
-  startYear: number = new Date().getFullYear() - 100,
+  startYear: number,
   showYearsCount: number = COUNTS_OF_YEAR,
 ) => {
   const years: number[] = [];
 
   for (let i = 0; i < showYearsCount; i += 1) {
-    years.push(startYear + i);
+    years.push(startYear - 100 + i);
   }
 
   return years;
@@ -93,8 +93,8 @@ export default React.forwardRef<HTMLDivElement, Props>(
       title,
       startDate,
       endDate,
-      defaultYear,
-      defaultMonth,
+      defaultYear = new Date().getFullYear(),
+      defaultMonth = new Date().getMonth(),
       showToday = true,
       minDate: min,
       maxDate,
@@ -112,19 +112,17 @@ export default React.forwardRef<HTMLDivElement, Props>(
 
     const selectedNodeRef = useRef<FixedSizeList>(null);
 
-    const currentYear = startDate
-      ? startDate.getFullYear()
-      : defaultYear ?? new Date().getFullYear();
+    const currentYear = startDate ? startDate.getFullYear() : defaultYear;
 
-    const currentMonth = startDate
-      ? startDate.getMonth()
-      : defaultMonth ?? new Date().getMonth();
+    const currentMonth = startDate ? startDate.getMonth() : defaultMonth;
 
     /**
      * 获取当前月索引位置
      */
     const getCurrentMonthIndex = () => {
-      const yearIndex = genYears().findIndex((year) => year === currentYear);
+      const yearIndex = genYears(defaultYear).findIndex(
+        (year) => year === currentYear,
+      );
       const monthIndex = MONTH_FULL_TITLES.findIndex(
         (month) => month === MONTH_FULL_TITLES[currentMonth],
       );
@@ -171,7 +169,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
     };
 
     const itemData = {
-      years: genYears(),
+      years: genYears(defaultYear),
       startDate: selectedStart,
       endDate: selectedEnd,
       showToday,

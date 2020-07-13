@@ -12,7 +12,7 @@ const parseDate = mem((dateStr?: string) =>
   dateStr ? new Date(Date.parse(`${dateStr}T00:00:00`)) : undefined,
 );
 
-const years = genYears();
+const years = genYears(2020);
 
 afterEach(cleanup);
 
