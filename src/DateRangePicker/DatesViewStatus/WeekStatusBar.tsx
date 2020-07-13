@@ -26,7 +26,6 @@ interface Props {
    * 有效状态区间的结束日期
    */
   endDate: Date;
-  style?: React.CSSProperties;
   /**
    * 是否是pc设备，默认为true
    */
