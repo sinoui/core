@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import { FixedSizeList } from 'react-window';
 import memoize from 'memoize-one';
@@ -147,12 +147,6 @@ export default React.forwardRef<HTMLDivElement, Props>(
       return yearIndex * 12 + monthIndex;
     };
     const currentMonthIndex = getCurrentMonthIndex();
-
-    useLayoutEffect(() => {
-      if (selectedNodeRef.current) {
-        selectedNodeRef.current.scrollToItem(currentMonthIndex, 'start');
-      }
-    }, [currentMonthIndex]);
 
     /**
      * 处理日期单元格点击事件
