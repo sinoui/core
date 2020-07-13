@@ -199,7 +199,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
         <MemoWeekTitleBar />
         <MobileDateRangeViewContent>
           <FixedSizeList
-            className="sinoui-date-range-mobile-year"
+            className="sinoui-date-range-mobile-view__dates-list"
             ref={selectedNodeRef}
             height={window.innerHeight - 176}
             itemCount={2400}

@@ -3,6 +3,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { defaultTheme } from '@sinoui/theme';
+import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import mem from '@sinoui/core/utils/mem';
 import MobileDateRangeView from '../MobileDateRangeView';
@@ -218,4 +219,20 @@ it('清除值', () => {
 
   expect(getByText('开始时间')).toBeInTheDocument();
   expect(getByText('结束时间')).toBeInTheDocument();
+});
+
+it('快照测试', () => {
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <MobileDateRangeView
+          startDate={parseDate('2020-06-10')}
+          endDate={parseDate('2020-06-18')}
+          focusedInput="start"
+        />
+      </ThemeProvider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
 });
