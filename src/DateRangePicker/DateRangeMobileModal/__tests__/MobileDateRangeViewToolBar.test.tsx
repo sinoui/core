@@ -82,4 +82,22 @@ describe('验收测试', () => {
     expect(getByText('结束时间')).toHaveStyle('opacity:1');
     expect(getByText('开始时间')).toHaveStyle('opacity:0.7');
   });
+
+  it('onClose属性', () => {
+    const onClose = jest.fn();
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <MobileDateRangeViewToolBar onClose={onClose} focused="end" />
+      </ThemeProvider>,
+    );
+
+    fireEvent.click(
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      container.querySelector(
+        '.sinoui-date-range-view-toolbar .sinoui-icon-button',
+      )!,
+    );
+
+    expect(onClose).toBeCalled();
+  });
 });
