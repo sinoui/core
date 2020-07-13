@@ -202,3 +202,20 @@ it('ref属性', () => {
 
   expect(getByTestId('view')).toEqual(rangeViewRef.current);
 });
+
+it('清除值', () => {
+  const { getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeView
+        startDate={parseDate('2020-06-10')}
+        endDate={parseDate('2020-06-18')}
+        focusedInput="start"
+      />
+    </ThemeProvider>,
+  );
+
+  fireEvent.click(getByText('清除'));
+
+  expect(getByText('开始时间')).toBeInTheDocument();
+  expect(getByText('结束时间')).toBeInTheDocument();
+});
