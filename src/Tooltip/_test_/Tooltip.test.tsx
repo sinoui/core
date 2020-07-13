@@ -7,6 +7,7 @@ import React from 'react';
 import Tooltip from '../Tooltip';
 
 afterEach(cleanup);
+jest.useFakeTimers();
 
 describe('触发器测试', () => {
   it('click', () => {
@@ -17,12 +18,16 @@ describe('触发器测试', () => {
             弹出
           </button>
         </Tooltip>
+        <button data-testid="other-btn" type="button">
+          其他按钮
+        </button>
       </ThemeProvider>,
     );
 
     fireEvent.click(getByTestId('trigger-btn'));
     expect(getByTestId('tooltip')).toBeTruthy();
     fireEvent.click(document);
+    jest.runAllTimers();
     expect(queryByTestId('tooltip')).toBeFalsy();
   });
 
@@ -40,6 +45,7 @@ describe('触发器测试', () => {
     fireEvent.mouseEnter(getByTestId('trigger-btn'));
     expect(queryByTestId('tooltip')).toBeTruthy();
     fireEvent.mouseLeave(getByTestId('trigger-btn'));
+    jest.runAllTimers();
     expect(queryByTestId('tooltip')).toBeFalsy();
   });
 
@@ -57,6 +63,7 @@ describe('触发器测试', () => {
     fireEvent.focus(getByTestId('trigger-btn'));
     expect(queryByTestId('tooltip')).toBeTruthy();
     fireEvent.blur(getByTestId('trigger-btn'));
+    jest.runAllTimers();
     expect(queryByTestId('tooltip')).toBeFalsy();
   });
 });

@@ -14,18 +14,18 @@ exports[`布局Row快照测试 gutterType = "around" 1`] = `
 
 exports[`布局Row快照测试 justifyContent = "center" alignItems="center" 1`] = `
 <div
-  className="sc-AxjAm cOPYLT sinoui-row"
+  className="sc-AxjAm cNYtKH sinoui-row"
 />
 `;
 
 exports[`布局Row快照测试 justifyContent="center" 1`] = `
 <div
-  className="sc-AxjAm fdOXIO sinoui-row"
+  className="sc-AxjAm dyNPpu sinoui-row"
 />
 `;
 
 exports[`布局Row快照测试 默认 1`] = `
 <div
-  className="sc-AxjAm dIKvAz sinoui-row"
+  className="sc-AxjAm cldJIP sinoui-row"
 />
 `;

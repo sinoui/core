@@ -6,7 +6,12 @@ title: Tooltip 信息提示
 import CardStoryLayout from './CardStoryLayout';
 import Tooltip from '@sinoui/core/Tooltip';
 import { Row, Column } from '@sinoui/core/grid';
-import { PlacementDemo, BaseDemo } from './tooltip-demos';
+import {
+  PlacementDemo,
+  BaseDemo,
+  TriggerDemo,
+  TransitionDemo,
+} from './tooltip-demos';
 
 ## 简单的文字提示
 
@@ -14,7 +19,45 @@ import { PlacementDemo, BaseDemo } from './tooltip-demos';
   <BaseDemo />
 </CardStoryLayout>
 
+示例代码：
+
+```tsx
+import React from 'react';
+import IconButton from '@sinoui/core/IconButton';
+import Add from '@sinoui/icons/Add';
+import Fab from '@sinoui/core/Fab';
+import Tooltip from '@sinoui/core/Tooltip';
+import { Row, Column } from '@sinoui/core/Grid';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+export default function BaseDemo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Row gutter={8}>
+        <Column xs={6}>
+          <Tooltip title="add" trigger="hover">
+            <IconButton>
+              <Add />
+            </IconButton>
+          </Tooltip>
+        </Column>
+        <Column xs={6}>
+          <Tooltip title="add" trigger="hover">
+            <Fab>
+              <Add />
+            </Fab>
+          </Tooltip>
+        </Column>
+      </Row>
+    </ThemeProvider>
+  );
+}
+```
+
 ## 文字提示定位
+
+文字提示组件支持基本的上、右、下、左居中弹出，以及上居左、上居右、右居上、右居下、下居左、下居右、左居上和左居下 12 中弹出位置显示。
 
 <CardStoryLayout style={{ flexDirection: 'column' }}>
   <PlacementDemo />
@@ -133,4 +176,82 @@ function PlacementDemo() {
 }
 
 export default PlacementDemo;
+```
+
+## 触发器
+
+文字提示支持`hover`(悬浮)，`focus`(聚焦)，`click`(单击)三种触发器，在移动端仅支持`click`。
+
+<CardStoryLayout>
+  <TriggerDemo />
+</CardStoryLayout>
+
+代码示例：
+
+```tsx
+import React from 'react';
+import Tooltip from '@sinoui/core/Tooltip';
+import { Row, Column } from '@sinoui/core/Grid';
+import Button from '@sinoui/core/Button';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+function TriggerDemo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Row>
+        <Column xs={8}>
+          <Tooltip title="这是一段提示文字" trigger="hover">
+            <Button raised>hover</Button>
+          </Tooltip>
+        </Column>
+        <Column xs={8}>
+          <Tooltip title="这是一段提示文字" trigger="focus">
+            <input />
+          </Tooltip>
+        </Column>
+        <Column xs={8}>
+          <Tooltip title="这是一段提示文字" trigger="click">
+            <Button raised>click</Button>
+          </Tooltip>
+        </Column>
+      </Row>
+    </ThemeProvider>
+  );
+}
+
+export default TriggerDemo;
+```
+
+## 过渡动画
+
+文字提示组件 默认使用`@sinoui/core/Grow`动画库的 Grow 动画，可以通过`transitionComponent`属性指定动画组件。
+
+<CardStoryLayout>
+  <TransitionDemo />
+</CardStoryLayout>
+
+示例代码：
+
+```tsx
+import React from 'react';
+import Tooltip from '@sinoui/core/Tooltip';
+import Button from '@sinoui/core/Button';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Fade from '@sinoui/core/Fade';
+
+export default function TransitionDemo() {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Tooltip title="fade" trigger="click" transitionComponent={Fade}>
+        <Button raised>fade</Button>
+      </Tooltip>
+
+      <Tooltip title="Grow" trigger="click">
+        <Button raised>默认Grow</Button>
+      </Tooltip>
+    </ThemeProvider>
+  );
+}
 ```
