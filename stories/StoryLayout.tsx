@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import type { Theme } from '@sinoui/theme';
 
 const ResetCss = createGlobalStyle`
   html,body {
@@ -10,6 +11,7 @@ const ResetCss = createGlobalStyle`
 
 interface Props {
   children: React.ReactNode;
+  theme?: Theme;
 }
 
 const Container = styled.div`
@@ -22,11 +24,11 @@ const Container = styled.div`
 /**
  * demo布局组件
  */
-export default function StoryLayout(props: Props) {
+export default function StoryLayout({ children, theme = defaultTheme }: Props) {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <>
-        <Container>{props.children}</Container>
+        <Container>{children}</Container>
         <ResetCss />
       </>
     </ThemeProvider>

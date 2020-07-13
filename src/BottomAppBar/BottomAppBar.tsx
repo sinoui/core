@@ -50,6 +50,7 @@ const StyledBottomAppBar = styled.div<{
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: ${({ theme }) => theme.zIndex.appBar};
   display: flex;
   height: 56px;
   width: 100%;
@@ -82,6 +83,7 @@ const InsetBottomAppBar = styled.div`
   display: flex;
   bottom: 0;
   left: 0;
+  z-index: ${({ theme }) => theme.zIndex.appBar};
   height: 56px;
   padding: 4px;
   width: 100%;

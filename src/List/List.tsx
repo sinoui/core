@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useRef, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import OverriableComponent from '../OverridableComponent';
@@ -82,7 +82,7 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
         listRef.current &&
         listRef.current
           .querySelectorAll('.sinoui-list-item')
-          [focusIndex].classList.value.includes('sinoui-list-item--disabled');
+          [focusIndex].classList.contains('sinoui-list-item--disabled');
       if (isItemDisabled) {
         // 如果聚焦的元素是列表的最后一个非禁用项，点击下键，则focusIndex = focusIndex - 1
         return getFoucsIndex(
@@ -95,56 +95,41 @@ const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
     [],
   );
 
-  useEffect(() => {
+  const handleKeyDown = (event: React.KeyboardEvent) => {
     const listItems =
       (listRef.current &&
         listRef.current.querySelectorAll('.sinoui-list-item')) ||
       [];
     const listItemsLen = listItems.length;
-    const disabledListItems =
-      (listRef.current &&
-        listRef.current.querySelectorAll(
-          '.sinoui-list-item.sinoui-list-item--disabled',
-        )) ||
-      [];
 
-    // 如果列表项全部 禁用 则不监听键盘上下键
-    if (listItemsLen > 0 && listItemsLen > disabledListItems.length) {
-      document.onkeydown = (e) => {
-        let focusIndex = -1;
-        if (listRef.current) {
-          focusIndex = nodeListToArray(listRef.current).findIndex(
-            (item) => item === document.activeElement,
-          );
-        }
-
-        switch ((e || window.event).keyCode) {
-          case 38:
-            focusIndex = getFoucsIndex(focusIndex);
-            break;
-          case 40:
-            focusIndex = getFoucsIndex(focusIndex, true);
-            break;
-          default:
-            break;
-        }
-
-        if (focusIndex !== -1 && focusIndex <= listItemsLen - 1) {
-          (
-            listItems &&
-            listItems[focusIndex] &&
-            (listItems[focusIndex] as HTMLInputElement)
-          ).focus();
-        }
-      };
+    let focusIndex = -1;
+    if (listRef.current) {
+      focusIndex = nodeListToArray(listRef.current).findIndex(
+        (item) => item === document.activeElement,
+      );
     }
 
-    return () => {
-      document.onkeydown = null;
-    };
-  }, [getFoucsIndex, listRef]);
+    switch (event.keyCode) {
+      case 38:
+        focusIndex = getFoucsIndex(focusIndex);
+        break;
+      case 40:
+        focusIndex = getFoucsIndex(focusIndex, true);
+        break;
+      default:
+        break;
+    }
 
-  return <StyledList {...props} ref={multiRef} />;
+    if (focusIndex !== -1 && focusIndex <= listItemsLen - 1) {
+      (
+        listItems &&
+        listItems[focusIndex] &&
+        (listItems[focusIndex] as HTMLInputElement)
+      ).focus();
+    }
+  };
+
+  return <StyledList {...props} ref={multiRef} onKeyDown={handleKeyDown} />;
 });
 
 export default List;

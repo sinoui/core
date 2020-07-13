@@ -1,6 +1,6 @@
 {
   "name": "@sinoui/core",
-  "version": "1.0.0-beta.27",
+  "version": "1.0.0-beta.54",
   "description": "sinoui基础组件库",
   "license": "MIT",
   "main": "index.js",
@@ -74,7 +74,9 @@
     "react-responsive": "^8.0.3",
     "react-textarea-autosize": "^7.1.2",
     "react-transition-group": "^4.4.1",
-    "styled-components": "^5.1.0"
+    "scroll-into-view-if-needed": "^2.2.25",
+    "styled-components": "^5.1.0",
+    "react-window": "^1.8.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -94,6 +96,7 @@
     "@types/react-dom": "^16.9.4",
     "@types/react-event-listener": "^0.4.9",
     "@types/react-transition-group": "^4.2.4",
+    "@types/react-window": "^1.8.2",
     "@types/styled-components": "5.1.0",
     "@types/testing-library__jest-dom": "^5.0.3",
     "babel-loader": "^8.1.0",
@@ -105,6 +108,7 @@
     "prettier": "^2.0.4",
     "react": "^16.12.0",
     "react-docgen-typescript-loader": "^3.6.0",
+    "react-hooks-testing-library": "^0.6.0",
     "react-test-renderer": "^16.12.0",
     "ts-lib-tools": "^0.11.6",
     "typescript": "^3.9.3",

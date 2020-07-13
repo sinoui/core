@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import activeElement from 'dom-helpers/activeElement';
 import contains from 'dom-helpers/contains';
 
@@ -92,6 +93,15 @@ export default class ModalManager {
     this.unmountCallbacks = [];
 
     this.listenGlobalFocus();
+  }
+
+  private static _defaultModalManager?: ModalManager;
+
+  public static defaultModalManager() {
+    if (!this._defaultModalManager) {
+      this._defaultModalManager = new ModalManager();
+    }
+    return this._defaultModalManager;
   }
 
   /**

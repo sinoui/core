@@ -649,6 +649,7 @@ Array [
   -ms-flex-align: center;
   align-items: center;
   line-height: 1.5;
+  padding: 4px 0px;
 }
 
 .c1 {
@@ -902,6 +903,7 @@ Array [
   -ms-flex-align: center;
   align-items: center;
   line-height: 1.5;
+  padding: 4px 0px;
 }
 
 .c1 {
@@ -1157,6 +1159,7 @@ Array [
   -ms-flex-align: center;
   align-items: center;
   line-height: 1.5;
+  padding: 4px 0px;
 }
 
 .c1 {

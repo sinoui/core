@@ -3,5 +3,6 @@
 exports[`快照测试 默认 1`] = `
 <ul
   className="sc-AxjAm jSMlTn sinoui-list"
+  onKeyDown={[Function]}
 />
 `;

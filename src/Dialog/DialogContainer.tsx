@@ -123,7 +123,7 @@ const DialogContainer = React.forwardRef<HTMLDivElement, DialogContainerProps>(
             'sinoui-dialog--draggable': draggable,
           })}
           autoWidth={autoWidth}
-          ref={handleRef}
+          ref={handleRef as any}
           {...rest}
         >
           {nodes}

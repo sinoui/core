@@ -7,19 +7,16 @@ afterEach(cleanup);
 
 it('显示空值', () => {
   const { container } = render(<SelectValueDisplay items={[]} />);
-  console.log(container.querySelector('span')?.textContent);
   expect(container.querySelector('span')).toHaveTextContent('\u200B');
 });
 
 it('显示空数组', () => {
   const { container } = render(<SelectValueDisplay value={[]} items={[]} />);
-
   expect(container.querySelector('span')).toHaveTextContent('\u200B');
 });
 
 it('显示空白字符', () => {
   const { container } = render(<SelectValueDisplay value="  " items={[]} />);
-  console.log(container.querySelector('span')?.textContent);
   expect(container.querySelector('span')).toHaveTextContent('\u200B');
 });
 

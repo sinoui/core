@@ -1,9 +1,8 @@
 import React from 'react';
 import IconButton from '@sinoui/core/IconButton';
-import SvgIcon from '@sinoui/core/SvgIcon';
-import { MdClose } from 'react-icons/md';
 import styled from 'styled-components';
 import classNames from 'classnames';
+import Close from '../svg-icons/Close';
 
 export interface CloseIconProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -40,7 +39,7 @@ export default function CloseIcon(props: CloseIconProps) {
       onClick={onClick}
       className={classNames('sinoui-dialog-title__icon')}
     >
-      <SvgIcon as={MdClose} />
+      <Close />
     </IconButtonWrapper>
   );
 }
