@@ -184,3 +184,21 @@ it('style 属性', () => {
 
   expect(getByTestId('view')).toHaveStyle('color: red');
 });
+
+it('ref属性', () => {
+  const rangeViewRef = React.createRef<HTMLDivElement>();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeView
+        data-testid="view"
+        startDate={parseDate('2020-06-10')}
+        endDate={parseDate('2020-06-18')}
+        focusedInput="start"
+        style={{ color: 'red' }}
+        ref={rangeViewRef}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('view')).toEqual(rangeViewRef.current);
+});
