@@ -21,7 +21,7 @@ const MemoDatesView = React.memo(SimpleMonthDatesView);
 function MonthItem({ index, style, data }: any) {
   const monthIdx = index % 12;
   const {
-    years,
+    defaultYear,
     startDate,
     endDate,
     showToday,
@@ -30,7 +30,7 @@ function MonthItem({ index, style, data }: any) {
     onDateClick,
   } = data;
   const month = MONTH_FULL_TITLES[monthIdx];
-  const year = years[Math.floor(index / 12)];
+  const year = defaultYear - 100 + Math.floor(index / 12);
 
   return (
     <div key={`${year}_${month}`} style={style}>

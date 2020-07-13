@@ -17,3 +17,8 @@ export const MOBILE_DATE_CELL_RECT: DateCellRect = {
   height: 48,
   padding: 4,
 };
+
+/**
+ * 默认年份索引
+ */
+export const DEFAULT_YEAR_INDEX = 1200; // 12 * 100 = 1200;

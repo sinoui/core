@@ -1,15 +1,13 @@
 import React, { useRef, useState, useCallback } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import { FixedSizeList } from 'react-window';
-import {
-  COUNTS_OF_YEAR,
-  MONTH_FULL_TITLES,
-} from '@sinoui/core/DatePicker/constants';
+import { MONTH_FULL_TITLES } from '@sinoui/core/DatePicker/constants';
 import formatDate from '@sinoui/core/DatePicker/formatDate';
 import MobileDateRangeViewWrapper from './MobileDateRangeViewWrapper';
 import MobileDateRangeViewToolBar from './MobileDateRangeViewToolBar';
 import MobileDateRangeViewContent from './MobileDateRangeViewContent';
 import MemoMonthItem from './MonthItem';
+import { DEFAULT_YEAR_INDEX } from '../constants';
 
 export interface Props {
   /**
@@ -62,25 +60,6 @@ export interface Props {
   style?: React.CSSProperties;
 }
 
-/**
- * 生成年份列表
- *
- * @param startYear 开始年份
- * @param showYearsCount 年份个数
- */
-export const genYears = (
-  startYear: number,
-  showYearsCount: number = COUNTS_OF_YEAR,
-) => {
-  const years: number[] = [];
-
-  for (let i = 0; i < showYearsCount; i += 1) {
-    years.push(startYear - 100 + i);
-  }
-
-  return years;
-};
-
 const MemoWeekTitleBar = React.memo(WeekTitleBar);
 
 /**
@@ -120,13 +99,11 @@ export default React.forwardRef<HTMLDivElement, Props>(
      * 获取当前月索引位置
      */
     const getCurrentMonthIndex = () => {
-      const yearIndex = genYears(defaultYear).findIndex(
-        (year) => year === currentYear,
-      );
+      const yearIndex = DEFAULT_YEAR_INDEX + (currentYear - defaultYear) * 12;
       const monthIndex = MONTH_FULL_TITLES.findIndex(
         (month) => month === MONTH_FULL_TITLES[currentMonth],
       );
-      return yearIndex * 12 + monthIndex;
+      return yearIndex + monthIndex;
     };
     const currentMonthIndex = getCurrentMonthIndex();
 
@@ -169,7 +146,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
     };
 
     const itemData = {
-      years: genYears(defaultYear),
+      defaultYear,
       startDate: selectedStart,
       endDate: selectedEnd,
       showToday,

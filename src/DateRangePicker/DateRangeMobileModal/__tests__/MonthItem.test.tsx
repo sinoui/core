@@ -6,13 +6,12 @@ import { defaultTheme } from '@sinoui/theme';
 import 'jest-styled-components';
 import mem from '@sinoui/core/utils/mem';
 import MonthItem from '../MonthItem';
-import { genYears } from '../MobileDateRangeView';
 
 const parseDate = mem((dateStr?: string) =>
   dateStr ? new Date(Date.parse(`${dateStr}T00:00:00`)) : undefined,
 );
 
-const years = genYears(2020);
+const defaultYear = 2020;
 
 afterEach(cleanup);
 
@@ -23,7 +22,7 @@ it('指定选中日期', () => {
         index={1205}
         data={{
           showToday: true,
-          years,
+          defaultYear,
           startDate: parseDate('2020-06-14'),
           endDate: parseDate('2020-06-20'),
         }}
@@ -46,7 +45,7 @@ it('指定最大最小值', () => {
         index={1205}
         data={{
           showToday: true,
-          years,
+          defaultYear,
           minDate: parseDate('2020-06-14'),
           maxDate: parseDate('2020-06-20'),
         }}
@@ -70,7 +69,7 @@ it('点击某一日期，onDateClick被调用', () => {
         index={1205}
         data={{
           showToday: true,
-          years,
+          defaultYear,
           minDate: parseDate('2020-06-14'),
           maxDate: parseDate('2020-06-20'),
           onDateClick,
@@ -93,7 +92,7 @@ it('展示年份和月份信息,比如2020年六月', () => {
         index={1205}
         data={{
           showToday: true,
-          years,
+          defaultYear,
         }}
       />
     </ThemeProvider>,
@@ -109,7 +108,7 @@ it('展示选中状态条', () => {
         index={1205}
         data={{
           showToday: true,
-          years,
+          defaultYear,
           startDate: parseDate('2020-06-14'),
           endDate: parseDate('2020-06-20'),
         }}
