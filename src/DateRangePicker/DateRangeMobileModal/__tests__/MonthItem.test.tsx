@@ -85,3 +85,41 @@ it('点击某一日期，onDateClick被调用', () => {
   );
   expect(onDateClick).toBeCalled();
 });
+
+it('展示年份和月份信息,比如2020年六月', () => {
+  const { getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MonthItem
+        index={1205}
+        data={{
+          showToday: true,
+          years,
+        }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByText('2020年六月')).toBeInTheDocument();
+});
+
+it('展示选中状态条', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MonthItem
+        index={1205}
+        data={{
+          showToday: true,
+          years,
+          startDate: parseDate('2020-06-14'),
+          endDate: parseDate('2020-06-20'),
+        }}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(
+    container.querySelectorAll(
+      '.sinoui-date-range-picker__week-status-bar--raised',
+    ),
+  ).toHaveLength(2);
+});
