@@ -57,6 +57,10 @@ export interface Props {
    * 值变更时的回调函数
    */
   onChange?: (value: string[]) => void;
+  /**
+   * 自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
 /**
@@ -113,6 +117,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
       focusedInput,
       onRequestClose,
       onChange,
+      ...rest
     } = props;
 
     const [selectedStart, setSelectedStart] = useState(startDate);
@@ -200,6 +205,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
       <MobileDateRangeViewWrapper
         className="sinoui-date-range-mobile-view"
         ref={ref}
+        {...rest}
       >
         <MobileDateRangeViewToolBar
           title={title ?? '设置日期'}
