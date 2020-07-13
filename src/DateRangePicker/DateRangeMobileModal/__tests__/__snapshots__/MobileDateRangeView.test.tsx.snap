@@ -440,7 +440,6 @@ exports[`快照测试 1`] = `
 }
 
 .c20 {
-  height: calc(100% - 176px);
   box-sizing: border-box;
   overflow: auto;
   width: 100%;
@@ -710,7 +709,7 @@ exports[`快照测试 1`] = `
     </p>
   </div>
   <div
-    className="c20"
+    className="c20 sinoui-date-range-mobile-view-content"
   >
     <div
       className="sinoui-date-range-mobile-view__dates-list"

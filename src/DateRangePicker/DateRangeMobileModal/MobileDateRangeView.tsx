@@ -197,7 +197,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
           onFocusedChange={setFocused}
         />
         <MemoWeekTitleBar />
-        <MobileDateRangeViewContent>
+        <MobileDateRangeViewContent className="sinoui-date-range-mobile-view-content">
           <FixedSizeList
             className="sinoui-date-range-mobile-view__dates-list"
             ref={selectedNodeRef}
