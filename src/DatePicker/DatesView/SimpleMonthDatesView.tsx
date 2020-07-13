@@ -65,7 +65,7 @@ function isGreaterThen(value: Date, year: number, month: number, date: number) {
  * @param minDate 最小日期
  * @param maxDate 最大日期
  */
-function getDisabledDates(
+export function getDisabledDates(
   year: number,
   month: number,
   minDate?: Date,
