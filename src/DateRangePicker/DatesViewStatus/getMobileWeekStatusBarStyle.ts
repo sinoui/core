@@ -30,16 +30,13 @@ export function getWeekStatusBarBorderRadius() {
 /**
  * 获取移动端状态条宽度
  * @param range 区间
- * @param weekNo 周在月份中的序号，从0开始
  * @param isStart 是否包含开始日期
  * @param isEnd 是否包含结束日期
  */
 export function getMobileWeekStatusBarWidth(
   range: [Date, Date],
-  weekNo: number,
   isStart?: boolean,
   isEnd?: boolean,
-  isLastWeek?: boolean,
 ) {
   const [start, end] = range;
   const { width, padding } = MOBILE_DATE_CELL_RECT;
@@ -47,61 +44,59 @@ export function getMobileWeekStatusBarWidth(
   const rangeLength = end.getDate() - start.getDate();
   const firstDay = start.getDay() === 0 ? 7 : start.getDay();
   const lastDay = end.getDay() === 0 ? 7 : end.getDay();
-  let statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1} + ${
-    rangeLength < 6 ? 12 : 24
-  }px)`;
 
-  if (isStart && isEnd) {
-    statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength} + ${dateCellContentWidth}px)`;
-  } else if (isEnd && weekNo === 0) {
-    statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1 / 2} + ${
-      dateCellContentWidth / 2
-    }px + ${firstDay === 1 ? 12 : 0}px)`;
-  } else if (isStart && isLastWeek) {
-    statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1 / 2} + ${
-      dateCellContentWidth / 2
-    }px + ${lastDay === 7 ? 12 : 0}px)`;
-  } else if (isStart || isEnd) {
-    statusBarWidth = `calc((100% - 24px)/7 * ${rangeLength + 1 / 2} + 12px + ${
-      dateCellContentWidth / 2
-    }px)`;
-  }
+  const dateCellWidth = '(100% - 24px) / 7';
+  const selectedDateCellWidth = `${dateCellWidth} / 2 + ${
+    dateCellContentWidth / 2
+  }px`; // 选中日期单元格宽度
 
-  return statusBarWidth;
+  const width1 = `${dateCellWidth} * ${rangeLength - 1}`;
+  const startDayWidth = isStart ? selectedDateCellWidth : dateCellWidth;
+  const endDayWidth = isEnd ? selectedDateCellWidth : dateCellWidth;
+  const leftPaddingWidth = firstDay === 1 && !isStart ? '12px' : undefined;
+  const rightPaddingWidth = lastDay === 7 && !isEnd ? '12px' : undefined;
+
+  const barWidth = [
+    width1,
+    startDayWidth,
+    endDayWidth,
+    leftPaddingWidth,
+    rightPaddingWidth,
+  ]
+    .filter(Boolean)
+    .join(' + ');
+
+  return `calc(${barWidth})`;
 }
 
 /**
  * 获取移动端状态条左侧定位
  * @param range 区间
- * @param weekNo 周在月份中的序号，从0开始
  * @param isStart 是否包含开始日期
- * @param isEnd 是否包含结束日期
  */
 export function getMobileWeekStatusBarLeft(
   range: [Date, Date],
-  weekNo: number,
   isStart?: boolean,
 ) {
   const [start] = range;
   const { width, padding } = MOBILE_DATE_CELL_RECT;
-  const firstDay = start.getDay() === 0 ? 7 : start.getDay();
   const dateCellContentWidth = width - 2 * padding;
-
-  let left = `calc((100% - 24px)/7 * ${firstDay - 1 / 2} - ${
+  const startDay = start.getDay() === 0 ? 7 : start.getDay();
+  const unselectedDays = startDay - 1;
+  const dateCellWidth = '(100% - 24px) / 7';
+  const selectedDateCellPadding = `${dateCellWidth} / 2 - ${
     dateCellContentWidth / 2
-  }px + 12px)`;
+  }px`; // 选中日期单元格宽度
 
-  if (!isStart) {
-    if (weekNo === 0) {
-      left = `calc((100% - 24px)/7 * ${firstDay - 1} + ${
-        firstDay === 1 ? 0 : 12
-      }px)`;
-    } else {
-      left = '0px';
-    }
-  }
+  const left = [
+    !isStart && startDay === 1 ? 0 : '12px',
+    `${dateCellWidth} * ${unselectedDays}`,
+    isStart ? selectedDateCellPadding : 0,
+  ]
+    .filter(Boolean)
+    .join(' + ');
 
-  return left;
+  return `calc(${left})`;
 }
 
 /**
@@ -119,24 +114,17 @@ export default function getMobileWeekStatusBarStyle(
   weekNo: number,
   isStart?: boolean,
   isEnd?: boolean,
-  isLastWeek?: boolean,
 ): React.CSSProperties {
   const borderRadius = getWeekStatusBarBorderRadius();
 
   return {
-    width: getMobileWeekStatusBarWidth(
-      range,
-      weekNo,
-      isStart,
-      isEnd,
-      isLastWeek,
-    ),
+    width: getMobileWeekStatusBarWidth(range, isStart, isEnd),
     height: getWeekStatusBarHeight(),
     borderTopLeftRadius: isStart ? borderRadius : 0,
     borderBottomLeftRadius: isStart ? borderRadius : 0,
     borderTopRightRadius: isEnd ? borderRadius : 0,
     borderBottomRightRadius: isEnd ? borderRadius : 0,
-    left: getMobileWeekStatusBarLeft(range, weekNo, isStart),
+    left: getMobileWeekStatusBarLeft(range, isStart),
     top: getWeekStatusBarTop(weekNo),
   };
 }
