@@ -236,3 +236,23 @@ it('快照测试', () => {
 
   expect(tree).toMatchSnapshot();
 });
+
+it('点击日期标题，切换焦点位置', () => {
+  const { getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeView
+        startDate={parseDate('2020-06-10')}
+        endDate={parseDate('2020-06-18')}
+        focusedInput="start"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByText('6月10日')).toHaveStyle('opacity: 1');
+  expect(getByText('6月18日')).toHaveStyle('opacity: 0.7');
+
+  fireEvent.click(getByText('6月18日'));
+
+  expect(getByText('6月10日')).toHaveStyle('opacity: 0.7');
+  expect(getByText('6月18日')).toHaveStyle('opacity: 1');
+});
