@@ -20,6 +20,30 @@ describe('快照测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('focused=start', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <MobileDateRangeViewToolBar focused="start" />
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('focused=end', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <MobileDateRangeViewToolBar focused="end" />
+        </ThemeProvider>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('验收测试', () => {
@@ -32,6 +56,20 @@ describe('验收测试', () => {
 
     expect(getByText('保存')).toBeInTheDocument();
     expect(getByText('清除')).toBeInTheDocument();
+  });
+
+  it('展示日期标题', () => {
+    const { getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <MobileDateRangeViewToolBar
+          startDate={new Date(2020, 6, 20)}
+          endDate={new Date(2020, 7, 10)}
+        />
+      </ThemeProvider>,
+    );
+
+    expect(getByText('7月20日')).toBeInTheDocument();
+    expect(getByText('8月10日')).toBeInTheDocument();
   });
 
   it('点击清除按钮，清空选中时间', () => {
@@ -83,6 +121,20 @@ describe('验收测试', () => {
     expect(getByText('开始时间')).toHaveStyle('opacity:0.7');
   });
 
+  it('点击结束时间，onFocusedChange被调用', () => {
+    const onFocusedChange = jest.fn();
+    const { getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <MobileDateRangeViewToolBar
+          onFocusedChange={onFocusedChange}
+          focused="start"
+        />
+      </ThemeProvider>,
+    );
+    fireEvent.click(getByText('结束时间'));
+    expect(onFocusedChange).toBeCalledWith('end');
+  });
+
   it('onClose属性', () => {
     const onClose = jest.fn();
     const { container } = render(
@@ -100,4 +152,14 @@ describe('验收测试', () => {
 
     expect(onClose).toBeCalled();
   });
+});
+
+it('title属性', () => {
+  const { getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeViewToolBar title="已选日期" />
+    </ThemeProvider>,
+  );
+
+  expect(getByText('已选日期')).toBeInTheDocument();
 });

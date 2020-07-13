@@ -1,5 +1,153 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`快照测试 focused=end 1`] = `
+<div
+  className="sc-AxgMl iCzCTP sinoui-date-range-view-toolbar"
+>
+  <div
+    className="sc-AxheI hXwyfz"
+  >
+    <button
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw haloBM sinoui-icon-button sinoui-icon-button--dense"
+      color="textSecondary"
+      role="button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="sc-AxhCb klcZHD sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
+      </svg>
+    </button>
+    <div
+      className="sc-AxheI hXwyfz"
+    >
+      <button
+        className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy fIOeOC sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        清除
+      </button>
+      <button
+        className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy fIOeOC sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        保存
+      </button>
+    </div>
+  </div>
+  <p
+    className="sc-AxjAm iVSsOx sinoui-typography sinoui-typography--caption"
+    color="textPrimary"
+    type="caption"
+  />
+  <h5
+    className="sc-AxjAm beXNVp sinoui-typography sinoui-typography--h5"
+    color="textPrimary"
+    type="h5"
+  >
+    <span
+      className="sc-Axmtr iyjFes"
+      onClick={[Function]}
+    >
+      开始时间
+    </span>
+    -
+    <span
+      className="sc-Axmtr gkCNjg"
+      onClick={[Function]}
+    >
+      结束时间
+    </span>
+  </h5>
+</div>
+`;
+
+exports[`快照测试 focused=start 1`] = `
+<div
+  className="sc-AxgMl iCzCTP sinoui-date-range-view-toolbar"
+>
+  <div
+    className="sc-AxheI hXwyfz"
+  >
+    <button
+      className="sc-AxirZ ctNRvI sinoui-base-button sc-AxiKw haloBM sinoui-icon-button sinoui-icon-button--dense"
+      color="textSecondary"
+      role="button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="sc-AxhCb klcZHD sinoui-svg-icon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
+      </svg>
+    </button>
+    <div
+      className="sc-AxheI hXwyfz"
+    >
+      <button
+        className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy fIOeOC sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        清除
+      </button>
+      <button
+        className="sc-AxirZ ctNRvI sinoui-base-button sc-AxhUy fIOeOC sinoui-button"
+        color="primary"
+        role="button"
+        type="button"
+      >
+        保存
+      </button>
+    </div>
+  </div>
+  <p
+    className="sc-AxjAm iVSsOx sinoui-typography sinoui-typography--caption"
+    color="textPrimary"
+    type="caption"
+  />
+  <h5
+    className="sc-AxjAm beXNVp sinoui-typography sinoui-typography--h5"
+    color="textPrimary"
+    type="h5"
+  >
+    <span
+      className="sc-Axmtr gkCNjg"
+      onClick={[Function]}
+    >
+      开始时间
+    </span>
+    -
+    <span
+      className="sc-Axmtr iyjFes"
+      onClick={[Function]}
+    >
+      结束时间
+    </span>
+  </h5>
+</div>
+`;
+
 exports[`快照测试 渲染 1`] = `
 <div
   className="sc-AxgMl iCzCTP sinoui-date-range-view-toolbar"
