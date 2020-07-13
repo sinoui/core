@@ -1,8 +1,6 @@
-import React, { useMemo } from 'react';
-import DatesView from '@sinoui/core/DatePicker/DatesView';
+import React from 'react';
+import SimpleMonthDatesView from '@sinoui/core/DatePicker/DatesView/SimpleMonthDatesView';
 import DatesViewStatus from '../DatesViewStatus';
-import isSameMonth from '../helpers/isSameMonth';
-import getDisabledDates from '../helpers/getDisabledDates';
 
 export interface Props {
   /**
@@ -43,7 +41,7 @@ export interface Props {
   outlinedDateRange?: [Date, Date];
 }
 
-const MemoDatesView = React.memo(DatesView);
+const MemoDatesView = React.memo(SimpleMonthDatesView);
 const MemoDatesViewStatus = React.memo(DatesViewStatus);
 
 /**
@@ -62,24 +60,6 @@ export default function DateRangeDatesView(props: Props) {
     outlinedDateRange,
     ...rest
   } = props;
-
-  const outlinedDate =
-    showToday && isSameMonth(new Date(), year, month)
-      ? new Date().getDate()
-      : undefined;
-
-  const selectedDates = useMemo(
-    () =>
-      [startDate, endDate]
-        .filter((date) => date && isSameMonth(date, year, month))
-        .map((date: any) => date.getDate()),
-    [endDate, month, startDate, year],
-  );
-
-  const disabledDates = useMemo(
-    () => getDisabledDates(year, month, minDate, maxDate),
-    [maxDate, minDate, month, year],
-  );
 
   return (
     <div
@@ -108,9 +88,10 @@ export default function DateRangeDatesView(props: Props) {
       <MemoDatesView
         year={year}
         month={month}
-        outlinedDate={outlinedDate}
-        selectedDates={selectedDates}
-        disabledDates={disabledDates}
+        showToday={showToday}
+        minDate={minDate}
+        maxDate={maxDate}
+        value={[startDate, endDate]}
         onDateClick={onDateClick}
         isPc
       />

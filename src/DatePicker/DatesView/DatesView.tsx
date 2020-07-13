@@ -8,7 +8,7 @@ import leadingZero from '../leadingZero';
 import dateCellStyle from './dateCellStyle';
 import { CLASSES } from '../constants';
 
-interface Props {
+export interface Props {
   /**
    * 指定日视图的年份
    */

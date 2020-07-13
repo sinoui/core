@@ -1,11 +1,8 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { MONTH_FULL_TITLES } from '@sinoui/core/DatePicker/constants';
-import DatesView from '@sinoui/core/DatePicker/DatesView';
 import styled from 'styled-components';
-import mem from '@sinoui/core/utils/mem';
+import SimpleMonthDatesView from '@sinoui/core/DatePicker/DatesView/SimpleMonthDatesView';
 import DatesViewStatus from '../DatesViewStatus';
-import isSameMonth from '../helpers/isSameMonth';
-import getDisabledDates from '../helpers/getDisabledDates';
 
 const YearItem = styled.div`
   display: inline-flex;
@@ -15,15 +12,7 @@ const YearItem = styled.div`
 `;
 
 const MemoDatesViewStatus = React.memo(DatesViewStatus);
-const MemoDatesView = React.memo(DatesView);
-
-/**
- * 缓存选中的日期
- */
-const memSelectedDates = mem(
-  (items: number[]) => items,
-  (items) => items.join('_'),
-);
+const MemoDatesView = React.memo(SimpleMonthDatesView);
 
 /**
  * 移动端每个月份日期渲染
@@ -43,26 +32,6 @@ function MonthItem({ index, style, data }: any) {
   const month = MONTH_FULL_TITLES[monthIdx];
   const year = years[Math.floor(index / 12)];
 
-  const outlinedDate =
-    showToday && isSameMonth(new Date(), year, monthIdx)
-      ? new Date().getDate()
-      : undefined;
-
-  const selectedDates = useMemo(() => {
-    return memSelectedDates(
-      [startDate, endDate]
-        .map((date) =>
-          isSameMonth(date, year, monthIdx) ? date.getDate() : undefined,
-        )
-        .filter(Boolean) as number[],
-    );
-  }, [endDate, monthIdx, startDate, year]);
-
-  const disabledDates = useMemo(
-    () => getDisabledDates(year, monthIdx, minDate, maxDate),
-    [maxDate, minDate, monthIdx, year],
-  );
-
   return (
     <div key={`${year}_${month}`} style={style}>
       {startDate && endDate && (
@@ -80,9 +49,10 @@ function MonthItem({ index, style, data }: any) {
       <MemoDatesView
         year={year}
         month={index % 12}
-        selectedDates={selectedDates as number[]}
-        outlinedDate={outlinedDate}
-        disabledDates={disabledDates}
+        value={[startDate, endDate]}
+        minDate={minDate}
+        maxDate={maxDate}
+        showToday={showToday}
         onDateClick={onDateClick}
       />
     </div>
