@@ -1,7 +1,6 @@
 import React, { useRef, useState, useCallback } from 'react';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import { FixedSizeList } from 'react-window';
-import memoize from 'memoize-one';
 import {
   COUNTS_OF_YEAR,
   MONTH_FULL_TITLES,
@@ -81,21 +80,6 @@ export const genYears = (
 
   return years;
 };
-
-/**
- * 创建项目数据
- */
-const createItemData = memoize(
-  (startDate, endDate, showToday, minDate, maxDate, onDateClick) => ({
-    years: genYears(),
-    startDate,
-    endDate,
-    showToday,
-    minDate,
-    maxDate,
-    onDateClick,
-  }),
-);
 
 const MemoWeekTitleBar = React.memo(WeekTitleBar);
 
@@ -186,14 +170,15 @@ export default React.forwardRef<HTMLDivElement, Props>(
       }
     };
 
-    const itemData = createItemData(
-      selectedStart,
-      selectedEnd,
+    const itemData = {
+      years: genYears(),
+      startDate: selectedStart,
+      endDate: selectedEnd,
       showToday,
       minDate,
       maxDate,
-      handleDateClick,
-    );
+      onDateClick: handleDateClick,
+    };
 
     return (
       <MobileDateRangeViewWrapper
