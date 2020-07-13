@@ -7,12 +7,6 @@ import DatesViewStatus from '../DatesViewStatus';
 import isSameMonth from '../helpers/isSameMonth';
 import getDisabledDates from '../helpers/getDisabledDates';
 
-const dateCellRect = {
-  width: 48,
-  height: 48,
-  padding: 4,
-};
-
 const YearItem = styled.div`
   display: inline-flex;
   align-items: center;
@@ -77,7 +71,6 @@ function MonthItem({ index, style, data }: any) {
           month={monthIdx}
           startDate={startDate}
           endDate={endDate}
-          dateCellRect={dateCellRect}
           isPc={false}
         />
       )}

@@ -36,10 +36,12 @@ const MobileDateRangeViewWrapper = styled(Paper).withConfig({
     grid-column-gap: 0;
   }
 
-  .sinoui-date-cell-ripple-layout,
-  .sinoui-date-cell-ripple {
-    height: 40px;
-    width: 40px;
+  && {
+    .sinoui-date-cell-ripple-layout,
+    .sinoui-date-cell-ripple {
+      height: 40px;
+      width: 40px;
+    }
   }
 `;
 
