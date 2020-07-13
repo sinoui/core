@@ -34,10 +34,6 @@ interface Props {
    * 是否是结束时间
    */
   isEnd?: boolean;
-  /**
-   * 是否是最后一周
-   */
-  isLastWeek?: boolean;
 }
 
 /**
@@ -51,7 +47,6 @@ export default function WeekStatusBar({
   isPc = true,
   isStart = false,
   isEnd = false,
-  isLastWeek = false,
   ...rest
 }: Props) {
   const weekBarStyle = useMemo(
@@ -63,9 +58,8 @@ export default function WeekStatusBar({
             weekNo,
             isStart,
             isEnd,
-            isLastWeek,
           ),
-    [endDate, isEnd, isLastWeek, isPc, isStart, startDate, weekNo],
+    [endDate, isEnd, isPc, isStart, startDate, weekNo],
   );
 
   return (
