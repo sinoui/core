@@ -2,6 +2,7 @@ import React, { useRef, useCallback, useState } from 'react';
 import TextInput, { TextInputProps } from '@sinoui/core/TextInput';
 import useSelect from '@sinoui/core/useSelect';
 import useIsPc from '@sinoui/core/DatePicker/useIsPc';
+import type { PopperProps } from '@sinoui/core/Popper';
 import InputAdornment from '../InputAdornment';
 import DatePickerIcon from '../svg-icons/DatePickerIcon';
 import formatDate from '../DatePicker/formatDate';
@@ -43,6 +44,10 @@ export interface Props
    */
   portal?: boolean;
   /**
+   * 给弹窗设置属性。
+   */
+  popperProps?: PopperProps;
+  /**
    * 默认年份
    */
   defaultYear?: number;
@@ -67,6 +72,7 @@ export default function DateRangePicker(props: Props) {
     portal,
     defaultYear,
     defaultMonth,
+    popperProps,
   } = props;
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
@@ -208,6 +214,7 @@ export default function DateRangePicker(props: Props) {
           focusedInput={focusedInput}
           {...getPopperProps()}
           portal={portal}
+          {...popperProps}
         />
       ) : (
         <DateRangeMobileModal
