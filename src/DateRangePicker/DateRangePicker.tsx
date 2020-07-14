@@ -61,6 +61,10 @@ export interface Props
   modalTitle?: string;
 }
 
+/**
+ * 日期区间选择组件
+ * @param props
+ */
 export default function DateRangePicker(props: Props) {
   const {
     isPc: isPcProps,
@@ -99,12 +103,18 @@ export default function DateRangePicker(props: Props) {
     isRenderWithPopper: isPc,
   });
 
+  /**
+   * 点击开始时间清除按钮时的回调函数
+   */
   const handleStartClear = () => {
     if (onChange) {
       onChange(['', endValue]);
     }
   };
 
+  /**
+   * 点击结束时间清除按钮的回调函数
+   */
   const handleEndClear = () => {
     if (onChange) {
       onChange([startValue, '']);
@@ -128,6 +138,9 @@ export default function DateRangePicker(props: Props) {
     });
   };
 
+  /**
+   * 点击日期单元格时的回调函数
+   */
   const handleDateClick = useCallback(
     (_event: React.MouseEvent<HTMLElement>, date: Date) => {
       if (onChange) {
@@ -161,7 +174,7 @@ export default function DateRangePicker(props: Props) {
       >
         <TextInput
           {...getTextInputProps()}
-          baseClassName="sinoui-date-range-picker__start"
+          baseClassName="sinoui-date-range-picker__start-input"
           value={value ? value[0] : ''}
           inputProps={{
             ...getTextInputProps().inputProps,
@@ -183,7 +196,7 @@ export default function DateRangePicker(props: Props) {
         <TextInput
           {...getTextInputProps()}
           ref={null}
-          baseClassName="sinoui-date-range-picker__end"
+          baseClassName="sinoui-date-range-picker__end-input"
           value={value && value[1] ? value[1] : ''}
           inputProps={{
             ...getTextInputProps().inputProps,

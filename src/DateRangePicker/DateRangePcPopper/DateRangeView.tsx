@@ -55,8 +55,8 @@ const ContentWrapper = styled.div`
 export default function DateRangeView(props: Props) {
   const {
     startDate,
-    defaultYear,
-    defaultMonth,
+    defaultYear = new Date().getFullYear(),
+    defaultMonth = new Date().getMonth(),
     showToday = true,
     ...rest
   } = props;
@@ -64,10 +64,7 @@ export default function DateRangeView(props: Props) {
   const [[year, month], setYearMonth] = useState(() => {
     return startDate
       ? [startDate.getFullYear(), startDate.getMonth()]
-      : [
-          defaultYear ?? new Date().getFullYear(),
-          defaultMonth ?? new Date().getMonth(),
-        ];
+      : [defaultYear, defaultMonth];
   });
 
   return (

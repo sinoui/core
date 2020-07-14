@@ -23,7 +23,11 @@ export default function DateRangePcPopper(props: Props) {
     ...rest
   } = props;
   return (
-    <Popper {...rest} placement="bottom-start">
+    <Popper
+      {...rest}
+      placement="bottom-start"
+      className="sinoui-date-range-picker__popper"
+    >
       <DateRangeView
         startDate={startDate}
         endDate={endDate}
