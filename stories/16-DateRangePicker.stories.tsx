@@ -29,6 +29,7 @@ export const 日期区间展示 = () => (
 
 const StyledDateRangePicker = styled(DateRangePicker)`
   width: 200px;
+  margin-top: 8px;
 `;
 
 function DateRangePickerDemo(props: any) {
@@ -51,5 +52,19 @@ export const 日期区间选择 = () => (
 export const 移动端日期区间选择 = () => (
   <StoryLayout>
     <DateRangePickerDemo isPc={false} />
+  </StoryLayout>
+);
+
+export const 不可用 = () => (
+  <StoryLayout>
+    <DateRangePickerDemo disabled />
+  </StoryLayout>
+);
+
+export const 输入框模式 = () => (
+  <StoryLayout>
+    <DateRangePickerDemo />
+    <DateRangePickerDemo variant="outlined" />
+    <DateRangePickerDemo variant="filled" />
   </StoryLayout>
 );
