@@ -10,7 +10,7 @@ const Arrow = styled.div`
   &::before {
     content: '';
     transform: rotate(45deg);
-    background-color: rgba(97, 97, 97);
+    background-color: rgb(97, 97, 97);
     top: 0;
     left: 0;
   }

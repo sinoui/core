@@ -19,13 +19,16 @@ function PlacementDemo() {
             justifyContent: 'center',
           }}
         >
-          <Tooltip title="提示" placement="top-start">
+          <Tooltip
+            title="提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示"
+            placement="top-start"
+          >
             <StyledButton>TOP-START</StyledButton>
           </Tooltip>
-          <Tooltip title="提示" placement="top">
+          <Tooltip title="提示提示提示提示" placement="top">
             <StyledButton>TOP</StyledButton>
           </Tooltip>
-          <Tooltip title="提示" placement="top-end">
+          <Tooltip title="提示提示提示提示提示" placement="top-end">
             <StyledButton>TOP-END</StyledButton>
           </Tooltip>
         </Column>
