@@ -635,7 +635,7 @@ exports[`快照测试 1`] = `
       设置日期
     </p>
     <h5
-      className="c8 sinoui-typography sinoui-typography--h5"
+      className="c8 sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
       color="textPrimary"
       type="h5"
     >
@@ -2438,7 +2438,7 @@ exports[`快照测试 1`] = `
               </span>
             </div>
             <div
-              className="sinoui-date-cell sinoui-date-cell--outlined"
+              className="sinoui-date-cell"
               data-column={1}
               data-date="2020-07-13"
               data-row={3}
@@ -2480,7 +2480,7 @@ exports[`快照测试 1`] = `
               </span>
             </div>
             <div
-              className="sinoui-date-cell"
+              className="sinoui-date-cell sinoui-date-cell--outlined"
               data-column={3}
               data-date="2020-07-15"
               data-row={3}

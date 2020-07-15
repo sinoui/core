@@ -49,6 +49,14 @@ interface Props extends Omit<ModalProps, 'children'> {
    * 值变更时的回调函数
    */
   onChange?: (value: string[]) => void;
+  /**
+   * 头部开始时间标题
+   */
+  startTitle?: string;
+  /**
+   * 头部结束时间标题
+   */
+  endTitle?: string;
 }
 
 /**
@@ -68,6 +76,8 @@ export default function DateRangeMobileModal(props: Props) {
     onChange,
     title,
     open,
+    startTitle,
+    endTitle,
     ...rest
   } = props;
   return (
@@ -90,6 +100,8 @@ export default function DateRangeMobileModal(props: Props) {
           onRequestClose={onRequestClose}
           onChange={onChange}
           title={title}
+          startTitle={startTitle}
+          endTitle={endTitle}
         />
       </Fade>
     </Modal>

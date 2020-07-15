@@ -35,21 +35,25 @@ import DateRangePicker from '@sinoui/core/DateRangePicker'; // 日期区间选�
 
 ## DateRangePicker
 
-| 参数名称     | 参数类型                          | 默认值 | 说明                                                      |
-| ------------ | --------------------------------- | ------ | --------------------------------------------------------- |
-| value        | string                            |        | 值                                                        |
-| onChange     | (date?: string) => void           |        | 值变化时的回调函数                                        |
-| isPc         | boolean                           |        | 是否是 pc 端设备                                          |
-| min          | string                            |        | 最小值                                                    |
-| max          | string                            |        | 最大值                                                    |
-| modalTitle   | string                            |        | 弹窗标题。默认为`设置${label}`。在移动端弹窗时使用        |
-| renderValue  | (value?: Date) => React.ReactNode |        | 指定自定义的值渲染函数。默认情况下，直接显示`value`属性值 |
-| portal       | boolean                           |        | 是否将弹出内容以传送门的方式渲染。默认为`true`            |
-| popperProps  | PopperProps                       |        | 给弹窗设置属性                                            |
-| defaultYear  | number                            |        | 默认年份                                                  |
-| defaultMonth | number                            |        | 默认月份                                                  |
-| popperProps  | PopperProps                       |        | 给弹窗设置属性。                                          |
+| 参数名称              | 参数类型                          | 默认值 | 说明                                                      |
+| --------------------- | --------------------------------- | ------ | --------------------------------------------------------- |
+| value                 | string                            |        | 值                                                        |
+| onChange              | (date?: string) => void           |        | 值变化时的回调函数                                        |
+| isPc                  | boolean                           |        | 是否是 pc 端设备                                          |
+| min                   | string                            |        | 最小值                                                    |
+| max                   | string                            |        | 最大值                                                    |
+| modalTitle            | string                            |        | 弹窗标题。默认为`设置${label}`。在移动端弹窗时使用        |
+| renderValue           | (value?: Date) => React.ReactNode |        | 指定自定义的值渲染函数。默认情况下，直接显示`value`属性值 |
+| portal                | boolean                           |        | 是否将弹出内容以传送门的方式渲染。默认为`true`            |
+| popperProps           | PopperProps                       |        | 给弹窗设置属性                                            |
+| defaultYear           | number                            |        | 默认年份                                                  |
+| defaultMonth          | number                            |        | 默认月份                                                  |  |
+| toTitle               | React.ReactNode                   |        | 设置输入框之间的连接元素，默认为~                         |
+| startInputLabel       | string                            |        | 开始输入框的标签内容                                      |
+| endInputLabel         | string                            |        | 结束输入框的标签内容                                      |
+| startInputPlaceholder | string                            |        | 开始输入框的提示说明                                      |
+| endInputPlaceholder   | string                            |        | 结束输入框的提示说明                                      |
 
-除上述属性外，DatePicker 还继承了[TextInput](./text-input)除了`value`， `multiline`， `minRows`， `maxRows`， `onChange`， 和 `multiple`之外的所有属性。
+除上述属性外，DateRangePicker 还继承了[TextInput](./text-input)除了`value`， `multiline`， `minRows`， `maxRows`， `onChange`， 和 `multiple`之外的所有属性。
 
 关于`DatePicker`和`DateRangePicker`的使用，请参考[日期选择 demo](../components/datepicker)。

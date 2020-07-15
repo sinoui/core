@@ -53,7 +53,7 @@ exports[`快照测试 focused=end 1`] = `
     type="caption"
   />
   <h5
-    className="sc-AxjAm beXNVp sinoui-typography sinoui-typography--h5"
+    className="sc-AxjAm beXNVp sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
     color="textPrimary"
     type="h5"
   >
@@ -127,7 +127,7 @@ exports[`快照测试 focused=start 1`] = `
     type="caption"
   />
   <h5
-    className="sc-AxjAm beXNVp sinoui-typography sinoui-typography--h5"
+    className="sc-AxjAm beXNVp sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
     color="textPrimary"
     type="h5"
   >
@@ -201,7 +201,7 @@ exports[`快照测试 渲染 1`] = `
     type="caption"
   />
   <h5
-    className="sc-AxjAm beXNVp sinoui-typography sinoui-typography--h5"
+    className="sc-AxjAm beXNVp sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
     color="textPrimary"
     type="h5"
   >

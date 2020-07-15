@@ -163,3 +163,23 @@ it('title属性', () => {
 
   expect(getByText('已选日期')).toBeInTheDocument();
 });
+
+it('startTitle属性', () => {
+  const { getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeViewToolBar startTitle="开始日期" />
+    </ThemeProvider>,
+  );
+
+  expect(getByText('开始日期')).toBeInTheDocument();
+});
+
+it('endTitle', () => {
+  const { getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <MobileDateRangeViewToolBar endTitle="结束日期" />
+    </ThemeProvider>,
+  );
+
+  expect(getByText('结束日期')).toBeInTheDocument();
+});
