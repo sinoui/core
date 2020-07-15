@@ -111,44 +111,40 @@ const defaultRenderBackdrop = (props: RenderModalBackdropProps) => {
   return <Backdrop {...props} />;
 };
 
-let defaultModalManager: ModalManager | undefined;
-const getDefaultModalManager = () => {
-  if (!defaultModalManager) {
-    defaultModalManager = new ModalManager();
-  }
-  return defaultModalManager;
-};
-
 /**
  * 模态框。
  */
-export default function Modal({
-  open,
-  onClose,
-  onRequestClose,
-  children,
-  container,
-  center,
-  backdrop = true,
-  backdropClick = true,
-  backdropOpacity,
-  onBackdropClick,
-  BackdropProps,
-  renderBackdrop = defaultRenderBackdrop,
-  keyboard = true,
-  onEscapeKeydown,
-  autoFocus = true,
-  enforceFocus = true,
-  scrollLock = true,
-  modalManager = getDefaultModalManager(),
-  ...rest
-}: Props) {
+export default React.forwardRef<HTMLDivElement, Props>(function Modal(
+  {
+    open,
+    onClose,
+    onRequestClose,
+    children,
+    container,
+    center,
+    backdrop = true,
+    backdropClick = true,
+    backdropOpacity,
+    onBackdropClick,
+    BackdropProps,
+    renderBackdrop = defaultRenderBackdrop,
+    keyboard = true,
+    onEscapeKeydown,
+    autoFocus = true,
+    enforceFocus = true,
+    scrollLock = true,
+    modalManager = ModalManager.defaultModalManager(),
+    ...rest
+  },
+  ref,
+) {
   const containerElement = getContainerElement(container);
   const hasTransition = 'in' in children.props;
   const [exited, setExited] = useState(!open);
 
   const modalNodeRef = useRef<HTMLDivElement>(null);
   const modalContentRef = useRef<HTMLDivElement>(null);
+  const handleModalNodeRef = useMultiRefs(modalNodeRef, ref);
   const handleModalContentRef = useMultiRefs(
     modalContentRef,
     (children as any).ref,
@@ -250,6 +246,7 @@ export default function Modal({
     }
 
     if (keyboard && onRequestClose) {
+      event.stopPropagation();
       onRequestClose(event as any, 'escapeKeydown');
     }
   };
@@ -257,6 +254,13 @@ export default function Modal({
   if (!isShowModal) {
     return null;
   }
+
+  /**
+   * 点击Modal整体
+   */
+  const onContainerClick = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+  };
 
   const childProps: Record<string, any> = {
     ref: handleModalContentRef,
@@ -283,7 +287,8 @@ export default function Modal({
       data-sinoui-id="modal"
       $center={center}
       onKeyDown={handleKeydown}
-      ref={modalNodeRef}
+      ref={handleModalNodeRef}
+      onClick={onContainerClick}
       {...rest}
     >
       {backdrop
@@ -301,4 +306,4 @@ export default function Modal({
     </ModalWrapper>,
     containerElement,
   );
-}
+});

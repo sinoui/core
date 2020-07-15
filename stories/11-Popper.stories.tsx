@@ -6,6 +6,8 @@ import Collapse from '@sinoui/core/Collapse';
 import Grow from '@sinoui/core/Grow';
 import { Modifier } from '@popperjs/core';
 import TextInput from '@sinoui/core/TextInput';
+import Modal from '@sinoui/core/Modal';
+import { defaultTheme } from '@sinoui/theme';
 import StoryLayout from './StoryLayout';
 import { Button } from '../src';
 
@@ -469,3 +471,36 @@ const Demo7 = () => {
 };
 
 export const 双弹出层 = () => <Demo7 />;
+
+const PopperOverModalDemo = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPopperOpen, setIsPopperOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  return (
+    <div>
+      <Button onClick={() => setIsModalOpen(true)}>展现模态框</Button>
+      <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} center>
+        <Paper style={{ width: 500, height: 200 }}>
+          <Button ref={buttonRef} onClick={() => setIsPopperOpen(true)}>
+            展开弹层
+          </Button>
+          <Popper
+            open={isPopperOpen}
+            referenceElement={buttonRef}
+            placement="bottom-start"
+          >
+            <TextInput autoFocus onBlur={() => setIsPopperOpen(false)} />
+            <Button onClick={() => setIsPopperOpen(false)}>关闭弹层</Button>
+          </Popper>
+        </Paper>
+      </Modal>
+    </div>
+  );
+};
+
+export const 在模态框上的弹层 = () => (
+  <StoryLayout>
+    <PopperOverModalDemo />
+  </StoryLayout>
+);

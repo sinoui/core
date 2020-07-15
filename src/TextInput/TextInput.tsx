@@ -1,5 +1,5 @@
 import React, { useState, useRef, useMemo } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { BaseInputProps } from '@sinoui/core/BaseInput';
 import HelperText from '@sinoui/core/HelperText';
 import FormLabel from '@sinoui/core/FormLabel';
@@ -47,6 +47,10 @@ export interface TextInputProps extends BaseInputProps {
    */
   shrink?: boolean;
   /**
+   * 直接控制输入框的标签悬浮状态。
+   */
+  forceShrink?: boolean;
+  /**
    * 给根元素指定css样式
    */
   style?: React.CSSProperties;
@@ -66,11 +70,32 @@ const variantComponent = {
   outlined: OutlinedInput,
 };
 
-const TextInputWrapper = styled.div<{ disabled?: boolean; field?: boolean }>`
+const focusedVisibleCss = css<{ $focused?: boolean }>`
+  & .sinoui-focused-visible {
+    visibility: ${({ $focused }) => ($focused ? 'visible' : 'hidden')};
+  }
+
+  &:hover .sinoui-focused-visible {
+    visibility: visible;
+  }
+
+  @media (hover: none) {
+    &:hover .sinoui-focused-visible {
+      visibility: ${({ $focused }) => ($focused ? 'visible' : 'hidden')};
+    }
+  }
+`;
+
+const TextInputWrapper = styled.div<{
+  disabled?: boolean;
+  field?: boolean;
+  $focused?: boolean;
+}>`
   display: ${({ field }) => (field ? 'flex' : 'inline-flex')};
   flex-direction: column;
   align-items: stretch;
   position: relative;
+  ${focusedVisibleCss}
 `;
 
 /**
@@ -88,6 +113,7 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
       disabled,
       required,
       shrink: shrinkProp,
+      forceShrink,
       error,
       errorText,
       placeholder,
@@ -105,12 +131,13 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
     const innerLabelRef = useRef<HTMLLabelElement>(null);
     const [focused, setFocused] = useState(false);
     const shrink =
-      shrinkProp ||
-      focused ||
-      !isEmptyValue(value) ||
-      !!defaultValue ||
       !!placeholder ||
-      !!startAdornment;
+      (forceShrink ??
+        (shrinkProp ||
+          focused ||
+          !isEmptyValue(value) ||
+          !!defaultValue ||
+          !!startAdornment));
     const formControlContext = useFormControlContext();
     const noLabel =
       !label &&
@@ -184,6 +211,7 @@ const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
         style={style}
         ref={ref}
         field={field}
+        $focused={focused}
       >
         {label && (
           <FormLabel

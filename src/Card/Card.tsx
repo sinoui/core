@@ -29,6 +29,7 @@ const StyledCard = styled(Paper).attrs(({ outlined }: CardProps) => ({
   display: inline-flex;
   flex-direction: column;
   outline: none;
+  overflow: hidden;
 `;
 
 export default StyledCard;

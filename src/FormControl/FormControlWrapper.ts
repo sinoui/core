@@ -25,6 +25,13 @@ const FormControlWrapper = styled.div<FormControlProps>`
     flex-direction: column;
   }
 
+  .sinoui-helper-line {
+    margin-bottom: 8px;
+    &:empty {
+      margin-bottom: 0;
+    }
+  }
+
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}px) {
     &.sinoui-form-item--horizontal {
       flex-direction: row;

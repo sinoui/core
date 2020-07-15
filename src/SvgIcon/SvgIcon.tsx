@@ -14,6 +14,10 @@ export interface SvgIconProps {
    */
   className?: string;
   /**
+   * 指定自定义样式
+   */
+  style?: React.CSSProperties;
+  /**
    * 设置 svg 元素的 viewBox，默认为0 0 24 24
    */
   viewBox?: string;

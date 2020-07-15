@@ -1,36 +1,13 @@
-import React, { useState, useRef, useCallback } from 'react';
-import styled from 'styled-components';
+import React, { useRef } from 'react';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
-import InputAdornment from '@sinoui/core/InputAdornment';
+import AutoComplete, {
+  AutoCompleteCloseReason,
+} from '@sinoui/core/AutoComplete';
+import type { AutoCompleteProps } from '@sinoui/core/AutoComplete';
+import type { Placement } from '@popperjs/core';
 import SelectInput from './SelectInput';
-import ArrowDropDownIcon from '../svg-icons/ArrowDropDownIcon';
 import type SelectItem from './SelectItem';
-import useMultiRefs from '../utils/useMultiRefs';
-
-const StyledTextInput = styled(TextInput)<{ $isOpen: boolean }>`
-  > .sinoui-base-input {
-    cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
-  }
-
-  &.sinoui-select--focused .sinoui-input-adornment--end .sinoui-svg-icon {
-    color: ${(props) => props.theme.palette.primary.main};
-  }
-
-  &.sinoui-select--error .sinoui-input-adornment--end .sinoui-svg-icon {
-    color: ${(props) => props.theme.palette.error.main};
-  }
-
-  & .sinoui-select__state-icon {
-    pointer-events: none;
-    transition: ${({ theme }) =>
-      theme.transitions.create('transform', {
-        easing: theme.transitions.easing.easeInOut,
-        duration: theme.transitions.duration.shorter,
-      })};
-    ${({ $isOpen }) => $isOpen && 'transform: rotate(180deg);'}
-  }
-`;
 
 export interface Props
   extends Omit<
@@ -64,84 +41,187 @@ export interface Props
    * 自定义class名称
    */
   className?: string;
+  /**
+   * 是否将弹出内容以传送门的方式渲染。默认为`false`。
+   */
+  portal?: boolean;
+  /**
+   * 自定义自动完成组件的属性
+   */
+  autoCompleteProps?: Partial<AutoCompleteProps>;
+  /**
+   * 宽度自适应
+   */
+  autoWidth?: boolean;
+  /**
+   * 控制选项打开状态
+   */
+  open?: boolean;
+  /**
+   * 打开选项的回调函数
+   */
+  onOpen?: (state: boolean) => void;
+  /**
+   * 关闭选项的回调函数
+   */
+  onClose?: (reason: AutoCompleteCloseReason) => void;
+  /**
+   * 输入框引用
+   */
+  textInputRef?: React.Ref<HTMLInputElement>;
+  /**
+   * 弹出层元素引用
+   */
+  popperRef?: React.Ref<HTMLDivElement>;
+  /**
+   * 是否允许弹层获取焦点。默认为`false`。
+   */
+  popperFocusable?: boolean;
+  /**
+   * 指定弹出层位置
+   */
+  placement?: Placement;
+}
+
+/**
+ * 从 children 中解析出选项
+ *
+ * @param children 下拉框叶子节点
+ */
+function parseItemsFromChildren(children: React.ReactNode): SelectItem[] {
+  return (
+    React.Children.map(children, (child, index) => {
+      if (!React.isValidElement(child)) {
+        return null;
+      }
+      return {
+        id: `${index}`,
+        value: child.props.value,
+        title: child.props.title ?? child.props.children,
+        children: child.props.children as React.ReactNode,
+      };
+    })?.filter(Boolean) || []
+  );
+}
+
+/**
+ * 转化select的value为AutoComplete的值
+ * @param items
+ * @param value
+ */
+function transferSelectValueToAutoCompleteValue(
+  items: SelectItem[],
+  value?: string | string[],
+) {
+  if (value) {
+    if (typeof value === 'string') {
+      return items.find((item) => item.value === value);
+    }
+
+    return items.filter((item) => value.indexOf(item.value) !== -1);
+  }
+  return value;
 }
 
 /**
  * 选择框组件
  */
-const Select = React.forwardRef<HTMLDivElement, Props>(function Select(
-  props,
-  ref,
-) {
+function Select(props: Props) {
   const selectRef = useRef<HTMLDivElement>(null);
-  const handleRef = useMultiRefs(selectRef, ref);
-  const [open, setOpen] = useState(false);
 
   const {
     children,
-    inputProps,
+    inputProps: nativeInputProps,
     multiple = false,
     renderValue,
     onChange,
     value,
+    label,
+    placeholder,
+    autoCompleteProps,
+    portal,
+    error,
+    disabled,
+    readOnly,
+    autoWidth,
+    open,
+    onClose,
+    onOpen,
+    textInputRef,
+    popperRef,
+    placement,
     allowClear = true,
+    popperFocusable,
     ...other
   } = props;
 
-  const inputComponent = SelectInput;
-
-  /**
-   * 点击清除按钮时的回调函数
-   */
-  const onClear = () => {
-    const defaultValue = multiple ? [] : '';
-    if (onChange) {
-      onChange(defaultValue);
-    }
+  const inputComprops = {
+    children,
+    renderValue,
+    selectRef,
+    ...nativeInputProps,
   };
 
-  const onOpen = useCallback(() => {
-    if (props.readOnly || props.disabled) {
-      return;
+  const options = parseItemsFromChildren(children);
+  const autoCompleteValue = transferSelectValueToAutoCompleteValue(
+    options,
+    value,
+  );
+
+  const handleChange = (item: any) => {
+    if (onChange) {
+      let selectedValue = item;
+      if (Array.isArray(item)) {
+        selectedValue = item.map((data) => data.value);
+      } else if (item != null) {
+        selectedValue = item.value;
+      }
+
+      onChange(selectedValue);
     }
-    setOpen(true);
-  }, [props.disabled, props.readOnly]);
-
-  const onClose = useCallback(() => {
-    setOpen(false);
-  }, []);
-
-  const inputCompProps = {
-    children,
-    multiple,
-    renderValue,
-    open,
-    onOpen,
-    onClose,
-    selectRef,
-    ...inputProps,
   };
 
   return (
-    <StyledTextInput
-      $isOpen={open}
-      inputComponent={inputComponent}
-      inputProps={inputCompProps}
-      ref={handleRef}
+    <AutoComplete
+      options={options}
+      getOptionLabel={(option) => option.title}
+      renderOption={(option) => option.children}
+      value={autoCompleteValue}
+      onChange={handleChange}
+      multiple={multiple}
+      error={error}
+      disabled={disabled}
+      readOnly={readOnly}
+      renderInput={(textInputProps: TextInputProps) => (
+        <TextInput
+          {...textInputProps}
+          baseClassName="sinoui-select"
+          label={label}
+          placeholder={placeholder}
+          inputComponent={SelectInput}
+          inputProps={{ ...textInputProps.inputProps, ...inputComprops }}
+          error={error}
+          disabled={disabled}
+          readOnly={readOnly}
+          value={value as any}
+          {...other}
+        />
+      )}
+      renderTags={() => null}
+      portal={portal}
+      autoWidth={autoWidth}
+      open={open}
+      onOpen={onOpen}
+      onClose={onClose}
+      textInputRef={textInputRef}
+      popperRef={popperRef}
+      placement={placement}
+      clearable={allowClear}
       allowClear={allowClear}
-      baseClassName="sinoui-select"
-      onClear={onClear}
-      endAdornment={
-        <InputAdornment position="end" className="sinoui-select__state-icon">
-          <ArrowDropDownIcon size={24} />
-        </InputAdornment>
-      }
-      value={value as any}
-      onClick={onOpen}
-      onChange={onChange as any}
-      {...other}
+      popperFocusable={popperFocusable}
+      {...autoCompleteProps}
     />
   );
-});
+}
 
 export default Select;
