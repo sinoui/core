@@ -7,12 +7,14 @@ title: DatePicker
 
 - DatePicker -- 日期选择
 - DateRangePicker -- 日期区间选择
+- TimePicker -- 时间选择
 
 ## 引用方式
 
 ```ts
 import DatePicker from '@sinoui/core/DatePicker'; // 日期选择
 import DateRangePicker from '@sinoui/core/DateRangePicker'; // 日期区间选择
+import TimePicker from '@sinoui/core/TimePicker'; // 时间选择
 ```
 
 ## DatePicker
@@ -52,4 +54,14 @@ import DateRangePicker from '@sinoui/core/DateRangePicker'; // 日期区间选�
 
 除上述属性外，DatePicker 还继承了[TextInput](./text-input)除了`value`， `multiline`， `minRows`， `maxRows`， `onChange`， 和 `multiple`之外的所有属性。
 
-关于`DatePicker`和`DateRangePicker`的使用，请参考[日期选择 demo](../components/datepicker)。
+## TimePicker
+
+| 参数名称    | 参数类型                | 默认值 | 说明               |
+| ----------- | ----------------------- | ------ | ------------------ |
+| value       | string                  |        | 值                 |
+| onChange    | (date?: string) => void |        | 值变化时的回调函数 |
+| popperProps | PopperProps             |        | 给弹窗设置属性。   |
+
+除上述属性外，TimePicker 还继承了[TextInput](./text-input)除了`value`， `multiline`， `minRows`， `maxRows`， `onChange`， 和 `multiple`之外的所有属性。
+
+关于`DatePicker`和`DateRangePicker`、`TimePicker`的使用，请参考[日期选择 demo](../components/datepicker)。
