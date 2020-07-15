@@ -1,16 +1,14 @@
 import React from 'react';
 import useSelect from '@sinoui/core/useSelect';
-import styled from 'styled-components';
-import Popper from '@sinoui/core/Popper';
 import InputAdornment from '@sinoui/core/InputAdornment';
 import DatePickerIcon from '@sinoui/core/svg-icons/DatePickerIcon';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import type { PopperProps } from '../Popper';
 import useIsPc from '../DatePicker/useIsPc';
-import DateTimeView from './DateTimeView/DateTimeView';
 import mem from '../utils/mem';
 import isNaN from '../utils/isNaN';
+import DateTimePcPopper from './DateTimePcPopper/DateTimePcPopper';
 
 export interface Props
   extends Omit<
@@ -83,10 +81,6 @@ export interface Props
   maxMinute?: number;
 }
 
-const StyledPopper = styled(Popper)`
-  z-index: ${({ theme }) => theme.zIndex.popover};
-`;
-
 const parseDate = mem((dateStr?: string) => {
   const availableDateStr = dateStr ? dateStr.replace(/-/g, '/') : undefined;
   return availableDateStr && !isNaN(Date.parse(availableDateStr))
@@ -108,8 +102,8 @@ export default function DateTimePicker(props: Props) {
     value,
     renderValue,
     onChange,
-    hourStep = 1,
-    minuteStep = 1,
+    hourStep,
+    minuteStep,
     popperProps,
     min,
     max,
@@ -155,32 +149,25 @@ export default function DateTimePicker(props: Props) {
           ...getTextInputProps().inputProps,
         }}
       />
-      <StyledPopper {...getPopperProps()} portal={portal} {...popperProps}>
-        <DateTimeView
-          isPc={isPc}
-          date={date}
-          hourStep={hourStep}
-          minuteStep={minuteStep}
-          minute={
-            date
-              ? date.getMinutes() - (date.getMinutes() % minuteStep)
-              : undefined
-          }
-          hour={
-            date ? date.getHours() - (date.getHours() % hourStep) : undefined
-          }
-          onChange={onChange}
-          onBlur={onRequestClose}
-          minDate={parseDate(min)}
-          maxDate={parseDate(max)}
-          minHour={minHour}
-          minMinute={minMinute}
-          maxHour={maxHour}
-          maxMinute={maxMinute}
-          startOfWeek={startOfWeek}
-          skipMonthsView={skipMonthsView}
-        />
-      </StyledPopper>
+      <DateTimePcPopper
+        {...getPopperProps()}
+        portal={portal}
+        {...popperProps}
+        isPc={isPc}
+        date={date}
+        hourStep={hourStep}
+        minuteStep={minuteStep}
+        onChange={onChange}
+        onRequestClose={onRequestClose}
+        minDate={parseDate(min)}
+        maxDate={parseDate(max)}
+        minHour={minHour}
+        minMinute={minMinute}
+        maxHour={maxHour}
+        maxMinute={maxMinute}
+        startOfWeek={startOfWeek}
+        skipMonthsView={skipMonthsView}
+      />
     </>
   );
 }
