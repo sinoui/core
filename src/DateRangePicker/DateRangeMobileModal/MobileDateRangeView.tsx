@@ -58,6 +58,14 @@ export interface Props {
    * 自定义样式
    */
   style?: React.CSSProperties;
+  /**
+   * 头部开始时间标题
+   */
+  startTitle?: string;
+  /**
+   * 头部结束时间标题
+   */
+  endTitle?: string;
 }
 
 const MemoWeekTitleBar = React.memo(WeekTitleBar);
@@ -80,6 +88,8 @@ export default React.forwardRef<HTMLDivElement, Props>(
       focusedInput,
       onRequestClose,
       onChange,
+      startTitle,
+      endTitle,
       ...rest
     } = props;
 
@@ -163,6 +173,8 @@ export default React.forwardRef<HTMLDivElement, Props>(
       >
         <MobileDateRangeViewToolBar
           title={title ?? '设置日期'}
+          startTitle={startTitle}
+          endTitle={endTitle}
           startDate={selectedStart}
           endDate={selectedEnd}
           onClose={onRequestClose}

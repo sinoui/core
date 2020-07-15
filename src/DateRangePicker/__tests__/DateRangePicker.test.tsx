@@ -404,8 +404,10 @@ describe('移动端', () => {
     fireEvent.click(getByText('清除'));
 
     expect(onChange).not.toBeCalled();
-    expect(getByText('开始时间')).toBeInTheDocument();
-    expect(getByText('结束时间')).toBeInTheDocument();
+    expect(
+      document.querySelector('.sinoui-date-range-view-toolbar__selected-date'),
+    ).toHaveTextContent('开始时间-结束时间');
+
     expect(
       document.querySelector('.sinoui-date-range-mobile-view'),
     ).toBeInTheDocument();
@@ -442,4 +444,84 @@ it('style属性指定给根节点', () => {
 
   const rootDom = container.querySelector('.sinoui-date-range-picker');
   expect(rootDom).toHaveStyle('width: 400px;');
+});
+
+it('toTitle属性', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangePicker
+        isPc
+        defaultMonth={5}
+        defaultYear={2020}
+        value={['2020-06-12', '2020-06-28']}
+        toTitle={<div>至</div>}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(
+    container.querySelector('.sinoui-date-range-picker'),
+  ).toHaveTextContent('2020-06-12至2020-06-28');
+});
+
+it('startInputLabel和endInputLabel', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangePicker
+        isPc
+        defaultMonth={5}
+        defaultYear={2020}
+        toTitle={<div>至</div>}
+        startInputLabel="开始"
+        endInputLabel="结束"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(
+    container.querySelector('.sinoui-date-range-picker__start-input > label'),
+  ).toHaveTextContent('开始');
+  expect(
+    container.querySelector('.sinoui-date-range-picker__end-input > label'),
+  ).toHaveTextContent('结束');
+});
+
+it('startInputPlacehold和endInputPlacehold', () => {
+  const { container, rerender } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangePicker
+        isPc
+        defaultMonth={5}
+        defaultYear={2020}
+        toTitle={<div>至</div>}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(
+    container.querySelector('.sinoui-date-range-picker__start-input'),
+  ).toHaveTextContent('开始时间');
+  expect(
+    container.querySelector('.sinoui-date-range-picker__end-input'),
+  ).toHaveTextContent('结束时间');
+
+  rerender(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangePicker
+        isPc
+        defaultMonth={5}
+        defaultYear={2020}
+        toTitle={<div>至</div>}
+        startInputPlaceholder="开始"
+        endInputPlaceholder="结束"
+      />
+    </ThemeProvider>,
+  );
+
+  expect(
+    container.querySelector('.sinoui-date-range-picker__start-input'),
+  ).toHaveTextContent('开始');
+  expect(
+    container.querySelector('.sinoui-date-range-picker__end-input'),
+  ).toHaveTextContent('结束');
 });

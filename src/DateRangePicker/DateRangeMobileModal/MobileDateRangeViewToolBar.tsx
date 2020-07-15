@@ -36,6 +36,14 @@ interface Props {
    */
   focused?: 'start' | 'end';
   onFocusedChange?: (type: 'start' | 'end') => void;
+  /**
+   * 开始时间标题
+   */
+  startTitle?: string;
+  /**
+   * 结束时间标题
+   */
+  endTitle?: string;
 }
 
 const MobileDateRangeViewToolBarWrapper = styled.div`
@@ -86,6 +94,8 @@ const MobileDateRangeViewToolBar = ({
   onClear,
   focused,
   onFocusedChange,
+  startTitle = '开始时间',
+  endTitle = '结束时间',
   ...rest
 }: Props) => {
   const handleFocusedChange = (type: 'start' | 'end') => {
@@ -108,14 +118,14 @@ const MobileDateRangeViewToolBar = ({
         </MobileDateRangeViewToolBarAction>
       </MobileDateRangeViewToolBarAction>
       <Caption>{title}</Caption>
-      <H5>
+      <H5 className="sinoui-date-range-view-toolbar__selected-date">
         <DateWrapper
           $focused={focused === 'start'}
           onClick={() => handleFocusedChange('start')}
         >
           {startDate
             ? `${startDate.getMonth() + 1}月${startDate.getDate()}日`
-            : '开始时间'}
+            : startTitle}
         </DateWrapper>
         -
         <DateWrapper
@@ -125,7 +135,7 @@ const MobileDateRangeViewToolBar = ({
           {endDate
             ? `
         ${endDate.getMonth() + 1}月${endDate.getDate()}日`
-            : '结束时间'}
+            : endTitle}
         </DateWrapper>
       </H5>
     </MobileDateRangeViewToolBarWrapper>

@@ -61,6 +61,26 @@ export interface Props
    * 弹窗标题
    */
   modalTitle?: string;
+  /**
+   * 开始输入框的标签内容
+   */
+  startInputLabel?: string;
+  /**
+   * 结束输入框的标签内容
+   */
+  endInputLabel?: string;
+  /**
+   * 开始输入框的提示说明
+   */
+  startInputPlaceholder?: string;
+  /**
+   * 结束输入框的提示说明
+   */
+  endInputPlaceholder?: string;
+  /**
+   * 设置输入框之间的连接元素，默认为~
+   */
+  toTitle?: React.ReactNode;
 }
 
 const ToTitle = styled.div`
@@ -100,6 +120,11 @@ export default function DateRangePicker(props: Props) {
     variant,
     className,
     style,
+    toTitle = <ToTitle> ~ </ToTitle>,
+    startInputLabel,
+    endInputLabel,
+    startInputPlaceholder = startInputLabel ? undefined : '开始时间',
+    endInputPlaceholder = endInputLabel ? undefined : '结束时间',
     ...other
   } = props;
   const isNativePc = useIsPc();
@@ -108,8 +133,12 @@ export default function DateRangePicker(props: Props) {
   const endValue = value && value[1] ? value[1] : '';
   const startDate = parseDate(startValue);
   const endDate = parseDate(endValue);
-  const startInputValue = renderValue ? renderValue(startDate) : startValue;
-  const endInputValue = renderValue ? renderValue(endDate) : endValue;
+  const startInputValue = renderValue
+    ? renderValue(startDate)
+    : startValue || startInputPlaceholder;
+  const endInputValue = renderValue
+    ? renderValue(endDate)
+    : endValue || endInputPlaceholder;
   const startInputRef = useRef<HTMLInputElement | null>(null);
   const endInputRef = useRef<HTMLInputElement | null>(null);
   const [focusedInput, setFocusedInput] = useState<'start' | 'end' | undefined>(
@@ -210,7 +239,8 @@ export default function DateRangePicker(props: Props) {
             onFocus: () => handleInputFocused('start'),
             onBlur: null,
           }}
-          placeholder="开始时间"
+          label={startInputLabel}
+          placeholder={startInputPlaceholder}
           endAdornment={
             <InputAdornment position="end" disablePointerEvents>
               <DatePickerIcon />
@@ -219,7 +249,7 @@ export default function DateRangePicker(props: Props) {
           allowClear
           onClear={handleStartClear}
         />
-        <ToTitle> ~ </ToTitle>
+        {toTitle}
         <StyledTextInput
           {...getTextInputProps()}
           ref={null}
@@ -232,7 +262,8 @@ export default function DateRangePicker(props: Props) {
             onFocus: () => handleInputFocused('end'),
             onBlur: null,
           }}
-          placeholder="结束时间"
+          label={endInputLabel}
+          placeholder={endInputPlaceholder}
           endAdornment={
             <InputAdornment position="end" disablePointerEvents>
               <DatePickerIcon />
@@ -268,6 +299,8 @@ export default function DateRangePicker(props: Props) {
           onRequestClose={onRequestClose}
           onChange={onChange}
           {...getModalProps()}
+          startTitle={startInputLabel ?? startInputPlaceholder}
+          endTitle={endInputLabel ?? endInputPlaceholder}
         />
       )}
     </>
