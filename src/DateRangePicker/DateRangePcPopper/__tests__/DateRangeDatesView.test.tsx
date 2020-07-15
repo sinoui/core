@@ -211,3 +211,26 @@ it('不显示今日', () => {
     getByTestId('datesview').querySelector('.sinoui-date-cell--outlined'),
   ).toBeFalsy();
 });
+
+it('星期从周日开始', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangeDatesView
+        startDate={new Date(2021, 0, 1)}
+        endDate={new Date(2021, 1, 31)}
+        year={2021}
+        month={0}
+        data-testid="datesview"
+        startOfWeek={0}
+      />
+    </ThemeProvider>,
+  );
+
+  const datesView = getByTestId('datesview');
+
+  expect(
+    datesView.querySelectorAll(
+      '.sinoui-date-range-picker__week-status-bar--raised',
+    ).length,
+  ).toBe(6);
+});

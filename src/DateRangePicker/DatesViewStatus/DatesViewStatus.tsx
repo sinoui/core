@@ -24,11 +24,14 @@ interface Props {
    * 设置为`true`，则表示空心。
    */
   outlined?: boolean;
-
   /**
    * 是否是PC设备
    */
   isPc?: boolean;
+  /*
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
 }
 
 const MemoWeekStatusBar = React.memo(WeekStatusBar);
@@ -49,14 +52,15 @@ export default function DatesViewStatus({
   endDate,
   year,
   month,
+  startOfWeek,
   ...rest
 }: Props) {
   const weekBars = useMemo(
     () =>
-      getMonthWeeks(year, month).map((range) =>
+      getMonthWeeks(year, month, startOfWeek).map((range) =>
         getCrossDateRange([startDate, endDate], range),
       ),
-    [year, month, startDate, endDate],
+    [year, month, startOfWeek, startDate, endDate],
   );
 
   return (
@@ -70,6 +74,7 @@ export default function DatesViewStatus({
             endDate={weekbar[1]}
             isStart={startDate.getTime() === weekbar[0].getTime()}
             isEnd={endDate.getTime() === weekbar[1].getTime()}
+            startOfWeek={startOfWeek}
             {...rest}
           />
         ) : null,

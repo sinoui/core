@@ -28,6 +28,7 @@ function MonthItem({ index, style, data }: any) {
     minDate,
     maxDate,
     onDateClick,
+    startOfWeek,
   } = data;
   const month = MONTH_FULL_TITLES[monthIdx];
   const year = defaultYear - 100 + Math.floor(index / 12);
@@ -41,6 +42,7 @@ function MonthItem({ index, style, data }: any) {
           startDate={startDate}
           endDate={endDate}
           isPc={false}
+          startOfWeek={startOfWeek}
         />
       )}
       <YearItem>
@@ -54,6 +56,7 @@ function MonthItem({ index, style, data }: any) {
         maxDate={maxDate}
         showToday={showToday}
         onDateClick={onDateClick}
+        startOfWeek={startOfWeek}
       />
     </div>
   );

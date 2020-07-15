@@ -27,14 +27,19 @@ const HoverOutline = ({
   hoverDate,
   year,
   month,
+  startOfWeek,
   ...rest
 }: {
   hoverDate: Date;
   year: number;
   month: number;
+  /*
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
 }) => {
-  const weekNo = getWeekNoOfMonth(hoverDate);
-  const dayOfWeek = getDayOfWeek(hoverDate);
+  const weekNo = getWeekNoOfMonth(hoverDate, startOfWeek === 0);
+  const dayOfWeek = getDayOfWeek(hoverDate, startOfWeek === 0);
 
   const x =
     (isSameMonth(hoverDate, year, month) ? 16 : 256 + 16) + dayOfWeek * 32 + 2;

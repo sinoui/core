@@ -4,6 +4,7 @@ import formatDate from '@sinoui/core/DatePicker/formatDate';
 import getWeekStatusBarStyle from './getWeekStatusBarStyle';
 import WeekStatusBarWrapper from './WeekStatusBarWrapper';
 import getMobileWeekStatusBarStyle from './getMobileWeekStatusBarStyle';
+import getDayOfWeek from '../helpers/getDayOfWeek';
 
 interface Props {
   /**
@@ -34,6 +35,10 @@ interface Props {
    * 是否是结束时间
    */
   isEnd?: boolean;
+  /**
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
 }
 
 /**
@@ -47,19 +52,22 @@ export default function WeekStatusBar({
   isPc = true,
   isStart = false,
   isEnd = false,
+  startOfWeek = 1,
   ...rest
 }: Props) {
+  const startDay = getDayOfWeek(startDate, startOfWeek === 0);
+  const endDay = getDayOfWeek(endDate, startOfWeek === 0);
   const weekBarStyle = useMemo(
     () =>
       isPc
-        ? getWeekStatusBarStyle([startDate, endDate], weekNo)
+        ? getWeekStatusBarStyle([startDay, endDay], weekNo)
         : getMobileWeekStatusBarStyle(
-            [startDate, endDate],
+            [startDay, endDay],
             weekNo,
             isStart,
             isEnd,
           ),
-    [endDate, isEnd, isPc, isStart, startDate, weekNo],
+    [endDay, isEnd, isPc, isStart, startDay, weekNo],
   );
 
   return (

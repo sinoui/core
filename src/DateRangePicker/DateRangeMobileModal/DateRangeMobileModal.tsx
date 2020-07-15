@@ -57,6 +57,10 @@ interface Props extends Omit<ModalProps, 'children'> {
    * 头部结束时间标题
    */
   endTitle?: string;
+  /*
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
 }
 
 /**
@@ -78,6 +82,7 @@ export default function DateRangeMobileModal(props: Props) {
     open,
     startTitle,
     endTitle,
+    startOfWeek,
     ...rest
   } = props;
   return (
@@ -102,6 +107,7 @@ export default function DateRangeMobileModal(props: Props) {
           title={title}
           startTitle={startTitle}
           endTitle={endTitle}
+          startOfWeek={startOfWeek}
         />
       </Fade>
     </Modal>

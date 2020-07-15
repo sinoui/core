@@ -1,4 +1,3 @@
-import getDayOfWeek from '../helpers/getDayOfWeek';
 import { PC_DATE_CELL_RECT } from '../constants';
 
 /**
@@ -16,11 +15,11 @@ export function getWeekStatusBarHeight() {
  * @param range 区间
  
  */
-export function getWeekStatusBarWidth(range: [Date, Date]) {
+export function getWeekStatusBarWidth(range: [number, number]) {
   const [start, end] = range;
   const { width, padding } = PC_DATE_CELL_RECT;
   const dateCellContentWidth = width - 2 * padding;
-  const rangeLength = end.getDate() - start.getDate();
+  const rangeLength = end - start;
 
   return `calc(${((rangeLength / 7) * 100).toFixed(
     4,
@@ -32,8 +31,7 @@ export function getWeekStatusBarWidth(range: [Date, Date]) {
  *
  * @param range 区间
  */
-export function getWeekStatusBarLeft(range: [Date, Date]) {
-  const firstDay = getDayOfWeek(range[0]);
+export function getWeekStatusBarLeft(firstDay: number) {
   return `calc(${((firstDay / 7) * 100).toFixed(4)}% + ${
     PC_DATE_CELL_RECT.padding
   }px)`;
@@ -64,17 +62,15 @@ export function getWeekStatusBarBorderRadius() {
  * @param weekNo 周在月份中的序号，从0开始
  */
 export default function getWeekStatusBarStyle(
-  range: [Date, Date],
+  range: [number, number],
   weekNo: number,
 ): React.CSSProperties {
-  // TODO: range 直接传递日期属于周几
-
   const borderRadius = getWeekStatusBarBorderRadius();
   return {
     width: getWeekStatusBarWidth(range),
     height: getWeekStatusBarHeight(),
     borderRadius,
-    left: getWeekStatusBarLeft(range),
+    left: getWeekStatusBarLeft(range[0]),
     top: getWeekStatusBarTop(weekNo),
   };
 }

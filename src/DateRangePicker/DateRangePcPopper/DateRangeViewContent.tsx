@@ -51,6 +51,10 @@ interface Props {
    * 日期单元格点击事件的回调函数。
    */
   onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
+  /*
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
 }
 
 /**
@@ -67,6 +71,7 @@ export default function DateRangeViewContent({
   minDate,
   maxDate,
   onDateClick,
+  startOfWeek,
   ...rest
 }: Props) {
   const [hoverDate, setHoverDate] = useState<Date>();
@@ -88,6 +93,7 @@ export default function DateRangeViewContent({
     maxDate,
     onDateClick,
     outlinedDateRange,
+    startOfWeek,
   };
 
   /**
@@ -133,7 +139,12 @@ export default function DateRangeViewContent({
       {...rest}
     >
       {outlinedDateRange && hoverDate && (
-        <HoverOutline hoverDate={hoverDate} year={year} month={month} />
+        <HoverOutline
+          hoverDate={hoverDate}
+          year={year}
+          month={month}
+          startOfWeek={startOfWeek}
+        />
       )}
       <DateRangeDatesView year={year} month={month} {...datesViewProps} />
       <DateRangeDatesView year={endYear} month={endMonth} {...datesViewProps} />

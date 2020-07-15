@@ -39,6 +39,10 @@ export interface Props {
    * 空心日期区间
    */
   outlinedDateRange?: [Date, Date];
+  /*
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
 }
 
 const MemoDatesView = React.memo(SimpleMonthDatesView);
@@ -58,6 +62,7 @@ export default function DateRangeDatesView(props: Props) {
     maxDate,
     onDateClick,
     outlinedDateRange,
+    startOfWeek,
     ...rest
   } = props;
 
@@ -75,6 +80,7 @@ export default function DateRangeDatesView(props: Props) {
           startDate={outlinedDateRange[0]}
           endDate={outlinedDateRange[1]}
           outlined
+          startOfWeek={startOfWeek}
         />
       )}
       {startDate && endDate && (
@@ -83,6 +89,7 @@ export default function DateRangeDatesView(props: Props) {
           month={month}
           startDate={startDate}
           endDate={endDate}
+          startOfWeek={startOfWeek}
         />
       )}
       <MemoDatesView
@@ -93,6 +100,7 @@ export default function DateRangeDatesView(props: Props) {
         maxDate={maxDate}
         value={[startDate, endDate]}
         onDateClick={onDateClick}
+        startOfWeek={startOfWeek}
         isPc
       />
     </div>

@@ -34,16 +34,14 @@ export function getWeekStatusBarBorderRadius() {
  * @param isEnd 是否包含结束日期
  */
 export function getMobileWeekStatusBarWidth(
-  range: [Date, Date],
+  range: [number, number],
   isStart?: boolean,
   isEnd?: boolean,
 ) {
-  const [start, end] = range;
+  const [firstDay, lastDay] = range;
   const { width, padding } = MOBILE_DATE_CELL_RECT;
   const dateCellContentWidth = width - 2 * padding;
-  const rangeLength = end.getDate() - start.getDate();
-  const firstDay = start.getDay() === 0 ? 7 : start.getDay();
-  const lastDay = end.getDay() === 0 ? 7 : end.getDay();
+  const rangeLength = lastDay - firstDay;
 
   const dateCellWidth = '(100% - 24px) / 7';
   const selectedDateCellWidth = `${dateCellWidth} / 2 + ${
@@ -53,8 +51,8 @@ export function getMobileWeekStatusBarWidth(
   const width1 = `${dateCellWidth} * ${rangeLength - 1}`;
   const startDayWidth = isStart ? selectedDateCellWidth : dateCellWidth;
   const endDayWidth = isEnd ? selectedDateCellWidth : dateCellWidth;
-  const leftPaddingWidth = firstDay === 1 && !isStart ? '12px' : undefined;
-  const rightPaddingWidth = lastDay === 7 && !isEnd ? '12px' : undefined;
+  const leftPaddingWidth = firstDay === 0 && !isStart ? '12px' : undefined;
+  const rightPaddingWidth = lastDay === 6 && !isEnd ? '12px' : undefined;
 
   const barWidth = [
     width1,
@@ -71,26 +69,23 @@ export function getMobileWeekStatusBarWidth(
 
 /**
  * 获取移动端状态条左侧定位
- * @param range 区间
+ * @param startDay 开始日期
  * @param isStart 是否包含开始日期
  */
 export function getMobileWeekStatusBarLeft(
-  range: [Date, Date],
+  startDay: number,
   isStart?: boolean,
 ) {
-  const [start] = range;
   const { width, padding } = MOBILE_DATE_CELL_RECT;
   const dateCellContentWidth = width - 2 * padding;
-  const startDay = start.getDay() === 0 ? 7 : start.getDay();
-  const unselectedDays = startDay - 1;
   const dateCellWidth = '(100% - 24px) / 7';
   const selectedDateCellPadding = `${dateCellWidth} / 2 - ${
     dateCellContentWidth / 2
   }px`; // 选中日期单元格宽度
 
   const left = [
-    !isStart && startDay === 1 ? 0 : '12px',
-    `${dateCellWidth} * ${unselectedDays}`,
+    !isStart && startDay === 0 ? 0 : '12px',
+    `${dateCellWidth} * ${startDay}`,
     isStart ? selectedDateCellPadding : 0,
   ]
     .filter(Boolean)
@@ -110,7 +105,7 @@ export function getMobileWeekStatusBarLeft(
  * @param isLastWeek 是否是每个月的最后一周
  */
 export default function getMobileWeekStatusBarStyle(
-  range: [Date, Date],
+  range: [number, number],
   weekNo: number,
   isStart?: boolean,
   isEnd?: boolean,
@@ -124,7 +119,7 @@ export default function getMobileWeekStatusBarStyle(
     borderBottomLeftRadius: isStart ? borderRadius : 0,
     borderTopRightRadius: isEnd ? borderRadius : 0,
     borderBottomRightRadius: isEnd ? borderRadius : 0,
-    left: getMobileWeekStatusBarLeft(range, isStart),
+    left: getMobileWeekStatusBarLeft(range[0], isStart),
     top: getWeekStatusBarTop(weekNo),
   };
 }

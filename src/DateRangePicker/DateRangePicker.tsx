@@ -81,6 +81,10 @@ export interface Props
    * 设置输入框之间的连接元素，默认为~
    */
   toTitle?: React.ReactNode;
+  /*
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
 }
 
 const ToTitle = styled.div`
@@ -125,6 +129,7 @@ export default function DateRangePicker(props: Props) {
     endInputLabel,
     startInputPlaceholder = startInputLabel ? undefined : '开始时间',
     endInputPlaceholder = endInputLabel ? undefined : '结束时间',
+    startOfWeek,
     ...other
   } = props;
   const isNativePc = useIsPc();
@@ -283,6 +288,7 @@ export default function DateRangePicker(props: Props) {
           defaultYear={defaultYear}
           defaultMonth={defaultMonth}
           focusedInput={focusedInput}
+          startOfWeek={startOfWeek}
           {...getPopperProps()}
           portal={portal}
           {...popperProps}
@@ -298,9 +304,10 @@ export default function DateRangePicker(props: Props) {
           focusedInput={focusedInput}
           onRequestClose={onRequestClose}
           onChange={onChange}
-          {...getModalProps()}
           startTitle={startInputLabel ?? startInputPlaceholder}
           endTitle={endInputLabel ?? endInputPlaceholder}
+          startOfWeek={startOfWeek}
+          {...getModalProps()}
         />
       )}
     </>

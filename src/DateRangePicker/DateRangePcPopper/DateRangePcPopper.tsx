@@ -20,6 +20,7 @@ export default function DateRangePcPopper(props: Props) {
     defaultYear,
     defaultMonth,
     focusedInput,
+    startOfWeek,
     ...rest
   } = props;
   return (
@@ -37,6 +38,7 @@ export default function DateRangePcPopper(props: Props) {
         defaultYear={defaultYear}
         defaultMonth={defaultMonth}
         focusedInput={focusedInput}
+        startOfWeek={startOfWeek}
       />
     </Popper>
   );

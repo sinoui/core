@@ -45,6 +45,24 @@ it('悬停轮廓在第二个日历上', () => {
   );
 });
 
+it('星期从周日开始', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <HoverOutline
+        data-testid="hover-outline"
+        hoverDate={new Date(2020, 6, 8)}
+        year={2020}
+        month={6}
+        startOfWeek={0}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('hover-outline')).toHaveStyle(
+    'transform: translate(114px, 34px)',
+  );
+});
+
 it('快照测试', () => {
   const tree = renderer
     .create(

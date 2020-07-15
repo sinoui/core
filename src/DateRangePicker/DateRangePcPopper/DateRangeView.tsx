@@ -42,6 +42,10 @@ export interface Props {
    * 聚焦的输入框
    */
   focusedInput?: 'start' | 'end';
+  /*
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
 }
 
 const ContentWrapper = styled.div`
@@ -58,6 +62,7 @@ export default function DateRangeView(props: Props) {
     defaultYear = new Date().getFullYear(),
     defaultMonth = new Date().getMonth(),
     showToday = true,
+    startOfWeek,
     ...rest
   } = props;
 
@@ -75,8 +80,8 @@ export default function DateRangeView(props: Props) {
         onChange={(newYar, newMonth) => setYearMonth([newYar, newMonth])}
       />
       <ContentWrapper className="sinoui-date-range-view__week-title">
-        <WeekTitleBar isPc />
-        <WeekTitleBar isPc />
+        <WeekTitleBar isPc startOfWeek={startOfWeek} />
+        <WeekTitleBar isPc startOfWeek={startOfWeek} />
       </ContentWrapper>
       <DateRangeViewContent
         {...rest}
@@ -84,6 +89,7 @@ export default function DateRangeView(props: Props) {
         month={month}
         showToday={showToday}
         startDate={startDate}
+        startOfWeek={startOfWeek}
       />
     </DateRangeViewWrapper>
   );

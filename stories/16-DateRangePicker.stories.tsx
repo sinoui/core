@@ -55,6 +55,13 @@ export const 移动端日期区间选择 = () => (
   </StoryLayout>
 );
 
+export const 星期从周日开始 = () => (
+  <StoryLayout>
+    <DateRangePickerDemo isPc={false} startOfWeek={0} />
+    <DateRangePickerDemo startOfWeek={0} />
+  </StoryLayout>
+);
+
 export const 不可用 = () => (
   <StoryLayout>
     <DateRangePickerDemo disabled />

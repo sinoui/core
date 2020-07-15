@@ -73,3 +73,24 @@ it('渲染空心圈', () => {
     ).length,
   ).toBe(2);
 });
+
+it('星期从周日开始', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DatesViewStatus
+        startDate={new Date(2021, 0, 1)}
+        endDate={new Date(2021, 0, 31)}
+        year={2021}
+        month={0}
+        startOfWeek={0}
+      />
+    </ThemeProvider>,
+  );
+
+  const weekStatusBars = container.querySelectorAll(
+    '.sinoui-date-range-picker__week-status-bar',
+  );
+
+  // 从周日开始，则2021年1月份有6周；否则2021年1月份有5周
+  expect(weekStatusBars.length).toBe(6);
+});

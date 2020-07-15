@@ -66,6 +66,10 @@ export interface Props {
    * 头部结束时间标题
    */
   endTitle?: string;
+  /*
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
 }
 
 const MemoWeekTitleBar = React.memo(WeekTitleBar);
@@ -90,6 +94,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
       onChange,
       startTitle,
       endTitle,
+      startOfWeek,
       ...rest
     } = props;
 
@@ -163,6 +168,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
       minDate,
       maxDate,
       onDateClick: handleDateClick,
+      startOfWeek,
     };
 
     return (
@@ -183,7 +189,7 @@ export default React.forwardRef<HTMLDivElement, Props>(
           focused={focused}
           onFocusedChange={setFocused}
         />
-        <MemoWeekTitleBar />
+        <MemoWeekTitleBar startOfWeek={startOfWeek} />
         <MobileDateRangeViewContent className="sinoui-date-range-mobile-view-content">
           <FixedSizeList
             className="sinoui-date-range-mobile-view__dates-list"

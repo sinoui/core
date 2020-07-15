@@ -47,3 +47,22 @@ it('渲染空心周状态条', () => {
     'sinoui-date-range-picker__week-status-bar--outlined',
   );
 });
+
+it('周从星期日开始', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <WeekStatusBar
+        weekNo={1}
+        startDate={new Date(2020, 6, 12)}
+        endDate={new Date(2020, 6, 18)}
+        data-testid="week-status-bar"
+        startOfWeek={0}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(getByTestId('week-status-bar')).toHaveStyle(
+    'width: calc(85.7142% + 28px)',
+  );
+  expect(getByTestId('week-status-bar')).toHaveStyle('left: calc(0% + 2px)');
+});

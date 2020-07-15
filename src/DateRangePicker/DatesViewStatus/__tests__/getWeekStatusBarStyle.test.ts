@@ -11,15 +11,11 @@ it('获取周状态条高度', () => {
 });
 
 it('获取周状态条的宽度', () => {
-  expect(
-    getWeekStatusBarWidth([new Date(2020, 6, 8), new Date(2020, 6, 10)]),
-  ).toBe('calc(28.5714% + 28px)');
+  expect(getWeekStatusBarWidth([2, 4])).toBe('calc(28.5714% + 28px)');
 });
 
 it('获取周状态的水平位置', () => {
-  expect(
-    getWeekStatusBarLeft([new Date(2020, 6, 8), new Date(2020, 7, 10)]),
-  ).toBe('calc(28.5714% + 2px)');
+  expect(getWeekStatusBarLeft(2)).toBe('calc(28.5714% + 2px)');
 });
 
 it('获取周状态条的垂直位置', () => {
@@ -31,9 +27,7 @@ it('获取周状态条的边框半径', () => {
 });
 
 it('获取周状态条样式', () => {
-  expect(
-    getWeekStatusBarStyle([new Date(2020, 6, 8), new Date(2020, 6, 10)], 1),
-  ).toEqual({
+  expect(getWeekStatusBarStyle([2, 4], 1)).toEqual({
     width: 'calc(28.5714% + 28px)',
     height: 28,
     borderRadius: 14,

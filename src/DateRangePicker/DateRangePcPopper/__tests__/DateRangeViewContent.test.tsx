@@ -33,7 +33,6 @@ it('鼠标悬停在2020-07-08', () => {
     );
   });
 
-  // TODO: 如果这个单元测试断言报错，可能是因为“区间只有1天的不渲染状态条”这个规则实现了。可以将3调整为2
   expect(
     viewContent.querySelectorAll(
       '.sinoui-date-range-picker__week-status-bar--outlined',
@@ -111,7 +110,6 @@ it('鼠标从日期单元格移到不可用日期单元格', () => {
     );
   });
 
-  // TODO: 如果这个单元测试断言报错，可能是因为“区间只有1天的不渲染状态条”这个规则实现了。可以将3调整为2
   expect(
     viewContent.querySelectorAll(
       '.sinoui-date-range-picker__week-status-bar--outlined',
@@ -210,7 +208,6 @@ it('鼠标短暂地从日期单元格移出选择框，然后又移到日期单�
     );
   });
 
-  // TODO: 如果这个单元测试断言报错，可能是因为“区间只有1天的不渲染状态条”这个规则实现了。可以将3调整为2
   expect(
     viewContent.querySelectorAll(
       '.sinoui-date-range-picker__week-status-bar--outlined',
@@ -220,4 +217,28 @@ it('鼠标短暂地从日期单元格移出选择框，然后又移到日期单�
   expect(
     viewContent.querySelector('.sinoui-date-range-picker__hover-outline'),
   ).toHaveAttribute('data-hover-date', '2020-07-08');
+});
+
+it('周从星期日开始', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangeViewContent
+        startDate={new Date(2021, 0, 1)}
+        endDate={new Date(2021, 1, 31)}
+        year={2021}
+        month={1}
+        focusedInput="start"
+        data-testid="view-content"
+        startOfWeek={0}
+      />
+    </ThemeProvider>,
+  );
+
+  const viewContent = getByTestId('view-content');
+
+  expect(
+    viewContent.querySelectorAll(
+      '.sinoui-date-range-picker__week-status-bar--raised',
+    ).length,
+  ).toBe(6);
 });
