@@ -5,6 +5,10 @@ import isSameMonth from '../helpers/isSameMonth';
 import getDayOfWeek from '../helpers/getDayOfWeek';
 import formatDate from '../../DatePicker/formatDate';
 
+const BORDER_COLOR: Record<string, string> = {
+  light: '#9a999a',
+};
+
 const HoverOutlineWrapper = styled.div`
   position: absolute;
   top: 0px;
@@ -12,7 +16,9 @@ const HoverOutlineWrapper = styled.div`
   width: 28px;
   height: 28px;
   box-sizing: border-box;
-  border: 1px solid ${({ theme }) => theme.palette.text.disabled};
+  border: 1px solid
+    ${({ theme }) =>
+      BORDER_COLOR[theme.palette.type] ?? theme.palette.text.disabled};
   border-radius: 14px;
   transition: ${({ theme }) =>
     theme.transitions.create('transform', {

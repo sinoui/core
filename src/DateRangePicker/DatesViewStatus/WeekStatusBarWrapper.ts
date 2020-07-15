@@ -6,7 +6,8 @@ interface Props {
 }
 
 const outlinedStyle = css`
-  border: 1px dashed ${({ theme }) => theme.palette.text.disabled};
+  border: 1px dashed
+    ${({ theme }) => adjustOpacity(0.25, theme.palette.text.disabled)};
 `;
 
 const raisedStyle = css`

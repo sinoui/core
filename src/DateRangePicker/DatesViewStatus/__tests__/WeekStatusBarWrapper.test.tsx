@@ -36,6 +36,6 @@ it('空心圈', () => {
 
   expect(weekStatusBar).toHaveStyleRule(
     'border',
-    `1px dashed ${defaultTheme.palette.text.disabled.replace(/ /g, '')}`,
+    `1px dashed rgba(0,0,0,0.25)`,
   );
 });
