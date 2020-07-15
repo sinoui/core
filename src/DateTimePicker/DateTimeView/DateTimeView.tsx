@@ -159,7 +159,7 @@ export default function DateTimeView(props: Props) {
     maxMinute = 59,
     hourStep = 1,
     minuteStep = 1,
-    hour = now.getMinutes() - (now.getMinutes() % minuteStep),
+    hour = now.getHours() - (now.getHours() % hourStep),
     minute = now.getMinutes() - (now.getMinutes() % minuteStep),
     onChange,
   } = props;

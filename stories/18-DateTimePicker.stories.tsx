@@ -43,9 +43,11 @@ export const 自定义渲染方式 = () => (
       min="2020-06-10 15:30"
       max="2020-06-20 15:30"
       renderValue={(value: Date) =>
-        `${value.getFullYear()}-${
-          value.getMonth() + 1
-        }-${value.getDate()} ${value.getHours()}-${value.getMinutes()}`
+        value
+          ? `${value.getFullYear()}-${
+              value.getMonth() + 1
+            }-${value.getDate()} ${value.getHours()}-${value.getMinutes()}`
+          : ''
       }
       allowClear
     />
