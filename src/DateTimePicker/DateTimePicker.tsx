@@ -9,6 +9,7 @@ import useIsPc from '../DatePicker/useIsPc';
 import mem from '../utils/mem';
 import isNaN from '../utils/isNaN';
 import DateTimePcPopper from './DateTimePcPopper/DateTimePcPopper';
+import DateTimeMobileModal from './DateTimeMobileModal/DateTimeMobileModal';
 
 export interface Props
   extends Omit<
@@ -121,7 +122,12 @@ export default function DateTimePicker(props: Props) {
   const inputValue = isValidateDate(value) ? value : '';
   const inputRenderValue = renderValue ? renderValue(date) : inputValue;
 
-  const { getPopperProps, getTextInputProps, onRequestClose } = useSelect({
+  const {
+    getPopperProps,
+    getTextInputProps,
+    onRequestClose,
+    getModalProps,
+  } = useSelect({
     ...props,
     isRenderWithPopper: isPc,
     renderValue: inputRenderValue,
@@ -149,25 +155,32 @@ export default function DateTimePicker(props: Props) {
           ...getTextInputProps().inputProps,
         }}
       />
-      <DateTimePcPopper
-        {...getPopperProps()}
-        portal={portal}
-        {...popperProps}
-        isPc={isPc}
-        date={date}
-        hourStep={hourStep}
-        minuteStep={minuteStep}
-        onChange={onChange}
-        onRequestClose={onRequestClose}
-        minDate={parseDate(min)}
-        maxDate={parseDate(max)}
-        minHour={minHour}
-        minMinute={minMinute}
-        maxHour={maxHour}
-        maxMinute={maxMinute}
-        startOfWeek={startOfWeek}
-        skipMonthsView={skipMonthsView}
-      />
+      {isPc ? (
+        <DateTimePcPopper
+          {...getPopperProps()}
+          portal={portal}
+          {...popperProps}
+          isPc={isPc}
+          date={date}
+          hourStep={hourStep}
+          minuteStep={minuteStep}
+          onChange={onChange}
+          onRequestClose={onRequestClose}
+          minDate={parseDate(min)}
+          maxDate={parseDate(max)}
+          minHour={minHour}
+          minMinute={minMinute}
+          maxHour={maxHour}
+          maxMinute={maxMinute}
+          startOfWeek={startOfWeek}
+          skipMonthsView={skipMonthsView}
+        />
+      ) : (
+        <DateTimeMobileModal
+          {...getModalProps()}
+          onRequestClose={onRequestClose}
+        />
+      )}
     </>
   );
 }

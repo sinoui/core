@@ -54,3 +54,9 @@ export const 自定义渲染方式 = () => (
     />
   </StoryLayout>
 );
+
+export const 移动端渲染 = () => (
+  <StoryLayout>
+    <DateTimePickerDemo label="日期时间选择" isPc={false} />
+  </StoryLayout>
+);
