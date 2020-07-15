@@ -87,13 +87,15 @@ const StyledPopper = styled(Popper)`
   z-index: ${({ theme }) => theme.zIndex.popover};
 `;
 
-const parseDate = mem((dateStr?: string) =>
-  dateStr && !isNaN(Date.parse(dateStr))
-    ? new Date(Date.parse(dateStr))
-    : undefined,
-);
+const parseDate = mem((dateStr?: string) => {
+  const availableDateStr = dateStr ? dateStr.replace(/-/g, '/') : undefined;
+  return availableDateStr && !isNaN(Date.parse(availableDateStr))
+    ? new Date(Date.parse(`${availableDateStr}:00`))
+    : undefined;
+});
 
-const isValidateDate = (value?: string) => value && !isNaN(Date.parse(value));
+const isValidateDate = (value?: string) =>
+  value && !isNaN(Date.parse(value.replace(/-/g, '/')));
 
 /**
  * 日期时间选择组件

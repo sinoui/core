@@ -145,8 +145,8 @@ export default function DateTimeView(props: Props) {
   const now = new Date();
   const {
     date,
-    defaultYear,
-    defaultMonth,
+    defaultYear = new Date().getFullYear(),
+    defaultMonth = new Date().getMonth(),
     isPc,
     skipMonthsView: skipMonthsViewProp,
     startOfWeek,
@@ -167,10 +167,7 @@ export default function DateTimeView(props: Props) {
   const [[year, month], setYearMonth] = useState(() => {
     return date
       ? [date.getFullYear(), date.getMonth()]
-      : [
-          defaultYear ?? new Date().getFullYear(),
-          defaultMonth ?? new Date().getMonth(),
-        ];
+      : [defaultYear, defaultMonth];
   });
 
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);

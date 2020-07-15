@@ -20,7 +20,8 @@ const StyledDateTimePicker = styled(DateTimePicker)`
 `;
 
 function DateTimePickerDemo(props: any) {
-  const [value, setValue] = useState('2020-06-18 15:30');
+  const { value: inputValue } = props;
+  const [value, setValue] = useState(inputValue ?? '2020-06-18 15:30');
 
   return (
     <StyledDateTimePicker

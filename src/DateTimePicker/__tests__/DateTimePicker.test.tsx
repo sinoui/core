@@ -5,8 +5,8 @@ import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import { MONTH_FULL_TITLES } from '@sinoui/core/DatePicker/constants';
 import DateTimePicker from '../DateTimePicker';
+import { MONTH_FULL_TITLES } from '../../DatePicker/constants';
 
 afterEach(cleanup);
 
