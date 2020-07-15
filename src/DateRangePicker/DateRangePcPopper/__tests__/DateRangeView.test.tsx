@@ -105,3 +105,23 @@ it('鼠标悬浮进入不可用日期区域，此日期没有上下边框', () =
     modifier: '::before',
   });
 });
+
+it('星期从周日开始', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangeView
+        minDate={parseDate('2020-06-10')}
+        startDate={parseDate('2020-06-14')}
+        endDate={parseDate('2020-07-12')}
+        startOfWeek={0}
+      />
+    </ThemeProvider>,
+  );
+
+  expect(container).toHaveTextContent('日一二三四五六');
+  expect(
+    container.querySelector(
+      '.sinoui-date-cell--empty ~ [data-date="2020-06-01"]',
+    ),
+  ).toBeTruthy();
+});
