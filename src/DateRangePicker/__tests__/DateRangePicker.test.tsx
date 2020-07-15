@@ -411,3 +411,35 @@ describe('移动端', () => {
     ).toBeInTheDocument();
   });
 });
+
+it('className属性', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangePicker
+        isPc
+        defaultMonth={5}
+        defaultYear={2020}
+        className="custom-class"
+      />
+    </ThemeProvider>,
+  );
+
+  const rootDom = container.querySelector('.sinoui-date-range-picker');
+  expect(container.querySelector('.custom-class')).toBe(rootDom);
+});
+
+it('style属性指定给根节点', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <DateRangePicker
+        isPc
+        defaultMonth={5}
+        defaultYear={2020}
+        style={{ width: 400 }}
+      />
+    </ThemeProvider>,
+  );
+
+  const rootDom = container.querySelector('.sinoui-date-range-picker');
+  expect(rootDom).toHaveStyle('width: 400px;');
+});

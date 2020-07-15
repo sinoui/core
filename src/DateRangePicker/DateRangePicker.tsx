@@ -3,6 +3,8 @@ import TextInput, { TextInputProps } from '@sinoui/core/TextInput';
 import useSelect from '@sinoui/core/useSelect';
 import useIsPc from '@sinoui/core/DatePicker/useIsPc';
 import type { PopperProps } from '@sinoui/core/Popper';
+import classNames from 'classnames';
+import styled from 'styled-components';
 import InputAdornment from '../InputAdornment';
 import DatePickerIcon from '../svg-icons/DatePickerIcon';
 import formatDate from '../DatePicker/formatDate';
@@ -61,6 +63,24 @@ export interface Props
   modalTitle?: string;
 }
 
+const ToTitle = styled.div`
+  width: 32px;
+  text-align: center;
+`;
+
+const DateRangePickerLayout = styled.div<{
+  $variant?: 'standard' | 'outlined' | 'filled';
+}>`
+  display: flex;
+  align-items: center;
+  min-width: ${({ $variant }) =>
+    $variant === 'outlined' || $variant === 'filled' ? 312 : 272}px;
+`;
+
+const StyledTextInput = styled(TextInput)`
+  flex: 1;
+`;
+
 /**
  * 日期区间选择组件
  * @param props
@@ -77,6 +97,10 @@ export default function DateRangePicker(props: Props) {
     defaultYear,
     defaultMonth,
     popperProps,
+    variant,
+    className,
+    style,
+    ...other
   } = props;
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
@@ -99,7 +123,8 @@ export default function DateRangePicker(props: Props) {
     onRequestClose,
     getModalProps,
   } = useSelect({
-    ...props,
+    ...other,
+    variant,
     isRenderWithPopper: isPc,
   });
 
@@ -167,12 +192,14 @@ export default function DateRangePicker(props: Props) {
 
   return (
     <>
-      <div
-        className="sinoui-date-range-picker"
+      <DateRangePickerLayout
+        className={classNames('sinoui-date-range-picker', className)}
         onBlur={handleInputBlur}
         ref={wrapperRef}
+        $variant={variant}
+        style={style}
       >
-        <TextInput
+        <StyledTextInput
           {...getTextInputProps()}
           baseClassName="sinoui-date-range-picker__start-input"
           value={value ? value[0] : ''}
@@ -192,8 +219,8 @@ export default function DateRangePicker(props: Props) {
           allowClear
           onClear={handleStartClear}
         />
-        <span> ~ </span>
-        <TextInput
+        <ToTitle> ~ </ToTitle>
+        <StyledTextInput
           {...getTextInputProps()}
           ref={null}
           baseClassName="sinoui-date-range-picker__end-input"
@@ -214,7 +241,7 @@ export default function DateRangePicker(props: Props) {
           allowClear
           onClear={handleEndClear}
         />
-      </div>
+      </DateRangePickerLayout>
       {isPc ? (
         <DateRangePcPopper
           startDate={startDate}
