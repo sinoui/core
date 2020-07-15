@@ -217,6 +217,7 @@ function Select(props: Props) {
       popperRef={popperRef}
       placement={placement}
       clearable={allowClear}
+      allowClear={allowClear}
       popperFocusable={popperFocusable}
       {...autoCompleteProps}
     />
