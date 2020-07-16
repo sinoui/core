@@ -78,7 +78,7 @@ export default function DateTimeMobileViewToolbar(props: Props) {
     }
   };
   return (
-    <DateTimeMobileViewToolbarWrapper>
+    <DateTimeMobileViewToolbarWrapper className="sinoui-date-time-mobile-view__toolbar">
       <LeftDateWrapper>
         <ClickableText
           onClick={() => onDateClick(ViewModel.years)}

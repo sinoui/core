@@ -135,6 +135,10 @@ const TimeTitle = styled(Subtitle1)`
   padding: 16px 16px 0px;
 `;
 
+const StyledInput = styled(TextInput)`
+  width: 124px;
+`;
+
 /**
  * 日期时间选择移动端视图
  */
@@ -229,8 +233,9 @@ export default function DateTimeMobileView(props: Props) {
   const renderTime = () => (
     <>
       <TimeTitle>请输入时间</TimeTitle>
-      <TimeWrapper>
-        <TextInput
+      <TimeWrapper className="sinoui-date-time-mobile-view__timeview">
+        <StyledInput
+          baseClassName="sinoui-date-time-mobile-view__timeview-hour-input"
           type="number"
           placeholder={hour}
           helperText="点"
@@ -238,7 +243,8 @@ export default function DateTimeMobileView(props: Props) {
           onChange={onHourChange}
         />
         <Divider>:</Divider>
-        <TextInput
+        <StyledInput
+          baseClassName="sinoui-date-time-mobile-view__timeview-minute-input"
           type="number"
           placeholder={minute}
           helperText="分"
