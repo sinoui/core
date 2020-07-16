@@ -33,6 +33,14 @@ export interface Props
    */
   max?: string;
   /**
+   * 默认年份
+   */
+  defaultYear?: number;
+  /**
+   * 默认月份
+   */
+  defaultMonth?: number;
+  /**
    * 是否采用portal形式
    */
   portal?: boolean;
@@ -114,6 +122,8 @@ export default function DateTimePicker(props: Props) {
     minMinute,
     maxHour,
     maxMinute,
+    defaultYear,
+    defaultMonth,
   } = props;
 
   const isNativePc = useIsPc();
@@ -174,11 +184,23 @@ export default function DateTimePicker(props: Props) {
           maxMinute={maxMinute}
           startOfWeek={startOfWeek}
           skipMonthsView={skipMonthsView}
+          defaultYear={defaultYear}
+          defaultMonth={defaultMonth}
         />
       ) : (
         <DateTimeMobileModal
           {...getModalProps()}
           onRequestClose={onRequestClose}
+          date={date}
+          onChange={onChange}
+          defaultYear={defaultYear}
+          defaultMonth={defaultMonth}
+          startOfWeek={startOfWeek}
+          minHour={minHour}
+          maxHour={maxHour}
+          minMinute={minMinute}
+          maxMinute={maxMinute}
+          skipMonthsView={skipMonthsView}
         />
       )}
     </>

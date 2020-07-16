@@ -9,9 +9,28 @@ interface Props {
    */
   year?: number;
   /**
+   * 月份
+   */
+  month?: number;
+  /**
+   * 天
+   */
+  day?: number;
+  /**
+   * 小时
+   */
+  hour?: string;
+  /**
+   * 分钟
+   */
+  minute?: string;
+  /**
    * 当前日历状态
    */
   viewModel: ViewModel;
+  /**
+   * 选择状态发生改变时的回调函数
+   */
   onViewModelChange?: (viewModel: ViewModel) => void;
 }
 
@@ -43,7 +62,15 @@ const Time = styled(ClickableText)`
 `;
 
 export default function DateTimeMobileViewToolbar(props: Props) {
-  const { year, viewModel, onViewModelChange } = props;
+  const {
+    year,
+    viewModel,
+    onViewModelChange,
+    month = new Date().getMonth(),
+    day = new Date().getDate(),
+    hour,
+    minute,
+  } = props;
 
   const onDateClick = (type: ViewModel) => {
     if (onViewModelChange) {
@@ -64,7 +91,7 @@ export default function DateTimeMobileViewToolbar(props: Props) {
           onClick={() => onDateClick(ViewModel.dates)}
           selected={viewModel === ViewModel.dates}
         >
-          6月1日
+          {month + 1}月{day}日
         </ClickableText>
       </LeftDateWrapper>
       <Time
@@ -72,7 +99,7 @@ export default function DateTimeMobileViewToolbar(props: Props) {
         onClick={() => onDateClick(ViewModel.time)}
         selected={viewModel === ViewModel.time}
       >
-        20:09
+        {hour}:{minute}
       </Time>
     </DateTimeMobileViewToolbarWrapper>
   );

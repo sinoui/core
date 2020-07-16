@@ -9,6 +9,7 @@ import TextInput from '@sinoui/core/TextInput';
 import styled from 'styled-components';
 import Body2 from '@sinoui/core/Body2';
 import Subtitle1 from '@sinoui/core/Subtitle1';
+import formatDate from '@sinoui/core/DatePicker/formatDate';
 import DateTimeMobileViewWrapper from './DateTimeMobileViewWrapper';
 import DateTimeMobileViewToolbar from './DateTimeMobileViewToolbar';
 
@@ -29,22 +30,34 @@ interface Props {
    * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
    */
   startOfWeek?: 0 | 1;
+  /**
+   * 最小小时数。默认为`0`。
+   */
+  minHour?: number;
+  /**
+   * 最大小时数。默认为`23`。
+   */
+  maxHour?: number;
+  /**
+   * 最小分钟数。默认为`0`。
+   */
+  minMinute?: number;
+  /**
+   * 最大分钟数。默认为`59`。
+   */
+  maxMinute?: number;
   /*
    * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
    */
   skipMonthsView?: boolean;
   /**
-   * 点击取消按钮的回调函数
+   * 弹窗关闭时的回调函数
    */
-  onCancel?: (event: React.MouseEvent) => void;
+  onClose?: () => void;
   /**
-   * 点击清除按钮的回调函数
+   * 值变更时的回调函数
    */
-  onClear?: (event: React.MouseEvent) => void;
-  /**
-   * 点击确定按钮的回调函数
-   */
-  onOk?: (event: React.MouseEvent) => void;
+  onChange?: (value: string) => void;
   /**
    * 自定义样式
    */
@@ -78,9 +91,8 @@ export default function DateTimeMobileView(props: Props) {
     defaultMonth = new Date().getMonth(),
     style,
     skipMonthsView = true,
-    onCancel,
-    onClear,
-    onOk,
+    onClose,
+    onChange,
   } = props;
 
   const [[year, month], setYearMonth] = useState(() => {
@@ -88,7 +100,16 @@ export default function DateTimeMobileView(props: Props) {
       ? [date.getFullYear(), date.getMonth()]
       : [defaultYear, defaultMonth];
   });
+  const [selectedDate, setSelectedDate] = useState<Date>(() => {
+    return date || new Date();
+  });
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
+  const [hour, setHour] = useState<string>(() => {
+    return date ? `${date.getHours()}` : `${new Date().getHours()}`;
+  });
+  const [minute, setMinute] = useState<string>(() => {
+    return date ? `${date.getMinutes()}` : `${new Date().getMinutes()}`;
+  });
 
   const handleYearSelect = (newYear: number) => {
     if (newYear !== year) {
@@ -106,25 +127,71 @@ export default function DateTimeMobileView(props: Props) {
     />
   );
 
+  const onDateClick = (
+    _event: React.MouseEvent<HTMLElement>,
+    clickDate: Date,
+  ) => {
+    setSelectedDate(clickDate);
+  };
+
   const renderDates = () => (
     <>
       <WeekTitleBar startOfWeek={startOfWeek} />
       <div className="sinoui-date-time-mobile-view__datesview">
-        <DatesView year={year} month={month} />
+        <DatesView year={year} month={month} onDateClick={onDateClick} />
       </div>
     </>
   );
+
+  const onHourChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setHour(event.target.value);
+  };
+
+  const onMinuteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setMinute(event.target.value);
+  };
 
   const renderTime = () => (
     <>
       <TimeTitle>请输入时间</TimeTitle>
       <TimeWrapper>
-        <TextInput placeholder={`${new Date().getHours()}`} helperText="点" />
+        <TextInput
+          type="number"
+          placeholder={hour}
+          helperText="点"
+          value={hour}
+          onChange={onHourChange}
+        />
         <Divider>:</Divider>
-        <TextInput placeholder={`${new Date().getMinutes()}`} helperText="分" />
+        <TextInput
+          type="number"
+          placeholder={minute}
+          helperText="分"
+          value={minute}
+          onChange={onMinuteChange}
+        />
       </TimeWrapper>
     </>
   );
+
+  const onClear = () => {
+    if (onChange) {
+      onChange('');
+    }
+    if (onClose) {
+      onClose();
+    }
+  };
+
+  const onOk = () => {
+    if (onChange) {
+      onChange(`${formatDate(selectedDate)} ${hour}:${minute}`);
+    }
+
+    if (onClose) {
+      onClose();
+    }
+  };
 
   return (
     <DateTimeMobileViewWrapper
@@ -133,6 +200,10 @@ export default function DateTimeMobileView(props: Props) {
     >
       <DateTimeMobileViewToolbar
         year={year}
+        month={month}
+        day={selectedDate.getDate()}
+        hour={hour}
+        minute={minute}
         viewModel={viewModel}
         onViewModelChange={setViewModel}
       />
@@ -148,7 +219,7 @@ export default function DateTimeMobileView(props: Props) {
       {viewModel === ViewModel.years && renderYears()}
       {viewModel === ViewModel.dates && renderDates()}
       {viewModel === ViewModel.time && renderTime()}
-      <CalendarViewAction onCancel={onCancel} onClear={onClear} onOk={onOk} />
+      <CalendarViewAction onCancel={onClose} onClear={onClear} onOk={onOk} />
     </DateTimeMobileViewWrapper>
   );
 }
