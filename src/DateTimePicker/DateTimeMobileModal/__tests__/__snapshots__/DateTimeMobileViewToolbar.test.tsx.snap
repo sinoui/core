@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`镜像测试 渲染日期时间选择头部组件 1`] = `
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2::-moz-focus-inner {
+  border-style: none;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c3 {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.c4 {
+  font-size: 34px;
+  opacity: 1;
+}
+
+.c0 {
+  height: 96px;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #3f51b5;
+  color: #fff;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.c0 > * {
+  color: currentColor;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  font-size: 48px;
+  opacity: 0.7;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  margin-bottom: -6px;
+}
+
+@media (hover:none) {
+  .c2:hover {
+    background-color: transparent;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <button
+      className="c2 sinoui-base-button c3"
+      onClick={[Function]}
+      role="button"
+      selected={false}
+      type="button"
+    >
+      2020
+    </button>
+    <button
+      className="c2 sinoui-base-button c4"
+      fontSize={34}
+      onClick={[Function]}
+      role="button"
+      selected={true}
+      type="button"
+    >
+      7
+      月
+      21
+      日
+    </button>
+  </div>
+  <button
+    className="c2 sinoui-base-button c5"
+    fontSize={48}
+    onClick={[Function]}
+    role="button"
+    selected={false}
+    type="button"
+  >
+    15
+    :
+    39
+  </button>
+</div>
+`;
