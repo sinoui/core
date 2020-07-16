@@ -199,7 +199,8 @@ export default class ModalManager {
         if (
           this.isTopModal(modal.node) &&
           currentActiveElement &&
-          !contains(modal.content, currentActiveElement)
+          !contains(modal.content, currentActiveElement) &&
+          typeof modal.content.focus === 'function'
         ) {
           modal.content.focus();
         }
@@ -221,7 +222,8 @@ export default class ModalManager {
     if (
       !this.activeElementsInModals.get(modal.node) &&
       currentActiveElement &&
-      !contains(modal.content, currentActiveElement)
+      !contains(modal.content, currentActiveElement) &&
+      typeof modal.content.focus === 'function'
     ) {
       modal.content.focus();
     }

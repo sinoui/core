@@ -294,3 +294,12 @@ it('defaultModalManager', () => {
     ModalManager.defaultModalManager(),
   );
 });
+
+it('模态框内容没有focus函数，打开模态框时，焦点元素不变', () => {
+  const modal = createModal({ enforceFocus: true });
+  modal.content = {} as any;
+
+  modalManager?.add(modal);
+
+  expect(document.activeElement).toBe(document.body);
+});
