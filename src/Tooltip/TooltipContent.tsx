@@ -57,24 +57,22 @@ const arrowStyle = css<{ hide?: boolean }>`
 `;
 
 const pcStyle = css`
-  padding: 6px 8px;
+  padding: 3.2px 8px;
 `;
 
 const mobileStyle = css`
-  padding: 10px 16px;
+  padding: 7.2px 16px;
 `;
 
 const TooltipContent = styled.div`
-  display: flex;
-  align-items: center;
+  display: block;
   box-sizing: border-box;
   background-color: rgba(97, 97, 97);
   color: #fff;
   border-radius: 4px;
 
-  ${(props) => ({
-    ...props.theme.typography.caption,
-  })}
+  ${(props) => props.theme.typography.caption};
+  line-height: 1.5;
   ${pcStyle}
   ${arrowStyle};
 

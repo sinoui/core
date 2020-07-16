@@ -24,7 +24,7 @@ const Demo = ({ arrow }: { arrow?: boolean }) => {
           </Tooltip>
         </Column>
         <Column xs={6}>
-          <Tooltip title="这是一段提示文字" placement="top" arrow={arrow}>
+          <Tooltip title="这是一段提示文字" placement="right" arrow={arrow}>
             <Button raised>下弹出</Button>
           </Tooltip>
         </Column>
