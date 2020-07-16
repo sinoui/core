@@ -10,6 +10,7 @@ import defaultTheme from '@sinoui/theme/defaultTheme';
 import Grow from '@sinoui/core/Grow';
 import getScrollSize from 'dom-helpers/scrollbarSize';
 import Modal from '../Modal';
+import modalConfig from '../modal-config';
 
 const ModalWrapper = styled.div``;
 jest.mock('dom-helpers/scrollbarSize');
@@ -17,6 +18,11 @@ jest.mock('dom-helpers/scrollbarSize');
 afterEach(cleanup);
 
 jest.useFakeTimers();
+
+beforeAll(() => {
+  modalConfig.enablePortal = true;
+});
+afterAll(modalConfig.reset);
 
 it('打开模态框', () => {
   const { getByTestId } = render(

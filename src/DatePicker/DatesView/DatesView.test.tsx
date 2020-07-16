@@ -141,6 +141,9 @@ it('显示下个月的部分日期，补全最后一个行', () => {
   );
 
   expect(disabledDates.length).toBe(5);
+  expect(
+    getByTestId('datesView').querySelector('[data-date="2020-07-01"]'),
+  ).toBeTruthy();
 });
 
 it('点击日期', () => {

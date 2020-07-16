@@ -58,6 +58,7 @@ const SelectInputLayout = styled.div<{
   cursor: ${({ disabled, readOnly }) =>
     disabled || readOnly ? 'inherit' : 'pointer'};
   width: 0;
+  -webkit-tap-highlight-color: transparent;
   ${singleLineTextCss}
 
   & + .sinoui-input-adornment--end > .sinoui-svg-icon {
@@ -110,7 +111,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
       disabled={disabled}
       {...other}
     >
-      {renderValue ?? value}
+      {renderValue || <span>&#8203;</span>}
     </SelectInputLayout>
   );
 });
