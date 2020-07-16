@@ -105,8 +105,8 @@ function isGreaterThen(value: Date, year: number, month: number, date: number) {
       value.getFullYear(),
       value.getMonth(),
       value.getDate(),
-      value.getHours(),
-      value.getMinutes(),
+      0,
+      0,
       0,
     ).getTime() > new Date(year, month, date, 0, 0, 0).getTime()
   );

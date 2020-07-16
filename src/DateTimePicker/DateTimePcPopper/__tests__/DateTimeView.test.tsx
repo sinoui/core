@@ -260,7 +260,7 @@ it('minDate', () => {
   const dateTimeView = container.querySelector('.sinoui-date-time-view')!;
   expect(
     dateTimeView.querySelectorAll('.sinoui-date-cell--disabled').length,
-  ).toBe(10);
+  ).toBe(9);
 });
 
 it('maxDate', () => {
@@ -279,5 +279,5 @@ it('maxDate', () => {
 
   expect(
     dateTimeView.querySelectorAll('.sinoui-date-cell--disabled').length,
-  ).toBe(10);
+  ).toBe(11);
 });

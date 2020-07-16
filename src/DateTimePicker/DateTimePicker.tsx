@@ -69,6 +69,10 @@ export interface Props
    */
   skipMonthsView?: boolean;
   /**
+   * 是否展示今天
+   */
+  showToday?: boolean;
+  /**
    * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
    */
   startOfWeek?: 0 | 1;
@@ -124,6 +128,7 @@ export default function DateTimePicker(props: Props) {
     maxMinute,
     defaultYear,
     defaultMonth,
+    showToday,
   } = props;
 
   const isNativePc = useIsPc();
@@ -186,6 +191,7 @@ export default function DateTimePicker(props: Props) {
           skipMonthsView={skipMonthsView}
           defaultYear={defaultYear}
           defaultMonth={defaultMonth}
+          showToday={showToday}
         />
       ) : (
         <DateTimeMobileModal
@@ -201,6 +207,9 @@ export default function DateTimePicker(props: Props) {
           minMinute={minMinute}
           maxMinute={maxMinute}
           skipMonthsView={skipMonthsView}
+          showToday={showToday}
+          minDate={parseDate(min)}
+          maxDate={parseDate(max)}
         />
       )}
     </>

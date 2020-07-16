@@ -57,6 +57,10 @@ export const 自定义渲染方式 = () => (
 
 export const 移动端渲染 = () => (
   <StoryLayout>
-    <DateTimePickerDemo label="日期时间选择" isPc={false} />
+    <DateTimePickerDemo
+      label="日期时间选择"
+      isPc={false}
+      min="2020-06-20 15:30"
+    />
   </StoryLayout>
 );

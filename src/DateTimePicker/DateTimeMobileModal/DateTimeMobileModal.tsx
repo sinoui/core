@@ -22,9 +22,21 @@ interface Props extends Omit<ModalProps, 'children'> {
    */
   defaultMonth?: number;
   /**
+   * 是否展示今天
+   */
+  showToday?: boolean;
+  /**
    * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
    */
   startOfWeek?: 0 | 1;
+  /**
+   * 最小日期
+   */
+  minDate?: Date;
+  /**
+   * 最大日期
+   */
+  maxDate?: Date;
   /**
    * 最小小时数。默认为`0`。
    */
@@ -52,15 +64,43 @@ interface Props extends Omit<ModalProps, 'children'> {
 }
 
 export default function DateTimeMobileModal(props: Props) {
-  const { open, onRequestClose, date, onChange, ...other } = props;
+  const {
+    open,
+    onRequestClose,
+    date,
+    onChange,
+    defaultMonth,
+    defaultYear,
+    startOfWeek,
+    minHour,
+    minMinute,
+    maxHour,
+    maxMinute,
+    minDate,
+    maxDate,
+    skipMonthsView,
+    showToday,
+    ...other
+  } = props;
   return (
-    <Modal open={open} onRequestClose={onRequestClose} center>
+    <Modal open={open} onRequestClose={onRequestClose} {...other}>
       <Fade in={open}>
         <DateTimeMobileView
           {...other}
           onClose={onRequestClose}
           date={date}
+          showToday={showToday}
           onChange={onChange}
+          defaultMonth={defaultMonth}
+          defaultYear={defaultYear}
+          startOfWeek={startOfWeek}
+          minHour={minHour}
+          maxHour={maxHour}
+          minMinute={minMinute}
+          maxMinute={maxMinute}
+          minDate={minDate}
+          maxDate={maxDate}
+          skipMonthsView={skipMonthsView}
         />
       </Fade>
     </Modal>
