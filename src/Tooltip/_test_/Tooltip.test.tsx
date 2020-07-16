@@ -11,7 +11,7 @@ jest.useFakeTimers();
 
 describe('触发器测试', () => {
   it('click', () => {
-    const { getByTestId, queryByTestId } = render(
+    const { getByTestId, queryByTestId, container } = render(
       <ThemeProvider theme={defaultTheme}>
         <Tooltip title="这是提示文字" data-testid="tooltip">
           <button data-testid="trigger-btn" type="button">
@@ -26,6 +26,8 @@ describe('触发器测试', () => {
 
     fireEvent.click(getByTestId('trigger-btn'));
     expect(getByTestId('tooltip')).toBeTruthy();
+    console.log(container.innerHTML);
+
     fireEvent.click(document);
     jest.runAllTimers();
     expect(queryByTestId('tooltip')).toBeFalsy();
@@ -70,7 +72,7 @@ describe('触发器测试', () => {
 
 describe('箭头', () => {
   it('不传入arrow属性 默认在pc端显示箭头', () => {
-    const { getByTestId, container } = render(
+    const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
         <Tooltip title="这是提示文字" data-testid="tooltip">
           <button data-testid="trigger-btn" type="button">
@@ -81,11 +83,11 @@ describe('箭头', () => {
     );
 
     fireEvent.click(getByTestId('trigger-btn'));
-    expect(container.querySelector('[data-popper-arrow]')).toBeTruthy();
+    expect(document.querySelector('[data-popper-arrow]')).toBeTruthy();
   });
 
   it('传入Arrow属性 显示箭头', () => {
-    const { getByTestId, container } = render(
+    const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
         <Tooltip title="这是提示文字" data-testid="tooltip" arrow>
           <button data-testid="trigger-btn" type="button">
@@ -95,13 +97,13 @@ describe('箭头', () => {
       </ThemeProvider>,
     );
     fireEvent.click(getByTestId('trigger-btn'));
-    expect(container.querySelector('[data-popper-arrow]')).toBeTruthy();
+    expect(document.querySelector('[data-popper-arrow]')).toBeTruthy();
   });
 
   it('移动端不显示箭头', () => {
-    const { getByTestId, container } = render(
+    const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Tooltip title="这是提示文字" data-testid="tooltip" isMobile>
+        <Tooltip title="这是提示文字" isMobile>
           <button data-testid="trigger-btn" type="button">
             弹出
           </button>
@@ -110,7 +112,7 @@ describe('箭头', () => {
     );
 
     fireEvent.click(getByTestId('trigger-btn'));
-    expect(container.querySelector('[data-popper-arrow]')).toBeFalsy();
+    expect(document.querySelector('[data-popper-arrow]')).toBeFalsy();
   });
 
   it('自定义className', () => {
