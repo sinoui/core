@@ -15,7 +15,7 @@ const arrowStyle = css<{ hide?: boolean }>`
     bottom: 6px;
   }
   [data-popper-placement^='bottom'] > & > [data-popper-arrow] {
-    top: -4px;
+    top: -5px;
   }
   [data-popper-placement='top'] > & > [data-popper-arrow],
   [data-popper-placement='bottom'] > & > [data-popper-arrow] {
@@ -31,7 +31,7 @@ const arrowStyle = css<{ hide?: boolean }>`
   }
 
   [data-popper-placement^='right'] > & > [data-popper-arrow] {
-    left: -4px;
+    left: -5px;
   }
   [data-popper-placement^='left'] > & > [data-popper-arrow] {
     right: 6px;
@@ -42,11 +42,11 @@ const arrowStyle = css<{ hide?: boolean }>`
   }
   [data-popper-placement='right-start'] > & > [data-popper-arrow],
   [data-popper-placement='left-start'] > & > [data-popper-arrow] {
-    margin-top: -15px;
+    margin-top: -12px;
   }
   [data-popper-placement='right-end'] > & > [data-popper-arrow],
   [data-popper-placement='left-end'] > & > [data-popper-arrow] {
-    margin-top: 5px;
+    margin-top: 2px;
   }
   [data-small] {
     display: block;

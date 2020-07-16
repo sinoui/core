@@ -24,7 +24,7 @@ const Demo = ({ arrow }: { arrow?: boolean }) => {
           </Tooltip>
         </Column>
         <Column xs={6}>
-          <Tooltip title="这是一段提示文字" placement="right" arrow={arrow}>
+          <Tooltip title="这是一段提示文字" placement="bottom" arrow={arrow}>
             <Button raised>下弹出</Button>
           </Tooltip>
         </Column>
@@ -53,20 +53,25 @@ export const 带箭头 = () => {
           <Tooltip
             title="提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示"
             placement="top-start"
+            trigger="hover"
           >
             <StyledButton>TOP-START</StyledButton>
           </Tooltip>
-          <Tooltip title="提示提示提示提示" placement="top">
+          <Tooltip title="提示提示提示提示" placement="top" trigger="hover">
             <StyledButton>TOP</StyledButton>
           </Tooltip>
-          <Tooltip title="提示提示提示提示提示" placement="top-end">
+          <Tooltip
+            title="提示提示提示提示提示"
+            placement="top-end"
+            trigger="hover"
+          >
             <StyledButton>TOP-END</StyledButton>
           </Tooltip>
         </Column>
       </Row>
       <Row>
         <Column xs={12}>
-          <Tooltip title="提示" placement="left-start">
+          <Tooltip title="提示" placement="left-start" trigger="hover">
             <StyledButton>LEFT-START</StyledButton>
           </Tooltip>
         </Column>
@@ -77,14 +82,14 @@ export const 带箭头 = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Tooltip title="提示" placement="right-start">
+          <Tooltip title="提示" placement="right-start" trigger="hover">
             <StyledButton>RIGHT-START</StyledButton>
           </Tooltip>
         </Column>
       </Row>
       <Row>
         <Column xs={12}>
-          <Tooltip title="提示" placement="left">
+          <Tooltip title="提示" placement="left" trigger="hover">
             <StyledButton>LEFT</StyledButton>
           </Tooltip>
         </Column>
@@ -95,14 +100,14 @@ export const 带箭头 = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Tooltip title="提示" placement="right">
+          <Tooltip title="提示" placement="right" trigger="hover">
             <StyledButton>RIGHT </StyledButton>
           </Tooltip>
         </Column>
       </Row>
       <Row>
         <Column xs={12}>
-          <Tooltip title="提示" placement="left-end">
+          <Tooltip title="提示" placement="left-end" trigger="hover">
             <StyledButton>LEFT-END</StyledButton>
           </Tooltip>
         </Column>
@@ -113,7 +118,7 @@ export const 带箭头 = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Tooltip title="提示" placement="right-end">
+          <Tooltip title="提示" placement="right-end" trigger="hover">
             <StyledButton>RIGHT-END</StyledButton>
           </Tooltip>
         </Column>
@@ -126,13 +131,13 @@ export const 带箭头 = () => {
             justifyContent: 'center',
           }}
         >
-          <Tooltip title="提示" placement="bottom-start">
+          <Tooltip title="提示" placement="bottom-start" trigger="hover">
             <StyledButton>BOTTOM-START</StyledButton>
           </Tooltip>
-          <Tooltip title="提示" placement="bottom">
+          <Tooltip title="提示" placement="bottom" trigger="hover">
             <StyledButton>BOTTOM</StyledButton>
           </Tooltip>
-          <Tooltip title="提示" placement="bottom-end">
+          <Tooltip title="提示" placement="bottom-end" trigger="hover">
             <StyledButton>BOTTOM-END</StyledButton>
           </Tooltip>
         </Column>

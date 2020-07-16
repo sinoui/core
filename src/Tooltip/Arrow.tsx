@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 const Arrow = styled.div`
+  z-index: -1;
+  position: absolute;
   &::before {
     width: 10px;
     height: 10px;
     position: absolute;
-    z-index: -1;
   }
   &::before {
     content: '';
