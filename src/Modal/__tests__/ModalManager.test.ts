@@ -191,6 +191,43 @@ it('同时删除多个模态框', () => {
   expect(document.activeElement).toBe(modal1.content);
 });
 
+it('在autoFocus模态框1之上打开不autoFocus为false的模态框2，关闭最上层模态框时，模态框1获取焦点', () => {
+  const modal1 = createModal({ autoFocus: true });
+  const modal2 = createModal({ autoFocus: false });
+
+  modalManager?.add(modal1);
+  modalManager?.add(modal2);
+
+  modalManager?.remove(modal2.node);
+
+  expect(document.activeElement).toBe(modal1.content);
+});
+
+it('两个autoFocus=false的模块框，删除顶层模态框，焦点不会交给底层模态框', () => {
+  const modal1 = createModal({ autoFocus: false });
+  const modal2 = createModal({ autoFocus: false });
+
+  modalManager?.add(modal1);
+  modalManager?.add(modal2);
+
+  modalManager?.remove(modal2.node);
+
+  expect(document.activeElement).not.toBe(modal1.content);
+});
+
+it('关闭autoFocus=false的模态框，焦点不会交给之前的元素', () => {
+  const button = document.createElement('button');
+  document.body.appendChild(button);
+  button.focus();
+
+  const modal = createModal({ autoFocus: false });
+  modalManager?.add(modal);
+  button.blur();
+
+  modalManager?.remove(modal.node);
+  expect(document.activeElement).not.toBe(button);
+});
+
 it('将焦点限制在模态框中', () => {
   const modal = createModal({ enforceFocus: true });
   modalManager?.add(modal);
