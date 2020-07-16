@@ -39,7 +39,7 @@ it('关闭状态', () => {
 });
 
 describe('快照测试', () => {
-  xit('打开状态', () => {
+  it('打开状态', () => {
     const onRequestClose = jest.fn();
     const tree = renderer
       .create(
@@ -57,7 +57,7 @@ describe('快照测试', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  xit('关闭状态', () => {
+  it('关闭状态', () => {
     const onRequestClose = jest.fn();
     const tree = renderer
       .create(
