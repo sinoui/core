@@ -6,6 +6,7 @@ import DateTimeMobileView from './DateTimeMobileView';
 
 interface Props extends Omit<ModalProps, 'children'> {
   value?: string;
+  onRequestClose?: () => void;
 }
 
 export default function DateTimeMobileModal(props: Props) {
@@ -13,7 +14,7 @@ export default function DateTimeMobileModal(props: Props) {
   return (
     <Modal open={open} onRequestClose={onRequestClose} center>
       <Fade in={open}>
-        <DateTimeMobileView />
+        <DateTimeMobileView onCancel={onRequestClose} />
       </Fade>
     </Modal>
   );
