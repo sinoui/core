@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { CLOCK_NUMBER_PADDING } from './constants';
 
 const selectedCss = css`
   background-color: ${({ theme }) => theme.palette.primary.main};
@@ -26,7 +27,7 @@ const Wrapper = styled.div<{
   color: ${(props) => props.theme.palette.text.primary};
   transform: ${({ $number, $size }) => `rotate(${
     30 * $number - 90
-  }deg) translateX(${($size - 32) / 2}px)
+  }deg) translateX(${($size - 32) / 2 - CLOCK_NUMBER_PADDING}px)
     rotate(${90 - 30 * $number}deg)`};
   ${(props) => props.$selected && selectedCss};
 `;

@@ -1,0 +1,3 @@
+const CLOCK_NUMBER_PADDING = 4;
+
+export { CLOCK_NUMBER_PADDING };
