@@ -42,9 +42,9 @@ type Props = Omit<BaseTransitionProps, 'timeout'> & {
    */
   timeout?: TransitionTimeout;
   /**
-   * 收缩方向，auto表示垂直和水平方向同时收缩
+   * 收缩方向，`both`表示垂直和水平方向同时收缩
    */
-  direction?: 'vertical' | 'horizontal' | 'auto';
+  direction?: 'vertical' | 'horizontal' | 'both';
 };
 
 /**
@@ -77,6 +77,11 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
   const cancelAnimateRef = useRef<Function | null>(null);
   const inRef = useRef<boolean>(!!inProp);
 
+  /**
+   * 处理动画
+   *
+   * @param status 状态
+   */
   const handleAnimate = (status: 'enter' | 'exit') => {
     const node = contentRef.current;
     const content = wrapperRef.current;
@@ -85,8 +90,10 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     }
     const duration = getDuration(timeout, status, content);
     autoTimeout.current = timeout === 'auto' ? duration : 0;
-    const initX = collapsedWidth / content.clientWidth;
-    const initY = collapsedHeight / content.clientHeight;
+    const initX =
+      direction === 'vertical' ? 1 : collapsedWidth / content.clientWidth;
+    const initY =
+      direction === 'horizontal' ? 1 : collapsedHeight / content.clientHeight;
     const start = {
       x: status === 'enter' ? initX : 1,
       y: status === 'enter' ? initY : 1,
@@ -105,9 +112,9 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
       const scaleY =
         direction === 'horizontal' ? 1 : interpolation(start.y, end.y);
       const invScaleX = scaleX === 0 ? 60 : 1 / scaleX;
-      const invScalY = scaleY === 0 ? 60 : 1 / scaleY;
+      const invScaleY = scaleY === 0 ? 60 : 1 / scaleY;
       node.style.transform = `scale(${scaleX}, ${scaleY})`;
-      content.style.transform = `scale(${invScaleX}, ${invScalY})`;
+      content.style.transform = `scale(${invScaleX}, ${invScaleY})`;
     });
   };
 
@@ -145,16 +152,18 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
         return;
       }
 
-      const scaleX = collapsedWidth / content.clientWidth;
-      const scaleY = collapsedHeight / content.clientHeight;
+      const scaleX =
+        direction === 'vertical' ? 1 : collapsedWidth / content.clientWidth;
+      const scaleY =
+        direction === 'horizontal' ? 1 : collapsedHeight / content.clientHeight;
 
       const invScaleX = scaleX === 0 ? 60 : 1 / scaleX;
       const invScaleY = scaleY === 0 ? 60 : 1 / scaleY;
 
-      node.style.transform = `scale(${scaleX},${scaleY})`;
-      content.style.transform = `scale(${invScaleX},${invScaleY})`;
+      node.style.transform = `scale(${scaleX}, ${scaleY})`;
+      content.style.transform = `scale(${invScaleX}, ${invScaleY})`;
     }
-  }, [collapsedHeight, collapsedWidth]);
+  }, [collapsedHeight, collapsedWidth, direction]);
 
   return (
     <Transition
