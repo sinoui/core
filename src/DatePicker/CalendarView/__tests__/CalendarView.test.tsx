@@ -283,7 +283,7 @@ it('onChange', () => {
   const calendarView = getByTestId('calendar-view');
   fireEvent.click(
     calendarView.querySelector(
-      '[data-date="2020/5/15"] > .sinoui-date-cell-content',
+      '[data-date="2020-05-15"] > .sinoui-date-cell-content',
     )!,
   );
 

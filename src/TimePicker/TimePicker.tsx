@@ -28,6 +28,30 @@ interface Props extends Omit<TextInputProps, 'onChange'> {
    * 指定弹窗属性
    */
   popperProps?: PopperProps;
+  /**
+   * 小时间隔
+   */
+  hourStep?: number;
+  /**
+   * 分钟间隔
+   */
+  minuteStep?: number;
+  /**
+   * 最小小时数。默认为`0`。
+   */
+  minHour?: number;
+  /**
+   * 最大小时数。默认为`23`。
+   */
+  maxHour?: number;
+  /**
+   * 最小分钟数。默认为`0`。
+   */
+  minMinute?: number;
+  /**
+   * 最大分钟数。默认为`59`。
+   */
+  maxMinute?: number;
 }
 
 const PaperWrapper = styled(Paper)`
@@ -49,6 +73,12 @@ export default function TimePicker(props: Props) {
     readOnly,
     popperProps,
     onBlur,
+    hourStep,
+    minuteStep,
+    minHour,
+    maxHour,
+    minMinute,
+    maxMinute,
     ...rest
   } = props;
   const [open, setOpen] = useState(false);
@@ -154,6 +184,12 @@ export default function TimePicker(props: Props) {
               onBlur={() => setOpen(false)}
               autoFocus
               ref={timeSelectViewRef}
+              hourStep={hourStep}
+              minuteStep={minuteStep}
+              minHour={minHour}
+              maxHour={maxHour}
+              minMinute={minMinute}
+              maxMinute={maxMinute}
             />
           </PaperWrapper>
         </Fade>

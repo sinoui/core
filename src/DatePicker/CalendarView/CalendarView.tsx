@@ -1,15 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import CalendarViewHeader from './CalendarViewHeader';
 import WeekTitleBar from '../WeekTitleBar';
-import DatesView from '../DatesView';
 import CalendarViewWrapper from './CalendarViewWrapper';
 import YearSelectView from '../YearSelectView';
 import ViewModel from '../ViewModel';
 import useIsPc from '../useIsPc';
 import MonthSelectView from '../MonthSelectView';
-import getDatesOfMonth from '../DatesView/getDatesOfMonth';
 import CalendarViewAction from './CalendarViewAction';
 import CalendarViewToolbar from './CalendarViewToolbar';
+import SimpleMonthDatesView from '../DatesView/SimpleMonthDatesView';
 
 export interface Props {
   className?: string;
@@ -82,48 +81,6 @@ export interface Props {
   isPc?: boolean;
 }
 
-function isSameMonth(
-  date: Date | undefined,
-  year: number,
-  month: number,
-): date is Date {
-  return !!date && date.getFullYear() === year && date.getMonth() === month;
-}
-
-function isGreaterThen(value: Date, year: number, month: number, date: number) {
-  return (
-    new Date(
-      value.getFullYear(),
-      value.getMonth(),
-      value.getDate(),
-      0,
-      0,
-      0,
-    ).getTime() > new Date(year, month, date, 0, 0, 0).getTime()
-  );
-}
-
-function getDisabledDates(
-  year: number,
-  month: number,
-  minDate?: Date,
-  maxDate?: Date,
-) {
-  const dates = getDatesOfMonth(year, month);
-  const disabledDates: number[] = [];
-
-  for (let i = 0; i < dates; i += 1) {
-    if (
-      (minDate && isGreaterThen(minDate, year, month, i + 1)) ||
-      (maxDate && !isGreaterThen(maxDate, year, month, i + 1))
-    ) {
-      disabledDates.push(i + 1);
-    }
-  }
-
-  return disabledDates.length !== 0 ? disabledDates : undefined;
-}
-
 /**
  * 日历视图
  */
@@ -160,13 +117,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
         ];
   });
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
-  const selectedDates = useMemo(() => {
-    return isSameMonth(value, year, month) ? [value.getDate()] : undefined;
-  }, [month, value, year]);
-  const outlinedDate =
-    showToday && isSameMonth(new Date(), year, month)
-      ? new Date().getDate()
-      : undefined;
+
   const skipMonthsView = skipMonthsViewProp ?? !isPc;
 
   if (
@@ -190,15 +141,16 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     <>
       <WeekTitleBar startOfWeek={startOfWeek} isPc={isPc} />
       <div className="sinoui-calendar-view__datesview">
-        <DatesView
+        <SimpleMonthDatesView
           year={year}
           month={month}
+          minDate={minDate}
+          maxDate={maxDate}
+          showToday={showToday}
+          value={value}
           isPc={isPc}
           showNextMonthDates={isPc}
-          selectedDates={selectedDates}
           onDateClick={handleDateClick}
-          outlinedDate={outlinedDate}
-          disabledDates={getDisabledDates(year, month, minDate, maxDate)}
           startOfWeek={startOfWeek}
         />
       </div>

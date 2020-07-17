@@ -10,6 +10,7 @@ import ModalManager from './ModalManager';
 import ariaHiddenModal from './ariaHiddenModal';
 import getContainerElement from '../utils/getContainerElement';
 import type { ContainerElement } from '../utils/getContainerElement';
+import modalConfig from './modal-config';
 
 export interface Props {
   /**
@@ -105,6 +106,17 @@ export interface Props {
    * 指定z-index
    */
   zIndex?: number;
+  /**
+   * 启用portal。默认为`true`。但是在测试环境默认为`false`。在单元测试时，可以通过以下方式统一启用或者禁用portal：
+   *
+   * ```ts
+   * import { modalConfig } from '@sinoui/core/Modal';
+   *
+   * beforeAll(() => modalConfig.enablePortal = false);
+   * afterAll(() => modalConfig.reset());
+   * ```
+   */
+  enablePortal?: boolean;
 }
 
 const defaultRenderBackdrop = (props: RenderModalBackdropProps) => {
@@ -113,8 +125,20 @@ const defaultRenderBackdrop = (props: RenderModalBackdropProps) => {
 
 /**
  * 模态框。
+ *
+ * 注意，在测试环境中，模态框是不启用portal的。如果需要启用portal，通过以下方式启用：
+ *
+ * ```ts
+ * import { modalConfig } from '@sinoui/core/Modal';
+ *
+ * beforeAll(() => {
+ *   modalConfig.enablePortal = true;
+ * });
+ *
+ * afterEach(modalConfig.reset);
+ * ```
  */
-export default React.forwardRef<HTMLDivElement, Props>(function Modal(
+const Modal = React.forwardRef<HTMLDivElement, Props>(function Modal(
   {
     open,
     onClose,
@@ -134,6 +158,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function Modal(
     enforceFocus = true,
     scrollLock = true,
     modalManager = ModalManager.defaultModalManager(),
+    enablePortal = modalConfig.enablePortal,
     ...rest
   },
   ref,
@@ -282,7 +307,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function Modal(
     );
   }
 
-  return ReactDOM.createPortal(
+  const modal = (
     <ModalWrapper
       data-sinoui-id="modal"
       $center={center}
@@ -303,7 +328,10 @@ export default React.forwardRef<HTMLDivElement, Props>(function Modal(
           })
         : null}
       {React.cloneElement(children, childProps)}
-    </ModalWrapper>,
-    containerElement,
+    </ModalWrapper>
   );
+
+  return enablePortal ? ReactDOM.createPortal(modal, containerElement) : modal;
 });
+
+export default Modal;

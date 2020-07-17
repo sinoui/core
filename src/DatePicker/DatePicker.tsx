@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import DatePickerIcon from '@sinoui/core/svg-icons/DatePickerIcon';
-import mem from '@sinoui/core/utils/mem';
 import styled from 'styled-components';
 import Popper from '@sinoui/core/Popper';
 import Modal from '@sinoui/core/Modal';
@@ -14,6 +13,7 @@ import useIsPc from './useIsPc';
 import formatDate from './formatDate';
 import type { CalendarViewProps } from './CalendarView';
 import isNaN from '../utils/isNaN';
+import mem from '../utils/mem';
 
 interface Props
   extends Omit<
@@ -158,13 +158,18 @@ export default function DatePicker(props: Props) {
         value={inputValue}
         onClear={handleClear}
         endAdornment={
-          <InputAdornment position="end" disablePointerEvents>
+          <InputAdornment position="end">
             <DatePickerIcon />
           </InputAdornment>
         }
       />
       {isPc ? (
-        <StyledPopper {...getPopperProps()} portal={portal} {...popperProps}>
+        <StyledPopper
+          {...getPopperProps()}
+          portal={portal}
+          {...popperProps}
+          placement="bottom-start"
+        >
           <CalendarView
             value={date}
             onChange={handleCalendarChange}

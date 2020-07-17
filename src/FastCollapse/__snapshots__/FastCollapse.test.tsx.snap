@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 展现 1`] = `
+.c0 {
+  overflow: hidden;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.c0 > div {
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+<div
+  className="c0 sinoui-collapse-container"
+  data-testid="collapse"
+>
+  <div
+    className="sinoui-collapse-content"
+  >
+    <div>
+      测试
+    </div>
+  </div>
+</div>
+`;
