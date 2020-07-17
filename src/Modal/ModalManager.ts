@@ -128,11 +128,14 @@ export default class ModalManager {
    * @param modalNode 模态框元素
    */
   remove(modalNode: HTMLElement) {
-    this.modals.splice(
+    const removedModal = this.modals.splice(
       this.modals.findIndex((modal) => modal.node === modalNode),
       1,
-    );
-    this.focusLastActiveElement();
+    )[0];
+    const modal = this.modals[this.modals.length - 1];
+    if (removedModal.autoFocus || (modal && modal.autoFocus)) {
+      this.focusLastActiveElement();
+    }
     // eslint-disable-next-line no-unused-expressions
     this.unmountCallbacksOfModals.get(modalNode)?.forEach((fn) => fn());
     this.unmountCallbacksOfModals.delete(modalNode);
@@ -196,7 +199,8 @@ export default class ModalManager {
         if (
           this.isTopModal(modal.node) &&
           currentActiveElement &&
-          !contains(modal.content, currentActiveElement)
+          !contains(modal.content, currentActiveElement) &&
+          typeof modal.content.focus === 'function'
         ) {
           modal.content.focus();
         }
@@ -218,7 +222,8 @@ export default class ModalManager {
     if (
       !this.activeElementsInModals.get(modal.node) &&
       currentActiveElement &&
-      !contains(modal.content, currentActiveElement)
+      !contains(modal.content, currentActiveElement) &&
+      typeof modal.content.focus === 'function'
     ) {
       modal.content.focus();
     }

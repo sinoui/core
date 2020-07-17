@@ -218,7 +218,7 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
     <div ref={handleTooltipRef} role="tooltip" style={computedStyle} {...rest}>
       {typeof children === 'function'
         ? children(childProps)
-        : React.isValidElement(children)
+        : React.isValidElement(children) && typeof children.type !== 'string'
         ? React.cloneElement(children, childProps)
         : children}
     </div>

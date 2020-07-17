@@ -73,8 +73,4 @@ it('禁用状态', () => {
     'aria-disabled',
     'true',
   );
-  expect(dateCell.querySelector('.sinoui-date-cell-content')).toHaveStyleRule(
-    'cursor',
-    'default',
-  );
 });

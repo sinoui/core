@@ -58,7 +58,7 @@ describe('value', () => {
       fireEvent.click(textInput);
     });
     // 最新value值代表的日期被选中
-    expect(container.querySelector('[data-date="2020/1/15"]')).toHaveClass(
+    expect(container.querySelector('[data-date="2020-01-15"]')).toHaveClass(
       'sinoui-date-cell--selected',
     );
   });
@@ -76,7 +76,7 @@ describe('value', () => {
       </ThemeProvider>,
     );
 
-    expect(getByTestId('datepicker').textContent).toBeFalsy();
+    expect(getByTestId('datepicker').textContent).toBe('​');
 
     const textInput = container.querySelector('.sinoui-base-input')!;
 
@@ -338,7 +338,7 @@ it('min', () => {
     fireEvent.click(textInput);
   });
 
-  expect(container.querySelector('[data-date="2020/6/3"]')).toHaveClass(
+  expect(container.querySelector('[data-date="2020-06-03"]')).toHaveClass(
     'sinoui-date-cell--disabled',
   );
 });
@@ -364,7 +364,7 @@ it('max', () => {
     fireEvent.click(textInput);
   });
 
-  expect(container.querySelector('[data-date="2020/6/24"]')).toHaveClass(
+  expect(container.querySelector('[data-date="2020-06-24"]')).toHaveClass(
     'sinoui-date-cell--disabled',
   );
 });
