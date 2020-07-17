@@ -38,14 +38,13 @@ const Wrapper = styled.div<{
 export default function ClockNumber({
   $number,
   $size,
-  selected,
 }: {
   $number: number;
   $size: number;
-  selected?: boolean;
 }) {
+  // const selected = rotateDeg > 30 * $number;
   return (
-    <Wrapper $number={$number} $size={$size} $selected={selected}>
+    <Wrapper $number={$number} $size={$size}>
       {$number}
     </Wrapper>
   );

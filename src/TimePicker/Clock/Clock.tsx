@@ -37,8 +37,19 @@ export default function Clock({ size = 260 }: { size: number }) {
       // 9点 - 12点
       deg = 360 - xyDeg;
     }
-
+    // 旋转角度超过 两个时间相夹的一半角度时 选中下一个时间
     return deg;
+    // if (deg - rotateDeg > 30 / 2) {
+    //   console.log(rotateDeg);
+    //   return rotateDeg + 30;
+    // }
+
+    // if (rotateDeg - deg > 30 / 2) {
+    //   console.log(rotateDeg);
+    //   return rotateDeg - 30;
+    // }
+    // console.log(rotateDeg);
+    // return rotateDeg;
   };
 
   // 鼠标按下 开始移动
@@ -51,25 +62,33 @@ export default function Clock({ size = 260 }: { size: number }) {
     const { pageX, pageY } = event;
     // 鼠标按下 且 没抬起时移动指针
     if (isMoveStart.current && !isMoveEnd.current) {
-      setRotateDeg(getRotateDegToBaseLine(pageX, pageY));
+      const currentRotateDeg = getRotateDegToBaseLine(pageX, pageY);
+      if (currentRotateDeg !== rotateDeg) {
+        setRotateDeg(currentRotateDeg);
+      }
     }
   };
 
   // 鼠标抬起
   const onMouseUp = (event: React.MouseEvent) => {
     const { pageX, pageY } = event;
-    setRotateDeg(getRotateDegToBaseLine(pageX, pageY));
+    const currentRotateDeg = getRotateDegToBaseLine(pageX, pageY);
+    if (currentRotateDeg !== rotateDeg) {
+      setRotateDeg(currentRotateDeg);
+    }
     isMoveStart.current = false;
     isMoveEnd.current = true;
   };
 
   const onTouchMove = (event: React.TouchEvent) => {
-    setRotateDeg(
-      getRotateDegToBaseLine(
-        event.nativeEvent.touches[0].pageX,
-        event.nativeEvent.touches[0].pageY,
-      ),
+    const currentRotateDeg = getRotateDegToBaseLine(
+      event.nativeEvent.touches[0].pageX,
+      event.nativeEvent.touches[0].pageY,
     );
+    if (currentRotateDeg !== rotateDeg) {
+      setRotateDeg(currentRotateDeg);
+    }
+
     isMoveStart.current = false;
     isMoveEnd.current = true;
   };
