@@ -215,3 +215,141 @@ describe('pc端', () => {
     expect(onChange).toBeCalledTimes(3);
   });
 });
+
+describe('移动端', () => {
+  it('点击出现日期时间选择弹窗', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateTimePicker
+          data-testid="date-time-picker"
+          value="2020-06-18 15:30"
+          isPc={false}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    expect(
+      container.querySelector('.sinoui-date-time-mobile-view'),
+    ).toBeInTheDocument();
+  });
+
+  it('失去焦点，不关闭弹窗', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateTimePicker
+          data-testid="date-time-picker"
+          value="2020-06-18 15:30"
+          isPc={false}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    act(() => {
+      fireEvent.blur(textInput);
+    });
+
+    expect(
+      container.querySelector('.sinoui-date-time-mobile-view'),
+    ).toBeInTheDocument();
+  });
+
+  it('选择日期时间后，点击保存按钮，onChange被调用，弹窗关闭', () => {
+    const onChange = jest.fn();
+    const { container, getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateTimePicker
+          data-testid="date-time-picker"
+          value="2020-06-18 15:30"
+          isPc={false}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    fireEvent.click(
+      container.querySelector(
+        '[data-date="2020-06-24"] > .sinoui-date-cell-content',
+      )!,
+    );
+
+    fireEvent.click(getByText('设置'));
+
+    expect(onChange).toBeCalledWith('2020-06-24 15:30');
+    expect(
+      container.querySelector('.sinoui-date-time-mobile-view'),
+    ).toBeFalsy();
+  });
+
+  it('选择日期后，点击关闭按钮，值不更新，弹窗关闭', () => {
+    const onChange = jest.fn();
+    const { container, getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateTimePicker
+          data-testid="date-time-picker"
+          value="2020-06-18 15:30"
+          isPc={false}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    fireEvent.click(
+      container.querySelector(
+        '[data-date="2020-06-24"] > .sinoui-date-cell-content',
+      )!,
+    );
+
+    fireEvent.click(getByText('取消'));
+
+    expect(onChange).not.toBeCalled();
+    expect(
+      container.querySelector('.sinoui-date-time-mobile-view'),
+    ).toBeFalsy();
+  });
+
+  it('点击清除按钮，清空值并关闭弹窗', () => {
+    const onChange = jest.fn();
+    const { container, getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateTimePicker
+          data-testid="date-time-picker"
+          value="2020-06-18 15:30"
+          isPc={false}
+          onChange={onChange}
+        />
+      </ThemeProvider>,
+    );
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+    act(() => {
+      fireEvent.click(textInput);
+    });
+
+    fireEvent.click(getByText('清除'));
+
+    expect(onChange).toBeCalledWith('');
+    expect(
+      container.querySelector('.sinoui-date-time-mobile-view'),
+    ).toBeFalsy();
+  });
+});
