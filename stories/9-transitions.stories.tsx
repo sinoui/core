@@ -24,7 +24,7 @@ import FormControlLabel from '@sinoui/core/FormControlLabel';
 import Collapse from '@sinoui/core/Collapse';
 import Body2 from '@sinoui/core/Body2';
 import Zoom from '@sinoui/core/Zoom';
-import CollapseNew from '@sinoui/core/CollapseNew';
+import CollapseNew from '@sinoui/core/FastCollapse';
 import StoryLayout from './StoryLayout';
 import { Button, IconButton } from '../src';
 
@@ -352,7 +352,7 @@ function CollapseAuto() {
       </Button>
       <Row>
         <Column xs={12}>
-          <CollapseNew in={isIn} direction="auto">
+          <CollapseNew in={isIn} direction="both">
             <CardDemo />
           </CollapseNew>
         </Column>

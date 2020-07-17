@@ -164,7 +164,12 @@ export default function DatePicker(props: Props) {
         }
       />
       {isPc ? (
-        <StyledPopper {...getPopperProps()} portal={portal} {...popperProps}>
+        <StyledPopper
+          {...getPopperProps()}
+          portal={portal}
+          {...popperProps}
+          placement="bottom-start"
+        >
           <CalendarView
             value={date}
             onChange={handleCalendarChange}
