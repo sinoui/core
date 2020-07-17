@@ -4,7 +4,7 @@ import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 import transitions from '@sinoui/theme/transitions';
 import type { TransitionStatus } from 'react-transition-group/Transition';
-import { animate } from '@sinoui/utils';
+import animate from './animate';
 import type BaseTransitionProps from '../transitions/BaseTransitionProps';
 import getDuration from '../transitions/getDuration';
 import type { TransitionTimeout } from '../transitions/getDuration';
@@ -18,10 +18,12 @@ const CollapseWrapper = styled.div<CollapseWrapperProps>`
   overflow: hidden;
   visibility: ${({ $hidden }) => ($hidden ? 'hidden' : '')};
   transform-origin: top left;
+  backface-visibility: hidden; /* 兼容 IE11，启用GPU加速 */
+  will-change: transform;
 
   & > div {
-    display: flex;
     transform-origin: top left;
+    backface-visibility: hidden; /* 兼容 IE11，启用GPU加速 */
     will-change: transform;
   }
 `;
@@ -31,15 +33,26 @@ type Props = Omit<BaseTransitionProps, 'timeout'> & {
    * 压缩后的高度。默认为`0`。单位为`px`。
    */
   collapsedHeight?: number;
+  /**
+   * 压缩后的宽度。默认为`0`。单位为`px`。
+   */
+  collapsedWidth?: number;
+  /**
+   * 指定动画时长。如果指定为`auto`，则会根据实际高度来计算时长。
+   */
   timeout?: TransitionTimeout;
   /**
-   * 收缩方向，auto表示垂直和水平方向同时收缩
+   * 收缩方向，`both`表示垂直和水平方向同时收缩
    */
-  direction?: 'vertical' | 'horizontal' | 'auto';
+  direction?: 'vertical' | 'horizontal' | 'both';
 };
 
 /**
  * 压缩元素的过渡效果。
+ *
+ * FastCollapse组件适合用于弹窗的动效。如果需要压缩的是布局中的元素，则需要使用Collapse组件。
+ *
+ * 实现思路参考： https://developers.google.com/web/updates/2017/03/performant-expand-and-collapse
  */
 const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
   props,
@@ -50,11 +63,9 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     timeout = transitions.duration.standard,
     in: inProp,
     collapsedHeight = 0,
+    collapsedWidth = 0,
     onEnter,
-    onEntering,
-    onEntered,
     onExit,
-    onExiting,
     direction = 'vertical',
     ...rest
   } = props;
@@ -63,95 +74,66 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
   const wrapperRef = useRef<HTMLDivElement>(null);
   const autoTimeout = useRef<number>(0);
   const timerRef = useRef<number>();
-  const enterAnimateRef = useRef<any>(null);
-  const exitAnimateRef = useRef<any>(null);
+  const cancelAnimateRef = useRef<Function | null>(null);
   const inRef = useRef<boolean>(!!inProp);
 
-  const handleEnter: any = (isAppearing: boolean) => {
+  /**
+   * 处理动画
+   *
+   * @param status 状态
+   */
+  const handleAnimate = (status: 'enter' | 'exit') => {
     const node = contentRef.current;
     const content = wrapperRef.current;
     if (!node || !content) {
       return;
     }
-    const start = collapsedHeight / content.clientHeight;
+    const duration = getDuration(timeout, status, content);
+    autoTimeout.current = timeout === 'auto' ? duration : 0;
+    const initX =
+      direction === 'vertical' ? 1 : collapsedWidth / content.clientWidth;
+    const initY =
+      direction === 'horizontal' ? 1 : collapsedHeight / content.clientHeight;
+    const start = {
+      x: status === 'enter' ? initX : 1,
+      y: status === 'enter' ? initY : 1,
+    };
+    const end = {
+      x: status === 'enter' ? 1 : initX,
+      y: status === 'enter' ? 1 : initY,
+    };
 
-    enterAnimateRef.current = animate(start, 1, 200, (value) => {
-      const scaleX = direction === 'vertical' ? 1 : value;
-      const scaleY = direction === 'horizontal' ? 1 : value;
+    // eslint-disable-next-line no-unused-expressions
+    cancelAnimateRef.current?.();
+
+    cancelAnimateRef.current = animate(duration, (interpolation) => {
+      const scaleX =
+        direction === 'vertical' ? 1 : interpolation(start.x, end.x);
+      const scaleY =
+        direction === 'horizontal' ? 1 : interpolation(start.y, end.y);
       const invScaleX = scaleX === 0 ? 60 : 1 / scaleX;
-      const invScalY = scaleY === 0 ? 60 : 1 / scaleY;
+      const invScaleY = scaleY === 0 ? 60 : 1 / scaleY;
       node.style.transform = `scale(${scaleX}, ${scaleY})`;
-      content.style.transform = `scale(${invScaleX}, ${invScalY})`;
+      content.style.transform = `scale(${invScaleX}, ${invScaleY})`;
     });
+  };
 
-    if (onEnter) {
+  const handleEnter: any = (isAppearing: boolean) => {
+    handleAnimate('enter');
+
+    const node = contentRef.current;
+    if (onEnter && node) {
       onEnter(node, isAppearing);
     }
   };
 
-  const handleEntering: any = (isAppearing: boolean) => {
-    const node = contentRef.current;
-    if (!node) {
-      return;
-    }
-    const wrapper = wrapperRef.current;
-    const duration = getDuration(timeout, 'enter', wrapper);
-    autoTimeout.current = timeout === 'auto' ? duration : 0;
-
-    if (onEntering) {
-      onEntering(node, isAppearing);
-    }
-  };
-
-  const handleEntered: any = (isAppearing: boolean) => {
-    const node = contentRef.current;
-    if (!node) {
-      return;
-    }
-    enterAnimateRef.current();
-    if (onEntered) {
-      onEntered(node, isAppearing);
-    }
-  };
-
   const handleExit = () => {
-    const node = contentRef.current;
-    const content = wrapperRef.current;
-    if (!node || !content) {
-      return;
-    }
-    const end = collapsedHeight / content.clientHeight;
-    exitAnimateRef.current = animate(1, end, 200, (value) => {
-      const scaleX = direction === 'vertical' ? 1 : value;
-      const scaleY = direction === 'horizontal' ? 1 : value;
-      const invScaleX = scaleX === 0 ? 60 : 1 / scaleX;
-      const invScalY = scaleY === 0 ? 60 : 1 / scaleY;
-      node.style.transform = `scale(${scaleX}, ${scaleY})`;
-      content.style.transform = `scale(${invScaleX}, ${invScalY})`;
-    });
+    handleAnimate('exit');
 
-    if (onExit) {
+    const node = contentRef.current;
+    if (onExit && node) {
       onExit(node);
     }
-  };
-
-  const handleExiting = () => {
-    const node = contentRef.current;
-    if (!node) {
-      return;
-    }
-    const wrapper = wrapperRef.current;
-    const duration = getDuration(timeout, 'exit', wrapper);
-
-    autoTimeout.current = timeout === 'auto' ? duration : 0;
-
-    if (onExiting) {
-      onExiting(node);
-    }
-  };
-
-  const handleExited = () => {
-    exitAnimateRef.current();
   };
 
   const addEndListener: any = (done: () => void) => {
@@ -170,13 +152,18 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
         return;
       }
 
-      const scaleY = collapsedHeight / content.clientHeight;
-      const invScalY = scaleY === 0 ? 60 : 1 / scaleY;
+      const scaleX =
+        direction === 'vertical' ? 1 : collapsedWidth / content.clientWidth;
+      const scaleY =
+        direction === 'horizontal' ? 1 : collapsedHeight / content.clientHeight;
 
-      node.style.transform = `scale(1,${scaleY})`;
-      content.style.transform = `scale(1,${invScalY})`;
+      const invScaleX = scaleX === 0 ? 60 : 1 / scaleX;
+      const invScaleY = scaleY === 0 ? 60 : 1 / scaleY;
+
+      node.style.transform = `scale(${scaleX}, ${scaleY})`;
+      content.style.transform = `scale(${invScaleX}, ${invScaleY})`;
     }
-  }, [collapsedHeight]);
+  }, [collapsedHeight, collapsedWidth, direction]);
 
   return (
     <Transition
@@ -184,11 +171,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
       in={inProp}
       timeout={timeout === 'auto' ? undefined : timeout}
       onEnter={handleEnter}
-      onEntering={handleEntering}
-      onEntered={handleEntered}
       onExit={handleExit}
-      onExiting={handleExiting}
-      onExited={handleExited}
       addEndListener={(timeout === 'auto' ? addEndListener : undefined) as any}
       nodeRef={wrapperRef}
       {...rest}
