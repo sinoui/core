@@ -1,15 +1,14 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import CalendarViewHeader from '@sinoui/core/DatePicker/CalendarView/CalendarViewHeader';
 import ViewModel from '@sinoui/core/DatePicker/ViewModel';
 import YearSelectView from '@sinoui/core/DatePicker/YearSelectView';
 import MonthSelectView from '@sinoui/core/DatePicker/MonthSelectView';
 import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
-import getDatesOfMonth from '@sinoui/core/DatePicker/DatesView/getDatesOfMonth';
-import DatesView from '@sinoui/core/DatePicker/DatesView';
 import TimeList from '@sinoui/core/TimePicker/TimeList';
 import Divider from '@sinoui/core/Divider';
 import styled from 'styled-components';
 import formatDate from '@sinoui/core/DatePicker/formatDate';
+import SimpleMonthDatesView from '@sinoui/core/DatePicker/DatesView/SimpleMonthDatesView';
 import DateTimeViewWrapper from './DateTimeViewWrapper';
 
 export interface Props {
@@ -91,48 +90,6 @@ export interface Props {
   onBlur?: () => void;
 }
 
-function isSameMonth(
-  date: Date | undefined,
-  year: number,
-  month: number,
-): date is Date {
-  return !!date && date.getFullYear() === year && date.getMonth() === month;
-}
-
-function isGreaterThen(value: Date, year: number, month: number, date: number) {
-  return (
-    new Date(
-      value.getFullYear(),
-      value.getMonth(),
-      value.getDate(),
-      0,
-      0,
-      0,
-    ).getTime() > new Date(year, month, date, 0, 0, 0).getTime()
-  );
-}
-
-function getDisabledDates(
-  year: number,
-  month: number,
-  minDate?: Date,
-  maxDate?: Date,
-) {
-  const dates = getDatesOfMonth(year, month);
-  const disabledDates: number[] = [];
-
-  for (let i = 0; i < dates; i += 1) {
-    if (
-      (minDate && isGreaterThen(minDate, year, month, i + 1)) ||
-      (maxDate && !isGreaterThen(maxDate, year, month, i + 1))
-    ) {
-      disabledDates.push(i + 1);
-    }
-  }
-
-  return disabledDates.length !== 0 ? disabledDates : undefined;
-}
-
 const StyledDivider = styled(Divider)`
   height: 296px;
 `;
@@ -174,14 +131,6 @@ export default function DateTimeView(props: Props) {
   const skipMonthsView = skipMonthsViewProp ?? !isPc;
 
   const timeListWrapperRef = useRef<HTMLDivElement>(null);
-
-  const selectedDates = useMemo(() => {
-    return isSameMonth(date, year, month) ? [date.getDate()] : undefined;
-  }, [date, month, year]);
-  const outlinedDate =
-    showToday && isSameMonth(new Date(), year, month)
-      ? new Date().getDate()
-      : undefined;
 
   const handleYearSelect = (newYear: number) => {
     if (newYear !== year) {
@@ -245,14 +194,15 @@ export default function DateTimeView(props: Props) {
     <>
       <WeekTitleBar startOfWeek={startOfWeek} isPc={isPc} />
       <div className="sinoui-date-time-view__datesview">
-        <DatesView
+        <SimpleMonthDatesView
           year={year}
           month={month}
           isPc={isPc}
+          showToday={showToday}
+          minDate={minDate}
+          maxDate={maxDate}
+          value={date}
           showNextMonthDates={isPc}
-          selectedDates={selectedDates}
-          outlinedDate={outlinedDate}
-          disabledDates={getDisabledDates(year, month, minDate, maxDate)}
           startOfWeek={startOfWeek}
           onDateClick={handleDateClick}
         />
