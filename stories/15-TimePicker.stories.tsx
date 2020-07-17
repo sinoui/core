@@ -4,7 +4,7 @@ import TimeSelectView, {
   Props as TimeSelectViewProps,
 } from '@sinoui/core/TimePicker/TimeSelectView';
 import Paper from '@sinoui/core/Paper';
-import TimePicker from '@sinoui/core/TimePicker';
+import TimePicker, { Clock } from '@sinoui/core/TimePicker';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -73,5 +73,11 @@ const TimePickerDemo = () => {
 export const 时间选择 = () => (
   <StoryLayout>
     <TimePickerDemo />
+  </StoryLayout>
+);
+
+export const 时钟 = () => (
+  <StoryLayout>
+    <Clock />
   </StoryLayout>
 );
