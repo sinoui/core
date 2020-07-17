@@ -4,6 +4,7 @@ import { CLOCK_NUMBER_PADDING } from './constants';
 
 const Wrapper = styled.div<{
   $size: number;
+  $rotateDeg: number;
 }>`
   position: absolute;
   left: calc((100% - 2px) / 2);
@@ -11,7 +12,7 @@ const Wrapper = styled.div<{
   width: 2px;
   height: ${({ $size }) => $size / 2 - CLOCK_NUMBER_PADDING}px;
   background-color: ${({ theme }) => theme.palette.primary.main};
-
+  transform: ${({ $rotateDeg = 0 }) => `rotateZ(${$rotateDeg}deg)`};
   transform-origin: bottom;
   .sinoui-clock__pointer {
     position: absolute;
@@ -25,9 +26,15 @@ const Wrapper = styled.div<{
   }
 `;
 
-export default function ClockPointer({ size }: { size: number }) {
+export default function ClockPointer({
+  size,
+  rotateDeg,
+}: {
+  size: number;
+  rotateDeg: number;
+}) {
   return (
-    <Wrapper $size={size}>
+    <Wrapper $size={size} $rotateDeg={rotateDeg}>
       <div className="sinoui-clock__pointer" />
     </Wrapper>
   );
