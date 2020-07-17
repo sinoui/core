@@ -15,6 +15,11 @@ export default function Clock({ size = 260 }: { size: number }) {
   // 指针旋转角度
   const [rotateDeg, setRotateDeg] = useState(0);
 
+  /**
+   * 获取基于12点基线的旋转角度
+   * @param pageX
+   * @param pageY
+   */
   const getRotateDegToBaseLine = (pageX: number, pageY: number) => {
     const { left, top } = clockRef?.current?.getBoundingClientRect() as any;
     const x = pageX - (left + size / 2 + CLOCK_PIN_SIZE / 2);
@@ -58,6 +63,17 @@ export default function Clock({ size = 260 }: { size: number }) {
     isMoveEnd.current = true;
   };
 
+  const onTouchMove = (event: React.TouchEvent) => {
+    setRotateDeg(
+      getRotateDegToBaseLine(
+        event.nativeEvent.touches[0].pageX,
+        event.nativeEvent.touches[0].pageY,
+      ),
+    );
+    isMoveStart.current = false;
+    isMoveEnd.current = true;
+  };
+
   return (
     // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
     <ClockWrapper
@@ -66,6 +82,7 @@ export default function Clock({ size = 260 }: { size: number }) {
       onMouseDown={onMouseDown}
       onMouseMove={onMouseMove}
       onMouseUp={onMouseUp}
+      onTouchMove={onTouchMove}
     >
       {hours.map((hour) => (
         <ClockNumber key={hour} $number={hour} $size={size} />
