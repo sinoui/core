@@ -1,4 +1,4 @@
-const leadingZero = (num: number) => (num < 10 ? `0${num}` : num);
+import leadingZero from './leadingZero';
 
 /**
  * 格式化日期

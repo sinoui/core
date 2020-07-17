@@ -74,9 +74,9 @@
     "react-responsive": "^8.0.3",
     "react-textarea-autosize": "^7.1.2",
     "react-transition-group": "^4.4.1",
+    "react-window": "^1.8.5",
     "scroll-into-view-if-needed": "^2.2.25",
-    "styled-components": "^5.1.0",
-    "react-window": "^1.8.5"
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

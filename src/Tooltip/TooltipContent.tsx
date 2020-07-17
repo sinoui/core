@@ -67,7 +67,7 @@ const mobileStyle = css`
 const TooltipContent = styled.div`
   display: block;
   box-sizing: border-box;
-  background-color: rgba(97, 97, 97);
+  background-color: rgb(97, 97, 97);
   color: #fff;
   border-radius: 4px;
 

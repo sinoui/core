@@ -46,3 +46,14 @@ export const CALENDAR_WIDTH_PC = 256; // px
  * 移动端日历视图内容区域的高度
  */
 export const CALENDAR_CONTENT_HEIGHT_PC = 230; // px
+
+export const CLASSES = {
+  /**
+   * 日期单元格
+   */
+  dateCell: 'sinoui-date-cell',
+  /**
+   * 日期单元格内容
+   */
+  dateCellContent: 'sinoui-date-cell-content',
+};
