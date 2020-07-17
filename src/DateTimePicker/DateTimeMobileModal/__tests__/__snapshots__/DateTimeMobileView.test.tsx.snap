@@ -47,7 +47,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
   background-color: rgba(0,0,0,0.04);
 }
 
-.c26 {
+.c23 {
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.75;
@@ -69,18 +69,18 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
   box-sizing: border-box;
 }
 
-.c26:hover {
+.c23:hover {
   background-color: rgba(63,81,181,0.04);
 }
 
-.c26 > .sinoui-svg-icon {
+.c23 > .sinoui-svg-icon {
   font-size: 18px;
   height: 18px;
   width: 18px;
   margin-right: 8px;
 }
 
-.c25 {
+.c22 {
   height: 48px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -95,6 +95,94 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0 16px;
+}
+
+.c21 {
+  -ms-grid-column-span: 4px;
+  grid-column-gap: 4px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto auto auto auto auto;
+  grid-template-columns: repeat(7,1fr);
+  grid-template-rows: repeat(6,auto);
+}
+
+.c21 .sinoui-date-cell-content {
+  height: 36px;
+  width: 36px;
+}
+
+.c21 .sinoui-date-cell-content .sinoui-date-cell-ripple-layout,
+.c21 .sinoui-date-cell-content .sinoui-date-cell-ripple {
+  height: 36px;
+  width: 36px;
+}
+
+.c21 .sinoui-date-cell {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  -webkit-letter-spacing: 0.01071em;
+  -moz-letter-spacing: 0.01071em;
+  -ms-letter-spacing: 0.01071em;
+  letter-spacing: 0.01071em;
+  color: rgba(0,0,0,0.87);
+}
+
+.c21 .sinoui-date-cell-content {
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  margin: 2px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: background-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+}
+
+.c21 .sinoui-date-cell-content:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c21 .sinoui-date-cell--outlined .sinoui-date-cell-content {
+  border: 1px solid currentColor;
+}
+
+.c21 .sinoui-date-cell--disabled .sinoui-date-cell-content {
+  cursor: default;
+  pointer-events: none;
+  color: rgba(0,0,0,0.38);
+}
+
+.c21 .sinoui-date-cell--disabled .sinoui-date-cell-content:hover {
+  background-color: none;
+}
+
+.c21 .sinoui-date-cell--selected .sinoui-date-cell-content {
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+}
+
+.c21 .sinoui-date-cell--selected .sinoui-date-cell-content:hover {
+  background-color: #3f51b5;
 }
 
 .c8 {
@@ -123,133 +211,6 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
   letter-spacing: 0.01071em;
   text-align: left;
   color: rgba(0,0,0,0.87);
-}
-
-.c22 {
-  box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 50%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: none;
-  margin: 2px;
-  -webkit-transition: background-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: background-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  height: 36px;
-  width: 36px;
-  cursor: pointer;
-  pointer-events: auto;
-}
-
-.c22 .sinoui-date-cell-ripple-layout,
-.c22 .sinoui-date-cell-ripple {
-  height: 36px;
-  width: 36px;
-}
-
-.c22:hover {
-  background-color: rgba(0,0,0,0.04);
-}
-
-.c23 {
-  box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 50%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: none;
-  margin: 2px;
-  -webkit-transition: background-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: background-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  height: 36px;
-  width: 36px;
-  border: 1px solid currentColor;
-  cursor: pointer;
-  pointer-events: auto;
-}
-
-.c23 .sinoui-date-cell-ripple-layout,
-.c23 .sinoui-date-cell-ripple {
-  height: 36px;
-  width: 36px;
-}
-
-.c23:hover {
-  background-color: rgba(0,0,0,0.04);
-}
-
-.c24 {
-  box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 50%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: none;
-  margin: 2px;
-  -webkit-transition: background-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: background-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  height: 36px;
-  width: 36px;
-  cursor: pointer;
-  background-color: #3f51b5;
-  color: #fff;
-  pointer-events: auto;
-}
-
-.c24 .sinoui-date-cell-ripple-layout,
-.c24 .sinoui-date-cell-ripple {
-  height: 36px;
-  width: 36px;
-}
-
-.c21 {
-  -ms-grid-column-span: 4px;
-  grid-column-gap: 4px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: auto auto auto auto auto auto;
-  grid-template-columns: repeat(7,1fr);
-  grid-template-rows: repeat(6,auto);
 }
 
 .c14 {
@@ -609,8 +570,14 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
 }
 
 @media (hover:none) {
-  .c26:hover {
+  .c23:hover {
     background-color: transparent;
+  }
+}
+
+@media (hoer:none) {
+  .c21 .sinoui-date-cell-content:hover {
+    background-color: none;
   }
 }
 
@@ -627,7 +594,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
 }
 
 <div
-  className="sc-fzoiQi c0 sinoui-date-time-mobile-view sinoui-paper"
+  className="sc-fznWqX c0 sinoui-date-time-mobile-view sinoui-paper"
 >
   <div
     className="c1 sinoui-date-time-mobile-view__toolbar"
@@ -832,7 +799,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={3}
-        data-date="2020/7/1"
+        data-date="2020-07-01"
         data-row={1}
         style={
           Object {
@@ -842,13 +809,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           1
         </span>
@@ -856,7 +820,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={4}
-        data-date="2020/7/2"
+        data-date="2020-07-02"
         data-row={1}
         style={
           Object {
@@ -866,13 +830,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           2
         </span>
@@ -880,7 +841,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={5}
-        data-date="2020/7/3"
+        data-date="2020-07-03"
         data-row={1}
         style={
           Object {
@@ -890,13 +851,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           3
         </span>
@@ -904,7 +862,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={6}
-        data-date="2020/7/4"
+        data-date="2020-07-04"
         data-row={1}
         style={
           Object {
@@ -914,13 +872,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           4
         </span>
@@ -928,7 +883,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={7}
-        data-date="2020/7/5"
+        data-date="2020-07-05"
         data-row={1}
         style={
           Object {
@@ -938,13 +893,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           5
         </span>
@@ -952,7 +904,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={1}
-        data-date="2020/7/6"
+        data-date="2020-07-06"
         data-row={2}
         style={
           Object {
@@ -962,13 +914,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           6
         </span>
@@ -976,7 +925,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={2}
-        data-date="2020/7/7"
+        data-date="2020-07-07"
         data-row={2}
         style={
           Object {
@@ -986,13 +935,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           7
         </span>
@@ -1000,7 +946,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={3}
-        data-date="2020/7/8"
+        data-date="2020-07-08"
         data-row={2}
         style={
           Object {
@@ -1010,13 +956,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           8
         </span>
@@ -1024,7 +967,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={4}
-        data-date="2020/7/9"
+        data-date="2020-07-09"
         data-row={2}
         style={
           Object {
@@ -1034,13 +977,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           9
         </span>
@@ -1048,7 +988,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={5}
-        data-date="2020/7/10"
+        data-date="2020-07-10"
         data-row={2}
         style={
           Object {
@@ -1058,13 +998,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           10
         </span>
@@ -1072,7 +1009,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={6}
-        data-date="2020/7/11"
+        data-date="2020-07-11"
         data-row={2}
         style={
           Object {
@@ -1082,13 +1019,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           11
         </span>
@@ -1096,7 +1030,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={7}
-        data-date="2020/7/12"
+        data-date="2020-07-12"
         data-row={2}
         style={
           Object {
@@ -1106,13 +1040,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           12
         </span>
@@ -1120,7 +1051,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={1}
-        data-date="2020/7/13"
+        data-date="2020-07-13"
         data-row={3}
         style={
           Object {
@@ -1130,13 +1061,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           13
         </span>
@@ -1144,7 +1072,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={2}
-        data-date="2020/7/14"
+        data-date="2020-07-14"
         data-row={3}
         style={
           Object {
@@ -1154,13 +1082,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           14
         </span>
@@ -1168,7 +1093,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={3}
-        data-date="2020/7/15"
+        data-date="2020-07-15"
         data-row={3}
         style={
           Object {
@@ -1178,21 +1103,18 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           15
         </span>
       </div>
       <div
-        className="sinoui-date-cell sinoui-date-cell--outlined"
+        className="sinoui-date-cell"
         data-column={4}
-        data-date="2020/7/16"
+        data-date="2020-07-16"
         data-row={3}
         style={
           Object {
@@ -1202,21 +1124,18 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c23 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           16
         </span>
       </div>
       <div
-        className="sinoui-date-cell"
+        className="sinoui-date-cell sinoui-date-cell--outlined"
         data-column={5}
-        data-date="2020/7/17"
+        data-date="2020-07-17"
         data-row={3}
         style={
           Object {
@@ -1226,13 +1145,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           17
         </span>
@@ -1240,7 +1156,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={6}
-        data-date="2020/7/18"
+        data-date="2020-07-18"
         data-row={3}
         style={
           Object {
@@ -1250,13 +1166,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           18
         </span>
@@ -1264,7 +1177,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={7}
-        data-date="2020/7/19"
+        data-date="2020-07-19"
         data-row={3}
         style={
           Object {
@@ -1274,13 +1187,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           19
         </span>
@@ -1288,7 +1198,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell sinoui-date-cell--selected"
         data-column={1}
-        data-date="2020/7/20"
+        data-date="2020-07-20"
         data-row={4}
         style={
           Object {
@@ -1298,13 +1208,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c24 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           20
         </span>
@@ -1312,7 +1219,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={2}
-        data-date="2020/7/21"
+        data-date="2020-07-21"
         data-row={4}
         style={
           Object {
@@ -1322,13 +1229,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           21
         </span>
@@ -1336,7 +1240,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={3}
-        data-date="2020/7/22"
+        data-date="2020-07-22"
         data-row={4}
         style={
           Object {
@@ -1346,13 +1250,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           22
         </span>
@@ -1360,7 +1261,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={4}
-        data-date="2020/7/23"
+        data-date="2020-07-23"
         data-row={4}
         style={
           Object {
@@ -1370,13 +1271,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           23
         </span>
@@ -1384,7 +1282,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={5}
-        data-date="2020/7/24"
+        data-date="2020-07-24"
         data-row={4}
         style={
           Object {
@@ -1394,13 +1292,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           24
         </span>
@@ -1408,7 +1303,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={6}
-        data-date="2020/7/25"
+        data-date="2020-07-25"
         data-row={4}
         style={
           Object {
@@ -1418,13 +1313,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           25
         </span>
@@ -1432,7 +1324,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={7}
-        data-date="2020/7/26"
+        data-date="2020-07-26"
         data-row={4}
         style={
           Object {
@@ -1442,13 +1334,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           26
         </span>
@@ -1456,7 +1345,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={1}
-        data-date="2020/7/27"
+        data-date="2020-07-27"
         data-row={5}
         style={
           Object {
@@ -1466,13 +1355,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           27
         </span>
@@ -1480,7 +1366,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={2}
-        data-date="2020/7/28"
+        data-date="2020-07-28"
         data-row={5}
         style={
           Object {
@@ -1490,13 +1376,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           28
         </span>
@@ -1504,7 +1387,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={3}
-        data-date="2020/7/29"
+        data-date="2020-07-29"
         data-row={5}
         style={
           Object {
@@ -1514,13 +1397,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           29
         </span>
@@ -1528,7 +1408,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={4}
-        data-date="2020/7/30"
+        data-date="2020-07-30"
         data-row={5}
         style={
           Object {
@@ -1538,13 +1418,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           30
         </span>
@@ -1552,7 +1429,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       <div
         className="sinoui-date-cell"
         data-column={5}
-        data-date="2020/7/31"
+        data-date="2020-07-31"
         data-row={5}
         style={
           Object {
@@ -1562,13 +1439,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         }
       >
         <span
-          className="c13 sinoui-typography sinoui-typography--body2 c22 sinoui-date-cell-content"
-          color="textPrimary"
-          disabled={false}
+          className="sinoui-date-cell-content"
           onClick={[Function]}
           role="button"
           tabIndex={0}
-          type="body2"
         >
           31
         </span>
@@ -1576,10 +1450,10 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
     </div>
   </div>
   <div
-    className="c25 sinoui-calendar-view-action"
+    className="c22 sinoui-calendar-view-action"
   >
     <button
-      className="c3 sinoui-base-button c26 sinoui-button"
+      className="c3 sinoui-base-button c23 sinoui-button"
       color="primary"
       onClick={[Function]}
       role="button"
@@ -1595,7 +1469,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       }
     />
     <button
-      className="c3 sinoui-base-button c26 sinoui-button"
+      className="c3 sinoui-base-button c23 sinoui-button"
       color="primary"
       role="button"
       type="button"
@@ -1603,7 +1477,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
       取消
     </button>
     <button
-      className="c3 sinoui-base-button c26 sinoui-button"
+      className="c3 sinoui-base-button c23 sinoui-button"
       color="primary"
       onClick={[Function]}
       role="button"

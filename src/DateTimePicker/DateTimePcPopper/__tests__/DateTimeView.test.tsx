@@ -202,7 +202,7 @@ it('onChange', () => {
   const dateTimeView = container.querySelector('.sinoui-date-time-view')!;
   fireEvent.click(
     dateTimeView.querySelector(
-      '[data-date="2020/6/24"] > .sinoui-date-cell-content',
+      '[data-date="2020-06-24"] > .sinoui-date-cell-content',
     )!,
   );
 

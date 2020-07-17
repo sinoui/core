@@ -57,7 +57,7 @@ describe('value', () => {
       fireEvent.click(textInput);
     });
     // 最新value值代表的日期时间被选中
-    expect(container.querySelector('[data-date="2020/6/20"]')).toHaveClass(
+    expect(container.querySelector('[data-date="2020-06-20"]')).toHaveClass(
       'sinoui-date-cell--selected',
     );
     expect(
@@ -80,7 +80,7 @@ describe('value', () => {
       </ThemeProvider>,
     );
 
-    expect(getByTestId('date-time-picker').textContent).toBeFalsy();
+    expect(getByTestId('date-time-picker').textContent).toBe('​');
     const textInput = container.querySelector('.sinoui-base-input')!;
 
     act(() => {
@@ -196,7 +196,7 @@ describe('pc端', () => {
     )!;
     fireEvent.click(
       dateTimeView.querySelector(
-        '[data-date="2020/6/24"] > .sinoui-date-cell-content',
+        '[data-date="2020-06-24"] > .sinoui-date-cell-content',
       )!,
     );
 

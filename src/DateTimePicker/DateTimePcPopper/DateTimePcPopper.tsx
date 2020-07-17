@@ -95,6 +95,9 @@ export default function DateTimePcPopper(props: Props) {
     maxMinute,
     startOfWeek,
     skipMonthsView,
+    defaultYear,
+    defaultMonth,
+    showToday,
     ...rest
   } = props;
   return (
@@ -120,6 +123,9 @@ export default function DateTimePcPopper(props: Props) {
         maxMinute={maxMinute}
         startOfWeek={startOfWeek}
         skipMonthsView={skipMonthsView}
+        defaultYear={defaultYear}
+        defaultMonth={defaultMonth}
+        showToday={showToday}
       />
     </StyledPopper>
   );
