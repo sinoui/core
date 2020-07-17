@@ -153,6 +153,72 @@ describe('验收测试', () => {
     expect(getByText('18:45')).toBeInTheDocument();
   });
 
+  it('输入不符合规范的小时，将直接置成已经选定的值', () => {
+    const { container, getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateTimeMobileView date={new Date(2020, 6, 20, 15, 40)} />
+      </ThemeProvider>,
+    );
+
+    fireEvent.click(getByText('15:40'));
+
+    const hourInput = container
+      .querySelector('.sinoui-date-time-mobile-view__timeview-hour-input')!
+      .querySelector('input');
+    const minuteInput = container
+      .querySelector('.sinoui-date-time-mobile-view__timeview-minute-input')!
+      .querySelector('input');
+
+    act(() => {
+      fireEvent.change(hourInput!, {
+        target: { value: '26' },
+      });
+    });
+
+    fireEvent.blur(hourInput!);
+
+    act(() => {
+      fireEvent.change(minuteInput!, {
+        target: { value: '45' },
+      });
+    });
+
+    expect(getByText('15:45')).toBeInTheDocument();
+  });
+
+  it('输入不符合规范的分钟，将直接置成已经选定的值', () => {
+    const { container, getByText } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateTimeMobileView date={new Date(2020, 6, 20, 15, 40)} />
+      </ThemeProvider>,
+    );
+
+    fireEvent.click(getByText('15:40'));
+
+    const hourInput = container
+      .querySelector('.sinoui-date-time-mobile-view__timeview-hour-input')!
+      .querySelector('input');
+    const minuteInput = container
+      .querySelector('.sinoui-date-time-mobile-view__timeview-minute-input')!
+      .querySelector('input');
+
+    act(() => {
+      fireEvent.change(hourInput!, {
+        target: { value: '22' },
+      });
+    });
+
+    act(() => {
+      fireEvent.change(minuteInput!, {
+        target: { value: '70' },
+      });
+    });
+
+    fireEvent.blur(minuteInput!);
+
+    expect(getByText('22:40')).toBeInTheDocument();
+  });
+
   it('设置选中的日期时间', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>

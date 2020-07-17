@@ -76,6 +76,26 @@ interface Props {
   showToday?: boolean;
 }
 
+/**
+ * 判断值是否可用
+ * @param value 值
+ * @param min 最小值
+ * @param max 最大值
+ */
+function isValidateValue(value: string, min?: number, max?: number) {
+  const numValue = Number(value);
+
+  if (min) {
+    return numValue < min;
+  }
+
+  if (max) {
+    return numValue > max;
+  }
+
+  return false;
+}
+
 const TimeWrapper = styled.div`
   padding: 16px;
   display: inline-flex;
@@ -112,6 +132,10 @@ export default function DateTimeMobileView(props: Props) {
     onChange,
     minDate,
     maxDate,
+    minHour = 0,
+    minMinute = 0,
+    maxHour = 23,
+    maxMinute = 59,
   } = props;
 
   const [[year, month], setYearMonth] = useState(() => {
@@ -179,6 +203,21 @@ export default function DateTimeMobileView(props: Props) {
     setMinute(event.target.value);
   };
 
+  const onHourBlur = () => {
+    if (isValidateValue(hour, minHour, maxHour)) {
+      const validateHour = date ? `${date.getHours()}` : '';
+      console.log(validateHour);
+      setHour(validateHour);
+    }
+  };
+
+  const onMinuteBlur = () => {
+    if (isValidateValue(minute, minMinute, maxMinute)) {
+      const validateMinute = date ? `${date.getMinutes()}` : '';
+      setMinute(validateMinute);
+    }
+  };
+
   const renderTime = () => (
     <>
       <TimeTitle>请输入时间</TimeTitle>
@@ -190,6 +229,7 @@ export default function DateTimeMobileView(props: Props) {
           helperText="点"
           value={hour}
           onChange={onHourChange}
+          onBlur={onHourBlur}
         />
         <Divider>:</Divider>
         <StyledInput
@@ -199,6 +239,7 @@ export default function DateTimeMobileView(props: Props) {
           helperText="分"
           value={minute}
           onChange={onMinuteChange}
+          onBlur={onMinuteBlur}
         />
       </TimeWrapper>
     </>
