@@ -72,6 +72,7 @@ const TooltipContent = styled.div`
   border-radius: 4px;
 
   ${(props) => props.theme.typography.caption};
+  font-family: ${(props) => props.theme.typography.fontFamily};
   line-height: 1.5;
   ${pcStyle}
   ${arrowStyle};
