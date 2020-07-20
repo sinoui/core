@@ -1,10 +1,15 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { CLOCK_NUMBER_PADDING } from './constants';
+import { CLOCK_NUMBER_PADDING, CLOCK_PIN_SIZE } from './constants';
 
 const selectedCss = css`
   background-color: ${({ theme }) => theme.palette.primary.main};
   color: #fff;
+  z-index: 100;
+`;
+
+const minuteDotdCss = css`
+  background-color: #fff;
   z-index: 100;
 `;
 
@@ -27,10 +32,21 @@ const Wrapper = styled.div<{
   ${(props) => props.theme.typography.body1};
   color: ${(props) => props.theme.palette.text.primary};
   transform: ${({ $number, $size }) => `rotate(${
-    30 * $number - 90
+    6 * $number - 90
   }deg) translateX(${($size - 32) / 2 - CLOCK_NUMBER_PADDING}px)
-    rotate(${90 - 30 * $number}deg)`};
+    rotate(${90 - 6 * $number}deg)`};
   ${(props) => props.$selected && selectedCss};
+`;
+
+const MinuteDot = styled.div<{
+  $selected?: boolean;
+}>`
+  width: ${CLOCK_PIN_SIZE}px;
+  height: ${CLOCK_PIN_SIZE}px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: transparent;
+  ${(props) => props.$selected && minuteDotdCss};
 `;
 
 /**
@@ -47,7 +63,11 @@ export default function ClockNumber({
 }) {
   return (
     <Wrapper $number={number} $size={size} $selected={selectedValue === number}>
-      {number}
+      {number % 5 === 0 ? (
+        number
+      ) : (
+        <MinuteDot $selected={selectedValue === number} />
+      )}
     </Wrapper>
   );
 }
