@@ -273,7 +273,7 @@ export default function DateTimeMobileView(props: Props) {
     >
       <DateTimeMobileViewToolbar
         year={year}
-        month={month}
+        month={selectedDate.getMonth()}
         day={selectedDate.getDate()}
         hour={hour}
         minute={minute}
