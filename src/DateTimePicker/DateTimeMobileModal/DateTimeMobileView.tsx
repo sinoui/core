@@ -188,7 +188,7 @@ export default function DateTimeMobileView(props: Props) {
           showToday={showToday}
           minDate={minDate}
           maxDate={maxDate}
-          value={date}
+          value={selectedDate}
           onDateClick={onDateClick}
           startOfWeek={startOfWeek}
         />
