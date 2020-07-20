@@ -74,12 +74,12 @@ interface Props {
 }
 
 /**
- * 判断值是否可用
+ * 判断值是否不可用
  * @param value 值
  * @param min 最小值
  * @param max 最大值
  */
-function isValidateValue(value: string, min?: number, max?: number) {
+function isInValidateValue(value: string, min?: number, max?: number) {
   const numValue = Number(value);
 
   if (min) {
@@ -200,14 +200,14 @@ export default function DateTimeMobileView(props: Props) {
   };
 
   const onHourBlur = () => {
-    if (isValidateValue(hour, minHour, maxHour)) {
+    if (isInValidateValue(hour, minHour, maxHour)) {
       const validateHour = date ? `${date.getHours()}` : '';
       setHour(validateHour);
     }
   };
 
   const onMinuteBlur = () => {
-    if (isValidateValue(minute, minMinute, maxMinute)) {
+    if (isInValidateValue(minute, minMinute, maxMinute)) {
       const validateMinute = date ? `${date.getMinutes()}` : '';
       setMinute(validateMinute);
     }
