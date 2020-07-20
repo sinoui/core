@@ -14,7 +14,10 @@ describe('镜像测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <DateTimeMobileView date={new Date(2020, 6, 20, 15, 40)} />
+          <DateTimeMobileView
+            date={new Date(2020, 6, 20, 15, 40)}
+            showToday={false}
+          />
         </ThemeProvider>,
       )
       .toJSON();

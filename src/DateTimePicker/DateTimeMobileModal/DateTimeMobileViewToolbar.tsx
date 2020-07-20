@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ViewModel from '@sinoui/core/DatePicker/ViewModel';
 import ClickableText from './ClickableText';
+import formatTime from './formatTime';
 
 interface Props {
   /**
@@ -99,7 +100,7 @@ export default function DateTimeMobileViewToolbar(props: Props) {
         onClick={() => onDateClick(ViewModel.time)}
         selected={viewModel === ViewModel.time}
       >
-        {hour}:{minute}
+        {formatTime(hour)}:{formatTime(minute)}
       </Time>
     </DateTimeMobileViewToolbarWrapper>
   );

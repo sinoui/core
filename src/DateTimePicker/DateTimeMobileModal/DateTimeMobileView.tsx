@@ -10,6 +10,7 @@ import Body2 from '@sinoui/core/Body2';
 import Subtitle1 from '@sinoui/core/Subtitle1';
 import formatDate from '@sinoui/core/DatePicker/formatDate';
 import SimpleMonthDatesView from '@sinoui/core/DatePicker/DatesView/SimpleMonthDatesView';
+import formatTime from './formatTime';
 import DateTimeMobileViewWrapper from './DateTimeMobileViewWrapper';
 import DateTimeMobileViewToolbar from './DateTimeMobileViewToolbar';
 
@@ -206,7 +207,6 @@ export default function DateTimeMobileView(props: Props) {
   const onHourBlur = () => {
     if (isValidateValue(hour, minHour, maxHour)) {
       const validateHour = date ? `${date.getHours()}` : '';
-      console.log(validateHour);
       setHour(validateHour);
     }
   };
@@ -256,7 +256,9 @@ export default function DateTimeMobileView(props: Props) {
 
   const onOk = () => {
     if (onChange) {
-      onChange(`${formatDate(selectedDate)} ${hour}:${minute}`);
+      onChange(
+        `${formatDate(selectedDate)} ${formatTime(hour)}:${formatTime(minute)}`,
+      );
     }
 
     if (onClose) {
