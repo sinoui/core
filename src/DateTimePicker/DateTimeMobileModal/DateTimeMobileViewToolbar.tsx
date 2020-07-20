@@ -85,7 +85,7 @@ export default function DateTimeMobileViewToolbar(props: Props) {
           onClick={() => onDateClick(ViewModel.years)}
           selected={viewModel === ViewModel.years}
         >
-          {year}
+          {year}年
         </ClickableText>
         <ClickableText
           fontSize={34}
