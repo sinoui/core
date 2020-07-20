@@ -1,4 +1,8 @@
-import { getHourOrMinuteRotateDeg, getRotateDegByTimeValue } from '../utils';
+import {
+  getHourOrMinuteRotateDeg,
+  getRotateDegByTimeValue,
+  get24HourByIsAm,
+} from '../utils';
 
 describe('getHourRotateDeg', () => {
   it('时针旋转15度', () => {
@@ -19,15 +23,24 @@ describe('getHourRotateDeg', () => {
 });
 
 describe('getRotateDegByTimeValue', () => {
-  it('value=""', () => {
-    const [hourDeg, minuteDeg] = getRotateDegByTimeValue(undefined, undefined);
-    expect(hourDeg).toBe(0);
-    expect(minuteDeg).toBe(0);
-  });
-
   it('value="03:10"', () => {
-    const [hourDeg, minuteDeg] = getRotateDegByTimeValue(3, 10);
+    const [hourDeg, minuteDeg] = getRotateDegByTimeValue('3:10');
     expect(hourDeg).toBe(90);
     expect(minuteDeg).toBe(60);
+  });
+});
+
+describe('get24HourByIsAm', () => {
+  it('上午的12:22', () => {
+    expect(get24HourByIsAm(12, true)).toBe(0);
+  });
+  it('下午的12:22', () => {
+    expect(get24HourByIsAm(12, false)).toBe(12);
+  });
+  it('上午的8:22', () => {
+    expect(get24HourByIsAm(8, true)).toBe(8);
+  });
+  it('下午的8:22', () => {
+    expect(get24HourByIsAm(8, false)).toBe(20);
   });
 });

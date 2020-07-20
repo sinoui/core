@@ -7,11 +7,9 @@ import ClockPointer from './ClockPointer';
 import { CLOCK_PIN_SIZE } from './constants';
 import {
   getHourOrMinuteRotateDeg,
-  getRotateDegByTimeValue,
   getHourByRotateDeg,
   getMinuteByRotateDeg,
 } from './utils';
-import parseTime from '../parseTime';
 
 interface Props {
   /**
@@ -19,32 +17,40 @@ interface Props {
    */
   size?: number;
   /**
-   * 当前时间 hh:mm
+   * 时针旋转角度
    */
-  value?: string;
+  hourRotateDeg: number;
   /**
-   * 指定时间值发生变化的回调函数。
+   * 分钟选择角度
    */
-  onChange?: (value?: string) => void;
+  minuteRotateDeg: number;
+  /**
+   * 时针旋转角度改变的回调函数
+   */
+  onChangeHourRotateDeg: (hour: number) => void;
+  /**
+   * 分针旋转角度改变的回调函数
+   */
+  onChangeMinuteRotateDeg: (hour: number) => void;
 }
 const hours = new Array(12).fill(1).map((_, index) => index + 1);
 const minutes = new Array(60).fill(1).map((_, index) => index + 1);
 
-export default function Clock({ value = '', size = 260, onChange }: Props) {
+export default function Clock({
+  size = 260,
+  hourRotateDeg,
+  minuteRotateDeg,
+  onChangeHourRotateDeg,
+  onChangeMinuteRotateDeg,
+}: Props) {
   const clockRef = useRef<HTMLDivElement | null>(null);
   // 开始移动指针
   const isMoveStart = useRef(false);
   // 停止移动指针
   const isMoveEnd = useRef(false);
-  const [hour, minute] = parseTime(value);
-  // 当前时间 时分指针旋转角度
-  const [hourDeg, minuteDeg] = getRotateDegByTimeValue(hour, minute);
-  // 时针旋转角度
-  const [hourRotateDeg, setHourRotateDeg] = useState(hourDeg);
-  // 分针旋转角度
-  const [minurteRotateDeg, setMinuteRotateDeg] = useState(minuteDeg);
+
   const [isHour, setIsHour] = useState(true);
-  const rotateDeg = isHour ? hourRotateDeg : minurteRotateDeg;
+  const rotateDeg = isHour ? hourRotateDeg : minuteRotateDeg;
   /**
    * 获取基于12点基线的旋转角度
    * @param pageX
@@ -70,42 +76,18 @@ export default function Clock({ value = '', size = 260, onChange }: Props) {
     return getHourOrMinuteRotateDeg(deg, isHour);
   };
 
-  // 鼠标按下 开始移动
-  const onMouseDown = (_event: React.MouseEvent) => {
+  const onTouchStart = () => {
     isMoveStart.current = true;
     isMoveEnd.current = false;
   };
 
-  const onMouseMove = (event: React.MouseEvent) => {
-    const { pageX, pageY } = event;
-    // 鼠标按下 且 没抬起时移动指针
-    if (isMoveStart.current && !isMoveEnd.current) {
-      const currentRotateDeg = getRotateDegToBaseLine(pageX, pageY);
-      if (currentRotateDeg !== rotateDeg) {
-        if (isHour) {
-          setHourRotateDeg(currentRotateDeg);
-        } else {
-          setMinuteRotateDeg(currentRotateDeg);
-        }
-      }
-    }
-  };
-
-  // 鼠标抬起 触发onChange
-  const onMouseUp = (event: React.MouseEvent) => {
-    const { pageX, pageY } = event;
+  const onTouchEnd = (event: any) => {
+    const { pageX, pageY } = event.nativeEvent.changedTouches[0];
     const currentRotateDeg = getRotateDegToBaseLine(pageX, pageY);
     if (isHour) {
-      setHourRotateDeg(currentRotateDeg);
+      onChangeHourRotateDeg(currentRotateDeg);
     } else {
-      setMinuteRotateDeg(currentRotateDeg);
-      const newValue = `${getHourByRotateDeg(
-        hourRotateDeg,
-      )}:${getMinuteByRotateDeg(currentRotateDeg)}`;
-      console.log('newValue', newValue);
-      if (onChange) {
-        onChange(newValue);
-      }
+      onChangeMinuteRotateDeg(currentRotateDeg);
     }
 
     isMoveStart.current = false;
@@ -123,9 +105,9 @@ export default function Clock({ value = '', size = 260, onChange }: Props) {
     );
     if (currentRotateDeg !== rotateDeg) {
       if (isHour) {
-        setHourRotateDeg(currentRotateDeg);
+        onChangeHourRotateDeg(currentRotateDeg);
       } else {
-        setMinuteRotateDeg(currentRotateDeg);
+        onChangeMinuteRotateDeg(currentRotateDeg);
       }
     }
 
@@ -138,9 +120,8 @@ export default function Clock({ value = '', size = 260, onChange }: Props) {
     <ClockWrapper
       $size={size}
       ref={clockRef}
-      onMouseDown={onMouseDown}
-      onMouseMove={onMouseMove}
-      onMouseUp={onMouseUp}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
       onTouchMove={onTouchMove}
     >
       {isHour
@@ -157,7 +138,7 @@ export default function Clock({ value = '', size = 260, onChange }: Props) {
               key={item}
               number={item}
               size={size}
-              selectedValue={getMinuteByRotateDeg(minurteRotateDeg)}
+              selectedValue={getMinuteByRotateDeg(minuteRotateDeg)}
             />
           ))}
       <ClockPin />

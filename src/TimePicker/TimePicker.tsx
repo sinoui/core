@@ -14,6 +14,8 @@ import parseTime from './parseTime';
 import formatTime from './formatTime';
 import { isTime } from './isTime';
 import type { TimeSelectViewRef } from './TimeSelectView';
+import TimePickerMobileModal from './TimePickerMobile';
+import useIsPc from './useIsPc';
 
 interface Props extends Omit<TextInputProps, 'onChange'> {
   /**
@@ -52,6 +54,10 @@ interface Props extends Omit<TextInputProps, 'onChange'> {
    * 最大分钟数。默认为`59`。
    */
   maxMinute?: number;
+  /**
+   * 是否是pc设备
+   */
+  isPc?: boolean;
 }
 
 const PaperWrapper = styled(Paper)`
@@ -67,6 +73,7 @@ const StyledPopper = styled(Popper)`
  */
 export default function TimePicker(props: Props) {
   const {
+    isPc: isPcProps = true,
     value = '',
     onChange,
     disabled,
@@ -81,6 +88,9 @@ export default function TimePicker(props: Props) {
     maxMinute,
     ...rest
   } = props;
+
+  const isNativePc = useIsPc();
+  const isPc = isPcProps ?? isNativePc;
   const [open, setOpen] = useState(false);
   const inputRef = useRef<HTMLDivElement>(null);
   const [inputValue, setInputValue] = useState(value);
@@ -169,31 +179,40 @@ export default function TimePicker(props: Props) {
         autoComplete="off"
         {...rest}
       />
-      <StyledPopper
-        referenceElement={inputRef}
-        open={open}
-        placement="bottom-start"
-        {...popperProps}
-      >
-        <Fade in={open}>
-          <PaperWrapper>
-            <TimeSelectView
-              onChange={handleTimeSelectChange}
-              hour={hour}
-              minute={minute}
-              onBlur={() => setOpen(false)}
-              autoFocus
-              ref={timeSelectViewRef}
-              hourStep={hourStep}
-              minuteStep={minuteStep}
-              minHour={minHour}
-              maxHour={maxHour}
-              minMinute={minMinute}
-              maxMinute={maxMinute}
-            />
-          </PaperWrapper>
-        </Fade>
-      </StyledPopper>
+      {isPc ? (
+        <StyledPopper
+          referenceElement={inputRef}
+          open={open}
+          placement="bottom-start"
+          {...popperProps}
+        >
+          <Fade in={open}>
+            <PaperWrapper>
+              <TimeSelectView
+                onChange={handleTimeSelectChange}
+                hour={hour}
+                minute={minute}
+                onBlur={() => setOpen(false)}
+                autoFocus
+                ref={timeSelectViewRef}
+                hourStep={hourStep}
+                minuteStep={minuteStep}
+                minHour={minHour}
+                maxHour={maxHour}
+                minMinute={minMinute}
+                maxMinute={maxMinute}
+              />
+            </PaperWrapper>
+          </Fade>
+        </StyledPopper>
+      ) : (
+        <TimePickerMobileModal
+          open={open}
+          value={value}
+          onRequestClose={() => setOpen(false)}
+          onChange={handleTimeSelectChange}
+        />
+      )}
     </>
   );
 }
