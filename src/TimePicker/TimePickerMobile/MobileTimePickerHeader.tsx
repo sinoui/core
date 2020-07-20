@@ -9,6 +9,10 @@ interface Props {
    */
   isAm: boolean;
   /**
+   * 是否为小时表盘
+   */
+  isHourView: boolean;
+  /**
    * 小时
    */
   hour: number;
@@ -20,6 +24,10 @@ interface Props {
    * AM 和PM 改变时的回调
    */
   onChangeAm: (isAm: boolean) => void;
+  /**
+   * 时分视图切换时的回调函数
+   */
+  onChangeHourOrMinuteView: (isHour: boolean) => void;
 }
 
 const MobileTimePickerHeaderWrapper = styled.div`
@@ -51,16 +59,26 @@ const MobileTimePickerHeaderWrapper = styled.div`
 `;
 
 export default function MobileTimePickerHeader({
+  isHourView,
   isAm,
   hour,
   minute,
   onChangeAm,
+  onChangeHourOrMinuteView,
 }: Props) {
   return (
     <MobileTimePickerHeaderWrapper>
       <div className="sinoui-time-picker-mobile-view__header-hour-minute">
-        <HourMinuteView value={hour} selected />
-        <HourMinuteView value={minute} />
+        <HourMinuteView
+          value={hour}
+          selected={isHourView}
+          onChange={() => onChangeHourOrMinuteView(true)}
+        />
+        <HourMinuteView
+          value={minute === 60 ? 0 : minute}
+          selected={!isHourView}
+          onChange={() => onChangeHourOrMinuteView(false)}
+        />
       </div>
       <div className="sinoui-time-picker-mobile-view__header-am-pm">
         <AmPmView selected={isAm} onChange={() => onChangeAm(true)}>

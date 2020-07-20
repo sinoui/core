@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CLOCK_NUMBER_PADDING } from './constants';
+import { CLOCK_NUMBER_PADDING, CLOCK_SIZE } from './constants';
 
 const Wrapper = styled.div<{
-  $size: number;
   $rotateDeg: number;
 }>`
   position: absolute;
   left: calc((100% - 2px) / 2);
   top: ${CLOCK_NUMBER_PADDING}px;
   width: 2px;
-  height: ${({ $size }) => $size / 2 - CLOCK_NUMBER_PADDING}px;
+  height: ${CLOCK_SIZE / 2 - CLOCK_NUMBER_PADDING}px;
   background-color: ${({ theme }) => theme.palette.primary.main};
   transform: ${({ $rotateDeg = 0 }) => `rotateZ(${$rotateDeg}deg)`};
   transform-origin: bottom;
@@ -26,15 +25,9 @@ const Wrapper = styled.div<{
   }
 `;
 
-export default function ClockPointer({
-  size,
-  rotateDeg,
-}: {
-  size: number;
-  rotateDeg: number;
-}) {
+export default function ClockPointer({ rotateDeg }: { rotateDeg: number }) {
   return (
-    <Wrapper $size={size} $rotateDeg={rotateDeg}>
+    <Wrapper $rotateDeg={rotateDeg}>
       <div className="sinoui-clock__pointer" />
     </Wrapper>
   );

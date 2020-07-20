@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { CLOCK_SIZE } from './constants';
 
-const ClockWrapper = styled.div<{ $size: number }>`
+const ClockWrapper = styled.div`
   position: relative;
-  width: ${(props) => props.$size}px;
-  height: ${(props) => props.$size}px;
+  width: ${CLOCK_SIZE}px;
+  height: ${CLOCK_SIZE}px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.07);
 `;

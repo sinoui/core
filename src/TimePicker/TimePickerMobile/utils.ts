@@ -26,8 +26,10 @@ const getNowHourMinite12 = () => {
  */
 export function getRotateDegByTimeValue(value: string) {
   const [hour, minute] = value ? parseTime(value) : getNowHourMinite12();
-  if (hour && minute) {
-    return [(360 / 12) * hour, (360 / 60) * minute];
+
+  if (hour !== undefined && minute !== undefined) {
+    const hour12 = hour > 12 ? hour - 12 : hour;
+    return [(360 / 12) * hour12, (360 / 60) * minute];
   }
   // 旋转0度
   return [0, 0];
@@ -69,4 +71,15 @@ export function get24HourByIsAm(hour: number, isAM: boolean) {
  */
 export function formatHourMinute(value: number) {
   return value < 10 ? `0${value}` : `${value}`;
+}
+
+/**
+ * 根据时间 得出是 AM 或 PM
+ * @param value
+ */
+export function getIsAmByTimeValue(value: string) {
+  const nowHour = new Date().getHours();
+  const hours24 = value ? parseTime(value)[0] : new Date().getHours();
+
+  return hours24 !== undefined ? hours24 < 12 : nowHour < 12;
 }

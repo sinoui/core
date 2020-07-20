@@ -36,6 +36,7 @@ it('点击指示图标，弹出选项', () => {
           'data-testid': 'time-picker',
         }}
         value="12:12"
+        isPc
       />
     </ThemeProvider>,
   );
@@ -55,6 +56,7 @@ it('弹窗失去焦点后，关闭弹窗', () => {
           'data-testid': 'time-picker',
         }}
         value="12:12"
+        isPc
       />
     </ThemeProvider>,
   );
@@ -199,7 +201,7 @@ describe('输入框', () => {
 it('点击图标打开弹窗时，选中的小时选项获取焦点', () => {
   const { getByRole } = render(
     <ThemeProvider theme={defaultTheme}>
-      <TimePicker value="12:13" />
+      <TimePicker value="12:13" isPc />
     </ThemeProvider>,
   );
 

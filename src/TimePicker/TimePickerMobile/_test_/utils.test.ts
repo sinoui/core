@@ -2,6 +2,7 @@ import {
   getHourOrMinuteRotateDeg,
   getRotateDegByTimeValue,
   get24HourByIsAm,
+  getIsAmByTimeValue,
 } from '../utils';
 
 describe('getHourRotateDeg', () => {
@@ -28,6 +29,12 @@ describe('getRotateDegByTimeValue', () => {
     expect(hourDeg).toBe(90);
     expect(minuteDeg).toBe(60);
   });
+
+  it('value="06:00"', () => {
+    const [hourDeg, minuteDeg] = getRotateDegByTimeValue('06:00');
+    expect(hourDeg).toBe(180);
+    expect(minuteDeg).toBe(0);
+  });
 });
 
 describe('get24HourByIsAm', () => {
@@ -42,5 +49,15 @@ describe('get24HourByIsAm', () => {
   });
   it('下午的8:22', () => {
     expect(get24HourByIsAm(8, false)).toBe(20);
+  });
+});
+
+describe('getIsAmByTimeValue', () => {
+  it('00:00', () => {
+    expect(getIsAmByTimeValue('00:00')).toBeTruthy();
+  });
+
+  it('12:00', () => {
+    expect(getIsAmByTimeValue('12:00')).toBeFalsy();
   });
 });

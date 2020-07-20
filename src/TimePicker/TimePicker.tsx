@@ -73,7 +73,7 @@ const StyledPopper = styled(Popper)`
  */
 export default function TimePicker(props: Props) {
   const {
-    isPc: isPcProps = true,
+    isPc: isPcProps,
     value = '',
     onChange,
     disabled,

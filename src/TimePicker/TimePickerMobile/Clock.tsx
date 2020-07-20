@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import ClockWrapper from './ClockWrapper';
 import ClockNumber from './ClockNumber';
 import ClockMinute from './ClockMinute';
 import ClockPin from './ClockPin';
 import ClockPointer from './ClockPointer';
-import { CLOCK_PIN_SIZE } from './constants';
+import { CLOCK_PIN_SIZE, CLOCK_SIZE } from './constants';
 import {
   getHourOrMinuteRotateDeg,
   getHourByRotateDeg,
@@ -13,9 +13,9 @@ import {
 
 interface Props {
   /**
-   * 钟表盘尺寸
+   * 当前设置是否为小时
    */
-  size?: number;
+  isHourView: boolean;
   /**
    * 时针旋转角度
    */
@@ -32,16 +32,21 @@ interface Props {
    * 分针旋转角度改变的回调函数
    */
   onChangeMinuteRotateDeg: (hour: number) => void;
+  /**
+   * 时分视图切换时的回调函数
+   */
+  onChangeHourOrMinuteView: (isHourView: boolean) => void;
 }
 const hours = new Array(12).fill(1).map((_, index) => index + 1);
 const minutes = new Array(60).fill(1).map((_, index) => index + 1);
 
 export default function Clock({
-  size = 260,
+  isHourView,
   hourRotateDeg,
   minuteRotateDeg,
   onChangeHourRotateDeg,
   onChangeMinuteRotateDeg,
+  onChangeHourOrMinuteView,
 }: Props) {
   const clockRef = useRef<HTMLDivElement | null>(null);
   // 开始移动指针
@@ -49,8 +54,7 @@ export default function Clock({
   // 停止移动指针
   const isMoveEnd = useRef(false);
 
-  const [isHour, setIsHour] = useState(true);
-  const rotateDeg = isHour ? hourRotateDeg : minuteRotateDeg;
+  const rotateDeg = isHourView ? hourRotateDeg : minuteRotateDeg;
   /**
    * 获取基于12点基线的旋转角度
    * @param pageX
@@ -58,8 +62,8 @@ export default function Clock({
    */
   const getRotateDegToBaseLine = (pageX: number, pageY: number) => {
     const { left, top } = clockRef?.current?.getBoundingClientRect() as any;
-    const x = pageX - (left + size / 2 + CLOCK_PIN_SIZE / 2);
-    const y = pageY - (top + size / 2 + CLOCK_PIN_SIZE / 2);
+    const x = pageX - (left + CLOCK_SIZE / 2 + CLOCK_PIN_SIZE / 2);
+    const y = pageY - (top + CLOCK_SIZE / 2 + CLOCK_PIN_SIZE / 2);
     const xyDeg = (Math.atan(Math.abs(x / y)) / (2 * Math.PI)) * 360;
     // 基于12点 右上方 1/4表盘
     let deg = Math.floor(xyDeg);
@@ -73,7 +77,7 @@ export default function Clock({
       // 基于12点 左上方 1/4表盘
       deg = 360 - xyDeg;
     }
-    return getHourOrMinuteRotateDeg(deg, isHour);
+    return getHourOrMinuteRotateDeg(deg, isHourView);
   };
 
   const onTouchStart = () => {
@@ -84,7 +88,7 @@ export default function Clock({
   const onTouchEnd = (event: any) => {
     const { pageX, pageY } = event.nativeEvent.changedTouches[0];
     const currentRotateDeg = getRotateDegToBaseLine(pageX, pageY);
-    if (isHour) {
+    if (isHourView) {
       onChangeHourRotateDeg(currentRotateDeg);
     } else {
       onChangeMinuteRotateDeg(currentRotateDeg);
@@ -93,8 +97,8 @@ export default function Clock({
     isMoveStart.current = false;
     isMoveEnd.current = true;
 
-    if (isHour) {
-      setIsHour(!isHour);
+    if (isHourView) {
+      onChangeHourOrMinuteView(!isHourView);
     }
   };
 
@@ -104,7 +108,7 @@ export default function Clock({
       event.nativeEvent.touches[0].pageY,
     );
     if (currentRotateDeg !== rotateDeg) {
-      if (isHour) {
+      if (isHourView) {
         onChangeHourRotateDeg(currentRotateDeg);
       } else {
         onChangeMinuteRotateDeg(currentRotateDeg);
@@ -118,18 +122,16 @@ export default function Clock({
   return (
     // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
     <ClockWrapper
-      $size={size}
       ref={clockRef}
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       onTouchMove={onTouchMove}
     >
-      {isHour
+      {isHourView
         ? hours.map((item) => (
             <ClockNumber
               key={item}
               number={item}
-              size={size}
               selectedValue={getHourByRotateDeg(rotateDeg)}
             />
           ))
@@ -137,12 +139,11 @@ export default function Clock({
             <ClockMinute
               key={item}
               number={item}
-              size={size}
               selectedValue={getMinuteByRotateDeg(minuteRotateDeg)}
             />
           ))}
       <ClockPin />
-      <ClockPointer size={size} rotateDeg={rotateDeg} />
+      <ClockPointer rotateDeg={rotateDeg} />
     </ClockWrapper>
   );
 }

@@ -8,6 +8,7 @@ import {
   getHourByRotateDeg,
   getMinuteByRotateDeg,
   get24HourByIsAm,
+  getIsAmByTimeValue,
 } from './utils';
 
 interface Props {
@@ -56,12 +57,14 @@ const MobileTimePickerView = React.forwardRef<HTMLDivElement, Props>(
     const { value = '', onRequestClose, onChange } = props;
     // 当前时间 时分指针旋转角度
     const [hourDeg, minuteDeg] = getRotateDegByTimeValue(value);
-    // 时针旋转角度
-    const [isAm, onChangeAm] = useState(new Date().getHours() <= 12);
+    // 是否为AM
+    const [isAm, onChangeAm] = useState(getIsAmByTimeValue(value));
     // 时针旋转角度
     const [hourRotateDeg, setHourRotateDeg] = useState(hourDeg);
     // 分针旋转角度
     const [minuteRotateDeg, setMinuteRotateDeg] = useState(minuteDeg);
+    // 当前设置为时钟 还是分钟
+    const [isHourView, onChangeHourOrMinuteView] = useState(true);
 
     const onOK = () => {
       const hourValue = getHourByRotateDeg(hourRotateDeg);
@@ -81,11 +84,15 @@ const MobileTimePickerView = React.forwardRef<HTMLDivElement, Props>(
           <MobileTimePickerHeader
             hour={getHourByRotateDeg(hourRotateDeg)}
             minute={getMinuteByRotateDeg(minuteRotateDeg)}
+            isHourView={isHourView}
+            onChangeHourOrMinuteView={onChangeHourOrMinuteView}
             isAm={isAm}
             onChangeAm={onChangeAm}
           />
           <div className="sinoui-time-picker-mobile-view__main">
             <Clock
+              isHourView={isHourView}
+              onChangeHourOrMinuteView={onChangeHourOrMinuteView}
               hourRotateDeg={hourRotateDeg}
               minuteRotateDeg={minuteRotateDeg}
               onChangeHourRotateDeg={setHourRotateDeg}
