@@ -1,7 +1,7 @@
 import React from 'react';
 import type { PopperProps } from '@sinoui/core/Popper';
-import styled from 'styled-components';
 import Popper from '@sinoui/core/Popper';
+import Fade from '@sinoui/core/Fade';
 import DateTimeView from './DateTimeView';
 
 interface Props extends Omit<PopperProps, 'onChange' | 'children'> {
@@ -75,10 +75,6 @@ interface Props extends Omit<PopperProps, 'onChange' | 'children'> {
   onRequestClose?: () => void;
 }
 
-const StyledPopper = styled(Popper)`
-  z-index: ${({ theme }) => theme.zIndex.popover};
-`;
-
 export default function DateTimePcPopper(props: Props) {
   const {
     isPc,
@@ -101,32 +97,36 @@ export default function DateTimePcPopper(props: Props) {
     ...rest
   } = props;
   return (
-    <StyledPopper {...rest}>
-      <DateTimeView
-        isPc={isPc}
-        date={date}
-        hourStep={hourStep}
-        minuteStep={minuteStep}
-        minute={
-          date
-            ? date.getMinutes() - (date.getMinutes() % minuteStep)
-            : undefined
-        }
-        hour={date ? date.getHours() - (date.getHours() % hourStep) : undefined}
-        onChange={onChange}
-        onBlur={onRequestClose}
-        minDate={minDate}
-        maxDate={maxDate}
-        minHour={minHour}
-        minMinute={minMinute}
-        maxHour={maxHour}
-        maxMinute={maxMinute}
-        startOfWeek={startOfWeek}
-        skipMonthsView={skipMonthsView}
-        defaultYear={defaultYear}
-        defaultMonth={defaultMonth}
-        showToday={showToday}
-      />
-    </StyledPopper>
+    <Popper {...rest}>
+      <Fade>
+        <DateTimeView
+          isPc={isPc}
+          date={date}
+          hourStep={hourStep}
+          minuteStep={minuteStep}
+          minute={
+            date
+              ? date.getMinutes() - (date.getMinutes() % minuteStep)
+              : undefined
+          }
+          hour={
+            date ? date.getHours() - (date.getHours() % hourStep) : undefined
+          }
+          onChange={onChange}
+          onBlur={onRequestClose}
+          minDate={minDate}
+          maxDate={maxDate}
+          minHour={minHour}
+          minMinute={minMinute}
+          maxHour={maxHour}
+          maxMinute={maxMinute}
+          startOfWeek={startOfWeek}
+          skipMonthsView={skipMonthsView}
+          defaultYear={defaultYear}
+          defaultMonth={defaultMonth}
+          showToday={showToday}
+        />
+      </Fade>
+    </Popper>
   );
 }
