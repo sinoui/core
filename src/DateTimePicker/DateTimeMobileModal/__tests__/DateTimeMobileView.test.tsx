@@ -187,12 +187,23 @@ describe('验收测试', () => {
     });
 
     expect(getByText('15:45')).toBeInTheDocument();
+    act(() => {
+      fireEvent.change(hourInput!, {
+        target: { value: '-2' },
+      });
+    });
+
+    fireEvent.blur(hourInput!);
+    expect(getByText('15:45')).toBeInTheDocument();
   });
 
   it('输入不符合规范的分钟，将直接置成已经选定的值', () => {
     const { container, getByText } = render(
       <ThemeProvider theme={defaultTheme}>
-        <DateTimeMobileView date={new Date(2020, 6, 20, 15, 40)} />
+        <DateTimeMobileView
+          date={new Date(2020, 6, 20, 15, 40)}
+          minMinute={20}
+        />
       </ThemeProvider>,
     );
 
@@ -214,6 +225,16 @@ describe('验收测试', () => {
     act(() => {
       fireEvent.change(minuteInput!, {
         target: { value: '70' },
+      });
+    });
+
+    fireEvent.blur(minuteInput!);
+
+    expect(getByText('22:40')).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.change(minuteInput!, {
+        target: { value: '10' },
       });
     });
 

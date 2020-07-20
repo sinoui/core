@@ -82,7 +82,11 @@ interface Props {
 function isInValidateValue(value: string, min?: number, max?: number) {
   const numValue = Number(value);
 
-  if (min) {
+  if ((min || min === 0) && max) {
+    return numValue < min || numValue > max;
+  }
+
+  if (min || min === 0) {
     return numValue < min;
   }
 
