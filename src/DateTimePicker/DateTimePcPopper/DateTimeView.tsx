@@ -98,7 +98,10 @@ const StyledDivider = styled(Divider)`
  * 日期时间选择展示组件
  * @param props
  */
-export default function DateTimeView(props: Props) {
+export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
+  props,
+  ref,
+) {
   const now = new Date();
   const {
     date,
@@ -119,6 +122,7 @@ export default function DateTimeView(props: Props) {
     hour = now.getHours() - (now.getHours() % hourStep),
     minute = now.getMinutes() - (now.getMinutes() % minuteStep),
     onChange,
+    ...rest
   } = props;
 
   const [[year, month], setYearMonth] = useState(() => {
@@ -211,7 +215,12 @@ export default function DateTimeView(props: Props) {
   );
 
   return (
-    <DateTimeViewWrapper $isPc={isPc} className="sinoui-date-time-view">
+    <DateTimeViewWrapper
+      $isPc={isPc}
+      className="sinoui-date-time-view"
+      ref={ref}
+      {...rest}
+    >
       <div className="sinoui-date-time-view__calendar">
         <CalendarViewHeader
           year={year}
@@ -250,4 +259,4 @@ export default function DateTimeView(props: Props) {
       </div>
     </DateTimeViewWrapper>
   );
-}
+});
