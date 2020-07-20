@@ -158,13 +158,18 @@ export default function DatePicker(props: Props) {
         value={inputValue}
         onClear={handleClear}
         endAdornment={
-          <InputAdornment position="end" disablePointerEvents>
+          <InputAdornment position="end">
             <DatePickerIcon />
           </InputAdornment>
         }
       />
       {isPc ? (
-        <StyledPopper {...getPopperProps()} portal={portal} {...popperProps}>
+        <StyledPopper
+          {...getPopperProps()}
+          portal={portal}
+          {...popperProps}
+          placement="bottom-start"
+        >
           <CalendarView
             value={date}
             onChange={handleCalendarChange}
