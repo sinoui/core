@@ -55,10 +55,6 @@ interface Props {
    * 最大分钟数。默认为`59`。
    */
   maxMinute?: number;
-  /*
-   * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
-   */
-  skipMonthsView?: boolean;
   /**
    * 弹窗关闭时的回调函数
    */
@@ -127,7 +123,6 @@ export default function DateTimeMobileView(props: Props) {
     defaultYear = new Date().getFullYear(),
     defaultMonth = new Date().getMonth(),
     style,
-    skipMonthsView = true,
     showToday = true,
     onClose,
     onChange,
@@ -159,7 +154,7 @@ export default function DateTimeMobileView(props: Props) {
     if (newYear !== year) {
       setYearMonth([newYear, month]);
     }
-    setViewModel(skipMonthsView ? ViewModel.dates : ViewModel.months);
+    setViewModel(ViewModel.dates);
   };
 
   const renderYears = () => (

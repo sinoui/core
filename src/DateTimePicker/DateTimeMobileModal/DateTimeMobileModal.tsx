@@ -53,10 +53,6 @@ interface Props extends Omit<ModalProps, 'children'> {
    * 最大分钟数。默认为`59`。
    */
   maxMinute?: number;
-  /*
-   * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
-   */
-  skipMonthsView?: boolean;
   /**
    * 弹窗关闭时的回调函数
    */
@@ -78,7 +74,6 @@ export default function DateTimeMobileModal(props: Props) {
     maxMinute,
     minDate,
     maxDate,
-    skipMonthsView,
     showToday,
     ...other
   } = props;
@@ -100,7 +95,6 @@ export default function DateTimeMobileModal(props: Props) {
           maxMinute={maxMinute}
           minDate={minDate}
           maxDate={maxDate}
-          skipMonthsView={skipMonthsView}
         />
       </Fade>
     </Modal>

@@ -25,11 +25,11 @@ export interface Props
    */
   onChange?: (value: string) => void;
   /**
-   * 最小值
+   * 最小日期
    */
   min?: string;
   /**
-   * 最大值
+   * 最大日期
    */
   max?: string;
   /**
@@ -206,7 +206,6 @@ export default function DateTimePicker(props: Props) {
           maxHour={maxHour}
           minMinute={minMinute}
           maxMinute={maxMinute}
-          skipMonthsView={skipMonthsView}
           showToday={showToday}
           minDate={parseDate(min)}
           maxDate={parseDate(max)}
