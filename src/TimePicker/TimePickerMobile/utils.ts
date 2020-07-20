@@ -13,6 +13,9 @@ export function getHourOrMinuteRotateDeg(deg: number, isHour: boolean) {
   return UNIT * degFloor;
 }
 
+/**
+ * 获取当前时间的 时分 12小时制
+ */
 const getNowHourMinite12 = () => {
   const now = new Date();
   const nowHours24 = now.getHours();
