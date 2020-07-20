@@ -55,10 +55,6 @@ interface Props {
    * 最大分钟数。默认为`59`。
    */
   maxMinute?: number;
-  /*
-   * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
-   */
-  skipMonthsView?: boolean;
   /**
    * 弹窗关闭时的回调函数
    */
@@ -78,12 +74,12 @@ interface Props {
 }
 
 /**
- * 判断值是否可用
+ * 判断值是否不可用
  * @param value 值
  * @param min 最小值
  * @param max 最大值
  */
-function isValidateValue(value: string, min?: number, max?: number) {
+function isInValidateValue(value: string, min?: number, max?: number) {
   const numValue = Number(value);
 
   if (min) {
@@ -127,7 +123,6 @@ export default function DateTimeMobileView(props: Props) {
     defaultYear = new Date().getFullYear(),
     defaultMonth = new Date().getMonth(),
     style,
-    skipMonthsView = true,
     showToday = true,
     onClose,
     onChange,
@@ -159,7 +154,7 @@ export default function DateTimeMobileView(props: Props) {
     if (newYear !== year) {
       setYearMonth([newYear, month]);
     }
-    setViewModel(skipMonthsView ? ViewModel.dates : ViewModel.months);
+    setViewModel(ViewModel.dates);
   };
 
   const renderYears = () => (
@@ -205,14 +200,14 @@ export default function DateTimeMobileView(props: Props) {
   };
 
   const onHourBlur = () => {
-    if (isValidateValue(hour, minHour, maxHour)) {
+    if (isInValidateValue(hour, minHour, maxHour)) {
       const validateHour = date ? `${date.getHours()}` : '';
       setHour(validateHour);
     }
   };
 
   const onMinuteBlur = () => {
-    if (isValidateValue(minute, minMinute, maxMinute)) {
+    if (isInValidateValue(minute, minMinute, maxMinute)) {
       const validateMinute = date ? `${date.getMinutes()}` : '';
       setMinute(validateMinute);
     }
@@ -273,7 +268,7 @@ export default function DateTimeMobileView(props: Props) {
     >
       <DateTimeMobileViewToolbar
         year={year}
-        month={month}
+        month={selectedDate.getMonth()}
         day={selectedDate.getDate()}
         hour={hour}
         minute={minute}

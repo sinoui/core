@@ -610,6 +610,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
         type="button"
       >
         2020
+        年
       </button>
       <button
         className="c3 sinoui-base-button c5"

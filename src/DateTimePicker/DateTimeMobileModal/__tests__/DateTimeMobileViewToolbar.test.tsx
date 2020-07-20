@@ -45,7 +45,7 @@ describe('验收测试', () => {
       </ThemeProvider>,
     );
 
-    expect(getByText('2020')).toBeInTheDocument();
+    expect(getByText('2020年')).toBeInTheDocument();
     expect(getByText('7月21日')).toBeInTheDocument();
     expect(getByText('15:39')).toBeInTheDocument();
   });
@@ -66,7 +66,7 @@ describe('验收测试', () => {
       </ThemeProvider>,
     );
 
-    fireEvent.click(getByText('2020'));
+    fireEvent.click(getByText('2020年'));
     expect(onViewModelChange).toBeCalledWith(ViewModel.years);
 
     fireEvent.click(getByText('7月21日'));

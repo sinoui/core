@@ -86,7 +86,7 @@ describe('验收测试', () => {
       </ThemeProvider>,
     );
 
-    fireEvent.click(getByText('2020'));
+    fireEvent.click(getByText('2020年'));
 
     expect(
       container.querySelector('.sinoui-date-time-mobile-view__yearsview'),
@@ -100,7 +100,7 @@ describe('验收测试', () => {
       </ThemeProvider>,
     );
 
-    fireEvent.click(getByText('2020'));
+    fireEvent.click(getByText('2020年'));
 
     const year_2019 = container.querySelector('[data-year="2019"]');
     fireEvent.click(year_2019!);
@@ -108,7 +108,7 @@ describe('验收测试', () => {
     expect(
       container.querySelector('.sinoui-date-time-mobile-view__yearsview'),
     ).toBeFalsy();
-    expect(getByText('2019')).toBeInTheDocument();
+    expect(getByText('2019年')).toBeInTheDocument();
     expect(
       container.querySelector('.sinoui-calendar-view-header'),
     ).toHaveTextContent('2019年七月');

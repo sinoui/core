@@ -125,6 +125,7 @@ exports[`镜像测试 渲染日期时间选择头部组件 1`] = `
       type="button"
     >
       2020
+      年
     </button>
     <button
       className="c2 sinoui-base-button c4"
