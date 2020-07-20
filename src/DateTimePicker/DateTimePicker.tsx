@@ -162,7 +162,7 @@ export default function DateTimePicker(props: Props) {
         value={inputValue}
         onClear={handleClear}
         endAdornment={
-          <InputAdornment position="end" disablePointerEvents>
+          <InputAdornment position="end">
             <DatePickerIcon />
           </InputAdornment>
         }
