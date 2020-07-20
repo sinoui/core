@@ -106,6 +106,7 @@ const TimeWrapper = styled.div`
 const Divider = styled(Body2)`
   width: 48px;
   text-align: center;
+  margin-bottom: 20px;
 `;
 
 const TimeTitle = styled(Subtitle1)`
