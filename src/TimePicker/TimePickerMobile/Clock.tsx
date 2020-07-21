@@ -80,43 +80,81 @@ export default function Clock({
     return getHourOrMinuteRotateDeg(deg, isHourView);
   };
 
+  /**
+   * 移动端事件
+   */
   const onTouchStart = () => {
     isMoveStart.current = true;
     isMoveEnd.current = false;
   };
 
-  const onTouchEnd = (event: any) => {
-    const { pageX, pageY } = event.nativeEvent.changedTouches[0];
-    const currentRotateDeg = getRotateDegToBaseLine(pageX, pageY);
-    if (isHourView) {
-      onChangeHourRotateDeg(currentRotateDeg);
-    } else {
-      onChangeMinuteRotateDeg(currentRotateDeg);
-    }
+  /**
+   * PC端事件
+   */
+  const onMouseDown = () => {
+    isMoveStart.current = true;
+    isMoveEnd.current = false;
+  };
 
-    isMoveStart.current = false;
-    isMoveEnd.current = true;
-
-    if (isHourView) {
-      onChangeHourOrMinuteView(!isHourView);
+  /**
+   * 改变时分指针位置 更新旋转角度
+   */
+  const onChangeHourMinuteValue = (pageX: number, pageY: number) => {
+    if (isMoveStart.current && !isMoveEnd.current) {
+      const currentRotateDeg = getRotateDegToBaseLine(pageX, pageY);
+      // 最新旋转角度和之前旋转角度不一致时  更新旋转角度
+      if (currentRotateDeg !== rotateDeg) {
+        if (isHourView) {
+          onChangeHourRotateDeg(currentRotateDeg);
+        } else {
+          onChangeMinuteRotateDeg(currentRotateDeg);
+        }
+      }
     }
   };
 
+  /**
+   * 移动端事件
+   */
+  const onTouchEnd = (event: React.TouchEvent) => {
+    const { pageX, pageY } = event.nativeEvent.changedTouches[0];
+    onChangeHourMinuteValue(pageX, pageY);
+    if (isHourView) {
+      onChangeHourOrMinuteView(!isHourView);
+    }
+    isMoveStart.current = false;
+    isMoveEnd.current = true;
+  };
+
+  /**
+   * PC端事件
+   */
+  const onMouseUp = (event: React.MouseEvent) => {
+    const { pageX, pageY } = event;
+    onChangeHourMinuteValue(pageX, pageY);
+    if (isHourView) {
+      onChangeHourOrMinuteView(!isHourView);
+    }
+    isMoveStart.current = false;
+    isMoveEnd.current = true;
+  };
+
+  /**
+   * 移动端事件
+   */
   const onTouchMove = (event: React.TouchEvent) => {
-    const currentRotateDeg = getRotateDegToBaseLine(
+    onChangeHourMinuteValue(
       event.nativeEvent.touches[0].pageX,
       event.nativeEvent.touches[0].pageY,
     );
-    if (currentRotateDeg !== rotateDeg) {
-      if (isHourView) {
-        onChangeHourRotateDeg(currentRotateDeg);
-      } else {
-        onChangeMinuteRotateDeg(currentRotateDeg);
-      }
-    }
+  };
 
-    isMoveStart.current = false;
-    isMoveEnd.current = true;
+  /**
+   * PC端事件
+   */
+  const onMouseMove = (event: React.MouseEvent) => {
+    const { pageX, pageY } = event;
+    onChangeHourMinuteValue(pageX, pageY);
   };
 
   return (
@@ -126,6 +164,10 @@ export default function Clock({
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       onTouchMove={onTouchMove}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      onMouseMove={onMouseMove}
+      className="sinoui-time-picker-mobile-view__clock"
     >
       {isHourView
         ? hours.map((item) => (

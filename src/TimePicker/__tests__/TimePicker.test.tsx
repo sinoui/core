@@ -331,3 +331,63 @@ it('autoComplete=off', () => {
 
   expect(input).toHaveAttribute('autocomplete', 'off');
 });
+
+describe('移动端视图测试', () => {
+  it('点击指示图标，弹出选项', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker
+          wrapperProps={{
+            'data-testid': 'time-picker',
+          }}
+          value="12:12"
+        />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+
+    expect(
+      document.querySelector('.sinoui-time-picker-mobile-view'),
+    ).toBeTruthy();
+  });
+
+  it('点击图标打开弹窗时，钟表盘对应的小时高亮显示', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="21:03" />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+
+    expect(document.querySelector('[data-hour-value="9"]')).toHaveStyle(
+      'color:#fff',
+    );
+  });
+
+  it('点击钟表盘切换到分钟表盘，对应的分钟高亮显示', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="21:00" />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+
+    const clock = document.querySelector(
+      '.sinoui-time-picker-mobile-view__clock',
+    ) as Element;
+    fireEvent.mouseDown(clock);
+    fireEvent.mouseUp(clock);
+    expect(document.querySelector('[data-minute-value="60"]')).toHaveStyle(
+      'color:#fff',
+    );
+  });
+});

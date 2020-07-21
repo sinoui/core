@@ -35,7 +35,7 @@ const MobileTimePickerHeaderWrapper = styled.div`
   justify-content: center;
   height: 100px;
   width: 100%;
-  padding-left: 50px;
+  padding-right: 50px;
   box-sizing: border-box;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -83,6 +83,14 @@ export default function MobileTimePickerHeader({
 }: Props) {
   return (
     <MobileTimePickerHeaderWrapper>
+      <div className="sinoui-time-picker-mobile-view__header-am-pm">
+        <AmPmView selected={isAm} onChange={() => onChangeAm(true)}>
+          上午
+        </AmPmView>
+        <AmPmView selected={!isAm} onChange={() => onChangeAm(false)}>
+          下午
+        </AmPmView>
+      </div>
       <div className="sinoui-time-picker-mobile-view__header-hour-minute">
         <HourMinuteView
           value={hour}
@@ -94,14 +102,6 @@ export default function MobileTimePickerHeader({
           selected={!isHourView}
           onChange={() => onChangeHourOrMinuteView(false)}
         />
-      </div>
-      <div className="sinoui-time-picker-mobile-view__header-am-pm">
-        <AmPmView selected={isAm} onChange={() => onChangeAm(true)}>
-          上午
-        </AmPmView>
-        <AmPmView selected={!isAm} onChange={() => onChangeAm(false)}>
-          下午
-        </AmPmView>
       </div>
     </MobileTimePickerHeaderWrapper>
   );

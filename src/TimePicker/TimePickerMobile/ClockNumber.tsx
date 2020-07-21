@@ -43,7 +43,11 @@ export default function ClockNumber({
   selectedValue: number;
 }) {
   return (
-    <Wrapper $number={number} $selected={selectedValue === number}>
+    <Wrapper
+      $number={number}
+      $selected={selectedValue === number}
+      data-hour-value={number}
+    >
       {number}
     </Wrapper>
   );
