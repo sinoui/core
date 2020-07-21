@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 Clock 1`] = `
+<div
+  className="sc-AxjAm fzMxrV sinoui-time-picker-mobile-view__clock"
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+>
+  <div
+    className="sc-AxirZ kWSfom"
+    data-hour-value={1}
+  >
+    1
+  </div>
+  <div
+    className="sc-AxirZ fUuFiK"
+    data-hour-value={2}
+  >
+    2
+  </div>
+  <div
+    className="sc-AxirZ bkAGRh"
+    data-hour-value={3}
+  >
+    3
+  </div>
+  <div
+    className="sc-AxirZ gbyAIS"
+    data-hour-value={4}
+  >
+    4
+  </div>
+  <div
+    className="sc-AxirZ gTcpKu"
+    data-hour-value={5}
+  >
+    5
+  </div>
+  <div
+    className="sc-AxirZ lbwMhO"
+    data-hour-value={6}
+  >
+    6
+  </div>
+  <div
+    className="sc-AxirZ fiTzPW"
+    data-hour-value={7}
+  >
+    7
+  </div>
+  <div
+    className="sc-AxirZ eqIjhy"
+    data-hour-value={8}
+  >
+    8
+  </div>
+  <div
+    className="sc-AxirZ dBHhEm"
+    data-hour-value={9}
+  >
+    9
+  </div>
+  <div
+    className="sc-AxirZ gbvvnG"
+    data-hour-value={10}
+  >
+    10
+  </div>
+  <div
+    className="sc-AxirZ bwDVQC"
+    data-hour-value={11}
+  >
+    11
+  </div>
+  <div
+    className="sc-AxirZ RcwIm"
+    data-hour-value={12}
+  >
+    12
+  </div>
+  <div
+    className="sc-AxhUy ezza-df"
+  />
+  <div
+    className="sc-AxgMl jtwisq"
+  >
+    <div
+      className="sinoui-clock__pointer"
+    />
+  </div>
+</div>
+`;

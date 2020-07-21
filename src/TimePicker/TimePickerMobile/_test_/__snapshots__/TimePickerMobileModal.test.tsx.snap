@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 Clock 1`] = `
+<div
+  className="sc-AxjAm eCuVQj"
+  data-sinoui-id="modal"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+>
+  <div
+    className="sc-fznyAO knKagA sinoui-time-picker-mobile-view"
+  >
+    <div
+      className="sc-fznKkj fOousH"
+    >
+      <div
+        className="sc-fzplWN foOVaU"
+      >
+        <div
+          className="sinoui-time-picker-mobile-view__header-am-pm"
+        >
+          <div
+            className="sc-fzpans ibGDgY"
+            onClick={[Function]}
+            selected={false}
+          >
+            上午
+          </div>
+          <div
+            className="sc-fzpans dCafyO"
+            onClick={[Function]}
+            selected={true}
+          >
+            下午
+          </div>
+        </div>
+        <div
+          className="sinoui-time-picker-mobile-view__header-hour-minute"
+        >
+          <div
+            className="sc-fzoLsD iVQvUg"
+            onClick={[Function]}
+            selected={true}
+          >
+            02
+          </div>
+          <div
+            className="sc-fzoLsD dNVqlq"
+            onClick={[Function]}
+            selected={false}
+          >
+            38
+          </div>
+        </div>
+      </div>
+      <div
+        className="sinoui-time-picker-mobile-view__main"
+      >
+        <div
+          className="sc-AxhUy gYFcZv sinoui-time-picker-mobile-view__clock"
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="sc-AxgMl bfFUkl"
+            data-hour-value={1}
+          >
+            1
+          </div>
+          <div
+            className="sc-AxgMl hQyyvL"
+            data-hour-value={2}
+          >
+            2
+          </div>
+          <div
+            className="sc-AxgMl ikQMFs"
+            data-hour-value={3}
+          >
+            3
+          </div>
+          <div
+            className="sc-AxgMl bCwxnF"
+            data-hour-value={4}
+          >
+            4
+          </div>
+          <div
+            className="sc-AxgMl iTfaWt"
+            data-hour-value={5}
+          >
+            5
+          </div>
+          <div
+            className="sc-AxgMl biXAhN"
+            data-hour-value={6}
+          >
+            6
+          </div>
+          <div
+            className="sc-AxgMl jcgQR"
+            data-hour-value={7}
+          >
+            7
+          </div>
+          <div
+            className="sc-AxgMl eJwIpN"
+            data-hour-value={8}
+          >
+            8
+          </div>
+          <div
+            className="sc-AxgMl jUziqt"
+            data-hour-value={9}
+          >
+            9
+          </div>
+          <div
+            className="sc-AxgMl bYhfcB"
+            data-hour-value={10}
+          >
+            10
+          </div>
+          <div
+            className="sc-AxgMl imeVQB"
+            data-hour-value={11}
+          >
+            11
+          </div>
+          <div
+            className="sc-AxgMl iMmJUl"
+            data-hour-value={12}
+          >
+            12
+          </div>
+          <div
+            className="sc-AxmLO hngXkt"
+          />
+          <div
+            className="sc-fzozJi eUlFPE"
+          >
+            <div
+              className="sinoui-clock__pointer"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="sinoui-time-picker-mobile-view__footer"
+      >
+        <button
+          className="sc-AxiKw fiAJmc sinoui-base-button sc-AxhCb brXeFf sinoui-button"
+          color="primary"
+          onClick={[Function]}
+          role="button"
+          type="button"
+        >
+          清除
+        </button>
+        <button
+          className="sc-AxiKw fiAJmc sinoui-base-button sc-AxhCb brXeFf sinoui-button"
+          color="primary"
+          role="button"
+          type="button"
+        >
+          取消
+        </button>
+        <button
+          className="sc-AxiKw fiAJmc sinoui-base-button sc-AxhCb brXeFf sinoui-button"
+          color="primary"
+          onClick={[Function]}
+          role="button"
+          type="button"
+        >
+          确定
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
