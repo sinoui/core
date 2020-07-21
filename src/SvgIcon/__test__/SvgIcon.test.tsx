@@ -164,4 +164,17 @@ describe('单元测试', () => {
 
     expect(getByTestId('svgicon')).toHaveStyle('color: red');
   });
+
+  it('ref', () => {
+    const svgRef = React.createRef<HTMLOrSVGElement>();
+    const { getByTestId } = render(
+      <TestWrapper>
+        <SvgIcon data-testid="svgicon" style={{ color: 'red' }} ref={svgRef}>
+          <path d="" />
+        </SvgIcon>
+      </TestWrapper>,
+    );
+
+    expect(getByTestId('svgicon')).toBe(svgRef.current);
+  });
 });
