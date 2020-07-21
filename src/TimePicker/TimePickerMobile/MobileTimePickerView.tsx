@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Button from '@sinoui/core/Button';
 import Clock from './Clock';
 import MobileTimePickerHeader from './MobileTimePickerHeader';
+import MobilePickerFooterViewIcon from './MobilePickerFooterViewIcon';
+import MobilePickerFooterButtons from './MobilePickerFooterButtons';
 import {
   getRotateDegByTimeValue,
   getHourByRotateDeg,
@@ -46,9 +47,9 @@ const MobileTimePickerViewBody = styled.div`
   & .sinoui-time-picker-mobile-view__footer {
     display: flex;
     width: 100%;
-    padding: 0 8px 8px 0;
+    padding: 0 8px 8px 16px;
     box-sizing: border-box;
-    justify-content: flex-end;
+    align-items: center;
   }
 `;
 
@@ -65,6 +66,7 @@ const MobileTimePickerView = React.forwardRef<HTMLDivElement, Props>(
     const [minuteRotateDeg, setMinuteRotateDeg] = useState(minuteDeg);
     // 当前设置为时钟 还是分钟
     const [isHourView, onChangeHourOrMinuteView] = useState(true);
+    const [isClockView, onChangeClockView] = useState(true);
 
     /**
      * 设置时间
@@ -103,19 +105,29 @@ const MobileTimePickerView = React.forwardRef<HTMLDivElement, Props>(
             onChangeAm={onChangeAm}
           />
           <div className="sinoui-time-picker-mobile-view__main">
-            <Clock
-              isHourView={isHourView}
-              onChangeHourOrMinuteView={onChangeHourOrMinuteView}
-              hourRotateDeg={hourRotateDeg}
-              minuteRotateDeg={minuteRotateDeg}
-              onChangeHourRotateDeg={setHourRotateDeg}
-              onChangeMinuteRotateDeg={setMinuteRotateDeg}
-            />
+            {isClockView ? (
+              <Clock
+                isHourView={isHourView}
+                onChangeHourOrMinuteView={onChangeHourOrMinuteView}
+                hourRotateDeg={hourRotateDeg}
+                minuteRotateDeg={minuteRotateDeg}
+                onChangeHourRotateDeg={setHourRotateDeg}
+                onChangeMinuteRotateDeg={setMinuteRotateDeg}
+              />
+            ) : (
+              <div>keyboard</div>
+            )}
           </div>
           <div className="sinoui-time-picker-mobile-view__footer">
-            <Button onClick={onClear}>清除</Button>
-            <Button onClick={onRequestClose}>取消</Button>
-            <Button onClick={onOK}>确定</Button>
+            <MobilePickerFooterViewIcon
+              isClockView={isClockView}
+              onChangeClockView={onChangeClockView}
+            />
+            <MobilePickerFooterButtons
+              onClear={onClear}
+              onOk={onOK}
+              onClose={onRequestClose}
+            />
           </div>
         </MobileTimePickerViewBody>
       </Wrapper>
