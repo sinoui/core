@@ -594,7 +594,7 @@ exports[`镜像测试 渲染移动端日期时间选择视图 1`] = `
 }
 
 <div
-  className="sc-fznWqX c0 sinoui-date-time-mobile-view sinoui-paper"
+  className="sc-fznKkj c0 sinoui-date-time-mobile-view sinoui-paper"
 >
   <div
     className="c1 sinoui-date-time-mobile-view__toolbar"

@@ -4,15 +4,14 @@ import WeekTitleBar from '@sinoui/core/DatePicker/WeekTitleBar';
 import CalendarViewHeader from '@sinoui/core/DatePicker/CalendarView/CalendarViewHeader';
 import ViewModel from '@sinoui/core/DatePicker/ViewModel';
 import YearSelectView from '@sinoui/core/DatePicker/YearSelectView';
-import TextInput from '@sinoui/core/TextInput';
 import styled from 'styled-components';
-import Body2 from '@sinoui/core/Body2';
 import Subtitle1 from '@sinoui/core/Subtitle1';
 import formatDate from '@sinoui/core/DatePicker/formatDate';
 import SimpleMonthDatesView from '@sinoui/core/DatePicker/DatesView/SimpleMonthDatesView';
 import formatTime from './formatTime';
 import DateTimeMobileViewWrapper from './DateTimeMobileViewWrapper';
 import DateTimeMobileViewToolbar from './DateTimeMobileViewToolbar';
+import TimeInput from './TimeInput';
 
 interface Props {
   /**
@@ -73,49 +72,9 @@ interface Props {
   showToday?: boolean;
 }
 
-/**
- * 判断值是否不可用
- * @param value 值
- * @param min 最小值
- * @param max 最大值
- */
-function isInValidateValue(value: string, min?: number, max?: number) {
-  const numValue = Number(value);
-
-  if ((min || min === 0) && max) {
-    return numValue < min || numValue > max;
-  }
-
-  if (min || min === 0) {
-    return numValue < min;
-  }
-
-  if (max) {
-    return numValue > max;
-  }
-
-  return false;
-}
-
-const TimeWrapper = styled.div`
-  padding: 16px;
-  display: inline-flex;
-  align-items: center;
-`;
-
-const Divider = styled(Body2)`
-  width: 48px;
-  text-align: center;
-  margin-bottom: 20px;
-`;
-
 const TimeTitle = styled(Subtitle1)`
   font-weight: ${({ theme }) => theme.typography.fontWeightBold};
   padding: 16px 16px 0px;
-`;
-
-const StyledInput = styled(TextInput)`
-  width: 124px;
 `;
 
 /**
@@ -196,52 +155,19 @@ export default function DateTimeMobileView(props: Props) {
     </>
   );
 
-  const onHourChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setHour(event.target.value);
-  };
-
-  const onMinuteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setMinute(event.target.value);
-  };
-
-  const onHourBlur = () => {
-    if (isInValidateValue(hour, minHour, maxHour)) {
-      const validateHour = date ? `${date.getHours()}` : '';
-      setHour(validateHour);
-    }
-  };
-
-  const onMinuteBlur = () => {
-    if (isInValidateValue(minute, minMinute, maxMinute)) {
-      const validateMinute = date ? `${date.getMinutes()}` : '';
-      setMinute(validateMinute);
-    }
-  };
-
   const renderTime = () => (
     <>
       <TimeTitle>请输入时间</TimeTitle>
-      <TimeWrapper className="sinoui-date-time-mobile-view__timeview">
-        <StyledInput
-          baseClassName="sinoui-date-time-mobile-view__timeview-hour-input"
-          type="number"
-          placeholder={hour}
-          helperText="点"
-          value={hour}
-          onChange={onHourChange}
-          onBlur={onHourBlur}
-        />
-        <Divider>:</Divider>
-        <StyledInput
-          baseClassName="sinoui-date-time-mobile-view__timeview-minute-input"
-          type="number"
-          placeholder={minute}
-          helperText="分"
-          value={minute}
-          onChange={onMinuteChange}
-          onBlur={onMinuteBlur}
-        />
-      </TimeWrapper>
+      <TimeInput
+        selectedHour={date ? `${date.getHours()}` : ''}
+        selectedMinute={date ? `${date.getMinutes()}` : ''}
+        minHour={minHour}
+        minMinute={minMinute}
+        maxHour={maxHour}
+        maxMinute={maxMinute}
+        onHourChange={setHour}
+        onMinuteChange={setMinute}
+      />
     </>
   );
 

@@ -137,21 +137,23 @@ describe('验收测试', () => {
 
     fireEvent.click(getByText('15:40'));
 
-    const hourInput = container.querySelector(
-      '.sinoui-date-time-mobile-view__timeview-hour-input',
-    );
-    const minuteInput = container.querySelector(
-      '.sinoui-date-time-mobile-view__timeview-minute-input',
-    );
+    const hourInput = container
+      .querySelector('.sinoui-date-time-mobile-view__timeview-hour-input')!
+      .querySelector('input')!;
+    const minuteInput = container
+      .querySelector('.sinoui-date-time-mobile-view__timeview-minute-input')!
+      .querySelector('input')!;
 
     act(() => {
-      fireEvent.change(hourInput!.querySelector('input')!, {
+      fireEvent.change(hourInput, {
         target: { value: '18' },
       });
-      fireEvent.change(minuteInput!.querySelector('input')!, {
+      fireEvent.change(minuteInput, {
         target: { value: '45' },
       });
     });
+    fireEvent.blur(hourInput);
+    fireEvent.blur(minuteInput);
 
     expect(getByText('18:45')).toBeInTheDocument();
   });
@@ -185,6 +187,8 @@ describe('验收测试', () => {
         target: { value: '45' },
       });
     });
+
+    fireEvent.blur(minuteInput!);
 
     expect(getByText('15:45')).toBeInTheDocument();
     act(() => {
@@ -221,6 +225,8 @@ describe('验收测试', () => {
         target: { value: '22' },
       });
     });
+
+    fireEvent.blur(hourInput!);
 
     act(() => {
       fireEvent.change(minuteInput!, {
