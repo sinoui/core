@@ -159,8 +159,10 @@ export default function DateTimeMobileView(props: Props) {
     <>
       <TimeTitle>请输入时间</TimeTitle>
       <TimeInput
-        selectedHour={date ? `${date.getHours()}` : ''}
-        selectedMinute={date ? `${date.getMinutes()}` : ''}
+        selectedHour={date ? `${date.getHours()}` : `${new Date().getHours()}`}
+        selectedMinute={
+          date ? `${date.getMinutes()}` : `${new Date().getMinutes()}`
+        }
         minHour={minHour}
         minMinute={minMinute}
         maxHour={maxHour}

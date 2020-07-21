@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import DateTimePicker from '../DateTimePicker';
 import { MONTH_FULL_TITLES } from '../../DatePicker/constants';
+import formatTime from '../DateTimeMobileModal/formatTime';
 
 afterEach(cleanup);
 
@@ -351,5 +352,27 @@ describe('移动端', () => {
     expect(
       container.querySelector('.sinoui-date-time-mobile-view'),
     ).toBeFalsy();
+  });
+
+  it('时间输入框默认展示当前时间', () => {
+    const now = new Date();
+    const { container, getByText, getByDisplayValue } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <DateTimePicker data-testid="date-time-picker" isPc={false} />
+      </ThemeProvider>,
+    );
+
+    const time = `${formatTime(`${now.getHours()}`)}:${formatTime(
+      `${now.getMinutes()}`,
+    )}`;
+
+    const textInput = container.querySelector('.sinoui-base-input')!;
+    act(() => {
+      fireEvent.click(textInput);
+    });
+    fireEvent.click(getByText(time));
+
+    expect(getByDisplayValue(`${now.getHours()}`)).toBeInTheDocument();
+    expect(getByDisplayValue(`${now.getMinutes()}`)).toBeInTheDocument();
   });
 });

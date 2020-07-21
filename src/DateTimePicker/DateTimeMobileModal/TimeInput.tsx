@@ -113,6 +113,7 @@ export default function TimeInput(props: Props) {
     if (onHourChangeProp) {
       if (isInValidateValue(hour, minHour, maxHour)) {
         onHourChangeProp(defaultHour);
+        setHour(defaultHour);
       } else {
         onHourChangeProp(hour);
       }
@@ -123,6 +124,7 @@ export default function TimeInput(props: Props) {
     if (onMinuteChangeProp) {
       if (isInValidateValue(minute, minMinute, maxMinute)) {
         onMinuteChangeProp(defaultMinute);
+        setMinute(defaultMinute);
       } else {
         onMinuteChangeProp(minute);
       }
