@@ -1,10 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import useEventCallback from '@sinoui/core/utils/useEventCallback';
 import getDatesOfMonth from './getDatesOfMonth';
 import getEmptyDatesOfMonth from './getEmptyDatesOfMonth';
 import DateCell from './DateCell';
+import leadingZero from '../leadingZero';
+import dateCellStyle from './dateCellStyle';
+import { CLASSES } from '../constants';
 
-interface Props {
+export interface Props {
   /**
    * 指定日视图的年份
    */
@@ -38,24 +42,63 @@ interface Props {
    * 日期单元格点击事件的回调函数。
    */
   onDateClick?: (event: React.MouseEvent<HTMLElement>, date: Date) => void;
+  /**
+   * 是否是PC设备
+   */
+  isPc?: boolean;
 }
+
+const mobileStyle = css`
+  -ms-grid-column-span: 4px;
+  grid-column-gap: 4px;
+`;
+
+const pcStyle = css`
+  -ms-grid-column-span: 0px;
+  grid-column-gap: 0px;
+`;
+
+const mobileContentStyle = css`
+  height: 36px;
+  width: 36px;
+
+  .sinoui-date-cell-ripple-layout,
+  .sinoui-date-cell-ripple {
+    height: 36px;
+    width: 36px;
+  }
+`;
+
+const pcContentStyle = css`
+  height: 28px;
+  width: 28px;
+  font-size: 12px;
+  .sinoui-date-cell-ripple-layout,
+  .sinoui-date-cell-ripple {
+    height: 28px;
+    width: 28px;
+  }
+`;
 
 /**
  * 日期视图容器
  */
-const DatesViewWrapper = styled.div`
+const DatesViewWrapper = styled.div<{ $isPc?: boolean }>`
+  ${mobileStyle}
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   -ms-grid-rows: auto auto auto auto auto auto;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, auto);
-  -ms-grid-column-span: 4px;
-  grid-column-gap: 4px;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-    -ms-grid-column-span: 0px;
-    grid-column-gap: 0px;
+
+  ${({ $isPc }) => $isPc && pcStyle}
+  .${CLASSES.dateCellContent}{
+    ${mobileContentStyle}
+    ${({ $isPc }) => $isPc && pcContentStyle}
   }
+  ${dateCellStyle};
+  
 `;
 
 export const getColumn = (index: number) => {
@@ -64,6 +107,7 @@ export const getColumn = (index: number) => {
 };
 
 export const getRow = (index: number) => Math.ceil(index / 7);
+const MemoDateCell = React.memo(DateCell);
 
 /**
  * 一个月的日网格视图
@@ -78,6 +122,7 @@ export default function DatesView(props: Props) {
     outlinedDate,
     showNextMonthDates,
     onDateClick,
+    isPc,
     ...rest
   } = props;
   const dates = getDatesOfMonth(year, month);
@@ -88,45 +133,53 @@ export default function DatesView(props: Props) {
       ? 7 - ((dates + emptyDates) % 7)
       : 0;
 
+  const handleDateCellClick = useEventCallback(
+    (event: React.MouseEvent<HTMLElement>, date: number) => {
+      if (onDateClick) {
+        onDateClick(event, new Date(year, month, date, 0, 0, 0));
+      }
+    },
+  );
+
   for (let i = 0; i < emptyDates; i += 1) {
-    dateCells.push(<DateCell key={i} row={1} column={i + 1} />);
+    dateCells.push(<DateCell key={i} row={1} column={i + 1} isPc={isPc} />);
   }
 
   for (let i = 0; i < dates; i += 1) {
+    const dateStr = `${year}-${leadingZero(month + 1)}-${leadingZero(i + 1)}`;
     dateCells.push(
-      <DateCell
+      <MemoDateCell
         date={i + 1}
-        key={`${year}_${month}_${i + 1}`}
+        key={dateStr}
+        isPc={isPc}
         selected={selectedDates.includes(i + 1)}
         disabled={disabledDates.includes(i + 1)}
         outlined={outlinedDate === i + 1}
         column={getColumn(dateCells.length + 1)}
         row={getRow(dateCells.length + 1)}
-        onClick={
-          onDateClick
-            ? (event) =>
-                onDateClick(event, new Date(year, month, i + 1, 0, 0, 0))
-            : undefined
-        }
-        data-date={`${year}/${month + 1}/${i + 1}`}
+        data-date={dateStr}
+        onClick={handleDateCellClick}
       />,
     );
   }
 
   for (let i = 0; i < nextMonthDates; i += 1) {
+    const dateStr = `${year}-${leadingZero(month + 2)}-${leadingZero(i + 1)}`;
     dateCells.push(
-      <DateCell
+      <MemoDateCell
         date={i + 1}
-        key={`${year}_${month + 1}_${i + 1}`}
+        key={dateStr}
+        isPc={isPc}
         disabled
         column={getColumn(dateCells.length + 1)}
         row={getRow(dateCells.length + 1)}
+        data-date={dateStr}
       />,
     );
   }
 
   return (
-    <DatesViewWrapper className="sinoui-dates-view" {...rest}>
+    <DatesViewWrapper className="sinoui-dates-view" {...rest} $isPc={isPc}>
       {dateCells}
     </DatesViewWrapper>
   );

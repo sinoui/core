@@ -25,7 +25,8 @@
     "image-webpack-loader": "^6.0.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "dayjs": "^1.8.29"
   },
   "browserslist": {
     "production": [

@@ -214,6 +214,10 @@ export interface Props {
    * 是否允许弹层获取焦点。默认为`false`。
    */
   popperFocusable?: boolean;
+  /**
+   * 是否允许删除，默认为true
+   */
+  allowClear?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -341,6 +345,7 @@ export default function AutoComplete(props: Props) {
     placement,
     popperComponentProps,
     popperFocusable,
+    allowClear = true,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -750,6 +755,12 @@ export default function AutoComplete(props: Props) {
     return [];
   }, [freeSolo, getOptionLabel, multiple, value]);
 
+  const isShowClear =
+    allowClear &&
+    (Array.isArray(value) ? value.length > 0 : !!value) &&
+    !disabled &&
+    !readOnly;
+
   const input = renderInput({
     ref: handleTextInputRef,
     value: inputValue,
@@ -771,7 +782,7 @@ export default function AutoComplete(props: Props) {
     },
     endAdornment: (
       <InputAdornment position="end">
-        {!!value && !disabled && !readOnly && (
+        {isShowClear && (
           <ClearButtonWrapper
             onClick={handleClear}
             className="sinoui-focused-visible"

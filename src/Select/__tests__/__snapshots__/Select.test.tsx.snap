@@ -30,7 +30,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   white-space: nowrap;
 }
 
-.c12 {
+.c10 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-weight: 400;
@@ -59,7 +59,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   white-space: nowrap;
 }
 
-.c14 {
+.c12 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-weight: 400;
@@ -209,23 +209,6 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
 }
 
 .c9 {
-  font-size: 20px;
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: color 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  display: inline-block;
-}
-
-.c11 {
   font-size: 24px;
   width: 1em;
   height: 1em;
@@ -242,7 +225,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   display: inline-block;
 }
 
-.c13 {
+.c11 {
   position: relative;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
@@ -251,38 +234,38 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
 }
 
-.c13 > .sinoui-input-adornment--end {
+.c11 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c13 > .sinoui-input-adornment--start {
+.c11 > .sinoui-input-adornment--start {
   margin-right: 0px;
   margin-left: 10px;
 }
 
-.c13 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c11 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -6px;
 }
 
-.c13 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c13 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c11 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c11 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -12px;
 }
 
-.c13 > .sinoui-input-adornment--start,
-.c13 > .sinoui-input-adornment--text {
+.c11 > .sinoui-input-adornment--start,
+.c11 > .sinoui-input-adornment--text {
   -webkit-transform: translateY(7.5px);
   -ms-transform: translateY(7.5px);
   transform: translateY(7.5px);
 }
 
-.c13 > .sinoui-base-input__input {
+.c11 > .sinoui-base-input__input {
   padding: 25.5px 12px 6.5px;
   padding-top: 25.5px;
 }
 
-.c13::before {
+.c11::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
@@ -299,11 +282,11 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transform: scaleX(1) scaleY(1);
 }
 
-.c13:hover::before {
+.c11:hover::before {
   background-color: rgba(0,0,0,0.87);
 }
 
-.c13::after {
+.c11::after {
   background-color: #3f51b5;
   left: 0;
   bottom: 0;
@@ -320,20 +303,20 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transform: scaleX(0) scaleY(0);
 }
 
-.c13::before,
-.c13::after {
+.c11::before,
+.c11::after {
   position: absolute;
   bottom: 0px;
   overflow: hidden;
   font-size: 0px;
 }
 
-.c13:hover::before {
+.c11:hover::before {
   background-color: rgba(0,0,0,0.87);
   height: 1px;
 }
 
-.c13 > .sinoui-input__overlay {
+.c11 > .sinoui-input__overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -347,11 +330,11 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   opacity: 0;
 }
 
-.c13:hover > .sinoui-input__overlay {
+.c11:hover > .sinoui-input__overlay {
   opacity: 0.04;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -367,14 +350,14 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c16 > div {
+.c14 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c16 > .sinoui-notched-outline__leading {
+.c14 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -383,14 +366,14 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   width: 10px;
 }
 
-.c16 > .sinoui-notched-outline__notch {
+.c14 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c16 > .sinoui-notched-outline__trailing {
+.c14 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -398,48 +381,48 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c16.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c16.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c14.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c15 {
+.c13 {
   position: relative;
   border-radius: 4px;
 }
 
-.c15 > .sinoui-notched-outline > div {
+.c13 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c15:hover > .sinoui-notched-outline > div {
+.c13:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c15 > .sinoui-base-input__input {
+.c13 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c15 > .sinoui-input-adornment--start {
+.c13 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c15 > .sinoui-input-adornment--end {
+.c13 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c15 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c13 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c15 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c15 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c13 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c13 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -619,8 +602,12 @@ label ~ .c3 {
   padding: 2px;
   width: auto;
   height: auto;
-  width: 28px;
-  height: 28px;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c8 > .sinoui-icon-button__ripple-layout {
@@ -633,32 +620,6 @@ label ~ .c3 {
 }
 
 .c8 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
-  width: 100%;
-  height: 100%;
-}
-
-.c10 {
-  padding: 2px;
-  width: auto;
-  height: auto;
-  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-.c10 > .sinoui-icon-button__ripple-layout {
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  width: auto;
-  height: auto;
-}
-
-.c10 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
   width: 100%;
   height: 100%;
 }
@@ -728,7 +689,7 @@ label ~ .c3 {
         className="c5 sinoui-input-adornment sinoui-input-adornment--end"
       >
         <button
-          className="c6 sinoui-base-button c7 sinoui-icon-button c8 sinoui-focused-visible"
+          className="c6 sinoui-base-button c7 sinoui-icon-button c8 sinoui-auto-complete__popup-indicator"
           color="textSecondary"
           onClick={[Function]}
           role="button"
@@ -737,26 +698,6 @@ label ~ .c3 {
           <svg
             aria-hidden="true"
             className="c9 sinoui-svg-icon"
-            focusable="false"
-            role="presentation"
-            size={20}
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-            />
-          </svg>
-        </button>
-        <button
-          className="c6 sinoui-base-button c7 sinoui-icon-button c10 sinoui-auto-complete__popup-indicator"
-          color="textSecondary"
-          onClick={[Function]}
-          role="button"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            className="c11 sinoui-svg-icon"
             focusable="false"
             role="presentation"
             size={24}
@@ -772,6 +713,64 @@ label ~ .c3 {
   </div>
   <div
     className="c0 sinoui-select sinoui-select--filled sinoui-auto-complete"
+  >
+    <label
+      className="c10 sinoui-form-label"
+    >
+      Required
+    </label>
+    <div
+      className="c2 sinoui-base-input c11"
+      data-testid="baseInput"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+    >
+      <div
+        aria-disabled="false"
+        aria-haspopup="listbox"
+        className="c4 sinoui-select-input sinoui-base-input__input"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <span>
+          ​
+        </span>
+      </div>
+      <div
+        className="c5 sinoui-input-adornment sinoui-input-adornment--end"
+      >
+        <button
+          className="c6 sinoui-base-button c7 sinoui-icon-button c8 sinoui-auto-complete__popup-indicator"
+          color="textSecondary"
+          onClick={[Function]}
+          role="button"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            className="c9 sinoui-svg-icon"
+            focusable="false"
+            role="presentation"
+            size={24}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="sinoui-input__overlay"
+      />
+    </div>
+  </div>
+  <div
+    className="c0 sinoui-select sinoui-select--outlined sinoui-auto-complete"
   >
     <label
       className="c12 sinoui-form-label"
@@ -803,7 +802,7 @@ label ~ .c3 {
         className="c5 sinoui-input-adornment sinoui-input-adornment--end"
       >
         <button
-          className="c6 sinoui-base-button c7 sinoui-icon-button c10 sinoui-auto-complete__popup-indicator"
+          className="c6 sinoui-base-button c7 sinoui-icon-button c8 sinoui-auto-complete__popup-indicator"
           color="textSecondary"
           onClick={[Function]}
           role="button"
@@ -811,7 +810,7 @@ label ~ .c3 {
         >
           <svg
             aria-hidden="true"
-            className="c11 sinoui-svg-icon"
+            className="c9 sinoui-svg-icon"
             focusable="false"
             role="presentation"
             size={24}
@@ -824,65 +823,7 @@ label ~ .c3 {
         </button>
       </div>
       <div
-        className="sinoui-input__overlay"
-      />
-    </div>
-  </div>
-  <div
-    className="c0 sinoui-select sinoui-select--outlined sinoui-auto-complete"
-  >
-    <label
-      className="c14 sinoui-form-label"
-    >
-      Required
-    </label>
-    <div
-      className="c2 sinoui-base-input c15"
-      data-testid="baseInput"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-    >
-      <div
-        aria-disabled="false"
-        aria-haspopup="listbox"
-        className="c4 sinoui-select-input sinoui-base-input__input"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        role="button"
-        tabIndex={0}
-      >
-        <span>
-          ​
-        </span>
-      </div>
-      <div
-        className="c5 sinoui-input-adornment sinoui-input-adornment--end"
-      >
-        <button
-          className="c6 sinoui-base-button c7 sinoui-icon-button c10 sinoui-auto-complete__popup-indicator"
-          color="textSecondary"
-          onClick={[Function]}
-          role="button"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            className="c11 sinoui-svg-icon"
-            focusable="false"
-            role="presentation"
-            size={24}
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M7 10l5 5 5-5z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        className="c16 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c14 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"

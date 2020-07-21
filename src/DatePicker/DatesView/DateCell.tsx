@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import bemClassNames from '@sinoui/core/utils/bemClassNames';
 import { useRipple } from '@sinoui/ripple';
-import DateCellContent from './DateCellContent';
 import gridCellCss from '../gridCellCss';
+import { CLASSES } from '../constants';
 
 interface Props {
   /**
@@ -36,7 +37,11 @@ interface Props {
   /**
    * 点击事件回调函数
    */
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>, date: number) => void;
+  /**
+   * 是否是PC设备
+   */
+  isPc?: boolean;
 }
 
 /**
@@ -52,9 +57,10 @@ export default function DateCell(props: Props) {
     onClick,
     row,
     column,
+    isPc,
     ...rest
   } = props;
-  const ref = useRipple({
+  const ref = useRipple<HTMLSpanElement>({
     center: true,
     fixSize: true,
     rippleLayoutClassName: 'sinoui-date-cell-ripple-layout',
@@ -67,7 +73,7 @@ export default function DateCell(props: Props) {
       {...rest}
       data-column={column}
       data-row={row}
-      className={bemClassNames('sinoui-date-cell', {
+      className={bemClassNames(CLASSES.dateCell, {
         empty: date == null,
         selected,
         outlined,
@@ -75,21 +81,16 @@ export default function DateCell(props: Props) {
       })}
     >
       {date == null ? null : (
-        <DateCellContent
-          className="sinoui-date-cell-content"
-          forwardedAs="span"
+        <span
+          className={CLASSES.dateCellContent}
           tabIndex={0}
           role="button"
           ref={ref}
-          $clickable={clickable && !disabled}
-          $selected={selected}
-          $outlined={outlined}
           aria-disabled={disabled ? 'true' : undefined}
-          disabled={disabled}
-          onClick={onClick}
+          onClick={(event) => onClick && onClick(event, date)}
         >
           {date}
-        </DateCellContent>
+        </span>
       )}
     </div>
   );

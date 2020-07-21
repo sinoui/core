@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import TextInput from '@sinoui/core/TextInput';
 import type { TextInputProps } from '@sinoui/core/TextInput';
 import DatePickerIcon from '@sinoui/core/svg-icons/DatePickerIcon';
-import mem from '@sinoui/core/utils/mem';
 import styled from 'styled-components';
 import Popper from '@sinoui/core/Popper';
 import Modal from '@sinoui/core/Modal';
@@ -13,6 +12,8 @@ import InputAdornment from '../InputAdornment';
 import useIsPc from './useIsPc';
 import formatDate from './formatDate';
 import type { CalendarViewProps } from './CalendarView';
+import isNaN from '../utils/isNaN';
+import mem from '../utils/mem';
 
 interface Props
   extends Omit<
@@ -91,8 +92,12 @@ const CalendarModalContent = React.forwardRef<
 });
 
 const parseDate = mem((dateStr?: string) =>
-  dateStr ? new Date(Date.parse(dateStr)) : undefined,
+  dateStr && !isNaN(Date.parse(dateStr))
+    ? new Date(Date.parse(dateStr))
+    : undefined,
 );
+
+const isValidateDate = (value?: string) => value && !isNaN(Date.parse(value));
 
 /**
  * 日期选择组件
@@ -114,7 +119,8 @@ export default function DatePicker(props: Props) {
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
   const date = parseDate(value);
-  const inputValue = renderValue ? renderValue(date) : value;
+  const inputValue = isValidateDate(value) ? value : '';
+  const inputRenderValue = renderValue ? renderValue(date) : inputValue;
   const {
     getModalProps,
     getPopperProps,
@@ -123,7 +129,7 @@ export default function DatePicker(props: Props) {
   } = useSelect({
     ...props,
     isRenderWithPopper: isPc,
-    renderValue: inputValue,
+    renderValue: inputRenderValue,
   });
 
   /**
@@ -149,21 +155,27 @@ export default function DatePicker(props: Props) {
       <TextInput
         {...getTextInputProps()}
         baseClassName="sinoui-date-picker"
-        value={value}
+        value={inputValue}
         onClear={handleClear}
         endAdornment={
-          <InputAdornment position="end" disablePointerEvents>
+          <InputAdornment position="end">
             <DatePickerIcon />
           </InputAdornment>
         }
       />
       {isPc ? (
-        <StyledPopper {...getPopperProps()} portal={portal} {...popperProps}>
+        <StyledPopper
+          {...getPopperProps()}
+          portal={portal}
+          {...popperProps}
+          placement="bottom-start"
+        >
           <CalendarView
             value={date}
             onChange={handleCalendarChange}
             minDate={parseDate(min)}
             maxDate={parseDate(max)}
+            isPc={isPc}
           />
         </StyledPopper>
       ) : (
@@ -175,6 +187,7 @@ export default function DatePicker(props: Props) {
             minDate={parseDate(min)}
             maxDate={parseDate(max)}
             title={modalTitle}
+            isPc={isPc}
           />
         </Modal>
       )}

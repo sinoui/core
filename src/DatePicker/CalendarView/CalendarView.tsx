@@ -1,15 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import CalendarViewHeader from './CalendarViewHeader';
 import WeekTitleBar from '../WeekTitleBar';
-import DatesView from '../DatesView';
 import CalendarViewWrapper from './CalendarViewWrapper';
 import YearSelectView from '../YearSelectView';
 import ViewModel from '../ViewModel';
 import useIsPc from '../useIsPc';
 import MonthSelectView from '../MonthSelectView';
-import getDatesOfMonth from '../DatesView/getDatesOfMonth';
 import CalendarViewAction from './CalendarViewAction';
 import CalendarViewToolbar from './CalendarViewToolbar';
+import SimpleMonthDatesView from '../DatesView/SimpleMonthDatesView';
 
 export interface Props {
   className?: string;
@@ -76,48 +75,10 @@ export interface Props {
    * 日历选择标题
    */
   title?: string;
-}
-
-function isSameMonth(
-  date: Date | undefined,
-  year: number,
-  month: number,
-): date is Date {
-  return !!date && date.getFullYear() === year && date.getMonth() === month;
-}
-
-function isGreaterThen(value: Date, year: number, month: number, date: number) {
-  return (
-    new Date(
-      value.getFullYear(),
-      value.getMonth(),
-      value.getDate(),
-      0,
-      0,
-      0,
-    ).getTime() > new Date(year, month, date, 0, 0, 0).getTime()
-  );
-}
-
-function getDisabledDates(
-  year: number,
-  month: number,
-  minDate?: Date,
-  maxDate?: Date,
-) {
-  const dates = getDatesOfMonth(year, month);
-  const disabledDates: number[] = [];
-
-  for (let i = 0; i < dates; i += 1) {
-    if (
-      (minDate && isGreaterThen(minDate, year, month, i + 1)) ||
-      (maxDate && !isGreaterThen(maxDate, year, month, i + 1))
-    ) {
-      disabledDates.push(i + 1);
-    }
-  }
-
-  return disabledDates.length !== 0 ? disabledDates : undefined;
+  /**
+   * 是否是pc形态
+   */
+  isPc?: boolean;
 }
 
 /**
@@ -139,11 +100,13 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     onClear,
     skipMonthsView: skipMonthsViewProp,
     title,
+    isPc: isPcProp,
     ...rest
   },
   ref,
 ) {
-  const isPc = useIsPc();
+  const nativePc = useIsPc();
+  const isPc = isPcProp ?? nativePc;
   const [valueState, setValueState] = useState(value);
   const [[year, month], setYearMonth] = useState(() => {
     return value
@@ -154,13 +117,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
         ];
   });
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
-  const selectedDates = useMemo(() => {
-    return isSameMonth(value, year, month) ? [value.getDate()] : undefined;
-  }, [month, value, year]);
-  const outlinedDate =
-    showToday && isSameMonth(new Date(), year, month)
-      ? new Date().getDate()
-      : undefined;
+
   const skipMonthsView = skipMonthsViewProp ?? !isPc;
 
   if (
@@ -182,16 +139,18 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
 
   const renderDates = () => (
     <>
-      <WeekTitleBar startOfWeek={startOfWeek} />
+      <WeekTitleBar startOfWeek={startOfWeek} isPc={isPc} />
       <div className="sinoui-calendar-view__datesview">
-        <DatesView
+        <SimpleMonthDatesView
           year={year}
           month={month}
+          minDate={minDate}
+          maxDate={maxDate}
+          showToday={showToday}
+          value={value}
+          isPc={isPc}
           showNextMonthDates={isPc}
-          selectedDates={selectedDates}
           onDateClick={handleDateClick}
-          outlinedDate={outlinedDate}
-          disabledDates={getDisabledDates(year, month, minDate, maxDate)}
           startOfWeek={startOfWeek}
         />
       </div>
@@ -210,6 +169,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
       selectedYear={year}
       onYearSelect={handleYearSelect}
       className="sinoui-calendar-view__yearsview"
+      isPc={isPc}
     />
   );
 
@@ -225,6 +185,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
       selectedMonth={month}
       onMonthSelect={handleMonthSelect}
       className="sinoui-calendar-view__monthsview"
+      isPc={isPc}
     />
   );
 
@@ -234,7 +195,12 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
   ]);
 
   return (
-    <CalendarViewWrapper {...rest} className="sinoui-calendar-view" ref={ref}>
+    <CalendarViewWrapper
+      {...rest}
+      className="sinoui-calendar-view"
+      ref={ref}
+      $isPc={isPc}
+    >
       {!isPc && (
         <CalendarViewToolbar
           title={title || '设置日期'}
