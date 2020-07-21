@@ -37,6 +37,8 @@ const MobileTimePickerHeaderWrapper = styled.div`
   width: 100%;
   padding-left: 50px;
   box-sizing: border-box;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   overflow: hidden;
   background-color: ${(props) => props.theme.palette.primary.main};
 
@@ -44,8 +46,21 @@ const MobileTimePickerHeaderWrapper = styled.div`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    & div:first-child::after {
+    position: relative;
+    ${(props) => props.theme.typography.h3};
+    color: rgba(255, 255, 255, 0.54);
+
+    & > div:first-child {
+      margin-right: 8px;
+    }
+
+    & > div:last-child {
+      margin-left: 8px;
+    }
+
+    ::after {
       content: ':';
+      position: absolute;
     }
   }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useRipple } from '@sinoui/ripple';
 
 interface Props {
   children: React.ReactNode;
@@ -17,8 +18,9 @@ const AmPmViewWrapper = styled.div<{ selected?: boolean }>`
 `;
 
 export default function AmPmView({ children, selected, onChange }: Props) {
+  const rippleRef = useRipple<HTMLDivElement>();
   return (
-    <AmPmViewWrapper selected={selected} onClick={onChange}>
+    <AmPmViewWrapper selected={selected} onClick={onChange} ref={rippleRef}>
       {children}
     </AmPmViewWrapper>
   );
