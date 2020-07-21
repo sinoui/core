@@ -20,7 +20,7 @@ interface Props {
   /**
    * 值变更时的回调函数
    */
-  onChange?: (hour: number, minute: number) => void;
+  onChange?: (hour?: number, minute?: number) => void;
 }
 
 const Wrapper = styled.div`
@@ -66,6 +66,9 @@ const MobileTimePickerView = React.forwardRef<HTMLDivElement, Props>(
     // 当前设置为时钟 还是分钟
     const [isHourView, onChangeHourOrMinuteView] = useState(true);
 
+    /**
+     * 设置时间
+     */
     const onOK = () => {
       const hourValue = getHourByRotateDeg(hourRotateDeg);
       const minuteValue = getMinuteByRotateDeg(minuteRotateDeg);
@@ -74,8 +77,18 @@ const MobileTimePickerView = React.forwardRef<HTMLDivElement, Props>(
           get24HourByIsAm(hourValue, isAm),
           minuteValue === 60 ? 0 : minuteValue,
         );
-        onRequestClose();
       }
+      onRequestClose();
+    };
+
+    /**
+     * 清除时间
+     */
+    const onClear = () => {
+      if (onChange) {
+        onChange();
+      }
+      onRequestClose();
     };
 
     return (
@@ -100,6 +113,7 @@ const MobileTimePickerView = React.forwardRef<HTMLDivElement, Props>(
             />
           </div>
           <div className="sinoui-time-picker-mobile-view__footer">
+            <Button onClick={onClear}>清除</Button>
             <Button onClick={onRequestClose}>取消</Button>
             <Button onClick={onOK}>确定</Button>
           </div>

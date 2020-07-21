@@ -156,6 +156,22 @@ export default function TimePicker(props: Props) {
     }
   };
 
+  /**
+   * 处理时分选择变更事件
+   *
+   * @param newHour 新的小时数
+   * @param newMinute 新的分钟数
+   */
+  const handleHourMinuteChange = (newHour?: number, newMinute?: number) => {
+    if (onChange) {
+      if (newHour !== undefined && newMinute !== undefined) {
+        onChange(formatTime(newHour, newMinute));
+      } else {
+        onChange('');
+      }
+    }
+  };
+
   return (
     <>
       <TextInput
@@ -210,7 +226,7 @@ export default function TimePicker(props: Props) {
           open={open}
           value={value}
           onRequestClose={() => setOpen(false)}
-          onChange={handleTimeSelectChange}
+          onChange={handleHourMinuteChange}
         />
       )}
     </>
