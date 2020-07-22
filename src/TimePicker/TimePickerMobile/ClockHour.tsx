@@ -1,15 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { CLOCK_NUMBER_PADDING, CLOCK_PIN_SIZE, CLOCK_SIZE } from './constants';
+import { CLOCK_NUMBER_PADDING, CLOCK_SIZE } from './constants';
 
 const selectedCss = css`
   background-color: ${({ theme }) => theme.palette.primary.main};
   color: #fff;
-  z-index: 100;
-`;
-
-const minuteDotdCss = css`
-  background-color: #fff;
   z-index: 100;
 `;
 
@@ -30,28 +25,17 @@ const Wrapper = styled.div<{
   z-index: 101;
   ${(props) => props.theme.typography.body1};
   color: ${(props) => props.theme.palette.text.primary};
-  transform: ${({ $number }) => `rotate(${6 * $number - 90}deg) translateX(${
+  transform: ${({ $number }) => `rotate(${30 * $number - 90}deg) translateX(${
     (CLOCK_SIZE - 32) / 2 - CLOCK_NUMBER_PADDING
   }px)
-    rotate(${90 - 6 * $number}deg)`};
+    rotate(${90 - 30 * $number}deg)`};
   ${(props) => props.$selected && selectedCss};
 `;
 
-const MinuteDot = styled.div<{
-  $selected?: boolean;
-}>`
-  width: ${CLOCK_PIN_SIZE}px;
-  height: ${CLOCK_PIN_SIZE}px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: transparent;
-  ${(props) => props.$selected && minuteDotdCss};
-`;
-
 /**
- * 表盘上的 分钟
+ * 表盘上的 小时
  */
-export default function ClockMinute({
+export default function ClockHour({
   number,
   selectedValue,
 }: {
@@ -62,13 +46,9 @@ export default function ClockMinute({
     <Wrapper
       $number={number}
       $selected={selectedValue === number}
-      data-minute-value={number}
+      data-hour-value={number}
     >
-      {number % 5 === 0 ? (
-        number
-      ) : (
-        <MinuteDot $selected={selectedValue === number} />
-      )}
+      {number}
     </Wrapper>
   );
 }

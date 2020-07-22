@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from '@sinoui/core/Modal';
 import type { ModalProps } from '@sinoui/core/Modal';
 import Fade from '@sinoui/core/Fade';
-import MobileTimePickerView from './MobileTimePickerView';
+import TimePickerMobileView from './TimePickerMobileView';
 
 interface Props extends Omit<ModalProps, 'children'> {
   value?: string;
@@ -25,7 +25,7 @@ export default function DateRangeMobileModal(props: Props) {
   return (
     <Modal open={open} backdrop={false} autoFocus={false} enforceFocus={false}>
       <Fade in={open}>
-        <MobileTimePickerView
+        <TimePickerMobileView
           value={value}
           onRequestClose={onRequestClose}
           onChange={onChange}

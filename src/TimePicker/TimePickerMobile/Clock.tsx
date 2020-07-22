@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import ClockWrapper from './ClockWrapper';
-import ClockNumber from './ClockNumber';
+import styled from 'styled-components';
+import ClockHour from './ClockHour';
 import ClockMinute from './ClockMinute';
 import ClockPin from './ClockPin';
 import ClockPointer from './ClockPointer';
@@ -11,6 +11,13 @@ import {
   getMinuteByRotateDeg,
 } from './utils';
 
+const ClockWrapper = styled.div`
+  position: relative;
+  width: ${CLOCK_SIZE}px;
+  height: ${CLOCK_SIZE}px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.07);
+`;
 interface Props {
   /**
    * 当前设置是否为小时
@@ -171,7 +178,7 @@ export default function Clock({
     >
       {isHourView
         ? hours.map((item) => (
-            <ClockNumber
+            <ClockHour
               key={item}
               number={item}
               selectedValue={getHourByRotateDeg(rotateDeg)}
