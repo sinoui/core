@@ -4,6 +4,7 @@ import Clock from './Clock';
 import TimePickerMobileHeader from './TimePickerMobileHeader';
 import TimePickerMobileViewIcon from './TimePickerMobileViewIcon';
 import TimePickerMobileButtons from './TimePickerMobileButtons';
+import TimeInputView from './TimeInputView';
 import {
   getRotateDegByTimeValue,
   getHourByRotateDeg,
@@ -41,6 +42,10 @@ const MobileTimePickerViewBody = styled.div`
   border-radius: 4px;
 
   & .sinoui-time-picker-mobile-view__main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 16px 0;
   }
 
@@ -116,7 +121,7 @@ const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
                 onChangeMinuteRotateDeg={setMinuteRotateDeg}
               />
             ) : (
-              <div>keyboard</div>
+              <TimeInputView />
             )}
           </div>
           <div className="sinoui-time-picker-mobile-view__footer">
