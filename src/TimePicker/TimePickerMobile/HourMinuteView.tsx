@@ -18,7 +18,8 @@ interface Props {
 const HourMinuteWrapper = styled.div<{ selected?: boolean }>`
   cursor: pointer;
   border-radius: 4px;
-  ${(props) => props.selected && `color: #fff`};
+  opacity: 0.7;
+  ${(props) => props.selected && `opacity: 1`};
 `;
 
 export default function HourMinuteView({ value, selected, onChange }: Props) {

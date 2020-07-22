@@ -406,7 +406,7 @@ describe('移动端视图测试', () => {
       document.querySelector(
         '.sinoui-time-picker-mobile-view__header-hour-minute > div:first-child',
       ),
-    ).toHaveStyle('color:#fff');
+    ).toHaveStyle('opacity:1');
   });
 
   it('显示为分钟表盘时，弹窗头部的分钟高亮显示', () => {
@@ -428,7 +428,7 @@ describe('移动端视图测试', () => {
       document.querySelector(
         '.sinoui-time-picker-mobile-view__header-hour-minute > div:last-child',
       ),
-    ).toHaveStyle('color:#fff');
+    ).toHaveStyle('opacity:1');
   });
 
   it('点击弹窗头部的分钟视图，分钟高亮显示', () => {
@@ -445,7 +445,7 @@ describe('移动端视图测试', () => {
       '.sinoui-time-picker-mobile-view__header-hour-minute > div:last-child',
     ) as Element;
     fireEvent.click(minuteView);
-    expect(minuteView).toHaveStyle('color:#fff');
+    expect(minuteView).toHaveStyle('opacity:1');
   });
 
   it('00:00时,上午高亮显示', () => {
@@ -461,7 +461,7 @@ describe('移动端视图测试', () => {
     const amView = document.querySelector(
       '.sinoui-time-picker-mobile-view__header-am-pm > div:first-child',
     ) as Element;
-    expect(amView).toHaveStyle('color:#fff');
+    expect(amView).toHaveStyle('opacity:1');
   });
 
   it('12:00时,下午高亮显示', () => {
@@ -477,7 +477,7 @@ describe('移动端视图测试', () => {
     const pmView = document.querySelector(
       '.sinoui-time-picker-mobile-view__header-am-pm > div:last-child',
     ) as Element;
-    expect(pmView).toHaveStyle('color:#fff');
+    expect(pmView).toHaveStyle('opacity:1');
   });
 
   it('点击上午,上午高亮显示', () => {
@@ -494,7 +494,7 @@ describe('移动端视图测试', () => {
       '.sinoui-time-picker-mobile-view__header-am-pm > div:first-child',
     ) as Element;
     fireEvent.click(amView);
-    expect(amView).toHaveStyle('color:#fff');
+    expect(amView).toHaveStyle('opacity:1');
   });
 
   it('点击下午,下午高亮显示', () => {
@@ -511,6 +511,6 @@ describe('移动端视图测试', () => {
       '.sinoui-time-picker-mobile-view__header-am-pm > div:last-child',
     ) as Element;
     fireEvent.click(pmView);
-    expect(pmView).toHaveStyle('color:#fff');
+    expect(pmView).toHaveStyle('opacity:1');
   });
 });

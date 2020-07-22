@@ -4,12 +4,12 @@ import { CLOCK_NUMBER_PADDING, CLOCK_PIN_SIZE, CLOCK_SIZE } from './constants';
 
 const selectedCss = css`
   background-color: ${({ theme }) => theme.palette.primary.main};
-  color: #fff;
+  color: ${({ theme }) => theme.palette.primary.contrastText};
   z-index: 100;
 `;
 
 const minuteDotdCss = css`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.palette.primary.contrastText};
   z-index: 100;
 `;
 

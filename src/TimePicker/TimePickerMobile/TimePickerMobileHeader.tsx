@@ -52,7 +52,7 @@ const TimePickerMobileHeaderWrapper = styled.div`
     align-items: center;
     position: relative;
     ${(props) => props.theme.typography.h3};
-    color: rgba(255, 255, 255, 0.54);
+    color: ${(props) => props.theme.palette.primary.contrastText};
 
     & > div:first-child {
       margin-right: 8px;
@@ -65,6 +65,7 @@ const TimePickerMobileHeaderWrapper = styled.div`
     ::after {
       content: ':';
       position: absolute;
+      opacity: 0.7;
     }
   }
 

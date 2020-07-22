@@ -12,9 +12,10 @@ interface Props {
 }
 
 const AmPmViewWrapper = styled.div<{ selected?: boolean }>`
-  color: rgba(255, 255, 255, 0.54);
+  color: ${(props) => props.theme.palette.primary.contrastText};
+  opacity: 0.7;
   cursor: pointer;
-  ${(props) => props.selected && `color: #fff`};
+  ${(props) => props.selected && `opacity: 1`};
 `;
 
 export default function AmPmView({ children, selected, onChange }: Props) {
