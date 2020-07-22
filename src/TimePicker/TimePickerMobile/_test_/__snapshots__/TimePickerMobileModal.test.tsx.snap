@@ -14,7 +14,7 @@ exports[`快照测试 Clock 1`] = `
       className="sc-fzqBZW louHDQ"
     >
       <div
-        className="sc-fzoLsD dOERrl"
+        className="sc-fzoLsD gnjWqx"
       >
         <div
           className="sinoui-time-picker-mobile-view__header-am-pm"
@@ -42,14 +42,14 @@ exports[`快照测试 Clock 1`] = `
             onClick={[Function]}
             selected={true}
           >
-            03
+            07
           </div>
           <div
             className="sc-AxmLO iEGmhh"
             onClick={[Function]}
             selected={false}
           >
-            22
+            21
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ exports[`快照测试 Clock 1`] = `
         className="sinoui-time-picker-mobile-view__main"
       >
         <div
-          className="sc-AxiKw hhgPIO sinoui-time-picker-mobile-view__clock"
+          className="sc-Axmtr jWAqTA sinoui-time-picker-mobile-view__clock"
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
@@ -66,82 +66,82 @@ exports[`快照测试 Clock 1`] = `
           onTouchStart={[Function]}
         >
           <div
-            className="sc-AxhCb gFDcsu"
+            className="sc-AxiKw bGcKRe"
             data-hour-value={1}
           >
             1
           </div>
           <div
-            className="sc-AxhCb ezyYmm"
+            className="sc-AxiKw jdCtvm"
             data-hour-value={2}
           >
             2
           </div>
           <div
-            className="sc-AxhCb GdHRF"
+            className="sc-AxiKw fFjsRr"
             data-hour-value={3}
           >
             3
           </div>
           <div
-            className="sc-AxhCb eHHrWm"
+            className="sc-AxiKw cyPQaG"
             data-hour-value={4}
           >
             4
           </div>
           <div
-            className="sc-AxhCb eCgFqm"
+            className="sc-AxiKw irRXFe"
             data-hour-value={5}
           >
             5
           </div>
           <div
-            className="sc-AxhCb edvgHi"
+            className="sc-AxiKw gZIlIO"
             data-hour-value={6}
           >
             6
           </div>
           <div
-            className="sc-AxhCb jjeDKC"
+            className="sc-AxiKw jbizYI"
             data-hour-value={7}
           >
             7
           </div>
           <div
-            className="sc-AxhCb dYvLha"
+            className="sc-AxiKw bWpci"
             data-hour-value={8}
           >
             8
           </div>
           <div
-            className="sc-AxhCb bLvYMK"
+            className="sc-AxiKw koWTAi"
             data-hour-value={9}
           >
             9
           </div>
           <div
-            className="sc-AxhCb hdojLO"
+            className="sc-AxiKw DVWMO"
             data-hour-value={10}
           >
             10
           </div>
           <div
-            className="sc-AxhCb hjcswK"
+            className="sc-AxiKw dmCWrS"
             data-hour-value={11}
           >
             11
           </div>
           <div
-            className="sc-AxhCb gIUEta"
+            className="sc-AxiKw cMvioi"
             data-hour-value={12}
           >
             12
           </div>
           <div
-            className="sc-AxheI fyItLT"
+            className="sc-AxgMl fgPYHp"
           />
           <div
-            className="sc-Axmtr gRAZfb"
+            className="sc-AxheI iOHOqG"
           >
             <div
               className="sinoui-clock__pointer"
@@ -200,7 +200,7 @@ exports[`快照测试 Clock 1`] = `
             role="button"
             type="button"
           >
-            确定
+            设置
           </button>
         </div>
       </div>

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 Clock 1`] = `
+<div
+  className="sc-AxiKw gQIQwB"
+>
+  <div
+    className="sinoui-time-picker-mobile-view__header-title"
+  >
+    设置时间
+  </div>
+</div>
+`;

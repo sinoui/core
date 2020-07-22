@@ -2,7 +2,7 @@
 
 exports[`快照测试 Clock 1`] = `
 <div
-  className="sc-AxjAm fzMxrV sinoui-time-picker-mobile-view__clock"
+  className="sc-AxgMl eXDohh sinoui-time-picker-mobile-view__clock"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
   onMouseUp={[Function]}
@@ -11,82 +11,82 @@ exports[`快照测试 Clock 1`] = `
   onTouchStart={[Function]}
 >
   <div
-    className="sc-AxirZ kWSfom"
+    className="sc-AxjAm hbxUwB"
     data-hour-value={1}
   >
     1
   </div>
   <div
-    className="sc-AxirZ fUuFiK"
+    className="sc-AxjAm cNPZdN"
     data-hour-value={2}
   >
     2
   </div>
   <div
-    className="sc-AxirZ bkAGRh"
+    className="sc-AxjAm bBBpi"
     data-hour-value={3}
   >
     3
   </div>
   <div
-    className="sc-AxirZ gbyAIS"
+    className="sc-AxjAm hyoxzV"
     data-hour-value={4}
   >
     4
   </div>
   <div
-    className="sc-AxirZ gTcpKu"
+    className="sc-AxjAm dzBrJN"
     data-hour-value={5}
   >
     5
   </div>
   <div
-    className="sc-AxirZ lbwMhO"
+    className="sc-AxjAm hePAud"
     data-hour-value={6}
   >
     6
   </div>
   <div
-    className="sc-AxirZ fiTzPW"
+    className="sc-AxjAm ijWjtN"
     data-hour-value={7}
   >
     7
   </div>
   <div
-    className="sc-AxirZ eqIjhy"
+    className="sc-AxjAm buVbtN"
     data-hour-value={8}
   >
     8
   </div>
   <div
-    className="sc-AxirZ dBHhEm"
+    className="sc-AxjAm gFXBut"
     data-hour-value={9}
   >
     9
   </div>
   <div
-    className="sc-AxirZ gbvvnG"
+    className="sc-AxjAm jZbhFx"
     data-hour-value={10}
   >
     10
   </div>
   <div
-    className="sc-AxirZ bwDVQC"
+    className="sc-AxjAm eXDoUB"
     data-hour-value={11}
   >
     11
   </div>
   <div
-    className="sc-AxirZ RcwIm"
+    className="sc-AxjAm fxLcYl"
     data-hour-value={12}
   >
     12
   </div>
   <div
-    className="sc-AxhUy ezza-df"
+    className="sc-AxhCb cATsou"
   />
   <div
-    className="sc-AxgMl jtwisq"
+    className="sc-AxhUy dLpdRo"
   >
     <div
       className="sinoui-clock__pointer"
