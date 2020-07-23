@@ -81,73 +81,73 @@ exports[`快照测试 Clock 1`] = `
         onTouchStart={[Function]}
       >
         <div
-          className="sc-AxhCb eMQjtn"
+          className="sc-AxhCb ZdwHg"
           data-hour-value={1}
         >
           1
         </div>
         <div
-          className="sc-AxhCb dLTXpD"
+          className="sc-AxhCb hiYmXM"
           data-hour-value={2}
         >
           2
         </div>
         <div
-          className="sc-AxhCb hdozlO"
+          className="sc-AxhCb MvbBR"
           data-hour-value={3}
         >
           3
         </div>
         <div
-          className="sc-AxhCb jqNmtD"
+          className="sc-AxhCb cWwUXg"
           data-hour-value={4}
         >
           4
         </div>
         <div
-          className="sc-AxhCb kHmfBn"
+          className="sc-AxhCb hoFVYI"
           data-hour-value={5}
         >
           5
         </div>
         <div
-          className="sc-AxhCb iLIoCP"
+          className="sc-AxhCb bTbvLg"
           data-hour-value={6}
         >
           6
         </div>
         <div
-          className="sc-AxhCb dpScSt"
+          className="sc-AxhCb igcnPS"
           data-hour-value={7}
         >
           7
         </div>
         <div
-          className="sc-AxhCb dNXurL"
+          className="sc-AxhCb fYueDw"
           data-hour-value={8}
         >
           8
         </div>
         <div
-          className="sc-AxhCb eukcHf"
+          className="sc-AxhCb iBLsNU"
           data-hour-value={9}
         >
           9
         </div>
         <div
-          className="sc-AxhCb jgtMxn"
+          className="sc-AxhCb gIRZak"
           data-hour-value={10}
         >
           10
         </div>
         <div
-          className="sc-AxhCb bLODSz"
+          className="sc-AxhCb kjXRNE"
           data-hour-value={11}
         >
           11
         </div>
         <div
-          className="sc-AxhCb bqMJLL"
+          className="sc-AxhCb ekcVhE"
           data-hour-value={12}
         >
           12

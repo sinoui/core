@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { CLOCK_NUMBER_PADDING, CLOCK_SIZE } from './constants';
 
 const selectedCss = css`
-  background-color: ${({ theme }) => theme.palette.primary.main};
   color: ${({ theme }) => theme.palette.primary.contrastText};
   z-index: 100;
 `;
@@ -25,7 +24,7 @@ const Wrapper = styled.div<{
   z-index: 101;
   ${(props) => props.theme.typography.body1};
   color: ${(props) => props.theme.palette.text.primary};
-  transition: ${({ theme }) => theme.transitions.create('background-color')};
+  transition: ${({ theme }) => theme.transitions.create('color')};
   transform: ${({ $number }) => `rotate(${30 * $number - 90}deg) translateX(${
     (CLOCK_SIZE - 32) / 2 - CLOCK_NUMBER_PADDING
   }px)
