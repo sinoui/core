@@ -60,7 +60,8 @@ export default function Clock({
   const isMoveStart = useRef(false);
   // 停止移动指针
   const isMoveEnd = useRef(false);
-
+  // 是否已经触发touch事件监听
+  const isTouchedEvent = useRef(false);
   const rotateDeg = isHourView ? hourRotateDeg : minuteRotateDeg;
   /**
    * 获取基于12点基线的旋转角度
@@ -93,14 +94,18 @@ export default function Clock({
   const onTouchStart = () => {
     isMoveStart.current = true;
     isMoveEnd.current = false;
+    isTouchedEvent.current = true;
   };
 
   /**
    * PC端事件
    */
   const onMouseDown = () => {
-    isMoveStart.current = true;
-    isMoveEnd.current = false;
+    // 已经触发touch事件 就不再触发mouse事件处理函数
+    if (!isTouchedEvent.current) {
+      isMoveStart.current = true;
+      isMoveEnd.current = false;
+    }
   };
 
   /**
@@ -114,6 +119,7 @@ export default function Clock({
         if (isHourView) {
           onChangeHourRotateDeg(currentRotateDeg);
         } else {
+          // value 为空时取当前时间的分钟对应的旋转角度
           onChangeMinuteRotateDeg(currentRotateDeg);
         }
       }

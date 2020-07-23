@@ -8,7 +8,15 @@ exports[`快照测试 Clock 1`] = `
   onKeyDown={[Function]}
 >
   <div
+    aria-modal="true"
     className="sc-fzoyAV bofTFo sinoui-time-picker-mobile-view"
+    style={
+      Object {
+        "opacity": 1,
+        "visibility": undefined,
+      }
+    }
+    tabIndex={-1}
   >
     <div
       className="sc-fzoLag dNktjs"
