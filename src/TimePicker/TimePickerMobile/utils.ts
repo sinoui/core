@@ -61,7 +61,7 @@ export function getMinuteByRotateDeg(deg: number) {
  * @param hour
  * @param isAM
  */
-export function get24HourByIsAm(hour: number, isAM: boolean) {
+export function get24HourByIsAm(hour: number, isAM: boolean): number {
   if (isAM) {
     return hour === 12 ? 0 : hour;
   }

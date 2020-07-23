@@ -5,6 +5,7 @@ import TimePickerMobileHeader from './TimePickerMobileHeader';
 import TimePickerMobileViewIcon from './TimePickerMobileViewIcon';
 import TimePickerMobileButtons from './TimePickerMobileButtons';
 import TimeInputView from './TimeInputView';
+import formatTime from '../formatTime';
 import {
   getRotateDegByTimeValue,
   getHourByRotateDeg,
@@ -22,7 +23,7 @@ interface Props {
   /**
    * 值变更时的回调函数
    */
-  onChange?: (hour?: number, minute?: number) => void;
+  onChange?: (value?: string) => void;
   /**
    * 自定义样式
    */
@@ -85,8 +86,10 @@ const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
       const minuteValue = getMinuteByRotateDeg(minuteRotateDeg);
       if (onChange) {
         onChange(
-          get24HourByIsAm(hourValue, isAm),
-          minuteValue === 60 ? 0 : minuteValue,
+          formatTime(
+            get24HourByIsAm(hourValue, isAm),
+            minuteValue === 60 ? 0 : minuteValue,
+          ),
         );
       }
       onRequestClose();

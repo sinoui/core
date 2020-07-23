@@ -13,7 +13,7 @@ interface Props extends Omit<ModalProps, 'children'> {
   /**
    * 值变更时的回调函数
    */
-  onChange?: (hour?: number, minute?: number) => void;
+  onChange?: (value?: string) => void;
 }
 
 /**
