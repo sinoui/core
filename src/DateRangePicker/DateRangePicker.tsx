@@ -98,7 +98,7 @@ const DateRangePickerLayout = styled.div<{
   display: flex;
   align-items: center;
   min-width: ${({ $variant }) =>
-    $variant === 'outlined' || $variant === 'filled' ? 312 : 272}px;
+    $variant === 'outlined' || $variant === 'filled' ? 320 : 280}px;
 `;
 
 const StyledTextInput = styled(TextInput)`

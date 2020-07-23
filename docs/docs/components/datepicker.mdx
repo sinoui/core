@@ -60,7 +60,7 @@ export default function DatePickerDemo() {
 
 ### 自定义值的渲染
 
-DatePicker 组件默认直接显示 value 的值。如果我们想要调整其显示方式，可以使用`renderValue`属性来自定义渲染方式，如`2020-01-01`:
+DatePicker 组件默认直接显示 value 的值。如果我们想要调整其显示方式，可以使用`renderValue`属性来自定义渲染方式，如`2020/01/01`:
 
 ```tsx
 import dayjs from 'dayjs';
@@ -72,7 +72,7 @@ function DatePickerDemo(props: any) {
       value={value}
       onChange={setValue}
       renderValue={(_value) =>
-        _value ? dayjs(_value).format('YYYY-MM-DD') : ''
+        _value ? dayjs(_value).format('YYYY/MM/DD') : ''
       }
     />
   );
@@ -80,7 +80,7 @@ function DatePickerDemo(props: any) {
 ```
 
 <DatePickerDemo
-  renderValue={(_value) => (_value ? dayjs(_value).format('YYYY-MM-DD') : '')}
+  renderValue={(_value) => (_value ? dayjs(_value).format('YYYY/MM/DD') : '')}
 />
 
 ## 日期区间选择
