@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { formatHourMinute } from './utils';
 import { CLOCK_NUMBER_PADDING, CLOCK_PIN_SIZE, CLOCK_SIZE } from './constants';
 
 const selectedCss = css`
@@ -58,6 +59,7 @@ export default function ClockMinute({
   number: number;
   selectedValue: number;
 }) {
+  const showedMinute = number === 60 ? `00` : formatHourMinute(number);
   return (
     <Wrapper
       $number={number}
@@ -65,7 +67,7 @@ export default function ClockMinute({
       data-minute-value={number}
     >
       {number % 5 === 0 ? (
-        number
+        showedMinute
       ) : (
         <MinuteDot $selected={selectedValue === number} />
       )}

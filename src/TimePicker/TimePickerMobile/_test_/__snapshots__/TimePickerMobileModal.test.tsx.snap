@@ -8,8 +8,20 @@ exports[`快照测试 Clock 1`] = `
   onKeyDown={[Function]}
 >
   <div
+    aria-hidden="true"
+    className="sc-AxirZ dXSBgW"
+    data-testid="sinoui-modal-backdrop"
+    onClick={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+        "visibility": undefined,
+      }
+    }
+  />
+  <div
     aria-modal="true"
-    className="sc-fzoyAV bofTFo sinoui-time-picker-mobile-view"
+    className="sc-fzoLag hDIiWQ sinoui-time-picker-mobile-view"
     style={
       Object {
         "opacity": 1,
@@ -19,23 +31,23 @@ exports[`快照测试 Clock 1`] = `
     tabIndex={-1}
   >
     <div
-      className="sc-fzoLag dNktjs"
+      className="sc-AxiKw sc-fzoXzr fPejaJ sinoui-paper"
     >
       <div
-        className="sc-fzoLsD jWDFl"
+        className="sc-fzpans klkfUx"
       >
         <div
           className="sinoui-time-picker-mobile-view__header-am-pm"
         >
           <div
-            className="sc-fzozJi hqgZCV"
+            className="sc-fzoLsD fqMwRd"
             onClick={[Function]}
             selected={false}
           >
             上午
           </div>
           <div
-            className="sc-fzozJi hvCkKT"
+            className="sc-fzoLsD hFTGUV"
             onClick={[Function]}
             selected={true}
           >
@@ -46,14 +58,14 @@ exports[`快照测试 Clock 1`] = `
           className="sinoui-time-picker-mobile-view__header-hour-minute"
         >
           <div
-            className="sc-AxmLO jAoLSA"
+            className="sc-fzozJi lmwLUx"
             onClick={[Function]}
             selected={true}
           >
             07
           </div>
           <div
-            className="sc-AxmLO ipiWRm"
+            className="sc-fzozJi bGzbax"
             onClick={[Function]}
             selected={false}
           >
@@ -65,7 +77,7 @@ exports[`快照测试 Clock 1`] = `
         className="sinoui-time-picker-mobile-view__main"
       >
         <div
-          className="sc-Axmtr jWAqTA sinoui-time-picker-mobile-view__clock"
+          className="sc-AxmLO jwvxqR sinoui-time-picker-mobile-view__clock"
           onMouseDown={[Function]}
           onMouseMove={[Function]}
           onMouseUp={[Function]}
@@ -74,82 +86,82 @@ exports[`快照测试 Clock 1`] = `
           onTouchStart={[Function]}
         >
           <div
-            className="sc-AxiKw bGcKRe"
+            className="sc-AxhCb gFDcsu"
             data-hour-value={1}
           >
             1
           </div>
           <div
-            className="sc-AxiKw jdCtvm"
+            className="sc-AxhCb ezyYmm"
             data-hour-value={2}
           >
             2
           </div>
           <div
-            className="sc-AxiKw fFjsRr"
+            className="sc-AxhCb kYSogz"
             data-hour-value={3}
           >
             3
           </div>
           <div
-            className="sc-AxiKw cyPQaG"
+            className="sc-AxhCb eHHrWm"
             data-hour-value={4}
           >
             4
           </div>
           <div
-            className="sc-AxiKw irRXFe"
+            className="sc-AxhCb eCgFqm"
             data-hour-value={5}
           >
             5
           </div>
           <div
-            className="sc-AxiKw gZIlIO"
+            className="sc-AxhCb edvgHi"
             data-hour-value={6}
           >
             6
           </div>
           <div
-            className="sc-AxiKw jbizYI"
+            className="sc-AxhCb cfYIGM"
             data-hour-value={7}
           >
             7
           </div>
           <div
-            className="sc-AxiKw bWpci"
+            className="sc-AxhCb dYvLha"
             data-hour-value={8}
           >
             8
           </div>
           <div
-            className="sc-AxiKw koWTAi"
+            className="sc-AxhCb bLvYMK"
             data-hour-value={9}
           >
             9
           </div>
           <div
-            className="sc-AxiKw DVWMO"
+            className="sc-AxhCb hdojLO"
             data-hour-value={10}
           >
             10
           </div>
           <div
-            className="sc-AxiKw dmCWrS"
+            className="sc-AxhCb hjcswK"
             data-hour-value={11}
           >
             11
           </div>
           <div
-            className="sc-AxiKw cMvioi"
+            className="sc-AxhCb gIUEta"
             data-hour-value={12}
           >
             12
           </div>
           <div
-            className="sc-AxgMl fgPYHp"
+            className="sc-AxheI fyItLT"
           />
           <div
-            className="sc-AxheI iOHOqG"
+            className="sc-Axmtr chOMRZ"
           >
             <div
               className="sinoui-clock__pointer"
@@ -161,7 +173,7 @@ exports[`快照测试 Clock 1`] = `
         className="sinoui-time-picker-mobile-view__footer"
       >
         <button
-          className="sc-fzpans kpVCAw sinoui-base-button sc-fzplWN dgekpj sinoui-icon-button sinoui-icon-button--dense"
+          className="sc-fzplWN eHFlkF sinoui-base-button sc-fznyAO blWhzL sinoui-icon-button sinoui-icon-button--dense"
           color="primary"
           onClick={[Function]}
           role="button"
@@ -169,7 +181,7 @@ exports[`快照测试 Clock 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="sc-fznyAO epGQhi sinoui-svg-icon"
+            className="sc-fznKkj bInCdn sinoui-svg-icon"
             data-testid="KeyboardIcon"
             focusable="false"
             role="presentation"
@@ -182,10 +194,10 @@ exports[`快照测试 Clock 1`] = `
           </svg>
         </button>
         <div
-          className="sc-fznZeY fezGAH"
+          className="sc-fzokOt dteSzk"
         >
           <button
-            className="sc-fzpans kpVCAw sinoui-base-button sc-fznKkj gpIgBD sinoui-button"
+            className="sc-fzplWN eHFlkF sinoui-base-button sc-fznZeY oyaBz sinoui-button"
             color="primary"
             onClick={[Function]}
             role="button"
@@ -194,7 +206,7 @@ exports[`快照测试 Clock 1`] = `
             清除
           </button>
           <button
-            className="sc-fzpans kpVCAw sinoui-base-button sc-fznKkj gpIgBD sinoui-button"
+            className="sc-fzplWN eHFlkF sinoui-base-button sc-fznZeY oyaBz sinoui-button"
             color="primary"
             role="button"
             type="button"
@@ -202,7 +214,7 @@ exports[`快照测试 Clock 1`] = `
             取消
           </button>
           <button
-            className="sc-fzpans kpVCAw sinoui-base-button sc-fznKkj gpIgBD sinoui-button"
+            className="sc-fzplWN eHFlkF sinoui-base-button sc-fznZeY oyaBz sinoui-button"
             color="primary"
             onClick={[Function]}
             role="button"

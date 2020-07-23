@@ -18,8 +18,8 @@ interface Props {
 const HourMinuteWrapper = styled.div<{ selected?: boolean }>`
   cursor: pointer;
   border-radius: 4px;
-  opacity: 0.7;
-  ${(props) => props.selected && `opacity: 1`};
+  opacity: ${(props) => (props.selected ? 1 : 0.7)};
+  -webkit-tap-highlight-color: transparent;
 `;
 
 export default function HourMinuteView({ value, selected, onChange }: Props) {

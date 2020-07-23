@@ -13,9 +13,9 @@ interface Props {
 
 const AmPmViewWrapper = styled.div<{ selected?: boolean }>`
   color: ${(props) => props.theme.palette.primary.contrastText};
-  opacity: 0.7;
   cursor: pointer;
-  ${(props) => props.selected && `opacity: 1`};
+  opacity: ${(props) => (props.selected ? 1 : 0.7)};
+  -webkit-tap-highlight-color: transparent;
 `;
 
 export default function AmPmView({ children, selected, onChange }: Props) {

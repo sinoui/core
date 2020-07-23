@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Paper from '@sinoui/core/Paper';
 import Clock from './Clock';
 import TimePickerMobileHeader from './TimePickerMobileHeader';
 import TimePickerMobileViewIcon from './TimePickerMobileViewIcon';
@@ -30,21 +31,15 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+const MobileTimePickerViewWrapper = styled.div`
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-`;
-const MobileTimePickerViewBody = styled.div`
-  width: 300px;
-  height: auto;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background: #fff;
-  border-radius: 4px;
+`;
+
+const MobileTimePickerViewPaper = styled(Paper)`
+  width: 300px;
 
   & .sinoui-time-picker-mobile-view__main {
     width: 100%;
@@ -57,7 +52,8 @@ const MobileTimePickerViewBody = styled.div`
   & .sinoui-time-picker-mobile-view__footer {
     display: flex;
     width: 100%;
-    padding: 0 8px 8px 16px;
+    height: 48px;
+    padding: 0 8px;
     box-sizing: border-box;
     align-items: center;
   }
@@ -106,8 +102,12 @@ const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
     };
 
     return (
-      <Wrapper className="sinoui-time-picker-mobile-view" ref={ref} {...rest}>
-        <MobileTimePickerViewBody>
+      <MobileTimePickerViewWrapper
+        className="sinoui-time-picker-mobile-view"
+        ref={ref}
+        {...rest}
+      >
+        <MobileTimePickerViewPaper>
           <TimePickerMobileHeader
             hour={getHourByRotateDeg(hourRotateDeg)}
             minute={getMinuteByRotateDeg(minuteRotateDeg)}
@@ -142,8 +142,8 @@ const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
               onClose={onRequestClose}
             />
           </div>
-        </MobileTimePickerViewBody>
-      </Wrapper>
+        </MobileTimePickerViewPaper>
+      </MobileTimePickerViewWrapper>
     );
   },
 );

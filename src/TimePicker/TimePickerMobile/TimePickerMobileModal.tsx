@@ -23,7 +23,7 @@ interface Props extends Omit<ModalProps, 'children'> {
 export default function DateRangeMobileModal(props: Props) {
   const { value, onRequestClose, onChange, open } = props;
   return (
-    <Modal open={open} backdrop={false} autoFocus={false} enforceFocus={false}>
+    <Modal open={open} autoFocus={false} enforceFocus={false}>
       <Fade in={open}>
         <TimePickerMobileView
           value={value}
