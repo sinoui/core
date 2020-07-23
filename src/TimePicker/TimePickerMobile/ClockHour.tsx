@@ -25,6 +25,7 @@ const Wrapper = styled.div<{
   z-index: 101;
   ${(props) => props.theme.typography.body1};
   color: ${(props) => props.theme.palette.text.primary};
+  transition: ${({ theme }) => theme.transitions.create('background-color')};
   transform: ${({ $number }) => `rotate(${30 * $number - 90}deg) translateX(${
     (CLOCK_SIZE - 32) / 2 - CLOCK_NUMBER_PADDING
   }px)

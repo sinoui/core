@@ -11,73 +11,73 @@ exports[`快照测试 Clock 1`] = `
   onTouchStart={[Function]}
 >
   <div
-    className="sc-AxjAm hbxUwB"
+    className="sc-AxjAm byikCg"
     data-hour-value={1}
   >
     1
   </div>
   <div
-    className="sc-AxjAm cNPZdN"
+    className="sc-AxjAm ijSDmw"
     data-hour-value={2}
   >
     2
   </div>
   <div
-    className="sc-AxjAm bBBpi"
+    className="sc-AxjAm iiJkUj"
     data-hour-value={3}
   >
     3
   </div>
   <div
-    className="sc-AxjAm hyoxzV"
+    className="sc-AxjAm kNZfJQ"
     data-hour-value={4}
   >
     4
   </div>
   <div
-    className="sc-AxjAm dzBrJN"
+    className="sc-AxjAm kdVvlQ"
     data-hour-value={5}
   >
     5
   </div>
   <div
-    className="sc-AxjAm hePAud"
+    className="sc-AxjAm kVTXvc"
     data-hour-value={6}
   >
     6
   </div>
   <div
-    className="sc-AxjAm ijWjtN"
+    className="sc-AxjAm hjSWFQ"
     data-hour-value={7}
   >
     7
   </div>
   <div
-    className="sc-AxjAm buVbtN"
+    className="sc-AxjAm dRXdnI"
     data-hour-value={8}
   >
     8
   </div>
   <div
-    className="sc-AxjAm gFXBut"
+    className="sc-AxjAm EekFk"
     data-hour-value={9}
   >
     9
   </div>
   <div
-    className="sc-AxjAm jZbhFx"
+    className="sc-AxjAm jOWuHc"
     data-hour-value={10}
   >
     10
   </div>
   <div
-    className="sc-AxjAm eXDoUB"
+    className="sc-AxjAm idAQxQ"
     data-hour-value={11}
   >
     11
   </div>
   <div
-    className="sc-AxjAm fxLcYl"
+    className="sc-AxjAm cdFTRQ"
     data-hour-value={12}
   >
     12
@@ -86,7 +86,7 @@ exports[`快照测试 Clock 1`] = `
     className="sc-AxhCb cATsou"
   />
   <div
-    className="sc-AxhUy dLpdRo"
+    className="sc-AxhUy eIjMCg"
   >
     <div
       className="sinoui-clock__pointer"

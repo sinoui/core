@@ -11,6 +11,7 @@ const Wrapper = styled.div<{
   width: 2px;
   height: ${CLOCK_SIZE / 2 - CLOCK_NUMBER_PADDING}px;
   background-color: ${({ theme }) => theme.palette.primary.main};
+  transition: ${({ theme }) => theme.transitions.create('transform')};
   transform: ${({ $rotateDeg = 0 }) => `rotateZ(${$rotateDeg}deg)`};
   transform-origin: bottom;
   .sinoui-clock__pointer {
