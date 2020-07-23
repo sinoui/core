@@ -2,7 +2,7 @@
 
 exports[`快照测试 Clock 1`] = `
 <div
-  className="sc-AxjAm eCuVQj"
+  className="sc-AxjAm eAeOPT"
   data-sinoui-id="modal"
   onClick={[Function]}
   onKeyDown={[Function]}
@@ -20,209 +20,203 @@ exports[`快照测试 Clock 1`] = `
     }
   />
   <div
-    aria-modal="true"
-    className="sc-fzoLag hDIiWQ sinoui-time-picker-mobile-view"
+    className="sc-AxiKw sc-fzoLag ieLsKz sinoui-time-picker-mobile-view sinoui-paper"
     style={
       Object {
         "opacity": 1,
         "visibility": undefined,
       }
     }
-    tabIndex={-1}
   >
     <div
-      className="sc-AxiKw sc-fzoXzr fPejaJ sinoui-paper"
+      className="sc-fzpans klkfUx"
     >
       <div
-        className="sc-fzpans klkfUx"
+        className="sinoui-time-picker-mobile-view__header-am-pm"
       >
         <div
-          className="sinoui-time-picker-mobile-view__header-am-pm"
+          className="sc-fzoLsD fqMwRd"
+          onClick={[Function]}
+          selected={false}
         >
-          <div
-            className="sc-fzoLsD fqMwRd"
-            onClick={[Function]}
-            selected={false}
-          >
-            上午
-          </div>
-          <div
-            className="sc-fzoLsD hFTGUV"
-            onClick={[Function]}
-            selected={true}
-          >
-            下午
-          </div>
+          上午
         </div>
         <div
-          className="sinoui-time-picker-mobile-view__header-hour-minute"
+          className="sc-fzoLsD hFTGUV"
+          onClick={[Function]}
+          selected={true}
         >
-          <div
-            className="sc-fzozJi lmwLUx"
-            onClick={[Function]}
-            selected={true}
-          >
-            07
-          </div>
-          <div
-            className="sc-fzozJi bGzbax"
-            onClick={[Function]}
-            selected={false}
-          >
-            21
-          </div>
+          下午
         </div>
       </div>
       <div
-        className="sinoui-time-picker-mobile-view__main"
+        className="sinoui-time-picker-mobile-view__header-hour-minute"
       >
         <div
-          className="sc-AxmLO jwvxqR sinoui-time-picker-mobile-view__clock"
-          onMouseDown={[Function]}
-          onMouseMove={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
+          className="sc-fzozJi lmwLUx"
+          onClick={[Function]}
+          selected={true}
+        >
+          07
+        </div>
+        <div
+          className="sc-fzozJi bGzbax"
+          onClick={[Function]}
+          selected={false}
+        >
+          21
+        </div>
+      </div>
+    </div>
+    <div
+      className="sinoui-time-picker-mobile-view__main"
+    >
+      <div
+        className="sc-AxmLO jwvxqR sinoui-time-picker-mobile-view__clock"
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="sc-AxhCb eMQjtn"
+          data-hour-value={1}
+        >
+          1
+        </div>
+        <div
+          className="sc-AxhCb dLTXpD"
+          data-hour-value={2}
+        >
+          2
+        </div>
+        <div
+          className="sc-AxhCb hdozlO"
+          data-hour-value={3}
+        >
+          3
+        </div>
+        <div
+          className="sc-AxhCb jqNmtD"
+          data-hour-value={4}
+        >
+          4
+        </div>
+        <div
+          className="sc-AxhCb kHmfBn"
+          data-hour-value={5}
+        >
+          5
+        </div>
+        <div
+          className="sc-AxhCb iLIoCP"
+          data-hour-value={6}
+        >
+          6
+        </div>
+        <div
+          className="sc-AxhCb dpScSt"
+          data-hour-value={7}
+        >
+          7
+        </div>
+        <div
+          className="sc-AxhCb dNXurL"
+          data-hour-value={8}
+        >
+          8
+        </div>
+        <div
+          className="sc-AxhCb eukcHf"
+          data-hour-value={9}
+        >
+          9
+        </div>
+        <div
+          className="sc-AxhCb jgtMxn"
+          data-hour-value={10}
+        >
+          10
+        </div>
+        <div
+          className="sc-AxhCb bLODSz"
+          data-hour-value={11}
+        >
+          11
+        </div>
+        <div
+          className="sc-AxhCb bqMJLL"
+          data-hour-value={12}
+        >
+          12
+        </div>
+        <div
+          className="sc-AxheI fyItLT"
+        />
+        <div
+          className="sc-Axmtr kiLAwl"
         >
           <div
-            className="sc-AxhCb eMQjtn"
-            data-hour-value={1}
-          >
-            1
-          </div>
-          <div
-            className="sc-AxhCb dLTXpD"
-            data-hour-value={2}
-          >
-            2
-          </div>
-          <div
-            className="sc-AxhCb hdozlO"
-            data-hour-value={3}
-          >
-            3
-          </div>
-          <div
-            className="sc-AxhCb jqNmtD"
-            data-hour-value={4}
-          >
-            4
-          </div>
-          <div
-            className="sc-AxhCb kHmfBn"
-            data-hour-value={5}
-          >
-            5
-          </div>
-          <div
-            className="sc-AxhCb iLIoCP"
-            data-hour-value={6}
-          >
-            6
-          </div>
-          <div
-            className="sc-AxhCb dpScSt"
-            data-hour-value={7}
-          >
-            7
-          </div>
-          <div
-            className="sc-AxhCb dNXurL"
-            data-hour-value={8}
-          >
-            8
-          </div>
-          <div
-            className="sc-AxhCb eukcHf"
-            data-hour-value={9}
-          >
-            9
-          </div>
-          <div
-            className="sc-AxhCb jgtMxn"
-            data-hour-value={10}
-          >
-            10
-          </div>
-          <div
-            className="sc-AxhCb bLODSz"
-            data-hour-value={11}
-          >
-            11
-          </div>
-          <div
-            className="sc-AxhCb bqMJLL"
-            data-hour-value={12}
-          >
-            12
-          </div>
-          <div
-            className="sc-AxheI fyItLT"
+            className="sinoui-clock__pointer"
           />
-          <div
-            className="sc-Axmtr kiLAwl"
-          >
-            <div
-              className="sinoui-clock__pointer"
-            />
-          </div>
         </div>
       </div>
+    </div>
+    <div
+      className="sinoui-time-picker-mobile-view__footer"
+    >
+      <button
+        className="sc-fzplWN eHFlkF sinoui-base-button sc-fznyAO blWhzL sinoui-icon-button sinoui-icon-button--dense"
+        color="primary"
+        onClick={[Function]}
+        role="button"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          className="sc-fznKkj bInCdn sinoui-svg-icon"
+          data-testid="KeyboardIcon"
+          focusable="false"
+          role="presentation"
+          size={24}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"
+          />
+        </svg>
+      </button>
       <div
-        className="sinoui-time-picker-mobile-view__footer"
+        className="sc-fzokOt dteSzk"
       >
         <button
-          className="sc-fzplWN eHFlkF sinoui-base-button sc-fznyAO blWhzL sinoui-icon-button sinoui-icon-button--dense"
+          className="sc-fzplWN eHFlkF sinoui-base-button sc-fznZeY oyaBz sinoui-button"
           color="primary"
           onClick={[Function]}
           role="button"
           type="button"
         >
-          <svg
-            aria-hidden="true"
-            className="sc-fznKkj bInCdn sinoui-svg-icon"
-            data-testid="KeyboardIcon"
-            focusable="false"
-            role="presentation"
-            size={24}
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"
-            />
-          </svg>
+          清除
         </button>
-        <div
-          className="sc-fzokOt dteSzk"
+        <button
+          className="sc-fzplWN eHFlkF sinoui-base-button sc-fznZeY oyaBz sinoui-button"
+          color="primary"
+          role="button"
+          type="button"
         >
-          <button
-            className="sc-fzplWN eHFlkF sinoui-base-button sc-fznZeY oyaBz sinoui-button"
-            color="primary"
-            onClick={[Function]}
-            role="button"
-            type="button"
-          >
-            清除
-          </button>
-          <button
-            className="sc-fzplWN eHFlkF sinoui-base-button sc-fznZeY oyaBz sinoui-button"
-            color="primary"
-            role="button"
-            type="button"
-          >
-            取消
-          </button>
-          <button
-            className="sc-fzplWN eHFlkF sinoui-base-button sc-fznZeY oyaBz sinoui-button"
-            color="primary"
-            onClick={[Function]}
-            role="button"
-            type="button"
-          >
-            设置
-          </button>
-        </div>
+          取消
+        </button>
+        <button
+          className="sc-fzplWN eHFlkF sinoui-base-button sc-fznZeY oyaBz sinoui-button"
+          color="primary"
+          onClick={[Function]}
+          role="button"
+          type="button"
+        >
+          设置
+        </button>
       </div>
     </div>
   </div>

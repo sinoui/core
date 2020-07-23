@@ -31,13 +31,6 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-const MobileTimePickerViewWrapper = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const MobileTimePickerViewPaper = styled(Paper)`
   width: 300px;
 
@@ -61,7 +54,7 @@ const MobileTimePickerViewPaper = styled(Paper)`
 
 const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
   (props, ref) => {
-    const { value = '', onRequestClose, onChange, ...rest } = props;
+    const { value = '', onRequestClose, onChange, style } = props;
     // 当前时间 时分指针旋转角度
     const [hourDeg, minuteDeg] = getRotateDegByTimeValue(value);
     // 是否为AM
@@ -102,48 +95,46 @@ const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
     };
 
     return (
-      <MobileTimePickerViewWrapper
+      <MobileTimePickerViewPaper
         className="sinoui-time-picker-mobile-view"
         ref={ref}
-        {...rest}
+        style={style}
       >
-        <MobileTimePickerViewPaper>
-          <TimePickerMobileHeader
-            hour={getHourByRotateDeg(hourRotateDeg)}
-            minute={getMinuteByRotateDeg(minuteRotateDeg)}
+        <TimePickerMobileHeader
+          hour={getHourByRotateDeg(hourRotateDeg)}
+          minute={getMinuteByRotateDeg(minuteRotateDeg)}
+          isClockView={isClockView}
+          isHourView={isHourView}
+          onChangeHourOrMinuteView={onChangeHourOrMinuteView}
+          isAm={isAm}
+          onChangeAm={onChangeAm}
+        />
+        <div className="sinoui-time-picker-mobile-view__main">
+          {isClockView ? (
+            <Clock
+              isHourView={isHourView}
+              onChangeHourOrMinuteView={onChangeHourOrMinuteView}
+              hourRotateDeg={hourRotateDeg}
+              minuteRotateDeg={minuteRotateDeg}
+              onChangeHourRotateDeg={setHourRotateDeg}
+              onChangeMinuteRotateDeg={setMinuteRotateDeg}
+            />
+          ) : (
+            <TimeInputView />
+          )}
+        </div>
+        <div className="sinoui-time-picker-mobile-view__footer">
+          <TimePickerMobileViewIcon
             isClockView={isClockView}
-            isHourView={isHourView}
-            onChangeHourOrMinuteView={onChangeHourOrMinuteView}
-            isAm={isAm}
-            onChangeAm={onChangeAm}
+            onChangeClockView={onChangeClockView}
           />
-          <div className="sinoui-time-picker-mobile-view__main">
-            {isClockView ? (
-              <Clock
-                isHourView={isHourView}
-                onChangeHourOrMinuteView={onChangeHourOrMinuteView}
-                hourRotateDeg={hourRotateDeg}
-                minuteRotateDeg={minuteRotateDeg}
-                onChangeHourRotateDeg={setHourRotateDeg}
-                onChangeMinuteRotateDeg={setMinuteRotateDeg}
-              />
-            ) : (
-              <TimeInputView />
-            )}
-          </div>
-          <div className="sinoui-time-picker-mobile-view__footer">
-            <TimePickerMobileViewIcon
-              isClockView={isClockView}
-              onChangeClockView={onChangeClockView}
-            />
-            <TimePickerMobileButtons
-              onClear={onClear}
-              onOk={onOK}
-              onClose={onRequestClose}
-            />
-          </div>
-        </MobileTimePickerViewPaper>
-      </MobileTimePickerViewWrapper>
+          <TimePickerMobileButtons
+            onClear={onClear}
+            onOk={onOK}
+            onClose={onRequestClose}
+          />
+        </div>
+      </MobileTimePickerViewPaper>
     );
   },
 );
