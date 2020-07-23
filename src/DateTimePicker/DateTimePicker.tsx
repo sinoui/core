@@ -53,6 +53,10 @@ export interface Props
    */
   isPc?: boolean;
   /**
+   * 是否展示下月日期
+   */
+  showNextMonthDates?: boolean;
+  /**
    * 指定自定义的值渲染函数。默认情况下，直接显示`value`属性值。
    */
   renderValue?: (value?: Date) => React.ReactNode;
@@ -129,6 +133,7 @@ export default function DateTimePicker(props: Props) {
     defaultYear,
     defaultMonth,
     showToday,
+    showNextMonthDates,
   } = props;
 
   const isNativePc = useIsPc();
@@ -162,7 +167,7 @@ export default function DateTimePicker(props: Props) {
         value={inputValue}
         onClear={handleClear}
         endAdornment={
-          <InputAdornment position="end">
+          <InputAdornment position="end" disablePointerEvents>
             <DatePickerIcon />
           </InputAdornment>
         }
@@ -175,7 +180,6 @@ export default function DateTimePicker(props: Props) {
           {...getPopperProps()}
           portal={portal}
           {...popperProps}
-          isPc={isPc}
           date={date}
           hourStep={hourStep}
           minuteStep={minuteStep}
@@ -192,6 +196,7 @@ export default function DateTimePicker(props: Props) {
           defaultYear={defaultYear}
           defaultMonth={defaultMonth}
           showToday={showToday}
+          showNextMonthDates={showNextMonthDates}
         />
       ) : (
         <DateTimeMobileModal

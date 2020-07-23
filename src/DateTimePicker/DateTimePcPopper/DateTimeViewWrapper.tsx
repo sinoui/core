@@ -28,7 +28,7 @@ const disabledProps = ['in'];
 const DateTimeViewWrapper = styled(Paper).withConfig({
   shouldForwardProp: (prop) => !disabledProps.includes(prop),
 })<any>`
-  ${({ $isPc }) => $isPc && pcStyle}
+  ${pcStyle}
 `;
 
 export default DateTimeViewWrapper;

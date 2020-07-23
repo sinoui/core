@@ -21,10 +21,6 @@ interface Props extends Omit<PopperProps, 'onChange' | 'children'> {
    * 默认月份
    */
   defaultMonth?: number;
-  /**
-   * 是否是pc设备
-   */
-  isPc?: boolean;
   /*
    * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
    */
@@ -73,11 +69,14 @@ interface Props extends Omit<PopperProps, 'onChange' | 'children'> {
    * 弹窗关闭时的回调函数
    */
   onRequestClose?: () => void;
+  /**
+   * 是否展示下月日期
+   */
+  showNextMonthDates?: boolean;
 }
 
 export default function DateTimePcPopper(props: Props) {
   const {
-    isPc,
     date,
     hourStep = 1,
     minuteStep = 1,
@@ -94,13 +93,14 @@ export default function DateTimePcPopper(props: Props) {
     defaultYear,
     defaultMonth,
     showToday,
+    open,
+    showNextMonthDates,
     ...rest
   } = props;
   return (
-    <Popper {...rest}>
-      <Fade>
+    <Popper {...rest} open={open}>
+      <Fade in={open}>
         <DateTimeView
-          isPc={isPc}
           date={date}
           hourStep={hourStep}
           minuteStep={minuteStep}
@@ -125,6 +125,7 @@ export default function DateTimePcPopper(props: Props) {
           defaultYear={defaultYear}
           defaultMonth={defaultMonth}
           showToday={showToday}
+          showNextMonthDates={showNextMonthDates}
         />
       </Fade>
     </Popper>

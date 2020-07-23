@@ -28,10 +28,6 @@ export interface Props {
    * 默认月份
    */
   defaultMonth?: number;
-  /**
-   * 是否是pc设备
-   */
-  isPc?: boolean;
   /*
    * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
    */
@@ -88,6 +84,10 @@ export interface Props {
    * 时间列表失去焦点时的回调函数
    */
   onBlur?: () => void;
+  /**
+   * 是否展示下月日期
+   */
+  showNextMonthDates?: boolean;
 }
 
 const StyledDivider = styled(Divider)`
@@ -107,8 +107,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
     date,
     defaultYear = new Date().getFullYear(),
     defaultMonth = new Date().getMonth(),
-    isPc,
-    skipMonthsView: skipMonthsViewProp,
+    skipMonthsView,
     startOfWeek,
     minDate,
     maxDate,
@@ -122,6 +121,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
     hour = now.getHours() - (now.getHours() % hourStep),
     minute = now.getMinutes() - (now.getMinutes() % minuteStep),
     onChange,
+    showNextMonthDates = true,
     ...rest
   } = props;
 
@@ -132,7 +132,6 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
   });
 
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
-  const skipMonthsView = skipMonthsViewProp ?? !isPc;
 
   const timeListWrapperRef = useRef<HTMLDivElement>(null);
 
@@ -148,7 +147,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
       selectedYear={year}
       onYearSelect={handleYearSelect}
       className="sinoui-date-time-view__yearsview"
-      isPc={isPc}
+      isPc
     />
   );
 
@@ -164,7 +163,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
       selectedMonth={month}
       onMonthSelect={handleMonthSelect}
       className="sinoui-date-time-view__monthsview"
-      isPc={isPc}
+      isPc
     />
   );
 
@@ -196,17 +195,17 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
 
   const renderDates = () => (
     <>
-      <WeekTitleBar startOfWeek={startOfWeek} isPc={isPc} />
+      <WeekTitleBar startOfWeek={startOfWeek} isPc />
       <div className="sinoui-date-time-view__datesview">
         <SimpleMonthDatesView
           year={year}
           month={month}
-          isPc={isPc}
+          isPc
           showToday={showToday}
           minDate={minDate}
           maxDate={maxDate}
           value={date}
-          showNextMonthDates={isPc}
+          showNextMonthDates={showNextMonthDates}
           startOfWeek={startOfWeek}
           onDateClick={handleDateClick}
         />
@@ -215,12 +214,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
   );
 
   return (
-    <DateTimeViewWrapper
-      $isPc={isPc}
-      className="sinoui-date-time-view"
-      ref={ref}
-      {...rest}
-    >
+    <DateTimeViewWrapper className="sinoui-date-time-view" ref={ref} {...rest}>
       <div className="sinoui-date-time-view__calendar">
         <CalendarViewHeader
           year={year}

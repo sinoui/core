@@ -114,7 +114,7 @@ it('选择年份', () => {
 it('月份选择视图', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <DateTimeView date={new Date('2020-06-18')} hour={12} minute={20} isPc />
+      <DateTimeView date={new Date('2020-06-18')} hour={12} minute={20} />
     </ThemeProvider>,
   );
 
@@ -140,7 +140,7 @@ it('月份选择视图', () => {
 it('选择月份', () => {
   const { container } = render(
     <ThemeProvider theme={defaultTheme}>
-      <DateTimeView date={new Date('2020-06-18')} hour={12} minute={20} isPc />
+      <DateTimeView date={new Date('2020-06-18')} hour={12} minute={20} />
     </ThemeProvider>,
   );
 
@@ -253,6 +253,7 @@ it('minDate', () => {
         hour={12}
         minute={20}
         minDate={new Date(2020, 5, 10, 12, 20)}
+        showNextMonthDates={false}
       />
     </ThemeProvider>,
   );
@@ -271,6 +272,7 @@ it('maxDate', () => {
         hour={12}
         minute={20}
         maxDate={new Date(2020, 5, 20, 12, 20)}
+        showNextMonthDates={false}
       />
     </ThemeProvider>,
   );

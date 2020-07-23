@@ -11,6 +11,8 @@ import formatTime from '../DateTimeMobileModal/formatTime';
 
 afterEach(cleanup);
 
+jest.useFakeTimers();
+
 describe('value', () => {
   it('显示指定日期时间', () => {
     const { getByTestId } = render(
@@ -166,6 +168,8 @@ describe('pc端', () => {
     act(() => {
       fireEvent.blur(input);
     });
+
+    jest.runAllTimers();
 
     expect(container.querySelector('.sinoui-date-time-view')).toBeFalsy();
   });

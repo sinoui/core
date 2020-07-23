@@ -10,7 +10,12 @@ export default {
 
 export const 日期时间选择视图 = () => (
   <StoryLayout>
-    <DateTimeView isPc />
+    <DateTimeView
+      date={new Date('2020-06-18')}
+      hour={12}
+      minute={20}
+      minDate={new Date(2020, 5, 10, 12, 20)}
+    />
   </StoryLayout>
 );
 
