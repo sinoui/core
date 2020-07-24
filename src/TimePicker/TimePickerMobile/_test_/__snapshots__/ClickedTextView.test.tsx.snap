@@ -17,7 +17,7 @@ exports[`快照测试 未选中 1`] = `
 </div>
 `;
 
-exports[`快照测试 未选中 2`] = `
+exports[`快照测试 选中 1`] = `
 .c0 {
   color: #fff;
   cursor: pointer;

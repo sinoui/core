@@ -132,10 +132,10 @@ exports[`TimePickerMobileView 小时视图 1`] = `
         className="sc-AxhCb cATsou"
       />
       <div
-        className="sc-AxhUy icXCsh"
+        className="sc-AxhUy eeSQhY"
       >
         <div
-          className="sinoui-clock__pointer"
+          className="sc-AxgMl izZPbq sinoui-clock__pointer-minute-dot"
         />
       </div>
     </div>

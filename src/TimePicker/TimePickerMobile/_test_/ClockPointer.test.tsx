@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ClockPointer from '../ClockPointer';
 
-it('分钟视图，旋转到11分，指针中心显示白色圆点', () => {
+it('分钟视图，旋转到11分，圆点背景色为白色', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <ClockPointer
@@ -20,10 +20,10 @@ it('分钟视图，旋转到11分，指针中心显示白色圆点', () => {
     getByTestId('clock-pointer').querySelector(
       '.sinoui-clock__pointer-minute-dot',
     ),
-  ).toBeInTheDOM();
+  ).toHaveStyle('background-color: #fff');
 });
 
-it('分钟视图，旋转到10分，指针中心不显示白色圆点', () => {
+it('分钟视图，旋转到10分，圆点背景色为主题色', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <ClockPointer
@@ -37,10 +37,10 @@ it('分钟视图，旋转到10分，指针中心不显示白色圆点', () => {
     getByTestId('clock-pointer').querySelector(
       '.sinoui-clock__pointer-minute-dot',
     ),
-  ).toBeFalsy();
+  ).toHaveStyle('background-color: #3f51b5');
 });
 
-it('时钟视图，指针中心不显示白色圆点', () => {
+it('时钟视图，圆点背景色为主题色', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <ClockPointer isHourView rotateDeg={30} data-testid="clock-pointer" />
@@ -50,7 +50,7 @@ it('时钟视图，指针中心不显示白色圆点', () => {
     getByTestId('clock-pointer').querySelector(
       '.sinoui-clock__pointer-minute-dot',
     ),
-  ).toBeFalsy();
+  ).toHaveStyle('background-color: #3f51b5');
 });
 
 describe('快照测试', () => {

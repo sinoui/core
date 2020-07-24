@@ -79,7 +79,7 @@ describe('快照测试', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('未选中', () => {
+  it('选中', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
