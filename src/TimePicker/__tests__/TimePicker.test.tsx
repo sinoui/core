@@ -365,7 +365,7 @@ describe('移动端视图测试', () => {
 
     fireEvent.click(button);
 
-    expect(document.querySelector('[data-hour-value="9"]')).toHaveStyle(
+    expect(document.querySelector('[data-clock-number="9"]')).toHaveStyle(
       'color:#fff',
     );
   });
@@ -386,7 +386,7 @@ describe('移动端视图测试', () => {
     ) as Element;
     fireEvent.mouseDown(clock);
     fireEvent.mouseUp(clock);
-    expect(document.querySelector('[data-minute-value="0"]')).toHaveStyle(
+    expect(document.querySelector('[data-clock-number="0"]')).toHaveStyle(
       'color:#fff',
     );
   });

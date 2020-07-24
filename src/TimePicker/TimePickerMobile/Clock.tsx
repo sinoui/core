@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import ClockHour from './ClockHour';
-import ClockMinute from './ClockMinute';
+import ClockNumber from './ClockNumber';
 import ClockPin from './ClockPin';
 import ClockPointer from './ClockPointer';
 import { CLOCK_PIN_SIZE, CLOCK_SIZE } from './constants';
@@ -206,16 +205,18 @@ export default function Clock({
     >
       {isHourView
         ? hours.map((item) => (
-            <ClockHour
+            <ClockNumber
               key={item}
               number={item}
+              isHourView={isHourView}
               selectedValue={getHourByRotateDeg(rotateDeg)}
             />
           ))
         : minutes.map((item) => (
-            <ClockMinute
+            <ClockNumber
               key={item}
               number={item}
+              isHourView={!isHourView}
               selectedValue={getMinuteByRotateDeg(minuteRotateDeg)}
             />
           ))}
