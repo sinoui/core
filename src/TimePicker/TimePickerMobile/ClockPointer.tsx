@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CLOCK_NUMBER_PADDING, CLOCK_SIZE } from './constants';
+import { CLOCK_NUMBER_PADDING, CLOCK_SIZE, CLOCK_PIN_SIZE } from './constants';
 
 const Wrapper = styled.div<{
   $rotateDeg: number;
@@ -26,10 +26,30 @@ const Wrapper = styled.div<{
   }
 `;
 
-export default function ClockPointer({ rotateDeg }: { rotateDeg: number }) {
+const MinuteDot = styled.div<{
+  $selected?: boolean;
+}>`
+  position: absolute;
+  left: 50%;
+  top: ${CLOCK_NUMBER_PADDING + 16}px;
+  width: ${CLOCK_PIN_SIZE}px;
+  height: ${CLOCK_PIN_SIZE}px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translate(-${CLOCK_PIN_SIZE / 2}px, -8px);
+`;
+
+export default function ClockPointer({
+  rotateDeg,
+  isHourView,
+}: {
+  rotateDeg: number;
+  isHourView: boolean;
+}) {
   return (
     <Wrapper $rotateDeg={rotateDeg}>
       <div className="sinoui-clock__pointer" />
+      {!isHourView && rotateDeg % 5 !== 0 && <MinuteDot />}
     </Wrapper>
   );
 }

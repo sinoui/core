@@ -86,6 +86,24 @@ export default function Clock({
       // 基于12点 左上方 1/4表盘
       deg = 360 - xyDeg;
     }
+
+    // 时针选择到12点时
+    if (
+      isHourView &&
+      (hourRotateDeg === 360 || hourRotateDeg === 0) &&
+      (deg < 15 || deg > 360 - 15)
+    ) {
+      deg = hourRotateDeg;
+    }
+
+    // 分针选择到00分时
+    if (
+      !isHourView &&
+      (minuteRotateDeg === 360 || minuteRotateDeg === 0) &&
+      (deg < 6 || deg > 360 - 6)
+    ) {
+      deg = minuteRotateDeg;
+    }
     return getHourOrMinuteRotateDeg(deg, isHourView);
   };
 
@@ -199,7 +217,7 @@ export default function Clock({
             />
           ))}
       <ClockPin />
-      <ClockPointer rotateDeg={rotateDeg} />
+      <ClockPointer rotateDeg={rotateDeg} isHourView={isHourView} />
     </ClockWrapper>
   );
 }

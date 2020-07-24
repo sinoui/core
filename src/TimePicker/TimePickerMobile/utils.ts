@@ -10,6 +10,7 @@ export function getHourOrMinuteRotateDeg(deg: number, isHour: boolean) {
   if (deg % UNIT >= UNIT / 2) {
     return UNIT * (degFloor + 1);
   }
+  console.log(deg);
   return UNIT * degFloor;
 }
 

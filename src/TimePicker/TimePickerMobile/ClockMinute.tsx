@@ -1,15 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { formatHourMinute } from './utils';
-import { CLOCK_NUMBER_PADDING, CLOCK_PIN_SIZE, CLOCK_SIZE } from './constants';
+import { CLOCK_NUMBER_PADDING, CLOCK_SIZE } from './constants';
 
 const selectedCss = css`
   color: ${({ theme }) => theme.palette.primary.contrastText};
-  z-index: 100;
-`;
-
-const minuteDotdCss = css`
-  background-color: ${({ theme }) => theme.palette.primary.contrastText};
   z-index: 100;
 `;
 
@@ -38,17 +33,6 @@ const Wrapper = styled.div<{
   ${(props) => props.$selected && selectedCss};
 `;
 
-const MinuteDot = styled.div<{
-  $selected?: boolean;
-}>`
-  width: ${CLOCK_PIN_SIZE}px;
-  height: ${CLOCK_PIN_SIZE}px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: transparent;
-  ${(props) => props.$selected && minuteDotdCss};
-`;
-
 /**
  * 表盘上的 分钟
  */
@@ -66,11 +50,7 @@ export default function ClockMinute({
       $selected={selectedValue === number}
       data-minute-value={number}
     >
-      {number % 5 === 0 ? (
-        showedMinute
-      ) : (
-        <MinuteDot $selected={selectedValue === number} />
-      )}
+      {number % 5 === 0 ? showedMinute : null}
     </Wrapper>
   );
 }
