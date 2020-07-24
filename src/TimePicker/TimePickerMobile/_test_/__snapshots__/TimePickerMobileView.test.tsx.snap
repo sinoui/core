@@ -171,6 +171,7 @@ exports[`TimePickerMobileView 小时视图 1`] = `
       <button
         className="sc-AxmLO dcJmXf sinoui-base-button sc-fzpans dYyNxv sinoui-button"
         color="primary"
+        data-testid="clock-clear-btn"
         onClick={[Function]}
         role="button"
         type="button"
@@ -180,6 +181,7 @@ exports[`TimePickerMobileView 小时视图 1`] = `
       <button
         className="sc-AxmLO dcJmXf sinoui-base-button sc-fzpans dYyNxv sinoui-button"
         color="primary"
+        data-testid="clock-cancel-btn"
         onClick={[MockFunction]}
         role="button"
         type="button"
@@ -189,6 +191,7 @@ exports[`TimePickerMobileView 小时视图 1`] = `
       <button
         className="sc-AxmLO dcJmXf sinoui-base-button sc-fzpans dYyNxv sinoui-button"
         color="primary"
+        data-testid="clock-ok-btn"
         onClick={[Function]}
         role="button"
         type="button"

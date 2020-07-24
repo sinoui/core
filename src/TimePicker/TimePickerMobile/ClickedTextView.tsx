@@ -3,9 +3,18 @@ import styled from 'styled-components';
 import { useRipple } from '@sinoui/ripple';
 
 interface Props {
+  /**
+   * 子元素
+   */
   children: React.ReactNode;
+  /**
+   * 是否选中
+   */
   selected: boolean;
-  onChange: () => void;
+  /**
+   * 点击触发的回调函数
+   */
+  onClick: () => void;
 }
 
 /**
@@ -21,14 +30,14 @@ const ClickedTextViewWrapper = styled.div<{ selected?: boolean }>`
 export default function ClickedTextView({
   children,
   selected,
-  onChange,
+  onClick,
   ...rest
 }: Props) {
   const rippleRef = useRipple<HTMLDivElement>();
   return (
     <ClickedTextViewWrapper
       selected={selected}
-      onClick={onChange}
+      onClick={onClick}
       ref={rippleRef}
       {...rest}
     >

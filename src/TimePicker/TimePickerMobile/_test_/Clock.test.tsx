@@ -7,6 +7,7 @@ import '@testing-library/jest-dom';
 import Clock from '../Clock';
 
 afterEach(cleanup);
+jest.useFakeTimers();
 
 it('鼠标按下后松开，触发时针旋转回调函数', () => {
   const onChangeHourRotateDeg = jest.fn();

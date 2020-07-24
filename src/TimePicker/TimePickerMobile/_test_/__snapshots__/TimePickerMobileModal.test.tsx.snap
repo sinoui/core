@@ -195,6 +195,7 @@ exports[`快照测试 Clock 1`] = `
         <button
           className="sc-fzoLsD htcuXs sinoui-base-button sc-fznyAO evhfQS sinoui-button"
           color="primary"
+          data-testid="clock-clear-btn"
           onClick={[Function]}
           role="button"
           type="button"
@@ -204,6 +205,8 @@ exports[`快照测试 Clock 1`] = `
         <button
           className="sc-fzoLsD htcuXs sinoui-base-button sc-fznyAO evhfQS sinoui-button"
           color="primary"
+          data-testid="clock-cancel-btn"
+          onClick={[MockFunction]}
           role="button"
           type="button"
         >
@@ -212,6 +215,7 @@ exports[`快照测试 Clock 1`] = `
         <button
           className="sc-fzoLsD htcuXs sinoui-base-button sc-fznyAO evhfQS sinoui-button"
           color="primary"
+          data-testid="clock-ok-btn"
           onClick={[Function]}
           role="button"
           type="button"

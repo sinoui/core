@@ -49,6 +49,129 @@ it('切换为键盘输入视图', () => {
   ).toBeTruthy();
 });
 
+it('点击清除按钮', () => {
+  const onChange = jest.fn();
+  const onRequestClose = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TimePickerMobileView
+        value="11:28"
+        onChange={onChange}
+        onRequestClose={onRequestClose}
+      />
+    </ThemeProvider>,
+  );
+  const clearBtn = getByTestId('clock-clear-btn');
+  act(() => {
+    fireEvent.click(clearBtn);
+  });
+
+  expect(onRequestClose).toBeCalled();
+  expect(onChange).toBeCalled();
+});
+
+it('点击取消按钮', () => {
+  const onChange = jest.fn();
+  const onRequestClose = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TimePickerMobileView
+        value="11:28"
+        onChange={onChange}
+        onRequestClose={onRequestClose}
+      />
+    </ThemeProvider>,
+  );
+  const cancelBtn = getByTestId('clock-cancel-btn');
+  act(() => {
+    fireEvent.click(cancelBtn);
+  });
+
+  expect(onRequestClose).toBeCalled();
+  expect(onChange).not.toBeCalled();
+});
+
+it('点击设置按钮', () => {
+  const onChange = jest.fn();
+  const onRequestClose = jest.fn();
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TimePickerMobileView
+        value="11:28"
+        onChange={onChange}
+        onRequestClose={onRequestClose}
+      />
+    </ThemeProvider>,
+  );
+  const okBtn = getByTestId('clock-ok-btn');
+  act(() => {
+    fireEvent.click(okBtn);
+  });
+
+  expect(onRequestClose).toBeCalled();
+  expect(onChange).toBeCalledWith('11:28');
+});
+
+it('选定小时，自动切换到分钟视图', () => {
+  const onChange = jest.fn();
+  const onRequestClose = jest.fn();
+  const { container, getByText } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <TimePickerMobileView
+        value="11:28"
+        onChange={onChange}
+        onRequestClose={onRequestClose}
+      />
+    </ThemeProvider>,
+  );
+
+  const clock = container.querySelector(
+    '.sinoui-time-picker-mobile-view__clock',
+  ) as Element;
+  act(() => {
+    fireEvent.mouseDown(clock);
+  });
+
+  act(() => {
+    fireEvent.mouseUp(clock);
+  });
+
+  expect(getByText('05')).toBeInTheDOM();
+});
+
+// it('调整角度，改变时针选中的值', () => {
+//   const onChange = jest.fn();
+//   const onRequestClose = jest.fn();
+//   const { container, getByText } = render(
+//     <ThemeProvider theme={defaultTheme}>
+//       <TimePickerMobileView
+//         value="11:28"
+//         onChange={onChange}
+//         onRequestClose={onRequestClose}
+//       />
+//     </ThemeProvider>,
+//   );
+
+//   const clock = container.querySelector(
+//     '.sinoui-time-picker-mobile-view__clock',
+//   ) as Element;
+//   act(() => {
+//     fireEvent.mouseDown(clock, {
+//       pageX: 188,
+//       pageY: 431,
+//     });
+//   });
+
+//   act(() => {
+//     fireEvent.mouseMove(clock, {
+//       pageX: 132,
+//       pageY: 416,
+//     });
+//   });
+//   console.log(clock.innerHTML);
+//   expect(getByText('7')).toHaveStyle('color:#fff');
+// });
+
 describe('TimePickerMobileView', () => {
   const onChange = jest.fn();
   const onRequestClose = jest.fn();

@@ -101,26 +101,23 @@ export default function TimePickerMobileHeader({
       {isClockView ? (
         <>
           <div className="sinoui-time-picker-mobile-view__header-am-pm">
-            <ClickedTextView selected={isAm} onChange={() => onChangeAm(true)}>
+            <ClickedTextView selected={isAm} onClick={() => onChangeAm(true)}>
               上午
             </ClickedTextView>
-            <ClickedTextView
-              selected={!isAm}
-              onChange={() => onChangeAm(false)}
-            >
+            <ClickedTextView selected={!isAm} onClick={() => onChangeAm(false)}>
               下午
             </ClickedTextView>
           </div>
           <div className="sinoui-time-picker-mobile-view__header-hour-minute">
             <ClickedTextView
               selected={isHourView}
-              onChange={() => onChangeHourOrMinuteView(true)}
+              onClick={() => onChangeHourOrMinuteView(true)}
             >
               {formatHourMinute(hour)}
             </ClickedTextView>
             <ClickedTextView
               selected={!isHourView}
-              onChange={() => onChangeHourOrMinuteView(false)}
+              onClick={() => onChangeHourOrMinuteView(false)}
             >
               {formatHourMinute(minute === 60 ? 0 : minute)}
             </ClickedTextView>

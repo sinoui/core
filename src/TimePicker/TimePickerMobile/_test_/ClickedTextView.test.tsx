@@ -10,12 +10,12 @@ import ClickedTextView from '../ClickedTextView';
 afterEach(cleanup);
 
 it('点击', () => {
-  const onChange = jest.fn();
+  const onClick = jest.fn();
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <ClickedTextView
         selected={false}
-        onChange={onChange}
+        onClick={onClick}
         data-testid="clicked-text"
       >
         12
@@ -28,14 +28,14 @@ it('点击', () => {
   act(() => {
     fireEvent.click(clickedText);
   });
-  expect(onChange).toBeCalled();
+  expect(onClick).toBeCalled();
 });
 
 it('高亮显示样式', () => {
-  const onChange = jest.fn();
+  const onClick = jest.fn();
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <ClickedTextView selected onChange={onChange} data-testid="clicked-text">
+      <ClickedTextView selected onClick={onClick} data-testid="clicked-text">
         12
       </ClickedTextView>
     </ThemeProvider>,
@@ -47,12 +47,12 @@ it('高亮显示样式', () => {
 });
 
 it('非高亮显示样式', () => {
-  const onChange = jest.fn();
+  const onClick = jest.fn();
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
       <ClickedTextView
         selected={false}
-        onChange={onChange}
+        onClick={onClick}
         data-testid="clicked-text"
       >
         12
@@ -66,12 +66,12 @@ it('非高亮显示样式', () => {
 });
 
 describe('快照测试', () => {
-  const onChange = jest.fn();
+  const onClick = jest.fn();
   it('未选中', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <ClickedTextView selected={false} onChange={onChange}>
+          <ClickedTextView selected={false} onClick={onClick}>
             12
           </ClickedTextView>
         </ThemeProvider>,
@@ -83,7 +83,7 @@ describe('快照测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <ClickedTextView selected onChange={onChange}>
+          <ClickedTextView selected onClick={onClick}>
             12
           </ClickedTextView>
         </ThemeProvider>,

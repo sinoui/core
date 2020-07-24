@@ -22,9 +22,15 @@ export default function TimePickerMobileButtons({
 }) {
   return (
     <ButtonsWrapper>
-      <Button onClick={onClear}>清除</Button>
-      <Button onClick={onClose}>取消</Button>
-      <Button onClick={onOk}>设置</Button>
+      <Button onClick={onClear} data-testid="clock-clear-btn">
+        清除
+      </Button>
+      <Button onClick={onClose} data-testid="clock-cancel-btn">
+        取消
+      </Button>
+      <Button onClick={onOk} data-testid="clock-ok-btn">
+        设置
+      </Button>
     </ButtonsWrapper>
   );
 }

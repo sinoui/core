@@ -164,6 +164,7 @@ export default function Clock({
    */
   const onMouseUp = (event: React.MouseEvent) => {
     const { pageX, pageY } = event;
+    console.log(pageX, pageY);
     onChangeHourMinuteValue(pageX, pageY);
     if (isHourView) {
       onChangeHourOrMinuteView(!isHourView);
@@ -187,6 +188,7 @@ export default function Clock({
    */
   const onMouseMove = (event: React.MouseEvent) => {
     const { pageX, pageY } = event;
+    console.log(pageX, pageY);
     onChangeHourMinuteValue(pageX, pageY);
   };
 
@@ -216,7 +218,7 @@ export default function Clock({
             <ClockNumber
               key={item}
               number={item}
-              isHourView={!isHourView}
+              isHourView={isHourView}
               selectedValue={getMinuteByRotateDeg(minuteRotateDeg)}
             />
           ))}

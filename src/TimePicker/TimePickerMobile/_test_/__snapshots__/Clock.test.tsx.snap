@@ -11,364 +11,268 @@ exports[`快照测试 分钟视图 1`] = `
   onTouchStart={[Function]}
 >
   <div
-    className="sc-AxjAm gfDCqv"
+    className="sc-AxjAm mxbDH"
     data-clock-number={1}
-  >
-    1
-  </div>
+  />
   <div
-    className="sc-AxjAm ebzboT"
+    className="sc-AxjAm kWfIAT"
     data-clock-number={2}
-  >
-    2
-  </div>
+  />
   <div
-    className="sc-AxjAm bnnJJm"
+    className="sc-AxjAm hvEznH"
     data-clock-number={3}
-  >
-    3
-  </div>
+  />
   <div
-    className="sc-AxjAm hYElOf"
+    className="sc-AxjAm ghhGfr"
     data-clock-number={4}
-  >
-    4
-  </div>
+  />
   <div
-    className="sc-AxjAm eyFkWv"
+    className="sc-AxjAm gfDCqv"
     data-clock-number={5}
   >
-    5
+    05
   </div>
   <div
-    className="sc-AxjAm emMJz"
+    className="sc-AxjAm jqGjCv"
     data-clock-number={6}
-  >
-    6
-  </div>
+  />
   <div
-    className="sc-AxjAm gvpLfH"
+    className="sc-AxjAm kYeaFj"
     data-clock-number={7}
-  >
-    7
-  </div>
+  />
   <div
-    className="sc-AxjAm eewICL"
+    className="sc-AxjAm hZtcUD"
     data-clock-number={8}
-  >
-    8
-  </div>
+  />
   <div
-    className="sc-AxjAm iVBebb"
+    className="sc-AxjAm dRKQVP"
     data-clock-number={9}
-  >
-    9
-  </div>
+  />
   <div
-    className="sc-AxjAm ezVgNP"
+    className="sc-AxjAm ebzboT"
     data-clock-number={10}
   >
     10
   </div>
   <div
-    className="sc-AxjAm iiuIkn"
+    className="sc-AxjAm cBJTYD"
     data-clock-number={11}
-  >
-    11
-  </div>
+  />
   <div
-    className="sc-AxjAm cSTVrr"
+    className="sc-AxjAm eOjkoD"
     data-clock-number={12}
-  >
-    12
-  </div>
+  />
   <div
-    className="sc-AxjAm dalHqL"
+    className="sc-AxjAm xHcFP"
     data-clock-number={13}
-  >
-    13
-  </div>
+  />
   <div
-    className="sc-AxjAm kDPeUD"
+    className="sc-AxjAm gCtjDb"
     data-clock-number={14}
-  >
-    14
-  </div>
+  />
   <div
-    className="sc-AxjAm TwNET"
+    className="sc-AxjAm bnnJJm"
     data-clock-number={15}
   >
     15
   </div>
   <div
-    className="sc-AxjAm iTKXbX"
+    className="sc-AxjAm jZIKvX"
     data-clock-number={16}
-  >
-    16
-  </div>
+  />
   <div
-    className="sc-AxjAm iBeYXH"
+    className="sc-AxjAm jTfsvX"
     data-clock-number={17}
-  >
-    17
-  </div>
+  />
   <div
-    className="sc-AxjAm erovFz"
+    className="sc-AxjAm hVzFtj"
     data-clock-number={18}
-  >
-    18
-  </div>
+  />
   <div
-    className="sc-AxjAm gvMuoD"
+    className="sc-AxjAm gkJGrb"
     data-clock-number={19}
-  >
-    19
-  </div>
+  />
   <div
-    className="sc-AxjAm hLUHvH"
+    className="sc-AxjAm hYElOf"
     data-clock-number={20}
   >
     20
   </div>
   <div
-    className="sc-AxjAm ejwggD"
+    className="sc-AxjAm idaCsT"
     data-clock-number={21}
-  >
-    21
-  </div>
+  />
   <div
-    className="sc-AxjAm aBBSv"
+    className="sc-AxjAm fiMTUn"
     data-clock-number={22}
-  >
-    22
-  </div>
+  />
   <div
-    className="sc-AxjAm AwXEn"
+    className="sc-AxjAm freEDX"
     data-clock-number={23}
-  >
-    23
-  </div>
+  />
   <div
-    className="sc-AxjAm gArUkn"
+    className="sc-AxjAm fTEVif"
     data-clock-number={24}
-  >
-    24
-  </div>
+  />
   <div
-    className="sc-AxjAm lnynWL"
+    className="sc-AxjAm eyFkWv"
     data-clock-number={25}
   >
     25
   </div>
   <div
-    className="sc-AxjAm loIoMD"
+    className="sc-AxjAm fIaVhz"
     data-clock-number={26}
-  >
-    26
-  </div>
+  />
   <div
-    className="sc-AxjAm eAUMxP"
+    className="sc-AxjAm gqWgYn"
     data-clock-number={27}
-  >
-    27
-  </div>
+  />
   <div
-    className="sc-AxjAm ehFZhz"
+    className="sc-AxjAm imIcxj"
     data-clock-number={28}
-  >
-    28
-  </div>
+  />
   <div
-    className="sc-AxjAm jOYPpz"
+    className="sc-AxjAm kBrQNP"
     data-clock-number={29}
-  >
-    29
-  </div>
+  />
   <div
-    className="sc-AxjAm bOxvOf"
+    className="sc-AxjAm emMJz"
     data-clock-number={30}
   >
     30
   </div>
   <div
-    className="sc-AxjAm gOOhiL"
+    className="sc-AxjAm ecaLPX"
     data-clock-number={31}
-  >
-    31
-  </div>
+  />
   <div
-    className="sc-AxjAm cVoUnX"
+    className="sc-AxjAm ixYSFP"
     data-clock-number={32}
-  >
-    32
-  </div>
+  />
   <div
-    className="sc-AxjAm bGFgpj"
+    className="sc-AxjAm SOGzH"
     data-clock-number={33}
-  >
-    33
-  </div>
+  />
   <div
-    className="sc-AxjAm jNglzX"
+    className="sc-AxjAm ifPUqv"
     data-clock-number={34}
-  >
-    34
-  </div>
+  />
   <div
-    className="sc-AxjAm cnIWzH"
+    className="sc-AxjAm gvpLfH"
     data-clock-number={35}
   >
     35
   </div>
   <div
-    className="sc-AxjAm kpzsuf"
+    className="sc-AxjAm lcotrr"
     data-clock-number={36}
-  >
-    36
-  </div>
+  />
   <div
-    className="sc-AxjAm iSNqhP"
+    className="sc-AxjAm fvRPuv"
     data-clock-number={37}
-  >
-    37
-  </div>
+  />
   <div
-    className="sc-AxjAm jfSWXb"
+    className="sc-AxjAm iZpLKv"
     data-clock-number={38}
-  >
-    38
-  </div>
+  />
   <div
-    className="sc-AxjAm cSgLqf"
+    className="sc-AxjAm djVbHX"
     data-clock-number={39}
-  >
-    39
-  </div>
+  />
   <div
-    className="sc-AxjAm eGATZP"
+    className="sc-AxjAm eewICL"
     data-clock-number={40}
   >
     40
   </div>
   <div
-    className="sc-AxjAm TJCeL"
+    className="sc-AxjAm iFSfXX"
     data-clock-number={41}
-  >
-    41
-  </div>
+  />
   <div
-    className="sc-AxjAm flcCFj"
+    className="sc-AxjAm haVhDH"
     data-clock-number={42}
-  >
-    42
-  </div>
+  />
   <div
-    className="sc-AxjAm fCszsD"
+    className="sc-AxjAm bzSwKf"
     data-clock-number={43}
-  >
-    43
-  </div>
+  />
   <div
-    className="sc-AxjAm ckNixj"
+    className="sc-AxjAm axtP"
     data-clock-number={44}
-  >
-    44
-  </div>
+  />
   <div
-    className="sc-AxjAm dCvbiL"
+    className="sc-AxjAm iVBebb"
     data-clock-number={45}
   >
     45
   </div>
   <div
-    className="sc-AxjAm egZmiv"
+    className="sc-AxjAm erlEav"
     data-clock-number={46}
-  >
-    46
-  </div>
+  />
   <div
-    className="sc-AxjAm ibECED"
+    className="sc-AxjAm dccySf"
     data-clock-number={47}
-  >
-    47
-  </div>
+  />
   <div
-    className="sc-AxjAm hocVVz"
+    className="sc-AxjAm ZfRSv"
     data-clock-number={48}
-  >
-    48
-  </div>
+  />
   <div
-    className="sc-AxjAm kRebuv"
+    className="sc-AxjAm Uskzb"
     data-clock-number={49}
-  >
-    49
-  </div>
+  />
   <div
-    className="sc-AxjAm hScEwD"
+    className="sc-AxjAm ezVgNP"
     data-clock-number={50}
   >
     50
   </div>
   <div
-    className="sc-AxjAm gniVzr"
+    className="sc-AxjAm ejlENP"
     data-clock-number={51}
-  >
-    51
-  </div>
+  />
   <div
-    className="sc-AxjAm gLAoxP"
+    className="sc-AxjAm dIzgmL"
     data-clock-number={52}
-  >
-    52
-  </div>
+  />
   <div
-    className="sc-AxjAm kVoTdj"
+    className="sc-AxjAm hWQOpP"
     data-clock-number={53}
-  >
-    53
-  </div>
+  />
   <div
-    className="sc-AxjAm dXmkeL"
+    className="sc-AxjAm gUnhfb"
     data-clock-number={54}
-  >
-    54
-  </div>
+  />
   <div
-    className="sc-AxjAm iVzhZP"
+    className="sc-AxjAm iiuIkn"
     data-clock-number={55}
   >
     55
   </div>
   <div
-    className="sc-AxjAm iTrwbb"
+    className="sc-AxjAm eOWBPX"
     data-clock-number={56}
-  >
-    56
-  </div>
+  />
   <div
-    className="sc-AxjAm coEIIn"
+    className="sc-AxjAm hStaf"
     data-clock-number={57}
-  >
-    57
-  </div>
+  />
   <div
-    className="sc-AxjAm hCbwrH"
+    className="sc-AxjAm kTTBRj"
     data-clock-number={58}
-  >
-    58
-  </div>
+  />
   <div
-    className="sc-AxjAm jPjbtP"
+    className="sc-AxjAm knXjyf"
     data-clock-number={59}
-  >
-    59
-  </div>
+  />
   <div
     className="sc-AxjAm eXvpdZ"
     data-clock-number={0}
   >
-    0
+    00
   </div>
   <div
     className="sc-AxirZ mcTG"
