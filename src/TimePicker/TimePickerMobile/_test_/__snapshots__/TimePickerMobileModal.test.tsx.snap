@@ -156,10 +156,10 @@ exports[`快照测试 Clock 1`] = `
           className="sc-AxgMl fgPYHp"
         />
         <div
-          className="sc-AxheI fubrDy"
+          className="sc-AxheI fhRpyT"
         >
           <div
-            className="sinoui-clock__pointer"
+            className="sc-Axmtr bbdiEb sinoui-clock__pointer-minute-dot"
           />
         </div>
       </div>

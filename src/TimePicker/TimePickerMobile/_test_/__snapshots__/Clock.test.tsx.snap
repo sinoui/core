@@ -278,10 +278,10 @@ exports[`快照测试 分钟视图 1`] = `
     className="sc-AxiKw dcMhZe"
   />
   <div
-    className="sc-AxhCb grROlM"
+    className="sc-AxhCb hcFRbp"
   >
     <div
-      className="sinoui-clock__pointer"
+      className="sc-AxhUy ivOmqw sinoui-clock__pointer-minute-dot"
     />
   </div>
 </div>
@@ -373,10 +373,10 @@ exports[`快照测试 小时视图 1`] = `
     className="sc-AxiKw dcMhZe"
   />
   <div
-    className="sc-AxhCb cViAeR"
+    className="sc-AxhCb NFRrg"
   >
     <div
-      className="sinoui-clock__pointer"
+      className="sc-AxhUy ivOmqw sinoui-clock__pointer-minute-dot"
     />
   </div>
 </div>
