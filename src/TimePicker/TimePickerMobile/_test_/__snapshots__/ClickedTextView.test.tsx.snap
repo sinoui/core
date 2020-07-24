@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 未选中 1`] = `
+.c0 {
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+  -webkit-tap-highlight-color: transparent;
+}
+
+<div
+  className="c0"
+  onClick={[MockFunction]}
+  selected={false}
+>
+  12
+</div>
+`;
+
+exports[`快照测试 未选中 2`] = `
+.c0 {
+  color: #fff;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+<div
+  className="c0"
+  onClick={[MockFunction]}
+  selected={true}
+>
+  12
+</div>
+`;

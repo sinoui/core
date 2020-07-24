@@ -54,6 +54,7 @@ export default function Clock({
   onChangeHourRotateDeg,
   onChangeMinuteRotateDeg,
   onChangeHourOrMinuteView,
+  ...rest
 }: Props) {
   const clockRef = useRef<HTMLDivElement | null>(null);
   // 开始移动指针
@@ -200,6 +201,7 @@ export default function Clock({
       onMouseUp={onMouseUp}
       onMouseMove={onMouseMove}
       className="sinoui-time-picker-mobile-view__clock"
+      {...rest}
     >
       {isHourView
         ? hours.map((item) => (

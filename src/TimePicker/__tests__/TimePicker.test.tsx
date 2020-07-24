@@ -431,23 +431,6 @@ describe('移动端视图测试', () => {
     ).toHaveStyle('opacity:1');
   });
 
-  it('点击弹窗头部的分钟视图，分钟高亮显示', () => {
-    const { getByRole } = render(
-      <ThemeProvider theme={defaultTheme}>
-        <TimePicker value="21:00" />
-      </ThemeProvider>,
-    );
-
-    const button = getByRole('button');
-
-    fireEvent.click(button);
-    const minuteView = document.querySelector(
-      '.sinoui-time-picker-mobile-view__header-hour-minute > div:last-child',
-    ) as Element;
-    fireEvent.click(minuteView);
-    expect(minuteView).toHaveStyle('opacity:1');
-  });
-
   it('00:00时,上午高亮显示', () => {
     const { getByRole } = render(
       <ThemeProvider theme={defaultTheme}>
@@ -477,40 +460,6 @@ describe('移动端视图测试', () => {
     const pmView = document.querySelector(
       '.sinoui-time-picker-mobile-view__header-am-pm > div:last-child',
     ) as Element;
-    expect(pmView).toHaveStyle('opacity:1');
-  });
-
-  it('点击上午,上午高亮显示', () => {
-    const { getByRole } = render(
-      <ThemeProvider theme={defaultTheme}>
-        <TimePicker />
-      </ThemeProvider>,
-    );
-
-    const button = getByRole('button');
-
-    fireEvent.click(button);
-    const amView = document.querySelector(
-      '.sinoui-time-picker-mobile-view__header-am-pm > div:first-child',
-    ) as Element;
-    fireEvent.click(amView);
-    expect(amView).toHaveStyle('opacity:1');
-  });
-
-  it('点击下午,下午高亮显示', () => {
-    const { getByRole } = render(
-      <ThemeProvider theme={defaultTheme}>
-        <TimePicker value="00:00" />
-      </ThemeProvider>,
-    );
-
-    const button = getByRole('button');
-
-    fireEvent.click(button);
-    const pmView = document.querySelector(
-      '.sinoui-time-picker-mobile-view__header-am-pm > div:last-child',
-    ) as Element;
-    fireEvent.click(pmView);
     expect(pmView).toHaveStyle('opacity:1');
   });
 });

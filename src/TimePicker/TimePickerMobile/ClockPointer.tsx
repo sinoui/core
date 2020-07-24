@@ -42,14 +42,17 @@ const MinuteDot = styled.div<{
 export default function ClockPointer({
   rotateDeg,
   isHourView,
+  ...rest
 }: {
   rotateDeg: number;
   isHourView: boolean;
 }) {
   return (
-    <Wrapper $rotateDeg={rotateDeg}>
+    <Wrapper $rotateDeg={rotateDeg} {...rest}>
       <div className="sinoui-clock__pointer" />
-      {!isHourView && rotateDeg % 5 !== 0 && <MinuteDot />}
+      {!isHourView && rotateDeg % 5 !== 0 && (
+        <MinuteDot className="sinoui-clock__pointer-minute-dot" />
+      )}
     </Wrapper>
   );
 }

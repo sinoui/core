@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import HourMinuteView from './HourMinuteView';
-import AmPmView from './AmPmView';
+import ClickedTextView from './ClickedTextView';
+import { formatHourMinute } from './utils';
 
 interface Props {
   /**
@@ -101,24 +101,29 @@ export default function TimePickerMobileHeader({
       {isClockView ? (
         <>
           <div className="sinoui-time-picker-mobile-view__header-am-pm">
-            <AmPmView selected={isAm} onChange={() => onChangeAm(true)}>
+            <ClickedTextView selected={isAm} onChange={() => onChangeAm(true)}>
               上午
-            </AmPmView>
-            <AmPmView selected={!isAm} onChange={() => onChangeAm(false)}>
+            </ClickedTextView>
+            <ClickedTextView
+              selected={!isAm}
+              onChange={() => onChangeAm(false)}
+            >
               下午
-            </AmPmView>
+            </ClickedTextView>
           </div>
           <div className="sinoui-time-picker-mobile-view__header-hour-minute">
-            <HourMinuteView
-              value={hour}
+            <ClickedTextView
               selected={isHourView}
               onChange={() => onChangeHourOrMinuteView(true)}
-            />
-            <HourMinuteView
-              value={minute === 60 ? 0 : minute}
+            >
+              {hour}
+            </ClickedTextView>
+            <ClickedTextView
               selected={!isHourView}
               onChange={() => onChangeHourOrMinuteView(false)}
-            />
+            >
+              {formatHourMinute(minute === 60 ? 0 : minute)}
+            </ClickedTextView>
           </div>
         </>
       ) : (

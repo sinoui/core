@@ -1,6 +1,293 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`快照测试 Clock 1`] = `
+exports[`快照测试 分钟视图 1`] = `
+<div
+  className="sc-AxgMl eXDohh sinoui-time-picker-mobile-view__clock"
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+>
+  <div
+    className="sc-AxirZ iwHolw"
+    data-minute-value={1}
+  />
+  <div
+    className="sc-AxirZ kDnccQ"
+    data-minute-value={2}
+  />
+  <div
+    className="sc-AxirZ lchdXo"
+    data-minute-value={3}
+  />
+  <div
+    className="sc-AxirZ hrvHpw"
+    data-minute-value={4}
+  />
+  <div
+    className="sc-AxirZ hsZLes"
+    data-minute-value={5}
+  >
+    05
+  </div>
+  <div
+    className="sc-AxirZ eVDzGI"
+    data-minute-value={6}
+  />
+  <div
+    className="sc-AxirZ Lfnes"
+    data-minute-value={7}
+  />
+  <div
+    className="sc-AxirZ Ijdwk"
+    data-minute-value={8}
+  />
+  <div
+    className="sc-AxirZ dqFcQk"
+    data-minute-value={9}
+  />
+  <div
+    className="sc-AxirZ dgQSxg"
+    data-minute-value={10}
+  >
+    10
+  </div>
+  <div
+    className="sc-AxirZ kWTtwk"
+    data-minute-value={11}
+  />
+  <div
+    className="sc-AxirZ bklWOs"
+    data-minute-value={12}
+  />
+  <div
+    className="sc-AxirZ czgXes"
+    data-minute-value={13}
+  />
+  <div
+    className="sc-AxirZ rJziI"
+    data-minute-value={14}
+  />
+  <div
+    className="sc-AxirZ dvJoCp"
+    data-minute-value={15}
+  >
+    15
+  </div>
+  <div
+    className="sc-AxirZ efBkJw"
+    data-minute-value={16}
+  />
+  <div
+    className="sc-AxirZ bDfizE"
+    data-minute-value={17}
+  />
+  <div
+    className="sc-AxirZ iFTghM"
+    data-minute-value={18}
+  />
+  <div
+    className="sc-AxirZ dIJxCY"
+    data-minute-value={19}
+  />
+  <div
+    className="sc-AxirZ kCfXOc"
+    data-minute-value={20}
+  >
+    20
+  </div>
+  <div
+    className="sc-AxirZ kWVPvE"
+    data-minute-value={21}
+  />
+  <div
+    className="sc-AxirZ joVtus"
+    data-minute-value={22}
+  />
+  <div
+    className="sc-AxirZ kDSYno"
+    data-minute-value={23}
+  />
+  <div
+    className="sc-AxirZ fdtxBg"
+    data-minute-value={24}
+  />
+  <div
+    className="sc-AxirZ fuNSXE"
+    data-minute-value={25}
+  >
+    25
+  </div>
+  <div
+    className="sc-AxirZ kvkyxM"
+    data-minute-value={26}
+  />
+  <div
+    className="sc-AxirZ btEBro"
+    data-minute-value={27}
+  />
+  <div
+    className="sc-AxirZ eDaQxM"
+    data-minute-value={28}
+  />
+  <div
+    className="sc-AxirZ aBKiY"
+    data-minute-value={29}
+  />
+  <div
+    className="sc-AxirZ OGnyc"
+    data-minute-value={30}
+  >
+    30
+  </div>
+  <div
+    className="sc-AxirZ iFAgcQ"
+    data-minute-value={31}
+  />
+  <div
+    className="sc-AxirZ SBSBw"
+    data-minute-value={32}
+  />
+  <div
+    className="sc-AxirZ dTsYNg"
+    data-minute-value={33}
+  />
+  <div
+    className="sc-AxirZ cZqwck"
+    data-minute-value={34}
+  />
+  <div
+    className="sc-AxirZ hgMUdw"
+    data-minute-value={35}
+  >
+    35
+  </div>
+  <div
+    className="sc-AxirZ czOlRM"
+    data-minute-value={36}
+  />
+  <div
+    className="sc-AxirZ SntUk"
+    data-minute-value={37}
+  />
+  <div
+    className="sc-AxirZ dZSbiI"
+    data-minute-value={38}
+  />
+  <div
+    className="sc-AxirZ ggFJzo"
+    data-minute-value={39}
+  />
+  <div
+    className="sc-AxirZ haJHPU"
+    data-minute-value={40}
+  >
+    40
+  </div>
+  <div
+    className="sc-AxirZ czokuI"
+    data-minute-value={41}
+  />
+  <div
+    className="sc-AxirZ gBhxFw"
+    data-minute-value={42}
+  />
+  <div
+    className="sc-AxirZ hxRcEA"
+    data-minute-value={43}
+  />
+  <div
+    className="sc-AxirZ gneLUQ"
+    data-minute-value={44}
+  />
+  <div
+    className="sc-AxirZ GJMPE"
+    data-minute-value={45}
+  >
+    45
+  </div>
+  <div
+    className="sc-AxirZ fkZmQk"
+    data-minute-value={46}
+  />
+  <div
+    className="sc-AxirZ ioNXjU"
+    data-minute-value={47}
+  />
+  <div
+    className="sc-AxirZ jYndHU"
+    data-minute-value={48}
+  />
+  <div
+    className="sc-AxirZ iwiAIk"
+    data-minute-value={49}
+  />
+  <div
+    className="sc-AxirZ guBock"
+    data-minute-value={50}
+  >
+    50
+  </div>
+  <div
+    className="sc-AxirZ gLkQck"
+    data-minute-value={51}
+  />
+  <div
+    className="sc-AxirZ jTDyWs"
+    data-minute-value={52}
+  />
+  <div
+    className="sc-AxirZ aSKYQ"
+    data-minute-value={53}
+  />
+  <div
+    className="sc-AxirZ iRkuOY"
+    data-minute-value={54}
+  />
+  <div
+    className="sc-AxirZ bigcWY"
+    data-minute-value={55}
+  >
+    55
+  </div>
+  <div
+    className="sc-AxirZ eBEjro"
+    data-minute-value={56}
+  />
+  <div
+    className="sc-AxirZ kMEbPU"
+    data-minute-value={57}
+  />
+  <div
+    className="sc-AxirZ gLFwDo"
+    data-minute-value={58}
+  />
+  <div
+    className="sc-AxirZ dofvKY"
+    data-minute-value={59}
+  />
+  <div
+    className="sc-AxirZ fRdnLK"
+    data-minute-value={60}
+  >
+    00
+  </div>
+  <div
+    className="sc-AxiKw dcMhZe"
+  />
+  <div
+    className="sc-AxhCb grROlM"
+  >
+    <div
+      className="sinoui-clock__pointer"
+    />
+  </div>
+</div>
+`;
+
+exports[`快照测试 小时视图 1`] = `
 <div
   className="sc-AxgMl eXDohh sinoui-time-picker-mobile-view__clock"
   onMouseDown={[Function]}
