@@ -11,8 +11,9 @@ import dayjs from 'dayjs';
 import DatePickerDemo from './datepicker-demos/DatePickerDemo';
 import DateRangePickerDemo from './datepicker-demos/DateRangePickerDemo';
 import TimePickerDemo from './datepicker-demos/TimePickerDemo';
+import DateTimePickerDemo from './datepicker-demos/DateTimePickerDemo';
 
-> 日期选择允许用户选择日期或日期范围，时间选择允许用户选择时间。
+> 日期选择允许用户选择日期；日期区间选择允许用户快速选择日期范围；时间选择允许用户选择时间；日期时间选择允许用户快速选择日期和时间。
 
 ## 引用方式
 
@@ -20,6 +21,7 @@ import TimePickerDemo from './datepicker-demos/TimePickerDemo';
 import DatePicker from '@sinoui/core/DatePicker'; // 日期选择
 import DateRangePicker from '@sinoui/core/DateRangePicker'; // 日期区间选择
 import TimePicker from '@sinoui/core/TimePicker'; // 时间选择
+import DateTimePicker from '@sinoui/core/DateTimePicker'; // 时间日期选择
 ```
 
 ## 日期选择
@@ -121,8 +123,25 @@ export default function DatePickerDemo() {
 
 <TimePickerDemo />
 
+## 日期时间选择
+
+`@sinoui/core/DateTimePicker`组件可以用来快速选择日期和时间的组合。
+
+```tsx
+import React, { useState } from 'react';
+import DateTimePicker from '@sinoui/core/DateTimePicker';
+
+export default function DateTimePickerDemo() {
+  const [value, setValue] = useState<string | undefined>('2020-06-18 15:30');
+  return <DateTimePicker value={value} onChange={setValue} />;
+}
+```
+
+<DateTimePickerDemo />
+
 ## API
 
 - [DatePicker](../components-apis/date-picker)
 - [DateRangePicker](../components-apis/date-range-picker)
 - [TimePicker](../components-apis/time-picker)
+- [DateTimePicker](../components-apis/date-time-picker)

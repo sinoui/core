@@ -2480,7 +2480,7 @@ exports[`快照测试 1`] = `
               </span>
             </div>
             <div
-              className="sinoui-date-cell sinoui-date-cell--outlined"
+              className="sinoui-date-cell"
               data-column={3}
               data-date="2020-07-15"
               data-row={3}
@@ -2522,7 +2522,7 @@ exports[`快照测试 1`] = `
               </span>
             </div>
             <div
-              className="sinoui-date-cell"
+              className="sinoui-date-cell sinoui-date-cell--outlined"
               data-column={5}
               data-date="2020-07-17"
               data-row={3}
