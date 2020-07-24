@@ -116,7 +116,7 @@ export default function TimePickerMobileHeader({
               selected={isHourView}
               onChange={() => onChangeHourOrMinuteView(true)}
             >
-              {hour}
+              {formatHourMinute(hour)}
             </ClickedTextView>
             <ClickedTextView
               selected={!isHourView}

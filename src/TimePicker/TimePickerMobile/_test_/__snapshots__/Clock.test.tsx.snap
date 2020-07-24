@@ -269,8 +269,8 @@ exports[`快照测试 分钟视图 1`] = `
     data-minute-value={59}
   />
   <div
-    className="sc-AxirZ fRdnLK"
-    data-minute-value={60}
+    className="sc-AxirZ hYwerK"
+    data-minute-value={0}
   >
     00
   </div>

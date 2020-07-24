@@ -46,6 +46,7 @@ interface Props {
 }
 const hours = new Array(12).fill(1).map((_, index) => index + 1);
 const minutes = new Array(60).fill(1).map((_, index) => index + 1);
+minutes[59] = 0;
 
 export default function Clock({
   isHourView,

@@ -2,7 +2,7 @@
 
 exports[`TimePickerMobileView 小时视图 1`] = `
 <div
-  className="sc-AxjAm sc-fzqBZW fHHqoA sinoui-time-picker-mobile-view sinoui-paper"
+  className="sc-AxjAm sc-fzoXWK clwDnt sinoui-time-picker-mobile-view sinoui-paper"
 >
   <div
     className="sc-AxmLO fVxEJC"
@@ -146,6 +146,7 @@ exports[`TimePickerMobileView 小时视图 1`] = `
     <button
       className="sc-fzozJi hzVFNO sinoui-base-button sc-fzoLsD bMYGiK sinoui-icon-button sinoui-icon-button--dense"
       color="primary"
+      data-view-icon={true}
       onClick={[Function]}
       role="button"
       type="button"

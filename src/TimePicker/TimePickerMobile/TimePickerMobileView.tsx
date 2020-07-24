@@ -13,6 +13,7 @@ import {
   getMinuteByRotateDeg,
   get24HourByIsAm,
   getIsAmByTimeValue,
+  formatHourMinute,
 } from './utils';
 
 interface Props {
@@ -65,21 +66,17 @@ const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
     const [minuteRotateDeg, setMinuteRotateDeg] = useState(minuteDeg);
     // 当前设置为时钟 还是分钟
     const [isHourView, onChangeHourOrMinuteView] = useState(true);
+    // 钟表视图 或 键盘输入视图
     const [isClockView, onChangeClockView] = useState(true);
 
     /**
      * 设置时间
      */
     const onOK = () => {
-      const hourValue = getHourByRotateDeg(hourRotateDeg);
-      const minuteValue = getMinuteByRotateDeg(minuteRotateDeg);
       if (onChange) {
-        onChange(
-          formatTime(
-            get24HourByIsAm(hourValue, isAm),
-            minuteValue === 60 ? 0 : minuteValue,
-          ),
-        );
+        const hourValue = getHourByRotateDeg(hourRotateDeg);
+        const minuteValue = getMinuteByRotateDeg(minuteRotateDeg);
+        onChange(formatTime(get24HourByIsAm(hourValue, isAm), minuteValue));
       }
       onRequestClose();
     };
@@ -92,6 +89,26 @@ const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
         onChange();
       }
       onRequestClose();
+    };
+
+    const onHourChange = (hourInputValue: string) => {
+      // 24制时间转换为旋转角度
+      const [clockHourDeg] = getRotateDegByTimeValue(
+        formatTime(
+          Number(hourInputValue),
+          getMinuteByRotateDeg(minuteRotateDeg),
+        ),
+      );
+      onChangeAm(Number(hourInputValue) < 12);
+      setHourRotateDeg(clockHourDeg);
+    };
+
+    const onMinuteChange = (minuteInputValue: string) => {
+      // 24制时间转换为旋转角度
+      const [, clockMinuteDeg] = getRotateDegByTimeValue(
+        formatTime(getHourByRotateDeg(hourRotateDeg), Number(minuteInputValue)),
+      );
+      setMinuteRotateDeg(clockMinuteDeg);
     };
 
     return (
@@ -120,7 +137,16 @@ const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
               onChangeMinuteRotateDeg={setMinuteRotateDeg}
             />
           ) : (
-            <TimeInputView />
+            <TimeInputView
+              selectedHour={formatHourMinute(
+                get24HourByIsAm(getHourByRotateDeg(hourRotateDeg), isAm),
+              )}
+              selectedMinute={formatHourMinute(
+                getMinuteByRotateDeg(minuteRotateDeg),
+              )}
+              onHourChange={onHourChange}
+              onMinuteChange={onMinuteChange}
+            />
           )}
         </div>
         <div className="sinoui-time-picker-mobile-view__footer">

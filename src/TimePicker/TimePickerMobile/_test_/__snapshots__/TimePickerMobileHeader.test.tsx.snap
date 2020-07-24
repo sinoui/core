@@ -30,7 +30,7 @@ exports[`快照测试 时钟视图下弹出头部view 1`] = `
       onClick={[Function]}
       selected={true}
     >
-      3
+      03
     </div>
     <div
       className="sc-AxjAm dCafeO"

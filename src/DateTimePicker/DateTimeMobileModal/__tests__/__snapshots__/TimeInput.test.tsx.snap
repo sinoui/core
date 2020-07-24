@@ -256,6 +256,8 @@ label ~ .c4 {
     >
       <input
         className="sinoui-base-input__input"
+        max={23}
+        min={0}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -287,6 +289,8 @@ label ~ .c4 {
     >
       <input
         className="sinoui-base-input__input"
+        max={59}
+        min={0}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}

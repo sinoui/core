@@ -53,7 +53,7 @@ export function getHourByRotateDeg(deg: number) {
  */
 export function getMinuteByRotateDeg(deg: number) {
   const UNIT = 360 / 60;
-  return deg / UNIT === 0 ? 60 : deg / UNIT;
+  return deg / UNIT === 0 || deg / UNIT === 60 ? 0 : deg / UNIT;
 }
 
 /**

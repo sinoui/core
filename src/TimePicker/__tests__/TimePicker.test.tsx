@@ -386,7 +386,7 @@ describe('移动端视图测试', () => {
     ) as Element;
     fireEvent.mouseDown(clock);
     fireEvent.mouseUp(clock);
-    expect(document.querySelector('[data-minute-value="60"]')).toHaveStyle(
+    expect(document.querySelector('[data-minute-value="0"]')).toHaveStyle(
       'color:#fff',
     );
   });

@@ -43,14 +43,13 @@ export default function ClockMinute({
   number: number;
   selectedValue: number;
 }) {
-  const showedMinute = number === 60 ? `00` : formatHourMinute(number);
   return (
     <Wrapper
       $number={number}
       $selected={selectedValue === number}
       data-minute-value={number}
     >
-      {number % 5 === 0 ? showedMinute : null}
+      {number % 5 === 0 ? formatHourMinute(number) : null}
     </Wrapper>
   );
 }

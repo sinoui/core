@@ -20,7 +20,7 @@ exports[`快照测试 Clock 1`] = `
     }
   />
   <div
-    className="sc-AxiKw sc-fzoyAV dQHvfz sinoui-time-picker-mobile-view sinoui-paper"
+    className="sc-AxiKw sc-fznxKY gvuVQq sinoui-time-picker-mobile-view sinoui-paper"
     style={
       Object {
         "opacity": 1,
@@ -57,7 +57,7 @@ exports[`快照测试 Clock 1`] = `
           onClick={[Function]}
           selected={true}
         >
-          7
+          07
         </div>
         <div
           className="sc-fzozJi bULAjP"
@@ -170,6 +170,7 @@ exports[`快照测试 Clock 1`] = `
       <button
         className="sc-fzpans kpVCAw sinoui-base-button sc-fzplWN dgekpj sinoui-icon-button sinoui-icon-button--dense"
         color="primary"
+        data-view-icon={true}
         onClick={[Function]}
         role="button"
         type="button"

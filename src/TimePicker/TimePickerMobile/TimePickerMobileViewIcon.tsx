@@ -17,6 +17,7 @@ export default function TimePickerMobileViewIcon({
       dense
       color="primary"
       onClick={() => onChangeClockView(!isClockView)}
+      data-view-icon
     >
       {isClockView ? <Keyboard /> : <Schedule />}
     </IconButton>

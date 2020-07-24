@@ -3,6 +3,7 @@ import {
   getRotateDegByTimeValue,
   get24HourByIsAm,
   getIsAmByTimeValue,
+  getMinuteByRotateDeg,
 } from '../utils';
 
 describe('getHourRotateDeg', () => {
@@ -59,5 +60,15 @@ describe('getIsAmByTimeValue', () => {
 
   it('12:00', () => {
     expect(getIsAmByTimeValue('12:00')).toBeFalsy();
+  });
+});
+
+describe('getMinuteByRotateDeg', () => {
+  it('分钟旋转0度', () => {
+    expect(getMinuteByRotateDeg(0)).toBe(0);
+  });
+
+  it('分钟旋转360度', () => {
+    expect(getMinuteByRotateDeg(360)).toBe(0);
   });
 });
