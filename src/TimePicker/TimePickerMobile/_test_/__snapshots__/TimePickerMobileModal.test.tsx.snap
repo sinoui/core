@@ -29,7 +29,7 @@ exports[`快照测试 Clock 1`] = `
     }
   >
     <div
-      className="sc-fzozJi jsqxCf"
+      className="sc-fzozJi vqqyd"
     >
       <div
         className="sinoui-time-picker-mobile-view__header-am-pm"
@@ -58,6 +58,11 @@ exports[`快照测试 Clock 1`] = `
           selected={true}
         >
           07
+        </div>
+        <div
+          className="sc-fzoLsD jWBFpv"
+        >
+          :
         </div>
         <div
           className="sc-AxmLO grzjDm"
@@ -168,7 +173,7 @@ exports[`快照测试 Clock 1`] = `
       className="sinoui-time-picker-mobile-view__footer"
     >
       <button
-        className="sc-fzoLsD htcuXs sinoui-base-button sc-fzpans eCDAFW sinoui-icon-button sinoui-icon-button--dense"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-fzpans eCDAFW sinoui-icon-button sinoui-icon-button--dense"
         color="primary"
         data-view-icon={true}
         onClick={[Function]}
@@ -193,7 +198,7 @@ exports[`快照测试 Clock 1`] = `
         className="sc-fznKkj korXTr"
       >
         <button
-          className="sc-fzoLsD htcuXs sinoui-base-button sc-fznyAO evhfQS sinoui-button"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-fznyAO evhfQS sinoui-button"
           color="primary"
           data-testid="clock-clear-btn"
           onClick={[Function]}
@@ -203,7 +208,7 @@ exports[`快照测试 Clock 1`] = `
           清除
         </button>
         <button
-          className="sc-fzoLsD htcuXs sinoui-base-button sc-fznyAO evhfQS sinoui-button"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-fznyAO evhfQS sinoui-button"
           color="primary"
           data-testid="clock-cancel-btn"
           onClick={[MockFunction]}
@@ -213,7 +218,7 @@ exports[`快照测试 Clock 1`] = `
           取消
         </button>
         <button
-          className="sc-fzoLsD htcuXs sinoui-base-button sc-fznyAO evhfQS sinoui-button"
+          className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-fznyAO evhfQS sinoui-button"
           color="primary"
           data-testid="clock-ok-btn"
           onClick={[Function]}

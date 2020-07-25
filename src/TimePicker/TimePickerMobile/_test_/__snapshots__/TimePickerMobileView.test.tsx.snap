@@ -5,7 +5,7 @@ exports[`TimePickerMobileView 小时视图 1`] = `
   className="sc-AxjAm sc-fzoNJl fkitjh sinoui-time-picker-mobile-view sinoui-paper"
 >
   <div
-    className="sc-Axmtr geRZyn"
+    className="sc-Axmtr jeVgxp"
   >
     <div
       className="sinoui-time-picker-mobile-view__header-am-pm"
@@ -34,6 +34,11 @@ exports[`TimePickerMobileView 小时视图 1`] = `
         selected={true}
       >
         11
+      </div>
+      <div
+        className="sc-AxmLO tMCXA"
+      >
+        :
       </div>
       <div
         className="sc-AxheI qkkeA"
@@ -144,7 +149,7 @@ exports[`TimePickerMobileView 小时视图 1`] = `
     className="sinoui-time-picker-mobile-view__footer"
   >
     <button
-      className="sc-AxmLO dcJmXf sinoui-base-button sc-fzozJi kUqiwo sinoui-icon-button sinoui-icon-button--dense"
+      className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-fzozJi kUqiwo sinoui-icon-button sinoui-icon-button--dense"
       color="primary"
       data-view-icon={true}
       onClick={[Function]}
@@ -169,7 +174,7 @@ exports[`TimePickerMobileView 小时视图 1`] = `
       className="sc-fzplWN jgRrJy"
     >
       <button
-        className="sc-AxmLO dcJmXf sinoui-base-button sc-fzpans dYyNxv sinoui-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-fzpans dYyNxv sinoui-button"
         color="primary"
         data-testid="clock-clear-btn"
         onClick={[Function]}
@@ -179,7 +184,7 @@ exports[`TimePickerMobileView 小时视图 1`] = `
         清除
       </button>
       <button
-        className="sc-AxmLO dcJmXf sinoui-base-button sc-fzpans dYyNxv sinoui-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-fzpans dYyNxv sinoui-button"
         color="primary"
         data-testid="clock-cancel-btn"
         onClick={[MockFunction]}
@@ -189,7 +194,7 @@ exports[`TimePickerMobileView 小时视图 1`] = `
         取消
       </button>
       <button
-        className="sc-AxmLO dcJmXf sinoui-base-button sc-fzpans dYyNxv sinoui-button"
+        className="BaseButton__BaseButtonLayout-wk8p17-0 ibgUtO sinoui-base-button sc-fzpans dYyNxv sinoui-button"
         color="primary"
         data-testid="clock-ok-btn"
         onClick={[Function]}

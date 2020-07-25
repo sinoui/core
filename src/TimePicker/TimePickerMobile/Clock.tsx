@@ -67,13 +67,13 @@ export default function Clock({
 
   /**
    * 获取基于12点基线的旋转角度
-   * @param pageX
-   * @param pageY
+   * @param clientX
+   * @param clientY
    */
-  const getRotateDegToBaseLine = (pageX: number, pageY: number) => {
+  const getRotateDegToBaseLine = (clientX: number, clientY: number) => {
     const { left, top } = clockRef?.current?.getBoundingClientRect() as any;
-    const x = pageX - (left + CLOCK_SIZE / 2 + CLOCK_PIN_SIZE / 2);
-    const y = pageY - (top + CLOCK_SIZE / 2 + CLOCK_PIN_SIZE / 2);
+    const x = clientX - (left + CLOCK_SIZE / 2 + CLOCK_PIN_SIZE / 2);
+    const y = clientY - (top + CLOCK_SIZE / 2 + CLOCK_PIN_SIZE / 2);
     const xyDeg = (Math.atan(Math.abs(x / y)) / (2 * Math.PI)) * 360;
     // 基于12点 右上方 1/4表盘
     let deg = Math.floor(xyDeg);
@@ -131,9 +131,9 @@ export default function Clock({
   /**
    * 改变时分指针位置 更新旋转角度
    */
-  const onChangeHourMinuteValue = (pageX: number, pageY: number) => {
+  const onChangeHourMinuteValue = (clientX: number, clientY: number) => {
     if (isMoveStart.current && !isMoveEnd.current) {
-      const currentRotateDeg = getRotateDegToBaseLine(pageX, pageY);
+      const currentRotateDeg = getRotateDegToBaseLine(clientX, clientY);
       // 最新旋转角度和之前旋转角度不一致时  更新旋转角度
       if (currentRotateDeg !== rotateDeg) {
         if (isHourView) {
@@ -150,8 +150,8 @@ export default function Clock({
    * 移动端事件
    */
   const onTouchEnd = (event: React.TouchEvent) => {
-    const { pageX, pageY } = event.nativeEvent.changedTouches[0];
-    onChangeHourMinuteValue(pageX, pageY);
+    const { clientX, clientY } = event.nativeEvent.changedTouches[0];
+    onChangeHourMinuteValue(clientX, clientY);
     if (isHourView) {
       onChangeHourOrMinuteView(!isHourView);
     }
@@ -163,9 +163,8 @@ export default function Clock({
    * PC端事件
    */
   const onMouseUp = (event: React.MouseEvent) => {
-    const { pageX, pageY } = event;
-    console.log(pageX, pageY);
-    onChangeHourMinuteValue(pageX, pageY);
+    const { clientX, clientY } = event;
+    onChangeHourMinuteValue(clientX, clientY);
     if (isHourView) {
       onChangeHourOrMinuteView(!isHourView);
     }
@@ -178,8 +177,8 @@ export default function Clock({
    */
   const onTouchMove = (event: React.TouchEvent) => {
     onChangeHourMinuteValue(
-      event.nativeEvent.touches[0].pageX,
-      event.nativeEvent.touches[0].pageY,
+      event.nativeEvent.touches[0].clientX,
+      event.nativeEvent.touches[0].clientY,
     );
   };
 
@@ -187,9 +186,9 @@ export default function Clock({
    * PC端事件
    */
   const onMouseMove = (event: React.MouseEvent) => {
-    const { pageX, pageY } = event;
-    console.log(pageX, pageY);
-    onChangeHourMinuteValue(pageX, pageY);
+    const { clientX, clientY } = event;
+
+    onChangeHourMinuteValue(clientX, clientY);
   };
 
   return (

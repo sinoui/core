@@ -63,9 +63,6 @@ const TimePickerMobileHeaderWrapper = styled.div`
     }
 
     ::after {
-      content: ':';
-      position: absolute;
-      opacity: 0.7;
     }
   }
 
@@ -85,6 +82,10 @@ const TimePickerMobileHeaderWrapper = styled.div`
     ${(props) => props.theme.typography.h4};
     color: ${(props) => props.theme.palette.primary.contrastText};
   }
+`;
+
+const Colon = styled.div`
+  opacity: 0.7;
 `;
 
 export default function TimePickerMobileHeader({
@@ -115,6 +116,7 @@ export default function TimePickerMobileHeader({
             >
               {formatHourMinute(hour)}
             </ClickedTextView>
+            <Colon>:</Colon>
             <ClickedTextView
               selected={!isHourView}
               onClick={() => onChangeHourOrMinuteView(false)}
