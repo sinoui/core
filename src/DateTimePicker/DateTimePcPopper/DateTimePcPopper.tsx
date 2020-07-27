@@ -98,7 +98,7 @@ export default function DateTimePcPopper(props: Props) {
     ...rest
   } = props;
   return (
-    <Popper {...rest} open={open}>
+    <Popper placement="bottom-start" {...rest} open={open}>
       <Fade in={open}>
         <DateTimeView
           date={date}
