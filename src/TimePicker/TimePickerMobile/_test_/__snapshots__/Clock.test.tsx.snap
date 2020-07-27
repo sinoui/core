@@ -278,7 +278,7 @@ exports[`快照测试 分钟视图 1`] = `
     className="sc-AxirZ mcTG"
   />
   <div
-    className="sc-AxiKw jgvgaV"
+    className="sc-AxiKw jDdSoh"
   >
     <div
       className="sc-AxhCb iTIGXN sinoui-clock__pointer-minute-dot"
@@ -373,7 +373,7 @@ exports[`快照测试 小时视图 1`] = `
     className="sc-AxirZ mcTG"
   />
   <div
-    className="sc-AxiKw GWOCM"
+    className="sc-AxiKw PRUSw"
   >
     <div
       className="sc-AxhCb iTIGXN sinoui-clock__pointer-minute-dot"

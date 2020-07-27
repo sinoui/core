@@ -14,7 +14,7 @@ const Wrapper = styled.div<{
   ${(props) =>
     props.$isTransition &&
     `transition: ${props.theme.transitions.create('transform')}`};
-  transform: ${({ $rotateDeg = 0 }) => `rotateZ(${$rotateDeg}deg)`};
+  transform: ${({ $rotateDeg = 0 }) => `rotate3d(0,0,1,${$rotateDeg}deg)`};
   transform-origin: center bottom 0;
 `;
 
