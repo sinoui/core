@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 时钟视图下弹出头部view 1`] = `
+<div
+  className="sc-AxirZ fkcfdf"
+>
+  <div
+    className="sinoui-time-picker-mobile-view__header-am-pm"
+  >
+    <div
+      className="sc-AxjAm ciJfZK"
+      onClick={[Function]}
+      selected={true}
+    >
+      上午
+    </div>
+    <div
+      className="sc-AxjAm dCafeO"
+      onClick={[Function]}
+      selected={false}
+    >
+      下午
+    </div>
+  </div>
+  <div
+    className="sinoui-time-picker-mobile-view__header-hour-minute"
+  >
+    <div
+      className="sc-AxjAm ciJfZK"
+      onClick={[Function]}
+      selected={true}
+    >
+      03
+    </div>
+    <div
+      className="sc-AxiKw fFWZDH"
+    >
+      :
+    </div>
+    <div
+      className="sc-AxjAm dCafeO"
+      onClick={[Function]}
+      selected={false}
+    >
+      20
+    </div>
+  </div>
+</div>
+`;
+
+exports[`快照测试 键盘输入视图下弹出头部view 1`] = `
+<div
+  className="sc-AxirZ fkcfdf"
+>
+  <div
+    className="sinoui-time-picker-mobile-view__header-title"
+  >
+    设置时间
+  </div>
+</div>
+`;

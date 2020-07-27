@@ -87,10 +87,10 @@ export default function TimeInput(props: Props) {
   const {
     selectedHour,
     selectedMinute,
-    minHour,
-    minMinute,
-    maxHour,
-    maxMinute,
+    minHour = 0,
+    minMinute = 0,
+    maxHour = 23,
+    maxMinute = 59,
     onHourChange: onHourChangeProp,
     onMinuteChange: onMinuteChangeProp,
   } = props;

@@ -1,0 +1,7 @@
+const CLOCK_NUMBER_PADDING = 4;
+const CLOCK_PIN_SIZE = 6;
+/**
+ * 钟表盘尺寸
+ */
+const CLOCK_SIZE = 260;
+export { CLOCK_NUMBER_PADDING, CLOCK_PIN_SIZE, CLOCK_SIZE };

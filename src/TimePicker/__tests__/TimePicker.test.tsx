@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import '@testing-library/jest-dom';
 import TimePicker from '../TimePicker';
+import { formatHourMinute } from '../TimePickerMobile/utils';
 
 afterEach(cleanup);
 
@@ -36,6 +37,7 @@ it('点击指示图标，弹出选项', () => {
           'data-testid': 'time-picker',
         }}
         value="12:12"
+        isPc
       />
     </ThemeProvider>,
   );
@@ -55,6 +57,7 @@ it('弹窗失去焦点后，关闭弹窗', () => {
           'data-testid': 'time-picker',
         }}
         value="12:12"
+        isPc
       />
     </ThemeProvider>,
   );
@@ -199,7 +202,7 @@ describe('输入框', () => {
 it('点击图标打开弹窗时，选中的小时选项获取焦点', () => {
   const { getByRole } = render(
     <ThemeProvider theme={defaultTheme}>
-      <TimePicker value="12:13" />
+      <TimePicker value="12:13" isPc />
     </ThemeProvider>,
   );
 
@@ -328,4 +331,204 @@ it('autoComplete=off', () => {
   const input = container.querySelector('input')!;
 
   expect(input).toHaveAttribute('autocomplete', 'off');
+});
+
+describe('移动端视图测试', () => {
+  it('点击指示图标，弹出移动端时间选择视图', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker
+          wrapperProps={{
+            'data-testid': 'time-picker',
+          }}
+          value="12:12"
+        />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+
+    expect(
+      document.querySelector('.sinoui-time-picker-mobile-view'),
+    ).toBeTruthy();
+  });
+
+  it('点击图标打开弹窗时，钟表盘对应的小时高亮显示', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="21:03" />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+
+    expect(document.querySelector('[data-clock-number="9"]')).toHaveStyle(
+      'color:#fff',
+    );
+  });
+
+  it('点击钟表盘切换到分钟表盘，对应的分钟高亮显示', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="21:00" />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+
+    const clock = document.querySelector(
+      '.sinoui-time-picker-mobile-view__clock',
+    ) as Element;
+    fireEvent.mouseDown(clock);
+    fireEvent.mouseUp(clock);
+    expect(document.querySelector('[data-clock-number="0"]')).toHaveStyle(
+      'color:#fff',
+    );
+  });
+
+  it('点击图标打开弹窗时，弹窗头部的小时高亮显示', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="21:03" />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+
+    expect(
+      document.querySelector(
+        '.sinoui-time-picker-mobile-view__header-hour-minute > div:first-child',
+      ),
+    ).toHaveStyle('opacity:1');
+  });
+
+  it('显示为分钟表盘时，弹窗头部的分钟高亮显示', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="21:03" />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+    const clock = document.querySelector(
+      '.sinoui-time-picker-mobile-view__clock',
+    ) as Element;
+    fireEvent.mouseDown(clock);
+    fireEvent.mouseUp(clock);
+    expect(
+      document.querySelector(
+        '.sinoui-time-picker-mobile-view__header-hour-minute > div:last-child',
+      ),
+    ).toHaveStyle('opacity:1');
+  });
+
+  it('00:00时,上午高亮显示', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="00:00" />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+    const amView = document.querySelector(
+      '.sinoui-time-picker-mobile-view__header-am-pm > div:first-child',
+    ) as Element;
+    expect(amView).toHaveStyle('opacity:1');
+  });
+
+  it('12:00时,下午高亮显示', () => {
+    const { getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="12:00" />
+      </ThemeProvider>,
+    );
+
+    const button = getByRole('button');
+
+    fireEvent.click(button);
+    const pmView = document.querySelector(
+      '.sinoui-time-picker-mobile-view__header-am-pm > div:last-child',
+    ) as Element;
+    expect(pmView).toHaveStyle('opacity:1');
+  });
+
+  it('点击取消按钮，关闭弹窗，不更新值', () => {
+    const onChange = jest.fn();
+    const { getByRole, getByText, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="12:00" onChange={onChange} />
+      </ThemeProvider>,
+    );
+
+    fireEvent.click(getByRole('button'));
+    const cancelBtn = getByText('取消');
+    const input = container.querySelector('input');
+    act(() => {
+      fireEvent.click(cancelBtn);
+      jest.runAllTimers();
+    });
+
+    expect(onChange).not.toBeCalled();
+    expect(input).toHaveValue('12:00');
+    expect(
+      container.querySelector('.sinoui-time-picker-mobile-view'),
+    ).not.toBeInTheDocument();
+  });
+
+  it('点击清除按钮，关闭弹窗，清空值', () => {
+    const onChange = jest.fn();
+    const { getByRole, getByText, container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker value="12:00" onChange={onChange} />
+      </ThemeProvider>,
+    );
+
+    fireEvent.click(getByRole('button'));
+    const clearBtn = getByText('清除');
+    act(() => {
+      fireEvent.click(clearBtn);
+      jest.runAllTimers();
+    });
+
+    expect(onChange).toBeCalledWith('');
+    expect(
+      container.querySelector('.sinoui-time-picker-mobile-view'),
+    ).not.toBeInTheDocument();
+  });
+
+  it('点击设置按钮，弹窗关闭，更新选中值', () => {
+    const onChange = jest.fn();
+    const { container, getByText, getByRole } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <TimePicker onChange={onChange} />
+      </ThemeProvider>,
+    );
+
+    fireEvent.click(getByRole('button'));
+    const okBtn = getByText('设置');
+    act(() => {
+      fireEvent.click(okBtn);
+      jest.runAllTimers();
+    });
+
+    const changedValue = `${formatHourMinute(
+      new Date().getHours(),
+    )}:${formatHourMinute(new Date().getMinutes())}`;
+    expect(onChange).toBeCalledWith(changedValue);
+    expect(
+      container.querySelector('.sinoui-time-picker-mobile-view'),
+    ).not.toBeInTheDocument();
+  });
 });

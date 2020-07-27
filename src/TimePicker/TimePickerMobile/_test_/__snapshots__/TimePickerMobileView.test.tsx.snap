@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimePickerMobileView 小时视图 1`] = `
+<div
+  className="sc-AxjAm sc-fzoXWK clwDnt sinoui-time-picker-mobile-view sinoui-paper"
+>
+  <div
+    className="sc-Axmtr jeVgxp"
+  >
+    <div
+      className="sinoui-time-picker-mobile-view__header-am-pm"
+    >
+      <div
+        className="sc-AxheI lnJFus"
+        onClick={[Function]}
+        selected={true}
+      >
+        上午
+      </div>
+      <div
+        className="sc-AxheI qkkeA"
+        onClick={[Function]}
+        selected={false}
+      >
+        下午
+      </div>
+    </div>
+    <div
+      className="sinoui-time-picker-mobile-view__header-hour-minute"
+    >
+      <div
+        className="sc-AxheI lnJFus"
+        onClick={[Function]}
+        selected={true}
+      >
+        11
+      </div>
+      <div
+        className="sc-AxmLO tMCXA"
+      >
+        :
+      </div>
+      <div
+        className="sc-AxheI qkkeA"
+        onClick={[Function]}
+        selected={false}
+      >
+        28
+      </div>
+    </div>
+  </div>
+  <div
+    className="sinoui-time-picker-mobile-view__main"
+  >
+    <div
+      className="sc-AxgMl eXDohh sinoui-time-picker-mobile-view__clock"
+      onMouseDown={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+    >
+      <div
+        className="sc-AxirZ hsZLes"
+        data-clock-number={1}
+      >
+        1
+      </div>
+      <div
+        className="sc-AxirZ dgQSxg"
+        data-clock-number={2}
+      >
+        2
+      </div>
+      <div
+        className="sc-AxirZ dvJoCp"
+        data-clock-number={3}
+      >
+        3
+      </div>
+      <div
+        className="sc-AxirZ kCfXOc"
+        data-clock-number={4}
+      >
+        4
+      </div>
+      <div
+        className="sc-AxirZ fuNSXE"
+        data-clock-number={5}
+      >
+        5
+      </div>
+      <div
+        className="sc-AxirZ OGnyc"
+        data-clock-number={6}
+      >
+        6
+      </div>
+      <div
+        className="sc-AxirZ hgMUdw"
+        data-clock-number={7}
+      >
+        7
+      </div>
+      <div
+        className="sc-AxirZ haJHPU"
+        data-clock-number={8}
+      >
+        8
+      </div>
+      <div
+        className="sc-AxirZ GJMPE"
+        data-clock-number={9}
+      >
+        9
+      </div>
+      <div
+        className="sc-AxirZ guBock"
+        data-clock-number={10}
+      >
+        10
+      </div>
+      <div
+        className="sc-AxirZ cxtxQa"
+        data-clock-number={11}
+      >
+        11
+      </div>
+      <div
+        className="sc-AxirZ bDhXdM"
+        data-clock-number={12}
+      >
+        12
+      </div>
+      <div
+        className="sc-AxiKw dcMhZe"
+      />
+      <div
+        className="sc-AxhCb cZZYSJ"
+      >
+        <div
+          className="sc-AxhUy ivOmqw sinoui-clock__pointer-minute-dot"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="sinoui-time-picker-mobile-view__footer"
+  >
+    <button
+      className="sc-fzozJi hzVFNO sinoui-base-button sc-fzoLsD bMYGiK sinoui-icon-button sinoui-icon-button--dense"
+      color="primary"
+      data-view-icon={true}
+      onClick={[Function]}
+      role="button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="sc-fzpans hDjjSH sinoui-svg-icon"
+        data-testid="KeyboardIcon"
+        focusable="false"
+        role="presentation"
+        size={24}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"
+        />
+      </svg>
+    </button>
+    <div
+      className="sc-fznyAO UMbLe"
+    >
+      <button
+        className="sc-fzozJi hzVFNO sinoui-base-button sc-fzplWN bXFyLu sinoui-button"
+        color="primary"
+        data-testid="clock-clear-btn"
+        onClick={[Function]}
+        role="button"
+        type="button"
+      >
+        清除
+      </button>
+      <button
+        className="sc-fzozJi hzVFNO sinoui-base-button sc-fzplWN bXFyLu sinoui-button"
+        color="primary"
+        data-testid="clock-cancel-btn"
+        onClick={[MockFunction]}
+        role="button"
+        type="button"
+      >
+        取消
+      </button>
+      <button
+        className="sc-fzozJi hzVFNO sinoui-base-button sc-fzplWN bXFyLu sinoui-button"
+        color="primary"
+        data-testid="clock-ok-btn"
+        onClick={[Function]}
+        role="button"
+        type="button"
+      >
+        设置
+      </button>
+    </div>
+  </div>
+</div>
+`;

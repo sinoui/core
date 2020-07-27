@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 分钟视图 1`] = `
+<div
+  className="sc-AxjAm jSXLxV"
+>
+  <div
+    className="sc-AxirZ iabEYR sinoui-clock__pointer-minute-dot"
+  />
+</div>
+`;
+
+exports[`快照测试 时钟视图 1`] = `
+<div
+  className="sc-AxjAm bmovfh"
+>
+  <div
+    className="sc-AxirZ iabEYR sinoui-clock__pointer-minute-dot"
+  />
+</div>
+`;
