@@ -5,6 +5,7 @@ import useIsPc from '@sinoui/core/DatePicker/useIsPc';
 import type { PopperProps } from '@sinoui/core/Popper';
 import classNames from 'classnames';
 import styled from 'styled-components';
+import type { ModalProps } from '@sinoui/core/Modal';
 import InputAdornment from '../InputAdornment';
 import DatePickerIcon from '../svg-icons/DatePickerIcon';
 import formatDate from '../DatePicker/formatDate';
@@ -46,9 +47,13 @@ export interface Props
    */
   portal?: boolean;
   /**
-   * 给弹窗设置属性。
+   * 给pc弹窗设置属性。
    */
   popperProps?: PopperProps;
+  /**
+   * 给移动端弹窗设置属性
+   */
+  modalProps?: ModalProps;
   /**
    * 默认年份
    */
@@ -121,6 +126,7 @@ export default function DateRangePicker(props: Props) {
     defaultYear,
     defaultMonth,
     popperProps,
+    modalProps,
     variant,
     className,
     style,
@@ -302,6 +308,7 @@ export default function DateRangePicker(props: Props) {
           defaultYear={defaultYear}
           defaultMonth={defaultMonth}
           focusedInput={focusedInput}
+          {...modalProps}
           onRequestClose={onRequestClose}
           onChange={onChange}
           startTitle={startInputLabel ?? startInputPlaceholder}
