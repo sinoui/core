@@ -117,6 +117,8 @@ export interface Props {
    * ```
    */
   enablePortal?: boolean;
+
+  className?: string;
 }
 
 const defaultRenderBackdrop = (props: RenderModalBackdropProps) => {

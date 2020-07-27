@@ -92,6 +92,7 @@ export default function DateRangeMobileModal(props: Props) {
       backdrop={false}
       autoFocus={false}
       enforceFocus={false}
+      className="sinoui-date-range-picker__modal"
     >
       <Fade in={open}>
         <MobileDateRangeView
