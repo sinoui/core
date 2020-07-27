@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import ClockNumber from './ClockNumber';
 import ClockPin from './ClockPin';
@@ -64,6 +64,8 @@ export default function Clock({
   // 是否已经触发touch事件监听
   const isTouchedEvent = useRef(false);
   const rotateDeg = isHourView ? hourRotateDeg : minuteRotateDeg;
+  // 指针选项是否显示过渡效果
+  const [isTransition, onTransitionChange] = useState(true);
 
   /**
    * 获取基于12点基线的旋转角度
@@ -115,6 +117,8 @@ export default function Clock({
     isMoveStart.current = true;
     isMoveEnd.current = false;
     isTouchedEvent.current = true;
+    // 滑动指针时 不增加过渡效果
+    onTransitionChange(false);
   };
 
   /**
@@ -125,6 +129,8 @@ export default function Clock({
     if (!isTouchedEvent.current) {
       isMoveStart.current = true;
       isMoveEnd.current = false;
+      // 滑动指针时 不增加过渡效果
+      onTransitionChange(false);
     }
   };
 
@@ -164,7 +170,6 @@ export default function Clock({
    */
   const onMouseUp = (event: React.MouseEvent) => {
     const { pageX, pageY } = event;
-    console.log(pageX, pageY);
     onChangeHourMinuteValue(pageX, pageY);
     if (isHourView) {
       onChangeHourOrMinuteView(!isHourView);
@@ -188,7 +193,6 @@ export default function Clock({
    */
   const onMouseMove = (event: React.MouseEvent) => {
     const { pageX, pageY } = event;
-    console.log(pageX, pageY);
     onChangeHourMinuteValue(pageX, pageY);
   };
 
@@ -223,7 +227,12 @@ export default function Clock({
             />
           ))}
       <ClockPin />
-      <ClockPointer rotateDeg={rotateDeg} isHourView={isHourView} />
+      <ClockPointer
+        isTransition={isTransition}
+        rotateDeg={rotateDeg}
+        isHourView={isHourView}
+        onTransitionChange={onTransitionChange}
+      />
     </ClockWrapper>
   );
 }

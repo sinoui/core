@@ -2,7 +2,7 @@
 
 exports[`快照测试 分钟视图 1`] = `
 <div
-  className="sc-AxjAm hWxPrr"
+  className="sc-AxjAm jSXLxV"
 >
   <div
     className="sc-AxirZ iabEYR sinoui-clock__pointer-minute-dot"
@@ -12,7 +12,7 @@ exports[`快照测试 分钟视图 1`] = `
 
 exports[`快照测试 时钟视图 1`] = `
 <div
-  className="sc-AxjAm ftLXlz"
+  className="sc-AxjAm bmovfh"
 >
   <div
     className="sc-AxirZ iabEYR sinoui-clock__pointer-minute-dot"
