@@ -9,7 +9,7 @@ import Popper from '../Popper';
 import type { PopperProps } from '../Popper';
 import Paper from '../Paper';
 import TimeSelectView from './TimeSelectView/TimeSelectView';
-import IconButton from '../IconButton';
+import BaseButton from '../BaseButton';
 import parseTime from './parseTime';
 import formatTime from './formatTime';
 import { isTime } from './isTime';
@@ -66,6 +66,11 @@ const PaperWrapper = styled(Paper)`
 
 const StyledPopper = styled(Popper)`
   z-index: ${({ theme }) => theme.zIndex.popover};
+`;
+
+const IconButton = styled(BaseButton)`
+  width: 24px;
+  height: 24px;
 `;
 
 /**
