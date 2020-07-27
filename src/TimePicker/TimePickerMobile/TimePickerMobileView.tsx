@@ -86,7 +86,7 @@ const TimePickerMobileView = React.forwardRef<HTMLDivElement, Props>(
      */
     const onClear = () => {
       if (onChange) {
-        onChange();
+        onChange('');
       }
       onRequestClose();
     };
