@@ -251,6 +251,10 @@ label ~ .c7 {
   width: 124px;
 }
 
+.c5 input {
+  -moz-appearance: textfield;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;

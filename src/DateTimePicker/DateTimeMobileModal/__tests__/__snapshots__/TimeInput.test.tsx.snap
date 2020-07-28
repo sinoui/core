@@ -237,6 +237,10 @@ label ~ .c4 {
   width: 124px;
 }
 
+.c2 input {
+  -moz-appearance: textfield;
+}
+
 @media (hover:none) {
   .c1:hover .sinoui-focused-visible {
     visibility: hidden;

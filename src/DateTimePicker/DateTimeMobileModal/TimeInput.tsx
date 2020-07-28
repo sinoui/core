@@ -53,6 +53,10 @@ const Divider = styled(Body2)`
 
 const StyledInput = styled(TextInput)`
   width: 124px;
+
+  input {
+    -moz-appearance: textfield;
+  }
 `;
 
 /**
