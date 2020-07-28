@@ -72,7 +72,6 @@ const TimePickerDemo = () => {
 
 export const 时间选择 = () => (
   <StoryLayout>
-    <div style={{ height: '800px', backgroundColor: 'red' }}>red</div>
     <TimePickerDemo />
   </StoryLayout>
 );
