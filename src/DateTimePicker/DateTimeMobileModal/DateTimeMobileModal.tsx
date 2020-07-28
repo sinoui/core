@@ -78,7 +78,13 @@ export default function DateTimeMobileModal(props: Props) {
     ...other
   } = props;
   return (
-    <Modal open={open} onRequestClose={onRequestClose} {...other}>
+    <Modal
+      open={open}
+      onRequestClose={onRequestClose}
+      {...other}
+      autoFocus={false}
+      enforceFocus={false}
+    >
       <Fade in={open}>
         <DateTimeMobileView
           {...other}
