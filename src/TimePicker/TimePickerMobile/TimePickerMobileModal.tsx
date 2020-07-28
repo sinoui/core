@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Modal from '@sinoui/core/Modal';
 import type { ModalProps } from '@sinoui/core/Modal';
 import Fade from '@sinoui/core/Fade';
 import TimePickerMobileView from './TimePickerMobileView';
+import scrollLock from './scrollLock';
 
 interface Props extends Omit<ModalProps, 'children'> {
   value?: string;
@@ -22,6 +23,15 @@ interface Props extends Omit<ModalProps, 'children'> {
  */
 export default function DateRangeMobileModal(props: Props) {
   const { value, onRequestClose, onChange, open } = props;
+
+  useEffect(() => {
+    if (open) {
+      scrollLock.enable();
+    } else {
+      scrollLock.disable();
+    }
+  }, [open]);
+
   return (
     <Modal open={open} autoFocus={false} center enforceFocus={false}>
       <Fade in={open}>
