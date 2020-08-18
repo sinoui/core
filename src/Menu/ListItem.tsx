@@ -79,43 +79,45 @@ const StyleBaseButton = withRipple({
  * Menu组件中的列表项组件
  *
  */
-function ListItem(props: ListItemProps) {
-  const {
-    button = true,
-    children: childrenProp,
-    component: componentProp,
-    disabled,
-    ...other
-  } = props;
-  const itemChildren = React.Children.map(childrenProp, (child) => {
-    if (typeof child === 'string') {
-      return (
-        <Typography
-          key="menu-title"
-          color={props.color}
-          style={props.textStyle}
-        >
-          {child}
-        </Typography>
-      );
+
+export default React.forwardRef<HTMLDivElement, ListItemProps>(
+  function ListItem(props, ref) {
+    const {
+      button = true,
+      children: childrenProp,
+      component: componentProp,
+      disabled,
+      ...other
+    } = props;
+    const itemChildren = React.Children.map(childrenProp, (child) => {
+      if (typeof child === 'string') {
+        return (
+          <Typography
+            key="menu-title"
+            color={props.color}
+            style={props.textStyle}
+            ref={ref}
+          >
+            {child}
+          </Typography>
+        );
+      }
+      return child;
+    });
+
+    const listItemProps = {
+      disabled,
+      button,
+      component: undefined,
+      ...other,
+    };
+    let ComponentMain = componentProp || StyleItem;
+
+    if (button) {
+      ComponentMain = StyleBaseButton;
+      listItemProps.component = componentProp as any;
     }
-    return child;
-  });
 
-  const listItemProps = {
-    disabled,
-    button,
-    component: undefined,
-    ...other,
-  };
-  let ComponentMain = componentProp || StyleItem;
-
-  if (button) {
-    ComponentMain = StyleBaseButton;
-    listItemProps.component = componentProp as any;
-  }
-
-  return <ComponentMain {...listItemProps}>{itemChildren}</ComponentMain>;
-}
-
-export default ListItem;
+    return <ComponentMain {...listItemProps}>{itemChildren}</ComponentMain>;
+  },
+);
