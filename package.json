@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@types/react-event-listener": "^0.4.9",
-    "@types/react-transition-group": "^4.4.0",
+    "@types/react-transition-group": "~4.2.4",
     "@types/react-window": "^1.8.2",
     "@babel/polyfill": "^7.8.7",
     "@babel/runtime": "^7.9.2",
