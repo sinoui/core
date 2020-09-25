@@ -86,8 +86,26 @@ const parseItemsFromChildren = (
   return (
     React.Children.map(children, (item) => {
       if (React.isValidElement(item) && item.props) {
-        const { children: label, value = label, id = value } = item.props;
-        return { id, value, label };
+        const {
+          children: label,
+          value = label,
+          id = value,
+          disabled,
+          labelPosition,
+          readOnly,
+          dense,
+          color,
+        } = item.props;
+        return {
+          id,
+          value,
+          label,
+          disabled,
+          labelPosition,
+          readOnly,
+          dense,
+          color,
+        };
       }
       return null;
     })?.filter(Boolean) ?? []
@@ -180,11 +198,11 @@ function CheckboxGroup<T = string>(props: CheckboxGroupProps<T>) {
         <Checkbox
           key={item.id ?? item.value}
           value={item.value}
-          readOnly={readOnly}
-          disabled={disabled}
-          dense={dense}
-          labelPosition={labelPosition}
-          color={color}
+          readOnly={item.readOnly ?? readOnly}
+          disabled={item.disabled ?? disabled}
+          dense={item.dense ?? dense}
+          labelPosition={item.labelPosition ?? labelPosition}
+          color={item.color ?? color}
           onClick={handleItemClick(item.value)}
           checked={value.includes(item.value)}
         >
