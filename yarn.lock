@@ -4663,6 +4663,11 @@ es6-symbol@^3.1.1, es6-symbol@~3.1.3:
     d "^1.0.1"
     ext "^1.1.2"
 
+esbuild@^0.7.12:
+  version "0.7.12"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.7.12.tgz#942d268c090e5b24bc1f006eefaee8cebd5289c7"
+  integrity sha512-e7cXv/5aTNY1d4nLri5tQ0ZeA1j90YjF2ZU6lGFOYMW+3H30GG+bMcR8HWfZH/SzHr2Meb6mqPdyn19IpKpO9g==
+
 escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"

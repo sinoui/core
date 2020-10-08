@@ -54,15 +54,15 @@
     "styled-components": ">=4.3.0"
   },
   "dependencies": {
-    "@types/react-event-listener": "^0.4.9",
-    "@types/react-transition-group": "~4.2.4",
-    "@types/react-window": "^1.8.2",
     "@babel/polyfill": "^7.8.7",
     "@babel/runtime": "^7.9.2",
     "@popperjs/core": "^2.4.0",
     "@sinoui/ripple": "^1.0.12",
     "@sinoui/theme": "^1.0.0-beta.8",
     "@sinoui/utils": "^0.2.1",
+    "@types/react-event-listener": "^0.4.9",
+    "@types/react-transition-group": "~4.2.4",
+    "@types/react-window": "^1.8.2",
     "classnames": "^2.2.6",
     "dom-helpers": "^5.1.4",
     "keycode": "^2.2.0",
@@ -98,6 +98,7 @@
     "@types/styled-components": "5.1.0",
     "@types/testing-library__jest-dom": "^5.0.3",
     "babel-loader": "^8.1.0",
+    "esbuild": "^0.7.12",
     "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
     "immer": "^6.0.1",
@@ -114,5 +115,10 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "./esbuild-transform.js"
+    }
   }
 }
