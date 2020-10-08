@@ -2522,7 +2522,7 @@ exports[`快照测试 1`] = `
               </span>
             </div>
             <div
-              className="sinoui-date-cell sinoui-date-cell--outlined"
+              className="sinoui-date-cell"
               data-column={5}
               data-date="2020-07-17"
               data-row={3}
