@@ -3,7 +3,6 @@ import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import defaultTheme from '@sinoui/theme/defaultTheme';
-import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import CalendarViewHeader from '../CalendarViewHeader';
 import ViewModel from '../../ViewModel';

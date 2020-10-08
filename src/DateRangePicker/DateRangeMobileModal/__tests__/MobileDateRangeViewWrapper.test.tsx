@@ -1,7 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
 import MobileDateRangeViewWrapper from '../MobileDateRangeViewWrapper';
 

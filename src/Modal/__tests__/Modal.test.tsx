@@ -4,7 +4,6 @@
 /* eslint-disable jsx-a11y/tabindex-no-positive */
 import React from 'react';
 import { render, cleanup, act, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import defaultTheme from '@sinoui/theme/defaultTheme';
 import Grow from '@sinoui/core/Grow';
@@ -361,7 +360,7 @@ describe('animate', () => {
     // 执行过渡定时器，相当于过渡结束
     jest.runAllTimers();
     // 卸载后，容器不包含任何元素
-    expect(container).toBeEmpty();
+    expect(container).toBeEmptyDOMElement();
   });
 
   it('关闭带过渡效果模态框后能够正常打开模态框', () => {

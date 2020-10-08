@@ -3,7 +3,7 @@ import renderer, { act } from 'react-test-renderer';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom/extend-expect';
+
 import { MdRestore, MdFavorite, MdLocationOn, MdFolder } from 'react-icons/md';
 import NavigationRail from '@sinoui/core/NavigationRail';
 import NavigationRailAction from '@sinoui/core/NavigationRailAction';

@@ -3,7 +3,6 @@ import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import Favorite from '@sinoui/icons/Favorite';
-import '@testing-library/jest-dom';
 import IconButton from './IconButton';
 
 it('正确渲染IconButton', () => {

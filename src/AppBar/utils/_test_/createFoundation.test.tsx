@@ -1,5 +1,4 @@
 import React from 'react';
-import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import createFoundation from '../createFoundation';
@@ -99,7 +98,6 @@ describe('不同模式应用栏滚动', () => {
     act(() => {
       fireEvent.scroll(window, { target: { pageYOffset: 100 } });
     });
-    console.log(appBar.outerHTML);
     expect(appBar).toHaveStyle('top:0px');
     act(() => {
       fireEvent.scroll(window, { target: { pageYOffset: 0 } });

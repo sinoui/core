@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent, cleanup, act } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import Clock from '../Clock';
 
 afterEach(cleanup);

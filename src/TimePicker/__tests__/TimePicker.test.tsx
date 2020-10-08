@@ -3,7 +3,6 @@ import React from 'react';
 import { render, fireEvent, cleanup, act } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom';
 import TimePicker from '../TimePicker';
 import { formatHourMinute } from '../TimePickerMobile/utils';
 

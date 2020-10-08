@@ -1,5 +1,7 @@
 import { PC_DATE_CELL_RECT } from '../constants';
 
+const toCssValue = (value: number) => Math.round(value * 10000) / 10000;
+
 /**
  * 获取周状态条高度
  */
@@ -21,8 +23,8 @@ export function getWeekStatusBarWidth(range: [number, number]) {
   const dateCellContentWidth = width - 2 * padding;
   const rangeLength = end - start;
 
-  return `calc(${((rangeLength / 7) * 100).toFixed(
-    4,
+  return `calc(${toCssValue(
+    (rangeLength / 7) * 100,
   )}% + ${dateCellContentWidth}px)`;
 }
 
@@ -32,7 +34,7 @@ export function getWeekStatusBarWidth(range: [number, number]) {
  * @param range 区间
  */
 export function getWeekStatusBarLeft(firstDay: number) {
-  return `calc(${((firstDay / 7) * 100).toFixed(4)}% + ${
+  return `calc(${toCssValue((firstDay / 7) * 100)}% + ${
     PC_DATE_CELL_RECT.padding
   }px)`;
 }

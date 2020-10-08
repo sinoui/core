@@ -14,6 +14,8 @@ export default {
     $body.style.removeProperty('position');
     $body.style.removeProperty('top');
     $body.style.removeProperty('width');
-    window.scrollTo(0, scrollPosition);
+    if (process.env.NODE_ENV !== 'test') {
+      window.scrollTo(0, scrollPosition);
+    }
   },
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import 'jest-styled-components';

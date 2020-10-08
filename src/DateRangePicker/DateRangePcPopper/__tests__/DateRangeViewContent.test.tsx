@@ -2,7 +2,6 @@ import { render, cleanup, act, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import React from 'react';
-import '@testing-library/jest-dom';
 import DateRangeViewContent from '../DateRangeViewContent';
 
 afterEach(cleanup);

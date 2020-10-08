@@ -4,7 +4,6 @@ import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom';
 import TimeSelectView from '../TimeSelectView';
 
 afterEach(cleanup);

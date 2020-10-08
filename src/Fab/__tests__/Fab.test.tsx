@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import { MdAdd } from 'react-icons/md';
 import TestWrapper from './TestWrapper';

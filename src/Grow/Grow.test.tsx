@@ -1,6 +1,5 @@
 import React, { createRef } from 'react';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import transitions from '@sinoui/theme/transitions';
 import { create } from 'react-test-renderer';
 import Grow from './Grow';

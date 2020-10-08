@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import isRefObject from '../isRefObject';
 
 it('refObject', () => {

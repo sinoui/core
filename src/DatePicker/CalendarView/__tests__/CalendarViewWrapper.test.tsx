@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';

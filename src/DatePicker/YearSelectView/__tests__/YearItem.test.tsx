@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import 'jest-styled-components';
-import '@testing-library/jest-dom';
 import { defaultTheme } from '@sinoui/theme';
 import { ThemeProvider } from 'styled-components';
 import YearItem from '../YearItem';

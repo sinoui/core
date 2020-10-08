@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { removeUndefinedProperties } from '@sinoui/core/utils/objects';
 
 const obj = {

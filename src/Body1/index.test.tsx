@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import Body1 from './index';
@@ -83,7 +82,7 @@ describe('文字排版 快照测试', () => {
           <Body1 align="center">Body1</Body1>
           <Body1 noWrap>Body1</Body1>
           <Body1 color="success">Body1</Body1>
-          <Body1 paragraphy>Body1</Body1>
+          <Body1 paragraph>Body1</Body1>
         </ThemeProvider>,
       )
       .toJSON();

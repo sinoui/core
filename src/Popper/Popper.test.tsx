@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable no-unused-expressions */
 import { render, cleanup, act } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import React, { useEffect } from 'react';
 import { Instance } from '@popperjs/core';
 import { ThemeProvider } from 'styled-components';

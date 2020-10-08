@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import ClockPointer from '../ClockPointer';
 
 it('分钟视图，旋转到11分，圆点背景色为白色', () => {

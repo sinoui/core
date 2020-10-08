@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer, { act } from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import Checkbox from '@sinoui/core/Checkbox';
 import { ThemeProvider } from 'styled-components';

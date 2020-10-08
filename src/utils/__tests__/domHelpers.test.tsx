@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { getScrollTop, getScrollLeft } from '../domHelpers';
 
 it('获取滚动距离', () => {

@@ -2,7 +2,6 @@ import React from 'react';
 import { render, cleanup, fireEvent, act } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import defaultTheme from '@sinoui/theme/defaultTheme';
-import '@testing-library/jest-dom';
 import CalendarViewAction from '../CalendarViewAction';
 
 afterEach(cleanup);

@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { transitions } from '@sinoui/theme';
-import '@testing-library/jest-dom';
 import { create } from 'react-test-renderer';
 import Zoom from './Zoom';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import { WiDayCloudyGusts } from 'react-icons/wi';
 import { render, cleanup } from '@testing-library/react';
 import TestWrapper from './TestWrapper';

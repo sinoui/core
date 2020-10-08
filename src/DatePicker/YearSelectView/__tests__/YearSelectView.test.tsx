@@ -2,7 +2,6 @@ import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import { defaultTheme } from '@sinoui/theme';
 import { ThemeProvider } from 'styled-components';
-import '@testing-library/jest-dom';
 import YearSelectView, { calcStartYear, genYears } from '../YearSelectView';
 
 afterEach(cleanup);

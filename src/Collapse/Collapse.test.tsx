@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { duration } from '@sinoui/theme/transitions';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';

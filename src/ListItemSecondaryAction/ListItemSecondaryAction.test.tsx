@@ -2,7 +2,6 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import ListItemSecondaryAction from '@sinoui/core/ListItemSecondaryAction';
 import IconButton from '@sinoui/core/IconButton';
 import BookmarkBorder from '@sinoui/icons/BookmarkBorder';

@@ -4,7 +4,6 @@ import renderer, { act } from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import Select from '../Select';
 import Option from '../Option';

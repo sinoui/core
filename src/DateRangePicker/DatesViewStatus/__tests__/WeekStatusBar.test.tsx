@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import React from 'react';
-import '@testing-library/jest-dom';
 import WeekStatusBar from '../WeekStatusBar';
 
 it('渲染实心周状态条', () => {
@@ -62,7 +61,7 @@ it('周从星期日开始', () => {
   );
 
   expect(getByTestId('week-status-bar')).toHaveStyle(
-    'width: calc(85.7142% + 28px)',
+    'width: calc(85.7143% + 28px)',
   );
   expect(getByTestId('week-status-bar')).toHaveStyle('left: calc(0% + 2px)');
 });

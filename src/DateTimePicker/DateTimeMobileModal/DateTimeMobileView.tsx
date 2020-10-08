@@ -80,7 +80,7 @@ const TimeTitle = styled(Subtitle1)`
 /**
  * 日期时间选择移动端视图
  */
-export default function DateTimeMobileView(props: Props) {
+const DateTimeMobileView = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     date,
     startOfWeek,
@@ -198,6 +198,7 @@ export default function DateTimeMobileView(props: Props) {
     <DateTimeMobileViewWrapper
       style={style}
       className="sinoui-date-time-mobile-view"
+      ref={ref}
     >
       <DateTimeMobileViewToolbar
         year={year}
@@ -223,4 +224,8 @@ export default function DateTimeMobileView(props: Props) {
       <CalendarViewAction onCancel={onClose} onClear={onClear} onOk={onOk} />
     </DateTimeMobileViewWrapper>
   );
-}
+});
+
+DateTimeMobileView.displayName = 'DateTimeMobileView';
+
+export default DateTimeMobileView;

@@ -1,13 +1,23 @@
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 import { render, fireEvent, act, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
+import { config } from 'react-transition-group';
 import DateTimePicker from '../DateTimePicker';
 import { MONTH_FULL_TITLES } from '../../DatePicker/constants';
 import formatTime from '../DateTimeMobileModal/formatTime';
+
+beforeEach(() => {
+  config.disabled = true;
+});
+
+afterEach(() => {
+  config.disabled = false;
+});
 
 afterEach(cleanup);
 

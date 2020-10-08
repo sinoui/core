@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import { act } from 'react-dom/test-utils';
 import TimePickerMobileView from '../TimePickerMobileView';
 

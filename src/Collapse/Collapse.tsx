@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useLayoutEffect } from 'react';
 import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 import transitions from '@sinoui/theme/transitions';
@@ -135,7 +135,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     timerRef.current = setTimeout(done, autoTimeout.current);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     return () => window.clearTimeout(timerRef.current);
   }, []);
 

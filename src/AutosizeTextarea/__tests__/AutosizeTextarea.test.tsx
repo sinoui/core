@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, fireEvent, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import AutosizeTextarea from '../AutosizeTextarea';
 import resizeTextarea from '../resizeTextarea';
 

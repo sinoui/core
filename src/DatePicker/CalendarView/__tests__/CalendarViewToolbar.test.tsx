@@ -2,7 +2,6 @@ import { render, cleanup } from '@testing-library/react';
 import { defaultTheme } from '@sinoui/theme';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import '@testing-library/jest-dom';
 import CalendarViewToolbar from '../CalendarViewToolbar';
 
 afterEach(cleanup);

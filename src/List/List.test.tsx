@@ -4,7 +4,6 @@ import { defaultTheme } from '@sinoui/theme';
 import renderer from 'react-test-renderer';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import '@testing-library/jest-dom';
 import List from '@sinoui/core/List';
 import ListItem from '@sinoui/core/ListItem';
 import ListItemText from '@sinoui/core/ListItemText';
@@ -47,15 +46,13 @@ describe('List', () => {
       <ThemeProvider theme={defaultTheme}>
         <List>
           {listData.map((item) => (
-            <>
-              <ListItem
-                disabled={item % 3 === 0}
-                key={item}
-                onClick={testClick}
-              >
-                <ListItemText>item{item}</ListItemText>
-              </ListItem>
-            </>
+            <ListItem
+              disabled={item % 3 === 0}
+              key={item}
+              onClick={testClick}
+            >
+              <ListItemText>item{item}</ListItemText>
+            </ListItem>
           ))}
         </List>
       </ThemeProvider>,
@@ -78,15 +75,13 @@ describe('List', () => {
       <ThemeProvider theme={defaultTheme}>
         <List>
           {listData.map((item) => (
-            <>
-              <ListItem
-                disabled={item % 3 === 0}
-                key={item}
-                onClick={testClick}
-              >
-                <ListItemText>item{item}</ListItemText>
-              </ListItem>
-            </>
+            <ListItem
+              disabled={item % 3 === 0}
+              key={item}
+              onClick={testClick}
+            >
+              <ListItemText>item{item}</ListItemText>
+            </ListItem>
           ))}
         </List>
       </ThemeProvider>,

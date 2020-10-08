@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components';
 import { render, fireEvent, cleanup, act } from '@testing-library/react';
 import { defaultTheme } from '@sinoui/theme';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import ClickedTextView from '../ClickedTextView';
 

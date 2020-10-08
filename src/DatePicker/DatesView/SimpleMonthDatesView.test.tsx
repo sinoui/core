@@ -2,7 +2,6 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import SimpleMonthDatesView, { getDisabledDates } from './SimpleMonthDatesView';
 

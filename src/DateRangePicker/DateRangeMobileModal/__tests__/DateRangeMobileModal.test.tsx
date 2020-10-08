@@ -2,7 +2,6 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
 import DateRangeMobileModal from '../DateRangeMobileModal';
 

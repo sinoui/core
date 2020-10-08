@@ -2,7 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom';
 import CardPrimaryAction from './CardPrimaryAction';
 
 it('正确渲染CardPrimaryAction', () => {

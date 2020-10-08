@@ -1,5 +1,4 @@
 import { cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { createTheme } from '@sinoui/theme';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 

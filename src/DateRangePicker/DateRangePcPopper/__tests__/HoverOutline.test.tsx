@@ -2,7 +2,6 @@ import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
-import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
 import HoverOutline from '../HoverOutline';
 

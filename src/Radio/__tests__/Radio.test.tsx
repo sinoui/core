@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import { render, cleanup, act, fireEvent } from '@testing-library/react';
 import Radio from '@sinoui/core/Radio';
 import { ThemeProvider } from 'styled-components';
