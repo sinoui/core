@@ -278,6 +278,7 @@ const selectedStyle = css<ChipLayoutProps>`
 
   > .sinoui-chip--selected__icon {
     position: absolute;
+    top: calc(50% - 12px);
     left: 12px;
     opacity: 1;
     color: ${({ theme, disabled, color }) =>
