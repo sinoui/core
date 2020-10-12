@@ -15,7 +15,7 @@ exports[`快照测试 TimeInputView 1`] = `
   color: rgba(0,0,0,0.87);
 }
 
-.c9 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: 400;
@@ -29,7 +29,7 @@ exports[`快照测试 TimeInputView 1`] = `
   color: rgba(0,0,0,0.87);
 }
 
-.c8 {
+.c9 {
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 1.66;
@@ -138,7 +138,7 @@ exports[`快照测试 TimeInputView 1`] = `
   cursor: pointer;
 }
 
-.c7 {
+.c8 {
   color: rgba(0,0,0,0.87);
 }
 
@@ -150,12 +150,12 @@ label ~ .c7 {
   margin-top: 16px;
 }
 
-.c7 > .sinoui-base-input__input {
+.c8 > .sinoui-base-input__input {
   padding: 3.5px 0px 4.5px;
   padding: 7.5px 0 8.5px;
 }
 
-.c7::before {
+.c8::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
@@ -172,11 +172,11 @@ label ~ .c7 {
   transform: scaleX(1) scaleY(1);
 }
 
-.c7:hover::before {
+.c8:hover::before {
   background-color: rgba(0,0,0,0.87);
 }
 
-.c7::after {
+.c8::after {
   background-color: #3f51b5;
   left: 0;
   bottom: 0;
@@ -193,15 +193,15 @@ label ~ .c7 {
   transform: scaleX(0) scaleY(0);
 }
 
-.c7::before,
-.c7::after {
+.c8::before,
+.c8::after {
   position: absolute;
   bottom: 0px;
   overflow: hidden;
   font-size: 0px;
 }
 
-.c7:hover::before {
+.c8:hover::before {
   background-color: rgba(0,0,0,0.87);
   height: 1px;
 }
@@ -241,7 +241,7 @@ label ~ .c7 {
   align-items: center;
 }
 
-.c10 {
+.c11 {
   width: 48px;
   text-align: center;
   margin-bottom: 20px;
@@ -298,7 +298,7 @@ label ~ .c7 {
       className="c4 sinoui-date-time-mobile-view__timeview-hour-input sinoui-date-time-mobile-view__timeview-hour-input--shrink sinoui-date-time-mobile-view__timeview-hour-input--no-label c5"
     >
       <div
-        className="c6 sinoui-base-input c7"
+        className="c6 sinoui-base-input c7 c8"
         data-testid="baseInput"
         onClick={[Function]}
       >
@@ -315,13 +315,13 @@ label ~ .c7 {
         />
       </div>
       <div
-        className="c8 sinoui-helper-text"
+        className="c9 sinoui-helper-text"
       >
         点
       </div>
     </div>
     <p
-      className="c9 sinoui-typography sinoui-typography--body2 c10"
+      className="c10 sinoui-typography sinoui-typography--body2 c11"
       color="textPrimary"
       type="body2"
     >
@@ -331,7 +331,7 @@ label ~ .c7 {
       className="c4 sinoui-date-time-mobile-view__timeview-minute-input sinoui-date-time-mobile-view__timeview-minute-input--shrink sinoui-date-time-mobile-view__timeview-minute-input--no-label c5"
     >
       <div
-        className="c6 sinoui-base-input c7"
+        className="c6 sinoui-base-input c7 c8"
         data-testid="baseInput"
         onClick={[Function]}
       >
@@ -348,7 +348,7 @@ label ~ .c7 {
         />
       </div>
       <div
-        className="c8 sinoui-helper-text"
+        className="c9 sinoui-helper-text"
       >
         分
       </div>

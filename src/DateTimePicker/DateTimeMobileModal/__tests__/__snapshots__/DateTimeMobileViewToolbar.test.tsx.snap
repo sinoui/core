@@ -57,6 +57,11 @@ exports[`镜像测试 渲染日期时间选择头部组件 1`] = `
   opacity: 1;
 }
 
+.c5 {
+  font-size: 48px;
+  opacity: 0.7;
+}
+
 .c0 {
   height: 96px;
   padding: 16px;
@@ -96,9 +101,7 @@ exports[`镜像测试 渲染日期时间选择头部组件 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
-  font-size: 48px;
-  opacity: 0.7;
+.c6 {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
@@ -142,7 +145,7 @@ exports[`镜像测试 渲染日期时间选择头部组件 1`] = `
     </button>
   </div>
   <button
-    className="c2 sinoui-base-button c5"
+    className="c2 sinoui-base-button c5 c6"
     fontSize={48}
     onClick={[Function]}
     role="button"

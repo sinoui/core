@@ -3,7 +3,7 @@
 exports[`指定颜色 1`] = `
 Array [
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ eeAoug sinoui-button"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu bytDgf sinoui-button"
     color="secondary"
     role="button"
     type="button"
@@ -11,7 +11,7 @@ Array [
     文本按钮
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ hsvCnF sinoui-button sinoui-button--outlined"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu liHSUG sinoui-button sinoui-button--outlined"
     color="secondary"
     role="button"
     type="button"
@@ -19,7 +19,7 @@ Array [
     轮廓按钮
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ XeLxF sinoui-button sinoui-button--raised"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu dKpPVe sinoui-button sinoui-button--raised"
     color="secondary"
     role="button"
     type="button"
@@ -27,7 +27,7 @@ Array [
     容器按钮
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ cSUqcG sinoui-button"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu idiGdx sinoui-button"
     color="textPrimary"
     role="button"
     type="button"
@@ -35,7 +35,7 @@ Array [
     文本按钮
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ jXFPhb sinoui-button sinoui-button--outlined"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu jwceCw sinoui-button sinoui-button--outlined"
     color="textPrimary"
     role="button"
     type="button"
@@ -43,7 +43,7 @@ Array [
     轮廓按钮
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ idojXP sinoui-button sinoui-button--raised"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu hqGcns sinoui-button sinoui-button--raised"
     color="textPrimary"
     role="button"
     type="button"
@@ -56,7 +56,7 @@ Array [
 exports[`正确渲染三种形式按钮 1`] = `
 Array [
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ igFTJn sinoui-button"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu kiyJuI sinoui-button"
     color="primary"
     role="button"
     type="button"
@@ -64,7 +64,7 @@ Array [
     文本按钮
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ kdAZMK sinoui-button sinoui-button--outlined"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu jIBlZl sinoui-button sinoui-button--outlined"
     color="primary"
     role="button"
     type="button"
@@ -72,7 +72,7 @@ Array [
     轮廓按钮
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ zjNSJ sinoui-button sinoui-button--raised"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu eMrUpS sinoui-button sinoui-button--raised"
     color="primary"
     role="button"
     type="button"
@@ -86,7 +86,7 @@ exports[`渲染不可用状态下的三种形式按钮 1`] = `
 Array [
   <button
     aria-disabled={true}
-    className="sc-AxjAm gIJowi sinoui-base-button sc-AxirZ fmXWdM sinoui-button"
+    className="sc-bdnylx hVwUlX sinoui-base-button sc-gtssRu gsbvrv sinoui-button"
     color="primary"
     disabled={true}
     role="button"
@@ -96,7 +96,7 @@ Array [
   </button>,
   <button
     aria-disabled={true}
-    className="sc-AxjAm gIJowi sinoui-base-button sc-AxirZ dXHyKN sinoui-button sinoui-button--outlined"
+    className="sc-bdnylx hVwUlX sinoui-base-button sc-gtssRu bmZWNa sinoui-button sinoui-button--outlined"
     color="primary"
     disabled={true}
     role="button"
@@ -106,7 +106,7 @@ Array [
   </button>,
   <button
     aria-disabled={true}
-    className="sc-AxjAm gIJowi sinoui-base-button sc-AxirZ jZINbu sinoui-button sinoui-button--raised"
+    className="sc-bdnylx hVwUlX sinoui-base-button sc-gtssRu eIvZBx sinoui-button sinoui-button--raised"
     color="primary"
     disabled={true}
     role="button"
@@ -120,7 +120,7 @@ Array [
 exports[`渲染带图标按钮 1`] = `
 Array [
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ igFTJn sinoui-button"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu kiyJuI sinoui-button"
     color="primary"
     role="button"
     type="button"
@@ -138,7 +138,7 @@ Array [
     icon
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ cBGwdK sinoui-button"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu imKIgJ sinoui-button"
     color="primary"
     role="button"
     type="button"
@@ -156,7 +156,7 @@ Array [
     </svg>
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ kdAZMK sinoui-button sinoui-button--outlined"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu jIBlZl sinoui-button sinoui-button--outlined"
     color="primary"
     role="button"
     type="button"
@@ -174,7 +174,7 @@ Array [
     icon
   </button>,
   <button
-    className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ zjNSJ sinoui-button sinoui-button--raised"
+    className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu eMrUpS sinoui-button sinoui-button--raised"
     color="primary"
     role="button"
     type="button"

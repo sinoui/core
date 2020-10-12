@@ -2,12 +2,12 @@
 
 exports[`快照测试 CardMedia设置square属性 1`] = `
 <div
-  className="sc-AxjAm dyhTnR sinoui-card__media sinoui-card__media--square"
+  className="sc-bdnylx kMVdac sinoui-card__media sinoui-card__media--square"
 />
 `;
 
 exports[`快照测试 CardMedia设置wide属性 1`] = `
 <div
-  className="sc-AxjAm dQNili sinoui-card__media sinoui-card__media--16-9"
+  className="sc-bdnylx lcpfYX sinoui-card__media sinoui-card__media--16-9"
 />
 `;

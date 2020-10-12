@@ -2,7 +2,7 @@
 
 exports[`快照测试 分钟视图 1`] = `
 <div
-  className="sc-AxhUy gYFcZv sinoui-time-picker-mobile-view__clock"
+  className="sc-eCApGN kPVWrr sinoui-time-picker-mobile-view__clock"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
   onMouseUp={[Function]}
@@ -11,277 +11,277 @@ exports[`快照测试 分钟视图 1`] = `
   onTouchStart={[Function]}
 >
   <div
-    className="sc-AxjAm mxbDH"
+    className="sc-bdnylx bXYGhS"
     data-clock-number={1}
   />
   <div
-    className="sc-AxjAm kWfIAT"
+    className="sc-bdnylx hWfzTK"
     data-clock-number={2}
   />
   <div
-    className="sc-AxjAm hvEznH"
+    className="sc-bdnylx jIgAoG"
     data-clock-number={3}
   />
   <div
-    className="sc-AxjAm ghhGfr"
+    className="sc-bdnylx iiEoga"
     data-clock-number={4}
   />
   <div
-    className="sc-AxjAm gfDCqv"
+    className="sc-bdnylx hpagQW"
     data-clock-number={5}
   >
     05
   </div>
   <div
-    className="sc-AxjAm jqGjCv"
+    className="sc-bdnylx bvmcre"
     data-clock-number={6}
   />
   <div
-    className="sc-AxjAm kYeaFj"
+    className="sc-bdnylx cBNqFm"
     data-clock-number={7}
   />
   <div
-    className="sc-AxjAm hZtcUD"
+    className="sc-bdnylx ePECCO"
     data-clock-number={8}
   />
   <div
-    className="sc-AxjAm dRKQVP"
+    className="sc-bdnylx bWEzhC"
     data-clock-number={9}
   />
   <div
-    className="sc-AxjAm ebzboT"
+    className="sc-bdnylx dBqxGO"
     data-clock-number={10}
   >
     10
   </div>
   <div
-    className="sc-AxjAm cBJTYD"
+    className="sc-bdnylx kSTPiO"
     data-clock-number={11}
   />
   <div
-    className="sc-AxjAm eOjkoD"
+    className="sc-bdnylx fXJbEW"
     data-clock-number={12}
   />
   <div
-    className="sc-AxjAm xHcFP"
+    className="sc-bdnylx gTJdEq"
     data-clock-number={13}
   />
   <div
-    className="sc-AxjAm gCtjDb"
+    className="sc-bdnylx iqbbca"
     data-clock-number={14}
   />
   <div
-    className="sc-AxjAm bnnJJm"
+    className="sc-bdnylx cHTMxP"
     data-clock-number={15}
   >
     15
   </div>
   <div
-    className="sc-AxjAm jZIKvX"
+    className="sc-bdnylx loStQa"
     data-clock-number={16}
   />
   <div
-    className="sc-AxjAm jTfsvX"
+    className="sc-bdnylx dZEgTu"
     data-clock-number={17}
   />
   <div
-    className="sc-AxjAm hVzFtj"
+    className="sc-bdnylx bLinru"
     data-clock-number={18}
   />
   <div
-    className="sc-AxjAm gkJGrb"
+    className="sc-bdnylx blBfwW"
     data-clock-number={19}
   />
   <div
-    className="sc-AxjAm hYElOf"
+    className="sc-bdnylx gvQllS"
     data-clock-number={20}
   >
     20
   </div>
   <div
-    className="sc-AxjAm idaCsT"
+    className="sc-bdnylx eKumSO"
     data-clock-number={21}
   />
   <div
-    className="sc-AxjAm fiMTUn"
+    className="sc-bdnylx kGvIoa"
     data-clock-number={22}
   />
   <div
-    className="sc-AxjAm freEDX"
+    className="sc-bdnylx frcyDu"
     data-clock-number={23}
   />
   <div
-    className="sc-AxjAm fTEVif"
+    className="sc-bdnylx dNcXCy"
     data-clock-number={24}
   />
   <div
-    className="sc-AxjAm eyFkWv"
+    className="sc-bdnylx cXFARC"
     data-clock-number={25}
   >
     25
   </div>
   <div
-    className="sc-AxjAm fIaVhz"
+    className="sc-bdnylx sOndm"
     data-clock-number={26}
   />
   <div
-    className="sc-AxjAm gqWgYn"
+    className="sc-bdnylx gwyInu"
     data-clock-number={27}
   />
   <div
-    className="sc-AxjAm imIcxj"
+    className="sc-bdnylx ghMuCO"
     data-clock-number={28}
   />
   <div
-    className="sc-AxjAm kBrQNP"
+    className="sc-bdnylx gPmtC"
     data-clock-number={29}
   />
   <div
-    className="sc-AxjAm emMJz"
+    className="sc-bdnylx jCvgbe"
     data-clock-number={30}
   >
     30
   </div>
   <div
-    className="sc-AxjAm ecaLPX"
+    className="sc-bdnylx jQINzu"
     data-clock-number={31}
   />
   <div
-    className="sc-AxjAm ixYSFP"
+    className="sc-bdnylx bfWiuO"
     data-clock-number={32}
   />
   <div
-    className="sc-AxjAm SOGzH"
+    className="sc-bdnylx icJBJS"
     data-clock-number={33}
   />
   <div
-    className="sc-AxjAm ifPUqv"
+    className="sc-bdnylx iIogXK"
     data-clock-number={34}
   />
   <div
-    className="sc-AxjAm gvpLfH"
+    className="sc-bdnylx cwLtnK"
     data-clock-number={35}
   >
     35
   </div>
   <div
-    className="sc-AxjAm lcotrr"
+    className="sc-bdnylx fFqkSO"
     data-clock-number={36}
   />
   <div
-    className="sc-AxjAm fvRPuv"
+    className="sc-bdnylx dCmfwW"
     data-clock-number={37}
   />
   <div
-    className="sc-AxjAm iZpLKv"
+    className="sc-bdnylx kslXJm"
     data-clock-number={38}
   />
   <div
-    className="sc-AxjAm djVbHX"
+    className="sc-bdnylx fLDgBC"
     data-clock-number={39}
   />
   <div
-    className="sc-AxjAm eewICL"
+    className="sc-bdnylx bulJmy"
     data-clock-number={40}
   >
     40
   </div>
   <div
-    className="sc-AxjAm iFSfXX"
+    className="sc-bdnylx bXdjne"
     data-clock-number={41}
   />
   <div
-    className="sc-AxjAm haVhDH"
+    className="sc-bdnylx jGJwGy"
     data-clock-number={42}
   />
   <div
-    className="sc-AxjAm bzSwKf"
+    className="sc-bdnylx hsiHJm"
     data-clock-number={43}
   />
   <div
-    className="sc-AxjAm axtP"
+    className="sc-bdnylx ibfCAW"
     data-clock-number={44}
   />
   <div
-    className="sc-AxjAm iVBebb"
+    className="sc-bdnylx lpsNHu"
     data-clock-number={45}
   >
     45
   </div>
   <div
-    className="sc-AxjAm erlEav"
+    className="sc-bdnylx fmJxai"
     data-clock-number={46}
   />
   <div
-    className="sc-AxjAm dccySf"
+    className="sc-bdnylx hASQsW"
     data-clock-number={47}
   />
   <div
-    className="sc-AxjAm ZfRSv"
+    className="sc-bdnylx ezCzWO"
     data-clock-number={48}
   />
   <div
-    className="sc-AxjAm Uskzb"
+    className="sc-bdnylx UdzvK"
     data-clock-number={49}
   />
   <div
-    className="sc-AxjAm ezVgNP"
+    className="sc-bdnylx cMicui"
     data-clock-number={50}
   >
     50
   </div>
   <div
-    className="sc-AxjAm ejlENP"
+    className="sc-bdnylx iJOgYW"
     data-clock-number={51}
   />
   <div
-    className="sc-AxjAm dIzgmL"
+    className="sc-bdnylx kRGAGy"
     data-clock-number={52}
   />
   <div
-    className="sc-AxjAm hWQOpP"
+    className="sc-bdnylx kFQHuy"
     data-clock-number={53}
   />
   <div
-    className="sc-AxjAm gUnhfb"
+    className="sc-bdnylx iUvjoq"
     data-clock-number={54}
   />
   <div
-    className="sc-AxjAm iiuIkn"
+    className="sc-bdnylx eVwLju"
     data-clock-number={55}
   >
     55
   </div>
   <div
-    className="sc-AxjAm eOWBPX"
+    className="sc-bdnylx fqeeFS"
     data-clock-number={56}
   />
   <div
-    className="sc-AxjAm hStaf"
+    className="sc-bdnylx bvLJnK"
     data-clock-number={57}
   />
   <div
-    className="sc-AxjAm kTTBRj"
+    className="sc-bdnylx hHFqPK"
     data-clock-number={58}
   />
   <div
-    className="sc-AxjAm knXjyf"
+    className="sc-bdnylx ioKmmi"
     data-clock-number={59}
   />
   <div
-    className="sc-AxjAm eXvpdZ"
+    className="sc-bdnylx TETMQ"
     data-clock-number={0}
   >
     00
   </div>
   <div
-    className="sc-AxirZ mcTG"
+    className="sc-gtssRu fllBrB"
   />
   <div
-    className="sc-AxiKw jDdSoh"
+    className="sc-dlnjPT bgjoqm"
   >
     <div
-      className="sc-AxhCb iTIGXN sinoui-clock__pointer-minute-dot"
+      className="sc-hKFyIo jLtqZk sinoui-clock__pointer-minute-dot"
     />
   </div>
 </div>
@@ -289,7 +289,7 @@ exports[`快照测试 分钟视图 1`] = `
 
 exports[`快照测试 小时视图 1`] = `
 <div
-  className="sc-AxhUy gYFcZv sinoui-time-picker-mobile-view__clock"
+  className="sc-eCApGN kPVWrr sinoui-time-picker-mobile-view__clock"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
   onMouseUp={[Function]}
@@ -298,85 +298,85 @@ exports[`快照测试 小时视图 1`] = `
   onTouchStart={[Function]}
 >
   <div
-    className="sc-AxjAm gfDCqv"
+    className="sc-bdnylx hpagQW"
     data-clock-number={1}
   >
     1
   </div>
   <div
-    className="sc-AxjAm ebzboT"
+    className="sc-bdnylx dBqxGO"
     data-clock-number={2}
   >
     2
   </div>
   <div
-    className="sc-AxjAm eynVhw"
+    className="sc-bdnylx gqXFxd"
     data-clock-number={3}
   >
     3
   </div>
   <div
-    className="sc-AxjAm hYElOf"
+    className="sc-bdnylx gvQllS"
     data-clock-number={4}
   >
     4
   </div>
   <div
-    className="sc-AxjAm eyFkWv"
+    className="sc-bdnylx cXFARC"
     data-clock-number={5}
   >
     5
   </div>
   <div
-    className="sc-AxjAm emMJz"
+    className="sc-bdnylx jCvgbe"
     data-clock-number={6}
   >
     6
   </div>
   <div
-    className="sc-AxjAm gvpLfH"
+    className="sc-bdnylx cwLtnK"
     data-clock-number={7}
   >
     7
   </div>
   <div
-    className="sc-AxjAm eewICL"
+    className="sc-bdnylx bulJmy"
     data-clock-number={8}
   >
     8
   </div>
   <div
-    className="sc-AxjAm iVBebb"
+    className="sc-bdnylx lpsNHu"
     data-clock-number={9}
   >
     9
   </div>
   <div
-    className="sc-AxjAm ezVgNP"
+    className="sc-bdnylx cMicui"
     data-clock-number={10}
   >
     10
   </div>
   <div
-    className="sc-AxjAm iiuIkn"
+    className="sc-bdnylx eVwLju"
     data-clock-number={11}
   >
     11
   </div>
   <div
-    className="sc-AxjAm cSTVrr"
+    className="sc-bdnylx bGsLDe"
     data-clock-number={12}
   >
     12
   </div>
   <div
-    className="sc-AxirZ mcTG"
+    className="sc-gtssRu fllBrB"
   />
   <div
-    className="sc-AxiKw PRUSw"
+    className="sc-dlnjPT hbonHX"
   >
     <div
-      className="sc-AxhCb iTIGXN sinoui-clock__pointer-minute-dot"
+      className="sc-hKFyIo jLtqZk sinoui-clock__pointer-minute-dot"
     />
   </div>
 </div>

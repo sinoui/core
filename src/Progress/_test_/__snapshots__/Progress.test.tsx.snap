@@ -10,7 +10,7 @@ exports[`快照测试 环形定量指示器 1`] = `
 
 exports[`快照测试 线性不定量指示器 1`] = `
 <div
-  className="sc-AxjAm gmoXle sinoui-progress sinoui-progress--linear"
+  className="sc-bdnylx hyTfqT sinoui-progress sinoui-progress--linear"
 >
   <div
     className="sinoui-progress--linear__bar sinoui-progress--linear__primary-bar"
@@ -23,7 +23,7 @@ exports[`快照测试 线性不定量指示器 1`] = `
 
 exports[`快照测试 线性定量指示器 1`] = `
 <div
-  className="sc-AxjAm iYGqDU sinoui-progress sinoui-progress--linear"
+  className="sc-bdnylx hGDsjR sinoui-progress sinoui-progress--linear"
   value={50}
 >
   <div
@@ -34,7 +34,7 @@ exports[`快照测试 线性定量指示器 1`] = `
 
 exports[`快照测试 线性缓冲指示器 1`] = `
 <div
-  className="sc-AxjAm iSfXWB sinoui-progress sinoui-progress--linear sinoui-progress--buffer"
+  className="sc-bdnylx dGmvLs sinoui-progress sinoui-progress--linear sinoui-progress--buffer"
   value={50}
 >
   <div
@@ -51,7 +51,7 @@ exports[`快照测试 线性缓冲指示器 1`] = `
 
 exports[`快照测试 默认 1`] = `
 <div
-  className="sc-AxirZ bDGrNS sinoui-progress sinoui-progress--circle"
+  className="sc-gtssRu bgDEAl sinoui-progress sinoui-progress--circle"
   size={40}
 >
   <canvas />

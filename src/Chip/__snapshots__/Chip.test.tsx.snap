@@ -121,7 +121,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c3 sinoui-chip__delete"
+      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c3 sinoui-chip__delete"
       disabled={true}
       focusable="false"
       onClick={[Function]}
@@ -272,7 +272,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c3 sinoui-chip__delete"
+      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c3 sinoui-chip__delete"
       disabled={true}
       focusable="false"
       onClick={[Function]}
@@ -1985,7 +1985,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c3 c4 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c4 sinoui-chip__delete"
+      className="c3 c4 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c4 sinoui-chip__delete"
       focusable="false"
       onClick={[Function]}
       role="presentation"
@@ -2186,7 +2186,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c3 c4 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c4 sinoui-chip__delete"
+      className="c3 c4 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c4 sinoui-chip__delete"
       focusable="false"
       onClick={[Function]}
       role="presentation"
@@ -2758,7 +2758,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c3 sinoui-chip__delete"
+      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c3 sinoui-chip__delete"
       focusable="false"
       onClick={[Function]}
       role="presentation"
@@ -2891,7 +2891,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c3 sinoui-chip__delete"
+      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c3 sinoui-chip__delete"
       focusable="false"
       onClick={[Function]}
       role="presentation"
@@ -3038,7 +3038,7 @@ Array [
     </span>
     <svg
       aria-hidden="true"
-      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c3 sinoui-chip__delete"
+      className="c2 c3 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c3 sinoui-chip__delete"
       focusable="false"
       onClick={[Function]}
       role="presentation"
@@ -3863,7 +3863,7 @@ Array [
       </span>
       <svg
         aria-hidden="true"
-        className="c9 c10 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c10 sinoui-chip__delete"
+        className="c9 c10 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c10 sinoui-chip__delete"
         focusable="false"
         onClick={[Function]}
         role="presentation"
@@ -3888,7 +3888,7 @@ Array [
       </span>
       <svg
         aria-hidden="true"
-        className="c9 c12 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c12 sinoui-chip__delete"
+        className="c9 c12 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c12 sinoui-chip__delete"
         disabled={true}
         focusable="false"
         onClick={[Function]}
@@ -4881,7 +4881,7 @@ Array [
       </span>
       <svg
         aria-hidden="true"
-        className="c9 c10 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c10 sinoui-chip__delete"
+        className="c9 c10 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c10 sinoui-chip__delete"
         focusable="false"
         onClick={[Function]}
         role="presentation"
@@ -4906,7 +4906,7 @@ Array [
       </span>
       <svg
         aria-hidden="true"
-        className="c9 c12 sinoui-chip__delete sinoui-svg-icon sc-AxgMl c12 sinoui-chip__delete"
+        className="c9 c12 sinoui-chip__delete sinoui-svg-icon sc-jSFkmK c12 sinoui-chip__delete"
         disabled={true}
         focusable="false"
         onClick={[Function]}

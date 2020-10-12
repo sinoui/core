@@ -53,6 +53,9 @@
     "react": ">=16.8.0",
     "styled-components": ">=4.3.0"
   },
+  "resolutions": {
+    "styled-components": "5.2.0"
+  },
   "dependencies": {
     "@types/react-event-listener": "^0.4.9",
     "@types/react-transition-group": "~4.2.4",
@@ -72,12 +75,11 @@
     "popper-max-size-modifier": "^0.2.0",
     "react-dom": "^16.12.0",
     "react-event-listener": "^0.6.6",
-    "react-icons": "^3.9.0",
     "react-textarea-autosize": "^7.1.2",
     "react-transition-group": "^4.4.1",
     "react-window": "^1.8.5",
     "scroll-into-view-if-needed": "^2.2.25",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -97,11 +99,13 @@
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "5.1.0",
     "@types/testing-library__jest-dom": "^5.0.3",
+    "babel-plugin-styled-components": "^1.11.1",
+    "react-icons": "^3.9.0",
     "babel-loader": "^8.1.0",
     "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
     "immer": "^6.0.1",
-    "jest-styled-components": "^7.0.0",
+    "jest-styled-components": "^7.0.3",
     "lint-staged": "^9.5.0",
     "prettier": "^2.0.4",
     "react": "^16.12.0",
@@ -114,5 +118,10 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^styled-components": "<rootDir>/node_modules/styled-components/dist/styled-components.browser.cjs.js"
+    }
   }
 }
