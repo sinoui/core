@@ -20,7 +20,7 @@ export interface DialogProps extends DialogContainerProps {
    *
    * @type {(string | ())}
    */
-  transition?: React.ReactType;
+  transition?: React.ElementType;
   /**
    * 过渡动画时长。
    *

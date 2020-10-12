@@ -92,7 +92,7 @@ export interface Props {
   /**
    * 用于定位弹窗的组件。默认为`Popper`。
    */
-  PopperComponent?: React.ReactType;
+  PopperComponent?: React.ElementType;
   /**
    * 弹窗图标。默认为`<ArrowDropDownIcon />`。
    */
@@ -120,7 +120,7 @@ export interface Props {
   /**
    * 指定弹窗出现时的效果组件
    */
-  TransitionComponent?: React.ReactType;
+  TransitionComponent?: React.ElementType;
   /**
    * 如果为`true`，则支持多选
    */

@@ -5,7 +5,7 @@ import { withRipple } from '@sinoui/ripple';
 export interface ListItemProps {
   button?: boolean;
   children?: React.ReactNode;
-  component?: React.ReactType;
+  component?: React.ElementType;
   dense?: boolean;
   disabled?: boolean;
   disableGutters?: boolean;

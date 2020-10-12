@@ -39,7 +39,7 @@ export interface Props {
   /**
    * 指定渲染选项列表的容器组件
    */
-  ListboxComponent?: React.ReactType;
+  ListboxComponent?: React.ElementType;
   /**
    * 选中项
    */
