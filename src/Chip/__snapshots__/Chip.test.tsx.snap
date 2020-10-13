@@ -5009,7 +5009,10 @@ Array [
 
 .c0 > .sinoui-chip--selected__icon {
   position: absolute;
-  top: calc(50% - 12px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 12px;
   opacity: 1;
   color: rgba(0,0,0,0.4);
@@ -5169,7 +5172,10 @@ Array [
 
 .c0 > .sinoui-chip--selected__icon {
   position: absolute;
-  top: calc(50% - 12px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 12px;
   opacity: 1;
   color: rgba(0,0,0,0.4);
@@ -5334,7 +5340,10 @@ Array [
 
 .c0 > .sinoui-chip--selected__icon {
   position: absolute;
-  top: calc(50% - 12px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 12px;
   opacity: 1;
   color: rgba(0,0,0,0.4);
@@ -5513,7 +5522,10 @@ Array [
 
 .c0 > .sinoui-chip--selected__icon {
   position: absolute;
-  top: calc(50% - 12px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 12px;
   opacity: 1;
   color: rgba(0,0,0,0.4);
@@ -5663,7 +5675,10 @@ Array [
 
 .c0 > .sinoui-chip--selected__icon {
   position: absolute;
-  top: calc(50% - 12px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 12px;
   opacity: 1;
   color: currentColor;
@@ -5841,7 +5856,10 @@ Array [
 
 .c0 > .sinoui-chip--selected__icon {
   position: absolute;
-  top: calc(50% - 12px);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 12px;
   opacity: 1;
   color: currentColor;
