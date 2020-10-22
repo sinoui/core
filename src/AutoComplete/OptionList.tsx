@@ -102,6 +102,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
     disabledOptions,
     focusedOption,
     freeSolo,
+    allowShowTitle,
     ...rest
   } = props;
 
@@ -138,7 +139,9 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
             onClick={() => handleOptionClick(item)}
             $focused={focusedOption === getOptionLabel(item)}
           >
-            <ListItemText>{renderOption(item)}</ListItemText>
+            <ListItemText title={allowShowTitle ? item.title : undefined}>
+              {renderOption(item)}
+            </ListItemText>
           </StyledListItem>
         ))
       : !freeSolo && (

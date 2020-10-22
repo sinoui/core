@@ -64,6 +64,10 @@ export interface Props {
    * 如果设置为`true`，则为freeSolo模式。默认为`false`
    */
   freeSolo?: boolean;
+  /**
+   * 是否允许显示选项的title
+   */
+  allowShowTitle?: boolean;
 }
 
 export interface TagProps {

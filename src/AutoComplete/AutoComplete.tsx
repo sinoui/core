@@ -218,6 +218,10 @@ export interface Props {
    * 是否允许删除，默认为true
    */
   allowClear?: boolean;
+  /**
+   * 是否允许显示title提示，默认为false
+   */
+  allowShowTitle?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -346,6 +350,7 @@ export default function AutoComplete(props: Props) {
     popperComponentProps,
     popperFocusable,
     allowClear = true,
+    allowShowTitle = false,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -808,6 +813,7 @@ export default function AutoComplete(props: Props) {
       renderOption={renderOption}
       onOptionClick={handleOptionClick}
       freeSolo={freeSolo}
+      allowShowTitle={allowShowTitle}
     />
   );
 

@@ -2,7 +2,7 @@
 
 exports[`BottomSheet组件 快照测试 内容超出屏幕一半显示滚动条 1`] = `
 <button
-  className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu kiyJuI sinoui-button"
+  className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ igFTJn sinoui-button"
   color="primary"
   onClick={[Function]}
   role="button"
@@ -14,7 +14,7 @@ exports[`BottomSheet组件 快照测试 内容超出屏幕一半显示滚动条 
 
 exports[`BottomSheet组件 快照测试 基本使用 1`] = `
 <button
-  className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu kiyJuI sinoui-button"
+  className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ igFTJn sinoui-button"
   color="primary"
   onClick={[Function]}
   role="button"
@@ -26,7 +26,7 @@ exports[`BottomSheet组件 快照测试 基本使用 1`] = `
 
 exports[`BottomSheet组件 快照测试 指定背景颜色 1`] = `
 <button
-  className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu kiyJuI sinoui-button"
+  className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ igFTJn sinoui-button"
   color="primary"
   onClick={[Function]}
   role="button"
@@ -38,7 +38,7 @@ exports[`BottomSheet组件 快照测试 指定背景颜色 1`] = `
 
 exports[`BottomSheet组件 快照测试 点击遮罩层事件 1`] = `
 <button
-  className="sc-bdnylx gHBxYK sinoui-base-button sc-gtssRu kiyJuI sinoui-button"
+  className="sc-AxjAm hmYuEz sinoui-base-button sc-AxirZ igFTJn sinoui-button"
   color="primary"
   onClick={[Function]}
   role="button"
