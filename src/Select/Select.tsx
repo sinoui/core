@@ -189,7 +189,7 @@ function Select(props: Props) {
   return (
     <AutoComplete
       options={options}
-      getOptionLabel={(option) => option.title}
+      getOptionLabel={(option) => option.value}
       renderOption={(option) => option.children}
       value={autoCompleteValue}
       onChange={handleChange}
