@@ -127,6 +127,9 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
             className={classNames({
               'sinoui-list-item--focused':
                 focusedOption === getOptionLabel(item),
+              'sinoui-list-item--selected':
+                selectedOptions &&
+                selectedOptions.indexOf(getOptionLabel(item)) !== -1,
             })}
             selected={
               selectedOptions &&

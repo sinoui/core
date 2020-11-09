@@ -74,6 +74,33 @@ it('点击选择框，出现选项弹窗', () => {
   expect(optionList?.querySelectorAll('.sinoui-list-item')).toHaveLength(3);
 });
 
+it('点击选择框，出现选项弹窗,并选中值', () => {
+  const { container } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <Select portal={false} value="1">
+        <Option value="1">选项一</Option>
+        <Option value="2">选项二</Option>
+        <Option value="4">选项一</Option>
+        <Option value="3">选项三</Option>
+      </Select>
+    </ThemeProvider>,
+  );
+
+  const select = container.querySelector('.sinoui-base-input__input')!;
+  act(() => {
+    fireEvent.click(select);
+  });
+  const optionList = container.querySelector(
+    '.sinoui-auto-complete__option-list',
+  );
+
+  expect(optionList).toBeInTheDocument();
+  expect(optionList?.querySelectorAll('.sinoui-list-item')).toHaveLength(4);
+  expect(
+    optionList?.querySelectorAll('.sinoui-list-item--selected'),
+  ).toHaveLength(1);
+});
+
 it('点击某一项，选中此选项', () => {
   const onChange = jest.fn();
   const { container } = render(
