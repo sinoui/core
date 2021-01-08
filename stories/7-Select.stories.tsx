@@ -25,7 +25,7 @@ const theme = createTheme({
 });
 
 function SimpleDemo() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState();
 
   const onChange = (val: any) => {
     setValue(val);
@@ -46,6 +46,7 @@ function SimpleDemo() {
           onChange={onChange}
           label="Required"
           required
+          placeholder="123"
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>

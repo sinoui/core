@@ -50,6 +50,7 @@ export interface Props {
   renderValue?: (
     value: string | string[] | undefined,
     items: SelectItem[],
+    placeholder?: string,
   ) => React.ReactNode;
   /**
    * tab键顺序值
@@ -64,6 +65,7 @@ export interface Props {
    */
   menuMinWidth?: number;
   selectRef?: HTMLDivElement;
+  placeholder?: string;
 }
 
 const SelectInputLayout = styled.div`
@@ -112,10 +114,15 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     onClose,
     onFocus,
     readOnly,
-    renderValue = (value, items) => (
-      <SelectValueDisplay value={value} items={items} />
+    renderValue = (value, items, placeholder) => (
+      <SelectValueDisplay
+        value={value}
+        items={items}
+        placeholder={placeholder}
+      />
     ),
     tabIndex = 0,
+    placeholder,
     value,
     menuMinWidth,
     selectRef,
@@ -151,7 +158,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
       onFocus={onFocus}
       {...other}
     >
-      {renderValue(value, items)}
+      {renderValue(value, items, placeholder)}
     </SelectInputLayout>
   );
 });
