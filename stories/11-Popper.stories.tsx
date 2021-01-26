@@ -185,7 +185,12 @@ const Demo4 = () => {
       <Button raised onClick={() => setIsShow(!isShow)} ref={buttonRef}>
         切换提示
       </Button>
-      <Popper open={isShow} referenceElement={buttonRef} modifiers={modifiers}>
+      <Popper
+        open={isShow}
+        referenceElement={buttonRef}
+        modifiers={modifiers}
+        placement="right"
+      >
         <Grow in={isShow}>
           <Tooltip>
             <Arrow data-popper-arrow />

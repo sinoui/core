@@ -2,7 +2,7 @@
 
 exports[`布局Column快照测试 栅格布局 1`] = `
 <div
-  className="sc-AxjAm dIKvAz sinoui-row"
+  className="sc-AxjAm cldJIP sinoui-row"
 >
   <div
     className="sc-AxirZ fyycv sinoui-column"
@@ -14,7 +14,7 @@ exports[`布局Column快照测试 栅格布局 1`] = `
 
 exports[`布局Column快照测试 默认 1`] = `
 <div
-  className="sc-AxjAm dIKvAz sinoui-row"
+  className="sc-AxjAm cldJIP sinoui-row"
 >
   <div
     className="sc-AxirZ gTPIsR sinoui-column"
