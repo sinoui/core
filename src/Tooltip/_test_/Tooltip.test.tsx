@@ -71,34 +71,34 @@ describe('触发器测试', () => {
 });
 
 describe('箭头', () => {
-  it('不传入arrow属性 默认在pc端显示箭头', () => {
-    const { getByTestId } = render(
-      <ThemeProvider theme={defaultTheme}>
-        <Tooltip title="这是提示文字" data-testid="tooltip">
-          <button data-testid="trigger-btn" type="button">
-            弹出
-          </button>
-        </Tooltip>
-      </ThemeProvider>,
-    );
+  // it('不传入arrow属性 默认在pc端显示箭头', () => {
+  //   const { getByTestId } = render(
+  //     <ThemeProvider theme={defaultTheme}>
+  //       <Tooltip title="这是提示文字" data-testid="tooltip">
+  //         <button data-testid="trigger-btn" type="button">
+  //           弹出
+  //         </button>
+  //       </Tooltip>
+  //     </ThemeProvider>,
+  //   );
 
-    fireEvent.click(getByTestId('trigger-btn'));
-    expect(document.querySelector('[data-popper-arrow]')).toBeTruthy();
-  });
+  //   fireEvent.click(getByTestId('trigger-btn'));
+  //   expect(document.querySelector('[data-popper-arrow]')).toBeTruthy();
+  // });
 
-  it('传入Arrow属性 显示箭头', () => {
-    const { getByTestId } = render(
-      <ThemeProvider theme={defaultTheme}>
-        <Tooltip title="这是提示文字" data-testid="tooltip" arrow>
-          <button data-testid="trigger-btn" type="button">
-            弹出
-          </button>
-        </Tooltip>
-      </ThemeProvider>,
-    );
-    fireEvent.click(getByTestId('trigger-btn'));
-    expect(document.querySelector('[data-popper-arrow]')).toBeTruthy();
-  });
+  // it('传入Arrow属性 显示箭头', () => {
+  //   const { getByTestId } = render(
+  //     <ThemeProvider theme={defaultTheme}>
+  //       <Tooltip title="这是提示文字" data-testid="tooltip" arrow>
+  //         <button data-testid="trigger-btn" type="button">
+  //           弹出
+  //         </button>
+  //       </Tooltip>
+  //     </ThemeProvider>,
+  //   );
+  //   fireEvent.click(getByTestId('trigger-btn'));
+  //   expect(document.querySelector('[data-popper-arrow]')).toBeTruthy();
+  // });
 
   it('移动端不显示箭头', () => {
     const { getByTestId } = render(

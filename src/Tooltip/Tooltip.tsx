@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import type { Placement } from '@popperjs/core';
 import classNames from 'classnames';
 import Popper from '@sinoui/core/Popper';
@@ -63,7 +63,7 @@ export default function Tooltip({
   title,
   children,
   trigger = 'click',
-  arrow,
+  arrow = false,
   isMobile,
   transitionComponent = Grow,
   className,
@@ -127,11 +127,11 @@ export default function Tooltip({
   /**
    * 如果arrow属性为undefined 时 ,pc端显示箭头 移动端不显示
    */
-  const isShowArrow = useMemo(
-    () => arrow === true || (arrow === undefined && !isMobile),
-    [arrow, isMobile],
-  );
-
+  // const isShowArrow = useMemo(
+  //   () => arrow === true || (arrow === undefined && !isMobile),
+  //   [isMobile],
+  // );
+  const isShowArrow = arrow && false;
   const TransitionComp = transitionComponent;
   return (
     <>
