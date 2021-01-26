@@ -28,6 +28,10 @@ export interface ListItemProps {
    * 自定义样式
    */
   style?: React.CSSProperties;
+  /**
+   * 标题，用于提示文字
+   */
+  title?: string;
 }
 
 const Wrapper = styled.div.attrs((props: ListItemProps) => ({

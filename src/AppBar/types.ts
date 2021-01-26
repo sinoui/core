@@ -38,4 +38,12 @@ export interface AppBarProps extends AppBarStatusTypes {
    * 滚动目标元素
    */
   targetScroll?: HTMLElement | Window | React.RefObject<HTMLElement>;
+  /**
+   * 给根元素指定自定义样式
+   */
+  style?: React.CSSProperties;
+  /**
+   * 给根元素指定自定义类名
+   */
+  className?: string;
 }

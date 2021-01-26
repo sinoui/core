@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import TextInput from '@sinoui/core/TextInput';
 import 'jest-styled-components';
 import Popper from '@sinoui/core/Popper';
-import Collapse from '@sinoui/core/CollapseNew';
+import Collapse from '@sinoui/core/FastCollapse';
 import AutoComplete, { AutoCompleteChangeReason } from '../AutoComplete';
 import { RenderTagsProps, AutoCompleteCloseReason } from '../types';
 

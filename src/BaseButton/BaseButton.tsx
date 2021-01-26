@@ -25,7 +25,7 @@ export interface Props {
   /**
    * 指定根元素组件类型
    */
-  as?: React.ReactType;
+  as?: React.ElementType;
 }
 
 const BaseButtonStyle = css<Props>`

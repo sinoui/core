@@ -92,7 +92,7 @@ export interface Props {
   /**
    * 用于定位弹窗的组件。默认为`Popper`。
    */
-  PopperComponent?: React.ReactType;
+  PopperComponent?: React.ElementType;
   /**
    * 弹窗图标。默认为`<ArrowDropDownIcon />`。
    */
@@ -120,7 +120,7 @@ export interface Props {
   /**
    * 指定弹窗出现时的效果组件
    */
-  TransitionComponent?: React.ReactType;
+  TransitionComponent?: React.ElementType;
   /**
    * 如果为`true`，则支持多选
    */
@@ -218,6 +218,10 @@ export interface Props {
    * 是否允许删除，默认为true
    */
   allowClear?: boolean;
+  /**
+   * 是否允许显示title提示，默认为false
+   */
+  allowShowTitle?: boolean;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -346,6 +350,7 @@ export default function AutoComplete(props: Props) {
     popperComponentProps,
     popperFocusable,
     allowClear = true,
+    allowShowTitle = false,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -808,6 +813,7 @@ export default function AutoComplete(props: Props) {
       renderOption={renderOption}
       onOptionClick={handleOptionClick}
       freeSolo={freeSolo}
+      allowShowTitle={allowShowTitle}
     />
   );
 

@@ -89,6 +89,8 @@ describe('文字排版 单元测试', () => {
     );
 
     const text = container.firstChild;
+
+    console.log(document.querySelector('html')?.innerHTML, 'xx');
     expect(text).toHaveStyle(`text-align:center`);
   });
 });

@@ -59,6 +59,23 @@ describe('CheckboxGroup 单元测试', () => {
     const check = container.querySelectorAll('.sinoui-checkbox--disabled');
     expect(check.length).toBe(2);
   });
+
+  test('测试某个选项不可用', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <CheckboxGroup>
+          <Checkbox value="1" disabled>
+            复选框
+          </Checkbox>
+          <Checkbox value="2">复选框2</Checkbox>
+        </CheckboxGroup>
+      </ThemeProvider>,
+    );
+
+    const check = container.querySelectorAll('.sinoui-checkbox--disabled');
+    expect(check.length).toBe(1);
+  });
+
   test('是否支持全选，全部选中', async () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>

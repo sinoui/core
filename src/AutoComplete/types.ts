@@ -39,7 +39,7 @@ export interface Props {
   /**
    * 指定渲染选项列表的容器组件
    */
-  ListboxComponent?: React.ReactType;
+  ListboxComponent?: React.ElementType;
   /**
    * 选中项
    */
@@ -64,6 +64,10 @@ export interface Props {
    * 如果设置为`true`，则为freeSolo模式。默认为`false`
    */
   freeSolo?: boolean;
+  /**
+   * 是否允许显示选项的title
+   */
+  allowShowTitle?: boolean;
 }
 
 export interface TagProps {

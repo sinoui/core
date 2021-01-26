@@ -30,7 +30,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   white-space: nowrap;
 }
 
-.c10 {
+.c12 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-weight: 400;
@@ -59,7 +59,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   white-space: nowrap;
 }
 
-.c12 {
+.c14 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-weight: 400;
@@ -185,7 +185,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   cursor: pointer;
 }
 
-.c5 {
+.c7 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -204,11 +204,11 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   margin-left: 8px;
 }
 
-[disabled] > .c5 {
+[disabled] > .c6 {
   color: rgba(0,0,0,0.38);
 }
 
-.c9 {
+.c11 {
   font-size: 24px;
   width: 1em;
   height: 1em;
@@ -225,7 +225,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   display: inline-block;
 }
 
-.c11 {
+.c13 {
   position: relative;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
@@ -234,38 +234,38 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
 }
 
-.c11 > .sinoui-input-adornment--end {
+.c13 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c11 > .sinoui-input-adornment--start {
+.c13 > .sinoui-input-adornment--start {
   margin-right: 0px;
   margin-left: 10px;
 }
 
-.c11 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c13 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -6px;
 }
 
-.c11 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c11 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c13 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c13 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -12px;
 }
 
-.c11 > .sinoui-input-adornment--start,
-.c11 > .sinoui-input-adornment--text {
+.c13 > .sinoui-input-adornment--start,
+.c13 > .sinoui-input-adornment--text {
   -webkit-transform: translateY(7.5px);
   -ms-transform: translateY(7.5px);
   transform: translateY(7.5px);
 }
 
-.c11 > .sinoui-base-input__input {
+.c13 > .sinoui-base-input__input {
   padding: 25.5px 12px 6.5px;
   padding-top: 25.5px;
 }
 
-.c11::before {
+.c13::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
@@ -282,11 +282,11 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transform: scaleX(1) scaleY(1);
 }
 
-.c11:hover::before {
+.c13:hover::before {
   background-color: rgba(0,0,0,0.87);
 }
 
-.c11::after {
+.c13::after {
   background-color: #3f51b5;
   left: 0;
   bottom: 0;
@@ -303,20 +303,20 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transform: scaleX(0) scaleY(0);
 }
 
-.c11::before,
-.c11::after {
+.c13::before,
+.c13::after {
   position: absolute;
   bottom: 0px;
   overflow: hidden;
   font-size: 0px;
 }
 
-.c11:hover::before {
+.c13:hover::before {
   background-color: rgba(0,0,0,0.87);
   height: 1px;
 }
 
-.c11 > .sinoui-input__overlay {
+.c13 > .sinoui-input__overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -330,11 +330,11 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   opacity: 0;
 }
 
-.c11:hover > .sinoui-input__overlay {
+.c13:hover > .sinoui-input__overlay {
   opacity: 0.04;
 }
 
-.c14 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -350,14 +350,14 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c14 > div {
+.c16 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c14 > .sinoui-notched-outline__leading {
+.c16 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -366,14 +366,14 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   width: 10px;
 }
 
-.c14 > .sinoui-notched-outline__notch {
+.c16 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c14 > .sinoui-notched-outline__trailing {
+.c16 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -381,52 +381,52 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c14.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c16.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c14.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c16.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c13 {
+.c15 {
   position: relative;
   border-radius: 4px;
 }
 
-.c13 > .sinoui-notched-outline > div {
+.c15 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c13:hover > .sinoui-notched-outline > div {
+.c15:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c13 > .sinoui-base-input__input {
+.c15 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c13 > .sinoui-input-adornment--start {
+.c15 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c13 > .sinoui-input-adornment--end {
+.c15 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c13 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c15 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c13 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c13 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c15 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c15 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
-.c3 {
+.c4 {
   color: rgba(0,0,0,0.87);
 }
 
@@ -438,11 +438,11 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
-.c3 > .sinoui-base-input__input {
+.c4 > .sinoui-base-input__input {
   padding: 3.5px 0px 4.5px;
 }
 
-.c3::before {
+.c4::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
@@ -459,11 +459,11 @@ label ~ .c3 {
   transform: scaleX(1) scaleY(1);
 }
 
-.c3:hover::before {
+.c4:hover::before {
   background-color: rgba(0,0,0,0.87);
 }
 
-.c3::after {
+.c4::after {
   background-color: #3f51b5;
   left: 0;
   bottom: 0;
@@ -480,15 +480,15 @@ label ~ .c3 {
   transform: scaleX(0) scaleY(0);
 }
 
-.c3::before,
-.c3::after {
+.c4::before,
+.c4::after {
   position: absolute;
   bottom: 0px;
   overflow: hidden;
   font-size: 0px;
 }
 
-.c3:hover::before {
+.c4:hover::before {
   background-color: rgba(0,0,0,0.87);
   height: 1px;
 }
@@ -516,7 +516,7 @@ label ~ .c3 {
   visibility: visible;
 }
 
-.c6 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -554,15 +554,15 @@ label ~ .c3 {
   user-select: none;
 }
 
-.c6::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border-style: none;
 }
 
-.c6:hover {
+.c8:hover {
   background-color: rgba(0,0,0,0.04);
 }
 
-.c7 {
+.c9 {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -570,35 +570,35 @@ label ~ .c3 {
   color: rgba(0,0,0,0.6);
 }
 
-.c7:hover {
+.c9:hover {
   background-color: rgba(0,0,0,0.04);
 }
 
-.c7 > .sinoui-icon-button__ripple-layout {
+.c9 > .sinoui-icon-button__ripple-layout {
   left: 0px;
   top: 0px;
   width: 48px;
   height: 48px;
 }
 
-.c7 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
+.c9 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
   width: 48px;
   height: 48px;
 }
 
-.c7 > .sinoui-icon-button--dense__ripple-layout {
+.c9 > .sinoui-icon-button--dense__ripple-layout {
   left: 0px;
   top: 0px;
   width: 32px;
   height: 32px;
 }
 
-.c7 > .sinoui-icon-button--dense__ripple-layout > .sinoui-icon-button--dense__ripple {
+.c9 > .sinoui-icon-button--dense__ripple-layout > .sinoui-icon-button--dense__ripple {
   width: 32px;
   height: 32px;
 }
 
-.c8 {
+.c10 {
   padding: 2px;
   width: auto;
   height: auto;
@@ -610,7 +610,7 @@ label ~ .c3 {
   transform: rotate(0deg);
 }
 
-.c8 > .sinoui-icon-button__ripple-layout {
+.c10 > .sinoui-icon-button__ripple-layout {
   left: 0px;
   top: 0px;
   right: 0px;
@@ -619,12 +619,12 @@ label ~ .c3 {
   height: auto;
 }
 
-.c8 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
+.c10 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
   width: 100%;
   height: 100%;
 }
 
-.c4 {
+.c5 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -644,13 +644,13 @@ label ~ .c3 {
 }
 
 @media (hover:none) {
-  .c6:hover {
+  .c8:hover {
     background-color: transparent;
   }
 }
 
 @media (hover:none) {
-  .c7:hover {
+  .c9:hover {
     background-color: transparent;
   }
 }
@@ -665,7 +665,7 @@ label ~ .c3 {
       Required
     </label>
     <div
-      className="c2 sinoui-base-input c3"
+      className="c2 sinoui-base-input c3 c4"
       data-testid="baseInput"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -674,7 +674,7 @@ label ~ .c3 {
       <div
         aria-disabled="false"
         aria-haspopup="listbox"
-        className="c4 sinoui-select-input sinoui-base-input__input"
+        className="c5 sinoui-select-input sinoui-base-input__input"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -686,10 +686,10 @@ label ~ .c3 {
         </span>
       </div>
       <div
-        className="c5 sinoui-input-adornment sinoui-input-adornment--end"
+        className="c6 c7 sinoui-input-adornment sinoui-input-adornment--end"
       >
         <button
-          className="c6 sinoui-base-button c7 sinoui-icon-button c8 sinoui-auto-complete__popup-indicator"
+          className="c8 sinoui-base-button c9 sinoui-icon-button c10 sinoui-auto-complete__popup-indicator"
           color="textSecondary"
           onClick={[Function]}
           role="button"
@@ -697,7 +697,7 @@ label ~ .c3 {
         >
           <svg
             aria-hidden="true"
-            className="c9 sinoui-svg-icon"
+            className="c11 sinoui-svg-icon"
             focusable="false"
             role="presentation"
             size={24}
@@ -715,12 +715,12 @@ label ~ .c3 {
     className="c0 sinoui-select sinoui-select--filled sinoui-auto-complete"
   >
     <label
-      className="c10 sinoui-form-label"
+      className="c12 sinoui-form-label"
     >
       Required
     </label>
     <div
-      className="c2 sinoui-base-input c11"
+      className="c2 sinoui-base-input c13"
       data-testid="baseInput"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -729,7 +729,7 @@ label ~ .c3 {
       <div
         aria-disabled="false"
         aria-haspopup="listbox"
-        className="c4 sinoui-select-input sinoui-base-input__input"
+        className="c5 sinoui-select-input sinoui-base-input__input"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -741,10 +741,10 @@ label ~ .c3 {
         </span>
       </div>
       <div
-        className="c5 sinoui-input-adornment sinoui-input-adornment--end"
+        className="c6 c7 sinoui-input-adornment sinoui-input-adornment--end"
       >
         <button
-          className="c6 sinoui-base-button c7 sinoui-icon-button c8 sinoui-auto-complete__popup-indicator"
+          className="c8 sinoui-base-button c9 sinoui-icon-button c10 sinoui-auto-complete__popup-indicator"
           color="textSecondary"
           onClick={[Function]}
           role="button"
@@ -752,7 +752,7 @@ label ~ .c3 {
         >
           <svg
             aria-hidden="true"
-            className="c9 sinoui-svg-icon"
+            className="c11 sinoui-svg-icon"
             focusable="false"
             role="presentation"
             size={24}
@@ -773,12 +773,12 @@ label ~ .c3 {
     className="c0 sinoui-select sinoui-select--outlined sinoui-auto-complete"
   >
     <label
-      className="c12 sinoui-form-label"
+      className="c14 sinoui-form-label"
     >
       Required
     </label>
     <div
-      className="c2 sinoui-base-input c13"
+      className="c2 sinoui-base-input c15"
       data-testid="baseInput"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -787,7 +787,7 @@ label ~ .c3 {
       <div
         aria-disabled="false"
         aria-haspopup="listbox"
-        className="c4 sinoui-select-input sinoui-base-input__input"
+        className="c5 sinoui-select-input sinoui-base-input__input"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -799,10 +799,10 @@ label ~ .c3 {
         </span>
       </div>
       <div
-        className="c5 sinoui-input-adornment sinoui-input-adornment--end"
+        className="c6 c7 sinoui-input-adornment sinoui-input-adornment--end"
       >
         <button
-          className="c6 sinoui-base-button c7 sinoui-icon-button c8 sinoui-auto-complete__popup-indicator"
+          className="c8 sinoui-base-button c9 sinoui-icon-button c10 sinoui-auto-complete__popup-indicator"
           color="textSecondary"
           onClick={[Function]}
           role="button"
@@ -810,7 +810,7 @@ label ~ .c3 {
         >
           <svg
             aria-hidden="true"
-            className="c9 sinoui-svg-icon"
+            className="c11 sinoui-svg-icon"
             focusable="false"
             role="presentation"
             size={24}
@@ -823,7 +823,7 @@ label ~ .c3 {
         </button>
       </div>
       <div
-        className="c14 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c16 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -972,7 +972,7 @@ exports[`渲染不可用的下拉框 1`] = `
   cursor: pointer;
 }
 
-.c5 {
+.c7 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -991,11 +991,11 @@ exports[`渲染不可用的下拉框 1`] = `
   margin-left: 8px;
 }
 
-[disabled] > .c5 {
+[disabled] > .c6 {
   color: rgba(0,0,0,0.38);
 }
 
-.c9 {
+.c11 {
   font-size: 24px;
   width: 1em;
   height: 1em;
@@ -1012,7 +1012,7 @@ exports[`渲染不可用的下拉框 1`] = `
   display: inline-block;
 }
 
-.c3 {
+.c4 {
   color: rgba(0,0,0,0.38);
 }
 
@@ -1024,11 +1024,11 @@ label ~ .c3 {
   margin-top: 16px;
 }
 
-.c3 > .sinoui-base-input__input {
+.c4 > .sinoui-base-input__input {
   padding: 3.5px 0px 4.5px;
 }
 
-.c3::before {
+.c4::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
@@ -1045,7 +1045,7 @@ label ~ .c3 {
   transform: scaleX(1) scaleY(1);
 }
 
-.c3::after {
+.c4::after {
   background-color: #3f51b5;
   left: 0;
   bottom: 0;
@@ -1062,19 +1062,19 @@ label ~ .c3 {
   transform: scaleX(0) scaleY(0);
 }
 
-.c3::before,
-.c3::after {
+.c4::before,
+.c4::after {
   position: absolute;
   bottom: 0px;
   overflow: hidden;
   font-size: 0px;
 }
 
-.c3::after {
+.c4::after {
   display: none;
 }
 
-.c3::before {
+.c4::before {
   background-color: rgba(0,0,0,0.26);
 }
 
@@ -1101,7 +1101,7 @@ label ~ .c3 {
   visibility: visible;
 }
 
-.c6 {
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1139,15 +1139,15 @@ label ~ .c3 {
   user-select: none;
 }
 
-.c6::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border-style: none;
 }
 
-.c6:hover {
+.c8:hover {
   background-color: rgba(0,0,0,0.04);
 }
 
-.c7 {
+.c9 {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -1155,35 +1155,35 @@ label ~ .c3 {
   color: rgba(0,0,0,0.38);
 }
 
-.c7:hover {
+.c9:hover {
   background-color: rgba(0,0,0,0.04);
 }
 
-.c7 > .sinoui-icon-button__ripple-layout {
+.c9 > .sinoui-icon-button__ripple-layout {
   left: 0px;
   top: 0px;
   width: 48px;
   height: 48px;
 }
 
-.c7 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
+.c9 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
   width: 48px;
   height: 48px;
 }
 
-.c7 > .sinoui-icon-button--dense__ripple-layout {
+.c9 > .sinoui-icon-button--dense__ripple-layout {
   left: 0px;
   top: 0px;
   width: 32px;
   height: 32px;
 }
 
-.c7 > .sinoui-icon-button--dense__ripple-layout > .sinoui-icon-button--dense__ripple {
+.c9 > .sinoui-icon-button--dense__ripple-layout > .sinoui-icon-button--dense__ripple {
   width: 32px;
   height: 32px;
 }
 
-.c8 {
+.c10 {
   padding: 2px;
   width: auto;
   height: auto;
@@ -1195,7 +1195,7 @@ label ~ .c3 {
   transform: rotate(0deg);
 }
 
-.c8 > .sinoui-icon-button__ripple-layout {
+.c10 > .sinoui-icon-button__ripple-layout {
   left: 0px;
   top: 0px;
   right: 0px;
@@ -1204,12 +1204,12 @@ label ~ .c3 {
   height: auto;
 }
 
-.c8 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
+.c10 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
   width: 100%;
   height: 100%;
 }
 
-.c4 {
+.c5 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1229,13 +1229,13 @@ label ~ .c3 {
 }
 
 @media (hover:none) {
-  .c6:hover {
+  .c8:hover {
     background-color: transparent;
   }
 }
 
 @media (hover:none) {
-  .c7:hover {
+  .c9:hover {
     background-color: transparent;
   }
 }
@@ -1251,7 +1251,7 @@ label ~ .c3 {
     Required
   </label>
   <div
-    className="c2 sinoui-base-input sinoui-base-input--disabled c3"
+    className="c2 sinoui-base-input sinoui-base-input--disabled c3 c4"
     data-testid="baseInput"
     disabled={true}
     onClick={[Function]}
@@ -1261,7 +1261,7 @@ label ~ .c3 {
     <div
       aria-disabled="true"
       aria-haspopup="listbox"
-      className="c4 sinoui-select-input sinoui-base-input__input"
+      className="c5 sinoui-select-input sinoui-base-input__input"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -1272,11 +1272,11 @@ label ~ .c3 {
       </span>
     </div>
     <div
-      className="c5 sinoui-input-adornment sinoui-input-adornment--end"
+      className="c6 c7 sinoui-input-adornment sinoui-input-adornment--end"
     >
       <button
         aria-disabled={true}
-        className="c6 sinoui-base-button c7 sinoui-icon-button sinoui-icon-button--disabled c8 sinoui-auto-complete__popup-indicator"
+        className="c8 sinoui-base-button c9 sinoui-icon-button sinoui-icon-button--disabled c10 sinoui-auto-complete__popup-indicator"
         color="actionDisabled"
         disabled={true}
         onClick={[Function]}
@@ -1285,7 +1285,7 @@ label ~ .c3 {
       >
         <svg
           aria-hidden="true"
-          className="c9 sinoui-svg-icon"
+          className="c11 sinoui-svg-icon"
           focusable="false"
           role="presentation"
           size={24}

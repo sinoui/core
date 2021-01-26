@@ -21,7 +21,7 @@ describe('测试 as 属性', () => {
     /**
      * 指定根元素
      */
-    as?: React.ReactType;
+    as?: React.ElementType;
   }
 
   type DefaultComp = React.SFC<DefaultProps>;

@@ -84,6 +84,22 @@ describe('RadioGroup 单元测试', () => {
     );
   });
 
+  it('测试某个选项不可用', () => {
+    const { container } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <RadioGroup>
+          <Radio value="1" disabled>
+            复选框
+          </Radio>
+          <Radio value="2">复选框2</Radio>
+        </RadioGroup>
+      </ThemeProvider>,
+    );
+
+    const check = container.querySelectorAll('.sinoui-radio--disabled');
+    expect(check.length).toBe(1);
+  });
+
   it('标签在图标左侧显示时，不缩进', () => {
     const { getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>

@@ -228,6 +228,8 @@ describe('pc端', () => {
           portal={false}
           min="2020-06-07"
           value={['', '2020-07-20']}
+          defaultYear={2020}
+          defaultMonth={6}
           isPc
           onChange={onChange}
         />

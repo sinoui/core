@@ -62,7 +62,7 @@ it('周从星期日开始', () => {
   );
 
   expect(getByTestId('week-status-bar')).toHaveStyle(
-    'width: calc(85.7142% + 28px)',
+    'width: calc(85.7143% + 28px)',
   );
   expect(getByTestId('week-status-bar')).toHaveStyle('left: calc(0% + 2px)');
 });

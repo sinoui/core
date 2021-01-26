@@ -25,7 +25,7 @@ const theme = createTheme({
 });
 
 function SimpleDemo() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState();
 
   const onChange = (val: any) => {
     setValue(val);
@@ -46,9 +46,11 @@ function SimpleDemo() {
           onChange={onChange}
           label="Required"
           required
+          placeholder="123"
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
+          <Option value="选项五">选项一</Option>
           <Option value="选项三">选项三</Option>
           <Option value="选项四">选项四</Option>
         </SelectField>
@@ -340,6 +342,7 @@ export const autoFocus = () => (
     <SelectField multiple variant="outlined" label="Multiple" autoFocus>
       <Option value="选项一">选项一</Option>
       <Option value="选项二">选项二</Option>
+      <Option value="选项五">选项一</Option>
       <Option value="选项三">选项三</Option>
       <Option value="选项四">选项四</Option>
     </SelectField>

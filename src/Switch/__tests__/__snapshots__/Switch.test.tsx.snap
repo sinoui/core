@@ -2,11 +2,11 @@
 
 exports[`Switch 镜像测试 不可用状态 1`] = `
 <span
-  className="sc-AxiKw iTtuAU sinoui-switch sinoui-switch--disabled"
+  className="sc-dlnjPT cLcamv sinoui-switch sinoui-switch--disabled"
   disabled={true}
 >
   <span
-    className="sc-AxirZ cmsVHW sinoui-switch__label"
+    className="sc-gtssRu zotEN sinoui-switch__label"
     data-testid="switchLabel"
     disabled={true}
   >
@@ -24,7 +24,7 @@ exports[`Switch 镜像测试 不可用状态 1`] = `
     />
   </span>
   <span
-    className="sc-AxjAm kAyGwU sinoui-switch__track"
+    className="sc-bdnylx gVpPlF sinoui-switch__track"
     disabled={true}
   />
 </span>
@@ -32,10 +32,10 @@ exports[`Switch 镜像测试 不可用状态 1`] = `
 
 exports[`Switch 镜像测试 渲染Switch 1`] = `
 <span
-  className="sc-AxiKw dbAppQ sinoui-switch"
+  className="sc-dlnjPT bHvzfb sinoui-switch"
 >
   <span
-    className="sc-AxirZ DKhje sinoui-switch__label"
+    className="sc-gtssRu UYBvF sinoui-switch__label"
     color="primary"
     data-testid="switchLabel"
   >
@@ -52,7 +52,7 @@ exports[`Switch 镜像测试 渲染Switch 1`] = `
     />
   </span>
   <span
-    className="sc-AxjAm cMNbLp sinoui-switch__track"
+    className="sc-bdnylx gefWAM sinoui-switch__track"
     color="primary"
   />
 </span>
@@ -60,11 +60,11 @@ exports[`Switch 镜像测试 渲染Switch 1`] = `
 
 exports[`Switch 镜像测试 选中状态 1`] = `
 <span
-  className="sc-AxiKw dbAppQ sinoui-switch sinoui-switch--checked"
+  className="sc-dlnjPT bHvzfb sinoui-switch sinoui-switch--checked"
 >
   <span
     checked={true}
-    className="sc-AxirZ iWTLdP sinoui-switch__label"
+    className="sc-gtssRu gevsfQ sinoui-switch__label"
     color="info"
     data-testid="switchLabel"
   >
@@ -83,7 +83,7 @@ exports[`Switch 镜像测试 选中状态 1`] = `
   </span>
   <span
     checked={true}
-    className="sc-AxjAm glPcoh sinoui-switch__track"
+    className="sc-bdnylx ftinAA sinoui-switch__track"
     color="info"
   />
 </span>

@@ -31,7 +31,7 @@ export interface Props {
   /**
    * 指定组件的根元素
    */
-  as?: React.ReactType;
+  as?: React.ElementType;
   /**
    * 自定义样式类名称
    */
@@ -278,6 +278,8 @@ const selectedStyle = css<ChipLayoutProps>`
 
   > .sinoui-chip--selected__icon {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     left: 12px;
     opacity: 1;
     color: ${({ theme, disabled, color }) =>
@@ -341,7 +343,7 @@ const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
     ...rest
   } = props;
 
-  const Comp: React.ReactType =
+  const Comp: React.ElementType =
     AsComp || clickable ? ClickableChipLayout : ChipLayout;
 
   const onClick = (event: React.MouseEvent) => {

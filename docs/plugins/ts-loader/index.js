@@ -50,10 +50,6 @@ module.exports = (_context, _options) => {
                 },
               ],
             },
-            {
-              test: /\.svg$/,
-              use: ['@svgr/webpack'],
-            },
           ],
         },
       };

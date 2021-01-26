@@ -27,7 +27,7 @@ interface MultilineProps {
 export interface BaseInputProps<
   InputComponentType extends React.ElementType = any,
   InputElementType = any,
-  ExtendInputProps = {}
+  ExtendInputProps = Record<string, any>
 > {
   /**
    * 值
@@ -56,7 +56,7 @@ export interface BaseInputProps<
    */
   inputRef?: React.Ref<InputElementType>;
   /**
-   * 是否是多行文本输入框。如果设置为`true`，则采用 react-textarea-autosize 渲染出 textarea
+   * 是否是多行文本输入框。如果设置为`true`，则采用 AutosizeTextarea 渲染出 textarea
    */
   multiline?: boolean;
   /**

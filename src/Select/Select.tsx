@@ -81,6 +81,10 @@ export interface Props
    * 指定弹出层位置
    */
   placement?: Placement;
+  /**
+   * 是否允许在选项上显示title提示
+   */
+  allowShowTitle?: boolean;
 }
 
 /**
@@ -152,6 +156,7 @@ function Select(props: Props) {
     placement,
     allowClear = true,
     popperFocusable,
+    allowShowTitle,
     ...other
   } = props;
 
@@ -184,7 +189,7 @@ function Select(props: Props) {
   return (
     <AutoComplete
       options={options}
-      getOptionLabel={(option) => option.title}
+      getOptionLabel={(option) => option.value}
       renderOption={(option) => option.children}
       value={autoCompleteValue}
       onChange={handleChange}
@@ -192,6 +197,7 @@ function Select(props: Props) {
       error={error}
       disabled={disabled}
       readOnly={readOnly}
+      allowShowTitle={allowShowTitle}
       renderInput={(textInputProps: TextInputProps) => (
         <TextInput
           {...textInputProps}

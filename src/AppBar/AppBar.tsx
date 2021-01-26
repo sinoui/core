@@ -127,7 +127,7 @@ const shortCollapsedCss = css`
 const StyledAppBar = styled.div<AppBarStatusTypes>`
   display: flex;
   position: fixed;
-  top:0;
+  top: 0;
   z-index: ${({ theme }) => theme.zIndex.appBar};
   width: 100%;
   color: ${({ theme }) => theme.palette.primary.contrastText};
@@ -138,7 +138,7 @@ const StyledAppBar = styled.div<AppBarStatusTypes>`
   ${({ short }) => short && shortCss}
   ${({ shortCollapsed }) => shortCollapsed && shortCollapsedCss}
   transition: top .25s cubic-bezier(.4,0,.2,1), width .25s cubic-bezier(.4,0,.2,1), height .25s cubic-bezier(.4,0,.2,1);
-  &  ${AppBarTitle} {
+  & ${AppBarTitle} {
     flex: 1;
     margin-left: 20px;
     min-width: 0;
@@ -155,16 +155,22 @@ const StyledAppBar = styled.div<AppBarStatusTypes>`
 
   &.sinoui-top-app-bar--prominent-scrolled {
     ${regularCss}
-  
-   & > ${AppBarTitle} {
-    align-self: center;
+
+    & > ${AppBarTitle} {
+      align-self: center;
     }
   }
-
 `;
 
 const AppBar = React.forwardRef<HTMLDivElement, AppBarProps>((props, ref) => {
-  const { navigationIcon, title, actionItems, targetScroll, ...rest } = props;
+  const {
+    navigationIcon,
+    title,
+    actionItems,
+    targetScroll,
+    className,
+    ...rest
+  } = props;
   const { fixed, short, prominent, shortCollapsed } = rest;
   const topAppBarRef = useRef<HTMLDivElement>(null);
   const containerRef = useMultiRefs(topAppBarRef, ref);
@@ -188,7 +194,7 @@ const AppBar = React.forwardRef<HTMLDivElement, AppBarProps>((props, ref) => {
   return (
     <StyledAppBar
       ref={containerRef}
-      className={classNames('sinoui-app-bar', 'sinoui-fixed')}
+      className={classNames('sinoui-app-bar', 'sinoui-fixed', className)}
       {...rest}
     >
       <NavigationIcon>{navigationIcon}</NavigationIcon>

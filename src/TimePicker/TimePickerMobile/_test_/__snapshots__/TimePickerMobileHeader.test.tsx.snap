@@ -2,20 +2,20 @@
 
 exports[`快照测试 时钟视图下弹出头部view 1`] = `
 <div
-  className="sc-AxirZ fkcfdf"
+  className="sc-gtssRu dAUaAc"
 >
   <div
     className="sinoui-time-picker-mobile-view__header-am-pm"
   >
     <div
-      className="sc-AxjAm ciJfZK"
+      className="sc-bdnylx cqlYpr"
       onClick={[Function]}
       selected={true}
     >
       上午
     </div>
     <div
-      className="sc-AxjAm dCafeO"
+      className="sc-bdnylx hvEFfX"
       onClick={[Function]}
       selected={false}
     >
@@ -26,19 +26,19 @@ exports[`快照测试 时钟视图下弹出头部view 1`] = `
     className="sinoui-time-picker-mobile-view__header-hour-minute"
   >
     <div
-      className="sc-AxjAm ciJfZK"
+      className="sc-bdnylx cqlYpr"
       onClick={[Function]}
       selected={true}
     >
       03
     </div>
     <div
-      className="sc-AxiKw fFWZDH"
+      className="sc-dlnjPT fqYJTs"
     >
       :
     </div>
     <div
-      className="sc-AxjAm dCafeO"
+      className="sc-bdnylx hvEFfX"
       onClick={[Function]}
       selected={false}
     >
@@ -50,7 +50,7 @@ exports[`快照测试 时钟视图下弹出头部view 1`] = `
 
 exports[`快照测试 键盘输入视图下弹出头部view 1`] = `
 <div
-  className="sc-AxirZ fkcfdf"
+  className="sc-gtssRu dAUaAc"
 >
   <div
     className="sinoui-time-picker-mobile-view__header-title"
