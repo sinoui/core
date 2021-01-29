@@ -17,18 +17,21 @@ function SimpleDemo() {
         <Step title="第三步" />
       </Steps>
       <div style={{ marginTop: 16 }}>
-        <Button
-          disabled={current === 0}
-          onClick={() => setCurrent(current - 1)}
-        >
-          上一步
-        </Button>
-        <Button
-          raised
-          onClick={() => setCurrent(current < 2 ? current + 1 : 2)}
-        >
-          {current < 2 ? '下一步' : '完成'}
-        </Button>
+        {current > 2 ? (
+          <Button onClick={() => setCurrent(0)}>重置</Button>
+        ) : (
+          <>
+            <Button
+              disabled={current === 0}
+              onClick={() => setCurrent(current - 1)}
+            >
+              上一步
+            </Button>
+            <Button raised onClick={() => setCurrent(current + 1)}>
+              {current < 2 ? '下一步' : '完成'}
+            </Button>
+          </>
+        )}
       </div>
     </>
   );

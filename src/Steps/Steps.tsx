@@ -48,7 +48,7 @@ export default function Steps(props: StepsProps) {
 
     return React.cloneElement(step, {
       last: index + 1 === childrenArray.length,
-      connector: <Connector />,
+      connector: <Connector complete={state.completed} />,
       ...state,
       ...step.props,
     });

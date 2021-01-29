@@ -1,15 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import Check from '@sinoui/icons/Check';
 
 const StepLayout = styled.div`
   padding: 0 8px;
   box-sizing: border-box;
 `;
 
-const Text = styled.span`
-  color: ${({ theme }) => theme.palette.text.disabled};
+const Text = styled.span<{ $active?: boolean }>`
+  color: ${({ theme, $active }) =>
+    $active ? theme.palette.text.primary : theme.palette.text.disabled};
   font-size: 14px;
-  font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
+  font-weight: ${({ theme, $active }) =>
+    $active
+      ? theme.typography.fontWeightMedium
+      : theme.typography.fontWeightRegular};
 `;
 
 const StepContent = styled.div`
@@ -17,7 +22,7 @@ const StepContent = styled.div`
   align-items: center;
 `;
 
-const NumberIcon = styled.div`
+const NumberIcon = styled.div<{ $active?: boolean }>`
   width: 24px;
   height: 24px;
   display: flex;
@@ -28,7 +33,8 @@ const NumberIcon = styled.div`
   margin-right: 8px;
   font-size: 12px;
   color: ${({ theme }) => theme.palette.common.white};
-  background: ${({ theme }) => theme.palette.text.disabled};
+  background: ${({ theme, $active }) =>
+    $active ? theme.palette.primary.main : theme.palette.text.disabled};
 `;
 
 export interface StepProps {
@@ -56,16 +62,26 @@ export interface StepProps {
    * 是否是最后一个
    */
   last?: boolean;
+  /**
+   * 是否处于活动状态
+   */
+  active?: boolean;
+  /**
+   * 是否是完成状态
+   */
+  completed?: boolean;
 }
 
 export default function Step(props: StepProps) {
-  const { title, index = 0, last, connector } = props;
+  const { title, index = 0, last, connector, active, completed } = props;
   return (
     <>
       <StepLayout>
         <StepContent>
-          <NumberIcon>{index + 1}</NumberIcon>
-          <Text>{title}</Text>
+          <NumberIcon $active={active || completed}>
+            {completed ? <Check size={18} /> : index + 1}
+          </NumberIcon>
+          <Text $active={active || completed}>{title}</Text>
         </StepContent>
       </StepLayout>
       {!last && connector}
