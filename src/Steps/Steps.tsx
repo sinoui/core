@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import classNames from 'classnames';
-import Connector from './Connector';
 
 export interface StepsProps {
   /**
@@ -20,15 +19,36 @@ export interface StepsProps {
    * 子元素
    */
   children?: React.ReactNode;
+  /**
+   * 标签位置
+   */
+  labelPlacement?: 'horizontal' | 'vertical';
+  /**
+   * 连接器
+   */
+  connector?: React.ReactNode;
 }
 
-const StepsLayout = styled.div`
+const verticalStyle = css`
+  align-items: flex-start;
+`;
+
+const StepsLayout = styled.div<{ labelPlacement?: 'horizontal' | 'vertical' }>`
   display: flex;
   align-items: center;
+  ${({ labelPlacement }) => labelPlacement === 'vertical' && verticalStyle}
 `;
 
 export default function Steps(props: StepsProps) {
-  const { direction, children, current, nonLinear, ...other } = props;
+  const {
+    direction,
+    children,
+    current,
+    nonLinear,
+    labelPlacement,
+    connector,
+    ...other
+  } = props;
   const childrenArray = React.Children.toArray(children);
   const steps = childrenArray.map((step: any, index) => {
     const state = {
@@ -48,7 +68,8 @@ export default function Steps(props: StepsProps) {
 
     return React.cloneElement(step, {
       last: index + 1 === childrenArray.length,
-      connector: <Connector complete={state.completed} />,
+      connector,
+      labelPlacement,
       ...state,
       ...step.props,
     });
@@ -57,6 +78,7 @@ export default function Steps(props: StepsProps) {
   return (
     <StepsLayout
       {...other}
+      labelPlacement={labelPlacement}
       className={classNames('sinoui-steps', {
         'sinoui-steps--horizontal': direction === 'horizontal',
         'sinoui-steps--vertical': direction === 'vertical',

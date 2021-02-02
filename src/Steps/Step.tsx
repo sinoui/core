@@ -1,10 +1,39 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Check from '@sinoui/icons/Check';
+import classNames from 'classnames';
+import Connector from './Connector';
+import Divider from '../Divider';
 
-const StepLayout = styled.div`
+const verticalLayoutCss = css`
+  flex: 1;
+  position: relative;
+
+  .sinoui-step-connector {
+    position: absolute;
+    top: 12px;
+    left: calc(50% + 20px);
+    right: calc(-50% + 20px);
+  }
+`;
+
+const StepLayout = styled.div<{ $isVertical?: boolean }>`
   padding: 0 8px;
   box-sizing: border-box;
+
+  ${({ $isVertical }) => $isVertical && verticalLayoutCss};
+
+  .sinoui-step-content--vertical {
+    flex-direction: column;
+
+    .sinoui-step-number-icon {
+      margin-right: 0;
+    }
+
+    .sinoui-step-title {
+      margin-top: 16px;
+    }
+  }
 `;
 
 const Text = styled.span<{ $active?: boolean }>`
@@ -17,7 +46,7 @@ const Text = styled.span<{ $active?: boolean }>`
       : theme.typography.fontWeightRegular};
 `;
 
-const StepContent = styled.div`
+const StepContent = styled.div<{ $isVertical?: boolean }>`
   display: flex;
   align-items: center;
 `;
@@ -35,6 +64,12 @@ const NumberIcon = styled.div<{ $active?: boolean }>`
   color: ${({ theme }) => theme.palette.common.white};
   background: ${({ theme, $active }) =>
     $active ? theme.palette.primary.main : theme.palette.text.disabled};
+`;
+
+const StyledDivider = styled(Divider)<{ complete?: boolean }>`
+  flex: 1;
+  background: ${({ complete, theme }) =>
+    complete ? theme.palette.primary.main : theme.palette.text.disabled};
 `;
 
 export interface StepProps {
@@ -70,21 +105,51 @@ export interface StepProps {
    * 是否是完成状态
    */
   completed?: boolean;
+  /**
+   * 标签位置
+   */
+  labelPlacement?: 'horizontal' | 'vertical';
 }
 
 export default function Step(props: StepProps) {
-  const { title, index = 0, last, connector, active, completed } = props;
+  const {
+    title,
+    index = 0,
+    last,
+    connector: Comp = StyledDivider,
+    active,
+    completed,
+    labelPlacement,
+  } = props;
   return (
     <>
-      <StepLayout>
-        <StepContent>
-          <NumberIcon $active={active || completed}>
+      <StepLayout $isVertical={labelPlacement === 'vertical'}>
+        {labelPlacement === 'vertical' && !last && (
+          <Connector className="sinoui-step-connector">
+            <Comp complete={completed} />
+          </Connector>
+        )}
+        <StepContent
+          className={classNames('sinoui-step-content', {
+            'sinoui-step-content--vertical': labelPlacement === 'vertical',
+          })}
+        >
+          <NumberIcon
+            $active={active || completed}
+            className="sinoui-step-number-icon"
+          >
             {completed ? <Check size={18} /> : index + 1}
           </NumberIcon>
-          <Text $active={active || completed}>{title}</Text>
+          <Text $active={active || completed} className="sinoui-step-title">
+            {title}
+          </Text>
         </StepContent>
       </StepLayout>
-      {!last && connector}
+      {!last && labelPlacement !== 'vertical' && (
+        <Connector className="sinoui-step-connector">
+          <Comp complete={completed} />
+        </Connector>
+      )}
     </>
   );
 }
