@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Steps, { Step } from '@sinoui/core/Steps';
 import Button from '@sinoui/core/Button';
+import ArrowRightAlt from '@sinoui/icons/ArrowRightAlt';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -9,13 +10,19 @@ export default {
 
 function SimpleDemo({
   labelPlacement,
+  connector,
 }: {
   labelPlacement?: 'horizontal' | 'vertical';
+  connector?: React.ReactNode;
 }) {
   const [current, setCurrent] = useState(0);
   return (
     <>
-      <Steps current={current} labelPlacement={labelPlacement}>
+      <Steps
+        current={current}
+        labelPlacement={labelPlacement}
+        connector={connector}
+      >
         <Step title="第一步" />
         <Step title="第二步" />
         <Step title="第三步" />
@@ -50,6 +57,12 @@ export const 基本使用 = () => (
 export const 标签垂直布局 = () => (
   <StoryLayout>
     <SimpleDemo labelPlacement="vertical" />
+  </StoryLayout>
+);
+
+export const 自定义连接器 = () => (
+  <StoryLayout>
+    <SimpleDemo connector={<ArrowRightAlt />} />
   </StoryLayout>
 );
 

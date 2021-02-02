@@ -15,6 +15,14 @@ const verticalLayoutCss = css`
     left: calc(50% + 20px);
     right: calc(-50% + 20px);
   }
+
+  .sinoui-step-connector--active {
+    color: ${({ theme }) => theme.palette.primary.main};
+
+    > hr {
+      background: ${({ theme }) => theme.palette.primary.main};
+    }
+  }
 `;
 
 const StepLayout = styled.div<{ $isVertical?: boolean }>`
@@ -68,8 +76,6 @@ const NumberIcon = styled.div<{ $active?: boolean }>`
 
 const StyledDivider = styled(Divider)<{ complete?: boolean }>`
   flex: 1;
-  background: ${({ complete, theme }) =>
-    complete ? theme.palette.primary.main : theme.palette.text.disabled};
 `;
 
 export interface StepProps {
@@ -116,7 +122,7 @@ export default function Step(props: StepProps) {
     title,
     index = 0,
     last,
-    connector: Comp = StyledDivider,
+    connector = <StyledDivider />,
     active,
     completed,
     labelPlacement,
@@ -125,8 +131,12 @@ export default function Step(props: StepProps) {
     <>
       <StepLayout $isVertical={labelPlacement === 'vertical'}>
         {labelPlacement === 'vertical' && !last && (
-          <Connector className="sinoui-step-connector">
-            <Comp complete={completed} />
+          <Connector
+            className={classNames('sinoui-step-connector', {
+              'sinoui-step-connector--active': completed,
+            })}
+          >
+            {connector}
           </Connector>
         )}
         <StepContent
@@ -146,8 +156,12 @@ export default function Step(props: StepProps) {
         </StepContent>
       </StepLayout>
       {!last && labelPlacement !== 'vertical' && (
-        <Connector className="sinoui-step-connector">
-          <Comp complete={completed} />
+        <Connector
+          className={classNames('sinoui-step-connector', {
+            'sinoui-step-connector--active': completed,
+          })}
+        >
+          {connector}
         </Connector>
       )}
     </>

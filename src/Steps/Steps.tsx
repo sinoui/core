@@ -37,6 +37,14 @@ const StepsLayout = styled.div<{ labelPlacement?: 'horizontal' | 'vertical' }>`
   display: flex;
   align-items: center;
   ${({ labelPlacement }) => labelPlacement === 'vertical' && verticalStyle}
+
+  .sinoui-step-connector--active {
+    color: ${({ theme }) => theme.palette.primary.main};
+
+    > hr {
+      background: ${({ theme }) => theme.palette.primary.main};
+    }
+  }
 `;
 
 export default function Steps(props: StepsProps) {
