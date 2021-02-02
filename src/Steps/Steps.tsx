@@ -27,6 +27,10 @@ export interface StepsProps {
    * 连接器
    */
   connector?: React.ReactNode;
+  /**
+   * 自定义图标
+   */
+  icon?: React.ReactNode;
 }
 
 const verticalStyle = css`
@@ -55,6 +59,7 @@ export default function Steps(props: StepsProps) {
     nonLinear,
     labelPlacement,
     connector,
+    icon,
     ...other
   } = props;
   const childrenArray = React.Children.toArray(children);
@@ -78,6 +83,7 @@ export default function Steps(props: StepsProps) {
       last: index + 1 === childrenArray.length,
       connector,
       labelPlacement,
+      icon,
       ...state,
       ...step.props,
     });

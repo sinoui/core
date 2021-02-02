@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Steps, { Step } from '@sinoui/core/Steps';
 import Button from '@sinoui/core/Button';
 import ArrowRightAlt from '@sinoui/icons/ArrowRightAlt';
+import StarOutline from '@sinoui/icons/StarOutline';
+import Star from '@sinoui/icons/Star';
 import StoryLayout from './StoryLayout';
 
 export default {
@@ -11,9 +13,11 @@ export default {
 function SimpleDemo({
   labelPlacement,
   connector,
+  icon,
 }: {
   labelPlacement?: 'horizontal' | 'vertical';
   connector?: React.ReactNode;
+  icon?: React.ReactNode;
 }) {
   const [current, setCurrent] = useState(0);
   return (
@@ -22,6 +26,7 @@ function SimpleDemo({
         current={current}
         labelPlacement={labelPlacement}
         connector={connector}
+        icon={icon}
       >
         <Step title="第一步" />
         <Step title="第二步" />
@@ -67,9 +72,7 @@ export const 自定义连接器 = () => (
 );
 
 export const 自定义图标 = () => (
-  <Steps current={1}>
-    <Step title="第一步" />
-    <Step title="第二步" />
-    <Step title="第三步" />
-  </Steps>
+  <StoryLayout>
+    <SimpleDemo icon={<Star />} />
+  </StoryLayout>
 );

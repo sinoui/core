@@ -78,6 +78,12 @@ const StyledDivider = styled(Divider)<{ complete?: boolean }>`
   flex: 1;
 `;
 
+const IconWrapper = styled.span<{ $active?: boolean }>`
+  margin-right: 8px;
+  color: ${({ theme, $active }) =>
+    $active ? theme.palette.primary.main : theme.palette.text.disabled};
+`;
+
 export interface StepProps {
   /**
    * 自定义图标
@@ -126,6 +132,7 @@ export default function Step(props: StepProps) {
     active,
     completed,
     labelPlacement,
+    icon,
   } = props;
   return (
     <>
@@ -144,12 +151,16 @@ export default function Step(props: StepProps) {
             'sinoui-step-content--vertical': labelPlacement === 'vertical',
           })}
         >
-          <NumberIcon
-            $active={active || completed}
-            className="sinoui-step-number-icon"
-          >
-            {completed ? <Check size={18} /> : index + 1}
-          </NumberIcon>
+          {icon ? (
+            <IconWrapper $active={active || completed}>{icon}</IconWrapper>
+          ) : (
+            <NumberIcon
+              $active={active || completed}
+              className="sinoui-step-number-icon"
+            >
+              {completed ? <Check size={18} /> : index + 1}
+            </NumberIcon>
+          )}
           <Text $active={active || completed} className="sinoui-step-title">
             {title}
           </Text>
