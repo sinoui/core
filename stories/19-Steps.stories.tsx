@@ -76,3 +76,36 @@ export const 自定义图标 = () => (
     <SimpleDemo icon={<Star />} />
   </StoryLayout>
 );
+
+function NoLinerDemo({
+  labelPlacement,
+}: {
+  labelPlacement?: 'horizontal' | 'vertical';
+}) {
+  const [current, setCurrent] = useState(0);
+  return (
+    <>
+      <Steps
+        current={current}
+        labelPlacement={labelPlacement}
+        onChange={(index: number) => setCurrent(index)}
+      >
+        <Step title="第一步" />
+        <Step title="第二步" />
+        <Step title="第三步" />
+      </Steps>
+    </>
+  );
+}
+
+export const 非线性步进器 = () => (
+  <StoryLayout>
+    <NoLinerDemo />
+  </StoryLayout>
+);
+
+export const 标签垂直布局的非线性步进器 = () => (
+  <StoryLayout>
+    <NoLinerDemo labelPlacement="vertical" />
+  </StoryLayout>
+);

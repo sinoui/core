@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import Check from '@sinoui/icons/Check';
+import { useRipple } from '@sinoui/ripple';
 import classNames from 'classnames';
 import Connector from './Connector';
 import Divider from '../Divider';
@@ -25,10 +26,13 @@ const verticalLayoutCss = css`
   }
 `;
 
-const StepLayout = styled.div<{ $isVertical?: boolean }>`
+const StepLayout = styled.div<{
+  $isVertical?: boolean;
+  $isClickable?: boolean;
+}>`
   padding: 0 8px;
   box-sizing: border-box;
-
+  cursor: ${({ $isClickable }) => ($isClickable ? 'pointer' : 'default')};
   ${({ $isVertical }) => $isVertical && verticalLayoutCss};
 
   .sinoui-step-content--vertical {
@@ -121,6 +125,10 @@ export interface StepProps {
    * 标签位置
    */
   labelPlacement?: 'horizontal' | 'vertical';
+  /**
+   * 点击时的回调函数
+   */
+  onChange?: (current: number) => void;
 }
 
 export default function Step(props: StepProps) {
@@ -133,10 +141,25 @@ export default function Step(props: StepProps) {
     completed,
     labelPlacement,
     icon,
+    onChange,
   } = props;
+
+  const ref = onChange ? useRipple<HTMLDivElement>() : null;
+
+  const handleClick = () => {
+    if (!onChange) {
+      return;
+    }
+    onChange(index);
+  };
   return (
     <>
-      <StepLayout $isVertical={labelPlacement === 'vertical'}>
+      <StepLayout
+        $isVertical={labelPlacement === 'vertical'}
+        onClick={handleClick}
+        $isClickable={!!onChange}
+        ref={ref}
+      >
         {labelPlacement === 'vertical' && !last && (
           <Connector
             className={classNames('sinoui-step-connector', {

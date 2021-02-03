@@ -31,6 +31,10 @@ export interface StepsProps {
    * 自定义图标
    */
   icon?: React.ReactNode;
+  /**
+   * 点击时的回调函数
+   */
+  onChange?: (current: number) => void;
 }
 
 const verticalStyle = css`
@@ -60,6 +64,7 @@ export default function Steps(props: StepsProps) {
     labelPlacement,
     connector,
     icon,
+    onChange,
     ...other
   } = props;
   const childrenArray = React.Children.toArray(children);
@@ -73,9 +78,9 @@ export default function Steps(props: StepsProps) {
 
     if (current === index) {
       state.active = true;
-    } else if (!nonLinear && current > index) {
+    } else if (current > index) {
       state.completed = true;
-    } else if (!nonLinear && current < index) {
+    } else if (current < index) {
       state.disabled = true;
     }
 
@@ -84,6 +89,7 @@ export default function Steps(props: StepsProps) {
       connector,
       labelPlacement,
       icon,
+      onChange,
       ...state,
       ...step.props,
     });
