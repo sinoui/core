@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
+import Divider from '../Divider';
 
 export interface StepsProps {
   /**
@@ -37,14 +38,42 @@ export interface StepsProps {
   onChange?: (current: number) => void;
 }
 
-const verticalStyle = css`
+const lableVerticalStyle = css`
   align-items: flex-start;
 `;
 
-const StepsLayout = styled.div<{ labelPlacement?: 'horizontal' | 'vertical' }>`
+const verticalStyle = css`
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  height: 100%;
+  justify-content: space-between;
+`;
+
+const dirAndLabelVerticalStyle = css`
+  .sinoui-step {
+    flex: 0;
+    padding: 8px;
+  }
+  .sinoui-step-connector {
+    margin-left: 8px;
+  }
+`;
+
+const StepsLayout = styled.div<{
+  labelPlacement?: 'horizontal' | 'vertical';
+  direction?: 'horizontal' | 'vertical';
+}>`
   display: flex;
   align-items: center;
-  ${({ labelPlacement }) => labelPlacement === 'vertical' && verticalStyle}
+  ${({ labelPlacement }) =>
+    labelPlacement === 'vertical' && lableVerticalStyle};
+  ${({ direction }) => direction === 'vertical' && verticalStyle};
+
+  ${({ labelPlacement, direction }) =>
+    direction === 'vertical' &&
+    labelPlacement === 'vertical' &&
+    dirAndLabelVerticalStyle};
 
   .sinoui-step-connector--active {
     color: ${({ theme }) => theme.palette.primary.main};
@@ -53,6 +82,12 @@ const StepsLayout = styled.div<{ labelPlacement?: 'horizontal' | 'vertical' }>`
       background: ${({ theme }) => theme.palette.primary.main};
     }
   }
+`;
+
+const StyledDivider = styled(Divider)<{ vertical?: boolean }>`
+  flex: 1;
+  height: ${({ vertical }) => (vertical ? 'calc(100% - 16px)' : '1px')};
+  margin-left: ${({ vertical }) => (vertical ? 20 : 0)}px;
 `;
 
 export default function Steps(props: StepsProps) {
@@ -86,8 +121,11 @@ export default function Steps(props: StepsProps) {
 
     return React.cloneElement(step, {
       last: index + 1 === childrenArray.length,
-      connector,
+      connector: connector ?? (
+        <StyledDivider vertical={direction === 'vertical'} />
+      ),
       labelPlacement,
+      direction,
       icon,
       onChange,
       ...state,
@@ -99,6 +137,7 @@ export default function Steps(props: StepsProps) {
     <StepsLayout
       {...other}
       labelPlacement={labelPlacement}
+      direction={direction}
       className={classNames('sinoui-steps', {
         'sinoui-steps--horizontal': direction === 'horizontal',
         'sinoui-steps--vertical': direction === 'vertical',

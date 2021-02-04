@@ -4,7 +4,6 @@ import Check from '@sinoui/icons/Check';
 import { useRipple } from '@sinoui/ripple';
 import classNames from 'classnames';
 import Connector from './Connector';
-import Divider from '../Divider';
 
 const verticalLayoutCss = css`
   flex: 1;
@@ -78,10 +77,6 @@ const NumberIcon = styled.div<{ $active?: boolean }>`
     $active ? theme.palette.primary.main : theme.palette.text.disabled};
 `;
 
-const StyledDivider = styled(Divider)<{ complete?: boolean }>`
-  flex: 1;
-`;
-
 const IconWrapper = styled.span<{ $active?: boolean }>`
   margin-right: 8px;
   color: ${({ theme, $active }) =>
@@ -129,6 +124,10 @@ export interface StepProps {
    * 点击时的回调函数
    */
   onChange?: (current: number) => void;
+  /**
+   * 步骤条方向
+   */
+  direction?: 'horizontal' | 'vertical';
 }
 
 export default function Step(props: StepProps) {
@@ -136,12 +135,13 @@ export default function Step(props: StepProps) {
     title,
     index = 0,
     last,
-    connector = <StyledDivider />,
+    connector,
     active,
     completed,
     labelPlacement,
     icon,
     onChange,
+    direction,
   } = props;
 
   const ref = onChange ? useRipple<HTMLDivElement>() : null;
@@ -155,12 +155,13 @@ export default function Step(props: StepProps) {
   return (
     <>
       <StepLayout
+        className="sinoui-step"
         $isVertical={labelPlacement === 'vertical'}
         onClick={handleClick}
         $isClickable={!!onChange}
         ref={ref}
       >
-        {labelPlacement === 'vertical' && !last && (
+        {labelPlacement === 'vertical' && direction !== 'vertical' && !last && (
           <Connector
             className={classNames('sinoui-step-connector', {
               'sinoui-step-connector--active': completed,
@@ -189,15 +190,17 @@ export default function Step(props: StepProps) {
           </Text>
         </StepContent>
       </StepLayout>
-      {!last && labelPlacement !== 'vertical' && (
-        <Connector
-          className={classNames('sinoui-step-connector', {
-            'sinoui-step-connector--active': completed,
-          })}
-        >
-          {connector}
-        </Connector>
-      )}
+      {!last &&
+        (labelPlacement !== 'vertical' ||
+          (labelPlacement === 'vertical' && direction === 'vertical')) && (
+          <Connector
+            className={classNames('sinoui-step-connector', {
+              'sinoui-step-connector--active': completed,
+            })}
+          >
+            {connector}
+          </Connector>
+        )}
     </>
   );
 }
