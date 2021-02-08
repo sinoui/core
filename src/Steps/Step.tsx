@@ -109,14 +109,6 @@ export interface StepProps {
    */
   last?: boolean;
   /**
-   * 是否处于活动状态
-   */
-  active?: boolean;
-  /**
-   * 是否是完成状态
-   */
-  completed?: boolean;
-  /**
    * 标签位置
    */
   labelPlacement?: 'horizontal' | 'vertical';
@@ -128,6 +120,10 @@ export interface StepProps {
    * 步骤条方向
    */
   direction?: 'horizontal' | 'vertical';
+  /**
+   * 状态
+   */
+  status?: 'wait' | 'active' | 'completed' | 'error';
 }
 
 export default function Step(props: StepProps) {
@@ -136,12 +132,11 @@ export default function Step(props: StepProps) {
     index = 0,
     last,
     connector,
-    active,
-    completed,
     labelPlacement,
     icon,
     onChange,
     direction,
+    status,
   } = props;
 
   const ref = onChange ? useRipple<HTMLDivElement>() : null;
@@ -164,7 +159,7 @@ export default function Step(props: StepProps) {
         {labelPlacement === 'vertical' && direction !== 'vertical' && !last && (
           <Connector
             className={classNames('sinoui-step-connector', {
-              'sinoui-step-connector--active': completed,
+              'sinoui-step-connector--active': status === 'completed',
             })}
           >
             {connector}
@@ -176,16 +171,23 @@ export default function Step(props: StepProps) {
           })}
         >
           {icon ? (
-            <IconWrapper $active={active || completed}>{icon}</IconWrapper>
+            <IconWrapper
+              $active={status === 'active' || status === 'completed'}
+            >
+              {icon}
+            </IconWrapper>
           ) : (
             <NumberIcon
-              $active={active || completed}
+              $active={status === 'active' || status === 'completed'}
               className="sinoui-step-number-icon"
             >
-              {completed ? <Check size={18} /> : index + 1}
+              {status === 'completed' ? <Check size={18} /> : index + 1}
             </NumberIcon>
           )}
-          <Text $active={active || completed} className="sinoui-step-title">
+          <Text
+            $active={status === 'active' || status === 'completed'}
+            className="sinoui-step-title"
+          >
             {title}
           </Text>
         </StepContent>
@@ -195,7 +197,7 @@ export default function Step(props: StepProps) {
           (labelPlacement === 'vertical' && direction === 'vertical')) && (
           <Connector
             className={classNames('sinoui-step-connector', {
-              'sinoui-step-connector--active': completed,
+              'sinoui-step-connector--active': status === 'completed',
             })}
           >
             {connector}

@@ -13,10 +13,6 @@ export interface StepsProps {
    */
   direction?: 'horizontal' | 'vertical';
   /**
-   * 是否为非线性，默认为false
-   */
-  nonLinear?: boolean;
-  /**
    * 子元素
    */
   children?: React.ReactNode;
@@ -95,7 +91,6 @@ export default function Steps(props: StepsProps) {
     direction,
     children,
     current,
-    nonLinear,
     labelPlacement,
     connector,
     icon,
@@ -106,17 +101,15 @@ export default function Steps(props: StepsProps) {
   const steps = childrenArray.map((step: any, index) => {
     const state = {
       index,
-      active: false,
-      completed: false,
-      disabled: false,
+      status: 'wait',
     };
 
     if (current === index) {
-      state.active = true;
+      state.status = 'active';
     } else if (current > index) {
-      state.completed = true;
+      state.status = 'completed';
     } else if (current < index) {
-      state.disabled = true;
+      state.status = 'wait';
     }
 
     return React.cloneElement(step, {
