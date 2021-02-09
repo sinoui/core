@@ -14,6 +14,7 @@ const verticalLayoutCss = css`
     top: 12px;
     left: calc(50% + 20px);
     right: calc(-50% + 20px);
+    margin-top: 0px;
   }
 
   .sinoui-step-connector--active {
@@ -29,25 +30,27 @@ const StepLayout = styled.div<{
   $isVertical?: boolean;
   $isClickable?: boolean;
 }>`
-  padding: 0 8px;
+  padding: 0 16px;
   box-sizing: border-box;
   cursor: ${({ $isClickable }) => ($isClickable ? 'pointer' : 'default')};
   ${({ $isVertical }) => $isVertical && verticalLayoutCss};
 
-  .sinoui-step-content--vertical {
+  .sinoui-step-container--vertical {
     flex-direction: column;
+    align-items: center;
 
     .sinoui-step-number-icon {
       margin-right: 0;
     }
 
-    .sinoui-step-title {
+    .sinoui-step-content {
       margin-top: 16px;
+      text-align: center;
     }
   }
 `;
 
-const Text = styled.span<{ $active?: boolean }>`
+const Title = styled.span<{ $active?: boolean }>`
   color: ${({ theme, $active }) =>
     $active ? theme.palette.text.primary : theme.palette.text.disabled};
   font-size: 14px;
@@ -57,9 +60,14 @@ const Text = styled.span<{ $active?: boolean }>`
       : theme.typography.fontWeightRegular};
 `;
 
+const Description = styled.div<{ $active?: boolean }>`
+  color: ${({ theme, $active }) =>
+    $active ? theme.palette.text.primary : theme.palette.text.disabled};
+`;
+
 const StepContent = styled.div<{ $isVertical?: boolean }>`
-  display: flex;
-  align-items: center;
+  display: inline-block;
+  vertical-align: top;
 `;
 
 const NumberIcon = styled.div<{ $active?: boolean }>`
@@ -72,6 +80,7 @@ const NumberIcon = styled.div<{ $active?: boolean }>`
   border-radius: 50%;
   margin-right: 8px;
   font-size: 12px;
+  line-height: 24px;
   color: ${({ theme }) => theme.palette.common.white};
   background: ${({ theme, $active }) =>
     $active ? theme.palette.primary.main : theme.palette.text.disabled};
@@ -81,6 +90,17 @@ const IconWrapper = styled.span<{ $active?: boolean }>`
   margin-right: 8px;
   color: ${({ theme, $active }) =>
     $active ? theme.palette.primary.main : theme.palette.text.disabled};
+`;
+
+const StepContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+`;
+
+const SubTitle = styled.div`
+  display: inline;
+  margin-left: 8px;
+  color: ${({ theme }) => theme.palette.text.disabled};
 `;
 
 export interface StepProps {
@@ -124,6 +144,14 @@ export interface StepProps {
    * 状态
    */
   status?: 'wait' | 'active' | 'completed' | 'error';
+  /**
+   * 副标题
+   */
+  subTitle?: React.ReactNode;
+  /**
+   * 描述文字（内容）
+   */
+  description?: React.ReactNode;
 }
 
 export default function Step(props: StepProps) {
@@ -137,6 +165,8 @@ export default function Step(props: StepProps) {
     onChange,
     direction,
     status,
+    subTitle,
+    description,
   } = props;
 
   const ref = onChange ? useRipple<HTMLDivElement>() : null;
@@ -165,9 +195,9 @@ export default function Step(props: StepProps) {
             {connector}
           </Connector>
         )}
-        <StepContent
-          className={classNames('sinoui-step-content', {
-            'sinoui-step-content--vertical': labelPlacement === 'vertical',
+        <StepContainer
+          className={classNames('sinoui-step-container', {
+            'sinoui-step-container--vertical': labelPlacement === 'vertical',
           })}
         >
           {icon ? (
@@ -184,13 +214,26 @@ export default function Step(props: StepProps) {
               {status === 'completed' ? <Check size={18} /> : index + 1}
             </NumberIcon>
           )}
-          <Text
-            $active={status === 'active' || status === 'completed'}
-            className="sinoui-step-title"
-          >
-            {title}
-          </Text>
-        </StepContent>
+          <StepContent className="sinoui-step-content">
+            <Title
+              $active={status === 'active' || status === 'completed'}
+              className="sinoui-step-title"
+            >
+              {title}
+              {subTitle && (
+                <SubTitle className="sinoui-step-subtitle">{subTitle}</SubTitle>
+              )}
+            </Title>
+            {description && (
+              <Description
+                className="sinoui-step-description"
+                $active={status === 'active' || status === 'completed'}
+              >
+                {description}
+              </Description>
+            )}
+          </StepContent>
+        </StepContainer>
       </StepLayout>
       {!last &&
         (labelPlacement !== 'vertical' ||

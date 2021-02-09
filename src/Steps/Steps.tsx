@@ -61,7 +61,7 @@ const StepsLayout = styled.div<{
   direction?: 'horizontal' | 'vertical';
 }>`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   ${({ labelPlacement }) =>
     labelPlacement === 'vertical' && lableVerticalStyle};
   ${({ direction }) => direction === 'vertical' && verticalStyle};
@@ -70,6 +70,18 @@ const StepsLayout = styled.div<{
     direction === 'vertical' &&
     labelPlacement === 'vertical' &&
     dirAndLabelVerticalStyle};
+
+  .sinoui-step:first-child {
+    padding-left: 0px;
+  }
+
+  .sinoui-step:last-child {
+    padding-right: 0px;
+  }
+
+  .sinoui-step-connector {
+    margin-top: 12px;
+  }
 
   .sinoui-step-connector--active {
     color: ${({ theme }) => theme.palette.primary.main};
