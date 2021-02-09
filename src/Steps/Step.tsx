@@ -71,7 +71,7 @@ const Title = styled.span<{ $active?: boolean; $error?: boolean }>`
 
 const Description = styled.div<{ $active?: boolean }>`
   color: ${({ theme, $active }) =>
-    $active ? theme.palette.text.primary : theme.palette.text.disabled};
+    $active ? theme.palette.text.secondary : theme.palette.text.disabled};
 `;
 
 const StepContent = styled.div<{ $isVertical?: boolean }>`
@@ -97,6 +97,8 @@ const NumberIcon = styled.div<{ $active?: boolean }>`
 
 const IconWrapper = styled.span<{ $active?: boolean; $error?: boolean }>`
   margin-right: 8px;
+  height: 24px;
+  width: 24px;
   color: ${({ theme, $active }) =>
     $active ? theme.palette.primary.main : theme.palette.text.disabled};
   ${({ theme, $error }) => $error && `color:${theme.palette.error.main}`};
@@ -179,7 +181,9 @@ export default function Step(props: StepProps) {
     description,
   } = props;
 
-  const ref = onChange ? useRipple<HTMLDivElement>() : null;
+  const ref = useRipple<HTMLDivElement>({
+    disabled: !onChange,
+  });
 
   const renderIcon = () => {
     if (icon) {
