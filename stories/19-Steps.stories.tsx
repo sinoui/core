@@ -175,12 +175,12 @@ export const 垂直布局 = () => (
   <StoryLayout>
     <div style={{ height: 400, width: 300 }}>
       <Steps current={1} direction="vertical">
+        <Step title="第一步" description="This is a description." />
         <Step
-          title="第一步"
+          title="第二步"
           subTitle="Left 00:00:08"
           description="This is a description."
         />
-        <Step title="第二步" description="This is a description." />
         <Step title="第三步" description="This is a description." />
       </Steps>
     </div>
@@ -192,5 +192,15 @@ export const 标签垂直布局的垂直步进器 = () => (
     <div style={{ height: 400, width: 300 }}>
       <VerticalDemo labelPlacement="vertical" />
     </div>
+  </StoryLayout>
+);
+
+export const 有错误状态的步进器 = () => (
+  <StoryLayout>
+    <Steps current={1}>
+      <Step title="第一步" />
+      <Step title="第二步" status="error" />
+      <Step title="第三步" />
+    </Steps>
   </StoryLayout>
 );

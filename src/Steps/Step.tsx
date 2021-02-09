@@ -1,6 +1,8 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Check from '@sinoui/icons/Check';
+import CheckCircle from '@sinoui/icons/CheckCircle';
+import Error from '@sinoui/icons/Error';
 import { useRipple } from '@sinoui/ripple';
 import classNames from 'classnames';
 import Connector from './Connector';
@@ -53,9 +55,13 @@ const StepLayout = styled.div<{
   }
 `;
 
-const Title = styled.span<{ $active?: boolean }>`
-  color: ${({ theme, $active }) =>
-    $active ? theme.palette.text.primary : theme.palette.text.disabled};
+const Title = styled.span<{ $active?: boolean; $error?: boolean }>`
+  color: ${({ theme, $active, $error }) =>
+    $active
+      ? theme.palette.text.primary
+      : $error
+      ? theme.palette.error.main
+      : theme.palette.text.disabled};
   font-size: 14px;
   font-weight: ${({ theme, $active }) =>
     $active
@@ -89,10 +95,11 @@ const NumberIcon = styled.div<{ $active?: boolean }>`
     $active ? theme.palette.primary.main : theme.palette.text.disabled};
 `;
 
-const IconWrapper = styled.span<{ $active?: boolean }>`
+const IconWrapper = styled.span<{ $active?: boolean; $error?: boolean }>`
   margin-right: 8px;
   color: ${({ theme, $active }) =>
     $active ? theme.palette.primary.main : theme.palette.text.disabled};
+  ${({ theme, $error }) => $error && `color:${theme.palette.error.main}`};
 `;
 
 const StepContainer = styled.div`
@@ -174,6 +181,45 @@ export default function Step(props: StepProps) {
 
   const ref = onChange ? useRipple<HTMLDivElement>() : null;
 
+  const renderIcon = () => {
+    if (icon) {
+      if (typeof icon === 'function') {
+        return icon(status);
+      }
+      return (
+        <IconWrapper
+          $active={status === 'active' || status === 'completed'}
+          $error={status === 'error'}
+        >
+          {icon}
+        </IconWrapper>
+      );
+    }
+    if (status === 'completed') {
+      return (
+        <IconWrapper $active>
+          <CheckCircle />
+        </IconWrapper>
+      );
+    }
+    if (status === 'error') {
+      return (
+        <IconWrapper $error>
+          <Error />
+        </IconWrapper>
+      );
+    }
+
+    return (
+      <NumberIcon
+        $active={status === 'active'}
+        className="sinoui-step-number-icon"
+      >
+        {index + 1}
+      </NumberIcon>
+    );
+  };
+
   const handleClick = () => {
     if (!onChange) {
       return;
@@ -203,23 +249,11 @@ export default function Step(props: StepProps) {
             'sinoui-step-container--vertical': labelPlacement === 'vertical',
           })}
         >
-          {icon ? (
-            <IconWrapper
-              $active={status === 'active' || status === 'completed'}
-            >
-              {icon}
-            </IconWrapper>
-          ) : (
-            <NumberIcon
-              $active={status === 'active' || status === 'completed'}
-              className="sinoui-step-number-icon"
-            >
-              {status === 'completed' ? <Check size={18} /> : index + 1}
-            </NumberIcon>
-          )}
+          {renderIcon()}
           <StepContent className="sinoui-step-content">
             <Title
               $active={status === 'active' || status === 'completed'}
+              $error={status === 'error'}
               className="sinoui-step-title"
             >
               {title}
