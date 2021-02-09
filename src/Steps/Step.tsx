@@ -44,7 +44,7 @@ const StepLayout = styled.div<{
     flex-direction: column;
     align-items: center;
 
-    .sinoui-step-number-icon {
+    .sinoui-step-icon {
       margin-right: 0;
     }
 
@@ -190,6 +190,7 @@ export default function Step(props: StepProps) {
         <IconWrapper
           $active={status === 'active' || status === 'completed'}
           $error={status === 'error'}
+          className="sinoui-step-icon"
         >
           {icon}
         </IconWrapper>
@@ -197,24 +198,21 @@ export default function Step(props: StepProps) {
     }
     if (status === 'completed') {
       return (
-        <IconWrapper $active>
+        <IconWrapper $active className="sinoui-step-icon">
           <CheckCircle />
         </IconWrapper>
       );
     }
     if (status === 'error') {
       return (
-        <IconWrapper $error>
+        <IconWrapper className="sinoui-step-icon" $error>
           <Error />
         </IconWrapper>
       );
     }
 
     return (
-      <NumberIcon
-        $active={status === 'active'}
-        className="sinoui-step-number-icon"
-      >
+      <NumberIcon $active={status === 'active'} className="sinoui-step-icon">
         {index + 1}
       </NumberIcon>
     );
