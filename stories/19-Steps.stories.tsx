@@ -163,18 +163,6 @@ function VerticalDemo({
         direction="vertical"
         onChange={(index: number) => setCurrent(index)}
       >
-        <Step title="第一步" />
-        <Step title="第二步" />
-        <Step title="第三步" />
-      </Steps>
-    </>
-  );
-}
-
-export const 垂直布局 = () => (
-  <StoryLayout>
-    <div style={{ height: 400, width: 300 }}>
-      <Steps current={1} direction="vertical">
         <Step title="第一步" description="This is a description." />
         <Step
           title="第二步"
@@ -183,14 +171,14 @@ export const 垂直布局 = () => (
         />
         <Step title="第三步" description="This is a description." />
       </Steps>
-    </div>
-  </StoryLayout>
-);
+    </>
+  );
+}
 
-export const 标签垂直布局的垂直步进器 = () => (
+export const 垂直布局 = () => (
   <StoryLayout>
     <div style={{ height: 400, width: 300 }}>
-      <VerticalDemo labelPlacement="vertical" />
+      <VerticalDemo />
     </div>
   </StoryLayout>
 );

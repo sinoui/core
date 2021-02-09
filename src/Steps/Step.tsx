@@ -1,10 +1,10 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import styled, { css } from 'styled-components';
-import CheckCircle from '@sinoui/icons/CheckCircle';
-import Error from '@sinoui/icons/Error';
 import { useRipple } from '@sinoui/ripple';
 import classNames from 'classnames';
+import CheckCircle from './CheckCircleIcon';
+import Error from './ErrorIcon';
 import Connector from './Connector';
 
 const verticalLayoutCss = css`
