@@ -175,9 +175,13 @@ export const 垂直布局 = () => (
   <StoryLayout>
     <div style={{ height: 400, width: 300 }}>
       <Steps current={1} direction="vertical">
-        <Step title="第一步" />
-        <Step title="第二步" />
-        <Step title="第三步" />
+        <Step
+          title="第一步"
+          subTitle="Left 00:00:08"
+          description="This is a description."
+        />
+        <Step title="第二步" description="This is a description." />
+        <Step title="第三步" description="This is a description." />
       </Steps>
     </div>
   </StoryLayout>

@@ -14,7 +14,10 @@ const verticalLayoutCss = css`
     top: 12px;
     left: calc(50% + 20px);
     right: calc(-50% + 20px);
-    margin-top: 0px;
+
+    hr {
+      margin-top: 0px;
+    }
   }
 
   .sinoui-step-connector--active {

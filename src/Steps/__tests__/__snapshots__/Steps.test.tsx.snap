@@ -2,7 +2,7 @@
 
 exports[`基础渲染 1`] = `
 <div
-  className="sc-gtssRu hkGMHR sinoui-steps"
+  className="sc-gtssRu ca-dzva sinoui-steps"
 >
   <div
     className="sc-jSFkmK dZAxZn sinoui-step"
@@ -92,7 +92,7 @@ exports[`基础渲染 1`] = `
 
 exports[`正确渲染--垂直方向步进器 1`] = `
 <div
-  className="sc-gtssRu dAWTNZ sinoui-steps sinoui-steps--vertical"
+  className="sc-gtssRu iluZHR sinoui-steps sinoui-steps--vertical"
   direction="vertical"
 >
   <div
@@ -122,7 +122,7 @@ exports[`正确渲染--垂直方向步进器 1`] = `
     className="sc-eCApGN jMOvUe sinoui-step-connector"
   >
     <hr
-      className="sc-bdnylx sc-dlnjPT dagirI gipmCd sinoui-divider sinoui-divider--vertical"
+      className="sc-bdnylx sc-dlnjPT dagirI bNiooA sinoui-divider sinoui-divider--vertical"
     />
   </div>
   <div
@@ -152,7 +152,7 @@ exports[`正确渲染--垂直方向步进器 1`] = `
     className="sc-eCApGN jMOvUe sinoui-step-connector"
   >
     <hr
-      className="sc-bdnylx sc-dlnjPT dagirI gipmCd sinoui-divider sinoui-divider--vertical"
+      className="sc-bdnylx sc-dlnjPT dagirI bNiooA sinoui-divider sinoui-divider--vertical"
     />
   </div>
   <div
@@ -183,11 +183,11 @@ exports[`正确渲染--垂直方向步进器 1`] = `
 
 exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
 <div
-  className="sc-gtssRu lnoPbF sinoui-steps sinoui-steps--vertical"
+  className="sc-gtssRu bmEAqs sinoui-steps sinoui-steps--vertical"
   direction="vertical"
 >
   <div
-    className="sc-jSFkmK cZHPvi sinoui-step"
+    className="sc-jSFkmK lbtOXw sinoui-step"
     onClick={[Function]}
   >
     <div
@@ -213,11 +213,11 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
     className="sc-eCApGN jMOvUe sinoui-step-connector"
   >
     <hr
-      className="sc-bdnylx sc-dlnjPT dagirI gipmCd sinoui-divider sinoui-divider--vertical"
+      className="sc-bdnylx sc-dlnjPT dagirI bNiooA sinoui-divider sinoui-divider--vertical"
     />
   </div>
   <div
-    className="sc-jSFkmK cZHPvi sinoui-step"
+    className="sc-jSFkmK lbtOXw sinoui-step"
     onClick={[Function]}
   >
     <div
@@ -243,11 +243,11 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
     className="sc-eCApGN jMOvUe sinoui-step-connector"
   >
     <hr
-      className="sc-bdnylx sc-dlnjPT dagirI gipmCd sinoui-divider sinoui-divider--vertical"
+      className="sc-bdnylx sc-dlnjPT dagirI bNiooA sinoui-divider sinoui-divider--vertical"
     />
   </div>
   <div
-    className="sc-jSFkmK cZHPvi sinoui-step"
+    className="sc-jSFkmK lbtOXw sinoui-step"
     onClick={[Function]}
   >
     <div
@@ -274,10 +274,10 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
 
 exports[`正确渲染--标签垂直布局 1`] = `
 <div
-  className="sc-gtssRu cvQPqY sinoui-steps"
+  className="sc-gtssRu kHQEwr sinoui-steps"
 >
   <div
-    className="sc-jSFkmK cZHPvi sinoui-step"
+    className="sc-jSFkmK lbtOXw sinoui-step"
     onClick={[Function]}
   >
     <div
@@ -307,7 +307,7 @@ exports[`正确渲染--标签垂直布局 1`] = `
     </div>
   </div>
   <div
-    className="sc-jSFkmK cZHPvi sinoui-step"
+    className="sc-jSFkmK lbtOXw sinoui-step"
     onClick={[Function]}
   >
     <div
@@ -337,7 +337,7 @@ exports[`正确渲染--标签垂直布局 1`] = `
     </div>
   </div>
   <div
-    className="sc-jSFkmK cZHPvi sinoui-step"
+    className="sc-jSFkmK lbtOXw sinoui-step"
     onClick={[Function]}
   >
     <div
