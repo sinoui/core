@@ -50,25 +50,6 @@ const verticalStyle = css`
   }
 `;
 
-const dirAndLabelVerticalStyle = css`
-  .sinoui-step {
-    flex: 0;
-    padding: 8px;
-  }
-
-  .sinoui-step:first-child {
-    padding-left: 8px;
-  }
-
-  .sinoui-step:last-child {
-    padding-right: 8px;
-  }
-
-  hr {
-    margin-left: 28px;
-  }
-`;
-
 const StepsLayout = styled.div<{
   labelPlacement?: 'horizontal' | 'vertical';
   direction?: 'horizontal' | 'vertical';
@@ -88,11 +69,6 @@ const StepsLayout = styled.div<{
     labelPlacement === 'vertical' && lableVerticalStyle};
   ${({ direction }) => direction === 'vertical' && verticalStyle};
 
-  ${({ labelPlacement, direction }) =>
-    direction === 'vertical' &&
-    labelPlacement === 'vertical' &&
-    dirAndLabelVerticalStyle};
-
   hr {
     margin-top: ${({ direction }) => (direction === 'vertical' ? 0 : 12)}px;
   }
@@ -107,7 +83,7 @@ const StepsLayout = styled.div<{
 `;
 
 const StyledDivider = styled(Divider)<{ vertical?: boolean }>`
-  flex: 1;
+  ${({ vertical }) => vertical && `flex: 1;`};
   height: ${({ vertical }) => (vertical ? 'calc(100% - 16px)' : '1px')};
   margin-left: ${({ vertical }) => (vertical ? 12 : 0)}px;
 `;

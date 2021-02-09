@@ -63,6 +63,7 @@ const Title = styled.span<{ $active?: boolean; $error?: boolean }>`
       ? theme.palette.error.main
       : theme.palette.text.disabled};
   font-size: 14px;
+  line-height: 24px;
   font-weight: ${({ theme, $active }) =>
     $active
       ? theme.typography.fontWeightMedium
@@ -89,7 +90,6 @@ const NumberIcon = styled.div<{ $active?: boolean }>`
   border-radius: 50%;
   margin-right: 8px;
   font-size: 12px;
-  line-height: 24px;
   color: ${({ theme }) => theme.palette.common.white};
   background: ${({ theme, $active }) =>
     $active ? theme.palette.primary.main : theme.palette.text.disabled};
