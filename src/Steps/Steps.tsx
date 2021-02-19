@@ -84,10 +84,12 @@ const StepsLayout = styled.div<{
 
 const StyledDivider = styled(Divider)<{ vertical?: boolean }>`
   ${({ vertical }) => !vertical && `flex: 1;`};
-  height: ${({ vertical }) => (vertical ? 'calc(100% - 16px)' : '1px')};
-  margin-left: ${({ vertical }) => (vertical ? 12 : 0)}px;
 `;
 
+/**
+ * 步进器组件
+ * @param props
+ */
 export default function Steps(props: StepsProps) {
   const {
     direction,

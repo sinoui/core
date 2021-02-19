@@ -177,7 +177,7 @@ function VerticalDemo({
 
 export const 垂直布局 = () => (
   <StoryLayout>
-    <div style={{ height: 400, width: 300 }}>
+    <div style={{ width: 300 }}>
       <VerticalDemo />
     </div>
   </StoryLayout>

@@ -1,36 +1,11 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { useRipple } from '@sinoui/ripple';
 import classNames from 'classnames';
 import CheckCircle from './CheckCircleIcon';
 import Error from './ErrorIcon';
 import Connector from './Connector';
-import VerticalStep from './VerticalStep';
-
-const verticalLayoutCss = css`
-  flex: 1;
-  position: relative;
-
-  .sinoui-step-connector {
-    position: absolute;
-    top: 12px;
-    left: calc(50% + 20px);
-    right: calc(-50% + 20px);
-
-    hr {
-      margin-top: 0px;
-    }
-  }
-
-  .sinoui-step-connector--active {
-    color: ${({ theme }) => theme.palette.primary.main};
-
-    > hr {
-      background: ${({ theme }) => theme.palette.primary.main};
-    }
-  }
-`;
 
 const StepLayout = styled.div<{
   $isVertical?: boolean;
@@ -39,21 +14,6 @@ const StepLayout = styled.div<{
   padding: 0 16px;
   box-sizing: border-box;
   cursor: ${({ $isClickable }) => ($isClickable ? 'pointer' : 'default')};
-  ${({ $isVertical }) => $isVertical && verticalLayoutCss};
-
-  .sinoui-step-container--vertical {
-    flex-direction: column;
-    align-items: center;
-
-    .sinoui-step-icon {
-      margin-right: 0;
-    }
-
-    .sinoui-step-content {
-      margin-top: 16px;
-      text-align: center;
-    }
-  }
 `;
 
 const Title = styled.span<{ $active?: boolean; $error?: boolean }>`
@@ -74,6 +34,7 @@ const Title = styled.span<{ $active?: boolean; $error?: boolean }>`
 const Description = styled.div<{ $active?: boolean }>`
   color: ${({ theme, $active }) =>
     $active ? theme.palette.text.secondary : theme.palette.text.disabled};
+  padding-bottom: 16px;
 `;
 
 const StepContent = styled.div<{ $isVertical?: boolean }>`
@@ -89,7 +50,6 @@ const NumberIcon = styled.div<{ $active?: boolean }>`
   align-items: center;
   box-sizing: border-box;
   border-radius: 50%;
-  margin-right: 8px;
   font-size: 12px;
   color: ${({ theme }) => theme.palette.common.white};
   background: ${({ theme, $active }) =>
@@ -97,17 +57,46 @@ const NumberIcon = styled.div<{ $active?: boolean }>`
 `;
 
 const IconWrapper = styled.span<{ $active?: boolean; $error?: boolean }>`
-  margin-right: 8px;
-  height: 24px;
-  width: 24px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   color: ${({ theme, $active }) =>
     $active ? theme.palette.primary.main : theme.palette.text.disabled};
   ${({ theme, $error }) => $error && `color:${theme.palette.error.main}`};
 `;
 
 const StepContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  display: -ms-grid;
+  -ms-grid-columns: 48px auto;
+  -ms-grid-rows: auto auto;
+  grid-template-columns: 48px auto;
+  grid-template-rows: auto auto;
+
+  .sinoui-step-icon {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+  }
+
+  .sinoui-step-content {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+  }
+
+  .sinoui-step-connector {
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+  }
+
+  .sinoui-step-description {
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+  }
+
+  hr {
+    height: calc(100% - 8px);
+  }
 `;
 
 const SubTitle = styled.div`
@@ -116,7 +105,7 @@ const SubTitle = styled.div`
   color: ${({ theme }) => theme.palette.text.disabled};
 `;
 
-export interface StepProps {
+export interface VerticalStepProps {
   /**
    * 自定义图标
    */
@@ -142,17 +131,9 @@ export interface StepProps {
    */
   last?: boolean;
   /**
-   * 标签位置
-   */
-  labelPlacement?: 'horizontal' | 'vertical';
-  /**
    * 点击时的回调函数
    */
   onChange?: (current: number) => void;
-  /**
-   * 步骤条方向
-   */
-  direction?: 'horizontal' | 'vertical';
   /**
    * 状态
    */
@@ -168,20 +149,17 @@ export interface StepProps {
 }
 
 /**
- * 步进器中的单个步骤组件
- *
+ * 垂直方向步进器
  * @param props
  */
-export default function Step(props: StepProps) {
+export default function VerticalStep(props: VerticalStepProps) {
   const {
     title,
     index = 0,
     last,
     connector,
-    labelPlacement,
     icon,
     onChange,
-    direction,
     status,
     subTitle,
     description,
@@ -222,9 +200,11 @@ export default function Step(props: StepProps) {
     }
 
     return (
-      <NumberIcon $active={status === 'active'} className="sinoui-step-icon">
-        {index + 1}
-      </NumberIcon>
+      <IconWrapper className="sinoui-step-icon">
+        <NumberIcon $active={status === 'active'} className="sinoui-step-icon">
+          {index + 1}
+        </NumberIcon>
+      </IconWrapper>
     );
   };
 
@@ -234,31 +214,15 @@ export default function Step(props: StepProps) {
     }
     onChange(index);
   };
-  return direction === 'vertical' ? (
-    <VerticalStep {...props} />
-  ) : (
+  return (
     <>
       <StepLayout
         className="sinoui-step"
-        $isVertical={labelPlacement === 'vertical'}
         onClick={handleClick}
         $isClickable={!!onChange}
         ref={ref}
       >
-        {labelPlacement === 'vertical' && !last && (
-          <Connector
-            className={classNames('sinoui-step-connector', {
-              'sinoui-step-connector--active': status === 'completed',
-            })}
-          >
-            {connector}
-          </Connector>
-        )}
-        <StepContainer
-          className={classNames('sinoui-step-container', {
-            'sinoui-step-container--vertical': labelPlacement === 'vertical',
-          })}
-        >
+        <StepContainer className="sinoui-step-container">
           {renderIcon()}
           <StepContent className="sinoui-step-content">
             <Title
@@ -271,26 +235,28 @@ export default function Step(props: StepProps) {
                 <SubTitle className="sinoui-step-subtitle">{subTitle}</SubTitle>
               )}
             </Title>
-            {description && (
-              <Description
-                className="sinoui-step-description"
-                $active={status === 'active' || status === 'completed'}
-              >
-                {description}
-              </Description>
-            )}
           </StepContent>
+          {!last ? (
+            <Connector
+              className={classNames('sinoui-step-connector', {
+                'sinoui-step-connector--active': status === 'completed',
+              })}
+            >
+              {connector}
+            </Connector>
+          ) : (
+            <div className="sinoui-step-connector" />
+          )}
+          {description && (
+            <Description
+              className="sinoui-step-description"
+              $active={status === 'active' || status === 'completed'}
+            >
+              {description}
+            </Description>
+          )}
         </StepContainer>
       </StepLayout>
-      {!last && labelPlacement !== 'vertical' && (
-        <Connector
-          className={classNames('sinoui-step-connector', {
-            'sinoui-step-connector--active': status === 'completed',
-          })}
-        >
-          {connector}
-        </Connector>
-      )}
     </>
   );
 }

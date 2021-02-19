@@ -5,22 +5,22 @@ exports[`基础渲染 1`] = `
   className="sc-gtssRu cxGVge sinoui-steps"
 >
   <div
-    className="sc-jSFkmK gjTjJR sinoui-step"
+    className="sc-crzoUp bHkhhO sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container"
+      className="sc-fFSRdu cKxIsS sinoui-step-container"
     >
       <div
-        className="sc-pNWxx gMeTJY sinoui-step-icon"
+        className="sc-hBMVcZ hwjZox sinoui-step-icon"
       >
         1
       </div>
       <div
-        className="sc-fujyUd hVdEak sinoui-step-content"
+        className="sc-ksluoS dWjjYo sinoui-step-content"
       >
         <span
-          className="sc-gKAblj kGlIOq sinoui-step-title"
+          className="sc-dIsAE gWoXit sinoui-step-title"
         >
           第一步
         </span>
@@ -31,26 +31,26 @@ exports[`基础渲染 1`] = `
     className="sc-eCApGN jMOvUe sinoui-step-connector"
   >
     <hr
-      className="sc-bdnylx sc-dlnjPT oMesJ dtGtSA sinoui-divider"
+      className="sc-bdnylx sc-dlnjPT oMesJ fTxljK sinoui-divider"
     />
   </div>
   <div
-    className="sc-jSFkmK gjTjJR sinoui-step"
+    className="sc-crzoUp bHkhhO sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container"
+      className="sc-fFSRdu cKxIsS sinoui-step-container"
     >
       <div
-        className="sc-pNWxx jNTnvr sinoui-step-icon"
+        className="sc-hBMVcZ fLyGFy sinoui-step-icon"
       >
         2
       </div>
       <div
-        className="sc-fujyUd hVdEak sinoui-step-content"
+        className="sc-ksluoS dWjjYo sinoui-step-content"
       >
         <span
-          className="sc-gKAblj dbNxUn sinoui-step-title"
+          className="sc-dIsAE cfOsOg sinoui-step-title"
         >
           第二步
         </span>
@@ -61,26 +61,26 @@ exports[`基础渲染 1`] = `
     className="sc-eCApGN jMOvUe sinoui-step-connector"
   >
     <hr
-      className="sc-bdnylx sc-dlnjPT oMesJ dtGtSA sinoui-divider"
+      className="sc-bdnylx sc-dlnjPT oMesJ fTxljK sinoui-divider"
     />
   </div>
   <div
-    className="sc-jSFkmK gjTjJR sinoui-step"
+    className="sc-crzoUp bHkhhO sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container"
+      className="sc-fFSRdu cKxIsS sinoui-step-container"
     >
       <div
-        className="sc-pNWxx jNTnvr sinoui-step-icon"
+        className="sc-hBMVcZ fLyGFy sinoui-step-icon"
       >
         3
       </div>
       <div
-        className="sc-fujyUd hVdEak sinoui-step-content"
+        className="sc-ksluoS dWjjYo sinoui-step-content"
       >
         <span
-          className="sc-gKAblj dbNxUn sinoui-step-title"
+          className="sc-dIsAE cfOsOg sinoui-step-title"
         >
           第三步
         </span>
@@ -96,17 +96,21 @@ exports[`正确渲染--垂直方向步进器 1`] = `
   direction="vertical"
 >
   <div
-    className="sc-jSFkmK gjTjJR sinoui-step"
+    className="sc-jSFkmK kqaYcK sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container"
+      className="sc-kEqYlL hamvQv sinoui-step-container"
     >
-      <div
-        className="sc-pNWxx gMeTJY sinoui-step-icon"
+      <span
+        className="sc-jrsJCI iEMaco sinoui-step-icon"
       >
-        1
-      </div>
+        <div
+          className="sc-pNWxx hZtzoU sinoui-step-icon"
+        >
+          1
+        </div>
+      </span>
       <div
         className="sc-fujyUd hVdEak sinoui-step-content"
       >
@@ -116,27 +120,31 @@ exports[`正确渲染--垂直方向步进器 1`] = `
           第一步
         </span>
       </div>
+      <div
+        className="sc-eCApGN jMOvUe sinoui-step-connector"
+      >
+        <hr
+          className="sc-bdnylx sc-dlnjPT dagirI iQbjqF sinoui-divider sinoui-divider--vertical"
+        />
+      </div>
     </div>
   </div>
   <div
-    className="sc-eCApGN jMOvUe sinoui-step-connector"
-  >
-    <hr
-      className="sc-bdnylx sc-dlnjPT dagirI TUAOT sinoui-divider sinoui-divider--vertical"
-    />
-  </div>
-  <div
-    className="sc-jSFkmK gjTjJR sinoui-step"
+    className="sc-jSFkmK kqaYcK sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container"
+      className="sc-kEqYlL hamvQv sinoui-step-container"
     >
-      <div
-        className="sc-pNWxx jNTnvr sinoui-step-icon"
+      <span
+        className="sc-jrsJCI iEMaco sinoui-step-icon"
       >
-        2
-      </div>
+        <div
+          className="sc-pNWxx fYCQBr sinoui-step-icon"
+        >
+          2
+        </div>
+      </span>
       <div
         className="sc-fujyUd hVdEak sinoui-step-content"
       >
@@ -146,27 +154,31 @@ exports[`正确渲染--垂直方向步进器 1`] = `
           第二步
         </span>
       </div>
+      <div
+        className="sc-eCApGN jMOvUe sinoui-step-connector"
+      >
+        <hr
+          className="sc-bdnylx sc-dlnjPT dagirI iQbjqF sinoui-divider sinoui-divider--vertical"
+        />
+      </div>
     </div>
   </div>
   <div
-    className="sc-eCApGN jMOvUe sinoui-step-connector"
-  >
-    <hr
-      className="sc-bdnylx sc-dlnjPT dagirI TUAOT sinoui-divider sinoui-divider--vertical"
-    />
-  </div>
-  <div
-    className="sc-jSFkmK gjTjJR sinoui-step"
+    className="sc-jSFkmK kqaYcK sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container"
+      className="sc-kEqYlL hamvQv sinoui-step-container"
     >
-      <div
-        className="sc-pNWxx jNTnvr sinoui-step-icon"
+      <span
+        className="sc-jrsJCI iEMaco sinoui-step-icon"
       >
-        3
-      </div>
+        <div
+          className="sc-pNWxx fYCQBr sinoui-step-icon"
+        >
+          3
+        </div>
+      </span>
       <div
         className="sc-fujyUd hVdEak sinoui-step-content"
       >
@@ -176,6 +188,9 @@ exports[`正确渲染--垂直方向步进器 1`] = `
           第三步
         </span>
       </div>
+      <div
+        className="sinoui-step-connector"
+      />
     </div>
   </div>
 </div>
@@ -187,17 +202,21 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
   direction="vertical"
 >
   <div
-    className="sc-jSFkmK eGYOK sinoui-step"
+    className="sc-jSFkmK kqaYcK sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container sinoui-step-container--vertical"
+      className="sc-kEqYlL hamvQv sinoui-step-container"
     >
-      <div
-        className="sc-pNWxx gMeTJY sinoui-step-icon"
+      <span
+        className="sc-jrsJCI iEMaco sinoui-step-icon"
       >
-        1
-      </div>
+        <div
+          className="sc-pNWxx hZtzoU sinoui-step-icon"
+        >
+          1
+        </div>
+      </span>
       <div
         className="sc-fujyUd hVdEak sinoui-step-content"
       >
@@ -207,27 +226,31 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
           第一步
         </span>
       </div>
+      <div
+        className="sc-eCApGN jMOvUe sinoui-step-connector"
+      >
+        <hr
+          className="sc-bdnylx sc-dlnjPT dagirI iQbjqF sinoui-divider sinoui-divider--vertical"
+        />
+      </div>
     </div>
   </div>
   <div
-    className="sc-eCApGN jMOvUe sinoui-step-connector"
-  >
-    <hr
-      className="sc-bdnylx sc-dlnjPT dagirI TUAOT sinoui-divider sinoui-divider--vertical"
-    />
-  </div>
-  <div
-    className="sc-jSFkmK eGYOK sinoui-step"
+    className="sc-jSFkmK kqaYcK sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container sinoui-step-container--vertical"
+      className="sc-kEqYlL hamvQv sinoui-step-container"
     >
-      <div
-        className="sc-pNWxx jNTnvr sinoui-step-icon"
+      <span
+        className="sc-jrsJCI iEMaco sinoui-step-icon"
       >
-        2
-      </div>
+        <div
+          className="sc-pNWxx fYCQBr sinoui-step-icon"
+        >
+          2
+        </div>
+      </span>
       <div
         className="sc-fujyUd hVdEak sinoui-step-content"
       >
@@ -237,27 +260,31 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
           第二步
         </span>
       </div>
+      <div
+        className="sc-eCApGN jMOvUe sinoui-step-connector"
+      >
+        <hr
+          className="sc-bdnylx sc-dlnjPT dagirI iQbjqF sinoui-divider sinoui-divider--vertical"
+        />
+      </div>
     </div>
   </div>
   <div
-    className="sc-eCApGN jMOvUe sinoui-step-connector"
-  >
-    <hr
-      className="sc-bdnylx sc-dlnjPT dagirI TUAOT sinoui-divider sinoui-divider--vertical"
-    />
-  </div>
-  <div
-    className="sc-jSFkmK eGYOK sinoui-step"
+    className="sc-jSFkmK kqaYcK sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container sinoui-step-container--vertical"
+      className="sc-kEqYlL hamvQv sinoui-step-container"
     >
-      <div
-        className="sc-pNWxx jNTnvr sinoui-step-icon"
+      <span
+        className="sc-jrsJCI iEMaco sinoui-step-icon"
       >
-        3
-      </div>
+        <div
+          className="sc-pNWxx fYCQBr sinoui-step-icon"
+        >
+          3
+        </div>
+      </span>
       <div
         className="sc-fujyUd hVdEak sinoui-step-content"
       >
@@ -267,6 +294,9 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
           第三步
         </span>
       </div>
+      <div
+        className="sinoui-step-connector"
+      />
     </div>
   </div>
 </div>
@@ -277,29 +307,29 @@ exports[`正确渲染--标签垂直布局 1`] = `
   className="sc-gtssRu ixuNXn sinoui-steps"
 >
   <div
-    className="sc-jSFkmK eGYOK sinoui-step"
+    className="sc-crzoUp inqkZB sinoui-step"
     onClick={[Function]}
   >
     <div
       className="sc-eCApGN jMOvUe sinoui-step-connector"
     >
       <hr
-        className="sc-bdnylx sc-dlnjPT oMesJ dtGtSA sinoui-divider"
+        className="sc-bdnylx sc-dlnjPT oMesJ fTxljK sinoui-divider"
       />
     </div>
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container sinoui-step-container--vertical"
+      className="sc-fFSRdu cKxIsS sinoui-step-container sinoui-step-container--vertical"
     >
       <div
-        className="sc-pNWxx gMeTJY sinoui-step-icon"
+        className="sc-hBMVcZ hwjZox sinoui-step-icon"
       >
         1
       </div>
       <div
-        className="sc-fujyUd hVdEak sinoui-step-content"
+        className="sc-ksluoS dWjjYo sinoui-step-content"
       >
         <span
-          className="sc-gKAblj kGlIOq sinoui-step-title"
+          className="sc-dIsAE gWoXit sinoui-step-title"
         >
           第一步
         </span>
@@ -307,29 +337,29 @@ exports[`正确渲染--标签垂直布局 1`] = `
     </div>
   </div>
   <div
-    className="sc-jSFkmK eGYOK sinoui-step"
+    className="sc-crzoUp inqkZB sinoui-step"
     onClick={[Function]}
   >
     <div
       className="sc-eCApGN jMOvUe sinoui-step-connector"
     >
       <hr
-        className="sc-bdnylx sc-dlnjPT oMesJ dtGtSA sinoui-divider"
+        className="sc-bdnylx sc-dlnjPT oMesJ fTxljK sinoui-divider"
       />
     </div>
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container sinoui-step-container--vertical"
+      className="sc-fFSRdu cKxIsS sinoui-step-container sinoui-step-container--vertical"
     >
       <div
-        className="sc-pNWxx jNTnvr sinoui-step-icon"
+        className="sc-hBMVcZ fLyGFy sinoui-step-icon"
       >
         2
       </div>
       <div
-        className="sc-fujyUd hVdEak sinoui-step-content"
+        className="sc-ksluoS dWjjYo sinoui-step-content"
       >
         <span
-          className="sc-gKAblj dbNxUn sinoui-step-title"
+          className="sc-dIsAE cfOsOg sinoui-step-title"
         >
           第二步
         </span>
@@ -337,22 +367,22 @@ exports[`正确渲染--标签垂直布局 1`] = `
     </div>
   </div>
   <div
-    className="sc-jSFkmK eGYOK sinoui-step"
+    className="sc-crzoUp inqkZB sinoui-step"
     onClick={[Function]}
   >
     <div
-      className="sc-kEqYlL hfQfpM sinoui-step-container sinoui-step-container--vertical"
+      className="sc-fFSRdu cKxIsS sinoui-step-container sinoui-step-container--vertical"
     >
       <div
-        className="sc-pNWxx jNTnvr sinoui-step-icon"
+        className="sc-hBMVcZ fLyGFy sinoui-step-icon"
       >
         3
       </div>
       <div
-        className="sc-fujyUd hVdEak sinoui-step-content"
+        className="sc-ksluoS dWjjYo sinoui-step-content"
       >
         <span
-          className="sc-gKAblj dbNxUn sinoui-step-title"
+          className="sc-dIsAE cfOsOg sinoui-step-title"
         >
           第三步
         </span>
