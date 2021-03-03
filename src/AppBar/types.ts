@@ -46,4 +46,5 @@ export interface AppBarProps extends AppBarStatusTypes {
    * 给根元素指定自定义类名
    */
   className?: string;
+  children?: React.ReactNode;
 }

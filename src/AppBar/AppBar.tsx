@@ -169,6 +169,7 @@ const AppBar = React.forwardRef<HTMLDivElement, AppBarProps>((props, ref) => {
     actionItems,
     targetScroll,
     className,
+    children,
     ...rest
   } = props;
   const { fixed, short, prominent, shortCollapsed } = rest;
@@ -200,6 +201,7 @@ const AppBar = React.forwardRef<HTMLDivElement, AppBarProps>((props, ref) => {
       <NavigationIcon>{navigationIcon}</NavigationIcon>
       <AppBarTitle> {title}</AppBarTitle>
       <AppBarActions>{actionItems}</AppBarActions>
+      {children}
     </StyledAppBar>
   );
 });
