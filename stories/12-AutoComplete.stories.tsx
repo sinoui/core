@@ -3,12 +3,20 @@ import { OptionList } from '@sinoui/core/AutoComplete';
 import AutoComplete from '@sinoui/core/AutoComplete/AutoComplete';
 import TextInput from '@sinoui/core/TextInput';
 import Chip from '@sinoui/core/Chip';
+import { createPalette, createTheme, colors } from '@sinoui/theme';
 import StoryLayout from './StoryLayout';
 import OptionListWithReactWindow from './AutoCompleteDemo/OptionListWithReactWindow';
 
 export default {
   title: 'AutoComplete',
 };
+
+const theme = createTheme({
+  palette: createPalette({
+    type: 'dark',
+    primary: colors.purple, // 主色调
+  }),
+});
 
 const simpleOptions = [
   { title: 'The Shawshank Redemption', year: 1994 },
@@ -133,6 +141,21 @@ const groupedOptions = simpleOptions
 export const 基本使用 = () => {
   return (
     <StoryLayout>
+      <OptionList
+        focusedOption="Schindler's List"
+        selectedOptions={['The Godfather', 'The Dark Knight']}
+        disabledOptions={['The Shawshank Redemption', '12 Angry Men']}
+        options={simpleOptions}
+        getOptionLabel={(option) => option.title}
+        onOptionClick={(label) => alert(label)}
+      />
+    </StoryLayout>
+  );
+};
+
+export const 暗色背景下的基本使用 = () => {
+  return (
+    <StoryLayout theme={theme}>
       <OptionList
         focusedOption="Schindler's List"
         selectedOptions={['The Godfather', 'The Dark Knight']}
