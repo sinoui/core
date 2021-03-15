@@ -3,7 +3,7 @@
 exports[`面包屑组件 快照测试 基本使用 1`] = `
 <nav
   aria-label="breadcrumb"
-  className="sc-dlnjPT fWjjei sinoui-bread-crumb"
+  className="sc-dlnjPT QbFCa sinoui-bread-crumb"
 >
   <ol
     className="sinoui-breadcrumb-ol"
@@ -74,7 +74,7 @@ exports[`面包屑组件 快照测试 基本使用 1`] = `
 exports[`面包屑组件 快照测试 指定背景颜色 1`] = `
 <nav
   aria-label="breadcrumb"
-  className="sc-dlnjPT cFmzah sinoui-bread-crumb"
+  className="sc-dlnjPT cVoUag sinoui-bread-crumb"
   color="primary"
 >
   <ol

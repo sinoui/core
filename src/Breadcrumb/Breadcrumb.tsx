@@ -3,16 +3,10 @@ import styled from 'styled-components';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import classNames from 'classnames';
 
-/**
- * 面包屑导航组件
- */
-
 const BreadCrumbWrapper = styled.div.attrs(({ component }: Props) => ({
   as: component,
 }))<Props>`
   height: 24px;
-  display: flex;
-  align-items: center;
   font-size: ${(props) => props.theme.typography.body1.fontSize};
   background-color: ${(props) =>
     getColorFromTheme(props.theme, props.color) ||
@@ -20,7 +14,7 @@ const BreadCrumbWrapper = styled.div.attrs(({ component }: Props) => ({
   color: ${(props) =>
     props.color
       ? props.theme.palette.common.white
-      : props.theme.palette.text.primary};
+      : props.theme.palette.text.secondary};
 
   > ol {
     display: flex;
@@ -41,12 +35,19 @@ const BreadCrumbWrapper = styled.div.attrs(({ component }: Props) => ({
     user-select: none;
   }
 
-  > ol li a {
+  .sinoui-link {
     color: inherit;
+    display: inline-flex;
+    align-items: center;
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 
-  > ol li p {
-    color: inherit;
+  svg {
+    font-size: 20px;
+    margin-right: 4px;
   }
 `;
 export interface Props {
@@ -65,7 +66,7 @@ export interface Props {
   /**
    * 指定元素属性
    */
-  component?: React.ReactType;
+  component?: React.ElementType;
   /**
    * 分隔符
    */
@@ -94,40 +95,41 @@ const insertSeparators = (items: any, separator: string) => {
   }, []);
 };
 
-const BreadCrumb = React.forwardRef(
-  (props: Props, ref: React.Ref<HTMLInputElement>) => {
-    const {
-      children,
-      color,
-      separator = '/',
-      className,
-      component: Component = 'nav',
-      ...rest
-    } = props;
+/**
+ * 面包屑导航组件
+ */
+const BreadCrumb = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+  const {
+    children,
+    color,
+    separator = '/',
+    className,
+    component: Component = 'nav',
+    ...rest
+  } = props;
 
-    const allItems = React.Children.toArray(children).map(
-      (node, index: number) => (
-        <li key={`node-${index.toString()}`} className="sinoui-breadcrumb-li">
-          {node}
-        </li>
-      ),
-    );
+  const allItems = React.Children.toArray(children).map(
+    (node, index: number) => (
+      <li key={`node-${index.toString()}`} className="sinoui-breadcrumb-li">
+        {node}
+      </li>
+    ),
+  );
 
-    return (
-      <BreadCrumbWrapper
-        className={classNames('sinoui-bread-crumb', className)}
-        color={color}
-        {...rest}
-        ref={ref}
-        component={Component}
-        aria-label="breadcrumb"
-      >
-        <ol className="sinoui-breadcrumb-ol">
-          {insertSeparators(allItems, separator)}
-        </ol>
-      </BreadCrumbWrapper>
-    );
-  },
-);
+  return (
+    <BreadCrumbWrapper
+      className={classNames('sinoui-bread-crumb', className)}
+      color={color}
+      {...rest}
+      ref={ref}
+      component={Component}
+      aria-label="breadcrumb"
+    >
+      <ol className="sinoui-breadcrumb-ol">
+        {insertSeparators(allItems, separator)}
+      </ol>
+    </BreadCrumbWrapper>
+  );
+});
 
 export default BreadCrumb;
