@@ -37,28 +37,26 @@ interface Props {
   href?: string;
 }
 
-const Link = React.forwardRef(
-  (props: Props, ref: React.Ref<HTMLInputElement>) => {
-    const {
-      className,
-      children,
-      color,
-      component: Component = 'a',
-      ...rest
-    } = props;
+const Link = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
+  const {
+    className,
+    children,
+    color,
+    component: Component = 'a',
+    ...rest
+  } = props;
 
-    return (
-      <LinkWrapper
-        className={classNames('sinoui-link', className)}
-        ref={ref}
-        color={color}
-        component={Component}
-        {...rest}
-      >
-        {children}
-      </LinkWrapper>
-    );
-  },
-);
+  return (
+    <LinkWrapper
+      className={classNames('sinoui-link', className)}
+      ref={ref}
+      color={color}
+      component={Component}
+      {...rest}
+    >
+      {children}
+    </LinkWrapper>
+  );
+});
 
 export default Link;
