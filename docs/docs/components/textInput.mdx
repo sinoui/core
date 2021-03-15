@@ -13,6 +13,7 @@ import AdornmentInputDemo from './textInput-demoes/AdornmentInputDemo';
 import CustomizedBaseInput from './textInput-demoes/CustomizedBaseInput';
 import Demo from '../commons/Demo';
 import MultilineTextInputDemo from './textInput-demoes/MultilineTextInputDemo';
+import CustomTypeInputDemo from './textInput-demoes/CustomTypeInputDemo';
 
 > TextInput 是文本输入框，用户可以在输入框中输入或编辑文字。
 
@@ -486,6 +487,20 @@ export default AdornmentInputDemo;
 
 <AdornmentInputDemo />
 
+## 不同类型的输入框
+
+可以通过`type`属性指定不同类型的输入框：
+
+```tsx
+<TextInput type="number" inputProps={{ min: 10, max: 20 }} />
+```
+
+可以通过`inputProps`给原生输入框元素指定属性。
+
+效果如下：
+
+<CustomTypeInputDemo />
+
 ## 查询框
 
 我们可以使用`TextInput`和`Icon`结合实现查询框，示例如下：
@@ -604,3 +619,7 @@ function CustomizedBaseInput() {
   );
 }
 ```
+
+## API
+
+- [TextInput](../components-apis/text-input.mdx)

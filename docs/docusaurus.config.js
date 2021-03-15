@@ -19,7 +19,7 @@ module.exports = {
         alt: 'sinoui',
         src: 'img/logo.svg',
       },
-      links: [
+      items: [
         { to: 'docs/components/button', label: '文档', position: 'left' },
         {
           href: 'https://github.com/sinoui/core',

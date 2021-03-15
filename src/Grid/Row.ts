@@ -33,7 +33,7 @@ export interface RowProps {
 }
 
 const gutterBetweenCss = css<RowProps>`
-  width: calc(100% + ${({ gutter }) => gutter}px);
+  width: calc(100% + ${({ gutter = 0 }) => gutter}px);
   margin: 0 -${({ gutter = 0 }) => gutter / 2}px;
 `;
 

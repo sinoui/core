@@ -24,10 +24,10 @@ describe('快照测试', () => {
       .create(
         <ThemeProvider theme={defaultTheme}>
           <CardHeader
-            avatar={Avatar}
+            avatar={<Avatar />}
             title="Shrimp and Chorizo Paella"
             subheader="subheader"
-            action={[<span>icon</span>]}
+            action={<span>icon</span>}
           />
         </ThemeProvider>,
       )

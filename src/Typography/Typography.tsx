@@ -60,7 +60,7 @@ export interface Props {
   /**
    * 变更DOM元素
    */
-  as?: React.ReactType;
+  as?: React.ElementType;
   /**
    * 自定义类名
    */
@@ -107,7 +107,7 @@ export interface Props {
     | 'overline';
 }
 
-const asElementTypes: { [name: string]: React.ReactType } = {
+const asElementTypes: { [name: string]: React.ElementType } = {
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',

@@ -2,10 +2,11 @@
 
 exports[`快照测试 设置属性 1`] = `
 <ul
-  className="sc-AxjAm jSMlTn sinoui-list"
+  className="sc-bdnylx Kdsni sinoui-list"
+  onKeyDown={[Function]}
 >
   <li
-    className="sc-AxirZ cJHOzn sinoui-list-item sinoui-list-item--insert sinoui-list-item--disabled sinoui-list-item--disabled-ripple"
+    className="sc-gtssRu alOty sinoui-list-item sinoui-list-item--insert sinoui-list-item--disabled sinoui-list-item--disabled-ripple"
     disabled={true}
     tabIndex="0"
   >
@@ -16,10 +17,11 @@ exports[`快照测试 设置属性 1`] = `
 
 exports[`快照测试 默认 1`] = `
 <ul
-  className="sc-AxjAm jSMlTn sinoui-list"
+  className="sc-bdnylx Kdsni sinoui-list"
+  onKeyDown={[Function]}
 >
   <li
-    className="sc-AxirZ ctYxQP sinoui-list-item"
+    className="sc-gtssRu iZsPES sinoui-list-item"
     tabIndex="0"
   >
     item

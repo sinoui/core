@@ -3,7 +3,7 @@
 exports[`面包屑组件 快照测试 基本使用 1`] = `
 <nav
   aria-label="breadcrumb"
-  className="sc-AxiKw dkqtTN sinoui-bread-crumb"
+  className="sc-dlnjPT fWjjei sinoui-bread-crumb"
 >
   <ol
     className="sinoui-breadcrumb-ol"
@@ -12,7 +12,7 @@ exports[`面包屑组件 快照测试 基本使用 1`] = `
       className="sinoui-breadcrumb-li"
     >
       <a
-        className="sc-AxirZ jJXAoU sinoui-link"
+        className="sc-gtssRu bqcBpH sinoui-link"
         href="/?path=/story/typography--基本组件使用"
       >
         Material-UI
@@ -28,7 +28,7 @@ exports[`面包屑组件 快照测试 基本使用 1`] = `
       className="sinoui-breadcrumb-li"
     >
       <a
-        className="sc-AxirZ jJXAoU sinoui-link"
+        className="sc-gtssRu bqcBpH sinoui-link"
         href="/?path=/story/typography--设置属性"
       >
         Core
@@ -44,7 +44,7 @@ exports[`面包屑组件 快照测试 基本使用 1`] = `
       className="sinoui-breadcrumb-li"
     >
       <a
-        className="sc-AxirZ jJXAoU sinoui-link"
+        className="sc-gtssRu bqcBpH sinoui-link"
         href="/?path=/story/typography--设置颜色"
       >
         UI
@@ -60,7 +60,7 @@ exports[`面包屑组件 快照测试 基本使用 1`] = `
       className="sinoui-breadcrumb-li"
     >
       <p
-        className="sc-AxjAm igJlAv sinoui-typography sinoui-typography--body1"
+        className="sc-bdnylx eUUwWG sinoui-typography sinoui-typography--body1"
         color="textPrimary"
         type="body1"
       >
@@ -74,7 +74,7 @@ exports[`面包屑组件 快照测试 基本使用 1`] = `
 exports[`面包屑组件 快照测试 指定背景颜色 1`] = `
 <nav
   aria-label="breadcrumb"
-  className="sc-AxiKw iGtNIS sinoui-bread-crumb"
+  className="sc-dlnjPT cFmzah sinoui-bread-crumb"
   color="primary"
 >
   <ol
@@ -84,7 +84,7 @@ exports[`面包屑组件 快照测试 指定背景颜色 1`] = `
       className="sinoui-breadcrumb-li"
     >
       <a
-        className="sc-AxirZ jJXAoU sinoui-link"
+        className="sc-gtssRu bqcBpH sinoui-link"
         href="/?path=/story/typography--基本组件使用"
       >
         Material-UI
@@ -100,7 +100,7 @@ exports[`面包屑组件 快照测试 指定背景颜色 1`] = `
       className="sinoui-breadcrumb-li"
     >
       <a
-        className="sc-AxirZ jJXAoU sinoui-link"
+        className="sc-gtssRu bqcBpH sinoui-link"
         href="/?path=/story/typography--设置属性"
       >
         Core
@@ -116,7 +116,7 @@ exports[`面包屑组件 快照测试 指定背景颜色 1`] = `
       className="sinoui-breadcrumb-li"
     >
       <a
-        className="sc-AxirZ jJXAoU sinoui-link"
+        className="sc-gtssRu bqcBpH sinoui-link"
         href="/?path=/story/typography--设置颜色"
       >
         UI
@@ -132,7 +132,7 @@ exports[`面包屑组件 快照测试 指定背景颜色 1`] = `
       className="sinoui-breadcrumb-li"
     >
       <p
-        className="sc-AxjAm igJlAv sinoui-typography sinoui-typography--body1"
+        className="sc-bdnylx eUUwWG sinoui-typography sinoui-typography--body1"
         color="textPrimary"
         type="body1"
       >

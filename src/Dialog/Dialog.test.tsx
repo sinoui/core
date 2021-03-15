@@ -17,7 +17,7 @@ describe('Dialog组件 单元测试', () => {
   test('测试全屏显示', () => {
     const { getAllByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <Dialog fullScreen data-testid="dialog">
+        <Dialog fullScreen data-testid="dialog" open>
           <DialogTitle>Use Google location service?</DialogTitle>
         </Dialog>
       </ThemeProvider>,
@@ -51,6 +51,24 @@ describe('Dialog组件 单元测试', () => {
 
     const test = container.querySelector('.sinoui-modal--draggable');
     expect(test).toBeFalsy();
+  });
+
+  it('style', () => {
+    const { getByTestId } = render(
+      <ThemeProvider theme={defaultTheme}>
+        <Dialog
+          draggable={false}
+          data-testid="dialog"
+          style={{
+            padding: 50,
+          }}
+        >
+          <DialogTitle>Use Google location service?</DialogTitle>
+        </Dialog>
+      </ThemeProvider>,
+    );
+
+    expect(getByTestId('dialog')).toHaveStyle('padding: 50px');
   });
 });
 

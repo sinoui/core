@@ -3,7 +3,10 @@ import styled from 'styled-components';
 /**
  * 表单控件的帮助条
  */
-const HelperLine = styled.div.attrs({ className: 'sinoui-helper-line' as any })`
+
+const HelperLine = styled.div.attrs({
+  className: 'sinoui-helper-line' as any,
+})`
   display: flex;
   align-items: flex-start;
   min-height: 24px;

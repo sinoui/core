@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 Clock 1`] = `
+<div
+  className="sc-bdnylx jyaLLy"
+  data-sinoui-id="modal"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+>
+  <div
+    aria-hidden="true"
+    className="sc-gtssRu VyvOZ"
+    data-testid="sinoui-modal-backdrop"
+    onClick={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+        "visibility": undefined,
+      }
+    }
+  />
+  <div
+    className="sc-dlnjPT sc-ezzayL da-DMzv kgavn sinoui-time-picker-mobile-view sinoui-paper"
+    style={
+      Object {
+        "opacity": 1,
+        "visibility": undefined,
+      }
+    }
+  >
+    <div
+      className="sc-pNWxx onMZB"
+    >
+      <div
+        className="sinoui-time-picker-mobile-view__header-am-pm"
+      >
+        <div
+          className="sc-fujyUd giIAqr"
+          onClick={[Function]}
+          selected={false}
+        >
+          上午
+        </div>
+        <div
+          className="sc-fujyUd jrYOkH"
+          onClick={[Function]}
+          selected={true}
+        >
+          下午
+        </div>
+      </div>
+      <div
+        className="sinoui-time-picker-mobile-view__header-hour-minute"
+      >
+        <div
+          className="sc-fujyUd jrYOkH"
+          onClick={[Function]}
+          selected={true}
+        >
+          07
+        </div>
+        <div
+          className="sc-jrsJCI fshBsT"
+        >
+          :
+        </div>
+        <div
+          className="sc-fujyUd giIAqr"
+          onClick={[Function]}
+          selected={false}
+        >
+          21
+        </div>
+      </div>
+    </div>
+    <div
+      className="sinoui-time-picker-mobile-view__main"
+    >
+      <div
+        className="sc-iCoHVE dEJhFP sinoui-time-picker-mobile-view__clock"
+        onMouseDown={[Function]}
+        onMouseMove={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="sc-hKFyIo jEHwah"
+          data-clock-number={1}
+        >
+          1
+        </div>
+        <div
+          className="sc-hKFyIo hNJCrZ"
+          data-clock-number={2}
+        >
+          2
+        </div>
+        <div
+          className="sc-hKFyIo gJwTNU"
+          data-clock-number={3}
+        >
+          3
+        </div>
+        <div
+          className="sc-hKFyIo czNdVR"
+          data-clock-number={4}
+        >
+          4
+        </div>
+        <div
+          className="sc-hKFyIo hCRnyx"
+          data-clock-number={5}
+        >
+          5
+        </div>
+        <div
+          className="sc-hKFyIo kltMzZ"
+          data-clock-number={6}
+        >
+          6
+        </div>
+        <div
+          className="sc-hKFyIo iLyyn"
+          data-clock-number={7}
+        >
+          7
+        </div>
+        <div
+          className="sc-hKFyIo iUFrKN"
+          data-clock-number={8}
+        >
+          8
+        </div>
+        <div
+          className="sc-hKFyIo hHnMvJ"
+          data-clock-number={9}
+        >
+          9
+        </div>
+        <div
+          className="sc-hKFyIo hCIYDd"
+          data-clock-number={10}
+        >
+          10
+        </div>
+        <div
+          className="sc-hKFyIo hCPmyN"
+          data-clock-number={11}
+        >
+          11
+        </div>
+        <div
+          className="sc-hKFyIo ewWvsp"
+          data-clock-number={12}
+        >
+          12
+        </div>
+        <div
+          className="sc-eCApGN jSsWv"
+        />
+        <div
+          className="sc-jSFkmK AVHaL"
+        >
+          <div
+            className="sc-gKAblj liaGzb sinoui-clock__pointer-minute-dot"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="sinoui-time-picker-mobile-view__footer"
+    >
+      <button
+        className="sc-kEqYlL icXvGV sinoui-base-button sc-iqAbSa htenXo sinoui-icon-button sinoui-icon-button--dense"
+        color="primary"
+        data-view-icon={true}
+        onClick={[Function]}
+        role="button"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          className="sc-crzoUp dkPjd sinoui-svg-icon"
+          data-testid="KeyboardIcon"
+          focusable="false"
+          role="presentation"
+          size={24}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"
+          />
+        </svg>
+      </button>
+      <div
+        className="sc-bqGHjH fUrluu"
+      >
+        <button
+          className="sc-kEqYlL icXvGV sinoui-base-button sc-dIsAE hCOAha sinoui-button"
+          color="primary"
+          data-testid="clock-clear-btn"
+          onClick={[Function]}
+          role="button"
+          type="button"
+        >
+          清除
+        </button>
+        <button
+          className="sc-kEqYlL icXvGV sinoui-base-button sc-dIsAE hCOAha sinoui-button"
+          color="primary"
+          data-testid="clock-cancel-btn"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          取消
+        </button>
+        <button
+          className="sc-kEqYlL icXvGV sinoui-base-button sc-dIsAE hCOAha sinoui-button"
+          color="primary"
+          data-testid="clock-ok-btn"
+          onClick={[Function]}
+          role="button"
+          type="button"
+        >
+          设置
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

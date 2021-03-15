@@ -7,6 +7,7 @@ import {
   createTheme,
   colors,
 } from '@sinoui/theme';
+import Checkbox from '@sinoui/core/Checkbox';
 
 export default {
   title: 'Select',
@@ -24,7 +25,7 @@ const theme = createTheme({
 });
 
 function SimpleDemo() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState();
 
   const onChange = (val: any) => {
     setValue(val);
@@ -45,10 +46,11 @@ function SimpleDemo() {
           onChange={onChange}
           label="Required"
           required
-          allowClear
+          placeholder="123"
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
+          <Option value="选项五">选项一</Option>
           <Option value="选项三">选项三</Option>
           <Option value="选项四">选项四</Option>
         </SelectField>
@@ -78,7 +80,8 @@ function SimpleDemo() {
           value={value}
           onChange={onChange}
           label="Error"
-          error="Error Message"
+          error
+          errorText="Error Message"
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
@@ -158,7 +161,8 @@ function SimpleDemo() {
           onChange={onChange}
           variant="filled"
           label="Error"
-          error="Error Message"
+          errorText="Error Message"
+          error
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
@@ -240,7 +244,8 @@ function SimpleDemo() {
           onChange={onChange}
           variant="outlined"
           label="Error"
-          error="Error Message"
+          errorText="Error Message"
+          error
         >
           <Option value="选项一">选项一</Option>
           <Option value="选项二">选项二</Option>
@@ -286,13 +291,7 @@ function MultipleSelectDemo() {
 
   return (
     <div style={{ marginLeft: 16, display: 'flex', alignItems: 'flex-start' }}>
-      <SelectField
-        value={value}
-        onChange={onChange}
-        multiple
-        label="Multiple"
-        allowClear
-      >
+      <SelectField value={value} onChange={onChange} multiple label="Multiple">
         <Option value="选项一">选项一</Option>
         <Option value="选项二">选项二</Option>
         <Option value="选项三">选项三</Option>
@@ -343,8 +342,40 @@ export const autoFocus = () => (
     <SelectField multiple variant="outlined" label="Multiple" autoFocus>
       <Option value="选项一">选项一</Option>
       <Option value="选项二">选项二</Option>
+      <Option value="选项五">选项一</Option>
       <Option value="选项三">选项三</Option>
       <Option value="选项四">选项四</Option>
     </SelectField>
+  </ThemeProvider>
+);
+
+const options = [
+  { id: '1', title: '选项一' },
+  { id: '2', title: '选项二' },
+  { id: '3', title: '选项三' },
+  { id: '4', title: '选项四' },
+];
+
+function CustomDemo() {
+  const [value, setValue] = useState<string[]>([]);
+  return (
+    <SelectField
+      multiple
+      value={value}
+      onChange={(newValue) => setValue(newValue as string[])}
+    >
+      {options.map((option) => (
+        <Option key={option.id} value={option.id} title={option.title}>
+          <Checkbox checked={value && value.indexOf(option.id) !== -1} />
+          {option.title}
+        </Option>
+      ))}
+    </SelectField>
+  );
+}
+
+export const 自定义选择框 = () => (
+  <ThemeProvider theme={defaultTheme}>
+    <CustomDemo />
   </ThemeProvider>
 );

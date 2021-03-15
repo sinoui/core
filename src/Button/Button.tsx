@@ -44,7 +44,6 @@ const textButtonStyle = css<Props>`
       duration: transitions.duration.shortest,
     })};
   padding: 0px 8px;
-  overflow: hidden;
   box-sizing: border-box;
 
   &:hover {

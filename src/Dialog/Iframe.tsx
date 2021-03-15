@@ -13,7 +13,7 @@ const Iframe = styled.iframe<Props>`
   width: 100%;
   margin: 0px;
   padding: 0px;
-  z-index: -1;
+  z-index: -2;
   border-width: 0px;
   /* height:2000px; */
   filter: 'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=70)';

@@ -20,7 +20,7 @@ interface SwitchProps {
   /**
    * 值
    */
-  value: string;
+  value?: string;
   /**
    * 值变更时的回调函数
    */

@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import keycode from 'keycode';
-import contains from 'dom-helpers/query/contains';
+import contains from 'dom-helpers/contains';
 import activeElement from 'dom-helpers/activeElement';
 import ownerDocument from 'dom-helpers/ownerDocument';
 import List, { ListProps } from './List';
@@ -38,9 +38,9 @@ export default React.forwardRef<HTMLUListElement, MenuListProps>(
 
     const getFocusItem = () => {
       const list = listRef.current;
-      const currentFocus = activeElement(ownerDocument(list));
+      const currentFocus = activeElement(ownerDocument(list as any));
 
-      if (list && contains(list, currentFocus)) {
+      if (list && contains(list, currentFocus as Element)) {
         return currentFocus;
       }
       return null;

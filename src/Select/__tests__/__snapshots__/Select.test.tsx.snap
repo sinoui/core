@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`正确渲染三种模式下的下拉选择框 1`] = `
-.c2 {
+.c1 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-weight: 400;
@@ -30,7 +30,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   white-space: nowrap;
 }
 
-.c8 {
+.c12 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-weight: 400;
@@ -59,7 +59,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   white-space: nowrap;
 }
 
-.c10 {
+.c14 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-weight: 400;
@@ -88,7 +88,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   white-space: nowrap;
 }
 
-.c3 {
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -110,7 +110,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   line-height: 1.5em;
 }
 
-.c3 > .sinoui-base-input__input {
+.c2 > .sinoui-base-input__input {
   outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -121,8 +121,8 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   caret-color: #3f51b5;
 }
 
-.c3 > input.sinoui-base-input__input,
-.c3 > textarea.sinoui-base-input__input {
+.c2 > input.sinoui-base-input__input,
+.c2 > textarea.sinoui-base-input__input {
   display: block;
   line-height: inherit;
   font: inherit;
@@ -140,52 +140,52 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   width: 100%;
 }
 
-.c3 > input.sinoui-base-input__input::-moz-placeholder,
-.c3 > textarea.sinoui-base-input__input::-moz-placeholder {
+.c2 > input.sinoui-base-input__input::-moz-placeholder,
+.c2 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > input.sinoui-base-input__input::-webkit-input-placeholder,
-.c3 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
+.c2 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c2 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > input.sinoui-base-input__input:-ms-input-placeholder,
-.c3 > textarea.sinoui-base-input__input:-ms-input-placeholder {
+.c2 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c2 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > input.sinoui-base-input__input::-ms-clear,
-.c3 > textarea.sinoui-base-input__input::-ms-clear {
+.c2 > input.sinoui-base-input__input::-ms-clear,
+.c2 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c3 > input.sinoui-base-input__input:focus,
-.c3 > textarea.sinoui-base-input__input:focus {
+.c2 > input.sinoui-base-input__input:focus,
+.c2 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c3 > input.sinoui-base-input__input:invalid,
-.c3 > textarea.sinoui-base-input__input:invalid {
+.c2 > input.sinoui-base-input__input:invalid,
+.c2 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
 
-.c3.sinoui-base-input--multiline > textarea {
+.c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
 }
 
-.c3 .sinoui-base-input__clear {
+.c2 .sinoui-base-input__clear {
   width: 18px;
 }
 
-.c3 .sinoui-base-input__clear > .sinoui-svg-icon {
+.c2 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
 }
 
-.c6 {
+.c7 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -208,7 +208,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   color: rgba(0,0,0,0.38);
 }
 
-.c7 {
+.c11 {
   font-size: 24px;
   width: 1em;
   height: 1em;
@@ -225,9 +225,8 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   display: inline-block;
 }
 
-.c9 {
+.c13 {
   position: relative;
-  overflow: hidden;
   background-color: #f5f5f5;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -235,38 +234,38 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transition: background-color 200ms cubic-bezier(0.0,0.0,0.2,1) 0ms;
 }
 
-.c9 > .sinoui-input-adornment--end {
+.c13 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c9 > .sinoui-input-adornment--start {
+.c13 > .sinoui-input-adornment--start {
   margin-right: 0px;
   margin-left: 10px;
 }
 
-.c9 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c13 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -6px;
 }
 
-.c9 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c9 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c13 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c13 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -12px;
 }
 
-.c9 > .sinoui-input-adornment--start,
-.c9 > .sinoui-input-adornment--text {
+.c13 > .sinoui-input-adornment--start,
+.c13 > .sinoui-input-adornment--text {
   -webkit-transform: translateY(7.5px);
   -ms-transform: translateY(7.5px);
   transform: translateY(7.5px);
 }
 
-.c9 > .sinoui-base-input__input {
-  padding: 23.5px 12px 8.5px;
-  padding-top: 23.5px;
+.c13 > .sinoui-base-input__input {
+  padding: 25.5px 12px 6.5px;
+  padding-top: 25.5px;
 }
 
-.c9::before {
+.c13::before {
   background-color: rgba(0,0,0,0.42);
   left: 0;
   bottom: 0;
@@ -283,11 +282,11 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transform: scaleX(1) scaleY(1);
 }
 
-.c9:hover::before {
+.c13:hover::before {
   background-color: rgba(0,0,0,0.87);
 }
 
-.c9::after {
+.c13::after {
   background-color: #3f51b5;
   left: 0;
   bottom: 0;
@@ -304,20 +303,20 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   transform: scaleX(0) scaleY(0);
 }
 
-.c9::before,
-.c9::after {
+.c13::before,
+.c13::after {
   position: absolute;
   bottom: 0px;
   overflow: hidden;
   font-size: 0px;
 }
 
-.c9:hover::before {
+.c13:hover::before {
   background-color: rgba(0,0,0,0.87);
   height: 1px;
 }
 
-.c9 > .sinoui-input__overlay {
+.c13 > .sinoui-input__overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -331,11 +330,11 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   opacity: 0;
 }
 
-.c9:hover > .sinoui-input__overlay {
+.c13:hover > .sinoui-input__overlay {
   opacity: 0.04;
 }
 
-.c12 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -351,14 +350,14 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   box-sizing: border-box;
 }
 
-.c12 > div {
+.c16 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c12 > .sinoui-notched-outline__leading {
+.c16 > .sinoui-notched-outline__leading {
   border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
@@ -367,14 +366,14 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   width: 10px;
 }
 
-.c12 > .sinoui-notched-outline__notch {
+.c16 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c12 > .sinoui-notched-outline__trailing {
+.c16 > .sinoui-notched-outline__trailing {
   border-left: none;
   -webkit-flex: 1 0 10px;
   -ms-flex: 1 0 10px;
@@ -382,48 +381,48 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   border-radius: 0 4px 4px 0;
 }
 
-.c12.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c16.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c12.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c16.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c11 {
+.c15 {
   position: relative;
   border-radius: 4px;
 }
 
-.c11 > .sinoui-notched-outline > div {
+.c15 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c11:hover > .sinoui-notched-outline > div {
+.c15:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c11 > .sinoui-base-input__input {
+.c15 > .sinoui-base-input__input {
   padding: 16px 14px;
 }
 
-.c11 > .sinoui-input-adornment--start {
+.c15 > .sinoui-input-adornment--start {
   margin-left: 14px;
   margin-right: 0px;
 }
 
-.c11 > .sinoui-input-adornment--end {
+.c15 > .sinoui-input-adornment--end {
   margin-right: 12px;
   margin-left: -6px;
 }
 
-.c11 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c15 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c11 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c11 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+.c15 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c15 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
   margin-left: -14px;
 }
 
@@ -431,11 +430,11 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   color: rgba(0,0,0,0.87);
 }
 
-label ~ .c4 {
+label ~ .c3 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content .c4 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c3 {
   margin-top: 16px;
 }
 
@@ -509,6 +508,122 @@ label ~ .c4 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: default;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8::-moz-focus-inner {
+  border-style: none;
+}
+
+.c8:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c9 {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: rgba(0,0,0,0.6);
+}
+
+.c9:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c9 > .sinoui-icon-button__ripple-layout {
+  left: 0px;
+  top: 0px;
+  width: 48px;
+  height: 48px;
+}
+
+.c9 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
+  width: 48px;
+  height: 48px;
+}
+
+.c9 > .sinoui-icon-button--dense__ripple-layout {
+  left: 0px;
+  top: 0px;
+  width: 32px;
+  height: 32px;
+}
+
+.c9 > .sinoui-icon-button--dense__ripple-layout > .sinoui-icon-button--dense__ripple {
+  width: 32px;
+  height: 32px;
+}
+
+.c10 {
+  padding: 2px;
+  width: auto;
+  height: auto;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c10 > .sinoui-icon-button__ripple-layout {
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: auto;
+  height: auto;
+}
+
+.c10 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
+  width: 100%;
+  height: 100%;
+}
+
 .c5 {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -516,52 +631,53 @@ label ~ .c4 {
   user-select: none;
   box-sizing: content-box;
   cursor: inherit;
+  width: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.c1 > .sinoui-base-input {
-  cursor: pointer;
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
-.c1.sinoui-select--focused .sinoui-input-adornment--end .sinoui-svg-icon {
-  color: #3f51b5;
+@media (hover:none) {
+  .c8:hover {
+    background-color: transparent;
+  }
 }
 
-.c1.sinoui-select--error .sinoui-input-adornment--end .sinoui-svg-icon {
-  color: #f44336;
-}
-
-.c1 .sinoui-select__state-icon {
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+@media (hover:none) {
+  .c9:hover {
+    background-color: transparent;
+  }
 }
 
 <div>
   <div
-    className="c0 sinoui-select c1"
+    className="c0 sinoui-select sinoui-auto-complete sinoui-auto-complete--multiple"
   >
     <label
-      className="c2 sinoui-form-label"
+      className="c1 sinoui-form-label"
     >
       Required
     </label>
     <div
-      className="c3 sinoui-base-input c4"
+      className="c2 sinoui-base-input c3 c4"
       data-testid="baseInput"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
     >
       <div
         aria-disabled="false"
-        aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-input sinoui-base-input__input"
         onBlur={[Function]}
+        onClick={[Function]}
         onFocus={[Function]}
-        onKeyDown={[Function]}
         role="button"
         tabIndex={0}
       >
@@ -570,44 +686,53 @@ label ~ .c4 {
         </span>
       </div>
       <div
-        className="c6 sinoui-input-adornment sinoui-input-adornment--end sinoui-select__state-icon"
+        className="c6 c7 sinoui-input-adornment sinoui-input-adornment--end"
       >
-        <svg
-          aria-hidden="true"
-          className="c7 sinoui-svg-icon"
-          focusable="false"
-          role="presentation"
-          size={24}
-          viewBox="0 0 24 24"
+        <button
+          className="c8 sinoui-base-button c9 sinoui-icon-button c10 sinoui-auto-complete__popup-indicator"
+          color="textSecondary"
+          onClick={[Function]}
+          role="button"
+          type="button"
         >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
+          <svg
+            aria-hidden="true"
+            className="c11 sinoui-svg-icon"
+            focusable="false"
+            role="presentation"
+            size={24}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
   <div
-    className="c0 sinoui-select sinoui-select--filled c1"
+    className="c0 sinoui-select sinoui-select--filled sinoui-auto-complete"
   >
     <label
-      className="c8 sinoui-form-label"
+      className="c12 sinoui-form-label"
     >
       Required
     </label>
     <div
-      className="c3 sinoui-base-input c9"
+      className="c2 sinoui-base-input c13"
       data-testid="baseInput"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
     >
       <div
         aria-disabled="false"
-        aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-input sinoui-base-input__input"
         onBlur={[Function]}
+        onClick={[Function]}
         onFocus={[Function]}
-        onKeyDown={[Function]}
         role="button"
         tabIndex={0}
       >
@@ -616,20 +741,28 @@ label ~ .c4 {
         </span>
       </div>
       <div
-        className="c6 sinoui-input-adornment sinoui-input-adornment--end sinoui-select__state-icon"
+        className="c6 c7 sinoui-input-adornment sinoui-input-adornment--end"
       >
-        <svg
-          aria-hidden="true"
-          className="c7 sinoui-svg-icon"
-          focusable="false"
-          role="presentation"
-          size={24}
-          viewBox="0 0 24 24"
+        <button
+          className="c8 sinoui-base-button c9 sinoui-icon-button c10 sinoui-auto-complete__popup-indicator"
+          color="textSecondary"
+          onClick={[Function]}
+          role="button"
+          type="button"
         >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
+          <svg
+            aria-hidden="true"
+            className="c11 sinoui-svg-icon"
+            focusable="false"
+            role="presentation"
+            size={24}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="sinoui-input__overlay"
@@ -637,26 +770,27 @@ label ~ .c4 {
     </div>
   </div>
   <div
-    className="c0 sinoui-select sinoui-select--outlined c1"
+    className="c0 sinoui-select sinoui-select--outlined sinoui-auto-complete"
   >
     <label
-      className="c10 sinoui-form-label"
+      className="c14 sinoui-form-label"
     >
       Required
     </label>
     <div
-      className="c3 sinoui-base-input c11"
+      className="c2 sinoui-base-input c15"
       data-testid="baseInput"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
     >
       <div
         aria-disabled="false"
-        aria-expanded="false"
         aria-haspopup="listbox"
         className="c5 sinoui-select-input sinoui-base-input__input"
         onBlur={[Function]}
+        onClick={[Function]}
         onFocus={[Function]}
-        onKeyDown={[Function]}
         role="button"
         tabIndex={0}
       >
@@ -665,23 +799,31 @@ label ~ .c4 {
         </span>
       </div>
       <div
-        className="c6 sinoui-input-adornment sinoui-input-adornment--end sinoui-select__state-icon"
+        className="c6 c7 sinoui-input-adornment sinoui-input-adornment--end"
       >
-        <svg
-          aria-hidden="true"
-          className="c7 sinoui-svg-icon"
-          focusable="false"
-          role="presentation"
-          size={24}
-          viewBox="0 0 24 24"
+        <button
+          className="c8 sinoui-base-button c9 sinoui-icon-button c10 sinoui-auto-complete__popup-indicator"
+          color="textSecondary"
+          onClick={[Function]}
+          role="button"
+          type="button"
         >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
+          <svg
+            aria-hidden="true"
+            className="c11 sinoui-svg-icon"
+            focusable="false"
+            role="presentation"
+            size={24}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </button>
       </div>
       <div
-        className="c12 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c16 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"
@@ -704,7 +846,7 @@ label ~ .c4 {
 `;
 
 exports[`渲染不可用的下拉框 1`] = `
-.c2 {
+.c1 {
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-weight: 400;
@@ -733,7 +875,7 @@ exports[`渲染不可用的下拉框 1`] = `
   white-space: nowrap;
 }
 
-.c3 {
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -755,7 +897,7 @@ exports[`渲染不可用的下拉框 1`] = `
   line-height: 1.5em;
 }
 
-.c3 > .sinoui-base-input__input {
+.c2 > .sinoui-base-input__input {
   outline: none;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -766,8 +908,8 @@ exports[`渲染不可用的下拉框 1`] = `
   caret-color: #3f51b5;
 }
 
-.c3 > input.sinoui-base-input__input,
-.c3 > textarea.sinoui-base-input__input {
+.c2 > input.sinoui-base-input__input,
+.c2 > textarea.sinoui-base-input__input {
   display: block;
   line-height: inherit;
   font: inherit;
@@ -785,52 +927,52 @@ exports[`渲染不可用的下拉框 1`] = `
   width: 100%;
 }
 
-.c3 > input.sinoui-base-input__input::-moz-placeholder,
-.c3 > textarea.sinoui-base-input__input::-moz-placeholder {
+.c2 > input.sinoui-base-input__input::-moz-placeholder,
+.c2 > textarea.sinoui-base-input__input::-moz-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > input.sinoui-base-input__input::-webkit-input-placeholder,
-.c3 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
+.c2 > input.sinoui-base-input__input::-webkit-input-placeholder,
+.c2 > textarea.sinoui-base-input__input::-webkit-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > input.sinoui-base-input__input:-ms-input-placeholder,
-.c3 > textarea.sinoui-base-input__input:-ms-input-placeholder {
+.c2 > input.sinoui-base-input__input:-ms-input-placeholder,
+.c2 > textarea.sinoui-base-input__input:-ms-input-placeholder {
   color: rgba(0,0,0,0.38);
 }
 
-.c3 > input.sinoui-base-input__input::-ms-clear,
-.c3 > textarea.sinoui-base-input__input::-ms-clear {
+.c2 > input.sinoui-base-input__input::-ms-clear,
+.c2 > textarea.sinoui-base-input__input::-ms-clear {
   display: none;
 }
 
-.c3 > input.sinoui-base-input__input:focus,
-.c3 > textarea.sinoui-base-input__input:focus {
+.c2 > input.sinoui-base-input__input:focus,
+.c2 > textarea.sinoui-base-input__input:focus {
   outline: 0;
 }
 
-.c3 > input.sinoui-base-input__input:invalid,
-.c3 > textarea.sinoui-base-input__input:invalid {
+.c2 > input.sinoui-base-input__input:invalid,
+.c2 > textarea.sinoui-base-input__input:invalid {
   box-shadow: none;
   caret-color: #f44336;
 }
 
-.c3.sinoui-base-input--multiline > textarea {
+.c2.sinoui-base-input--multiline > textarea {
   resize: none;
   padding: 0;
 }
 
-.c3 .sinoui-base-input__clear {
+.c2 .sinoui-base-input__clear {
   width: 18px;
 }
 
-.c3 .sinoui-base-input__clear > .sinoui-svg-icon {
+.c2 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
 }
 
-.c6 {
+.c7 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -853,7 +995,7 @@ exports[`渲染不可用的下拉框 1`] = `
   color: rgba(0,0,0,0.38);
 }
 
-.c7 {
+.c11 {
   font-size: 24px;
   width: 1em;
   height: 1em;
@@ -874,11 +1016,11 @@ exports[`渲染不可用的下拉框 1`] = `
   color: rgba(0,0,0,0.38);
 }
 
-label ~ .c4 {
+label ~ .c3 {
   margin-top: 16px;
 }
 
-.sinoui-form-item--floating > .sinoui-form-item__content .c4 {
+.sinoui-form-item--floating > .sinoui-form-item__content .c3 {
   margin-top: 16px;
 }
 
@@ -951,6 +1093,122 @@ label ~ .c4 {
   position: relative;
 }
 
+.c0 .sinoui-focused-visible {
+  visibility: hidden;
+}
+
+.c0:hover .sinoui-focused-visible {
+  visibility: visible;
+}
+
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8::-moz-focus-inner {
+  border-style: none;
+}
+
+.c8:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c9 {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: rgba(0,0,0,0.38);
+}
+
+.c9:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c9 > .sinoui-icon-button__ripple-layout {
+  left: 0px;
+  top: 0px;
+  width: 48px;
+  height: 48px;
+}
+
+.c9 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
+  width: 48px;
+  height: 48px;
+}
+
+.c9 > .sinoui-icon-button--dense__ripple-layout {
+  left: 0px;
+  top: 0px;
+  width: 32px;
+  height: 32px;
+}
+
+.c9 > .sinoui-icon-button--dense__ripple-layout > .sinoui-icon-button--dense__ripple {
+  width: 32px;
+  height: 32px;
+}
+
+.c10 {
+  padding: 2px;
+  width: auto;
+  height: auto;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transition: transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  transition: transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c10 > .sinoui-icon-button__ripple-layout {
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: auto;
+  height: auto;
+}
+
+.c10 > .sinoui-icon-button__ripple-layout > .sinoui-icon-button__ripple {
+  width: 100%;
+  height: 100%;
+}
+
 .c5 {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -958,54 +1216,55 @@ label ~ .c4 {
   user-select: none;
   box-sizing: content-box;
   cursor: inherit;
+  width: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.c1 > .sinoui-base-input {
-  cursor: default;
+@media (hover:none) {
+  .c0:hover .sinoui-focused-visible {
+    visibility: hidden;
+  }
 }
 
-.c1.sinoui-select--focused .sinoui-input-adornment--end .sinoui-svg-icon {
-  color: #3f51b5;
+@media (hover:none) {
+  .c8:hover {
+    background-color: transparent;
+  }
 }
 
-.c1.sinoui-select--error .sinoui-input-adornment--end .sinoui-svg-icon {
-  color: #f44336;
-}
-
-.c1 .sinoui-select__state-icon {
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  -webkit-transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: transform 200ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
+@media (hover:none) {
+  .c9:hover {
+    background-color: transparent;
+  }
 }
 
 <div
-  className="c0 sinoui-select sinoui-select--disabled c1"
+  className="c0 sinoui-select sinoui-select--disabled sinoui-auto-complete"
   disabled={true}
 >
   <label
-    className="c2 sinoui-form-label"
+    className="c1 sinoui-form-label"
     disabled={true}
   >
     Required
   </label>
   <div
-    className="c3 sinoui-base-input sinoui-base-input--disabled c4"
+    className="c2 sinoui-base-input sinoui-base-input--disabled c3 c4"
     data-testid="baseInput"
     disabled={true}
     onClick={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
   >
     <div
       aria-disabled="true"
-      aria-expanded="false"
       aria-haspopup="listbox"
       className="c5 sinoui-select-input sinoui-base-input__input"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
-      onKeyDown={[Function]}
       role="button"
     >
       <span>
@@ -1013,20 +1272,30 @@ label ~ .c4 {
       </span>
     </div>
     <div
-      className="c6 sinoui-input-adornment sinoui-input-adornment--end sinoui-select__state-icon"
+      className="c6 c7 sinoui-input-adornment sinoui-input-adornment--end"
     >
-      <svg
-        aria-hidden="true"
-        className="c7 sinoui-svg-icon"
-        focusable="false"
-        role="presentation"
-        size={24}
-        viewBox="0 0 24 24"
+      <button
+        aria-disabled={true}
+        className="c8 sinoui-base-button c9 sinoui-icon-button sinoui-icon-button--disabled c10 sinoui-auto-complete__popup-indicator"
+        color="actionDisabled"
+        disabled={true}
+        onClick={[Function]}
+        role="button"
+        type="button"
       >
-        <path
-          d="M7 10l5 5 5-5z"
-        />
-      </svg>
+        <svg
+          aria-hidden="true"
+          className="c11 sinoui-svg-icon"
+          focusable="false"
+          role="presentation"
+          size={24}
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </div>

@@ -21,13 +21,13 @@ export interface FilledInputProps extends BaseInputProps {
 }
 
 const denseStyle = css`
-  padding-top: 19.5px;
-  padding-bottom: 4.5px;
+  padding-top: 20.5px;
+  padding-bottom: 3.5px;
 `;
 
 const denseNoLabelStyle = css`
   padding-top: 3.5px;
-  padding-bottom: 4.5px;
+  padding-bottom: 3.5px;
 `;
 
 const overlayStyle = css<{ focused?: boolean }>`
@@ -58,7 +58,6 @@ const overlayStyle = css<{ focused?: boolean }>`
 
 const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
   position: relative;
-  overflow: hidden;
   background-color: ${({ theme }) => FILLED_INPUT_BGCOLOR[theme.palette.type]};
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -94,8 +93,8 @@ const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
   }
 
   ${({ multiline }) => (multiline ? '&' : '> .sinoui-base-input__input')} {
-    padding: 23.5px 12px 8.5px;
-    padding-top: ${({ noLabel }) => (noLabel ? 7.5 : 23.5)}px;
+    padding: 25.5px 12px 6.5px;
+    padding-top: ${({ noLabel }) => (noLabel ? 7.5 : 25.5)}px;
     ${({ noLabel, dense }) => !noLabel && dense && denseStyle}
     ${({ noLabel, dense }) => dense && noLabel && denseNoLabelStyle}
   }

@@ -107,6 +107,7 @@ const ListItemStyle = css<ListItemProps>`
   box-sizing: border-box;
   padding: 12px 16px;
   background-color: ${(props) => props.theme.palette.background.paper};
+  color: ${({ theme }) => theme.palette.text.primary};
   outline: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -122,6 +123,7 @@ const ListItemStyle = css<ListItemProps>`
     width: 100%;
     height: 100%;
     z-index: 0;
+    pointer-events: none;
   }
 
   ${({ paddingLeft }) =>

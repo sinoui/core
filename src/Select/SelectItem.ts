@@ -14,4 +14,8 @@ export default interface SelectItem<T = string> {
    * 项目呈现的内容
    */
   children?: React.ReactNode;
+  /**
+   * 标签名称
+   */
+  title?: string;
 }

@@ -1,0 +1,147 @@
+---
+id: datepicker
+title: Date/Time 日期、时间选择
+---
+
+import DatePicker from '@sinoui/core/DatePicker';
+import DateRangePicker from '@sinoui/core/DateRangePicker';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import dayjs from 'dayjs';
+import DatePickerDemo from './datepicker-demos/DatePickerDemo';
+import DateRangePickerDemo from './datepicker-demos/DateRangePickerDemo';
+import TimePickerDemo from './datepicker-demos/TimePickerDemo';
+import DateTimePickerDemo from './datepicker-demos/DateTimePickerDemo';
+
+> 日期选择允许用户选择日期；日期区间选择允许用户快速选择日期范围；时间选择允许用户选择时间；日期时间选择允许用户快速选择日期和时间。
+
+## 引用方式
+
+```ts
+import DatePicker from '@sinoui/core/DatePicker'; // 日期选择
+import DateRangePicker from '@sinoui/core/DateRangePicker'; // 日期区间选择
+import TimePicker from '@sinoui/core/TimePicker'; // 时间选择
+import DateTimePicker from '@sinoui/core/DateTimePicker'; // 时间日期选择
+```
+
+## 日期选择
+
+### 基本使用
+
+```tsx
+function DatePickerDemo() {
+  const [value, setValue] = useState<string | undefined>('2020-06-12');
+  return <Datepicker value={value} onChange={setValue} />;
+}
+```
+
+<DatePickerDemo />
+
+### 设置最大最小值
+
+在使用 DatePicker 时，我们可以通过`min`和`max`分别设置可选的最小范围和最大范围。使用方式如下:
+
+```tsx
+import React, { useState } from 'react';
+import DatePicker from '@sinoui/core/DatePicker';
+
+export default function DatePickerDemo() {
+  const [value, setValue] = useState<string | undefined>('2020-06-12');
+  return (
+    <StyledDatePicker
+      value={value}
+      onChange={setValue}
+      min="2020-06-09"
+      max="2020-06-24"
+    />
+  );
+}
+```
+
+<DatePickerDemo min="2020-06-09" max="2020-06-24" />
+
+### 自定义值的渲染
+
+DatePicker 组件默认直接显示 value 的值。如果我们想要调整其显示方式，可以使用`renderValue`属性来自定义渲染方式，如`2020/01/01`:
+
+```tsx
+import dayjs from 'dayjs';
+
+function DatePickerDemo(props: any) {
+  const [value, setValue] = useState<string | undefined>('2020-06-12');
+  return (
+    <Datepicker
+      value={value}
+      onChange={setValue}
+      renderValue={(_value) =>
+        _value ? dayjs(_value).format('YYYY/MM/DD') : ''
+      }
+    />
+  );
+}
+```
+
+<DatePickerDemo
+  renderValue={(_value) => (_value ? dayjs(_value).format('YYYY/MM/DD') : '')}
+/>
+
+## 日期区间选择
+
+`@sinoui/core/DateRangePicker`组件可以用来快速选择开始日期和结束日期的日期区间组合。
+
+```tsx
+import React, { useState } from 'react';
+import DateRangePicker from '@sinoui/core/DateRangePicker';
+
+export default function DateRangePickerDemo() {
+  const [value, setValue] = useState(['2020-06-16', '2020-07-28']);
+  return (
+    <>
+      <DateRangePicker value={value} onChange={setValue} />
+      <DateRangePicker value={value} onChange={setValue} variant="outlined" />
+      <DateRangePicker value={value} onChange={setValue} variant="filled" />
+    </>
+  );
+}
+```
+
+<DateRangePickerDemo />
+
+## 时间选择
+
+`@sinoui/core/TimePicker`组件可以用来选择和输入时间。
+
+```tsx
+import React, { useState } from 'react';
+import TimePicker from '@sinoui/core/TimePicker';
+
+export default function DatePickerDemo() {
+  const [value, setValue] = useState<string | undefined>('14:20');
+  return <TimePicker value={value} onChange={setValue} />;
+}
+```
+
+<TimePickerDemo />
+
+## 日期时间选择
+
+`@sinoui/core/DateTimePicker`组件可以用来快速选择日期和时间的组合。
+
+```tsx
+import React, { useState } from 'react';
+import DateTimePicker from '@sinoui/core/DateTimePicker';
+
+export default function DateTimePickerDemo() {
+  const [value, setValue] = useState<string | undefined>('2020-06-18 15:30');
+  return <DateTimePicker value={value} onChange={setValue} />;
+}
+```
+
+<DateTimePickerDemo />
+
+## API
+
+- [DatePicker](../components-apis/date-picker)
+- [DateRangePicker](../components-apis/date-range-picker)
+- [TimePicker](../components-apis/time-picker)
+- [DateTimePicker](../components-apis/date-time-picker)

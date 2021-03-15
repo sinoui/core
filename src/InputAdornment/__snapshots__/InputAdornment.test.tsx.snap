@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`在开始位置使用 1`] = `
-.c0 {
+.c1 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -25,7 +25,7 @@ exports[`在开始位置使用 1`] = `
 }
 
 <div
-  className="c0 sinoui-input-adornment sinoui-input-adornment--start"
+  className="c0 c1 sinoui-input-adornment sinoui-input-adornment--start"
 >
   <p>
     装饰器
@@ -34,7 +34,7 @@ exports[`在开始位置使用 1`] = `
 `;
 
 exports[`在结束位置使用 1`] = `
-.c0 {
+.c1 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -58,7 +58,7 @@ exports[`在结束位置使用 1`] = `
 }
 
 <div
-  className="c0 sinoui-input-adornment sinoui-input-adornment--end"
+  className="c0 c1 sinoui-input-adornment sinoui-input-adornment--end"
 >
   <p>
     装饰器
@@ -67,7 +67,7 @@ exports[`在结束位置使用 1`] = `
 `;
 
 exports[`显示文本装饰器 1`] = `
-.c1 {
+.c2 {
   margin: 0;
   padding: 0;
   font-weight: 400;
@@ -81,7 +81,7 @@ exports[`显示文本装饰器 1`] = `
   color: inherit;
 }
 
-.c0 {
+.c1 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -109,10 +109,10 @@ exports[`显示文本装饰器 1`] = `
 }
 
 <div
-  className="c0 sinoui-input-adornment sinoui-input-adornment--end sinoui-input-adornment--text"
+  className="c0 c1 sinoui-input-adornment sinoui-input-adornment--end sinoui-input-adornment--text"
 >
   <p
-    className="c1 sinoui-typography sinoui-typography--body1"
+    className="c2 sinoui-typography sinoui-typography--body1"
     color="inherit"
     type="body1"
   >
@@ -122,7 +122,7 @@ exports[`显示文本装饰器 1`] = `
 `;
 
 exports[`替换根元素 1`] = `
-.c0 {
+.c1 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -146,7 +146,7 @@ exports[`替换根元素 1`] = `
 }
 
 <p
-  className="c0 sinoui-input-adornment sinoui-input-adornment--start"
+  className="c0 c1 sinoui-input-adornment sinoui-input-adornment--start"
 >
   <p>
     装饰器
@@ -155,7 +155,7 @@ exports[`替换根元素 1`] = `
 `;
 
 exports[`禁止点击事件 1`] = `
-.c0 {
+.c1 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -184,7 +184,7 @@ exports[`禁止点击事件 1`] = `
 }
 
 <div
-  className="c0 sinoui-input-adornment sinoui-input-adornment--start"
+  className="c0 c1 sinoui-input-adornment sinoui-input-adornment--start"
 >
   <p>
     装饰器

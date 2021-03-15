@@ -19,7 +19,7 @@ export interface Props {
   /**
    * 根元素使用的组件。默认为 `div`。
    */
-  as?: React.ReactType;
+  as?: React.ElementType;
   /**
    * 自定义样式类名称
    */

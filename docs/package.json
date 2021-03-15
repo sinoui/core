@@ -12,20 +12,20 @@
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-typescript": "^7.9.0",
-    "@docusaurus/core": "2.0.0-alpha.39",
-    "@docusaurus/preset-classic": "2.0.0-alpha.39",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.39",
-    "@docusaurus/theme-classic": "2.0.0-alpha.39",
-    "@docusaurus/theme-search-algolia": "2.0.0-alpha.39",
-    "@svgr/webpack": "^5.3.0",
+    "@docusaurus/core": "2.0.0-alpha.65",
+    "@docusaurus/preset-classic": "2.0.0-alpha.65",
+    "@docusaurus/theme-classic": "2.0.0-alpha.65",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.65",
+    "@docusaurus/theme-search-algolia": "2.0.0-alpha.65",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "babel-preset-ts-lib": "^0.11.0",
+    "babel-preset-ts-lib": "^0.13.0",
     "classnames": "^2.2.6",
-    "image-webpack-loader": "^6.0.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "styled-components": "^5.1.0"
+    "dayjs": "^1.9.1",
+    "image-webpack-loader": "^7.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.2.0"
   },
   "browserslist": {
     "production": [
@@ -38,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^2.0.0-alpha.51",
+    "@tsconfig/docusaurus": "^1.0.2"
   }
 }

@@ -2,7 +2,7 @@
 
 exports[`DialogContent组件 快照测试 基本使用 1`] = `
 <h6
-  className="sc-AxjAm dltSeZ sinoui-typography sinoui-typography--subtitle1 sc-AxiKw dQNjqZ sinoui-dialog-content children theme"
+  className="sc-bdnylx dOAKmE sinoui-typography sinoui-typography--subtitle1 sc-dlnjPT kkBVxa sinoui-dialog-content children theme"
   color="textSecondary"
   type="subtitle1"
 >

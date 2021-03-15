@@ -1,4 +1,6 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
+import styled from 'styled-components';
 import SelectItem from './SelectItem';
 /**
  * 判断是否为空
@@ -14,18 +16,28 @@ function isEmpty(display?: string | string[]) {
   );
 }
 
+const Placeholder = styled.span`
+  color: ${({ theme }) => theme.palette.text.secondary};
+`;
+
 /**
  * 展现选择框选中值的组件
  */
 function SelectValueDisplay({
   value,
   items,
+  placeholder,
 }: {
-  value?: string | string[];
+  value: string | string[] | undefined;
   items: SelectItem[];
+  placeholder: string | undefined;
 }) {
   if (isEmpty(value)) {
-    return <span>&#8203;</span>;
+    return placeholder ? (
+      <Placeholder>{placeholder}</Placeholder>
+    ) : (
+      <span>&#8203;</span>
+    );
   }
   const values = Array.isArray(value) ? value : [value];
   const result = values.map((itemValue, index) => {
@@ -33,11 +45,17 @@ function SelectValueDisplay({
     if (!item) {
       return null;
     }
-    const { children } = item;
-    if (typeof children === 'string') {
-      return `${children}${index === values.length - 1 ? '' : ', '}`;
+    const { title, children } = item;
+    const selectValue = title ?? children;
+    if (typeof selectValue === 'string') {
+      return (
+        <React.Fragment key={index}>
+          {selectValue}
+          {index === values.length - 1 ? '' : ', '}
+        </React.Fragment>
+      );
     }
-    return children;
+    return <React.Fragment key={index}>{selectValue}</React.Fragment>;
   });
 
   return <>{result}</>;

@@ -61,6 +61,7 @@ const DialogWrapper = styled.div<DialogWrapperProps>`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  outline: none;
   ${(props) => (props.fullScreen ? fullScreenStyle : defaultBigSizeStyle)};
 `;
 

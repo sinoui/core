@@ -16,7 +16,7 @@ function DialogDemo(props: any) {
   return (
     <>
       <Button onClick={() => setOpen(true)}>CLICK</Button>
-      <Dialog open={open} {...props}>
+      <Dialog open={open} {...props} onClose={() => setOpen(false)}>
         <DialogTitle>Use Google location service</DialogTitle>
         <DialogContent>
           Let Google help apps determine location. This means sending anonymous
@@ -41,7 +41,12 @@ function DialogShow(props: any) {
   return (
     <>
       <Button onClick={() => setOpen(true)}>CLICK</Button>
-      <DialogWrapper open={open} {...props} autoWidth>
+      <DialogWrapper
+        open={open}
+        {...props}
+        autoWidth
+        onClose={() => setOpen(false)}
+      >
         <DialogTitle>Use Google location service</DialogTitle>
         <DialogContent style={{ width: '560px' }}>
           Let Google help apps determine location. This means sending anonymous
