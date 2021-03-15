@@ -1,0 +1,145 @@
+---
+id: link
+title: Link 链接组件
+---
+
+import styled, { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+import Link from '@sinoui/core/Link';
+import LinkDemo from './Link-demos/LinkDemo';
+
+## 基本使用
+
+```tsx
+import Link from '@sinoui/core/Link';
+
+function LinkDemo() {
+  const TypographyWrapper = styled(Typography)`
+    > a:not(:first-child) {
+      margin-left: 10px;
+    }
+  `;
+
+  return (
+    <TypographyWrapper>
+      <Link href="/docs/components/bottomSheet">BottomSheet</Link>
+      <Link href="/docs/components/paper">Paper</Link>
+      <Link href="/docs/components/bottomNavigation">bottomNavigation</Link>
+    </TypographyWrapper>
+  );
+}
+```
+
+## 效果展示
+
+<ThemeProvider theme={defaultTheme}>
+  <LinkDemo />
+</ThemeProvider>
+
+## 指定根元素
+
+```tsx
+import Link from '@sinoui/core/Link';
+
+function LinkDemo() {
+  return (
+    <Typography>
+      <Link href="/?path=/story/typography--基本组件使用" component="button">
+        Link
+      </Link>
+    </Typography>
+  );
+}
+```
+
+## 效果展示
+
+<ThemeProvider theme={defaultTheme}>
+  <Typography>
+    <Link href="/?path=/story/typography--基本组件使用" component="button">
+      Link
+    </Link>
+  </Typography>
+</ThemeProvider>
+
+## 指定颜色
+
+```tsx
+import Link from '@sinoui/core/Link';
+
+function LinkDemo() {
+  return (
+    <Typography>
+      <Link href="/docs/components/paper" color="primary">
+        color=primary
+      </Link>
+      <br />
+      <Link href="/docs/components/paper" color="secondary">
+        color=secondary
+      </Link>
+      <br />
+      <Link href="/docs/components/paper" color="textPrimary">
+        color=textPrimary
+      </Link>
+      <br />
+      <Link href="/docs/components/paper" color="textSecondary">
+        color=textSecondary
+      </Link>
+      <br />
+      <Link href="/docs/components/paper" color="error">
+        color=error
+      </Link>
+      <br />
+      <Link href="/docs/components/paper" color="warning">
+        color=warning
+      </Link>
+      <br />
+      <Link href="/docs/components/paper" color="success">
+        color=success
+      </Link>
+      <br />
+      <Link href="/docs/components/paper" color="info">
+        color=info
+      </Link>
+    </Typography>
+  );
+}
+```
+
+## 效果展示
+
+<ThemeProvider theme={defaultTheme}>
+  <Typography>
+    <Link href="/docs/components/paper" color="primary">
+      color=primary
+    </Link>
+    <br />
+    <Link href="/docs/components/paper" color="secondary">
+      color=secondary
+    </Link>
+    <br />
+    <Link href="/docs/components/paper" color="textPrimary">
+      color=textPrimary
+    </Link>
+    <br />
+    <Link href="/docs/components/paper" color="textSecondary">
+      color=textSecondary
+    </Link>
+    <br />
+    <Link href="/docs/components/paper" color="error">
+      color=error
+    </Link>
+    <br />
+    <Link href="/docs/components/paper" color="warning">
+      color=warning
+    </Link>
+    <br />
+    <Link href="/docs/components/paper" color="success">
+      color=success
+    </Link>
+    <br />
+    <Link href="/docs/components/paper" color="info">
+      color=info
+    </Link>
+  </Typography>
+</ThemeProvider>
