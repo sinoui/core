@@ -3,10 +3,9 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { useRipple } from '@sinoui/ripple';
 import classNames from 'classnames';
-import CheckCircle from './CheckCircleIcon';
-import Error from './ErrorIcon';
 import Connector from './Connector';
 import VerticalStep from './VerticalStep';
+import StepIcon from './StepIcon';
 
 const verticalLayoutCss = css`
   flex: 1;
@@ -79,30 +78,6 @@ const Description = styled.div<{ $active?: boolean }>`
 const StepContent = styled.div<{ $isVertical?: boolean }>`
   display: inline-block;
   vertical-align: top;
-`;
-
-const NumberIcon = styled.div<{ $active?: boolean }>`
-  width: 24px;
-  height: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  border-radius: 50%;
-  margin-right: 8px;
-  font-size: 12px;
-  color: ${({ theme }) => theme.palette.common.white};
-  background: ${({ theme, $active }) =>
-    $active ? theme.palette.primary.main : theme.palette.text.disabled};
-`;
-
-const IconWrapper = styled.span<{ $active?: boolean; $error?: boolean }>`
-  margin-right: 8px;
-  height: 24px;
-  width: 24px;
-  color: ${({ theme, $active }) =>
-    $active ? theme.palette.primary.main : theme.palette.text.disabled};
-  ${({ theme, $error }) => $error && `color:${theme.palette.error.main}`};
 `;
 
 const StepContainer = styled.div`
@@ -191,43 +166,6 @@ export default function Step(props: StepProps) {
     disabled: !onChange,
   });
 
-  const renderIcon = () => {
-    if (icon) {
-      if (typeof icon === 'function') {
-        return icon(status);
-      }
-      return (
-        <IconWrapper
-          $active={status === 'active' || status === 'completed'}
-          $error={status === 'error'}
-          className="sinoui-step-icon"
-        >
-          {icon}
-        </IconWrapper>
-      );
-    }
-    if (status === 'completed') {
-      return (
-        <IconWrapper $active className="sinoui-step-icon">
-          <CheckCircle />
-        </IconWrapper>
-      );
-    }
-    if (status === 'error') {
-      return (
-        <IconWrapper className="sinoui-step-icon" $error>
-          <Error />
-        </IconWrapper>
-      );
-    }
-
-    return (
-      <NumberIcon $active={status === 'active'} className="sinoui-step-icon">
-        {index + 1}
-      </NumberIcon>
-    );
-  };
-
   const handleClick = () => {
     if (!onChange) {
       return;
@@ -259,7 +197,7 @@ export default function Step(props: StepProps) {
             'sinoui-step-container--vertical': labelPlacement === 'vertical',
           })}
         >
-          {renderIcon()}
+          <StepIcon icon={icon} index={index} isInHorizontal status={status} />
           <StepContent className="sinoui-step-content">
             <Title
               $active={status === 'active' || status === 'completed'}
