@@ -1,0 +1,56 @@
+---
+id: steps
+title: Steps
+---
+
+> 步进器组件。
+
+## 引入方式
+
+```jsx
+import Steps, { Step } from '@sinoui/core/Steps';
+```
+
+## Steps属性
+
+| 属性名称       | 属性类型                    | 默认值 | 属性说明               |
+| -------------- | --------------------------- | ------ | ---------------------- |
+| current        | number                      |        | 当前处于活动状态的步骤 |
+| direction      | 'horizontal' \| 'vertical' |        | 步骤条方向             |
+| children       | React.ReactNode             |        | 子元素                 |
+| labelPlacement | 'horizontal' \| 'vertical' |        | 标签位置               |
+| connector      | React.ReactNode             |        | 自定义连接器           |
+| icon           | React.ReactNode             |        | 自定义图标             |
+| onChange       | (current: number) => void   |        | 点击时的回调函数       |
+
+## Step属性
+
+| 属性名称    | 属性类型                                    | 默认值 | 属性说明         |
+| ----------- | ------------------------------------------- | ------ | ---------------- |
+| title       | string                                      |        | 标题             |
+| subTitle    | React.ReactNode                             |        | 副标题           |
+| description | React.ReactNode                             |        | 描述文字（内容） |
+| status      | 'wait' \| 'active' \| 'completed' \| 'error' |        | 步骤状态         |
+| disabled    | boolean                                     | false  | 不可用状态       |
+| icon        | React.ReactNode                             |        | 自定义图标       |
+| onChange    | (current: number) => void                   |        | 点击时的回调函数 |
+
+## 入门示例
+
+```jsx
+import React from "react";
+import Steps, { Step } from "@sinoui/core/Steps";
+
+export default function Demo() {
+  return (
+    <Steps>
+      <Step title="第一步" />
+      <Step title="第二步" />
+      <Step title="第三步" />
+    </Steps>
+  );
+}
+```
+
+更多应用示例请参考[Steps 组件文档](../components/steps)。
+
