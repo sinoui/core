@@ -3,9 +3,12 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { useRipple } from '@sinoui/ripple';
 import classNames from 'classnames';
-import Connector from './Connector';
-import VerticalStep from './VerticalStep';
-import StepIcon from './StepIcon';
+import Connector from './components/Connector';
+import VerticalStep from './components/VerticalStep';
+import StepIcon from './components/StepIcon';
+import Title from './components/Title';
+import SubTitle from './components/SubTitle';
+import StepContent from './components/StepContent';
 
 const verticalLayoutCss = css`
   flex: 1;
@@ -55,40 +58,14 @@ const StepLayout = styled.div<{
   }
 `;
 
-const Title = styled.span<{ $active?: boolean; $error?: boolean }>`
-  color: ${({ theme, $active, $error }) =>
-    $active
-      ? theme.palette.text.primary
-      : $error
-      ? theme.palette.error.main
-      : theme.palette.text.disabled};
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: ${({ theme, $active }) =>
-    $active
-      ? theme.typography.fontWeightMedium
-      : theme.typography.fontWeightRegular};
-`;
-
 const Description = styled.div<{ $active?: boolean }>`
   color: ${({ theme, $active }) =>
     $active ? theme.palette.text.secondary : theme.palette.text.disabled};
 `;
 
-const StepContent = styled.div<{ $isVertical?: boolean }>`
-  display: inline-block;
-  vertical-align: top;
-`;
-
 const StepContainer = styled.div`
   display: flex;
   align-items: flex-start;
-`;
-
-const SubTitle = styled.div`
-  display: inline;
-  margin-left: 8px;
-  color: ${({ theme }) => theme.palette.text.disabled};
 `;
 
 export interface StepProps {
@@ -206,12 +183,20 @@ export default function Step(props: StepProps) {
             >
               {title}
               {subTitle && (
-                <SubTitle className="sinoui-step-subtitle">{subTitle}</SubTitle>
+                <SubTitle
+                  className={classNames('sinoui-step-subtitle', {
+                    'sinoui-step-subtitle--error': status === 'error',
+                  })}
+                >
+                  {subTitle}
+                </SubTitle>
               )}
             </Title>
             {description && (
               <Description
-                className="sinoui-step-description"
+                className={classNames('sinoui-step-description', {
+                  'sinoui-step-description--error': status === 'error',
+                })}
                 $active={status === 'active' || status === 'completed'}
               >
                 {description}

@@ -187,7 +187,12 @@ export const 有错误状态的步进器 = () => (
   <StoryLayout>
     <Steps current={1}>
       <Step title="第一步" />
-      <Step title="第二步" status="error" />
+      <Step
+        title="第二步"
+        status="error"
+        subTitle="Left 00:00:08"
+        description="This is a description."
+      />
       <Step title="第三步" />
     </Steps>
   </StoryLayout>

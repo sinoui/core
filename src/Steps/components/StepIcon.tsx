@@ -6,7 +6,7 @@ import Error from './ErrorIcon';
 const IconWrapper = styled.span<{
   $active?: boolean;
   $error?: boolean;
-  $isInHorizontal: boolean;
+  $isInHorizontal?: boolean;
 }>`
   height: ${({ $isInHorizontal }) => ($isInHorizontal ? '24px' : '100%')};
   width: ${({ $isInHorizontal }) => ($isInHorizontal ? '24px' : '100%')};

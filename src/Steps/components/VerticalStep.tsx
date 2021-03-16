@@ -5,6 +5,9 @@ import { useRipple } from '@sinoui/ripple';
 import classNames from 'classnames';
 import Connector from './Connector';
 import StepIcon from './StepIcon';
+import Title from './Title';
+import SubTitle from './SubTitle';
+import StepContent from './StepContent';
 
 const StepLayout = styled.div<{
   $isClickable?: boolean;
@@ -14,30 +17,10 @@ const StepLayout = styled.div<{
   cursor: ${({ $isClickable }) => ($isClickable ? 'pointer' : 'default')};
 `;
 
-const Title = styled.span<{ $active?: boolean; $error?: boolean }>`
-  color: ${({ theme, $active, $error }) =>
-    $active
-      ? theme.palette.text.primary
-      : $error
-      ? theme.palette.error.main
-      : theme.palette.text.disabled};
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: ${({ theme, $active }) =>
-    $active
-      ? theme.typography.fontWeightMedium
-      : theme.typography.fontWeightRegular};
-`;
-
 const Description = styled.div<{ $active?: boolean }>`
   color: ${({ theme, $active }) =>
     $active ? theme.palette.text.secondary : theme.palette.text.disabled};
   padding-bottom: 16px;
-`;
-
-const StepContent = styled.div`
-  display: inline-block;
-  vertical-align: top;
 `;
 
 const StepContainer = styled.div`
@@ -71,12 +54,6 @@ const StepContainer = styled.div`
   hr {
     height: calc(100% - 8px);
   }
-`;
-
-const SubTitle = styled.div`
-  display: inline;
-  margin-left: 8px;
-  color: ${({ theme }) => theme.palette.text.disabled};
 `;
 
 export interface VerticalStepProps {
@@ -167,7 +144,13 @@ export default function VerticalStep(props: VerticalStepProps) {
             >
               {title}
               {subTitle && (
-                <SubTitle className="sinoui-step-subtitle">{subTitle}</SubTitle>
+                <SubTitle
+                  className={classNames('sinoui-step-subtitle', {
+                    'sinoui-step-subtitle--error': status === 'error',
+                  })}
+                >
+                  {subTitle}
+                </SubTitle>
               )}
             </Title>
           </StepContent>
@@ -184,7 +167,9 @@ export default function VerticalStep(props: VerticalStepProps) {
           )}
           {description && (
             <Description
-              className="sinoui-step-description"
+              className={classNames('sinoui-step-description', {
+                'sinoui-step-description--error': status === 'error',
+              })}
               $active={status === 'active' || status === 'completed'}
             >
               {description}
