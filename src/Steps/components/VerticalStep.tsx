@@ -165,16 +165,14 @@ export default function VerticalStep(props: VerticalStepProps) {
           ) : (
             <div className="sinoui-step-connector" />
           )}
-          {description && (
-            <Description
-              className={classNames('sinoui-step-description', {
-                'sinoui-step-description--error': status === 'error',
-              })}
-              $active={status === 'active' || status === 'completed'}
-            >
-              {description}
-            </Description>
-          )}
+          <Description
+            className={classNames('sinoui-step-description', {
+              'sinoui-step-description--error': status === 'error',
+            })}
+            $active={status === 'active' || status === 'completed'}
+          >
+            {description}
+          </Description>
         </StepContainer>
       </StepLayout>
     </>

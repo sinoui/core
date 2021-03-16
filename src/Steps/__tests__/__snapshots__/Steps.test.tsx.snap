@@ -139,6 +139,9 @@ exports[`正确渲染--垂直方向步进器 1`] = `
           className="sc-bdnylx sc-dlnjPT dagirI iQbjqF sinoui-divider sinoui-divider--vertical"
         />
       </div>
+      <div
+        className="sc-kEqYlL iGLExg sinoui-step-description"
+      />
     </div>
   </div>
   <div
@@ -173,6 +176,9 @@ exports[`正确渲染--垂直方向步进器 1`] = `
           className="sc-bdnylx sc-dlnjPT dagirI iQbjqF sinoui-divider sinoui-divider--vertical"
         />
       </div>
+      <div
+        className="sc-kEqYlL jKkjld sinoui-step-description"
+      />
     </div>
   </div>
   <div
@@ -202,6 +208,9 @@ exports[`正确渲染--垂直方向步进器 1`] = `
       </div>
       <div
         className="sinoui-step-connector"
+      />
+      <div
+        className="sc-kEqYlL jKkjld sinoui-step-description"
       />
     </div>
   </div>
@@ -245,6 +254,9 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
           className="sc-bdnylx sc-dlnjPT dagirI iQbjqF sinoui-divider sinoui-divider--vertical"
         />
       </div>
+      <div
+        className="sc-kEqYlL iGLExg sinoui-step-description"
+      />
     </div>
   </div>
   <div
@@ -279,6 +291,9 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
           className="sc-bdnylx sc-dlnjPT dagirI iQbjqF sinoui-divider sinoui-divider--vertical"
         />
       </div>
+      <div
+        className="sc-kEqYlL jKkjld sinoui-step-description"
+      />
     </div>
   </div>
   <div
@@ -308,6 +323,9 @@ exports[`正确渲染--垂直方向步进器且标签垂直布局 1`] = `
       </div>
       <div
         className="sinoui-step-connector"
+      />
+      <div
+        className="sc-kEqYlL jKkjld sinoui-step-description"
       />
     </div>
   </div>

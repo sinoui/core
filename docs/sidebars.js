@@ -39,6 +39,7 @@ module.exports = {
           'components/bottomNavigation',
           'components/tooltip',
           'components/navigationRail',
+          'components/steps',
         ],
       },
     ],
