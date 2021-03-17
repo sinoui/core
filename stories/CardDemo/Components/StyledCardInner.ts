@@ -6,7 +6,6 @@ const StyledCardInner = styled.div<{
 }>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
-  flex: 1;
 
   & h5 {
     margin: 0;
