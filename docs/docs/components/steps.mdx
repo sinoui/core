@@ -1,0 +1,209 @@
+---
+id: steps
+title: Steps 步进器
+---
+
+import { SimpleDemo, NoLinerDemo } from './steps-demos';
+import ArrowRightAlt from '@sinoui/icons/ArrowRightAlt';
+import Star from '@sinoui/icons/Star';
+import Steps, { Step } from '@sinoui/core/Steps';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+Steps步骤条是引导用户按照流程完成任务的导航条。
+
+使用场景：当任务复杂或者存在先后关系时，将其分解成一系列步骤，从而简化任务。
+
+## 基本使用
+
+```jsx
+/* eslint-disable react/require-default-props */
+import React, { useState } from 'react';
+import Steps, { Step } from '@sinoui/core/Steps';
+import Button from '@sinoui/core/Button';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@sinoui/theme';
+
+function SimpleDemo({
+  labelPlacement,
+  connector,
+  icon,
+}: {
+  labelPlacement?: 'horizontal' | 'vertical';
+  connector?: React.ReactNode;
+  icon?: React.ReactNode;
+}) {
+  const [current, setCurrent] = useState(0);
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <Steps
+          current={current}
+          labelPlacement={labelPlacement}
+          connector={connector}
+          icon={icon}
+        >
+          <Step title="第一步" />
+          <Step title="第二步" />
+          <Step title="第三步" />
+        </Steps>
+        <div style={{ marginTop: 16 }}>
+          {current > 2 ? (
+            <Button onClick={() => setCurrent(0)}>重置</Button>
+          ) : (
+            <>
+              <Button
+                disabled={current === 0}
+                onClick={() => setCurrent(current - 1)}
+              >
+                上一步
+              </Button>
+              <Button raised onClick={() => setCurrent(current + 1)}>
+                {current < 2 ? '下一步' : '完成'}
+              </Button>
+            </>
+          )}
+        </div>
+      </>
+    </ThemeProvider>
+  );
+}
+
+export default SimpleDemo;
+```
+
+<SimpleDemo/>
+
+## 标签垂直布局
+
+通过`labelPlacement`属性自定义标签布局方向，默认为`horizontal`。
+
+```jsx
+<Steps
+  labelPlacement="vertical"
+>
+  <Step title="第一步" />
+  <Step title="第二步" />
+  <Step title="第三步" />
+</Steps>
+```
+
+<SimpleDemo labelPlacement="vertical"/>
+
+## 自定义连接器
+
+可以通过`connector`属性自定义连接器组件。
+
+```jsx
+<Steps
+  connector={<ArrowRightAlt />}
+>
+  <Step title="第一步" />
+  <Step title="第二步" />
+  <Step title="第三步" />
+</Steps>
+```
+
+<SimpleDemo connector={<ArrowRightAlt />}/> 
+
+## 自定义图标
+
+可以通过`icon`属性自定义步进器组件图标。
+
+```jsx
+<Steps
+  icon={<Star />}
+>
+  <Step title="第一步" />
+  <Step title="第二步" />
+  <Step title="第三步" />
+</Steps>
+```
+
+<SimpleDemo icon={<Star />}/>
+
+## 非线性步进器
+
+所谓非线性步进器，可以通过点击的方式切换当前步骤。
+
+```jsx
+import Steps, { Step } from '@sinoui/core/Steps';
+import { defaultTheme } from '@sinoui/theme';
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+
+function NoLinerDemo({
+  labelPlacement,
+}: {
+  labelPlacement?: 'horizontal' | 'vertical';
+}) {
+  const [current, setCurrent] = useState(0);
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <Steps
+        current={current}
+        labelPlacement={labelPlacement}
+        onChange={(index: number) => setCurrent(index)}
+      >
+        <Step title="第一步" />
+        <Step
+          title="第二步"
+          subTitle="Left 00:00:08"
+          description="This is a description."
+        />
+        <Step title="第三步" />
+      </Steps>
+    </ThemeProvider>
+  );
+}
+
+export default NoLinerDemo;
+```
+
+<NoLinerDemo/>
+
+## 垂直方向步进器
+
+通过`direction`属性自定义步进器布局方式，默认为水平布局。
+
+```jsx
+<Steps
+  direction="vertical"
+>
+  <Step title="第一步" />
+  <Step title="第二步" />
+  <Step title="第三步" />
+</Steps>
+```
+
+<NoLinerDemo direction="vertical"/>
+
+## 有错误状态的步进器
+
+```jsx
+<Steps current={1}>
+  <Step title="第一步" />
+  <Step
+    title="第二步"
+    status="error"
+    subTitle="Left 00:00:08"
+    description="This is a description."
+  />
+  <Step title="第三步" />
+</Steps>
+```
+
+<ThemeProvider theme={defaultTheme}>
+  <Steps current={1}>
+    <Step title="第一步" />
+    <Step
+      title="第二步"
+      status="error"
+      subTitle="Left 00:00:08"
+      description="This is a description."
+    />
+    <Step title="第三步" />
+  </Steps>
+</ThemeProvider>
+
+

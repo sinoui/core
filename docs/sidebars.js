@@ -39,6 +39,7 @@ module.exports = {
           'components/bottomNavigation',
           'components/tooltip',
           'components/navigationRail',
+          'components/steps',
         ],
       },
     ],
@@ -81,6 +82,7 @@ module.exports = {
       'components-apis/bottomNavigation',
       'components-apis/tooltip',
       'components-apis/navigationRail',
+      'components-apis/steps',
     ],
   },
 };
