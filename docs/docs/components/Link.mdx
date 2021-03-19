@@ -11,15 +11,18 @@ import LinkDemo from './Link-demos/LinkDemo';
 ## 基本使用
 
 ```tsx
+import React from 'react';
+import styled from 'styled-components';
+import Typography from '@sinoui/core/Typography';
 import Link from '@sinoui/core/Link';
 
-function LinkDemo() {
-  const TypographyWrapper = styled(Typography)`
-    > a:not(:first-child) {
-      margin-left: 10px;
-    }
-  `;
+const TypographyWrapper = styled(Typography)`
+  > a:not(:first-child) {
+    margin-left: 10px;
+  }
+`;
 
+function LinkDemo() {
   return (
     <TypographyWrapper>
       <Link href="/docs/components/bottomSheet">BottomSheet</Link>
@@ -28,9 +31,9 @@ function LinkDemo() {
     </TypographyWrapper>
   );
 }
-```
 
-## 效果展示
+export default LinkDemo;
+```
 
 <ThemeProvider theme={defaultTheme}>
   <LinkDemo />
@@ -51,8 +54,6 @@ function LinkDemo() {
   );
 }
 ```
-
-## 效果展示
 
 <ThemeProvider theme={defaultTheme}>
   <Typography>
@@ -105,8 +106,6 @@ function LinkDemo() {
   );
 }
 ```
-
-## 效果展示
 
 <ThemeProvider theme={defaultTheme}>
   <Typography>

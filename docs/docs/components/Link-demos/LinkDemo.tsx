@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import Typography from '@sinoui/core/Typography';
 import Link from '@sinoui/core/Link';
 
-function LinkDemo() {
-  const TypographyWrapper = styled(Typography)`
-    > a:not(:first-child) {
-      margin-left: 10px;
-    }
-  `;
+const TypographyWrapper = styled(Typography)`
+  > a:not(:first-child) {
+    margin-left: 10px;
+  }
+`;
 
+function LinkDemo() {
   return (
     <TypographyWrapper>
       <Link href="/docs/components/bottomSheet">BottomSheet</Link>

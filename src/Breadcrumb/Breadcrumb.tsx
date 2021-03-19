@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import styled from 'styled-components';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
@@ -76,22 +77,18 @@ export interface Props {
 const insertSeparators = (items: any, separator: string) => {
   return items.reduce((init: any, current: any, index: number) => {
     if (index < items.length - 1) {
-      // eslint-disable-next-line no-param-reassign
-      init = init.concat(
+      return init.concat(
         current,
         <li
           aria-hidden
-          key={`separator-${index.toString()}`}
+          key={`separator-${index}`}
           className="sinoui-breadcrumb-separator"
         >
           {separator}
         </li>,
       );
-    } else {
-      init.push(current);
     }
-
-    return init;
+    return init.concat(current);
   }, []);
 };
 
@@ -110,7 +107,7 @@ const BreadCrumb = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
 
   const allItems = React.Children.toArray(children).map(
     (node, index: number) => (
-      <li key={`node-${index.toString()}`} className="sinoui-breadcrumb-li">
+      <li key={`node-${index}`} className="sinoui-breadcrumb-li">
         {node}
       </li>
     ),
