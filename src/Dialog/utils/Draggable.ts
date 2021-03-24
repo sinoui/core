@@ -14,6 +14,10 @@ export interface DeltaBounds {
   y: [number, number];
 }
 
+const preventDefault = (event: MouseEvent) => {
+  event.preventDefault();
+};
+
 export default class Draggable {
   private container$: HTMLElement;
 
@@ -78,17 +82,12 @@ export default class Draggable {
   }
 
   private clearDragEvents() {
-    if (this.handler$.ownerDocument) {
-      this.handler$.ownerDocument.removeEventListener(
-        'mouseup',
-        this.onDocumentMouseUp,
-        false,
-      );
-      this.handler$.ownerDocument.removeEventListener(
-        'mousemove',
-        this.onDocumentMouseMove,
-        false,
-      );
+    const doc = this.handler$.ownerDocument;
+    if (doc) {
+      doc.removeEventListener('dragstart', preventDefault, false);
+      doc.removeEventListener('dragend', preventDefault, false);
+      doc.removeEventListener('mouseup', this.onDocumentMouseUp, false);
+      doc.removeEventListener('mousemove', this.onDocumentMouseMove, false);
     }
   }
 
@@ -111,23 +110,13 @@ export default class Draggable {
       this.calcBounds();
     }
 
-    if (this.handler$.ownerDocument) {
-      this.handler$.ownerDocument.ondragstart = (e: MouseEvent) => {
-        e.preventDefault();
-      };
-      this.handler$.ownerDocument.ondragend = (e: MouseEvent) => {
-        e.preventDefault();
-      };
-      this.handler$.ownerDocument.addEventListener(
-        'mouseup',
-        this.onDocumentMouseUp,
-        false,
-      );
-      this.handler$.ownerDocument.addEventListener(
-        'mousemove',
-        this.onDocumentMouseMove,
-        false,
-      );
+    const doc = this.handler$.ownerDocument;
+
+    if (doc) {
+      doc.addEventListener('dragstart', preventDefault, false);
+      doc.addEventListener('dragend', preventDefault, false);
+      doc.addEventListener('mouseup', this.onDocumentMouseUp, false);
+      doc.addEventListener('mousemove', this.onDocumentMouseMove, false);
     }
   }
 
