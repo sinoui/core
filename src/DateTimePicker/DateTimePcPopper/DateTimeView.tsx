@@ -9,6 +9,7 @@ import Divider from '@sinoui/core/Divider';
 import styled from 'styled-components';
 import formatDate from '@sinoui/core/DatePicker/formatDate';
 import SimpleMonthDatesView from '@sinoui/core/DatePicker/DatesView/SimpleMonthDatesView';
+import padStart from 'lodash/padStart';
 import DateTimeViewWrapper from './DateTimeViewWrapper';
 
 export interface Props {
@@ -173,7 +174,9 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
   ) => {
     const newDate = clickDate ? formatDate(clickDate) : '';
     if (onChange) {
-      onChange(`${newDate} ${hour}:${minute}`);
+      const h = padStart(`${hour}`, 2, '0');
+      const m = padStart(`${minute}`, 2, '0');
+      onChange(`${newDate} ${h}:${m}`);
     }
   };
 
@@ -181,7 +184,9 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
     const newDate = date ? formatDate(date) : '';
 
     if (onChange) {
-      onChange(`${newDate} ${hourDate}:${minute}`);
+      const h = padStart(`${hourDate}`, 2, '0');
+      const m = padStart(`${minute}`, 2, '0');
+      onChange(`${newDate} ${h}:${m}`);
     }
   };
 
@@ -189,7 +194,9 @@ export default React.forwardRef<HTMLDivElement, Props>(function DateTimeView(
     const newDate = date ? formatDate(date) : '';
 
     if (onChange) {
-      onChange(`${newDate} ${hour}:${minuteDate}`);
+      const h = padStart(`${hour}`, 2, '0');
+      const m = padStart(`${minuteDate}`, 2, '0');
+      onChange(`${newDate} ${h}:${m}`);
     }
   };
 
