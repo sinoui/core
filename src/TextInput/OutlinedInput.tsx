@@ -121,11 +121,14 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
     const [notchWidth, setNotchWidth] = useState(0);
 
     useLayoutEffect(() => {
+      if (notchWidth !== 0) {
+        return;
+      }
       const label = labelRef?.current;
       if (label && !noLabel) {
         setNotchWidth(label.clientWidth * 0.75);
       }
-    }, [labelRef, noLabel]);
+    });
 
     return (
       <StyledBaseInput
