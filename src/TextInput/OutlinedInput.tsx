@@ -1,10 +1,13 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import BaseInput from '@sinoui/core/BaseInput';
 import type { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled, { css } from 'styled-components';
 import type { Theme } from '@sinoui/theme';
+import elementResizeDetectorMaker from 'element-resize-detector';
+import { debounce } from '@sinoui/utils';
 import NotchedOutline from './NotchedOutline';
 import adjustOpacity from '../utils/adjustOpacity';
+import useEnhancedEffect from '../utils/useEnhancedEffect';
 
 export interface OutlinedInputProps extends BaseInputProps {
   /**
@@ -112,6 +115,10 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
   }
 `;
 
+const erd = elementResizeDetectorMaker({
+  strategy: 'scroll',
+});
+
 /**
  * 轮廓输入框
  */
@@ -120,15 +127,23 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
     const { notched, labelRef, dense, focused, noLabel, ...other } = props;
     const [notchWidth, setNotchWidth] = useState(0);
 
-    useLayoutEffect(() => {
-      if (notchWidth !== 0) {
-        return;
-      }
+    useEnhancedEffect(() => {
       const label = labelRef?.current;
       if (label && !noLabel) {
         setNotchWidth(label.clientWidth * 0.75);
+
+        const listener = debounce(() => {
+          setNotchWidth(label.clientWidth * 0.75);
+        });
+
+        erd.listenTo(label, listener);
+
+        return () => {
+          erd.removeListener(label, listener);
+        };
       }
-    });
+      return undefined;
+    }, [labelRef?.current]);
 
     return (
       <StyledBaseInput

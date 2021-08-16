@@ -1444,6 +1444,14 @@
     "@babel/polyfill" "^7.6.0"
     "@babel/runtime" "^7.6.3"
 
+"@sinoui/utils@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@sinoui/utils/-/utils-1.0.0.tgz#17b0acf3e42c0818f70e3d29e42e4cb3a22a0dba"
+  integrity sha512-auzEg1IlWVoPo0zB6fqu8/Tj9O6dINk7DmVFqZtvK/SdQLN2iE9qEnJAyX0xPfqr5eEJfh6zh+iV51sCa+CbZQ==
+  dependencies:
+    "@babel/polyfill" "^7.6.0"
+    "@babel/runtime" "^7.6.3"
+
 "@storybook/addon-actions@^6.0.22":
   version "6.0.26"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.0.26.tgz#d0de9e4d78a8f8f5bf8730c04d0b6d1741c29273"
@@ -2094,6 +2102,11 @@
   resolved "https://registry.yarnpkg.com/@types/dom-helpers/-/dom-helpers-5.0.1.tgz#141aebf88dce696f0ed6fda5a0bc652eaf524976"
   dependencies:
     dom-helpers "*"
+
+"@types/element-resize-detector@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@types/element-resize-detector/-/element-resize-detector-1.1.3.tgz#0154ef4117305d26ab7a5ac16b83ee51f6b9bb8c"
+  integrity sha512-rqmeHxzNMPar/3IbdQRm+mydv8KlEXUtcp5M47rbZUEjslTjg+bT5+OXCknTCIy1AfvNR0Kio44iMY2zUH65CQ==
 
 "@types/estree@*":
   version "0.0.45"
@@ -4885,6 +4898,13 @@ elegant-spinner@^1.0.1:
 element-resize-detector@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.2.1.tgz#b0305194447a4863155e58f13323a0aef30851d1"
+  dependencies:
+    batch-processor "1.0.0"
+
+element-resize-detector@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.2.3.tgz#5078d9b99398fe4c589f8c8df94ff99e5d413ff3"
+  integrity sha512-+dhNzUgLpq9ol5tyhoG7YLoXL3ssjfFW+0gpszXPwRU6NjGr1fVHMEAF8fVzIiRJq57Nre0RFeIjJwI8Nh2NmQ==
   dependencies:
     batch-processor "1.0.0"
 
