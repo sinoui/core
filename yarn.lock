@@ -1427,6 +1427,17 @@
     keycode "^2.2.0"
     warning "^4.0.3"
 
+"@sinoui/theme@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@sinoui/theme/-/theme-1.0.0.tgz#4fdcd679ebb74b14625d0650b64ab4936a879ffa"
+  integrity sha512-Yo9rZK0JxKJn4gpr61NZ/O4D07n7wT89q+m1URnepHt7y66OgyYKL/dVAs0QsHs9QAMYU/GtSXZkRJTTZQRwTw==
+  dependencies:
+    "@babel/polyfill" "^7.6.0"
+    "@babel/runtime" "^7.6.3"
+    deepmerge "^4.2.2"
+    polished "^3.4.4"
+    warning "^4.0.3"
+
 "@sinoui/theme@^1.0.0-beta.8":
   version "1.0.0-beta.8"
   resolved "https://registry.yarnpkg.com/@sinoui/theme/-/theme-1.0.0-beta.8.tgz#36c11e4f0cc26f966ecec6ed4ca6f22be4c88550"

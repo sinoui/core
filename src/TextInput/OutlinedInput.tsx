@@ -143,7 +143,7 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
         };
       }
       return undefined;
-    }, [labelRef?.current]);
+    }, []);
 
     return (
       <StyledBaseInput

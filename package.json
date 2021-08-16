@@ -1,6 +1,6 @@
 {
   "name": "@sinoui/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "sinoui基础组件库",
   "license": "MIT",
   "main": "index.js",
@@ -62,7 +62,7 @@
     "@babel/runtime": "^7.9.2",
     "@popperjs/core": "^2.4.0",
     "@sinoui/ripple": "^1.0.12",
-    "@sinoui/theme": "^1.0.0-beta.8",
+    "@sinoui/theme": "^1.0.0",
     "@sinoui/utils": "^1.0.0",
     "@types/classnames": "^2.2.9",
     "@types/dom-helpers": "^5.0.1",
