@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## 1.0.3 - 2021.8.19
+
+- fix: 修复`Backdrop`无法显示 children 的缺陷
+
 ## v1.0.2 - 2021.8.19
 
 - fix: 修复在 webpack 模块联邦中无法共享 FormControl 子模块的缺陷

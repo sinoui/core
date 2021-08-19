@@ -29,11 +29,12 @@ const Backdrop = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     visible,
     opacity,
     transitionDuration = theme.transitions.duration.shorter,
+    children,
     ...rest
   } = props;
   return (
     <Fade appear in={open} timeout={transitionDuration} {...rest} ref={ref}>
-      <Scrim opacity={visible === false ? 0 : opacity} />
+      <Scrim opacity={visible === false ? 0 : opacity}>{children}</Scrim>
     </Fade>
   );
 });
