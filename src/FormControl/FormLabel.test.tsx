@@ -4,8 +4,8 @@ import { defaultTheme } from '@sinoui/theme';
 import React from 'react';
 import 'jest-styled-components';
 import FormLabel from './FormLabel';
-import FormControlContext from '../FormControl/FormControlContext';
-import FormControl from '../FormControl';
+import FormControlContext from './FormControlContext';
+import FormControl from '.';
 
 afterEach(cleanup);
 

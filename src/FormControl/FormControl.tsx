@@ -5,7 +5,7 @@ import useId from './useId';
 import HelperLine from '../HelperLine';
 import type FormControlProps from './FormControlProps';
 import FormControlWrapper from './FormControlWrapper';
-import FormLabel from '../FormLabel';
+import FormLabel from './FormLabel';
 import FormControlContext from './FormControlContext';
 
 /**
@@ -34,6 +34,7 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
       ...rest
     } = props;
 
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     const [_focused, setFocused] = useState(false);
     const focused = focusedProp ?? _focused;
     const onFocus = useCallback(() => setFocused(true), [setFocused]);

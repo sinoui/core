@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import type { Theme } from '@sinoui/theme';
 import React from 'react';
-import useFormControlContext from '../FormControl/useFormControlContext';
+import useFormControlContext from './useFormControlContext';
 import { removeUndefinedProperties } from '../utils/objects';
 import type FormLabelProps from './FormLabelProps';
 import floatingLabelCss from './floatingLabelCss';

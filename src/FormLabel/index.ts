@@ -1,3 +1,3 @@
-import FormLabel from './FormLabel';
+import { FormLabel } from '../FormControl';
 
 export default FormLabel;
