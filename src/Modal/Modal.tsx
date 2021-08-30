@@ -121,9 +121,9 @@ export interface Props {
   className?: string;
 }
 
-const defaultRenderBackdrop = (props: RenderModalBackdropProps) => {
-  return <Backdrop {...props} />;
-};
+const defaultRenderBackdrop = (props: RenderModalBackdropProps) => (
+  <Backdrop {...props} />
+);
 
 /**
  * 模态框。
@@ -140,200 +140,204 @@ const defaultRenderBackdrop = (props: RenderModalBackdropProps) => {
  * afterEach(modalConfig.reset);
  * ```
  */
-const Modal = React.forwardRef<HTMLDivElement, Props>(function Modal(
-  {
-    open,
-    onClose,
-    onRequestClose,
-    children,
-    container,
-    center,
-    backdrop = true,
-    backdropClick = true,
-    backdropOpacity,
-    onBackdropClick,
-    BackdropProps,
-    renderBackdrop = defaultRenderBackdrop,
-    keyboard = true,
-    onEscapeKeydown,
-    autoFocus = true,
-    enforceFocus = true,
-    scrollLock = true,
-    modalManager = ModalManager.defaultModalManager(),
-    enablePortal = modalConfig.enablePortal,
-    ...rest
+const Modal = React.forwardRef<HTMLDivElement, Props>(
+  (
+    {
+      open,
+      onClose,
+      onRequestClose,
+      children,
+      container,
+      center,
+      backdrop = true,
+      backdropClick = true,
+      backdropOpacity,
+      onBackdropClick,
+      BackdropProps,
+      renderBackdrop = defaultRenderBackdrop,
+      keyboard = true,
+      onEscapeKeydown,
+      autoFocus = true,
+      enforceFocus = true,
+      scrollLock = true,
+      modalManager = ModalManager.defaultModalManager(),
+      enablePortal = modalConfig.enablePortal,
+      ...rest
+    },
+    ref,
+  ) => {
+    const containerElement = getContainerElement(container);
+    const hasTransition = 'in' in children.props;
+    const [exited, setExited] = useState(!open);
+
+    const modalNodeRef = useRef<HTMLDivElement>(null);
+    const modalContentRef = useRef<HTMLDivElement>(null);
+    const handleModalNodeRef = useMultiRefs(modalNodeRef, ref);
+    const handleModalContentRef = useMultiRefs(
+      modalContentRef,
+      (children as any).ref,
+    );
+    const isShowModal = open || (!open && hasTransition && !exited);
+    const prevOpenRef = useRef<boolean>(false);
+
+    useEffect(() => {
+      prevOpenRef.current = open;
+    }, [open]);
+
+    useEffect(() => {
+      const modalNode = modalNodeRef.current;
+      const modalContent = modalContentRef.current;
+      if (!isShowModal || !modalNode || !modalContent) {
+        return undefined;
+      }
+      // 在展现模态框时添加
+      modalManager.add({
+        node: modalNode,
+        content: modalContent,
+        container: containerElement,
+        autoFocus,
+        enforceFocus,
+      });
+      // 在隐藏或者卸载模态框时移除
+      return () => modalManager.remove(modalNode);
+    }, [autoFocus, containerElement, enforceFocus, isShowModal, modalManager]);
+
+    useEffect(() => {
+      if (!isShowModal || !containerElement || !scrollLock) {
+        return undefined;
+      }
+      return lockScroll(containerElement); // 注意，lockScroll函数返回了解除滚动锁定的回调函数。这里必须使用 return。
+    }, [containerElement, isShowModal, scrollLock]);
+
+    useEffect(() => {
+      const modalNode = modalNodeRef.current;
+      if (!isShowModal || !containerElement || !modalNode) {
+        return undefined;
+      }
+      return ariaHiddenModal(modalNode, containerElement);
+    }, [containerElement, isShowModal]);
+
+    /**
+     * 处理点击遮罩层的点击事件
+     *
+     * @param event 点击事件
+     */
+    const handleBackdropClick = (event: React.MouseEvent<HTMLElement>) => {
+      if (event.target !== event.currentTarget) {
+        return;
+      }
+      if (onClose && backdropClick) {
+        event.stopPropagation();
+        onClose('backdropClick');
+      }
+      if (onRequestClose && backdropClick) {
+        event.stopPropagation();
+        onRequestClose(event as any, 'backdropClick');
+      }
+      if (onBackdropClick) {
+        onBackdropClick(event);
+      }
+    };
+
+    /**
+     * 处理进场动画事件
+     */
+    const handleEnter = () => {
+      setExited(false);
+    };
+
+    /**
+     * 处理退场动画结束事件
+     */
+    const handleExited = () => {
+      setExited(true);
+    };
+
+    /**
+     * 处理键盘按下事件
+     *
+     * @param event 键盘事件
+     */
+    const handleKeydown = (event: React.KeyboardEvent) => {
+      const { key } = event;
+      if (key !== 'Escape') {
+        return;
+      }
+
+      if (onEscapeKeydown) {
+        onEscapeKeydown(event);
+      }
+
+      if (keyboard && onClose) {
+        event.stopPropagation();
+        onClose('escapeKeydown');
+      }
+
+      if (keyboard && onRequestClose) {
+        event.stopPropagation();
+        onRequestClose(event as any, 'escapeKeydown');
+      }
+    };
+
+    if (!isShowModal) {
+      return null;
+    }
+
+    /**
+     * 点击Modal整体
+     */
+    const onContainerClick = (event: React.MouseEvent<HTMLElement>) => {
+      event.stopPropagation();
+    };
+
+    const childProps: Record<string, any> = {
+      ref: handleModalContentRef,
+      'aria-modal': 'true',
+    };
+
+    if (!('tabIndex' in children.props)) {
+      childProps.tabIndex = -1;
+    }
+
+    if (hasTransition) {
+      childProps.onEnter = createChainFunction(
+        children.props.onEnter,
+        handleEnter,
+      );
+      childProps.onExited = createChainFunction(
+        children.props.onExited,
+        handleExited,
+      );
+    }
+
+    const modal = (
+      <ModalWrapper
+        data-sinoui-id="modal"
+        $center={center}
+        onKeyDown={handleKeydown}
+        ref={handleModalNodeRef}
+        onClick={onContainerClick}
+        {...rest}
+      >
+        {backdrop
+          ? renderBackdrop({
+              open,
+              zIndex: -1,
+              onClick: handleBackdropClick,
+              opacity: backdropOpacity,
+              'data-testid': 'sinoui-modal-backdrop',
+              'aria-hidden': 'true',
+              ...BackdropProps,
+            })
+          : null}
+        {React.cloneElement(children, childProps)}
+      </ModalWrapper>
+    );
+
+    return enablePortal
+      ? ReactDOM.createPortal(modal, containerElement)
+      : modal;
   },
-  ref,
-) {
-  const containerElement = getContainerElement(container);
-  const hasTransition = 'in' in children.props;
-  const [exited, setExited] = useState(!open);
-
-  const modalNodeRef = useRef<HTMLDivElement>(null);
-  const modalContentRef = useRef<HTMLDivElement>(null);
-  const handleModalNodeRef = useMultiRefs(modalNodeRef, ref);
-  const handleModalContentRef = useMultiRefs(
-    modalContentRef,
-    (children as any).ref,
-  );
-  const isShowModal = open || (!open && hasTransition && !exited);
-  const prevOpenRef = useRef<boolean>(false);
-
-  useEffect(() => {
-    prevOpenRef.current = open;
-  }, [open]);
-
-  useEffect(() => {
-    const modalNode = modalNodeRef.current;
-    const modalContent = modalContentRef.current;
-    if (!isShowModal || !modalNode || !modalContent) {
-      return undefined;
-    }
-    // 在展现模态框时添加
-    modalManager.add({
-      node: modalNode,
-      content: modalContent,
-      container: containerElement,
-      autoFocus,
-      enforceFocus,
-    });
-    // 在隐藏或者卸载模态框时移除
-    return () => modalManager.remove(modalNode);
-  }, [autoFocus, containerElement, enforceFocus, isShowModal, modalManager]);
-
-  useEffect(() => {
-    if (!isShowModal || !containerElement || !scrollLock) {
-      return undefined;
-    }
-    return lockScroll(containerElement); // 注意，lockScroll函数返回了解除滚动锁定的回调函数。这里必须使用 return。
-  }, [containerElement, isShowModal, scrollLock]);
-
-  useEffect(() => {
-    const modalNode = modalNodeRef.current;
-    if (!isShowModal || !containerElement || !modalNode) {
-      return undefined;
-    }
-    return ariaHiddenModal(modalNode, containerElement);
-  }, [containerElement, isShowModal]);
-
-  /**
-   * 处理点击遮罩层的点击事件
-   *
-   * @param event 点击事件
-   */
-  const handleBackdropClick = (event: React.MouseEvent<HTMLElement>) => {
-    if (event.target !== event.currentTarget) {
-      return;
-    }
-    if (onClose && backdropClick) {
-      event.stopPropagation();
-      onClose('backdropClick');
-    }
-    if (onRequestClose && backdropClick) {
-      event.stopPropagation();
-      onRequestClose(event as any, 'backdropClick');
-    }
-    if (onBackdropClick) {
-      onBackdropClick(event);
-    }
-  };
-
-  /**
-   * 处理进场动画事件
-   */
-  const handleEnter = () => {
-    setExited(false);
-  };
-
-  /**
-   * 处理退场动画结束事件
-   */
-  const handleExited = () => {
-    setExited(true);
-  };
-
-  /**
-   * 处理键盘按下事件
-   *
-   * @param event 键盘事件
-   */
-  const handleKeydown = (event: React.KeyboardEvent) => {
-    const { key } = event;
-    if (key !== 'Escape') {
-      return;
-    }
-
-    if (onEscapeKeydown) {
-      onEscapeKeydown(event);
-    }
-
-    if (keyboard && onClose) {
-      event.stopPropagation();
-      onClose('escapeKeydown');
-    }
-
-    if (keyboard && onRequestClose) {
-      event.stopPropagation();
-      onRequestClose(event as any, 'escapeKeydown');
-    }
-  };
-
-  if (!isShowModal) {
-    return null;
-  }
-
-  /**
-   * 点击Modal整体
-   */
-  const onContainerClick = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-  };
-
-  const childProps: Record<string, any> = {
-    ref: handleModalContentRef,
-    'aria-modal': 'true',
-  };
-
-  if (!('tabIndex' in children.props)) {
-    childProps.tabIndex = -1;
-  }
-
-  if (hasTransition) {
-    childProps.onEnter = createChainFunction(
-      children.props.onEnter,
-      handleEnter,
-    );
-    childProps.onExited = createChainFunction(
-      children.props.onExited,
-      handleExited,
-    );
-  }
-
-  const modal = (
-    <ModalWrapper
-      data-sinoui-id="modal"
-      $center={center}
-      onKeyDown={handleKeydown}
-      ref={handleModalNodeRef}
-      onClick={onContainerClick}
-      {...rest}
-    >
-      {backdrop
-        ? renderBackdrop({
-            open,
-            zIndex: -1,
-            onClick: handleBackdropClick,
-            opacity: backdropOpacity,
-            'data-testid': 'sinoui-modal-backdrop',
-            'aria-hidden': 'true',
-            ...BackdropProps,
-          })
-        : null}
-      {React.cloneElement(children, childProps)}
-    </ModalWrapper>
-  );
-
-  return enablePortal ? ReactDOM.createPortal(modal, containerElement) : modal;
-});
+);
 
 export default Modal;

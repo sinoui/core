@@ -5,6 +5,8 @@ import contains from 'dom-helpers/contains';
 const isHTMLElement = (e: Node | null): e is HTMLElement =>
   !!e && 'parentElement' in e;
 
+const isWindow = typeof window !== 'undefined';
+
 /**
  * 判断指定元素是否在模态框中
  *
@@ -87,12 +89,15 @@ export default class ModalManager {
 
   constructor() {
     this.modals = [];
-    this.activeElementOutModal = activeElement();
+
+    this.activeElementOutModal = isWindow ? activeElement() : null;
     this.activeElementsInModals = new WeakMap();
     this.unmountCallbacksOfModals = new WeakMap();
     this.unmountCallbacks = [];
 
-    this.listenGlobalFocus();
+    if (isWindow) {
+      this.listenGlobalFocus();
+    }
   }
 
   private static _defaultModalManager?: ModalManager;
