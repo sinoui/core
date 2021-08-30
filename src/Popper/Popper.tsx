@@ -1,7 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, {
   useRef,
-  useLayoutEffect,
   useState,
   useCallback,
   useEffect,
@@ -15,6 +14,7 @@ import type { ContainerElement } from '../utils/getContainerElement';
 import getContainerElement from '../utils/getContainerElement';
 import useMultiRefs from '../utils/useMultiRefs';
 import ModalManager from '../Modal/ModalManager';
+import useEnhancedEffect from '../utils/useEnhancedEffect';
 
 interface TransitionProps {
   in: boolean;
@@ -93,138 +93,145 @@ const DEFAULT_STYLE: React.CSSProperties = {
  *
  * 此组件封装的是[popper.js](https://popper.js.org)，将包含的内容以弹出的方式定位到指定的相对位置。
  */
-const Popper = React.forwardRef<HTMLDivElement, Props>(function Popper(
-  {
-    open,
-    children,
-    referenceElement,
-    placement = 'bottom',
-    container,
-    portal = true,
-    popperRef: popperRefProp,
-    modifiers,
-    popperOptions,
-    style,
-    modalManager = ModalManager.defaultModalManager(),
-    autoFocus = false,
-    enforceFocus = false,
-    zIndex: zIndexProp,
-    ...rest
-  },
-  ref,
-) {
-  const tooltipRef = useRef<HTMLDivElement | null>(null);
-  const handleTooltipRef = useMultiRefs(tooltipRef, ref);
-  const popperRef = useRef<Instance | null>(null);
-  const handlePopperRef = useMultiRefs(popperRef, popperRefProp);
-  const [exited, setExited] = useState(!open);
-  const transition =
-    React.isValidElement(children) && children.props.in != null;
-  const isShow = open || (transition && !exited);
-  const theme = useTheme();
-  const zIndex = portal ? zIndexProp ?? theme?.zIndex?.modal : zIndexProp;
-  const computedStyle = useMemo(
-    () => ({
-      zIndex,
-      ...DEFAULT_STYLE,
-      ...style,
-    }),
-    [zIndex, style],
-  );
-  const containerElement = getContainerElement(container);
+const Popper = React.forwardRef<HTMLDivElement, Props>(
+  (
+    {
+      open,
+      children,
+      referenceElement,
+      placement = 'bottom',
+      container,
+      portal = true,
+      popperRef: popperRefProp,
+      modifiers,
+      popperOptions,
+      style,
+      modalManager = ModalManager.defaultModalManager(),
+      autoFocus = false,
+      enforceFocus = false,
+      zIndex: zIndexProp,
+      ...rest
+    },
+    ref,
+  ) => {
+    const tooltipRef = useRef<HTMLDivElement | null>(null);
+    const handleTooltipRef = useMultiRefs(tooltipRef, ref);
+    const popperRef = useRef<Instance | null>(null);
+    const handlePopperRef = useMultiRefs(popperRef, popperRefProp);
+    const [exited, setExited] = useState(!open);
+    const transition =
+      React.isValidElement(children) && children.props.in != null;
+    const isShow = open || (transition && !exited);
+    const theme = useTheme();
+    const zIndex = portal ? zIndexProp ?? theme?.zIndex?.modal : zIndexProp;
+    const computedStyle = useMemo(
+      () => ({
+        zIndex,
+        ...DEFAULT_STYLE,
+        ...style,
+      }),
+      [zIndex, style],
+    );
+    const containerElement = getContainerElement(container);
 
-  useLayoutEffect(() => {
-    const tooltip = tooltipRef.current;
-    const reference = getContainerElement(referenceElement);
-    if (isShow && tooltip && reference) {
-      const popper = createPopper(reference, tooltip, {
-        placement,
-        modifiers: modifiers ?? [],
-        ...popperOptions,
-      });
-      handlePopperRef(popper);
-      return () => {
-        popper.destroy();
-        handlePopperRef(null);
-      };
-    }
-    return undefined;
-  }, [
-    handlePopperRef,
-    isShow,
-    modifiers,
-    placement,
-    popperOptions,
-    referenceElement,
-  ]);
-
-  useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    popperRef.current?.update();
-  });
-
-  useEffect(() => {
-    const tooltip = tooltipRef.current;
-    if (!isShow || !portal || !tooltip) {
+    useEnhancedEffect(() => {
+      const tooltip = tooltipRef.current;
+      const reference = getContainerElement(referenceElement);
+      if (isShow && tooltip && reference) {
+        const popper = createPopper(reference, tooltip, {
+          placement,
+          modifiers: modifiers ?? [],
+          ...popperOptions,
+        });
+        handlePopperRef(popper);
+        return () => {
+          popper.destroy();
+          handlePopperRef(null);
+        };
+      }
       return undefined;
-    }
-    modalManager.add({
-      node: tooltip,
-      content: tooltip,
-      container: containerElement,
-      autoFocus,
-      enforceFocus,
+    }, [
+      handlePopperRef,
+      isShow,
+      modifiers,
+      placement,
+      popperOptions,
+      referenceElement,
+    ]);
+
+    useEffect(() => {
+      // eslint-disable-next-line no-unused-expressions
+      popperRef.current?.update();
     });
-    return () => modalManager.remove(tooltip);
-  }, [
-    autoFocus,
-    containerElement,
-    enforceFocus,
-    isShow,
-    modalManager,
-    open,
-    portal,
-  ]);
 
-  const handleEnter = useCallback(() => {
-    setExited(false);
-  }, []);
+    useEffect(() => {
+      const tooltip = tooltipRef.current;
+      if (!isShow || !portal || !tooltip) {
+        return undefined;
+      }
+      modalManager.add({
+        node: tooltip,
+        content: tooltip,
+        container: containerElement,
+        autoFocus,
+        enforceFocus,
+      });
+      return () => modalManager.remove(tooltip);
+    }, [
+      autoFocus,
+      containerElement,
+      enforceFocus,
+      isShow,
+      modalManager,
+      open,
+      portal,
+    ]);
 
-  const handleEntered = useCallback(() => {
-    // 修复可能动画结束后提示内容的尺寸发生变化的情况。
-    // eslint-disable-next-line no-unused-expressions
-    popperRef.current?.update();
-  }, []);
+    const handleEnter = useCallback(() => {
+      setExited(false);
+    }, []);
 
-  const handleExited = useCallback(() => {
-    setExited(true);
-  }, []);
+    const handleEntered = useCallback(() => {
+      // 修复可能动画结束后提示内容的尺寸发生变化的情况。
+      // eslint-disable-next-line no-unused-expressions
+      popperRef.current?.update();
+    }, []);
 
-  if (!isShow) {
-    return null;
-  }
+    const handleExited = useCallback(() => {
+      setExited(true);
+    }, []);
 
-  const childProps: any = {
-    in: open,
-  };
+    if (!isShow) {
+      return null;
+    }
 
-  if (transition) {
-    childProps.onEnter = handleEnter;
-    childProps.onEntered = handleEntered;
-    childProps.onExited = handleExited;
-  }
+    const childProps: any = {
+      in: open,
+    };
 
-  const content = (
-    <div ref={handleTooltipRef} role="tooltip" style={computedStyle} {...rest}>
-      {typeof children === 'function'
-        ? children(childProps)
-        : React.isValidElement(children) && typeof children.type !== 'string'
-        ? React.cloneElement(children, childProps)
-        : children}
-    </div>
-  );
+    if (transition) {
+      childProps.onEnter = handleEnter;
+      childProps.onEntered = handleEntered;
+      childProps.onExited = handleExited;
+    }
 
-  return portal ? ReactDOM.createPortal(content, containerElement) : content;
-});
+    const content = (
+      <div
+        ref={handleTooltipRef}
+        role="tooltip"
+        style={computedStyle}
+        {...rest}
+      >
+        {typeof children === 'function'
+          ? children(childProps)
+          : React.isValidElement(children) && typeof children.type !== 'string'
+          ? React.cloneElement(children, childProps)
+          : children}
+      </div>
+    );
+
+    return portal ? ReactDOM.createPortal(content, containerElement) : content;
+  },
+);
 
 export default Popper;

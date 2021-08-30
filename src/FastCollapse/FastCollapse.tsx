@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import React, { useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Transition } from 'react-transition-group';
 import styled from 'styled-components';
 import transitions from '@sinoui/theme/transitions';
@@ -9,6 +9,7 @@ import type BaseTransitionProps from '../transitions/BaseTransitionProps';
 import getDuration from '../transitions/getDuration';
 import type { TransitionTimeout } from '../transitions/getDuration';
 import useMultiRefs from '../utils/useMultiRefs';
+import useEnhancedEffect from '../utils/useEnhancedEffect';
 
 interface CollapseWrapperProps {
   $hidden?: boolean;
@@ -54,10 +55,7 @@ type Props = Omit<BaseTransitionProps, 'timeout'> & {
  *
  * 实现思路参考： https://developers.google.com/web/updates/2017/03/performant-expand-and-collapse
  */
-const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
-  props,
-  ref,
-) {
+const Collapse = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     children,
     timeout = transitions.duration.standard,
@@ -140,11 +138,9 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
     timerRef.current = setTimeout(done, autoTimeout.current);
   };
 
-  useEffect(() => {
-    return () => window.clearTimeout(timerRef.current);
-  }, []);
+  useEffect(() => () => window.clearTimeout(timerRef.current), []);
 
-  useLayoutEffect(() => {
+  useEnhancedEffect(() => {
     if (!inRef.current) {
       const node = contentRef.current;
       const content = wrapperRef.current;

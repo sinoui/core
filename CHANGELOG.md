@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.0.8 - 2021.8.30
+
+- fix: 将 useLayoutEffect 替换为 useEnhancedEffect，解决无法在 node.js 环境下执行类似 SSR 任务的缺陷
+
 ## v1.0.7 - 2021.8.30
 
 - fix(OutlinedInput): 修复在 Node.js 环境下无法执行类似 SSR 任务的缺陷

@@ -1,6 +1,7 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import classNames from 'classnames';
+import useEnhancedEffect from '@sinoui/core/utils/useEnhancedEffect';
 import YearItem from './YearItem';
 import {
   COLUMNS_OF_YEAR_PC,
@@ -76,9 +77,7 @@ export const calcStartYear = (
   currentYear: number,
   columns: number,
   size = 100,
-) => {
-  return currentYear - (currentYear % columns) - (size - (size % columns));
-};
+) => currentYear - (currentYear % columns) - (size - (size % columns));
 
 /**
  * 选择年的视图
@@ -114,7 +113,7 @@ export default function YearSelectView(props: Props) {
     }
   };
 
-  useLayoutEffect(() => {
+  useEnhancedEffect(() => {
     const selectedYearNode = selectedYearNodeRef.current;
     if (selectedYearNode) {
       scrollIntoView(selectedYearNode, {
