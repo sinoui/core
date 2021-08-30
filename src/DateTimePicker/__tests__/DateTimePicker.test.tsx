@@ -374,7 +374,9 @@ describe('移动端', () => {
     act(() => {
       fireEvent.click(textInput);
     });
-    fireEvent.click(getByText(time));
+    act(() => {
+      fireEvent.click(getByText(time));
+    });
 
     expect(getByDisplayValue(`${now.getHours()}`)).toBeInTheDocument();
     expect(getByDisplayValue(`${now.getMinutes()}`)).toBeInTheDocument();

@@ -7,6 +7,8 @@ export type ContainerElement<T = HTMLElement> =
   | undefined
   | null;
 
+const isWindow = typeof window !== 'undefined';
+
 /**
  * 获取容器元素
  *
@@ -15,8 +17,11 @@ export type ContainerElement<T = HTMLElement> =
  */
 export default function getContainerElement<T = HTMLElement>(
   container: ContainerElement<T>,
-  defaultElement = document.body as any,
+  defaultElement = (isWindow ? document.body : undefined) as any,
 ): T {
+  if (!isWindow) {
+    return defaultElement;
+  }
   if (isRefObject(container)) {
     return container.current ?? defaultElement;
   }
