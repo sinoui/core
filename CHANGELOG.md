@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.0.7 - 2021.8.30
+
+- fix(OutlinedInput): 修复在 Node.js 环境下无法执行类似 SSR 任务的缺陷
+
 ## v1.0.6 - 2021.8.30
 
 - fix(FormLabel): 调整 Lable 行高以修复 Label 中包含`y | g`时显示不全的问题

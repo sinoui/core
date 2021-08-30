@@ -115,15 +115,23 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
   }
 `;
 
-const erd = elementResizeDetectorMaker({
-  strategy: 'scroll',
-});
+let erd: elementResizeDetectorMaker.Erd | undefined;
+
+function getErd() {
+  if (!erd) {
+    erd = elementResizeDetectorMaker({
+      strategy: 'scroll',
+    });
+  }
+
+  return erd;
+}
 
 /**
  * 轮廓输入框
  */
 const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
-  function OutlineInput(props: OutlinedInputProps, ref) {
+  (props: OutlinedInputProps, ref) => {
     const { notched, labelRef, dense, focused, noLabel, ...other } = props;
     const [notchWidth, setNotchWidth] = useState(0);
 
@@ -136,10 +144,10 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
           setNotchWidth(label.clientWidth * 0.75);
         });
 
-        erd.listenTo(label, listener);
+        getErd().listenTo(label, listener);
 
         return () => {
-          erd.removeListener(label, listener);
+          getErd().removeListener(label, listener);
         };
       }
       return undefined;
