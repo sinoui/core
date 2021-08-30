@@ -490,7 +490,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       用户名
     </label>
@@ -511,7 +511,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--filled"
   >
     <label
-      className="c5 sinoui-form-label"
+      className="c5 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       用户名
     </label>
@@ -535,7 +535,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink"
   >
     <label
-      className="c7 sinoui-form-label"
+      className="c7 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--filled sinoui-form-label--required-is-after"
     >
       用户名
     </label>
@@ -934,7 +934,7 @@ label ~ .c3 {
     disabled={true}
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       disabled={true}
     >
       用户名
@@ -965,7 +965,7 @@ label ~ .c3 {
     disabled={true}
   >
     <label
-      className="c6 sinoui-form-label"
+      className="c6 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       disabled={true}
     >
       用户名
@@ -1528,7 +1528,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--shrink"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--filled sinoui-form-label--required-is-after"
     >
       金额
     </label>
@@ -1560,7 +1560,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--shrink"
   >
     <label
-      className="c8 sinoui-form-label"
+      className="c8 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--filled sinoui-form-label--required-is-after"
     >
       金额
     </label>
@@ -1595,7 +1595,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--outlined sinoui-text-input--shrink"
   >
     <label
-      className="c10 sinoui-form-label"
+      className="c10 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--filled sinoui-form-label--required-is-after"
     >
       金额
     </label>
@@ -2175,7 +2175,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       重量
     </label>
@@ -2207,7 +2207,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--filled"
   >
     <label
-      className="c8 sinoui-form-label"
+      className="c8 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       重量
     </label>
@@ -2242,7 +2242,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--outlined"
   >
     <label
-      className="c10 sinoui-form-label"
+      className="c10 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       重量
     </label>
@@ -2671,7 +2671,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       用户名
     </label>
@@ -2697,7 +2697,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--filled"
   >
     <label
-      className="c6 sinoui-form-label"
+      className="c6 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       用户名
     </label>
@@ -3111,7 +3111,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--required sinoui-text-input--error"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       required={true}
     >
       用户名
@@ -3139,7 +3139,7 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--filled sinoui-text-input--required sinoui-text-input--error"
   >
     <label
-      className="c6 sinoui-form-label"
+      className="c6 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       required={true}
     >
       用户名

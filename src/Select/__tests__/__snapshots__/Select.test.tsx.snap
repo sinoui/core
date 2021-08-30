@@ -663,7 +663,7 @@ label ~ .c3 {
     className="c0 sinoui-select sinoui-auto-complete sinoui-auto-complete--multiple"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       Required
     </label>
@@ -718,7 +718,7 @@ label ~ .c3 {
     className="c0 sinoui-select sinoui-select--filled sinoui-auto-complete"
   >
     <label
-      className="c12 sinoui-form-label"
+      className="c12 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       Required
     </label>
@@ -776,7 +776,7 @@ label ~ .c3 {
     className="c0 sinoui-select sinoui-select--outlined sinoui-auto-complete"
   >
     <label
-      className="c14 sinoui-form-label"
+      className="c14 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       Required
     </label>
@@ -1249,7 +1249,7 @@ label ~ .c3 {
   disabled={true}
 >
   <label
-    className="c1 sinoui-form-label"
+    className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     disabled={true}
   >
     Required

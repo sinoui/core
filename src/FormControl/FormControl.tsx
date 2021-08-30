@@ -9,6 +9,16 @@ import FormLabel from './FormLabel';
 import FormControlContext from './FormControlContext';
 
 /**
+ * 判断叶子节点是否只有一个且包含 placeholder 属性值
+ *
+ * @param children 叶子节点
+ * @returns 如果叶子节点包含 placeholder 属性，则返回 true；否则返回 false
+ */
+const containsPlaceholder = (children?: React.ReactNode) =>
+  React.Children.count(children) === 1 &&
+  !!(React.Children.only(children) as any)?.props?.placeholder;
+
+/**
  * 表单控件组件
  */
 const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
@@ -39,9 +49,10 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
     const focused = focusedProp ?? _focused;
     const onFocus = useCallback(() => setFocused(true), [setFocused]);
     const onBlur = useCallback(() => setFocused(false), [setFocused]);
+    const childrenContainsPlaceholder = containsPlaceholder(children);
 
     const childContext = {
-      filled,
+      filled: childrenContainsPlaceholder || filled,
       id,
       variant,
       labelLayout,
@@ -76,7 +87,7 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
         >
           <FormLabel ref={labelRef}>{props.label}</FormLabel>
           <div className="sinoui-form-item__content">
-            {props.children}
+            {children}
             <HelperLine>
               {helperText && !error && <HelperText>{helperText}</HelperText>}
               {error && <HelperText error>{error}</HelperText>}

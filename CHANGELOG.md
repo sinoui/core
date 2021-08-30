@@ -1,5 +1,25 @@
 # 版本变更说明
 
+## 1.0.4 - 2021.8.30
+
+- fix(FormLabel): 修复在 FormControl 中的 TextInput 有 placeholder 属性，而标签没有上浮的缺陷
+- improve(FormLabel): [改进 FormLabel 的 className](#改进-formlabel-的-classname)，优化样式定制的开发体验
+
+### 改进 FormLabel 的 className
+
+改进后的 `FormLabel` 的 `className` 有：
+
+- `sinoui-form-label` （从一开始就有）
+- `sinoui-form-label--variant-outlined` - 与轮廓输入框组合使用时
+- `sinoui-form-label--variant-filled` - 与填充输入框组合使用时
+- `sinoui-form-label--variant-standard` - 与标准输入框组合使用时
+- `sinoui-form-label--layout-floating` - 标签采用浮动布局
+- `sinoui-form-label--layout-shrink` - 标签采用收缩布局（固定在上方）
+- `sinoui-form-label--layout-standard` - 标签采用标准布局（不缩放，不浮动）
+- `sinoui-form-label--focused` - 在表单控件获取到焦点时
+- `sinoui-form-label--filled` - 在表单控件有填充值时（有输入值或者 placeholder）
+- `sinoui-form-label--required-is-after` - 必填符号在标签的右侧显示（水平布局时）
+
 ## 1.0.3 - 2021.8.19
 
 - fix: 修复`Backdrop`无法显示 children 的缺陷

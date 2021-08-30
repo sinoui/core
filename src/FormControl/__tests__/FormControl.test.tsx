@@ -217,3 +217,17 @@ it('生成上下文', () => {
 
   expect(context?.focused).toBe(false);
 });
+
+it('有placeholder时，标签应该是上浮的', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl data-testid="formcontrol" layout="horizontal" id="input_1">
+        <input placeholder="这是提示语" />
+      </FormControl>
+    </ThemeProvider>,
+  );
+
+  const label = getByTestId('formcontrol').querySelector('.sinoui-form-label');
+
+  expect(label).toHaveClass('sinoui-form-label--filled');
+});

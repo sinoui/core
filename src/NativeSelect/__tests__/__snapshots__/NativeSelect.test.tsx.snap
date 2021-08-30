@@ -563,7 +563,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       标准选择框
     </label>
@@ -629,7 +629,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--filled"
   >
     <label
-      className="c10 sinoui-form-label"
+      className="c10 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       填充模式选择框
     </label>
@@ -698,7 +698,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--outlined"
   >
     <label
-      className="c12 sinoui-form-label"
+      className="c12 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       框模式选择框
     </label>
@@ -1325,7 +1325,7 @@ label ~ .c3 {
     disabled={true}
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       disabled={true}
     >
       标准选择框
@@ -1395,7 +1395,7 @@ label ~ .c3 {
     disabled={true}
   >
     <label
-      className="c10 sinoui-form-label"
+      className="c10 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       disabled={true}
     >
       填充模式选择框
@@ -1468,7 +1468,7 @@ label ~ .c3 {
     disabled={true}
   >
     <label
-      className="c12 sinoui-form-label"
+      className="c12 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       disabled={true}
     >
       框模式选择框
@@ -2748,7 +2748,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--shrink"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--filled sinoui-form-label--required-is-after"
     >
       标准选择框
     </label>
@@ -2798,7 +2798,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--filled sinoui-native-select--shrink"
   >
     <label
-      className="c7 sinoui-form-label"
+      className="c7 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--filled sinoui-form-label--required-is-after"
     >
       填充模式选择框
     </label>
@@ -2851,7 +2851,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--shrink"
   >
     <label
-      className="c9 sinoui-form-label"
+      className="c9 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--filled sinoui-form-label--required-is-after"
     >
       框模式选择框
     </label>
@@ -3493,7 +3493,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       标准选择框
     </label>
@@ -3564,7 +3564,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--filled"
   >
     <label
-      className="c11 sinoui-form-label"
+      className="c11 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       填充模式选择框
     </label>
@@ -3638,7 +3638,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--outlined"
   >
     <label
-      className="c13 sinoui-form-label"
+      className="c13 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       框模式选择框
     </label>
@@ -4312,7 +4312,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--required sinoui-native-select--error"
   >
     <label
-      className="c1 sinoui-form-label"
+      className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       required={true}
     >
       标准选择框
@@ -4385,7 +4385,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--filled sinoui-native-select--required sinoui-native-select--error"
   >
     <label
-      className="c11 sinoui-form-label"
+      className="c11 sinoui-form-label sinoui-form-label--variant-filled sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       required={true}
     >
       填充模式选择框
@@ -4461,7 +4461,7 @@ label ~ .c3 {
     className="c0 sinoui-native-select sinoui-native-select--outlined sinoui-native-select--required sinoui-native-select--error"
   >
     <label
-      className="c13 sinoui-form-label"
+      className="c13 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
       required={true}
     >
       框模式选择框

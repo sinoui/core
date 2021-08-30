@@ -114,7 +114,7 @@ exports[`水平布局 1`] = `
   data-testid="formcontrol"
 >
   <label
-    className="c1 sinoui-form-label"
+    className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-standard"
     htmlFor="input_1"
   />
   <div
@@ -254,7 +254,7 @@ exports[`水平布局FormLabel显示冒号 1`] = `
   data-testid="formcontrol"
 >
   <label
-    className="c1 sinoui-form-label"
+    className="c1 sinoui-form-label sinoui-form-label--variant-standard sinoui-form-label--layout-standard"
     htmlFor="input_1"
   >
     姓名

@@ -44,4 +44,12 @@ export default interface FormLabelProps {
    * 密集模式
    */
   dense?: boolean;
+  /**
+   * 指定标签指向的元素id
+   */
+  htmlFor?: string;
+  /**
+   * 是否显示冒号。默认为 false，即不显示冒号。
+   */
+  colon?: boolean;
 }
