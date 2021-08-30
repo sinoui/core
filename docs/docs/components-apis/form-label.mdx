@@ -21,3 +21,19 @@ title: FormLabel
 | className | string                               |            | 为根元素指定 css 类                                                                        |
 | style     | CSSProperties                        |            | 为根元素指定 css 样式                                                                      |
 | children  | React.ReactNode                      |            | 子元素                                                                                     |
+| htmlFor   | string \| undefined                  |            | 与标签绑定的表单元素 id                                                                    |
+
+## `className`
+
+`FormLabel` 组件有以下内置的 `className`：
+
+- `sinoui-form-label` - 表示表单标签
+- `sinoui-form-label--variant-outlined` - 与轮廓输入框组合使用时
+- `sinoui-form-label--variant-filled` - 与填充输入框组合使用时
+- `sinoui-form-label--variant-standard` - 与标准输入框组合使用时
+- `sinoui-form-label--layout-floating` - 标签采用浮动布局
+- `sinoui-form-label--layout-shrink` - 标签采用收缩布局（固定在上方）
+- `sinoui-form-label--layout-standard` - 标签采用标准布局（不缩放，不浮动）
+- `sinoui-form-label--focused` - 在表单控件获取到焦点时
+- `sinoui-form-label--filled` - 在表单控件有填充值时（有输入值或者 placeholder）
+- `sinoui-form-label--required-is-after` - 必填符号在标签的右侧显示（水平布局时）
