@@ -20,7 +20,7 @@ exports[`渲染三种模式下的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(0px,24px) scale(1);
   -ms-transform: translate(0px,24px) scale(1);
   transform: translate(0px,24px) scale(1);
@@ -50,7 +50,7 @@ exports[`渲染三种模式下的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(12px,20px) scale(1);
   -ms-transform: translate(12px,20px) scale(1);
   transform: translate(12px,20px) scale(1);
@@ -80,7 +80,7 @@ exports[`渲染三种模式下的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(14px,20px) scale(1);
   -ms-transform: translate(14px,20px) scale(1);
   transform: translate(14px,20px) scale(1);
@@ -801,7 +801,7 @@ exports[`渲染不可用的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(0px,24px) scale(1);
   -ms-transform: translate(0px,24px) scale(1);
   transform: translate(0px,24px) scale(1);
@@ -831,7 +831,7 @@ exports[`渲染不可用的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(12px,20px) scale(1);
   -ms-transform: translate(12px,20px) scale(1);
   transform: translate(12px,20px) scale(1);
@@ -861,7 +861,7 @@ exports[`渲染不可用的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(14px,20px) scale(1);
   -ms-transform: translate(14px,20px) scale(1);
   transform: translate(14px,20px) scale(1);
@@ -2245,7 +2245,7 @@ exports[`渲染多选选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(0px,1.5px) scale(0.75);
   -ms-transform: translate(0px,1.5px) scale(0.75);
   transform: translate(0px,1.5px) scale(0.75);
@@ -2275,7 +2275,7 @@ exports[`渲染多选选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(12px,9px) scale(0.75);
   -ms-transform: translate(12px,9px) scale(0.75);
   transform: translate(12px,9px) scale(0.75);
@@ -2305,7 +2305,7 @@ exports[`渲染多选选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(14px,-6px) scale(0.75);
   -ms-transform: translate(14px,-6px) scale(0.75);
   transform: translate(14px,-6px) scale(0.75);
@@ -2950,7 +2950,7 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(0px,24px) scale(1);
   -ms-transform: translate(0px,24px) scale(1);
   transform: translate(0px,24px) scale(1);
@@ -2980,7 +2980,7 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(12px,20px) scale(1);
   -ms-transform: translate(12px,20px) scale(1);
   transform: translate(12px,20px) scale(1);
@@ -3010,7 +3010,7 @@ exports[`渲染有辅助性文字的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(14px,20px) scale(1);
   -ms-transform: translate(14px,20px) scale(1);
   transform: translate(14px,20px) scale(1);
@@ -3758,7 +3758,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(0px,24px) scale(1);
   -ms-transform: translate(0px,24px) scale(1);
   transform: translate(0px,24px) scale(1);
@@ -3793,7 +3793,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(12px,20px) scale(1);
   -ms-transform: translate(12px,20px) scale(1);
   transform: translate(12px,20px) scale(1);
@@ -3828,7 +3828,7 @@ exports[`渲染有错误提示的选择框 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   -webkit-transform: translate(14px,20px) scale(1);
   -ms-transform: translate(14px,20px) scale(1);
   transform: translate(14px,20px) scale(1);

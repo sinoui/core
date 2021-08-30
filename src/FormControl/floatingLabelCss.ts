@@ -54,7 +54,7 @@ const floatingLabelCss = css`
   z-index: 1;
   pointer-events: none;
   transform-origin: top left;
-  line-height: 1.15;
+  line-height: 1.3;
   transform: translate(${getTranslateX}px, ${getTranslateY}px)
     scale(${getScale});
   will-change: transform;
