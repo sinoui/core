@@ -6,7 +6,8 @@
 export default function isEmptyValue(value?: any) {
   return (
     typeof value !== 'boolean' &&
-    typeof value !== 'number' &&
+    // eslint-disable-next-line no-restricted-globals
+    (typeof value !== 'number' || isNaN(value)) &&
     (!value || (Array.isArray(value) && value.length === 0))
   );
 }
