@@ -43,10 +43,7 @@ const reflow = (node: HTMLElement) => node.offsetTop;
 /**
  * 压缩元素的过渡效果。
  */
-const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
-  props,
-  ref,
-) {
+const Collapse = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     children,
     timeout = transitions.duration.standard,
@@ -132,12 +129,10 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>(function Collapse(
   };
 
   const addEndListener: any = (done: () => void) => {
-    timerRef.current = setTimeout(done, autoTimeout.current);
+    timerRef.current = setTimeout(done, autoTimeout.current) as any;
   };
 
-  useEffect(() => {
-    return () => window.clearTimeout(timerRef.current);
-  }, []);
+  useEffect(() => () => window.clearTimeout(timerRef.current), []);
 
   return (
     <Transition

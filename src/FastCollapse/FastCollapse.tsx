@@ -135,7 +135,7 @@ const Collapse = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   };
 
   const addEndListener: any = (done: () => void) => {
-    timerRef.current = setTimeout(done, autoTimeout.current);
+    timerRef.current = setTimeout(done, autoTimeout.current) as any;
   };
 
   useEffect(() => () => window.clearTimeout(timerRef.current), []);

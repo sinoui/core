@@ -30,7 +30,7 @@ const Grow = React.forwardRef<
   Omit<BaseTransitionProps, 'timeout'> & {
     timeout?: TransitionTimeout;
   }
->(function Grow(props, ref) {
+>((props, ref) => {
   const {
     in: inProp,
     children,
@@ -97,12 +97,10 @@ const Grow = React.forwardRef<
    */
   const addEndListener: any = (done: () => void) => {
     if (timeout === 'auto') {
-      timeoutRef.current = setTimeout(done, autoTimeout.current);
+      timeoutRef.current = setTimeout(done, autoTimeout.current) as any;
     }
   };
-  useEffect(() => {
-    return () => clearTimeout(timeoutRef.current);
-  }, []);
+  useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
   return (
     <Transition

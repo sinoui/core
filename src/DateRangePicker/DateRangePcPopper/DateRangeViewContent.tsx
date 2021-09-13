@@ -103,7 +103,7 @@ export default function DateRangeViewContent({
     clearTimeout(mouseLeaveTimeout.current);
     mouseLeaveTimeout.current = setTimeout(() => {
       setHoverDate(undefined);
-    }, 100);
+    }, 100) as any;
   };
 
   /**
