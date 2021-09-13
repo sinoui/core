@@ -3,6 +3,7 @@
 ## v1.0.11 - 2021.9.13
 
 - fix(FormControl): 修复没有指定 label 标签或者指定为 undefined、null 时却渲染出 label 元素的缺陷
+- fix(Select): 修复下拉选择框的鼠标样式错误
 
 ## v1.0.10 - 2021.8.30
 

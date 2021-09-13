@@ -71,9 +71,13 @@ export interface Props {
 const SelectInputLayout = styled.div`
   user-select: none;
   box-sizing: content-box;
-  cursor: inherit;
+  cursor: pointer;
   width: 0;
   ${singleLineTextCss}
+
+  .sinoui-select--disabled & {
+    cursor: default;
+  }
 `;
 
 /**
@@ -100,10 +104,7 @@ function parseItemsFromChildren(children: React.ReactNode): SelectItem[] {
 /**
  * 处理复选框内部逻辑的组件
  */
-export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
-  props,
-  ref,
-) {
+export default React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     autoFocus,
     children,
