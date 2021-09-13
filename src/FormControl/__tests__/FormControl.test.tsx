@@ -221,7 +221,12 @@ it('生成上下文', () => {
 it('有placeholder时，标签应该是上浮的', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <FormControl data-testid="formcontrol" layout="horizontal" id="input_1">
+      <FormControl
+        data-testid="formcontrol"
+        layout="horizontal"
+        id="input_1"
+        label="标签"
+      >
         <input placeholder="这是提示语" />
       </FormControl>
     </ThemeProvider>,
@@ -230,4 +235,18 @@ it('有placeholder时，标签应该是上浮的', () => {
   const label = getByTestId('formcontrol').querySelector('.sinoui-form-label');
 
   expect(label).toHaveClass('sinoui-form-label--filled');
+});
+
+it('不指定 label 属性则不渲染 label 元素', () => {
+  const { getByTestId } = render(
+    <ThemeProvider theme={defaultTheme}>
+      <FormControl data-testid="formcontrol">
+        <input />
+      </FormControl>
+    </ThemeProvider>,
+  );
+
+  const label = getByTestId('formcontrol').querySelector('.sinoui-form-label');
+
+  expect(label).toBeNull();
 });

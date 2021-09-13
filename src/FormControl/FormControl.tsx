@@ -85,7 +85,7 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
           colon={colon}
           {...rest}
         >
-          <FormLabel ref={labelRef}>{props.label}</FormLabel>
+          {props.label && <FormLabel ref={labelRef}>{props.label}</FormLabel>}
           <div className="sinoui-form-item__content">
             {children}
             <HelperLine>
