@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { createRef } from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';

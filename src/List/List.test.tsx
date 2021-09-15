@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
@@ -47,21 +50,15 @@ describe('List', () => {
       <ThemeProvider theme={defaultTheme}>
         <List>
           {listData.map((item) => (
-            <>
-              <ListItem
-                disabled={item % 3 === 0}
-                key={item}
-                onClick={testClick}
-              >
-                <ListItemText>item{item}</ListItemText>
-              </ListItem>
-            </>
+            <ListItem disabled={item % 3 === 0} key={item} onClick={testClick}>
+              <ListItemText>item{item}</ListItemText>
+            </ListItem>
           ))}
         </List>
       </ThemeProvider>,
     );
     const listItemEle = container.querySelectorAll('.sinoui-list-item');
-    listItemEle[1].focus();
+    (listItemEle[1] as any).focus();
     expect(listItemEle[1]).toHaveFocus();
 
     act(() => {
@@ -78,21 +75,15 @@ describe('List', () => {
       <ThemeProvider theme={defaultTheme}>
         <List>
           {listData.map((item) => (
-            <>
-              <ListItem
-                disabled={item % 3 === 0}
-                key={item}
-                onClick={testClick}
-              >
-                <ListItemText>item{item}</ListItemText>
-              </ListItem>
-            </>
+            <ListItem disabled={item % 3 === 0} key={item} onClick={testClick}>
+              <ListItemText>item{item}</ListItemText>
+            </ListItem>
           ))}
         </List>
       </ThemeProvider>,
     );
     const listItemEle = container.querySelectorAll('.sinoui-list-item');
-    listItemEle[0].focus();
+    (listItemEle[0] as any).focus();
     expect(listItemEle[0]).toHaveFocus();
 
     act(() => {

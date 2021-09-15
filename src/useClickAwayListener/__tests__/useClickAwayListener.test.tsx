@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import React, { useRef, createRef } from 'react';
 import { renderHook } from '@testing-library/react-hooks';

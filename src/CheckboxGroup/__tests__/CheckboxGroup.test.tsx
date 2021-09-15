@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import renderer, { act } from 'react-test-renderer';
 import '@testing-library/jest-dom';
@@ -191,10 +194,7 @@ describe('CheckboxGroup组件 快照测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <CheckboxGroup
-            onChange={(value) => console.log(value)}
-            value={['2', '3']}
-          >
+          <CheckboxGroup value={['2', '3']}>
             <Checkbox value="1">复选框1</Checkbox>
             <Checkbox value="2">复选框2</Checkbox>
             <Checkbox value="3">复选框3</Checkbox>
@@ -211,7 +211,6 @@ describe('CheckboxGroup组件 快照测试', () => {
       .create(
         <ThemeProvider theme={defaultTheme}>
           <CheckboxGroup
-            onChange={(value) => console.log(value)}
             items={[
               {
                 value: '1',
@@ -233,10 +232,7 @@ describe('CheckboxGroup组件 快照测试', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={defaultTheme}>
-          <CheckboxGroup
-            enableSelectAll
-            onChange={(value) => console.log(value)}
-          >
+          <CheckboxGroup enableSelectAll>
             <Checkbox value="1">复选框1</Checkbox>
             <Checkbox value="2">复选框2</Checkbox>
             <Checkbox value="3">复选框3</Checkbox>

@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 import { render, fireEvent, act, cleanup } from '@testing-library/react';
@@ -12,6 +15,19 @@ import formatTime from '../DateTimeMobileModal/formatTime';
 afterEach(cleanup);
 
 jest.useFakeTimers();
+
+jest.mock('react-transition-group', () => ({
+  Transition: ({ in: inProp, children }: any) =>
+    inProp ? (
+      <div className="test121">
+        {typeof children === 'function'
+          ? children('entered', {
+              style: {},
+            })
+          : children}
+      </div>
+    ) : null,
+}));
 
 describe('value', () => {
   it('显示指定日期时间', () => {

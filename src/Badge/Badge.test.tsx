@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, cleanup } from '@testing-library/react';
@@ -37,7 +40,7 @@ describe('Badge组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    expect(getByText('1')).toBeInTheDOM();
+    expect(getByText('1')).toBeInTheDocument();
   });
 
   it('指定封顶数值', () => {
@@ -49,7 +52,7 @@ describe('Badge组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    expect(getByText('99+')).toBeInTheDOM();
+    expect(getByText('99+')).toBeInTheDocument();
   });
 
   it('设置徽标的显示位置', () => {

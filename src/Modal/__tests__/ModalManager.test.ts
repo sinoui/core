@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /* eslint-disable no-unused-expressions */
 import { fireEvent } from '@testing-library/react';
 import ModalManager, { findParentModal } from '../ModalManager';

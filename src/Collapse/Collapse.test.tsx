@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -264,13 +267,11 @@ it('onExit, onExiting', () => {
 describe('快照测试', () => {
   it('展现', () => {
     const tree = create(
-      <React.StrictMode>
-        <ThemeProvider theme={defaultTheme}>
-          <Collapse in>
-            <div>测试</div>
-          </Collapse>
-        </ThemeProvider>
-      </React.StrictMode>,
+      <ThemeProvider theme={defaultTheme}>
+        <Collapse in>
+          <div>测试</div>
+        </Collapse>
+      </ThemeProvider>,
     ).toJSON();
 
     expect(tree).toMatchSnapshot();

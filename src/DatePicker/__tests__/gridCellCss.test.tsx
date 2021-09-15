@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import styled from 'styled-components';
 import { render, cleanup } from '@testing-library/react';

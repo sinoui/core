@@ -7,11 +7,13 @@ import 'jest-styled-components';
 import TooltipContent from '../TooltipContent';
 
 it('ToolTipContent', () => {
-  const tree = renderer.create(
-    <ThemeProvider theme={defaultTheme}>
-      <TooltipContent />
-    </ThemeProvider>,
-  ).toJSON;
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={defaultTheme}>
+        <TooltipContent />
+      </ThemeProvider>,
+    )
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });

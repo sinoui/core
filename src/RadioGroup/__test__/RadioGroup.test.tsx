@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import renderer, { act } from 'react-test-renderer';
 import { render, cleanup, fireEvent } from '@testing-library/react';

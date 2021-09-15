@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import DivCanvas from './DivCanvas';
 import type { ProgressPropsType } from './types';
+import NODE_ENV from '../utils/env';
 
 const PROGRESS_MAX_WIDTH = 1.9; // 弧度
 const PROGRESS_WIDTH_DELTA = 0.05;
@@ -74,7 +75,8 @@ export default function CircleProgress(props: ProgressPropsType) {
 
   useEffect(() => {
     if (canvas.current && !canvasCtx.current) {
-      canvasCtx.current = canvas.current.getContext('2d');
+      canvasCtx.current =
+        NODE_ENV === 'test' ? null : canvas.current.getContext('2d');
       canvas.current.width = size;
       canvas.current.height = size;
       if (canvasCtx.current) {

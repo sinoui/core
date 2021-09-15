@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom';
@@ -333,12 +336,7 @@ describe('验收测试', () => {
 it('密集模式', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <Chip
-        label="文本"
-        dense
-        data-testid="chip"
-        onDelete={() => console.log('123')}
-      />
+      <Chip label="文本" dense data-testid="chip" />
     </ThemeProvider>,
   );
   expect(getByTestId('chip')).toHaveStyleRule('height', '24px');

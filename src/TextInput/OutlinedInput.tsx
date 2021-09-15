@@ -8,6 +8,7 @@ import { debounce } from '@sinoui/utils';
 import NotchedOutline from './NotchedOutline';
 import adjustOpacity from '../utils/adjustOpacity';
 import useEnhancedEffect from '../utils/useEnhancedEffect';
+import NODE_ENV from '../utils/env';
 
 export interface OutlinedInputProps extends BaseInputProps {
   /**
@@ -144,10 +145,15 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
           setNotchWidth(label.clientWidth * 0.75);
         });
 
-        getErd().listenTo(label, listener);
+        const isTest = NODE_ENV === 'test';
+        if (!isTest) {
+          getErd().listenTo(label, listener);
+        }
 
         return () => {
-          getErd().removeListener(label, listener);
+          if (!isTest) {
+            getErd().removeListener(label, listener);
+          }
         };
       }
       return undefined;

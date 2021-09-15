@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
@@ -361,7 +364,7 @@ describe('animate', () => {
     // 执行过渡定时器，相当于过渡结束
     jest.runAllTimers();
     // 卸载后，容器不包含任何元素
-    expect(container).toBeEmpty();
+    expect(container).toBeEmptyDOMElement();
   });
 
   it('关闭带过渡效果模态框后能够正常打开模态框', () => {

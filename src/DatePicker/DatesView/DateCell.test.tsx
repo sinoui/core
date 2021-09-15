@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
@@ -16,7 +19,7 @@ it('展示空日期', () => {
   );
 
   const dateCell = getByTestId('date-cell');
-  expect(dateCell).toBeEmpty();
+  expect(dateCell).toBeEmptyDOMElement();
   expect(dateCell).toHaveClass('sinoui-date-cell--empty');
   expect(dateCell).toHaveAttribute('data-row', '1');
   expect(dateCell).toHaveAttribute('data-column', '2');

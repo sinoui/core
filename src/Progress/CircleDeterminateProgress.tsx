@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components';
 import classNames from 'classnames';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import type { ProgressPropsType } from './types';
+import NODE_ENV from '../utils/env';
 
 /**
  * 环形定量进度指示器
@@ -58,7 +59,8 @@ export default function CircleDeterminateProgress(props: ProgressPropsType) {
   useEffect(() => {
     if (canvas.current && end.current < 270) {
       if (!canvasCtx.current) {
-        canvasCtx.current = canvas.current.getContext('2d');
+        canvasCtx.current =
+          NODE_ENV === 'test' ? null : canvas.current.getContext('2d');
       }
 
       canvas.current.width = size;

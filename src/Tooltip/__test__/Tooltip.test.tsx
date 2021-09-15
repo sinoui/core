@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /* eslint-disable no-unused-expressions */
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
@@ -11,7 +14,7 @@ jest.useFakeTimers();
 
 describe('触发器测试', () => {
   it('click', () => {
-    const { getByTestId, queryByTestId, container } = render(
+    const { getByTestId, queryByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
         <Tooltip title="这是提示文字" data-testid="tooltip">
           <button data-testid="trigger-btn" type="button">
@@ -26,7 +29,6 @@ describe('触发器测试', () => {
 
     fireEvent.click(getByTestId('trigger-btn'));
     expect(getByTestId('tooltip')).toBeTruthy();
-    console.log(container.innerHTML);
 
     fireEvent.click(document);
     jest.runAllTimers();

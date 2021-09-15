@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import { render, cleanup } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';

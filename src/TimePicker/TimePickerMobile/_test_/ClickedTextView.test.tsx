@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { render, fireEvent, cleanup, act } from '@testing-library/react';

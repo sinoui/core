@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -90,7 +93,6 @@ describe('文字排版 单元测试', () => {
 
     const text = container.firstChild;
 
-    console.log(document.querySelector('html')?.innerHTML, 'xx');
     expect(text).toHaveStyle(`text-align:center`);
   });
 });

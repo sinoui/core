@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /* eslint-disable no-param-reassign */
 import '@testing-library/jest-dom';
 import resizeTextarea from '../resizeTextarea';
@@ -11,9 +14,7 @@ function mockLayout(
   },
 ) {
   const spy = jest.spyOn(shadow, 'scrollHeight', 'get');
-  spy.mockImplementation(() => {
-    return contentHeights[shadow.value];
-  });
+  spy.mockImplementation(() => contentHeights[shadow.value]);
 }
 
 function setStyle(element: HTMLElement, style: any) {

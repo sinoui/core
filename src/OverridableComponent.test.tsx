@@ -1,4 +1,5 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import OverridableComponent, { OverrideProps } from './OverridableComponent';
 
 /*
@@ -28,13 +29,12 @@ describe('测试 as 属性', () => {
 
   const Bar: OverridableComponent<BarProps, DefaultComp> = (
     _props: BarProps,
-  ) => {
-    return <div>123</div>;
-  };
+  ) => <div>123</div>;
 
   it('不指定 as 属性，则使用默认的组件类型', () => {
-    const bar = <Bar x y={false} />;
-    console.log(bar);
+    const bar = renderer.create(<Bar x y={false} />).toJSON();
+
+    expect(bar).toMatchSnapshot();
   });
 
   it('指定 as 属性时，同时可指定 as 组件的属性', () => {
@@ -47,8 +47,9 @@ describe('测试 as 属性', () => {
 
     const Custom = (_props: CustomProps) => <div>123</div>;
 
-    const bar = <Bar as={Custom} y z />;
-    console.log(bar);
+    const bar = renderer.create(<Bar as={Custom} y z />).toJSON();
+
+    expect(bar).toMatchSnapshot();
   });
 });
 
@@ -60,14 +61,15 @@ describe('测试属性声明覆盖', () => {
        */
       className?: string;
     }
-    const Foo: OverridableComponent<Props, 'button'> = (_props: Props) => {
-      return <div>123</div>;
-    };
+    const Foo: OverridableComponent<Props, 'button'> = (_props: Props) => (
+      <div>123</div>
+    );
 
-    const foo = <Foo className="foo" />;
-    const asFoo = <Foo as="a" className="link" />;
+    const foo = renderer.create(<Foo className="foo" />).toJSON();
+    const asFoo = renderer.create(<Foo as="a" className="link" />).toJSON();
 
-    console.log(foo, asFoo);
+    expect(foo).toMatchSnapshot();
+    expect(asFoo).toMatchSnapshot();
   });
 
   it('组件属性中声明 style', () => {
@@ -77,39 +79,49 @@ describe('测试属性声明覆盖', () => {
        */
       style?: React.CSSProperties;
     }
-    const Foo: OverridableComponent<Props, 'button'> = (_props: Props) => {
-      return <div>123</div>;
-    };
+    const Foo: OverridableComponent<Props, 'button'> = (_props: Props) => (
+      <div>123</div>
+    );
 
-    const foo = (
+    const foo = renderer.create(
       <Foo
         style={{
           background: 'red',
         }}
-      />
+      />,
     );
-    const asFoo = (
-      <Foo
-        as="a"
-        style={{
-          background: 'red',
-        }}
-      />
-    );
+    const asFoo = renderer
+      .create(
+        <Foo
+          as="a"
+          style={{
+            background: 'red',
+          }}
+        />,
+      )
+      .toJSON();
 
-    console.log(foo, asFoo);
+    expect(foo).toMatchSnapshot();
+    expect(asFoo).toMatchSnapshot();
   });
   it('children 属性', () => {
     interface Props {
       children: string;
     }
-    const Foo: OverridableComponent<Props, 'button'> = (_props: Props) => {
-      return <div>123</div>;
-    };
+    const Foo: OverridableComponent<Props, 'button'> = (_props: Props) => (
+      <div>123</div>
+    );
 
-    const foo = <Foo>123</Foo>;
-    const asFoo = <Foo as="a">123</Foo>;
-    console.log(foo, asFoo);
+    const tree = renderer
+      .create(
+        <>
+          <Foo>123</Foo>
+          <Foo as="a">123</Foo>
+        </>,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
   });
 });
 
@@ -122,14 +134,19 @@ it('扩展组件类型', () => {
   ) => JSX.Element) &
     OverridableComponent<Props, 'button'>;
 
-  const Foo: FooType = (_props: Props) => {
-    return <div>123</div>;
-  };
+  const Foo: FooType = (_props: Props) => <div>123</div>;
 
-  const hrefFoo = <Foo href="123" target="_blank" />;
-  const foo = <Foo />;
-  const asFoo = <Foo as="a" href="123" target="_blank" />;
-  const linkFoo = <Foo as="a" />;
-  const asAnotherFoo = <Foo as="div" id="123" />;
-  console.log(hrefFoo, foo, asFoo, linkFoo, asAnotherFoo);
+  const tree = renderer
+    .create(
+      <>
+        <Foo href="123" target="_blank" />
+        <Foo />
+        <Foo as="a" href="123" target="_blank" />
+        <Foo as="a" />
+        <Foo as="div" id="123" />
+      </>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
 });

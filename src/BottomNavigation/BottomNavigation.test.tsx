@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, cleanup } from '@testing-library/react';
@@ -19,13 +22,7 @@ describe('BottomNavigation组件 单元测试', () => {
   it('不显示所有标签', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          showLabels={false}
-        >
+        <BottomNavigation value="favorites" showLabels={false}>
           <BottomNavigationAction
             label="Recents"
             value="recents"
@@ -54,12 +51,7 @@ describe('BottomNavigation组件 快照测试', () => {
   it('基本使用', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-        >
+        <BottomNavigation value="favorites">
           <BottomNavigationAction
             label="Recents"
             value="recents"
@@ -90,13 +82,7 @@ describe('BottomNavigation组件 快照测试', () => {
   it('设置隐藏所有标签名称', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          showLabels={false}
-        >
+        <BottomNavigation value="favorites" showLabels={false}>
           <BottomNavigationAction
             label="Recents"
             value="recents"
@@ -128,12 +114,7 @@ describe('BottomNavigation组件 快照测试', () => {
   it('结合Badge组件使用', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-        >
+        <BottomNavigation value="favorites">
           <BottomNavigationAction
             label="Recents"
             value="recents"
@@ -176,12 +157,7 @@ describe('BottomNavigation组件 快照测试', () => {
   it('指定背景颜色', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-        >
+        <BottomNavigation value="favorites">
           <BottomNavigationAction
             label="Recents"
             value="recents"
@@ -203,13 +179,7 @@ describe('BottomNavigation组件 快照测试', () => {
             icon={<MdFolder />}
           />
         </BottomNavigation>
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          color="primary"
-        >
+        <BottomNavigation value="favorites" color="primary">
           <BottomNavigationAction
             label="Recents"
             value="recents"
@@ -231,13 +201,7 @@ describe('BottomNavigation组件 快照测试', () => {
             icon={<MdFolder />}
           />
         </BottomNavigation>
-        <BottomNavigation
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          color="success"
-        >
+        <BottomNavigation value="favorites" color="success">
           <BottomNavigationAction
             label="Recents"
             value="recents"

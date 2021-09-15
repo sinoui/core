@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import animate from './animate';
 
 jest.useFakeTimers();
@@ -7,9 +10,7 @@ const cancelRaf = window.cancelAnimationFrame;
 const { now } = Date;
 
 beforeEach(() => {
-  window.requestAnimationFrame = (callback: Function) => {
-    return setTimeout(callback);
-  };
+  window.requestAnimationFrame = (callback: Function) => setTimeout(callback);
   window.cancelAnimationFrame = (rafId: number) => {
     clearTimeout(rafId);
   };

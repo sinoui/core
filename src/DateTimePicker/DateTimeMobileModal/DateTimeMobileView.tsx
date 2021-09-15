@@ -80,7 +80,7 @@ const TimeTitle = styled(Subtitle1)`
 /**
  * 日期时间选择移动端视图
  */
-export default function DateTimeMobileView(props: Props) {
+export default React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     date,
     startOfWeek,
@@ -98,21 +98,19 @@ export default function DateTimeMobileView(props: Props) {
     maxMinute = 59,
   } = props;
 
-  const [[year, month], setYearMonth] = useState(() => {
-    return date
-      ? [date.getFullYear(), date.getMonth()]
-      : [defaultYear, defaultMonth];
-  });
-  const [selectedDate, setSelectedDate] = useState<Date>(() => {
-    return date || new Date();
-  });
+  const [[year, month], setYearMonth] = useState(() =>
+    date ? [date.getFullYear(), date.getMonth()] : [defaultYear, defaultMonth],
+  );
+  const [selectedDate, setSelectedDate] = useState<Date>(
+    () => date || new Date(),
+  );
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
-  const [hour, setHour] = useState<string>(() => {
-    return date ? `${date.getHours()}` : `${new Date().getHours()}`;
-  });
-  const [minute, setMinute] = useState<string>(() => {
-    return date ? `${date.getMinutes()}` : `${new Date().getMinutes()}`;
-  });
+  const [hour, setHour] = useState<string>(() =>
+    date ? `${date.getHours()}` : `${new Date().getHours()}`,
+  );
+  const [minute, setMinute] = useState<string>(() =>
+    date ? `${date.getMinutes()}` : `${new Date().getMinutes()}`,
+  );
 
   const handleYearSelect = (newYear: number) => {
     if (newYear !== year) {
@@ -198,6 +196,7 @@ export default function DateTimeMobileView(props: Props) {
     <DateTimeMobileViewWrapper
       style={style}
       className="sinoui-date-time-mobile-view"
+      ref={ref}
     >
       <DateTimeMobileViewToolbar
         year={year}
@@ -223,4 +222,4 @@ export default function DateTimeMobileView(props: Props) {
       <CalendarViewAction onCancel={onClose} onClear={onClear} onOk={onOk} />
     </DateTimeMobileViewWrapper>
   );
-}
+});

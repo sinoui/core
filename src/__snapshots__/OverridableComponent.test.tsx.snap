@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`扩展组件类型 1`] = `
+Array [
+  <div>
+    123
+  </div>,
+  <div>
+    123
+  </div>,
+  <div>
+    123
+  </div>,
+  <div>
+    123
+  </div>,
+  <div>
+    123
+  </div>,
+]
+`;
+
+exports[`测试 as 属性 不指定 as 属性，则使用默认的组件类型 1`] = `
+<div>
+  123
+</div>
+`;
+
+exports[`测试 as 属性 指定 as 属性时，同时可指定 as 组件的属性 1`] = `
+<div>
+  123
+</div>
+`;
+
+exports[`测试属性声明覆盖 children 属性 1`] = `
+Array [
+  <div>
+    123
+  </div>,
+  <div>
+    123
+  </div>,
+]
+`;
+
+exports[`测试属性声明覆盖 组件属性中声明 className 1`] = `
+<div>
+  123
+</div>
+`;
+
+exports[`测试属性声明覆盖 组件属性中声明 className 2`] = `
+<div>
+  123
+</div>
+`;
+
+exports[`测试属性声明覆盖 组件属性中声明 style 1`] = `
+<div>
+  123
+</div>
+`;
+
+exports[`测试属性声明覆盖 组件属性中声明 style 2`] = `
+<div>
+  123
+</div>
+`;

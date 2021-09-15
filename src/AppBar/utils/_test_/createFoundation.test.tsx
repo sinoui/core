@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/react';
@@ -9,9 +12,8 @@ import createDOMAdapter from '../createDOMAdapter';
  * 获取应用栏
  * @param container
  */
-const getAppBarDom = (container: any) => {
-  return container.querySelector('#appBar') as HTMLElement;
-};
+const getAppBarDom = (container: any) =>
+  container.querySelector('#appBar') as HTMLElement;
 
 describe('不同模式应用栏滚动', () => {
   it('固定模式', () => {
@@ -99,7 +101,7 @@ describe('不同模式应用栏滚动', () => {
     act(() => {
       fireEvent.scroll(window, { target: { pageYOffset: 100 } });
     });
-    console.log(appBar.outerHTML);
+
     expect(appBar).toHaveStyle('top:0px');
     act(() => {
       fireEvent.scroll(window, { target: { pageYOffset: 0 } });

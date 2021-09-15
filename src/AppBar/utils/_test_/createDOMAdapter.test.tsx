@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, fireEvent } from '@testing-library/react';
@@ -8,9 +11,8 @@ import createDOMAdapter from '../createDOMAdapter';
  * 获取应用栏
  * @param container
  */
-const getAppBarDom = (container: any) => {
-  return container.querySelector('#appBar') as HTMLElement;
-};
+const getAppBarDom = (container: any) =>
+  container.querySelector('#appBar') as HTMLElement;
 
 describe('验证createDOMAdapter中的方法', () => {
   it('addClass', () => {

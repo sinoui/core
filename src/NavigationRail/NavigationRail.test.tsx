@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React, { useState } from 'react';
 import renderer, { act } from 'react-test-renderer';
 import { render, cleanup, fireEvent } from '@testing-library/react';
@@ -19,13 +22,7 @@ describe('NavigationRail组件 单元测试', () => {
   it('不显示所有标签', () => {
     const { container, getByTestId } = render(
       <ThemeProvider theme={defaultTheme}>
-        <NavigationRail
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          showLabels={false}
-        >
+        <NavigationRail value="favorites" showLabels={false}>
           <NavigationRailAction
             label="Recents"
             value="recents"
@@ -56,13 +53,7 @@ describe('NavigationRail组件 单元测试', () => {
   it('测试是否选中', () => {
     const { container } = render(
       <ThemeProvider theme={defaultTheme}>
-        <NavigationRail
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          data-testid="NavigationRail"
-        >
+        <NavigationRail value="favorites" data-testid="NavigationRail">
           <NavigationRailAction
             label="Recents"
             value="recents"
@@ -159,12 +150,7 @@ describe('NavigationRail组件 快照测试', () => {
   it('基本使用', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>
-        <NavigationRail
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-        >
+        <NavigationRail value="favorites">
           <NavigationRailAction
             label="Recents"
             value="recents"
@@ -195,13 +181,7 @@ describe('NavigationRail组件 快照测试', () => {
   it('设置隐藏所有标签名称', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>
-        <NavigationRail
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          showLabels={false}
-        >
+        <NavigationRail value="favorites" showLabels={false}>
           <NavigationRailAction
             label="Recents"
             value="recents"
@@ -232,12 +212,7 @@ describe('NavigationRail组件 快照测试', () => {
   it('结合Badge组件使用', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>
-        <NavigationRail
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-        >
+        <NavigationRail value="favorites">
           <NavigationRailAction
             label="Recents"
             value="recents"
@@ -280,13 +255,7 @@ describe('NavigationRail组件 快照测试', () => {
   it('布局显示', () => {
     const tree = renderer.create(
       <ThemeProvider theme={defaultTheme}>
-        <NavigationRail
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          align="center"
-        >
+        <NavigationRail value="favorites" align="center">
           <NavigationRailAction
             label="Recents"
             value="recents"
@@ -308,13 +277,7 @@ describe('NavigationRail组件 快照测试', () => {
             icon={<MdFolder />}
           />
         </NavigationRail>
-        <NavigationRail
-          onChange={(_e: React.FormEvent<HTMLDivElement>, value) =>
-            console.log(value)
-          }
-          value="favorites"
-          align="end"
-        >
+        <NavigationRail value="favorites" align="end">
           <NavigationRailAction
             label="Recents"
             value="recents"

@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import { defaultTheme } from '@sinoui/theme';

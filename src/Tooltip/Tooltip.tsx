@@ -42,7 +42,7 @@ interface ToolTipProps {
 const modifiers = [
   {
     name: 'arrow',
-    enable: true,
+    enabled: true,
     options: {
       padding: 5, // 5px from the edges of the popper
     },

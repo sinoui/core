@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 import { render, fireEvent, cleanup, act } from '@testing-library/react';

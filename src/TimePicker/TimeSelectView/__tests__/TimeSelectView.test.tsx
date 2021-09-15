@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-unused-expressions */
 import React from 'react';

@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
@@ -76,9 +79,7 @@ describe('Dialog组件 快照测试', () => {
   afterEach(cleanup);
 
   beforeAll(() => {
-    (ReactDOM as any).createPortal = jest.fn((element, _node: any) => {
-      return element;
-    });
+    (ReactDOM as any).createPortal = jest.fn((element, _node: any) => element);
   });
 
   afterEach(() => {

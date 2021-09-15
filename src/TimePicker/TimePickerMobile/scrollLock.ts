@@ -1,3 +1,5 @@
+import NODE_ENV from '@sinoui/core/utils/env';
+
 const $body = document.querySelector('body') as HTMLBodyElement;
 let scrollPosition = 0;
 
@@ -14,6 +16,8 @@ export default {
     $body.style.removeProperty('position');
     $body.style.removeProperty('top');
     $body.style.removeProperty('width');
-    window.scrollTo(0, scrollPosition);
+    if (NODE_ENV !== 'test') {
+      window.scrollTo(0, scrollPosition);
+    }
   },
 };

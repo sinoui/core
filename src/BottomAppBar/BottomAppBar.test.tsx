@@ -2,7 +2,6 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import BottomAppBar from '@sinoui/core/BottomAppBar';
 import InSetCircle from './InSetCircle';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
 import { MdAdd } from 'react-icons/md';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@sinoui/theme';

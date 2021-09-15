@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React, { createRef } from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
