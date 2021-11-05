@@ -115,10 +115,14 @@ function parseItemsFromChildren(children: React.ReactNode): SelectItem[] {
  */
 function transferSelectValueToAutoCompleteValue(
   items: SelectItem[],
+  multiple = false,
   value?: string | string[],
 ) {
   if (value) {
     if (typeof value === 'string') {
+      if (multiple) {
+        return [items.find((item) => item.value === value)];
+      }
       return items.find((item) => item.value === value);
     }
 
@@ -170,6 +174,7 @@ function Select(props: Props) {
   const options = parseItemsFromChildren(children);
   const autoCompleteValue = transferSelectValueToAutoCompleteValue(
     options,
+    multiple,
     value,
   );
 
