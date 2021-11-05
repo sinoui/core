@@ -110,10 +110,11 @@ function parseItemsFromChildren(children: React.ReactNode): SelectItem[] {
 
 /**
  * 转化select的value为AutoComplete的值
- * @param items
- * @param value
+ * @param items 选项列表
+ * @param multiple 是否为多选
+ * @param value 给到 select 的值
  */
-function transferSelectValueToAutoCompleteValue(
+export function transferSelectValueToAutoCompleteValue(
   items: SelectItem[],
   multiple = false,
   value?: string | string[],
@@ -128,7 +129,7 @@ function transferSelectValueToAutoCompleteValue(
 
     return items.filter((item) => value.indexOf(item.value) !== -1);
   }
-  return value;
+  return undefined;
 }
 
 /**

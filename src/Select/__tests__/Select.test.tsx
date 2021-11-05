@@ -9,8 +9,9 @@ import { defaultTheme } from '@sinoui/theme';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
-import Select from '../Select';
+import Select, { transferSelectValueToAutoCompleteValue } from '../Select';
 import Option from '../Option';
+import { SelectItem } from '..';
 
 afterEach(cleanup);
 
@@ -237,4 +238,85 @@ it('open = true', () => {
   expect(
     container.querySelector('.sinoui-auto-complete__option-list'),
   ).toBeTruthy();
+});
+
+describe('transferSelectValueToAutoCompleteValue', () => {
+  const items = [
+    {
+      id: '1',
+      value: '1',
+      title: '选项1',
+    },
+    {
+      id: '2',
+      value: '2',
+      title: '选项2',
+    },
+    {
+      id: '3',
+      value: '3',
+      title: '选项3',
+    },
+  ];
+  it('单选情况下且有指定的值', () => {
+    const expected = items[0];
+
+    const actual = transferSelectValueToAutoCompleteValue(items, false, '1');
+
+    expect(actual).toBe(expected);
+  });
+
+  it('单选情况下未指定值', () => {
+    const actual = transferSelectValueToAutoCompleteValue(items);
+
+    expect(actual).toBe(undefined);
+  });
+
+  it('单选情况下指定了不存在的值', () => {
+    const actual = transferSelectValueToAutoCompleteValue(
+      items,
+      false,
+      'unknown',
+    );
+
+    expect(actual).toBe(undefined);
+  });
+
+  it('多选情况下指定了字符串值', () => {
+    const expected = [items[0]];
+
+    const actual = transferSelectValueToAutoCompleteValue(items, true, '1');
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('多选情况下指定了未知字符串值', () => {
+    const expected: SelectItem[] = [];
+
+    const actual = transferSelectValueToAutoCompleteValue(
+      items,
+      true,
+      'unknown',
+    );
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('多选情况下指定了字符串数组', () => {
+    const expected: SelectItem[] = [items[0], items[1]];
+
+    const actual = transferSelectValueToAutoCompleteValue(items, true, [
+      '1',
+      '2',
+      'unknown',
+    ]);
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('指定空字符串', () => {
+    const actual = transferSelectValueToAutoCompleteValue(items, false, '');
+
+    expect(actual).toBe(undefined);
+  });
 });
