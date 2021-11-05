@@ -121,7 +121,7 @@ function transferSelectValueToAutoCompleteValue(
   if (value) {
     if (typeof value === 'string') {
       if (multiple) {
-        return [items.find((item) => item.value === value)];
+        return items.filter((item) => item.value === value);
       }
       return items.find((item) => item.value === value);
     }
