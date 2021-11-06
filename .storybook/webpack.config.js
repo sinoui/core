@@ -1,6 +1,12 @@
 const { resolve } = require('path');
 
 module.exports = ({ config }) => {
+  config.plugins = config.plugins.filter((plugin) => {
+    const name = plugin.name;
+    const isDocgen = name === 'React Docgen Typescript Plugin';
+    return !isDocgen;
+  });
+
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
