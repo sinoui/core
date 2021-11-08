@@ -4,6 +4,7 @@
 
 - fix: 修复 Button 等组件拖慢 ts 提示 50 倍速度的缺陷
 - fix(DatePicker): 修复年度选择弹窗出现横向滚动条的缺陷
+- fix(AppBarTitle): 修复 AppBarTitle 无 `sino-app-bar--title` class 的缺陷
 
 ## v1.0.14 - 2021.11.05
 
