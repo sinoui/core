@@ -19,7 +19,7 @@ import {
   BASIC_CHIP_HOVER_BG,
 } from './contains';
 
-export interface Props extends HTMLAttributes<'div'> {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
   /**
    * 标签内容
    */

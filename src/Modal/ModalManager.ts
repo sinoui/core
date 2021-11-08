@@ -242,11 +242,12 @@ export default class ModalManager {
   private focusLastActiveElement() {
     clearTimeout(this.focusLastActiveElementTimer);
     this.focusLastActiveElementTimer = setTimeout(() => {
-      const lastActiveElement = this.getActiveElementOfTopModal() as HTMLElement;
+      const lastActiveElement =
+        this.getActiveElementOfTopModal() as HTMLElement;
       if (lastActiveElement) {
         lastActiveElement.focus();
       }
-    });
+    }) as any;
   }
 
   /**

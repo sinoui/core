@@ -5,7 +5,7 @@ import { useRipple } from '@sinoui/ripple';
 import styled, { css } from 'styled-components';
 import useMultiRefs from '../utils/useMultiRefs';
 
-export interface Props extends HTMLAttributes<'button'> {
+export interface Props extends HTMLAttributes<HTMLButtonElement> {
   /**
    * 自定义class名称
    */

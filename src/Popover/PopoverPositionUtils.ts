@@ -35,7 +35,7 @@ export function getTransformOrigin(
  * @param {*} anchorOrigin
  */
 export function getTargetPosition(
-  anchorRect: ClientRect,
+  anchorRect: Rect,
   anchorOrigin: RelativePosition,
 ): { left: number; top: number } {
   return {
@@ -54,7 +54,7 @@ export function getTargetPosition(
  * @param {*} marginThreshold
  */
 export function suitBorder(
-  elementRect: ClientRect,
+  elementRect: Rect,
   elementOffset: { vertical: number; horizontal: number },
   containerRect: { width: number; height: number },
   marginThreshold: number,

@@ -1,5 +1,5 @@
 import BaseButton from './BaseButton';
-import type { Props, BaseButtonProps } from './BaseButton';
+import type { Props } from './BaseButton';
 
-export type { BaseButtonProps, Props };
+export type { Props, Props as BaseButtonProps };
 export default BaseButton;
