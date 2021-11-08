@@ -94,7 +94,7 @@ function NavigationRailAction(props: NavigationRailActionProps) {
         'sinoui-navigation-rail--selected': value === selectedValue,
       })}
       onClick={onClick}
-      value={value}
+      data-value={value}
       showLabel={showLabel}
     >
       <IconWrapper>{icon}</IconWrapper>

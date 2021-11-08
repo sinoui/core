@@ -28,7 +28,7 @@ describe('NavigationRailAction组件 单元测试', () => {
       </ThemeProvider>,
     );
 
-    const test = getByTestId('NavigationRail').getAttribute('value');
+    const test = getByTestId('NavigationRail').getAttribute('data-value');
     expect(test).toEqual('recents');
   });
 
