@@ -2,7 +2,7 @@
 
 exports[`AppBarTitle 1`] = `
 <h1
-  className="sc-bdnylx hqnrnV"
+  className="sc-bdvvtL cWOOYY sinoui-app-bar--title"
 >
   标题
 </h1>
