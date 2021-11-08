@@ -23,9 +23,7 @@ type FontType =
  */
 function createTypography(type: FontType, displayName: string) {
   const Comp = React.forwardRef<HTMLElement, Omit<Props, 'type'>>(
-    (props, ref) => {
-      return <Typography {...props} type={type} ref={ref} />;
-    },
+    (props, ref) => <Typography {...props} type={type} ref={ref} />,
   );
 
   if (process.env.NODE_ENV !== 'production') {
