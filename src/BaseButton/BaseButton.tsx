@@ -1,11 +1,11 @@
 import React from 'react';
+import type { HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { useRipple } from '@sinoui/ripple';
 import styled, { css } from 'styled-components';
 import useMultiRefs from '../utils/useMultiRefs';
-import OverridableComponent, { OverrideProps } from '../OverridableComponent';
 
-export interface Props {
+export interface Props extends HTMLAttributes<'button'> {
   /**
    * 自定义class名称
    */
@@ -26,6 +26,7 @@ export interface Props {
    * 指定根元素组件类型
    */
   as?: React.ElementType;
+  ref?: React.Ref<HTMLElement>;
 }
 
 const BaseButtonStyle = css<Props>`
@@ -66,20 +67,11 @@ const BaseButtonLayout = styled.button`
   ${BaseButtonStyle}
 `;
 
-export type BaseButtonProps<
-  C extends React.ElementType = 'button'
-> = OverrideProps<Props, C>;
-
-type BaseButtonType = ((
-  props: { href: string } & OverrideProps<Props, 'a'>,
-) => JSX.Element | null) &
-  OverridableComponent<Omit<Props, 'href'>, 'button'>;
-
 /**
  * 基础的可点击元素
  */
-const BaseButton: BaseButtonType = React.forwardRef<HTMLElement, Props>(
-  function BaseButton(props, ref) {
+const BaseButton: React.FC<Props> = React.forwardRef<HTMLElement, Props>(
+  (props, ref) => {
     const {
       children,
       className,
@@ -123,5 +115,9 @@ const BaseButton: BaseButtonType = React.forwardRef<HTMLElement, Props>(
     );
   },
 );
+
+if (process.env.NODE_ENV === 'development') {
+  BaseButton.displayName = 'BaseButton';
+}
 
 export default BaseButton;

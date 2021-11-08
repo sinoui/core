@@ -2,7 +2,7 @@
 
 exports[`文字排版 快照测试 基本文字排版 1`] = `
 <p
-  className="sc-bdnylx dMJQsA sinoui-typography sinoui-typography--body2"
+  className="sc-bdvvtL eKkXkd sinoui-typography sinoui-typography--body2"
   color="textPrimary"
   type="body2"
 >
@@ -13,35 +13,35 @@ exports[`文字排版 快照测试 基本文字排版 1`] = `
 exports[`文字排版 快照测试 设置属性 1`] = `
 Array [
   <h2
-    className="sc-bdnylx dMJQsA sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL eKkXkd sinoui-typography sinoui-typography--body2"
     color="textPrimary"
     type="body2"
   >
     Body2
   </h2>,
   <p
-    className="sc-bdnylx bxBxZM sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL frKKgt sinoui-typography sinoui-typography--body2"
     color="textPrimary"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx exeOrd sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL kRZRc sinoui-typography sinoui-typography--body2"
     color="textPrimary"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx hTXcpI sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL cwbdgp sinoui-typography sinoui-typography--body2"
     color="success"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx dMJQsA sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL eKkXkd sinoui-typography sinoui-typography--body2"
     color="textPrimary"
     type="body2"
   >
@@ -53,63 +53,63 @@ Array [
 exports[`文字排版 快照测试 颜色设置 1`] = `
 Array [
   <p
-    className="sc-bdnylx dMJQsA sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL eKkXkd sinoui-typography sinoui-typography--body2"
     color="textPrimary"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx dKBluD sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL etpRVO sinoui-typography sinoui-typography--body2"
     color="primary"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx jGqGvM sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL bBGfjV sinoui-typography sinoui-typography--body2"
     color="secondary"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx dMJQsA sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL eKkXkd sinoui-typography sinoui-typography--body2"
     color="textPrimary"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx LTNtV sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL dHQTE sinoui-typography sinoui-typography--body2"
     color="textSecondary"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx eHWfKl sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL gETlSY sinoui-typography sinoui-typography--body2"
     color="error"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx laatJU sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL jyNorV sinoui-typography sinoui-typography--body2"
     color="warning"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx hTXcpI sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL cwbdgp sinoui-typography sinoui-typography--body2"
     color="success"
     type="body2"
   >
     Body2
   </p>,
   <p
-    className="sc-bdnylx hFAHfo sinoui-typography sinoui-typography--body2"
+    className="sc-bdvvtL WXAEJ sinoui-typography sinoui-typography--body2"
     color="info"
     type="body2"
   >

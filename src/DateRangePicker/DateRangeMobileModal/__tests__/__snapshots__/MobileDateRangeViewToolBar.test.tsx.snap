@@ -2,20 +2,20 @@
 
 exports[`快照测试 focused=end 1`] = `
 <div
-  className="sc-jSFkmK fvfwgF sinoui-date-range-view-toolbar"
+  className="sc-jRQBWg jpEcvy sinoui-date-range-view-toolbar"
 >
   <div
-    className="sc-gKAblj kfHSjQ"
+    className="sc-gKclnd eCRbOS"
   >
     <button
-      className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT fIGoBv sinoui-icon-button sinoui-icon-button--dense"
+      className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN fgGRjO sinoui-icon-button sinoui-icon-button--dense"
       color="textSecondary"
       role="button"
       type="button"
     >
       <svg
         aria-hidden="true"
-        className="sc-hKFyIo lnCuhW sinoui-svg-icon"
+        className="sc-hKwDye gzJKdS sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -27,10 +27,10 @@ exports[`快照测试 focused=end 1`] = `
       </svg>
     </button>
     <div
-      className="sc-gKAblj kfHSjQ"
+      className="sc-gKclnd eCRbOS"
     >
       <button
-        className="sc-gtssRu bWEvxX sinoui-base-button sc-eCApGN dkrzui sinoui-button"
+        className="sc-gsDKAQ WZUMy sinoui-base-button sc-eCImPb hlMGMS sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -38,7 +38,7 @@ exports[`快照测试 focused=end 1`] = `
         清除
       </button>
       <button
-        className="sc-gtssRu bWEvxX sinoui-base-button sc-eCApGN dkrzui sinoui-button"
+        className="sc-gsDKAQ WZUMy sinoui-base-button sc-eCImPb hlMGMS sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -48,24 +48,24 @@ exports[`快照测试 focused=end 1`] = `
     </div>
   </div>
   <p
-    className="sc-bdnylx cJLcUI sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL cPSmjV sinoui-typography sinoui-typography--caption"
     color="textPrimary"
     type="caption"
   />
   <h5
-    className="sc-bdnylx jGLhhQ sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
+    className="sc-bdvvtL kPRGhZ sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
     color="textPrimary"
     type="h5"
   >
     <span
-      className="sc-iCoHVE kVdMff"
+      className="sc-iCfMLu dTLiKD"
       onClick={[Function]}
     >
       开始时间
     </span>
     -
     <span
-      className="sc-iCoHVE cVGaeH"
+      className="sc-iCfMLu jgyJvb"
       onClick={[Function]}
     >
       结束时间
@@ -76,20 +76,20 @@ exports[`快照测试 focused=end 1`] = `
 
 exports[`快照测试 focused=start 1`] = `
 <div
-  className="sc-jSFkmK fvfwgF sinoui-date-range-view-toolbar"
+  className="sc-jRQBWg jpEcvy sinoui-date-range-view-toolbar"
 >
   <div
-    className="sc-gKAblj kfHSjQ"
+    className="sc-gKclnd eCRbOS"
   >
     <button
-      className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT fIGoBv sinoui-icon-button sinoui-icon-button--dense"
+      className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN fgGRjO sinoui-icon-button sinoui-icon-button--dense"
       color="textSecondary"
       role="button"
       type="button"
     >
       <svg
         aria-hidden="true"
-        className="sc-hKFyIo lnCuhW sinoui-svg-icon"
+        className="sc-hKwDye gzJKdS sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -101,10 +101,10 @@ exports[`快照测试 focused=start 1`] = `
       </svg>
     </button>
     <div
-      className="sc-gKAblj kfHSjQ"
+      className="sc-gKclnd eCRbOS"
     >
       <button
-        className="sc-gtssRu bWEvxX sinoui-base-button sc-eCApGN dkrzui sinoui-button"
+        className="sc-gsDKAQ WZUMy sinoui-base-button sc-eCImPb hlMGMS sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -112,7 +112,7 @@ exports[`快照测试 focused=start 1`] = `
         清除
       </button>
       <button
-        className="sc-gtssRu bWEvxX sinoui-base-button sc-eCApGN dkrzui sinoui-button"
+        className="sc-gsDKAQ WZUMy sinoui-base-button sc-eCImPb hlMGMS sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -122,24 +122,24 @@ exports[`快照测试 focused=start 1`] = `
     </div>
   </div>
   <p
-    className="sc-bdnylx cJLcUI sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL cPSmjV sinoui-typography sinoui-typography--caption"
     color="textPrimary"
     type="caption"
   />
   <h5
-    className="sc-bdnylx jGLhhQ sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
+    className="sc-bdvvtL kPRGhZ sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
     color="textPrimary"
     type="h5"
   >
     <span
-      className="sc-iCoHVE cVGaeH"
+      className="sc-iCfMLu jgyJvb"
       onClick={[Function]}
     >
       开始时间
     </span>
     -
     <span
-      className="sc-iCoHVE kVdMff"
+      className="sc-iCfMLu dTLiKD"
       onClick={[Function]}
     >
       结束时间
@@ -150,20 +150,20 @@ exports[`快照测试 focused=start 1`] = `
 
 exports[`快照测试 渲染 1`] = `
 <div
-  className="sc-jSFkmK fvfwgF sinoui-date-range-view-toolbar"
+  className="sc-jRQBWg jpEcvy sinoui-date-range-view-toolbar"
 >
   <div
-    className="sc-gKAblj kfHSjQ"
+    className="sc-gKclnd eCRbOS"
   >
     <button
-      className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT fIGoBv sinoui-icon-button sinoui-icon-button--dense"
+      className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN fgGRjO sinoui-icon-button sinoui-icon-button--dense"
       color="textSecondary"
       role="button"
       type="button"
     >
       <svg
         aria-hidden="true"
-        className="sc-hKFyIo lnCuhW sinoui-svg-icon"
+        className="sc-hKwDye gzJKdS sinoui-svg-icon"
         focusable="false"
         role="presentation"
         size={24}
@@ -175,10 +175,10 @@ exports[`快照测试 渲染 1`] = `
       </svg>
     </button>
     <div
-      className="sc-gKAblj kfHSjQ"
+      className="sc-gKclnd eCRbOS"
     >
       <button
-        className="sc-gtssRu bWEvxX sinoui-base-button sc-eCApGN dkrzui sinoui-button"
+        className="sc-gsDKAQ WZUMy sinoui-base-button sc-eCImPb hlMGMS sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -186,7 +186,7 @@ exports[`快照测试 渲染 1`] = `
         清除
       </button>
       <button
-        className="sc-gtssRu bWEvxX sinoui-base-button sc-eCApGN dkrzui sinoui-button"
+        className="sc-gsDKAQ WZUMy sinoui-base-button sc-eCImPb hlMGMS sinoui-button"
         color="primary"
         role="button"
         type="button"
@@ -196,24 +196,24 @@ exports[`快照测试 渲染 1`] = `
     </div>
   </div>
   <p
-    className="sc-bdnylx cJLcUI sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL cPSmjV sinoui-typography sinoui-typography--caption"
     color="textPrimary"
     type="caption"
   />
   <h5
-    className="sc-bdnylx jGLhhQ sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
+    className="sc-bdvvtL kPRGhZ sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
     color="textPrimary"
     type="h5"
   >
     <span
-      className="sc-iCoHVE kVdMff"
+      className="sc-iCfMLu dTLiKD"
       onClick={[Function]}
     >
       开始时间
     </span>
     -
     <span
-      className="sc-iCoHVE kVdMff"
+      className="sc-iCfMLu dTLiKD"
       onClick={[Function]}
     >
       结束时间

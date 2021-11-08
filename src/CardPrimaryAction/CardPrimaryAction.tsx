@@ -1,22 +1,14 @@
 import React from 'react';
+import type { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { opacify } from 'polished';
 import { useRipple } from '@sinoui/ripple';
-import OverriableComponent from '../OverridableComponent';
+import classNames from 'classnames';
 import useMultiRefs from '../utils/useMultiRefs';
 
-export interface Props {
-  /**
-   * 点击事件
-   *
-   */
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-}
+export interface Props extends HTMLAttributes<HTMLDivElement> {}
 
-const StyledCardPrimaryAction = styled.div.attrs(() => ({
-  className: 'sinoui-card__primary-action',
-  tabIndex: '0',
-}))`
+const StyledCardPrimaryAction = styled.div`
   overflow: hidden;
   cursor: pointer;
   outline: none;
@@ -61,16 +53,27 @@ const StyledCardPrimaryAction = styled.div.attrs(() => ({
 `;
 
 /**
- *
  * CardPrimaryAction 主操作区域
  */
-const CardPrimaryAction: OverriableComponent<Props, 'div'> = React.forwardRef<
+const CardPrimaryAction: React.FC<Props> = React.forwardRef<
   HTMLDivElement,
   Props
 >((props, ref) => {
+  const { className, tabIndex = 0, ...rest } = props;
   const rippleRef = useRipple<HTMLDivElement>();
   const cardPrimaryActionRef = useMultiRefs(rippleRef, ref);
-  return <StyledCardPrimaryAction {...props} ref={cardPrimaryActionRef} />;
+  return (
+    <StyledCardPrimaryAction
+      className={classNames('sinoui-card__primary-action', className)}
+      tabIndex={tabIndex}
+      {...(rest as any)}
+      ref={cardPrimaryActionRef}
+    />
+  );
 });
+
+if (process.env.NODE_ENV === 'development') {
+  CardPrimaryAction.displayName = 'CardPrimaryAction';
+}
 
 export default CardPrimaryAction;

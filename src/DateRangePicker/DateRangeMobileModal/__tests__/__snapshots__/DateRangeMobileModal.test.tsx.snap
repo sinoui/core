@@ -4,14 +4,14 @@ exports[`快照测试 关闭状态 1`] = `null`;
 
 exports[`快照测试 打开状态 1`] = `
 <div
-  className="sc-bdnylx fxqese sinoui-date-range-picker__modal"
+  className="sc-bdvvtL hJyniL sinoui-date-range-picker__modal"
   data-sinoui-id="modal"
   onClick={[Function]}
   onKeyDown={[Function]}
 >
   <div
     aria-modal="true"
-    className="sc-jSFkmK sc-gKAblj yMpfF daKNcg sinoui-date-range-mobile-view sinoui-paper"
+    className="sc-jRQBWg sc-gKclnd kouTUq kPjpQe sinoui-date-range-mobile-view sinoui-paper"
     style={
       Object {
         "opacity": 1,
@@ -21,13 +21,13 @@ exports[`快照测试 打开状态 1`] = `
     tabIndex={-1}
   >
     <div
-      className="sc-kEqYlL cgzEkB sinoui-date-range-view-toolbar"
+      className="sc-kDTinF forfzz sinoui-date-range-view-toolbar"
     >
       <div
-        className="sc-iqAbSa ilLuMM"
+        className="sc-iqseJM fHPujO"
       >
         <button
-          className="sc-iCoHVE jTpBAp sinoui-base-button sc-fujyUd bGhAMW sinoui-icon-button sinoui-icon-button--dense"
+          className="sc-iCfMLu kCOKXp sinoui-base-button sc-furwcr kFFCxq sinoui-icon-button sinoui-icon-button--dense"
           color="textSecondary"
           onClick={[MockFunction]}
           role="button"
@@ -35,7 +35,7 @@ exports[`快照测试 打开状态 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="sc-pNWxx hSRAZt sinoui-svg-icon"
+            className="sc-pVTFL JbhZW sinoui-svg-icon"
             focusable="false"
             role="presentation"
             size={24}
@@ -47,10 +47,10 @@ exports[`快照测试 打开状态 1`] = `
           </svg>
         </button>
         <div
-          className="sc-iqAbSa ilLuMM"
+          className="sc-iqseJM fHPujO"
         >
           <button
-            className="sc-iCoHVE jTpBAp sinoui-base-button sc-jrsJCI hEHmYv sinoui-button"
+            className="sc-iCfMLu kCOKXp sinoui-base-button sc-jrQzAO iWeSdn sinoui-button"
             color="primary"
             onClick={[Function]}
             role="button"
@@ -59,7 +59,7 @@ exports[`快照测试 打开状态 1`] = `
             清除
           </button>
           <button
-            className="sc-iCoHVE jTpBAp sinoui-base-button sc-jrsJCI hEHmYv sinoui-button"
+            className="sc-iCfMLu kCOKXp sinoui-base-button sc-jrQzAO iWeSdn sinoui-button"
             color="primary"
             onClick={[Function]}
             role="button"
@@ -70,26 +70,26 @@ exports[`快照测试 打开状态 1`] = `
         </div>
       </div>
       <p
-        className="sc-dlnjPT dBgerd sinoui-typography sinoui-typography--caption"
+        className="sc-dkPtRN euzasc sinoui-typography sinoui-typography--caption"
         color="textPrimary"
         type="caption"
       >
         设置日期
       </p>
       <h5
-        className="sc-dlnjPT exVRkZ sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
+        className="sc-dkPtRN scNXs sinoui-typography sinoui-typography--h5 sinoui-date-range-view-toolbar__selected-date"
         color="textPrimary"
         type="h5"
       >
         <span
-          className="sc-crzoUp eLFWUE"
+          className="sc-crHmcD XfWGg"
           onClick={[Function]}
         >
           开始时间
         </span>
         -
         <span
-          className="sc-crzoUp eLFWUE"
+          className="sc-crHmcD XfWGg"
           onClick={[Function]}
         >
           结束时间
@@ -97,52 +97,52 @@ exports[`快照测试 打开状态 1`] = `
       </h5>
     </div>
     <div
-      className="sc-eCApGN bUAeNY sinoui-week-title-bar"
+      className="sc-eCImPb dpojCs sinoui-week-title-bar"
     >
       <p
-        className="sc-dlnjPT kgLMXB sinoui-typography sinoui-typography--body2 sc-hKFyIo iKUJxZ"
+        className="sc-dkPtRN ktGmxM sinoui-typography sinoui-typography--body2 sc-hKwDye gRVWlF"
         color="textPrimary"
         type="body2"
       >
         一
       </p>
       <p
-        className="sc-dlnjPT kgLMXB sinoui-typography sinoui-typography--body2 sc-hKFyIo jlQKwu"
+        className="sc-dkPtRN ktGmxM sinoui-typography sinoui-typography--body2 sc-hKwDye hsRXka"
         color="textPrimary"
         type="body2"
       >
         二
       </p>
       <p
-        className="sc-dlnjPT kgLMXB sinoui-typography sinoui-typography--body2 sc-hKFyIo ePHNZb"
+        className="sc-dkPtRN ktGmxM sinoui-typography sinoui-typography--body2 sc-hKwDye cWJaMH"
         color="textPrimary"
         type="body2"
       >
         三
       </p>
       <p
-        className="sc-dlnjPT kgLMXB sinoui-typography sinoui-typography--body2 sc-hKFyIo gwesik"
+        className="sc-dkPtRN ktGmxM sinoui-typography sinoui-typography--body2 sc-hKwDye kjogDA"
         color="textPrimary"
         type="body2"
       >
         四
       </p>
       <p
-        className="sc-dlnjPT kgLMXB sinoui-typography sinoui-typography--body2 sc-hKFyIo fUQvHh"
+        className="sc-dkPtRN ktGmxM sinoui-typography sinoui-typography--body2 sc-hKwDye jIakcx"
         color="textPrimary"
         type="body2"
       >
         五
       </p>
       <p
-        className="sc-dlnjPT kgLMXB sinoui-typography sinoui-typography--body2 sc-hKFyIo gvMwFC"
+        className="sc-dkPtRN ktGmxM sinoui-typography sinoui-typography--body2 sc-hKwDye kiWlaS"
         color="textPrimary"
         type="body2"
       >
         六
       </p>
       <p
-        className="sc-dlnjPT kgLMXB sinoui-typography sinoui-typography--body2 sc-hKFyIo bZDAij"
+        className="sc-dkPtRN ktGmxM sinoui-typography sinoui-typography--body2 sc-hKwDye fMNoDz"
         color="textPrimary"
         type="body2"
       >
@@ -150,7 +150,7 @@ exports[`快照测试 打开状态 1`] = `
       </p>
     </div>
     <div
-      className="sc-dIsAE IWiTL sinoui-date-range-mobile-view-content"
+      className="sc-egiyK endyIG sinoui-date-range-mobile-view-content"
     >
       <div
         className="sinoui-date-range-mobile-view__dates-list"
@@ -182,20 +182,21 @@ exports[`快照测试 打开状态 1`] = `
                 "height": 336,
                 "left": 0,
                 "position": "absolute",
+                "right": undefined,
                 "top": 404544,
                 "width": "100%",
               }
             }
           >
             <div
-              className="sc-hBMVcZ hatcsg"
+              className="sc-hBUSln hoXFzg"
             >
               2020
               年
               五月
             </div>
             <div
-              className="sc-bqGHjH heblJy sinoui-dates-view"
+              className="sc-bqiRlB fDlhlY sinoui-dates-view"
             >
               <div
                 className="sinoui-date-cell sinoui-date-cell--empty"
@@ -900,20 +901,21 @@ exports[`快照测试 打开状态 1`] = `
                 "height": 336,
                 "left": 0,
                 "position": "absolute",
+                "right": undefined,
                 "top": 404880,
                 "width": "100%",
               }
             }
           >
             <div
-              className="sc-hBMVcZ hatcsg"
+              className="sc-hBUSln hoXFzg"
             >
               2020
               年
               六月
             </div>
             <div
-              className="sc-bqGHjH heblJy sinoui-dates-view"
+              className="sc-bqiRlB fDlhlY sinoui-dates-view"
             >
               <div
                 className="sinoui-date-cell"
@@ -1553,20 +1555,21 @@ exports[`快照测试 打开状态 1`] = `
                 "height": 336,
                 "left": 0,
                 "position": "absolute",
+                "right": undefined,
                 "top": 405216,
                 "width": "100%",
               }
             }
           >
             <div
-              className="sc-hBMVcZ hatcsg"
+              className="sc-hBUSln hoXFzg"
             >
               2020
               年
               七月
             </div>
             <div
-              className="sc-bqGHjH heblJy sinoui-dates-view"
+              className="sc-bqiRlB fDlhlY sinoui-dates-view"
             >
               <div
                 className="sinoui-date-cell sinoui-date-cell--empty"
@@ -2249,20 +2252,21 @@ exports[`快照测试 打开状态 1`] = `
                 "height": 336,
                 "left": 0,
                 "position": "absolute",
+                "right": undefined,
                 "top": 405552,
                 "width": "100%",
               }
             }
           >
             <div
-              className="sc-hBMVcZ hatcsg"
+              className="sc-hBUSln hoXFzg"
             >
               2020
               年
               八月
             </div>
             <div
-              className="sc-bqGHjH heblJy sinoui-dates-view"
+              className="sc-bqiRlB fDlhlY sinoui-dates-view"
             >
               <div
                 className="sinoui-date-cell sinoui-date-cell--empty"

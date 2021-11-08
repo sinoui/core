@@ -1,16 +1,12 @@
 import React from 'react';
+import type { HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
 import { opacify } from 'polished';
 import { useRipple } from '@sinoui/ripple';
-import OverriableComponent from '../OverridableComponent';
 import useMultiRefs from '../utils/useMultiRefs';
 
-/**
- * ListItem  列表项组件
- */
-
-export interface ListItemProps {
+export interface ListItemProps extends HTMLAttributes<HTMLLIElement> {
   /**
    * 设置为true，表示是嵌入样式
    */
@@ -132,29 +128,40 @@ const ListItemStyle = css<ListItemProps>`
   ${({ insert }) => insert && `padding-left: 32px`}
 `;
 
-const Wrapper = styled.li.attrs((props: ListItemProps) => ({
-  tabIndex: '0',
-  className: classNames('sinoui-list-item', {
-    'sinoui-list-item--insert': props.insert,
-    'sinoui-list-item--disabled': props.disabled,
-    'sinoui-list-item--disabled-ripple': props.disabledRipple,
-    'sinoui-list-item--dense': props.dense,
-  }),
-}))<ListItemProps>`
+const Wrapper = styled.li<ListItemProps>`
   ${ListItemStyle}
 `;
 
-const ListItem: OverriableComponent<ListItemProps, 'li'> = React.forwardRef<
+/**
+ * ListItem  列表项组件
+ */
+const ListItem: React.FC<ListItemProps> = React.forwardRef<
   HTMLLIElement,
   ListItemProps
 >((props, ref) => {
-  const { disabledRipple, disabled } = props;
+  const { disabledRipple, disabled, className, tabIndex = 0 } = props;
   const rippleConfig = disabledRipple
     ? { enableKeyboardFocus: false, disabled: true }
     : { enableKeyboardFocus: false, disabled };
   const rippleRef = useRipple<HTMLLIElement>(rippleConfig);
   const listItemRef = useMultiRefs(rippleRef, ref);
 
-  return <Wrapper {...props} ref={listItemRef} />;
+  return (
+    <Wrapper
+      {...props}
+      className={classNames(
+        'sinoui-list-item',
+        {
+          'sinoui-list-item--insert': props.insert,
+          'sinoui-list-item--disabled': props.disabled,
+          'sinoui-list-item--disabled-ripple': props.disabledRipple,
+          'sinoui-list-item--dense': props.dense,
+        },
+        className,
+      )}
+      tabIndex={tabIndex}
+      ref={listItemRef}
+    />
+  );
 });
 export default ListItem;

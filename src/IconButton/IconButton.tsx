@@ -3,7 +3,6 @@ import BaseButton from '@sinoui/core/BaseButton';
 import type { Props as BaseButtonProps } from '@sinoui/core/BaseButton';
 import styled from 'styled-components';
 import getColorFromTheme from '../utils/getColorFromTheme';
-import OverridableComponent from '../OverridableComponent';
 import adjustOpacity from '../utils/adjustOpacity';
 import bemClassNames from '../utils/bemClassNames';
 
@@ -20,6 +19,8 @@ export interface IconButtonProps extends BaseButtonProps {
    * 指定图标大小。密集模式默认为20px，正常模式下不设置图标大小，即会采用图标组件自身默认的大小，一般为`24px`。
    */
   size?: number;
+
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 const rippleConfig: object = {
@@ -93,13 +94,10 @@ const IconButtonLayout = styled(BaseButton)<
 /**
  * 图标按钮
  */
-const IconButton: OverridableComponent<
-  IconButtonProps,
-  'button'
-> = React.forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
-  props,
-  ref,
-) {
+const IconButton: React.FC<IconButtonProps> = React.forwardRef<
+  HTMLButtonElement,
+  IconButtonProps
+>((props, ref) => {
   const {
     as,
     children,
@@ -136,5 +134,7 @@ const IconButton: OverridableComponent<
     </IconButtonLayout>
   );
 });
+
+IconButton.displayName = 'IconButton';
 
 export default IconButton;

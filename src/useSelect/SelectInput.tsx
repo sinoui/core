@@ -72,10 +72,7 @@ const SelectInputLayout = styled.div<{
 /**
  * 处理弹窗选择相关组件input内部渲染元素
  */
-export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
-  props,
-  ref,
-) {
+const SelectInput = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     autoFocus,
     children,
@@ -115,3 +112,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function SelectInput(
     </SelectInputLayout>
   );
 });
+
+SelectInput.displayName = 'SelectInput';
+
+export default SelectInput;

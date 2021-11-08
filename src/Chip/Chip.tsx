@@ -1,10 +1,10 @@
 import React from 'react';
+import type { HTMLAttributes } from 'react';
 import BaseButton from '@sinoui/core/BaseButton';
 import styled, { css } from 'styled-components';
 import CancelIcon from '@sinoui/core/svg-icons/Cancel';
 import { Theme } from '@sinoui/theme';
 import { opacify } from 'polished';
-import OverridableComponent from '../OverridableComponent';
 import bemClassNames from '../utils/bemClassNames';
 import singleLineTextCss from '../utils/singleLineTextCss';
 import getColorFromTheme from '../utils/getColorFromTheme';
@@ -19,7 +19,7 @@ import {
   BASIC_CHIP_HOVER_BG,
 } from './contains';
 
-export interface Props {
+export interface Props extends HTMLAttributes<'div'> {
   /**
    * 标签内容
    */
@@ -68,6 +68,10 @@ export interface Props {
    * 选中状态，如果为`true`，则为选中
    */
   selected?: boolean;
+  /**
+   *
+   */
+  ref?: React.Ref<HTMLElement>;
 }
 
 export interface ChipLayoutProps {
@@ -324,76 +328,75 @@ const CancelButton = styled(CancelIcon)`
     })};
 `;
 
-const Chip: OverridableComponent<Props, 'div'> = React.forwardRef<
-  HTMLElement,
-  Props
->(function Chip(props, ref) {
-  const {
-    label,
-    as: AsComp,
-    clickable,
-    className,
-    onDelete,
-    variant = 'standard',
-    disabled,
-    dense,
-    icon,
-    avatar,
-    selected,
-    ...rest
-  } = props;
+const Chip: React.FC<Props> = React.forwardRef<HTMLElement, Props>(
+  (props, ref) => {
+    const {
+      label,
+      as: AsComp,
+      clickable,
+      className,
+      onDelete,
+      variant = 'standard',
+      disabled,
+      dense,
+      icon,
+      avatar,
+      selected,
+      ...rest
+    } = props;
 
-  const Comp: React.ElementType =
-    AsComp || clickable ? ClickableChipLayout : ChipLayout;
+    const Comp: React.ElementType =
+      AsComp || clickable ? ClickableChipLayout : ChipLayout;
 
-  const onClick = (event: React.MouseEvent) => {
-    if (disabled) {
-      return;
-    }
-
-    if (onDelete) {
-      onDelete(event);
-    }
-  };
-
-  const renderSelectedIcon = () => {
-    if (selected) {
-      if (avatar || icon) {
-        return <CheckCircle className="sinoui-chip--selected__icon" />;
+    const onClick = (event: React.MouseEvent) => {
+      if (disabled) {
+        return;
       }
-      return <Done className="sinoui-chip--selected__done" />;
-    }
-    return null;
-  };
 
-  return (
-    <Comp
-      ref={ref}
-      className={bemClassNames(
-        'sinoui-chip',
-        { disabled, outlined: variant === 'outlined' },
-        className,
-      )}
-      $variant={variant}
-      disabled={disabled}
-      dense={dense}
-      aria-disabled={disabled ? 'true' : undefined}
-      selected={selected}
-      clickable={clickable}
-      {...rest}
-    >
-      {avatar || icon}
-      {renderSelectedIcon()}
-      <ChipContent className="sinoui-chip__content">{label}</ChipContent>
-      {onDelete && (
-        <CancelButton
-          className="sinoui-chip__delete"
-          onClick={onClick}
-          disabled={disabled}
-        />
-      )}
-    </Comp>
-  );
-});
+      if (onDelete) {
+        onDelete(event);
+      }
+    };
+
+    const renderSelectedIcon = () => {
+      if (selected) {
+        if (avatar || icon) {
+          return <CheckCircle className="sinoui-chip--selected__icon" />;
+        }
+        return <Done className="sinoui-chip--selected__done" />;
+      }
+      return null;
+    };
+
+    return (
+      <Comp
+        ref={ref}
+        className={bemClassNames(
+          'sinoui-chip',
+          { disabled, outlined: variant === 'outlined' },
+          className,
+        )}
+        $variant={variant}
+        disabled={disabled}
+        dense={dense}
+        aria-disabled={disabled ? 'true' : undefined}
+        selected={selected}
+        clickable={clickable}
+        {...rest}
+      >
+        {avatar || icon}
+        {renderSelectedIcon()}
+        <ChipContent className="sinoui-chip__content">{label}</ChipContent>
+        {onDelete && (
+          <CancelButton
+            className="sinoui-chip__delete"
+            onClick={onClick}
+            disabled={disabled}
+          />
+        )}
+      </Comp>
+    );
+  },
+);
 
 export default Chip;

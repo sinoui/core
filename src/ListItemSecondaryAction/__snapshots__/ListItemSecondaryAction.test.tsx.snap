@@ -2,17 +2,17 @@
 
 exports[`快照测试 主操作区有IconButton 1`] = `
 <div
-  className="sc-bdnylx drOSzv"
+  className="sc-bdvvtL bbseZu"
 >
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT bNDBQj sinoui-icon-button"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN kJOIcu sinoui-icon-button"
     color="textSecondary"
     role="button"
     type="button"
   >
     <svg
       aria-hidden="true"
-      className="sc-hKFyIo lnCuhW sinoui-svg-icon"
+      className="sc-hKwDye gzJKdS sinoui-svg-icon"
       data-testid="BookmarkBorderIcon"
       focusable="false"
       role="presentation"
@@ -29,11 +29,11 @@ exports[`快照测试 主操作区有IconButton 1`] = `
 
 exports[`快照测试 主操作区有图标 1`] = `
 <div
-  className="sc-bdnylx drOSzv"
+  className="sc-bdvvtL bbseZu"
 >
   <svg
     aria-hidden="true"
-    className="sc-hKFyIo lnCuhW sinoui-svg-icon"
+    className="sc-hKwDye gzJKdS sinoui-svg-icon"
     data-testid="BookmarkBorderIcon"
     focusable="false"
     role="presentation"

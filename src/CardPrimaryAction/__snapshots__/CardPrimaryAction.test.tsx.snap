@@ -2,8 +2,8 @@
 
 exports[`正确渲染CardPrimaryAction 1`] = `
 <div
-  className="sc-bdnylx flHQCd sinoui-card__primary-action"
-  tabIndex="0"
+  className="sc-bdvvtL CkmdU sinoui-card__primary-action"
+  tabIndex={0}
 >
   文本
 </div>

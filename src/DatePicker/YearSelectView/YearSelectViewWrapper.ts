@@ -10,6 +10,7 @@ const YearSelectViewWrapper = styled(CalendarContent)<{ $columns: number }>`
   justify-content: space-between;
   box-sizing: border-box;
   overflow: auto;
+  padding: 4px;
 `;
 
 export default YearSelectViewWrapper;

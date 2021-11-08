@@ -2,7 +2,7 @@
 
 exports[`文字排版 快照测试 基本文字排版 1`] = `
 <p
-  className="sc-bdnylx cJLcUI sinoui-typography sinoui-typography--caption"
+  className="sc-bdvvtL cPSmjV sinoui-typography sinoui-typography--caption"
   color="textPrimary"
   type="caption"
 >
@@ -13,28 +13,28 @@ exports[`文字排版 快照测试 基本文字排版 1`] = `
 exports[`文字排版 快照测试 设置属性 1`] = `
 Array [
   <h2
-    className="sc-bdnylx cJLcUI sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL cPSmjV sinoui-typography sinoui-typography--caption"
     color="textPrimary"
     type="caption"
   >
     Caption
   </h2>,
   <p
-    className="sc-bdnylx cDzLHg sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL fRvhkB sinoui-typography sinoui-typography--caption"
     color="textPrimary"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx OpYZt sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL fYVEqw sinoui-typography sinoui-typography--caption"
     color="textPrimary"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx gytULs sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL hKnhTB sinoui-typography sinoui-typography--caption"
     color="success"
     type="caption"
   >
@@ -46,63 +46,63 @@ Array [
 exports[`文字排版 快照测试 颜色设置 1`] = `
 Array [
   <p
-    className="sc-bdnylx cJLcUI sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL cPSmjV sinoui-typography sinoui-typography--caption"
     color="textPrimary"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx eIoAGf sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL kFkfpG sinoui-typography sinoui-typography--caption"
     color="primary"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx xSQck sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL iKwWmB sinoui-typography sinoui-typography--caption"
     color="secondary"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx cJLcUI sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL cPSmjV sinoui-typography sinoui-typography--caption"
     color="textPrimary"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx evgsWJ sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL iSfrzw sinoui-typography sinoui-typography--caption"
     color="textSecondary"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx cPrkjF sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL gBkZQs sinoui-typography sinoui-typography--caption"
     color="error"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx fHMSEQ sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL fXIJeB sinoui-typography sinoui-typography--caption"
     color="warning"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx gytULs sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL hKnhTB sinoui-typography sinoui-typography--caption"
     color="success"
     type="caption"
   >
     Caption
   </p>,
   <p
-    className="sc-bdnylx ghESwI sinoui-typography sinoui-typography--caption"
+    className="sc-bdvvtL DpBOZ sinoui-typography sinoui-typography--caption"
     color="info"
     type="caption"
   >

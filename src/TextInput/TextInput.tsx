@@ -62,6 +62,8 @@ export interface TextInputProps extends BaseInputProps {
    * 将输入框作为表单控件使用
    */
   field?: boolean;
+
+  ref?: React.Ref<HTMLDivElement>;
 }
 
 const variantComponent = {
@@ -101,140 +103,137 @@ const TextInputWrapper = styled.div<{
 /**
  * 文本输入框组件。符合 Material Design Text Field 规范。
  */
-const TextInput = React.forwardRef<HTMLDivElement, TextInputProps>(
-  (props, ref) => {
-    const {
-      variant = 'standard',
-      baseClassName = cssClasses.textInput,
-      label,
-      field,
-      value,
-      defaultValue,
-      disabled,
-      required,
-      shrink: shrinkProp,
-      forceShrink,
-      error,
-      errorText,
-      placeholder,
-      className,
-      style,
-      helperText,
-      readOnly,
-      dense,
-      startAdornment,
-      wrapperProps,
-      onFocus,
-      onBlur,
-      ...other
-    } = props;
-    const innerLabelRef = useRef<HTMLLabelElement>(null);
-    const [focused, setFocused] = useState(false);
-    const shrink =
-      !!placeholder ||
-      (forceShrink ??
-        (shrinkProp ||
-          focused ||
-          !isEmptyValue(value) ||
-          !!defaultValue ||
-          !!startAdornment));
-    const formControlContext = useFormControlContext();
-    const noLabel =
-      !label &&
-      (!formControlContext || formControlContext.labelLayout !== 'floating');
-    const labelRef = label ? innerLabelRef : formControlContext?.labelRef;
+const TextInput: React.FC<TextInputProps> = React.forwardRef<
+  HTMLDivElement,
+  TextInputProps
+>((props, ref) => {
+  const {
+    variant = 'standard',
+    baseClassName = cssClasses.textInput,
+    label,
+    field,
+    value,
+    defaultValue,
+    disabled,
+    required,
+    shrink: shrinkProp,
+    forceShrink,
+    error,
+    errorText,
+    placeholder,
+    className,
+    style,
+    helperText,
+    readOnly,
+    dense,
+    startAdornment,
+    wrapperProps,
+    onFocus,
+    onBlur,
+    ...other
+  } = props;
+  const innerLabelRef = useRef<HTMLLabelElement>(null);
+  const [focused, setFocused] = useState(false);
+  const shrink =
+    !!placeholder ||
+    (forceShrink ??
+      (shrinkProp ||
+        focused ||
+        !isEmptyValue(value) ||
+        !!defaultValue ||
+        !!startAdornment));
+  const formControlContext = useFormControlContext();
+  const noLabel =
+    !label &&
+    (!formControlContext || formControlContext.labelLayout !== 'floating');
+  const labelRef = label ? innerLabelRef : formControlContext?.labelRef;
 
-    const handleBlur = useMemo(
-      () => mergeCallbacks(onBlur, () => setFocused(false)),
-      [onBlur],
-    );
-    const handleFocus = useMemo(
-      () => mergeCallbacks(onFocus, () => setFocused(true)),
-      [onFocus],
-    );
+  const handleBlur = useMemo(
+    () => mergeCallbacks(onBlur, () => setFocused(false)),
+    [onBlur],
+  );
+  const handleFocus = useMemo(
+    () => mergeCallbacks(onFocus, () => setFocused(true)),
+    [onFocus],
+  );
 
-    const InputComponent = variantComponent[variant];
-    const inputState = {
-      required,
-      dense,
-      disabled,
-      error,
-      readOnly,
-      focused,
-    };
+  const InputComponent = variantComponent[variant];
+  const inputState = {
+    required,
+    dense,
+    disabled,
+    error,
+    readOnly,
+    focused,
+  };
 
-    const inputProps: Record<string, any> = {
-      ...other,
-      ...inputState,
-      onBlur: handleBlur,
-      onFocus: handleFocus,
-      startAdornment,
-      placeholder,
-      value,
-      defaultValue,
-      noLabel,
-      error,
-      errorText,
-    };
+  const inputProps: Record<string, any> = {
+    ...other,
+    ...inputState,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+    startAdornment,
+    placeholder,
+    value,
+    defaultValue,
+    noLabel,
+    error,
+    errorText,
+  };
 
-    if (variant === 'outlined') {
-      inputProps.notched = shrink;
-      inputProps.labelRef = labelRef;
-    }
+  if (variant === 'outlined') {
+    inputProps.notched = shrink;
+    inputProps.labelRef = labelRef;
+  }
 
-    const helperTextContent = (
-      <>
-        {error && errorText && <HelperText error>{errorText}</HelperText>}
-        {!error && helperText && (
-          <HelperText disabled={disabled}>{helperText}</HelperText>
-        )}
-      </>
-    );
+  const helperTextContent = (
+    <>
+      {error && errorText && <HelperText error>{errorText}</HelperText>}
+      {!error && helperText && (
+        <HelperText disabled={disabled}>{helperText}</HelperText>
+      )}
+    </>
+  );
 
-    return (
-      <TextInputWrapper
-        {...wrapperProps}
-        className={bemClassNames(
-          baseClassName,
-          {
-            outlined: variant === 'outlined',
-            filled: variant === 'filled',
-            shrink,
-            noLabel,
-            ...inputState,
-            error: !!error,
-          },
-          className,
-          field && 'sinoui-form-control',
-        )}
-        disabled={disabled}
-        style={style}
-        ref={ref}
-        field={field}
-        $focused={focused}
-      >
-        {label && (
-          <FormLabel
-            layout="floating"
-            {...inputState}
-            error={!!error}
-            variant={variant}
-            filled={shrink}
-            ref={labelRef}
-          >
-            {label}
-          </FormLabel>
-        )}
-        <InputComponent {...inputProps} />
-        {field ? (
-          <HelperLine>{helperTextContent}</HelperLine>
-        ) : (
-          helperTextContent
-        )}
-      </TextInputWrapper>
-    );
-  },
-);
+  return (
+    <TextInputWrapper
+      {...wrapperProps}
+      className={bemClassNames(
+        baseClassName,
+        {
+          outlined: variant === 'outlined',
+          filled: variant === 'filled',
+          shrink,
+          noLabel,
+          ...inputState,
+          error: !!error,
+        },
+        className,
+        field && 'sinoui-form-control',
+      )}
+      disabled={disabled}
+      style={style}
+      ref={ref}
+      field={field}
+      $focused={focused}
+    >
+      {label && (
+        <FormLabel
+          layout="floating"
+          {...inputState}
+          error={!!error}
+          variant={variant}
+          filled={shrink}
+          ref={labelRef}
+        >
+          {label}
+        </FormLabel>
+      )}
+      <InputComponent {...inputProps} />
+      {field ? <HelperLine>{helperTextContent}</HelperLine> : helperTextContent}
+    </TextInputWrapper>
+  );
+});
 
 TextInput.sinouiName = 'TextInput';
 

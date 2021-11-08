@@ -6,7 +6,6 @@ import classNames from 'classnames';
 import { opacify } from 'polished';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
 import colorCss from '@sinoui/core/utils/colorCss';
-import OverridableComponent from '../OverridableComponent';
 
 export interface Props extends BaseButtonProps {
   /**
@@ -29,6 +28,7 @@ export interface Props extends BaseButtonProps {
    * 子元素
    */
   children?: React.ReactNode;
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 const textButtonStyle = css<Props>`
@@ -110,19 +110,7 @@ const flowingIconStyle = css<Props>`
   margin-right: ${({ outlined, raised }) => (outlined || raised ? -4 : 0)}px;
 `;
 
-const ButtonLayout = styled(BaseButton).attrs(
-  ({ className, outlined, raised, color = 'primary' }: Props) => ({
-    color,
-    className: classNames(
-      'sinoui-button',
-      {
-        'sinoui-button--outlined': outlined,
-        'sinoui-button--raised': raised,
-      },
-      className,
-    ),
-  }),
-)<Props>`
+const ButtonLayout = styled(BaseButton)<Props>`
   ${textButtonStyle};
   ${(props) => props.outlined && outlinedStyle};
   ${(props) => props.raised && raisedStyle};
@@ -140,12 +128,33 @@ const ButtonLayout = styled(BaseButton).attrs(
   }
 `;
 
-const Button: OverridableComponent<Props, 'button'> = React.forwardRef<
-  HTMLButtonElement,
-  Props
->(function Button(props, ref) {
-  const { as, ...other } = props;
-  return <ButtonLayout {...other} forwardedAs={as} ref={ref} />;
-});
+/**
+ * 按钮组件
+ */
+const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
+  (props, ref) => {
+    const { as, className, outlined, raised, color = 'primary' } = props;
+    return (
+      <ButtonLayout
+        {...props}
+        forwardedAs={as}
+        ref={ref}
+        className={classNames(
+          'sinoui-button',
+          {
+            'sinoui-button--outlined': outlined,
+            'sinoui-button--raised': raised,
+          },
+          className,
+        )}
+        color={color}
+      />
+    );
+  },
+);
+
+if (process.env.NODE_ENV === 'development') {
+  Button.displayName = 'Button';
+}
 
 export default Button;

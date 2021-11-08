@@ -177,4 +177,6 @@ const Typography = React.forwardRef<HTMLElement, Props>((props, ref) => {
   );
 });
 
+Typography.displayName = 'Typography';
+
 export default Typography;

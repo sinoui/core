@@ -2,10 +2,10 @@
 
 exports[`Fab组件 快照测试 基本使用 1`] = `
 <div
-  className="sc-bdnylx jYNGHx"
+  className="sc-bdvvtL cuXNUk"
 >
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT kXwqKt sinoui-fab"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN cLlSvA sinoui-fab"
     color="primary"
     role="button"
     type="button"
@@ -34,10 +34,10 @@ exports[`Fab组件 快照测试 基本使用 1`] = `
 
 exports[`Fab组件 快照测试 指定不同颜色 1`] = `
 <div
-  className="sc-bdnylx jYNGHx"
+  className="sc-bdvvtL cuXNUk"
 >
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT kXwqKt sinoui-fab"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN cLlSvA sinoui-fab"
     color="primary"
     role="button"
     type="button"
@@ -62,7 +62,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT eqrRTa sinoui-fab"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN geglXf sinoui-fab"
     color="secondary"
     role="button"
     type="button"
@@ -87,7 +87,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT lnTzaf sinoui-fab"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN lmcUBm sinoui-fab"
     color="error"
     role="button"
     type="button"
@@ -112,7 +112,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT rIsAC sinoui-fab"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN gCEGMb sinoui-fab"
     color="warning"
     role="button"
     type="button"
@@ -137,7 +137,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT fEMIdG sinoui-fab"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN fgKJaX sinoui-fab"
     color="info"
     role="button"
     type="button"
@@ -162,7 +162,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT fEiiQO sinoui-fab"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN eJmBxX sinoui-fab"
     color="success"
     role="button"
     type="button"
@@ -187,7 +187,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT jCyWnH sinoui-fab"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN lmdSQq sinoui-fab"
     color="actionActive"
     role="button"
     type="button"
@@ -212,7 +212,7 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
     </svg>
   </button>
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT bynKfZ sinoui-fab"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN dsSDbg sinoui-fab"
     color="actionDisabled"
     role="button"
     type="button"
@@ -241,11 +241,11 @@ exports[`Fab组件 快照测试 指定不同颜色 1`] = `
 
 exports[`Fab组件 快照测试 设置不可用状态 1`] = `
 <div
-  className="sc-bdnylx jYNGHx"
+  className="sc-bdvvtL cuXNUk"
 >
   <button
     aria-disabled={true}
-    className="sc-gtssRu doxERG sinoui-base-button sc-dlnjPT kXwqKt sinoui-fab sinoui-fab--disabled"
+    className="sc-gsDKAQ bxyrTn sinoui-base-button sc-dkPtRN cLlSvA sinoui-fab sinoui-fab--disabled"
     color="primary"
     disabled={true}
     role="button"
@@ -275,10 +275,10 @@ exports[`Fab组件 快照测试 设置不可用状态 1`] = `
 
 exports[`Fab组件 快照测试 设置扩展样式 1`] = `
 <div
-  className="sc-bdnylx jYNGHx"
+  className="sc-bdvvtL cuXNUk"
 >
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT frdLfi sinoui-fab sinoui-fab--extended"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN wjcUj sinoui-fab sinoui-fab--extended"
     color="primary"
     role="button"
     type="button"
@@ -307,10 +307,10 @@ exports[`Fab组件 快照测试 设置扩展样式 1`] = `
 
 exports[`Fab组件 快照测试 设置较小显示 1`] = `
 <div
-  className="sc-bdnylx jYNGHx"
+  className="sc-bdvvtL cuXNUk"
 >
   <button
-    className="sc-gtssRu bWEvxX sinoui-base-button sc-dlnjPT fVjlQR sinoui-fab sinoui-fab--mini"
+    className="sc-gsDKAQ WZUMy sinoui-base-button sc-dkPtRN jozFIg sinoui-fab sinoui-fab--mini"
     color="primary"
     role="button"
     type="button"

@@ -1,14 +1,13 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import classNames from 'classnames';
-import OverriableComponent from '../OverridableComponent';
 import useMultiRefs from '../utils/useMultiRefs';
 
 /**
  * List  列表根组件
  */
 
-export interface Props {
+export interface Props extends HTMLAttributes<HTMLUListElement> {
   /**
    * 设置为true,表示为密集模式
    */
@@ -21,7 +20,7 @@ export interface Props {
    * 禁用内边距
    */
   disabledPadding?: boolean;
-  style?: React.CSSProperties;
+  ref?: React.Ref<HTMLUListElement>;
 }
 
 const ListStyle = css<Props>`
@@ -52,84 +51,86 @@ const nodeListToArray = (listRef: HTMLElement | null) => {
   return arr;
 };
 
-const List: OverriableComponent<Props, 'ul'> = React.forwardRef<
-  HTMLUListElement,
-  Props
->((props, ref) => {
-  const listRef = useRef<HTMLUListElement | null>(null);
-  const multiRef = useMultiRefs(listRef, ref);
+/**
+ * 列表组件
+ */
+const List: React.FC<Props> = React.forwardRef<HTMLUListElement, Props>(
+  (props, ref) => {
+    const listRef = useRef<HTMLUListElement | null>(null);
+    const multiRef = useMultiRefs(listRef, ref);
 
-  /**
-   * 获取 需要聚焦的 listItem 序号
-   */
-  const getFoucsIndex = useCallback(
-    (activeIndex: number, isPageDown?: boolean): number => {
-      let focusIndex = activeIndex;
+    /**
+     * 获取 需要聚焦的 listItem 序号
+     */
+    const getFoucsIndex = useCallback(
+      (activeIndex: number, isPageDown?: boolean): number => {
+        let focusIndex = activeIndex;
+        const listItems =
+          (listRef.current &&
+            listRef.current.querySelectorAll('.sinoui-list-item')) ||
+          [];
+        if (!isPageDown) {
+          focusIndex = focusIndex > 0 ? focusIndex - 1 : 0;
+        } else {
+          focusIndex =
+            focusIndex < listItems.length - 1
+              ? focusIndex + 1
+              : listItems.length - 1;
+        }
+
+        const isItemDisabled =
+          listRef.current &&
+          listRef.current
+            .querySelectorAll('.sinoui-list-item')
+            [focusIndex].classList.contains('sinoui-list-item--disabled');
+        if (isItemDisabled) {
+          // 如果聚焦的元素是列表的最后一个非禁用项，点击下键，则focusIndex = focusIndex - 1
+          return getFoucsIndex(
+            focusIndex,
+            focusIndex < listItems.length - 1 ? isPageDown : !isPageDown,
+          );
+        }
+        return focusIndex;
+      },
+      [],
+    );
+
+    const handleKeyDown = (event: React.KeyboardEvent) => {
       const listItems =
         (listRef.current &&
           listRef.current.querySelectorAll('.sinoui-list-item')) ||
         [];
-      if (!isPageDown) {
-        focusIndex = focusIndex > 0 ? focusIndex - 1 : 0;
-      } else {
-        focusIndex =
-          focusIndex < listItems.length - 1
-            ? focusIndex + 1
-            : listItems.length - 1;
-      }
+      const listItemsLen = listItems.length;
 
-      const isItemDisabled =
-        listRef.current &&
-        listRef.current
-          .querySelectorAll('.sinoui-list-item')
-          [focusIndex].classList.contains('sinoui-list-item--disabled');
-      if (isItemDisabled) {
-        // 如果聚焦的元素是列表的最后一个非禁用项，点击下键，则focusIndex = focusIndex - 1
-        return getFoucsIndex(
-          focusIndex,
-          focusIndex < listItems.length - 1 ? isPageDown : !isPageDown,
+      let focusIndex = -1;
+      if (listRef.current) {
+        focusIndex = nodeListToArray(listRef.current).findIndex(
+          (item) => item === document.activeElement,
         );
       }
-      return focusIndex;
-    },
-    [],
-  );
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    const listItems =
-      (listRef.current &&
-        listRef.current.querySelectorAll('.sinoui-list-item')) ||
-      [];
-    const listItemsLen = listItems.length;
+      switch (event.keyCode) {
+        case 38:
+          focusIndex = getFoucsIndex(focusIndex);
+          break;
+        case 40:
+          focusIndex = getFoucsIndex(focusIndex, true);
+          break;
+        default:
+          break;
+      }
 
-    let focusIndex = -1;
-    if (listRef.current) {
-      focusIndex = nodeListToArray(listRef.current).findIndex(
-        (item) => item === document.activeElement,
-      );
-    }
+      if (focusIndex !== -1 && focusIndex <= listItemsLen - 1) {
+        (
+          listItems &&
+          listItems[focusIndex] &&
+          (listItems[focusIndex] as HTMLInputElement)
+        ).focus();
+      }
+    };
 
-    switch (event.keyCode) {
-      case 38:
-        focusIndex = getFoucsIndex(focusIndex);
-        break;
-      case 40:
-        focusIndex = getFoucsIndex(focusIndex, true);
-        break;
-      default:
-        break;
-    }
-
-    if (focusIndex !== -1 && focusIndex <= listItemsLen - 1) {
-      (
-        listItems &&
-        listItems[focusIndex] &&
-        (listItems[focusIndex] as HTMLInputElement)
-      ).focus();
-    }
-  };
-
-  return <StyledList {...props} ref={multiRef} onKeyDown={handleKeyDown} />;
-});
+    return <StyledList {...props} ref={multiRef} onKeyDown={handleKeyDown} />;
+  },
+);
 
 export default List;

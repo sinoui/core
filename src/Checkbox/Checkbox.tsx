@@ -38,6 +38,8 @@ const Checkbox = withLabel<any, HTMLInputElement, CheckboxProps<any>>(
   'Checkbox',
 )(CheckboxButton);
 
-Checkbox.displayName = 'Checkbox';
+if (process.env.NODE_ENV === 'development') {
+  Checkbox.displayName = 'Checkbox';
+}
 
 export default Checkbox;

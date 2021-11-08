@@ -85,4 +85,6 @@ const SvgIcon = styled.svg
   display: inline-block;
 `;
 
+SvgIcon.displayName = 'SvgIcon';
+
 export default SvgIcon;
