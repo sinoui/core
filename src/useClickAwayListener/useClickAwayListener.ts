@@ -31,6 +31,6 @@ export default function useClickAwayListener(
 
   useEffect(() => {
     document.addEventListener('click', handleClick, true);
-    return () => document.addEventListener('click', handleClick, true);
+    return () => document.removeEventListener('click', handleClick, true);
   }, [handleClick]);
 }
