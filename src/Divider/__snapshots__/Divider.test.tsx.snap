@@ -2,30 +2,30 @@
 
 exports[`快照测试 flex布局下的垂直分割线 1`] = `
 <hr
-  className="sc-bdnylx iBiQKV sinoui-divider sinoui-divider--vertical"
+  className="sc-bdvvtL jIkQzs sinoui-divider sinoui-divider--vertical"
 />
 `;
 
 exports[`快照测试 垂直分割线 1`] = `
 <hr
-  className="sc-bdnylx dagirI sinoui-divider sinoui-divider--vertical"
+  className="sc-bdvvtL ezzhLB sinoui-divider sinoui-divider--vertical"
 />
 `;
 
 exports[`快照测试 水平中间分割线 1`] = `
 <hr
-  className="sc-bdnylx iotndo sinoui-divider"
+  className="sc-bdvvtL buctud sinoui-divider"
 />
 `;
 
 exports[`快照测试 水平插入分割线 1`] = `
 <hr
-  className="sc-bdnylx bMglSV sinoui-divider"
+  className="sc-bdvvtL hokrVA sinoui-divider"
 />
 `;
 
 exports[`快照测试 默认水平分割线 1`] = `
 <hr
-  className="sc-bdnylx oMesJ sinoui-divider"
+  className="sc-bdvvtL ihiApg sinoui-divider"
 />
 `;

@@ -85,10 +85,7 @@ const StyledListItem = styled(ListItem)<{ $focused?: boolean }>`
 /**
  * 选项列表
  */
-const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
-  props,
-  ref,
-) {
+const OptionList = React.forwardRef<HTMLElement, Props>((props, ref) => {
   const {
     options: optionsProp = [],
     groupBy,
@@ -141,6 +138,7 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
             }
             onClick={() => handleOptionClick(item)}
             $focused={focusedOption === getOptionLabel(item)}
+            data-value={getOptionLabel(item)}
           >
             <ListItemText title={allowShowTitle ? item.title : undefined}>
               {renderOption(item)}
@@ -157,14 +155,12 @@ const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
         );
   };
 
-  const defaultRenderGroup = (option: any) => {
-    return (
-      <GroupContent key={option.key} disabledRipple>
-        <GroupTitle>{option.groupTitle}</GroupTitle>
-        <GroupList>{option.children}</GroupList>
-      </GroupContent>
-    );
-  };
+  const defaultRenderGroup = (option: any) => (
+    <GroupContent key={option.key} disabledRipple>
+      <GroupTitle>{option.groupTitle}</GroupTitle>
+      <GroupList>{option.children}</GroupList>
+    </GroupContent>
+  );
 
   const renderGroup = renderGroupProp || defaultRenderGroup;
 

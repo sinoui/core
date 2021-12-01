@@ -48,11 +48,11 @@ function SimpleDemo() {
           required
           placeholder="123"
         >
-          <Option value="选项一">选项一</Option>
-          <Option value="选项二">选项二</Option>
-          <Option value="选项五">选项一</Option>
-          <Option value="选项三">选项三</Option>
-          <Option value="选项四">选项四</Option>
+          <Option value="1">选项一</Option>
+          <Option value="2">选项二</Option>
+          <Option value="3">选项三</Option>
+          <Option value="4">选项四</Option>
+          <Option value="5">选项五</Option>
         </SelectField>
         <SelectField
           value={value}
@@ -342,9 +342,9 @@ export const autoFocus = () => (
     <SelectField multiple variant="outlined" label="Multiple" autoFocus>
       <Option value="选项一">选项一</Option>
       <Option value="选项二">选项二</Option>
-      <Option value="选项五">选项一</Option>
       <Option value="选项三">选项三</Option>
       <Option value="选项四">选项四</Option>
+      <Option value="选项五">选项五</Option>
     </SelectField>
   </ThemeProvider>
 );

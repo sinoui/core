@@ -2,7 +2,7 @@
 
 exports[`Paper组件 快照测试 基本使用 1`] = `
 <div
-  className="sc-bdnylx sc-gtssRu laeRoC ceTWHP sinoui-paper"
+  className="sc-bdvvtL sc-gsDKAQ zCEun klchtu sinoui-paper"
 >
   Paper Content
 </div>
@@ -10,7 +10,7 @@ exports[`Paper组件 快照测试 基本使用 1`] = `
 
 exports[`Paper组件 快照测试 设置是否显示方角 1`] = `
 <div
-  className="sc-bdnylx sc-gtssRu hUmNbC ceTWHP sinoui-paper"
+  className="sc-bdvvtL sc-gsDKAQ iHJAXL klchtu sinoui-paper"
 >
   Paper Content
 </div>
@@ -18,7 +18,7 @@ exports[`Paper组件 快照测试 设置是否显示方角 1`] = `
 
 exports[`Paper组件 快照测试 设置轮廓模式 1`] = `
 <div
-  className="sc-bdnylx sc-gtssRu jiYHHe ceTWHP sinoui-paper"
+  className="sc-bdvvtL sc-gsDKAQ fylTGH klchtu sinoui-paper"
 >
   Paper Content
 </div>
@@ -26,7 +26,7 @@ exports[`Paper组件 快照测试 设置轮廓模式 1`] = `
 
 exports[`Paper组件 快照测试 设置阴影高度 1`] = `
 <div
-  className="sc-bdnylx sc-gtssRu cZAbic ceTWHP sinoui-paper"
+  className="sc-bdvvtL sc-gsDKAQ htMQwZ klchtu sinoui-paper"
   elevation={4}
 >
   Paper Content

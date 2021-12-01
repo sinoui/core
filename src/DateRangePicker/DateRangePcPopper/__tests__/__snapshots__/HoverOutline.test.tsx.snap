@@ -2,7 +2,7 @@
 
 exports[`快照测试 1`] = `
 <div
-  className="sc-bdnylx kLmPJw sinoui-date-range-picker__hover-outline"
+  className="sc-bdvvtL kkVykZ sinoui-date-range-picker__hover-outline"
   data-hover-date="2020-07-08"
   data-testid="hover-outline"
   style={

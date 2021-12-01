@@ -19,16 +19,16 @@ exports[`快照测试 嵌入图标 1`] = `
 
 exports[`快照测试 浮动按钮居中嵌入 1`] = `
 <div
-  className="sc-hKFyIo eTUGFS"
+  className="sc-hKwDye jpIEfe"
 >
   <div
     className="sinoui-bottom-app-bar--fab"
   />
   <div
-    className="sc-bdnylx hKFxmq sinoui-app-bar--actions"
+    className="sc-bdvvtL gowonf sinoui-app-bar--actions"
   />
   <div
-    className="sc-eCApGN bhKDxI"
+    className="sc-eCImPb dVVfXo"
   >
     <div
       className="sinoui-bottom-app-bar--layer"
@@ -56,26 +56,26 @@ exports[`快照测试 浮动按钮居中嵌入 1`] = `
 
 exports[`快照测试 浮动按钮居右显示 1`] = `
 <div
-  className="sc-dlnjPT jYJtuc"
+  className="sc-dkPtRN cFkZaV"
 >
   <div
     className="sinoui-bottom-app-bar--fab"
   />
   <div
-    className="sc-bdnylx hKFxmq sinoui-app-bar--actions"
+    className="sc-bdvvtL gowonf sinoui-app-bar--actions"
   />
 </div>
 `;
 
 exports[`快照测试 默认 1`] = `
 <div
-  className="sc-dlnjPT dsvvZF"
+  className="sc-dkPtRN ghODxX"
 >
   <div
     className="sinoui-bottom-app-bar--fab"
   />
   <div
-    className="sc-bdnylx hKFxmq sinoui-app-bar--actions"
+    className="sc-bdvvtL gowonf sinoui-app-bar--actions"
   />
 </div>
 `;

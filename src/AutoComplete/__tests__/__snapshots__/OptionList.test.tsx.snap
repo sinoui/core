@@ -7,6 +7,7 @@ exports[`不分组数据渲染 1`] = `
 >
   <li
     className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+    data-value="The Shawshank Redemption"
     onClick={[Function]}
     tabIndex={0}
   >
@@ -18,6 +19,7 @@ exports[`不分组数据渲染 1`] = `
   </li>
   <li
     className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+    data-value="The Godfather"
     onClick={[Function]}
     tabIndex={0}
   >
@@ -29,6 +31,7 @@ exports[`不分组数据渲染 1`] = `
   </li>
   <li
     className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+    data-value="The Godfather: Part II"
     onClick={[Function]}
     tabIndex={0}
   >
@@ -40,6 +43,7 @@ exports[`不分组数据渲染 1`] = `
   </li>
   <li
     className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+    data-value="The Dark Knight"
     onClick={[Function]}
     tabIndex={0}
   >
@@ -72,6 +76,7 @@ exports[`分组渲染 1`] = `
     >
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="12 Angry Men"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -83,6 +88,7 @@ exports[`分组渲染 1`] = `
       </li>
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="2001: A Space Odyssey"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -94,6 +100,7 @@ exports[`分组渲染 1`] = `
       </li>
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="3 Idiots"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -120,6 +127,7 @@ exports[`分组渲染 1`] = `
     >
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="American History X"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -131,6 +139,7 @@ exports[`分组渲染 1`] = `
       </li>
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="Apocalypse Now"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -142,6 +151,7 @@ exports[`分组渲染 1`] = `
       </li>
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="Alien"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -153,6 +163,7 @@ exports[`分组渲染 1`] = `
       </li>
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="American Beauty"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -164,6 +175,7 @@ exports[`分组渲染 1`] = `
       </li>
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="Aliens"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -175,6 +187,7 @@ exports[`分组渲染 1`] = `
       </li>
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="Amélie"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -186,6 +199,7 @@ exports[`分组渲染 1`] = `
       </li>
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="A Clockwork Orange"
         onClick={[Function]}
         tabIndex={0}
       >
@@ -197,6 +211,7 @@ exports[`分组渲染 1`] = `
       </li>
       <li
         className="sc-gsDKAQ jMsphT sinoui-list-item sc-crHmcD jgHYBA"
+        data-value="Amadeus"
         onClick={[Function]}
         tabIndex={0}
       >

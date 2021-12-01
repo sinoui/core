@@ -287,12 +287,12 @@ const sameWidth = (autoWidth?: boolean) => ({
 });
 
 const getFocusedIndex = (
-  items: Element[],
+  items: HTMLLIElement[],
   key: string,
   focusedOption?: string,
 ) => {
   const currentIdx = items.findIndex(
-    (item) => item.textContent === focusedOption,
+    (item) => item.dataset.value === focusedOption,
   );
 
   let focusedIdx = currentIdx;
@@ -576,7 +576,7 @@ export default function AutoComplete(props: Props) {
           block: 'nearest',
           inline: 'nearest',
         });
-        setFocusedOption(items[focusedIndex]?.textContent!);
+        setFocusedOption(items[focusedIndex]?.dataset.value!);
       } else {
         open();
       }
