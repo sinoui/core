@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import getScrollbarSize from 'dom-helpers/scrollbarSize';
+import { detect } from 'detect-browser';
 
 /**
  * 判断指定容器元素是否溢出
@@ -7,7 +8,8 @@ import getScrollbarSize from 'dom-helpers/scrollbarSize';
  * @param container 容器
  */
 function isOverflowing(container: HTMLElement) {
-  if (container === document.body) {
+  const brower = detect();
+  if (container === document.body && brower?.name !== 'ie') {
     return window.innerWidth > document.documentElement.clientWidth;
   }
   return container.scrollHeight > container.clientHeight;
