@@ -1,6 +1,6 @@
 {
   "name": "@sinoui/core",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "sinoui基础组件库",
   "license": "MIT",
   "main": "index.js",
