@@ -133,10 +133,17 @@ const ButtonLayout = styled(BaseButton)<Props>`
  */
 const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
   (props, ref) => {
-    const { as, className, outlined, raised, color = 'primary' } = props;
+    const {
+      as,
+      className,
+      outlined,
+      raised,
+      color = 'primary',
+      ...rest
+    } = props;
     return (
       <ButtonLayout
-        {...props}
+        {...rest}
         forwardedAs={as}
         ref={ref}
         className={classNames(
@@ -148,6 +155,8 @@ const Button: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
           className,
         )}
         color={color}
+        outlined={outlined}
+        raised={raised}
       />
     );
   },

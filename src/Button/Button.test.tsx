@@ -171,3 +171,19 @@ describe('className', () => {
     );
   });
 });
+
+describe('as', () => {
+  it('链接标签', () => {
+    const tree = renderer
+      .create(
+        <ThemeProvider theme={defaultTheme}>
+          <Button>链接</Button>
+        </ThemeProvider>,
+      )
+      .toTree();
+
+    expect((tree?.rendered as any).props.className).toContain(
+      'sinoui-base-button',
+    );
+  });
+});
