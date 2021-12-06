@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-nested-ternary */
 import React, {
   useRef,
@@ -10,6 +11,7 @@ import { createPopper, Modifier, OptionsGeneric } from '@popperjs/core';
 import type { Instance, Placement, VirtualElement } from '@popperjs/core';
 import ReactDOM from 'react-dom';
 import { useTheme } from 'styled-components';
+import { detect } from 'detect-browser';
 import type { ContainerElement } from '../utils/getContainerElement';
 import getContainerElement from '../utils/getContainerElement';
 import useMultiRefs from '../utils/useMultiRefs';
@@ -165,6 +167,11 @@ const Popper = React.forwardRef<HTMLDivElement, Props>(
     });
 
     useEffect(() => {
+      const browser = detect();
+      if (browser?.name === 'ie') {
+        return undefined;
+      }
+
       const tooltip = tooltipRef.current;
       if (!isShow || !portal || !tooltip) {
         return undefined;

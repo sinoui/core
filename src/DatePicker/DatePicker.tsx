@@ -68,7 +68,7 @@ const CalendarModalContent = React.forwardRef<
     onClose: () => void;
     onChange: (value?: Date) => void;
   }
->(function CalendarModalContent({ value, onChange, onClose, ...rest }, ref) {
+>(({ value, onChange, onClose, ...rest }, ref) => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(
     value ?? new Date(),
   );
@@ -121,16 +121,12 @@ export default function DatePicker(props: Props) {
   const date = parseDate(value);
   const inputValue = isValidateDate(value) ? value : '';
   const inputRenderValue = renderValue ? renderValue(date) : inputValue;
-  const {
-    getModalProps,
-    getPopperProps,
-    getTextInputProps,
-    onRequestClose,
-  } = useSelect({
-    ...props,
-    isRenderWithPopper: isPc,
-    renderValue: inputRenderValue,
-  });
+  const { getModalProps, getPopperProps, getTextInputProps, onRequestClose } =
+    useSelect({
+      ...props,
+      isRenderWithPopper: isPc,
+      renderValue: inputRenderValue,
+    });
 
   /**
    * 日期选择变化时的回调函数
