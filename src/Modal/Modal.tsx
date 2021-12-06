@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import { detect } from 'detect-browser';
 import ModalWrapper from './ModalWrapper';
 import Backdrop from '../Backdrop';
 import RenderModalBackdropProps from './RenderModalBackdropProps';
@@ -185,6 +187,11 @@ const Modal = React.forwardRef<HTMLDivElement, Props>(
     }, [open]);
 
     useEffect(() => {
+      const browser = detect();
+      if (browser?.name === 'ie') {
+        return undefined;
+      }
+
       const modalNode = modalNodeRef.current;
       const modalContent = modalContentRef.current;
       if (!isShowModal || !modalNode || !modalContent) {

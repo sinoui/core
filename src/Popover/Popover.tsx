@@ -313,9 +313,8 @@ function Popover(props: PopoverProps) {
 
     if (content$ && paperDomRef.current) {
       const { height } = content$.getBoundingClientRect();
-      const {
-        height: paperHeight,
-      } = paperDomRef.current.getBoundingClientRect();
+      const { height: paperHeight } =
+        paperDomRef.current.getBoundingClientRect();
 
       if (height > paperHeight) {
         paperDomRef.current.style.bottom = '0px';
