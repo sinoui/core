@@ -1,7 +1,6 @@
-import Menu from './Menu';
-import MenuNew from './MenuNew';
+import Menu, { MenuProps } from './Menu';
 import MenuListItem from './MenuListItem';
 
 export default Menu;
 
-export { MenuListItem, MenuNew };
+export { MenuListItem, MenuProps };

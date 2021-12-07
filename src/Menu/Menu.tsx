@@ -1,12 +1,17 @@
-/* eslint-disable react/no-find-dom-node */
 /* eslint-disable no-param-reassign */
 import React, { useCallback, useRef, useEffect } from 'react';
 import getScrollbarSize from 'dom-helpers/scrollbarSize';
-import Popover, { PopoverProps } from '@sinoui/core/Popover';
-import { PaperProps } from '@sinoui/core/Paper';
+import Paper, { PaperProps } from '@sinoui/core/Paper';
+import Popper from '@sinoui/core/Popper';
+import Grow from '@sinoui/core/Grow';
+import type { VirtualElement } from '@popperjs/core';
+import { Modifier } from '@popperjs/core';
+import styled from 'styled-components';
+import contains from 'dom-helpers/contains';
+import type { ContainerElement } from '../utils/getContainerElement';
 import MenuList, { MenuListProps } from './MenuList';
 
-export interface MenuProps extends PopoverProps {
+export interface MenuProps {
   children?: React.ReactNode;
   open: boolean;
   onEnter?: (element: HTMLElement) => void;
@@ -20,15 +25,23 @@ export interface MenuProps extends PopoverProps {
   dense?: boolean;
   color?: string;
   textStyle?: React.CSSProperties;
+  /**
+   * 参考元素。弹出提示内容会基于参考内容进行定位
+   */
+  referenceElement: ContainerElement<HTMLElement | VirtualElement>;
+  /**
+   * 传给popper的插件。
+   */
+  modifiers?: Partial<Modifier<any, any>>[];
 }
 
-const LTR_ORIGIN: {
-  vertical: 'top';
-  horizontal: 'left';
-} = {
-  vertical: 'top',
-  horizontal: 'left',
-};
+const MenuLayout = styled(Popper)`
+  z-index: 2;
+`;
+
+const StylePaper = styled(Paper)`
+  overflow-y: auto;
+`;
 
 export function syncWidth(anchorElement: HTMLElement, target?: HTMLElement) {
   if (
@@ -62,17 +75,11 @@ function Menu(props: MenuProps) {
     onRequestClose,
     children,
     MenuListProps: menuListProps,
-    PaperProps: paperProps = {},
-    paperRef,
-    minWidth,
-    dense,
-    color,
-    textStyle,
-    ...other
+    referenceElement,
+    modifiers,
   } = props;
 
   const menuListRef = useRef<any>(null);
-  const PaperPropsStyle = {};
 
   const focus = useCallback(() => {
     if (menuListRef.current) {
@@ -96,11 +103,34 @@ function Menu(props: MenuProps) {
     }
   }, [preventAutoFocus]);
 
+  const onMenuoutClick = useCallback(
+    (event) => {
+      const { target } = event;
+      if (
+        target !== menuListRef.current &&
+        !contains(menuListRef.current, target)
+      ) {
+        if (onRequestClose) {
+          onRequestClose();
+        }
+      }
+    },
+    [onRequestClose],
+  );
+
   useEffect(() => {
     if (open) {
       focus();
     }
   }, [focus, open]);
+
+  useEffect(() => {
+    if (open) {
+      document.addEventListener('click', onMenuoutClick);
+    }
+
+    return () => document.removeEventListener('click', onMenuoutClick);
+  }, [onMenuoutClick, open]);
 
   const handleEnter = useCallback(
     (element: HTMLElement) => {
@@ -130,32 +160,25 @@ function Menu(props: MenuProps) {
   );
 
   return (
-    <Popover
+    <MenuLayout
       open={open}
-      onEnter={handleEnter}
-      anchorOrigin={LTR_ORIGIN}
-      transformOrigin={LTR_ORIGIN}
-      PaperProps={{
-        ...paperProps,
-        style: {
-          maxHeight: 'calc(100vh - 96px)',
-          WebkitOverflowScrolling: 'touch',
-          minWidth,
-          ...PaperPropsStyle,
-        },
-        ref: paperRef,
-      }}
-      onRequestClose={onRequestClose}
-      {...other}
+      referenceElement={referenceElement}
+      placement="bottom-start"
+      modifiers={modifiers}
+      portal
     >
-      <MenuList
-        onKeyDown={handleListKeyDown}
-        {...menuListProps}
-        ref={menuListRef}
-      >
-        {children}
-      </MenuList>
-    </Popover>
+      <Grow in={open} onEnter={handleEnter}>
+        <StylePaper elevation={8}>
+          <MenuList
+            onKeyDown={handleListKeyDown}
+            {...menuListProps}
+            ref={menuListRef}
+          >
+            {children}
+          </MenuList>
+        </StylePaper>
+      </Grow>
+    </MenuLayout>
   );
 }
 

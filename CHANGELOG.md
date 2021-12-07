@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.0.21 - 2021.12.07
+
+- improve(Menu): 去掉不用的旧版 Menu 代码
+
 ## v1.0.19 - 2021.12.06
 
 - fix(Button): 修复 Button 组件 as 属性导致丢失 sinoui-base-button 样式的缺陷

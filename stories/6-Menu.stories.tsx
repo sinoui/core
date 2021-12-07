@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { MenuListItem, MenuNew } from '@sinoui/core/Menu';
+import Menu, { MenuListItem } from '@sinoui/core/Menu';
 import Button from '@sinoui/core/Button';
 import StoryLayout from './StoryLayout';
 
@@ -16,7 +16,7 @@ function SimpleDemo() {
       <Button ref={buttonRef} onClick={() => setOpen(!open)}>
         {open ? '关闭' : '打开'}
       </Button>
-      <MenuNew
+      <Menu
         open={open}
         onRequestClose={() => setOpen(false)}
         referenceElement={buttonRef}
@@ -24,7 +24,7 @@ function SimpleDemo() {
         <MenuListItem>选项一</MenuListItem>
         <MenuListItem>选项二</MenuListItem>
         <MenuListItem>选项三</MenuListItem>
-      </MenuNew>
+      </Menu>
     </StoryLayout>
   );
 }
