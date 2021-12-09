@@ -1,3 +1,5 @@
-import ToggleButton from './ToggleButton';
+import ToggleButton, { ToggleButtonProps } from './ToggleButton';
 
 export default ToggleButton;
+
+export type { ToggleButtonProps };

@@ -25,7 +25,7 @@ function getItems(items: HTMLCollection) {
 }
 
 export default React.forwardRef<HTMLUListElement, MenuListProps>(
-  function MenuList(props, ref) {
+  (props, ref) => {
     const [currentTabIndex, setCurrentTabIndex] = useState(-1);
 
     const selectedItemIndexRef = useRef<number>(-1);

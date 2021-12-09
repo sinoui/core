@@ -17,7 +17,7 @@ export interface ToggleButtonProps {
   /**
    * 值变更时的回调函数
    */
-  onChange?: (value?: string) => void;
+  onChange?: (value: string) => void;
   /**
    * 子元素
    */
@@ -112,7 +112,7 @@ export default function ToggleButton(props: ToggleButtonProps) {
 
   const handleClcik = () => {
     if (onChange) {
-      onChange(!selected ? value : '');
+      onChange(value);
     }
   };
 
