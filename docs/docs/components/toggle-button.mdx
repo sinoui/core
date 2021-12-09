@@ -1,0 +1,219 @@
+---
+id: toggle-button
+title: ToggleButton 切换按钮
+---
+
+import StoryLayout from './StoryLayout';
+import {
+  SimpleToggeleButton,
+  ToggleButtonWithColor,
+  MultipleDemo,
+  SingleToggleButton,
+} from './toggle-button-demoes';
+
+切换按钮组可用于对相关选项进行分组。
+
+## 基础使用
+
+<SimpleToggeleButton />
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import defaultTheme from '@sinoui/theme/defaultTheme';
+import ToggleButton from '@sinoui/core/ToggleButton';
+import ToggleButtonGroup from '@sinoui/core/ToggleButtonGroup';
+import FormatAlignLeft from '@sinoui/icons/FormatAlignLeft';
+import FormatAlignRight from '@sinoui/icons/FormatAlignRight';
+import FormatAlignCenter from '@sinoui/icons/FormatAlignCenter';
+import FormatAlignJustify from '@sinoui/icons/FormatAlignJustify';
+
+export default function SimpleToggeleButtonDemo() {
+  const [selected, setSelected] = useState('');
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <ToggleButtonGroup value={selected} onChange={setSelected as any}>
+        <ToggleButton value="left">
+          <FormatAlignLeft />
+        </ToggleButton>
+        <ToggleButton value="center">
+          <FormatAlignCenter />
+        </ToggleButton>
+        <ToggleButton value="right">
+          <FormatAlignRight />
+        </ToggleButton>
+        <ToggleButton value="justify">
+          <FormatAlignJustify />
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </ThemeProvider>
+  );
+}
+```
+
+## 多选模式
+
+组件支持多选，只需给`ToggleButtonGroup`组件指定`multiple`属性即可。
+
+<MultipleDemo />
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import defaultTheme from '@sinoui/theme/defaultTheme';
+import ToggleButton from '@sinoui/core/ToggleButton';
+import ToggleButtonGroup from '@sinoui/core/ToggleButtonGroup';
+import FormatBold from '@sinoui/icons/FormatBold';
+import FormatItalic from '@sinoui/icons/FormatItalic';
+import FormatUnderlined from '@sinoui/icons/FormatUnderlined';
+import FormatClear from '@sinoui/icons/FormatClear';
+
+export default function MultipleDemo() {
+  const [selected, setSelected] = useState(['bold']);
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <ToggleButtonGroup
+        multiple
+        value={selected}
+        onChange={setSelected as any}
+      >
+        <ToggleButton value="bold">
+          <FormatBold />
+        </ToggleButton>
+        <ToggleButton value="italic">
+          <FormatItalic />
+        </ToggleButton>
+        <ToggleButton value="underLine">
+          <FormatUnderlined />
+        </ToggleButton>
+        <ToggleButton value="clear" disabled>
+          <FormatClear />
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </ThemeProvider>
+  );
+}
+```
+
+## 紧凑模式
+
+只需给`ToggleButtonGroup`组件指定`dense`属性即可实现紧凑模式展现。
+
+<SimpleToggeleButton dense />
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import defaultTheme from '@sinoui/theme/defaultTheme';
+import ToggleButton from '@sinoui/core/ToggleButton';
+import ToggleButtonGroup from '@sinoui/core/ToggleButtonGroup';
+import FormatAlignLeft from '@sinoui/icons/FormatAlignLeft';
+import FormatAlignRight from '@sinoui/icons/FormatAlignRight';
+import FormatAlignCenter from '@sinoui/icons/FormatAlignCenter';
+import FormatAlignJustify from '@sinoui/icons/FormatAlignJustify';
+
+export default function DenseToggeleButtonDemo() {
+  const [selected, setSelected] = useState('');
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <ToggleButtonGroup dense value={selected} onChange={setSelected as any}>
+        <ToggleButton value="left">
+          <FormatAlignLeft />
+        </ToggleButton>
+        <ToggleButton value="center">
+          <FormatAlignCenter />
+        </ToggleButton>
+        <ToggleButton value="right">
+          <FormatAlignRight />
+        </ToggleButton>
+        <ToggleButton value="justify">
+          <FormatAlignJustify />
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </ThemeProvider>
+  );
+}
+```
+
+## 指定按钮选中时的颜色
+
+我们可以通过给`ToggleButtonGroup`组件指定`color`属性即可实现选中颜色的设置。
+
+<ToggleButtonWithColor />
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import defaultTheme from '@sinoui/theme/defaultTheme';
+import ToggleButton from '@sinoui/core/ToggleButton';
+import ToggleButtonGroup from '@sinoui/core/ToggleButtonGroup';
+
+export default function ToggleButtonWithColor() {
+  const [selected, setSelected] = useState<string>('web');
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <>
+        <ToggleButtonGroup
+          color="primary"
+          value={selected}
+          onChange={setSelected as any}
+        >
+          <ToggleButton value="web">web</ToggleButton>
+          <ToggleButton value="android">Android</ToggleButton>
+          <ToggleButton value="ios">ios</ToggleButton>
+        </ToggleButtonGroup>
+        <br />
+        <ToggleButtonGroup
+          color="secondary"
+          value={selected}
+          onChange={setSelected as any}
+        >
+          <ToggleButton value="web">web</ToggleButton>
+          <ToggleButton value="android">Android</ToggleButton>
+          <ToggleButton value="ios">ios</ToggleButton>
+        </ToggleButtonGroup>
+        <br />
+        <ToggleButtonGroup
+          color="info"
+          value={selected}
+          onChange={setSelected as any}
+        >
+          <ToggleButton value="web">web</ToggleButton>
+          <ToggleButton value="android">Android</ToggleButton>
+          <ToggleButton value="ios">ios</ToggleButton>
+        </ToggleButtonGroup>
+      </>
+    </ThemeProvider>
+  );
+}
+```
+
+## 单个切换按钮
+
+切换按钮支持单独使用，只要确保`selected`属性变化即可。
+
+<SingleToggleButton />
+
+```tsx
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import defaultTheme from '@sinoui/theme/defaultTheme';
+import ToggleButton from '@sinoui/core/ToggleButton';
+import Done from '@sinoui/icons/Done';
+
+export default function SingleToggleButton() {
+  const [selected, setSelected] = useState(false);
+
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <ToggleButton
+        value="check"
+        selected={selected}
+        onChange={() => setSelected(!selected)}
+      >
+        <Done />
+      </ToggleButton>
+    </ThemeProvider>
+  );
+}
+```

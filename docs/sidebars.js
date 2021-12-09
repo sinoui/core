@@ -40,6 +40,7 @@ module.exports = {
           'components/tooltip',
           'components/navigationRail',
           'components/steps',
+          'components/toggle-button',
         ],
       },
     ],
