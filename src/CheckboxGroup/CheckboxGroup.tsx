@@ -82,35 +82,32 @@ export interface CheckboxGroupProps<T> {
  */
 const parseItemsFromChildren = (
   children: React.ReactNode,
-): CheckboxGroupItem<any>[] => {
-  return (
-    React.Children.map(children, (item) => {
-      if (React.isValidElement(item) && item.props) {
-        const {
-          children: label,
-          value = label,
-          id = value,
-          disabled,
-          labelPosition,
-          readOnly,
-          dense,
-          color,
-        } = item.props;
-        return {
-          id,
-          value,
-          label,
-          disabled,
-          labelPosition,
-          readOnly,
-          dense,
-          color,
-        };
-      }
-      return null;
-    })?.filter(Boolean) ?? []
-  );
-};
+): CheckboxGroupItem<any>[] =>
+  React.Children.map(children, (item) => {
+    if (React.isValidElement(item) && item.props) {
+      const {
+        children: label,
+        value = label,
+        id = value,
+        disabled,
+        labelPosition,
+        readOnly,
+        dense,
+        color,
+      } = item.props;
+      return {
+        id,
+        value,
+        label,
+        disabled,
+        labelPosition,
+        readOnly,
+        dense,
+        color,
+      };
+    }
+    return null;
+  })?.filter(Boolean) ?? [];
 
 /**
  * 复选框组组件。不指定value属性时，此组件为非受控状态，自身维护选中状态

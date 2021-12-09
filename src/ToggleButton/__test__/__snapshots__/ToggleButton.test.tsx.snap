@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`正确渲染切换按钮 1`] = `
+<button
+  className="sc-bdvvtL eqWEUT sinoui-base-button sc-gsDKAQ jsrPIs sinoui-toggle-button"
+  onClick={[Function]}
+  role="button"
+  type="button"
+  value="IOS"
+>
+  IOS
+</button>
+`;
+
+exports[`渲染不同颜色的按钮 1`] = `
+Array [
+  <button
+    className="sc-bdvvtL eqWEUT sinoui-base-button sc-gsDKAQ jsrPIs sinoui-toggle-button"
+    color="primary"
+    onClick={[Function]}
+    role="button"
+    type="button"
+    value="IOS"
+  >
+    IOS
+  </button>,
+  <button
+    className="sc-bdvvtL eqWEUT sinoui-base-button sc-gsDKAQ ixkGTa sinoui-toggle-button"
+    color="success"
+    onClick={[Function]}
+    role="button"
+    type="button"
+    value="IOS"
+  >
+    IOS
+  </button>,
+  <button
+    className="sc-bdvvtL eqWEUT sinoui-base-button sc-gsDKAQ fbeYvB sinoui-toggle-button"
+    color="info"
+    onClick={[Function]}
+    role="button"
+    type="button"
+    value="IOS"
+  >
+    IOS
+  </button>,
+]
+`;
+
+exports[`渲染紧凑模式 1`] = `
+<button
+  className="sc-bdvvtL eqWEUT sinoui-base-button sc-gsDKAQ eaArLj sinoui-toggle-button sinoui-toggle-button--dense"
+  onClick={[Function]}
+  role="button"
+  type="button"
+  value="IOS"
+>
+  IOS
+</button>
+`;
+
+exports[`选中状态 1`] = `
+Array [
+  <button
+    className="sc-bdvvtL eqWEUT sinoui-base-button sc-gsDKAQ gLoBXw sinoui-toggle-button sinoui-toggle-button--selected"
+    onClick={[Function]}
+    role="button"
+    selected={true}
+    type="button"
+    value="IOS"
+  >
+    IOS
+  </button>,
+  <button
+    className="sc-bdvvtL eqWEUT sinoui-base-button sc-gsDKAQ esBoyA sinoui-toggle-button sinoui-toggle-button--selected"
+    color="primary"
+    onClick={[Function]}
+    role="button"
+    selected={true}
+    type="button"
+    value="IOS"
+  >
+    IOS
+  </button>,
+  <button
+    className="sc-bdvvtL eqWEUT sinoui-base-button sc-gsDKAQ fdFOdg sinoui-toggle-button sinoui-toggle-button--selected"
+    color="secondary"
+    onClick={[Function]}
+    role="button"
+    selected={true}
+    type="button"
+    value="IOS"
+  >
+    IOS
+  </button>,
+]
+`;

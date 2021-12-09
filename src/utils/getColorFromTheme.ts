@@ -34,9 +34,8 @@ const get = <T>(palette: any, path: string[]): T | undefined => {
  * @param {string} key 颜色关键字
  * @returns
  */
-const camelToObjectPath = (key: string) => {
-  return key.replace(/[A-Z]/g, (word) => `.${word.toLowerCase()}`).split('.');
-};
+const camelToObjectPath = (key: string) =>
+  key.replace(/[A-Z]/g, (word) => `.${word.toLowerCase()}`).split('.');
 
 /**
  *
