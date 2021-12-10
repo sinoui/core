@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { isFragment } from 'react-is';
+import classNames from 'classnames';
 import { ToggleButtonProps } from '../ToggleButton';
 
 export interface ToggleButtonGroupProps {
@@ -28,6 +29,16 @@ export interface ToggleButtonGroupProps {
    * 设置紧凑模式
    */
   dense?: boolean;
+
+  /**
+   * 指定自定义的样式名称
+   */
+  className?: string;
+
+  /**
+   * 指定自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
 const ToggleButtonGroupLayout = styled.div`
@@ -85,7 +96,16 @@ const valueToArray = (value?: string | string[]) => {
  * @returns
  */
 export default function ToggleButtonGroup(props: ToggleButtonGroupProps) {
-  const { children, color, dense, value, multiple, onChange } = props;
+  const {
+    children,
+    color,
+    dense,
+    value,
+    multiple,
+    onChange,
+    className,
+    ...rest
+  } = props;
   const selectedItems = valueToArray(value);
 
   /**
@@ -111,7 +131,10 @@ export default function ToggleButtonGroup(props: ToggleButtonGroupProps) {
   };
 
   return (
-    <ToggleButtonGroupLayout>
+    <ToggleButtonGroupLayout
+      className={classNames('sinoui-toggle-button-group', className)}
+      {...rest}
+    >
       {transformAllChildren(
         children,
         (item: React.ReactElement<ToggleButtonProps>, index: number) => {

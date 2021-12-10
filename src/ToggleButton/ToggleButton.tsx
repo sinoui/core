@@ -34,6 +34,16 @@ export interface ToggleButtonProps {
    * 是否使用紧凑版
    */
   dense?: boolean;
+
+  /**
+   * 指定自定义的样式名称
+   */
+  className?: string;
+
+  /**
+   * 指定自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
 const defaultButtonStyle = css<ToggleButtonProps>`
@@ -107,6 +117,7 @@ export default function ToggleButton(props: ToggleButtonProps) {
     color,
     disabled,
     dense,
+    className,
     ...rest
   } = props;
 
@@ -119,7 +130,7 @@ export default function ToggleButton(props: ToggleButtonProps) {
   return (
     <ToggleButtonLayout
       {...rest}
-      className={classNames('sinoui-toggle-button', {
+      className={classNames('sinoui-toggle-button', className, {
         'sinoui-toggle-button--selected': selected,
         'sinoui-toggle-button--dense': dense,
       })}
