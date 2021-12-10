@@ -1,5 +1,6 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { isFragment } from 'react-is';
 import { ToggleButtonProps } from '../ToggleButton';
 
 export interface ToggleButtonGroupProps {
@@ -22,7 +23,7 @@ export interface ToggleButtonGroupProps {
   /**
    * 子元素，一般为ToggleButton
    */
-  children: React.ReactNode | any;
+  children: React.ReactNode;
   /**
    * 设置紧凑模式
    */
@@ -43,52 +44,83 @@ const ToggleButtonGroupLayout = styled.div`
 `;
 
 /**
+ * 转换所有的叶子节点
+ *
+ * * 过滤掉非元素节点
+ * * 深度遍历 React.Fragment 子元素
+ *
+ * @param children 叶子节点
+ * @param mapper 节点转换器
+ * @returns 返回转换后的结果
+ */
+function transformAllChildren(
+  children: React.ReactNode,
+  mapper: (child: React.ReactElement, index: number) => React.ReactNode,
+): React.ReactNode {
+  return (
+    <>
+      {React.Children.map(children, (item, index) => {
+        if (!React.isValidElement(item)) {
+          return null;
+        }
+        if (isFragment(item)) {
+          return transformAllChildren(item.props.children, mapper);
+        }
+        return mapper(item, index);
+      })}
+    </>
+  );
+}
+
+const valueToArray = (value?: string | string[]) => {
+  if (Array.isArray(value)) {
+    return value;
+  }
+  return value ? [value] : [];
+};
+
+/**
  * 切换按钮组组件
  * @param props ToggleButtonGroupProps
  * @returns
  */
 export default function ToggleButtonGroup(props: ToggleButtonGroupProps) {
   const { children, color, dense, value, multiple, onChange } = props;
+  const selectedItems = valueToArray(value);
 
   /**
    * 处理值变更
    */
-  const handleChange = useCallback(
-    (selectedValue: string) => {
-      if (multiple) {
-        let newValue: string[] = [...(value as string[])];
-        const idx = newValue.indexOf(selectedValue);
-        if (idx === -1) {
-          newValue.push(selectedValue);
-        } else {
-          newValue = [...newValue.slice(0, idx), ...newValue.slice(idx + 1)];
-        }
-        if (onChange) {
-          onChange(newValue);
-        }
-      } else if (onChange) {
-        onChange(value === selectedValue ? '' : selectedValue);
+  const handleChange = (selectedValue: string) => {
+    if (multiple) {
+      const newValue = [...selectedItems];
+      const idx = newValue.indexOf(selectedValue);
+      if (idx === -1) {
+        newValue.push(selectedValue);
+      } else {
+        newValue.splice(idx, 1);
       }
-    },
-    [multiple, onChange, value],
-  );
+      if (onChange) {
+        onChange(newValue);
+      }
+    } else if (onChange) {
+      onChange(
+        selectedItems.includes(selectedValue) ? undefined : selectedValue,
+      );
+    }
+  };
 
   return (
     <ToggleButtonGroupLayout>
-      {React.Children.map(
+      {transformAllChildren(
         children,
-        (item: React.ReactElement<ToggleButtonProps>) => {
-          if (!React.isValidElement(item)) {
-            return null;
-          }
-
+        (item: React.ReactElement<ToggleButtonProps>, index: number) => {
           const childProps = {
             color,
             dense,
-            selected: multiple
-              ? value?.indexOf(item.props.value) !== -1
-              : value === item.props.value,
+            selected: selectedItems.includes(item.props.value),
             onChange: handleChange,
+            key: `${item.props.value}_${index}`,
           };
 
           return React.cloneElement(item, childProps);
