@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.1.2 - 2022.2.19
+
+- fix(RadioGroup): 修复 RadioGroup 不能正确处理 onBlur 和 onFocus 属性的缺陷
+
 ## v1.1.1 - 2021.12.10
 
 - fix(ToggleButton): 修复无法自定义切换按钮样式的缺陷

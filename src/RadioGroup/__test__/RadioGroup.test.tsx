@@ -10,6 +10,7 @@ import { defaultTheme } from '@sinoui/theme';
 import RadioGroup from '@sinoui/core/RadioGroup';
 import Radio from '@sinoui/core/Radio';
 import 'jest-styled-components';
+import FormGroup from '@sinoui/core/FormGroup';
 
 /**
  * RadioGroup 单元测试
@@ -199,4 +200,18 @@ describe('radioGroup组件 快照测试', () => {
 
     expect(tree).toMatchSnapshot();
   });
+});
+
+it('缺陷验证：不能正确处理 onFocus 和 onBlur 属性', () => {
+  const handleFocus = jest.fn();
+  const handleBlur = jest.fn();
+
+  const tree = renderer.create(
+    <RadioGroup onFocus={handleFocus} onBlur={handleBlur} />,
+  );
+
+  const { onFocus, onBlur } = tree.root.findByType(FormGroup).props;
+
+  expect(onFocus).toBe(handleFocus);
+  expect(onBlur).toBe(handleBlur);
 });

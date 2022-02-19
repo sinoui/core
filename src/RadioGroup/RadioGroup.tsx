@@ -74,35 +74,32 @@ export interface RadioGroupProps<T> {
  */
 const parseItemsFromChildren = (
   children: React.ReactNode,
-): RadioGroupItem<any>[] => {
-  return (
-    React.Children.map(children, (item) => {
-      if (React.isValidElement(item) && item.props) {
-        const {
-          children: label,
-          value = label,
-          id = value,
-          disabled,
-          labelPosition,
-          readOnly,
-          dense,
-          color,
-        } = item.props;
-        return {
-          id,
-          value,
-          label,
-          disabled,
-          labelPosition,
-          readOnly,
-          dense,
-          color,
-        };
-      }
-      return null;
-    })?.filter(Boolean) ?? []
-  );
-};
+): RadioGroupItem<any>[] =>
+  React.Children.map(children, (item) => {
+    if (React.isValidElement(item) && item.props) {
+      const {
+        children: label,
+        value = label,
+        id = value,
+        disabled,
+        labelPosition,
+        readOnly,
+        dense,
+        color,
+      } = item.props;
+      return {
+        id,
+        value,
+        label,
+        disabled,
+        labelPosition,
+        readOnly,
+        dense,
+        color,
+      };
+    }
+    return null;
+  })?.filter(Boolean) ?? [];
 
 /**
  * 单选按钮组组件。
@@ -113,8 +110,6 @@ function RadioGroup<T = string>(props: RadioGroupProps<T>) {
     value,
     labelPosition,
     disabled,
-    onFocus,
-    onBlur,
     color,
     readOnly,
     onChange,
