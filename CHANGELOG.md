@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.1.3 - 2022.3.4
+
+- fix(AutoComplete): 修复多选 AutoComplete 失去焦点时值为空的情况下会报错的缺陷
+
 ## v1.1.2 - 2022.2.19
 
 - fix(RadioGroup): 修复 RadioGroup 不能正确处理 onBlur 和 onFocus 属性的缺陷

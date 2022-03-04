@@ -525,15 +525,14 @@ export default function AutoComplete(props: Props) {
     }
 
     if (!freeSolo) {
-      setInputValue(value ? getOptionLabel(value) : '');
-      setFocusedOption(
-        // eslint-disable-next-line no-nested-ternary
-        value
-          ? multiple
-            ? getOptionLabel(value[value.length - 1])
-            : getOptionLabel(value)
-          : '',
-      );
+      let focusedOptionText = '';
+      if (Array.isArray(value) && value.length > 0) {
+        focusedOptionText = getOptionLabel(value[value.length - 1]);
+      } else if (value && !Array.isArray(value)) {
+        focusedOptionText = getOptionLabel(value);
+      }
+      setInputValue(multiple || !value ? '' : getOptionLabel(value));
+      setFocusedOption(focusedOptionText);
     }
     setFocused(false);
 
