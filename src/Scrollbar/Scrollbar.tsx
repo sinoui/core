@@ -1,5 +1,7 @@
 import { useDrag } from '@use-gesture/react';
 import React, { useCallback, useEffect, useRef } from 'react';
+import getScrollbarSize from 'dom-helpers/scrollbarSize';
+import classnames from 'classnames';
 import HorizontalContent from './HorizontalContent';
 import HorizontalLayout from './HorizontalLayout';
 import Layout from './Layout';
@@ -8,9 +10,17 @@ import VerticalLayout from './VerticalLayout';
 
 export interface Props {
   children: React.ReactNode;
+  /**
+   * 自定义class名称
+   */
+  className?: string;
+  /**
+   * 自定义样式
+   */
+  style?: React.CSSProperties;
 }
 
-export default function Scrollbar({ children }: Props) {
+export default function Scrollbar({ children, className, style }: Props) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const verticalBarRef = useRef<HTMLDivElement | null>(null);
   const horizontalBarRef = useRef<HTMLDivElement | null>(null);
@@ -79,25 +89,37 @@ export default function Scrollbar({ children }: Props) {
     }
   });
 
+  const scrollbarWidth = getScrollbarSize();
+
   return (
-    <Layout>
+    <Layout className={classnames('sinoui-scrollbar', className)} style={style}>
       <div
         style={{
-          position: 'absolute',
           inset: 0,
-          marginRight: -17,
-          marginBottom: -17,
+          marginRight: -scrollbarWidth,
+          marginBottom: -scrollbarWidth,
           overflow: 'scroll',
+          height: `calc(100% + ${scrollbarWidth}px)`,
+          width: `calc(100% + ${scrollbarWidth}px)`,
         }}
         ref={scrollRef}
+        className="sinoui-scrollbar__content"
       >
         {children}
       </div>
-      <HorizontalLayout>
-        <HorizontalContent ref={horizontalBarRef} {...horizontalBind()} />
+      <HorizontalLayout className="sinoui-scrollbar__horizontal-track">
+        <HorizontalContent
+          ref={horizontalBarRef}
+          {...horizontalBind()}
+          className="sinoui-scrollbar__horizontal-thumb"
+        />
       </HorizontalLayout>
-      <VerticalLayout>
-        <VerticalContent ref={verticalBarRef} {...verticalBind()} />
+      <VerticalLayout className="sinoui-scrollbar__vertical-track">
+        <VerticalContent
+          ref={verticalBarRef}
+          {...verticalBind()}
+          className="sinoui-scrollbar__vertical-thumb"
+        />
       </VerticalLayout>
     </Layout>
   );
