@@ -1,6 +1,6 @@
 import { useDrag } from '@use-gesture/react';
 import React, { useCallback, useEffect, useRef } from 'react';
-import getScrollbarSize from 'dom-helpers/scrollbarSize';
+
 import classnames from 'classnames';
 import ScrollbarContainner from './ScrollbarContainner';
 import ScrollbarRect from './ScrollbarRect';
@@ -13,6 +13,7 @@ import useRafCallback from '../utils/useRafCallback';
 import Track from './Track';
 import Thumb from './Thumb';
 import useMultiRefs from '../utils/useMultiRefs';
+import ScrollContent from './ScrollContent';
 
 export interface Props {
   children: React.ReactNode;
@@ -161,28 +162,18 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
       handleHorizontalDrag(offsetX);
     });
 
-    const nativeScrollBarSize = getScrollbarSize();
-
     return (
       <ScrollbarContainner
         className={classnames('sinoui-scrollbar', className)}
         style={style}
       >
-        <div
-          style={{
-            inset: 0,
-            marginRight: -nativeScrollBarSize,
-            marginBottom: -nativeScrollBarSize,
-            overflow: 'scroll',
-            height: `calc(100% + ${nativeScrollBarSize}px)`,
-            width: `calc(100% + ${nativeScrollBarSize}px)`,
-          }}
+        <ScrollContent
           ref={contentRef}
           onScroll={onScroll}
           className="sinoui-scrollbar__content"
         >
           {children}
-        </div>
+        </ScrollContent>
         <Track
           variant="horizontal"
           className="sinoui-scrollbar__horizontal-track"
