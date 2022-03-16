@@ -13,6 +13,7 @@ import getInnerHeight from '../utils/getInnerHeight';
 import getInnerWidth from '../utils/getInnerWidth';
 import useElementResize from '../utils/useElementResize';
 import useChildrenChange from '../utils/useChildrenChange';
+import useRafCallback from '../utils/useRafCallback';
 
 export interface Props {
   children: React.ReactNode;
@@ -93,7 +94,6 @@ export default function Scrollbar({
   /**
    * 重新排列滚动容器
    */
-  // TODO: 需要 debounce 保护
   const reflow = useCallback(() => {
     calcSize();
     layout();
@@ -120,28 +120,32 @@ export default function Scrollbar({
     return undefined;
   }, [reflow]);
 
-  // 监听垂直滚动指示器的拖拽事件
-  const verticalBind = useDrag(({ delta }) => {
-    const [, offsetY] = delta;
+  const handleVerticalDrag = useRafCallback((offsetY: number) => {
     const rect = scrollbarRectRef.current;
     const container = scrollRef.current;
     rect.plusVerticalThumbPosition(offsetY);
-    // TODO: 需要 debounce 保护
     if (container) {
       container.scrollTop = rect.scrollTop;
     }
   });
+  // 监听垂直滚动指示器的拖拽事件
+  const verticalBind = useDrag(({ delta }) => {
+    const [, offsetY] = delta;
+    handleVerticalDrag(offsetY);
+  });
 
-  // 监听水平滚动指示器的拖拽事件
-  const horizontalBind = useDrag(({ delta }) => {
-    const [offsetX] = delta;
+  const handleHorizontalDrag = useRafCallback((offsetX: number) => {
     const rect = scrollbarRectRef.current;
     const container = scrollRef.current;
     rect.plusHorizontalThumbPosition(offsetX);
     if (container) {
-      // TODO: 需要 debounce 保护
       container.scrollLeft = rect.scrollLeft;
     }
+  });
+  // 监听水平滚动指示器的拖拽事件
+  const horizontalBind = useDrag(({ delta }) => {
+    const [offsetX] = delta;
+    handleHorizontalDrag(offsetX);
   });
 
   const nativeScrollBarSize = getScrollbarSize();

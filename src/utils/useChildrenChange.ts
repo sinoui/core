@@ -30,6 +30,7 @@ export default function useChildrenChange(
 
     return () => {
       mutationObserver.disconnect();
+      callback.cancel();
     };
   }, [element]);
 }

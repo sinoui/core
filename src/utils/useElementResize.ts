@@ -43,6 +43,7 @@ export default function useElementResize(
 
     return () => {
       getErd().removeListener(element, callback);
+      callback.cancel();
     };
   }, [element]);
 }
