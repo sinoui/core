@@ -2,11 +2,7 @@ import { useDrag } from '@use-gesture/react';
 import React, { useCallback, useEffect, useRef } from 'react';
 import getScrollbarSize from 'dom-helpers/scrollbarSize';
 import classnames from 'classnames';
-import HorizontalContent from './HorizontalContent';
-import HorizontalLayout from './HorizontalLayout';
-import Layout from './Layout';
-import VerticalContent from './VerticalContent';
-import VerticalLayout from './VerticalLayout';
+import ScrollbarContainner from './ScrollbarContainner';
 import ScrollbarRect from './ScrollbarRect';
 import useEnhancedEffect from '../utils/useEnhancedEffect';
 import getInnerHeight from '../utils/getInnerHeight';
@@ -14,6 +10,8 @@ import getInnerWidth from '../utils/getInnerWidth';
 import useElementResize from '../utils/useElementResize';
 import useChildrenChange from '../utils/useChildrenChange';
 import useRafCallback from '../utils/useRafCallback';
+import Track from './Track';
+import Thumb from './Thumb';
 
 export interface Props {
   children: React.ReactNode;
@@ -31,6 +29,19 @@ export interface Props {
   style?: React.CSSProperties;
 }
 
+/**
+ * 带有自定义滚动条的滚动容器。与 `<div style={{ overflow: 'auto' }} />` 效果是一致的。
+ *
+ * 示例：
+ *
+ * ```tsx
+ * <Scrollbar style={{ height: 100 }}>这是一大段内容</Scrollbar>
+ * ```
+ *
+ * 使用注意事项：
+ *
+ * * 如果不给 Scrollbar 限定高度（任何方式限定高度均可），则不会产生垂直滚动条
+ */
 export default function Scrollbar({
   children,
   thumbMinSize = 20,
@@ -48,18 +59,18 @@ export default function Scrollbar({
    * 计算滚动容器尺寸
    */
   const calcSize = useCallback(() => {
-    const scrollContainer = scrollRef.current;
+    const scrollContent = scrollRef.current;
     const scrollbarRect = scrollbarRectRef.current;
     const horizontalTrack = horizontalTrackRef.current;
     const verticalTrack = verticalTrackRef.current;
-    if (scrollContainer && horizontalTrack && verticalTrack) {
+    if (scrollContent && horizontalTrack && verticalTrack) {
       scrollbarRect.thumbMinSize = thumbMinSize;
-      scrollbarRect.containerWidth = scrollContainer.clientWidth;
-      scrollbarRect.containerHeight = scrollContainer.clientHeight;
-      scrollbarRect.scrollWidth = scrollContainer.scrollWidth;
-      scrollbarRect.scrollHeight = scrollContainer.scrollHeight;
-      scrollbarRect.scrollTop = scrollContainer.scrollTop;
-      scrollbarRect.scrollLeft = scrollContainer.scrollLeft;
+      scrollbarRect.containerWidth = scrollContent.clientWidth;
+      scrollbarRect.containerHeight = scrollContent.clientHeight;
+      scrollbarRect.scrollWidth = scrollContent.scrollWidth;
+      scrollbarRect.scrollHeight = scrollContent.scrollHeight;
+      scrollbarRect.scrollTop = scrollContent.scrollTop;
+      scrollbarRect.scrollLeft = scrollContent.scrollLeft;
       scrollbarRect.horizontalTrackWidth = getInnerWidth(horizontalTrack);
       scrollbarRect.verticalTrackHeight = getInnerHeight(verticalTrack);
     }
@@ -110,11 +121,11 @@ export default function Scrollbar({
 
   // 监听内容滚动事件
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', reflow);
+    const scrollContent = scrollRef.current;
+    if (scrollContent) {
+      scrollContent.addEventListener('scroll', reflow);
 
-      return () => scrollContainer.removeEventListener('scroll', reflow);
+      return () => scrollContent.removeEventListener('scroll', reflow);
     }
 
     return undefined;
@@ -151,7 +162,10 @@ export default function Scrollbar({
   const nativeScrollBarSize = getScrollbarSize();
 
   return (
-    <Layout className={classnames('sinoui-scrollbar', className)} style={style}>
+    <ScrollbarContainner
+      className={classnames('sinoui-scrollbar', className)}
+      style={style}
+    >
       <div
         style={{
           inset: 0,
@@ -166,26 +180,30 @@ export default function Scrollbar({
       >
         {children}
       </div>
-      <HorizontalLayout
+      <Track
+        variant="horizontal"
         className="sinoui-scrollbar__horizontal-track"
         ref={horizontalTrackRef}
       >
-        <HorizontalContent
+        <Thumb
+          variant="horizontal"
           ref={horizontalBarRef}
           {...horizontalBind()}
           className="sinoui-scrollbar__horizontal-thumb"
         />
-      </HorizontalLayout>
-      <VerticalLayout
+      </Track>
+      <Track
+        variant="vertical"
         className="sinoui-scrollbar__vertical-track"
         ref={verticalTrackRef}
       >
-        <VerticalContent
+        <Thumb
+          variant="vertical"
           ref={verticalBarRef}
           {...verticalBind()}
           className="sinoui-scrollbar__vertical-thumb"
         />
-      </VerticalLayout>
-    </Layout>
+      </Track>
+    </ScrollbarContainner>
   );
 }

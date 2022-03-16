@@ -110,3 +110,11 @@ export const 滚动容器高度为0 = () => (
     </Scrollbar>
   </StoryLayout>
 );
+
+export const 高度自适应 = () => (
+  <StoryLayout>
+    <Scrollbar style={{ border: '1px solid red' }}>
+      <div style={{ height: 10000 }} />
+    </Scrollbar>
+  </StoryLayout>
+);
