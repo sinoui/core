@@ -3,6 +3,7 @@ import Scrollbar from '@sinoui/core/Scrollbar';
 import styled, { ServerStyleSheet } from 'styled-components';
 import { renderToString } from 'react-dom/server';
 import { hydrate } from 'react-dom';
+import { range } from 'lodash';
 import StoryLayout from './StoryLayout';
 import { Button } from '../src';
 
@@ -163,3 +164,59 @@ function ServerSideRenderDemo() {
 }
 
 export const 服务器端渲染 = () => <ServerSideRenderDemo />;
+
+const ComplexDemo = () => {
+  const list = range(0, 1000).map((i) => (
+    <li key={i}>
+      <div>这是一段文字{i}</div>
+      <div>这是一段文字{i}</div>
+      <div>这是一段文字{i}</div>
+    </li>
+  ));
+  return (
+    <Scrollbar
+      style={{
+        height: 200,
+        border: '1px solid red',
+        boxSizing: 'border-box',
+      }}
+    >
+      <ul>{list}</ul>
+    </Scrollbar>
+  );
+};
+
+export const 包含很多内容的滚动性能 = () => <ComplexDemo />;
+
+const CustomScrollBar = styled(Scrollbar)`
+  .sinoui-scrollbar__vertical-track {
+    top: 8px;
+    bottom: 8px;
+  }
+  .sinoui-scrollbar__vertical-thumb {
+    background-image: linear-gradient(
+      -131deg,
+      rgb(231, 176, 43) 0%,
+      rgb(193, 62, 81) 100%
+    );
+  }
+`;
+
+export const 自定义滚动条样式 = () => (
+  <CustomScrollBar
+    style={{
+      height: 500,
+      width: 800,
+      margin: '50px auto',
+      background: 'rgb(245, 245, 245)',
+    }}
+  >
+    <div
+      style={{
+        height: 1000,
+      }}
+    >
+      这是一条数据
+    </div>
+  </CustomScrollBar>
+);
