@@ -7,6 +7,7 @@ const VerticalContent = styled.div`
   cursor: pointer;
   border-radius: inherit;
   background-color: rgba(0, 0, 0, 0.2);
+  touch-action: none;
 `;
 
 export default VerticalContent;

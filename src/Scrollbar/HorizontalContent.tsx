@@ -7,6 +7,7 @@ const HorizontalContent = styled.div`
   border-radius: inherit;
   background-color: rgba(0, 0, 0, 0.2);
   height: 100%;
+  touch-action: none;
 `;
 
 export default HorizontalContent;
