@@ -41,6 +41,7 @@ module.exports = {
           'components/navigationRail',
           'components/steps',
           'components/toggle-button',
+          'components/scrollbar',
         ],
       },
     ],
@@ -84,6 +85,7 @@ module.exports = {
       'components-apis/tooltip',
       'components-apis/navigationRail',
       'components-apis/steps',
+      'components-apis/scrollbar',
     ],
   },
 };
