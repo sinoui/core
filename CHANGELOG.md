@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.1.4 - 2022.3.16
+
+- feat(Scrollbar): 添加滚动条组件
+
 ## v1.1.3 - 2022.3.4
 
 - fix(AutoComplete): 修复多选 AutoComplete 失去焦点时值为空的情况下会报错的缺陷
