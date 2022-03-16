@@ -157,16 +157,12 @@ export default function DateRangePicker(props: Props) {
   );
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const {
-    getTextInputProps,
-    getPopperProps,
-    onRequestClose,
-    getModalProps,
-  } = useSelect({
-    ...other,
-    variant,
-    isRenderWithPopper: isPc,
-  });
+  const { getTextInputProps, getPopperProps, onRequestClose, getModalProps } =
+    useSelect({
+      ...other,
+      variant,
+      isRenderWithPopper: isPc,
+    });
 
   /**
    * 点击开始时间清除按钮时的回调函数

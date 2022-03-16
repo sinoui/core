@@ -138,55 +138,48 @@ const groupedOptions = simpleOptions
   })
   .sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter));
 
-export const 基本使用 = () => {
-  return (
-    <StoryLayout>
-      <OptionList
-        focusedOption="Schindler's List"
-        selectedOptions={['The Godfather', 'The Dark Knight']}
-        disabledOptions={['The Shawshank Redemption', '12 Angry Men']}
-        options={simpleOptions}
-        getOptionLabel={(option) => option.title}
-        onOptionClick={(label) => alert(label)}
-      />
-    </StoryLayout>
-  );
-};
+export const 基本使用 = () => (
+  <StoryLayout>
+    <OptionList
+      focusedOption="Schindler's List"
+      selectedOptions={['The Godfather', 'The Dark Knight']}
+      disabledOptions={['The Shawshank Redemption', '12 Angry Men']}
+      options={simpleOptions}
+      getOptionLabel={(option) => option.title}
+      onOptionClick={(label) => alert(label)}
+      allowShowTitle
+    />
+  </StoryLayout>
+);
 
-export const 暗色背景下的基本使用 = () => {
-  return (
-    <StoryLayout theme={theme}>
-      <OptionList
-        focusedOption="Schindler's List"
-        selectedOptions={['The Godfather', 'The Dark Knight']}
-        disabledOptions={['The Shawshank Redemption', '12 Angry Men']}
-        options={simpleOptions}
-        getOptionLabel={(option) => option.title}
-        onOptionClick={(label) => alert(label)}
-      />
-    </StoryLayout>
-  );
-};
+export const 暗色背景下的基本使用 = () => (
+  <StoryLayout theme={theme}>
+    <OptionList
+      focusedOption="Schindler's List"
+      selectedOptions={['The Godfather', 'The Dark Knight']}
+      disabledOptions={['The Shawshank Redemption', '12 Angry Men']}
+      options={simpleOptions}
+      getOptionLabel={(option) => option.title}
+      onOptionClick={(label) => alert(label)}
+    />
+  </StoryLayout>
+);
 
-export const 列表分组 = () => {
-  return (
-    <StoryLayout>
-      <OptionList
-        options={groupedOptions}
-        getOptionLabel={(option) => option.title}
-        groupBy={(option) => option.firstLetter}
-      />
-    </StoryLayout>
-  );
-};
+export const 列表分组 = () => (
+  <StoryLayout>
+    <OptionList
+      options={groupedOptions}
+      getOptionLabel={(option) => option.title}
+      groupBy={(option) => option.firstLetter}
+    />
+  </StoryLayout>
+);
 
-export const 结合reactwindow使用 = () => {
-  return (
-    <StoryLayout>
-      <OptionListWithReactWindow />
-    </StoryLayout>
-  );
-};
+export const 结合reactwindow使用 = () => (
+  <StoryLayout>
+    <OptionListWithReactWindow />
+  </StoryLayout>
+);
 
 const AutoCompleteDemo = ({ placeholder, label, freeSolo, ...rest }: any) => {
   const [value, setValue] = useState(

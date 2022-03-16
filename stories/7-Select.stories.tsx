@@ -47,6 +47,7 @@ function SimpleDemo() {
           label="Required"
           required
           placeholder="123"
+          allowShowTitle
         >
           <Option value="1">选项一</Option>
           <Option value="2">选项二</Option>
