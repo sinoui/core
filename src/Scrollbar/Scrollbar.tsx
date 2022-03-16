@@ -7,6 +7,10 @@ import HorizontalLayout from './HorizontalLayout';
 import Layout from './Layout';
 import VerticalContent from './VerticalContent';
 import VerticalLayout from './VerticalLayout';
+import ScrollbarRect from './ScrollbarRect';
+import useEnhancedEffect from '../utils/useEnhancedEffect';
+import getInnerHeight from '../utils/getInnerHeight';
+import getInnerWidth from '../utils/getInnerWidth';
 
 export interface Props {
   children: React.ReactNode;
@@ -18,103 +22,161 @@ export interface Props {
    * 自定义样式
    */
   style?: React.CSSProperties;
+  /*
+   * 最小滚动指示器的尺寸。默认为 20 px。
+   */
+  thumbMinSize?: number;
 }
 
-export default function Scrollbar({ children, className, style }: Props) {
+export default function Scrollbar({
+  children,
+  className,
+  style,
+  thumbMinSize = 20,
+}: Props) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const scrollbarRectRef = useRef<ScrollbarRect>(new ScrollbarRect());
   const verticalBarRef = useRef<HTMLDivElement | null>(null);
   const horizontalBarRef = useRef<HTMLDivElement | null>(null);
+  const verticalTrackRef = useRef<HTMLDivElement | null>(null);
+  const horizontalTrackRef = useRef<HTMLDivElement | null>(null);
 
-  const handleScroll = useCallback(() => {
-    if (verticalBarRef.current) {
-      verticalBarRef.current.style.transform = `translateY(${scrollRef.current?.scrollTop}px)`;
+  /**
+   * 计算滚动容器尺寸
+   */
+  const calcSize = useCallback(() => {
+    const scrollContainer = scrollRef.current;
+    const scrollbarRect = scrollbarRectRef.current;
+    const horizontalTrack = horizontalTrackRef.current;
+    const verticalTrack = verticalTrackRef.current;
+    if (scrollContainer && horizontalTrack && verticalTrack) {
+      scrollbarRect.thumbMinSize = thumbMinSize;
+      scrollbarRect.containerWidth = scrollContainer.clientWidth;
+      scrollbarRect.containerHeight = scrollContainer.clientHeight;
+      scrollbarRect.scrollWidth = scrollContainer.scrollWidth;
+      scrollbarRect.scrollHeight = scrollContainer.scrollHeight;
+      scrollbarRect.scrollTop = scrollContainer.scrollTop;
+      scrollbarRect.scrollLeft = scrollContainer.scrollLeft;
+      scrollbarRect.horizontalTrackWidth = getInnerWidth(horizontalTrack);
+      scrollbarRect.verticalTrackHeight = getInnerHeight(verticalTrack);
     }
-    if (horizontalBarRef.current) {
-      horizontalBarRef.current.style.transform = `translateX(${scrollRef.current?.scrollLeft}px)`;
+  }, [thumbMinSize]);
+
+  /**
+   * 布局滚动指示器
+   */
+  const layout = useCallback(() => {
+    const rect = scrollbarRectRef.current;
+    const verticalThumb = verticalBarRef.current;
+    const horizontalThumb = horizontalBarRef.current;
+
+    if (verticalThumb) {
+      verticalThumb.style.display = rect.isVerticalScrollVisible()
+        ? 'block'
+        : 'none';
+      verticalThumb.style.height = `${rect.verticalThumbHeight}px`;
+      verticalThumb.style.transform = `translateY(${rect.verticalThumbPosition}px)`;
+    }
+
+    if (horizontalThumb) {
+      horizontalThumb.style.display = rect.isHorizontalScrollVisible()
+        ? 'block'
+        : 'none';
+
+      horizontalThumb.style.width = `${rect.horizontalThumbWidth}px`;
+      horizontalThumb.style.transform = `translateX(${rect.horizontalThumbPosition}px)`;
     }
   }, []);
 
-  const handleResize = () => {
-    if (
-      scrollRef.current &&
-      verticalBarRef.current &&
-      horizontalBarRef.current
-    ) {
-      const { clientHeight, scrollHeight, clientWidth, scrollWidth } =
-        scrollRef.current;
-      if (scrollHeight > clientHeight) {
-        verticalBarRef.current.style.display = 'block';
-      } else {
-        verticalBarRef.current.style.display = 'none';
-      }
+  /**
+   * 重新排列滚动容器
+   */
+  // TODO: 需要 debounce 保护
+  const reflow = useCallback(() => {
+    calcSize();
+    layout();
+  }, [calcSize, layout]);
 
-      if (scrollWidth > clientWidth) {
-        horizontalBarRef.current.style.display = 'block';
-      } else {
-        horizontalBarRef.current.style.display = 'none';
-      }
-    }
-  };
-
-  useEffect(() => {
-    handleResize();
-    if (scrollRef.current) {
-      scrollRef.current.addEventListener('scroll', handleScroll);
-
-      return () =>
-        scrollRef.current?.removeEventListener('scroll', handleScroll);
-    }
-
-    return () => undefined;
-  }, [handleScroll]);
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
+  // 做初始布局
+  useEnhancedEffect(() => {
+    calcSize();
+    layout();
   }, []);
 
-  const verticalBind = useDrag(({ movement, initial }) => {
-    const [, offsetY] = movement;
-    const [initialX, initialY] = initial;
-    if (scrollRef.current) {
-      scrollRef.current.scrollTo({ left: initialX, top: initialY + offsetY });
+  // 监听内容滚动事件
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', reflow);
+
+      return () => scrollContainer.removeEventListener('scroll', reflow);
+    }
+
+    return undefined;
+  }, [reflow]);
+
+  // 监听 resize 事件
+  useEffect(() => {
+    window.addEventListener('resize', reflow);
+    return () => window.removeEventListener('resize', reflow);
+  }, [reflow]);
+
+  // 监听垂直滚动指示器的拖拽事件
+  const verticalBind = useDrag(({ delta }) => {
+    const [, offsetY] = delta;
+    const rect = scrollbarRectRef.current;
+    const container = scrollRef.current;
+    rect.plusVerticalThumbPosition(offsetY);
+    // TODO: 需要 debounce 保护
+    if (container) {
+      container.scrollTop = rect.scrollTop;
     }
   });
 
-  const horizontalBind = useDrag(({ movement }) => {
-    const [offsetX] = movement;
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft = offsetX;
+  // 监听水平滚动指示器的拖拽事件
+  const horizontalBind = useDrag(({ delta }) => {
+    const [offsetX] = delta;
+    const rect = scrollbarRectRef.current;
+    const container = scrollRef.current;
+    rect.plusHorizontalThumbPosition(offsetX);
+    if (container) {
+      // TODO: 需要 debounce 保护
+      container.scrollLeft = rect.scrollLeft;
     }
   });
 
-  const scrollbarWidth = getScrollbarSize();
+  const nativeScrollBarSize = getScrollbarSize();
 
   return (
     <Layout className={classnames('sinoui-scrollbar', className)} style={style}>
       <div
         style={{
           inset: 0,
-          marginRight: -scrollbarWidth,
-          marginBottom: -scrollbarWidth,
+          marginRight: -nativeScrollBarSize,
+          marginBottom: -nativeScrollBarSize,
           overflow: 'scroll',
-          height: `calc(100% + ${scrollbarWidth}px)`,
-          width: `calc(100% + ${scrollbarWidth}px)`,
+          height: `calc(100% + ${nativeScrollBarSize}px)`,
+          width: `calc(100% + ${nativeScrollBarSize}px)`,
         }}
         ref={scrollRef}
         className="sinoui-scrollbar__content"
       >
         {children}
       </div>
-      <HorizontalLayout className="sinoui-scrollbar__horizontal-track">
+      <HorizontalLayout
+        className="sinoui-scrollbar__horizontal-track"
+        ref={horizontalTrackRef}
+      >
         <HorizontalContent
           ref={horizontalBarRef}
           {...horizontalBind()}
           className="sinoui-scrollbar__horizontal-thumb"
         />
       </HorizontalLayout>
-      <VerticalLayout className="sinoui-scrollbar__vertical-track">
+      <VerticalLayout
+        className="sinoui-scrollbar__vertical-track"
+        ref={verticalTrackRef}
+      >
         <VerticalContent
           ref={verticalBarRef}
           {...verticalBind()}
