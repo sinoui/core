@@ -151,12 +151,7 @@ export default class ScrollbarRect {
    * @param delta 增加的值
    */
   public plusHorizontalThumbPosition(delta: number) {
-    const thumbPosition = this.horizontalThumbPosition + delta;
-    const offset =
-      thumbPosition / (this.horizontalTrackWidth - this.horizontalThumbWidth);
-    const scrollLeft = offset * (this.scrollWidth - this.containerWidth);
-
-    this.scrollLeft = scrollLeft;
+    this.horizontalThumbPosition += delta;
   }
 
   /**
@@ -175,12 +170,7 @@ export default class ScrollbarRect {
    * @param delta 增加的值
    */
   public plusVerticalThumbPosition(delta: number) {
-    const thumbPosition = this.verticalThumbPosition + delta;
-    const offset =
-      thumbPosition / (this.verticalTrackHeight - this.verticalThumbHeight);
-    const scrollTop = offset * (this.scrollHeight - this.containerHeight);
-
-    this.scrollTop = scrollTop;
+    this.verticalThumbPosition += delta;
   }
 
   /**
