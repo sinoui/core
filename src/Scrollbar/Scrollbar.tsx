@@ -100,10 +100,13 @@ export default function Scrollbar({
   }, [calcSize, layout]);
 
   // 做初始布局
-  useEnhancedEffect(() => {
-    calcSize();
-    layout();
-  }, []);
+  useEnhancedEffect(reflow, [reflow]);
+
+  // 监听 resize 事件
+  useElementResize(scrollRef, reflow);
+
+  // 监听内容变更
+  useChildrenChange(scrollRef, reflow);
 
   // 监听内容滚动事件
   useEffect(() => {
@@ -116,12 +119,6 @@ export default function Scrollbar({
 
     return undefined;
   }, [reflow]);
-
-  // 监听 resize 事件
-  useElementResize(scrollRef, reflow);
-
-  // 监听内容变更
-  useChildrenChange(scrollRef, reflow);
 
   // 监听垂直滚动指示器的拖拽事件
   const verticalBind = useDrag(({ delta }) => {
