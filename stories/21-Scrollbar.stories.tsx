@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import Scrollbar from '@sinoui/core/Scrollbar';
+import styled from 'styled-components';
 import StoryLayout from './StoryLayout';
 import { Button } from '../src';
 
 export default {
   title: '滚动条',
 };
+
+const ActionLayout = styled.div`
+  display: flex;
+  margin-top: 16px;
+
+  .sinoui-button {
+    margin-right: 8px;
+  }
+`;
 
 const defaultContent = `1、真正的友情，无论是挑拨离间的阴风，还是天灾人祸的霹雳，无论是阴谋诡计的浓雾，还是贫困潦倒的严霜，都不能使你胆怯，都不能使你疏远，都不能使你背叛。你坚韧若高山的岩石，你连绵如长长的流水。
 2、承受是一种真诚，一种用心铸成的应允领悟；承受是一种涵养，一种处变不惊、处乱不慌的气度和坦荡；承受是一种力量，一种排泄流俗、弘扬正气的凸现和舒展。承受如一杯陈年老酒，醇香而清冽；承受像一盆羞涩的朝花，含苞待放；承受似一支乡音俚曲，粗朴而深厚；承受是一位哲学家的絮语，含蓄而隽永。
@@ -44,7 +54,7 @@ export const 容器尺寸改变 = () => (
   </StoryLayout>
 );
 
-export const 指定高度 = () => {
+export const 改变内容高度 = () => {
   const [content, setContent] = useState(defaultContent);
 
   const handleClick = () => {
@@ -55,11 +65,36 @@ export const 指定高度 = () => {
 
   return (
     <StoryLayout>
-      <Scrollbar style={{ height: 400, width: 600 }}>{content}</Scrollbar>
+      <Scrollbar style={{ height: 400, width: 600, border: '1px solid red' }}>
+        {content}
+      </Scrollbar>
       <Button onClick={handleClick}>添加内容</Button>
     </StoryLayout>
   );
 };
+
+export const 改变容器尺寸 = () => {
+  const [height, setHeight] = useState(200);
+  return (
+    <StoryLayout>
+      <Scrollbar style={{ width: 400, height, border: '1px solid red' }}>
+        1、真正的友情，无论是挑拨离间的阴风，还是天灾人祸的霹雳，无论是阴谋诡计的浓雾，还是贫困潦倒的严霜，都不能使你胆怯，都不能使你疏远，都不能使你背叛。你坚韧若高山的岩石，你连绵如长长的流水。
+        2、承受是一种真诚，一种用心铸成的应允领悟；承受是一种涵养，一种处变不惊、处乱不慌的气度和坦荡；承受是一种力量，一种排泄流俗、弘扬正气的凸现和舒展。承受如一杯陈年老酒，醇香而清冽；承受像一盆羞涩的朝花，含苞待放；承受似一支乡音俚曲，粗朴而深厚；承受是一位哲学家的絮语，含蓄而隽永。
+        3、做不了大江大河，就做一条小小的溪流吧，做不了参天大树，就做一株小小的野草吧；做不了顶天立地的英雄，就做一个平凡的百姓吧。只要不停地奔流、生长、努力，也一样走过山高水远，也一样绿遍天涯，也一样活得光明磊落。
+        4、悲悯，是人的情感的一脉活水，有时漾开柔波，有时惊起阵痛；悲悯，是人心灵上的一场甘霖，可以滋润干涸的心田，可以净化污浊的世风。
+      </Scrollbar>
+      <ActionLayout>
+        <Button outlined onClick={() => setHeight(height - 50)}>
+          高度➖
+        </Button>
+        <Button raised onClick={() => setHeight(height + 50)}>
+          高度➕
+        </Button>
+      </ActionLayout>
+    </StoryLayout>
+  );
+};
+
 export const 滚动内容高度为0 = () => (
   <StoryLayout>
     <Scrollbar style={{ height: 100, border: '1px solid red' }}>
