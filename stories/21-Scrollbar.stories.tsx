@@ -24,7 +24,7 @@ export const 容器尺寸改变 = () => (
   <StoryLayout>
     <div style={{ width: '100%', height: '90vh', border: '1px solid red' }}>
       <Scrollbar>
-        <div style={{ width: 300, height: 300 }}>
+        <div style={{ width: 1000, height: 300 }}>
           这是一篇文字这是一篇文字这是一篇文字这是一篇文字这是一篇文字这是一篇文字这是一篇文字这是一篇文字这是一篇文字
         </div>
       </Scrollbar>
