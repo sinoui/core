@@ -66,7 +66,7 @@ export const 改变内容高度 = () => {
   return (
     <StoryLayout>
       <Scrollbar style={{ height: 400, width: 600, border: '1px solid red' }}>
-        {content}
+        <div>{content}</div>
       </Scrollbar>
       <Button onClick={handleClick}>添加内容</Button>
     </StoryLayout>

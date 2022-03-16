@@ -11,6 +11,8 @@ import ScrollbarRect from './ScrollbarRect';
 import useEnhancedEffect from '../utils/useEnhancedEffect';
 import getInnerHeight from '../utils/getInnerHeight';
 import getInnerWidth from '../utils/getInnerWidth';
+import useElementResize from '../utils/useElementResize';
+import useChildrenChange from '../utils/useChildrenChange';
 
 export interface Props {
   children: React.ReactNode;
@@ -116,10 +118,10 @@ export default function Scrollbar({
   }, [reflow]);
 
   // 监听 resize 事件
-  useEffect(() => {
-    window.addEventListener('resize', reflow);
-    return () => window.removeEventListener('resize', reflow);
-  }, [reflow]);
+  useElementResize(scrollRef, reflow);
+
+  // 监听内容变更
+  useChildrenChange(scrollRef, reflow);
 
   // 监听垂直滚动指示器的拖拽事件
   const verticalBind = useDrag(({ delta }) => {
