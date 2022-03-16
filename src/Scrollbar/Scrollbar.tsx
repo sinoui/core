@@ -12,6 +12,7 @@ import useChildrenChange from '../utils/useChildrenChange';
 import useRafCallback from '../utils/useRafCallback';
 import Track from './Track';
 import Thumb from './Thumb';
+import useMultiRefs from '../utils/useMultiRefs';
 import ScrollContent from './ScrollContent';
 
 export interface Props {
@@ -28,6 +29,10 @@ export interface Props {
    * 给滚动容器添加的样式
    */
   style?: React.CSSProperties;
+  /**
+   * 内容滚动时的回调函数
+   */
+  onScroll?: (event: React.UIEvent<HTMLDivElement, UIEvent>) => void;
 }
 
 /**
@@ -43,155 +48,159 @@ export interface Props {
  *
  * * 如果不给 Scrollbar 限定高度（任何方式限定高度均可），则不会产生垂直滚动条
  */
-export default function Scrollbar({
-  children,
-  thumbMinSize = 20,
-  style,
-  className,
-}: Props) {
-  const scrollRef = useRef<HTMLDivElement | null>(null);
-  const scrollbarRectRef = useRef<ScrollbarRect>(new ScrollbarRect());
-  const verticalBarRef = useRef<HTMLDivElement | null>(null);
-  const horizontalBarRef = useRef<HTMLDivElement | null>(null);
-  const verticalTrackRef = useRef<HTMLDivElement | null>(null);
-  const horizontalTrackRef = useRef<HTMLDivElement | null>(null);
+const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
+  ({ children, thumbMinSize = 20, style, className, onScroll }, ref) => {
+    const scrollRef = useRef<HTMLDivElement | null>(null);
+    const contentRef = useMultiRefs(scrollRef, ref);
+    const scrollbarRectRef = useRef<ScrollbarRect>(new ScrollbarRect());
+    const verticalBarRef = useRef<HTMLDivElement | null>(null);
+    const horizontalBarRef = useRef<HTMLDivElement | null>(null);
+    const verticalTrackRef = useRef<HTMLDivElement | null>(null);
+    const horizontalTrackRef = useRef<HTMLDivElement | null>(null);
 
-  /**
-   * 计算滚动容器尺寸
-   */
-  const calcSize = useCallback(() => {
-    const scrollContent = scrollRef.current;
-    const scrollbarRect = scrollbarRectRef.current;
-    const horizontalTrack = horizontalTrackRef.current;
-    const verticalTrack = verticalTrackRef.current;
-    if (scrollContent && horizontalTrack && verticalTrack) {
-      scrollbarRect.thumbMinSize = thumbMinSize;
-      scrollbarRect.containerWidth = scrollContent.clientWidth;
-      scrollbarRect.containerHeight = scrollContent.clientHeight;
-      scrollbarRect.scrollWidth = scrollContent.scrollWidth;
-      scrollbarRect.scrollHeight = scrollContent.scrollHeight;
-      scrollbarRect.scrollTop = scrollContent.scrollTop;
-      scrollbarRect.scrollLeft = scrollContent.scrollLeft;
-      scrollbarRect.horizontalTrackWidth = getInnerWidth(horizontalTrack);
-      scrollbarRect.verticalTrackHeight = getInnerHeight(verticalTrack);
-    }
-  }, [thumbMinSize]);
+    /**
+     * 计算滚动容器尺寸
+     */
+    const calcSize = useCallback(() => {
+      const scrollContent = scrollRef.current;
+      const scrollbarRect = scrollbarRectRef.current;
+      const horizontalTrack = horizontalTrackRef.current;
+      const verticalTrack = verticalTrackRef.current;
+      if (scrollContent && horizontalTrack && verticalTrack) {
+        scrollbarRect.thumbMinSize = thumbMinSize;
+        scrollbarRect.containerWidth = scrollContent.clientWidth;
+        scrollbarRect.containerHeight = scrollContent.clientHeight;
+        scrollbarRect.scrollWidth = scrollContent.scrollWidth;
+        scrollbarRect.scrollHeight = scrollContent.scrollHeight;
+        scrollbarRect.scrollTop = scrollContent.scrollTop;
+        scrollbarRect.scrollLeft = scrollContent.scrollLeft;
+        scrollbarRect.horizontalTrackWidth = getInnerWidth(horizontalTrack);
+        scrollbarRect.verticalTrackHeight = getInnerHeight(verticalTrack);
+      }
+    }, [thumbMinSize]);
 
-  /**
-   * 布局滚动指示器
-   */
-  const layout = useCallback(() => {
-    const rect = scrollbarRectRef.current;
-    const verticalThumb = verticalBarRef.current;
-    const horizontalThumb = horizontalBarRef.current;
+    /**
+     * 布局滚动指示器
+     */
+    const layout = useCallback(() => {
+      const rect = scrollbarRectRef.current;
+      const verticalThumb = verticalBarRef.current;
+      const horizontalThumb = horizontalBarRef.current;
 
-    if (verticalThumb) {
-      verticalThumb.style.display = rect.isVerticalScrollVisible()
-        ? 'block'
-        : 'none';
-      verticalThumb.style.height = `${rect.verticalThumbHeight}px`;
-      verticalThumb.style.transform = `translateY(${rect.verticalThumbPosition}px)`;
-    }
+      if (verticalThumb) {
+        verticalThumb.style.display = rect.isVerticalScrollVisible()
+          ? 'block'
+          : 'none';
+        verticalThumb.style.height = `${rect.verticalThumbHeight}px`;
+        verticalThumb.style.transform = `translateY(${rect.verticalThumbPosition}px)`;
+      }
 
-    if (horizontalThumb) {
-      horizontalThumb.style.display = rect.isHorizontalScrollVisible()
-        ? 'block'
-        : 'none';
+      if (horizontalThumb) {
+        horizontalThumb.style.display = rect.isHorizontalScrollVisible()
+          ? 'block'
+          : 'none';
 
-      horizontalThumb.style.width = `${rect.horizontalThumbWidth}px`;
-      horizontalThumb.style.transform = `translateX(${rect.horizontalThumbPosition}px)`;
-    }
-  }, []);
+        horizontalThumb.style.width = `${rect.horizontalThumbWidth}px`;
+        horizontalThumb.style.transform = `translateX(${rect.horizontalThumbPosition}px)`;
+      }
+    }, []);
 
-  /**
-   * 重新排列滚动容器
-   */
-  const reflow = useCallback(() => {
-    calcSize();
-    layout();
-  }, [calcSize, layout]);
+    /**
+     * 重新排列滚动容器
+     */
+    const reflow = useCallback(() => {
+      calcSize();
+      layout();
+    }, [calcSize, layout]);
 
-  // 做初始布局
-  useEnhancedEffect(reflow, [reflow]);
+    // 做初始布局
+    useEnhancedEffect(reflow, [reflow]);
 
-  // 监听 resize 事件
-  useElementResize(scrollRef, reflow);
+    // 监听 resize 事件
+    useElementResize(scrollRef, reflow);
 
-  // 监听内容变更
-  useChildrenChange(scrollRef, reflow);
+    // 监听内容变更
+    useChildrenChange(scrollRef, reflow);
 
-  // 监听内容滚动事件
-  useEffect(() => {
-    const scrollContent = scrollRef.current;
-    if (scrollContent) {
-      scrollContent.addEventListener('scroll', reflow);
+    // 监听内容滚动事件
+    useEffect(() => {
+      const scrollContent = scrollRef.current;
+      if (scrollContent) {
+        scrollContent.addEventListener('scroll', reflow);
 
-      return () => scrollContent.removeEventListener('scroll', reflow);
-    }
+        return () => scrollContent.removeEventListener('scroll', reflow);
+      }
 
-    return undefined;
-  }, [reflow]);
+      return undefined;
+    }, [reflow]);
 
-  const handleVerticalDrag = useRafCallback((offsetY: number) => {
-    const rect = scrollbarRectRef.current;
-    const container = scrollRef.current;
-    rect.plusVerticalThumbPosition(offsetY);
-    if (container) {
-      container.scrollTop = rect.scrollTop;
-    }
-  });
-  // 监听垂直滚动指示器的拖拽事件
-  const verticalBind = useDrag(({ delta }) => {
-    const [, offsetY] = delta;
-    handleVerticalDrag(offsetY);
-  });
+    const handleVerticalDrag = useRafCallback((offsetY: number) => {
+      const rect = scrollbarRectRef.current;
+      const container = scrollRef.current;
+      rect.plusVerticalThumbPosition(offsetY);
+      if (container) {
+        container.scrollTop = rect.scrollTop;
+      }
+    });
+    // 监听垂直滚动指示器的拖拽事件
+    const verticalBind = useDrag(({ delta }) => {
+      const [, offsetY] = delta;
+      handleVerticalDrag(offsetY);
+    });
 
-  const handleHorizontalDrag = useRafCallback((offsetX: number) => {
-    const rect = scrollbarRectRef.current;
-    const container = scrollRef.current;
-    rect.plusHorizontalThumbPosition(offsetX);
-    if (container) {
-      container.scrollLeft = rect.scrollLeft;
-    }
-  });
-  // 监听水平滚动指示器的拖拽事件
-  const horizontalBind = useDrag(({ delta }) => {
-    const [offsetX] = delta;
-    handleHorizontalDrag(offsetX);
-  });
+    const handleHorizontalDrag = useRafCallback((offsetX: number) => {
+      const rect = scrollbarRectRef.current;
+      const container = scrollRef.current;
+      rect.plusHorizontalThumbPosition(offsetX);
+      if (container) {
+        container.scrollLeft = rect.scrollLeft;
+      }
+    });
+    // 监听水平滚动指示器的拖拽事件
+    const horizontalBind = useDrag(({ delta }) => {
+      const [offsetX] = delta;
+      handleHorizontalDrag(offsetX);
+    });
 
-  return (
-    <ScrollbarContainner
-      className={classnames('sinoui-scrollbar', className)}
-      style={style}
-    >
-      <ScrollContent ref={scrollRef} className="sinoui-scrollbar__content">
-        {children}
-      </ScrollContent>
-      <Track
-        variant="horizontal"
-        className="sinoui-scrollbar__horizontal-track"
-        ref={horizontalTrackRef}
+    return (
+      <ScrollbarContainner
+        className={classnames('sinoui-scrollbar', className)}
+        style={style}
       >
-        <Thumb
+        <ScrollContent
+          ref={contentRef}
+          onScroll={onScroll}
+          className="sinoui-scrollbar__content"
+        >
+          {children}
+        </ScrollContent>
+        <Track
           variant="horizontal"
-          ref={horizontalBarRef}
-          {...horizontalBind()}
-          className="sinoui-scrollbar__horizontal-thumb"
-        />
-      </Track>
-      <Track
-        variant="vertical"
-        className="sinoui-scrollbar__vertical-track"
-        ref={verticalTrackRef}
-      >
-        <Thumb
+          className="sinoui-scrollbar__horizontal-track"
+          ref={horizontalTrackRef}
+        >
+          <Thumb
+            variant="horizontal"
+            ref={horizontalBarRef}
+            {...horizontalBind()}
+            className="sinoui-scrollbar__horizontal-thumb"
+          />
+        </Track>
+        <Track
           variant="vertical"
-          ref={verticalBarRef}
-          {...verticalBind()}
-          className="sinoui-scrollbar__vertical-thumb"
-        />
-      </Track>
-    </ScrollbarContainner>
-  );
-}
+          className="sinoui-scrollbar__vertical-track"
+          ref={verticalTrackRef}
+        >
+          <Thumb
+            variant="vertical"
+            ref={verticalBarRef}
+            {...verticalBind()}
+            className="sinoui-scrollbar__vertical-thumb"
+          />
+        </Track>
+      </ScrollbarContainner>
+    );
+  },
+);
+
+export default Scrollbar;
