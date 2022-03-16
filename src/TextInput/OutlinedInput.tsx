@@ -3,12 +3,10 @@ import BaseInput from '@sinoui/core/BaseInput';
 import type { BaseInputProps } from '@sinoui/core/BaseInput';
 import styled, { css } from 'styled-components';
 import type { Theme } from '@sinoui/theme';
-import elementResizeDetectorMaker from 'element-resize-detector';
-import { debounce } from '@sinoui/utils';
 import NotchedOutline from './NotchedOutline';
 import adjustOpacity from '../utils/adjustOpacity';
 import useEnhancedEffect from '../utils/useEnhancedEffect';
-import NODE_ENV from '../utils/env';
+import useElementResize from '../utils/useElementResize';
 
 export interface OutlinedInputProps extends BaseInputProps {
   /**
@@ -116,18 +114,6 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
   }
 `;
 
-let erd: elementResizeDetectorMaker.Erd | undefined;
-
-function getErd() {
-  if (!erd) {
-    erd = elementResizeDetectorMaker({
-      strategy: 'scroll',
-    });
-  }
-
-  return erd;
-}
-
 /**
  * 轮廓输入框
  */
@@ -140,24 +126,15 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
       const label = labelRef?.current;
       if (label && !noLabel) {
         setNotchWidth(label.clientWidth * 0.75);
-
-        const listener = debounce(() => {
-          setNotchWidth(label.clientWidth * 0.75);
-        });
-
-        const isTest = NODE_ENV === 'test';
-        if (!isTest) {
-          getErd().listenTo(label, listener);
-        }
-
-        return () => {
-          if (!isTest) {
-            getErd().removeListener(label, listener);
-          }
-        };
       }
-      return undefined;
     }, []);
+
+    useElementResize(labelRef, () => {
+      const label = labelRef?.current;
+      if (label && !noLabel) {
+        setNotchWidth(label.clientWidth * 0.75);
+      }
+    });
 
     return (
       <StyledBaseInput
