@@ -160,11 +160,33 @@ export default class ScrollbarRect {
   }
 
   /**
+   * 设置水平滚动指示器的位置
+   */
+  public set horizontalThumbPosition(thumbPosition: number) {
+    const offset =
+      thumbPosition / (this.horizontalTrackWidth - this.horizontalThumbWidth);
+    const scrollLeft = offset * (this.scrollWidth - this.containerWidth);
+
+    this.scrollLeft = scrollLeft;
+  }
+
+  /**
    * 增加垂直滚动指示器的位置
    * @param delta 增加的值
    */
   public plusVerticalThumbPosition(delta: number) {
     const thumbPosition = this.verticalThumbPosition + delta;
+    const offset =
+      thumbPosition / (this.verticalTrackHeight - this.verticalThumbHeight);
+    const scrollTop = offset * (this.scrollHeight - this.containerHeight);
+
+    this.scrollTop = scrollTop;
+  }
+
+  /**
+   * 设置垂直滚动指示器的位置
+   */
+  public set verticalThumbPosition(thumbPosition: number) {
     const offset =
       thumbPosition / (this.verticalTrackHeight - this.verticalThumbHeight);
     const scrollTop = offset * (this.scrollHeight - this.containerHeight);

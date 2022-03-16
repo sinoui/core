@@ -35,6 +35,11 @@ export interface Props {
   onScroll?: (event: React.UIEvent<HTMLDivElement, UIEvent>) => void;
 }
 
+const preventEvent = (event: React.UIEvent) => {
+  event.stopPropagation();
+  event.preventDefault();
+};
+
 /**
  * 带有自定义滚动条的滚动容器。与 `<div style={{ overflow: 'auto' }} />` 效果是一致的。
  *
@@ -162,6 +167,42 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
       handleHorizontalDrag(offsetX);
     });
 
+    /**
+     * 处理水平轨道点击事件
+     * @param event 点击事件
+     */
+    const handleHorizontalTrackClick = (
+      event: React.MouseEvent<HTMLDivElement>,
+    ) => {
+      const { left } = (event.target as HTMLElement).getBoundingClientRect();
+      const positionX = event.clientX;
+      const rect = scrollbarRectRef.current;
+      const container = scrollRef.current;
+      rect.horizontalThumbPosition =
+        positionX - left - rect.horizontalThumbWidth / 2;
+      if (container) {
+        container.scrollLeft = rect.scrollLeft;
+      }
+    };
+
+    /**
+     * 处理垂直轨道点击事件
+     * @param event 点击事件
+     */
+    const handleVerticalTrackClick = (
+      event: React.MouseEvent<HTMLDivElement>,
+    ) => {
+      const { top } = (event.target as HTMLElement).getBoundingClientRect();
+      const positionY = event.clientY;
+      const rect = scrollbarRectRef.current;
+      const container = scrollRef.current;
+      rect.verticalThumbPosition =
+        positionY - top - rect.verticalThumbHeight / 2;
+      if (container) {
+        container.scrollTop = rect.scrollTop;
+      }
+    };
+
     return (
       <ScrollbarContainner
         className={classnames('sinoui-scrollbar', className)}
@@ -178,24 +219,28 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
           variant="horizontal"
           className="sinoui-scrollbar__horizontal-track"
           ref={horizontalTrackRef}
+          onClick={handleHorizontalTrackClick}
         >
           <Thumb
             variant="horizontal"
             ref={horizontalBarRef}
             {...horizontalBind()}
             className="sinoui-scrollbar__horizontal-thumb"
+            onClick={preventEvent}
           />
         </Track>
         <Track
           variant="vertical"
           className="sinoui-scrollbar__vertical-track"
           ref={verticalTrackRef}
+          onClick={handleVerticalTrackClick}
         >
           <Thumb
             variant="vertical"
             ref={verticalBarRef}
             {...verticalBind()}
             className="sinoui-scrollbar__vertical-thumb"
+            onClick={preventEvent}
           />
         </Track>
       </ScrollbarContainner>
