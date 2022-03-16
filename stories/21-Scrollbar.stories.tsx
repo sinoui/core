@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Scrollbar from '@sinoui/core/Scrollbar';
-import styled from 'styled-components';
+import styled, { ServerStyleSheet } from 'styled-components';
+import { renderToString } from 'react-dom/server';
+import { hydrate } from 'react-dom';
 import StoryLayout from './StoryLayout';
 import { Button } from '../src';
 
@@ -118,3 +120,46 @@ export const 高度自适应 = () => (
     </Scrollbar>
   </StoryLayout>
 );
+
+function ServerSideRenderDemo() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const element = useMemo(
+    () => (
+      <Scrollbar
+        style={{
+          height: 200,
+          border: '1px solid red',
+          boxSizing: 'border-box',
+        }}
+      >
+        <div style={{ height: 500 }} />
+      </Scrollbar>
+    ),
+    [],
+  );
+
+  useEffect(() => {
+    // 服务器端渲染
+    const container = containerRef.current;
+    if (!container) {
+      return;
+    }
+
+    const sheet = new ServerStyleSheet();
+    container.innerHTML = renderToString(sheet.collectStyles(element));
+    const styleTags = sheet.getStyleTags();
+    document.head.innerHTML += styleTags;
+    hydrate(element, container);
+  }, [element]);
+
+  return (
+    <div>
+      <h4>服务器端渲染</h4>
+      <div>{renderToString(element)}</div>
+      <h4>注水</h4>
+      <div ref={containerRef} />
+    </div>
+  );
+}
+
+export const 服务器端渲染 = () => <ServerSideRenderDemo />;
