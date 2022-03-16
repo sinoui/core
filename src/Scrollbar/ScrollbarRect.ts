@@ -85,6 +85,10 @@ export default class ScrollbarRect {
    * 获取水平滚动指示器的宽度
    */
   public get horizontalThumbWidth() {
+    if (this.scrollWidth === 0) {
+      return 0;
+    }
+
     const thumbSize = Math.ceil(
       (this.containerWidth / this.scrollWidth) * this.horizontalTrackWidth,
     );
@@ -100,6 +104,10 @@ export default class ScrollbarRect {
    * 获取垂直滚动指示器的高度
    */
   public get verticalThumbHeight() {
+    if (this.scrollHeight === 0) {
+      return 0;
+    }
+
     const thumbSize = Math.ceil(
       (this.containerHeight / this.scrollHeight) * this.verticalTrackHeight,
     );
@@ -115,7 +123,11 @@ export default class ScrollbarRect {
    * 获取水平滚动指示器的位置
    */
   public get horizontalThumbPosition() {
-    const offset = this.scrollLeft / (this.scrollWidth - this.containerWidth);
+    const nativeBlankWidth = this.scrollWidth - this.containerWidth;
+    if (nativeBlankWidth <= 0) {
+      return 0;
+    }
+    const offset = this.scrollLeft / nativeBlankWidth;
     const blankWidth = this.horizontalTrackWidth - this.horizontalThumbWidth;
     return offset * blankWidth;
   }
@@ -124,7 +136,12 @@ export default class ScrollbarRect {
    * 获取垂直滚动指示器的位置
    */
   public get verticalThumbPosition() {
-    const offset = this.scrollTop / (this.scrollHeight - this.containerHeight);
+    const nativeBlankHeight = this.scrollHeight - this.containerHeight;
+    if (nativeBlankHeight <= 0) {
+      return 0;
+    }
+    const offset = this.scrollTop / nativeBlankHeight;
+
     const blankHeight = this.verticalTrackHeight - this.verticalThumbHeight;
     return offset * blankHeight;
   }

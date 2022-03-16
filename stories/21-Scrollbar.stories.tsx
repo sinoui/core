@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Scrollbar from '@sinoui/core/Scrollbar';
 import StoryLayout from './StoryLayout';
 
@@ -29,5 +29,21 @@ export const 容器尺寸改变 = () => (
         </div>
       </Scrollbar>
     </div>
+  </StoryLayout>
+);
+
+export const 滚动内容高度为0 = () => (
+  <StoryLayout>
+    <Scrollbar style={{ height: 100, border: '1px solid red' }}>
+      <div />
+    </Scrollbar>
+  </StoryLayout>
+);
+
+export const 滚动容器高度为0 = () => (
+  <StoryLayout>
+    <Scrollbar style={{ height: 0, border: '1px solid red' }}>
+      <div style={{ height: 100 }} />
+    </Scrollbar>
   </StoryLayout>
 );
