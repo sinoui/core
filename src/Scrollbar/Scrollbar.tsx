@@ -18,21 +18,21 @@ export interface Props {
    * 自定义class名称
    */
   className?: string;
-  /**
-   * 自定义样式
-   */
-  style?: React.CSSProperties;
   /*
    * 最小滚动指示器的尺寸。默认为 20 px。
    */
   thumbMinSize?: number;
+  /**
+   * 给滚动容器添加的样式
+   */
+  style?: React.CSSProperties;
 }
 
 export default function Scrollbar({
   children,
-  className,
-  style,
   thumbMinSize = 20,
+  style,
+  className,
 }: Props) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const scrollbarRectRef = useRef<ScrollbarRect>(new ScrollbarRect());

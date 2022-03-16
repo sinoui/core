@@ -60,3 +60,18 @@ export const 指定高度 = () => {
     </StoryLayout>
   );
 };
+export const 滚动内容高度为0 = () => (
+  <StoryLayout>
+    <Scrollbar style={{ height: 100, border: '1px solid red' }}>
+      <div />
+    </Scrollbar>
+  </StoryLayout>
+);
+
+export const 滚动容器高度为0 = () => (
+  <StoryLayout>
+    <Scrollbar style={{ height: 0, border: '1px solid red' }}>
+      <div style={{ height: 100 }} />
+    </Scrollbar>
+  </StoryLayout>
+);
