@@ -138,34 +138,50 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
       return undefined;
     }, [reflow]);
 
-    const handleVerticalDrag = useRafCallback(() => {
+    /**
+     * 同步垂直滚动条位置
+     */
+    const syncScrollTop = useRafCallback(() => {
       const rect = scrollbarRectRef.current;
       const container = scrollRef.current;
       if (container) {
         container.scrollTop = rect.scrollTop;
       }
     });
-    // 监听垂直滚动指示器的拖拽事件
-    const verticalBind = useDrag(({ delta }) => {
-      const [, offsetY] = delta;
-      const rect = scrollbarRectRef.current;
-      rect.plusVerticalThumbPosition(offsetY);
-      handleVerticalDrag();
-    });
 
-    const handleHorizontalDrag = useRafCallback(() => {
+    /**
+     * 同步水平滚动条位置
+     */
+    const syncScrollLeft = useRafCallback(() => {
       const rect = scrollbarRectRef.current;
       const container = scrollRef.current;
       if (container) {
         container.scrollLeft = rect.scrollLeft;
       }
     });
-    // 监听水平滚动指示器的拖拽事件
-    const horizontalBind = useDrag(({ delta }) => {
-      const [offsetX] = delta;
+
+    // 监听垂直滚动指示器的拖拽事件
+    const verticalBind = useDrag(({ movement, first, memo }) => {
       const rect = scrollbarRectRef.current;
-      rect.plusHorizontalThumbPosition(offsetX);
-      handleHorizontalDrag();
+      if (first) {
+        return rect.verticalThumbPosition;
+      }
+      const [, offsetY] = movement;
+      rect.verticalThumbPosition = memo + offsetY;
+      syncScrollTop();
+      return memo;
+    });
+
+    // 监听水平滚动指示器的拖拽事件
+    const horizontalBind = useDrag(({ movement, first, memo }) => {
+      const rect = scrollbarRectRef.current;
+      if (first) {
+        return rect.verticalThumbPosition;
+      }
+      const [offsetX] = movement;
+      rect.verticalThumbPosition = memo + offsetX;
+      syncScrollLeft();
+      return memo;
     });
 
     /**
