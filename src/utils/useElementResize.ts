@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import elementResizeDetectorMaker from 'element-resize-detector';
 import { debounce } from '@sinoui/utils';
 import NODE_ENV from './env';
+import useRefInEffect from './useRefInEffect';
 
 let erd: elementResizeDetectorMaker.Erd | undefined;
 
@@ -30,19 +31,17 @@ export default function useElementResize(
   listen: () => void,
 ) {
   const listenRef = useRef(listen);
-  const element = elementRef?.current;
   listenRef.current = listen;
   const [callback] = useState(() => debounce(() => listenRef.current(), 64));
 
   useEffect(() => {
     window.addEventListener('resize', callback, false);
-
     return () => window.removeEventListener('resize', callback, false);
   }, [callback]);
 
-  useEffect(() => {
+  useRefInEffect(elementRef, (element) => {
     const isTest = NODE_ENV === 'test';
-    if (!element || isTest) {
+    if (isTest) {
       return undefined;
     }
 
@@ -52,5 +51,5 @@ export default function useElementResize(
       getErd().removeListener(element, callback);
       callback.cancel();
     };
-  }, [callback, element]);
+  });
 }

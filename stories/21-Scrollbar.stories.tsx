@@ -271,3 +271,97 @@ const FlexWrapDemo = () => (
 );
 
 export const FlexWrap中使用横向滚动条 = () => <FlexWrapDemo />;
+
+const TextInput = React.lazy(() => import('@sinoui/core/TextInput'));
+
+function LazyLoadDemo() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [number, setNumber] = useState(1);
+  const inputs = range(0, number).map((i) => (
+    <div
+      style={{
+        margin: 8,
+      }}
+      key={i}
+    >
+      <TextInput
+        style={{ width: 1000 }}
+        variant="outlined"
+        label="测试"
+        value="张三"
+      />
+    </div>
+  ));
+
+  return (
+    <div>
+      <Button onClick={() => setNumber(number + 1)}>新增</Button>
+      <Scrollbar
+        style={{
+          width: 300,
+          height: 50,
+        }}
+        ref={scrollRef}
+      >
+        <React.Suspense fallback={null}>
+          <div
+            style={{
+              width: 1000,
+              padding: 16,
+            }}
+          >
+            {inputs}
+          </div>
+        </React.Suspense>
+      </Scrollbar>
+    </div>
+  );
+}
+
+export const 异步加载 = () => (
+  <StoryLayout>
+    <LazyLoadDemo />
+  </StoryLayout>
+);
+
+function LazyLoadDemo2() {
+  const [number, setNumber] = useState(1);
+  const inputs = range(0, number).map((i) => (
+    <TextInput
+      style={{ width: 1000 }}
+      variant="outlined"
+      label="测试"
+      value="张三"
+      key={i}
+    />
+  ));
+
+  return (
+    <div>
+      <Button onClick={() => setNumber(number + 1)}>新增</Button>
+      <React.Suspense fallback={null}>
+        <Scrollbar
+          style={{
+            width: 300,
+            height: 50,
+          }}
+        >
+          <div
+            style={{
+              width: 1000,
+              padding: 16,
+            }}
+          >
+            {inputs}
+          </div>
+        </Scrollbar>
+      </React.Suspense>
+    </div>
+  );
+}
+
+export const 异步加载2 = () => (
+  <StoryLayout>
+    <LazyLoadDemo2 />
+  </StoryLayout>
+);

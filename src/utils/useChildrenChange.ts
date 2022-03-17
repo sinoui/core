@@ -1,5 +1,6 @@
 import { debounce } from '@sinoui/utils';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import useRefInEffect from './useRefInEffect';
 
 /**
  * 监听子孙元素变更
@@ -14,23 +15,18 @@ export default function useChildrenChange(
   listen: () => void,
 ) {
   const listenRef = useRef(listen);
-  const element = elementRef.current;
+  listenRef.current = listen;
 
-  useEffect(() => {
-    if (!element) {
-      return undefined;
-    }
+  useRefInEffect(elementRef, (element) => {
     const callback = debounce(() => listenRef.current(), 64);
     const mutationObserver = new MutationObserver(callback);
     mutationObserver.observe(element, {
       childList: true,
       subtree: true,
-      characterData: true,
     });
-
     return () => {
       mutationObserver.disconnect();
       callback.cancel();
     };
-  }, [element]);
+  });
 }
