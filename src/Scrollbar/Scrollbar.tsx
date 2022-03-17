@@ -1,6 +1,5 @@
 import { useDrag } from '@use-gesture/react';
 import React, { useCallback, useEffect, useRef } from 'react';
-
 import classnames from 'classnames';
 import ScrollbarContainner from './ScrollbarContainner';
 import ScrollbarRect from './ScrollbarRect';
@@ -139,10 +138,9 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
       return undefined;
     }, [reflow]);
 
-    const handleVerticalDrag = useRafCallback((offsetY: number) => {
+    const handleVerticalDrag = useRafCallback(() => {
       const rect = scrollbarRectRef.current;
       const container = scrollRef.current;
-      rect.plusVerticalThumbPosition(offsetY);
       if (container) {
         container.scrollTop = rect.scrollTop;
       }
@@ -150,13 +148,14 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
     // 监听垂直滚动指示器的拖拽事件
     const verticalBind = useDrag(({ delta }) => {
       const [, offsetY] = delta;
-      handleVerticalDrag(offsetY);
+      const rect = scrollbarRectRef.current;
+      rect.plusVerticalThumbPosition(offsetY);
+      handleVerticalDrag();
     });
 
-    const handleHorizontalDrag = useRafCallback((offsetX: number) => {
+    const handleHorizontalDrag = useRafCallback(() => {
       const rect = scrollbarRectRef.current;
       const container = scrollRef.current;
-      rect.plusHorizontalThumbPosition(offsetX);
       if (container) {
         container.scrollLeft = rect.scrollLeft;
       }
@@ -164,7 +163,9 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
     // 监听水平滚动指示器的拖拽事件
     const horizontalBind = useDrag(({ delta }) => {
       const [offsetX] = delta;
-      handleHorizontalDrag(offsetX);
+      const rect = scrollbarRectRef.current;
+      rect.plusHorizontalThumbPosition(offsetX);
+      handleHorizontalDrag();
     });
 
     /**
