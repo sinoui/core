@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.1.5 - 2022.3.17
+
+- improve(Scrollbar): 降低@react/use-gesture 版本号，使滚动条组件兼容 IE 浏览器
+
 ## v1.1.4 - 2022.3.16
 
 - feat(Scrollbar): 添加滚动条组件

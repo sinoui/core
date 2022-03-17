@@ -30,6 +30,7 @@ const verticalTrackCss = css`
 const Track = styled.div<Props>`
   position: absolute;
   border-radius: 3px;
+  user-select: none;
   ${({ variant }) =>
     variant === 'horizontal' ? horizontalTrackCss : verticalTrackCss}
 `;

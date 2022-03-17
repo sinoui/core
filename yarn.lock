@@ -3311,18 +3311,6 @@
     "@typescript-eslint/types" "4.33.0"
     eslint-visitor-keys "^2.0.0"
 
-"@use-gesture/core@10.2.10":
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/@use-gesture/core/-/core-10.2.10.tgz#ef242d32a27070de3e6b2219ee113289ec8216b4"
-  integrity sha512-7WFIDfeTB+7RBui8YOrB2xbgmvMsvaCDjyzrdvECKkgOpIynNSdhlLXjiFuqQMtnK71IL/9WNZNU0P8xuaLuUQ==
-
-"@use-gesture/react@^10.2.10":
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/@use-gesture/react/-/react-10.2.10.tgz#8c13645ff9aa1d9806a0a461befa4c90fccc7879"
-  integrity sha512-znChnKVAMMGXD9J7fCKN686BJNBlUJaRtCu92IQXVWdcxg4MqS0SgsBslGnTWXTlsHVkg5zcGjKYf7qYkOf0Rg==
-  dependencies:
-    "@use-gesture/core" "10.2.10"
-
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.11.1.tgz#2bfd767eae1a6996f432ff7e8d7fc75679c0b6a7"
@@ -10821,6 +10809,11 @@ react-transition-group@^4.4.1:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-use-gesture@^7.0.15:
+  version "7.0.16"
+  resolved "https://registry.yarnpkg.com/react-use-gesture/-/react-use-gesture-7.0.16.tgz#501985261ef9c815a377b6ff9be6df5a85fbb54f"
+  integrity sha512-gwgX+E+WQG0T1uFVl3z8j3ZwH3QQGIgVl7VtQEC2m0IscSs668sSps4Ss3CFp3Vns8xx0j9TVK4aBXH6+YrpEg==
 
 react-window@^1.8.5:
   version "1.8.6"
