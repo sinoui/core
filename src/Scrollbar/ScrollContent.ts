@@ -24,6 +24,8 @@ const ScrollContent = styled.div<Props>`
   overflow: scroll;
   margin-right: ${() => -getScrollbarSize()}px;
   margin-bottom: ${() => -getScrollbarSize()}px;
+  height: calc(100% + ${() => getScrollbarSize()}px);
+  width: calc(100% + ${() => getScrollbarSize()}px);
   ${({ $autoHeight }) =>
     $autoHeight ? autoHeightContentStyle : defaultContentStyle}
 `;
