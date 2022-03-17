@@ -29,6 +29,10 @@ export interface Props {
    */
   style?: React.CSSProperties;
   /**
+   * 自适应内容的高度
+   */
+  autoHeight?: boolean;
+  /**
    * 内容滚动时的回调函数
    */
   onScroll?: (event: React.UIEvent<HTMLDivElement, UIEvent>) => void;
@@ -53,7 +57,10 @@ const preventEvent = (event: React.UIEvent) => {
  * * 如果不给 Scrollbar 限定高度（任何方式限定高度均可），则不会产生垂直滚动条
  */
 const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
-  ({ children, thumbMinSize = 20, style, className, onScroll }, ref) => {
+  (
+    { children, thumbMinSize = 20, style, className, onScroll, autoHeight },
+    ref,
+  ) => {
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const contentRef = useMultiRefs(scrollRef, ref);
     const scrollbarRectRef = useRef<ScrollbarRect>(new ScrollbarRect());
@@ -224,11 +231,13 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
       <ScrollbarContainner
         className={classnames('sinoui-scrollbar', className)}
         style={style}
+        $autoHeight={autoHeight}
       >
         <ScrollContent
           ref={contentRef}
           onScroll={onScroll}
           className="sinoui-scrollbar__content"
+          $autoHeight={autoHeight}
         >
           {children}
         </ScrollContent>

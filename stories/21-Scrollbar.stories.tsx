@@ -116,7 +116,7 @@ export const 滚动容器高度为0 = () => (
 
 export const 高度自适应 = () => (
   <StoryLayout>
-    <Scrollbar style={{ border: '1px solid red' }}>
+    <Scrollbar style={{ border: '1px solid red' }} autoHeight>
       <div style={{ height: 10000 }} />
     </Scrollbar>
   </StoryLayout>
@@ -220,3 +220,54 @@ export const 自定义滚动条样式 = () => (
     </div>
   </CustomScrollBar>
 );
+
+const Row = styled.div`
+  width: 100%;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+`;
+
+const FlexWrapDemo = () => (
+  <div
+    style={{
+      padding: 16,
+      border: '1px solid red',
+    }}
+  >
+    <div
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+      }}
+    >
+      <Row>
+        <div
+          style={{
+            width: 160,
+            height: 100,
+          }}
+        />
+        <Scrollbar
+          style={{
+            flex: 1,
+            flexGrow: 1,
+            flexShrink: 0,
+          }}
+        >
+          <div
+            style={{
+              width: 10000,
+              height: 200,
+              backgroundColor: 'yellow',
+            }}
+          />
+        </Scrollbar>
+      </Row>
+    </div>
+  </div>
+);
+
+export const FlexWrap中使用横向滚动条 = () => <FlexWrapDemo />;

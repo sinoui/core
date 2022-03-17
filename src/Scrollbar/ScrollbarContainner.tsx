@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 
-const ScrollbarContainner = styled.div`
-  height: 100%;
+interface Props {
+  /**
+   * 是否支持自适应高度
+   */
+  $autoHeight?: boolean;
+}
+
+const ScrollbarContainner = styled.div<Props>`
+  height: ${({ $autoHeight }) => ($autoHeight ? 'auto' : '100%')};
   width: 100%;
   position: relative;
   overflow: hidden;
