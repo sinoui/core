@@ -122,19 +122,15 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
     const { notched, labelRef, dense, focused, noLabel, ...other } = props;
     const [notchWidth, setNotchWidth] = useState(0);
 
-    useEnhancedEffect(() => {
+    const syncNotchWidth = () => {
       const label = labelRef?.current;
       if (label && !noLabel) {
         setNotchWidth(label.clientWidth * 0.75);
       }
-    }, []);
+    };
 
-    useElementResize(labelRef, () => {
-      const label = labelRef?.current;
-      if (label && !noLabel) {
-        setNotchWidth(label.clientWidth * 0.75);
-      }
-    });
+    useEnhancedEffect(syncNotchWidth, []);
+    useElementResize(labelRef, syncNotchWidth);
 
     return (
       <StyledBaseInput
