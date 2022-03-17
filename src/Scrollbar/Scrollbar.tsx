@@ -1,4 +1,4 @@
-import { useDrag } from '@use-gesture/react';
+import { useDrag } from 'react-use-gesture';
 import React, { useCallback, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import ScrollbarContainner from './ScrollbarContainner';
