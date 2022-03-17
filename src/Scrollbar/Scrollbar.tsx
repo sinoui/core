@@ -168,7 +168,8 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
     });
 
     // 监听垂直滚动指示器的拖拽事件
-    const verticalBind = useDrag(({ movement, first, memo }) => {
+    const verticalBind = useDrag(({ movement, first, memo, event }) => {
+      event?.stopPropagation();
       const rect = scrollbarRectRef.current;
       if (first) {
         return rect.verticalThumbPosition;
@@ -180,7 +181,8 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
     });
 
     // 监听水平滚动指示器的拖拽事件
-    const horizontalBind = useDrag(({ movement, first, memo }) => {
+    const horizontalBind = useDrag(({ movement, first, memo, event }) => {
+      event?.stopPropagation();
       const rect = scrollbarRectRef.current;
       if (first) {
         return rect.horizontalThumbPosition;
