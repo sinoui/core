@@ -176,10 +176,10 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
     const horizontalBind = useDrag(({ movement, first, memo }) => {
       const rect = scrollbarRectRef.current;
       if (first) {
-        return rect.verticalThumbPosition;
+        return rect.horizontalThumbPosition;
       }
       const [offsetX] = movement;
-      rect.verticalThumbPosition = memo + offsetX;
+      rect.horizontalThumbPosition = memo + offsetX;
       syncScrollLeft();
       return memo;
     });
