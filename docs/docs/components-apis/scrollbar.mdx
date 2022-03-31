@@ -13,14 +13,14 @@ import Scrollbar from '@sinoui/core/Scrollbar';
 
 ## 属性
 
-| 属性名称     | 属性类型                                                | 默认值 | 属性说明                                                                                     |
-| ------------ | ------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------- |
-| thumbMinSize | number                                                  | 20     | 最小滚动指示器的尺寸                                                                         |
-| children     | React.ReactNode                                         |        | 子元素                                                                                       |
-| style        | React.CSSProperties                                     |        | 自定义样式                                                                                   |
-| className    | string                                                  |        | 自定义类名                                                                                   |
-| onScroll     | (event: React.UIEvent<HTMLDivElement, UIEvent>) => void |        | 内容滚动时的回调函数                                                                         |
-| ref          | React.RefObject<HTMLDivElement>                         |        | 指向 `.sinoui-scrollbar__content` 元素的引用。调用此元素的滚动方法，内容就可以发生滚动效果。 |
-| autoHeight   | boolean \| undefined                                    | false  | 自适应内容高度。此模式下，不会出现垂直滚动条，除非添加上 `maxHeight` 样式。                  |
+| 属性名称     | 属性类型                                                  | 默认值 | 属性说明                                                                                     |
+| ------------ | --------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------- |
+| thumbMinSize | number                                                    | 20     | 最小滚动指示器的尺寸                                                                         |
+| children     | React.ReactNode                                           |        | 子元素                                                                                       |
+| style        | React.CSSProperties                                       |        | 自定义样式                                                                                   |
+| className    | string                                                    |        | 自定义类名                                                                                   |
+| onScroll     | `(event: React.UIEvent<HTMLDivElement, UIEvent>) => void` |        | 内容滚动时的回调函数                                                                         |
+| ref          | `React.RefObject<HTMLDivElement> `                        |        | 指向 `.sinoui-scrollbar__content` 元素的引用。调用此元素的滚动方法，内容就可以发生滚动效果。 |
+| autoHeight   | boolean \| undefined                                      | false  | 自适应内容高度。此模式下，不会出现垂直滚动条，除非添加上 `maxHeight` 样式。                  |
 
 关于 Scrollbar 组件的使用，请参考[Scrollbar|滚动条](../components/scrollbar)。
