@@ -322,11 +322,11 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 
 .c9 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c9 > .sinoui-notched-outline__notch {
@@ -1360,11 +1360,11 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 
 .c12 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c12 > .sinoui-notched-outline__notch {
@@ -2007,11 +2007,11 @@ exports[`渲染带后缀元素的输入框 1`] = `
 
 .c12 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c12 > .sinoui-notched-outline__notch {

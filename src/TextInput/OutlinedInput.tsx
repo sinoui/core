@@ -29,6 +29,10 @@ export interface OutlinedInputProps extends BaseInputProps {
    * 无标签
    */
   noLabel?: boolean;
+  /**
+   * 是否显示方角
+   */
+  square?: boolean;
 }
 
 interface StyledBaseInputProps {
@@ -37,6 +41,7 @@ interface StyledBaseInputProps {
   $dense?: boolean;
   disabled?: boolean;
   $noLabel?: boolean;
+  $square?: boolean;
 }
 
 /**
@@ -75,9 +80,13 @@ const denseNoLabelStyle = css`
   padding-bottom: 4px;
 `;
 
+const roundCss = css`
+  border-radius: 4px;
+`;
+
 const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
   position: relative;
-  border-radius: 4px;
+  ${({ $square }) => !$square && roundCss};
 
   > .sinoui-notched-outline > div {
     border-color: ${getOutlineColor};
@@ -119,7 +128,8 @@ const StyledBaseInput = styled(BaseInput)<StyledBaseInputProps>`
  */
 const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
   (props: OutlinedInputProps, ref) => {
-    const { notched, labelRef, dense, focused, noLabel, ...other } = props;
+    const { notched, labelRef, dense, focused, noLabel, square, ...other } =
+      props;
     const [notchWidth, setNotchWidth] = useState(0);
 
     const syncNotchWidth = () => {
@@ -138,9 +148,14 @@ const OutlinedInput = React.forwardRef<HTMLDivElement, OutlinedInputProps>(
         ref={ref}
         $dense={dense}
         $noLabel={noLabel}
+        $square={square}
         {...other}
       >
-        <NotchedOutline notched={notched} notchWidth={notchWidth} />
+        <NotchedOutline
+          notched={notched}
+          notchWidth={notchWidth}
+          square={square}
+        />
       </StyledBaseInput>
     );
   },

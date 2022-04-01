@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.1.7 - 2022.4.1
+
+- feat(TextInput): TextInput 在 outline 模式下支持方角显示
+
 ## v1.1.6 - 2022.3.17
 
 - fix(Scrollbar): 修复子元素发生变化，没有自动计算滚动条布局的缺陷
