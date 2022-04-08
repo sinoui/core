@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.1.8 - 2022.4.8
+
+- improve(Scrollbar): 出现滚动条时，分别添加对应的 class 名称
+
 ## v1.1.7 - 2022.4.1
 
 - feat(TextInput): TextInput 在 outline 模式下支持方角显示
