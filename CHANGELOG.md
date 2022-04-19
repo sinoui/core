@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.1.9 - 2022.4.19
+
+- fix(FormControl): 修复表单校验错误为`object`类型时，页面空白的 bug
+
 ## v1.1.8 - 2022.4.8
 
 - improve(Scrollbar): 出现滚动条时，分别添加对应的 class 名称

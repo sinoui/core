@@ -170,69 +170,67 @@ const StyledChip = styled(Chip)`
   margin: 4px;
 `;
 
-export const 自定义颜色 = () => {
-  return (
-    <StoryLayout>
-      <>
-        <div style={{ display: 'flex' }}>
-          <StyledChip label="Default" />
-          <StyledChip color="primary" label="Primary" />
-          <StyledChip color="secondary" label="Secondary" />
-          <StyledChip color="success" label="Success" />
-          <StyledChip color="warning" label="Warning" />
-          <StyledChip color="info" label="Info" />
-          <StyledChip color="error" label="Error" />
-          <StyledChip disabled label="Disabled" />
-          <StyledChip
-            color="primary"
-            label="Primary"
-            onDelete={() => console.log('123')}
-          />
-          <StyledChip
-            disabled
-            label="Disabled"
-            color="primary"
-            onDelete={() => console.log('123')}
-          />
-          <StyledChip
-            color="primary"
-            label="Primary Leading Icon"
-            icon={<FaceIcon />}
-          />
-        </div>
-        <div style={{ display: 'flex' }}>
-          <StyledChip label="Default" variant="outlined" />
-          <StyledChip color="primary" label="Primary" variant="outlined" />
-          <StyledChip color="secondary" label="Secondary" variant="outlined" />
-          <StyledChip color="success" label="Success" variant="outlined" />
-          <StyledChip color="warning" label="Warning" variant="outlined" />
-          <StyledChip color="info" label="Info" variant="outlined" />
-          <StyledChip color="error" label="Error" variant="outlined" />
-          <StyledChip disabled label="Disabled" variant="outlined" />
-          <StyledChip
-            color="primary"
-            label="Primary"
-            variant="outlined"
-            onDelete={() => console.log('123')}
-          />
-          <StyledChip
-            disabled
-            label="Disabled"
-            color="primary"
-            variant="outlined"
-            onDelete={() => console.log('123')}
-          />
-          <StyledChip
-            color="primary"
-            label="Primary Leading Icon"
-            icon={<FaceIcon />}
-            variant="outlined"
-          />
-        </div>
-      </>
-    </StoryLayout>
-  );
-};
+export const 自定义颜色 = () => (
+  <StoryLayout>
+    <>
+      <div style={{ display: 'flex' }}>
+        <StyledChip label="Default" />
+        <StyledChip color="primary" label="Primary" />
+        <StyledChip color="secondary" label="Secondary" />
+        <StyledChip color="success" label="Success" />
+        <StyledChip color="warning" label="Warning" />
+        <StyledChip color="info" label="Info" />
+        <StyledChip color="error" label="Error" />
+        <StyledChip disabled label="Disabled" />
+        <StyledChip
+          color="primary"
+          label="Primary"
+          onDelete={() => console.log('123')}
+        />
+        <StyledChip
+          disabled
+          label="Disabled"
+          color="primary"
+          onDelete={() => console.log('123')}
+        />
+        <StyledChip
+          color="primary"
+          label="Primary Leading Icon"
+          icon={<FaceIcon />}
+        />
+      </div>
+      <div style={{ display: 'flex' }}>
+        <StyledChip label="Default" variant="outlined" />
+        <StyledChip color="primary" label="Primary" variant="outlined" />
+        <StyledChip color="secondary" label="Secondary" variant="outlined" />
+        <StyledChip color="success" label="Success" variant="outlined" />
+        <StyledChip color="warning" label="Warning" variant="outlined" />
+        <StyledChip color="info" label="Info" variant="outlined" />
+        <StyledChip color="error" label="Error" variant="outlined" />
+        <StyledChip disabled label="Disabled" variant="outlined" />
+        <StyledChip
+          color="primary"
+          label="Primary"
+          variant="outlined"
+          onDelete={() => console.log('123')}
+        />
+        <StyledChip
+          disabled
+          label="Disabled"
+          color="primary"
+          variant="outlined"
+          onDelete={() => console.log('123')}
+        />
+        <StyledChip
+          color="primary"
+          label="Primary Leading Icon"
+          icon={<FaceIcon />}
+          variant="outlined"
+        />
+      </div>
+    </>
+  </StoryLayout>
+);
 
 function SelectedDemo() {
   const [selected, setSelected] = useState(false);
