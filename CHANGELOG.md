@@ -1,5 +1,11 @@
 # 版本变更说明
 
+## v1.1.10 - 2022.5.5
+
+- fix(DatePicker): 修复 placeholder 属性无作用的缺陷
+- fix(DateTimePicker): 修复 placeholder 属性无作用的缺陷
+- fix(DateRangePicker): 修复提示语样式错误的缺陷
+
 ## v1.1.9 - 2022.4.19
 
 - fix(FormControl): 修复表单校验错误为`object`类型时，页面空白的 bug
