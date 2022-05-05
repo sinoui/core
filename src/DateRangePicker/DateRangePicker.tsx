@@ -12,6 +12,7 @@ import formatDate from '../DatePicker/formatDate';
 import parseDate from '../DatePicker/parseDate';
 import DateRangeMobileModal from './DateRangeMobileModal';
 import DateRangePcPopper from './DateRangePcPopper';
+import SimpleText from '../DateTimePicker/SimpleText';
 
 export interface Props
   extends Omit<
@@ -144,12 +145,18 @@ export default function DateRangePicker(props: Props) {
   const endValue = value && value[1] ? value[1] : '';
   const startDate = parseDate(startValue);
   const endDate = parseDate(endValue);
-  const startInputValue = renderValue
-    ? renderValue(startDate)
-    : startValue || startInputPlaceholder;
-  const endInputValue = renderValue
-    ? renderValue(endDate)
-    : endValue || endInputPlaceholder;
+  const startInputValue = (
+    <SimpleText
+      value={renderValue ? renderValue(startDate) : startValue}
+      placeholder={startInputPlaceholder}
+    />
+  );
+  const endInputValue = (
+    <SimpleText
+      value={renderValue ? renderValue(endDate) : endValue}
+      placeholder={endInputPlaceholder}
+    />
+  );
   const startInputRef = useRef<HTMLInputElement | null>(null);
   const endInputRef = useRef<HTMLInputElement | null>(null);
   const [focusedInput, setFocusedInput] = useState<'start' | 'end' | undefined>(

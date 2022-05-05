@@ -69,3 +69,13 @@ export const 移动端渲染 = () => (
     />
   </StoryLayout>
 );
+
+export const 提示语 = () => (
+  <StoryLayout>
+    <DateTimePickerDemo
+      label="日期时间选择"
+      placeholder="请选择日期和时间"
+      allowClear
+    />
+  </StoryLayout>
+);

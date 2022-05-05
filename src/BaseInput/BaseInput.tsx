@@ -27,7 +27,7 @@ interface MultilineProps {
 export interface BaseInputProps<
   InputComponentType extends React.ElementType = any,
   InputElementType = any,
-  ExtendInputProps = Record<string, any>
+  ExtendInputProps = Record<string, any>,
 > {
   /**
    * 值
@@ -191,7 +191,7 @@ export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
 const BaseInput: BaseInputComponentType = React.forwardRef<
   HTMLDivElement,
   BaseInputProps
->(function BaseInput(props, ref) {
+>((props, ref) => {
   const formControlContext = useFormControlContext();
   const {
     value,

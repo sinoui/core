@@ -10,6 +10,7 @@ import mem from '../utils/mem';
 import isNaN from '../utils/isNaN';
 import DateTimePcPopper from './DateTimePcPopper/DateTimePcPopper';
 import DateTimeMobileModal from './DateTimeMobileModal/DateTimeMobileModal';
+import SimpleText from './SimpleText';
 
 export interface Props
   extends Omit<
@@ -134,24 +135,26 @@ export default function DateTimePicker(props: Props) {
     defaultMonth,
     showToday,
     showNextMonthDates,
+    placeholder,
   } = props;
 
   const isNativePc = useIsPc();
   const isPc = isPcProp ?? isNativePc;
   const date = parseDate(value);
   const inputValue = isValidateDate(value) ? value : '';
-  const inputRenderValue = renderValue ? renderValue(date) : inputValue;
+  const inputRenderValue = (
+    <SimpleText
+      value={renderValue ? renderValue(date) : inputValue}
+      placeholder={placeholder}
+    />
+  );
 
-  const {
-    getPopperProps,
-    getTextInputProps,
-    onRequestClose,
-    getModalProps,
-  } = useSelect({
-    ...props,
-    isRenderWithPopper: isPc,
-    renderValue: inputRenderValue,
-  });
+  const { getPopperProps, getTextInputProps, onRequestClose, getModalProps } =
+    useSelect({
+      ...props,
+      isRenderWithPopper: isPc,
+      renderValue: inputRenderValue,
+    });
 
   const handleClear = () => {
     if (onChange) {

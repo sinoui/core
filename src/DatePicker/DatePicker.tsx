@@ -14,6 +14,7 @@ import formatDate from './formatDate';
 import type { CalendarViewProps } from './CalendarView';
 import isNaN from '../utils/isNaN';
 import mem from '../utils/mem';
+import SimpleText from '../DateTimePicker/SimpleText';
 
 interface Props
   extends Omit<
@@ -115,12 +116,19 @@ export default function DatePicker(props: Props) {
     renderValue,
     portal,
     popperProps,
+    placeholder,
   } = props;
   const isNativePc = useIsPc();
   const isPc = isPcProps ?? isNativePc;
   const date = parseDate(value);
   const inputValue = isValidateDate(value) ? value : '';
-  const inputRenderValue = renderValue ? renderValue(date) : inputValue;
+  const inputRenderValue = (
+    <SimpleText
+      value={renderValue ? renderValue(date) : inputValue}
+      placeholder={placeholder}
+    />
+  );
+
   const { getModalProps, getPopperProps, getTextInputProps, onRequestClose } =
     useSelect({
       ...props,
