@@ -222,6 +222,11 @@ export interface Props {
    * 是否允许显示title提示，默认为false
    */
   allowShowTitle?: boolean;
+
+  /**
+   * 指定渲染选项列表的容器组件
+   */
+  ListboxComponent?: React.ElementType;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -351,6 +356,7 @@ export default function AutoComplete(props: Props) {
     popperFocusable,
     allowClear = true,
     allowShowTitle = false,
+    ListboxComponent,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -813,6 +819,7 @@ export default function AutoComplete(props: Props) {
       onOptionClick={handleOptionClick}
       freeSolo={freeSolo}
       allowShowTitle={allowShowTitle}
+      ListboxComponent={ListboxComponent}
     />
   );
 
