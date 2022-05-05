@@ -362,11 +362,11 @@ exports[`渲染三种模式下的选择框 1`] = `
 
 .c14 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c14 > .sinoui-notched-outline__notch {
@@ -1124,11 +1124,11 @@ exports[`渲染不可用的选择框 1`] = `
 
 .c14 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c14 > .sinoui-notched-outline__notch {
@@ -1826,11 +1826,11 @@ exports[`渲染不带标签的选择框 1`] = `
 
 .c11 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c11 > .sinoui-notched-outline__notch {
@@ -2547,11 +2547,11 @@ exports[`渲染多选选择框 1`] = `
 
 .c11 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c11 > .sinoui-notched-outline__notch {
@@ -3292,11 +3292,11 @@ exports[`渲染有辅助性文字的选择框 1`] = `
 
 .c15 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c15 > .sinoui-notched-outline__notch {
@@ -4113,11 +4113,11 @@ exports[`渲染有错误提示的选择框 1`] = `
 
 .c15 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c15 > .sinoui-notched-outline__notch {

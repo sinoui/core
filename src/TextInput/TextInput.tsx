@@ -62,6 +62,10 @@ export interface TextInputProps extends BaseInputProps {
    * 将输入框作为表单控件使用
    */
   field?: boolean;
+  /**
+   * outline模式下是否显示方角
+   */
+  square?: boolean;
 
   ref?: React.Ref<HTMLDivElement>;
 }
@@ -130,6 +134,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef<
     wrapperProps,
     onFocus,
     onBlur,
+    square,
     ...other
   } = props;
   const innerLabelRef = useRef<HTMLLabelElement>(null);
@@ -179,6 +184,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef<
     noLabel,
     error,
     errorText,
+    square,
   };
 
   if (variant === 'outlined') {

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import bemClassNames from '../utils/bemClassNames';
 
 export interface NotchedOutlineProps {
@@ -11,9 +11,21 @@ export interface NotchedOutlineProps {
    * 缺口宽度
    */
   notchWidth?: number;
+  /**
+   * 是否显示方角
+   */
+  square?: boolean;
 }
 
-const NotchedOutlineLayout = styled.div`
+const leadingRoundCss = css`
+  border-radius: 4px 0 0 4px;
+`;
+
+const trailingRoundCss = css`
+  border-radius: 0 4px 4px 0;
+`;
+
+const NotchedOutlineLayout = styled.div<{ $square?: boolean }>`
   display: flex;
   position: absolute;
   bottom: 0;
@@ -34,9 +46,9 @@ const NotchedOutlineLayout = styled.div`
 
   > .sinoui-notched-outline__leading {
     border-right: none;
-    border-radius: 4px 0 0 4px;
     flex: 0 0 auto;
     width: 10px;
+    ${({ $square }) => !$square && leadingRoundCss};
   }
 
   > .sinoui-notched-outline__notch {
@@ -49,7 +61,7 @@ const NotchedOutlineLayout = styled.div`
   > .sinoui-notched-outline__trailing {
     border-left: none;
     flex: 1 0 10px;
-    border-radius: 0 4px 4px 0;
+    ${({ $square }) => !$square && trailingRoundCss};
   }
 
   &.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
@@ -65,7 +77,7 @@ const NotchedOutlineLayout = styled.div`
  * 有缺口的轮廓组件。一般用于轮廓模式的输入框、下拉选择框。
  */
 export default function NotchedOutline(props: NotchedOutlineProps) {
-  const { notched, notchWidth = 0 } = props;
+  const { notched, notchWidth = 0, square } = props;
   const notchStyle = useMemo(
     () => ({
       width: notchWidth,
@@ -79,6 +91,7 @@ export default function NotchedOutline(props: NotchedOutlineProps) {
         notched,
         'no-label': notchWidth === 0,
       })}
+      $square={square}
     >
       <div className="sinoui-notched-outline__leading" />
       <div className="sinoui-notched-outline__notch" style={notchStyle} />

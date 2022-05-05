@@ -90,7 +90,9 @@ const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
             {children}
             <HelperLine>
               {helperText && !error && <HelperText>{helperText}</HelperText>}
-              {error && <HelperText error>{error}</HelperText>}
+              {error && typeof error !== 'object' && (
+                <HelperText error>{error}</HelperText>
+              )}
             </HelperLine>
           </div>
         </FormControlWrapper>

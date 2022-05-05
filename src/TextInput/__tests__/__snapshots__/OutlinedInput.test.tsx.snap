@@ -123,11 +123,11 @@ exports[`无标签 1`] = `
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
@@ -345,11 +345,11 @@ exports[`正确渲染边框模式下的Input 1`] = `
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
@@ -567,11 +567,11 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
@@ -792,11 +792,11 @@ Array [
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
@@ -1013,11 +1013,11 @@ Array [
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
@@ -1238,11 +1238,11 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c2 > .sinoui-notched-outline__notch {
@@ -1460,11 +1460,11 @@ exports[`聚焦状态 1`] = `
 
 .c2 > .sinoui-notched-outline__leading {
   border-right: none;
-  border-radius: 4px 0 0 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 10px;
+  border-radius: 4px 0 0 4px;
 }
 
 .c2 > .sinoui-notched-outline__notch {

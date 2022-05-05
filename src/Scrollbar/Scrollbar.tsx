@@ -68,6 +68,22 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
     const horizontalBarRef = useRef<HTMLDivElement | null>(null);
     const verticalTrackRef = useRef<HTMLDivElement | null>(null);
     const horizontalTrackRef = useRef<HTMLDivElement | null>(null);
+    const extraClassNamesRef = useRef<string[]>([]);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const addClass = useCallback((clazz: string) => {
+      if (!extraClassNamesRef.current.includes(clazz)) {
+        extraClassNamesRef.current.push(clazz);
+        containerRef.current?.classList.add(clazz);
+      }
+    }, []);
+
+    const removeClass = useCallback((clazz: string) => {
+      if (extraClassNamesRef.current.includes(clazz)) {
+        extraClassNamesRef.current.pop();
+        containerRef.current?.classList.remove(clazz);
+      }
+    }, []);
 
     /**
      * 计算滚动容器尺寸
@@ -99,22 +115,31 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
       const horizontalThumb = horizontalBarRef.current;
 
       if (verticalThumb) {
-        verticalThumb.style.display = rect.isVerticalScrollVisible()
-          ? 'block'
-          : 'none';
+        if (rect.isVerticalScrollVisible()) {
+          addClass('is-vertical-scroll');
+          verticalThumb.style.display = 'block';
+        } else {
+          verticalThumb.style.display = 'none';
+          removeClass('is-vertical-scroll');
+        }
+
         verticalThumb.style.height = `${rect.verticalThumbHeight}px`;
         verticalThumb.style.transform = `translateY(${rect.verticalThumbPosition}px)`;
       }
 
       if (horizontalThumb) {
-        horizontalThumb.style.display = rect.isHorizontalScrollVisible()
-          ? 'block'
-          : 'none';
+        if (rect.isHorizontalScrollVisible()) {
+          addClass('is-horizontal-scroll');
+          horizontalThumb.style.display = 'block';
+        } else {
+          removeClass('is-horizontal-scroll');
+          horizontalThumb.style.display = 'none';
+        }
 
         horizontalThumb.style.width = `${rect.horizontalThumbWidth}px`;
         horizontalThumb.style.transform = `translateX(${rect.horizontalThumbPosition}px)`;
       }
-    }, []);
+    }, [addClass, removeClass]);
 
     /**
      * 重新排列滚动容器
@@ -231,9 +256,14 @@ const Scrollbar = React.forwardRef<HTMLDivElement, Props>(
 
     return (
       <ScrollbarContainner
-        className={classnames('sinoui-scrollbar', className)}
+        className={classnames(
+          'sinoui-scrollbar',
+          className,
+          extraClassNamesRef.current,
+        )}
         style={style}
         $autoHeight={autoHeight}
+        ref={containerRef}
       >
         <ScrollContent
           ref={contentRef}
