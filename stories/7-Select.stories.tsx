@@ -360,18 +360,28 @@ const options = [
 function CustomDemo() {
   const [value, setValue] = useState<string[]>([]);
   return (
-    <SelectField
-      multiple
-      value={value}
-      onChange={(newValue) => setValue(newValue as string[])}
-    >
-      {options.map((option) => (
-        <Option key={option.id} value={option.id} title={option.title}>
-          <Checkbox checked={value && value.indexOf(option.id) !== -1} />
-          {option.title}
-        </Option>
-      ))}
-    </SelectField>
+    <>
+      <SelectField
+        multiple
+        value={value}
+        onChange={(newValue) => setValue(newValue as string[])}
+      >
+        {options.map((option) => (
+          <Option key={option.id} value={option.id} title={option.title}>
+            <Checkbox checked={value && value.indexOf(option.id) !== -1} />
+            {option.title}
+          </Option>
+        ))}
+      </SelectField>
+      <Select style={{ width: 200 }}>
+        {options.map((option) => (
+          <Option key={option.id} value={option.id} title={option.title}>
+            <Checkbox checked={value && value.indexOf(option.id) !== -1} />
+            {option.title}
+          </Option>
+        ))}
+      </Select>
+    </>
   );
 }
 

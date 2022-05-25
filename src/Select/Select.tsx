@@ -162,6 +162,7 @@ function Select(props: Props) {
     allowClear = true,
     popperFocusable,
     allowShowTitle,
+    className,
     ...other
   } = props;
 
@@ -204,6 +205,7 @@ function Select(props: Props) {
       disabled={disabled}
       readOnly={readOnly}
       allowShowTitle={allowShowTitle}
+      className={className}
       renderInput={(textInputProps: TextInputProps) => (
         <TextInput
           {...textInputProps}

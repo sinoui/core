@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.1.11
+
+- fix(AutoComplete/Select): 修复 Select 使用 styled-components 时，没能继承 AutoComplete 的样式类的问题
+
 ## v1.1.10 - 2022.5.5
 
 - fix(DatePicker): 修复 placeholder 属性无作用的缺陷

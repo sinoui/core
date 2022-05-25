@@ -227,6 +227,10 @@ export interface Props {
    * 指定渲染选项列表的容器组件
    */
   ListboxComponent?: React.ElementType;
+  /**
+   * 自定义样式类
+   */
+  className?: string;
 }
 
 const rippleStyle = css<{ size?: number }>`
@@ -357,6 +361,7 @@ export default function AutoComplete(props: Props) {
     allowClear = true,
     allowShowTitle = false,
     ListboxComponent,
+    className,
   } = props;
 
   const defaultInputValue = useMemo(() => {
@@ -779,10 +784,14 @@ export default function AutoComplete(props: Props) {
     dense,
     onChange: handleInputChange,
     onMouseDown: preventEventDefault,
-    className: bemClassNames('sinoui-auto-complete', {
-      multiple,
-      dense: dense && multiple,
-    }),
+    className: bemClassNames(
+      'sinoui-auto-complete',
+      {
+        multiple,
+        dense: dense && multiple,
+      },
+      className,
+    ),
     onKeyDown: handleInputKeydown,
     inputProps: {
       ref: inputRef,
