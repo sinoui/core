@@ -153,6 +153,7 @@ Array [
     checked={false}
     className="c0 sinoui-base-button c1 sinoui-radio"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -324,6 +325,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-radio sinoui-radio--checked"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -553,6 +555,7 @@ Array [
       checked={false}
       className="c2 sinoui-base-button c3 sinoui-radio"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -782,6 +785,7 @@ Array [
       checked={true}
       className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--checked"
       color="primary"
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -1043,6 +1047,7 @@ Array [
       className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -1245,6 +1250,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-radio sinoui-radio--checked"
     color="primary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -1441,6 +1447,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-radio sinoui-radio--checked"
     color="secondary"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -1637,6 +1644,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-radio sinoui-radio--checked"
     color="error"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -1833,6 +1841,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-radio sinoui-radio--checked"
     color="warning"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -2029,6 +2038,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-radio sinoui-radio--checked"
     color="success"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -2225,6 +2235,7 @@ Array [
     checked={true}
     className="c0 sinoui-base-button c1 sinoui-radio sinoui-radio--checked"
     color="info"
+    onClick={[Function]}
     tabIndex="0"
   >
     <svg
@@ -2452,6 +2463,7 @@ Array [
       className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--disabled"
       color="primary"
       disabled={true}
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg
@@ -2680,6 +2692,7 @@ Array [
       className="c2 sinoui-base-button c3 sinoui-radio sinoui-radio--readOnly"
       color="primary"
       disabled={true}
+      onClick={[Function]}
       tabIndex="0"
     >
       <svg

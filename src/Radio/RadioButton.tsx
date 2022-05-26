@@ -123,6 +123,10 @@ export interface Props {
    */
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
   /**
+   * 点击时的回调函数
+   */
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  /**
    * tabIndex属性
    */
   tabIndex?: number;
@@ -190,10 +194,19 @@ function RadioButton(props: Props) {
     className,
     inputClassName,
     dense,
+    onClick,
     ...other
   } = props;
 
   const checkedNew = isControlled ? checkedProp : check;
+
+  const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
+    event.preventDefault();
+
+    if (onClick) {
+      onClick(event);
+    }
+  };
 
   const icon = checkedNew ? (
     <RadioButtonCheckedIcon />
@@ -213,6 +226,7 @@ function RadioButton(props: Props) {
       checked={checkedNew}
       disabled={disabledProp || readOnlyProp}
       color={color}
+      onClick={handleClick}
       {...other}
       className={classNames('sinoui-radio', className, {
         'sinoui-radio--checked': checked,

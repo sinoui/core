@@ -229,9 +229,11 @@ export default function BaseCheckboxButton(props: Props) {
   };
 
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
+    event.preventDefault();
     if (onChange && !disabled && !readOnly) {
       onChange(!checked);
     }
+
     if (onClick) {
       onClick(event);
     }

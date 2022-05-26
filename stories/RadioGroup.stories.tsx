@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Radio from '@sinoui/core/Radio';
 import RadioGroup from '@sinoui/core/RadioGroup';
+import styled from 'styled-components';
 import type { RadioGroupProps } from '../src/RadioGroup';
 import StoryLayout from './StoryLayout';
 
@@ -8,16 +9,28 @@ export default {
   title: 'RadioGroup',
 };
 
+const StyleRadioGroup = styled(RadioGroup)`
+  .sinoui-radio__input {
+    width: 10px;
+    height: 10px;
+  }
+`;
+
 const RadioGroupDemo = (props: RadioGroupProps<string>) => {
   const [value, setValue] = useState<string | undefined>('2');
 
+  const onChange = (currentValue) => {
+    console.log('点击了');
+    setValue(currentValue);
+  };
+
   return (
-    <RadioGroup onChange={setValue} value={value} {...props}>
+    <StyleRadioGroup onChange={onChange} value={value} {...props}>
       <Radio value="1">单选框1</Radio>
       <Radio value="2">单选框2</Radio>
       <Radio value="3">单选框3</Radio>
       <Radio value="4">单选框4</Radio>
-    </RadioGroup>
+    </StyleRadioGroup>
   );
 };
 

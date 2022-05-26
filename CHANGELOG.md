@@ -3,6 +3,7 @@
 ## v1.1.11
 
 - fix(AutoComplete/Select): 修复 Select 使用 styled-components 时，没能继承 AutoComplete 的样式类的问题
+- fix(Radio、Chcekbox): 修复 input 尺寸太小时，点击图标触发两次 onClick 事件的问题
 
 ## v1.1.10 - 2022.5.5
 
