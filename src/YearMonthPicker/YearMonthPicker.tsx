@@ -20,11 +20,11 @@ interface Props
     'value' | 'multiline' | 'minRows' | 'maxRows' | 'onChange' | 'multiple'
   > {
   /**
-   * 值
+   * 值。格式 YYYY-MM
    */
   value?: string;
   /**
-   * 值变化时的回调函数
+   * 值变化时的回调函数。date格式：YYYY-MM
    */
   onChange?: (date?: string) => void;
   /**

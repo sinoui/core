@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import CalendarViewWrapper from '@sinoui/core/DatePicker/CalendarView/CalendarViewWrapper';
 import YearSelectView from '@sinoui/core/DatePicker/YearSelectView';
 import useIsPc from '@sinoui/core/DatePicker/useIsPc';
@@ -14,13 +14,7 @@ export interface Props {
   className?: string;
   style?: React.CSSProperties;
   /**
-   * 指定选中日期。需要是`Date`类型的。如果需要从字符串转换成`Date`，则建议使用`useMemo`:
-   * 
-   * ```tsx
-     const date = useMemo(() => new Date(Date.parse(dateStr)), [dateStr]);
-    
-     return <DatePicker value={date} />;
-   * ```
+   * 指定选中日期。格式 YYYY-MM
    */
   value?: string;
   /**
@@ -114,13 +108,11 @@ export default React.forwardRef<HTMLDivElement, Props>(
     );
     const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.months);
 
-    useEffect(() => {
-      if (value !== valueRef.current && value) {
-        const [newYear, newMonth] = value.split('-');
-        setYearMonth([Number(newYear), Number(newMonth) - 1]);
-        valueRef.current = value;
-      }
-    }, [value]);
+    if (value !== valueRef.current && value) {
+      const [newYear, newMonth] = value.split('-');
+      setYearMonth([Number(newYear), Number(newMonth) - 1]);
+      valueRef.current = value;
+    }
 
     const handleYearSelect = (newYear: number) => {
       if (newYear !== year) {
