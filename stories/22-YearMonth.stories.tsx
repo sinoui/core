@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import YearMonthPicker from '@sinoui/core/YearMonthPicker';
 import Button from '@sinoui/core/Button';
+import YearMonthPicker from '@sinoui/core/YearMonthPicker';
+import { useState } from 'react';
+import styled from 'styled-components';
+
 import StoryLayout from './StoryLayout';
 
 const StyledYearMontPicker = styled(YearMonthPicker)`
@@ -29,8 +30,8 @@ export const 指定范围 = () => {
       <StyledYearMontPicker
         value={value}
         onChange={setValue}
-        min="2022-01"
-        max="2022-06"
+        min="2021-03"
+        max="2023-06"
       />
     </StoryLayout>
   );

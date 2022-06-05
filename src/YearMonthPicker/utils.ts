@@ -32,3 +32,39 @@ export const getYearAndMonthByValue = (value: string): [number, number] => {
 
   return [Number(year), Number(month) - 1];
 };
+
+/**
+ * 获取指定年份有效的月份范围
+ *
+ * @param minDate 最小年月
+ * @param maxDate 最大年月
+ * @param year 指定的年份
+ * @returns 返回指定年份有效的月份范围
+ */
+export const getValidateMonthRange = (
+  minDate: string | undefined,
+  maxDate: string | undefined,
+  year: number,
+): [number, number] => {
+  let min = 0;
+  let max = 11;
+  if (isValidateDate(minDate)) {
+    const [minYear, minMonth] = getYearAndMonthByValue(minDate);
+    if (minYear === year) {
+      min = minMonth;
+    } else if (minYear > year) {
+      min = 12;
+    }
+  }
+
+  if (isValidateDate(maxDate)) {
+    const [maxYear, maxMonth] = getYearAndMonthByValue(maxDate);
+    if (maxYear === year) {
+      max = maxMonth;
+    } else if (maxYear < year) {
+      max = -1;
+    }
+  }
+
+  return [min, max];
+};

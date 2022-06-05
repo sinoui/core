@@ -7,9 +7,9 @@ import padStart from 'lodash/padStart';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import CalendarViewHeader from '../DatePicker/CalendarView/CalendarViewHeader';
+import MonthSelectView from '../DatePicker/MonthSelectView';
 import ViewModel from '../DatePicker/ViewModel';
-import MonthSelectView from './MonthSelectView';
-import { getYearAndMonthByValue } from './utils';
+import { getValidateMonthRange, getYearAndMonthByValue } from './utils';
 import YearMonthText from './YearMonthText';
 
 /**
@@ -160,18 +160,22 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     }
   };
 
-  const renderMonths = () => (
-    <MonthSelectView
-      selectedMonth={month}
-      onMonthSelect={handleMonthSelect}
-      className="sinoui-calendar-view__monthsview"
-      isPc={isPc}
-      year={year}
-      value={value}
-      minDate={minDate}
-      maxDate={maxDate}
-    />
-  );
+  const renderMonths = () => {
+    const [minMonth, maxMonth] = getValidateMonthRange(minDate, maxDate, year);
+    const isValueYear = value
+      ? getYearAndMonthByValue(value)[0] === year
+      : false;
+    return (
+      <MonthSelectView
+        onMonthSelect={handleMonthSelect}
+        className="sinoui-calendar-view__monthsview"
+        isPc={isPc}
+        minMonth={minMonth}
+        maxMonth={maxMonth}
+        selectedMonth={isValueYear ? month : -1}
+      />
+    );
+  };
 
   const isShowButtons = useMemo(
     () => showButtons ?? !isPc,
