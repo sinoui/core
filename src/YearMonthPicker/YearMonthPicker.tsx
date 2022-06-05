@@ -17,7 +17,7 @@ export interface YearMonthPickerProps
    */
   value?: string;
   /**
-   * 值变化时的回调函数
+   * 值变化时的回调函数。date格式：YYYY-MM
    */
   onChange?: (date?: string) => void;
   /**
