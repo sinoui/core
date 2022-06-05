@@ -6,10 +6,10 @@ import YearSelectView from '@sinoui/core/DatePicker/YearSelectView';
 import padStart from 'lodash/padStart';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
-import CalendarViewHeader from './CalendarViewHeader';
+import CalendarViewHeader from '../DatePicker/CalendarView/CalendarViewHeader';
+import ViewModel from '../DatePicker/ViewModel';
 import MonthSelectView from './MonthSelectView';
 import { getYearAndMonthByValue } from './utils';
-import ViewModel from './ViewModel';
 import YearMonthText from './YearMonthText';
 
 /**
@@ -196,6 +196,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
         onChange={(newYar, newMonth) => setYearMonth([newYar, newMonth])}
         onViewModelChange={setViewModel}
         viewModel={viewModel}
+        startViewModel={ViewModel.months}
       />
       {viewModel === ViewModel.years && renderYears()}
       {viewModel === ViewModel.months && renderMonths()}

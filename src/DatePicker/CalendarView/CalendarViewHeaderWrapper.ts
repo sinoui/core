@@ -1,8 +1,13 @@
 import styled from 'styled-components';
-import ViewModel from '../ViewModel';
 
+/**
+ * 组件属性
+ */
 interface Props {
-  $viewModel?: ViewModel;
+  /**
+   * 当前视图是否为日历的开始视图
+   */
+  $isStartViewModel: boolean;
 }
 
 const CalendarViewHeaderWrapper = styled.div<Props>`
@@ -30,7 +35,7 @@ const CalendarViewHeaderWrapper = styled.div<Props>`
   .sinoui-calendar-view-header__year-dropdown-icon {
     transition: ${({ theme }) => theme.transitions.create('transform')};
     transform: rotate(
-      ${({ $viewModel }) => ($viewModel !== ViewModel.dates ? 180 : 0)}deg
+      ${({ $isStartViewModel }) => ($isStartViewModel ? 0 : 180)}deg
     );
   }
 
