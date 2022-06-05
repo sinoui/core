@@ -1,24 +1,35 @@
-import React, { useState, useMemo } from 'react';
-import CalendarViewHeader from './CalendarViewHeader';
-import WeekTitleBar from '../WeekTitleBar';
-import CalendarViewWrapper from './CalendarViewWrapper';
-import YearSelectView from '../YearSelectView';
-import ViewModel from '../ViewModel';
-import useIsPc from '../useIsPc';
-import MonthSelectView from '../MonthSelectView';
-import CalendarViewAction from './CalendarViewAction';
-import CalendarViewToolbar from './CalendarViewToolbar';
-import SimpleMonthDatesView from '../DatesView/SimpleMonthDatesView';
+import React, { useMemo, useState } from 'react';
 
+import SimpleMonthDatesView from '../DatesView/SimpleMonthDatesView';
+import MonthSelectView from '../MonthSelectView';
+import useIsPc from '../useIsPc';
+import ViewModel from '../ViewModel';
+import WeekTitleBar from '../WeekTitleBar';
+import YearSelectView from '../YearSelectView';
+import CalendarViewAction from './CalendarViewAction';
+import CalendarViewHeader from './CalendarViewHeader';
+import CalendarViewToolbar from './CalendarViewToolbar';
+import CalendarViewWrapper from './CalendarViewWrapper';
+import DateText from './DateText';
+
+/**
+ * 组件属性
+ */
 export interface Props {
+  /**
+   *
+   */
   className?: string;
+  /**
+   *
+   */
   style?: React.CSSProperties;
   /**
    * 指定选中日期。需要是`Date`类型的。如果需要从字符串转换成`Date`，则建议使用`useMemo`:
    * 
    * ```tsx
      const date = useMemo(() => new Date(Date.parse(dateStr)), [dateStr]);
-    
+   
      return <DatePicker value={date} />;
    * ```
    */
@@ -67,7 +78,7 @@ export interface Props {
    * 点击确定按钮的回调函数
    */
   onOk?: (event: React.MouseEvent) => void;
-  /*
+  /**
    * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
    */
   skipMonthsView?: boolean;
@@ -108,14 +119,14 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
   const nativePc = useIsPc();
   const isPc = isPcProp ?? nativePc;
   const [valueState, setValueState] = useState(value);
-  const [[year, month], setYearMonth] = useState(() => {
-    return value
+  const [[year, month], setYearMonth] = useState(() =>
+    value
       ? [value.getFullYear(), value.getMonth()]
       : [
           defaultYear ?? new Date().getFullYear(),
           defaultMonth ?? new Date().getMonth(),
-        ];
-  });
+        ],
+  );
   const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
 
   const skipMonthsView = skipMonthsViewProp ?? !isPc;
@@ -189,10 +200,10 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     />
   );
 
-  const isShowButtons = useMemo(() => showButtons ?? !isPc, [
-    isPc,
-    showButtons,
-  ]);
+  const isShowButtons = useMemo(
+    () => showButtons ?? !isPc,
+    [isPc, showButtons],
+  );
 
   return (
     <CalendarViewWrapper
@@ -202,10 +213,9 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
       $isPc={isPc}
     >
       {!isPc && (
-        <CalendarViewToolbar
-          title={title || '设置日期'}
-          value={value ?? new Date()}
-        />
+        <CalendarViewToolbar title={title || '设置日期'}>
+          <DateText date={value} />
+        </CalendarViewToolbar>
       )}
       <CalendarViewHeader
         year={year}

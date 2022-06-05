@@ -2,18 +2,19 @@ import padStart from 'lodash/padStart';
 
 /**
  * 校验年月的字符串格式是否正确
+ *
  * @param value 需要校验的字符串
  * @returns  是否匹配'YYYY-MM'的日期格式
  */
-export const isValidateDate = (value?: string) =>
-  value && /\d{4}-(0[1-9]|1[0-2])$/.test(value);
+export const isValidateDate = (value?: string): value is string =>
+  !!value && /\d{4}-(0[1-9]|1[0-2])$/.test(value);
 
 /**
  * 获取当前时间的年月信息
  *
  * @returns YYYY-MM格式的字符串
  */
-export const getDefaultYearMonth = () => {
+export const getDefaultYearMonth = (): string => {
   const year = new Date().getFullYear();
   const month = new Date().getMonth();
 
@@ -22,10 +23,11 @@ export const getDefaultYearMonth = () => {
 
 /**
  * 将字符串类型的日期转换成对应的年月
- * @param value
- * @returns
+ *
+ * @param value 表示年月的字符串
+ * @returns 返回解析到的数据
  */
-export const getYearAndMonthByValue = (value: string) => {
+export const getYearAndMonthByValue = (value: string): [number, number] => {
   const [year, month] = value.split('-');
 
   return [Number(year), Number(month) - 1];

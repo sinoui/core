@@ -2,14 +2,15 @@
  * @jest-environment jsdom
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react';
-import { render, fireEvent, act, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
-import { ThemeProvider } from 'styled-components';
+
 import { defaultTheme } from '@sinoui/theme';
-import DatePicker from '../DatePicker';
+import { act, cleanup, fireEvent, render } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
+
 import { MONTH_FULL_TITLES } from '../constants';
+import DatePicker from '../DatePicker';
 
 afterEach(cleanup);
 
@@ -79,7 +80,7 @@ describe('value', () => {
       </ThemeProvider>,
     );
 
-    expect(getByTestId('datepicker').textContent).toBe('​');
+    expect(getByTestId('datepicker').textContent?.length).toBe(0);
 
     const textInput = container.querySelector('.sinoui-base-input')!;
 

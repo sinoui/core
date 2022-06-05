@@ -1,17 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import Caption from '@sinoui/core/Caption';
 import H5 from '@sinoui/core/H5';
+import type React from 'react';
+import styled from 'styled-components';
 
+/**
+ * 日历视图的工具栏组件属性
+ */
 interface Props {
   /**
    * 标题
    */
   title: string;
   /**
-   * 显示的值
+   * 需要显示的子元素
    */
-  value: Date;
+  children?: React.ReactNode;
 }
 
 const CalendarViewToolbarWrapper = styled.div`
@@ -30,19 +34,19 @@ const CalendarViewToolbarWrapper = styled.div`
 
 /**
  * 日历视图的工具栏
+ *
+ * @param props 组件属性
+ * @param props.title 标题
+ * @param props.children 需要在工具栏上显示的内容
  */
-const CalendarViewToolbar = ({ title, value, ...rest }: Props) => {
-  return (
+const CalendarViewToolbar: React.FC<Props> = ({ title, children, ...rest }) => (
     <CalendarViewToolbarWrapper
       className="sinoui-calendar-view-toolbar"
       {...rest}
     >
       <Caption>{title}</Caption>
-      <H5>
-        {value.getFullYear()}年{value.getMonth() + 1}月{value.getDate()}日
-      </H5>
+      <H5>{children}</H5>
     </CalendarViewToolbarWrapper>
   );
-};
 
 export default CalendarViewToolbar;
