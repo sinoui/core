@@ -70,7 +70,7 @@ const MonthSelectView = ({
     >
       {MONTH_FULL_TITLES.map((title, index) => (
         <YearItem
-          key={`${year}-${title}`}
+          key={title}
           row={Math.ceil((index + 1) / 3)}
           column={(index % 3) + 1}
           onClick={handleItemClick(index)}
