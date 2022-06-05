@@ -1,9 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
 import ViewModel from '@sinoui/core/DatePicker/ViewModel';
+import styled from 'styled-components';
+
 import ClickableText from './ClickableText';
 import formatTime from './formatTime';
 
+/**
+ * 组件属性
+ */
 interface Props {
   /**
    * 年份
@@ -62,7 +65,12 @@ const Time = styled(ClickableText)`
   margin-bottom: -6px;
 `;
 
-export default function DateTimeMobileViewToolbar(props: Props) {
+/**
+ * 移动端日期时间视图中的工具栏组件
+ *
+ * @param props 组件属性
+ */
+const DateTimeMobileViewToolbar: React.FC<Props> = (props) => {
   const {
     year,
     viewModel,
@@ -104,4 +112,6 @@ export default function DateTimeMobileViewToolbar(props: Props) {
       </Time>
     </DateTimeMobileViewToolbarWrapper>
   );
-}
+};
+
+export default DateTimeMobileViewToolbar;

@@ -1,9 +1,12 @@
-import React from 'react';
-import Modal from '@sinoui/core/Modal';
-import type { ModalProps } from '@sinoui/core/Modal';
 import Fade from '@sinoui/core/Fade';
+import type { ModalProps } from '@sinoui/core/Modal';
+import Modal from '@sinoui/core/Modal';
+
 import DateTimeMobileView from './DateTimeMobileView';
 
+/**
+ * 组件属性
+ */
 interface Props extends Omit<ModalProps, 'children'> {
   /**
    * 选中的日期
@@ -59,7 +62,12 @@ interface Props extends Omit<ModalProps, 'children'> {
   onRequestClose?: () => void;
 }
 
-export default function DateTimeMobileModal(props: Props) {
+/**
+ * 移动端日期时间选择弹窗组件
+ *
+ * @param props 组件属性
+ */
+const DateTimeMobileModal: React.FC<Props> = (props) => {
   const {
     open,
     onRequestClose,
@@ -105,4 +113,6 @@ export default function DateTimeMobileModal(props: Props) {
       </Fade>
     </Modal>
   );
-}
+};
+
+export default DateTimeMobileModal;

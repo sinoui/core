@@ -1,7 +1,11 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import styled, { css } from 'styled-components';
+
 import bemClassNames from '../utils/bemClassNames';
 
+/**
+ * 轮廓缺口组件的属性
+ */
 export interface NotchedOutlineProps {
   /**
    * 设置为`true`，则会形成缺口。
@@ -25,7 +29,17 @@ const trailingRoundCss = css`
   border-radius: 0 4px 4px 0;
 `;
 
-const NotchedOutlineLayout = styled.div<{ $square?: boolean }>`
+/**
+ *
+ */
+interface NotchedOutlineLayoutProps {
+  /**
+   * 是否显示方角
+   */
+  $square?: boolean;
+}
+
+const NotchedOutlineLayout = styled.div<NotchedOutlineLayoutProps>`
   display: flex;
   position: absolute;
   bottom: 0;
@@ -75,8 +89,10 @@ const NotchedOutlineLayout = styled.div<{ $square?: boolean }>`
 
 /**
  * 有缺口的轮廓组件。一般用于轮廓模式的输入框、下拉选择框。
+ *
+ * @param props 组件属性
  */
-export default function NotchedOutline(props: NotchedOutlineProps) {
+const NotchedOutline: React.FC<NotchedOutlineProps> = (props) => {
   const { notched, notchWidth = 0, square } = props;
   const notchStyle = useMemo(
     () => ({
@@ -98,4 +114,6 @@ export default function NotchedOutline(props: NotchedOutlineProps) {
       <div className="sinoui-notched-outline__trailing" />
     </NotchedOutlineLayout>
   );
-}
+};
+
+export default NotchedOutline;

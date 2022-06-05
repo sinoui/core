@@ -27,7 +27,7 @@ exports[`快照测试 打开状态 1`] = `
         className="sc-iqseJM fHPujO"
       >
         <button
-          className="sc-iCfMLu kCOKXp sinoui-base-button sc-furwcr kFFCxq sinoui-icon-button sinoui-icon-button--dense"
+          className="sc-iCfMLu kCOKXp sinoui-base-button sc-pVTFL elqwXV sinoui-icon-button sinoui-icon-button--dense"
           color="textSecondary"
           onClick={[MockFunction]}
           role="button"
@@ -35,7 +35,7 @@ exports[`快照测试 打开状态 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="sc-pVTFL JbhZW sinoui-svg-icon"
+            className="sc-jrQzAO bHNNSz sinoui-svg-icon"
             focusable="false"
             role="presentation"
             size={24}
@@ -50,7 +50,7 @@ exports[`快照测试 打开状态 1`] = `
           className="sc-iqseJM fHPujO"
         >
           <button
-            className="sc-iCfMLu kCOKXp sinoui-base-button sc-jrQzAO iWeSdn sinoui-button"
+            className="sc-iCfMLu kCOKXp sinoui-base-button sc-furwcr iNiGUB sinoui-button"
             color="primary"
             onClick={[Function]}
             role="button"
@@ -59,7 +59,7 @@ exports[`快照测试 打开状态 1`] = `
             清除
           </button>
           <button
-            className="sc-iCfMLu kCOKXp sinoui-base-button sc-jrQzAO iWeSdn sinoui-button"
+            className="sc-iCfMLu kCOKXp sinoui-base-button sc-furwcr iNiGUB sinoui-button"
             color="primary"
             onClick={[Function]}
             role="button"

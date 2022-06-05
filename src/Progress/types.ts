@@ -1,3 +1,6 @@
+/**
+ * 进度条组件属性类型
+ */
 export interface ProgressPropsType {
   /**
    * 设置为true 表示是线性进度指示器
@@ -32,6 +35,12 @@ export interface ProgressPropsType {
    * 圆形进度条指示器的尺寸，默认为40px
    */
   size?: number;
+  /**
+   * 组件样式
+   */
   style?: React.CSSProperties;
+  /**
+   * 组件样式类
+   */
   className?: string;
 }

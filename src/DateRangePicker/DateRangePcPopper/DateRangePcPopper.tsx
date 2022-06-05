@@ -1,16 +1,20 @@
-import React from 'react';
-import Popper from '@sinoui/core/Popper';
 import type { PopperProps } from '@sinoui/core/Popper';
-import DateRangeView from './DateRangeView';
-import type { Props as DateRangeViewProps } from './DateRangeView';
+import Popper from '@sinoui/core/Popper';
 
+import type { Props as DateRangeViewProps } from './DateRangeView';
+import DateRangeView from './DateRangeView';
+
+/**
+ * 组件属性
+ */
 interface Props extends Omit<PopperProps, 'children'>, DateRangeViewProps {}
 
 /**
  * 日期区间选择组件pc端弹窗
- * @param props
+ *
+ * @param props 组件属性
  */
-export default function DateRangePcPopper(props: Props) {
+const DateRangePcPopper: React.FC<Props> = (props) => {
   const {
     startDate,
     endDate,
@@ -42,4 +46,6 @@ export default function DateRangePcPopper(props: Props) {
       />
     </Popper>
   );
-}
+};
+
+export default DateRangePcPopper;

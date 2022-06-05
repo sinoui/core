@@ -1,9 +1,13 @@
-import React, { useMemo } from 'react';
 import mem from '@sinoui/core/utils/mem';
+import { useMemo } from 'react';
+
 import type { Props as DatesViewProps } from './DatesView';
 import DatesView from './DatesView';
 import getDatesOfMonth from './getDatesOfMonth';
 
+/**
+ * 组件属性
+ */
 interface Props extends DatesViewProps {
   /**
    * 最小日期
@@ -33,6 +37,7 @@ interface Props extends DatesViewProps {
 
 /**
  * 判断是否是同一月份
+ *
  * @param date 日期
  * @param year 年
  * @param month 月
@@ -45,6 +50,14 @@ function isSameMonth(
   return !!date && date.getFullYear() === year && date.getMonth() === month;
 }
 
+/**
+ * 判断 value 是否大于指定日期
+ *
+ * @param value 加入判断的值
+ * @param year 指定日期中的年份
+ * @param month 指定日期中的月份
+ * @param date 指定日期中的日
+ */
 function isGreaterThen(value: Date, year: number, month: number, date: number) {
   return (
     new Date(
@@ -60,6 +73,7 @@ function isGreaterThen(value: Date, year: number, month: number, date: number) {
 
 /**
  * 获取不可用日期
+ *
  * @param year 年
  * @param month 月
  * @param minDate 最小日期
@@ -88,6 +102,7 @@ export function getDisabledDates(
 
 /**
  * 获取选中日期
+ *
  * @param value 指定选中日期
  * @param year 年份
  * @param month 月份
@@ -108,7 +123,12 @@ const memSelectedDates = mem(
   (items) => items.join('_'),
 );
 
-export default function SimpleMonthDatesView(props: Props) {
+/**
+ * 简单的一个月中的日期视图组件
+ *
+ * @param props 组件属性
+ */
+const SimpleMonthDatesView: React.FC<Props> = (props) => {
   const {
     minDate,
     maxDate,
@@ -119,17 +139,19 @@ export default function SimpleMonthDatesView(props: Props) {
     ...rest
   } = props;
 
-  const selectedDates = useMemo(() => {
-    return Array.isArray(value)
-      ? memSelectedDates(
-          [value[0], value[1]]
-            .map((date) =>
-              isSameMonth(date, year, month) ? date.getDate() : undefined,
-            )
-            .filter(Boolean) as number[],
-        )
-      : getSelectedDates(value, year, month);
-  }, [month, value, year]);
+  const selectedDates = useMemo(
+    () =>
+      Array.isArray(value)
+        ? memSelectedDates(
+            [value[0], value[1]]
+              .map((date) =>
+                isSameMonth(date, year, month) ? date.getDate() : undefined,
+              )
+              .filter(Boolean) as number[],
+          )
+        : getSelectedDates(value, year, month),
+    [month, value, year],
+  );
 
   const outlinedDate =
     showToday && isSameMonth(new Date(), year, month)
@@ -146,4 +168,6 @@ export default function SimpleMonthDatesView(props: Props) {
       disabledDates={getDisabledDates(year, month, minDate, maxDate)}
     />
   );
-}
+};
+
+export default SimpleMonthDatesView;

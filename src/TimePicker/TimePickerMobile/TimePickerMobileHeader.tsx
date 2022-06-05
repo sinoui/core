@@ -1,8 +1,11 @@
-import React from 'react';
 import styled from 'styled-components';
+
 import ClickedTextView from './ClickedTextView';
 import { formatHourMinute } from './utils';
 
+/**
+ * 组件属性
+ */
 interface Props {
   /**
    * 是否为时钟表盘视图
@@ -88,7 +91,19 @@ const Colon = styled.div`
   opacity: 0.7;
 `;
 
-export default function TimePickerMobileHeader({
+/**
+ * 移动端时间选择的头部组件
+ *
+ * @param props 组件属性
+ * @param props.isClockView 是否是时钟视图
+ * @param props.isHourView 是否是小时视图
+ * @param props.isAm 12小时制 是否上午
+ * @param props.hour 小时
+ * @param props.minute 分钟
+ * @param props.onChangeAm AM 和 PM 改变时的回调
+ * @param props.onChangeHourOrMinuteView 时分视图切换时的回调函数
+ */
+const TimePickerMobileHeader: React.FC<Props> = ({
   isClockView,
   isHourView,
   isAm,
@@ -96,40 +111,40 @@ export default function TimePickerMobileHeader({
   minute,
   onChangeAm,
   onChangeHourOrMinuteView,
-}: Props) {
-  return (
-    <TimePickerMobileHeaderWrapper>
-      {isClockView ? (
-        <>
-          <div className="sinoui-time-picker-mobile-view__header-am-pm">
-            <ClickedTextView selected={isAm} onClick={() => onChangeAm(true)}>
-              上午
-            </ClickedTextView>
-            <ClickedTextView selected={!isAm} onClick={() => onChangeAm(false)}>
-              下午
-            </ClickedTextView>
-          </div>
-          <div className="sinoui-time-picker-mobile-view__header-hour-minute">
-            <ClickedTextView
-              selected={isHourView}
-              onClick={() => onChangeHourOrMinuteView(true)}
-            >
-              {formatHourMinute(hour)}
-            </ClickedTextView>
-            <Colon>:</Colon>
-            <ClickedTextView
-              selected={!isHourView}
-              onClick={() => onChangeHourOrMinuteView(false)}
-            >
-              {formatHourMinute(minute === 60 ? 0 : minute)}
-            </ClickedTextView>
-          </div>
-        </>
-      ) : (
-        <div className="sinoui-time-picker-mobile-view__header-title">
-          设置时间
+}) => (
+  <TimePickerMobileHeaderWrapper>
+    {isClockView ? (
+      <>
+        <div className="sinoui-time-picker-mobile-view__header-am-pm">
+          <ClickedTextView selected={isAm} onClick={() => onChangeAm(true)}>
+            上午
+          </ClickedTextView>
+          <ClickedTextView selected={!isAm} onClick={() => onChangeAm(false)}>
+            下午
+          </ClickedTextView>
         </div>
-      )}
-    </TimePickerMobileHeaderWrapper>
-  );
-}
+        <div className="sinoui-time-picker-mobile-view__header-hour-minute">
+          <ClickedTextView
+            selected={isHourView}
+            onClick={() => onChangeHourOrMinuteView(true)}
+          >
+            {formatHourMinute(hour)}
+          </ClickedTextView>
+          <Colon>:</Colon>
+          <ClickedTextView
+            selected={!isHourView}
+            onClick={() => onChangeHourOrMinuteView(false)}
+          >
+            {formatHourMinute(minute === 60 ? 0 : minute)}
+          </ClickedTextView>
+        </div>
+      </>
+    ) : (
+      <div className="sinoui-time-picker-mobile-view__header-title">
+        设置时间
+      </div>
+    )}
+  </TimePickerMobileHeaderWrapper>
+);
+
+export default TimePickerMobileHeader;

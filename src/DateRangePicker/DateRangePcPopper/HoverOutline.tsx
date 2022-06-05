@@ -1,9 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
+
+import formatDate from '../../DatePicker/formatDate';
+import getDayOfWeek from '../helpers/getDayOfWeek';
 import getWeekNoOfMonth from '../helpers/getWeekNoOfMonth';
 import isSameMonth from '../helpers/isSameMonth';
-import getDayOfWeek from '../helpers/getDayOfWeek';
-import formatDate from '../../DatePicker/formatDate';
 
 const BORDER_COLOR: Record<string, string> = {
   light: '#9a999a',
@@ -27,22 +27,42 @@ const HoverOutlineWrapper = styled.div`
 `;
 
 /**
- * 悬停轮廓
+ * 悬停轮廓组件属性
  */
-const HoverOutline = ({
+export interface HoverOutlineProps {
+  /**
+   * 悬停日期
+   */
+  hoverDate: Date;
+  /**
+   * 年份
+   */
+  year: number;
+  /**
+   * 月份
+   */
+  month: number;
+  /**
+   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+   */
+  startOfWeek?: 0 | 1;
+}
+
+/**
+ * 悬停轮廓
+ *
+ * @param props 组件属性
+ * @param props.hoverDate 悬停日期
+ * @param props.year 年份
+ * @param props.month 月份
+ * @param props.startOfWeek 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
+ */
+const HoverOutline: React.FC<HoverOutlineProps> = ({
   hoverDate,
   year,
   month,
   startOfWeek,
   ...rest
-}: {
-  hoverDate: Date;
-  year: number;
-  month: number;
-  /*
-   * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
-   */
-  startOfWeek?: 0 | 1;
 }) => {
   const weekNo = getWeekNoOfMonth(hoverDate, startOfWeek === 0);
   const dayOfWeek = getDayOfWeek(hoverDate, startOfWeek === 0);

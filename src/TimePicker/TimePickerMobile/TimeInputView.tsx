@@ -1,8 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import Subtitle1 from '@sinoui/core/Subtitle1';
 import TimeInput from '@sinoui/core/DateTimePicker/DateTimeMobileModal/TimeInput';
+import Subtitle1 from '@sinoui/core/Subtitle1';
+import styled from 'styled-components';
 
+/**
+ * 组件属性
+ */
 interface Props {
   /**
    * 选中时间的小时
@@ -33,11 +35,16 @@ const TimeInputTitle = styled(Subtitle1)`
   padding-left: 16px;
 `;
 
-export default function TimeInputView(props: Props) {
-  return (
-    <TimeInputViewWrapper className="sinoui-time-picker-mobile-view__keyboard">
-      <TimeInputTitle>请输入时间</TimeInputTitle>
-      <TimeInput {...props} />
-    </TimeInputViewWrapper>
-  );
-}
+/**
+ * 时间输入框视图
+ *
+ * @param props 组件属性
+ */
+const TimeInputView: React.FC<Props> = (props) => (
+  <TimeInputViewWrapper className="sinoui-time-picker-mobile-view__keyboard">
+    <TimeInputTitle>请输入时间</TimeInputTitle>
+    <TimeInput {...props} />
+  </TimeInputViewWrapper>
+);
+
+export default TimeInputView;

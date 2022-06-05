@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
 import BaseButton from '@sinoui/core/BaseButton';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
-import { opacify } from 'polished';
 import classNames from 'classnames';
+import { opacify } from 'polished';
+import type React from 'react';
+import { useState } from 'react';
+import styled from 'styled-components';
+
 import RadioButtonCheckedIcon from './svg-icons/RadioButtonChecked';
 import RadioButtonUncheckedIcon from './svg-icons/RadioButtonUnchecked';
+
+/**
+ * 切换按钮属性
+ */
+interface ToggleButtonProps {
+  /**
+   * 是否选中
+   */
+  checked?: boolean;
+}
 
 const ToggleButton = styled(BaseButton).attrs(() => ({
   forwardedAs: 'span',
   tabIndex: '0',
-}))<{ checked?: boolean }>`
+}))<ToggleButtonProps>`
   > .sinoui-icon,
   > .sinoui-svg-icon {
     font-size: 20px;
@@ -89,6 +101,9 @@ const StyleInput = styled.input`
   border: none;
 `;
 
+/**
+ * 单选按钮组件属性
+ */
 export interface Props {
   /**
    * 是否被选中
@@ -105,7 +120,7 @@ export interface Props {
   /**
    * input的其它属性
    */
-  inputProps?: string;
+  inputProps?: Record<string, any>;
   /**
    * ref属性
    */
@@ -157,9 +172,11 @@ export interface Props {
 }
 
 /**
- * 基本展示组件
+ * 单选按钮组件
+ *
+ * @param props 单选按钮组件的属性
  */
-function RadioButton(props: Props) {
+const RadioButton: React.FC<Props> = (props) => {
   const { checked, defaultChecked } = props;
   const isControlled = checked != null;
   const [check, setCheck] = useState(
@@ -252,6 +269,6 @@ function RadioButton(props: Props) {
       />
     </ToggleButton>
   );
-}
+};
 
 export default RadioButton;

@@ -1,11 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import Button from '@sinoui/core/Button';
 import Caption from '@sinoui/core/Caption';
 import H5 from '@sinoui/core/H5';
 import IconButton from '@sinoui/core/IconButton';
 import Close from '@sinoui/core/svg-icons/Close';
-import Button from '@sinoui/core/Button';
+import styled from 'styled-components';
 
+/**
+ * 工具栏组件的属性
+ */
 interface Props {
   /**
    * 弹窗标题
@@ -35,6 +37,9 @@ interface Props {
    * 聚焦的输入框
    */
   focused?: 'start' | 'end';
+  /**
+   * 焦点位置变更回调函数
+   */
   onFocusedChange?: (type: 'start' | 'end') => void;
   /**
    * 开始时间标题
@@ -77,13 +82,35 @@ const MobileDateRangeViewToolBarAction = styled.div`
   align-items: center;
 `;
 
-const DateWrapper = styled.span<{ $focused?: boolean }>`
+/**
+ * 日期包裹组件的属性
+ */
+interface DateWrapperProps {
+  /**
+   * 是否是聚焦状态
+   */
+  $focused?: boolean;
+}
+
+const DateWrapper = styled.span<DateWrapperProps>`
   opacity: ${({ $focused }) => ($focused ? 1 : 0.7)};
   cursor: pointer;
 `;
 
 /**
  * 日历视图的工具栏
+ *
+ * @param props 组件属性
+ * @param props.title 弹窗标题
+ * @param props.startDate 开始时间
+ * @param props.endDate 结束时间
+ * @param props.onClose 弹窗关闭时的回调函数
+ * @param props.onOk 点击保存按钮时的回调函数
+ * @param props.onClear 点击清除按钮时的回调函数
+ * @param props.focused 聚焦的输入框
+ * @param props.onFocusedChange 焦点位置变更回调函数
+ * @param props.startTitle 开始时间标题
+ * @param props.endTitle 结束时间标题
  */
 const MobileDateRangeViewToolBar = ({
   title,

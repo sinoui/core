@@ -1,11 +1,18 @@
-import React, { useEffect } from 'react';
-import Modal from '@sinoui/core/Modal';
-import type { ModalProps } from '@sinoui/core/Modal';
 import Fade from '@sinoui/core/Fade';
-import TimePickerMobileView from './TimePickerMobileView';
-import scrollLock from './scrollLock';
+import type { ModalProps } from '@sinoui/core/Modal';
+import Modal from '@sinoui/core/Modal';
+import { useEffect } from 'react';
 
+import scrollLock from './scrollLock';
+import TimePickerMobileView from './TimePickerMobileView';
+
+/**
+ * 组件属性
+ */
 interface Props extends Omit<ModalProps, 'children'> {
+  /**
+   * 值
+   */
   value?: string;
   /**
    * 弹窗关闭时的回调函数
@@ -19,9 +26,10 @@ interface Props extends Omit<ModalProps, 'children'> {
 
 /**
  * 移动端日期区间选择弹窗
- * @param props
+ *
+ * @param props 组件属性
  */
-export default function DateRangeMobileModal(props: Props) {
+const DateRangeMobileModal: React.FC<Props> = (props) => {
   const { value, onRequestClose, onChange, open } = props;
 
   useEffect(() => {
@@ -43,4 +51,6 @@ export default function DateRangeMobileModal(props: Props) {
       </Fade>
     </Modal>
   );
-}
+};
+
+export default DateRangeMobileModal;

@@ -1,9 +1,12 @@
-import React from 'react';
+import Fade from '@sinoui/core/Fade';
 import type { PopperProps } from '@sinoui/core/Popper';
 import Popper from '@sinoui/core/Popper';
-import Fade from '@sinoui/core/Fade';
+
 import DateTimeView from './DateTimeView';
 
+/**
+ * 组件属性
+ */
 interface Props extends Omit<PopperProps, 'onChange' | 'children'> {
   /**
    * 日期
@@ -21,7 +24,7 @@ interface Props extends Omit<PopperProps, 'onChange' | 'children'> {
    * 默认月份
    */
   defaultMonth?: number;
-  /*
+  /**
    * 设置为`true`，则跳过月份选择。默认情况下，在桌面端不跳过，在移动端跳过。
    */
   skipMonthsView?: boolean;
@@ -75,7 +78,12 @@ interface Props extends Omit<PopperProps, 'onChange' | 'children'> {
   showNextMonthDates?: boolean;
 }
 
-export default function DateTimePcPopper(props: Props) {
+/**
+ * pc端日期时间弹窗组件
+ *
+ * @param props 组件属性
+ */
+const DateTimePcPopper: React.FC<Props> = (props) => {
   const {
     date,
     hourStep = 1,
@@ -130,4 +138,6 @@ export default function DateTimePcPopper(props: Props) {
       </Fade>
     </Popper>
   );
-}
+};
+
+export default DateTimePcPopper;

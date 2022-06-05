@@ -1,13 +1,26 @@
-import React, { useMemo } from 'react';
-import ChevronLeftIcon from '@sinoui/core/svg-icons/ChevronLeftIcon';
-import SmallIconButton from '@sinoui/core/DatePicker/CalendarView/SmallIconButton';
-import styled from 'styled-components';
 import Body1 from '@sinoui/core/Body1';
+import SmallIconButton from '@sinoui/core/DatePicker/CalendarView/SmallIconButton';
+import ChevronLeftIcon from '@sinoui/core/svg-icons/ChevronLeftIcon';
+import { useMemo } from 'react';
+import styled from 'styled-components';
+
 import DateRangeHeaderWrapper from './DateRangeHeaderWrapper';
 
+/**
+ * 组件属性
+ */
 export interface Props {
+  /**
+   * 开始年份
+   */
   startYear: number;
+  /**
+   * 开始月份
+   */
   startMonth: number;
+  /**
+   * 开始年份和月份发生变化时的回调函数
+   */
   onChange: (startYear: number, startMonth: number) => void;
 }
 
@@ -33,8 +46,10 @@ const Title = styled(Body1)`
 
 /**
  * 日期区间选择的头部
+ *
+ * @param props 组件属性
  */
-export default function DateRangeHeader(props: Props) {
+const DateRangeHeader: React.FC<Props> = (props) => {
   const { startYear, startMonth, onChange, ...other } = props;
 
   /**
@@ -57,9 +72,10 @@ export default function DateRangeHeader(props: Props) {
     onChange(nextStartYear, nextStartMonth);
   };
 
-  const endMonth = useMemo(() => (startMonth === 11 ? 0 : startMonth + 1), [
-    startMonth,
-  ]);
+  const endMonth = useMemo(
+    () => (startMonth === 11 ? 0 : startMonth + 1),
+    [startMonth],
+  );
 
   const endYear = useMemo(
     () => (startMonth === 11 ? startYear + 1 : startYear),
@@ -92,4 +108,6 @@ export default function DateRangeHeader(props: Props) {
       </SmallIconButton>
     </DateRangeHeaderWrapper>
   );
-}
+};
+
+export default DateRangeHeader;

@@ -1,10 +1,21 @@
-import React, { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div<{
+/**
+ * 包装组件的属性
+ */
+interface WrapperProps {
+  /**
+   * 旋转角度（单位为 deg）
+   */
   $rotateDeg: number;
+  /**
+   * 是否启用 css 过度动画
+   */
   $isTransition: boolean;
-}>`
+}
+
+const Wrapper = styled.div<WrapperProps>`
   position: absolute;
   left: calc((100% - 2px) / 2);
   width: 2px;
@@ -18,9 +29,17 @@ const Wrapper = styled.div<{
   transform-origin: center bottom 0;
 `;
 
-const MinuteDot = styled.div<{
+/**
+ * 分钟点组件属性
+ */
+interface MinuteDotProps {
+  /**
+   * 是否选中
+   */
   $selected?: boolean;
-}>`
+}
+
+const MinuteDot = styled.div<MinuteDotProps>`
   top: -21px;
   left: -15px;
   width: 4px;
@@ -33,18 +52,44 @@ const MinuteDot = styled.div<{
     $selected ? '#fff' : theme.palette.primary.main};
 `;
 
-export default function ClockPointer({
+/**
+ * 时钟点组件的属性
+ */
+export interface ClockPointerProps {
+  /**
+   * 旋转角度。单位为 deg。
+   */
+  rotateDeg: number;
+  /**
+   * 是否是小时视图
+   */
+  isHourView: boolean;
+  /**
+   * 是否启用 css 过渡动画
+   */
+  isTransition: boolean;
+  /**
+   * 切换 cs 过渡动画的回调函数
+   */
+  onTransitionChange: (transitionValue: boolean) => void;
+}
+
+/**
+ * 时钟点组件
+ *
+ * @param props 组件属性
+ * @param props.rotateDeg 旋转角度。单位为 deg。
+ * @param props.isHourView 是否是小时视图
+ * @param props.isTransition 是否启用 css 过渡动画
+ * @param props.onTransitionChange 切换 cs 过渡动画的回调函数
+ */
+const ClockPointer: React.FC<ClockPointerProps> = ({
   rotateDeg,
   isHourView,
   isTransition,
   onTransitionChange,
   ...rest
-}: {
-  rotateDeg: number;
-  isHourView: boolean;
-  isTransition: boolean;
-  onTransitionChange: (transitionValue: boolean) => void;
-}) {
+}) => {
   const hourViewRef = useRef(isHourView);
 
   useEffect(() => {
@@ -63,4 +108,6 @@ export default function ClockPointer({
       />
     </Wrapper>
   );
-}
+};
+
+export default ClockPointer;

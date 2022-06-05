@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 /**
  * 底部应用栏 嵌入模式式图标
  */
-export default function InsetCircle() {
+const InsetCircle: React.FC = () => {
   const {
     palette: {
       primary: { main },
@@ -26,4 +26,6 @@ export default function InsetCircle() {
       />
     </svg>
   );
-}
+};
+
+export default InsetCircle;

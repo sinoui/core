@@ -1,14 +1,14 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import classNames from 'classnames';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
+import classNames from 'classnames';
 import { lighten } from 'polished';
-import type { ProgressPropsType } from './types';
+import styled, { css } from 'styled-components';
+
 import {
+  determinateBuefferDotKeyframes,
   inDeterminatePrimaryBarKeyFrames,
   inDeterminateSecondaryBarKeyFrames,
-  determinateBuefferDotKeyframes,
 } from './LinearKeyframes';
+import type { ProgressPropsType } from './types';
 
 /**
  * 线性进度条不定量样式
@@ -28,6 +28,8 @@ const inDeterminateStyle = css`
 
 /**
  * 非缓冲线性定量进度条
+ *
+ * @param props 组件属性
  */
 const normalDeterminateStyle = css<ProgressPropsType>`
   & .sinoui-progress--linear__primary-bar {
@@ -40,6 +42,12 @@ const normalDeterminateStyle = css<ProgressPropsType>`
 
 /**
  * 线性缓冲样式
+ *
+ * @param props 组件属性
+ * @param props.color 进度条指示器的颜色
+ * @param props.theme 属性
+ * @param props.bufferValue 指定缓存进度指示器的缓冲进度
+ * @param props.value 指定定量进度指示器的进度
  */
 const bufferStyle = css<ProgressPropsType>`
   background-color: transparent;
@@ -113,8 +121,12 @@ const Wrapper = styled.div<ProgressPropsType>`
 
 /**
  * 线性指示器
+ *
+ * @param props 组件属性
  */
-export default function LinearProgress(props: ProgressPropsType) {
+const LinearProgress: React.FC<ProgressPropsType> = (
+  props: ProgressPropsType,
+) => {
   const { determinate, className, buffer } = props;
   return (
     <Wrapper
@@ -133,4 +145,6 @@ export default function LinearProgress(props: ProgressPropsType) {
       )}
     </Wrapper>
   );
-}
+};
+
+export default LinearProgress;

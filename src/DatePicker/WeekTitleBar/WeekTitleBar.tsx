@@ -1,7 +1,10 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
+
 import WeekTitle from './WeekTitle';
 
+/**
+ * 组件属性
+ */
 interface Props {
   /**
    * 星期开始的位置。`0`表示为星期日，`1`表示为星期一。默认为`1`。
@@ -25,7 +28,17 @@ const pcStyle = css`
 
 const weekTitles = ['一', '二', '三', '四', '五', '六', '日'];
 
-const WeekTitleBarWrapper = styled.div<{ $isPc?: boolean }>`
+/**
+ * WeekTitleBarWarpper组件属性
+ */
+interface WeekTitleBarWrapperProps {
+  /**
+   * 是否是pc设备
+   */
+  $isPc?: boolean;
+}
+
+const WeekTitleBarWrapper = styled.div<WeekTitleBarWrapperProps>`
   ${mobileStyle}
   display: -ms-grid;
   display: grid;
@@ -38,12 +51,12 @@ const WeekTitleBarWrapper = styled.div<{ $isPc?: boolean }>`
 
 /**
  * 周标题栏
+ *
+ * @param props 组件属性
+ * @param props.startOfWeek 星期开始的位置。`0`表示为星期日，`1`表示为星期一。默认为`1`。
+ * @param props.isPc 是否是pc设备
  */
-export default function WeekTitleBar({
-  startOfWeek = 1,
-  isPc,
-  ...rest
-}: Props) {
+const WeekTitleBar: React.FC<Props> = ({ startOfWeek = 1, isPc, ...rest }) => {
   const titles =
     startOfWeek === 1 ? weekTitles : [weekTitles[6], ...weekTitles.slice(0, 6)];
   return (
@@ -59,4 +72,6 @@ export default function WeekTitleBar({
       ))}
     </WeekTitleBarWrapper>
   );
-}
+};
+
+export default WeekTitleBar;

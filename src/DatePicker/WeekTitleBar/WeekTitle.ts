@@ -1,7 +1,21 @@
-import styled, { css } from 'styled-components';
 import Body2 from '@sinoui/core/Body2';
+import styled, { css } from 'styled-components';
 
-const mobileStyle = css<{ $isPc?: boolean }>`
+/**
+ * 周状态栏中的标题组件属性
+ */
+interface WeekTitleProps {
+  /**
+   * 标题所属的列
+   */
+  $column: number;
+  /**
+   * 是否是 pc 设备
+   */
+  $isPc?: boolean;
+}
+
+const mobileStyle = css<WeekTitleProps>`
   width: 40px;
   height: 40px;
 `;
@@ -12,7 +26,15 @@ const pcStyle = css`
   height: 18px;
 `;
 
-const WeekTitle = styled(Body2)<{ $column: number; $isPc?: boolean }>`
+/**
+ * 周状态栏中的标题
+ *
+ * @param props 组件属性
+ * @param props.theme 主题
+ * @param props.$column 标题所属的列
+ * @param props.$isPc 是否是 pc 设备
+ */
+const WeekTitle = styled(Body2)<WeekTitleProps>`
   ${mobileStyle}
   display: inline-flex;
   justify-content: center;

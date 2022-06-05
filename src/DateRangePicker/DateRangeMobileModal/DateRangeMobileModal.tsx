@@ -1,9 +1,12 @@
-import React from 'react';
-import Modal from '@sinoui/core/Modal';
-import type { ModalProps } from '@sinoui/core/Modal';
 import Fade from '@sinoui/core/Fade';
+import type { ModalProps } from '@sinoui/core/Modal';
+import Modal from '@sinoui/core/Modal';
+
 import MobileDateRangeView from './MobileDateRangeView';
 
+/**
+ * 组件属性
+ */
 interface Props extends Omit<ModalProps, 'children'> {
   /**
    * 弹窗标题
@@ -57,7 +60,7 @@ interface Props extends Omit<ModalProps, 'children'> {
    * 头部结束时间标题
    */
   endTitle?: string;
-  /*
+  /**
    * 星期开始位置。`0`表示开始的是星期日，`1`表示星期一。默认为`1`。
    */
   startOfWeek?: 0 | 1;
@@ -65,9 +68,10 @@ interface Props extends Omit<ModalProps, 'children'> {
 
 /**
  * 移动端日期区间选择弹窗
- * @param props
+ *
+ * @param props 组件属性
  */
-export default function DateRangeMobileModal(props: Props) {
+const DateRangeMobileModal: React.FC<Props> = (props) => {
   const {
     startDate,
     endDate,
@@ -113,4 +117,6 @@ export default function DateRangeMobileModal(props: Props) {
       </Fade>
     </Modal>
   );
-}
+};
+
+export default DateRangeMobileModal;

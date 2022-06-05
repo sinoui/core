@@ -1,11 +1,19 @@
 {
-  "include": ["src", "stories"],
-  "exclude": ["node_modules"],
+  "include": [
+    "src",
+    "stories"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "compilerOptions": {
     "incremental": true,
     "target": "es5",
     "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
@@ -21,13 +29,15 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowJs": false,
     "baseUrl": ".",
     "paths": {
-      "@sinoui/core/*": ["src/*"]
+      "@sinoui/core/*": [
+        "src/*"
+      ]
     }
   }
 }

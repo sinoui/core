@@ -1,7 +1,11 @@
-import React from 'react';
-import SvgIcon from '@sinoui/core/SvgIcon';
 import type { SvgIconProps } from '@sinoui/core/SvgIcon';
+import SvgIcon from '@sinoui/core/SvgIcon';
 
+/**
+ * 错误图标
+ *
+ * @param props 组件属性
+ */
 export default function ErrorIcon(props: SvgIconProps) {
   return (
     <SvgIcon {...props}>

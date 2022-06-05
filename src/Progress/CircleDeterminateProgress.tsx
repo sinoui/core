@@ -1,15 +1,17 @@
-import React, { useRef, useEffect, useContext, useCallback } from 'react';
-import { ThemeContext } from 'styled-components';
-import classNames from 'classnames';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
-import type { ProgressPropsType } from './types';
+import classNames from 'classnames';
+import { useCallback, useContext, useEffect, useRef } from 'react';
+import { ThemeContext } from 'styled-components';
+
 import NODE_ENV from '../utils/env';
+import type { ProgressPropsType } from './types';
 
 /**
  * 环形定量进度指示器
- * @param props
+ *
+ * @param props 组件属性
  */
-export default function CircleDeterminateProgress(props: ProgressPropsType) {
+const CircleDeterminateProgress: React.FC<ProgressPropsType> = (props) => {
   const {
     size = 40,
     thickness = 3.6,
@@ -83,4 +85,6 @@ export default function CircleDeterminateProgress(props: ProgressPropsType) {
       <canvas ref={canvas} />
     </div>
   );
-}
+};
+
+export default CircleDeterminateProgress;
