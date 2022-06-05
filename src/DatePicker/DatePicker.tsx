@@ -1,25 +1,17 @@
-import React, { useState } from 'react';
-import TextInput from '@sinoui/core/TextInput';
-import type { TextInputProps } from '@sinoui/core/TextInput';
-import DatePickerIcon from '@sinoui/core/svg-icons/DatePickerIcon';
-import styled from 'styled-components';
-import Popper from '@sinoui/core/Popper';
-import Modal from '@sinoui/core/Modal';
-import useSelect from '@sinoui/core/useSelect';
-import type { PopperProps } from '@sinoui/core/Popper';
-import CalendarView from './CalendarView';
-import InputAdornment from '../InputAdornment';
-import useIsPc from './useIsPc';
-import formatDate from './formatDate';
-import type { CalendarViewProps } from './CalendarView';
 import isNaN from '../utils/isNaN';
 import mem from '../utils/mem';
-import SimpleText from '../DateTimePicker/SimpleText';
+import type { BaseDatePickerProps } from './BaseDatePicker';
+import BaseDatePicker from './BaseDatePicker';
+import formatDate from './formatDate';
+import ViewModel from './ViewModel';
 
-interface Props
+/**
+ * 日期选择组件的属性
+ */
+export interface DatePickerProps
   extends Omit<
-    TextInputProps,
-    'value' | 'multiline' | 'minRows' | 'maxRows' | 'onChange' | 'multiple'
+    BaseDatePickerProps,
+    'value' | 'onChange' | 'startViewModel' | 'min' | 'max' | 'renderValue'
   > {
   /**
    * 值
@@ -30,10 +22,6 @@ interface Props
    */
   onChange?: (date?: string) => void;
   /**
-   * 是否是pc端设备
-   */
-  isPc?: boolean;
-  /**
    * 最小值
    */
   min?: string;
@@ -41,56 +29,12 @@ interface Props
    * 最大值
    */
   max?: string;
-  /**
-   * 弹窗标题。默认为`设置${label}`。在移动端弹窗时使用。
-   */
-  modalTitle?: string;
+
   /**
    * 指定自定义的值渲染函数。默认情况下，直接显示`value`属性值。
    */
   renderValue?: (value?: Date) => React.ReactNode;
-  /**
-   * 是否将弹出内容以传送门的方式渲染。默认为`true`。
-   */
-  portal?: boolean;
-  /**
-   * 给弹窗设置属性。
-   */
-  popperProps?: PopperProps;
 }
-
-const StyledPopper = styled(Popper)`
-  z-index: ${({ theme }) => theme.zIndex.popover};
-`;
-
-const CalendarModalContent = React.forwardRef<
-  HTMLDivElement,
-  Omit<CalendarViewProps, 'onChange'> & {
-    onClose: () => void;
-    onChange: (value?: Date) => void;
-  }
->(({ value, onChange, onClose, ...rest }, ref) => {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
-    value ?? new Date(),
-  );
-  return (
-    <CalendarView
-      {...rest}
-      ref={ref}
-      value={selectedDate}
-      onChange={setSelectedDate}
-      onCancel={onClose}
-      onOk={() => {
-        onChange(selectedDate);
-        onClose();
-      }}
-      onClear={() => {
-        onChange(undefined);
-        onClose();
-      }}
-    />
-  );
-});
 
 const parseDate = mem((dateStr?: string) =>
   dateStr && !isNaN(Date.parse(dateStr))
@@ -98,103 +42,31 @@ const parseDate = mem((dateStr?: string) =>
     : undefined,
 );
 
-const isValidateDate = (value?: string) => value && !isNaN(Date.parse(value));
-
 /**
  * 日期选择组件
- * @param props
+ *
+ * @param props 组件属性
  */
-export default function DatePicker(props: Props) {
-  const { label } = props;
-  const {
-    value,
-    onChange,
-    isPc: isPcProps,
-    min,
-    max,
-    modalTitle = `设置${label || '日期'}`,
-    renderValue,
-    portal,
-    popperProps,
-    placeholder,
-  } = props;
-  const isNativePc = useIsPc();
-  const isPc = isPcProps ?? isNativePc;
-  const date = parseDate(value);
-  const inputValue = isValidateDate(value) ? value : '';
-  const inputRenderValue = (
-    <SimpleText
-      value={renderValue ? renderValue(date) : inputValue}
-      placeholder={placeholder}
-    />
-  );
-
-  const { getModalProps, getPopperProps, getTextInputProps, onRequestClose } =
-    useSelect({
-      ...props,
-      isRenderWithPopper: isPc,
-      renderValue: inputRenderValue,
-    });
-
-  /**
-   * 日期选择变化时的回调函数
-   * @param selectedDate
-   */
-  const handleCalendarChange = (selectedDate?: Date) => {
-    const newDate = selectedDate ? formatDate(selectedDate) : '';
-    if (onChange) {
-      onChange(newDate);
-    }
-    onRequestClose();
-  };
-
-  const handleClear = () => {
-    if (onChange) {
-      onChange('');
-    }
-  };
+export default function DatePicker(props: DatePickerProps) {
+  const { value, min, max, onChange, renderValue, ...rest } = props;
+  const handleChange = onChange
+    ? (date?: Date) => {
+        if (date) {
+          return onChange(formatDate(date));
+        }
+        return onChange('');
+      }
+    : undefined;
 
   return (
-    <>
-      <TextInput
-        {...getTextInputProps()}
-        baseClassName="sinoui-date-picker"
-        value={inputValue}
-        onClear={handleClear}
-        endAdornment={
-          <InputAdornment position="end" disablePointerEvents>
-            <DatePickerIcon />
-          </InputAdornment>
-        }
-      />
-      {isPc ? (
-        <StyledPopper
-          {...getPopperProps()}
-          portal={portal}
-          {...popperProps}
-          placement="bottom-start"
-        >
-          <CalendarView
-            value={date}
-            onChange={handleCalendarChange}
-            minDate={parseDate(min)}
-            maxDate={parseDate(max)}
-            isPc={isPc}
-          />
-        </StyledPopper>
-      ) : (
-        <Modal {...getModalProps()}>
-          <CalendarModalContent
-            value={date}
-            onChange={handleCalendarChange}
-            onClose={onRequestClose}
-            minDate={parseDate(min)}
-            maxDate={parseDate(max)}
-            title={modalTitle}
-            isPc={isPc}
-          />
-        </Modal>
-      )}
-    </>
+    <BaseDatePicker
+      {...rest}
+      value={parseDate(value)}
+      min={parseDate(min)}
+      max={parseDate(max)}
+      onChange={handleChange}
+      startViewModel={ViewModel.dates}
+      renderValue={renderValue ?? formatDate}
+    />
   );
 }

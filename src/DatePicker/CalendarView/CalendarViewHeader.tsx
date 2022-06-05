@@ -109,7 +109,8 @@ export default function CalendarViewHeader({
       {...rest}
     >
       <Body1 className="sinoui-calendar-view-header__title">
-        {year}年{monthTitles[month]}月
+        {year}年
+        {startViewModel === ViewModel.dates && <>{monthTitles[month]}月</>}
       </Body1>
       <SmallIconButton
         className="sinoui-calendar-view-header__year-dropdown-icon"

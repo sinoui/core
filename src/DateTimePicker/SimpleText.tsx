@@ -1,8 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+/**
+ * 展示简单文本组件的属性
+ */
 interface SimpleTextProps {
+  /**
+   * 值
+   */
   value?: any | null;
+  /**
+   * 提示语
+   */
   placeholder?: string;
 }
 
@@ -12,8 +21,11 @@ const Wrapper = styled.span`
   }
 `;
 
+/**
+ * 展示简单文本组件
+ */
 const SimpleText = React.forwardRef<HTMLDivElement, SimpleTextProps>(
-  ({ value, placeholder }, ref) => {
+  function SimpleText({ value, placeholder = <>&nbsp;</> }, ref) {
     const isEmptyValue = value == null || String(value).trim().length === 0;
     return (
       <Wrapper ref={ref} className={isEmptyValue ? 'with-placeholder' : ''}>

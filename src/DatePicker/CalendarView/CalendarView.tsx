@@ -11,6 +11,7 @@ import CalendarViewHeader from './CalendarViewHeader';
 import CalendarViewToolbar from './CalendarViewToolbar';
 import CalendarViewWrapper from './CalendarViewWrapper';
 import DateText from './DateText';
+import getMonthRange from './getMonthRange';
 
 /**
  * 组件属性
@@ -90,6 +91,10 @@ export interface Props {
    * 是否是pc形态
    */
   isPc?: boolean;
+  /**
+   * 日历开始的视图模型。默认为日期视图。
+   */
+  startViewModel: ViewModel.months | ViewModel.dates;
 }
 
 /**
@@ -112,6 +117,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     skipMonthsView: skipMonthsViewProp,
     title,
     isPc: isPcProp,
+    startViewModel,
     ...rest
   },
   ref,
@@ -127,7 +133,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
           defaultMonth ?? new Date().getMonth(),
         ],
   );
-  const [viewModel, setViewModel] = useState<ViewModel>(ViewModel.dates);
+  const [viewModel, setViewModel] = useState<ViewModel>(startViewModel);
 
   const skipMonthsView = skipMonthsViewProp ?? !isPc;
 
@@ -172,7 +178,11 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     if (newYear !== year) {
       setYearMonth([newYear, month]);
     }
-    setViewModel(skipMonthsView ? ViewModel.dates : ViewModel.months);
+    setViewModel(
+      skipMonthsView && ViewModel.months !== startViewModel
+        ? ViewModel.dates
+        : ViewModel.months,
+    );
   };
 
   const renderYears = () => (
@@ -188,17 +198,36 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     if (newMonth !== month) {
       setYearMonth([year, newMonth]);
     }
-    setViewModel(ViewModel.dates);
+
+    if (startViewModel === ViewModel.dates) {
+      setViewModel(ViewModel.dates);
+    } else if (onChange) {
+      onChange(new Date(year, newMonth, 1));
+    }
   };
 
-  const renderMonths = () => (
-    <MonthSelectView
-      selectedMonth={month}
-      onMonthSelect={handleMonthSelect}
-      className="sinoui-calendar-view__monthsview"
-      isPc={isPc}
-    />
-  );
+  const renderMonths = () => {
+    const selectedMonth =
+      startViewModel === ViewModel.dates
+        ? month
+        : year === value?.getFullYear()
+        ? month
+        : -1;
+    const [minMonth, maxMonth] =
+      startViewModel === ViewModel.dates
+        ? [0, 11]
+        : getMonthRange(year, minDate, maxDate);
+    return (
+      <MonthSelectView
+        selectedMonth={selectedMonth}
+        onMonthSelect={handleMonthSelect}
+        className="sinoui-calendar-view__monthsview"
+        isPc={isPc}
+        minMonth={minMonth}
+        maxMonth={maxMonth}
+      />
+    );
+  };
 
   const isShowButtons = useMemo(
     () => showButtons ?? !isPc,
@@ -214,7 +243,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
     >
       {!isPc && (
         <CalendarViewToolbar title={title || '设置日期'}>
-          <DateText date={value} />
+          <DateText date={value} startViewModel={startViewModel} />
         </CalendarViewToolbar>
       )}
       <CalendarViewHeader
@@ -223,6 +252,7 @@ export default React.forwardRef<HTMLDivElement, Props>(function CalendarView(
         onChange={(newYar, newMonth) => setYearMonth([newYar, newMonth])}
         onViewModelChange={setViewModel}
         viewModel={viewModel}
+        startViewModel={startViewModel}
       />
       {viewModel === ViewModel.years && renderYears()}
       {viewModel === ViewModel.dates && renderDates()}

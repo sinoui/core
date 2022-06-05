@@ -40,11 +40,10 @@ export const 指定范围 = () => {
 export const 指定渲染格式 = () => {
   const [value, setValue] = useState<string | undefined>();
 
-  const renderValue = (date?: string) => {
+  const renderValue = (date?: Date) => {
     if (!date) return '';
-    const [year, month] = date.split('-');
 
-    return `${year}年${Number(month)}月`;
+    return `${date.getFullYear()}年${Number(date.getMonth())}月`;
   };
 
   return (

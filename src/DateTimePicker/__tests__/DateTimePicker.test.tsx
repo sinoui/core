@@ -100,7 +100,7 @@ describe('value', () => {
       </ThemeProvider>,
     );
 
-    expect(getByTestId('date-time-picker').textContent?.length).toBe(0);
+    expect(getByTestId('date-time-picker').textContent?.trim()).toBe('');
     const textInput = container.querySelector('.sinoui-base-input')!;
 
     act(() => {

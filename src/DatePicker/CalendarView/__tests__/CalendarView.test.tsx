@@ -2,12 +2,15 @@
  * @jest-environment jsdom
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react';
-import { render, fireEvent, act, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
-import { ThemeProvider } from 'styled-components';
+
 import { defaultTheme } from '@sinoui/theme';
+import { act, cleanup, fireEvent, render } from '@testing-library/react';
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+
+import ViewModel from '../../ViewModel';
 import CalendarView from '../CalendarView';
 
 afterEach(cleanup);
@@ -19,6 +22,7 @@ it('展现日历视图', () => {
         defaultYear={2020}
         defaultMonth={5}
         data-testid="calendar-view"
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -35,6 +39,7 @@ it('上个月', () => {
         defaultYear={2020}
         defaultMonth={5}
         data-testid="calendar-view"
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -57,6 +62,7 @@ it('下个月', () => {
         defaultYear={2020}
         defaultMonth={5}
         data-testid="calendar-view"
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -79,6 +85,7 @@ it('年份选择视图', () => {
         defaultYear={2020}
         defaultMonth={5}
         data-testid="calendar-view"
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -106,6 +113,7 @@ it('选择年份', () => {
         defaultMonth={5}
         data-testid="calendar-view"
         skipMonthsView
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -134,6 +142,7 @@ it('选择选中的年份', () => {
         defaultMonth={5}
         data-testid="calendar-view"
         skipMonthsView
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -166,6 +175,7 @@ it('显示月份选择视图', () => {
         defaultMonth={5}
         data-testid="calendar-view"
         skipMonthsView={false}
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -196,6 +206,7 @@ it('选择月份', () => {
         defaultMonth={5}
         data-testid="calendar-view"
         skipMonthsView={false}
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -221,7 +232,11 @@ it('选择月份', () => {
 it('value', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <CalendarView data-testid="calendar-view" value={new Date(2020, 4, 11)} />
+      <CalendarView
+        data-testid="calendar-view"
+        value={new Date(2020, 4, 11)}
+        startViewModel={ViewModel.dates}
+      />
     </ThemeProvider>,
   );
 
@@ -236,13 +251,21 @@ it('value', () => {
 it('传递不同的value', () => {
   const { getByTestId, rerender } = render(
     <ThemeProvider theme={defaultTheme}>
-      <CalendarView data-testid="calendar-view" value={new Date(2020, 4, 11)} />
+      <CalendarView
+        data-testid="calendar-view"
+        value={new Date(2020, 4, 11)}
+        startViewModel={ViewModel.dates}
+      />
     </ThemeProvider>,
   );
 
   rerender(
     <ThemeProvider theme={defaultTheme}>
-      <CalendarView data-testid="calendar-view" value={new Date(2019, 7, 12)} />
+      <CalendarView
+        data-testid="calendar-view"
+        value={new Date(2019, 7, 12)}
+        startViewModel={ViewModel.dates}
+      />
     </ThemeProvider>,
   );
 
@@ -257,7 +280,11 @@ it('传递不同的value', () => {
 it('日期列表中不存在选中日期', () => {
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <CalendarView data-testid="calendar-view" value={new Date(2020, 4, 11)} />
+      <CalendarView
+        data-testid="calendar-view"
+        value={new Date(2020, 4, 11)}
+        startViewModel={ViewModel.dates}
+      />
     </ThemeProvider>,
   );
 
@@ -279,6 +306,7 @@ it('onChange', () => {
         data-testid="calendar-view"
         value={new Date(2020, 4, 11)}
         onChange={onChange}
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -300,6 +328,7 @@ it('minDate', () => {
         data-testid="calendar-view"
         value={new Date(2020, 4, 11, 0, 0, 0)}
         minDate={new Date(2020, 4, 10, 0, 0, 0)}
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -318,6 +347,7 @@ it('maxDate', () => {
         data-testid="calendar-view"
         value={new Date(2020, 4, 11, 0, 0, 0)}
         maxDate={new Date(2020, 4, 16, 0, 0, 0)}
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -336,6 +366,7 @@ it('startOfWeek', () => {
         data-testid="calendar-view"
         value={new Date(2020, 4, 11, 0, 0, 0)}
         startOfWeek={0}
+        startViewModel={ViewModel.dates}
       />
     </ThemeProvider>,
   );
@@ -351,7 +382,11 @@ it('ref', () => {
   const ref = React.createRef<HTMLDivElement>();
   const { getByTestId } = render(
     <ThemeProvider theme={defaultTheme}>
-      <CalendarView data-testid="calendar-view" ref={ref} />
+      <CalendarView
+        data-testid="calendar-view"
+        ref={ref}
+        startViewModel={ViewModel.dates}
+      />
     </ThemeProvider>,
   );
 
