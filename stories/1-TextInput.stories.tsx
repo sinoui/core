@@ -1,11 +1,12 @@
-import React, { useState, useCallback } from 'react';
-import TextInput from '@sinoui/core/TextInput';
-import styled, { ThemeProvider } from 'styled-components';
-import { defaultTheme } from '@sinoui/theme';
+import H4 from '@sinoui/core/H4';
 import InputAdornment from '@sinoui/core/InputAdornment';
+import TextInput from '@sinoui/core/TextInput';
 import Star from '@sinoui/icons/Star';
 import Visibility from '@sinoui/icons/Visibility';
-import H4 from '@sinoui/core/H4';
+import { defaultTheme } from '@sinoui/theme';
+import type React from 'react';
+import { useCallback, useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
 
 export default {
   title: 'TextInput',
@@ -16,6 +17,9 @@ const TextInputField = styled(TextInput)`
   width: 300px;
 `;
 
+/**
+ *
+ */
 function SimpleInput() {
   const [value, setValue] = useState('');
 
@@ -182,6 +186,7 @@ function SimpleInput() {
             value={value}
             required
             variant="outlined"
+            placeholder="占位符"
             allowClear
           />
           <TextInputField
@@ -248,6 +253,9 @@ function SimpleInput() {
   );
 }
 
+/**
+ *
+ */
 function AdornmentInput() {
   const [value, setValue] = useState('');
 
@@ -699,8 +707,8 @@ export const 作为表单控件使用 = () => (
       label="多行输入框"
       field
     />
-    </ThemeProvider>
-    );
+  </ThemeProvider>
+);
 
 const ClearDemo = () => {
   const [value, setValue] = useState('1');

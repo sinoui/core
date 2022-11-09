@@ -1,5 +1,9 @@
 # 版本变更说明
 
+## v1.1.14 - 2022.11.9
+
+- fix(Select): 修复下拉选择组件 placeholder 颜色不正确的 bug
+
 ## v1.1.13 - 2022.6.5
 
 - feat(YearMonthPicker): 新增 YearMonthPicker 组件，支持日期只选择年月

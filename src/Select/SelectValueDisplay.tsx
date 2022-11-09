@@ -1,7 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import styled from 'styled-components';
-import SelectItem from './SelectItem';
+
+import type SelectItem from './SelectItem';
 /**
  * 判断是否为空
  *
@@ -17,19 +18,33 @@ function isEmpty(display?: string | string[]) {
 }
 
 const Placeholder = styled.span`
-  color: ${({ theme }) => theme.palette.text.secondary};
+  color: ${({ theme }) => theme.palette.text.hint};
 `;
 
 /**
  * 展现选择框选中值的组件
+ *
+ * @param root0
+ * @param root0.value
+ * @param root0.items
+ * @param root0.placeholder
  */
 function SelectValueDisplay({
   value,
   items,
   placeholder,
 }: {
+  /**
+   *
+   */
   value: string | string[] | undefined;
+  /**
+   *
+   */
   items: SelectItem[];
+  /**
+   *
+   */
   placeholder: string | undefined;
 }) {
   if (isEmpty(value)) {
