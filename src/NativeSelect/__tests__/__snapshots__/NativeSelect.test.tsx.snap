@@ -264,7 +264,7 @@ exports[`渲染三种模式下的选择框 1`] = `
 }
 
 .c11 > .sinoui-base-input__input {
-  padding: 25.5px 12px 6.5px;
+  padding: 22px 12px 10px;
   padding-top: 25.5px;
 }
 
@@ -1045,7 +1045,7 @@ exports[`渲染不可用的选择框 1`] = `
 }
 
 .c11 > .sinoui-base-input__input {
-  padding: 25.5px 12px 6.5px;
+  padding: 22px 12px 10px;
   padding-top: 25.5px;
 }
 
@@ -1728,7 +1728,7 @@ exports[`渲染不带标签的选择框 1`] = `
 }
 
 .c9 > .sinoui-base-input__input {
-  padding: 25.5px 12px 6.5px;
+  padding: 22px 12px 10px;
   padding-top: 7.5px;
 }
 
@@ -2449,7 +2449,7 @@ exports[`渲染多选选择框 1`] = `
 }
 
 .c8 > .sinoui-base-input__input {
-  padding: 25.5px 12px 6.5px;
+  padding: 22px 12px 10px;
   padding-top: 25.5px;
 }
 
@@ -3194,7 +3194,7 @@ exports[`渲染有辅助性文字的选择框 1`] = `
 }
 
 .c12 > .sinoui-base-input__input {
-  padding: 25.5px 12px 6.5px;
+  padding: 22px 12px 10px;
   padding-top: 25.5px;
 }
 
@@ -4017,7 +4017,7 @@ exports[`渲染有错误提示的选择框 1`] = `
 }
 
 .c12 > .sinoui-base-input__input {
-  padding: 25.5px 12px 6.5px;
+  padding: 22px 12px 10px;
   padding-top: 25.5px;
 }
 

@@ -1,10 +1,14 @@
-import BaseInput from '@sinoui/core/BaseInput';
 import type { BaseInputProps } from '@sinoui/core/BaseInput';
-import styled, { css } from 'styled-components';
+import BaseInput from '@sinoui/core/BaseInput';
 import React from 'react';
-import lineRippleStyle from './lineRippleStyle';
-import { FILLED_INPUT_BGCOLOR } from './constant';
+import styled, { css } from 'styled-components';
 
+import { FILLED_INPUT_BGCOLOR } from './constant';
+import lineRippleStyle from './lineRippleStyle';
+
+/**
+ * 填充模式下输入框组件属性类型
+ */
 export interface FilledInputProps extends BaseInputProps {
   /**
    * 聚焦状态
@@ -30,7 +34,12 @@ const denseNoLabelStyle = css`
   padding-bottom: 3.5px;
 `;
 
-const overlayStyle = css<{ focused?: boolean }>`
+const overlayStyle = css<{
+  /**
+   * 组件处于聚焦状态
+   */
+  focused?: boolean;
+}>`
   > .sinoui-input__overlay {
     position: absolute;
     width: 100%;
@@ -93,7 +102,7 @@ const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
   }
 
   ${({ multiline }) => (multiline ? '&' : '> .sinoui-base-input__input')} {
-    padding: 25.5px 12px 6.5px;
+    padding: 22px 12px 10px;
     padding-top: ${({ noLabel }) => (noLabel ? 7.5 : 25.5)}px;
     ${({ noLabel, dense }) => !noLabel && dense && denseStyle}
     ${({ noLabel, dense }) => dense && noLabel && denseNoLabelStyle}
@@ -107,7 +116,7 @@ const FilledInputLayout = styled(BaseInput)<FilledInputProps>`
  * 填充模式输入框
  */
 const FilledInput = React.forwardRef<HTMLDivElement, FilledInputProps>(
-  ({ children, ...props }, ref) => {
+  function FilledInput({ children, ...props }, ref) {
     return (
       <FilledInputLayout {...props} ref={ref}>
         {children}

@@ -264,7 +264,7 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
 }
 
 .c14 > .sinoui-base-input__input {
-  padding: 25.5px 12px 6.5px;
+  padding: 22px 12px 10px;
   padding-top: 25.5px;
 }
 
