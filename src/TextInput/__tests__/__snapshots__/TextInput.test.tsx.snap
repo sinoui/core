@@ -81,9 +81,9 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   -ms-transform-origin: top left;
   transform-origin: top left;
   line-height: 1.3;
-  -webkit-transform: translate(14px,-6px) scale(0.75);
-  -ms-transform: translate(14px,-6px) scale(0.75);
-  transform: translate(14px,-6px) scale(0.75);
+  -webkit-transform: translate(12px,-6px) scale(0.75);
+  -ms-transform: translate(12px,-6px) scale(0.75);
+  transform: translate(12px,-6px) scale(0.75);
   will-change: transform;
   max-width: calc(100% - 24px);
   overflow: hidden;
@@ -325,7 +325,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
@@ -338,9 +338,9 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 
 .c9 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -367,16 +367,16 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 }
 
 .c8 > .sinoui-base-input__input {
-  padding: 16px 14px;
+  padding: 16px 12px;
 }
 
 .c8 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+  margin-left: 12px;
   margin-right: 0px;
 }
 
 .c8 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+  margin-right: 10px;
   margin-left: -6px;
 }
 
@@ -386,7 +386,7 @@ exports[`正确渲染三种模式下的输入框 1`] = `
 
 .c8 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
 .c8 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+  margin-left: -12px;
 }
 
 .c4 {
@@ -1119,9 +1119,9 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   -ms-transform-origin: top left;
   transform-origin: top left;
   line-height: 1.3;
-  -webkit-transform: translate(14px,-6px) scale(0.75);
-  -ms-transform: translate(14px,-6px) scale(0.75);
-  transform: translate(14px,-6px) scale(0.75);
+  -webkit-transform: translate(12px,-6px) scale(0.75);
+  -ms-transform: translate(12px,-6px) scale(0.75);
+  transform: translate(12px,-6px) scale(0.75);
   will-change: transform;
   max-width: calc(100% - 24px);
   overflow: hidden;
@@ -1363,7 +1363,7 @@ exports[`渲染带前缀元素的装饰器 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
@@ -1376,9 +1376,9 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 
 .c12 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -1405,16 +1405,16 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 }
 
 .c11 > .sinoui-base-input__input {
-  padding: 16px 14px;
+  padding: 16px 12px;
 }
 
 .c11 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+  margin-left: 12px;
   margin-right: 0px;
 }
 
 .c11 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+  margin-right: 10px;
   margin-left: -6px;
 }
 
@@ -1424,7 +1424,7 @@ exports[`渲染带前缀元素的装饰器 1`] = `
 
 .c11 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
 .c11 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+  margin-left: -12px;
 }
 
 .c4 {
@@ -1746,36 +1746,6 @@ exports[`渲染带后缀元素的输入框 1`] = `
   white-space: nowrap;
 }
 
-.c10 {
-  font-size: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Roboto,'Noto Sans SC','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-  font-weight: 400;
-  color: rgba(0,0,0,0.6);
-  box-sizing: border-box;
-  margin: 0px;
-  margin-top: -2px;
-  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,-webkit-transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  -webkit-transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  transition: color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms,transform 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  line-height: 1.3;
-  -webkit-transform: translate(14px,20px) scale(1);
-  -ms-transform: translate(14px,20px) scale(1);
-  transform: translate(14px,20px) scale(1);
-  will-change: transform;
-  max-width: calc(100% - 24px);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1982,7 +1952,7 @@ exports[`渲染带后缀元素的输入框 1`] = `
   opacity: 0.04;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1998,80 +1968,80 @@ exports[`渲染带后缀元素的输入框 1`] = `
   box-sizing: border-box;
 }
 
-.c12 > div {
+.c11 > div {
   border: 1px solid currentColor;
   box-sizing: border-box;
   -webkit-transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
   transition: border-color 300ms cubic-bezier(0.4,0.0,0.2,1) 0ms;
 }
 
-.c12 > .sinoui-notched-outline__leading {
+.c11 > .sinoui-notched-outline__leading {
   border-right: none;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
-.c12 > .sinoui-notched-outline__notch {
+.c11 > .sinoui-notched-outline__notch {
   border-left: none;
   border-right: none;
   padding: 0 4px;
   box-sizing: content-box;
 }
 
-.c12 > .sinoui-notched-outline__trailing {
+.c11 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
-.c12.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
+.c11.sinoui-notched-outline--notched > .sinoui-notched-outline__notch {
   border-top: none;
 }
 
-.c12.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
+.c11.sinoui-notched-outline--no-label > .sinoui-notched-outline__notch {
   padding: 0;
 }
 
-.c11 {
+.c10 {
   position: relative;
   border-radius: 4px;
 }
 
-.c11 > .sinoui-notched-outline > div {
+.c10 > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.38);
   border-width: 1px;
 }
 
-.c11:hover > .sinoui-notched-outline > div {
+.c10:hover > .sinoui-notched-outline > div {
   border-color: rgba(0,0,0,0.87);
 }
 
-.c11 > .sinoui-base-input__input {
-  padding: 16px 14px;
+.c10 > .sinoui-base-input__input {
+  padding: 16px 12px;
 }
 
-.c11 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+.c10 > .sinoui-input-adornment--start {
+  margin-left: 12px;
   margin-right: 0px;
 }
 
-.c11 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+.c10 > .sinoui-input-adornment--end {
+  margin-right: 10px;
   margin-left: -6px;
 }
 
-.c11 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
+.c10 > .sinoui-input-adornment--start ~ .sinoui-base-input__input {
   margin-left: -8px;
 }
 
-.c11 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
-.c11 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+.c10 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
+.c10 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
+  margin-left: -12px;
 }
 
 .c4 {
@@ -2242,12 +2212,12 @@ label ~ .c3 {
     className="c0 sinoui-text-input sinoui-text-input--outlined"
   >
     <label
-      className="c10 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
+      className="c8 sinoui-form-label sinoui-form-label--variant-outlined sinoui-form-label--layout-floating sinoui-form-label--required-is-after"
     >
       重量
     </label>
     <div
-      className="c2 sinoui-base-input c11"
+      className="c2 sinoui-base-input c10"
       data-testid="baseInput"
       onClick={[Function]}
     >
@@ -2269,7 +2239,7 @@ label ~ .c3 {
         </p>
       </div>
       <div
-        className="c12 sinoui-notched-outline sinoui-notched-outline--no-label"
+        className="c11 sinoui-notched-outline sinoui-notched-outline--no-label"
       >
         <div
           className="sinoui-notched-outline__leading"

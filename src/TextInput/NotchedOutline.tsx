@@ -61,7 +61,7 @@ const NotchedOutlineLayout = styled.div<NotchedOutlineLayoutProps>`
   > .sinoui-notched-outline__leading {
     border-right: none;
     flex: 0 0 auto;
-    width: 10px;
+    width: 8px;
     ${({ $square }) => !$square && leadingRoundCss};
   }
 
@@ -74,7 +74,7 @@ const NotchedOutlineLayout = styled.div<NotchedOutlineLayoutProps>`
 
   > .sinoui-notched-outline__trailing {
     border-left: none;
-    flex: 1 0 10px;
+    flex: 1 0 8px;
     ${({ $square }) => !$square && trailingRoundCss};
   }
 

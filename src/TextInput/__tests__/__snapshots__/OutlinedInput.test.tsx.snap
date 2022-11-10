@@ -126,7 +126,7 @@ exports[`无标签 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
@@ -139,9 +139,9 @@ exports[`无标签 1`] = `
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -168,16 +168,16 @@ exports[`无标签 1`] = `
 }
 
 .c1 > .sinoui-base-input__input {
-  padding: 8px 14px;
+  padding: 8px 12px;
 }
 
 .c1 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+  margin-left: 12px;
   margin-right: 0px;
 }
 
 .c1 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+  margin-right: 10px;
   margin-left: -6px;
 }
 
@@ -187,7 +187,7 @@ exports[`无标签 1`] = `
 
 .c1 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
 .c1 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+  margin-left: -12px;
 }
 
 <div
@@ -348,7 +348,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
@@ -361,9 +361,9 @@ exports[`正确渲染边框模式下的Input 1`] = `
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -390,16 +390,16 @@ exports[`正确渲染边框模式下的Input 1`] = `
 }
 
 .c1 > .sinoui-base-input__input {
-  padding: 16px 14px;
+  padding: 16px 12px;
 }
 
 .c1 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+  margin-left: 12px;
   margin-right: 0px;
 }
 
 .c1 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+  margin-right: 10px;
   margin-left: -6px;
 }
 
@@ -409,7 +409,7 @@ exports[`正确渲染边框模式下的Input 1`] = `
 
 .c1 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
 .c1 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+  margin-left: -12px;
 }
 
 <div
@@ -570,7 +570,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
@@ -583,9 +583,9 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -612,16 +612,16 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 }
 
 .c1 > .sinoui-base-input__input {
-  padding: 16px 14px;
+  padding: 16px 12px;
 }
 
 .c1 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+  margin-left: 12px;
   margin-right: 0px;
 }
 
 .c1 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+  margin-right: 10px;
   margin-left: -6px;
 }
 
@@ -631,7 +631,7 @@ exports[`渲染不可用状态下边框模式的Input 1`] = `
 
 .c1 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
 .c1 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+  margin-left: -12px;
 }
 
 <div
@@ -795,7 +795,7 @@ Array [
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
@@ -808,9 +808,9 @@ Array [
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -837,18 +837,18 @@ Array [
 }
 
 .c1 > .sinoui-base-input__input {
-  padding: 16px 14px;
+  padding: 16px 12px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c1 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+  margin-left: 12px;
   margin-right: 0px;
 }
 
 .c1 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+  margin-right: 10px;
   margin-left: -6px;
 }
 
@@ -858,7 +858,7 @@ Array [
 
 .c1 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
 .c1 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+  margin-left: -12px;
 }
 
 <div
@@ -1016,7 +1016,7 @@ Array [
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
@@ -1029,9 +1029,9 @@ Array [
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -1058,18 +1058,18 @@ Array [
 }
 
 .c1 > .sinoui-base-input__input {
-  padding: 8px 14px;
+  padding: 8px 12px;
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
 .c1 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+  margin-left: 12px;
   margin-right: 0px;
 }
 
 .c1 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+  margin-right: 10px;
   margin-left: -6px;
 }
 
@@ -1079,7 +1079,7 @@ Array [
 
 .c1 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
 .c1 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+  margin-left: -12px;
 }
 
 <div
@@ -1241,7 +1241,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
@@ -1254,9 +1254,9 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -1283,16 +1283,16 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 }
 
 .c1 > .sinoui-base-input__input {
-  padding: 16px 14px;
+  padding: 16px 12px;
 }
 
 .c1 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+  margin-left: 12px;
   margin-right: 0px;
 }
 
 .c1 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+  margin-right: 10px;
   margin-left: -6px;
 }
 
@@ -1302,7 +1302,7 @@ exports[`渲染错误状态下边框模式的Input 1`] = `
 
 .c1 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
 .c1 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+  margin-left: -12px;
 }
 
 <div
@@ -1463,7 +1463,7 @@ exports[`聚焦状态 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 10px;
+  width: 8px;
   border-radius: 4px 0 0 4px;
 }
 
@@ -1476,9 +1476,9 @@ exports[`聚焦状态 1`] = `
 
 .c2 > .sinoui-notched-outline__trailing {
   border-left: none;
-  -webkit-flex: 1 0 10px;
-  -ms-flex: 1 0 10px;
-  flex: 1 0 10px;
+  -webkit-flex: 1 0 8px;
+  -ms-flex: 1 0 8px;
+  flex: 1 0 8px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -1505,16 +1505,16 @@ exports[`聚焦状态 1`] = `
 }
 
 .c1 > .sinoui-base-input__input {
-  padding: 16px 14px;
+  padding: 16px 12px;
 }
 
 .c1 > .sinoui-input-adornment--start {
-  margin-left: 14px;
+  margin-left: 12px;
   margin-right: 0px;
 }
 
 .c1 > .sinoui-input-adornment--end {
-  margin-right: 12px;
+  margin-right: 10px;
   margin-left: -6px;
 }
 
@@ -1524,7 +1524,7 @@ exports[`聚焦状态 1`] = `
 
 .c1 > .sinoui-input-adornment--start.sinoui-input-adornment--text ~ .sinoui-base-input__input,
 .c1 > .sinoui-input-adornment--end.sinoui-input-adornment--text {
-  margin-left: -14px;
+  margin-left: -12px;
 }
 
 <div

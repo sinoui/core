@@ -1,16 +1,19 @@
 import { css } from 'styled-components';
-import FormLabelProps from './FormLabelProps';
+
+import type FormLabelProps from './FormLabelProps';
 
 const getTranslateX = ({
   variant,
 }: {
+  /**
+   * 输入框形态
+   */
   variant?: 'standard' | 'filled' | 'outlined';
 }) => {
   switch (variant) {
     case 'filled':
-      return 12;
     case 'outlined':
-      return 14;
+      return 12;
 
     case 'standard':
     default:

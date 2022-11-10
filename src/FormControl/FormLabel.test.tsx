@@ -1,14 +1,15 @@
 /**
  * @jest-environment jsdom
  */
-import { render, cleanup } from '@testing-library/react';
-import { ThemeProvider } from 'styled-components';
-import { defaultTheme } from '@sinoui/theme';
-import React from 'react';
 import 'jest-styled-components';
-import FormLabel from './FormLabel';
-import FormControlContext from './FormControlContext';
+
+import { defaultTheme } from '@sinoui/theme';
+import { cleanup, render } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
+
 import FormControl from '.';
+import FormControlContext from './FormControlContext';
+import FormLabel from './FormLabel';
 
 afterEach(cleanup);
 
@@ -281,7 +282,7 @@ it('floating label: 轮廓输入框', () => {
   );
   const label = getByTestId('label');
 
-  expect(label).toHaveStyleRule('transform', 'translate(14px,20px) scale(1)');
+  expect(label).toHaveStyleRule('transform', 'translate(12px,20px) scale(1)');
 });
 
 it('floating label: 填充输入框，密集模式', () => {
@@ -294,7 +295,7 @@ it('floating label: 填充输入框，密集模式', () => {
   );
   const label = getByTestId('label');
 
-  expect(label).toHaveStyleRule('transform', 'translate(14px,12px) scale(1)');
+  expect(label).toHaveStyleRule('transform', 'translate(12px,12px) scale(1)');
 });
 
 it('floating label: 轮廓输入框，密集模式，聚焦状态', () => {
@@ -315,7 +316,7 @@ it('floating label: 轮廓输入框，密集模式，聚焦状态', () => {
 
   expect(label).toHaveStyleRule(
     'transform',
-    'translate(14px,-6px) scale(0.75)',
+    'translate(12px,-6px) scale(0.75)',
   );
 });
 
@@ -336,7 +337,7 @@ it('floating label: 轮廓输入框，聚焦状态', () => {
 
   expect(label).toHaveStyleRule(
     'transform',
-    'translate(14px,-6px) scale(0.75)',
+    'translate(12px,-6px) scale(0.75)',
   );
 });
 
