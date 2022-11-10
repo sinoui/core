@@ -1,11 +1,13 @@
 /**
  * @jest-environment jsdom
  */
-import React, { createRef } from 'react';
-import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
+
 import transitions from '@sinoui/theme/transitions';
+import { cleanup, render } from '@testing-library/react';
+import { createRef } from 'react';
 import { create } from 'react-test-renderer';
+
 import Grow from './Grow';
 
 afterEach(cleanup);
@@ -158,6 +160,22 @@ it('子元素属性', () => {
   expect(growRef.current).toBe(getByTestId('grow'));
   expect(getByTestId('grow')).toHaveAttribute('id', 'div123');
   expect(getByTestId('grow')).toHaveClass('div121');
+});
+
+it('在动画过程中不改变展现的子元素', () => {
+  const { getByTestId, rerender } = render(
+    <Grow in timeout={100}>
+      <div data-testid="grow">测试</div>
+    </Grow>,
+  );
+
+  rerender(
+    <Grow in={false} timeout={100}>
+      <div data-testid="grow">新的内容</div>
+    </Grow>,
+  );
+
+  expect(getByTestId('grow')).toHaveTextContent('测试');
 });
 
 describe('快照测试', () => {

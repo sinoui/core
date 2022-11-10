@@ -1,7 +1,22 @@
+/**
+ *
+ */
 export interface RenderOption {
+  /**
+   *
+   */
   options: any[];
+  /**
+   *
+   */
   groupTitle: string;
+  /**
+   *
+   */
   key: number;
+  /**
+   *
+   */
   index: number;
 }
 
@@ -15,6 +30,9 @@ export enum AutoCompleteCloseReason {
   popperIndicatorClick = 'popper-indicator-click',
 }
 
+/**
+ *
+ */
 export interface Props {
   /**
    * 可展示的数据
@@ -59,7 +77,7 @@ export interface Props {
   /**
    * 当前聚焦选项
    */
-  focusedOption?: string;
+  focusedOption?: string | null;
   /**
    * 如果设置为`true`，则为freeSolo模式。默认为`false`
    */
@@ -70,14 +88,38 @@ export interface Props {
   allowShowTitle?: boolean;
 }
 
+/**
+ *
+ */
 export interface TagProps {
+  /**
+   *
+   */
   onDelete: (event: React.MouseEvent) => void;
+  /**
+   *
+   */
   onClick: (event: React.MouseEvent) => void;
+  /**
+   *
+   */
   label: string;
+  /**
+   *
+   */
   variant?: 'outlined' | 'standard';
 }
 
+/**
+ *
+ */
 export interface RenderTagsProps {
+  /**
+   *
+   */
   tags: string[];
+  /**
+   *
+   */
   getTagProps: (index: number) => TagProps;
 }

@@ -1,7 +1,8 @@
 /* eslint-disable no-param-reassign */
-import React, { useRef, useEffect } from 'react';
-import { Transition } from 'react-transition-group';
 import { transitions } from '@sinoui/theme';
+import React, { useEffect, useRef } from 'react';
+import { Transition } from 'react-transition-group';
+
 import type BaseTransitionProps from '../transitions/BaseTransitionProps';
 import getDuration from '../transitions/getDuration';
 import useMultiRefs from '../utils/useMultiRefs';
@@ -28,9 +29,12 @@ const styles: { [status: string]: React.CSSProperties } = {
 const Grow = React.forwardRef<
   HTMLElement,
   Omit<BaseTransitionProps, 'timeout'> & {
+    /**
+     * 超时时间
+     */
     timeout?: TransitionTimeout;
   }
->((props, ref) => {
+>(function Grow(props, ref) {
   const {
     in: inProp,
     children,
@@ -43,6 +47,11 @@ const Grow = React.forwardRef<
   const handleRef = useMultiRefs(contentRef, ref, (children as any).ref);
   const autoTimeout = useRef<number>(0);
   const timeoutRef = useRef<number>();
+  const childrenRef = useRef(children);
+
+  if (inProp) {
+    childrenRef.current = children;
+  }
 
   /**
    * 进入过渡的回调函数，需要在此时给节点添加上入场动画的`css transition`。
@@ -114,7 +123,7 @@ const Grow = React.forwardRef<
       {...rest}
     >
       {(status: any, childProps: any) =>
-        React.cloneElement(children, {
+        React.cloneElement(childrenRef.current, {
           ref: handleRef,
           ...childProps,
           style: {

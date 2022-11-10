@@ -1,13 +1,14 @@
-import React, { useRef } from 'react';
 import List from '@sinoui/core/List';
 import ListItem from '@sinoui/core/ListItem';
 import ListItemText from '@sinoui/core/ListItemText';
-import styled, { css } from 'styled-components';
 import Progress from '@sinoui/core/Progress';
 import classNames from 'classnames';
 import { opacify } from 'polished';
-import { Props, RenderOption } from './types';
+import React, { useRef } from 'react';
+import styled, { css } from 'styled-components';
+
 import useMultiRefs from '../utils/useMultiRefs';
+import type { Props, RenderOption } from './types';
 import groupOptions from './utils/groupOptions';
 
 const MaxHeightList = styled(List)`
@@ -60,7 +61,16 @@ const LoadingLayout = styled.div`
   align-items: center;
 `;
 
-const focusedStyle = css<{ selected?: boolean; $focused?: boolean }>`
+const focusedStyle = css<{
+  /**
+   * 组件是否属于选中状态
+   */
+  selected?: boolean;
+  /**
+   * 组件是否处于聚焦状态
+   */
+  $focused?: boolean;
+}>`
   ::before {
     background-color: ${({ theme, selected }) =>
       !selected
@@ -78,14 +88,22 @@ const focusedStyle = css<{ selected?: boolean; $focused?: boolean }>`
   }
 `;
 
-const StyledListItem = styled(ListItem)<{ $focused?: boolean }>`
+const StyledListItem = styled(ListItem)<{
+  /**
+   * 组件是否处于聚焦状态
+   */
+  $focused?: boolean;
+}>`
   ${({ $focused }) => $focused && focusedStyle};
 `;
 
 /**
  * 选项列表
  */
-const OptionList = React.forwardRef<HTMLElement, Props>((props, ref) => {
+const OptionList = React.forwardRef<HTMLElement, Props>(function OptionList(
+  props,
+  ref,
+) {
   const {
     options: optionsProp = [],
     groupBy,

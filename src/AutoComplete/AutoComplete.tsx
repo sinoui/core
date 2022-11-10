@@ -1,30 +1,32 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-param-reassign */
-import React, { useRef, useState, useMemo } from 'react';
-import styled, { css } from 'styled-components';
 import type { ModifierArguments, Options, Placement } from '@popperjs/core';
+import type React from 'react';
+import { useMemo, useRef, useState } from 'react';
 import scrollIntoView from 'scroll-into-view-if-needed';
-import OptionList from './OptionList';
-import Popper from '../Popper';
-import type { PopperProps } from '../Popper';
+import styled, { css } from 'styled-components';
+
 import Grow from '../Grow';
-import ArrowDropDownIcon from '../svg-icons/ArrowDropDownIcon';
-import InputAdornment from '../InputAdornment';
 import IconButton from '../IconButton';
+import InputAdornment from '../InputAdornment';
+import type { PopperProps } from '../Popper';
+import Popper from '../Popper';
+import ArrowDropDownIcon from '../svg-icons/ArrowDropDownIcon';
 import Close from '../svg-icons/Close';
-import { getAvailableItems } from './utils/handleItems';
-import useInputValue from './useInputValue';
 import bemClassNames from '../utils/bemClassNames';
+import useMultiRefs from '../utils/useMultiRefs';
 import AutoCompleteStyle from './AutoCompleteStyle';
 import AutoCompleteTags from './AutoCompleteTags';
+import moveFocused from './moveFocused';
+import OptionList from './OptionList';
 import type { RenderTagsProps } from './types';
 import { AutoCompleteCloseReason } from './types';
-import moveFocused from './moveFocused';
 import useAutoCompleteOpen from './useAutoCompleteOpen';
-import useMultiRefs from '../utils/useMultiRefs';
+import useInputValue from './useInputValue';
+import { getAvailableItems } from './utils/handleItems';
 
 /**
- * 自动完成组件变更原因
+ * 自动补全组件变更原因
  */
 export enum AutoCompleteChangeReason {
   /**
@@ -49,6 +51,9 @@ export enum AutoCompleteChangeReason {
   blur = 'blur',
 }
 
+/**
+ * 自动填充组件属性类型
+ */
 export interface Props {
   /**
    * 渲染输入框。
@@ -233,7 +238,15 @@ export interface Props {
   className?: string;
 }
 
-const rippleStyle = css<{ size?: number }>`
+/**
+ * 波纹的样式
+ */
+const rippleStyle = css<{
+  /**
+   * 图标按钮尺寸
+   */
+  size?: number;
+}>`
   > .sinoui-icon-button__ripple-layout {
     left: 0px;
     top: 0px;
@@ -249,7 +262,12 @@ const rippleStyle = css<{ size?: number }>`
   }
 `;
 
-const iconButtonStyle = css<{ size?: number }>`
+const iconButtonStyle = css<{
+  /**
+   * 图标按钮尺寸
+   */
+  size?: number;
+}>`
   padding: 2px;
   width: auto;
   height: auto;
@@ -263,6 +281,9 @@ const ClearButtonWrapper = styled(IconButton)`
 `;
 
 const PopupIndicatorWrapper = styled(IconButton)<{
+  /**
+   * 是否是打开状态。
+   */
   $open: boolean;
 }>`
   ${iconButtonStyle}
@@ -270,7 +291,12 @@ const PopupIndicatorWrapper = styled(IconButton)<{
   transform: rotate(${({ $open }) => ($open ? 180 : 0)}deg);
 `;
 
-const StyledPopper = styled(Popper)<{ portal?: boolean }>`
+const StyledPopper = styled(Popper)<{
+  /**
+   * 是否使用传送门，将组件的DOM渲染到全局
+   */
+  portal?: boolean;
+}>`
   z-index: ${({ theme }) => theme.zIndex.popover};
 
   > .sinoui-auto-complete__option-list {
@@ -298,7 +324,7 @@ const sameWidth = (autoWidth?: boolean) => ({
 const getFocusedIndex = (
   items: HTMLLIElement[],
   key: string,
-  focusedOption?: string,
+  focusedOption?: string | null,
 ) => {
   const currentIdx = items.findIndex(
     (item) => item.dataset.value === focusedOption,
@@ -316,7 +342,9 @@ const getFocusedIndex = (
 };
 
 /**
- * 自动完成组件。
+ * 自动补全组件。
+ *
+ * @param props 组件属性。
  */
 export default function AutoComplete(props: Props) {
   const {
@@ -393,7 +421,7 @@ export default function AutoComplete(props: Props) {
     onOpen,
     onClose,
   );
-  const [focusedOption, setFocusedOption] = useState<string | undefined>(
+  const [focusedOption, setFocusedOption] = useState<string | undefined | null>(
     defaultFocusedOption,
   );
   const [focused, setFocused] = useState(false);
@@ -436,7 +464,7 @@ export default function AutoComplete(props: Props) {
   /**
    * 处理选项点击事件
    *
-   * @param label 选项的标签
+   * @param item 选项
    */
   const handleOptionClick = (item: any) => {
     if (multiple) {
@@ -586,7 +614,7 @@ export default function AutoComplete(props: Props) {
           block: 'nearest',
           inline: 'nearest',
         });
-        setFocusedOption(items[focusedIndex]?.dataset.value!);
+        setFocusedOption(items[focusedIndex]?.dataset.value);
       } else {
         open();
       }
@@ -597,7 +625,7 @@ export default function AutoComplete(props: Props) {
       listRef.current
     ) {
       const items = getAvailableItems(listRef.current);
-      setFocusedOption(items[0]?.textContent!);
+      setFocusedOption(items[0]?.textContent);
     } else if (
       key === 'End' &&
       handleHomeEndKeys &&
@@ -610,7 +638,7 @@ export default function AutoComplete(props: Props) {
         block: 'nearest',
         inline: 'nearest',
       });
-      setFocusedOption(items[items.length - 1]?.textContent!);
+      setFocusedOption(items[items.length - 1]?.textContent);
     } else if (key === 'Enter' && focusedOption) {
       const focusedItem = options.find(
         (option) => getOptionLabel(option) === focusedOption,
