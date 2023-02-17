@@ -12,5 +12,5 @@ export default function useEventCallback(fn: Function) {
   useEnhancedEffect(() => {
     ref.current = fn;
   });
-  return React.useCallback((...args) => (0, ref.current)(...args), []);
+  return React.useCallback((...args) => ref.current(...args), []);
 }

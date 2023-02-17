@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import classNames from 'classnames';
+import DialogTitle from '@sinoui/core/DialogTitle';
 import Typography from '@sinoui/core/Typography';
 import getColorFromTheme from '@sinoui/core/utils/getColorFromTheme';
-import DialogTitle from '@sinoui/core/DialogTitle';
+import classNames from 'classnames';
+import styled from 'styled-components';
 
-const DialogContent = styled(Typography).attrs((className) => ({
+const DialogContent = styled(Typography).attrs(({ className }) => ({
   type: 'subtitle1',
   className: classNames('sinoui-dialog-content', className),
   color: 'textSecondary',

@@ -1,14 +1,18 @@
-import React, { useCallback, useRef, useMemo, useEffect } from 'react';
-import classNames from 'classnames';
 import AutosizeTextarea from '@sinoui/core/AutosizeTextarea';
-import useMultiRefs from '../utils/useMultiRefs';
-import BaseInputLayout from './BaseInputLayout';
-import mergeCallbacks from '../utils/mergeCallbacks';
-import bemClassNames from '../utils/bemClassNames';
+import classNames from 'classnames';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+
 import { useFormControlContext } from '../FormControl';
 import InputAdornment from '../InputAdornment';
+import bemClassNames from '../utils/bemClassNames';
+import mergeCallbacks from '../utils/mergeCallbacks';
+import useMultiRefs from '../utils/useMultiRefs';
+import BaseInputLayout from './BaseInputLayout';
 import ClearIcon from './ClearIcon';
 
+/**
+ *
+ */
 interface MultilineProps {
   /**
    * 指定多行输入框的最大行数
@@ -24,6 +28,9 @@ interface MultilineProps {
   rows?: number;
 }
 
+/**
+ *
+ */
 export interface BaseInputProps<
   InputComponentType extends React.ElementType = any,
   InputElementType = any,
@@ -169,14 +176,23 @@ export interface BaseInputProps<
   title?: string;
 }
 
+/**
+ *
+ */
 export interface BaseInputComponentType<InputElementType = HTMLInputElement> {
   <C extends React.ElementType>(
     props: {
+      /**
+       *
+       */
       inputComponent: C;
     } & BaseInputProps<C, InputElementType>,
   ): JSX.Element | null;
   (
     props: {
+      /**
+       *
+       */
       multiline: true;
     } & BaseInputProps<'textarea', HTMLTextAreaElement, MultilineProps>,
   ): JSX.Element | null;
