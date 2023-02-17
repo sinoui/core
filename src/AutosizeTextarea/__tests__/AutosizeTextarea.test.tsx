@@ -117,5 +117,5 @@ it('窗口调整时自动调整高度', () => {
 
   jest.runAllTimers();
 
-  expect(resizeTextarea).toBeCalledTimes(1); // 因debounce，所以是只调用1次
+  expect(resizeTextarea).toBeCalledTimes(2);
 });

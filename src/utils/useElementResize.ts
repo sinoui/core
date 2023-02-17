@@ -49,7 +49,7 @@ export default function useElementResize(
   const [callback] = useState(() =>
     useRaf
       ? createRafCallback(() => listenRef.current())
-      : debounce(() => listenRef.current(), 64),
+      : debounce(() => listenRef.current(), 64, { leading: true }),
   );
 
   useRefInEffect(elementRef, (element) => {

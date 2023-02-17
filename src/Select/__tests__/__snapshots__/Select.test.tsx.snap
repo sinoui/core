@@ -61,6 +61,29 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
   white-space: nowrap;
 }
 
+.c8 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  color: rgba(0,0,0,0.6);
+  margin-left: 8px;
+}
+
+[disabled] > .c7 {
+  color: rgba(0,0,0,0.38);
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -156,29 +179,6 @@ exports[`正确渲染三种模式下的下拉选择框 1`] = `
 .c2 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c8 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 0.01em;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  max-height: 2em;
-  white-space: nowrap;
-  color: rgba(0,0,0,0.6);
-  margin-left: 8px;
-}
-
-[disabled] > .c7 {
-  color: rgba(0,0,0,0.38);
 }
 
 .c12 {
@@ -853,6 +853,29 @@ exports[`渲染不可用的下拉框 1`] = `
   white-space: nowrap;
 }
 
+.c8 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.01em;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-height: 2em;
+  white-space: nowrap;
+  color: rgba(0,0,0,0.6);
+  margin-left: 8px;
+}
+
+[disabled] > .c7 {
+  color: rgba(0,0,0,0.38);
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -948,29 +971,6 @@ exports[`渲染不可用的下拉框 1`] = `
 .c2 .sinoui-base-input__clear > .sinoui-svg-icon {
   font-size: 18px;
   cursor: pointer;
-}
-
-.c8 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 0.01em;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  max-height: 2em;
-  white-space: nowrap;
-  color: rgba(0,0,0,0.6);
-  margin-left: 8px;
-}
-
-[disabled] > .c7 {
-  color: rgba(0,0,0,0.38);
 }
 
 .c12 {
