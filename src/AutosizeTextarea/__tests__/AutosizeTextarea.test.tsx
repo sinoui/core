@@ -1,10 +1,12 @@
 /**
  * @jest-environment jsdom
  */
+import '@testing-library/jest-dom';
+
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render, fireEvent, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
+
 import AutosizeTextarea from '../AutosizeTextarea';
 import resizeTextarea from '../resizeTextarea';
 
@@ -102,20 +104,6 @@ it('minRows', () => {
   );
 
   expect(getByTestId('textarea')).toHaveAttribute('rows', '3');
-});
-
-it('在非受控模式自动调整高度', () => {
-  const changeCallback = jest.fn();
-  const { getByTestId } = render(
-    <AutosizeTextarea data-testid="textarea" onChange={changeCallback} />,
-  );
-
-  const textarea = getByTestId('textarea');
-
-  fireEvent.change(textarea, { target: { value: '123' } });
-
-  expect(changeCallback).toBeCalled();
-  expect(resizeTextarea).toBeCalledTimes(2); // 两次调用，第一次是初始化时调用；第二次是值变更时调用
 });
 
 it('窗口调整时自动调整高度', () => {

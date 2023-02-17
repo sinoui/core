@@ -2,11 +2,10 @@
 
 exports[`渲染文本域 1`] = `
 Array [
-  <textarea
-    onChange={[Function]}
-  />,
+  <textarea />,
   <textarea
     aria-hidden="true"
+    readOnly={true}
     style={
       Object {
         "height": 0,
@@ -29,7 +28,6 @@ Array [
 exports[`给文本域添加样式 1`] = `
 Array [
   <textarea
-    onChange={[Function]}
     style={
       Object {
         "boxSizing": "border-box",
@@ -38,6 +36,7 @@ Array [
   />,
   <textarea
     aria-hidden="true"
+    readOnly={true}
     style={
       Object {
         "boxSizing": "border-box",

@@ -780,6 +780,7 @@ exports[`渲染多行输入框 1`] = `
   <textarea
     aria-hidden="true"
     className="sinoui-base-input__input"
+    readOnly={true}
     style={
       Object {
         "height": 0,
@@ -1393,6 +1394,7 @@ exports[`设置minRows和maxRows 1`] = `
     <textarea
       aria-hidden="true"
       className="sinoui-base-input__input"
+      readOnly={true}
       style={
         Object {
           "height": 0,

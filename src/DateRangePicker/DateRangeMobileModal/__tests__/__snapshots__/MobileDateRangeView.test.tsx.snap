@@ -745,7 +745,7 @@ exports[`快照测试 1`] = `
               "left": 0,
               "position": "absolute",
               "right": undefined,
-              "top": 396480,
+              "top": 392448,
               "width": "100%",
             }
           }
@@ -1464,7 +1464,7 @@ exports[`快照测试 1`] = `
               "left": 0,
               "position": "absolute",
               "right": undefined,
-              "top": 396816,
+              "top": 392784,
               "width": "100%",
             }
           }
@@ -2154,7 +2154,7 @@ exports[`快照测试 1`] = `
               "left": 0,
               "position": "absolute",
               "right": undefined,
-              "top": 397152,
+              "top": 393120,
               "width": "100%",
             }
           }
@@ -2851,7 +2851,7 @@ exports[`快照测试 1`] = `
               "left": 0,
               "position": "absolute",
               "right": undefined,
-              "top": 397488,
+              "top": 393456,
               "width": "100%",
             }
           }

@@ -1,4 +1,8 @@
 /* eslint-disable no-param-reassign */
+/**
+ *
+ * @param element
+ */
 function getSizeData(element: HTMLElement) {
   const computedStyle = getComputedStyle(element);
   const getSizeValue = (key: keyof CSSStyleDeclaration) =>
@@ -10,6 +14,11 @@ function getSizeData(element: HTMLElement) {
   return { boxSizing, padding, border, width };
 }
 
+/**
+ *
+ * @param shadow
+ * @param content
+ */
 function getContentHeight(shadow: HTMLTextAreaElement, content = 'x') {
   shadow.value = content;
   return shadow.scrollHeight;
@@ -35,6 +44,11 @@ export default function resizeTextarea(
     getContentHeight(shadow, textarea.value || textarea.placeholder || 'x') -
     padding;
   const singleRowHeight = getContentHeight(shadow) - padding;
+
+  if (singleRowHeight <= 0) {
+    return;
+  }
+
   let textareaHeight = contentHeight;
   if (minRows) {
     textareaHeight = Math.max(singleRowHeight * minRows, textareaHeight);

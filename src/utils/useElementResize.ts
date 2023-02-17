@@ -1,20 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import elementResizeDetectorMaker from 'element-resize-detector';
 import { debounce } from '@sinoui/utils';
+import type React from 'react';
+import { useRef, useState } from 'react';
+
 import NODE_ENV from './env';
 import useRefInEffect from './useRefInEffect';
-
-let erd: elementResizeDetectorMaker.Erd | undefined;
-
-function getErd() {
-  if (!erd) {
-    erd = elementResizeDetectorMaker({
-      strategy: 'scroll',
-    });
-  }
-
-  return erd;
-}
 
 /**
  * 创建采用 raf 延迟执行回调函数的新函数
@@ -22,13 +11,18 @@ function getErd() {
  * @param callback 回调函数
  * @returns 返回 raf 延迟执行回调函数的新函数
  */
-function createRafCallback<T extends Function>(
+function createRafCallback<T extends () => void>(
   callback: T,
-): T & { cancel: () => void } {
+): T & {
+  /**
+   * 取消函数
+   */
+  cancel: () => void;
+} {
   let raf = -1;
   const rafCallback = (...args: any) => {
     window.cancelAnimationFrame(raf);
-    raf = window.requestAnimationFrame(() => callback(...args));
+    raf = window.requestAnimationFrame(() => (callback as any)(...args));
   };
   rafCallback.cancel = () => window.cancelAnimationFrame(raf);
   return rafCallback as any;
@@ -58,22 +52,23 @@ export default function useElementResize(
       : debounce(() => listenRef.current(), 64),
   );
 
-  useEffect(() => {
-    window.addEventListener('resize', callback, false);
-    return () => window.removeEventListener('resize', callback, false);
-  }, [callback]);
-
   useRefInEffect(elementRef, (element) => {
+    window.addEventListener('resize', callback, false);
     const isTest = NODE_ENV === 'test';
     if (isTest) {
       return undefined;
     }
 
-    getErd().listenTo(element, callback);
+    let observer: ResizeObserver | undefined;
+    if (window.ResizeObserver) {
+      const observer = new ResizeObserver(callback);
+      observer.observe(element);
+    }
 
     return () => {
-      getErd().removeListener(element, callback);
       callback.cancel();
+      observer?.disconnect();
+      window.removeEventListener('resize', callback, false);
     };
   });
 }

@@ -1,8 +1,12 @@
-import React, { useRef, useEffect, useCallback } from 'react';
-import { debounce } from '@sinoui/utils';
+import React, { useRef } from 'react';
+
+import useElementResize from '../utils/useElementResize';
 import useMultiRefs from '../utils/useMultiRefs';
 import resizeTextarea from './resizeTextarea';
 
+/**
+ *
+ */
 interface AutosizeTextareaProps
   extends React.ComponentPropsWithoutRef<'textarea'> {
   /**
@@ -38,12 +42,12 @@ const AutosizeTextarea = React.forwardRef<
   HTMLTextAreaElement,
   AutosizeTextareaProps
 >((props, ref) => {
-  const { minRows, maxRows, onChange, ...rest } = props;
+  const { minRows, maxRows, ...rest } = props;
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const shadowRef = useRef<HTMLTextAreaElement>(null);
   const textareaRefHandler = useMultiRefs(ref, textareaRef);
 
-  const resizeTextareaCallback = useCallback(() => {
+  const syncHeight = () => {
     const shadow = shadowRef.current;
     const textarea = textareaRef.current;
     if (!shadow || !textarea) {
@@ -51,43 +55,26 @@ const AutosizeTextarea = React.forwardRef<
     }
 
     resizeTextarea(textarea, shadow, minRows, maxRows);
-  }, [maxRows, minRows]);
-
-  useEnhancedEffect(resizeTextareaCallback);
-
-  useEffect(() => {
-    const resize = debounce(resizeTextareaCallback);
-    window.addEventListener('resize', resize, false);
-    return () => {
-      resize.cancel();
-      window.removeEventListener('resize', resize, false);
-    };
-  }, [resizeTextareaCallback]);
-
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    resizeTextareaCallback();
-    if (onChange) {
-      onChange(event);
-    }
   };
+
+  useEnhancedEffect(syncHeight);
+  useElementResize(textareaRef, syncHeight);
 
   return (
     <>
-      <textarea
-        ref={textareaRefHandler}
-        rows={minRows}
-        onChange={handleChange}
-        {...rest}
-      />
+      <textarea ref={textareaRefHandler} rows={minRows} {...rest} />
       <textarea
         className={rest.className}
         ref={shadowRef}
         tabIndex={-1}
         aria-hidden="true"
+        readOnly={true}
         style={{ ...rest.style, ...shadowStyle }}
       />
     </>
   );
 });
+
+AutosizeTextarea.displayName = 'AutosizeTextarea';
 
 export default AutosizeTextarea;
